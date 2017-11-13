@@ -81,6 +81,23 @@ public:
   bool is_global() const { return type == JNIGlobalRefType; }
   bool is_weak() const { return type == JNIWeakGlobalRefType; }
   bool is_invalid() const { return type == JNIInvalidRefType; }
+
+  jreference to_local() const {
+    jreference ref;
+    ref.obj = env()->NewLocalRef(obj);
+    return ref;
+  }
+  jreference to_global() const {
+    jreference ref;
+    ref.obj = env()->NewGlobalRef(obj);
+    return ref;
+  }
+  jreference to_weak() const {
+    jreference ref;
+    ref.obj = env()->NewWeakGlobalRef(obj);
+    return ref;
+  }
+};
 };
 
 #endif
