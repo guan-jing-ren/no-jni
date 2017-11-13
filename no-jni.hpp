@@ -1,12 +1,9 @@
 #ifndef NO_JNI_HPP
 #define NO_JNI_HPP
 
+#include "no-jvm.hpp"
+
 #include "../fundamental-machines/constexpr_string.hpp"
-
-#include <jni.h>
-
-inline JavaVM *vm = nullptr;
-inline JNIEnv *env = nullptr;
 
 template <size_t N> struct jpackage : cexprstr<char, N> {
   constexpr jpackage(const char (&s)[N]) : cexprstr<char, N>{s} {}
@@ -35,22 +32,23 @@ constexpr jpackage<M + N> operator/(jpackage<M> l, const char (&r)[N]) {
 }
 
 class jreference {
+  static JNIEnv *env() { return JavaVirtualMachine::env; }
   jobjectRefType type = JNIInvalidRefType;
   jobject obj = nullptr;
 
 public:
-  jreference(jobject o) : type(env->GetObjectRefType(o)) {
+  jreference(jobject o) : type(env()->GetObjectRefType(o)) {
     switch (type) {
     default:
       break;
     case JNILocalRefType:
-      obj = env->NewLocalRef(o);
+      obj = env()->NewLocalRef(o);
       break;
     case JNIGlobalRefType:
-      obj = env->NewGlobalRef(o);
+      obj = env()->NewGlobalRef(o);
       break;
     case JNIWeakGlobalRefType:
-      obj = env->NewWeakGlobalRef(o);
+      obj = env()->NewWeakGlobalRef(o);
       break;
     case JNIInvalidRefType:
       break;
@@ -61,13 +59,13 @@ public:
     default:
       break;
     case JNILocalRefType:
-      env->DeleteLocalRef(obj);
+      env()->DeleteLocalRef(obj);
       break;
     case JNIGlobalRefType:
-      env->DeleteGlobalRef(obj);
+      env()->DeleteGlobalRef(obj);
       break;
     case JNIWeakGlobalRefType:
-      env->DeleteWeakGlobalRef(obj);
+      env()->DeleteWeakGlobalRef(obj);
       break;
     case JNIInvalidRefType:
       break;
