@@ -5,6 +5,8 @@
 
 #include "../fundamental-machines/constexpr_string.hpp"
 
+#include <functional>
+
 template <size_t N> struct jpackage : cexprstr<char, N> {
   constexpr jpackage(const char (&s)[N]) : cexprstr<char, N>{s} {}
   constexpr jpackage(const cexprstr<char, N> s) : cexprstr<char, N>{s} {}
@@ -35,6 +37,10 @@ class jreference {
   static JNIEnv *env() { return JavaVirtualMachine::env; }
   jobjectRefType type = JNIInvalidRefType;
   jobject obj = nullptr;
+
+  jreference() = default;
+
+  friend class jmonitor;
 
 public:
   jreference(jobject o) : type(env()->GetObjectRefType(o)) {
@@ -98,6 +104,20 @@ public:
     return ref;
   }
 };
+
+class jmonitor {
+  const std::reference_wrapper<const jreference> ref;
+
+public:
+  jmonitor(const jmonitor &) = delete;
+  jmonitor(jmonitor &&) = delete;
+  jmonitor &operator=(const jmonitor &) = delete;
+  jmonitor &operator=(jmonitor &&) = delete;
+
+  jmonitor(const jreference &r) : ref(r) {
+    JavaVirtualMachine::env->MonitorEnter(ref.get().obj);
+  }
+  ~jmonitor() { JavaVirtualMachine::env->MonitorExit(ref.get().obj); }
 };
 
 #endif
