@@ -127,30 +127,35 @@ template <size_t N> struct jsignature_t : cexprstr<char, N> {
   constexpr jsignature_t(const cexprstr<char, N> s) : cexprstr<char, N>{s} {}
 };
 
-struct jvoid final {};
+struct jvoid final {
+  constexpr jvoid() = default;
+};
 
-template <typename T> constexpr auto make_signature() {
-  if constexpr (std::is_same<T, jboolean>::value) {
-    return jsignature_t{"Z"};
-  } else if (std::is_same<T, jbyte>::value) {
-    return jsignature_t{"B"};
-  } else if (std::is_same<T, jchar>::value) {
-    return jsignature_t{"C"};
-  } else if (std::is_same<T, jshort>::value) {
-    return jsignature_t{"S"};
-  } else if (std::is_same<T, jint>::value) {
-    return jsignature_t{"I"};
-  } else if (std::is_same<T, jlong>::value) {
-    return jsignature_t{"J"};
-  } else if (std::is_same<T, jfloat>::value) {
-    return jsignature_t{"F"};
-  } else if (std::is_same<T, jdouble>::value) {
-    return jsignature_t{"D"};
-  } else if (std::is_same<T, jvoid>::value) {
-    return jsignature_t{"V"};
+template <typename T> struct make_signature {
+  constexpr make_signature() = default;
+  constexpr auto operator()() {
+    if constexpr (std::is_same<T, jboolean>::value) {
+      return jsignature_t{"Z"};
+    } else if (std::is_same<T, jbyte>::value) {
+      return jsignature_t{"B"};
+    } else if (std::is_same<T, jchar>::value) {
+      return jsignature_t{"C"};
+    } else if (std::is_same<T, jshort>::value) {
+      return jsignature_t{"S"};
+    } else if (std::is_same<T, jint>::value) {
+      return jsignature_t{"I"};
+    } else if (std::is_same<T, jlong>::value) {
+      return jsignature_t{"J"};
+    } else if (std::is_same<T, jfloat>::value) {
+      return jsignature_t{"F"};
+    } else if (std::is_same<T, jdouble>::value) {
+      return jsignature_t{"D"};
+    } else if (std::is_same<T, jvoid>::value) {
+      return jsignature_t{"V"};
+    }
   }
-}
+};
 
-template <typename T> constexpr auto jsignature = make_signature<T>();
+template <typename T> constexpr auto jsignature = make_signature<T>{}();
 
 #endif
