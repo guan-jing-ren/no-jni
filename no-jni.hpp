@@ -33,6 +33,8 @@ constexpr jpackage<M + N> operator/(jpackage<M> l, const char (&r)[N]) {
   return l + "/" + r;
 }
 
+constexpr jpackage root_package{""};
+
 class jreference {
   static JNIEnv *env() { return JavaVirtualMachine::env; }
   jobjectRefType type = JNIInvalidRefType;
