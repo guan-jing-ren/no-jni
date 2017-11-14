@@ -13,8 +13,19 @@ env LD_LIBRARY_PATH=/usr/lib/jvm/default-java/jre/lib/amd64/server/ ./nojni -Dru
 
 using namespace std;
 
+constexpr jpackage com{"com"};
+constexpr jpackage org{"org"};
+constexpr jpackage java{"java"};
+constexpr jpackage javax{"javax"};
+
+constexpr auto swt = org / "eclipse" / "swt";
+
+class Display : public jhandle<Display> {
+public:
+  static constexpr jsignature_t signature = "L" / swt / "Display;";
+};
+
 int main(int c, char **v) {
-  constexpr auto swt = root_package / "org" / "eclipse" / "swt";
   cout << "SWT package name: " << swt << ";\n";
   cout << jsignature<jboolean> << ";\n";
   cout << jsignature<jbyte> << ";\n";
@@ -25,6 +36,7 @@ int main(int c, char **v) {
   cout << jsignature<jfloat> << ";\n";
   cout << jsignature<jdouble> << ";\n";
   cout << jsignature<jvoid> << ";\n";
+  cout << jsignature<Display> << "\n";
 
   JavaVirtualMachine jvm(c, v);
   cout << jvm.vm << ' ' << jvm.env << '\n';

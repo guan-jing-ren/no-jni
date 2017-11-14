@@ -13,27 +13,25 @@ template <size_t N> struct jpackage : cexprstr<char, N> {
 };
 
 template <size_t M, size_t N>
-constexpr jpackage<M + N + 1> operator/(jpackage<M> l, jpackage<N> r) {
-  return l + "/" + r;
+constexpr auto operator/(jpackage<M> l, jpackage<N> r) {
+  return jpackage{l + "/" + r};
 }
 template <size_t M, size_t N>
-constexpr jpackage<M + N + 1> operator/(cexprstr<char, M> l, jpackage<N> r) {
-  return l + "/" + r;
+constexpr auto operator/(cexprstr<char, M> l, jpackage<N> r) {
+  return jpackage{l + "/" + r};
 }
 template <size_t M, size_t N>
-constexpr jpackage<M + N + 1> operator/(jpackage<M> l, cexprstr<char, N> r) {
-  return l + "/" + r;
+constexpr auto operator/(jpackage<M> l, cexprstr<char, N> r) {
+  return jpackage{l + "/" + r};
 }
 template <size_t M, size_t N>
-constexpr jpackage<M + N> operator/(const char (&l)[M], jpackage<N> r) {
-  return l + "/" + r;
+constexpr auto operator/(const char (&l)[M], jpackage<N> r) {
+  return jpackage{jpackage{l} + "/" + r};
 }
 template <size_t M, size_t N>
-constexpr jpackage<M + N> operator/(jpackage<M> l, const char (&r)[N]) {
-  return l + "/" + r;
+constexpr auto operator/(jpackage<M> l, const char (&r)[N]) {
+  return jpackage{l + "/" + jpackage{r}};
 }
-
-constexpr jpackage root_package{""};
 
 class jreference {
   static JNIEnv *env() { return JavaVirtualMachine::env; }
