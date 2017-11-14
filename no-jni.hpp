@@ -160,6 +160,9 @@ template <typename T> struct make_signature {
         return make_signature<typename T::class_type>{}();
       else
         return "L" + T::signature + ";";
+    } else {
+      struct unsupported {};
+      return unsupported{};
     }
   }
 };
