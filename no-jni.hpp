@@ -164,5 +164,7 @@ public:
 };
 
 template <typename T> constexpr auto jsignature = make_signature<T>{}();
+template <typename T>
+constexpr auto jsignature<jhandle<T>> = make_signature<T>{}();
 
 #endif

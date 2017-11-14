@@ -22,7 +22,7 @@ constexpr auto swt = org / "eclipse" / "swt";
 
 class Display : public jhandle<Display> {
 public:
-  static constexpr jsignature_t signature = "L" / swt / "Display;";
+  static constexpr jsignature_t signature = swt / "Display";
 };
 
 int main(int c, char **v) {
@@ -37,6 +37,7 @@ int main(int c, char **v) {
   cout << jsignature<jdouble> << ";\n";
   cout << jsignature<jvoid> << ";\n";
   cout << jsignature<Display> << "\n";
+  cout << jsignature<jhandle<Display>> << "\n";
 
   JavaVirtualMachine jvm(c, v);
   cout << jvm.vm << ' ' << jvm.env << '\n';
