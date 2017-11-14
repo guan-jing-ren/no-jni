@@ -131,7 +131,7 @@ struct jvoid final {
 
 template <typename T> struct make_signature {
   constexpr make_signature() = default;
-  constexpr auto operator()() {
+  constexpr auto operator()() const {
     if constexpr (std::is_same<T, jboolean>::value)
       return jsignature_t{"Z"};
     else if constexpr (std::is_same<T, jbyte>::value)
