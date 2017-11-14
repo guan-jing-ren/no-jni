@@ -132,26 +132,35 @@ struct jvoid final {
 template <typename T> struct make_signature {
   constexpr make_signature() = default;
   constexpr auto operator()() {
-    if constexpr (std::is_same<T, jboolean>::value) {
+    if constexpr (std::is_same<T, jboolean>::value)
       return jsignature_t{"Z"};
-    } else if (std::is_same<T, jbyte>::value) {
+    else if constexpr (std::is_same<T, jbyte>::value)
       return jsignature_t{"B"};
-    } else if (std::is_same<T, jchar>::value) {
+    else if constexpr (std::is_same<T, jchar>::value)
       return jsignature_t{"C"};
-    } else if (std::is_same<T, jshort>::value) {
+    else if constexpr (std::is_same<T, jshort>::value)
       return jsignature_t{"S"};
-    } else if (std::is_same<T, jint>::value) {
+    else if constexpr (std::is_same<T, jint>::value)
       return jsignature_t{"I"};
-    } else if (std::is_same<T, jlong>::value) {
+    else if constexpr (std::is_same<T, jlong>::value)
       return jsignature_t{"J"};
-    } else if (std::is_same<T, jfloat>::value) {
+    else if constexpr (std::is_same<T, jfloat>::value)
       return jsignature_t{"F"};
-    } else if (std::is_same<T, jdouble>::value) {
+    else if constexpr (std::is_same<T, jdouble>::value)
       return jsignature_t{"D"};
-    } else if (std::is_same<T, jvoid>::value) {
+    else if constexpr (std::is_same<T, jvoid>::value)
       return jsignature_t{"V"};
-    }
+    else if constexpr (std::is_same<decltype(T::ref), jreference>::value)
+      return T::signature;
   }
+};
+
+template <typename T> class jhandle {
+  jreference ref;
+
+  template <typename> friend struct make_signature;
+
+public:
 };
 
 template <typename T> constexpr auto jsignature = make_signature<T>{}();
