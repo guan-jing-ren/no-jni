@@ -29,6 +29,10 @@ class DisplayArray : public jhandle<Display[]> {
 public:
 };
 
+class IntArrayArray : public jhandle<jint *[]> {
+public:
+};
+
 int main(int c, char **v) {
   cout << "SWT package name: " << swt << ";\n";
   cout << jsignature<jboolean> << ";\n";
@@ -43,6 +47,7 @@ int main(int c, char **v) {
   cout << jsignature<Display> << "\n";
   cout << jsignature<jhandle<Display>> << "\n";
   cout << jsignature<DisplayArray> << "\n";
+  cout << jsignature<IntArrayArray> << "\n";
 
   JavaVirtualMachine jvm(c, v);
   cout << jvm.vm << ' ' << jvm.env << '\n';

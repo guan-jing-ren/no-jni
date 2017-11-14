@@ -150,10 +150,14 @@ template <typename T> struct make_signature {
       return jsignature_t{"D"};
     else if constexpr (std::is_same<T, jvoid>::value)
       return jsignature_t{"V"};
+    else if constexpr (std::is_array<T>::value)
+      return "[" + make_signature<std::remove_extent_t<T>>{}();
+    else if constexpr (std::is_pointer<T>::value)
+      return "[" + make_signature<std::remove_pointer_t<T>>{}();
     else if constexpr (std::is_same<decltype(T::ref), jreference>::value) {
-      if constexpr (std::is_array<typename T::class_type>::value)
-        return "[" +
-               make_signature<std::remove_extent_t<typename T::class_type>>{}();
+      if constexpr (std::is_array<typename T::class_type>::value ||
+                    std::is_pointer<typename T::class_type>::value)
+        return make_signature<typename T::class_type>{}();
       else
         return "L" + T::signature + ";";
     }
