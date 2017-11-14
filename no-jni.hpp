@@ -105,21 +105,6 @@ public:
   }
 };
 
-class jmonitor {
-  const std::reference_wrapper<const jreference> ref;
-
-public:
-  jmonitor(const jmonitor &) = delete;
-  jmonitor(jmonitor &&) = delete;
-  jmonitor &operator=(const jmonitor &) = delete;
-  jmonitor &operator=(jmonitor &&) = delete;
-
-  jmonitor(const jreference &r) : ref(r) {
-    JavaVirtualMachine::env->MonitorEnter(ref.get().obj);
-  }
-  ~jmonitor() { JavaVirtualMachine::env->MonitorExit(ref.get().obj); }
-};
-
 template <size_t N> struct jsignature_t : cexprstr<char, N> {
   constexpr jsignature_t(const char (&s)[N]) : cexprstr<char, N>{s} {}
   constexpr jsignature_t(const cexprstr<char, N> s) : cexprstr<char, N>{s} {}
@@ -172,6 +157,8 @@ template <typename T> class jhandle {
   jreference ref;
 
   template <typename> friend struct make_signature;
+  friend class jmonitor;
+  template <typename> friend class jhandle;
 
 public:
 };
@@ -179,5 +166,21 @@ public:
 template <typename T> constexpr auto jsignature = make_signature<T>{}();
 template <typename T>
 constexpr auto jsignature<jhandle<T>> = make_signature<T>{}();
+
+class jmonitor {
+  const std::reference_wrapper<const jreference> ref;
+
+public:
+  jmonitor(const jmonitor &) = delete;
+  jmonitor(jmonitor &&) = delete;
+  jmonitor &operator=(const jmonitor &) = delete;
+  jmonitor &operator=(jmonitor &&) = delete;
+
+  jmonitor(const jreference &r) : ref(r) {
+    JavaVirtualMachine::env->MonitorEnter(ref.get().obj);
+  }
+  template <typename T> jmonitor(const jhandle<T> &h) : jmonitor(h.ref) {}
+  ~jmonitor() { JavaVirtualMachine::env->MonitorExit(ref.get().obj); }
+};
 
 #endif
