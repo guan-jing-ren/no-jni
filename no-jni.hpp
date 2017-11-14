@@ -156,6 +156,7 @@ template <typename T> struct make_signature {
 };
 
 template <typename T> class jhandle {
+  using class_type = T;
   jreference ref;
 
   template <typename> friend struct make_signature;
