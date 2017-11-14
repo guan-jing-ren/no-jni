@@ -25,6 +25,10 @@ public:
   static constexpr jsignature_t signature = swt / "Display";
 };
 
+class DisplayArray : public jhandle<Display[]> {
+public:
+};
+
 int main(int c, char **v) {
   cout << "SWT package name: " << swt << ";\n";
   cout << jsignature<jboolean> << ";\n";
@@ -38,6 +42,7 @@ int main(int c, char **v) {
   cout << jsignature<jvoid> << ";\n";
   cout << jsignature<Display> << "\n";
   cout << jsignature<jhandle<Display>> << "\n";
+  cout << jsignature<DisplayArray> << "\n";
 
   JavaVirtualMachine jvm(c, v);
   cout << jvm.vm << ' ' << jvm.env << '\n';
