@@ -20,9 +20,18 @@ using namespace std;
 
 constexpr auto swt_widgets = org / "eclipse" / "swt";
 
+class Widget : public jhandle<Widget> {
+public:
+  static constexpr jsignature_t signature = swt_widgets / "Widget";
+};
+
 class Display : public jhandle<Display> {
 public:
   static constexpr jsignature_t signature = swt_widgets / "Display";
+
+  constexpr const static Enum method_signatures{
+      jfunction<Display, Display>("getCurrent"),
+      jfunction<Widget, Display, jlong, jint>("findWidget")};
 };
 
 class DisplayArray : public jhandle<Display[]> {
@@ -48,9 +57,14 @@ int main(int c, char **v) {
   cout << jsignature<jhandle<Display>> << "\n";
   cout << jsignature<DisplayArray> << "\n";
   cout << jsignature<IntArrayArray> << "\n";
+  cout << Display::method_signatures << "\n";
 
   JavaVirtualMachine jvm(c, v);
   cout << jvm.vm << ' ' << jvm.env << '\n';
+
+  Display display;
+  display.call<Widget>("findWidget", jlong{}, jint{});
+  display.call<Widget>("getWidget", jlong{}, jlong{});
 
   return 0;
 }
