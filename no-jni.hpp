@@ -181,7 +181,23 @@ template <typename T> class jhandle {
   friend class jmonitor;
   template <typename> friend class jhandle;
 
+  template <size_t N> static jmethodID find_method(size_t i) {
+    std::cout << "Method index: " << i << '\n';
+    static jmethodID methods[N] = {0};
+    if (!methods[i])
+      ;
+    return methods[i];
+  }
+
 public:
+  template <typename R, size_t N, typename... Args>
+  constexpr R call(const char (&s)[N], Args &&... args) const {
+    static_assert(T::method_signatures.size());
+    std::cout << jfunction<R, T, Args...>(s) << '\n';
+    size_t method_index = T::method_signatures[jfunction<R, T, Args...>(s)];
+    find_method<T::method_signatures.size()>(method_index);
+    return {};
+  }
 };
 
 template <typename T> constexpr auto jsignature = make_signature<T>{}();
