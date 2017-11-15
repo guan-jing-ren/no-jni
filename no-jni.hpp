@@ -11,6 +11,7 @@ template <size_t N> struct jpackage : cexprstr<char, N> {
   constexpr jpackage(const char (&s)[N]) : cexprstr<char, N>{s} {}
   constexpr jpackage(const cexprstr<char, N> s) : cexprstr<char, N>{s} {}
 };
+template <size_t N> jpackage(const char (&s)[N])->jpackage<N - 1>;
 
 template <size_t M, size_t N>
 constexpr auto operator/(jpackage<M> l, jpackage<N> r) {
@@ -110,6 +111,7 @@ template <size_t N> struct jsignature_t : cexprstr<char, N> {
   constexpr jsignature_t(const cexprstr<char, N> s) : cexprstr<char, N>{s} {}
 };
 
+template <size_t N> jsignature_t(const char (&s)[N])->jsignature_t<N - 1>;
 struct jvoid final {
   constexpr jvoid() = default;
 };
