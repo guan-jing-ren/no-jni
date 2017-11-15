@@ -156,6 +156,23 @@ template <typename T> struct make_signature {
   }
 };
 
+template <typename R, typename T, typename... Args>
+struct make_signature<R T::*(Args...)> {
+  constexpr make_signature() {}
+  constexpr auto operator()() const {
+    if constexpr (sizeof...(Args) == 0)
+      return make_signature<T>{}() + "()" + make_signature<R>{}();
+    else
+      return make_signature<T>{}() + "(" + concat(make_signature<Args>{}()...) +
+             ")" + make_signature<R>{}();
+  }
+};
+
+template <typename R, typename T, typename... Args, size_t N>
+constexpr auto jfunction(const char (&s)[N]) {
+  return jsignature_t{s} + " " + make_signature<R T::*(Args...)>{}();
+}
+
 template <typename T> class jhandle {
   using class_type = T;
   jreference ref;
