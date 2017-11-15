@@ -182,7 +182,6 @@ template <typename T> class jhandle {
   template <typename> friend class jhandle;
 
   template <size_t N> static jmethodID find_method(size_t i) {
-    std::cout << "Method index: " << i << '\n';
     static jmethodID methods[N] = {0};
     if (!methods[i])
       ;
