@@ -18,11 +18,11 @@ using namespace std;
 [[maybe_unused]] constexpr jpackage java{"java"};
 [[maybe_unused]] constexpr jpackage javax{"javax"};
 
-constexpr auto swt = org / "eclipse" / "swt";
+constexpr auto swt_widgets = org / "eclipse" / "swt";
 
 class Display : public jhandle<Display> {
 public:
-  static constexpr jsignature_t signature = swt / "Display";
+  static constexpr jsignature_t signature = swt_widgets / "Display";
 };
 
 class DisplayArray : public jhandle<Display[]> {
@@ -34,7 +34,7 @@ public:
 };
 
 int main(int c, char **v) {
-  cout << "SWT package name: " << swt << ";\n";
+  cout << "SWT package name: " << swt_widgets << ";\n";
   cout << jsignature<jboolean> << ";\n";
   cout << jsignature<jbyte> << ";\n";
   cout << jsignature<jchar> << ";\n";
