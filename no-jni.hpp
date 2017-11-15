@@ -192,7 +192,6 @@ public:
   template <typename R, size_t N, typename... Args>
   constexpr R call(const char (&s)[N], Args &&... args) const {
     static_assert(T::method_signatures.size());
-    std::cout << jfunction<R, T, Args...>(s) << '\n';
     size_t method_index = T::method_signatures[jfunction<R, T, Args...>(s)];
     find_method<T::method_signatures.size()>(method_index);
     return {};
