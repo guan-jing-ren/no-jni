@@ -62,6 +62,8 @@ public:
     }
   }
   ~jreference() {
+    if (!obj)
+      return;
     switch (type) {
     default:
       break;
