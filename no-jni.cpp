@@ -13,10 +13,10 @@ env LD_LIBRARY_PATH=/usr/lib/jvm/default-java/jre/lib/amd64/server/ ./nojni -Dru
 
 using namespace std;
 
-constexpr jpackage com{"com"};
-constexpr jpackage org{"org"};
-constexpr jpackage java{"java"};
-constexpr jpackage javax{"javax"};
+[[maybe_unused]] constexpr jpackage com{"com"};
+[[maybe_unused]] constexpr jpackage org{"org"};
+[[maybe_unused]] constexpr jpackage java{"java"};
+[[maybe_unused]] constexpr jpackage javax{"javax"};
 
 constexpr auto swt = org / "eclipse" / "swt";
 
