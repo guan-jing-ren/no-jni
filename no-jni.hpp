@@ -224,6 +224,13 @@ template <typename T> class jObject {
   }
 
 public:
+  static jClass<T> getClass() {
+    static jClass<T> clazz;
+    if (!clazz.ref.obj)
+      clazz = jClass<T>{};
+    return clazz;
+  }
+
   template <typename R, size_t N, typename... Args>
   constexpr R call(const char (&s)[N], Args &&... args) const {
     static_assert(T::method_signatures.size());
