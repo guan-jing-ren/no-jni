@@ -18,7 +18,7 @@ using namespace std;
 [[maybe_unused]] constexpr jPackage java{"java"};
 [[maybe_unused]] constexpr jPackage javax{"javax"};
 
-constexpr auto swt_widgets = org / "eclipse" / "swt";
+constexpr auto swt_widgets = org / "eclipse" / "swt" / "widgets";
 
 class Widget : public jObject<Widget> {
 public:
