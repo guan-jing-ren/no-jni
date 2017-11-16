@@ -189,7 +189,7 @@ constexpr auto jFunction(const char (&s)[N]) {
   return jSignature_t{s} + "\0" + make_signature<R T::*(Args...)>{}() + "\0";
 }
 
-template <typename T> class jhandle {
+template <typename T> class jObject {
 
   using class_type = T;
   jReference ref;
