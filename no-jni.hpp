@@ -189,6 +189,24 @@ constexpr auto jFunction(const char (&s)[N]) {
   return jSignature_t{s} + "\0" + make_signature<R T::*(Args...)>{}() + "\0";
 }
 
+template <typename T> class jClass {
+  static JNIEnv *env() { return JavaVirtualMachine::env; }
+  using class_type = T;
+  jReference ref;
+
+  template <typename> friend class jObject;
+
+public:
+  jClass() {
+    if (!env())
+      return;
+    constexpr auto sig = make_signature<T>{}() + "\0";
+    ref = jReference{env()->FindClass(sig.s)};
+  }
+
+  operator jclass() { return static_cast<jclass>(ref.obj); };
+};
+
 template <typename T> class jObject {
 
   using class_type = T;
