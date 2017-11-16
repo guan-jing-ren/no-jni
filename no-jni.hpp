@@ -208,6 +208,7 @@ public:
 };
 
 template <typename T> class jObject {
+  static JNIEnv *env() { return JavaVirtualMachine::env; }
 
   using class_type = T;
   jReference ref;
@@ -216,10 +217,25 @@ template <typename T> class jObject {
   friend class jMonitor;
   template <typename> friend class jObject;
 
+  template <size_t N> static auto get_method(cexprstr<char, N> sig) {
+    return env()->GetMethodID(getClass(), sig.s,
+                              std::find(sig.s, sig.s + sig.size(), 0) + 1);
+  }
+
+  template <size_t... I>
+  static void init_methods(std::index_sequence<I...>,
+                           jmethodID (&m)[sizeof...(I)]) {
+    [[maybe_unused]] auto ms = {
+        (m[I] = get_method(T::method_signatures.template at<I>()))...};
+  }
+
   template <size_t N> static jmethodID find_method(size_t i) {
     static jmethodID methods[N] = {0};
     if (!methods[i])
-      ;
+      init_methods(std::make_index_sequence<N>{},
+                   methods); // Must be initialized at runtime, after JNI
+                             // environment is established.
+
     return methods[i];
   }
 
