@@ -79,11 +79,25 @@ public:
     case JNIInvalidRefType:
       break;
     }
+    obj = nullptr;
   }
 
   jReference(const jReference &ref) : jReference(ref.obj) {}
   jReference(jReference &&ref) : type(ref.type), obj(ref.obj) {
     ref.type = JNIInvalidRefType, ref.obj = nullptr;
+  }
+
+  jReference &operator=(const jReference &ref) {
+    this->~jReference();
+    jReference tmp{ref};
+    std::swap(obj, tmp.obj);
+    return *this;
+  }
+
+  jReference &operator=(jReference &&ref) {
+    this->~jReference();
+    std::swap(obj, ref.obj);
+    return *this;
   }
 
   bool is_local() const { return type == JNILocalRefType; }
