@@ -186,7 +186,7 @@ struct make_signature<R T::*(Args...)> {
 
 template <typename R, typename T, typename... Args, size_t N>
 constexpr auto jFunction(const char (&s)[N]) {
-  return jsignature_t{s} + " " + make_signature<R T::*(Args...)>{}();
+  return jSignature_t{s} + "\0" + make_signature<R T::*(Args...)>{}() + "\0";
 }
 
 template <typename T> class jhandle {
