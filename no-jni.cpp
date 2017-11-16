@@ -30,8 +30,8 @@ public:
   static constexpr jSignature_t signature = swt_widgets / "Display";
 
   constexpr const static Enum method_signatures{
-      jFunction<Display, Display>("getCurrent"),
-      jFunction<Widget, Display, jlong, jint>("findWidget")};
+      jFunction<Display Display::*()>("getCurrent"),
+      jFunction<Widget Display::*(jlong, jlong)>("findWidget")};
 };
 
 class DisplayArray : public jObject<Display[]> {
@@ -64,7 +64,7 @@ int main(int c, char **v) {
 
   Display display;
   std::cout << "Display findWidget: "
-            << display.call<Widget>("findWidget", jlong{}, jint{}) << "\n";
+            << display.call<Widget>("findWidget", jlong{}, jlong{}) << "\n";
   // display.call<Widget>("getWidget", jlong{}, jlong{});
 
   std::cout << "Display getClass: " << Display::getClass() << "\n";

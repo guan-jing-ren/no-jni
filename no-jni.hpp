@@ -135,6 +135,7 @@ struct jvoid final {
 };
 
 template <typename T> struct make_signature {
+  static constexpr bool is_member_function = false;
   constexpr make_signature() = default;
   constexpr auto operator()() const {
     if constexpr (std::is_same<T, jboolean>::value)
@@ -174,6 +175,7 @@ template <typename T> struct make_signature {
 
 template <typename R, typename T, typename... Args>
 struct make_signature<R T::*(Args...)> {
+  static constexpr bool is_member_function = true;
   constexpr make_signature() {}
   constexpr auto operator()() const {
     if constexpr (sizeof...(Args) == 0)
@@ -184,9 +186,9 @@ struct make_signature<R T::*(Args...)> {
   }
 };
 
-template <typename R, typename T, typename... Args, size_t N>
-constexpr auto jFunction(const char (&s)[N]) {
-  return jSignature_t{s} + "\0" + make_signature<R T::*(Args...)>{}() + "\0";
+template <typename T, size_t N> constexpr auto jFunction(const char (&s)[N]) {
+  static_assert(make_signature<T>::is_member_function);
+  return jSignature_t{s} + "\0" + make_signature<T>{}() + "\0";
 }
 
 template <typename T> class jClass {
@@ -252,7 +254,7 @@ public:
   template <typename R, size_t N, typename... Args>
   constexpr R call(const char (&s)[N], Args &&... args) const {
     static_assert(T::method_signatures.size());
-    size_t method_index = T::method_signatures[jFunction<R, T, Args...>(s)];
+    size_t method_index = T::method_signatures[jFunction<R T::*(Args...)>(s)];
     find_method<T::method_signatures.size()>(method_index);
     return {};
   }
