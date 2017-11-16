@@ -7,44 +7,44 @@
 
 #include <functional>
 
-template <size_t N> struct jpackage : cexprstr<char, N> {
-  constexpr jpackage(const char (&s)[N]) : cexprstr<char, N>{s} {}
-  constexpr jpackage(const cexprstr<char, N> s) : cexprstr<char, N>{s} {}
+template <size_t N> struct jPackage : cexprstr<char, N> {
+  constexpr jPackage(const char (&s)[N]) : cexprstr<char, N>{s} {}
+  constexpr jPackage(const cexprstr<char, N> s) : cexprstr<char, N>{s} {}
 };
-template <size_t N> jpackage(const char (&s)[N])->jpackage<N - 1>;
+template <size_t N> jPackage(const char (&s)[N])->jPackage<N - 1>;
 
 template <size_t M, size_t N>
-constexpr auto operator/(jpackage<M> l, jpackage<N> r) {
-  return jpackage{l + "/" + r};
+constexpr auto operator/(jPackage<M> l, jPackage<N> r) {
+  return jPackage{l + "/" + r};
 }
 template <size_t M, size_t N>
-constexpr auto operator/(cexprstr<char, M> l, jpackage<N> r) {
-  return jpackage{l + "/" + r};
+constexpr auto operator/(cexprstr<char, M> l, jPackage<N> r) {
+  return jPackage{l + "/" + r};
 }
 template <size_t M, size_t N>
-constexpr auto operator/(jpackage<M> l, cexprstr<char, N> r) {
-  return jpackage{l + "/" + r};
+constexpr auto operator/(jPackage<M> l, cexprstr<char, N> r) {
+  return jPackage{l + "/" + r};
 }
 template <size_t M, size_t N>
-constexpr auto operator/(const char (&l)[M], jpackage<N> r) {
-  return jpackage{jpackage{l} + "/" + r};
+constexpr auto operator/(const char (&l)[M], jPackage<N> r) {
+  return jPackage{jPackage{l} + "/" + r};
 }
 template <size_t M, size_t N>
-constexpr auto operator/(jpackage<M> l, const char (&r)[N]) {
-  return jpackage{l + "/" + jpackage{r}};
+constexpr auto operator/(jPackage<M> l, const char (&r)[N]) {
+  return jPackage{l + "/" + jPackage{r}};
 }
 
-class jreference {
+class jReference {
   static JNIEnv *env() { return JavaVirtualMachine::env; }
   jobjectRefType type = JNIInvalidRefType;
   jobject obj = nullptr;
 
-  jreference() = default;
+  jReference() = default;
 
-  friend class jmonitor;
+  friend class jMonitor;
 
 public:
-  jreference(jobject o) : type(env()->GetObjectRefType(o)) {
+  jReference(jobject o) : type(env()->GetObjectRefType(o)) {
     switch (type) {
     default:
       break;
@@ -61,7 +61,7 @@ public:
       break;
     }
   }
-  ~jreference() {
+  ~jReference() {
     if (!obj)
       return;
     switch (type) {
@@ -81,8 +81,8 @@ public:
     }
   }
 
-  jreference(const jreference &ref) : jreference(ref.obj) {}
-  jreference(jreference &&ref) : type(ref.type), obj(ref.obj) {
+  jReference(const jReference &ref) : jReference(ref.obj) {}
+  jReference(jReference &&ref) : type(ref.type), obj(ref.obj) {
     ref.type = JNIInvalidRefType, ref.obj = nullptr;
   }
 
@@ -91,29 +91,31 @@ public:
   bool is_weak() const { return type == JNIWeakGlobalRefType; }
   bool is_invalid() const { return type == JNIInvalidRefType; }
 
-  jreference to_local() const {
-    jreference ref;
+  jReference to_local() const {
+    jReference ref;
     ref.obj = env()->NewLocalRef(obj);
     return ref;
   }
-  jreference to_global() const {
-    jreference ref;
+  jReference to_global() const {
+    jReference ref;
     ref.obj = env()->NewGlobalRef(obj);
     return ref;
   }
-  jreference to_weak() const {
-    jreference ref;
+  jReference to_weak() const {
+    jReference ref;
     ref.obj = env()->NewWeakGlobalRef(obj);
     return ref;
   }
 };
 
-template <size_t N> struct jsignature_t : cexprstr<char, N> {
-  constexpr jsignature_t(const char (&s)[N]) : cexprstr<char, N>{s} {}
-  constexpr jsignature_t(const cexprstr<char, N> s) : cexprstr<char, N>{s} {}
+template <size_t N> struct jSignature_t : cexprstr<char, N> {
+  constexpr jSignature_t(const char (&s)[N]) : cexprstr<char, N>{s} {}
+  constexpr jSignature_t(cexprstr<char, N> s) : cexprstr<char, N>{s} {}
 };
 
-template <size_t N> jsignature_t(const char (&s)[N])->jsignature_t<N - 1>;
+template <size_t N> jSignature_t(const char (&)[N])->jSignature_t<N - 1>;
+template <size_t N> jSignature_t(cexprstr<char, N>)->jSignature_t<N>;
+
 struct jvoid final {
   constexpr jvoid() = default;
 };
@@ -122,28 +124,28 @@ template <typename T> struct make_signature {
   constexpr make_signature() = default;
   constexpr auto operator()() const {
     if constexpr (std::is_same<T, jboolean>::value)
-      return jsignature_t{"Z"};
+      return jSignature_t{"Z"};
     else if constexpr (std::is_same<T, jbyte>::value)
-      return jsignature_t{"B"};
+      return jSignature_t{"B"};
     else if constexpr (std::is_same<T, jchar>::value)
-      return jsignature_t{"C"};
+      return jSignature_t{"C"};
     else if constexpr (std::is_same<T, jshort>::value)
-      return jsignature_t{"S"};
+      return jSignature_t{"S"};
     else if constexpr (std::is_same<T, jint>::value)
-      return jsignature_t{"I"};
+      return jSignature_t{"I"};
     else if constexpr (std::is_same<T, jlong>::value)
-      return jsignature_t{"J"};
+      return jSignature_t{"J"};
     else if constexpr (std::is_same<T, jfloat>::value)
-      return jsignature_t{"F"};
+      return jSignature_t{"F"};
     else if constexpr (std::is_same<T, jdouble>::value)
-      return jsignature_t{"D"};
+      return jSignature_t{"D"};
     else if constexpr (std::is_same<T, jvoid>::value)
-      return jsignature_t{"V"};
+      return jSignature_t{"V"};
     else if constexpr (std::is_array<T>::value)
       return "[" + make_signature<std::remove_extent_t<T>>{}();
     else if constexpr (std::is_pointer<T>::value)
       return "[" + make_signature<std::remove_pointer_t<T>>{}();
-    else if constexpr (std::is_same<decltype(T::ref), jreference>::value) {
+    else if constexpr (std::is_same<decltype(T::ref), jReference>::value) {
       if constexpr (std::is_array<typename T::class_type>::value ||
                     std::is_pointer<typename T::class_type>::value)
         return make_signature<typename T::class_type>{}();
@@ -169,17 +171,18 @@ struct make_signature<R T::*(Args...)> {
 };
 
 template <typename R, typename T, typename... Args, size_t N>
-constexpr auto jfunction(const char (&s)[N]) {
+constexpr auto jFunction(const char (&s)[N]) {
   return jsignature_t{s} + " " + make_signature<R T::*(Args...)>{}();
 }
 
 template <typename T> class jhandle {
+
   using class_type = T;
-  jreference ref;
+  jReference ref;
 
   template <typename> friend struct make_signature;
-  friend class jmonitor;
-  template <typename> friend class jhandle;
+  friend class jMonitor;
+  template <typename> friend class jObject;
 
   template <size_t N> static jmethodID find_method(size_t i) {
     static jmethodID methods[N] = {0};
@@ -192,30 +195,30 @@ public:
   template <typename R, size_t N, typename... Args>
   constexpr R call(const char (&s)[N], Args &&... args) const {
     static_assert(T::method_signatures.size());
-    size_t method_index = T::method_signatures[jfunction<R, T, Args...>(s)];
+    size_t method_index = T::method_signatures[jFunction<R, T, Args...>(s)];
     find_method<T::method_signatures.size()>(method_index);
     return {};
   }
 };
 
-template <typename T> constexpr auto jsignature = make_signature<T>{}();
+template <typename T> constexpr auto jSignature = make_signature<T>{}();
 template <typename T>
-constexpr auto jsignature<jhandle<T>> = make_signature<T>{}();
+constexpr auto jSignature<jObject<T>> = make_signature<T>{}();
 
-class jmonitor {
-  const std::reference_wrapper<const jreference> ref;
+class jMonitor {
+  const std::reference_wrapper<const jReference> ref;
 
 public:
-  jmonitor(const jmonitor &) = delete;
-  jmonitor(jmonitor &&) = delete;
-  jmonitor &operator=(const jmonitor &) = delete;
-  jmonitor &operator=(jmonitor &&) = delete;
+  jMonitor(const jMonitor &) = delete;
+  jMonitor(jMonitor &&) = delete;
+  jMonitor &operator=(const jMonitor &) = delete;
+  jMonitor &operator=(jMonitor &&) = delete;
 
-  jmonitor(const jreference &r) : ref(r) {
+  jMonitor(const jReference &r) : ref(r) {
     JavaVirtualMachine::env->MonitorEnter(ref.get().obj);
   }
-  template <typename T> jmonitor(const jhandle<T> &h) : jmonitor(h.ref) {}
-  ~jmonitor() { JavaVirtualMachine::env->MonitorExit(ref.get().obj); }
+  template <typename T> jMonitor(const jObject<T> &h) : jMonitor(h.ref) {}
+  ~jMonitor() { JavaVirtualMachine::env->MonitorExit(ref.get().obj); }
 };
 
 #endif

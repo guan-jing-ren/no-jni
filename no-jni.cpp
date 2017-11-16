@@ -13,50 +13,50 @@ env LD_LIBRARY_PATH=/usr/lib/jvm/default-java/jre/lib/amd64/server/ ./nojni -Dru
 
 using namespace std;
 
-[[maybe_unused]] constexpr jpackage com{"com"};
-[[maybe_unused]] constexpr jpackage org{"org"};
-[[maybe_unused]] constexpr jpackage java{"java"};
-[[maybe_unused]] constexpr jpackage javax{"javax"};
+[[maybe_unused]] constexpr jPackage com{"com"};
+[[maybe_unused]] constexpr jPackage org{"org"};
+[[maybe_unused]] constexpr jPackage java{"java"};
+[[maybe_unused]] constexpr jPackage javax{"javax"};
 
 constexpr auto swt_widgets = org / "eclipse" / "swt";
 
-class Widget : public jhandle<Widget> {
+class Widget : public jObject<Widget> {
 public:
-  static constexpr jsignature_t signature = swt_widgets / "Widget";
+  static constexpr jSignature_t signature = swt_widgets / "Widget";
 };
 
-class Display : public jhandle<Display> {
+class Display : public jObject<Display> {
 public:
-  static constexpr jsignature_t signature = swt_widgets / "Display";
+  static constexpr jSignature_t signature = swt_widgets / "Display";
 
   constexpr const static Enum method_signatures{
-      jfunction<Display, Display>("getCurrent"),
-      jfunction<Widget, Display, jlong, jint>("findWidget")};
+      jFunction<Display, Display>("getCurrent"),
+      jFunction<Widget, Display, jlong, jint>("findWidget")};
 };
 
-class DisplayArray : public jhandle<Display[]> {
+class DisplayArray : public jObject<Display[]> {
 public:
 };
 
-class IntArrayArray : public jhandle<jint *[]> {
+class IntArrayArray : public jObject<jint *[]> {
 public:
 };
 
 int main(int c, char **v) {
   cout << "SWT package name: " << swt_widgets << ";\n";
-  cout << jsignature<jboolean> << ";\n";
-  cout << jsignature<jbyte> << ";\n";
-  cout << jsignature<jchar> << ";\n";
-  cout << jsignature<jshort> << ";\n";
-  cout << jsignature<jint> << ";\n";
-  cout << jsignature<jlong> << ";\n";
-  cout << jsignature<jfloat> << ";\n";
-  cout << jsignature<jdouble> << ";\n";
-  cout << jsignature<jvoid> << ";\n";
-  cout << jsignature<Display> << "\n";
-  cout << jsignature<jhandle<Display>> << "\n";
-  cout << jsignature<DisplayArray> << "\n";
-  cout << jsignature<IntArrayArray> << "\n";
+  cout << jSignature<jboolean> << ";\n";
+  cout << jSignature<jbyte> << ";\n";
+  cout << jSignature<jchar> << ";\n";
+  cout << jSignature<jshort> << ";\n";
+  cout << jSignature<jint> << ";\n";
+  cout << jSignature<jlong> << ";\n";
+  cout << jSignature<jfloat> << ";\n";
+  cout << jSignature<jdouble> << ";\n";
+  cout << jSignature<jvoid> << ";\n";
+  cout << jSignature<Display> << "\n";
+  cout << jSignature<jObject<Display>> << "\n";
+  cout << jSignature<DisplayArray> << "\n";
+  cout << jSignature<IntArrayArray> << "\n";
   cout << Display::method_signatures << "\n";
 
   JavaVirtualMachine jvm(c, v);
