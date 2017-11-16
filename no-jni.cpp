@@ -60,11 +60,15 @@ int main(int c, char **v) {
   cout << Display::method_signatures << "\n";
 
   JavaVirtualMachine jvm(c, v);
-  cout << jvm.vm << ' ' << jvm.env << '\n';
+  cout << jvm.vm << ' ' << jvm.env << "\n";
 
   Display display;
-  display.call<Widget>("findWidget", jlong{}, jint{});
-  display.call<Widget>("getWidget", jlong{}, jlong{});
+  std::cout << "Display findWidget: "
+            << display.call<Widget>("findWidget", jlong{}, jint{}) << "\n";
+  // display.call<Widget>("getWidget", jlong{}, jlong{});
+
+  std::cout << "Display getClass: " << Display::getClass() << "\n";
+  // std::cout << "Display getClass: " << Display::() << "\n";
 
   return 0;
 }

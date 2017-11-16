@@ -247,6 +247,8 @@ public:
     return clazz;
   }
 
+  operator void *() { return ref.obj; }
+
   template <typename R, size_t N, typename... Args>
   constexpr R call(const char (&s)[N], Args &&... args) const {
     static_assert(T::method_signatures.size());
