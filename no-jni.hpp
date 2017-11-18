@@ -263,7 +263,7 @@ public:
 
   template <typename F, size_t N>
   constexpr static auto method_index(const char (&s)[N]) {
-    return class_type::method_signatures[jFunction<class_type, F>(s)];
+    return class_type::method_signatures[method<F>(s)];
   }
 
   static jClass<class_type> getClass() {
