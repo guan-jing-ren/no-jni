@@ -191,14 +191,26 @@ template <typename T, size_t N> constexpr auto jFunction(const char (&s)[N]) {
   return jSignature_t{s} + "\0" + make_signature<T>{}() + "\0";
 }
 
+template <typename, typename> struct to_mem_t;
+template <typename C, typename R, typename... Args>
+struct to_mem_t<C, R(Args...)> {
+  using type = R C::*(Args...);
+};
+template <typename C, typename F> using to_mem = typename to_mem_t<C, F>::type;
+
+template <typename C, typename T, size_t N>
+constexpr auto jFunction(const char (&s)[N]) {
+  return jFunction<to_mem<C, T>>(s);
+}
+
 template <typename T> class jClass {
   static JNIEnv *env() { return JavaVirtualMachine::env; }
-  using class_type = T;
   jReference ref;
 
   template <typename> friend class jObject;
 
 public:
+  using class_type = T;
   jClass() {
     if (!env())
       return;
@@ -212,7 +224,6 @@ public:
 template <typename T> class jObject {
   static JNIEnv *env() { return JavaVirtualMachine::env; }
 
-  using class_type = T;
   jReference ref;
 
   template <typename> friend struct make_signature;
@@ -242,6 +253,13 @@ template <typename T> class jObject {
   }
 
 public:
+  using class_type = T;
+
+  template <typename F, size_t N>
+  constexpr static auto method(const char (&s)[N]) {
+    return jFunction<class_type, F>(s);
+  }
+
   static jClass<T> getClass() {
     static jClass<T> clazz;
     if (!clazz.ref.obj)

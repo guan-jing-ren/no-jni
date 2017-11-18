@@ -29,9 +29,9 @@ class Display : public jObject<Display> {
 public:
   static constexpr jSignature_t signature = swt_widgets / "Display";
 
-  constexpr const static Enum method_signatures{
-      jFunction<Display Display::*()>("getCurrent"),
-      jFunction<Widget Display::*(jlong, jlong)>("findWidget")};
+  constexpr static Enum method_signatures{
+      method<Display()>("getCurrent"),
+      method<Widget(jlong, jlong)>("findWidget")};
 };
 
 class DisplayArray : public jObject<Display[]> {
