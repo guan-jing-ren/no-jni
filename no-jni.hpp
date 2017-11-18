@@ -79,6 +79,7 @@ public:
     case JNIInvalidRefType:
       break;
     }
+    type = JNILocalRefType;
     obj = nullptr;
   }
 
@@ -90,12 +91,14 @@ public:
   jReference &operator=(const jReference &ref) {
     this->~jReference();
     jReference tmp{ref};
+    std::swap(type, tmp.type);
     std::swap(obj, tmp.obj);
     return *this;
   }
 
   jReference &operator=(jReference &&ref) {
     this->~jReference();
+    std::swap(type, ref.type);
     std::swap(obj, ref.obj);
     return *this;
   }
@@ -224,7 +227,7 @@ public:
     ref = jReference{env()->FindClass(sig.s)};
   }
 
-  operator jclass() { return static_cast<jclass>(ref.obj); };
+  operator jclass() const & { return static_cast<jclass>(ref.obj); };
 
   static superclass_type getSuperClass() { return {}; }
 };
@@ -279,9 +282,12 @@ template <typename Class, typename SuperClass = Object> class jObject {
     return m;
   }
 
+  jObject(jobject o) : ref(o) {}
+
 public:
   using class_type = Class;
   using superclass_type = SuperClass;
+  jObject() = default;
 
   template <typename F, size_t N>
   constexpr static auto method(const char (&s)[N]) {
@@ -293,14 +299,14 @@ public:
     return class_type::method_signatures[method<F>(s)];
   }
 
-  static jClass<class_type> getClass() {
+  static const jClass<class_type> &getClass() {
     static jClass<class_type> clazz;
     if (!clazz.ref.obj)
       clazz = jClass<class_type>{};
     return clazz;
   }
 
-  operator void *() { return ref.obj; }
+  operator void *() const { return ref.obj; }
 
   template <typename R, size_t N, typename... Args>
   static R scall(const char (&s)[N], Args &&... args) {
