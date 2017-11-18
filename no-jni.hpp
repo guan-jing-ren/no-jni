@@ -203,25 +203,27 @@ constexpr auto jFunction(const char (&s)[N]) {
   return jFunction<to_mem<C, T>>(s);
 }
 
-template <typename T> class jClass {
+class Object;
+template <typename Class, typename SuperClass = Object> class jClass {
   static JNIEnv *env() { return JavaVirtualMachine::env; }
   jReference ref;
 
   template <typename, typename> friend class jObject;
 
 public:
-  using class_type = T;
+  using class_type = Class;
+  using superclass_type = SuperClass;
+
   jClass() {
     if (!env())
       return;
-    constexpr auto sig = make_signature<T>{}() + "\0";
+    constexpr auto sig = make_signature<class_type>{}() + "\0";
     ref = jReference{env()->FindClass(sig.s)};
   }
 
   operator jclass() { return static_cast<jclass>(ref.obj); };
 };
 
-class Object;
 template <typename Class, typename SuperClass = Object> class jObject {
   static JNIEnv *env() { return JavaVirtualMachine::env; }
 
@@ -256,6 +258,7 @@ template <typename Class, typename SuperClass = Object> class jObject {
 
 public:
   using class_type = Class;
+  using superclass_type = SuperClass;
 
   template <typename F, size_t N>
   constexpr static auto method(const char (&s)[N]) {
