@@ -239,7 +239,7 @@ template <typename T> class jObject {
   static void init_methods(std::index_sequence<I...>,
                            jmethodID (&m)[sizeof...(I)]) {
     [[maybe_unused]] auto ms = {
-        (m[I] = get_method(T::method_signatures.template at<I>()))...};
+        (m[I] = get_method(class_type::method_signatures.template at<I>()))...};
   }
 
   static jmethodID find_method(size_t i) {
@@ -266,10 +266,10 @@ public:
     return class_type::method_signatures[jFunction<class_type, F>(s)];
   }
 
-  static jClass<T> getClass() {
-    static jClass<T> clazz;
+  static jClass<class_type> getClass() {
+    static jClass<class_type> clazz;
     if (!clazz.ref.obj)
-      clazz = jClass<T>{};
+      clazz = jClass<class_type>{};
     return clazz;
   }
 
@@ -277,7 +277,7 @@ public:
 
   template <typename R, size_t N, typename... Args>
   constexpr R call(const char (&s)[N], Args &&... args) const {
-    static_assert(T::method_signatures.size());
+    static_assert(class_type::method_signatures.size());
     find_method(method_index<R(Args...)>(s));
     return {};
   }
