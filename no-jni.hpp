@@ -208,11 +208,14 @@ template <typename Class, typename SuperClass = Object> class jClass {
   static JNIEnv *env() { return JavaVirtualMachine::env; }
   jReference ref;
 
+  template <typename> friend struct make_signature;
+  friend class jMonitor;
   template <typename, typename> friend class jObject;
 
 public:
   using class_type = Class;
   using superclass_type = SuperClass;
+  static constexpr auto signature = class_type::signature;
 
   jClass() {
     if (!env())
@@ -222,6 +225,8 @@ public:
   }
 
   operator jclass() { return static_cast<jclass>(ref.obj); };
+
+  static superclass_type getSuperClass() { return {}; }
 };
 
 template <typename Class, typename SuperClass = Object> class jObject {
@@ -282,7 +287,11 @@ public:
   template <typename R, size_t N, typename... Args>
   constexpr R call(const char (&s)[N], Args &&... args) const {
     static_assert(class_type::method_signatures.size());
-    find_method(method_index<R(Args...)>(s));
+    auto m = find_method(method_index<R(Args...)>(s));
+    if constexpr (!std::is_same<class_type, superclass_type>::value)
+      if (!m)
+        m = superclass_type::find_method(
+            superclass_type::template method_index<R(Args...)>(s));
     return {};
   }
 };
