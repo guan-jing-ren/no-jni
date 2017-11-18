@@ -64,6 +64,8 @@ public:
   ~jReference() {
     if (!obj)
       return;
+    if (!env())
+      return;
     switch (type) {
     default:
       break;
@@ -79,7 +81,7 @@ public:
     case JNIInvalidRefType:
       break;
     }
-    type = JNILocalRefType;
+    type = JNIInvalidRefType;
     obj = nullptr;
   }
 
@@ -376,6 +378,7 @@ template <typename T>
 constexpr auto jSignature<jObject<T>> = make_signature<T>{}();
 
 class jMonitor {
+  static JNIEnv *env() { return JavaVirtualMachine::env; }
   const std::reference_wrapper<const jReference> ref;
 
 public:
@@ -384,11 +387,13 @@ public:
   jMonitor &operator=(const jMonitor &) = delete;
   jMonitor &operator=(jMonitor &&) = delete;
 
-  jMonitor(const jReference &r) : ref(r) {
-    JavaVirtualMachine::env->MonitorEnter(ref.get().obj);
-  }
+  jMonitor(const jReference &r) : ref(r) { env()->MonitorEnter(ref.get().obj); }
   template <typename T> jMonitor(const jObject<T> &h) : jMonitor(h.ref) {}
-  ~jMonitor() { JavaVirtualMachine::env->MonitorExit(ref.get().obj); }
+  ~jMonitor() {
+    if (!env())
+      return;
+    env()->MonitorExit(ref.get().obj);
+  }
 };
 
 #endif
