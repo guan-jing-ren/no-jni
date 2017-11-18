@@ -59,16 +59,30 @@ int main(int c, char **v) {
   cout << jSignature<IntArrayArray> << "\n";
   cout << Display::method_signatures << "\n";
 
+  constexpr auto s = "findWidget"_sig;
+  cout << integral_constant<size_t, s.len>::value << "\n";
+
   JavaVirtualMachine jvm(c, v);
   cout << jvm.vm << ' ' << jvm.env << "\n";
 
   Display display;
   std::cout << "Display findWidget: "
             << display.call<Widget>("findWidget", jlong{}, jlong{}) << "\n";
-  // display.call<Widget>("getWidget", jlong{}, jlong{});
+  std::cout << "Display getWidget: "
+            << display.call<Widget>("getWidget", jlong{}, jlong{}) << "\n";
 
   std::cout << "Display getClass: " << Display::getClass() << "\n";
-  // std::cout << "Display getClass: " << Display::() << "\n";
+
+  std::cout << "Method index findWidget fail: "
+            << std::integral_constant<
+                   size_t, Display::method_index<Display(jlong, jlong)>(
+                               "findWidget")>::value
+            << '\n';
+  std::cout << "Method index findWidget success: "
+            << std::integral_constant<
+                   size_t, Display::method_index<Widget(jlong, jlong)>(
+                               "findWidget")>::value
+            << '\n';
 
   return 0;
 }
