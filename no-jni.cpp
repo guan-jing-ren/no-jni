@@ -18,6 +18,19 @@ using namespace std;
 [[maybe_unused]] constexpr jPackage java{"java"};
 [[maybe_unused]] constexpr jPackage javax{"javax"};
 
+constexpr auto java_lang = java / "lang";
+
+class Object : public jObject<Object> {
+public:
+  static constexpr auto signature = java_lang / "Object";
+
+  constexpr static Enum method_signatures{
+      method<int()>("hashCode"),    method<jvoid()>("notify"),
+      method<jvoid()>("notifyAll"), method<jvoid()>("wait"),
+      method<jvoid(jlong)>("wait"), method<jvoid(jlong, jint)>("wait"),
+  };
+};
+
 constexpr auto swt_widgets = org / "eclipse" / "swt" / "widgets";
 
 class Widget : public jObject<Widget> {
