@@ -207,7 +207,7 @@ template <typename T> class jClass {
   static JNIEnv *env() { return JavaVirtualMachine::env; }
   jReference ref;
 
-  template <typename> friend class jObject;
+  template <typename, typename> friend class jObject;
 
 public:
   using class_type = T;
@@ -221,14 +221,15 @@ public:
   operator jclass() { return static_cast<jclass>(ref.obj); };
 };
 
-template <typename T> class jObject {
+class Object;
+template <typename Class, typename SuperClass = Object> class jObject {
   static JNIEnv *env() { return JavaVirtualMachine::env; }
 
   jReference ref;
 
   template <typename> friend struct make_signature;
   friend class jMonitor;
-  template <typename> friend class jObject;
+  template <typename, typename> friend class jObject;
 
   template <size_t N> static auto get_method(cexprstr<char, N> sig) {
     return env()->GetMethodID(getClass(), sig.s,
@@ -254,7 +255,7 @@ template <typename T> class jObject {
   }
 
 public:
-  using class_type = T;
+  using class_type = Class;
 
   template <typename F, size_t N>
   constexpr static auto method(const char (&s)[N]) {
