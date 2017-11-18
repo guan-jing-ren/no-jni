@@ -22,12 +22,12 @@ constexpr auto swt_widgets = org / "eclipse" / "swt" / "widgets";
 
 class Widget : public jObject<Widget> {
 public:
-  static constexpr jSignature_t signature = swt_widgets / "Widget";
+  static constexpr auto signature = swt_widgets / "Widget";
 };
 
 class Display : public jObject<Display> {
 public:
-  static constexpr jSignature_t signature = swt_widgets / "Display";
+  static constexpr auto signature = swt_widgets / "Display";
 
   constexpr static Enum method_signatures{
       method<Display()>("getCurrent"),
