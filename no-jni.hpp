@@ -282,6 +282,52 @@ template <typename Class, typename SuperClass = Object> class jObject {
     return m;
   }
 
+  template <typename R> static constexpr auto static_caller() {
+    if constexpr (std::is_same<R, jboolean>::value)
+      return &JNIEnv::CallStaticBooleanMethod;
+    else if constexpr (std::is_same<R, jbyte>::value)
+      return &JNIEnv::CallStaticByteMethod;
+    else if constexpr (std::is_same<R, jchar>::value)
+      return &JNIEnv::CallStaticCharMethod;
+    else if constexpr (std::is_same<R, jshort>::value)
+      return &JNIEnv::CallStaticShortMethod;
+    else if constexpr (std::is_same<R, jint>::value)
+      return &JNIEnv::CallStaticIntMethod;
+    else if constexpr (std::is_same<R, jlong>::value)
+      return &JNIEnv::CallStaticLongMethod;
+    else if constexpr (std::is_same<R, jfloat>::value)
+      return &JNIEnv::CallStaticFloatMethod;
+    else if constexpr (std::is_same<R, jdouble>::value)
+      return &JNIEnv::CallStaticDoubleMethod;
+    else if constexpr (std::is_same<R, jvoid>::value)
+      return &JNIEnv::CallStaticVoidMethod;
+    else
+      return &JNIEnv::CallStaticObjectMethod;
+  }
+
+  template <typename R> static constexpr auto caller() {
+    if constexpr (std::is_same<R, jboolean>::value)
+      return &JNIEnv::CallBooleanMethod;
+    else if constexpr (std::is_same<R, jbyte>::value)
+      return &JNIEnv::CallByteMethod;
+    else if constexpr (std::is_same<R, jchar>::value)
+      return &JNIEnv::CallCharMethod;
+    else if constexpr (std::is_same<R, jshort>::value)
+      return &JNIEnv::CallShortMethod;
+    else if constexpr (std::is_same<R, jint>::value)
+      return &JNIEnv::CallIntMethod;
+    else if constexpr (std::is_same<R, jlong>::value)
+      return &JNIEnv::CallLongMethod;
+    else if constexpr (std::is_same<R, jfloat>::value)
+      return &JNIEnv::CallFloatMethod;
+    else if constexpr (std::is_same<R, jdouble>::value)
+      return &JNIEnv::CallDoubleMethod;
+    else if constexpr (std::is_same<R, jvoid>::value)
+      return &JNIEnv::CallVoidMethod;
+    else
+      return &JNIEnv::CallObjectMethod;
+  }
+
   jObject(jobject o) : ref(o) {}
 
 public:
