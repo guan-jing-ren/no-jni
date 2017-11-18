@@ -238,27 +238,45 @@ template <typename Class, typename SuperClass = Object> class jObject {
   friend class jMonitor;
   template <typename, typename> friend class jObject;
 
-  template <size_t N> static auto get_method(cexprstr<char, N> sig) {
-    return env()->GetMethodID(getClass(), sig.s,
-                              std::find(sig.s, sig.s + sig.size(), 0) + 1);
+  template <jmethodID (JNIEnv ::*getter)(jclass, const char *, const char *),
+            size_t N>
+  static auto get_method(cexprstr<char, N> sig) {
+    return (env()->*getter)(getClass(), sig.s,
+                            std::find(sig.s, sig.s + sig.size(), 0) + 1);
   }
 
-  template <size_t... I>
+  template <jmethodID (JNIEnv ::*getter)(jclass, const char *, const char *),
+            size_t... I>
   static void init_methods(std::index_sequence<I...>,
                            jmethodID (&m)[sizeof...(I)]) {
     [[maybe_unused]] auto ms = {
-        (m[I] = get_method(class_type::method_signatures.template at<I>()))...};
+        (m[I] = get_method<getter>(
+             class_type::method_signatures.template at<I>()))...};
   }
 
+  template <jmethodID (JNIEnv ::*getter)(jclass, const char *, const char *)>
   static jmethodID find_method(size_t i) {
     constexpr size_t N = class_type::method_signatures.size();
     static jmethodID methods[N] = {0};
     if (!methods[i])
-      init_methods(std::make_index_sequence<N>{},
-                   methods); // Must be initialized at runtime, after JNI
-                             // environment is established.
+      init_methods<getter>(
+          std::make_index_sequence<N>{},
+          methods); // Must be initialized at runtime, after JNI
+                    // environment is established.
 
     return methods[i];
+  }
+
+  template <jmethodID (JNIEnv ::*getter)(jclass, const char *, const char *),
+            typename F, size_t N>
+  static jmethodID call_(const char (&s)[N]) {
+    static_assert(class_type::method_signatures.size());
+    auto m = find_method<getter>(method_index<F>(s));
+    if constexpr (!std::is_same<class_type, superclass_type>::value)
+      if (!m)
+        m = superclass_type::template find_method<getter>(
+            superclass_type::template method_index<F>(s));
+    return m;
   }
 
 public:
@@ -285,13 +303,18 @@ public:
   operator void *() { return ref.obj; }
 
   template <typename R, size_t N, typename... Args>
-  constexpr R call(const char (&s)[N], Args &&... args) const {
-    static_assert(class_type::method_signatures.size());
-    auto m = find_method(method_index<R(Args...)>(s));
-    if constexpr (!std::is_same<class_type, superclass_type>::value)
-      if (!m)
-        m = superclass_type::find_method(
-            superclass_type::template method_index<R(Args...)>(s));
+  static R scall(const char (&s)[N], Args &&... args) {
+    auto m = call_<&JNIEnv::GetStaticMethodID, R(Args...)>(s);
+    if (!m)
+      return {};
+    return {};
+  }
+
+  template <typename R, size_t N, typename... Args>
+  R call(const char (&s)[N], Args &&... args) const {
+    auto m = call_<&JNIEnv::GetMethodID, R(Args...)>(s);
+    if (!m)
+      return {};
     return {};
   }
 };

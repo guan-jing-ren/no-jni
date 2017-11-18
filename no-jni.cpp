@@ -82,6 +82,9 @@ int main(int c, char **v) {
   JavaVirtualMachine jvm(c, v);
   cout << jvm.vm << ' ' << jvm.env << "\n";
 
+  std::cout << "Display getCurrent: " << Display::scall<Display>("getCurrent")
+            << "\n";
+
   Display display;
   std::cout << "Display findWidget: "
             << display.call<Widget>("findWidget", jlong{}, jlong{}) << "\n";
