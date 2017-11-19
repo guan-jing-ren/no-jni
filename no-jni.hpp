@@ -394,7 +394,7 @@ template <typename F> static constexpr auto array_setter() {
     return &JNIEnv::SetObjectArrayElement;
 }
 
-static void *cast(void *o) { return o; }
+static jobject cast(void *o) { return static_cast<jobject>(o); }
 template <typename T>
 static auto cast(T t) -> std::enable_if_t<std::is_arithmetic<T>::value, T> {
   return t;
@@ -446,11 +446,11 @@ template <typename E, bool A = std::is_arithmetic<E>::value> class Element {
   Element &operator=(Element &&) = default;
 
 public:
-  template <typename EE> E operator=(EE &&elem) {
+  E operator=(const E &elem) {
     if constexpr (A)
       (env()->*set)(obj, idx, 1, &elem);
     else
-      (env()->*set)(obj, idx, elem.ref.obj);
+      (env()->*set)(obj, idx, cast(elem));
     return elem;
   }
 

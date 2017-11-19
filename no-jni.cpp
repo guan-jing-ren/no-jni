@@ -180,6 +180,7 @@ int main(int c, char **v) {
       Display::scall<Display>("getDefault").call<PointArray>("getIconSizes");
   std::cout << "Icon sizes: " << icon_sizes << "\n";
   auto num_icon_sizes = icon_sizes.size();
+  icon_sizes[0] = point;
   std::cout << "Icon sizes size: " << num_icon_sizes << "\n";
   for (Point icon_size : icon_sizes) {
     std::cout << "Icon size: " << icon_size.at<jint>("x") << ","
