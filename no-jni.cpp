@@ -50,7 +50,8 @@ public:
   static constexpr auto signature = swt_widgets / "Display";
 
   constexpr static Enum method_signatures{
-      jFunction<Display()>("getCurrent"),
+      jFunction<Display()>("getCurrent"), //
+      jFunction<Display()>("getDefault"),
       jFunction<Widget(jlong, jlong)>("findWidget")};
 };
 
@@ -83,6 +84,8 @@ int main(int c, char **v) {
   cout << jvm.vm << ' ' << jvm.env << "\n";
 
   std::cout << "Display getCurrent: " << Display::scall<Display>("getCurrent")
+            << "\n";
+  std::cout << "Display getDefault: " << Display::scall<Display>("getDefault")
             << "\n";
 
   Display display;

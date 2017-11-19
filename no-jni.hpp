@@ -328,12 +328,18 @@ public:
 
   operator void *() const { return ref.obj; }
 
+  static jobject cast(jobject o) { return o; }
+  template <typename T> static T cast(T t) {
+    static_assert(!std::is_convertible<T, jobject>::value);
+    return t;
+  }
+
   template <typename R, size_t N, typename... Args>
   static R scall(const char (&s)[N], Args &&... args) {
     auto m = call_<&JNIEnv::GetStaticMethodID, R(Args...)>(s);
     if (!m)
       return {};
-    return {};
+    return {(env()->*static_caller<R>())(getClass(), m, cast(args)...)};
   }
 
   template <typename R, size_t N, typename... Args>
@@ -341,7 +347,7 @@ public:
     auto m = call_<&JNIEnv::GetMethodID, R(Args...)>(s);
     if (!m)
       return {};
-    return {};
+    return {(env()->*caller<R>())(ref.obj, m, cast(args)...)};
   }
 };
 
