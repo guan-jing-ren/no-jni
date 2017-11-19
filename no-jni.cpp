@@ -38,7 +38,9 @@ public:
   };
 };
 
-constexpr auto swt_widgets = org / "eclipse" / "swt" / "widgets";
+constexpr auto swt = org / "eclipse" / "swt";
+constexpr auto swt_widgets = swt / "widgets";
+constexpr auto swt_graphics = swt / "graphics";
 
 class Widget : public jObject<Widget> {
 public:
