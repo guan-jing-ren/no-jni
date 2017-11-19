@@ -44,22 +44,9 @@ class jReference {
   friend class jMonitor;
 
 public:
-  jReference(jobject o) : type(env()->GetObjectRefType(o)) {
-    switch (type) {
-    default:
-      break;
-    case JNILocalRefType:
-      obj = env()->NewLocalRef(o);
-      break;
-    case JNIGlobalRefType:
-      obj = env()->NewGlobalRef(o);
-      break;
-    case JNIWeakGlobalRefType:
-      obj = env()->NewWeakGlobalRef(o);
-      break;
-    case JNIInvalidRefType:
-      break;
-    }
+  jReference(jobject o) {
+    obj = env()->NewGlobalRef(o);
+    type = env()->GetObjectRefType(obj);
   }
   ~jReference() {
     if (!obj)
@@ -113,16 +100,19 @@ public:
   jReference to_local() const {
     jReference ref;
     ref.obj = env()->NewLocalRef(obj);
+    ref.type = env()->GetObjectRefType(obj);
     return ref;
   }
   jReference to_global() const {
     jReference ref;
     ref.obj = env()->NewGlobalRef(obj);
+    ref.type = env()->GetObjectRefType(obj);
     return ref;
   }
   jReference to_weak() const {
     jReference ref;
     ref.obj = env()->NewWeakGlobalRef(obj);
+    ref.type = env()->GetObjectRefType(obj);
     return ref;
   }
 };
