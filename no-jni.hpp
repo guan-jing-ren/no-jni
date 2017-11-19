@@ -450,11 +450,16 @@ public:
 
   public:
     Field(const jReference &o, jfieldID f) : owner(o), id(f) {}
+    Field(const jReference &&o, jfieldID f) = delete;
     Field(const Field &) = delete;
     Field(Field &&) = delete;
     Field &operator=(const Field &) = delete;
     Field &operator=(Field &&) = delete;
 
+    template <typename FF> F operator=(FF &&f) {
+      (env()->*set)(owner.get().obj, id, cast(f));
+      return f;
+    }
     operator F() const { return (env()->*get)(owner.get().obj, id); }
   };
 

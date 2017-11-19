@@ -114,6 +114,18 @@ int main(int c, char **v) {
                    .at<int>("y")
             << "\n";
 
+  auto point =
+      Display::scall<Display>("getDefault").call<Point>("getCursorLocation");
+  auto point2 = point;
+  std::cout << "Point 2: " << point2.at<int>("x") << "," << point2.at<int>("y")
+            << "\n";
+  point2.at<int>("x") = 42;
+  point2.at<int>("y") = 43;
+  std::cout << "Point: " << point.at<int>("x") << "," << point.at<int>("y")
+            << "\n";
+  std::cout << "Point 2: " << point2.at<int>("x") << "," << point2.at<int>("y")
+            << "\n";
+
   Display display;
   std::cout << "Display findWidget: "
             << display.call<Widget>("findWidget", jlong{}, jlong{}) << "\n";
