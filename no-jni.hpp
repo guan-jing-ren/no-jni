@@ -451,7 +451,7 @@ public:
   template <typename, typename> friend class jObject;
 
 public:
-  Element(const Element &) = delete;
+  Element(const Element &) = default;
   Element(Element &&) = delete;
   Element &operator=(const Element &) = delete;
   Element &operator=(Element &&) = delete;
@@ -474,6 +474,23 @@ public:
   }
 
   E operator*() const { return static_cast<E>(*this); }
+  Element &operator++() {
+    ++idx;
+    return *this;
+  }
+
+  bool operator==(const Element &e) const {
+    return obj == e.obj && idx == e.idx;
+  }
+
+  bool operator!=(const Element &e) const { return !(*this == e); }
+};
+
+template <typename E, bool A> struct std::iterator_traits<Element<E, A>> {
+  using iterator_category = std::forward_iterator_tag;
+  using difference_type = ptrdiff_t;
+  using value_type = E;
+  using reference = E &;
 };
 
 template <typename Class, typename SuperClass = Object> class jObject {
@@ -596,7 +613,7 @@ public:
     return env()->GetArrayLength(static_cast<jarray>(ref.obj));
   }
 
-  auto operator[](jsize i) {
+  auto operator[](jsize i) const {
     static_assert(std::is_array<class_type>::value);
     using raw_elem_type = std::remove_extent_t<class_type>;
     using elem_type = std::conditional_t<std::is_pointer<raw_elem_type>::value,
@@ -604,7 +621,21 @@ public:
                                          raw_elem_type>;
     return Element<elem_type>{ref.obj, i};
   }
+
+  auto begin() const { return (*this)[0]; }
+
+  auto end() const { return (*this)[size()]; }
 };
+
+template <typename Class, typename SuperClass>
+auto begin(jObject<Class, SuperClass> &o) {
+  return o.begin();
+}
+
+template <typename Class, typename SuperClass>
+auto end(jObject<Class, SuperClass> &o) {
+  return o.end();
+}
 
 template <typename T> constexpr auto jSignature = make_signature<T>{}();
 template <typename T>

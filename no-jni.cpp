@@ -180,10 +180,15 @@ int main(int c, char **v) {
       Display::scall<Display>("getDefault").call<PointArray>("getIconSizes");
   std::cout << "Icon sizes: " << icon_sizes << "\n";
   auto num_icon_sizes = icon_sizes.size();
-  std::cout << "Icon sizes size: " << num_shells << "\n";
-  for (auto i = 0; i < num_icon_sizes; ++i) {
-    auto icon_size = *icon_sizes[i];
-    std::cout << "Icon size " << i << ": " << icon_size.at<jint>("x") << ","
+  std::cout << "Icon sizes size: " << num_icon_sizes << "\n";
+  for (auto icon_size : icon_sizes) {
+    std::cout << "Icon size: " << icon_size.at<jint>("x") << ","
+              << icon_size.at<jint>("y") << "\n";
+  }
+
+  std::vector<Point> icon_size_vector(begin(icon_sizes), end(icon_sizes));
+  for (Point icon_size : icon_size_vector) {
+    std::cout << "Icon size: " << icon_size.at<jint>("x") << ","
               << icon_size.at<jint>("y") << "\n";
   }
 
