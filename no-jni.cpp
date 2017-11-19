@@ -24,6 +24,8 @@ class Object : public jObject<Object> {
 public:
   static constexpr auto signature = java_lang / "Object";
 
+  constexpr static Enum field_signatures{cexprstr{"\0"}};
+
   constexpr static Enum method_signatures{
       jMethod<Object()>("clone"), //
       jMethod<jboolean(Object)>("equals"),
