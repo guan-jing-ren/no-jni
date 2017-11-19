@@ -69,6 +69,8 @@ public:
       jField<jint>("x"),
       jField<jint>("y"),
   };
+
+  constexpr static Enum method_signatures{jConstructor<int, int>()};
 };
 
 class PointArray : public jObject<Point[]> {};
