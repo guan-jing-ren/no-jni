@@ -394,9 +394,9 @@ template <typename F> static constexpr auto array_setter() {
     return &JNIEnv::SetObjectArrayElement;
 }
 
-static jobject cast(jobject o) { return o; }
-template <typename T> static T cast(T t) {
-  static_assert(!std::is_convertible<T, jobject>::value);
+static void *cast(void *o) { return o; }
+template <typename T>
+static auto cast(T t) -> std::enable_if_t<std::is_arithmetic<T>::value, T> {
   return t;
 }
 
@@ -550,7 +550,7 @@ template <typename Class, typename SuperClass = Object> class jObject {
             G (JNIEnv ::*getter)(jclass, const char *, const char *),
             typename R, size_t N, typename F, typename C, typename... Args>
   static R call_(const char (&s)[N], F f, C &&context, Args &&... args) {
-    auto m = get_member<G, getter, R(Args...)>(
+    auto m = get_member<G, getter, R(std::decay_t<Args>...)>(
         s, class_type::method_signatures, superclass_type::method_signatures);
     if (!m)
       return {};
