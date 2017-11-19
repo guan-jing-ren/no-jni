@@ -65,9 +65,10 @@ class Point : public jObject<Point> {
 public:
   static constexpr auto signature = swt_graphics / "Point";
 
-  constexpr static Enum field_signatures{                   //
-                                         jField<jint>("x"), //
-                                         jField<jint>("y")};
+  constexpr static Enum field_signatures{
+      jField<jint>("x"),
+      jField<jint>("y"),
+  };
 };
 
 class PointArray : public jObject<Point[]> {};
