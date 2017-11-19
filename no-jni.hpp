@@ -441,12 +441,11 @@ template <typename E, bool A = std::is_arithmetic<E>::value> class Element {
   template <typename, bool> friend class Iterator;
 
   Element(const Element &) = default;
+  Element(Element &&) = default;
+  Element &operator=(const Element &) = default;
+  Element &operator=(Element &&) = default;
 
 public:
-  Element(Element &&) = delete;
-  Element &operator=(const Element &) = delete;
-  Element &operator=(Element &&) = delete;
-
   template <typename EE> E operator=(EE &&elem) {
     if constexpr (A)
       (env()->*set)(obj, idx, 1, &elem);
@@ -482,9 +481,9 @@ template <typename E, bool A = std::is_arithmetic<E>::value> class Iterator {
 
 public:
   Iterator(const Iterator &) = default;
-  Iterator(Iterator &&) = delete;
-  Iterator &operator=(const Iterator &) = delete;
-  Iterator &operator=(Iterator &&) = delete;
+  Iterator(Iterator &&) = default;
+  Iterator &operator=(const Iterator &) = default;
+  Iterator &operator=(Iterator &&) = default;
 
   Element<E, A> operator*() const { return element; }
   Iterator &operator++() {
