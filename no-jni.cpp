@@ -31,7 +31,7 @@ public:
       jMethod<jboolean(Object)>("equals"),
       jMethod<jvoid()>("finalize"),
       jMethod<jClass<Object>()>("getClass"),
-      jMethod<int()>("hashCode"),
+      jMethod<jint()>("hashCode"),
       jMethod<jvoid()>("notify"),
       jMethod<jvoid()>("notifyAll"),
       jMethod<jvoid()>("wait"),
@@ -44,6 +44,18 @@ constexpr auto swt = org / "eclipse" / "swt";
 constexpr auto swt_widgets = swt / "widgets";
 constexpr auto swt_graphics = swt / "graphics";
 
+class SWT : public jObject<SWT> {
+public:
+  static constexpr auto signature = swt / "SWT";
+  constexpr static Enum field_signatures{
+      jField<jint>("ALT"),         //
+      jField<jint>("ARROW_UP"),    //
+      jField<jint>("ARROW_DOWN"),  //
+      jField<jint>("ARROW_LEFT"),  //
+      jField<jint>("ARROW_RIGHT"), //
+  };
+};
+
 class Widget : public jObject<Widget> {
 public:
   static constexpr auto signature = swt_widgets / "Widget";
@@ -53,9 +65,9 @@ class Point : public jObject<Point> {
 public:
   static constexpr auto signature = swt_graphics / "Point";
 
-  constexpr static Enum field_signatures{                  //
-                                         jField<int>("x"), //
-                                         jField<int>("y")};
+  constexpr static Enum field_signatures{                   //
+                                         jField<jint>("x"), //
+                                         jField<jint>("y")};
 };
 
 class Display : public jObject<Display> {
@@ -102,29 +114,35 @@ int main(int c, char **v) {
   std::cout << "Display getDefault: " << Display::scall<Display>("getDefault")
             << "\n";
   std::cout << "Display getDefault hashCode: "
-            << Display::scall<Display>("getDefault").call<int>("hashCode")
+            << Display::scall<Display>("getDefault").call<jint>("hashCode")
             << "\n";
   std::cout << "Display getDefault getCursorLocation x,y: "
             << Display::scall<Display>("getDefault")
                    .call<Point>("getCursorLocation")
-                   .at<int>("x")
+                   .at<jint>("x")
             << ","
             << Display::scall<Display>("getDefault")
                    .call<Point>("getCursorLocation")
-                   .at<int>("y")
+                   .at<jint>("y")
             << "\n";
 
   auto point =
       Display::scall<Display>("getDefault").call<Point>("getCursorLocation");
   auto point2 = point;
-  std::cout << "Point 2: " << point2.at<int>("x") << "," << point2.at<int>("y")
+  std::cout << "Point 2: " << point2.at<jint>("x") << ","
+            << point2.at<jint>("y") << "\n";
+  point2.at<jint>("x") = 42;
+  point2.at<jint>("y") = 43;
+  std::cout << "Point: " << point.at<jint>("x") << "," << point.at<jint>("y")
             << "\n";
-  point2.at<int>("x") = 42;
-  point2.at<int>("y") = 43;
-  std::cout << "Point: " << point.at<int>("x") << "," << point.at<int>("y")
-            << "\n";
-  std::cout << "Point 2: " << point2.at<int>("x") << "," << point2.at<int>("y")
-            << "\n";
+  std::cout << "Point 2: " << point2.at<jint>("x") << ","
+            << point2.at<jint>("y") << "\n";
+
+  std::cout << "SWT ALT: " << SWT::sat<jint>("ALT") << "\n";
+  std::cout << "SWT ARROW_UP: " << SWT::sat<jint>("ARROW_UP") << "\n";
+  std::cout << "SWT ARROW_DOWN: " << SWT::sat<jint>("ARROW_DOWN") << "\n";
+  std::cout << "SWT ARROW_LEFT: " << SWT::sat<jint>("ARROW_LEFT") << "\n";
+  std::cout << "SWT ARROW_RIGHT: " << SWT::sat<jint>("ARROW_RIGHT") << "\n";
 
   Display display;
   std::cout << "Display findWidget: "

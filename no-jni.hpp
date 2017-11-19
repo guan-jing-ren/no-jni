@@ -442,9 +442,11 @@ public:
 
   operator void *() const { return ref.obj; }
 
-  template <typename F> class Field {
+  template <bool S, typename F> class Field {
     std::reference_wrapper<const jReference> owner;
     jfieldID id;
+    constexpr static auto sget = static_getter<F>();
+    constexpr static auto sset = static_setter<F>();
     constexpr static auto get = getter<F>();
     constexpr static auto set = setter<F>();
 
@@ -457,16 +459,31 @@ public:
     Field &operator=(Field &&) = delete;
 
     template <typename FF> F operator=(FF &&f) {
-      (env()->*set)(owner.get().obj, id, cast(f));
+      if constexpr (S)
+        (env()->*sset)(static_cast<jclass>(owner.get().obj), id, cast(f));
+      else
+        (env()->*set)(owner.get().obj, id, cast(f));
       return f;
     }
-    operator F() const { return (env()->*get)(owner.get().obj, id); }
+    operator F() const {
+      if constexpr (S)
+        return (env()->*sget)(static_cast<jclass>(owner.get().obj), id);
+      else
+        return (env()->*get)(owner.get().obj, id);
+    }
   };
 
-  template <typename F, size_t N> Field<F> at(const char (&s)[N]) const {
+  template <typename F, size_t N>
+  static Field<true, F> sat(const char (&s)[N]) {
+    auto f = get_member<jfieldID, &JNIEnv::GetStaticFieldID, F>(
+        s, class_type::field_signatures, superclass_type::field_signatures);
+    return Field<true, F>{getClass().ref, f};
+  }
+
+  template <typename F, size_t N> Field<false, F> at(const char (&s)[N]) const {
     auto f = get_member<jfieldID, &JNIEnv::GetFieldID, F>(
         s, class_type::field_signatures, superclass_type::field_signatures);
-    return Field<F>{ref, f};
+    return Field<false, F>{ref, f};
   }
 
   template <typename R, size_t N, typename... Args>
