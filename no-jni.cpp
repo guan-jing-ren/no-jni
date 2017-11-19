@@ -25,16 +25,16 @@ public:
   static constexpr auto signature = java_lang / "Object";
 
   constexpr static Enum method_signatures{
-      method<Object()>("clone"), //
-      method<jboolean(Object)>("equals"),
-      method<jvoid()>("finalize"),
-      method<jClass<Object>()>("getClass"),
-      method<int()>("hashCode"),
-      method<jvoid()>("notify"),
-      method<jvoid()>("notifyAll"),
-      method<jvoid()>("wait"),
-      method<jvoid(jlong)>("wait"),
-      method<jvoid(jlong, jint)>("wait"),
+      jFunction<Object()>("clone"), //
+      jFunction<jboolean(Object)>("equals"),
+      jFunction<jvoid()>("finalize"),
+      jFunction<jClass<Object>()>("getClass"),
+      jFunction<int()>("hashCode"),
+      jFunction<jvoid()>("notify"),
+      jFunction<jvoid()>("notifyAll"),
+      jFunction<jvoid()>("wait"),
+      jFunction<jvoid(jlong)>("wait"),
+      jFunction<jvoid(jlong, jint)>("wait"),
   };
 };
 
@@ -50,8 +50,8 @@ public:
   static constexpr auto signature = swt_widgets / "Display";
 
   constexpr static Enum method_signatures{
-      method<Display()>("getCurrent"),
-      method<Widget(jlong, jlong)>("findWidget")};
+      jFunction<Display()>("getCurrent"),
+      jFunction<Widget(jlong, jlong)>("findWidget")};
 };
 
 class DisplayArray : public jObject<Display[]> {

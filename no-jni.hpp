@@ -168,34 +168,21 @@ template <typename T> struct make_signature {
   }
 };
 
-template <typename R, typename T, typename... Args>
-struct make_signature<R T::*(Args...)> {
+template <typename R, typename... Args> struct make_signature<R(Args...)> {
   static constexpr bool is_member_function = true;
   constexpr make_signature() {}
   constexpr auto operator()() const {
     if constexpr (sizeof...(Args) == 0)
-      return make_signature<T>{}() + "()" + make_signature<R>{}();
+      return "()" + make_signature<R>{}();
     else
-      return make_signature<T>{}() + "(" + concat(make_signature<Args>{}()...) +
-             ")" + make_signature<R>{}();
+      return "(" + concat(make_signature<Args>{}()...) + ")" +
+             make_signature<R>{}();
   }
 };
 
 template <typename T, size_t N> constexpr auto jFunction(const char (&s)[N]) {
   static_assert(make_signature<T>::is_member_function);
   return jSignature_t{s} + "\0" + make_signature<T>{}() + "\0";
-}
-
-template <typename, typename> struct to_mem_t;
-template <typename C, typename R, typename... Args>
-struct to_mem_t<C, R(Args...)> {
-  using type = R C::*(Args...);
-};
-template <typename C, typename F> using to_mem = typename to_mem_t<C, F>::type;
-
-template <typename C, typename T, size_t N>
-constexpr auto jFunction(const char (&s)[N]) {
-  return jFunction<to_mem<C, T>>(s);
 }
 
 class Object;
@@ -215,7 +202,7 @@ public:
   jClass() {
     if (!env())
       return;
-    constexpr auto sig = make_signature<class_type>{}() + "\0";
+    constexpr auto sig = class_type::signature + "\0";
     ref = jReference{env()->FindClass(sig.s)};
   }
 
@@ -328,13 +315,8 @@ public:
   jObject() = default;
 
   template <typename F, size_t N>
-  constexpr static auto method(const char (&s)[N]) {
-    return jFunction<class_type, F>(s);
-  }
-
-  template <typename F, size_t N>
   constexpr static auto method_index(const char (&s)[N]) {
-    return class_type::method_signatures[method<F>(s)];
+    return class_type::method_signatures[jFunction<F>(s)];
   }
 
   static const jClass<class_type> &getClass() {
