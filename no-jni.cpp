@@ -98,6 +98,9 @@ int main(int c, char **v) {
             << "\n";
   std::cout << "Display getDefault: " << Display::scall<Display>("getDefault")
             << "\n";
+  std::cout << "Display getDefault hashCode: "
+            << Display::scall<Display>("getDefault").call<int>("hashCode")
+            << "\n";
 
   Display display;
   std::cout << "Display findWidget: "
