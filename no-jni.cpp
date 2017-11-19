@@ -47,6 +47,15 @@ public:
   static constexpr auto signature = swt_widgets / "Widget";
 };
 
+class Point : public jObject<Point> {
+public:
+  static constexpr auto signature = swt_graphics / "Point";
+
+  constexpr static Enum field_signatures{                  //
+                                         jField<int>("x"), //
+                                         jField<int>("y")};
+};
+
 class Display : public jObject<Display> {
 public:
   static constexpr auto signature = swt_widgets / "Display";
