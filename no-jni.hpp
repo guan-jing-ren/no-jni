@@ -480,12 +480,14 @@ public:
 
   template <typename F, size_t N>
   static Field<true, F> sat(const char (&s)[N]) {
+    static_assert(!std::is_array<class_type>::value);
     auto f = get_member<jfieldID, &JNIEnv::GetStaticFieldID, F>(
         s, class_type::field_signatures, superclass_type::field_signatures);
     return Field<true, F>{getClass(), f};
   }
 
   template <typename F, size_t N> Field<false, F> at(const char (&s)[N]) const {
+    static_assert(!std::is_array<class_type>::value);
     auto f = get_member<jfieldID, &JNIEnv::GetFieldID, F>(
         s, class_type::field_signatures, superclass_type::field_signatures);
     return Field<false, F>{ref.obj, f};
@@ -493,12 +495,14 @@ public:
 
   template <typename R, size_t N, typename... Args>
   static R scall(const char (&s)[N], Args &&... args) {
+    static_assert(!std::is_array<class_type>::value);
     return call_<jmethodID, &JNIEnv::GetStaticMethodID, R>(
         s, static_caller<R>(), getClass(), std::forward<Args>(args)...);
   }
 
   template <typename R, size_t N, typename... Args>
   R call(const char (&s)[N], Args &&... args) const {
+    static_assert(!std::is_array<class_type>::value);
     return call_<jmethodID, &JNIEnv::GetMethodID, R>(
         s, caller<R>(), ref.obj, std::forward<Args>(args)...);
   }
