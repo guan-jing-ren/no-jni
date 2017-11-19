@@ -229,44 +229,46 @@ template <typename Class, typename SuperClass = Object> class jObject {
   friend class jMonitor;
   template <typename, typename> friend class jObject;
 
-  template <jmethodID (JNIEnv ::*getter)(jclass, const char *, const char *),
-            size_t N>
-  static auto get_method(cexprstr<char, N> sig) {
+  template <typename G,
+            G (JNIEnv ::*getter)(jclass, const char *, const char *), size_t N>
+  static auto get_member(cexprstr<char, N> sig) {
     return (env()->*getter)(getClass(), sig.s,
                             std::find(sig.s, sig.s + sig.size(), 0) + 1);
   }
 
-  template <jmethodID (JNIEnv ::*getter)(jclass, const char *, const char *),
-            size_t... I>
-  static void init_methods(std::index_sequence<I...>,
-                           jmethodID (&m)[sizeof...(I)]) {
+  template <typename G,
+            G (JNIEnv ::*getter)(jclass, const char *, const char *),
+            size_t... I, typename E>
+  static void init_members(std::index_sequence<I...>, G (&m)[sizeof...(I)],
+                           const E &e) {
     [[maybe_unused]] auto ms = {
-        (m[I] = get_method<getter>(
-             class_type::method_signatures.template at<I>()))...};
+        (m[I] = get_member<G, getter>(e.template at<I>()))...};
   }
 
-  template <jmethodID (JNIEnv ::*getter)(jclass, const char *, const char *)>
-  static jmethodID find_method(size_t i) {
-    constexpr size_t N = class_type::method_signatures.size();
-    static jmethodID methods[N] = {0};
-    if (!methods[i])
-      init_methods<getter>(
-          std::make_index_sequence<N>{},
-          methods); // Must be initialized at runtime, after JNI
-                    // environment is established.
-
-    return methods[i];
+  template <typename G,
+            G (JNIEnv ::*getter)(jclass, const char *, const char *),
+            typename E>
+  static G find_member(size_t i, const E &e) {
+    constexpr size_t N = E::size();
+    static_assert(N);
+    static G members[N] = {0};
+    if (!members[i])
+      init_members<G, getter>(std::make_index_sequence<N>{}, members,
+                              e); // Must be initialized at runtime, after JNI
+                                  // environment is established.
+    return members[i];
   }
 
-  template <jmethodID (JNIEnv ::*getter)(jclass, const char *, const char *),
-            typename F, size_t N>
-  static jmethodID call_(const char (&s)[N]) {
-    static_assert(class_type::method_signatures.size());
-    auto m = find_method<getter>(method_index<F>(s));
+  template <typename G,
+            G (JNIEnv ::*getter)(jclass, const char *, const char *),
+            typename F, size_t N, typename E, typename SE>
+  static G get_member(const char (&s)[N], const E &e, SE &se) {
+    static_assert(E::size());
+    auto m = find_member<G, getter>(method_index<F>(s), e);
     if constexpr (!std::is_same<class_type, superclass_type>::value)
       if (!m)
-        m = superclass_type::template find_method<getter>(
-            superclass_type::template method_index<F>(s));
+        m = superclass_type::template find_member<G, getter>(
+            superclass_type::template method_index<F>(s), se);
     return m;
   }
 
