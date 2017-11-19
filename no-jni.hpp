@@ -318,6 +318,23 @@ template <typename Class, typename SuperClass = Object> class jObject {
       return &JNIEnv::CallObjectMethod;
   }
 
+  static jobject cast(jobject o) { return o; }
+  template <typename T> static T cast(T t) {
+    static_assert(!std::is_convertible<T, jobject>::value);
+    return t;
+  }
+
+  template <typename G,
+            G (JNIEnv ::*getter)(jclass, const char *, const char *),
+            typename R, size_t N, typename F, typename C, typename... Args>
+  static R call_(const char (&s)[N], F f, C &&context, Args &&... args) {
+    auto m = get_member<G, getter, R(Args...)>(
+        s, class_type::method_signatures, superclass_type::method_signatures);
+    if (!m)
+      return {};
+    return {(env()->*f)(context, m, cast(args)...)};
+  }
+
   jObject(jobject o) : ref(o) {}
 
 public:
@@ -338,23 +355,6 @@ public:
   }
 
   operator void *() const { return ref.obj; }
-
-  static jobject cast(jobject o) { return o; }
-  template <typename T> static T cast(T t) {
-    static_assert(!std::is_convertible<T, jobject>::value);
-    return t;
-  }
-
-  template <typename G,
-            G (JNIEnv ::*getter)(jclass, const char *, const char *),
-            typename R, size_t N, typename F, typename C, typename... Args>
-  static R call_(const char (&s)[N], F f, C &&context, Args &&... args) {
-    auto m = get_member<G, getter, R(Args...)>(
-        s, class_type::method_signatures, superclass_type::method_signatures);
-    if (!m)
-      return {};
-    return {(env()->*f)(context, m, cast(args)...)};
-  }
 
   template <typename R, size_t N, typename... Args>
   static R scall(const char (&s)[N], Args &&... args) {
