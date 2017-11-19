@@ -394,6 +394,27 @@ template <typename F> static constexpr auto array_setter() {
     return &JNIEnv::SetObjectArrayElement;
 }
 
+template <typename F> static constexpr auto alloc() {
+  if constexpr (std::is_same<F, jboolean>::value)
+    return &JNIEnv::NewBooleanArray;
+  else if constexpr (std::is_same<F, jbyte>::value)
+    return &JNIEnv::NewByteArray;
+  else if constexpr (std::is_same<F, jchar>::value)
+    return &JNIEnv::NewCharArray;
+  else if constexpr (std::is_same<F, jshort>::value)
+    return &JNIEnv::NewShortArray;
+  else if constexpr (std::is_same<F, jint>::value)
+    return &JNIEnv::NewIntArray;
+  else if constexpr (std::is_same<F, jlong>::value)
+    return &JNIEnv::NewLongArray;
+  else if constexpr (std::is_same<F, jfloat>::value)
+    return &JNIEnv::NewFloatArray;
+  else if constexpr (std::is_same<F, jdouble>::value)
+    return &JNIEnv::NewDoubleArray;
+  else
+    return &JNIEnv::NewObjectArray;
+}
+
 static jobject cast(void *o) { return static_cast<jobject>(o); }
 template <typename T>
 static auto cast(T t) -> std::enable_if_t<std::is_arithmetic<T>::value, T> {
@@ -599,6 +620,8 @@ public:
   using superclass_type = SuperClass;
   jObject() = default;
 
+  template <typename... Args> constexpr static auto jConstructor() {
+    return jMethod<jvoid(Args...)>("<init>");
   }
 
   static const jClass<class_type> &getClass() {
@@ -606,6 +629,26 @@ public:
     if (!clazz.ref.obj)
       clazz = jClass<class_type>{};
     return clazz;
+  }
+
+  template <typename... Args> jObject(Args &&... args) {
+    if constexpr (std::is_array<class_type>::value) {
+      static_assert(sizeof...(Args) == 1);
+      static_assert(std::is_same<Args..., jsize>::value);
+      using raw_elem_type = std::remove_extent_t<class_type>;
+      using elem_type =
+          std::conditional_t<std::is_pointer<raw_elem_type>::value,
+                             std::remove_pointer_t<raw_elem_type>[],
+                             raw_elem_type>;
+
+      ref = jReference((env()->*alloc<elem_type>())(args...));
+    } else {
+      ref = jReference(env()->NewObject(
+          getClass(),
+          get_member<jmethodID, &JNIEnv::GetMethodID, jvoid(Args...)>(
+              "<init>", class_type::method_signatures,
+              superclass_type::method_signatures)));
+    }
   }
 
   operator void *() const { return ref.obj; }
