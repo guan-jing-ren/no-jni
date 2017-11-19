@@ -268,88 +268,88 @@ template <typename R> static constexpr auto caller() {
     return &JNIEnv::CallObjectMethod;
 }
 
-template <typename F> static constexpr auto static_getter() {
-  if constexpr (std::is_same<F, jboolean>::value)
-    return &JNIEnv::GetStaticBooleanField;
-  else if constexpr (std::is_same<F, jbyte>::value)
-    return &JNIEnv::GetStaticByteField;
-  else if constexpr (std::is_same<F, jchar>::value)
-    return &JNIEnv::GetStaticCharField;
-  else if constexpr (std::is_same<F, jshort>::value)
-    return &JNIEnv::GetStaticShortField;
-  else if constexpr (std::is_same<F, jint>::value)
-    return &JNIEnv::GetStaticIntField;
-  else if constexpr (std::is_same<F, jlong>::value)
-    return &JNIEnv::GetStaticLongField;
-  else if constexpr (std::is_same<F, jfloat>::value)
-    return &JNIEnv::GetStaticFloatField;
-  else if constexpr (std::is_same<F, jdouble>::value)
-    return &JNIEnv::GetStaticDoubleField;
-  else
-    return &JNIEnv::GetStaticObjectField;
+template <bool S, typename F> static constexpr auto getter() {
+  if constexpr (S) {
+    if constexpr (std::is_same<F, jboolean>::value)
+      return &JNIEnv::GetStaticBooleanField;
+    else if constexpr (std::is_same<F, jbyte>::value)
+      return &JNIEnv::GetStaticByteField;
+    else if constexpr (std::is_same<F, jchar>::value)
+      return &JNIEnv::GetStaticCharField;
+    else if constexpr (std::is_same<F, jshort>::value)
+      return &JNIEnv::GetStaticShortField;
+    else if constexpr (std::is_same<F, jint>::value)
+      return &JNIEnv::GetStaticIntField;
+    else if constexpr (std::is_same<F, jlong>::value)
+      return &JNIEnv::GetStaticLongField;
+    else if constexpr (std::is_same<F, jfloat>::value)
+      return &JNIEnv::GetStaticFloatField;
+    else if constexpr (std::is_same<F, jdouble>::value)
+      return &JNIEnv::GetStaticDoubleField;
+    else
+      return &JNIEnv::GetStaticObjectField;
+  } else {
+    if constexpr (std::is_same<F, jboolean>::value)
+      return &JNIEnv::GetBooleanField;
+    else if constexpr (std::is_same<F, jbyte>::value)
+      return &JNIEnv::GetByteField;
+    else if constexpr (std::is_same<F, jchar>::value)
+      return &JNIEnv::GetCharField;
+    else if constexpr (std::is_same<F, jshort>::value)
+      return &JNIEnv::GetShortField;
+    else if constexpr (std::is_same<F, jint>::value)
+      return &JNIEnv::GetIntField;
+    else if constexpr (std::is_same<F, jlong>::value)
+      return &JNIEnv::GetLongField;
+    else if constexpr (std::is_same<F, jfloat>::value)
+      return &JNIEnv::GetFloatField;
+    else if constexpr (std::is_same<F, jdouble>::value)
+      return &JNIEnv::GetDoubleField;
+    else
+      return &JNIEnv::GetObjectField;
+  }
 }
 
-template <typename F> static constexpr auto getter() {
-  if constexpr (std::is_same<F, jboolean>::value)
-    return &JNIEnv::GetBooleanField;
-  else if constexpr (std::is_same<F, jbyte>::value)
-    return &JNIEnv::GetByteField;
-  else if constexpr (std::is_same<F, jchar>::value)
-    return &JNIEnv::GetCharField;
-  else if constexpr (std::is_same<F, jshort>::value)
-    return &JNIEnv::GetShortField;
-  else if constexpr (std::is_same<F, jint>::value)
-    return &JNIEnv::GetIntField;
-  else if constexpr (std::is_same<F, jlong>::value)
-    return &JNIEnv::GetLongField;
-  else if constexpr (std::is_same<F, jfloat>::value)
-    return &JNIEnv::GetFloatField;
-  else if constexpr (std::is_same<F, jdouble>::value)
-    return &JNIEnv::GetDoubleField;
-  else
-    return &JNIEnv::GetObjectField;
-}
-
-template <typename F> static constexpr auto static_setter() {
-  if constexpr (std::is_same<F, jboolean>::value)
-    return &JNIEnv::SetStaticBooleanField;
-  else if constexpr (std::is_same<F, jbyte>::value)
-    return &JNIEnv::SetStaticByteField;
-  else if constexpr (std::is_same<F, jchar>::value)
-    return &JNIEnv::SetStaticCharField;
-  else if constexpr (std::is_same<F, jshort>::value)
-    return &JNIEnv::SetStaticShortField;
-  else if constexpr (std::is_same<F, jint>::value)
-    return &JNIEnv::SetStaticIntField;
-  else if constexpr (std::is_same<F, jlong>::value)
-    return &JNIEnv::SetStaticLongField;
-  else if constexpr (std::is_same<F, jfloat>::value)
-    return &JNIEnv::SetStaticFloatField;
-  else if constexpr (std::is_same<F, jdouble>::value)
-    return &JNIEnv::SetStaticDoubleField;
-  else
-    return &JNIEnv::SetStaticObjectField;
-}
-
-template <typename F> static constexpr auto setter() {
-  if constexpr (std::is_same<F, jboolean>::value)
-    return &JNIEnv::SetBooleanField;
-  else if constexpr (std::is_same<F, jbyte>::value)
-    return &JNIEnv::SetByteField;
-  else if constexpr (std::is_same<F, jchar>::value)
-    return &JNIEnv::SetCharField;
-  else if constexpr (std::is_same<F, jshort>::value)
-    return &JNIEnv::SetShortField;
-  else if constexpr (std::is_same<F, jint>::value)
-    return &JNIEnv::SetIntField;
-  else if constexpr (std::is_same<F, jlong>::value)
-    return &JNIEnv::SetLongField;
-  else if constexpr (std::is_same<F, jfloat>::value)
-    return &JNIEnv::SetFloatField;
-  else if constexpr (std::is_same<F, jdouble>::value)
-    return &JNIEnv::SetDoubleField;
-  else
-    return &JNIEnv::SetObjectField;
+template <bool S, typename F> static constexpr auto setter() {
+  if constexpr (S) {
+    if constexpr (std::is_same<F, jboolean>::value)
+      return &JNIEnv::SetStaticBooleanField;
+    else if constexpr (std::is_same<F, jbyte>::value)
+      return &JNIEnv::SetStaticByteField;
+    else if constexpr (std::is_same<F, jchar>::value)
+      return &JNIEnv::SetStaticCharField;
+    else if constexpr (std::is_same<F, jshort>::value)
+      return &JNIEnv::SetStaticShortField;
+    else if constexpr (std::is_same<F, jint>::value)
+      return &JNIEnv::SetStaticIntField;
+    else if constexpr (std::is_same<F, jlong>::value)
+      return &JNIEnv::SetStaticLongField;
+    else if constexpr (std::is_same<F, jfloat>::value)
+      return &JNIEnv::SetStaticFloatField;
+    else if constexpr (std::is_same<F, jdouble>::value)
+      return &JNIEnv::SetStaticDoubleField;
+    else
+      return &JNIEnv::SetStaticObjectField;
+  } else {
+    if constexpr (std::is_same<F, jboolean>::value)
+      return &JNIEnv::SetBooleanField;
+    else if constexpr (std::is_same<F, jbyte>::value)
+      return &JNIEnv::SetByteField;
+    else if constexpr (std::is_same<F, jchar>::value)
+      return &JNIEnv::SetCharField;
+    else if constexpr (std::is_same<F, jshort>::value)
+      return &JNIEnv::SetShortField;
+    else if constexpr (std::is_same<F, jint>::value)
+      return &JNIEnv::SetIntField;
+    else if constexpr (std::is_same<F, jlong>::value)
+      return &JNIEnv::SetLongField;
+    else if constexpr (std::is_same<F, jfloat>::value)
+      return &JNIEnv::SetFloatField;
+    else if constexpr (std::is_same<F, jdouble>::value)
+      return &JNIEnv::SetDoubleField;
+    else
+      return &JNIEnv::SetObjectField;
+  }
 }
 
 template <typename F> static constexpr auto array_getter() {
@@ -403,10 +403,8 @@ static auto cast(T t) -> std::enable_if_t<std::is_arithmetic<T>::value, T> {
 template <bool S, typename F> class Field {
   static JNIEnv *env() { return JavaVirtualMachine::env; }
 
-  constexpr static auto sget = static_getter<F>();
-  constexpr static auto sset = static_setter<F>();
-  constexpr static auto get = getter<F>();
-  constexpr static auto set = setter<F>();
+  constexpr static auto get = getter<S, F>();
+  constexpr static auto set = setter<S, F>();
 
   std::conditional_t<S, jclass, jobject> obj;
   jfieldID id;
@@ -422,18 +420,10 @@ public:
   Field &operator=(Field &&) = delete;
 
   template <typename FF> F operator=(FF &&f) {
-    if constexpr (S)
-      (env()->*sset)(obj, id, cast(f));
-    else
-      (env()->*set)(obj, id, cast(f));
+    (env()->*set)(obj, id, cast(f));
     return f;
   }
-  operator F() const {
-    if constexpr (S)
-      return (env()->*sget)(obj, id);
-    else
-      return (env()->*get)(obj, id);
-  }
+  operator F() const { return (env()->*get)(obj, id); }
 };
 
 template <typename E, bool A = std::is_arithmetic<E>::value> class Element {
