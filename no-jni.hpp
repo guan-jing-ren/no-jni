@@ -352,6 +352,48 @@ template <typename F> static constexpr auto setter() {
     return &JNIEnv::SetObjectField;
 }
 
+template <typename F> static constexpr auto array_getter() {
+  if constexpr (std::is_same<F, jboolean>::value)
+    return &JNIEnv::GetBooleanArrayRegion;
+  else if constexpr (std::is_same<F, jbyte>::value)
+    return &JNIEnv::GetByteArrayRegion;
+  else if constexpr (std::is_same<F, jchar>::value)
+    return &JNIEnv::GetCharArrayRegion;
+  else if constexpr (std::is_same<F, jshort>::value)
+    return &JNIEnv::GetShortArrayRegion;
+  else if constexpr (std::is_same<F, jint>::value)
+    return &JNIEnv::GetIntArrayRegion;
+  else if constexpr (std::is_same<F, jlong>::value)
+    return &JNIEnv::GetLongArrayRegion;
+  else if constexpr (std::is_same<F, jfloat>::value)
+    return &JNIEnv::GetFloatArrayRegion;
+  else if constexpr (std::is_same<F, jdouble>::value)
+    return &JNIEnv::GetDoubleArrayRegion;
+  else
+    return &JNIEnv::GetObjectArrayElement;
+}
+
+template <typename F> static constexpr auto array_setter() {
+  if constexpr (std::is_same<F, jboolean>::value)
+    return &JNIEnv::SetBooleanArrayRegion;
+  else if constexpr (std::is_same<F, jbyte>::value)
+    return &JNIEnv::SetByteArrayRegion;
+  else if constexpr (std::is_same<F, jchar>::value)
+    return &JNIEnv::SetCharArrayRegion;
+  else if constexpr (std::is_same<F, jshort>::value)
+    return &JNIEnv::SetShortArrayRegion;
+  else if constexpr (std::is_same<F, jint>::value)
+    return &JNIEnv::SetIntArrayRegion;
+  else if constexpr (std::is_same<F, jlong>::value)
+    return &JNIEnv::SetLongArrayRegion;
+  else if constexpr (std::is_same<F, jfloat>::value)
+    return &JNIEnv::SetFloatArrayRegion;
+  else if constexpr (std::is_same<F, jdouble>::value)
+    return &JNIEnv::SetDoubleArrayRegion;
+  else
+    return &JNIEnv::SetObjectArrayElement;
+}
+
 static jobject cast(jobject o) { return o; }
 template <typename T> static T cast(T t) {
   static_assert(!std::is_convertible<T, jobject>::value);
@@ -394,6 +436,46 @@ public:
   }
 };
 
+template <typename E, bool A = std::is_arithmetic<E>::value> class Element {
+public:
+  static JNIEnv *env() { return JavaVirtualMachine::env; }
+
+  constexpr static auto get = array_getter<E>();
+  constexpr static auto set = array_setter<E>();
+
+  std::conditional_t<A, jarray, jobjectArray> obj;
+  jsize idx;
+
+  Element(jobject o, jsize i) : obj(static_cast<decltype(obj)>(o)), idx(i) {}
+
+  template <typename, typename> friend class jObject;
+
+public:
+  Element(const Element &) = delete;
+  Element(Element &&) = delete;
+  Element &operator=(const Element &) = delete;
+  Element &operator=(Element &&) = delete;
+
+  template <typename EE> E operator=(EE &&elem) {
+    if constexpr (A)
+      (env()->*set)(obj, idx, 1, &elem);
+    else
+      (env()->*set)(obj, idx, elem.ref.obj);
+    return elem;
+  }
+
+  operator E() const {
+    E elem;
+    if constexpr (A)
+      (env()->*get)(obj, idx, 1, &elem);
+    else
+      elem.ref = jReference{(env()->*get)(obj, idx)};
+    return elem;
+  }
+
+  E operator*() const { return static_cast<E>(*this); }
+};
+
 template <typename Class, typename SuperClass = Object> class jObject {
   static JNIEnv *env() { return JavaVirtualMachine::env; }
 
@@ -402,6 +484,7 @@ template <typename Class, typename SuperClass = Object> class jObject {
   template <typename> friend struct make_signature;
   friend class jMonitor;
   template <typename, typename> friend class jObject;
+  template <typename, bool> friend class Element;
 
   template <typename G,
             G (JNIEnv ::*getter)(jclass, const char *, const char *), size_t N>
@@ -505,6 +588,21 @@ public:
     static_assert(!std::is_array<class_type>::value);
     return call_<jmethodID, &JNIEnv::GetMethodID, R>(
         s, caller<R>(), ref.obj, std::forward<Args>(args)...);
+  }
+
+  template <bool A = std::is_array<class_type>::value>
+  auto size() const -> std::enable_if_t<A, jsize> {
+    static_assert(std::is_array<class_type>::value);
+    return env()->GetArrayLength(static_cast<jarray>(ref.obj));
+  }
+
+  auto operator[](jsize i) {
+    static_assert(std::is_array<class_type>::value);
+    using raw_elem_type = std::remove_extent_t<class_type>;
+    using elem_type = std::conditional_t<std::is_pointer<raw_elem_type>::value,
+                                         std::remove_pointer_t<raw_elem_type>[],
+                                         raw_elem_type>;
+    return Element<elem_type>{ref.obj, i};
   }
 };
 

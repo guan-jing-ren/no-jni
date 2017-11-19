@@ -70,15 +70,30 @@ public:
                                          jField<jint>("y")};
 };
 
+class PointArray : public jObject<Point[]> {};
+
+class Shell : public jObject<Shell> {
+public:
+  static constexpr auto signature = swt_widgets / "Shell";
+
+  constexpr static Enum method_signatures{
+      jMethod<Point()>("getLocation"),
+  };
+};
+class ShellArray : public jObject<Shell[]> {};
+
 class Display : public jObject<Display> {
 public:
   static constexpr auto signature = swt_widgets / "Display";
 
   constexpr static Enum method_signatures{
-      jMethod<Display()>("getCurrent"), //
+      jMethod<Display()>("getCurrent"),
       jMethod<Display()>("getDefault"),
       jMethod<Widget(jlong, jlong)>("findWidget"),
-      jMethod<Point()>("getCursorLocation")};
+      jMethod<Point()>("getCursorLocation"),
+      jMethod<ShellArray()>("getShells"),
+      jMethod<PointArray()>("getIconSizes"),
+  };
 };
 
 class DisplayArray : public jObject<Display[]> {
@@ -151,6 +166,25 @@ int main(int c, char **v) {
             << display.call<Widget>("getWidget", jlong{}, jlong{}) << "\n";
 
   std::cout << "Display getClass: " << Display::getClass() << "\n";
+
+  auto shells =
+      Display::scall<Display>("getDefault").call<ShellArray>("getShells");
+  std::cout << "Shells: " << shells << "\n";
+  auto num_shells = shells.size();
+  std::cout << "Shells size: " << num_shells << "\n";
+  for (auto i = 0; i < num_shells; ++i)
+    std::cout << "Shell " << i << ": " << *shells[i] << "\n";
+
+  auto icon_sizes =
+      Display::scall<Display>("getDefault").call<PointArray>("getIconSizes");
+  std::cout << "Icon sizes: " << icon_sizes << "\n";
+  auto num_icon_sizes = icon_sizes.size();
+  std::cout << "Icon sizes size: " << num_shells << "\n";
+  for (auto i = 0; i < num_icon_sizes; ++i) {
+    auto icon_size = *icon_sizes[i];
+    std::cout << "Icon size " << i << ": " << icon_size.at<jint>("x") << ","
+              << icon_size.at<jint>("y") << "\n";
+  }
 
   return 0;
 }
