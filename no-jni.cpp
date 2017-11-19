@@ -181,7 +181,7 @@ int main(int c, char **v) {
   std::cout << "Icon sizes: " << icon_sizes << "\n";
   auto num_icon_sizes = icon_sizes.size();
   std::cout << "Icon sizes size: " << num_icon_sizes << "\n";
-  for (auto icon_size : icon_sizes) {
+  for (Point icon_size : icon_sizes) {
     std::cout << "Icon size: " << icon_size.at<jint>("x") << ","
               << icon_size.at<jint>("y") << "\n";
   }

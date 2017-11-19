@@ -427,7 +427,6 @@ public:
 };
 
 template <typename E, bool A = std::is_arithmetic<E>::value> class Element {
-public:
   static JNIEnv *env() { return JavaVirtualMachine::env; }
 
   constexpr static auto get = array_getter<E>();
@@ -439,9 +438,11 @@ public:
   Element(jobject o, jsize i) : obj(static_cast<decltype(obj)>(o)), idx(i) {}
 
   template <typename, typename> friend class jObject;
+  template <typename, bool> friend class Iterator;
+
+  Element(const Element &) = default;
 
 public:
-  Element(const Element &) = default;
   Element(Element &&) = delete;
   Element &operator=(const Element &) = delete;
   Element &operator=(Element &&) = delete;
@@ -464,10 +465,6 @@ public:
   }
 
   E operator*() const { return static_cast<E>(*this); }
-  Element &operator++() {
-    ++idx;
-    return *this;
-  }
 
   bool operator==(const Element &e) const {
     return obj == e.obj && idx == e.idx;
@@ -476,7 +473,33 @@ public:
   bool operator!=(const Element &e) const { return !(*this == e); }
 };
 
-template <typename E, bool A> struct std::iterator_traits<Element<E, A>> {
+template <typename E, bool A = std::is_arithmetic<E>::value> class Iterator {
+  Element<E, A> element;
+
+  Iterator(const Element<E, A> elem) : element(elem) {}
+
+  template <typename, typename> friend class jObject;
+
+public:
+  Iterator(const Iterator &) = default;
+  Iterator(Iterator &&) = delete;
+  Iterator &operator=(const Iterator &) = delete;
+  Iterator &operator=(Iterator &&) = delete;
+
+  Element<E, A> operator*() const { return element; }
+  Iterator &operator++() {
+    ++element.idx;
+    return *this;
+  }
+
+  bool operator==(const Iterator &e) const {
+    return element.obj == e.element.obj && element.idx == e.element.idx;
+  }
+
+  bool operator!=(const Iterator &e) const { return !(*this == e); }
+};
+
+template <typename E, bool A> struct std::iterator_traits<Iterator<E, A>> {
   using iterator_category = std::forward_iterator_tag;
   using difference_type = ptrdiff_t;
   using value_type = E;
@@ -612,9 +635,9 @@ public:
     return Element<elem_type>{ref.obj, i};
   }
 
-  auto begin() const { return (*this)[0]; }
+  auto begin() const { return Iterator{(*this)[0]}; }
 
-  auto end() const { return (*this)[size()]; }
+  auto end() const { return Iterator{(*this)[size()]}; }
 };
 
 template <typename Class, typename SuperClass>
