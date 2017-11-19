@@ -492,15 +492,33 @@ public:
     return *this;
   }
 
+  std::ptrdiff_t operator-(const Iterator &i) const {
+    return element.idx - i.element.idx;
+  }
+
   bool operator==(const Iterator &e) const {
     return element.obj == e.element.obj && element.idx == e.element.idx;
   }
 
   bool operator!=(const Iterator &e) const { return !(*this == e); }
+
+  bool operator<(const Iterator &e) const {
+    return element.idx < e.element.idx;
+  }
+
+  Iterator operator+(std::ptrdiff_t n) {
+    Iterator i = *this;
+    i.element.idx += n;
+    return i;
+  }
+
+  Iterator &operator+=(std::ptrdiff_t n) { return (*this) = (*this) + n; }
+
+  auto operator[](std::ptrdiff_t n) { return (*this) + n; }
 };
 
 template <typename E, bool A> struct std::iterator_traits<Iterator<E, A>> {
-  using iterator_category = std::forward_iterator_tag;
+  using iterator_category = std::random_access_iterator_tag;
   using difference_type = ptrdiff_t;
   using value_type = E;
   using reference = E &;
