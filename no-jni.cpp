@@ -25,16 +25,16 @@ public:
   static constexpr auto signature = java_lang / "Object";
 
   constexpr static Enum method_signatures{
-      jFunction<Object()>("clone"), //
-      jFunction<jboolean(Object)>("equals"),
-      jFunction<jvoid()>("finalize"),
-      jFunction<jClass<Object>()>("getClass"),
-      jFunction<int()>("hashCode"),
-      jFunction<jvoid()>("notify"),
-      jFunction<jvoid()>("notifyAll"),
-      jFunction<jvoid()>("wait"),
-      jFunction<jvoid(jlong)>("wait"),
-      jFunction<jvoid(jlong, jint)>("wait"),
+      jMethod<Object()>("clone"), //
+      jMethod<jboolean(Object)>("equals"),
+      jMethod<jvoid()>("finalize"),
+      jMethod<jClass<Object>()>("getClass"),
+      jMethod<int()>("hashCode"),
+      jMethod<jvoid()>("notify"),
+      jMethod<jvoid()>("notifyAll"),
+      jMethod<jvoid()>("wait"),
+      jMethod<jvoid(jlong)>("wait"),
+      jMethod<jvoid(jlong, jint)>("wait"),
   };
 };
 
@@ -50,9 +50,9 @@ public:
   static constexpr auto signature = swt_widgets / "Display";
 
   constexpr static Enum method_signatures{
-      jFunction<Display()>("getCurrent"), //
-      jFunction<Display()>("getDefault"),
-      jFunction<Widget(jlong, jlong)>("findWidget")};
+      jMethod<Display()>("getCurrent"), //
+      jMethod<Display()>("getDefault"),
+      jMethod<Widget(jlong, jlong)>("findWidget")};
 };
 
 class DisplayArray : public jObject<Display[]> {

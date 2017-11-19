@@ -180,9 +180,18 @@ template <typename R, typename... Args> struct make_signature<R(Args...)> {
   }
 };
 
-template <typename T, size_t N> constexpr auto jFunction(const char (&s)[N]) {
-  static_assert(make_signature<T>::is_member_function);
-  return jSignature_t{s} + "\0" + make_signature<T>{}() + "\0";
+template <bool IsFunction, typename T, size_t N>
+constexpr auto jMember(const char (&name)[N]) {
+  static_assert(make_signature<T>::is_member_function == IsFunction);
+  return jSignature_t{name} + "\0" + make_signature<T>{}() + "\0";
+}
+
+template <typename T, size_t N> constexpr auto jMethod(const char (&name)[N]) {
+  return jMember<true, T>(name);
+}
+
+template <typename T, size_t N> constexpr auto jField(const char (&name)[N]) {
+  return jMember<false, T>(name);
 }
 
 class Object;
@@ -316,7 +325,7 @@ public:
 
   template <typename F, size_t N>
   constexpr static auto method_index(const char (&s)[N]) {
-    return class_type::method_signatures[jFunction<F>(s)];
+    return class_type::method_signatures[jMethod<F>(s)];
   }
 
   static const jClass<class_type> &getClass() {
