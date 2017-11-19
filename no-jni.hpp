@@ -345,20 +345,27 @@ public:
     return t;
   }
 
-  template <typename R, size_t N, typename... Args>
-  static R scall(const char (&s)[N], Args &&... args) {
-    auto m = call_<&JNIEnv::GetStaticMethodID, R(Args...)>(s);
+  template <typename G,
+            G (JNIEnv ::*getter)(jclass, const char *, const char *),
+            typename R, size_t N, typename F, typename C, typename... Args>
+  static R call_(const char (&s)[N], F f, C &&context, Args &&... args) {
+    auto m = get_member<G, getter, R(Args...)>(
+        s, class_type::method_signatures, superclass_type::method_signatures);
     if (!m)
       return {};
-    return {(env()->*static_caller<R>())(getClass(), m, cast(args)...)};
+    return {(env()->*f)(context, m, cast(args)...)};
+  }
+
+  template <typename R, size_t N, typename... Args>
+  static R scall(const char (&s)[N], Args &&... args) {
+    return call_<jmethodID, &JNIEnv::GetStaticMethodID, R>(
+        s, static_caller<R>(), getClass(), std::forward<Args>(args)...);
   }
 
   template <typename R, size_t N, typename... Args>
   R call(const char (&s)[N], Args &&... args) const {
-    auto m = call_<&JNIEnv::GetMethodID, R(Args...)>(s);
-    if (!m)
-      return {};
-    return {(env()->*caller<R>())(ref.obj, m, cast(args)...)};
+    return call_<jmethodID, &JNIEnv::GetMethodID, R>(
+        s, caller<R>(), ref.obj, std::forward<Args>(args)...);
   }
 };
 
