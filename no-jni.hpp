@@ -240,7 +240,7 @@ template <typename Class, typename SuperClass = Object> class jObject {
             G (JNIEnv ::*getter)(jclass, const char *, const char *),
             size_t... I, typename E>
   static void init_members(std::index_sequence<I...>, G (&m)[sizeof...(I)],
-                           const E &e) {
+                           E e) {
     [[maybe_unused]] auto ms = {
         (m[I] = get_member<G, getter>(e.template at<I>()))...};
   }
@@ -248,7 +248,7 @@ template <typename Class, typename SuperClass = Object> class jObject {
   template <typename G,
             G (JNIEnv ::*getter)(jclass, const char *, const char *),
             typename E>
-  static G find_member(size_t i, const E &e) {
+  static G find_member(size_t i, E e) {
     constexpr size_t N = E::size();
     static_assert(N);
     static G members[N] = {0};
@@ -262,13 +262,13 @@ template <typename Class, typename SuperClass = Object> class jObject {
   template <typename G,
             G (JNIEnv ::*getter)(jclass, const char *, const char *),
             typename F, size_t N, typename E, typename SE>
-  static G get_member(const char (&s)[N], const E &e, SE &se) {
+  static G get_member(const char (&s)[N], E e, SE se) {
     static_assert(E::size());
-    auto m = find_member<G, getter>(method_index<F>(s), e);
+    auto m = find_member<G, getter>(member_index<G, F>(s, e), e);
     if constexpr (!std::is_same<class_type, superclass_type>::value)
       if (!m)
         m = superclass_type::template find_member<G, getter>(
-            superclass_type::template method_index<F>(s), se);
+            superclass_type::template member_index<G, F>(s, se), se);
     return m;
   }
 
