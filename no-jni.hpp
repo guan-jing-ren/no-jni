@@ -356,6 +356,14 @@ public:
 
   operator void *() const { return ref.obj; }
 
+  template <typename F, size_t N> F field(const char (&s)[N]) const {
+    auto f = get_member<jfieldID, &JNIEnv::GetFieldID, F>(
+        s, class_type::field_signatures, superclass_type::field_signatures);
+    if (!f)
+      return {};
+    return env()->GetIntField(ref.obj, f);
+  }
+
   template <typename R, size_t N, typename... Args>
   static R scall(const char (&s)[N], Args &&... args) {
     return call_<jmethodID, &JNIEnv::GetStaticMethodID, R>(

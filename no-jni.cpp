@@ -65,7 +65,8 @@ public:
   constexpr static Enum method_signatures{
       jMethod<Display()>("getCurrent"), //
       jMethod<Display()>("getDefault"),
-      jMethod<Widget(jlong, jlong)>("findWidget")};
+      jMethod<Widget(jlong, jlong)>("findWidget"),
+      jMethod<Point()>("getCursorLocation")};
 };
 
 class DisplayArray : public jObject<Display[]> {
