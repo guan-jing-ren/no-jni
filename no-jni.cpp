@@ -101,6 +101,11 @@ int main(int c, char **v) {
   std::cout << "Display getDefault hashCode: "
             << Display::scall<Display>("getDefault").call<int>("hashCode")
             << "\n";
+  std::cout << "Display getDefault getCursorLocation y: "
+            << Display::scall<Display>("getDefault")
+                   .call<Point>("getCursorLocation")
+                   .field<int>("y")
+            << "\n";
 
   Display display;
   std::cout << "Display findWidget: "
@@ -109,17 +114,6 @@ int main(int c, char **v) {
             << display.call<Widget>("getWidget", jlong{}, jlong{}) << "\n";
 
   std::cout << "Display getClass: " << Display::getClass() << "\n";
-
-  std::cout << "Method index findWidget fail: "
-            << std::integral_constant<
-                   size_t, Display::method_index<Display(jlong, jlong)>(
-                               "findWidget")>::value
-            << '\n';
-  std::cout << "Method index findWidget success: "
-            << std::integral_constant<
-                   size_t, Display::method_index<Widget(jlong, jlong)>(
-                               "findWidget")>::value
-            << '\n';
 
   return 0;
 }

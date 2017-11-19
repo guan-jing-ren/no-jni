@@ -342,9 +342,9 @@ public:
   using superclass_type = SuperClass;
   jObject() = default;
 
-  template <typename F, size_t N>
-  constexpr static auto method_index(const char (&s)[N]) {
-    return class_type::method_signatures[jMethod<F>(s)];
+  template <typename G, typename F, size_t N, typename E>
+  constexpr static auto member_index(const char (&s)[N], E e) {
+    return e[jMember<std::is_same<G, jmethodID>::value, F>(s)];
   }
 
   static const jClass<class_type> &getClass() {
