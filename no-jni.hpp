@@ -563,6 +563,11 @@ template <typename Class, typename SuperClass = Object> class jObject {
     return members[i];
   }
 
+  template <typename G, typename F, size_t N, typename E>
+  constexpr static auto member_index(const char (&s)[N], E e) {
+    return e[jMember<std::is_same<G, jmethodID>::value, F>(s)];
+  }
+
   template <typename G,
             G (JNIEnv ::*getter)(jclass, const char *, const char *),
             typename F, size_t N, typename E, typename SE>
@@ -594,9 +599,6 @@ public:
   using superclass_type = SuperClass;
   jObject() = default;
 
-  template <typename G, typename F, size_t N, typename E>
-  constexpr static auto member_index(const char (&s)[N], E e) {
-    return e[jMember<std::is_same<G, jmethodID>::value, F>(s)];
   }
 
   static const jClass<class_type> &getClass() {
