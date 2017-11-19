@@ -104,10 +104,14 @@ int main(int c, char **v) {
   std::cout << "Display getDefault hashCode: "
             << Display::scall<Display>("getDefault").call<int>("hashCode")
             << "\n";
-  std::cout << "Display getDefault getCursorLocation y: "
+  std::cout << "Display getDefault getCursorLocation x,y: "
             << Display::scall<Display>("getDefault")
                    .call<Point>("getCursorLocation")
-                   .field<int>("y")
+                   .at<int>("x")
+            << ","
+            << Display::scall<Display>("getDefault")
+                   .call<Point>("getCursorLocation")
+                   .at<int>("y")
             << "\n";
 
   Display display;
