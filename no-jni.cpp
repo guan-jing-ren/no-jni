@@ -205,7 +205,8 @@ int main(int c, char **v) {
             << "\n";
 
   PointArray snew{icon_sizes.size() + 1};
-  std::copy(begin(icon_sizes), end(icon_sizes), begin(snew));
+  std::copy(make_reverse_iterator(end(icon_sizes)),
+            make_reverse_iterator(begin(icon_sizes)), begin(snew));
   snew[icon_sizes.size()] = pnew;
   for (Point icon_size : snew) {
     std::cout << "snew Icon size: " << icon_size.at<jint>("x") << ","

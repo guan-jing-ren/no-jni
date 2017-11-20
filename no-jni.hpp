@@ -544,6 +544,10 @@ public:
     ++element.idx;
     return *this;
   }
+  Iterator &operator--() {
+    --element.idx;
+    return *this;
+  }
 
   std::ptrdiff_t operator-(const Iterator &i) const {
     return element.idx - i.element.idx;
@@ -574,7 +578,8 @@ template <typename E, bool A> struct std::iterator_traits<Iterator<E, A>> {
   using iterator_category = std::random_access_iterator_tag;
   using difference_type = ptrdiff_t;
   using value_type = E;
-  using reference = E &;
+  using reference = E;
+  using pointer = Iterator<E, A>;
 };
 
 template <typename Class, typename SuperClass = Object> class jObject {
