@@ -610,14 +610,20 @@ template <typename Class, typename SuperClass = Object> class jObject {
 
   template <typename G,
             G (JNIEnv ::*getter)(jclass, const char *, const char *),
-            typename F, size_t N, typename E, typename SE>
-  static G get_member(const char (&s)[N], E e, SE se) {
-    static_assert(E::size());
-    auto m = find_member<G, getter>(member_index<G, F>(s, e), e);
+            typename F, size_t N>
+  static G get_member(const char (&s)[N]) {
+    G m = nullptr;
+    if constexpr (std::is_same<G, jmethodID>::value)
+      m = find_member<G, getter>(
+          member_index<G, F>(s, class_type::method_signatures),
+          class_type::method_signatures);
+    else if constexpr (std::is_same<G, jfieldID>::value)
+      m = find_member<G, getter>(
+          member_index<G, F>(s, class_type::field_signatures),
+          class_type::field_signatures);
     if constexpr (!std::is_same<class_type, superclass_type>::value)
       if (!m)
-        m = superclass_type::template find_member<G, getter>(
-            superclass_type::template member_index<G, F>(s, se), se);
+        m = superclass_type::template get_member<G, getter, F>(s);
     return m;
   }
 
@@ -625,8 +631,7 @@ template <typename Class, typename SuperClass = Object> class jObject {
             G (JNIEnv ::*getter)(jclass, const char *, const char *),
             typename R, size_t N, typename F, typename C, typename... Args>
   static R call_(const char (&s)[N], F f, C &&context, Args &&... args) {
-    auto m = get_member<G, getter, R(std::decay_t<Args>...)>(
-        s, class_type::method_signatures, superclass_type::method_signatures);
+    auto m = get_member<G, getter, R(std::decay_t<Args>...)>(s);
     if (!m)
       return {};
     return {(env()->*f)(context, m, cast(args)...)};
@@ -674,9 +679,7 @@ public:
       ref = jReference{
           env()->NewObject(getClass(),
                            get_member<jmethodID, &JNIEnv::GetMethodID,
-                                      jvoid(std::decay_t<Args>...)>(
-                               "<init>", class_type::method_signatures,
-                               superclass_type::method_signatures),
+                                      jvoid(std::decay_t<Args>...)>("<init>"),
                            cast(args)...)};
     }
   }
@@ -686,15 +689,13 @@ public:
   template <typename F, size_t N>
   static Field<true, F> sat(const char (&s)[N]) {
     static_assert(!std::is_array<class_type>::value);
-    auto f = get_member<jfieldID, &JNIEnv::GetStaticFieldID, F>(
-        s, class_type::field_signatures, superclass_type::field_signatures);
+    auto f = get_member<jfieldID, &JNIEnv::GetStaticFieldID, F>(s);
     return Field<true, F>{getClass(), f};
   }
 
   template <typename F, size_t N> Field<false, F> at(const char (&s)[N]) const {
     static_assert(!std::is_array<class_type>::value);
-    auto f = get_member<jfieldID, &JNIEnv::GetFieldID, F>(
-        s, class_type::field_signatures, superclass_type::field_signatures);
+    auto f = get_member<jfieldID, &JNIEnv::GetFieldID, F>(s);
     return Field<false, F>{ref.obj, f};
   }
 
