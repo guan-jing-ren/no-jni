@@ -183,9 +183,14 @@ template <typename R, typename... Args> struct make_signature<R(Args...)> {
 };
 
 template <typename, bool> class Element;
-template <typename T, bool S> struct make_signature<Element<T, S>> {
+template <typename T, bool A> struct make_signature<Element<T, A>> {
   constexpr make_signature() = default;
   constexpr auto operator()() const { return make_signature<T>{}(); }
+};
+template <bool, typename> class Field;
+template <bool S, typename F> struct make_signature<Field<S, F>> {
+  constexpr make_signature() = default;
+  constexpr auto operator()() const { return make_signature<F>{}(); }
 };
 
 template <bool IsFunction, typename T, size_t N>
@@ -426,8 +431,9 @@ template <typename T>
 static auto cast(T t) -> std::enable_if_t<std::is_arithmetic<T>::value, T> {
   return t;
 }
-template <typename T, bool S> jobject cast(Element<T, S> e) {
-  return JavaVirtualMachine::env->NewWeakGlobalRef(cast(*e));
+template <typename T, bool A> auto cast(Element<T, A> e) { return cast(*e); }
+template <bool S, typename T> auto cast(const Field<S, T> &f) {
+  return cast(*f);
 }
 
 template <bool S, typename F> class Field {
@@ -453,7 +459,8 @@ public:
     (env()->*set)(obj, id, cast(f));
     return f;
   }
-  operator F() const { return (env()->*get)(obj, id); }
+  operator F const() { return **this; }
+  F operator*() const { return (env()->*get)(obj, id); }
 };
 
 template <typename E, bool A = std::is_arithmetic<E>::value> class Element {

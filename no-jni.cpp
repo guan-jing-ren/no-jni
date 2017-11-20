@@ -197,7 +197,7 @@ int main(int c, char **v) {
               << icon_size.at<jint>("y") << "\n";
   }
 
-  Point pnew(84, 86);
+  Point pnew(84, point2.at<jint>("y"));
   std::cout << "pnew: " << pnew.at<jint>("x") << "," << pnew.at<jint>("y")
             << "\n";
 
