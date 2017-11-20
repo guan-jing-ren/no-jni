@@ -75,7 +75,10 @@ public:
   using jObject::jObject;
 };
 
-class PointArray : public jObject<Point[]> {};
+class PointArray : public jObject<Point[]> {
+public:
+  using jObject::jObject;
+};
 
 class Shell : public jObject<Shell> {
 public:
@@ -200,6 +203,14 @@ int main(int c, char **v) {
   Point pnew(84, point2.at<jint>("y"));
   std::cout << "pnew: " << pnew.at<jint>("x") << "," << pnew.at<jint>("y")
             << "\n";
+
+  PointArray snew{icon_sizes.size() + 1};
+  std::copy(begin(icon_sizes), end(icon_sizes), begin(snew));
+  snew[icon_sizes.size()] = pnew;
+  for (Point icon_size : snew) {
+    std::cout << "snew Icon size: " << icon_size.at<jint>("x") << ","
+              << icon_size.at<jint>("y") << "\n";
+  }
 
   return 0;
 }
