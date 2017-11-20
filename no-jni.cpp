@@ -20,6 +20,36 @@ using namespace std;
 
 constexpr auto java_lang = java / "lang";
 
+class String : public jObject<String> {
+  template <typename, typename> friend class jObject;
+
+  String(jobject o) { ref = jReference{o}; }
+
+public:
+  static constexpr auto signature = java_lang / "String";
+
+  constexpr static Enum method_signatures{cexprstr{"\0"}};
+
+  String() = default;
+  String(const char *s)
+      : jObject(static_cast<jobject>(env()->NewStringUTF(s))) {}
+  template <size_t N>
+  String(const char16_t (&s)[N])
+      : jObject(static_cast<jobject>(env()->NewString(s, N - 1))) {}
+
+  auto size() const {
+    return env()->GetStringUTFLength(static_cast<jstring>(cast(*this)));
+  }
+
+  operator std::string() const {
+    std::string s;
+    s.resize(size());
+    env()->GetStringUTFRegion(static_cast<jstring>(cast(*this)), 0, s.size(),
+                              &s[0]);
+    return s;
+  }
+};
+
 class Object : public jObject<Object> {
 public:
   static constexpr auto signature = java_lang / "Object";
@@ -34,6 +64,7 @@ public:
       jMethod<jint()>("hashCode"),
       jMethod<jvoid()>("notify"),
       jMethod<jvoid()>("notifyAll"),
+      jMethod<String()>("toString"),
       jMethod<jvoid()>("wait"),
       jMethod<jvoid(jlong)>("wait"),
       jMethod<jvoid(jlong, jint)>("wait"),
@@ -209,8 +240,8 @@ int main(int c, char **v) {
             make_reverse_iterator(begin(icon_sizes)), begin(snew));
   snew[icon_sizes.size()] = pnew;
   for (Point icon_size : snew) {
-    std::cout << "snew Icon size: " << icon_size.at<jint>("x") << ","
-              << icon_size.at<jint>("y") << "\n";
+    std::cout << "snew Icon size: "
+              << (std::string)icon_size.call<String>("toString") << "\n";
   }
 
   return 0;

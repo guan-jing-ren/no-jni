@@ -583,15 +583,13 @@ template <typename E, bool A> struct std::iterator_traits<Iterator<E, A>> {
 };
 
 template <typename Class, typename SuperClass = Object> class jObject {
-  static JNIEnv *env() { return JavaVirtualMachine::env; }
-
   jReference ref;
 
   template <typename> friend struct make_signature;
   friend class jMonitor;
   template <typename, typename> friend class jObject;
   template <typename, bool> friend class Element;
-  friend class class_type;
+  friend class String;
 
   template <typename G,
             G (JNIEnv ::*getter)(jclass, const char *, const char *), size_t N>
@@ -658,6 +656,7 @@ template <typename Class, typename SuperClass = Object> class jObject {
   }
 
 protected:
+  static JNIEnv *env() { return JavaVirtualMachine::env; }
   jObject(jobject o) : ref(o) {}
 
 public:
