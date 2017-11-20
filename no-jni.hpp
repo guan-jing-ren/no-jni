@@ -216,15 +216,23 @@ template <typename Class, typename SuperClass = Object> class jClass {
   friend class jMonitor;
   template <typename, typename> friend class jObject;
 
+  static constexpr auto deduce_signature() {
+    if constexpr (std::is_array<class_type>::value)
+      return make_signature<superclass_type>{}();
+    else
+      return class_type::signature;
+    ;
+  }
+
 public:
   using class_type = Class;
   using superclass_type = SuperClass;
-  static constexpr auto signature = class_type::signature;
+  static constexpr auto signature = deduce_signature();
 
   jClass() {
     if (!env())
       return;
-    constexpr auto sig = class_type::signature + "\0";
+    constexpr auto sig = signature + "\0";
     ref = jReference{env()->FindClass(sig.s)};
   }
 
@@ -479,12 +487,19 @@ template <typename E, bool A = std::is_arithmetic<E>::value> class Element {
 
   Element(const Element &) = default;
   Element(Element &&) = default;
-  Element &operator=(const Element &) = default;
-  Element &operator=(Element &&) = default;
 
   auto ref() const { return jReference{(env()->*get)(obj, idx)}; }
 
 public:
+  Element &operator=(const Element &other) {
+    (*this) = *other;
+    return *this;
+  }
+  Element &operator=(Element &&other) {
+    (*this) = *other;
+    return *this;
+  }
+
   E operator=(const E &elem) {
     if constexpr (A)
       (env()->*set)(obj, idx, 1, &elem);
@@ -674,7 +689,11 @@ public:
                              std::remove_pointer_t<raw_elem_type>[],
                              raw_elem_type>;
 
-      ref = jReference{(env()->*alloc<elem_type>())(args...)};
+      if constexpr (std::is_arithmetic<elem_type>::value)
+        ref = jReference{(env()->*alloc<elem_type>())(args...)};
+      else
+        ref = jReference{
+            (env()->*alloc<elem_type>())(args..., getClass(), nullptr)};
     } else {
       ref = jReference{
           env()->NewObject(getClass(),
