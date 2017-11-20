@@ -486,14 +486,7 @@ public:
     return elem;
   }
 
-  operator E() const {
-    E elem;
-    if constexpr (A)
-      (env()->*get)(obj, idx, 1, &elem);
-    else
-      elem.ref = ref();
-    return elem;
-  }
+  operator E() const { return **this; }
 
   E operator*() const {
     E elem;
