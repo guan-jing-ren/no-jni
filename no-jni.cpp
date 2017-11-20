@@ -71,6 +71,8 @@ public:
   };
 
   constexpr static Enum method_signatures{jConstructor<int, int>()};
+
+  using jObject::jObject;
 };
 
 class PointArray : public jObject<Point[]> {};
@@ -194,6 +196,10 @@ int main(int c, char **v) {
     std::cout << "Icon size: " << icon_size.at<jint>("x") << ","
               << icon_size.at<jint>("y") << "\n";
   }
+
+  Point pnew(84, 86);
+  std::cout << "pnew: " << pnew.at<jint>("x") << "," << pnew.at<jint>("y")
+            << "\n";
 
   return 0;
 }

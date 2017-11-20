@@ -172,7 +172,7 @@ template <typename T> struct make_signature {
 
 template <typename R, typename... Args> struct make_signature<R(Args...)> {
   static constexpr bool is_member_function = true;
-  constexpr make_signature() {}
+  constexpr make_signature() = default;
   constexpr auto operator()() const {
     if constexpr (sizeof...(Args) == 0)
       return "()" + make_signature<R>{}();
@@ -180,6 +180,12 @@ template <typename R, typename... Args> struct make_signature<R(Args...)> {
       return "(" + concat(make_signature<Args>{}()...) + ")" +
              make_signature<R>{}();
   }
+};
+
+template <typename, bool> class Element;
+template <typename T, bool S> struct make_signature<Element<T, S>> {
+  constexpr make_signature() = default;
+  constexpr auto operator()() const { return make_signature<T>{}(); }
 };
 
 template <bool IsFunction, typename T, size_t N>
@@ -420,6 +426,9 @@ template <typename T>
 static auto cast(T t) -> std::enable_if_t<std::is_arithmetic<T>::value, T> {
   return t;
 }
+template <typename T, bool S> jobject cast(Element<T, S> e) {
+  return JavaVirtualMachine::env->NewWeakGlobalRef(cast(*e));
+}
 
 template <bool S, typename F> class Field {
   static JNIEnv *env() { return JavaVirtualMachine::env; }
@@ -466,6 +475,8 @@ template <typename E, bool A = std::is_arithmetic<E>::value> class Element {
   Element &operator=(const Element &) = default;
   Element &operator=(Element &&) = default;
 
+  auto ref() const { return jReference{(env()->*get)(obj, idx)}; }
+
 public:
   E operator=(const E &elem) {
     if constexpr (A)
@@ -480,11 +491,18 @@ public:
     if constexpr (A)
       (env()->*get)(obj, idx, 1, &elem);
     else
-      elem.ref = jReference{(env()->*get)(obj, idx)};
+      elem.ref = ref();
     return elem;
   }
 
-  E operator*() const { return static_cast<E>(*this); }
+  E operator*() const {
+    E elem;
+    if constexpr (A)
+      (env()->*get)(obj, idx, 1, &elem);
+    else
+      elem.ref = ref();
+    return elem;
+  }
 
   bool operator==(const Element &e) const {
     return obj == e.obj && idx == e.idx;
@@ -553,6 +571,7 @@ template <typename Class, typename SuperClass = Object> class jObject {
   friend class jMonitor;
   template <typename, typename> friend class jObject;
   template <typename, bool> friend class Element;
+  friend class class_type;
 
   template <typename G,
             G (JNIEnv ::*getter)(jclass, const char *, const char *), size_t N>
@@ -613,12 +632,21 @@ template <typename Class, typename SuperClass = Object> class jObject {
     return {(env()->*f)(context, m, cast(args)...)};
   }
 
+protected:
   jObject(jobject o) : ref(o) {}
 
 public:
   using class_type = Class;
   using superclass_type = SuperClass;
   jObject() = default;
+  jObject(const jObject &) = default;
+  jObject(jObject &&) = default;
+  jObject &operator=(const jObject &) = default;
+  jObject &operator=(jObject &&) = default;
+  template <bool S> jObject(const Element<class_type, S> &e) : ref(e.ref()) {}
+  template <bool S> jObject(Element<class_type, S> &&e) : ref(e.ref()) {}
+  jObject(const class_type &o) : jObject(static_cast<jObject>(o)) {}
+  jObject(class_type &&o) : jObject(static_cast<jObject>(o)) {}
 
   template <typename... Args> constexpr static auto jConstructor() {
     return jMethod<jvoid(Args...)>("<init>");
@@ -641,13 +669,15 @@ public:
                              std::remove_pointer_t<raw_elem_type>[],
                              raw_elem_type>;
 
-      ref = jReference((env()->*alloc<elem_type>())(args...));
+      ref = jReference{(env()->*alloc<elem_type>())(args...)};
     } else {
-      ref = jReference(env()->NewObject(
-          getClass(),
-          get_member<jmethodID, &JNIEnv::GetMethodID, jvoid(Args...)>(
-              "<init>", class_type::method_signatures,
-              superclass_type::method_signatures)));
+      ref = jReference{
+          env()->NewObject(getClass(),
+                           get_member<jmethodID, &JNIEnv::GetMethodID,
+                                      jvoid(std::decay_t<Args>...)>(
+                               "<init>", class_type::method_signatures,
+                               superclass_type::method_signatures),
+                           cast(args)...)};
     }
   }
 
