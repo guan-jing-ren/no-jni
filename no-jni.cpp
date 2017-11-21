@@ -163,14 +163,6 @@ int main(int c, char **v) {
 
   std::cout << "Display getClass: " << Display::getClass() << "\n";
 
-  auto shells =
-      Display::scall<Display>("getDefault").call<ShellArray>("getShells");
-  std::cout << "Shells: " << shells << "\n";
-  auto num_shells = shells.size();
-  std::cout << "Shells size: " << num_shells << "\n";
-  for (auto i = 0; i < num_shells; ++i)
-    std::cout << "Shell " << i << ": " << shells[i] << "\n";
-
   auto icon_sizes =
       Display::scall<Display>("getDefault").call<PointArray>("getIconSizes");
   std::cout << "Icon sizes: " << icon_sizes << "\n";
@@ -202,13 +194,20 @@ int main(int c, char **v) {
 
   Shell shell{Display::scall<Display>("getDefault")};
   shell.call<jvoid>("setText", String{"NoJNI shell test!"});
-  std::cout << shell << "\n";
   shell.call<jvoid>("open");
 
-  while (!shell.call<jboolean>("isDisposed"))
+  while (!shell.call<jboolean>("isDisposed")) {
+    auto shells =
+        Display::scall<Display>("getDefault").call<ShellArray>("getShells");
+    std::cout << "Shells: " << shells << "\n";
+    auto num_shells = shells.size();
+    std::cout << "Shells size: " << num_shells << "\n";
+    for (auto i = 0; i < num_shells; ++i)
+      std::cout << "Shell " << i << ": " << shells[i] << "\n";
     if (!Display::scall<Display>("getDefault")
              .call<jboolean>("readAndDispatch"))
       Display::scall<Display>("getDefault").call<jboolean>("sleep");
+  }
   Display::scall<Display>("getDefault").call<jvoid>("dispose");
 
   return 0;
