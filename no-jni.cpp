@@ -36,7 +36,9 @@ class Widget : public jObject<Widget> {
 public:
   static constexpr auto signature = swt_widgets / "Widget";
 
-  constexpr static Enum method_signatures = superclass_type::method_signatures;
+  constexpr static Enum method_signatures{
+      jMethod<jboolean()>("isDisposed"),
+  };
 };
 
 class Point : public jObject<Point> {
@@ -60,12 +62,15 @@ public:
   using jObject::jObject;
 };
 
-class Shell : public jObject<Shell> {
+class Shell : public jObject<Shell, Widget> {
 public:
   static constexpr auto signature = swt_widgets / "Shell";
 
   constexpr static Enum method_signatures{
+      jConstructor<Shell>(),
       jMethod<Point()>("getLocation"),
+      jMethod<jvoid()>("open"),
+      jMethod<jvoid(String)>("setText"),
   };
 };
 class ShellArray : public jObject<Shell[]> {};
@@ -75,12 +80,15 @@ public:
   static constexpr auto signature = swt_widgets / "Display";
 
   constexpr static Enum method_signatures{
+      jMethod<jvoid()>("dispose"),
       jMethod<Display()>("getCurrent"),
       jMethod<Display()>("getDefault"),
       jMethod<Widget(jlong, jlong)>("findWidget"),
       jMethod<Point()>("getCursorLocation"),
       jMethod<ShellArray()>("getShells"),
       jMethod<PointArray()>("getIconSizes"),
+      jMethod<jboolean()>("readAndDispatch"),
+      jMethod<jboolean()>("sleep"),
   };
 };
 
@@ -191,6 +199,17 @@ int main(int c, char **v) {
   for (Point icon_size : snew) {
     std::cout << "snew Icon size: " << icon_size << "\n";
   }
+
+  Shell shell{Display::scall<Display>("getDefault")};
+  shell.call<jvoid>("setText", String{"NoJNI shell test!"});
+  std::cout << shell << "\n";
+  shell.call<jvoid>("open");
+
+  while (!shell.call<jboolean>("isDisposed"))
+    if (!Display::scall<Display>("getDefault")
+             .call<jboolean>("readAndDispatch"))
+      Display::scall<Display>("getDefault").call<jboolean>("sleep");
+  Display::scall<Display>("getDefault").call<jvoid>("dispose");
 
   return 0;
 }
