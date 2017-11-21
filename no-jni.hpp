@@ -593,29 +593,31 @@ template <typename Class, typename SuperClass = Object> class jObject {
 
   template <typename G,
             G (JNIEnv ::*getter)(jclass, const char *, const char *), size_t N>
-  static auto get_member(cexprstr<char, N> sig) {
-    return (env()->*getter)(getClass(), sig.s,
+  static auto get_member(cexprstr<char, N> sig, jclass c) {
+    return (env()->*getter)(c, sig.s,
                             std::find(sig.s, sig.s + sig.size(), 0) + 1);
   }
 
   template <typename G,
             G (JNIEnv ::*getter)(jclass, const char *, const char *),
             size_t... I, typename E>
-  static void init_members(std::index_sequence<I...>, G (&m)[sizeof...(I)],
-                           E e) {
+  static void init_members(std::index_sequence<I...>, jclass c,
+                           G (&m)[sizeof...(I)], E e) {
     [[maybe_unused]] auto ms = {
-        (m[I] = get_member<G, getter>(e.template at<I>()))...};
+        (m[I] = get_member<G, getter>(e.template at<I>(), c))...};
   }
 
   template <typename G,
             G (JNIEnv ::*getter)(jclass, const char *, const char *),
             typename E>
-  static G find_member(size_t i, E e) {
+  static G find_member(jclass c, size_t i, E e) {
     constexpr size_t N = E::size();
     static_assert(N);
+    if (i >= N)
+      return nullptr;
     static G members[N] = {0};
     if (!members[i])
-      init_members<G, getter>(std::make_index_sequence<N>{}, members,
+      init_members<G, getter>(std::make_index_sequence<N>{}, c, members,
                               e); // Must be initialized at runtime, after JNI
                                   // environment is established.
     return members[i];
@@ -629,19 +631,19 @@ template <typename Class, typename SuperClass = Object> class jObject {
   template <typename G,
             G (JNIEnv ::*getter)(jclass, const char *, const char *),
             typename F, size_t N>
-  static G get_member(const char (&s)[N]) {
+  static G get_member(const char (&s)[N], jclass c) {
     G m = nullptr;
     if constexpr (std::is_same<G, jmethodID>::value)
       m = find_member<G, getter>(
-          member_index<G, F>(s, class_type::method_signatures),
+          c, member_index<G, F>(s, class_type::method_signatures),
           class_type::method_signatures);
     else if constexpr (std::is_same<G, jfieldID>::value)
       m = find_member<G, getter>(
-          member_index<G, F>(s, class_type::field_signatures),
+          c, member_index<G, F>(s, class_type::field_signatures),
           class_type::field_signatures);
     if constexpr (!std::is_same<class_type, superclass_type>::value)
       if (!m)
-        m = superclass_type::template get_member<G, getter, F>(s);
+        m = superclass_type::template get_member<G, getter, F>(s, c);
     return m;
   }
 
@@ -649,7 +651,7 @@ template <typename Class, typename SuperClass = Object> class jObject {
             G (JNIEnv ::*getter)(jclass, const char *, const char *),
             typename R, size_t N, typename F, typename C, typename... Args>
   static R call_(const char (&s)[N], F f, C &&context, Args &&... args) {
-    auto m = get_member<G, getter, R(std::decay_t<Args>...)>(s);
+    auto m = get_member<G, getter, R(std::decay_t<Args>...)>(s, getClass());
     if (!m)
       return {};
     return {(env()->*f)(context, m, cast(args)...)};
@@ -699,11 +701,11 @@ public:
         ref = jReference{
             (env()->*alloc<elem_type>())(args..., getClass(), nullptr)};
     } else {
-      ref = jReference{
-          env()->NewObject(getClass(),
-                           get_member<jmethodID, &JNIEnv::GetMethodID,
-                                      jvoid(std::decay_t<Args>...)>("<init>"),
-                           cast(args)...)};
+      ref = jReference{env()->NewObject(
+          getClass(),
+          get_member<jmethodID, &JNIEnv::GetMethodID,
+                     jvoid(std::decay_t<Args>...)>("<init>", getClass()),
+          cast(args)...)};
     }
   }
 
