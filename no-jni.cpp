@@ -90,6 +90,8 @@ public:
 class Widget : public jObject<Widget> {
 public:
   static constexpr auto signature = swt_widgets / "Widget";
+
+  constexpr static Enum method_signatures = superclass_type::method_signatures;
 };
 
 class Point : public jObject<Point> {
@@ -214,7 +216,7 @@ int main(int c, char **v) {
   auto num_shells = shells.size();
   std::cout << "Shells size: " << num_shells << "\n";
   for (auto i = 0; i < num_shells; ++i)
-    std::cout << "Shell " << i << ": " << *shells[i] << "\n";
+    std::cout << "Shell " << i << ": " << shells[i] << "\n";
 
   auto icon_sizes =
       Display::scall<Display>("getDefault").call<PointArray>("getIconSizes");
@@ -242,8 +244,7 @@ int main(int c, char **v) {
             make_reverse_iterator(begin(icon_sizes)), begin(snew));
   snew[icon_sizes.size()] = pnew;
   for (Point icon_size : snew) {
-    std::cout << "snew Icon size: "
-              << (std::string)icon_size.call<String>("toString") << "\n";
+    std::cout << "snew Icon size: " << icon_size << "\n";
   }
 
   return 0;
