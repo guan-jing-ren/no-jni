@@ -57,7 +57,7 @@ public:
   constexpr static Enum field_signatures{cexprstr{"\0"}};
 
   constexpr static Enum method_signatures{
-      jMethod<Object()>("clone"), //
+      jMethod<Object()>("clone"),
       jMethod<jboolean(Object)>("equals"),
       jMethod<jvoid()>("finalize"),
       jMethod<jClass<Object>()>("getClass"),
@@ -79,11 +79,11 @@ class SWT : public jObject<SWT> {
 public:
   static constexpr auto signature = swt / "SWT";
   constexpr static Enum field_signatures{
-      jField<jint>("ALT"),         //
-      jField<jint>("ARROW_UP"),    //
-      jField<jint>("ARROW_DOWN"),  //
-      jField<jint>("ARROW_LEFT"),  //
-      jField<jint>("ARROW_RIGHT"), //
+      jField<jint>("ALT"),        //
+      jField<jint>("ARROW_UP"),   //
+      jField<jint>("ARROW_DOWN"), //
+      jField<jint>("ARROW_LEFT"), //
+      jField<jint>("ARROW_RIGHT"),
   };
 };
 
@@ -101,7 +101,9 @@ public:
       jField<jint>("y"),
   };
 
-  constexpr static Enum method_signatures{jConstructor<int, int>()};
+  constexpr static Enum method_signatures{
+      jConstructor<int, int>(),
+  };
 
   using jObject::jObject;
 };
