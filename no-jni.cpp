@@ -59,7 +59,6 @@ public:
 
 class PointArray : public jObject<Point[]> {
 public:
-  using jObject::jObject;
 };
 
 class Shell : public jObject<Shell, Widget> {
