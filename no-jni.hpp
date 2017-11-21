@@ -827,4 +827,60 @@ public:
   }
 };
 
+[[maybe_unused]] constexpr jPackage java{"java"};
+[[maybe_unused]] constexpr jPackage javax{"javax"};
+
+constexpr auto java_lang = java / "lang";
+
+class String : public jObject<String> {
+  template <typename, typename> friend class jObject;
+
+  String(jobject o) { ref = jReference{o}; }
+
+public:
+  static constexpr auto signature = java_lang / "String";
+
+  constexpr static Enum method_signatures{cexprstr{"\0"}};
+
+  String() = default;
+  String(const char *s)
+      : jObject(static_cast<jobject>(env()->NewStringUTF(s))) {}
+  template <size_t N>
+  String(const char16_t (&s)[N])
+      : jObject(static_cast<jobject>(env()->NewString(s, N - 1))) {}
+
+  auto size() const {
+    return env()->GetStringUTFLength(static_cast<jstring>(cast(*this)));
+  }
+
+  operator std::string() const {
+    std::string s;
+    s.resize(size());
+    env()->GetStringUTFRegion(static_cast<jstring>(cast(*this)), 0, s.size(),
+                              &s[0]);
+    return s;
+  }
+};
+
+class Object : public jObject<Object> {
+public:
+  static constexpr auto signature = java_lang / "Object";
+
+  constexpr static Enum field_signatures{cexprstr{"\0"}};
+
+  constexpr static Enum method_signatures{
+      jMethod<Object()>("clone"),
+      jMethod<jboolean(Object)>("equals"),
+      jMethod<jvoid()>("finalize"),
+      jMethod<jClass<Object>()>("getClass"),
+      jMethod<jint()>("hashCode"),
+      jMethod<jvoid()>("notify"),
+      jMethod<jvoid()>("notifyAll"),
+      jMethod<String()>("toString"),
+      jMethod<jvoid()>("wait"),
+      jMethod<jvoid(jlong)>("wait"),
+      jMethod<jvoid(jlong, jint)>("wait"),
+  };
+};
+
 #endif
