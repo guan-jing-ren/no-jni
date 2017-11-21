@@ -698,6 +698,7 @@ public:
   template <bool S> jObject(Element<class_type, S> &&e) : ref(e.ref()) {}
   jObject(const class_type &o) : jObject(static_cast<jObject>(o)) {}
   jObject(class_type &&o) : jObject(static_cast<jObject>(o)) {}
+  static void *operator new(std::size_t sz) = delete;
 
   template <typename... Args> constexpr static auto jConstructor() {
     return jMethod<jvoid(Args...)>("<init>");
