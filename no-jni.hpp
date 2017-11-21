@@ -650,6 +650,10 @@ template <typename Class, typename SuperClass = Object> class jObject {
     if constexpr (!std::is_same<class_type, superclass_type>::value)
       if (!m)
         m = superclass_type::template get_member<G, getter, F>(s, c);
+    if (!m) {
+      const auto sig = jMember<std::is_same<G, jmethodID>::value, F>(s);
+      m = get_member<G, getter>(sig, c);
+    }
     return m;
   }
 
@@ -669,7 +673,11 @@ template <typename Class, typename SuperClass = Object> class jObject {
     auto m = get_member<G, getter, R(std::decay_t<Args>...)>(s, getClass());
     if (!m)
       return {};
-    return {(env()->*f)(context, m, cast(args)...)};
+    if constexpr (std::is_same<R, jvoid>::value) {
+      (env()->*f)(context, m, cast(args)...);
+      return {};
+    } else
+      return {(env()->*f)(context, m, cast(args)...)};
   }
 
   operator void *() const { return ref.obj; }
