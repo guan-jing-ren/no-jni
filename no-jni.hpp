@@ -647,6 +647,15 @@ template <typename Class, typename SuperClass = Object> class jObject {
     return m;
   }
 
+  template <bool S,
+            jfieldID (JNIEnv::*getter)(jclass, const char *, const char *),
+            typename F, size_t N, typename C>
+  static Field<S, F> at_(const char (&s)[N], C &&context) {
+    static_assert(!std::is_array<class_type>::value);
+    auto f = get_member<jfieldID, getter, F>(s, getClass());
+    return Field<S, F>{context, f};
+  }
+
   template <typename G,
             G (JNIEnv ::*getter)(jclass, const char *, const char *),
             typename R, size_t N, typename F, typename C, typename... Args>
@@ -713,15 +722,11 @@ public:
 
   template <typename F, size_t N>
   static Field<true, F> sat(const char (&s)[N]) {
-    static_assert(!std::is_array<class_type>::value);
-    auto f = get_member<jfieldID, &JNIEnv::GetStaticFieldID, F>(s);
-    return Field<true, F>{getClass(), f};
+    return at_<true, &JNIEnv::GetStaticFieldID, F>(s, getClass());
   }
 
   template <typename F, size_t N> Field<false, F> at(const char (&s)[N]) const {
-    static_assert(!std::is_array<class_type>::value);
-    auto f = get_member<jfieldID, &JNIEnv::GetFieldID, F>(s);
-    return Field<false, F>{ref.obj, f};
+    return at_<false, &JNIEnv::GetFieldID, F>(s, ref.obj);
   }
 
   template <typename R, size_t N, typename... Args>
