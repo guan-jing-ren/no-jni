@@ -208,6 +208,7 @@ template <typename T, size_t N> constexpr auto jField(const char (&name)[N]) {
 }
 
 class Object;
+class String;
 template <typename Class, typename SuperClass = Object> class jClass {
   static JNIEnv *env() { return JavaVirtualMachine::env; }
   jReference ref;
@@ -526,6 +527,11 @@ public:
   bool operator!=(const Element &e) const { return !(*this == e); }
 };
 
+template <typename E, bool A>
+std::ostream &operator<<(std::ostream &out, const Element<E, A> &e) {
+  return out << *e;
+}
+
 template <typename E, bool A = std::is_arithmetic<E>::value> class Iterator {
   Element<E, A> element;
 
@@ -666,6 +672,8 @@ template <typename Class, typename SuperClass = Object> class jObject {
     return {(env()->*f)(context, m, cast(args)...)};
   }
 
+  operator void *() const { return ref.obj; }
+
 protected:
   static JNIEnv *env() { return JavaVirtualMachine::env; }
   jObject(jobject o) : ref(o) {}
@@ -718,7 +726,26 @@ public:
     }
   }
 
-  operator void *() const { return ref.obj; }
+  operator std::string() const {
+    const auto print_null = [](auto dotted) {
+      for (auto &c : dotted.s)
+        if (c == '/')
+          c = '.';
+      return std::string{dotted.s, dotted.s + dotted.size()} + "@0";
+    };
+    if constexpr (std::is_array<class_type>::value) {
+      if (!ref.obj)
+        return print_null("L" + make_signature<class_type>{}() + ";");
+      auto m =
+          env()->GetMethodID(getClass(), "toString", "()Ljava/lang/String;");
+      return std::string(String{env()->CallObjectMethod(ref.obj, m)});
+    } else {
+      if (!ref.obj) {
+        return print_null(class_type::signature);
+      }
+      return call<String>("toString");
+    }
+  }
 
   template <typename F, size_t N>
   static Field<true, F> sat(const char (&s)[N]) {
@@ -738,7 +765,6 @@ public:
 
   template <typename R, size_t N, typename... Args>
   R call(const char (&s)[N], Args &&... args) const {
-    static_assert(!std::is_array<class_type>::value);
     return call_<jmethodID, &JNIEnv::GetMethodID, R>(
         s, caller<R>(), ref.obj, std::forward<Args>(args)...);
   }
@@ -771,6 +797,11 @@ auto begin(jObject<Class, SuperClass> &o) {
 template <typename Class, typename SuperClass>
 auto end(jObject<Class, SuperClass> &o) {
   return o.end();
+}
+
+template <typename C, typename SC>
+std::ostream &operator<<(std::ostream &out, const jObject<C, SC> &o) {
+  return out << std::string{o};
 }
 
 template <typename T> constexpr auto jSignature = make_signature<T>{}();
