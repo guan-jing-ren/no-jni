@@ -192,10 +192,10 @@ public:
     return sig.j;
   }
 
-  tClassLoader get_class_loader() const {
+  tClassLoader classloader() const {
     jobject cl;
     env()->GetClassLoader(*this, &cl);
-    return tClassLoader{cl};
+    return tClassLoader{jReference::steal(cl)};
   }
 
   auto get_methods() const {
