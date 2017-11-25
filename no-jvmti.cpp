@@ -173,12 +173,15 @@ public:
 };
 
 class tClass : public tObject {
+
+  operator jclass() const { return static_cast<jclass>(cast(*this)); }
+
 public:
   using tObject::tObject;
 
   std::string signature() const {
     tAlloc<char> sig, gen;
-    env()->GetClassSignature(static_cast<jclass>(cast(*this)), sig, gen);
+    env()->GetClassSignature(*this, sig, gen);
     return sig.j;
   }
 };
