@@ -120,6 +120,13 @@ template <typename J> struct tAlloc {
   jint count = 0;
   J *j = nullptr;
 
+  tAlloc() = default;
+
+  tAlloc(tAlloc &&other) : count(other.count), j(other.j) {
+    other.count = 0;
+    other.j = nullptr;
+  }
+
   ~tAlloc() {
     if (!env())
       return;
