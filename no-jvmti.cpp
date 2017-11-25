@@ -165,6 +165,12 @@ public:
   static constexpr Enum method_signatures{cexprstr{"\0"}};
 
   tObject(jobject o) : jObject(o) {}
+
+  static auto instance() {
+    jobject o;
+    env()->GetLocalInstance(nullptr, 0, &o);
+    return tObject{jReference::steal(o)};
+  }
 };
 
 class tClassLoader : public tObject {
@@ -238,6 +244,22 @@ public:
   const std::string &generic() const { return gen; }
 };
 
+template <typename T>
+T (jvmtiEnv::*get_var)
+(jthread, jint, jint, T) = &jvmtiEnv::GetLocalObject;
+template <> auto get_var<jint> = &jvmtiEnv::GetLocalInt;
+template <> auto get_var<jlong> = &jvmtiEnv::GetLocalLong;
+template <> auto get_var<jfloat> = &jvmtiEnv::GetLocalFloat;
+template <> auto get_var<jdouble> = &jvmtiEnv::GetLocalDouble;
+
+template <typename T>
+T (jvmtiEnv::*set_var)
+(jthread, jint, jint, T) = &jvmtiEnv::SetLocalObject;
+template <> auto set_var<jint> = &jvmtiEnv::SetLocalInt;
+template <> auto set_var<jlong> = &jvmtiEnv::SetLocalLong;
+template <> auto set_var<jfloat> = &jvmtiEnv::SetLocalFloat;
+template <> auto set_var<jdouble> = &jvmtiEnv::SetLocalDouble;
+
 class tMethod : public tMember<jmethodID> {
   static jvmtiEnv *env() { return tenv; }
 
@@ -266,6 +288,17 @@ public:
     jlocation first, last;
     std::string name, signature, generic;
     jint slot;
+
+    template <typename T> operator T() const {
+      T t;
+      (env()->*get_var<T>)(nullptr, 0, slot, &t);
+      return t;
+    }
+
+    template <typename T> tVariable &operator=(T &&t) {
+      (env()->*set_var<T>)(nullptr, 0, slot, t);
+      return *this;
+    }
   };
 
   auto local_variables() const {
