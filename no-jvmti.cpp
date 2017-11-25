@@ -260,6 +260,45 @@ public:
     else
       env()->ClearBreakpoint(*this, loc);
   }
+
+  struct tVariables {
+    jlocation first, last;
+    std::string name, signature, generic;
+    jint slot;
+  };
+
+  auto local_variables() const {
+    struct Entry : jvmtiLocalVariableEntry {
+      Entry(const Entry &) = delete;
+      ~Entry() {
+        tAlloc<char> n, s, g;
+        n.j = name;
+        s.j = signature;
+        g.j = generic_signature;
+      }
+    };
+    static_assert(sizeof(Entry) == sizeof(jvmtiLocalVariableEntry));
+    tAlloc<Entry> entries;
+
+    env()->GetLocalVariableTable(id, entries, entries);
+
+    std::vector<tVariables> vars;
+    std::transform(begin(entries), end(entries), back_inserter(vars),
+                   [](const Entry &entry) {
+                     tVariables var;
+                     var.first = entry.start_location;
+                     var.last = var.first + entry.length;
+                     if (entry.name)
+                       var.name = entry.name;
+                     if (entry.signature)
+                       var.signature = entry.signature;
+                     if (entry.generic_signature)
+                       var.generic = entry.generic_signature;
+                     var.slot = entry.slot;
+                     return var;
+                   });
+    return vars;
+  }
 };
 
 class tField : public tMember<jfieldID> {
