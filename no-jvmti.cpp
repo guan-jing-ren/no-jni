@@ -245,9 +245,6 @@ public:
 class tField : public tMember<jfieldID> {
   static jvmtiEnv *env() { return tenv; }
   tClass clazz;
-  jfieldID id;
-
-  std::string nm, sig, gen;
 
 public:
   tField(tClass c, jfieldID i) : clazz(c) {
