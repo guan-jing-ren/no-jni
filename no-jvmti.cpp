@@ -159,6 +159,19 @@ public:
   tObject(jobject o) : jObject(o) {}
 };
 
+class tClassLoader : public tObject {
+public:
+  using tObject::tObject;
+
+  tClassLoader(jobject o) : tObject(o) {}
+
+  tAlloc<jclass> classes() const {
+    tAlloc<jclass> cls;
+    env()->GetClassLoaderClasses(cast(*this), cls, cls);
+    return cls;
+  }
+};
+
 class tClass : public tObject {
 public:
   using tObject::tObject;
