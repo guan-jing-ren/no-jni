@@ -272,11 +272,6 @@ public:
 void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
   JavaVirtualMachine::env = jni_env;
   std::cout << "VM Initialized\n";
-  jobject cl = nullptr;
-  std::cout << Object::getClass() << "\n";
-  std::cout << tenv->GetClassLoader(Object::getClass(), &cl) << "\n";
-  std::cout << "Class loader: " << cl << '\n';
-  std::cout << tObject{cl} << "\n";
 
   tAlloc<jclass> all_loaded;
   tenv->GetLoadedClasses(all_loaded, all_loaded);
