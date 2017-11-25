@@ -246,6 +246,13 @@ public:
     env()->GetMethodDeclaringClass(id, &cls);
     return tClass{jReference::steal(cls)};
   }
+
+  void breakpoint(bool brk, jlocation loc) {
+    if (brk)
+      env()->SetBreakpoint(*this, loc);
+    else
+      env()->ClearBreakpoint(*this, loc);
+  }
 };
 
 class tField : public tMember<jfieldID> {
