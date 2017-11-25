@@ -13,6 +13,7 @@ env LD_LIBRARY_PATH=/usr/lib/jvm/default-java/jre/lib/amd64/server/ ./nojni -Dru
 #include <algorithm>
 #include <cstdio>
 #include <iosfwd>
+#include <numeric>
 #include <unordered_map>
 #include <vector>
 
@@ -164,6 +165,7 @@ public:
   static constexpr jSignature_t signature{"\0"};
   static constexpr Enum method_signatures{cexprstr{"\0"}};
 
+  tObject() = default;
   tObject(jobject o) : jObject(o) {}
 
   static auto instance() {
@@ -404,6 +406,37 @@ public:
     env()->GetStackTrace(*this, 0, count, frames.data(), &actual);
     frames.resize(actual);
     return frames;
+  }
+
+  static auto all_stack_frames() {
+    tAlloc<jvmtiStackInfo> info;
+    auto threads = all();
+    env()->GetAllStackTraces(
+        std::accumulate(std::begin(threads), std::end(threads), 0,
+                        [](jint max, const tThread &thread) {
+                          return std::max(max, thread.frame_count());
+                        }),
+        info, info);
+
+    struct StackInfo {
+      tThread thread;
+      jint state;
+      std::vector<jvmtiFrameInfo> frame_buffer;
+    };
+    std::vector<StackInfo> stack_info;
+    std::transform(info.j, info.j + info.count, back_inserter(stack_info),
+                   [](jvmtiStackInfo &si) {
+                     StackInfo info;
+                     info.thread = tThread{jReference::steal(si.thread)};
+                     info.state = si.state;
+                     info.frame_buffer.resize(si.frame_count);
+                     std::copy(si.frame_buffer,
+                               si.frame_buffer + si.frame_count,
+                               back_inserter(info.frame_buffer));
+                     return info;
+                   });
+
+    return stack_info;
   }
 
   auto pop_frame() const { env()->PopFrame(*this); }
