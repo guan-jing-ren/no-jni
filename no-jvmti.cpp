@@ -153,8 +153,8 @@ template <typename J> struct tAlloc {
     return reinterpret_cast<JJ **>(&j);
   }
 
-  auto begin() { return j; }
-  auto end() { return j + count; }
+  auto begin() const { return j; }
+  auto end() const { return j + count; }
 };
 
 class tObject : public jObject<tObject> {
@@ -279,7 +279,7 @@ public:
     return tClass{jReference::steal(cls)};
   }
 
-  auto breakpoint(bool brk, jlocation loc) {
+  auto breakpoint(bool brk, jlocation loc) const {
     if (brk)
       env()->SetBreakpoint(*this, loc);
     else
