@@ -174,9 +174,9 @@ public:
 
 class tClass : public tObject {
 
+public:
   operator jclass() const { return static_cast<jclass>(cast(*this)); }
 
-public:
   using tObject::tObject;
 
   std::string signature() const {
@@ -195,6 +195,12 @@ public:
     tAlloc<jmethodID> methods;
     env()->GetClassMethods(*this, methods, methods);
     return methods;
+  }
+
+  tAlloc<jfieldID> get_fields() const {
+    tAlloc<jfieldID> fields;
+    env()->GetClassFields(*this, fields, fields);
+    return fields;
   }
 };
 
@@ -223,6 +229,32 @@ public:
   const std::string &generic() const { return gen; }
 };
 
+class tField {
+  static jvmtiEnv *env() { return tenv; }
+  tClass clazz;
+  jfieldID id;
+
+  std::string nm, sig, gen;
+
+public:
+  tField(tClass c, jfieldID id) : clazz(c), id(id) {
+    tAlloc<char> n, s, g;
+    env()->GetFieldName(clazz, id, n, s, g);
+    if (n.j)
+      nm = n.j;
+    if (s.j)
+      sig = s.j;
+    if (g.j)
+      gen = g.j;
+  }
+
+  operator jfieldID() const { return id; }
+
+  const std::string &name() const { return nm; }
+  const std::string &signature() const { return sig; }
+  const std::string &generic() const { return gen; }
+};
+
 void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
   JavaVirtualMachine::env = jni_env;
   std::cout << "VM Initialized\n";
@@ -243,6 +275,19 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
 
   for (tClass clazz : all_loaded) {
     std::cout << clazz.signature() << "\n";
+
+    auto fields = clazz.get_fields();
+    std::vector<std::string> fsignatures;
+    std::transform(begin(fields), end(fields), back_inserter(fsignatures),
+                   [clazz](jfieldID id) {
+                     tField field{clazz, id};
+                     return field.name() + " " + field.signature();
+                   });
+    std::sort(begin(fsignatures), end(fsignatures));
+    for (auto &sig : fsignatures)
+      std::cout << "\t" << sig << "\n";
+    std::cout << "\n";
+
     auto methods = clazz.get_methods();
     std::vector<std::string> msignatures;
     std::transform(begin(methods), end(methods), back_inserter(msignatures),
