@@ -262,7 +262,7 @@ public:
       env()->ClearBreakpoint(*this, loc);
   }
 
-  struct tVariables {
+  struct tVariable {
     jlocation first, last;
     std::string name, signature, generic;
     jint slot;
@@ -283,10 +283,10 @@ public:
 
     env()->GetLocalVariableTable(id, entries, entries);
 
-    std::vector<tVariables> vars;
+    std::vector<tVariable> vars;
     std::transform(begin(entries), end(entries), back_inserter(vars),
                    [](const Entry &entry) {
-                     tVariables var;
+                     tVariable var;
                      var.first = entry.start_location;
                      var.last = var.first + entry.length;
                      if (entry.name)
@@ -366,7 +366,7 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
     std::cout << "\n";
 
     auto methods = clazz.get_methods();
-    std::unordered_map<std::string, std::vector<tMethod::tVariables>> all_vars;
+    std::unordered_map<std::string, std::vector<tMethod::tVariable>> all_vars;
     std::vector<std::string> msignatures;
     std::transform(begin(methods), end(methods), back_inserter(msignatures),
                    [&all_vars](const tMethod &method) mutable {
