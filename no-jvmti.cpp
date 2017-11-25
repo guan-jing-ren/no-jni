@@ -6,6 +6,7 @@ env LD_LIBRARY_PATH=/usr/lib/jvm/default-java/jre/lib/amd64/server/ ./nojni -Dru
 // clang-format on
 
 #include "no-jni.hpp"
+#include "no-swt.hpp"
 
 #include <jvmti.h>
 
@@ -291,6 +292,8 @@ public:
 void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
   JavaVirtualMachine::env = jni_env;
   std::cout << "VM Initialized\n";
+
+  auto default_display = Display::scall<Display>("getDefault");
 
   tAlloc<jclass> all_loaded;
   tenv->GetLoadedClasses(all_loaded, all_loaded);
