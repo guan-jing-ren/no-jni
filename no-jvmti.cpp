@@ -13,6 +13,7 @@ env LD_LIBRARY_PATH=/usr/lib/jvm/default-java/jre/lib/amd64/server/ ./nojni -Dru
 #include <algorithm>
 #include <cstdio>
 #include <iosfwd>
+#include <unordered_map>
 #include <vector>
 
 using namespace std;
@@ -365,14 +366,20 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
     std::cout << "\n";
 
     auto methods = clazz.get_methods();
+    std::unordered_map<std::string, std::vector<tMethod::tVariables>> all_vars;
     std::vector<std::string> msignatures;
     std::transform(begin(methods), end(methods), back_inserter(msignatures),
-                   [](const tMethod &method) {
-                     return method.name() + " " + method.signature();
+                   [&all_vars](const tMethod &method) mutable {
+                     auto sig = method.name() + " " + method.signature();
+                     all_vars[sig] = method.local_variables();
+                     return sig;
                    });
     std::sort(begin(msignatures), end(msignatures));
-    for (auto &sig : msignatures)
+    for (auto &sig : msignatures) {
       std::cout << "\t" << sig << "\n";
+      for (auto &var : all_vars[sig])
+        std::cout << "\t\t" << var.name << " " << var.signature << "\n";
+    }
   }
 }
 
