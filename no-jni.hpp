@@ -687,10 +687,9 @@ template <typename Class, typename SuperClass = Object> class jObject {
       return {(env()->*f)(context, m, cast(args)...)};
   }
 
-  operator void *() const { return ref.obj; }
-
 protected:
   static JNIEnv *env() { return JavaVirtualMachine::env; }
+  operator void *() const { return ref.obj; }
   jObject(jobject o) : ref(o) {}
 
 public:
