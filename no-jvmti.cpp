@@ -368,6 +368,47 @@ public:
   }
 };
 
+class tThread : public tObject {
+public:
+  using tObject::tObject;
+  operator jthread() const { return cast(*this); }
+
+  static auto current() {
+    jthread thread;
+    env()->GetCurrentThread(&thread);
+    return tThread{jReference::steal(thread)};
+  }
+
+  static auto all() {
+    tAlloc<jthread> threads;
+    env()->GetAllThreads(threads, threads);
+    std::vector<tThread> all_threads;
+    std::copy(threads.j, threads.j + threads.count, back_inserter(all_threads));
+    return all_threads;
+  }
+
+  auto interrupt() const { return env()->InterruptThread(*this); }
+  auto suspend() const { return env()->SuspendThread(*this); }
+  auto resume() const { return env()->ResumeThread(*this); }
+
+  auto frame_count() const {
+    jint count;
+    env()->GetFrameCount(*this, &count);
+    return count;
+  }
+
+  auto stack_frames() const {
+    auto count = frame_count();
+    jint actual;
+    std::vector<jvmtiFrameInfo> frames(count);
+    env()->GetStackTrace(*this, 0, count, frames.data(), &actual);
+    frames.resize(actual);
+    return frames;
+  }
+
+  auto pop_frame() const { env()->PopFrame(*this); }
+};
+
 void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
   JavaVirtualMachine::env = jni_env;
   std::cout << "VM Initialized\n";
