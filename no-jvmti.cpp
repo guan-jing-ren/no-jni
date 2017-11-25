@@ -372,8 +372,6 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
   JavaVirtualMachine::env = jni_env;
   std::cout << "VM Initialized\n";
 
-  auto default_display = Display::scall<Display>("getDefault");
-
   tAlloc<jclass> all_loaded;
   tenv->GetLoadedClasses(all_loaded, all_loaded);
   std::vector<std::string> signatures;
