@@ -184,6 +184,7 @@ public:
     env()->GetClassSignature(*this, sig, gen);
     return sig.j;
   }
+
   tClassLoader get_class_loader() const {
     jobject cl;
     env()->GetClassLoader(*this, &cl);
@@ -197,9 +198,29 @@ public:
   }
 };
 
-class tClassLoader : public tObject {
+class tMethod {
+  static jvmtiEnv *env() { return tenv; }
+  jmethodID id;
+
+  std::string nm, sig, gen;
+
 public:
-  using tObject::tObject;
+  tMethod(jmethodID id) : id(id) {
+    tAlloc<char> n, s, g;
+    env()->GetMethodName(id, n, s, g);
+    if (n.j)
+      nm = n.j;
+    if (s.j)
+      sig = s.j;
+    if (g.j)
+      gen = g.j;
+  }
+
+  operator jmethodID() const { return id; }
+
+  const std::string &name() const { return nm; }
+  const std::string &signature() const { return sig; }
+  const std::string &generic() const { return gen; }
 };
 
 void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
@@ -219,6 +240,19 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
   std::sort(begin(signatures), end(signatures));
   for (std::string sig : signatures)
     std::cout << sig << "\n";
+
+  for (tClass clazz : all_loaded) {
+    std::cout << clazz.signature() << "\n";
+    auto methods = clazz.get_methods();
+    std::vector<std::string> msignatures;
+    std::transform(begin(methods), end(methods), back_inserter(msignatures),
+                   [](const tMethod &method) {
+                     return method.name() + " " + method.signature();
+                   });
+    std::sort(begin(msignatures), end(msignatures));
+    for (auto &sig : msignatures)
+      std::cout << "\t" << sig << "\n";
+  }
 }
 
 void VMDeath(jvmtiEnv *jvmti_env, JNIEnv *jni_env) {
