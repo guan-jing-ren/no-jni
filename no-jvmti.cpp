@@ -448,15 +448,19 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
 
   tAlloc<jclass> all_loaded;
   tenv->GetLoadedClasses(all_loaded, all_loaded);
-  std::vector<std::string> signatures;
-  std::transform(begin(all_loaded), end(all_loaded), back_inserter(signatures),
-                 [](const tClass &clazz) { return clazz.signature(); });
-  std::sort(begin(signatures), end(signatures));
-  for (std::string sig : signatures)
-    std::cout << sig << "\n";
+  std::unordered_map<std::string, tClass> classes;
+  std::vector<std::string> csignatures;
+  std::transform(begin(all_loaded), end(all_loaded), back_inserter(csignatures),
+                 [&classes](const tClass &clazz) mutable {
+                   auto sig = clazz.signature();
+                   classes[sig] = clazz;
+                   return sig;
+                 });
+  std::sort(begin(csignatures), end(csignatures));
 
-  for (tClass clazz : all_loaded) {
-    std::cout << clazz.signature() << "\n";
+  for (std::string sig : csignatures) {
+    std::cout << sig << "\n";
+    auto clazz = classes[sig];
 
     auto fields = clazz.get_fields();
     std::vector<std::string> fsignatures;
