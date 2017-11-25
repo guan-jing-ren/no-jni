@@ -198,16 +198,12 @@ public:
     return tClassLoader{cl};
   }
 
-  tAlloc<jmethodID> get_methods() const {
-    tAlloc<jmethodID> methods;
-    env()->GetClassMethods(*this, methods, methods);
-    return methods;
+  auto get_methods() const {
+    return get_members<jmethodID, &jvmtiEnv::GetClassMethods>();
   }
 
-  tAlloc<jfieldID> get_fields() const {
-    tAlloc<jfieldID> fields;
-    env()->GetClassFields(*this, fields, fields);
-    return fields;
+  auto get_fields() const {
+    return get_members<jfieldID, &jvmtiEnv::GetClassFields>();
   }
 };
 
