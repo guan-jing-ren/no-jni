@@ -134,7 +134,8 @@ template <typename J> struct tAlloc {
       std::for_each(j, j + count, [](J &j) {
         if constexpr (std::is_convertible<J, jobject>::value)
           jReference::steal(reinterpret_cast<jobject &>(j));
-        else
+        else if constexpr (!std::is_same<J, jmethodID>::value &&
+                           !std::is_same<J, jfieldID>::value)
           env()->Deallocate(reinterpret_cast<unsigned char *>(j));
       });
     env()->Deallocate(reinterpret_cast<unsigned char *>(j));
