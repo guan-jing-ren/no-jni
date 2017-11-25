@@ -94,6 +94,13 @@ public:
     return *this;
   }
 
+  static jReference steal(jobject &o) {
+    jReference ref;
+    std::swap(ref.obj, o);
+    ref.type = ref.obj ? env()->GetObjectRefType(ref.obj) : JNIInvalidRefType;
+    return ref;
+  }
+
   bool is_local() const { return type == JNILocalRefType; }
   bool is_global() const { return type == JNIGlobalRefType; }
   bool is_weak() const { return type == JNIWeakGlobalRefType; }
