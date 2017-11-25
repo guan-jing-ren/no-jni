@@ -257,10 +257,19 @@ public:
     set_name(n, s, g);
   }
 
+  void watch_access(bool watch) {
+    if (watch)
+      env()->SetFieldAccessWatch(clazz, *this);
+    else
+      env()->ClearFieldAccessWatch(clazz, *this);
+  }
 
-  const std::string &name() const { return nm; }
-  const std::string &signature() const { return sig; }
-  const std::string &generic() const { return gen; }
+  void watch_modify(bool watch) {
+    if (watch)
+      env()->SetFieldModificationWatch(clazz, *this);
+    else
+      env()->ClearFieldModificationWatch(clazz, *this);
+  }
 };
 
 void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
