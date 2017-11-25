@@ -184,6 +184,17 @@ public:
     env()->GetClassSignature(*this, sig, gen);
     return sig.j;
   }
+  tClassLoader get_class_loader() const {
+    jobject cl;
+    env()->GetClassLoader(*this, &cl);
+    return tClassLoader{cl};
+  }
+
+  tAlloc<jmethodID> get_methods() const {
+    tAlloc<jmethodID> methods;
+    env()->GetClassMethods(*this, methods, methods);
+    return methods;
+  }
 };
 
 class tClassLoader : public tObject {
