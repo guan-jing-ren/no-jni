@@ -94,12 +94,18 @@ public:
     return *this;
   }
 
-  static jReference steal(jobject &o) {
+  template <typename J> static jReference steal(J &j) {
+    static_assert(std::is_convertible<J, jobject>::value);
+    jobject o = nullptr;
+    std::swap(o, reinterpret_cast<jobject &>(j));
     jReference ref;
     std::swap(ref.obj, o);
     ref.type = ref.obj ? env()->GetObjectRefType(ref.obj) : JNIInvalidRefType;
     return ref;
   }
+
+  operator jobject() const { return obj; }
+  operator bool() const { return obj; }
 
   bool is_local() const { return type == JNILocalRefType; }
   bool is_global() const { return type == JNIGlobalRefType; }
