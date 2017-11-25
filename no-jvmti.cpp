@@ -174,6 +174,13 @@ public:
 
 class tClass : public tObject {
 
+  template <typename G, jvmtiError (jvmtiEnv::*getter)(jclass, jint *, G **)>
+  tAlloc<G> get_members() const {
+    tAlloc<G> members;
+    (env()->*getter)(*this, members, members);
+    return members;
+  }
+
 public:
   operator jclass() const { return static_cast<jclass>(cast(*this)); }
 
@@ -204,16 +211,13 @@ public:
   }
 };
 
-class tMethod {
-  static jvmtiEnv *env() { return tenv; }
-  jmethodID id;
+template <typename M> class tMember {
+protected:
+  M id;
 
   std::string nm, sig, gen;
 
-public:
-  tMethod(jmethodID id) : id(id) {
-    tAlloc<char> n, s, g;
-    env()->GetMethodName(id, n, s, g);
+  void set_name(tAlloc<char> &n, tAlloc<char> &s, tAlloc<char> &g) {
     if (n.j)
       nm = n.j;
     if (s.j)
@@ -222,14 +226,27 @@ public:
       gen = g.j;
   }
 
-  operator jmethodID() const { return id; }
+public:
+  operator M() const { return id; }
 
   const std::string &name() const { return nm; }
   const std::string &signature() const { return sig; }
   const std::string &generic() const { return gen; }
 };
 
-class tField {
+class tMethod : public tMember<jmethodID> {
+  static jvmtiEnv *env() { return tenv; }
+
+public:
+  tMethod(jmethodID i) {
+    id = i;
+    tAlloc<char> n, s, g;
+    env()->GetMethodName(id, n, s, g);
+    set_name(n, s, g);
+  }
+};
+
+class tField : public tMember<jfieldID> {
   static jvmtiEnv *env() { return tenv; }
   tClass clazz;
   jfieldID id;
@@ -237,18 +254,13 @@ class tField {
   std::string nm, sig, gen;
 
 public:
-  tField(tClass c, jfieldID id) : clazz(c), id(id) {
+  tField(tClass c, jfieldID i) : clazz(c) {
+    id = i;
     tAlloc<char> n, s, g;
     env()->GetFieldName(clazz, id, n, s, g);
-    if (n.j)
-      nm = n.j;
-    if (s.j)
-      sig = s.j;
-    if (g.j)
-      gen = g.j;
+    set_name(n, s, g);
   }
 
-  operator jfieldID() const { return id; }
 
   const std::string &name() const { return nm; }
   const std::string &signature() const { return sig; }
