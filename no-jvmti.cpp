@@ -240,6 +240,12 @@ public:
     env()->GetMethodName(id, n, s, g);
     set_name(n, s, g);
   }
+
+  tClass declaring_class() const {
+    jclass cls;
+    env()->GetMethodDeclaringClass(id, &cls);
+    return tClass{jReference::steal(cls)};
+  }
 };
 
 class tField : public tMember<jfieldID> {
@@ -252,6 +258,12 @@ public:
     tAlloc<char> n, s, g;
     env()->GetFieldName(clazz, id, n, s, g);
     set_name(n, s, g);
+  }
+
+  tClass declaring_class() const {
+    jclass cls;
+    env()->GetFieldDeclaringClass(clazz, id, &cls);
+    return tClass{jReference::steal(cls)};
   }
 
   void watch_access(bool watch) {
