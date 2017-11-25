@@ -152,8 +152,8 @@ template <typename J> struct tAlloc {
     return reinterpret_cast<JJ **>(&j);
   }
 
-  J *begin() { return j; }
-  J *end() { return j + count; }
+  auto begin() { return j; }
+  auto end() { return j + count; }
 };
 
 class tObject : public jObject<tObject> {
@@ -173,7 +173,7 @@ public:
 
   tClassLoader(jobject o) : tObject(o) {}
 
-  tAlloc<jclass> classes() const {
+  auto classes() const {
     tAlloc<jclass> cls;
     env()->GetClassLoaderClasses(cast(*this), cls, cls);
     return cls;
@@ -183,7 +183,7 @@ public:
 class tClass : public tObject {
 
   template <typename G, jvmtiError (jvmtiEnv::*getter)(jclass, jint *, G **)>
-  tAlloc<G> get_members() const {
+  auto get_members() const {
     tAlloc<G> members;
     (env()->*getter)(*this, members, members);
     return members;
@@ -221,7 +221,7 @@ protected:
 
   std::string nm, sig, gen;
 
-  void set_name(tAlloc<char> &n, tAlloc<char> &s, tAlloc<char> &g) {
+  auto set_name(tAlloc<char> &n, tAlloc<char> &s, tAlloc<char> &g) {
     if (n.j)
       nm = n.j;
     if (s.j)
@@ -249,13 +249,13 @@ public:
     set_name(n, s, g);
   }
 
-  tClass declaring_class() const {
+  auto declaring_class() const {
     jclass cls;
     env()->GetMethodDeclaringClass(id, &cls);
     return tClass{jReference::steal(cls)};
   }
 
-  void breakpoint(bool brk, jlocation loc) {
+  auto breakpoint(bool brk, jlocation loc) {
     if (brk)
       env()->SetBreakpoint(*this, loc);
     else
@@ -314,20 +314,20 @@ public:
     set_name(n, s, g);
   }
 
-  tClass declaring_class() const {
+  auto declaring_class() const {
     jclass cls;
     env()->GetFieldDeclaringClass(clazz, id, &cls);
     return tClass{jReference::steal(cls)};
   }
 
-  void watch_access(bool watch) {
+  auto watch_access(bool watch) const {
     if (watch)
       env()->SetFieldAccessWatch(clazz, *this);
     else
       env()->ClearFieldAccessWatch(clazz, *this);
   }
 
-  void watch_modify(bool watch) {
+  auto watch_modify(bool watch) const {
     if (watch)
       env()->SetFieldModificationWatch(clazz, *this);
     else
