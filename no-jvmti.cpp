@@ -446,6 +446,10 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
   JavaVirtualMachine::env = jni_env;
   std::cout << "VM Initialized\n";
 
+  auto display_class = tClass{Display::getClass()}.classloader().classes();
+  for (tClass c : display_class)
+    std::cout << c.signature() << "\n";
+
   tAlloc<jclass> all_loaded;
   tenv->GetLoadedClasses(all_loaded, all_loaded);
   std::unordered_map<std::string, tClass> classes;
