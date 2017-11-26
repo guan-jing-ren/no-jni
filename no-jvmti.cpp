@@ -14,7 +14,9 @@ env LD_LIBRARY_PATH=/usr/lib/jvm/default-java/jre/lib/amd64/server/ ./nojni -Dru
 #include <cstdio>
 #include <iosfwd>
 #include <numeric>
+#include <regex>
 #include <unordered_map>
+#include <unordered_set>
 #include <vector>
 
 using namespace std;
@@ -26,10 +28,12 @@ jvmtiEnv *tenv;
 void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread);
 void VMDeath(jvmtiEnv *jvmti_env, JNIEnv *jni_env);
 
+std::string agent_options;
+
 jint Agent_OnLoad(JavaVM *vm, char *options, void *reserved) {
   JavaVirtualMachine::vm = vm;
   vm->GetEnv(reinterpret_cast<void **>(&tenv), JVMTI_VERSION_1_2);
-  std::cout << "JVMTI options: " << string{options ? options : ""} << "\n";
+  agent_options = options ? options : "";
 
   static jvmtiCapabilities cap;
   cap.can_tag_objects = true;
@@ -205,7 +209,7 @@ public:
   std::string signature() const {
     tAlloc<char> sig, gen;
     env()->GetClassSignature(*this, sig, gen);
-    return sig.j;
+    return sig.j ? sig.j : "";
   }
 
   tClassLoader classloader() const {
@@ -220,6 +224,11 @@ public:
 
   auto get_fields() const {
     return get_members<jfieldID, &jvmtiEnv::GetClassFields>();
+  }
+
+  auto superclass() const {
+    auto scls = JavaVirtualMachine::env->GetSuperclass(*this);
+    return tClass{jReference::steal(scls)};
   }
 };
 
@@ -442,57 +451,265 @@ public:
   auto pop_frame() const { env()->PopFrame(*this); }
 };
 
+std::string demangle(const std::string &sig, const std::string &pkg) {
+  std::regex token_rx{"(\\[*?)([ZBCSIJFDV()]|L.+?;)"};
+  return std::accumulate(
+      std::sregex_iterator{begin(sig), end(sig), token_rx}, {}, std::string{},
+      [&pkg](std::string sig, const std::smatch &sub) {
+        auto token = sub.str();
+        auto sep = (sig.empty() || sig.back() == '(' ? "" : ",");
+        switch (token[0]) {
+        case 'Z':
+          return sig + sep + "jboolean";
+        case 'B':
+          return sig + sep + "jbyte";
+        case 'C':
+          return sig + sep + "jchar";
+        case 'S':
+          return sig + sep + "jshort";
+        case 'I':
+          return sig + sep + "jint";
+        case 'J':
+          return sig + sep + "jlong";
+        case 'F':
+          return sig + sep + "jfloat";
+        case 'D':
+          return sig + sep + "jdouble";
+        case 'V':
+          return sig + sep + "jvoid";
+        case '(':
+        case ')':
+          return sig + token[0];
+        case '[':
+          return sig + sep + demangle(sub[2].str(), pkg) + " " +
+                 std::string(sub[1].length(), '*');
+        case 'L':
+          std::rotate(begin(token), ++begin(token), end(token));
+          token.pop_back();
+          token.pop_back();
+          if (token.find(pkg + '/') == 0)
+            token = token.substr(pkg.size() + 1);
+          if (token.find("java/lang/") == 0)
+            token = token.substr(std::strlen("java/lang/"));
+          return sig + sep + std::regex_replace(token, std::regex{"/"}, "::");
+        };
+      });
+}
+
+constexpr jPackage java_util = java / "util";
+constexpr jPackage java_util_jar = java_util / "jar";
+constexpr jPackage java_util_zip = java_util / "zip";
+
+class ZipEntry : public jObject<ZipEntry> {
+public:
+  static constexpr auto signature = java_util_zip / "ZipEntry";
+
+  constexpr static Enum method_signatures{
+      jConstructor<ZipEntry>(),
+      jConstructor<String>(),
+      jMethod<Object()>("clone"),
+      jMethod<String()>("getComment"),
+      jMethod<jlong()>("getCompressedSize"),
+      jMethod<jlong()>("getCrc"),
+      jMethod<jbyte *()>("getExtra"),
+      jMethod<jint()>("getMethod"),
+      jMethod<String()>("getName"),
+      jMethod<jlong()>("getSize"),
+      jMethod<jlong()>("getTime"),
+      jMethod<jint()>("hashCode"),
+      jMethod<jboolean()>("isDirectory"),
+      jMethod<jvoid(String)>("setComment"),
+      jMethod<jvoid(long)>("setCompressedSize"),
+      jMethod<jvoid(long)>("setCrc"),
+      jMethod<jvoid(jbyte[])>("setExtra"),
+      jMethod<jvoid(int)>("setMethod"),
+      jMethod<jvoid(long)>("setSize"),
+      jMethod<jvoid(long)>("setTime"),
+      jMethod<String()>("toString"),
+  };
+};
+
+template <typename E> class Enumeration : public jObject<Enumeration<E>> {
+public:
+  static constexpr auto signature = java_util / "Enumeration";
+
+  constexpr static Enum method_signatures{
+      jMethod<jboolean()>("hasMoreElements"),
+      jMethod<Object()>("nextElement"),
+  };
+};
+
+class ZipFile : public jObject<ZipFile> {
+public:
+  using jObject::jObject;
+
+  static constexpr auto signature = java_util_zip / "ZipFile";
+
+  constexpr static Enum method_signatures{
+      jConstructor<String>(),
+      jMethod<jvoid()>("close"),
+      jMethod<Enumeration<ZipEntry>()>("entries"),
+      jMethod<jvoid()>("finalize"),
+      jMethod<String()>("getComment"),
+      jMethod<ZipEntry(String)>("getEntry"),
+      jMethod<String()>("getName"),
+      jMethod<jint()>("size"),
+  };
+};
+
 void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
   JavaVirtualMachine::env = jni_env;
-  std::cout << "VM Initialized\n";
+  // std::cout << "VM Initialized\n";
 
-  auto display_class = tClass{Display::getClass()}.classloader().classes();
-  for (tClass c : display_class)
-    std::cout << c.signature() << "\n";
-
-  tAlloc<jclass> all_loaded;
-  tenv->GetLoadedClasses(all_loaded, all_loaded);
+  // auto display_class = tClass{Display::getClass()}.classloader().classes();
+  // for (tClass c : display_class)
+  //   std::cout << c.signature() << "\n";
   std::unordered_map<std::string, tClass> classes;
   std::vector<std::string> csignatures;
-  std::transform(begin(all_loaded), end(all_loaded), back_inserter(csignatures),
-                 [&classes](const tClass &clazz) mutable {
-                   auto sig = clazz.signature();
-                   classes[sig] = clazz;
-                   return sig;
-                 });
+
+  std::regex classpath_rx{"-Djava.class.path=(.+)"};
+  std::regex option_rx{","};
+  std::smatch classpath;
+  auto classpath_arg = std::find_if(
+      std::sregex_token_iterator{begin(agent_options), end(agent_options),
+                                 option_rx, -1},
+      {}, [classpath_rx, &classpath](const std::ssub_match &sub) {
+        auto arg = sub.str();
+        return std::regex_match(arg, classpath, classpath_rx);
+      });
+
+  std::vector<std::string> packages;
+  if (classpath_arg != std::sregex_token_iterator{}) {
+    // std::cout << "Classpath: " << classpath[1].str() << "\n";
+    ZipFile zip{String{classpath[1].str().c_str()}};
+    auto entries = zip.call<Enumeration<ZipEntry>>("entries");
+    // std::cout << "Entries: " << entries << "\n";
+
+    std::regex sig_rx{R"((.+)/(.+?)\.class)"};
+    std::smatch signature;
+    std::unordered_set<std::string> pkgs;
+    while (entries.call<jboolean>("hasMoreElements")) {
+      Object entry{entries.call<Object>("nextElement")};
+      std::string name = entry;
+      std::regex_match(name, signature, sig_rx);
+      auto package = signature[1].str();
+      auto clazz = signature[2].str();
+      if (clazz.empty() || package.find("/internal/") != std::string::npos)
+        continue;
+
+      // std::cout << "// Package: " << signature[1] << " Class: " <<
+      // signature[2]
+      //           << "\n";
+
+      for (auto p = 0; p != std::string::npos; p = package.find('/', ++p))
+        pkgs.insert(package.substr(0, p));
+      pkgs.insert(package);
+
+      auto sig = package + "/" + clazz;
+      csignatures.push_back(sig);
+      classes[sig] = tClass{JavaVirtualMachine::env->FindClass(sig.c_str())};
+      // std::cout << "// Superclass: " << classes[sig].superclass().signature()
+      // << "\n";
+    }
+    pkgs.erase("");
+    packages = {begin(pkgs), end(pkgs)};
+    std::sort(begin(packages), end(packages));
+  }
+
+  std::unordered_map<std::string, std::pair<std::string, std::string>>
+      pkg_to_nspace_pkg_var;
+
+  for (auto &pkg : packages) {
+    auto nspace = std::regex_replace(pkg, std::regex{"/"}, "::");
+    auto pkg_var = std::regex_replace(pkg, std::regex{"/"}, "_");
+    pkg_to_nspace_pkg_var[pkg] = {nspace, pkg_var};
+    auto pkg_parent = pkg_var.substr(0, pkg_var.rfind('_'));
+    auto pkg_child =
+        pkg_var.substr(pkg_parent.size() + (pkg_parent != pkg_var));
+    auto pkg_sig = "constexpr jPackage " + pkg_var + " = " + pkg_parent +
+                   " / \"" + pkg_child + "\";";
+    std::cout << "namespace " << nspace << " {}\n" << pkg_sig << "\n";
+  }
+
+  // tAlloc<jclass> all_loaded;
+  // tenv->GetLoadedClasses(all_loaded, all_loaded);
+  // std::transform(begin(all_loaded), end(all_loaded),
+  // back_inserter(csignatures),
+  //                [&classes](const tClass &clazz) mutable {
+  //                  auto sig = clazz.signature();
+  //                  classes[sig] = clazz;
+  //                  return sig;
+  //                });
   std::sort(begin(csignatures), end(csignatures));
 
-  for (std::string sig : csignatures) {
-    std::cout << sig << "\n";
+  for (auto &sig : csignatures) {
+    auto pkg = sig.substr(0, sig.rfind("/"));
+    auto cls = sig.substr(pkg.size() + (pkg != sig));
     auto clazz = classes[sig];
+    auto ssig = clazz.superclass().signature();
+    auto scls = std::regex_replace(demangle(ssig, pkg), std::regex{"/"}, "::");
+    if (scls.empty())
+      scls = "Object";
+
+    std::cout << "class "
+              << pkg_to_nspace_pkg_var[pkg].first + "::" + cls +
+                     " : public jObject<" + cls + ", " + scls + "> {\n";
+
+    std::cout << "public:\n";
+    std::cout << "\tusing jObject::jObject;\n\n";
+    std::cout << "\tstatic constexpr auto signature = " +
+                     pkg_to_nspace_pkg_var[pkg].second + " / \"" + cls +
+                     "\";\n\n";
 
     auto fields = clazz.get_fields();
-    std::vector<std::string> fsignatures;
+    std::vector<std::pair<std::string, std::string>> fsignatures;
     std::transform(begin(fields), end(fields), back_inserter(fsignatures),
                    [clazz](jfieldID id) {
                      tField field{clazz, id};
-                     return field.name() + " " + field.signature();
+                     return std::make_pair(field.name(), field.signature());
                    });
     std::sort(begin(fsignatures), end(fsignatures));
-    for (auto &sig : fsignatures)
-      std::cout << "\t" << sig << "\n";
-    std::cout << "\n";
+    std::cout << "\tconstexpr static Enum field_signatures{\n";
+    if (fsignatures.empty())
+      std::cout << "\t\tcexprstr{\"\\0\"}, //\n";
+    else
+      for (auto &sig : fsignatures) {
+        if (sig.second.find("/internal/") != std::string::npos)
+          break;
+
+        std::cout << "\t\tjField<" << demangle(sig.second, pkg)
+                  << ">(\"" + sig.first + "\"), //\n";
+      }
+    std::cout << "\t};\n\n";
 
     auto methods = clazz.get_methods();
-    std::unordered_map<std::string, std::vector<tMethod::tVariable>> all_vars;
-    std::vector<std::string> msignatures;
+    std::vector<std::pair<std::string, std::string>> msignatures;
     std::transform(begin(methods), end(methods), back_inserter(msignatures),
-                   [&all_vars](const tMethod &method) mutable {
-                     auto sig = method.name() + " " + method.signature();
-                     all_vars[sig] = method.local_variables();
-                     return sig;
+                   [](const tMethod &method) mutable {
+                     return std::make_pair(method.name(), method.signature());
                    });
     std::sort(begin(msignatures), end(msignatures));
-    for (auto &sig : msignatures) {
-      std::cout << "\t" << sig << "\n";
-      for (auto &var : all_vars[sig])
-        std::cout << "\t\t" << var.name << " " << var.signature << "\n";
-    }
+    std::cout << "\tconstexpr static Enum method_signatures{\n";
+    if (msignatures.empty())
+      std::cout << "\t\tcexprstr{\"\\0\"}, //\n";
+    else
+      for (auto &sig : msignatures) {
+        if (sig.second.find("/internal/") != std::string::npos)
+          break;
+
+        std::rotate(begin(sig.second),
+                    ++std::find(begin(sig.second), end(sig.second), ')'),
+                    end(sig.second));
+        if (sig.first == "<init>")
+          std::cout << "\t\tjConstructor<" + demangle(sig.second, pkg) +
+                           ">(), //\n";
+        else
+          std::cout << "\t\tjMethod<" + demangle(sig.second, pkg) + ">(\"" +
+                           sig.first + "\"), //\n";
+      }
+    std::cout << "\t};\n";
+
+    std::cout << "};\n\n";
   }
 }
 
