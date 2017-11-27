@@ -695,6 +695,19 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
 
     std::cout << "\t};\n\n";
 
+    for (auto &sig : fsignatures) {
+      std::cout << "\t" << &"\0static "[std::get<2>(sig)] << "auto "
+                << std::get<0>(sig) << "() const {\n"
+                << "\t\tstatic_assert(field_signatures[jField<"
+                << demangle(std::get<1>(sig), pkg) << ">(\"" << std::get<0>(sig)
+                << "\")] != -1);\n"
+                << "\t\treturn "
+                << "\0s"[std::get<2>(sig)] << "at<"
+                << demangle(std::get<1>(sig), pkg) << ">(\"" << std::get<0>(sig)
+                << "\");\n"
+                << "\t}\n\n";
+    }
+
     auto methods = clazz.get_methods();
     std::vector<std::tuple<std::string, std::string, bool>> msignatures;
     std::transform(begin(methods), end(methods), back_inserter(msignatures),
@@ -726,7 +739,24 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
           std::cout << "\t\tjMethod<" + demangle(std::get<1>(sig), pkg) +
                            ">(\"" + std::get<0>(sig) + "\"), //\n";
       }
-    std::cout << "\t};\n";
+    std::cout << "\t};\n\n";
+
+    for (auto &sig : msignatures) {
+      if (std::get<0>(sig).find("init>") != std::string::npos)
+        continue;
+      auto return_type =
+          demangle(std::get<1>(sig).substr(0, std::get<1>(sig).find('(')), pkg);
+      std::cout << "\ttemplate<typename... Args>\n"
+                << "\t" << &"\0static "[std::get<2>(sig)] << "auto "
+                << std::get<0>(sig) << "(Args &&...args) const {\n"
+                << "\t\tstatic_assert(method_signatures[jMethod<" << return_type
+                << "(std::decay_t<Args>...)>(\"" << std::get<0>(sig)
+                << "\")] != -1);\n"
+                << "\t\treturn "
+                << "\0s"[std::get<2>(sig)] << "call<" << return_type << ">(\""
+                << std::get<0>(sig) << "\", std::forward<Args>(args)...);\n"
+                << "\t}\n\n";
+    }
 
     std::cout << "};\n\n";
   }
