@@ -718,6 +718,8 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
 
     std::cout << "};\n\n";
   }
+
+  JavaVirtualMachine::env->ExceptionClear();
 }
 
 void VMDeath(jvmtiEnv *jvmti_env, JNIEnv *jni_env) {
