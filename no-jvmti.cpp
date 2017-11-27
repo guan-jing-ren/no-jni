@@ -677,18 +677,22 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
                      return std::make_tuple(field.name(), field.signature(),
                                             field.is_static());
                    });
+    fsignatures.erase(std::remove_if(begin(fsignatures), end(fsignatures),
+                                     [](const auto &sig) {
+                                       return std::get<1>(sig).find(
+                                                  "/internal/") !=
+                                              std::string::npos;
+                                     }),
+                      end(fsignatures));
     std::sort(begin(fsignatures), end(fsignatures));
     std::cout << "\tconstexpr static Enum field_signatures{\n";
     if (fsignatures.empty())
       std::cout << "\t\tcexprstr{\"\\0\"}, //\n";
     else
-      for (auto &sig : fsignatures) {
-        if (sig.second.find("/internal/") != std::string::npos)
-          break;
-
+      for (auto &sig : fsignatures)
         std::cout << "\t\tjField<" << demangle(std::get<1>(sig), pkg) << ">(\""
                   << std::get<0>(sig) << "\"), //\n";
-      }
+
     std::cout << "\t};\n\n";
 
     auto methods = clazz.get_methods();
@@ -698,15 +702,19 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
                      return std::make_tuple(method.name(), method.signature(),
                                             method.is_static());
                    });
+    msignatures.erase(std::remove_if(begin(msignatures), end(msignatures),
+                                     [](const auto &sig) {
+                                       return std::get<1>(sig).find(
+                                                  "/internal/") !=
+                                              std::string::npos;
+                                     }),
+                      end(msignatures));
     std::sort(begin(msignatures), end(msignatures));
     std::cout << "\tconstexpr static Enum method_signatures{\n";
     if (msignatures.empty())
       std::cout << "\t\tcexprstr{\"\\0\"}, //\n";
     else
       for (auto &sig : msignatures) {
-        if (sig.second.find("/internal/") != std::string::npos)
-          break;
-
         std::rotate(
             begin(std::get<1>(sig)),
             ++std::find(begin(std::get<1>(sig)), end(std::get<1>(sig)), ')'),
