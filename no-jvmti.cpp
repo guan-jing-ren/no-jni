@@ -670,11 +670,12 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
                      "\";\n\n";
 
     auto fields = clazz.get_fields();
-    std::vector<std::pair<std::string, std::string>> fsignatures;
+    std::vector<std::tuple<std::string, std::string, bool>> fsignatures;
     std::transform(begin(fields), end(fields), back_inserter(fsignatures),
                    [clazz](jfieldID id) {
                      tField field{clazz, id};
-                     return std::make_pair(field.name(), field.signature());
+                     return std::make_tuple(field.name(), field.signature(),
+                                            field.is_static());
                    });
     std::sort(begin(fsignatures), end(fsignatures));
     std::cout << "\tconstexpr static Enum field_signatures{\n";
@@ -685,16 +686,17 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
         if (sig.second.find("/internal/") != std::string::npos)
           break;
 
-        std::cout << "\t\tjField<" << demangle(sig.second, pkg)
-                  << ">(\"" + sig.first + "\"), //\n";
+        std::cout << "\t\tjField<" << demangle(std::get<1>(sig), pkg) << ">(\""
+                  << std::get<0>(sig) << "\"), //\n";
       }
     std::cout << "\t};\n\n";
 
     auto methods = clazz.get_methods();
-    std::vector<std::pair<std::string, std::string>> msignatures;
+    std::vector<std::tuple<std::string, std::string, bool>> msignatures;
     std::transform(begin(methods), end(methods), back_inserter(msignatures),
                    [](const tMethod &method) mutable {
-                     return std::make_pair(method.name(), method.signature());
+                     return std::make_tuple(method.name(), method.signature(),
+                                            method.is_static());
                    });
     std::sort(begin(msignatures), end(msignatures));
     std::cout << "\tconstexpr static Enum method_signatures{\n";
@@ -705,15 +707,16 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
         if (sig.second.find("/internal/") != std::string::npos)
           break;
 
-        std::rotate(begin(sig.second),
-                    ++std::find(begin(sig.second), end(sig.second), ')'),
-                    end(sig.second));
-        if (sig.first == "<init>")
-          std::cout << "\t\tjConstructor<" + demangle(sig.second, pkg) +
+        std::rotate(
+            begin(std::get<1>(sig)),
+            ++std::find(begin(std::get<1>(sig)), end(std::get<1>(sig)), ')'),
+            end(std::get<1>(sig)));
+        if (std::get<0>(sig) == "<init>")
+          std::cout << "\t\tjConstructor<" + demangle(std::get<1>(sig), pkg) +
                            ">(), //\n";
         else
-          std::cout << "\t\tjMethod<" + demangle(sig.second, pkg) + ">(\"" +
-                           sig.first + "\"), //\n";
+          std::cout << "\t\tjMethod<" + demangle(std::get<1>(sig), pkg) +
+                           ">(\"" + std::get<0>(sig) + "\"), //\n";
       }
     std::cout << "\t};\n";
 
