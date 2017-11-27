@@ -236,6 +236,7 @@ template <typename M> class tMember {
 protected:
   M id;
 
+  jint modifiers;
   std::string nm, sig, gen;
 
   auto set_name(tAlloc<char> &n, tAlloc<char> &s, tAlloc<char> &g) {
@@ -280,7 +281,10 @@ public:
     tAlloc<char> n, s, g;
     env()->GetMethodName(id, n, s, g);
     set_name(n, s, g);
+    env()->GetMethodModifiers(id, &modifiers);
   }
+
+  bool is_static() const { return modifiers & 0x8; }
 
   auto declaring_class() const {
     jclass cls;
@@ -356,7 +360,10 @@ public:
     tAlloc<char> n, s, g;
     env()->GetFieldName(clazz, id, n, s, g);
     set_name(n, s, g);
+    env()->GetFieldModifiers(clazz, id, &modifiers);
   }
+
+  bool is_static() const { return modifiers & 0x8; }
 
   auto declaring_class() const {
     jclass cls;
