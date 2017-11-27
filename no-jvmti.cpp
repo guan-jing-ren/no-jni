@@ -500,6 +500,7 @@ std::string demangle(const std::string &sig, const std::string &pkg) {
             token = token.substr(std::strlen("java/lang/"));
           return sig + sep + std::regex_replace(token, std::regex{"/"}, "::");
         };
+        return std::string{};
       });
 }
 
