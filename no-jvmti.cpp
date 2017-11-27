@@ -464,7 +464,7 @@ std::string demangle(const std::string &sig, const std::string &pkg) {
       std::sregex_iterator{begin(sig), end(sig), token_rx}, {}, std::string{},
       [&pkg](std::string sig, const std::smatch &sub) {
         auto token = sub.str();
-        auto sep = (sig.empty() || sig.back() == '(' ? "" : ",");
+        auto sep = (sig.empty() || sig.back() == '(' ? "" : ", ");
         switch (token[0]) {
         case 'Z':
           return sig + sep + "jboolean";
