@@ -144,6 +144,8 @@ struct jvoid final {
   constexpr jvoid() = default;
 };
 
+template <typename T> constexpr auto signature = T::signature;
+
 template <typename T> struct make_signature {
   static constexpr bool is_member_function = false;
   constexpr make_signature() = default;
@@ -175,7 +177,7 @@ template <typename T> struct make_signature {
                     std::is_pointer<typename T::class_type>::value)
         return make_signature<typename T::class_type>{}();
       else
-        return "L" + T::signature + ";";
+        return "L" + signature<T> + ";";
     } else {
       struct unsupported {};
       return unsupported{};
@@ -234,7 +236,7 @@ template <typename Class, typename SuperClass = Object> class jClass {
     if constexpr (std::is_array<class_type>::value)
       return make_signature<superclass_type>{}();
     else
-      return class_type::signature;
+      return ::signature<class_type>;
     ;
   }
 
@@ -601,6 +603,9 @@ template <typename E, bool A> struct std::iterator_traits<Iterator<E, A>> {
   using pointer = Iterator<E, A>;
 };
 
+template <typename T> constexpr auto method_signatures = T::method_signatures;
+template <typename T> constexpr auto field_signatures = T::field_signatures;
+
 template <typename Class, typename SuperClass = Object> class jObject {
   jReference ref;
 
@@ -654,17 +659,18 @@ template <typename Class, typename SuperClass = Object> class jObject {
     G m = nullptr;
     if constexpr (std::is_same<G, jmethodID>::value)
       m = find_member<G, getter>(
-          c, member_index<G, F>(s, class_type::method_signatures),
-          class_type::method_signatures);
+          c, member_index<G, F>(s, method_signatures<class_type>),
+          method_signatures<class_type>);
     else if constexpr (std::is_same<G, jfieldID>::value)
       m = find_member<G, getter>(
-          c, member_index<G, F>(s, class_type::field_signatures),
-          class_type::field_signatures);
+          c, member_index<G, F>(s, field_signatures<class_type>),
+          field_signatures<class_type>);
     if constexpr (!std::is_same<class_type, superclass_type>::value)
       if (!m)
         m = superclass_type::template get_member<G, getter, F>(s, c);
     if (!m) {
       const auto sig = jMember<std::is_same<G, jmethodID>::value, F>(s);
+      std::cout << "Fallback method find for: " << sig << "\n";
       m = get_member<G, getter>(sig, c);
     }
     return m;
@@ -762,7 +768,7 @@ public:
       return std::string(String{env()->CallObjectMethod(ref.obj, m)});
     } else {
       if (!ref.obj) {
-        return print_null(class_type::signature);
+        return print_null(signature<class_type>);
       }
       return call<String>("toString");
     }
