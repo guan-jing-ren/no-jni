@@ -638,6 +638,7 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
                    " / \"" + pkg_child + "\";";
     std::cout << "namespace " << nspace << " {}\n" << pkg_sig << "\n";
   }
+  std::cout << "\n";
 
   // tAlloc<jclass> all_loaded;
   // tenv->GetLoadedClasses(all_loaded, all_loaded);
@@ -649,6 +650,19 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
   //                  return sig;
   //                });
   std::sort(begin(csignatures), end(csignatures));
+
+  for (const auto &sig : csignatures) {
+    auto pkg = sig.substr(0, sig.rfind("/"));
+    auto cls = sig.substr(pkg.size() + (pkg != sig));
+
+    std::cout << "namespace " << std::regex_replace(pkg, std::regex{"/"}, "::")
+              << " { class " << cls << "; }\n";
+    std::cout << "template<> constexpr auto signature<"
+              << std::regex_replace(sig, std::regex{"/"}, "::")
+              << "> = " << std::regex_replace(pkg, std::regex{"/"}, "_")
+              << " / \"" << cls << "\";\n";
+  }
+  std::cout << "\n";
 
   for (const auto &sig : csignatures) {
     auto pkg = sig.substr(0, sig.rfind("/"));
