@@ -650,7 +650,7 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
   //                });
   std::sort(begin(csignatures), end(csignatures));
 
-  for (auto &sig : csignatures) {
+  for (const auto &sig : csignatures) {
     auto pkg = sig.substr(0, sig.rfind("/"));
     auto cls = sig.substr(pkg.size() + (pkg != sig));
     auto clazz = classes[sig];
@@ -689,13 +689,13 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
     if (fsignatures.empty())
       std::cout << "\t\tcexprstr{\"\\0\"}, //\n";
     else
-      for (auto &sig : fsignatures)
+      for (const auto &sig : fsignatures)
         std::cout << "\t\tjField<" << demangle(std::get<1>(sig), pkg) << ">(\""
                   << std::get<0>(sig) << "\"), //\n";
 
     std::cout << "\t};\n\n";
 
-    for (auto &sig : fsignatures) {
+    for (const auto &sig : fsignatures) {
       std::cout << "\t" << &"\0static "[std::get<2>(sig)] << "auto "
                 << std::get<0>(sig) << "() const {\n"
                 << "\t\tstatic_assert(field_signatures[jField<"
@@ -741,7 +741,7 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
       }
     std::cout << "\t};\n\n";
 
-    for (auto &sig : msignatures) {
+    for (const auto &sig : msignatures) {
       if (std::get<0>(sig).find("init>") != std::string::npos)
         continue;
       auto return_type =
