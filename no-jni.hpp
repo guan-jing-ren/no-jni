@@ -47,6 +47,8 @@ class jReference {
 
 public:
   jReference(jobject o) {
+    if (!o)
+      return;
     obj = env()->NewGlobalRef(o);
     type = env()->GetObjectRefType(obj);
   }
