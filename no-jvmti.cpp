@@ -696,14 +696,14 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
     std::cout << "\t};\n\n";
 
     for (const auto &sig : fsignatures) {
-      std::cout << "\t" << &"\0static "[std::get<2>(sig)] << "auto "
+      std::cout << "\ttemplate<typename F = " << demangle(std::get<1>(sig), pkg)
+                << ">\n"
+                << "\t" << &"\0static "[std::get<2>(sig)] << "auto "
                 << std::get<0>(sig) << "() const {\n"
-                << "\t\tstatic_assert(field_signatures[jField<"
-                << demangle(std::get<1>(sig), pkg) << ">(\"" << std::get<0>(sig)
-                << "\")] != -1);\n"
+                << "\t\tstatic_assert(field_signatures[jField<F>(\""
+                << std::get<0>(sig) << "\")] != -1);\n"
                 << "\t\treturn "
-                << "\0s"[std::get<2>(sig)] << "at<"
-                << demangle(std::get<1>(sig), pkg) << ">(\"" << std::get<0>(sig)
+                << "\0s"[std::get<2>(sig)] << "at<F>(\"" << std::get<0>(sig)
                 << "\");\n"
                 << "\t}\n\n";
     }
@@ -746,15 +746,16 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
         continue;
       auto return_type =
           demangle(std::get<1>(sig).substr(0, std::get<1>(sig).find('(')), pkg);
-      std::cout << "\ttemplate<typename... Args>\n"
+      std::cout << "\ttemplate<typename R = " << return_type
+                << ", typename... Args>\n"
                 << "\t" << &"\0static "[std::get<2>(sig)] << "auto "
                 << std::get<0>(sig) << "(Args &&...args) const {\n"
-                << "\t\tstatic_assert(method_signatures[jMethod<" << return_type
-                << "(std::decay_t<Args>...)>(\"" << std::get<0>(sig)
-                << "\")] != -1);\n"
+                << "\t\tstatic_assert(method_signatures[jMethod<R(std::decay_t<"
+                   "Args>...)>(\""
+                << std::get<0>(sig) << "\")] != -1);\n"
                 << "\t\treturn "
-                << "\0s"[std::get<2>(sig)] << "call<" << return_type << ">(\""
-                << std::get<0>(sig) << "\", std::forward<Args>(args)...);\n"
+                << "\0s"[std::get<2>(sig)] << "call<R>(\"" << std::get<0>(sig)
+                << "\", std::forward<Args>(args)...);\n"
                 << "\t}\n\n";
     }
 
