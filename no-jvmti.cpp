@@ -207,6 +207,8 @@ public:
   using tObject::tObject;
 
   std::string signature() const {
+    if (!cast(*this))
+      return "";
     tAlloc<char> sig, gen;
     env()->GetClassSignature(*this, sig, gen);
     return sig.j ? sig.j : "";
@@ -227,7 +229,11 @@ public:
   }
 
   auto superclass() const {
+    if (!cast(*this))
+      return tClass{};
     auto scls = JavaVirtualMachine::env->GetSuperclass(*this);
+    if (!scls)
+      return tClass{};
     return tClass{jReference::steal(scls)};
   }
 };
