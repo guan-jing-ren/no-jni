@@ -752,9 +752,9 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
     cout << "\t};\n\n";
 
     regex keywords{
-        "(virtual|and|not|xor|or|namespace|signed|delete|union|register|"
-        "signature|null|NULL|BIG_ENDIAN|LITTLE_ENDIAN|OVERFLOW|"
-        "UNDERFLOW)"};
+        "\\b(virtual|and|not|xor|or|export|namespace|signed|delete|union|"
+        "register|signature|null|NULL|BIG_ENDIAN|LITTLE_ENDIAN|"
+        "OVERFLOW|EACCESS|EAGAIN|ASCII|UNDERFLOW)\\b"};
     for (auto &sig : fsignatures) {
       get<0>(sig) = regex_replace(get<0>(sig), keywords, "$1_");
       cout << "\ttemplate<typename F = " << demangle(get<1>(sig)) << ">\n"
