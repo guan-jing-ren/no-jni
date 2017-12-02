@@ -634,6 +634,8 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
       pkg = std::regex_replace(pkg, std::regex{"namespace"}, "namespace_");
   }
 
+  std::cout << "#include \"no-jni.hpp\"\n\n";
+
   std::unordered_map<std::string, std::pair<std::string, std::string>>
       pkg_to_nspace_pkg_var;
 
