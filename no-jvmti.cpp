@@ -715,7 +715,7 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
                                      }),
                       end(fsignatures));
     std::sort(begin(fsignatures), end(fsignatures));
-    std::cout << "\tconstexpr static Enum field_signatures{\n";
+    std::cout << "\tconstexpr static ::Enum field_signatures{\n";
     if (fsignatures.empty())
       std::cout << "\t\tcexprstr{\"\\0\"}, //\n";
     else
@@ -753,7 +753,7 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
                                      }),
                       end(msignatures));
     std::sort(begin(msignatures), end(msignatures));
-    std::cout << "\tconstexpr static Enum method_signatures{\n";
+    std::cout << "\tconstexpr static ::Enum method_signatures{\n";
     if (msignatures.empty())
       std::cout << "\t\tcexprstr{\"\\0\"}, //\n";
     else
