@@ -1,6 +1,6 @@
 // clang-format off
 /*
-clang++ -fPIC -shared -g3 -O3 -std=c++17 -Wall -I /usr/lib/jvm/default-java/include -I /usr/lib/jvm/default-java/include/linux/ -L /usr/lib/jvm/default-java/jre/lib/amd64/server/ -o libnojvmti.so no-jvmti.cpp no-jvm.cpp -ljvm
+clang++ -fPIC -shared -g3 -O3 -std=c++17 -DJAVA -Wall -I /usr/lib/jvm/default-java/include -I /usr/lib/jvm/default-java/include/linux/ -L /usr/lib/jvm/default-java/jre/lib/amd64/server/ -o libnojvmti.so no-jvmti.cpp no-jvm.cpp -ljvm
 env LD_LIBRARY_PATH=/usr/lib/jvm/default-java/jre/lib/amd64/server/ ./nojni -Drun=run
 */
 // clang-format on
@@ -511,9 +511,16 @@ std::string demangle(std::string sig, const std::string &pkg) {
       });
 }
 
-constexpr jPackage java_util = java / "util";
+namespace java::lang {}
+using namespace java::lang;
+
+#ifdef JAVA
+#include "java.hpp"
+#else
+constexpr jPackage java_util = java_ / "util";
 constexpr jPackage java_util_jar = java_util / "jar";
 constexpr jPackage java_util_zip = java_util / "zip";
+#endif
 
 class ZipEntry : public jObject<ZipEntry> {
 public:
