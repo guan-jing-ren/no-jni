@@ -201,6 +201,8 @@ class tClass : public tObject {
     return members;
   }
 
+  jint modifiers;
+
 public:
   operator jclass() const { return static_cast<jclass>(cast(*this)); }
 
@@ -218,6 +220,12 @@ public:
     jobject cl;
     env()->GetClassLoader(*this, &cl);
     return tClassLoader{jReference::steal(cl)};
+  }
+
+  bool is_public() const {
+    jint modifiers;
+    env()->GetClassModifiers(*this, &modifiers);
+    return modifiers & 0x1;
   }
 
   auto get_methods() const {
@@ -291,6 +299,7 @@ public:
   }
 
   bool is_static() const { return modifiers & 0x8; }
+  bool is_public() const { return modifiers & 0x1; }
 
   auto declaring_class() const {
     jclass cls;
@@ -370,6 +379,7 @@ public:
   }
 
   bool is_static() const { return modifiers & 0x8; }
+  bool is_public() const { return modifiers & 0x1; }
 
   auto declaring_class() const {
     jclass cls;
@@ -463,11 +473,11 @@ public:
   auto pop_frame() const { env()->PopFrame(*this); }
 };
 
-string demangle(string sig, const string &pkg) {
+string demangle(string sig) {
   regex token_rx{"(\\[*?)([ZBCSIJFDV()]|L.+?;)"};
   sig = regex_replace(sig, regex{"namespace"}, "namespace_");
   return accumulate(sregex_iterator{begin(sig), end(sig), token_rx}, {},
-                    string{}, [&pkg](string sig, const smatch &sub) {
+                    string{}, [](string sig, const smatch &sub) {
                       auto token = sub.str();
                       auto sep = (sig.empty() || sig.back() == '(' ? "" : ", ");
                       switch (token[0]) {
@@ -493,16 +503,12 @@ string demangle(string sig, const string &pkg) {
                       case ')':
                         return sig + token[0];
                       case '[':
-                        return sig + sep + demangle(sub[2].str(), pkg) + " " +
+                        return sig + sep + demangle(sub[2].str()) + " " +
                                string(sub[1].length(), '*');
                       case 'L':
                         rotate(begin(token), ++begin(token), end(token));
                         token.pop_back();
                         token.pop_back();
-                        if (token.find(pkg + '/') == 0)
-                          token = token.substr(pkg.size() + 1);
-                        if (token.find("java/lang/") == 0)
-                          token = token.substr(strlen("java/lang/"));
                         return sig + sep +
                                regex_replace(token, regex{"/"}, "::");
                       };
@@ -623,8 +629,9 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
 
                  auto sig = package + "/" + clazz;
                  csignatures.push_back(sig);
-                 classes[sig] =
-                     tClass{JavaVirtualMachine::env->FindClass(sig.c_str())};
+                 tClass tc{JavaVirtualMachine::env->FindClass(sig.c_str())};
+                 if (tc.is_public())
+                   classes[sig] = tc;
                }
              });
     pkgs.erase("");
@@ -705,7 +712,7 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
     auto ssig = clazz.superclass().signature();
     if (ssig.find("/internal/") != string::npos)
       ssig.clear();
-    auto scls = regex_replace(demangle(ssig, pkg), regex{"/"}, "::");
+    auto scls = regex_replace(demangle(ssig), regex{"/"}, "::");
     if (scls.empty())
       scls = "Object";
 
@@ -719,17 +726,18 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
                 pkg_to_nspace_pkg_var[pkg].second + " / \"" + cls + "\";\n\n";
 
     auto fields = clazz.get_fields();
-    vector<tuple<string, string, bool>> fsignatures;
+    vector<tuple<string, string, bool, bool>> fsignatures;
     transform(begin(fields), end(fields), back_inserter(fsignatures),
               [clazz](jfieldID id) {
                 tField field{clazz, id};
                 return make_tuple(field.name(), field.signature(),
-                                  field.is_static());
+                                  field.is_static(), field.is_public());
               });
     fsignatures.erase(remove_if(begin(fsignatures), end(fsignatures),
                                 [](const auto &sig) {
-                                  return get<1>(sig).find("/internal/") !=
-                                         string::npos;
+                                  return !get<3>(sig) ||
+                                         get<1>(sig).find("/internal/") !=
+                                             string::npos;
                                 }),
                       end(fsignatures));
     sort(begin(fsignatures), end(fsignatures));
@@ -738,8 +746,8 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
       cout << "\t\tcexprstr{\"\\0\"}, //\n";
     else
       for (const auto &sig : fsignatures)
-        cout << "\t\tjField<" << demangle(get<1>(sig), pkg) << ">(\""
-             << get<0>(sig) << "\"), //\n";
+        cout << "\t\tjField<" << demangle(get<1>(sig)) << ">(\"" << get<0>(sig)
+             << "\"), //\n";
 
     cout << "\t};\n\n";
 
@@ -749,7 +757,7 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
         "UNDERFLOW)"};
     for (auto &sig : fsignatures) {
       get<0>(sig) = regex_replace(get<0>(sig), keywords, "$1_");
-      cout << "\ttemplate<typename F = " << demangle(get<1>(sig), pkg) << ">\n"
+      cout << "\ttemplate<typename F = " << demangle(get<1>(sig)) << ">\n"
            << "\t" << &"\0static "[get<2>(sig)] << "auto " << get<0>(sig)
            << "() " << &"\0const "[!get<2>(sig)] << "{\n"
            << "\t\tstatic_assert(field_signatures[jField<F>(\"" << get<0>(sig)
@@ -760,16 +768,17 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
     }
 
     auto methods = clazz.get_methods();
-    vector<tuple<string, string, bool>> msignatures;
+    vector<tuple<string, string, bool, bool>> msignatures;
     transform(begin(methods), end(methods), back_inserter(msignatures),
               [](const tMethod &method) mutable {
                 return make_tuple(method.name(), method.signature(),
-                                  method.is_static());
+                                  method.is_static(), method.is_public());
               });
     msignatures.erase(remove_if(begin(msignatures), end(msignatures),
                                 [](const auto &sig) {
-                                  return get<1>(sig).find("/internal/") !=
-                                         string::npos;
+                                  return !get<3>(sig) ||
+                                         get<1>(sig).find("/internal/") !=
+                                             string::npos;
                                 }),
                       end(msignatures));
     sort(begin(msignatures), end(msignatures));
@@ -782,10 +791,9 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
                ++find(begin(get<1>(sig)), end(get<1>(sig)), ')'),
                end(get<1>(sig)));
         if (get<0>(sig) == "<init>")
-          cout << "\t\tjConstructor<" + demangle(get<1>(sig), pkg) +
-                      ">(), //\n";
+          cout << "\t\tjConstructor<" + demangle(get<1>(sig)) + ">(), //\n";
         else
-          cout << "\t\tjMethod<" + demangle(get<1>(sig), pkg) + ">(\"" +
+          cout << "\t\tjMethod<" + demangle(get<1>(sig)) + ">(\"" +
                       get<0>(sig) + "\"), //\n";
       }
     cout << "\t};\n\n";
@@ -799,8 +807,7 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
       if (overloaded.find(get<0>(sig)) != overloaded.cend())
         continue;
       overloaded.insert(get<0>(sig));
-      auto return_type =
-          demangle(get<1>(sig).substr(0, get<1>(sig).find('(')), pkg);
+      auto return_type = demangle(get<1>(sig).substr(0, get<1>(sig).find('(')));
       cout << "\ttemplate<typename R = " << return_type
            << ", typename... Args>\n"
            << "\t" << &"\0static "[get<2>(sig)] << "auto " << get<0>(sig)
