@@ -574,11 +574,7 @@ public:
 
 void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
   JavaVirtualMachine::env = jni_env;
-  // std::cout << "VM Initialized\n";
 
-  // auto display_class = tClass{Display::getClass()}.classloader().classes();
-  // for (tClass c : display_class)
-  //   std::cout << c.signature() << "\n";
   std::unordered_map<std::string, tClass> classes;
   std::vector<std::string> csignatures;
 
@@ -595,10 +591,8 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
 
   std::vector<std::string> packages;
   if (classpath_arg != std::sregex_token_iterator{}) {
-    // std::cout << "Classpath: " << classpath[1].str() << "\n";
     ZipFile zip{String{classpath[1].str().c_str()}};
     auto entries = zip.call<Enumeration<ZipEntry>>("entries");
-    // std::cout << "Entries: " << entries << "\n";
 
     std::regex sig_rx{R"((.+)/(.+?)\.class)"};
     std::smatch signature;
@@ -613,10 +607,6 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
           package.find("/internal/") != std::string::npos)
         continue;
 
-      // std::cout << "// Package: " << signature[1] << " Class: " <<
-      // signature[2]
-      //           << "\n";
-
       for (auto p = 0; p != std::string::npos; p = package.find('/', ++p))
         pkgs.insert(package.substr(0, p));
       pkgs.insert(package);
@@ -624,8 +614,6 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
       auto sig = package + "/" + clazz;
       csignatures.push_back(sig);
       classes[sig] = tClass{JavaVirtualMachine::env->FindClass(sig.c_str())};
-      // std::cout << "// Superclass: " << classes[sig].superclass().signature()
-      // << "\n";
     }
     pkgs.erase("");
     packages = {begin(pkgs), end(pkgs)};
@@ -671,15 +659,6 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
   }
   std::cout << "\n";
 
-  // tAlloc<jclass> all_loaded;
-  // tenv->GetLoadedClasses(all_loaded, all_loaded);
-  // std::transform(begin(all_loaded), end(all_loaded),
-  // back_inserter(csignatures),
-  //                [&classes](const tClass &clazz) mutable {
-  //                  auto sig = clazz.signature();
-  //                  classes[sig] = clazz;
-  //                  return sig;
-  //                });
   std::sort(begin(csignatures), end(csignatures));
   for (auto &csig : csignatures)
     csig = std::regex_replace(csig, std::regex{"namespace"}, "namespace_");
