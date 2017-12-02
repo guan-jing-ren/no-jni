@@ -750,9 +750,8 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
                 << std::get<0>(sig) << "() const {\n"
                 << "\t\tstatic_assert(field_signatures[jField<F>(\""
                 << std::get<0>(sig) << "\")] != -1);\n"
-                << "\t\treturn "
-                << "\0s"[std::get<2>(sig)] << "at<F>(\"" << std::get<0>(sig)
-                << "\");\n"
+                << "\t\treturn " << &"\0s"[std::get<2>(sig)] << "at<F>(\""
+                << std::get<0>(sig) << "\");\n"
                 << "\t}\n\n";
     }
 
@@ -808,9 +807,8 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
                 << "\t\tstatic_assert(method_signatures[jMethod<R(std::decay_t<"
                    "Args>...)>(\""
                 << std::get<0>(sig) << "\")] != -1);\n"
-                << "\t\treturn "
-                << "\0s"[std::get<2>(sig)] << "call<R>(\"" << std::get<0>(sig)
-                << "\", std::forward<Args>(args)...);\n"
+                << "\t\treturn " << &"\0s"[std::get<2>(sig)] << "call<R>(\""
+                << std::get<0>(sig) << "\", std::forward<Args>(args)...);\n"
                 << "\t}\n\n";
     }
 
