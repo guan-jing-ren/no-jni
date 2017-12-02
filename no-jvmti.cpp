@@ -729,12 +729,12 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
 
     std::cout << "\t};\n\n";
 
-    std::regex keywords{"(virtual|and|not|xor|signed|delete|union|register|signature|null|NULL|BIG_ENDIAN|LITTLE_ENDIAN|OVERFLOW|UNDERFLOW)"};
+    std::regex keywords{
+        "(virtual|and|not|xor|or|namespace|signed|delete|union|register|"
+        "signature|null|NULL|BIG_ENDIAN|LITTLE_ENDIAN|OVERFLOW|"
+        "UNDERFLOW)"};
     for (auto &sig : fsignatures) {
-      std::get<0>(sig) = std::regex_replace(
-          std::get<0>(sig),
-          keywords,
-          "$1_");
+      std::get<0>(sig) = std::regex_replace(std::get<0>(sig), keywords, "$1_");
       std::cout << "\ttemplate<typename F = " << demangle(std::get<1>(sig), pkg)
                 << ">\n"
                 << "\t" << &"\0static "[std::get<2>(sig)] << "auto "
@@ -785,10 +785,7 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
     for (auto &sig : msignatures) {
       if (std::get<0>(sig).find("init>") != std::string::npos)
         continue;
-      std::get<0>(sig) = std::regex_replace(
-          std::get<0>(sig),
-          keywords,
-          "$1_");
+      std::get<0>(sig) = std::regex_replace(std::get<0>(sig), keywords, "$1_");
       if (overloaded.find(std::get<0>(sig)) != overloaded.cend())
         continue;
       overloaded.insert(std::get<0>(sig));
