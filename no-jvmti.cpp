@@ -521,11 +521,16 @@ using namespace java::lang;
 
 #ifdef JAVA
 #include "java.hpp"
+
+using java::lang::Enumeration;
+using java::util::zip::ZipEntry;
+using java::util::zip::ZipFile;
+
 #else
+
 constexpr jPackage java_util = java_ / "util";
 constexpr jPackage java_util_jar = java_util / "jar";
 constexpr jPackage java_util_zip = java_util / "zip";
-#endif
 
 class ZipEntry : public jObject<ZipEntry> {
 public:
@@ -583,6 +588,8 @@ public:
       jMethod<jint()>("size"),
   };
 };
+
+#endif
 
 void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
   JavaVirtualMachine::env = jni_env;
