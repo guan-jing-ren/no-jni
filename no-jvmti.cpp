@@ -609,7 +609,8 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
       std::regex_match(name, signature, sig_rx);
       auto package = signature[1].str();
       auto clazz = signature[2].str();
-      if (clazz.empty() || package.find("/internal/") != std::string::npos)
+      if (clazz.empty() || clazz == "package-info" ||
+          package.find("/internal/") != std::string::npos)
         continue;
 
       // std::cout << "// Package: " << signature[1] << " Class: " <<
@@ -682,6 +683,8 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
     auto cls = sig.substr(pkg.size() + (pkg != sig));
     auto clazz = classes[sig];
     auto ssig = clazz.superclass().signature();
+    if (ssig.find("/internal/") != std::string::npos)
+      ssig.clear();
     auto scls = std::regex_replace(demangle(ssig, pkg), std::regex{"/"}, "::");
     if (scls.empty())
       scls = "Object";
