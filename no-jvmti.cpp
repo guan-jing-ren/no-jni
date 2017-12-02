@@ -637,6 +637,18 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
   std::unordered_map<std::string, std::pair<std::string, std::string>>
       pkg_to_nspace_pkg_var;
 
+  auto prefixed = [](const auto &l, const auto &r) {
+    auto pref_size = std::min(l.size(), r.size());
+    return std::lexicographical_compare(begin(l), begin(l) + pref_size,
+                                        begin(r), begin(r) + pref_size);
+  };
+  auto java =
+      equal_range(begin(packages), end(packages), string{"java"}, prefixed);
+  auto non_java = rotate(begin(packages), java.first, java.second);
+  auto java_lang =
+      equal_range(begin(packages), non_java, string{"java/lang"}, prefixed);
+  rotate(++begin(packages), java_lang.first, java_lang.second);
+
   for (auto &pkg : packages) {
     auto nspace = std::regex_replace(pkg, std::regex{"/"}, "::");
     auto pkg_var = std::regex_replace(pkg, std::regex{"/"}, "_");
@@ -664,6 +676,12 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
   std::sort(begin(csignatures), end(csignatures));
   for (auto &csig : csignatures)
     csig = std::regex_replace(csig, std::regex{"namespace"}, "namespace_");
+  java = equal_range(begin(csignatures), end(csignatures), string{"java"},
+                     prefixed);
+  non_java = rotate(begin(csignatures), java.first, java.second);
+  java_lang =
+      equal_range(begin(csignatures), non_java, string{"java/lang"}, prefixed);
+  rotate(begin(csignatures), java_lang.first, java_lang.second);
 
   for (const auto &sig : csignatures) {
     auto pkg = sig.substr(0, sig.rfind("/"));
