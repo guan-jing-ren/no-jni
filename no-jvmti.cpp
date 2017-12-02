@@ -597,7 +597,12 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
 
   vector<string> packages;
   if (classpath_arg != sregex_token_iterator{}) {
-    ZipFile zip{String{classpath[1].str().c_str()}};
+    regex path_rx{":"};
+    auto paths = classpath[1].str();
+    unordered_set<string> pkgs;
+    for_each(sregex_token_iterator{begin(paths), end(paths), path_rx, -1}, {},
+             [&csignatures, &classes, &pkgs](const ssub_match &sub) {
+               ZipFile zip{String{sub.str().c_str()}};
                auto entries = zip.call<Enumeration<ZipEntry>>("entries");
 
                regex sig_rx{R"((.+)/(.+?)\.class)"};
@@ -620,6 +625,8 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
                  csignatures.push_back(sig);
                  classes[sig] =
                      tClass{JavaVirtualMachine::env->FindClass(sig.c_str())};
+               }
+             });
     pkgs.erase("");
     packages = {begin(pkgs), end(pkgs)};
     sort(begin(packages), end(packages));
