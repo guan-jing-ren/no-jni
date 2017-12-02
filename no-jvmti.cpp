@@ -482,23 +482,23 @@ string demangle(string sig) {
                       auto sep = (sig.empty() || sig.back() == '(' ? "" : ", ");
                       switch (token[0]) {
                       case 'Z':
-                        return sig + sep + "jboolean";
+                        return sig + sep + "::jboolean";
                       case 'B':
-                        return sig + sep + "jbyte";
+                        return sig + sep + "::jbyte";
                       case 'C':
-                        return sig + sep + "jchar";
+                        return sig + sep + "::jchar";
                       case 'S':
-                        return sig + sep + "jshort";
+                        return sig + sep + "::jshort";
                       case 'I':
-                        return sig + sep + "jint";
+                        return sig + sep + "::jint";
                       case 'J':
-                        return sig + sep + "jlong";
+                        return sig + sep + "::jlong";
                       case 'F':
-                        return sig + sep + "jfloat";
+                        return sig + sep + "::jfloat";
                       case 'D':
-                        return sig + sep + "jdouble";
+                        return sig + sep + "::jdouble";
                       case 'V':
-                        return sig + sep + "jvoid";
+                        return sig + sep + "::jvoid";
                       case '(':
                       case ')':
                         return sig + token[0];
@@ -510,7 +510,7 @@ string demangle(string sig) {
                         token.pop_back();
                         token.pop_back();
                         return sig + sep +
-                               regex_replace(token, regex{"/"}, "::");
+                               "::" + regex_replace(token, regex{"/"}, "::");
                       };
                       return string{};
                     });
@@ -698,9 +698,9 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
 
     cout << "namespace " << regex_replace(pkg, regex{"/"}, "::") << " { class "
          << cls << "; }\n";
-    cout << "template<> constexpr auto signature<"
+    cout << "template<> constexpr auto signature<::"
          << regex_replace(sig, regex{"/"}, "::")
-         << "> = " << regex_replace(pkg, regex{"/"}, "_") << " / \"" << cls
+         << "> = ::" << regex_replace(pkg, regex{"/"}, "_") << " / \"" << cls
          << "\";\n";
   }
   cout << "\n";
@@ -714,16 +714,16 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
       ssig.clear();
     auto scls = regex_replace(demangle(ssig), regex{"/"}, "::");
     if (scls.empty())
-      scls = "Object";
+      scls = "::java::lang::Object";
 
-    cout << "class "
-         << pkg_to_nspace_pkg_var[pkg].first + "::" + cls +
-                " : public jObject<" + cls + ", " + scls + "> {\n";
+    cout << "class ::" << pkg_to_nspace_pkg_var[pkg].first << "::" << cls
+         << " : public jObject<::" << pkg_to_nspace_pkg_var[pkg].first
+         << "::" << cls << ", " << scls << "> {\n";
 
     cout << "public:\n";
     cout << "\tusing jObject::jObject;\n\n";
-    cout << "\tstatic constexpr auto signature = " +
-                pkg_to_nspace_pkg_var[pkg].second + " / \"" + cls + "\";\n\n";
+    cout << "\tstatic constexpr auto signature = ::"
+         << pkg_to_nspace_pkg_var[pkg].second << " / \"" << cls << "\";\n\n";
 
     auto fields = clazz.get_fields();
     vector<tuple<string, string, bool, bool>> fsignatures;
