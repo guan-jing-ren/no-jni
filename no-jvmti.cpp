@@ -755,11 +755,11 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
         "\\b(virtual|and|not|xor|or|export|namespace|signed|delete|union|"
         "register|signature|null|NULL|BIG_ENDIAN|LITTLE_ENDIAN|"
         "OVERFLOW|EACCESS|EAGAIN|ASCII|UNDERFLOW)\\b"};
-    for (auto &sig : fsignatures) {
-      get<0>(sig) = regex_replace(get<0>(sig), keywords, "$1_");
+    for (const auto &sig : fsignatures) {
+      auto name = regex_replace(get<0>(sig), keywords, "$1_");
       cout << "\ttemplate<typename F = " << demangle(get<1>(sig)) << ">\n"
-           << "\t" << &"\0static "[get<2>(sig)] << "auto " << get<0>(sig)
-           << "() " << &"\0const "[!get<2>(sig)] << "{\n"
+           << "\t" << &"\0static "[get<2>(sig)] << "auto " << name << "() "
+           << &"\0const "[!get<2>(sig)] << "{\n"
            << "\t\tstatic_assert(field_signatures[jField<F>(\"" << get<0>(sig)
            << "\")] != -1);\n"
            << "\t\treturn " << &"\0s"[get<2>(sig)] << "at<F>(\"" << get<0>(sig)
@@ -800,17 +800,17 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
 
     unordered_set<string> overloaded;
 
-    for (auto &sig : msignatures) {
+    for (const auto &sig : msignatures) {
       if (get<0>(sig).find("init>") != string::npos)
         continue;
-      get<0>(sig) = regex_replace(get<0>(sig), keywords, "$1_");
+      auto name = regex_replace(get<0>(sig), keywords, "$1_");
       if (overloaded.find(get<0>(sig)) != overloaded.cend())
         continue;
       overloaded.insert(get<0>(sig));
       auto return_type = demangle(get<1>(sig).substr(0, get<1>(sig).find('(')));
       cout << "\ttemplate<typename R = " << return_type
            << ", typename... Args>\n"
-           << "\t" << &"\0static "[get<2>(sig)] << "auto " << get<0>(sig)
+           << "\t" << &"\0static "[get<2>(sig)] << "auto " << name
            << "(Args &&...args) " << &"\0const "[!get<2>(sig)] << "{\n"
            << "\t\tstatic_assert(method_signatures[jMethod<R(decay_t<"
               "Args>...)>(\""
