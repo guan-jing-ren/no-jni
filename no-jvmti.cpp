@@ -464,8 +464,9 @@ public:
   auto pop_frame() const { env()->PopFrame(*this); }
 };
 
-std::string demangle(const std::string &sig, const std::string &pkg) {
+std::string demangle(std::string sig, const std::string &pkg) {
   std::regex token_rx{"(\\[*?)([ZBCSIJFDV()]|L.+?;)"};
+  sig = std::regex_replace(sig, std::regex{"namespace"}, "namespace_");
   return std::accumulate(
       std::sregex_iterator{begin(sig), end(sig), token_rx}, {}, std::string{},
       [&pkg](std::string sig, const std::smatch &sub) {
@@ -628,6 +629,8 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
     pkgs.erase("");
     packages = {begin(pkgs), end(pkgs)};
     std::sort(begin(packages), end(packages));
+    for (auto &pkg : packages)
+      pkg = std::regex_replace(pkg, std::regex{"namespace"}, "namespace_");
   }
 
   std::unordered_map<std::string, std::pair<std::string, std::string>>
@@ -637,7 +640,9 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
     auto nspace = std::regex_replace(pkg, std::regex{"/"}, "::");
     auto pkg_var = std::regex_replace(pkg, std::regex{"/"}, "_");
     pkg_to_nspace_pkg_var[pkg] = {nspace, pkg_var};
-    auto pkg_parent = pkg_var.substr(0, pkg_var.rfind('_'));
+    auto pkg_parent = pkg_var.substr(
+        0, pkg_var.back() == '_' ? pkg_var.rfind('_', pkg_var.rfind('_') - 1)
+                                 : pkg_var.rfind('_'));
     auto pkg_child =
         pkg_var.substr(pkg_parent.size() + (pkg_parent != pkg_var));
     auto pkg_sig = "constexpr jPackage " + pkg_var + " = " + pkg_parent +
@@ -656,6 +661,8 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
   //                  return sig;
   //                });
   std::sort(begin(csignatures), end(csignatures));
+  for (auto &csig : csignatures)
+    csig = std::regex_replace(csig, std::regex{"namespace"}, "namespace_");
 
   for (const auto &sig : csignatures) {
     auto pkg = sig.substr(0, sig.rfind("/"));
@@ -761,9 +768,11 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
       }
     std::cout << "\t};\n\n";
 
-    for (const auto &sig : msignatures) {
+    for (auto &sig : msignatures) {
       if (std::get<0>(sig).find("init>") != std::string::npos)
         continue;
+      std::get<0>(sig) = std::regex_replace(
+          std::get<0>(sig), std::regex{"(delete|register|signature|null|NULL)"}, "$1_");
       auto return_type =
           demangle(std::get<1>(sig).substr(0, std::get<1>(sig).find('(')), pkg);
       std::cout << "\ttemplate<typename R = " << return_type
