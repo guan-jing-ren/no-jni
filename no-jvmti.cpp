@@ -747,7 +747,8 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
       std::cout << "\ttemplate<typename F = " << demangle(std::get<1>(sig), pkg)
                 << ">\n"
                 << "\t" << &"\0static "[std::get<2>(sig)] << "auto "
-                << std::get<0>(sig) << "() const {\n"
+                << std::get<0>(sig) << "() " << &"\0const "[!std::get<2>(sig)]
+                << "{\n"
                 << "\t\tstatic_assert(field_signatures[jField<F>(\""
                 << std::get<0>(sig) << "\")] != -1);\n"
                 << "\t\treturn " << &"\0s"[std::get<2>(sig)] << "at<F>(\""
@@ -803,7 +804,8 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
       std::cout << "\ttemplate<typename R = " << return_type
                 << ", typename... Args>\n"
                 << "\t" << &"\0static "[std::get<2>(sig)] << "auto "
-                << std::get<0>(sig) << "(Args &&...args) const {\n"
+                << std::get<0>(sig) << "(Args &&...args) "
+                << &"\0const "[!std::get<2>(sig)] << "{\n"
                 << "\t\tstatic_assert(method_signatures[jMethod<R(std::decay_t<"
                    "Args>...)>(\""
                 << std::get<0>(sig) << "\")] != -1);\n"
