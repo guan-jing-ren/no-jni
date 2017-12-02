@@ -656,7 +656,8 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
     auto pkg_child =
         pkg_var.substr(pkg_parent.size() + (pkg_parent != pkg_var));
     auto pkg_sig =
-        "[[maybe_unused]] inline constexpr jPackage " + pkg_var + &"_"[!pkg_child.empty()] +
+        "[[maybe_unused]] inline constexpr jPackage " + pkg_var +
+        &"_"[!pkg_child.empty()] +
         (pkg_child.empty()
              ? "{\"" + pkg_parent + "\"};"
              : (" = " + pkg_parent +
@@ -674,7 +675,12 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
   non_java = rotate(begin(csignatures), java.first, java.second);
   java_lang =
       equal_range(begin(csignatures), non_java, string{"java/lang"}, prefixed);
-  rotate(begin(csignatures), java_lang.first, java_lang.second);
+  auto non_java_lang =
+      rotate(begin(csignatures), java_lang.first, java_lang.second);
+  stable_partition(
+      begin(csignatures), non_java_lang,
+      [fund = regex{"java/lang/Class|java/lang/Object|java/lang/String"}](
+          const auto &sig) { return regex_match(sig, fund); });
 
   for (const auto &sig : csignatures) {
     auto pkg = sig.substr(0, sig.rfind("/"));
