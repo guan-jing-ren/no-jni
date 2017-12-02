@@ -658,8 +658,13 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
                                  : pkg_var.rfind('_'));
     auto pkg_child =
         pkg_var.substr(pkg_parent.size() + (pkg_parent != pkg_var));
-    auto pkg_sig = "constexpr jPackage " + pkg_var + " = " + pkg_parent +
-                   " / \"" + pkg_child + "\";";
+    auto pkg_sig =
+        "[[maybe_unused]] inline constexpr jPackage " + pkg_var + &"_"[!pkg_child.empty()] +
+        (pkg_child.empty()
+             ? "{\"" + pkg_parent + "\"};"
+             : (" = " + pkg_parent +
+                &"_ / \""[pkg_parent.find('_') != std::string::npos] +
+                pkg_child + "\";"));
     std::cout << "namespace " << nspace << " {}\n" << pkg_sig << "\n";
   }
   std::cout << "\n";
