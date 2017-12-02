@@ -771,11 +771,16 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
       }
     std::cout << "\t};\n\n";
 
+    std::unordered_set<std::string> overloaded;
+
     for (auto &sig : msignatures) {
       if (std::get<0>(sig).find("init>") != std::string::npos)
         continue;
       std::get<0>(sig) = std::regex_replace(
           std::get<0>(sig), std::regex{"(delete|register|signature|null|NULL)"}, "$1_");
+      if (overloaded.find(std::get<0>(sig)) != overloaded.cend())
+        continue;
+      overloaded.insert(std::get<0>(sig));
       auto return_type =
           demangle(std::get<1>(sig).substr(0, std::get<1>(sig).find('(')), pkg);
       std::cout << "\ttemplate<typename R = " << return_type
