@@ -148,6 +148,9 @@ struct jvoid final {
 
 template <typename T> constexpr auto signature = T::signature;
 
+template <typename T> typename T::ref has_ref(std::nullptr_t = nullptr);
+template <typename T> jvoid has_ref(std::nullptr_t = nullptr);
+
 template <typename T> struct make_signature {
   static constexpr bool is_member_function = false;
   constexpr make_signature() = default;
@@ -174,15 +177,15 @@ template <typename T> struct make_signature {
       return "[" + make_signature<std::remove_extent_t<T>>{}();
     else if constexpr (std::is_pointer<T>::value)
       return "[" + make_signature<std::remove_pointer_t<T>>{}();
-    else if constexpr (std::is_same<decltype(T::ref), jReference>::value) {
+    else if constexpr (std::is_same<decltype(has_ref<T>()),
+                                    jReference>::value) {
       if constexpr (std::is_array<typename T::class_type>::value ||
                     std::is_pointer<typename T::class_type>::value)
         return make_signature<typename T::class_type>{}();
       else
         return "L" + signature<T> + ";";
     } else {
-      struct unsupported {};
-      return unsupported{};
+      return "L" + signature<T> + ";";
     }
   }
 };
@@ -672,7 +675,6 @@ template <typename Class, typename SuperClass = Object> class jObject {
         m = superclass_type::template get_member<G, getter, F>(s, c);
     if (!m) {
       const auto sig = jMember<std::is_same<G, jmethodID>::value, F>(s);
-      std::cout << "Fallback method find for: " << sig << "\n";
       m = get_member<G, getter>(sig, c);
     }
     return m;
