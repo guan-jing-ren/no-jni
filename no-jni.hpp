@@ -716,6 +716,7 @@ public:
   using class_type = Class;
   using superclass_type = SuperClass;
   jObject() = default;
+  jObject(jReference &&r) : ref(std::move(r)) {}
   jObject(const jObject &) = default;
   jObject(jObject &&) = default;
   jObject &operator=(const jObject &) = default;
@@ -822,6 +823,20 @@ public:
   auto begin() const { return Iterator{(*this)[0]}; }
 
   auto end() const { return Iterator{(*this)[size()]}; }
+
+  template <typename A> constexpr static bool is_ancestor() {
+    if constexpr (std::is_same<A, superclass_type>::value)
+      return true;
+    else if constexpr (std::is_same<java::lang::Object, superclass_type>::value)
+      return false;
+    else
+      return superclass_type::template is_ancestor<A>();
+  }
+
+  template <typename A> auto super() const {
+    static_assert(is_ancestor<A>());
+    return A{jReference{cast(*this)}};
+  }
 };
 
 template <typename Class, typename SuperClass>

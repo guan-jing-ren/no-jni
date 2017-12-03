@@ -34,7 +34,8 @@ void basic_test(bool b) {
   std::cout << "Display getCurrent: " << Display::getCurrent() << "\n";
   std::cout << "Display getDefault: " << Display::getDefault() << "\n";
   std::cout << "Display getDefault hashCode: "
-            << Display::getDefault().call<jint>("hashCode") << "\n";
+            << Display::getDefault().super<java::lang::Object>().hashCode()
+            << "\n";
   std::cout << "Display getDefault getCursorLocation x,y: "
             << Display::getDefault().getCursorLocation().x() << ","
             << Display::getDefault().getCursorLocation().y() << "\n";
@@ -96,11 +97,11 @@ int main(int c, char **v) {
   shell.setText(String{"NoJNI shell test!"});
   shell.open();
 
-  while (!shell.call<jboolean>("isDisposed"))
+  while (!shell.super<org::eclipse::swt::widgets::Widget>().isDisposed())
     if (!Display::getDefault().readAndDispatch())
       Display::getDefault().sleep();
 
-  Display::getDefault().call<jvoid>("dispose");
+  Display::getDefault().super<org::eclipse::swt::graphics::Device>().dispose();
 
   return 0;
 }
