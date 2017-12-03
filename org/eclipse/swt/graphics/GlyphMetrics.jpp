@@ -1,0 +1,63 @@
+#ifndef org_eclipse_swt_graphics_GlyphMetrics_HPP
+#define org_eclipse_swt_graphics_GlyphMetrics_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::graphics::GlyphMetrics : public jObject<::org::eclipse::swt::graphics::GlyphMetrics, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_graphics / "GlyphMetrics";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("ascent"), //
+		jField<::jint>("descent"), //
+		jField<::jint>("width"), //
+	};
+
+	template<typename F = ::jint>
+	auto ascent() const {
+		static_assert(field_signatures[jField<F>("ascent")] != -1);
+		return at<F>("ascent");
+	}
+
+	template<typename F = ::jint>
+	auto descent() const {
+		static_assert(field_signatures[jField<F>("descent")] != -1);
+		return at<F>("descent");
+	}
+
+	template<typename F = ::jint>
+	auto width() const {
+		static_assert(field_signatures[jField<F>("width")] != -1);
+		return at<F>("width");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::jint, ::jint)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,49 @@
+#ifndef org_eclipse_swt_events_SegmentEvent_HPP
+#define org_eclipse_swt_events_SegmentEvent_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::events::SegmentEvent : public jObject<::org::eclipse::swt::events::SegmentEvent, ::org::eclipse::swt::events::TypedEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_events / "SegmentEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("lineOffset"), //
+		jField<::java::lang::String>("lineText"), //
+		jField<::jint *>("segments"), //
+		jField<::jchar *>("segmentsChars"), //
+	};
+
+	template<typename F = ::jint>
+	auto lineOffset() const {
+		static_assert(field_signatures[jField<F>("lineOffset")] != -1);
+		return at<F>("lineOffset");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto lineText() const {
+		static_assert(field_signatures[jField<F>("lineText")] != -1);
+		return at<F>("lineText");
+	}
+
+	template<typename F = ::jint *>
+	auto segments() const {
+		static_assert(field_signatures[jField<F>("segments")] != -1);
+		return at<F>("segments");
+	}
+
+	template<typename F = ::jchar *>
+	auto segmentsChars() const {
+		static_assert(field_signatures[jField<F>("segmentsChars")] != -1);
+		return at<F>("segmentsChars");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::org::eclipse::swt::widgets::Event)>(), //
+	};
+
+};
+
+#endif

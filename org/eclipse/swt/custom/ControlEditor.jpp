@@ -1,0 +1,91 @@
+#ifndef org_eclipse_swt_custom_ControlEditor_HPP
+#define org_eclipse_swt_custom_ControlEditor_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::custom::ControlEditor : public jObject<::org::eclipse::swt::custom::ControlEditor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_custom / "ControlEditor";
+
+	constexpr static Enume field_signatures{
+		jField<::jboolean>("grabHorizontal"), //
+		jField<::jboolean>("grabVertical"), //
+		jField<::jint>("horizontalAlignment"), //
+		jField<::jint>("minimumHeight"), //
+		jField<::jint>("minimumWidth"), //
+		jField<::jint>("verticalAlignment"), //
+	};
+
+	template<typename F = ::jboolean>
+	auto grabHorizontal() const {
+		static_assert(field_signatures[jField<F>("grabHorizontal")] != -1);
+		return at<F>("grabHorizontal");
+	}
+
+	template<typename F = ::jboolean>
+	auto grabVertical() const {
+		static_assert(field_signatures[jField<F>("grabVertical")] != -1);
+		return at<F>("grabVertical");
+	}
+
+	template<typename F = ::jint>
+	auto horizontalAlignment() const {
+		static_assert(field_signatures[jField<F>("horizontalAlignment")] != -1);
+		return at<F>("horizontalAlignment");
+	}
+
+	template<typename F = ::jint>
+	auto minimumHeight() const {
+		static_assert(field_signatures[jField<F>("minimumHeight")] != -1);
+		return at<F>("minimumHeight");
+	}
+
+	template<typename F = ::jint>
+	auto minimumWidth() const {
+		static_assert(field_signatures[jField<F>("minimumWidth")] != -1);
+		return at<F>("minimumWidth");
+	}
+
+	template<typename F = ::jint>
+	auto verticalAlignment() const {
+		static_assert(field_signatures[jField<F>("verticalAlignment")] != -1);
+		return at<F>("verticalAlignment");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::org::eclipse::swt::widgets::Composite)>(), //
+		jMethod<::jvoid()>("dispose"), //
+		jMethod<::org::eclipse::swt::widgets::Control()>("getEditor"), //
+		jMethod<::jvoid()>("layout"), //
+		jMethod<::jvoid(::org::eclipse::swt::widgets::Control)>("setEditor"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispose(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dispose")] != -1);
+		return call<R>("dispose", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::eclipse::swt::widgets::Control, typename... Args>
+	auto getEditor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEditor")] != -1);
+		return call<R>("getEditor", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto layout(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("layout")] != -1);
+		return call<R>("layout", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setEditor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setEditor")] != -1);
+		return call<R>("setEditor", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,70 @@
+#ifndef org_eclipse_swt_events_PaintEvent_HPP
+#define org_eclipse_swt_events_PaintEvent_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::events::PaintEvent : public jObject<::org::eclipse::swt::events::PaintEvent, ::org::eclipse::swt::events::TypedEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_events / "PaintEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("count"), //
+		jField<::org::eclipse::swt::graphics::GC>("gc"), //
+		jField<::jint>("height"), //
+		jField<::jint>("width"), //
+		jField<::jint>("x"), //
+		jField<::jint>("y"), //
+	};
+
+	template<typename F = ::jint>
+	auto count() const {
+		static_assert(field_signatures[jField<F>("count")] != -1);
+		return at<F>("count");
+	}
+
+	template<typename F = ::org::eclipse::swt::graphics::GC>
+	auto gc() const {
+		static_assert(field_signatures[jField<F>("gc")] != -1);
+		return at<F>("gc");
+	}
+
+	template<typename F = ::jint>
+	auto height() const {
+		static_assert(field_signatures[jField<F>("height")] != -1);
+		return at<F>("height");
+	}
+
+	template<typename F = ::jint>
+	auto width() const {
+		static_assert(field_signatures[jField<F>("width")] != -1);
+		return at<F>("width");
+	}
+
+	template<typename F = ::jint>
+	auto x() const {
+		static_assert(field_signatures[jField<F>("x")] != -1);
+		return at<F>("x");
+	}
+
+	template<typename F = ::jint>
+	auto y() const {
+		static_assert(field_signatures[jField<F>("y")] != -1);
+		return at<F>("y");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::org::eclipse::swt::widgets::Event)>(), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

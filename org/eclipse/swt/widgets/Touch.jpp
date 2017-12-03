@@ -1,0 +1,69 @@
+#ifndef org_eclipse_swt_widgets_Touch_HPP
+#define org_eclipse_swt_widgets_Touch_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::widgets::Touch : public jObject<::org::eclipse::swt::widgets::Touch, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_widgets / "Touch";
+
+	constexpr static Enume field_signatures{
+		jField<::jlong>("id"), //
+		jField<::jboolean>("primary"), //
+		jField<::org::eclipse::swt::widgets::TouchSource>("source"), //
+		jField<::jint>("state"), //
+		jField<::jint>("x"), //
+		jField<::jint>("y"), //
+	};
+
+	template<typename F = ::jlong>
+	auto id() const {
+		static_assert(field_signatures[jField<F>("id")] != -1);
+		return at<F>("id");
+	}
+
+	template<typename F = ::jboolean>
+	auto primary() const {
+		static_assert(field_signatures[jField<F>("primary")] != -1);
+		return at<F>("primary");
+	}
+
+	template<typename F = ::org::eclipse::swt::widgets::TouchSource>
+	auto source() const {
+		static_assert(field_signatures[jField<F>("source")] != -1);
+		return at<F>("source");
+	}
+
+	template<typename F = ::jint>
+	auto state() const {
+		static_assert(field_signatures[jField<F>("state")] != -1);
+		return at<F>("state");
+	}
+
+	template<typename F = ::jint>
+	auto x() const {
+		static_assert(field_signatures[jField<F>("x")] != -1);
+		return at<F>("x");
+	}
+
+	template<typename F = ::jint>
+	auto y() const {
+		static_assert(field_signatures[jField<F>("y")] != -1);
+		return at<F>("y");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

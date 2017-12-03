@@ -1,0 +1,99 @@
+#ifndef org_eclipse_swt_graphics_PaletteData_HPP
+#define org_eclipse_swt_graphics_PaletteData_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::graphics::PaletteData : public jObject<::org::eclipse::swt::graphics::PaletteData, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_graphics / "PaletteData";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("blueMask"), //
+		jField<::jint>("blueShift"), //
+		jField<::org::eclipse::swt::graphics::RGB *>("colors"), //
+		jField<::jint>("greenMask"), //
+		jField<::jint>("greenShift"), //
+		jField<::jboolean>("isDirect"), //
+		jField<::jint>("redMask"), //
+		jField<::jint>("redShift"), //
+	};
+
+	template<typename F = ::jint>
+	auto blueMask() const {
+		static_assert(field_signatures[jField<F>("blueMask")] != -1);
+		return at<F>("blueMask");
+	}
+
+	template<typename F = ::jint>
+	auto blueShift() const {
+		static_assert(field_signatures[jField<F>("blueShift")] != -1);
+		return at<F>("blueShift");
+	}
+
+	template<typename F = ::org::eclipse::swt::graphics::RGB *>
+	auto colors() const {
+		static_assert(field_signatures[jField<F>("colors")] != -1);
+		return at<F>("colors");
+	}
+
+	template<typename F = ::jint>
+	auto greenMask() const {
+		static_assert(field_signatures[jField<F>("greenMask")] != -1);
+		return at<F>("greenMask");
+	}
+
+	template<typename F = ::jint>
+	auto greenShift() const {
+		static_assert(field_signatures[jField<F>("greenShift")] != -1);
+		return at<F>("greenShift");
+	}
+
+	template<typename F = ::jboolean>
+	auto isDirect() const {
+		static_assert(field_signatures[jField<F>("isDirect")] != -1);
+		return at<F>("isDirect");
+	}
+
+	template<typename F = ::jint>
+	auto redMask() const {
+		static_assert(field_signatures[jField<F>("redMask")] != -1);
+		return at<F>("redMask");
+	}
+
+	template<typename F = ::jint>
+	auto redShift() const {
+		static_assert(field_signatures[jField<F>("redShift")] != -1);
+		return at<F>("redShift");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::org::eclipse::swt::graphics::RGB *)>(), //
+		jMethod<::jint(::org::eclipse::swt::graphics::RGB)>("getPixel"), //
+		jMethod<::org::eclipse::swt::graphics::RGB(::jint)>("getRGB"), //
+		jMethod<::org::eclipse::swt::graphics::RGB *()>("getRGBs"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getPixel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPixel")] != -1);
+		return call<R>("getPixel", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::eclipse::swt::graphics::RGB, typename... Args>
+	auto getRGB(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRGB")] != -1);
+		return call<R>("getRGB", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::eclipse::swt::graphics::RGB *, typename... Args>
+	auto getRGBs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRGBs")] != -1);
+		return call<R>("getRGBs", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

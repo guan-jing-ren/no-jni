@@ -1,0 +1,42 @@
+#ifndef org_eclipse_swt_custom_ExtendedModifyEvent_HPP
+#define org_eclipse_swt_custom_ExtendedModifyEvent_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::custom::ExtendedModifyEvent : public jObject<::org::eclipse::swt::custom::ExtendedModifyEvent, ::org::eclipse::swt::events::TypedEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_custom / "ExtendedModifyEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("length"), //
+		jField<::java::lang::String>("replacedText"), //
+		jField<::jint>("start"), //
+	};
+
+	template<typename F = ::jint>
+	auto length() const {
+		static_assert(field_signatures[jField<F>("length")] != -1);
+		return at<F>("length");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto replacedText() const {
+		static_assert(field_signatures[jField<F>("replacedText")] != -1);
+		return at<F>("replacedText");
+	}
+
+	template<typename F = ::jint>
+	auto start() const {
+		static_assert(field_signatures[jField<F>("start")] != -1);
+		return at<F>("start");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::org::eclipse::swt::custom::StyledTextEvent)>(), //
+	};
+
+};
+
+#endif

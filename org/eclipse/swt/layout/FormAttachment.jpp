@@ -1,0 +1,69 @@
+#ifndef org_eclipse_swt_layout_FormAttachment_HPP
+#define org_eclipse_swt_layout_FormAttachment_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::layout::FormAttachment : public jObject<::org::eclipse::swt::layout::FormAttachment, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_layout / "FormAttachment";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("alignment"), //
+		jField<::org::eclipse::swt::widgets::Control>("control"), //
+		jField<::jint>("denominator"), //
+		jField<::jint>("numerator"), //
+		jField<::jint>("offset"), //
+	};
+
+	template<typename F = ::jint>
+	auto alignment() const {
+		static_assert(field_signatures[jField<F>("alignment")] != -1);
+		return at<F>("alignment");
+	}
+
+	template<typename F = ::org::eclipse::swt::widgets::Control>
+	auto control() const {
+		static_assert(field_signatures[jField<F>("control")] != -1);
+		return at<F>("control");
+	}
+
+	template<typename F = ::jint>
+	auto denominator() const {
+		static_assert(field_signatures[jField<F>("denominator")] != -1);
+		return at<F>("denominator");
+	}
+
+	template<typename F = ::jint>
+	auto numerator() const {
+		static_assert(field_signatures[jField<F>("numerator")] != -1);
+		return at<F>("numerator");
+	}
+
+	template<typename F = ::jint>
+	auto offset() const {
+		static_assert(field_signatures[jField<F>("offset")] != -1);
+		return at<F>("offset");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint)>(), //
+		jConstructor<::jvoid(::jint, ::jint)>(), //
+		jConstructor<::jvoid(::jint, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::org::eclipse::swt::widgets::Control)>(), //
+		jConstructor<::jvoid(::org::eclipse::swt::widgets::Control, ::jint)>(), //
+		jConstructor<::jvoid(::org::eclipse::swt::widgets::Control, ::jint, ::jint)>(), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

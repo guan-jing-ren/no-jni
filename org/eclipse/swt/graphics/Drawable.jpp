@@ -1,0 +1,35 @@
+#ifndef org_eclipse_swt_graphics_Drawable_HPP
+#define org_eclipse_swt_graphics_Drawable_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::graphics::Drawable : public jObject<::org::eclipse::swt::graphics::Drawable, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_graphics / "Drawable";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::jlong, ::org::eclipse::swt::graphics::GCData)>("internal_dispose_GC"), //
+		jMethod<::jlong(::org::eclipse::swt::graphics::GCData)>("internal_new_GC"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto internal_dispose_GC(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("internal_dispose_GC")] != -1);
+		return call<R>("internal_dispose_GC", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto internal_new_GC(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("internal_new_GC")] != -1);
+		return call<R>("internal_new_GC", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

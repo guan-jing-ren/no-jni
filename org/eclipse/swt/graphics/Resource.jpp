@@ -1,0 +1,43 @@
+#ifndef org_eclipse_swt_graphics_Resource_HPP
+#define org_eclipse_swt_graphics_Resource_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::graphics::Resource : public jObject<::org::eclipse::swt::graphics::Resource, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_graphics / "Resource";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid()>("dispose"), //
+		jMethod<::org::eclipse::swt::graphics::Device()>("getDevice"), //
+		jMethod<::jboolean()>("isDisposed"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispose(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dispose")] != -1);
+		return call<R>("dispose", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::eclipse::swt::graphics::Device, typename... Args>
+	auto getDevice(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDevice")] != -1);
+		return call<R>("getDevice", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDisposed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isDisposed")] != -1);
+		return call<R>("isDisposed", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

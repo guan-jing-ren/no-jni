@@ -1,0 +1,50 @@
+#ifndef org_eclipse_swt_custom_AnimatedProgress_HPP
+#define org_eclipse_swt_custom_AnimatedProgress_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::custom::AnimatedProgress : public jObject<::org::eclipse::swt::custom::AnimatedProgress, ::org::eclipse::swt::widgets::Canvas> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_custom / "AnimatedProgress";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::org::eclipse::swt::widgets::Composite, ::jint)>(), //
+		jMethod<::jvoid()>("clear"), //
+		jMethod<::org::eclipse::swt::graphics::Point(::jint, ::jint, ::jboolean)>("computeSize"), //
+		jMethod<::jvoid()>("start"), //
+		jMethod<::jvoid()>("stop"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto clear(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clear")] != -1);
+		return call<R>("clear", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::eclipse::swt::graphics::Point, typename... Args>
+	auto computeSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("computeSize")] != -1);
+		return call<R>("computeSize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto start(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("start")] != -1);
+		return call<R>("start", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto stop(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("stop")] != -1);
+		return call<R>("stop", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

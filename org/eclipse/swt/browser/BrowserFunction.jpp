@@ -1,0 +1,58 @@
+#ifndef org_eclipse_swt_browser_BrowserFunction_HPP
+#define org_eclipse_swt_browser_BrowserFunction_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::browser::BrowserFunction : public jObject<::org::eclipse::swt::browser::BrowserFunction, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_browser / "BrowserFunction";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::org::eclipse::swt::browser::Browser, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::org::eclipse::swt::browser::Browser, ::java::lang::String, ::jboolean, ::java::lang::String *)>(), //
+		jMethod<::jvoid()>("dispose"), //
+		jMethod<::java::lang::Object(::java::lang::Object *)>("function"), //
+		jMethod<::org::eclipse::swt::browser::Browser()>("getBrowser"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::jboolean()>("isDisposed"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispose(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dispose")] != -1);
+		return call<R>("dispose", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto function(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("function")] != -1);
+		return call<R>("function", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::eclipse::swt::browser::Browser, typename... Args>
+	auto getBrowser(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBrowser")] != -1);
+		return call<R>("getBrowser", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDisposed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isDisposed")] != -1);
+		return call<R>("isDisposed", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

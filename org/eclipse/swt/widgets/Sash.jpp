@@ -1,0 +1,43 @@
+#ifndef org_eclipse_swt_widgets_Sash_HPP
+#define org_eclipse_swt_widgets_Sash_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::widgets::Sash : public jObject<::org::eclipse::swt::widgets::Sash, ::org::eclipse::swt::widgets::Control> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_widgets / "Sash";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::org::eclipse::swt::widgets::Composite, ::jint)>(), //
+		jMethod<::jvoid(::org::eclipse::swt::events::SelectionListener)>("addSelectionListener"), //
+		jMethod<::org::eclipse::swt::graphics::Point(::jint, ::jint, ::jboolean)>("computeSize"), //
+		jMethod<::jvoid(::org::eclipse::swt::events::SelectionListener)>("removeSelectionListener"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addSelectionListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addSelectionListener")] != -1);
+		return call<R>("addSelectionListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::eclipse::swt::graphics::Point, typename... Args>
+	auto computeSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("computeSize")] != -1);
+		return call<R>("computeSize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeSelectionListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeSelectionListener")] != -1);
+		return call<R>("removeSelectionListener", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

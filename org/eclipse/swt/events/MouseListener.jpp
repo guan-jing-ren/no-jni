@@ -1,0 +1,42 @@
+#ifndef org_eclipse_swt_events_MouseListener_HPP
+#define org_eclipse_swt_events_MouseListener_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::events::MouseListener : public jObject<::org::eclipse::swt::events::MouseListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_events / "MouseListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::org::eclipse::swt::events::MouseEvent)>("mouseDoubleClick"), //
+		jMethod<::jvoid(::org::eclipse::swt::events::MouseEvent)>("mouseDown"), //
+		jMethod<::jvoid(::org::eclipse::swt::events::MouseEvent)>("mouseUp"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto mouseDoubleClick(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("mouseDoubleClick")] != -1);
+		return call<R>("mouseDoubleClick", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto mouseDown(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("mouseDown")] != -1);
+		return call<R>("mouseDown", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto mouseUp(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("mouseUp")] != -1);
+		return call<R>("mouseUp", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

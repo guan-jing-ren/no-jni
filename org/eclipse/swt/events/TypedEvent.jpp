@@ -1,0 +1,57 @@
+#ifndef org_eclipse_swt_events_TypedEvent_HPP
+#define org_eclipse_swt_events_TypedEvent_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::events::TypedEvent : public jObject<::org::eclipse::swt::events::TypedEvent, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_events / "TypedEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::Object>("data"), //
+		jField<::org::eclipse::swt::widgets::Display>("display"), //
+		jField<::jint>("time"), //
+		jField<::org::eclipse::swt::widgets::Widget>("widget"), //
+	};
+
+	template<typename F = ::java::lang::Object>
+	auto data() const {
+		static_assert(field_signatures[jField<F>("data")] != -1);
+		return at<F>("data");
+	}
+
+	template<typename F = ::org::eclipse::swt::widgets::Display>
+	auto display() const {
+		static_assert(field_signatures[jField<F>("display")] != -1);
+		return at<F>("display");
+	}
+
+	template<typename F = ::jint>
+	auto time() const {
+		static_assert(field_signatures[jField<F>("time")] != -1);
+		return at<F>("time");
+	}
+
+	template<typename F = ::org::eclipse::swt::widgets::Widget>
+	auto widget() const {
+		static_assert(field_signatures[jField<F>("widget")] != -1);
+		return at<F>("widget");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Object)>(), //
+		jConstructor<::jvoid(::org::eclipse::swt::widgets::Event)>(), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

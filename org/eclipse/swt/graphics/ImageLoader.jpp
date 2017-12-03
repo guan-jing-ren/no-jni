@@ -1,0 +1,107 @@
+#ifndef org_eclipse_swt_graphics_ImageLoader_HPP
+#define org_eclipse_swt_graphics_ImageLoader_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::graphics::ImageLoader : public jObject<::org::eclipse::swt::graphics::ImageLoader, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_graphics / "ImageLoader";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("backgroundPixel"), //
+		jField<::jint>("compression"), //
+		jField<::org::eclipse::swt::graphics::ImageData *>("data"), //
+		jField<::jint>("logicalScreenHeight"), //
+		jField<::jint>("logicalScreenWidth"), //
+		jField<::jint>("repeatCount"), //
+	};
+
+	template<typename F = ::jint>
+	auto backgroundPixel() const {
+		static_assert(field_signatures[jField<F>("backgroundPixel")] != -1);
+		return at<F>("backgroundPixel");
+	}
+
+	template<typename F = ::jint>
+	auto compression() const {
+		static_assert(field_signatures[jField<F>("compression")] != -1);
+		return at<F>("compression");
+	}
+
+	template<typename F = ::org::eclipse::swt::graphics::ImageData *>
+	auto data() const {
+		static_assert(field_signatures[jField<F>("data")] != -1);
+		return at<F>("data");
+	}
+
+	template<typename F = ::jint>
+	auto logicalScreenHeight() const {
+		static_assert(field_signatures[jField<F>("logicalScreenHeight")] != -1);
+		return at<F>("logicalScreenHeight");
+	}
+
+	template<typename F = ::jint>
+	auto logicalScreenWidth() const {
+		static_assert(field_signatures[jField<F>("logicalScreenWidth")] != -1);
+		return at<F>("logicalScreenWidth");
+	}
+
+	template<typename F = ::jint>
+	auto repeatCount() const {
+		static_assert(field_signatures[jField<F>("repeatCount")] != -1);
+		return at<F>("repeatCount");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::org::eclipse::swt::graphics::ImageLoaderListener)>("addImageLoaderListener"), //
+		jMethod<::jboolean()>("hasListeners"), //
+		jMethod<::org::eclipse::swt::graphics::ImageData *(::java::io::InputStream)>("load"), //
+		jMethod<::org::eclipse::swt::graphics::ImageData *(::java::lang::String)>("load"), //
+		jMethod<::jvoid(::org::eclipse::swt::graphics::ImageLoaderEvent)>("notifyListeners"), //
+		jMethod<::jvoid(::org::eclipse::swt::graphics::ImageLoaderListener)>("removeImageLoaderListener"), //
+		jMethod<::jvoid(::java::io::OutputStream, ::jint)>("save"), //
+		jMethod<::jvoid(::java::lang::String, ::jint)>("save"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addImageLoaderListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addImageLoaderListener")] != -1);
+		return call<R>("addImageLoaderListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasListeners(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hasListeners")] != -1);
+		return call<R>("hasListeners", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::eclipse::swt::graphics::ImageData *, typename... Args>
+	auto load(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("load")] != -1);
+		return call<R>("load", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto notifyListeners(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("notifyListeners")] != -1);
+		return call<R>("notifyListeners", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeImageLoaderListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeImageLoaderListener")] != -1);
+		return call<R>("removeImageLoaderListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto save(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("save")] != -1);
+		return call<R>("save", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

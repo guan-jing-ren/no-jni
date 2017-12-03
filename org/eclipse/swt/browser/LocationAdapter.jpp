@@ -1,0 +1,36 @@
+#ifndef org_eclipse_swt_browser_LocationAdapter_HPP
+#define org_eclipse_swt_browser_LocationAdapter_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::browser::LocationAdapter : public jObject<::org::eclipse::swt::browser::LocationAdapter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_browser / "LocationAdapter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::org::eclipse::swt::browser::LocationEvent)>("changed"), //
+		jMethod<::jvoid(::org::eclipse::swt::browser::LocationEvent)>("changing"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto changed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("changed")] != -1);
+		return call<R>("changed", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto changing(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("changing")] != -1);
+		return call<R>("changing", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,49 @@
+#ifndef org_eclipse_swt_awt_SWT_AWT_HPP
+#define org_eclipse_swt_awt_SWT_AWT_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::awt::SWT_AWT : public jObject<::org::eclipse::swt::awt::SWT_AWT, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_awt / "SWT_AWT";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("embeddedFrameClass"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto embeddedFrameClass() {
+		static_assert(field_signatures[jField<F>("embeddedFrameClass")] != -1);
+		return sat<F>("embeddedFrameClass");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::awt::Frame(::org::eclipse::swt::widgets::Composite)>("getFrame"), //
+		jMethod<::java::awt::Frame(::org::eclipse::swt::widgets::Composite)>("new_Frame"), //
+		jMethod<::org::eclipse::swt::widgets::Shell(::org::eclipse::swt::widgets::Display, ::java::awt::Canvas)>("new_Shell"), //
+	};
+
+	template<typename R = ::java::awt::Frame, typename... Args>
+	static auto getFrame(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFrame")] != -1);
+		return scall<R>("getFrame", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Frame, typename... Args>
+	static auto new_Frame(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("new_Frame")] != -1);
+		return scall<R>("new_Frame", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::eclipse::swt::widgets::Shell, typename... Args>
+	static auto new_Shell(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("new_Shell")] != -1);
+		return scall<R>("new_Shell", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,44 @@
+#ifndef org_eclipse_swt_graphics_Pattern_HPP
+#define org_eclipse_swt_graphics_Pattern_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::graphics::Pattern : public jObject<::org::eclipse::swt::graphics::Pattern, ::org::eclipse::swt::graphics::Resource> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_graphics / "Pattern";
+
+	constexpr static Enume field_signatures{
+		jField<::jlong>("handle"), //
+	};
+
+	template<typename F = ::jlong>
+	auto handle() const {
+		static_assert(field_signatures[jField<F>("handle")] != -1);
+		return at<F>("handle");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::org::eclipse::swt::graphics::Device, ::jfloat, ::jfloat, ::jfloat, ::jfloat, ::org::eclipse::swt::graphics::Color, ::jint, ::org::eclipse::swt::graphics::Color, ::jint)>(), //
+		jConstructor<::jvoid(::org::eclipse::swt::graphics::Device, ::jfloat, ::jfloat, ::jfloat, ::jfloat, ::org::eclipse::swt::graphics::Color, ::org::eclipse::swt::graphics::Color)>(), //
+		jConstructor<::jvoid(::org::eclipse::swt::graphics::Device, ::org::eclipse::swt::graphics::Image)>(), //
+		jMethod<::jboolean()>("isDisposed"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDisposed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isDisposed")] != -1);
+		return call<R>("isDisposed", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

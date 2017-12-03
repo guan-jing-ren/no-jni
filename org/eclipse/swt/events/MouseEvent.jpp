@@ -1,0 +1,63 @@
+#ifndef org_eclipse_swt_events_MouseEvent_HPP
+#define org_eclipse_swt_events_MouseEvent_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::events::MouseEvent : public jObject<::org::eclipse::swt::events::MouseEvent, ::org::eclipse::swt::events::TypedEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_events / "MouseEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("button"), //
+		jField<::jint>("count"), //
+		jField<::jint>("stateMask"), //
+		jField<::jint>("x"), //
+		jField<::jint>("y"), //
+	};
+
+	template<typename F = ::jint>
+	auto button() const {
+		static_assert(field_signatures[jField<F>("button")] != -1);
+		return at<F>("button");
+	}
+
+	template<typename F = ::jint>
+	auto count() const {
+		static_assert(field_signatures[jField<F>("count")] != -1);
+		return at<F>("count");
+	}
+
+	template<typename F = ::jint>
+	auto stateMask() const {
+		static_assert(field_signatures[jField<F>("stateMask")] != -1);
+		return at<F>("stateMask");
+	}
+
+	template<typename F = ::jint>
+	auto x() const {
+		static_assert(field_signatures[jField<F>("x")] != -1);
+		return at<F>("x");
+	}
+
+	template<typename F = ::jint>
+	auto y() const {
+		static_assert(field_signatures[jField<F>("y")] != -1);
+		return at<F>("y");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::org::eclipse::swt::widgets::Event)>(), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

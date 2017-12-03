@@ -1,0 +1,56 @@
+#ifndef org_eclipse_swt_browser_AuthenticationEvent_HPP
+#define org_eclipse_swt_browser_AuthenticationEvent_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::browser::AuthenticationEvent : public jObject<::org::eclipse::swt::browser::AuthenticationEvent, ::org::eclipse::swt::events::TypedEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_browser / "AuthenticationEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::jboolean>("doit"), //
+		jField<::java::lang::String>("location"), //
+		jField<::java::lang::String>("password"), //
+		jField<::java::lang::String>("user"), //
+	};
+
+	template<typename F = ::jboolean>
+	auto doit() const {
+		static_assert(field_signatures[jField<F>("doit")] != -1);
+		return at<F>("doit");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto location() const {
+		static_assert(field_signatures[jField<F>("location")] != -1);
+		return at<F>("location");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto password() const {
+		static_assert(field_signatures[jField<F>("password")] != -1);
+		return at<F>("password");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto user() const {
+		static_assert(field_signatures[jField<F>("user")] != -1);
+		return at<F>("user");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::org::eclipse::swt::widgets::Widget)>(), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

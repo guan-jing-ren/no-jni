@@ -1,0 +1,87 @@
+#ifndef org_eclipse_swt_custom_StyleRange_HPP
+#define org_eclipse_swt_custom_StyleRange_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::custom::StyleRange : public jObject<::org::eclipse::swt::custom::StyleRange, ::org::eclipse::swt::graphics::TextStyle> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_custom / "StyleRange";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("fontStyle"), //
+		jField<::jint>("length"), //
+		jField<::jint>("start"), //
+	};
+
+	template<typename F = ::jint>
+	auto fontStyle() const {
+		static_assert(field_signatures[jField<F>("fontStyle")] != -1);
+		return at<F>("fontStyle");
+	}
+
+	template<typename F = ::jint>
+	auto length() const {
+		static_assert(field_signatures[jField<F>("length")] != -1);
+		return at<F>("length");
+	}
+
+	template<typename F = ::jint>
+	auto start() const {
+		static_assert(field_signatures[jField<F>("start")] != -1);
+		return at<F>("start");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint, ::jint, ::org::eclipse::swt::graphics::Color, ::org::eclipse::swt::graphics::Color)>(), //
+		jConstructor<::jvoid(::jint, ::jint, ::org::eclipse::swt::graphics::Color, ::org::eclipse::swt::graphics::Color, ::jint)>(), //
+		jConstructor<::jvoid(::org::eclipse::swt::graphics::TextStyle)>(), //
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jboolean()>("isUnstyled"), //
+		jMethod<::jboolean(::org::eclipse::swt::custom::StyleRange)>("similarTo"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isUnstyled(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isUnstyled")] != -1);
+		return call<R>("isUnstyled", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto similarTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("similarTo")] != -1);
+		return call<R>("similarTo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

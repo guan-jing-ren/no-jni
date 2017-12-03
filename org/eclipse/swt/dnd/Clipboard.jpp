@@ -1,0 +1,75 @@
+#ifndef org_eclipse_swt_dnd_Clipboard_HPP
+#define org_eclipse_swt_dnd_Clipboard_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::dnd::Clipboard : public jObject<::org::eclipse::swt::dnd::Clipboard, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_dnd / "Clipboard";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::org::eclipse::swt::widgets::Display)>(), //
+		jMethod<::jvoid()>("clearContents"), //
+		jMethod<::jvoid(::jint)>("clearContents"), //
+		jMethod<::jvoid()>("dispose"), //
+		jMethod<::java::lang::String *()>("getAvailableTypeNames"), //
+		jMethod<::org::eclipse::swt::dnd::TransferData *()>("getAvailableTypes"), //
+		jMethod<::org::eclipse::swt::dnd::TransferData *(::jint)>("getAvailableTypes"), //
+		jMethod<::java::lang::Object(::org::eclipse::swt::dnd::Transfer)>("getContents"), //
+		jMethod<::java::lang::Object(::org::eclipse::swt::dnd::Transfer, ::jint)>("getContents"), //
+		jMethod<::jboolean()>("isDisposed"), //
+		jMethod<::jvoid(::java::lang::Object *, ::org::eclipse::swt::dnd::Transfer *)>("setContents"), //
+		jMethod<::jvoid(::java::lang::Object *, ::org::eclipse::swt::dnd::Transfer *, ::jint)>("setContents"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto clearContents(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clearContents")] != -1);
+		return call<R>("clearContents", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispose(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dispose")] != -1);
+		return call<R>("dispose", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getAvailableTypeNames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAvailableTypeNames")] != -1);
+		return call<R>("getAvailableTypeNames", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::eclipse::swt::dnd::TransferData *, typename... Args>
+	auto getAvailableTypes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAvailableTypes")] != -1);
+		return call<R>("getAvailableTypes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getContents(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getContents")] != -1);
+		return call<R>("getContents", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDisposed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isDisposed")] != -1);
+		return call<R>("isDisposed", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setContents(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setContents")] != -1);
+		return call<R>("setContents", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,36 @@
+#ifndef org_eclipse_swt_events_MenuAdapter_HPP
+#define org_eclipse_swt_events_MenuAdapter_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::events::MenuAdapter : public jObject<::org::eclipse::swt::events::MenuAdapter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_events / "MenuAdapter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::org::eclipse::swt::events::MenuEvent)>("menuHidden"), //
+		jMethod<::jvoid(::org::eclipse::swt::events::MenuEvent)>("menuShown"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto menuHidden(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("menuHidden")] != -1);
+		return call<R>("menuHidden", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto menuShown(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("menuShown")] != -1);
+		return call<R>("menuShown", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

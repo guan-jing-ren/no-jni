@@ -1,0 +1,50 @@
+#ifndef org_eclipse_swt_custom_StyledTextDropTargetEffect_HPP
+#define org_eclipse_swt_custom_StyledTextDropTargetEffect_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::custom::StyledTextDropTargetEffect : public jObject<::org::eclipse::swt::custom::StyledTextDropTargetEffect, ::org::eclipse::swt::dnd::DropTargetEffect> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_custom / "StyledTextDropTargetEffect";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::org::eclipse::swt::custom::StyledText)>(), //
+		jMethod<::jvoid(::org::eclipse::swt::dnd::DropTargetEvent)>("dragEnter"), //
+		jMethod<::jvoid(::org::eclipse::swt::dnd::DropTargetEvent)>("dragLeave"), //
+		jMethod<::jvoid(::org::eclipse::swt::dnd::DropTargetEvent)>("dragOver"), //
+		jMethod<::jvoid(::org::eclipse::swt::dnd::DropTargetEvent)>("dropAccept"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dragEnter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dragEnter")] != -1);
+		return call<R>("dragEnter", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dragLeave(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dragLeave")] != -1);
+		return call<R>("dragLeave", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dragOver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dragOver")] != -1);
+		return call<R>("dragOver", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dropAccept(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dropAccept")] != -1);
+		return call<R>("dropAccept", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

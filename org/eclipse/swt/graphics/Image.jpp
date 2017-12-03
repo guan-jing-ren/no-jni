@@ -1,0 +1,141 @@
+#ifndef org_eclipse_swt_graphics_Image_HPP
+#define org_eclipse_swt_graphics_Image_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::graphics::Image : public jObject<::org::eclipse::swt::graphics::Image, ::org::eclipse::swt::graphics::Resource> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_graphics / "Image";
+
+	constexpr static Enume field_signatures{
+		jField<::jlong>("mask"), //
+		jField<::jlong>("pixmap"), //
+		jField<::jlong>("surface"), //
+		jField<::jint>("type"), //
+	};
+
+	template<typename F = ::jlong>
+	auto mask() const {
+		static_assert(field_signatures[jField<F>("mask")] != -1);
+		return at<F>("mask");
+	}
+
+	template<typename F = ::jlong>
+	auto pixmap() const {
+		static_assert(field_signatures[jField<F>("pixmap")] != -1);
+		return at<F>("pixmap");
+	}
+
+	template<typename F = ::jlong>
+	auto surface() const {
+		static_assert(field_signatures[jField<F>("surface")] != -1);
+		return at<F>("surface");
+	}
+
+	template<typename F = ::jint>
+	auto type() const {
+		static_assert(field_signatures[jField<F>("type")] != -1);
+		return at<F>("type");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::org::eclipse::swt::graphics::Device, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::org::eclipse::swt::graphics::Device, ::java::io::InputStream)>(), //
+		jConstructor<::jvoid(::org::eclipse::swt::graphics::Device, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::org::eclipse::swt::graphics::Device, ::org::eclipse::swt::graphics::Image, ::jint)>(), //
+		jConstructor<::jvoid(::org::eclipse::swt::graphics::Device, ::org::eclipse::swt::graphics::ImageData)>(), //
+		jConstructor<::jvoid(::org::eclipse::swt::graphics::Device, ::org::eclipse::swt::graphics::ImageData, ::org::eclipse::swt::graphics::ImageData)>(), //
+		jConstructor<::jvoid(::org::eclipse::swt::graphics::Device, ::org::eclipse::swt::graphics::ImageDataProvider)>(), //
+		jConstructor<::jvoid(::org::eclipse::swt::graphics::Device, ::org::eclipse::swt::graphics::ImageFileNameProvider)>(), //
+		jConstructor<::jvoid(::org::eclipse::swt::graphics::Device, ::org::eclipse::swt::graphics::Rectangle)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::org::eclipse::swt::graphics::Color()>("getBackground"), //
+		jMethod<::org::eclipse::swt::graphics::Rectangle()>("getBounds"), //
+		jMethod<::org::eclipse::swt::graphics::ImageData()>("getImageData"), //
+		jMethod<::org::eclipse::swt::graphics::Image(::org::eclipse::swt::graphics::Device, ::jint, ::jlong, ::jlong)>("gtk_new"), //
+		jMethod<::org::eclipse::swt::graphics::Image(::org::eclipse::swt::graphics::Device, ::jint, ::jlong)>("gtk_new_from_pixbuf"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jvoid(::jlong, ::org::eclipse::swt::graphics::GCData)>("internal_dispose_GC"), //
+		jMethod<::jlong(::org::eclipse::swt::graphics::GCData)>("internal_new_GC"), //
+		jMethod<::jboolean()>("isDisposed"), //
+		jMethod<::jvoid(::org::eclipse::swt::graphics::Color)>("setBackground"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::eclipse::swt::graphics::Color, typename... Args>
+	auto getBackground(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBackground")] != -1);
+		return call<R>("getBackground", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::eclipse::swt::graphics::Rectangle, typename... Args>
+	auto getBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBounds")] != -1);
+		return call<R>("getBounds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::eclipse::swt::graphics::ImageData, typename... Args>
+	auto getImageData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getImageData")] != -1);
+		return call<R>("getImageData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::eclipse::swt::graphics::Image, typename... Args>
+	static auto gtk_new(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("gtk_new")] != -1);
+		return scall<R>("gtk_new", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::eclipse::swt::graphics::Image, typename... Args>
+	static auto gtk_new_from_pixbuf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("gtk_new_from_pixbuf")] != -1);
+		return scall<R>("gtk_new_from_pixbuf", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto internal_dispose_GC(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("internal_dispose_GC")] != -1);
+		return call<R>("internal_dispose_GC", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto internal_new_GC(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("internal_new_GC")] != -1);
+		return call<R>("internal_new_GC", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDisposed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isDisposed")] != -1);
+		return call<R>("isDisposed", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setBackground(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setBackground")] != -1);
+		return call<R>("setBackground", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

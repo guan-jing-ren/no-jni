@@ -1,0 +1,91 @@
+#ifndef org_eclipse_swt_events_GestureEvent_HPP
+#define org_eclipse_swt_events_GestureEvent_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::events::GestureEvent : public jObject<::org::eclipse::swt::events::GestureEvent, ::org::eclipse::swt::events::TypedEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_events / "GestureEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("detail"), //
+		jField<::jboolean>("doit"), //
+		jField<::jdouble>("magnification"), //
+		jField<::jdouble>("rotation"), //
+		jField<::jint>("stateMask"), //
+		jField<::jint>("x"), //
+		jField<::jint>("xDirection"), //
+		jField<::jint>("y"), //
+		jField<::jint>("yDirection"), //
+	};
+
+	template<typename F = ::jint>
+	auto detail() const {
+		static_assert(field_signatures[jField<F>("detail")] != -1);
+		return at<F>("detail");
+	}
+
+	template<typename F = ::jboolean>
+	auto doit() const {
+		static_assert(field_signatures[jField<F>("doit")] != -1);
+		return at<F>("doit");
+	}
+
+	template<typename F = ::jdouble>
+	auto magnification() const {
+		static_assert(field_signatures[jField<F>("magnification")] != -1);
+		return at<F>("magnification");
+	}
+
+	template<typename F = ::jdouble>
+	auto rotation() const {
+		static_assert(field_signatures[jField<F>("rotation")] != -1);
+		return at<F>("rotation");
+	}
+
+	template<typename F = ::jint>
+	auto stateMask() const {
+		static_assert(field_signatures[jField<F>("stateMask")] != -1);
+		return at<F>("stateMask");
+	}
+
+	template<typename F = ::jint>
+	auto x() const {
+		static_assert(field_signatures[jField<F>("x")] != -1);
+		return at<F>("x");
+	}
+
+	template<typename F = ::jint>
+	auto xDirection() const {
+		static_assert(field_signatures[jField<F>("xDirection")] != -1);
+		return at<F>("xDirection");
+	}
+
+	template<typename F = ::jint>
+	auto y() const {
+		static_assert(field_signatures[jField<F>("y")] != -1);
+		return at<F>("y");
+	}
+
+	template<typename F = ::jint>
+	auto yDirection() const {
+		static_assert(field_signatures[jField<F>("yDirection")] != -1);
+		return at<F>("yDirection");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::org::eclipse::swt::widgets::Event)>(), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

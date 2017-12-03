@@ -1,0 +1,36 @@
+#ifndef org_eclipse_swt_dnd_TableDragSourceEffect_HPP
+#define org_eclipse_swt_dnd_TableDragSourceEffect_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::dnd::TableDragSourceEffect : public jObject<::org::eclipse::swt::dnd::TableDragSourceEffect, ::org::eclipse::swt::dnd::DragSourceEffect> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_dnd / "TableDragSourceEffect";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::org::eclipse::swt::widgets::Table)>(), //
+		jMethod<::jvoid(::org::eclipse::swt::dnd::DragSourceEvent)>("dragFinished"), //
+		jMethod<::jvoid(::org::eclipse::swt::dnd::DragSourceEvent)>("dragStart"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dragFinished(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dragFinished")] != -1);
+		return call<R>("dragFinished", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dragStart(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dragStart")] != -1);
+		return call<R>("dragStart", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

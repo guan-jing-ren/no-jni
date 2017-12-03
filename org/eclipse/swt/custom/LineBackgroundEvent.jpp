@@ -1,0 +1,42 @@
+#ifndef org_eclipse_swt_custom_LineBackgroundEvent_HPP
+#define org_eclipse_swt_custom_LineBackgroundEvent_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::custom::LineBackgroundEvent : public jObject<::org::eclipse::swt::custom::LineBackgroundEvent, ::org::eclipse::swt::events::TypedEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_custom / "LineBackgroundEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::org::eclipse::swt::graphics::Color>("lineBackground"), //
+		jField<::jint>("lineOffset"), //
+		jField<::java::lang::String>("lineText"), //
+	};
+
+	template<typename F = ::org::eclipse::swt::graphics::Color>
+	auto lineBackground() const {
+		static_assert(field_signatures[jField<F>("lineBackground")] != -1);
+		return at<F>("lineBackground");
+	}
+
+	template<typename F = ::jint>
+	auto lineOffset() const {
+		static_assert(field_signatures[jField<F>("lineOffset")] != -1);
+		return at<F>("lineOffset");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto lineText() const {
+		static_assert(field_signatures[jField<F>("lineText")] != -1);
+		return at<F>("lineText");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::org::eclipse::swt::custom::StyledTextEvent)>(), //
+	};
+
+};
+
+#endif

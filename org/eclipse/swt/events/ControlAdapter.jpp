@@ -1,0 +1,36 @@
+#ifndef org_eclipse_swt_events_ControlAdapter_HPP
+#define org_eclipse_swt_events_ControlAdapter_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::events::ControlAdapter : public jObject<::org::eclipse::swt::events::ControlAdapter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_events / "ControlAdapter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::org::eclipse::swt::events::ControlEvent)>("controlMoved"), //
+		jMethod<::jvoid(::org::eclipse::swt::events::ControlEvent)>("controlResized"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto controlMoved(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("controlMoved")] != -1);
+		return call<R>("controlMoved", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto controlResized(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("controlResized")] != -1);
+		return call<R>("controlResized", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

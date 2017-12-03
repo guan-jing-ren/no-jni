@@ -1,0 +1,36 @@
+#ifndef org_eclipse_swt_dnd_ByteArrayTransfer_HPP
+#define org_eclipse_swt_dnd_ByteArrayTransfer_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::dnd::ByteArrayTransfer : public jObject<::org::eclipse::swt::dnd::ByteArrayTransfer, ::org::eclipse::swt::dnd::Transfer> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_dnd / "ByteArrayTransfer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::org::eclipse::swt::dnd::TransferData *()>("getSupportedTypes"), //
+		jMethod<::jboolean(::org::eclipse::swt::dnd::TransferData)>("isSupportedType"), //
+	};
+
+	template<typename R = ::org::eclipse::swt::dnd::TransferData *, typename... Args>
+	auto getSupportedTypes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSupportedTypes")] != -1);
+		return call<R>("getSupportedTypes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isSupportedType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSupportedType")] != -1);
+		return call<R>("isSupportedType", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

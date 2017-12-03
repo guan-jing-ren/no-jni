@@ -1,0 +1,84 @@
+#ifndef org_eclipse_swt_dnd_DragSourceEvent_HPP
+#define org_eclipse_swt_dnd_DragSourceEvent_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::dnd::DragSourceEvent : public jObject<::org::eclipse::swt::dnd::DragSourceEvent, ::org::eclipse::swt::events::TypedEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_dnd / "DragSourceEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::org::eclipse::swt::dnd::TransferData>("dataType"), //
+		jField<::jint>("detail"), //
+		jField<::jboolean>("doit"), //
+		jField<::org::eclipse::swt::graphics::Image>("image"), //
+		jField<::jint>("offsetX"), //
+		jField<::jint>("offsetY"), //
+		jField<::jint>("x"), //
+		jField<::jint>("y"), //
+	};
+
+	template<typename F = ::org::eclipse::swt::dnd::TransferData>
+	auto dataType() const {
+		static_assert(field_signatures[jField<F>("dataType")] != -1);
+		return at<F>("dataType");
+	}
+
+	template<typename F = ::jint>
+	auto detail() const {
+		static_assert(field_signatures[jField<F>("detail")] != -1);
+		return at<F>("detail");
+	}
+
+	template<typename F = ::jboolean>
+	auto doit() const {
+		static_assert(field_signatures[jField<F>("doit")] != -1);
+		return at<F>("doit");
+	}
+
+	template<typename F = ::org::eclipse::swt::graphics::Image>
+	auto image() const {
+		static_assert(field_signatures[jField<F>("image")] != -1);
+		return at<F>("image");
+	}
+
+	template<typename F = ::jint>
+	auto offsetX() const {
+		static_assert(field_signatures[jField<F>("offsetX")] != -1);
+		return at<F>("offsetX");
+	}
+
+	template<typename F = ::jint>
+	auto offsetY() const {
+		static_assert(field_signatures[jField<F>("offsetY")] != -1);
+		return at<F>("offsetY");
+	}
+
+	template<typename F = ::jint>
+	auto x() const {
+		static_assert(field_signatures[jField<F>("x")] != -1);
+		return at<F>("x");
+	}
+
+	template<typename F = ::jint>
+	auto y() const {
+		static_assert(field_signatures[jField<F>("y")] != -1);
+		return at<F>("y");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::org::eclipse::swt::dnd::DNDEvent)>(), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

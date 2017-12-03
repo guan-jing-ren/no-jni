@@ -1,0 +1,35 @@
+#ifndef org_eclipse_swt_graphics_PathData_HPP
+#define org_eclipse_swt_graphics_PathData_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::graphics::PathData : public jObject<::org::eclipse::swt::graphics::PathData, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_graphics / "PathData";
+
+	constexpr static Enume field_signatures{
+		jField<::jfloat *>("points"), //
+		jField<::jbyte *>("types"), //
+	};
+
+	template<typename F = ::jfloat *>
+	auto points() const {
+		static_assert(field_signatures[jField<F>("points")] != -1);
+		return at<F>("points");
+	}
+
+	template<typename F = ::jbyte *>
+	auto types() const {
+		static_assert(field_signatures[jField<F>("types")] != -1);
+		return at<F>("types");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+	};
+
+};
+
+#endif

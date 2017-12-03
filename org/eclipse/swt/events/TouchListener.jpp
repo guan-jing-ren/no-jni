@@ -1,0 +1,28 @@
+#ifndef org_eclipse_swt_events_TouchListener_HPP
+#define org_eclipse_swt_events_TouchListener_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::events::TouchListener : public jObject<::org::eclipse::swt::events::TouchListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_events / "TouchListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::org::eclipse::swt::events::TouchEvent)>("touch"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto touch(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("touch")] != -1);
+		return call<R>("touch", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

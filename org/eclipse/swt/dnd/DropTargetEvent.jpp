@@ -1,0 +1,84 @@
+#ifndef org_eclipse_swt_dnd_DropTargetEvent_HPP
+#define org_eclipse_swt_dnd_DropTargetEvent_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::dnd::DropTargetEvent : public jObject<::org::eclipse::swt::dnd::DropTargetEvent, ::org::eclipse::swt::events::TypedEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_dnd / "DropTargetEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::org::eclipse::swt::dnd::TransferData>("currentDataType"), //
+		jField<::org::eclipse::swt::dnd::TransferData *>("dataTypes"), //
+		jField<::jint>("detail"), //
+		jField<::jint>("feedback"), //
+		jField<::org::eclipse::swt::widgets::Widget>("item"), //
+		jField<::jint>("operations"), //
+		jField<::jint>("x"), //
+		jField<::jint>("y"), //
+	};
+
+	template<typename F = ::org::eclipse::swt::dnd::TransferData>
+	auto currentDataType() const {
+		static_assert(field_signatures[jField<F>("currentDataType")] != -1);
+		return at<F>("currentDataType");
+	}
+
+	template<typename F = ::org::eclipse::swt::dnd::TransferData *>
+	auto dataTypes() const {
+		static_assert(field_signatures[jField<F>("dataTypes")] != -1);
+		return at<F>("dataTypes");
+	}
+
+	template<typename F = ::jint>
+	auto detail() const {
+		static_assert(field_signatures[jField<F>("detail")] != -1);
+		return at<F>("detail");
+	}
+
+	template<typename F = ::jint>
+	auto feedback() const {
+		static_assert(field_signatures[jField<F>("feedback")] != -1);
+		return at<F>("feedback");
+	}
+
+	template<typename F = ::org::eclipse::swt::widgets::Widget>
+	auto item() const {
+		static_assert(field_signatures[jField<F>("item")] != -1);
+		return at<F>("item");
+	}
+
+	template<typename F = ::jint>
+	auto operations() const {
+		static_assert(field_signatures[jField<F>("operations")] != -1);
+		return at<F>("operations");
+	}
+
+	template<typename F = ::jint>
+	auto x() const {
+		static_assert(field_signatures[jField<F>("x")] != -1);
+		return at<F>("x");
+	}
+
+	template<typename F = ::jint>
+	auto y() const {
+		static_assert(field_signatures[jField<F>("y")] != -1);
+		return at<F>("y");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::org::eclipse::swt::dnd::DNDEvent)>(), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

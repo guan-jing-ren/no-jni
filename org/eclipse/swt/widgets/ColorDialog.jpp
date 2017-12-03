@@ -1,0 +1,58 @@
+#ifndef org_eclipse_swt_widgets_ColorDialog_HPP
+#define org_eclipse_swt_widgets_ColorDialog_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::eclipse::swt::widgets::ColorDialog : public jObject<::org::eclipse::swt::widgets::ColorDialog, ::org::eclipse::swt::widgets::Dialog> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_eclipse_swt_widgets / "ColorDialog";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::org::eclipse::swt::widgets::Shell)>(), //
+		jConstructor<::jvoid(::org::eclipse::swt::widgets::Shell, ::jint)>(), //
+		jMethod<::org::eclipse::swt::graphics::RGB()>("getRGB"), //
+		jMethod<::org::eclipse::swt::graphics::RGB *()>("getRGBs"), //
+		jMethod<::org::eclipse::swt::graphics::RGB()>("open"), //
+		jMethod<::jvoid(::org::eclipse::swt::graphics::RGB)>("setRGB"), //
+		jMethod<::jvoid(::org::eclipse::swt::graphics::RGB *)>("setRGBs"), //
+	};
+
+	template<typename R = ::org::eclipse::swt::graphics::RGB, typename... Args>
+	auto getRGB(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRGB")] != -1);
+		return call<R>("getRGB", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::eclipse::swt::graphics::RGB *, typename... Args>
+	auto getRGBs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRGBs")] != -1);
+		return call<R>("getRGBs", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::eclipse::swt::graphics::RGB, typename... Args>
+	auto open(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("open")] != -1);
+		return call<R>("open", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setRGB(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setRGB")] != -1);
+		return call<R>("setRGB", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setRGBs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setRGBs")] != -1);
+		return call<R>("setRGBs", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif
