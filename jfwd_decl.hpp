@@ -401,8 +401,6 @@ namespace org::eclipse::swt::events {}
 [[maybe_unused]] inline constexpr jPackage org_eclipse_swt_events = org_eclipse_swt / "events";
 namespace org::eclipse::swt::graphics {}
 [[maybe_unused]] inline constexpr jPackage org_eclipse_swt_graphics = org_eclipse_swt / "graphics";
-namespace org::eclipse::swt::internal {}
-[[maybe_unused]] inline constexpr jPackage org_eclipse_swt_internal = org_eclipse_swt / "internal";
 namespace org::eclipse::swt::layout {}
 [[maybe_unused]] inline constexpr jPackage org_eclipse_swt_layout = org_eclipse_swt / "layout";
 namespace org::eclipse::swt::opengl {}
@@ -417,14 +415,6 @@ namespace org::ietf {}
 [[maybe_unused]] inline constexpr jPackage org_ietf = org_ / "ietf";
 namespace org::ietf::jgss {}
 [[maybe_unused]] inline constexpr jPackage org_ietf_jgss = org_ietf / "jgss";
-namespace org::jcp {}
-[[maybe_unused]] inline constexpr jPackage org_jcp = org_ / "jcp";
-namespace org::jcp::xml {}
-[[maybe_unused]] inline constexpr jPackage org_jcp_xml = org_jcp / "xml";
-namespace org::jcp::xml::dsig {}
-[[maybe_unused]] inline constexpr jPackage org_jcp_xml_dsig = org_jcp_xml / "dsig";
-namespace org::jcp::xml::dsig::internal {}
-[[maybe_unused]] inline constexpr jPackage org_jcp_xml_dsig_internal = org_jcp_xml_dsig / "internal";
 namespace org::omg {}
 [[maybe_unused]] inline constexpr jPackage org_omg = org_ / "omg";
 namespace org::omg::CORBA {}
@@ -16116,34 +16106,6 @@ namespace org::eclipse::swt::graphics { class TextStyle; }
 template<> constexpr auto signature<::org::eclipse::swt::graphics::TextStyle> = ::org_eclipse_swt_graphics / "TextStyle";
 namespace org::eclipse::swt::graphics { class Transform; }
 template<> constexpr auto signature<::org::eclipse::swt::graphics::Transform> = ::org_eclipse_swt_graphics / "Transform";
-namespace org::eclipse::swt::internal { class BidiUtil; }
-template<> constexpr auto signature<::org::eclipse::swt::internal::BidiUtil> = ::org_eclipse_swt_internal / "BidiUtil";
-namespace org::eclipse::swt::internal { class C; }
-template<> constexpr auto signature<::org::eclipse::swt::internal::C> = ::org_eclipse_swt_internal / "C";
-namespace org::eclipse::swt::internal { class Callback; }
-template<> constexpr auto signature<::org::eclipse::swt::internal::Callback> = ::org_eclipse_swt_internal / "Callback";
-namespace org::eclipse::swt::internal { class CloneableCompatibility; }
-template<> constexpr auto signature<::org::eclipse::swt::internal::CloneableCompatibility> = ::org_eclipse_swt_internal / "CloneableCompatibility";
-namespace org::eclipse::swt::internal { class Compatibility; }
-template<> constexpr auto signature<::org::eclipse::swt::internal::Compatibility> = ::org_eclipse_swt_internal / "Compatibility";
-namespace org::eclipse::swt::internal { class Converter; }
-template<> constexpr auto signature<::org::eclipse::swt::internal::Converter> = ::org_eclipse_swt_internal / "Converter";
-namespace org::eclipse::swt::internal { class ImageList; }
-template<> constexpr auto signature<::org::eclipse::swt::internal::ImageList> = ::org_eclipse_swt_internal / "ImageList";
-namespace org::eclipse::swt::internal { class LONG; }
-template<> constexpr auto signature<::org::eclipse::swt::internal::LONG> = ::org_eclipse_swt_internal / "LONG";
-namespace org::eclipse::swt::internal { class Library; }
-template<> constexpr auto signature<::org::eclipse::swt::internal::Library> = ::org_eclipse_swt_internal / "Library";
-namespace org::eclipse::swt::internal { class Lock; }
-template<> constexpr auto signature<::org::eclipse::swt::internal::Lock> = ::org_eclipse_swt_internal / "Lock";
-namespace org::eclipse::swt::internal { class Platform; }
-template<> constexpr auto signature<::org::eclipse::swt::internal::Platform> = ::org_eclipse_swt_internal / "Platform";
-namespace org::eclipse::swt::internal { class SWTEventListener; }
-template<> constexpr auto signature<::org::eclipse::swt::internal::SWTEventListener> = ::org_eclipse_swt_internal / "SWTEventListener";
-namespace org::eclipse::swt::internal { class SWTEventObject; }
-template<> constexpr auto signature<::org::eclipse::swt::internal::SWTEventObject> = ::org_eclipse_swt_internal / "SWTEventObject";
-namespace org::eclipse::swt::internal { class SerializableCompatibility; }
-template<> constexpr auto signature<::org::eclipse::swt::internal::SerializableCompatibility> = ::org_eclipse_swt_internal / "SerializableCompatibility";
 namespace org::eclipse::swt::layout { class FillData; }
 template<> constexpr auto signature<::org::eclipse::swt::layout::FillData> = ::org_eclipse_swt_layout / "FillData";
 namespace org::eclipse::swt::layout { class FillLayout; }
@@ -16352,12 +16314,6 @@ namespace org::ietf::jgss { class MessageProp; }
 template<> constexpr auto signature<::org::ietf::jgss::MessageProp> = ::org_ietf_jgss / "MessageProp";
 namespace org::ietf::jgss { class Oid; }
 template<> constexpr auto signature<::org::ietf::jgss::Oid> = ::org_ietf_jgss / "Oid";
-namespace org::jcp::xml::dsig::internal { class DigesterOutputStream; }
-template<> constexpr auto signature<::org::jcp::xml::dsig::internal::DigesterOutputStream> = ::org_jcp_xml_dsig_internal / "DigesterOutputStream";
-namespace org::jcp::xml::dsig::internal { class MacOutputStream; }
-template<> constexpr auto signature<::org::jcp::xml::dsig::internal::MacOutputStream> = ::org_jcp_xml_dsig_internal / "MacOutputStream";
-namespace org::jcp::xml::dsig::internal { class SignerOutputStream; }
-template<> constexpr auto signature<::org::jcp::xml::dsig::internal::SignerOutputStream> = ::org_jcp_xml_dsig_internal / "SignerOutputStream";
 namespace org::omg::CORBA { class ACTIVITY_COMPLETED; }
 template<> constexpr auto signature<::org::omg::CORBA::ACTIVITY_COMPLETED> = ::org_omg_CORBA / "ACTIVITY_COMPLETED";
 namespace org::omg::CORBA { class ACTIVITY_REQUIRED; }

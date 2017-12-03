@@ -563,7 +563,7 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
                  auto package = signature[1].str();
                  auto clazz = signature[2].str();
                  if (clazz.empty() || clazz == "package-info" ||
-                     package.find("/internal/") != string::npos)
+                     package.find("/internal") != string::npos)
                    continue;
 
                  for (auto p = 0; p != string::npos; p = package.find('/', ++p))
@@ -668,7 +668,7 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
     auto cls = sig.substr(pkg.size() + (pkg != sig));
     auto clazz = classes[sig];
     auto ssig = clazz.superclass().signature();
-    if (ssig.find("/internal/") != string::npos)
+    if (ssig.find("/internal") != string::npos)
       ssig.clear();
     auto scls = regex_replace(demangle(ssig), regex{"/"}, "::");
     if (scls.empty())
@@ -693,7 +693,7 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
     fsignatures.erase(remove_if(begin(fsignatures), end(fsignatures),
                                 [](const auto &sig) {
                                   return !get<3>(sig) ||
-                                         get<1>(sig).find("/internal/") !=
+                                         get<1>(sig).find("/internal") !=
                                              string::npos;
                                 }),
                       end(fsignatures));
@@ -734,7 +734,7 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
     msignatures.erase(remove_if(begin(msignatures), end(msignatures),
                                 [](const auto &sig) {
                                   return !get<3>(sig) ||
-                                         get<1>(sig).find("/internal/") !=
+                                         get<1>(sig).find("/internal") !=
                                              string::npos;
                                 }),
                       end(msignatures));
