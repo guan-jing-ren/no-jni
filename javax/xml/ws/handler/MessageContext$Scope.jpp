@@ -1,0 +1,48 @@
+#ifndef javax_xml_ws_handler_MessageContext$Scope_HPP
+#define javax_xml_ws_handler_MessageContext$Scope_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::ws::handler::MessageContext$Scope : public jObject<::javax::xml::ws::handler::MessageContext$Scope, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_ws_handler / "MessageContext$Scope";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::xml::ws::handler::MessageContext$Scope>("APPLICATION"), //
+		jField<::javax::xml::ws::handler::MessageContext$Scope>("HANDLER"), //
+	};
+
+	template<typename F = ::javax::xml::ws::handler::MessageContext$Scope>
+	static auto APPLICATION() {
+		static_assert(field_signatures[jField<F>("APPLICATION")] != -1);
+		return sat<F>("APPLICATION");
+	}
+
+	template<typename F = ::javax::xml::ws::handler::MessageContext$Scope>
+	static auto HANDLER() {
+		static_assert(field_signatures[jField<F>("HANDLER")] != -1);
+		return sat<F>("HANDLER");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::ws::handler::MessageContext$Scope(::java::lang::String)>("valueOf"), //
+		jMethod<::javax::xml::ws::handler::MessageContext$Scope *()>("values"), //
+	};
+
+	template<typename R = ::javax::xml::ws::handler::MessageContext$Scope, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::ws::handler::MessageContext$Scope *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

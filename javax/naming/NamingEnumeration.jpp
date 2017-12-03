@@ -1,0 +1,42 @@
+#ifndef javax_naming_NamingEnumeration_HPP
+#define javax_naming_NamingEnumeration_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::naming::NamingEnumeration : public jObject<::javax::naming::NamingEnumeration, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_naming / "NamingEnumeration";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("close"), //
+		jMethod<::jboolean()>("hasMore"), //
+		jMethod<::java::lang::Object()>("next"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasMore(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hasMore")] != -1);
+		return call<R>("hasMore", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto next(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("next")] != -1);
+		return call<R>("next", forward<Args>(args)...);
+	}
+
+};
+
+#endif

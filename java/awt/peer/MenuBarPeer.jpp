@@ -1,0 +1,42 @@
+#ifndef java_awt_peer_MenuBarPeer_HPP
+#define java_awt_peer_MenuBarPeer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::peer::MenuBarPeer : public jObject<::java::awt::peer::MenuBarPeer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_peer / "MenuBarPeer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::awt::Menu)>("addHelpMenu"), //
+		jMethod<::jvoid(::java::awt::Menu)>("addMenu"), //
+		jMethod<::jvoid(::jint)>("delMenu"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addHelpMenu(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addHelpMenu")] != -1);
+		return call<R>("addHelpMenu", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addMenu(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addMenu")] != -1);
+		return call<R>("addMenu", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto delMenu(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("delMenu")] != -1);
+		return call<R>("delMenu", forward<Args>(args)...);
+	}
+
+};
+
+#endif

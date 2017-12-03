@@ -1,0 +1,38 @@
+#ifndef java_util_Base64$Decoder_HPP
+#define java_util_Base64$Decoder_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::Base64$Decoder : public jObject<::java::util::Base64$Decoder, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "Base64$Decoder";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jbyte *(::java::lang::String)>("decode"), //
+		jMethod<::java::nio::ByteBuffer(::java::nio::ByteBuffer)>("decode"), //
+		jMethod<::jbyte *(::jbyte *)>("decode"), //
+		jMethod<::jint(::jbyte *, ::jbyte *)>("decode"), //
+		jMethod<::java::io::InputStream(::java::io::InputStream)>("wrap"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto decode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("decode")] != -1);
+		return call<R>("decode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::InputStream, typename... Args>
+	auto wrap(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("wrap")] != -1);
+		return call<R>("wrap", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,28 @@
+#ifndef java_util_logging_Filter_HPP
+#define java_util_logging_Filter_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::logging::Filter : public jObject<::java::util::logging::Filter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_logging / "Filter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::util::logging::LogRecord)>("isLoggable"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isLoggable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isLoggable")] != -1);
+		return call<R>("isLoggable", forward<Args>(args)...);
+	}
+
+};
+
+#endif

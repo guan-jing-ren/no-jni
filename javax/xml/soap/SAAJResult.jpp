@@ -1,0 +1,32 @@
+#ifndef javax_xml_soap_SAAJResult_HPP
+#define javax_xml_soap_SAAJResult_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::soap::SAAJResult : public jObject<::javax::xml::soap::SAAJResult, ::javax::xml::transform::dom::DOMResult> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_soap / "SAAJResult";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::javax::xml::soap::SOAPElement)>(), //
+		jConstructor<::jvoid(::javax::xml::soap::SOAPMessage)>(), //
+		jMethod<::javax::xml::soap::Node()>("getResult"), //
+	};
+
+	template<typename R = ::javax::xml::soap::Node, typename... Args>
+	auto getResult(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getResult")] != -1);
+		return call<R>("getResult", forward<Args>(args)...);
+	}
+
+};
+
+#endif

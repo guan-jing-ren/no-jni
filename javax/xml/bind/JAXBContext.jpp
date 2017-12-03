@@ -1,0 +1,81 @@
+#ifndef javax_xml_bind_JAXBContext_HPP
+#define javax_xml_bind_JAXBContext_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::bind::JAXBContext : public jObject<::javax::xml::bind::JAXBContext, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_bind / "JAXBContext";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("JAXB_CONTEXT_FACTORY"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto JAXB_CONTEXT_FACTORY() {
+		static_assert(field_signatures[jField<F>("JAXB_CONTEXT_FACTORY")] != -1);
+		return sat<F>("JAXB_CONTEXT_FACTORY");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::bind::Binder()>("createBinder"), //
+		jMethod<::javax::xml::bind::Binder(::java::lang::Class)>("createBinder"), //
+		jMethod<::javax::xml::bind::JAXBIntrospector()>("createJAXBIntrospector"), //
+		jMethod<::javax::xml::bind::Marshaller()>("createMarshaller"), //
+		jMethod<::javax::xml::bind::Unmarshaller()>("createUnmarshaller"), //
+		jMethod<::javax::xml::bind::Validator()>("createValidator"), //
+		jMethod<::jvoid(::javax::xml::bind::SchemaOutputResolver)>("generateSchema"), //
+		jMethod<::javax::xml::bind::JAXBContext(::java::lang::String)>("newInstance"), //
+		jMethod<::javax::xml::bind::JAXBContext(::java::lang::String, ::java::lang::ClassLoader)>("newInstance"), //
+		jMethod<::javax::xml::bind::JAXBContext(::java::lang::String, ::java::lang::ClassLoader, ::java::util::Map)>("newInstance"), //
+		jMethod<::javax::xml::bind::JAXBContext(::java::lang::Class *)>("newInstance"), //
+		jMethod<::javax::xml::bind::JAXBContext(::java::lang::Class *, ::java::util::Map)>("newInstance"), //
+	};
+
+	template<typename R = ::javax::xml::bind::Binder, typename... Args>
+	auto createBinder(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createBinder")] != -1);
+		return call<R>("createBinder", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::bind::JAXBIntrospector, typename... Args>
+	auto createJAXBIntrospector(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createJAXBIntrospector")] != -1);
+		return call<R>("createJAXBIntrospector", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::bind::Marshaller, typename... Args>
+	auto createMarshaller(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createMarshaller")] != -1);
+		return call<R>("createMarshaller", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::bind::Unmarshaller, typename... Args>
+	auto createUnmarshaller(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createUnmarshaller")] != -1);
+		return call<R>("createUnmarshaller", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::bind::Validator, typename... Args>
+	auto createValidator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createValidator")] != -1);
+		return call<R>("createValidator", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto generateSchema(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("generateSchema")] != -1);
+		return call<R>("generateSchema", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::bind::JAXBContext, typename... Args>
+	static auto newInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newInstance")] != -1);
+		return scall<R>("newInstance", forward<Args>(args)...);
+	}
+
+};
+
+#endif

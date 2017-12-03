@@ -1,0 +1,35 @@
+#ifndef java_awt_peer_MouseInfoPeer_HPP
+#define java_awt_peer_MouseInfoPeer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::peer::MouseInfoPeer : public jObject<::java::awt::peer::MouseInfoPeer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_peer / "MouseInfoPeer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint(::java::awt::Point)>("fillPointWithCoords"), //
+		jMethod<::jboolean(::java::awt::Window)>("isWindowUnderMouse"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto fillPointWithCoords(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("fillPointWithCoords")] != -1);
+		return call<R>("fillPointWithCoords", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isWindowUnderMouse(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isWindowUnderMouse")] != -1);
+		return call<R>("isWindowUnderMouse", forward<Args>(args)...);
+	}
+
+};
+
+#endif

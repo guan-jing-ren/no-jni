@@ -1,0 +1,29 @@
+#ifndef java_nio_file_Paths_HPP
+#define java_nio_file_Paths_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::file::Paths : public jObject<::java::nio::file::Paths, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_file / "Paths";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::nio::file::Path(::java::lang::String, ::java::lang::String *)>("get"), //
+		jMethod<::java::nio::file::Path(::java::net::URI)>("get"), //
+	};
+
+	template<typename R = ::java::nio::file::Path, typename... Args>
+	static auto get(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get")] != -1);
+		return scall<R>("get", forward<Args>(args)...);
+	}
+
+};
+
+#endif

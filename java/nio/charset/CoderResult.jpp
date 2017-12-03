@@ -1,0 +1,104 @@
+#ifndef java_nio_charset_CoderResult_HPP
+#define java_nio_charset_CoderResult_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::charset::CoderResult : public jObject<::java::nio::charset::CoderResult, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_charset / "CoderResult";
+
+	constexpr static Enume field_signatures{
+		jField<::java::nio::charset::CoderResult>("OVERFLOW"), //
+		jField<::java::nio::charset::CoderResult>("UNDERFLOW"), //
+	};
+
+	template<typename F = ::java::nio::charset::CoderResult>
+	static auto OVERFLOW_() {
+		static_assert(field_signatures[jField<F>("OVERFLOW")] != -1);
+		return sat<F>("OVERFLOW");
+	}
+
+	template<typename F = ::java::nio::charset::CoderResult>
+	static auto UNDERFLOW_() {
+		static_assert(field_signatures[jField<F>("UNDERFLOW")] != -1);
+		return sat<F>("UNDERFLOW");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean()>("isError"), //
+		jMethod<::jboolean()>("isMalformed"), //
+		jMethod<::jboolean()>("isOverflow"), //
+		jMethod<::jboolean()>("isUnderflow"), //
+		jMethod<::jboolean()>("isUnmappable"), //
+		jMethod<::jint()>("length"), //
+		jMethod<::java::nio::charset::CoderResult(::jint)>("malformedForLength"), //
+		jMethod<::jvoid()>("throwException"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::java::nio::charset::CoderResult(::jint)>("unmappableForLength"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isError(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isError")] != -1);
+		return call<R>("isError", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isMalformed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isMalformed")] != -1);
+		return call<R>("isMalformed", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isOverflow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isOverflow")] != -1);
+		return call<R>("isOverflow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isUnderflow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isUnderflow")] != -1);
+		return call<R>("isUnderflow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isUnmappable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isUnmappable")] != -1);
+		return call<R>("isUnmappable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto length(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("length")] != -1);
+		return call<R>("length", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::charset::CoderResult, typename... Args>
+	static auto malformedForLength(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("malformedForLength")] != -1);
+		return scall<R>("malformedForLength", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto throwException(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("throwException")] != -1);
+		return call<R>("throwException", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::charset::CoderResult, typename... Args>
+	static auto unmappableForLength(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unmappableForLength")] != -1);
+		return scall<R>("unmappableForLength", forward<Args>(args)...);
+	}
+
+};
+
+#endif

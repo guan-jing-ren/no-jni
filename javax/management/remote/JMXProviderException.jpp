@@ -1,0 +1,31 @@
+#ifndef javax_management_remote_JMXProviderException_HPP
+#define javax_management_remote_JMXProviderException_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::management::remote::JMXProviderException : public jObject<::javax::management::remote::JMXProviderException, ::java::io::IOException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management_remote / "JMXProviderException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Throwable)>(), //
+		jMethod<::java::lang::Throwable()>("getCause"), //
+	};
+
+	template<typename R = ::java::lang::Throwable, typename... Args>
+	auto getCause(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCause")] != -1);
+		return call<R>("getCause", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,50 @@
+#ifndef javax_swing_AbstractSpinnerModel_HPP
+#define javax_swing_AbstractSpinnerModel_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::AbstractSpinnerModel : public jObject<::javax::swing::AbstractSpinnerModel, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "AbstractSpinnerModel";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::javax::swing::event::ChangeListener)>("addChangeListener"), //
+		jMethod<::javax::swing::event::ChangeListener *()>("getChangeListeners"), //
+		jMethod<::java::util::EventListener *(::java::lang::Class)>("getListeners"), //
+		jMethod<::jvoid(::javax::swing::event::ChangeListener)>("removeChangeListener"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addChangeListener")] != -1);
+		return call<R>("addChangeListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::event::ChangeListener *, typename... Args>
+	auto getChangeListeners(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getChangeListeners")] != -1);
+		return call<R>("getChangeListeners", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::EventListener *, typename... Args>
+	auto getListeners(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getListeners")] != -1);
+		return call<R>("getListeners", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeChangeListener")] != -1);
+		return call<R>("removeChangeListener", forward<Args>(args)...);
+	}
+
+};
+
+#endif

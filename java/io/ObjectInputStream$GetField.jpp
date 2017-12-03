@@ -1,0 +1,51 @@
+#ifndef java_io_ObjectInputStream$GetField_HPP
+#define java_io_ObjectInputStream$GetField_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::io::ObjectInputStream$GetField : public jObject<::java::io::ObjectInputStream$GetField, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_io / "ObjectInputStream$GetField";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jboolean(::java::lang::String)>("defaulted"), //
+		jMethod<::jbyte(::java::lang::String, ::jbyte)>("get"), //
+		jMethod<::jchar(::java::lang::String, ::jchar)>("get"), //
+		jMethod<::jdouble(::java::lang::String, ::jdouble)>("get"), //
+		jMethod<::jfloat(::java::lang::String, ::jfloat)>("get"), //
+		jMethod<::jint(::java::lang::String, ::jint)>("get"), //
+		jMethod<::jlong(::java::lang::String, ::jlong)>("get"), //
+		jMethod<::java::lang::Object(::java::lang::String, ::java::lang::Object)>("get"), //
+		jMethod<::jshort(::java::lang::String, ::jshort)>("get"), //
+		jMethod<::jboolean(::java::lang::String, ::jboolean)>("get"), //
+		jMethod<::java::io::ObjectStreamClass()>("getObjectStreamClass"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto defaulted(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("defaulted")] != -1);
+		return call<R>("defaulted", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::ObjectStreamClass, typename... Args>
+	auto getObjectStreamClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getObjectStreamClass")] != -1);
+		return call<R>("getObjectStreamClass", forward<Args>(args)...);
+	}
+
+};
+
+#endif

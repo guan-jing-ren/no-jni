@@ -1,0 +1,35 @@
+#ifndef java_security_cert_CertPathBuilderResult_HPP
+#define java_security_cert_CertPathBuilderResult_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::cert::CertPathBuilderResult : public jObject<::java::security::cert::CertPathBuilderResult, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_cert / "CertPathBuilderResult";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::java::security::cert::CertPath()>("getCertPath"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::CertPath, typename... Args>
+	auto getCertPath(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCertPath")] != -1);
+		return call<R>("getCertPath", forward<Args>(args)...);
+	}
+
+};
+
+#endif

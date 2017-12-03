@@ -1,0 +1,36 @@
+#ifndef javax_swing_plaf_basic_BasicBorders$ToggleButtonBorder_HPP
+#define javax_swing_plaf_basic_BasicBorders$ToggleButtonBorder_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::swing::plaf::basic::BasicBorders$ToggleButtonBorder : public jObject<::javax::swing::plaf::basic::BasicBorders$ToggleButtonBorder, ::javax::swing::plaf::basic::BasicBorders$ButtonBorder> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_plaf_basic / "BasicBorders$ToggleButtonBorder";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::Color, ::java::awt::Color, ::java::awt::Color, ::java::awt::Color)>(), //
+		jMethod<::java::awt::Insets(::java::awt::Component, ::java::awt::Insets)>("getBorderInsets"), //
+		jMethod<::jvoid(::java::awt::Component, ::java::awt::Graphics, ::jint, ::jint, ::jint, ::jint)>("paintBorder"), //
+	};
+
+	template<typename R = ::java::awt::Insets, typename... Args>
+	auto getBorderInsets(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBorderInsets")] != -1);
+		return call<R>("getBorderInsets", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto paintBorder(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paintBorder")] != -1);
+		return call<R>("paintBorder", forward<Args>(args)...);
+	}
+
+};
+
+#endif

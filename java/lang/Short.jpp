@@ -1,0 +1,182 @@
+#ifndef java_lang_Short_HPP
+#define java_lang_Short_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::lang::Short : public jObject<::java::lang::Short, ::java::lang::Number> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang / "Short";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("BYTES"), //
+		jField<::jshort>("MAX_VALUE"), //
+		jField<::jshort>("MIN_VALUE"), //
+		jField<::jint>("SIZE"), //
+		jField<::java::lang::Class>("TYPE"), //
+	};
+
+	template<typename F = ::jint>
+	static auto BYTES() {
+		static_assert(field_signatures[jField<F>("BYTES")] != -1);
+		return sat<F>("BYTES");
+	}
+
+	template<typename F = ::jshort>
+	static auto MAX_VALUE() {
+		static_assert(field_signatures[jField<F>("MAX_VALUE")] != -1);
+		return sat<F>("MAX_VALUE");
+	}
+
+	template<typename F = ::jshort>
+	static auto MIN_VALUE() {
+		static_assert(field_signatures[jField<F>("MIN_VALUE")] != -1);
+		return sat<F>("MIN_VALUE");
+	}
+
+	template<typename F = ::jint>
+	static auto SIZE() {
+		static_assert(field_signatures[jField<F>("SIZE")] != -1);
+		return sat<F>("SIZE");
+	}
+
+	template<typename F = ::java::lang::Class>
+	static auto TYPE() {
+		static_assert(field_signatures[jField<F>("TYPE")] != -1);
+		return sat<F>("TYPE");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::jshort)>(), //
+		jMethod<::jbyte()>("byteValue"), //
+		jMethod<::jint(::jshort, ::jshort)>("compare"), //
+		jMethod<::jint(::java::lang::Object)>("compareTo"), //
+		jMethod<::jint(::java::lang::Short)>("compareTo"), //
+		jMethod<::java::lang::Short(::java::lang::String)>("decode"), //
+		jMethod<::jdouble()>("doubleValue"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jfloat()>("floatValue"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jint(::jshort)>("hashCode"), //
+		jMethod<::jint()>("intValue"), //
+		jMethod<::jlong()>("longValue"), //
+		jMethod<::jshort(::java::lang::String)>("parseShort"), //
+		jMethod<::jshort(::java::lang::String, ::jint)>("parseShort"), //
+		jMethod<::jshort(::jshort)>("reverseBytes"), //
+		jMethod<::jshort()>("shortValue"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::java::lang::String(::jshort)>("toString"), //
+		jMethod<::jint(::jshort)>("toUnsignedInt"), //
+		jMethod<::jlong(::jshort)>("toUnsignedLong"), //
+		jMethod<::java::lang::Short(::java::lang::String)>("valueOf"), //
+		jMethod<::java::lang::Short(::java::lang::String, ::jint)>("valueOf"), //
+		jMethod<::java::lang::Short(::jshort)>("valueOf"), //
+	};
+
+	template<typename R = ::jbyte, typename... Args>
+	auto byteValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("byteValue")] != -1);
+		return call<R>("byteValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto compare(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compare")] != -1);
+		return scall<R>("compare", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto compareTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compareTo")] != -1);
+		return call<R>("compareTo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Short, typename... Args>
+	static auto decode(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("decode")] != -1);
+		return scall<R>("decode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	auto doubleValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("doubleValue")] != -1);
+		return call<R>("doubleValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto floatValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("floatValue")] != -1);
+		return call<R>("floatValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto intValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("intValue")] != -1);
+		return call<R>("intValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto longValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("longValue")] != -1);
+		return call<R>("longValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jshort, typename... Args>
+	static auto parseShort(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("parseShort")] != -1);
+		return scall<R>("parseShort", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jshort, typename... Args>
+	static auto reverseBytes(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("reverseBytes")] != -1);
+		return scall<R>("reverseBytes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jshort, typename... Args>
+	auto shortValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("shortValue")] != -1);
+		return call<R>("shortValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto toUnsignedInt(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toUnsignedInt")] != -1);
+		return scall<R>("toUnsignedInt", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	static auto toUnsignedLong(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toUnsignedLong")] != -1);
+		return scall<R>("toUnsignedLong", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Short, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+};
+
+#endif

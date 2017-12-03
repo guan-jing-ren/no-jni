@@ -1,0 +1,65 @@
+#ifndef javax_swing_event_EventListenerList_HPP
+#define javax_swing_event_EventListenerList_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::event::EventListenerList : public jObject<::javax::swing::event::EventListenerList, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_event / "EventListenerList";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::lang::Class, ::java::util::EventListener)>("add"), //
+		jMethod<::jint()>("getListenerCount"), //
+		jMethod<::jint(::java::lang::Class)>("getListenerCount"), //
+		jMethod<::java::lang::Object *()>("getListenerList"), //
+		jMethod<::java::util::EventListener *(::java::lang::Class)>("getListeners"), //
+		jMethod<::jvoid(::java::lang::Class, ::java::util::EventListener)>("remove"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto add(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getListenerCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getListenerCount")] != -1);
+		return call<R>("getListenerCount", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object *, typename... Args>
+	auto getListenerList(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getListenerList")] != -1);
+		return call<R>("getListenerList", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::EventListener *, typename... Args>
+	auto getListeners(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getListeners")] != -1);
+		return call<R>("getListeners", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto remove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

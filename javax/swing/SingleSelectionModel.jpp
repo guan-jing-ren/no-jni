@@ -1,0 +1,63 @@
+#ifndef javax_swing_SingleSelectionModel_HPP
+#define javax_swing_SingleSelectionModel_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::SingleSelectionModel : public jObject<::javax::swing::SingleSelectionModel, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "SingleSelectionModel";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::swing::event::ChangeListener)>("addChangeListener"), //
+		jMethod<::jvoid()>("clearSelection"), //
+		jMethod<::jint()>("getSelectedIndex"), //
+		jMethod<::jboolean()>("isSelected"), //
+		jMethod<::jvoid(::javax::swing::event::ChangeListener)>("removeChangeListener"), //
+		jMethod<::jvoid(::jint)>("setSelectedIndex"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addChangeListener")] != -1);
+		return call<R>("addChangeListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto clearSelection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clearSelection")] != -1);
+		return call<R>("clearSelection", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getSelectedIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSelectedIndex")] != -1);
+		return call<R>("getSelectedIndex", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isSelected(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSelected")] != -1);
+		return call<R>("isSelected", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeChangeListener")] != -1);
+		return call<R>("removeChangeListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setSelectedIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSelectedIndex")] != -1);
+		return call<R>("setSelectedIndex", forward<Args>(args)...);
+	}
+
+};
+
+#endif

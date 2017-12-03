@@ -1,0 +1,42 @@
+#ifndef org_omg_DynamicAny_DynValueCommonOperations_HPP
+#define org_omg_DynamicAny_DynValueCommonOperations_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::DynamicAny::DynValueCommonOperations : public jObject<::org::omg::DynamicAny::DynValueCommonOperations, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_DynamicAny / "DynValueCommonOperations";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean()>("is_null"), //
+		jMethod<::jvoid()>("set_to_null"), //
+		jMethod<::jvoid()>("set_to_value"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto is_null(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("is_null")] != -1);
+		return call<R>("is_null", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set_to_null(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set_to_null")] != -1);
+		return call<R>("set_to_null", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set_to_value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set_to_value")] != -1);
+		return call<R>("set_to_value", forward<Args>(args)...);
+	}
+
+};
+
+#endif

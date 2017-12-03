@@ -1,0 +1,37 @@
+#ifndef javax_xml_crypto_dsig_dom_DOMValidateContext_HPP
+#define javax_xml_crypto_dsig_dom_DOMValidateContext_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::javax::xml::crypto::dsig::dom::DOMValidateContext : public jObject<::javax::xml::crypto::dsig::dom::DOMValidateContext, ::javax::xml::crypto::dom::DOMCryptoContext> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_crypto_dsig_dom / "DOMValidateContext";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::security::Key, ::org::w3c::dom::Node)>(), //
+		jConstructor<::jvoid(::javax::xml::crypto::KeySelector, ::org::w3c::dom::Node)>(), //
+		jMethod<::org::w3c::dom::Node()>("getNode"), //
+		jMethod<::jvoid(::org::w3c::dom::Node)>("setNode"), //
+	};
+
+	template<typename R = ::org::w3c::dom::Node, typename... Args>
+	auto getNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNode")] != -1);
+		return call<R>("getNode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setNode")] != -1);
+		return call<R>("setNode", forward<Args>(args)...);
+	}
+
+};
+
+#endif

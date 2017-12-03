@@ -1,0 +1,28 @@
+#ifndef org_w3c_dom_DOMErrorHandler_HPP
+#define org_w3c_dom_DOMErrorHandler_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::w3c::dom::DOMErrorHandler : public jObject<::org::w3c::dom::DOMErrorHandler, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_w3c_dom / "DOMErrorHandler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::org::w3c::dom::DOMError)>("handleError"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto handleError(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("handleError")] != -1);
+		return call<R>("handleError", forward<Args>(args)...);
+	}
+
+};
+
+#endif

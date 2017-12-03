@@ -1,0 +1,56 @@
+#ifndef javax_management_AttributeChangeNotification_HPP
+#define javax_management_AttributeChangeNotification_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::management::AttributeChangeNotification : public jObject<::javax::management::AttributeChangeNotification, ::javax::management::Notification> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management / "AttributeChangeNotification";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("ATTRIBUTE_CHANGE"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto ATTRIBUTE_CHANGE() {
+		static_assert(field_signatures[jField<F>("ATTRIBUTE_CHANGE")] != -1);
+		return sat<F>("ATTRIBUTE_CHANGE");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Object, ::jlong, ::jlong, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::Object, ::java::lang::Object)>(), //
+		jMethod<::java::lang::String()>("getAttributeName"), //
+		jMethod<::java::lang::String()>("getAttributeType"), //
+		jMethod<::java::lang::Object()>("getNewValue"), //
+		jMethod<::java::lang::Object()>("getOldValue"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAttributeName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttributeName")] != -1);
+		return call<R>("getAttributeName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAttributeType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttributeType")] != -1);
+		return call<R>("getAttributeType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getNewValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNewValue")] != -1);
+		return call<R>("getNewValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getOldValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOldValue")] != -1);
+		return call<R>("getOldValue", forward<Args>(args)...);
+	}
+
+};
+
+#endif

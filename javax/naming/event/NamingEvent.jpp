@@ -1,0 +1,91 @@
+#ifndef javax_naming_event_NamingEvent_HPP
+#define javax_naming_event_NamingEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::naming::event::NamingEvent : public jObject<::javax::naming::event::NamingEvent, ::java::util::EventObject> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_naming_event / "NamingEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("OBJECT_ADDED"), //
+		jField<::jint>("OBJECT_CHANGED"), //
+		jField<::jint>("OBJECT_REMOVED"), //
+		jField<::jint>("OBJECT_RENAMED"), //
+	};
+
+	template<typename F = ::jint>
+	static auto OBJECT_ADDED() {
+		static_assert(field_signatures[jField<F>("OBJECT_ADDED")] != -1);
+		return sat<F>("OBJECT_ADDED");
+	}
+
+	template<typename F = ::jint>
+	static auto OBJECT_CHANGED() {
+		static_assert(field_signatures[jField<F>("OBJECT_CHANGED")] != -1);
+		return sat<F>("OBJECT_CHANGED");
+	}
+
+	template<typename F = ::jint>
+	static auto OBJECT_REMOVED() {
+		static_assert(field_signatures[jField<F>("OBJECT_REMOVED")] != -1);
+		return sat<F>("OBJECT_REMOVED");
+	}
+
+	template<typename F = ::jint>
+	static auto OBJECT_RENAMED() {
+		static_assert(field_signatures[jField<F>("OBJECT_RENAMED")] != -1);
+		return sat<F>("OBJECT_RENAMED");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::naming::event::EventContext, ::jint, ::javax::naming::Binding, ::javax::naming::Binding, ::java::lang::Object)>(), //
+		jMethod<::jvoid(::javax::naming::event::NamingListener)>("dispatch"), //
+		jMethod<::java::lang::Object()>("getChangeInfo"), //
+		jMethod<::javax::naming::event::EventContext()>("getEventContext"), //
+		jMethod<::javax::naming::Binding()>("getNewBinding"), //
+		jMethod<::javax::naming::Binding()>("getOldBinding"), //
+		jMethod<::jint()>("getType"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispatch(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dispatch")] != -1);
+		return call<R>("dispatch", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getChangeInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getChangeInfo")] != -1);
+		return call<R>("getChangeInfo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::naming::event::EventContext, typename... Args>
+	auto getEventContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEventContext")] != -1);
+		return call<R>("getEventContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::naming::Binding, typename... Args>
+	auto getNewBinding(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNewBinding")] != -1);
+		return call<R>("getNewBinding", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::naming::Binding, typename... Args>
+	auto getOldBinding(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOldBinding")] != -1);
+		return call<R>("getOldBinding", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", forward<Args>(args)...);
+	}
+
+};
+
+#endif

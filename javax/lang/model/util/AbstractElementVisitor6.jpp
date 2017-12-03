@@ -1,0 +1,36 @@
+#ifndef javax_lang_model_util_AbstractElementVisitor6_HPP
+#define javax_lang_model_util_AbstractElementVisitor6_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::lang::model::util::AbstractElementVisitor6 : public jObject<::javax::lang::model::util::AbstractElementVisitor6, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_lang_model_util / "AbstractElementVisitor6";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object(::javax::lang::model::element::Element)>("visit"), //
+		jMethod<::java::lang::Object(::javax::lang::model::element::Element, ::java::lang::Object)>("visit"), //
+		jMethod<::java::lang::Object(::javax::lang::model::element::Element, ::java::lang::Object)>("visitUnknown"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto visit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("visit")] != -1);
+		return call<R>("visit", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto visitUnknown(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("visitUnknown")] != -1);
+		return call<R>("visitUnknown", forward<Args>(args)...);
+	}
+
+};
+
+#endif

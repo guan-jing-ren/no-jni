@@ -1,0 +1,36 @@
+#ifndef org_omg_IOP_ServiceContext_HPP
+#define org_omg_IOP_ServiceContext_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::IOP::ServiceContext : public jObject<::org::omg::IOP::ServiceContext, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_IOP / "ServiceContext";
+
+	constexpr static Enume field_signatures{
+		jField<::jbyte *>("context_data"), //
+		jField<::jint>("context_id"), //
+	};
+
+	template<typename F = ::jbyte *>
+	auto context_data() const {
+		static_assert(field_signatures[jField<F>("context_data")] != -1);
+		return at<F>("context_data");
+	}
+
+	template<typename F = ::jint>
+	auto context_id() const {
+		static_assert(field_signatures[jField<F>("context_id")] != -1);
+		return at<F>("context_id");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint, ::jbyte *)>(), //
+	};
+
+};
+
+#endif

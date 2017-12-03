@@ -1,0 +1,44 @@
+#ifndef java_security_Signer_HPP
+#define java_security_Signer_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::Signer : public jObject<::java::security::Signer, ::java::security::Identity> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "Signer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::security::IdentityScope)>(), //
+		jMethod<::java::security::PrivateKey()>("getPrivateKey"), //
+		jMethod<::jvoid(::java::security::KeyPair)>("setKeyPair"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::security::PrivateKey, typename... Args>
+	auto getPrivateKey(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrivateKey")] != -1);
+		return call<R>("getPrivateKey", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setKeyPair(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setKeyPair")] != -1);
+		return call<R>("setKeyPair", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

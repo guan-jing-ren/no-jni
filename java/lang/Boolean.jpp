@@ -1,0 +1,131 @@
+#ifndef java_lang_Boolean_HPP
+#define java_lang_Boolean_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::lang::Boolean : public jObject<::java::lang::Boolean, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang / "Boolean";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::Boolean>("FALSE"), //
+		jField<::java::lang::Boolean>("TRUE"), //
+		jField<::java::lang::Class>("TYPE"), //
+	};
+
+	template<typename F = ::java::lang::Boolean>
+	static auto FALSE() {
+		static_assert(field_signatures[jField<F>("FALSE")] != -1);
+		return sat<F>("FALSE");
+	}
+
+	template<typename F = ::java::lang::Boolean>
+	static auto TRUE() {
+		static_assert(field_signatures[jField<F>("TRUE")] != -1);
+		return sat<F>("TRUE");
+	}
+
+	template<typename F = ::java::lang::Class>
+	static auto TYPE() {
+		static_assert(field_signatures[jField<F>("TYPE")] != -1);
+		return sat<F>("TYPE");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::jboolean)>(), //
+		jMethod<::jboolean()>("booleanValue"), //
+		jMethod<::jint(::jboolean, ::jboolean)>("compare"), //
+		jMethod<::jint(::java::lang::Boolean)>("compareTo"), //
+		jMethod<::jint(::java::lang::Object)>("compareTo"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jboolean(::java::lang::String)>("getBoolean"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jint(::jboolean)>("hashCode"), //
+		jMethod<::jboolean(::jboolean, ::jboolean)>("logicalAnd"), //
+		jMethod<::jboolean(::jboolean, ::jboolean)>("logicalOr"), //
+		jMethod<::jboolean(::jboolean, ::jboolean)>("logicalXor"), //
+		jMethod<::jboolean(::java::lang::String)>("parseBoolean"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::java::lang::String(::jboolean)>("toString"), //
+		jMethod<::java::lang::Boolean(::java::lang::String)>("valueOf"), //
+		jMethod<::java::lang::Boolean(::jboolean)>("valueOf"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto booleanValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("booleanValue")] != -1);
+		return call<R>("booleanValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto compare(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compare")] != -1);
+		return scall<R>("compare", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto compareTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compareTo")] != -1);
+		return call<R>("compareTo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto getBoolean(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBoolean")] != -1);
+		return scall<R>("getBoolean", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto logicalAnd(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("logicalAnd")] != -1);
+		return scall<R>("logicalAnd", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto logicalOr(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("logicalOr")] != -1);
+		return scall<R>("logicalOr", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto logicalXor(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("logicalXor")] != -1);
+		return scall<R>("logicalXor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto parseBoolean(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("parseBoolean")] != -1);
+		return scall<R>("parseBoolean", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Boolean, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+};
+
+#endif

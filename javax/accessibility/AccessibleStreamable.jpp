@@ -1,0 +1,35 @@
+#ifndef javax_accessibility_AccessibleStreamable_HPP
+#define javax_accessibility_AccessibleStreamable_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::accessibility::AccessibleStreamable : public jObject<::javax::accessibility::AccessibleStreamable, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_accessibility / "AccessibleStreamable";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::datatransfer::DataFlavor *()>("getMimeTypes"), //
+		jMethod<::java::io::InputStream(::java::awt::datatransfer::DataFlavor)>("getStream"), //
+	};
+
+	template<typename R = ::java::awt::datatransfer::DataFlavor *, typename... Args>
+	auto getMimeTypes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMimeTypes")] != -1);
+		return call<R>("getMimeTypes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::InputStream, typename... Args>
+	auto getStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStream")] != -1);
+		return call<R>("getStream", forward<Args>(args)...);
+	}
+
+};
+
+#endif

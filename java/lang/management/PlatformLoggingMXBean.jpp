@@ -1,0 +1,49 @@
+#ifndef java_lang_management_PlatformLoggingMXBean_HPP
+#define java_lang_management_PlatformLoggingMXBean_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::management::PlatformLoggingMXBean : public jObject<::java::lang::management::PlatformLoggingMXBean, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_management / "PlatformLoggingMXBean";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String(::java::lang::String)>("getLoggerLevel"), //
+		jMethod<::java::util::List()>("getLoggerNames"), //
+		jMethod<::java::lang::String(::java::lang::String)>("getParentLoggerName"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String)>("setLoggerLevel"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getLoggerLevel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLoggerLevel")] != -1);
+		return call<R>("getLoggerLevel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getLoggerNames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLoggerNames")] != -1);
+		return call<R>("getLoggerNames", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getParentLoggerName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParentLoggerName")] != -1);
+		return call<R>("getParentLoggerName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLoggerLevel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLoggerLevel")] != -1);
+		return call<R>("setLoggerLevel", forward<Args>(args)...);
+	}
+
+};
+
+#endif

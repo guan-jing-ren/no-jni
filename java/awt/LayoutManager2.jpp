@@ -1,0 +1,56 @@
+#ifndef java_awt_LayoutManager2_HPP
+#define java_awt_LayoutManager2_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::LayoutManager2 : public jObject<::java::awt::LayoutManager2, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "LayoutManager2";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::awt::Component, ::java::lang::Object)>("addLayoutComponent"), //
+		jMethod<::jfloat(::java::awt::Container)>("getLayoutAlignmentX"), //
+		jMethod<::jfloat(::java::awt::Container)>("getLayoutAlignmentY"), //
+		jMethod<::jvoid(::java::awt::Container)>("invalidateLayout"), //
+		jMethod<::java::awt::Dimension(::java::awt::Container)>("maximumLayoutSize"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addLayoutComponent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addLayoutComponent")] != -1);
+		return call<R>("addLayoutComponent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getLayoutAlignmentX(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLayoutAlignmentX")] != -1);
+		return call<R>("getLayoutAlignmentX", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getLayoutAlignmentY(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLayoutAlignmentY")] != -1);
+		return call<R>("getLayoutAlignmentY", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto invalidateLayout(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("invalidateLayout")] != -1);
+		return call<R>("invalidateLayout", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Dimension, typename... Args>
+	auto maximumLayoutSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("maximumLayoutSize")] != -1);
+		return call<R>("maximumLayoutSize", forward<Args>(args)...);
+	}
+
+};
+
+#endif

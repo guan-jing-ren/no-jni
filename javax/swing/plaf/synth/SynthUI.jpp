@@ -1,0 +1,35 @@
+#ifndef javax_swing_plaf_synth_SynthUI_HPP
+#define javax_swing_plaf_synth_SynthUI_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::swing::plaf::synth::SynthUI : public jObject<::javax::swing::plaf::synth::SynthUI, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_plaf_synth / "SynthUI";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::swing::plaf::synth::SynthContext(::javax::swing::JComponent)>("getContext"), //
+		jMethod<::jvoid(::javax::swing::plaf::synth::SynthContext, ::java::awt::Graphics, ::jint, ::jint, ::jint, ::jint)>("paintBorder"), //
+	};
+
+	template<typename R = ::javax::swing::plaf::synth::SynthContext, typename... Args>
+	auto getContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getContext")] != -1);
+		return call<R>("getContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto paintBorder(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paintBorder")] != -1);
+		return call<R>("paintBorder", forward<Args>(args)...);
+	}
+
+};
+
+#endif

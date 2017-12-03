@@ -1,0 +1,29 @@
+#ifndef org_omg_stub_java_rmi__Remote_Stub_HPP
+#define org_omg_stub_java_rmi__Remote_Stub_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::org::omg::stub::java::rmi::_Remote_Stub : public jObject<::org::omg::stub::java::rmi::_Remote_Stub, ::javax::rmi::CORBA::Stub> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_stub_java_rmi / "_Remote_Stub";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::String *()>("_ids"), //
+	};
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto _ids(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("_ids")] != -1);
+		return call<R>("_ids", forward<Args>(args)...);
+	}
+
+};
+
+#endif

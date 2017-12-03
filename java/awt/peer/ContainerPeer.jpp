@@ -1,0 +1,56 @@
+#ifndef java_awt_peer_ContainerPeer_HPP
+#define java_awt_peer_ContainerPeer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::peer::ContainerPeer : public jObject<::java::awt::peer::ContainerPeer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_peer / "ContainerPeer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("beginLayout"), //
+		jMethod<::jvoid()>("beginValidate"), //
+		jMethod<::jvoid()>("endLayout"), //
+		jMethod<::jvoid()>("endValidate"), //
+		jMethod<::java::awt::Insets()>("getInsets"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto beginLayout(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("beginLayout")] != -1);
+		return call<R>("beginLayout", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto beginValidate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("beginValidate")] != -1);
+		return call<R>("beginValidate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto endLayout(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("endLayout")] != -1);
+		return call<R>("endLayout", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto endValidate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("endValidate")] != -1);
+		return call<R>("endValidate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Insets, typename... Args>
+	auto getInsets(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInsets")] != -1);
+		return call<R>("getInsets", forward<Args>(args)...);
+	}
+
+};
+
+#endif

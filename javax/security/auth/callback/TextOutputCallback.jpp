@@ -1,0 +1,56 @@
+#ifndef javax_security_auth_callback_TextOutputCallback_HPP
+#define javax_security_auth_callback_TextOutputCallback_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::security::auth::callback::TextOutputCallback : public jObject<::javax::security::auth::callback::TextOutputCallback, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_security_auth_callback / "TextOutputCallback";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("ERROR"), //
+		jField<::jint>("INFORMATION"), //
+		jField<::jint>("WARNING"), //
+	};
+
+	template<typename F = ::jint>
+	static auto ERROR() {
+		static_assert(field_signatures[jField<F>("ERROR")] != -1);
+		return sat<F>("ERROR");
+	}
+
+	template<typename F = ::jint>
+	static auto INFORMATION() {
+		static_assert(field_signatures[jField<F>("INFORMATION")] != -1);
+		return sat<F>("INFORMATION");
+	}
+
+	template<typename F = ::jint>
+	static auto WARNING() {
+		static_assert(field_signatures[jField<F>("WARNING")] != -1);
+		return sat<F>("WARNING");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::java::lang::String)>(), //
+		jMethod<::java::lang::String()>("getMessage"), //
+		jMethod<::jint()>("getMessageType"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMessage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMessage")] != -1);
+		return call<R>("getMessage", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getMessageType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMessageType")] != -1);
+		return call<R>("getMessageType", forward<Args>(args)...);
+	}
+
+};
+
+#endif

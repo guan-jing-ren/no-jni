@@ -1,0 +1,66 @@
+#ifndef javax_net_ssl_TrustManagerFactory_HPP
+#define javax_net_ssl_TrustManagerFactory_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::net::ssl::TrustManagerFactory : public jObject<::javax::net::ssl::TrustManagerFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_net_ssl / "TrustManagerFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getAlgorithm"), //
+		jMethod<::java::lang::String()>("getDefaultAlgorithm"), //
+		jMethod<::javax::net::ssl::TrustManagerFactory(::java::lang::String)>("getInstance"), //
+		jMethod<::javax::net::ssl::TrustManagerFactory(::java::lang::String, ::java::lang::String)>("getInstance"), //
+		jMethod<::javax::net::ssl::TrustManagerFactory(::java::lang::String, ::java::security::Provider)>("getInstance"), //
+		jMethod<::java::security::Provider()>("getProvider"), //
+		jMethod<::javax::net::ssl::TrustManager *()>("getTrustManagers"), //
+		jMethod<::jvoid(::java::security::KeyStore)>("init"), //
+		jMethod<::jvoid(::javax::net::ssl::ManagerFactoryParameters)>("init"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAlgorithm(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlgorithm")] != -1);
+		return call<R>("getAlgorithm", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getDefaultAlgorithm(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaultAlgorithm")] != -1);
+		return scall<R>("getDefaultAlgorithm", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::net::ssl::TrustManagerFactory, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Provider, typename... Args>
+	auto getProvider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProvider")] != -1);
+		return call<R>("getProvider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::net::ssl::TrustManager *, typename... Args>
+	auto getTrustManagers(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTrustManagers")] != -1);
+		return call<R>("getTrustManagers", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto init(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("init")] != -1);
+		return call<R>("init", forward<Args>(args)...);
+	}
+
+};
+
+#endif

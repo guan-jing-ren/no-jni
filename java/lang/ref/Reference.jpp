@@ -1,0 +1,49 @@
+#ifndef java_lang_ref_Reference_HPP
+#define java_lang_ref_Reference_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::ref::Reference : public jObject<::java::lang::ref::Reference, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_ref / "Reference";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("clear"), //
+		jMethod<::jboolean()>("enqueue"), //
+		jMethod<::java::lang::Object()>("get"), //
+		jMethod<::jboolean()>("isEnqueued"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto clear(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clear")] != -1);
+		return call<R>("clear", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto enqueue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("enqueue")] != -1);
+		return call<R>("enqueue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isEnqueued(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isEnqueued")] != -1);
+		return call<R>("isEnqueued", forward<Args>(args)...);
+	}
+
+};
+
+#endif

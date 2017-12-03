@@ -1,0 +1,74 @@
+#ifndef javax_sound_sampled_spi_FormatConversionProvider_HPP
+#define javax_sound_sampled_spi_FormatConversionProvider_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::sound::sampled::spi::FormatConversionProvider : public jObject<::javax::sound::sampled::spi::FormatConversionProvider, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sound_sampled_spi / "FormatConversionProvider";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::sound::sampled::AudioInputStream(::javax::sound::sampled::AudioFormat$Encoding, ::javax::sound::sampled::AudioInputStream)>("getAudioInputStream"), //
+		jMethod<::javax::sound::sampled::AudioInputStream(::javax::sound::sampled::AudioFormat, ::javax::sound::sampled::AudioInputStream)>("getAudioInputStream"), //
+		jMethod<::javax::sound::sampled::AudioFormat$Encoding *()>("getSourceEncodings"), //
+		jMethod<::javax::sound::sampled::AudioFormat$Encoding *()>("getTargetEncodings"), //
+		jMethod<::javax::sound::sampled::AudioFormat$Encoding *(::javax::sound::sampled::AudioFormat)>("getTargetEncodings"), //
+		jMethod<::javax::sound::sampled::AudioFormat *(::javax::sound::sampled::AudioFormat$Encoding, ::javax::sound::sampled::AudioFormat)>("getTargetFormats"), //
+		jMethod<::jboolean(::javax::sound::sampled::AudioFormat$Encoding, ::javax::sound::sampled::AudioFormat)>("isConversionSupported"), //
+		jMethod<::jboolean(::javax::sound::sampled::AudioFormat, ::javax::sound::sampled::AudioFormat)>("isConversionSupported"), //
+		jMethod<::jboolean(::javax::sound::sampled::AudioFormat$Encoding)>("isSourceEncodingSupported"), //
+		jMethod<::jboolean(::javax::sound::sampled::AudioFormat$Encoding)>("isTargetEncodingSupported"), //
+	};
+
+	template<typename R = ::javax::sound::sampled::AudioInputStream, typename... Args>
+	auto getAudioInputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAudioInputStream")] != -1);
+		return call<R>("getAudioInputStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::sampled::AudioFormat$Encoding *, typename... Args>
+	auto getSourceEncodings(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSourceEncodings")] != -1);
+		return call<R>("getSourceEncodings", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::sampled::AudioFormat$Encoding *, typename... Args>
+	auto getTargetEncodings(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTargetEncodings")] != -1);
+		return call<R>("getTargetEncodings", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::sampled::AudioFormat *, typename... Args>
+	auto getTargetFormats(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTargetFormats")] != -1);
+		return call<R>("getTargetFormats", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isConversionSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isConversionSupported")] != -1);
+		return call<R>("isConversionSupported", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isSourceEncodingSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSourceEncodingSupported")] != -1);
+		return call<R>("isSourceEncodingSupported", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isTargetEncodingSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isTargetEncodingSupported")] != -1);
+		return call<R>("isTargetEncodingSupported", forward<Args>(args)...);
+	}
+
+};
+
+#endif

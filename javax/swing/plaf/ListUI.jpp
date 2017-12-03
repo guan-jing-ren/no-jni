@@ -1,0 +1,43 @@
+#ifndef javax_swing_plaf_ListUI_HPP
+#define javax_swing_plaf_ListUI_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::plaf::ListUI : public jObject<::javax::swing::plaf::ListUI, ::javax::swing::plaf::ComponentUI> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_plaf / "ListUI";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::awt::Rectangle(::javax::swing::JList, ::jint, ::jint)>("getCellBounds"), //
+		jMethod<::java::awt::Point(::javax::swing::JList, ::jint)>("indexToLocation"), //
+		jMethod<::jint(::javax::swing::JList, ::java::awt::Point)>("locationToIndex"), //
+	};
+
+	template<typename R = ::java::awt::Rectangle, typename... Args>
+	auto getCellBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCellBounds")] != -1);
+		return call<R>("getCellBounds", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Point, typename... Args>
+	auto indexToLocation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("indexToLocation")] != -1);
+		return call<R>("indexToLocation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto locationToIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("locationToIndex")] != -1);
+		return call<R>("locationToIndex", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,62 @@
+#ifndef java_time_zone_ZoneOffsetTransitionRule$TimeDefinition_HPP
+#define java_time_zone_ZoneOffsetTransitionRule$TimeDefinition_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::time::zone::ZoneOffsetTransitionRule$TimeDefinition : public jObject<::java::time::zone::ZoneOffsetTransitionRule$TimeDefinition, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_time_zone / "ZoneOffsetTransitionRule$TimeDefinition";
+
+	constexpr static Enume field_signatures{
+		jField<::java::time::zone::ZoneOffsetTransitionRule$TimeDefinition>("STANDARD"), //
+		jField<::java::time::zone::ZoneOffsetTransitionRule$TimeDefinition>("UTC"), //
+		jField<::java::time::zone::ZoneOffsetTransitionRule$TimeDefinition>("WALL"), //
+	};
+
+	template<typename F = ::java::time::zone::ZoneOffsetTransitionRule$TimeDefinition>
+	static auto STANDARD() {
+		static_assert(field_signatures[jField<F>("STANDARD")] != -1);
+		return sat<F>("STANDARD");
+	}
+
+	template<typename F = ::java::time::zone::ZoneOffsetTransitionRule$TimeDefinition>
+	static auto UTC() {
+		static_assert(field_signatures[jField<F>("UTC")] != -1);
+		return sat<F>("UTC");
+	}
+
+	template<typename F = ::java::time::zone::ZoneOffsetTransitionRule$TimeDefinition>
+	static auto WALL() {
+		static_assert(field_signatures[jField<F>("WALL")] != -1);
+		return sat<F>("WALL");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::time::LocalDateTime(::java::time::LocalDateTime, ::java::time::ZoneOffset, ::java::time::ZoneOffset)>("createDateTime"), //
+		jMethod<::java::time::zone::ZoneOffsetTransitionRule$TimeDefinition(::java::lang::String)>("valueOf"), //
+		jMethod<::java::time::zone::ZoneOffsetTransitionRule$TimeDefinition *()>("values"), //
+	};
+
+	template<typename R = ::java::time::LocalDateTime, typename... Args>
+	auto createDateTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createDateTime")] != -1);
+		return call<R>("createDateTime", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::zone::ZoneOffsetTransitionRule$TimeDefinition, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::zone::ZoneOffsetTransitionRule$TimeDefinition *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

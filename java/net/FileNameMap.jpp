@@ -1,0 +1,28 @@
+#ifndef java_net_FileNameMap_HPP
+#define java_net_FileNameMap_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::net::FileNameMap : public jObject<::java::net::FileNameMap, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_net / "FileNameMap";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String(::java::lang::String)>("getContentTypeFor"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getContentTypeFor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getContentTypeFor")] != -1);
+		return call<R>("getContentTypeFor", forward<Args>(args)...);
+	}
+
+};
+
+#endif

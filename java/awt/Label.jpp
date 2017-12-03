@@ -1,0 +1,86 @@
+#ifndef java_awt_Label_HPP
+#define java_awt_Label_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::Label : public jObject<::java::awt::Label, ::java::awt::Component> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "Label";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("CENTER"), //
+		jField<::jint>("LEFT"), //
+		jField<::jint>("RIGHT"), //
+	};
+
+	template<typename F = ::jint>
+	static auto CENTER() {
+		static_assert(field_signatures[jField<F>("CENTER")] != -1);
+		return sat<F>("CENTER");
+	}
+
+	template<typename F = ::jint>
+	static auto LEFT() {
+		static_assert(field_signatures[jField<F>("LEFT")] != -1);
+		return sat<F>("LEFT");
+	}
+
+	template<typename F = ::jint>
+	static auto RIGHT() {
+		static_assert(field_signatures[jField<F>("RIGHT")] != -1);
+		return sat<F>("RIGHT");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::jint)>(), //
+		jMethod<::jvoid()>("addNotify"), //
+		jMethod<::javax::accessibility::AccessibleContext()>("getAccessibleContext"), //
+		jMethod<::jint()>("getAlignment"), //
+		jMethod<::java::lang::String()>("getText"), //
+		jMethod<::jvoid(::jint)>("setAlignment"), //
+		jMethod<::jvoid(::java::lang::String)>("setText"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addNotify(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addNotify")] != -1);
+		return call<R>("addNotify", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::accessibility::AccessibleContext, typename... Args>
+	auto getAccessibleContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAccessibleContext")] != -1);
+		return call<R>("getAccessibleContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getAlignment(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlignment")] != -1);
+		return call<R>("getAlignment", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getText(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getText")] != -1);
+		return call<R>("getText", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setAlignment(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setAlignment")] != -1);
+		return call<R>("setAlignment", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setText(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setText")] != -1);
+		return call<R>("setText", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,132 @@
+#ifndef java_sql_ParameterMetaData_HPP
+#define java_sql_ParameterMetaData_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::sql::ParameterMetaData : public jObject<::java::sql::ParameterMetaData, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_sql / "ParameterMetaData";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("parameterModeIn"), //
+		jField<::jint>("parameterModeInOut"), //
+		jField<::jint>("parameterModeOut"), //
+		jField<::jint>("parameterModeUnknown"), //
+		jField<::jint>("parameterNoNulls"), //
+		jField<::jint>("parameterNullable"), //
+		jField<::jint>("parameterNullableUnknown"), //
+	};
+
+	template<typename F = ::jint>
+	static auto parameterModeIn() {
+		static_assert(field_signatures[jField<F>("parameterModeIn")] != -1);
+		return sat<F>("parameterModeIn");
+	}
+
+	template<typename F = ::jint>
+	static auto parameterModeInOut() {
+		static_assert(field_signatures[jField<F>("parameterModeInOut")] != -1);
+		return sat<F>("parameterModeInOut");
+	}
+
+	template<typename F = ::jint>
+	static auto parameterModeOut() {
+		static_assert(field_signatures[jField<F>("parameterModeOut")] != -1);
+		return sat<F>("parameterModeOut");
+	}
+
+	template<typename F = ::jint>
+	static auto parameterModeUnknown() {
+		static_assert(field_signatures[jField<F>("parameterModeUnknown")] != -1);
+		return sat<F>("parameterModeUnknown");
+	}
+
+	template<typename F = ::jint>
+	static auto parameterNoNulls() {
+		static_assert(field_signatures[jField<F>("parameterNoNulls")] != -1);
+		return sat<F>("parameterNoNulls");
+	}
+
+	template<typename F = ::jint>
+	static auto parameterNullable() {
+		static_assert(field_signatures[jField<F>("parameterNullable")] != -1);
+		return sat<F>("parameterNullable");
+	}
+
+	template<typename F = ::jint>
+	static auto parameterNullableUnknown() {
+		static_assert(field_signatures[jField<F>("parameterNullableUnknown")] != -1);
+		return sat<F>("parameterNullableUnknown");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String(::jint)>("getParameterClassName"), //
+		jMethod<::jint()>("getParameterCount"), //
+		jMethod<::jint(::jint)>("getParameterMode"), //
+		jMethod<::jint(::jint)>("getParameterType"), //
+		jMethod<::java::lang::String(::jint)>("getParameterTypeName"), //
+		jMethod<::jint(::jint)>("getPrecision"), //
+		jMethod<::jint(::jint)>("getScale"), //
+		jMethod<::jint(::jint)>("isNullable"), //
+		jMethod<::jboolean(::jint)>("isSigned"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getParameterClassName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParameterClassName")] != -1);
+		return call<R>("getParameterClassName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getParameterCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParameterCount")] != -1);
+		return call<R>("getParameterCount", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getParameterMode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParameterMode")] != -1);
+		return call<R>("getParameterMode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getParameterType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParameterType")] != -1);
+		return call<R>("getParameterType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getParameterTypeName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParameterTypeName")] != -1);
+		return call<R>("getParameterTypeName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getPrecision(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrecision")] != -1);
+		return call<R>("getPrecision", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getScale(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getScale")] != -1);
+		return call<R>("getScale", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto isNullable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isNullable")] != -1);
+		return call<R>("isNullable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isSigned(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSigned")] != -1);
+		return call<R>("isSigned", forward<Args>(args)...);
+	}
+
+};
+
+#endif

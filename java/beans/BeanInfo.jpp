@@ -1,0 +1,104 @@
+#ifndef java_beans_BeanInfo_HPP
+#define java_beans_BeanInfo_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::beans::BeanInfo : public jObject<::java::beans::BeanInfo, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_beans / "BeanInfo";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("ICON_COLOR_16x16"), //
+		jField<::jint>("ICON_COLOR_32x32"), //
+		jField<::jint>("ICON_MONO_16x16"), //
+		jField<::jint>("ICON_MONO_32x32"), //
+	};
+
+	template<typename F = ::jint>
+	static auto ICON_COLOR_16x16() {
+		static_assert(field_signatures[jField<F>("ICON_COLOR_16x16")] != -1);
+		return sat<F>("ICON_COLOR_16x16");
+	}
+
+	template<typename F = ::jint>
+	static auto ICON_COLOR_32x32() {
+		static_assert(field_signatures[jField<F>("ICON_COLOR_32x32")] != -1);
+		return sat<F>("ICON_COLOR_32x32");
+	}
+
+	template<typename F = ::jint>
+	static auto ICON_MONO_16x16() {
+		static_assert(field_signatures[jField<F>("ICON_MONO_16x16")] != -1);
+		return sat<F>("ICON_MONO_16x16");
+	}
+
+	template<typename F = ::jint>
+	static auto ICON_MONO_32x32() {
+		static_assert(field_signatures[jField<F>("ICON_MONO_32x32")] != -1);
+		return sat<F>("ICON_MONO_32x32");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::beans::BeanInfo *()>("getAdditionalBeanInfo"), //
+		jMethod<::java::beans::BeanDescriptor()>("getBeanDescriptor"), //
+		jMethod<::jint()>("getDefaultEventIndex"), //
+		jMethod<::jint()>("getDefaultPropertyIndex"), //
+		jMethod<::java::beans::EventSetDescriptor *()>("getEventSetDescriptors"), //
+		jMethod<::java::awt::Image(::jint)>("getIcon"), //
+		jMethod<::java::beans::MethodDescriptor *()>("getMethodDescriptors"), //
+		jMethod<::java::beans::PropertyDescriptor *()>("getPropertyDescriptors"), //
+	};
+
+	template<typename R = ::java::beans::BeanInfo *, typename... Args>
+	auto getAdditionalBeanInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAdditionalBeanInfo")] != -1);
+		return call<R>("getAdditionalBeanInfo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::beans::BeanDescriptor, typename... Args>
+	auto getBeanDescriptor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBeanDescriptor")] != -1);
+		return call<R>("getBeanDescriptor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getDefaultEventIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaultEventIndex")] != -1);
+		return call<R>("getDefaultEventIndex", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getDefaultPropertyIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaultPropertyIndex")] != -1);
+		return call<R>("getDefaultPropertyIndex", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::beans::EventSetDescriptor *, typename... Args>
+	auto getEventSetDescriptors(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEventSetDescriptors")] != -1);
+		return call<R>("getEventSetDescriptors", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Image, typename... Args>
+	auto getIcon(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIcon")] != -1);
+		return call<R>("getIcon", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::beans::MethodDescriptor *, typename... Args>
+	auto getMethodDescriptors(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMethodDescriptors")] != -1);
+		return call<R>("getMethodDescriptors", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::beans::PropertyDescriptor *, typename... Args>
+	auto getPropertyDescriptors(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPropertyDescriptors")] != -1);
+		return call<R>("getPropertyDescriptors", forward<Args>(args)...);
+	}
+
+};
+
+#endif

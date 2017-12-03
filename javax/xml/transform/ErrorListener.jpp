@@ -1,0 +1,42 @@
+#ifndef javax_xml_transform_ErrorListener_HPP
+#define javax_xml_transform_ErrorListener_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::transform::ErrorListener : public jObject<::javax::xml::transform::ErrorListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_transform / "ErrorListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::xml::transform::TransformerException)>("error"), //
+		jMethod<::jvoid(::javax::xml::transform::TransformerException)>("fatalError"), //
+		jMethod<::jvoid(::javax::xml::transform::TransformerException)>("warning"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto error(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("error")] != -1);
+		return call<R>("error", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto fatalError(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("fatalError")] != -1);
+		return call<R>("fatalError", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto warning(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("warning")] != -1);
+		return call<R>("warning", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,43 @@
+#ifndef java_util_IllegalFormatConversionException_HPP
+#define java_util_IllegalFormatConversionException_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::IllegalFormatConversionException : public jObject<::java::util::IllegalFormatConversionException, ::java::util::IllegalFormatException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "IllegalFormatConversionException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jchar, ::java::lang::Class)>(), //
+		jMethod<::java::lang::Class()>("getArgumentClass"), //
+		jMethod<::jchar()>("getConversion"), //
+		jMethod<::java::lang::String()>("getMessage"), //
+	};
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getArgumentClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getArgumentClass")] != -1);
+		return call<R>("getArgumentClass", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jchar, typename... Args>
+	auto getConversion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getConversion")] != -1);
+		return call<R>("getConversion", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMessage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMessage")] != -1);
+		return call<R>("getMessage", forward<Args>(args)...);
+	}
+
+};
+
+#endif

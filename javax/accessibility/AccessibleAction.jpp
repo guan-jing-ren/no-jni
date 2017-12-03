@@ -1,0 +1,76 @@
+#ifndef javax_accessibility_AccessibleAction_HPP
+#define javax_accessibility_AccessibleAction_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::accessibility::AccessibleAction : public jObject<::javax::accessibility::AccessibleAction, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_accessibility / "AccessibleAction";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("CLICK"), //
+		jField<::java::lang::String>("DECREMENT"), //
+		jField<::java::lang::String>("INCREMENT"), //
+		jField<::java::lang::String>("TOGGLE_EXPAND"), //
+		jField<::java::lang::String>("TOGGLE_POPUP"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto CLICK() {
+		static_assert(field_signatures[jField<F>("CLICK")] != -1);
+		return sat<F>("CLICK");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto DECREMENT() {
+		static_assert(field_signatures[jField<F>("DECREMENT")] != -1);
+		return sat<F>("DECREMENT");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto INCREMENT() {
+		static_assert(field_signatures[jField<F>("INCREMENT")] != -1);
+		return sat<F>("INCREMENT");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto TOGGLE_EXPAND() {
+		static_assert(field_signatures[jField<F>("TOGGLE_EXPAND")] != -1);
+		return sat<F>("TOGGLE_EXPAND");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto TOGGLE_POPUP() {
+		static_assert(field_signatures[jField<F>("TOGGLE_POPUP")] != -1);
+		return sat<F>("TOGGLE_POPUP");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::jint)>("doAccessibleAction"), //
+		jMethod<::jint()>("getAccessibleActionCount"), //
+		jMethod<::java::lang::String(::jint)>("getAccessibleActionDescription"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto doAccessibleAction(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("doAccessibleAction")] != -1);
+		return call<R>("doAccessibleAction", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getAccessibleActionCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAccessibleActionCount")] != -1);
+		return call<R>("getAccessibleActionCount", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAccessibleActionDescription(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAccessibleActionDescription")] != -1);
+		return call<R>("getAccessibleActionDescription", forward<Args>(args)...);
+	}
+
+};
+
+#endif

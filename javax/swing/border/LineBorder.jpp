@@ -1,0 +1,80 @@
+#ifndef javax_swing_border_LineBorder_HPP
+#define javax_swing_border_LineBorder_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::border::LineBorder : public jObject<::javax::swing::border::LineBorder, ::javax::swing::border::AbstractBorder> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_border / "LineBorder";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::Color)>(), //
+		jConstructor<::jvoid(::java::awt::Color, ::jint)>(), //
+		jConstructor<::jvoid(::java::awt::Color, ::jint, ::jboolean)>(), //
+		jMethod<::javax::swing::border::Border()>("createBlackLineBorder"), //
+		jMethod<::javax::swing::border::Border()>("createGrayLineBorder"), //
+		jMethod<::java::awt::Insets(::java::awt::Component, ::java::awt::Insets)>("getBorderInsets"), //
+		jMethod<::java::awt::Color()>("getLineColor"), //
+		jMethod<::jboolean()>("getRoundedCorners"), //
+		jMethod<::jint()>("getThickness"), //
+		jMethod<::jboolean()>("isBorderOpaque"), //
+		jMethod<::jvoid(::java::awt::Component, ::java::awt::Graphics, ::jint, ::jint, ::jint, ::jint)>("paintBorder"), //
+	};
+
+	template<typename R = ::javax::swing::border::Border, typename... Args>
+	static auto createBlackLineBorder(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createBlackLineBorder")] != -1);
+		return scall<R>("createBlackLineBorder", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::border::Border, typename... Args>
+	static auto createGrayLineBorder(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createGrayLineBorder")] != -1);
+		return scall<R>("createGrayLineBorder", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Insets, typename... Args>
+	auto getBorderInsets(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBorderInsets")] != -1);
+		return call<R>("getBorderInsets", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Color, typename... Args>
+	auto getLineColor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLineColor")] != -1);
+		return call<R>("getLineColor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getRoundedCorners(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRoundedCorners")] != -1);
+		return call<R>("getRoundedCorners", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getThickness(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getThickness")] != -1);
+		return call<R>("getThickness", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isBorderOpaque(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isBorderOpaque")] != -1);
+		return call<R>("isBorderOpaque", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto paintBorder(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paintBorder")] != -1);
+		return call<R>("paintBorder", forward<Args>(args)...);
+	}
+
+};
+
+#endif

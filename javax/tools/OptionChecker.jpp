@@ -1,0 +1,28 @@
+#ifndef javax_tools_OptionChecker_HPP
+#define javax_tools_OptionChecker_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::tools::OptionChecker : public jObject<::javax::tools::OptionChecker, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_tools / "OptionChecker";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint(::java::lang::String)>("isSupportedOption"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto isSupportedOption(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSupportedOption")] != -1);
+		return call<R>("isSupportedOption", forward<Args>(args)...);
+	}
+
+};
+
+#endif

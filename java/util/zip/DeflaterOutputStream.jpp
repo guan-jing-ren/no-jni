@@ -1,0 +1,56 @@
+#ifndef java_util_zip_DeflaterOutputStream_HPP
+#define java_util_zip_DeflaterOutputStream_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::zip::DeflaterOutputStream : public jObject<::java::util::zip::DeflaterOutputStream, ::java::io::FilterOutputStream> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_zip / "DeflaterOutputStream";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::OutputStream)>(), //
+		jConstructor<::jvoid(::java::io::OutputStream, ::java::util::zip::Deflater)>(), //
+		jConstructor<::jvoid(::java::io::OutputStream, ::java::util::zip::Deflater, ::jint)>(), //
+		jConstructor<::jvoid(::java::io::OutputStream, ::java::util::zip::Deflater, ::jint, ::jboolean)>(), //
+		jConstructor<::jvoid(::java::io::OutputStream, ::java::util::zip::Deflater, ::jboolean)>(), //
+		jConstructor<::jvoid(::java::io::OutputStream, ::jboolean)>(), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::jvoid()>("finish"), //
+		jMethod<::jvoid()>("flush"), //
+		jMethod<::jvoid(::jint)>("write"), //
+		jMethod<::jvoid(::jbyte *, ::jint, ::jint)>("write"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto finish(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("finish")] != -1);
+		return call<R>("finish", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto flush(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("flush")] != -1);
+		return call<R>("flush", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", forward<Args>(args)...);
+	}
+
+};
+
+#endif

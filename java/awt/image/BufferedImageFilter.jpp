@@ -1,0 +1,58 @@
+#ifndef java_awt_image_BufferedImageFilter_HPP
+#define java_awt_image_BufferedImageFilter_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::image::BufferedImageFilter : public jObject<::java::awt::image::BufferedImageFilter, ::java::awt::image::ImageFilter> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_image / "BufferedImageFilter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::image::BufferedImageOp)>(), //
+		jMethod<::java::awt::image::BufferedImageOp()>("getBufferedImageOp"), //
+		jMethod<::jvoid(::jint)>("imageComplete"), //
+		jMethod<::jvoid(::java::awt::image::ColorModel)>("setColorModel"), //
+		jMethod<::jvoid(::jint, ::jint)>("setDimensions"), //
+		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint, ::java::awt::image::ColorModel, ::jbyte *, ::jint, ::jint)>("setPixels"), //
+		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint, ::java::awt::image::ColorModel, ::jint *, ::jint, ::jint)>("setPixels"), //
+	};
+
+	template<typename R = ::java::awt::image::BufferedImageOp, typename... Args>
+	auto getBufferedImageOp(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBufferedImageOp")] != -1);
+		return call<R>("getBufferedImageOp", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto imageComplete(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("imageComplete")] != -1);
+		return call<R>("imageComplete", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setColorModel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setColorModel")] != -1);
+		return call<R>("setColorModel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDimensions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDimensions")] != -1);
+		return call<R>("setDimensions", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setPixels(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPixels")] != -1);
+		return call<R>("setPixels", forward<Args>(args)...);
+	}
+
+};
+
+#endif

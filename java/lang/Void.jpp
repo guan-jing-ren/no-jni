@@ -1,0 +1,28 @@
+#ifndef java_lang_Void_HPP
+#define java_lang_Void_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::lang::Void : public jObject<::java::lang::Void, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang / "Void";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::Class>("TYPE"), //
+	};
+
+	template<typename F = ::java::lang::Class>
+	static auto TYPE() {
+		static_assert(field_signatures[jField<F>("TYPE")] != -1);
+		return sat<F>("TYPE");
+	}
+
+	constexpr static Enume method_signatures{
+		cexprstr{"\0"}, //
+	};
+
+};
+
+#endif

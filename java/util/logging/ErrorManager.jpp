@@ -1,0 +1,70 @@
+#ifndef java_util_logging_ErrorManager_HPP
+#define java_util_logging_ErrorManager_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::logging::ErrorManager : public jObject<::java::util::logging::ErrorManager, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_logging / "ErrorManager";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("CLOSE_FAILURE"), //
+		jField<::jint>("FLUSH_FAILURE"), //
+		jField<::jint>("FORMAT_FAILURE"), //
+		jField<::jint>("GENERIC_FAILURE"), //
+		jField<::jint>("OPEN_FAILURE"), //
+		jField<::jint>("WRITE_FAILURE"), //
+	};
+
+	template<typename F = ::jint>
+	static auto CLOSE_FAILURE() {
+		static_assert(field_signatures[jField<F>("CLOSE_FAILURE")] != -1);
+		return sat<F>("CLOSE_FAILURE");
+	}
+
+	template<typename F = ::jint>
+	static auto FLUSH_FAILURE() {
+		static_assert(field_signatures[jField<F>("FLUSH_FAILURE")] != -1);
+		return sat<F>("FLUSH_FAILURE");
+	}
+
+	template<typename F = ::jint>
+	static auto FORMAT_FAILURE() {
+		static_assert(field_signatures[jField<F>("FORMAT_FAILURE")] != -1);
+		return sat<F>("FORMAT_FAILURE");
+	}
+
+	template<typename F = ::jint>
+	static auto GENERIC_FAILURE() {
+		static_assert(field_signatures[jField<F>("GENERIC_FAILURE")] != -1);
+		return sat<F>("GENERIC_FAILURE");
+	}
+
+	template<typename F = ::jint>
+	static auto OPEN_FAILURE() {
+		static_assert(field_signatures[jField<F>("OPEN_FAILURE")] != -1);
+		return sat<F>("OPEN_FAILURE");
+	}
+
+	template<typename F = ::jint>
+	static auto WRITE_FAILURE() {
+		static_assert(field_signatures[jField<F>("WRITE_FAILURE")] != -1);
+		return sat<F>("WRITE_FAILURE");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::Exception, ::jint)>("error"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto error(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("error")] != -1);
+		return call<R>("error", forward<Args>(args)...);
+	}
+
+};
+
+#endif

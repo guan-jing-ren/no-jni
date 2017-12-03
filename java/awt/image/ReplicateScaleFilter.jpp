@@ -1,0 +1,44 @@
+#ifndef java_awt_image_ReplicateScaleFilter_HPP
+#define java_awt_image_ReplicateScaleFilter_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::image::ReplicateScaleFilter : public jObject<::java::awt::image::ReplicateScaleFilter, ::java::awt::image::ImageFilter> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_image / "ReplicateScaleFilter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::jint)>(), //
+		jMethod<::jvoid(::jint, ::jint)>("setDimensions"), //
+		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint, ::java::awt::image::ColorModel, ::jbyte *, ::jint, ::jint)>("setPixels"), //
+		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint, ::java::awt::image::ColorModel, ::jint *, ::jint, ::jint)>("setPixels"), //
+		jMethod<::jvoid(::java::util::Hashtable)>("setProperties"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDimensions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDimensions")] != -1);
+		return call<R>("setDimensions", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setPixels(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPixels")] != -1);
+		return call<R>("setPixels", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setProperties(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setProperties")] != -1);
+		return call<R>("setProperties", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,56 @@
+#ifndef java_security_Principal_HPP
+#define java_security_Principal_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::Principal : public jObject<::java::security::Principal, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "Principal";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jboolean(::javax::security::auth::Subject)>("implies"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto implies(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("implies")] != -1);
+		return call<R>("implies", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

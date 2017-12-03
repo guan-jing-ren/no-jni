@@ -1,0 +1,43 @@
+#ifndef javax_sound_midi_spi_MidiDeviceProvider_HPP
+#define javax_sound_midi_spi_MidiDeviceProvider_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::sound::midi::spi::MidiDeviceProvider : public jObject<::javax::sound::midi::spi::MidiDeviceProvider, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sound_midi_spi / "MidiDeviceProvider";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::sound::midi::MidiDevice(::javax::sound::midi::MidiDevice$Info)>("getDevice"), //
+		jMethod<::javax::sound::midi::MidiDevice$Info *()>("getDeviceInfo"), //
+		jMethod<::jboolean(::javax::sound::midi::MidiDevice$Info)>("isDeviceSupported"), //
+	};
+
+	template<typename R = ::javax::sound::midi::MidiDevice, typename... Args>
+	auto getDevice(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDevice")] != -1);
+		return call<R>("getDevice", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::midi::MidiDevice$Info *, typename... Args>
+	auto getDeviceInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDeviceInfo")] != -1);
+		return call<R>("getDeviceInfo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDeviceSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isDeviceSupported")] != -1);
+		return call<R>("isDeviceSupported", forward<Args>(args)...);
+	}
+
+};
+
+#endif

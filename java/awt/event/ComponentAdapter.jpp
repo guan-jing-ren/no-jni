@@ -1,0 +1,50 @@
+#ifndef java_awt_event_ComponentAdapter_HPP
+#define java_awt_event_ComponentAdapter_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::event::ComponentAdapter : public jObject<::java::awt::event::ComponentAdapter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_event / "ComponentAdapter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::awt::event::ComponentEvent)>("componentHidden"), //
+		jMethod<::jvoid(::java::awt::event::ComponentEvent)>("componentMoved"), //
+		jMethod<::jvoid(::java::awt::event::ComponentEvent)>("componentResized"), //
+		jMethod<::jvoid(::java::awt::event::ComponentEvent)>("componentShown"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto componentHidden(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("componentHidden")] != -1);
+		return call<R>("componentHidden", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto componentMoved(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("componentMoved")] != -1);
+		return call<R>("componentMoved", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto componentResized(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("componentResized")] != -1);
+		return call<R>("componentResized", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto componentShown(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("componentShown")] != -1);
+		return call<R>("componentShown", forward<Args>(args)...);
+	}
+
+};
+
+#endif

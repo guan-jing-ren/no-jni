@@ -1,0 +1,107 @@
+#ifndef java_awt_event_InputMethodEvent_HPP
+#define java_awt_event_InputMethodEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::event::InputMethodEvent : public jObject<::java::awt::event::InputMethodEvent, ::java::awt::AWTEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_event / "InputMethodEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("CARET_POSITION_CHANGED"), //
+		jField<::jint>("INPUT_METHOD_FIRST"), //
+		jField<::jint>("INPUT_METHOD_LAST"), //
+		jField<::jint>("INPUT_METHOD_TEXT_CHANGED"), //
+	};
+
+	template<typename F = ::jint>
+	static auto CARET_POSITION_CHANGED() {
+		static_assert(field_signatures[jField<F>("CARET_POSITION_CHANGED")] != -1);
+		return sat<F>("CARET_POSITION_CHANGED");
+	}
+
+	template<typename F = ::jint>
+	static auto INPUT_METHOD_FIRST() {
+		static_assert(field_signatures[jField<F>("INPUT_METHOD_FIRST")] != -1);
+		return sat<F>("INPUT_METHOD_FIRST");
+	}
+
+	template<typename F = ::jint>
+	static auto INPUT_METHOD_LAST() {
+		static_assert(field_signatures[jField<F>("INPUT_METHOD_LAST")] != -1);
+		return sat<F>("INPUT_METHOD_LAST");
+	}
+
+	template<typename F = ::jint>
+	static auto INPUT_METHOD_TEXT_CHANGED() {
+		static_assert(field_signatures[jField<F>("INPUT_METHOD_TEXT_CHANGED")] != -1);
+		return sat<F>("INPUT_METHOD_TEXT_CHANGED");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::Component, ::jint, ::jlong, ::java::text::AttributedCharacterIterator, ::jint, ::java::awt::font::TextHitInfo, ::java::awt::font::TextHitInfo)>(), //
+		jConstructor<::jvoid(::java::awt::Component, ::jint, ::java::awt::font::TextHitInfo, ::java::awt::font::TextHitInfo)>(), //
+		jConstructor<::jvoid(::java::awt::Component, ::jint, ::java::text::AttributedCharacterIterator, ::jint, ::java::awt::font::TextHitInfo, ::java::awt::font::TextHitInfo)>(), //
+		jMethod<::jvoid()>("consume"), //
+		jMethod<::java::awt::font::TextHitInfo()>("getCaret"), //
+		jMethod<::jint()>("getCommittedCharacterCount"), //
+		jMethod<::java::text::AttributedCharacterIterator()>("getText"), //
+		jMethod<::java::awt::font::TextHitInfo()>("getVisiblePosition"), //
+		jMethod<::jlong()>("getWhen"), //
+		jMethod<::jboolean()>("isConsumed"), //
+		jMethod<::java::lang::String()>("paramString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto consume(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("consume")] != -1);
+		return call<R>("consume", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::font::TextHitInfo, typename... Args>
+	auto getCaret(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCaret")] != -1);
+		return call<R>("getCaret", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getCommittedCharacterCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCommittedCharacterCount")] != -1);
+		return call<R>("getCommittedCharacterCount", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::text::AttributedCharacterIterator, typename... Args>
+	auto getText(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getText")] != -1);
+		return call<R>("getText", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::font::TextHitInfo, typename... Args>
+	auto getVisiblePosition(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getVisiblePosition")] != -1);
+		return call<R>("getVisiblePosition", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getWhen(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWhen")] != -1);
+		return call<R>("getWhen", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isConsumed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isConsumed")] != -1);
+		return call<R>("isConsumed", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto paramString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paramString")] != -1);
+		return call<R>("paramString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

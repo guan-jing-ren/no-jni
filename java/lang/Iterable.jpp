@@ -1,0 +1,42 @@
+#ifndef java_lang_Iterable_HPP
+#define java_lang_Iterable_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::lang::Iterable : public jObject<::java::lang::Iterable, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang / "Iterable";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::util::function::Consumer)>("forEach"), //
+		jMethod<::java::util::Iterator()>("iterator"), //
+		jMethod<::java::util::Spliterator()>("spliterator"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto forEach(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("forEach")] != -1);
+		return call<R>("forEach", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Iterator, typename... Args>
+	auto iterator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("iterator")] != -1);
+		return call<R>("iterator", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Spliterator, typename... Args>
+	auto spliterator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("spliterator")] != -1);
+		return call<R>("spliterator", forward<Args>(args)...);
+	}
+
+};
+
+#endif

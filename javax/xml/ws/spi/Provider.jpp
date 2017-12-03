@@ -1,0 +1,81 @@
+#ifndef javax_xml_ws_spi_Provider_HPP
+#define javax_xml_ws_spi_Provider_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::ws::spi::Provider : public jObject<::javax::xml::ws::spi::Provider, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_ws_spi / "Provider";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("JAXWSPROVIDER_PROPERTY"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto JAXWSPROVIDER_PROPERTY() {
+		static_assert(field_signatures[jField<F>("JAXWSPROVIDER_PROPERTY")] != -1);
+		return sat<F>("JAXWSPROVIDER_PROPERTY");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::ws::Endpoint(::java::lang::String, ::java::lang::Object)>("createAndPublishEndpoint"), //
+		jMethod<::javax::xml::ws::Endpoint(::java::lang::String, ::java::lang::Object, ::javax::xml::ws::WebServiceFeature *)>("createAndPublishEndpoint"), //
+		jMethod<::javax::xml::ws::Endpoint(::java::lang::String, ::java::lang::Class, ::javax::xml::ws::spi::Invoker, ::javax::xml::ws::WebServiceFeature *)>("createEndpoint"), //
+		jMethod<::javax::xml::ws::Endpoint(::java::lang::String, ::java::lang::Object)>("createEndpoint"), //
+		jMethod<::javax::xml::ws::Endpoint(::java::lang::String, ::java::lang::Object, ::javax::xml::ws::WebServiceFeature *)>("createEndpoint"), //
+		jMethod<::javax::xml::ws::spi::ServiceDelegate(::java::net::URL, ::javax::xml::namespace_::QName, ::java::lang::Class)>("createServiceDelegate"), //
+		jMethod<::javax::xml::ws::spi::ServiceDelegate(::java::net::URL, ::javax::xml::namespace_::QName, ::java::lang::Class, ::javax::xml::ws::WebServiceFeature *)>("createServiceDelegate"), //
+		jMethod<::javax::xml::ws::wsaddressing::W3CEndpointReference(::java::lang::String, ::javax::xml::namespace_::QName, ::javax::xml::namespace_::QName, ::java::util::List, ::java::lang::String, ::java::util::List)>("createW3CEndpointReference"), //
+		jMethod<::javax::xml::ws::wsaddressing::W3CEndpointReference(::java::lang::String, ::javax::xml::namespace_::QName, ::javax::xml::namespace_::QName, ::javax::xml::namespace_::QName, ::java::util::List, ::java::lang::String, ::java::util::List, ::java::util::List, ::java::util::Map)>("createW3CEndpointReference"), //
+		jMethod<::java::lang::Object(::javax::xml::ws::EndpointReference, ::java::lang::Class, ::javax::xml::ws::WebServiceFeature *)>("getPort"), //
+		jMethod<::javax::xml::ws::spi::Provider()>("provider"), //
+		jMethod<::javax::xml::ws::EndpointReference(::javax::xml::transform::Source)>("readEndpointReference"), //
+	};
+
+	template<typename R = ::javax::xml::ws::Endpoint, typename... Args>
+	auto createAndPublishEndpoint(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createAndPublishEndpoint")] != -1);
+		return call<R>("createAndPublishEndpoint", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::ws::Endpoint, typename... Args>
+	auto createEndpoint(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createEndpoint")] != -1);
+		return call<R>("createEndpoint", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::ws::spi::ServiceDelegate, typename... Args>
+	auto createServiceDelegate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createServiceDelegate")] != -1);
+		return call<R>("createServiceDelegate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::ws::wsaddressing::W3CEndpointReference, typename... Args>
+	auto createW3CEndpointReference(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createW3CEndpointReference")] != -1);
+		return call<R>("createW3CEndpointReference", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getPort(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPort")] != -1);
+		return call<R>("getPort", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::ws::spi::Provider, typename... Args>
+	static auto provider(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("provider")] != -1);
+		return scall<R>("provider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::ws::EndpointReference, typename... Args>
+	auto readEndpointReference(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("readEndpointReference")] != -1);
+		return call<R>("readEndpointReference", forward<Args>(args)...);
+	}
+
+};
+
+#endif

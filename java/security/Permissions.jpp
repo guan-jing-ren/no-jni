@@ -1,0 +1,43 @@
+#ifndef java_security_Permissions_HPP
+#define java_security_Permissions_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::Permissions : public jObject<::java::security::Permissions, ::java::security::PermissionCollection> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "Permissions";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::security::Permission)>("add"), //
+		jMethod<::java::util::Enumeration()>("elements"), //
+		jMethod<::jboolean(::java::security::Permission)>("implies"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto add(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	auto elements(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("elements")] != -1);
+		return call<R>("elements", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto implies(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("implies")] != -1);
+		return call<R>("implies", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,48 @@
+#ifndef javax_swing_event_DocumentEvent$EventType_HPP
+#define javax_swing_event_DocumentEvent$EventType_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::event::DocumentEvent$EventType : public jObject<::javax::swing::event::DocumentEvent$EventType, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_event / "DocumentEvent$EventType";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::swing::event::DocumentEvent$EventType>("CHANGE"), //
+		jField<::javax::swing::event::DocumentEvent$EventType>("INSERT"), //
+		jField<::javax::swing::event::DocumentEvent$EventType>("REMOVE"), //
+	};
+
+	template<typename F = ::javax::swing::event::DocumentEvent$EventType>
+	static auto CHANGE() {
+		static_assert(field_signatures[jField<F>("CHANGE")] != -1);
+		return sat<F>("CHANGE");
+	}
+
+	template<typename F = ::javax::swing::event::DocumentEvent$EventType>
+	static auto INSERT() {
+		static_assert(field_signatures[jField<F>("INSERT")] != -1);
+		return sat<F>("INSERT");
+	}
+
+	template<typename F = ::javax::swing::event::DocumentEvent$EventType>
+	static auto REMOVE() {
+		static_assert(field_signatures[jField<F>("REMOVE")] != -1);
+		return sat<F>("REMOVE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,36 @@
+#ifndef java_util_IllegalFormatPrecisionException_HPP
+#define java_util_IllegalFormatPrecisionException_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::IllegalFormatPrecisionException : public jObject<::java::util::IllegalFormatPrecisionException, ::java::util::IllegalFormatException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "IllegalFormatPrecisionException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint)>(), //
+		jMethod<::java::lang::String()>("getMessage"), //
+		jMethod<::jint()>("getPrecision"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMessage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMessage")] != -1);
+		return call<R>("getMessage", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getPrecision(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrecision")] != -1);
+		return call<R>("getPrecision", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,35 @@
+#ifndef java_util_prefs_PreferencesFactory_HPP
+#define java_util_prefs_PreferencesFactory_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::prefs::PreferencesFactory : public jObject<::java::util::prefs::PreferencesFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_prefs / "PreferencesFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::prefs::Preferences()>("systemRoot"), //
+		jMethod<::java::util::prefs::Preferences()>("userRoot"), //
+	};
+
+	template<typename R = ::java::util::prefs::Preferences, typename... Args>
+	auto systemRoot(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("systemRoot")] != -1);
+		return call<R>("systemRoot", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::prefs::Preferences, typename... Args>
+	auto userRoot(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("userRoot")] != -1);
+		return call<R>("userRoot", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,28 @@
+#ifndef java_util_function_ObjDoubleConsumer_HPP
+#define java_util_function_ObjDoubleConsumer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::function::ObjDoubleConsumer : public jObject<::java::util::function::ObjDoubleConsumer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_function / "ObjDoubleConsumer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::Object, ::jdouble)>("accept"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto accept(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("accept")] != -1);
+		return call<R>("accept", forward<Args>(args)...);
+	}
+
+};
+
+#endif

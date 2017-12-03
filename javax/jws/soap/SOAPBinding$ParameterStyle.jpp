@@ -1,0 +1,48 @@
+#ifndef javax_jws_soap_SOAPBinding$ParameterStyle_HPP
+#define javax_jws_soap_SOAPBinding$ParameterStyle_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::jws::soap::SOAPBinding$ParameterStyle : public jObject<::javax::jws::soap::SOAPBinding$ParameterStyle, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_jws_soap / "SOAPBinding$ParameterStyle";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::jws::soap::SOAPBinding$ParameterStyle>("BARE"), //
+		jField<::javax::jws::soap::SOAPBinding$ParameterStyle>("WRAPPED"), //
+	};
+
+	template<typename F = ::javax::jws::soap::SOAPBinding$ParameterStyle>
+	static auto BARE() {
+		static_assert(field_signatures[jField<F>("BARE")] != -1);
+		return sat<F>("BARE");
+	}
+
+	template<typename F = ::javax::jws::soap::SOAPBinding$ParameterStyle>
+	static auto WRAPPED() {
+		static_assert(field_signatures[jField<F>("WRAPPED")] != -1);
+		return sat<F>("WRAPPED");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::jws::soap::SOAPBinding$ParameterStyle(::java::lang::String)>("valueOf"), //
+		jMethod<::javax::jws::soap::SOAPBinding$ParameterStyle *()>("values"), //
+	};
+
+	template<typename R = ::javax::jws::soap::SOAPBinding$ParameterStyle, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::jws::soap::SOAPBinding$ParameterStyle *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

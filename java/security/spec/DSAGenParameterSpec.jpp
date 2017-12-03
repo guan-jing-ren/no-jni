@@ -1,0 +1,44 @@
+#ifndef java_security_spec_DSAGenParameterSpec_HPP
+#define java_security_spec_DSAGenParameterSpec_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::spec::DSAGenParameterSpec : public jObject<::java::security::spec::DSAGenParameterSpec, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_spec / "DSAGenParameterSpec";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::jint)>(), //
+		jConstructor<::jvoid(::jint, ::jint, ::jint)>(), //
+		jMethod<::jint()>("getPrimePLength"), //
+		jMethod<::jint()>("getSeedLength"), //
+		jMethod<::jint()>("getSubprimeQLength"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getPrimePLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrimePLength")] != -1);
+		return call<R>("getPrimePLength", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getSeedLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSeedLength")] != -1);
+		return call<R>("getSeedLength", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getSubprimeQLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSubprimeQLength")] != -1);
+		return call<R>("getSubprimeQLength", forward<Args>(args)...);
+	}
+
+};
+
+#endif

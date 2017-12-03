@@ -1,0 +1,37 @@
+#ifndef java_nio_channels_AsynchronousByteChannel_HPP
+#define java_nio_channels_AsynchronousByteChannel_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::channels::AsynchronousByteChannel : public jObject<::java::nio::channels::AsynchronousByteChannel, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_channels / "AsynchronousByteChannel";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::concurrent::Future(::java::nio::ByteBuffer)>("read"), //
+		jMethod<::jvoid(::java::nio::ByteBuffer, ::java::lang::Object, ::java::nio::channels::CompletionHandler)>("read"), //
+		jMethod<::java::util::concurrent::Future(::java::nio::ByteBuffer)>("write"), //
+		jMethod<::jvoid(::java::nio::ByteBuffer, ::java::lang::Object, ::java::nio::channels::CompletionHandler)>("write"), //
+	};
+
+	template<typename R = ::java::util::concurrent::Future, typename... Args>
+	auto read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::concurrent::Future, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,29 @@
+#ifndef org_omg_CORBA_2_3_portable_Delegate_HPP
+#define org_omg_CORBA_2_3_portable_Delegate_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::omg::CORBA_2_3::portable::Delegate : public jObject<::org::omg::CORBA_2_3::portable::Delegate, ::org::omg::CORBA::portable::Delegate> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CORBA_2_3_portable / "Delegate";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::String(::org::omg::CORBA::Object)>("get_codebase"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto get_codebase(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get_codebase")] != -1);
+		return call<R>("get_codebase", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,100 @@
+#ifndef java_awt_event_ActionEvent_HPP
+#define java_awt_event_ActionEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::event::ActionEvent : public jObject<::java::awt::event::ActionEvent, ::java::awt::AWTEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_event / "ActionEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("ACTION_FIRST"), //
+		jField<::jint>("ACTION_LAST"), //
+		jField<::jint>("ACTION_PERFORMED"), //
+		jField<::jint>("ALT_MASK"), //
+		jField<::jint>("CTRL_MASK"), //
+		jField<::jint>("META_MASK"), //
+		jField<::jint>("SHIFT_MASK"), //
+	};
+
+	template<typename F = ::jint>
+	static auto ACTION_FIRST() {
+		static_assert(field_signatures[jField<F>("ACTION_FIRST")] != -1);
+		return sat<F>("ACTION_FIRST");
+	}
+
+	template<typename F = ::jint>
+	static auto ACTION_LAST() {
+		static_assert(field_signatures[jField<F>("ACTION_LAST")] != -1);
+		return sat<F>("ACTION_LAST");
+	}
+
+	template<typename F = ::jint>
+	static auto ACTION_PERFORMED() {
+		static_assert(field_signatures[jField<F>("ACTION_PERFORMED")] != -1);
+		return sat<F>("ACTION_PERFORMED");
+	}
+
+	template<typename F = ::jint>
+	static auto ALT_MASK() {
+		static_assert(field_signatures[jField<F>("ALT_MASK")] != -1);
+		return sat<F>("ALT_MASK");
+	}
+
+	template<typename F = ::jint>
+	static auto CTRL_MASK() {
+		static_assert(field_signatures[jField<F>("CTRL_MASK")] != -1);
+		return sat<F>("CTRL_MASK");
+	}
+
+	template<typename F = ::jint>
+	static auto META_MASK() {
+		static_assert(field_signatures[jField<F>("META_MASK")] != -1);
+		return sat<F>("META_MASK");
+	}
+
+	template<typename F = ::jint>
+	static auto SHIFT_MASK() {
+		static_assert(field_signatures[jField<F>("SHIFT_MASK")] != -1);
+		return sat<F>("SHIFT_MASK");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Object, ::jint, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::Object, ::jint, ::java::lang::String, ::jint)>(), //
+		jConstructor<::jvoid(::java::lang::Object, ::jint, ::java::lang::String, ::jlong, ::jint)>(), //
+		jMethod<::java::lang::String()>("getActionCommand"), //
+		jMethod<::jint()>("getModifiers"), //
+		jMethod<::jlong()>("getWhen"), //
+		jMethod<::java::lang::String()>("paramString"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getActionCommand(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getActionCommand")] != -1);
+		return call<R>("getActionCommand", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getModifiers(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getModifiers")] != -1);
+		return call<R>("getModifiers", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getWhen(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWhen")] != -1);
+		return call<R>("getWhen", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto paramString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paramString")] != -1);
+		return call<R>("paramString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

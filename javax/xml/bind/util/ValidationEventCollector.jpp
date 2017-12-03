@@ -1,0 +1,50 @@
+#ifndef javax_xml_bind_util_ValidationEventCollector_HPP
+#define javax_xml_bind_util_ValidationEventCollector_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::bind::util::ValidationEventCollector : public jObject<::javax::xml::bind::util::ValidationEventCollector, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_bind_util / "ValidationEventCollector";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::xml::bind::ValidationEvent *()>("getEvents"), //
+		jMethod<::jboolean(::javax::xml::bind::ValidationEvent)>("handleEvent"), //
+		jMethod<::jboolean()>("hasEvents"), //
+		jMethod<::jvoid()>("reset"), //
+	};
+
+	template<typename R = ::javax::xml::bind::ValidationEvent *, typename... Args>
+	auto getEvents(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEvents")] != -1);
+		return call<R>("getEvents", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto handleEvent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("handleEvent")] != -1);
+		return call<R>("handleEvent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasEvents(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hasEvents")] != -1);
+		return call<R>("hasEvents", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto reset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("reset")] != -1);
+		return call<R>("reset", forward<Args>(args)...);
+	}
+
+};
+
+#endif

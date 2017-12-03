@@ -1,0 +1,69 @@
+#ifndef org_w3c_dom_ls_LSParserFilter_HPP
+#define org_w3c_dom_ls_LSParserFilter_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::w3c::dom::ls::LSParserFilter : public jObject<::org::w3c::dom::ls::LSParserFilter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_w3c_dom_ls / "LSParserFilter";
+
+	constexpr static Enume field_signatures{
+		jField<::jshort>("FILTER_ACCEPT"), //
+		jField<::jshort>("FILTER_INTERRUPT"), //
+		jField<::jshort>("FILTER_REJECT"), //
+		jField<::jshort>("FILTER_SKIP"), //
+	};
+
+	template<typename F = ::jshort>
+	static auto FILTER_ACCEPT() {
+		static_assert(field_signatures[jField<F>("FILTER_ACCEPT")] != -1);
+		return sat<F>("FILTER_ACCEPT");
+	}
+
+	template<typename F = ::jshort>
+	static auto FILTER_INTERRUPT() {
+		static_assert(field_signatures[jField<F>("FILTER_INTERRUPT")] != -1);
+		return sat<F>("FILTER_INTERRUPT");
+	}
+
+	template<typename F = ::jshort>
+	static auto FILTER_REJECT() {
+		static_assert(field_signatures[jField<F>("FILTER_REJECT")] != -1);
+		return sat<F>("FILTER_REJECT");
+	}
+
+	template<typename F = ::jshort>
+	static auto FILTER_SKIP() {
+		static_assert(field_signatures[jField<F>("FILTER_SKIP")] != -1);
+		return sat<F>("FILTER_SKIP");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jshort(::org::w3c::dom::Node)>("acceptNode"), //
+		jMethod<::jint()>("getWhatToShow"), //
+		jMethod<::jshort(::org::w3c::dom::Element)>("startElement"), //
+	};
+
+	template<typename R = ::jshort, typename... Args>
+	auto acceptNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("acceptNode")] != -1);
+		return call<R>("acceptNode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getWhatToShow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWhatToShow")] != -1);
+		return call<R>("getWhatToShow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jshort, typename... Args>
+	auto startElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("startElement")] != -1);
+		return call<R>("startElement", forward<Args>(args)...);
+	}
+
+};
+
+#endif

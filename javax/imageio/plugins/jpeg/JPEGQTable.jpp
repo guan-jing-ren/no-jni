@@ -1,0 +1,70 @@
+#ifndef javax_imageio_plugins_jpeg_JPEGQTable_HPP
+#define javax_imageio_plugins_jpeg_JPEGQTable_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::imageio::plugins::jpeg::JPEGQTable : public jObject<::javax::imageio::plugins::jpeg::JPEGQTable, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_imageio_plugins_jpeg / "JPEGQTable";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::imageio::plugins::jpeg::JPEGQTable>("K1Div2Luminance"), //
+		jField<::javax::imageio::plugins::jpeg::JPEGQTable>("K1Luminance"), //
+		jField<::javax::imageio::plugins::jpeg::JPEGQTable>("K2Chrominance"), //
+		jField<::javax::imageio::plugins::jpeg::JPEGQTable>("K2Div2Chrominance"), //
+	};
+
+	template<typename F = ::javax::imageio::plugins::jpeg::JPEGQTable>
+	static auto K1Div2Luminance() {
+		static_assert(field_signatures[jField<F>("K1Div2Luminance")] != -1);
+		return sat<F>("K1Div2Luminance");
+	}
+
+	template<typename F = ::javax::imageio::plugins::jpeg::JPEGQTable>
+	static auto K1Luminance() {
+		static_assert(field_signatures[jField<F>("K1Luminance")] != -1);
+		return sat<F>("K1Luminance");
+	}
+
+	template<typename F = ::javax::imageio::plugins::jpeg::JPEGQTable>
+	static auto K2Chrominance() {
+		static_assert(field_signatures[jField<F>("K2Chrominance")] != -1);
+		return sat<F>("K2Chrominance");
+	}
+
+	template<typename F = ::javax::imageio::plugins::jpeg::JPEGQTable>
+	static auto K2Div2Chrominance() {
+		static_assert(field_signatures[jField<F>("K2Div2Chrominance")] != -1);
+		return sat<F>("K2Div2Chrominance");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint *)>(), //
+		jMethod<::javax::imageio::plugins::jpeg::JPEGQTable(::jfloat, ::jboolean)>("getScaledInstance"), //
+		jMethod<::jint *()>("getTable"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::javax::imageio::plugins::jpeg::JPEGQTable, typename... Args>
+	auto getScaledInstance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getScaledInstance")] != -1);
+		return call<R>("getScaledInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint *, typename... Args>
+	auto getTable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTable")] != -1);
+		return call<R>("getTable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

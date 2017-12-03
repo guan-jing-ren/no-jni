@@ -1,0 +1,48 @@
+#ifndef javax_swing_event_RowSorterEvent$Type_HPP
+#define javax_swing_event_RowSorterEvent$Type_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::event::RowSorterEvent$Type : public jObject<::javax::swing::event::RowSorterEvent$Type, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_event / "RowSorterEvent$Type";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::swing::event::RowSorterEvent$Type>("SORTED"), //
+		jField<::javax::swing::event::RowSorterEvent$Type>("SORT_ORDER_CHANGED"), //
+	};
+
+	template<typename F = ::javax::swing::event::RowSorterEvent$Type>
+	static auto SORTED() {
+		static_assert(field_signatures[jField<F>("SORTED")] != -1);
+		return sat<F>("SORTED");
+	}
+
+	template<typename F = ::javax::swing::event::RowSorterEvent$Type>
+	static auto SORT_ORDER_CHANGED() {
+		static_assert(field_signatures[jField<F>("SORT_ORDER_CHANGED")] != -1);
+		return sat<F>("SORT_ORDER_CHANGED");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::swing::event::RowSorterEvent$Type(::java::lang::String)>("valueOf"), //
+		jMethod<::javax::swing::event::RowSorterEvent$Type *()>("values"), //
+	};
+
+	template<typename R = ::javax::swing::event::RowSorterEvent$Type, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::event::RowSorterEvent$Type *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

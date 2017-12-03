@@ -1,0 +1,28 @@
+#ifndef javax_print_event_PrintServiceAttributeListener_HPP
+#define javax_print_event_PrintServiceAttributeListener_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::print::event::PrintServiceAttributeListener : public jObject<::javax::print::event::PrintServiceAttributeListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_print_event / "PrintServiceAttributeListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::print::event::PrintServiceAttributeEvent)>("attributeUpdate"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto attributeUpdate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("attributeUpdate")] != -1);
+		return call<R>("attributeUpdate", forward<Args>(args)...);
+	}
+
+};
+
+#endif

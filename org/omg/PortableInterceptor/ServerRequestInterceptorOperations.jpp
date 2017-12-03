@@ -1,0 +1,56 @@
+#ifndef org_omg_PortableInterceptor_ServerRequestInterceptorOperations_HPP
+#define org_omg_PortableInterceptor_ServerRequestInterceptorOperations_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::PortableInterceptor::ServerRequestInterceptorOperations : public jObject<::org::omg::PortableInterceptor::ServerRequestInterceptorOperations, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_PortableInterceptor / "ServerRequestInterceptorOperations";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::org::omg::PortableInterceptor::ServerRequestInfo)>("receive_request"), //
+		jMethod<::jvoid(::org::omg::PortableInterceptor::ServerRequestInfo)>("receive_request_service_contexts"), //
+		jMethod<::jvoid(::org::omg::PortableInterceptor::ServerRequestInfo)>("send_exception"), //
+		jMethod<::jvoid(::org::omg::PortableInterceptor::ServerRequestInfo)>("send_other"), //
+		jMethod<::jvoid(::org::omg::PortableInterceptor::ServerRequestInfo)>("send_reply"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto receive_request(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("receive_request")] != -1);
+		return call<R>("receive_request", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto receive_request_service_contexts(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("receive_request_service_contexts")] != -1);
+		return call<R>("receive_request_service_contexts", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto send_exception(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("send_exception")] != -1);
+		return call<R>("send_exception", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto send_other(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("send_other")] != -1);
+		return call<R>("send_other", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto send_reply(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("send_reply")] != -1);
+		return call<R>("send_reply", forward<Args>(args)...);
+	}
+
+};
+
+#endif

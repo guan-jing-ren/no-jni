@@ -1,0 +1,42 @@
+#ifndef java_awt_MenuContainer_HPP
+#define java_awt_MenuContainer_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::MenuContainer : public jObject<::java::awt::MenuContainer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "MenuContainer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::Font()>("getFont"), //
+		jMethod<::jboolean(::java::awt::Event)>("postEvent"), //
+		jMethod<::jvoid(::java::awt::MenuComponent)>("remove"), //
+	};
+
+	template<typename R = ::java::awt::Font, typename... Args>
+	auto getFont(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFont")] != -1);
+		return call<R>("getFont", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto postEvent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("postEvent")] != -1);
+		return call<R>("postEvent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto remove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", forward<Args>(args)...);
+	}
+
+};
+
+#endif

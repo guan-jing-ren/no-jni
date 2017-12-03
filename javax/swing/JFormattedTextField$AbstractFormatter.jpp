@@ -1,0 +1,50 @@
+#ifndef javax_swing_JFormattedTextField$AbstractFormatter_HPP
+#define javax_swing_JFormattedTextField$AbstractFormatter_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::JFormattedTextField$AbstractFormatter : public jObject<::javax::swing::JFormattedTextField$AbstractFormatter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "JFormattedTextField$AbstractFormatter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::javax::swing::JFormattedTextField)>("install"), //
+		jMethod<::java::lang::Object(::java::lang::String)>("stringToValue"), //
+		jMethod<::jvoid()>("uninstall"), //
+		jMethod<::java::lang::String(::java::lang::Object)>("valueToString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto install(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("install")] != -1);
+		return call<R>("install", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto stringToValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("stringToValue")] != -1);
+		return call<R>("stringToValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto uninstall(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("uninstall")] != -1);
+		return call<R>("uninstall", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto valueToString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueToString")] != -1);
+		return call<R>("valueToString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,365 @@
+#ifndef java_lang_StrictMath_HPP
+#define java_lang_StrictMath_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::lang::StrictMath : public jObject<::java::lang::StrictMath, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang / "StrictMath";
+
+	constexpr static Enume field_signatures{
+		jField<::jdouble>("E"), //
+		jField<::jdouble>("PI"), //
+	};
+
+	template<typename F = ::jdouble>
+	static auto E() {
+		static_assert(field_signatures[jField<F>("E")] != -1);
+		return sat<F>("E");
+	}
+
+	template<typename F = ::jdouble>
+	static auto PI() {
+		static_assert(field_signatures[jField<F>("PI")] != -1);
+		return sat<F>("PI");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jdouble(::jdouble, ::jdouble)>("IEEEremainder"), //
+		jMethod<::jdouble(::jdouble)>("abs"), //
+		jMethod<::jfloat(::jfloat)>("abs"), //
+		jMethod<::jint(::jint)>("abs"), //
+		jMethod<::jlong(::jlong)>("abs"), //
+		jMethod<::jdouble(::jdouble)>("acos"), //
+		jMethod<::jint(::jint, ::jint)>("addExact"), //
+		jMethod<::jlong(::jlong, ::jlong)>("addExact"), //
+		jMethod<::jdouble(::jdouble)>("asin"), //
+		jMethod<::jdouble(::jdouble)>("atan"), //
+		jMethod<::jdouble(::jdouble, ::jdouble)>("atan2"), //
+		jMethod<::jdouble(::jdouble)>("cbrt"), //
+		jMethod<::jdouble(::jdouble)>("ceil"), //
+		jMethod<::jdouble(::jdouble, ::jdouble)>("copySign"), //
+		jMethod<::jfloat(::jfloat, ::jfloat)>("copySign"), //
+		jMethod<::jdouble(::jdouble)>("cos"), //
+		jMethod<::jdouble(::jdouble)>("cosh"), //
+		jMethod<::jdouble(::jdouble)>("exp"), //
+		jMethod<::jdouble(::jdouble)>("expm1"), //
+		jMethod<::jdouble(::jdouble)>("floor"), //
+		jMethod<::jint(::jint, ::jint)>("floorDiv"), //
+		jMethod<::jlong(::jlong, ::jlong)>("floorDiv"), //
+		jMethod<::jint(::jint, ::jint)>("floorMod"), //
+		jMethod<::jlong(::jlong, ::jlong)>("floorMod"), //
+		jMethod<::jint(::jdouble)>("getExponent"), //
+		jMethod<::jint(::jfloat)>("getExponent"), //
+		jMethod<::jdouble(::jdouble, ::jdouble)>("hypot"), //
+		jMethod<::jdouble(::jdouble)>("log"), //
+		jMethod<::jdouble(::jdouble)>("log10"), //
+		jMethod<::jdouble(::jdouble)>("log1p"), //
+		jMethod<::jdouble(::jdouble, ::jdouble)>("max"), //
+		jMethod<::jfloat(::jfloat, ::jfloat)>("max"), //
+		jMethod<::jint(::jint, ::jint)>("max"), //
+		jMethod<::jlong(::jlong, ::jlong)>("max"), //
+		jMethod<::jdouble(::jdouble, ::jdouble)>("min"), //
+		jMethod<::jfloat(::jfloat, ::jfloat)>("min"), //
+		jMethod<::jint(::jint, ::jint)>("min"), //
+		jMethod<::jlong(::jlong, ::jlong)>("min"), //
+		jMethod<::jint(::jint, ::jint)>("multiplyExact"), //
+		jMethod<::jlong(::jlong, ::jlong)>("multiplyExact"), //
+		jMethod<::jdouble(::jdouble, ::jdouble)>("nextAfter"), //
+		jMethod<::jfloat(::jfloat, ::jdouble)>("nextAfter"), //
+		jMethod<::jdouble(::jdouble)>("nextDown"), //
+		jMethod<::jfloat(::jfloat)>("nextDown"), //
+		jMethod<::jdouble(::jdouble)>("nextUp"), //
+		jMethod<::jfloat(::jfloat)>("nextUp"), //
+		jMethod<::jdouble(::jdouble, ::jdouble)>("pow"), //
+		jMethod<::jdouble()>("random"), //
+		jMethod<::jdouble(::jdouble)>("rint"), //
+		jMethod<::jlong(::jdouble)>("round"), //
+		jMethod<::jint(::jfloat)>("round"), //
+		jMethod<::jdouble(::jdouble, ::jint)>("scalb"), //
+		jMethod<::jfloat(::jfloat, ::jint)>("scalb"), //
+		jMethod<::jdouble(::jdouble)>("signum"), //
+		jMethod<::jfloat(::jfloat)>("signum"), //
+		jMethod<::jdouble(::jdouble)>("sin"), //
+		jMethod<::jdouble(::jdouble)>("sinh"), //
+		jMethod<::jdouble(::jdouble)>("sqrt"), //
+		jMethod<::jint(::jint, ::jint)>("subtractExact"), //
+		jMethod<::jlong(::jlong, ::jlong)>("subtractExact"), //
+		jMethod<::jdouble(::jdouble)>("tan"), //
+		jMethod<::jdouble(::jdouble)>("tanh"), //
+		jMethod<::jdouble(::jdouble)>("toDegrees"), //
+		jMethod<::jint(::jlong)>("toIntExact"), //
+		jMethod<::jdouble(::jdouble)>("toRadians"), //
+		jMethod<::jdouble(::jdouble)>("ulp"), //
+		jMethod<::jfloat(::jfloat)>("ulp"), //
+	};
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto IEEEremainder(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("IEEEremainder")] != -1);
+		return scall<R>("IEEEremainder", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto abs(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("abs")] != -1);
+		return scall<R>("abs", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto acos(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("acos")] != -1);
+		return scall<R>("acos", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto addExact(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addExact")] != -1);
+		return scall<R>("addExact", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto asin(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("asin")] != -1);
+		return scall<R>("asin", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto atan(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("atan")] != -1);
+		return scall<R>("atan", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto atan2(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("atan2")] != -1);
+		return scall<R>("atan2", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto cbrt(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("cbrt")] != -1);
+		return scall<R>("cbrt", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto ceil(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("ceil")] != -1);
+		return scall<R>("ceil", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto copySign(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("copySign")] != -1);
+		return scall<R>("copySign", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto cos(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("cos")] != -1);
+		return scall<R>("cos", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto cosh(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("cosh")] != -1);
+		return scall<R>("cosh", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto exp(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("exp")] != -1);
+		return scall<R>("exp", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto expm1(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("expm1")] != -1);
+		return scall<R>("expm1", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto floor(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("floor")] != -1);
+		return scall<R>("floor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto floorDiv(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("floorDiv")] != -1);
+		return scall<R>("floorDiv", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto floorMod(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("floorMod")] != -1);
+		return scall<R>("floorMod", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto getExponent(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getExponent")] != -1);
+		return scall<R>("getExponent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto hypot(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hypot")] != -1);
+		return scall<R>("hypot", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto log(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("log")] != -1);
+		return scall<R>("log", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto log10(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("log10")] != -1);
+		return scall<R>("log10", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto log1p(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("log1p")] != -1);
+		return scall<R>("log1p", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto max(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("max")] != -1);
+		return scall<R>("max", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto min(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("min")] != -1);
+		return scall<R>("min", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto multiplyExact(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("multiplyExact")] != -1);
+		return scall<R>("multiplyExact", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto nextAfter(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nextAfter")] != -1);
+		return scall<R>("nextAfter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto nextDown(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nextDown")] != -1);
+		return scall<R>("nextDown", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto nextUp(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nextUp")] != -1);
+		return scall<R>("nextUp", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto pow(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("pow")] != -1);
+		return scall<R>("pow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto random(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("random")] != -1);
+		return scall<R>("random", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto rint(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("rint")] != -1);
+		return scall<R>("rint", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	static auto round(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("round")] != -1);
+		return scall<R>("round", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto scalb(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("scalb")] != -1);
+		return scall<R>("scalb", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto signum(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("signum")] != -1);
+		return scall<R>("signum", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto sin(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("sin")] != -1);
+		return scall<R>("sin", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto sinh(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("sinh")] != -1);
+		return scall<R>("sinh", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto sqrt(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("sqrt")] != -1);
+		return scall<R>("sqrt", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto subtractExact(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("subtractExact")] != -1);
+		return scall<R>("subtractExact", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto tan(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("tan")] != -1);
+		return scall<R>("tan", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto tanh(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("tanh")] != -1);
+		return scall<R>("tanh", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto toDegrees(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toDegrees")] != -1);
+		return scall<R>("toDegrees", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto toIntExact(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toIntExact")] != -1);
+		return scall<R>("toIntExact", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto toRadians(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toRadians")] != -1);
+		return scall<R>("toRadians", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto ulp(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("ulp")] != -1);
+		return scall<R>("ulp", forward<Args>(args)...);
+	}
+
+};
+
+#endif

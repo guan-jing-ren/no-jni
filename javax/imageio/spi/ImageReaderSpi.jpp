@@ -1,0 +1,64 @@
+#ifndef javax_imageio_spi_ImageReaderSpi_HPP
+#define javax_imageio_spi_ImageReaderSpi_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::imageio::spi::ImageReaderSpi : public jObject<::javax::imageio::spi::ImageReaderSpi, ::javax::imageio::spi::ImageReaderWriterSpi> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_imageio_spi / "ImageReaderSpi";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::Class *>("STANDARD_INPUT_TYPE"), //
+	};
+
+	template<typename F = ::java::lang::Class *>
+	static auto STANDARD_INPUT_TYPE() {
+		static_assert(field_signatures[jField<F>("STANDARD_INPUT_TYPE")] != -1);
+		return sat<F>("STANDARD_INPUT_TYPE");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::String *, ::java::lang::String *, ::java::lang::String *, ::java::lang::String, ::java::lang::Class *, ::java::lang::String *, ::jboolean, ::java::lang::String, ::java::lang::String, ::java::lang::String *, ::java::lang::String *, ::jboolean, ::java::lang::String, ::java::lang::String, ::java::lang::String *, ::java::lang::String *)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("canDecodeInput"), //
+		jMethod<::javax::imageio::ImageReader()>("createReaderInstance"), //
+		jMethod<::javax::imageio::ImageReader(::java::lang::Object)>("createReaderInstance"), //
+		jMethod<::java::lang::String *()>("getImageWriterSpiNames"), //
+		jMethod<::java::lang::Class *()>("getInputTypes"), //
+		jMethod<::jboolean(::javax::imageio::ImageReader)>("isOwnReader"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto canDecodeInput(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("canDecodeInput")] != -1);
+		return call<R>("canDecodeInput", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::imageio::ImageReader, typename... Args>
+	auto createReaderInstance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createReaderInstance")] != -1);
+		return call<R>("createReaderInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getImageWriterSpiNames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getImageWriterSpiNames")] != -1);
+		return call<R>("getImageWriterSpiNames", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class *, typename... Args>
+	auto getInputTypes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInputTypes")] != -1);
+		return call<R>("getInputTypes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isOwnReader(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isOwnReader")] != -1);
+		return call<R>("isOwnReader", forward<Args>(args)...);
+	}
+
+};
+
+#endif

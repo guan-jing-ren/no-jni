@@ -1,0 +1,28 @@
+#ifndef java_nio_file_PathMatcher_HPP
+#define java_nio_file_PathMatcher_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::file::PathMatcher : public jObject<::java::nio::file::PathMatcher, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_file / "PathMatcher";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::nio::file::Path)>("matches"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto matches(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("matches")] != -1);
+		return call<R>("matches", forward<Args>(args)...);
+	}
+
+};
+
+#endif

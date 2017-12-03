@@ -1,0 +1,62 @@
+#ifndef javax_print_attribute_standard_OrientationRequested_HPP
+#define javax_print_attribute_standard_OrientationRequested_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::print::attribute::standard::OrientationRequested : public jObject<::javax::print::attribute::standard::OrientationRequested, ::javax::print::attribute::EnumSyntax> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_print_attribute_standard / "OrientationRequested";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::print::attribute::standard::OrientationRequested>("LANDSCAPE"), //
+		jField<::javax::print::attribute::standard::OrientationRequested>("PORTRAIT"), //
+		jField<::javax::print::attribute::standard::OrientationRequested>("REVERSE_LANDSCAPE"), //
+		jField<::javax::print::attribute::standard::OrientationRequested>("REVERSE_PORTRAIT"), //
+	};
+
+	template<typename F = ::javax::print::attribute::standard::OrientationRequested>
+	static auto LANDSCAPE() {
+		static_assert(field_signatures[jField<F>("LANDSCAPE")] != -1);
+		return sat<F>("LANDSCAPE");
+	}
+
+	template<typename F = ::javax::print::attribute::standard::OrientationRequested>
+	static auto PORTRAIT() {
+		static_assert(field_signatures[jField<F>("PORTRAIT")] != -1);
+		return sat<F>("PORTRAIT");
+	}
+
+	template<typename F = ::javax::print::attribute::standard::OrientationRequested>
+	static auto REVERSE_LANDSCAPE() {
+		static_assert(field_signatures[jField<F>("REVERSE_LANDSCAPE")] != -1);
+		return sat<F>("REVERSE_LANDSCAPE");
+	}
+
+	template<typename F = ::javax::print::attribute::standard::OrientationRequested>
+	static auto REVERSE_PORTRAIT() {
+		static_assert(field_signatures[jField<F>("REVERSE_PORTRAIT")] != -1);
+		return sat<F>("REVERSE_PORTRAIT");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Class()>("getCategory"), //
+		jMethod<::java::lang::String()>("getName"), //
+	};
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getCategory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCategory")] != -1);
+		return call<R>("getCategory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+};
+
+#endif

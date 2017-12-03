@@ -1,0 +1,64 @@
+#ifndef java_beans_PropertyChangeEvent_HPP
+#define java_beans_PropertyChangeEvent_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::beans::PropertyChangeEvent : public jObject<::java::beans::PropertyChangeEvent, ::java::util::EventObject> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_beans / "PropertyChangeEvent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Object, ::java::lang::String, ::java::lang::Object, ::java::lang::Object)>(), //
+		jMethod<::java::lang::Object()>("getNewValue"), //
+		jMethod<::java::lang::Object()>("getOldValue"), //
+		jMethod<::java::lang::Object()>("getPropagationId"), //
+		jMethod<::java::lang::String()>("getPropertyName"), //
+		jMethod<::jvoid(::java::lang::Object)>("setPropagationId"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getNewValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNewValue")] != -1);
+		return call<R>("getNewValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getOldValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOldValue")] != -1);
+		return call<R>("getOldValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getPropagationId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPropagationId")] != -1);
+		return call<R>("getPropagationId", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getPropertyName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPropertyName")] != -1);
+		return call<R>("getPropertyName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setPropagationId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPropagationId")] != -1);
+		return call<R>("setPropagationId", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

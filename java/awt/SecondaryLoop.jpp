@@ -1,0 +1,35 @@
+#ifndef java_awt_SecondaryLoop_HPP
+#define java_awt_SecondaryLoop_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::SecondaryLoop : public jObject<::java::awt::SecondaryLoop, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "SecondaryLoop";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean()>("enter"), //
+		jMethod<::jboolean()>("exit"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto enter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("enter")] != -1);
+		return call<R>("enter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto exit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("exit")] != -1);
+		return call<R>("exit", forward<Args>(args)...);
+	}
+
+};
+
+#endif

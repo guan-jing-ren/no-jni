@@ -1,0 +1,28 @@
+#ifndef java_text_spi_DecimalFormatSymbolsProvider_HPP
+#define java_text_spi_DecimalFormatSymbolsProvider_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::text::spi::DecimalFormatSymbolsProvider : public jObject<::java::text::spi::DecimalFormatSymbolsProvider, ::java::util::spi::LocaleServiceProvider> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_text_spi / "DecimalFormatSymbolsProvider";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::text::DecimalFormatSymbols(::java::util::Locale)>("getInstance"), //
+	};
+
+	template<typename R = ::java::text::DecimalFormatSymbols, typename... Args>
+	auto getInstance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
+		return call<R>("getInstance", forward<Args>(args)...);
+	}
+
+};
+
+#endif

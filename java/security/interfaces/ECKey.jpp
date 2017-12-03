@@ -1,0 +1,28 @@
+#ifndef java_security_interfaces_ECKey_HPP
+#define java_security_interfaces_ECKey_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::interfaces::ECKey : public jObject<::java::security::interfaces::ECKey, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_interfaces / "ECKey";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::security::spec::ECParameterSpec()>("getParams"), //
+	};
+
+	template<typename R = ::java::security::spec::ECParameterSpec, typename... Args>
+	auto getParams(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParams")] != -1);
+		return call<R>("getParams", forward<Args>(args)...);
+	}
+
+};
+
+#endif

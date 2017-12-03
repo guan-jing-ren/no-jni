@@ -1,0 +1,50 @@
+#ifndef javax_sound_sampled_LineEvent_HPP
+#define javax_sound_sampled_LineEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::sound::sampled::LineEvent : public jObject<::javax::sound::sampled::LineEvent, ::java::util::EventObject> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sound_sampled / "LineEvent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::sound::sampled::Line, ::javax::sound::sampled::LineEvent$Type, ::jlong)>(), //
+		jMethod<::jlong()>("getFramePosition"), //
+		jMethod<::javax::sound::sampled::Line()>("getLine"), //
+		jMethod<::javax::sound::sampled::LineEvent$Type()>("getType"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jlong, typename... Args>
+	auto getFramePosition(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFramePosition")] != -1);
+		return call<R>("getFramePosition", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::sampled::Line, typename... Args>
+	auto getLine(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLine")] != -1);
+		return call<R>("getLine", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::sampled::LineEvent$Type, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,58 @@
+#ifndef javax_xml_transform_sax_SAXTransformerFactory_HPP
+#define javax_xml_transform_sax_SAXTransformerFactory_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::transform::sax::SAXTransformerFactory : public jObject<::javax::xml::transform::sax::SAXTransformerFactory, ::javax::xml::transform::TransformerFactory> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_transform_sax / "SAXTransformerFactory";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("FEATURE"), //
+		jField<::java::lang::String>("FEATURE_XMLFILTER"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto FEATURE() {
+		static_assert(field_signatures[jField<F>("FEATURE")] != -1);
+		return sat<F>("FEATURE");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto FEATURE_XMLFILTER() {
+		static_assert(field_signatures[jField<F>("FEATURE_XMLFILTER")] != -1);
+		return sat<F>("FEATURE_XMLFILTER");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::transform::sax::TemplatesHandler()>("newTemplatesHandler"), //
+		jMethod<::javax::xml::transform::sax::TransformerHandler()>("newTransformerHandler"), //
+		jMethod<::javax::xml::transform::sax::TransformerHandler(::javax::xml::transform::Source)>("newTransformerHandler"), //
+		jMethod<::javax::xml::transform::sax::TransformerHandler(::javax::xml::transform::Templates)>("newTransformerHandler"), //
+		jMethod<::org::xml::sax::XMLFilter(::javax::xml::transform::Source)>("newXMLFilter"), //
+		jMethod<::org::xml::sax::XMLFilter(::javax::xml::transform::Templates)>("newXMLFilter"), //
+	};
+
+	template<typename R = ::javax::xml::transform::sax::TemplatesHandler, typename... Args>
+	auto newTemplatesHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newTemplatesHandler")] != -1);
+		return call<R>("newTemplatesHandler", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::transform::sax::TransformerHandler, typename... Args>
+	auto newTransformerHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newTransformerHandler")] != -1);
+		return call<R>("newTransformerHandler", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::xml::sax::XMLFilter, typename... Args>
+	auto newXMLFilter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newXMLFilter")] != -1);
+		return call<R>("newXMLFilter", forward<Args>(args)...);
+	}
+
+};
+
+#endif

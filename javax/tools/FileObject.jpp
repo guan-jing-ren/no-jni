@@ -1,0 +1,84 @@
+#ifndef javax_tools_FileObject_HPP
+#define javax_tools_FileObject_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::tools::FileObject : public jObject<::javax::tools::FileObject, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_tools / "FileObject";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean()>("delete"), //
+		jMethod<::java::lang::CharSequence(::jboolean)>("getCharContent"), //
+		jMethod<::jlong()>("getLastModified"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::java::io::InputStream()>("openInputStream"), //
+		jMethod<::java::io::OutputStream()>("openOutputStream"), //
+		jMethod<::java::io::Reader(::jboolean)>("openReader"), //
+		jMethod<::java::io::Writer()>("openWriter"), //
+		jMethod<::java::net::URI()>("toUri"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto delete_(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("delete")] != -1);
+		return call<R>("delete", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::CharSequence, typename... Args>
+	auto getCharContent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCharContent")] != -1);
+		return call<R>("getCharContent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getLastModified(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLastModified")] != -1);
+		return call<R>("getLastModified", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::InputStream, typename... Args>
+	auto openInputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("openInputStream")] != -1);
+		return call<R>("openInputStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::OutputStream, typename... Args>
+	auto openOutputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("openOutputStream")] != -1);
+		return call<R>("openOutputStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::Reader, typename... Args>
+	auto openReader(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("openReader")] != -1);
+		return call<R>("openReader", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::Writer, typename... Args>
+	auto openWriter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("openWriter")] != -1);
+		return call<R>("openWriter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::URI, typename... Args>
+	auto toUri(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toUri")] != -1);
+		return call<R>("toUri", forward<Args>(args)...);
+	}
+
+};
+
+#endif

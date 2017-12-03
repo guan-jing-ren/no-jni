@@ -1,0 +1,120 @@
+#ifndef java_lang_instrument_Instrumentation_HPP
+#define java_lang_instrument_Instrumentation_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::instrument::Instrumentation : public jObject<::java::lang::instrument::Instrumentation, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_instrument / "Instrumentation";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::instrument::ClassFileTransformer)>("addTransformer"), //
+		jMethod<::jvoid(::java::lang::instrument::ClassFileTransformer, ::jboolean)>("addTransformer"), //
+		jMethod<::jvoid(::java::util::jar::JarFile)>("appendToBootstrapClassLoaderSearch"), //
+		jMethod<::jvoid(::java::util::jar::JarFile)>("appendToSystemClassLoaderSearch"), //
+		jMethod<::java::lang::Class *()>("getAllLoadedClasses"), //
+		jMethod<::java::lang::Class *(::java::lang::ClassLoader)>("getInitiatedClasses"), //
+		jMethod<::jlong(::java::lang::Object)>("getObjectSize"), //
+		jMethod<::jboolean(::java::lang::Class)>("isModifiableClass"), //
+		jMethod<::jboolean()>("isNativeMethodPrefixSupported"), //
+		jMethod<::jboolean()>("isRedefineClassesSupported"), //
+		jMethod<::jboolean()>("isRetransformClassesSupported"), //
+		jMethod<::jvoid(::java::lang::instrument::ClassDefinition *)>("redefineClasses"), //
+		jMethod<::jboolean(::java::lang::instrument::ClassFileTransformer)>("removeTransformer"), //
+		jMethod<::jvoid(::java::lang::Class *)>("retransformClasses"), //
+		jMethod<::jvoid(::java::lang::instrument::ClassFileTransformer, ::java::lang::String)>("setNativeMethodPrefix"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addTransformer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addTransformer")] != -1);
+		return call<R>("addTransformer", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto appendToBootstrapClassLoaderSearch(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("appendToBootstrapClassLoaderSearch")] != -1);
+		return call<R>("appendToBootstrapClassLoaderSearch", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto appendToSystemClassLoaderSearch(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("appendToSystemClassLoaderSearch")] != -1);
+		return call<R>("appendToSystemClassLoaderSearch", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class *, typename... Args>
+	auto getAllLoadedClasses(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAllLoadedClasses")] != -1);
+		return call<R>("getAllLoadedClasses", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class *, typename... Args>
+	auto getInitiatedClasses(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInitiatedClasses")] != -1);
+		return call<R>("getInitiatedClasses", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getObjectSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getObjectSize")] != -1);
+		return call<R>("getObjectSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isModifiableClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isModifiableClass")] != -1);
+		return call<R>("isModifiableClass", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isNativeMethodPrefixSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isNativeMethodPrefixSupported")] != -1);
+		return call<R>("isNativeMethodPrefixSupported", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isRedefineClassesSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isRedefineClassesSupported")] != -1);
+		return call<R>("isRedefineClassesSupported", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isRetransformClassesSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isRetransformClassesSupported")] != -1);
+		return call<R>("isRetransformClassesSupported", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto redefineClasses(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("redefineClasses")] != -1);
+		return call<R>("redefineClasses", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto removeTransformer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeTransformer")] != -1);
+		return call<R>("removeTransformer", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto retransformClasses(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("retransformClasses")] != -1);
+		return call<R>("retransformClasses", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setNativeMethodPrefix(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setNativeMethodPrefix")] != -1);
+		return call<R>("setNativeMethodPrefix", forward<Args>(args)...);
+	}
+
+};
+
+#endif

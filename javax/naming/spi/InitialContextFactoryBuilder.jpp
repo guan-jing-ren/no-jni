@@ -1,0 +1,28 @@
+#ifndef javax_naming_spi_InitialContextFactoryBuilder_HPP
+#define javax_naming_spi_InitialContextFactoryBuilder_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::naming::spi::InitialContextFactoryBuilder : public jObject<::javax::naming::spi::InitialContextFactoryBuilder, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_naming_spi / "InitialContextFactoryBuilder";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::naming::spi::InitialContextFactory(::java::util::Hashtable)>("createInitialContextFactory"), //
+	};
+
+	template<typename R = ::javax::naming::spi::InitialContextFactory, typename... Args>
+	auto createInitialContextFactory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createInitialContextFactory")] != -1);
+		return call<R>("createInitialContextFactory", forward<Args>(args)...);
+	}
+
+};
+
+#endif

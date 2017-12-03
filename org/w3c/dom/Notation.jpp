@@ -1,0 +1,35 @@
+#ifndef org_w3c_dom_Notation_HPP
+#define org_w3c_dom_Notation_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::w3c::dom::Notation : public jObject<::org::w3c::dom::Notation, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_w3c_dom / "Notation";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getPublicId"), //
+		jMethod<::java::lang::String()>("getSystemId"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getPublicId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPublicId")] != -1);
+		return call<R>("getPublicId", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getSystemId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSystemId")] != -1);
+		return call<R>("getSystemId", forward<Args>(args)...);
+	}
+
+};
+
+#endif

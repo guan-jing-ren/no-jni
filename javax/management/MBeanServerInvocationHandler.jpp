@@ -1,0 +1,58 @@
+#ifndef javax_management_MBeanServerInvocationHandler_HPP
+#define javax_management_MBeanServerInvocationHandler_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::management::MBeanServerInvocationHandler : public jObject<::javax::management::MBeanServerInvocationHandler, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management / "MBeanServerInvocationHandler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::management::MBeanServerConnection, ::javax::management::ObjectName)>(), //
+		jConstructor<::jvoid(::javax::management::MBeanServerConnection, ::javax::management::ObjectName, ::jboolean)>(), //
+		jMethod<::javax::management::MBeanServerConnection()>("getMBeanServerConnection"), //
+		jMethod<::javax::management::ObjectName()>("getObjectName"), //
+		jMethod<::java::lang::Object(::java::lang::Object, ::java::lang::reflect::Method, ::java::lang::Object *)>("invoke"), //
+		jMethod<::jboolean()>("isMXBean"), //
+		jMethod<::java::lang::Object(::javax::management::MBeanServerConnection, ::javax::management::ObjectName, ::java::lang::Class, ::jboolean)>("newProxyInstance"), //
+	};
+
+	template<typename R = ::javax::management::MBeanServerConnection, typename... Args>
+	auto getMBeanServerConnection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMBeanServerConnection")] != -1);
+		return call<R>("getMBeanServerConnection", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::ObjectName, typename... Args>
+	auto getObjectName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getObjectName")] != -1);
+		return call<R>("getObjectName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto invoke(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("invoke")] != -1);
+		return call<R>("invoke", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isMXBean(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isMXBean")] != -1);
+		return call<R>("isMXBean", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto newProxyInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newProxyInstance")] != -1);
+		return scall<R>("newProxyInstance", forward<Args>(args)...);
+	}
+
+};
+
+#endif

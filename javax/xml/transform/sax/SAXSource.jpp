@@ -1,0 +1,79 @@
+#ifndef javax_xml_transform_sax_SAXSource_HPP
+#define javax_xml_transform_sax_SAXSource_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::transform::sax::SAXSource : public jObject<::javax::xml::transform::sax::SAXSource, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_transform_sax / "SAXSource";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("FEATURE"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto FEATURE() {
+		static_assert(field_signatures[jField<F>("FEATURE")] != -1);
+		return sat<F>("FEATURE");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::org::xml::sax::InputSource)>(), //
+		jConstructor<::jvoid(::org::xml::sax::XMLReader, ::org::xml::sax::InputSource)>(), //
+		jMethod<::org::xml::sax::InputSource()>("getInputSource"), //
+		jMethod<::java::lang::String()>("getSystemId"), //
+		jMethod<::org::xml::sax::XMLReader()>("getXMLReader"), //
+		jMethod<::jvoid(::org::xml::sax::InputSource)>("setInputSource"), //
+		jMethod<::jvoid(::java::lang::String)>("setSystemId"), //
+		jMethod<::jvoid(::org::xml::sax::XMLReader)>("setXMLReader"), //
+		jMethod<::org::xml::sax::InputSource(::javax::xml::transform::Source)>("sourceToInputSource"), //
+	};
+
+	template<typename R = ::org::xml::sax::InputSource, typename... Args>
+	auto getInputSource(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInputSource")] != -1);
+		return call<R>("getInputSource", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getSystemId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSystemId")] != -1);
+		return call<R>("getSystemId", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::xml::sax::XMLReader, typename... Args>
+	auto getXMLReader(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getXMLReader")] != -1);
+		return call<R>("getXMLReader", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setInputSource(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setInputSource")] != -1);
+		return call<R>("setInputSource", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setSystemId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSystemId")] != -1);
+		return call<R>("setSystemId", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setXMLReader(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setXMLReader")] != -1);
+		return call<R>("setXMLReader", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::xml::sax::InputSource, typename... Args>
+	static auto sourceToInputSource(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("sourceToInputSource")] != -1);
+		return scall<R>("sourceToInputSource", forward<Args>(args)...);
+	}
+
+};
+
+#endif

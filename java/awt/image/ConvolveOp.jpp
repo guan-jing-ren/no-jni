@@ -1,0 +1,94 @@
+#ifndef java_awt_image_ConvolveOp_HPP
+#define java_awt_image_ConvolveOp_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::image::ConvolveOp : public jObject<::java::awt::image::ConvolveOp, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_image / "ConvolveOp";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("EDGE_NO_OP"), //
+		jField<::jint>("EDGE_ZERO_FILL"), //
+	};
+
+	template<typename F = ::jint>
+	static auto EDGE_NO_OP() {
+		static_assert(field_signatures[jField<F>("EDGE_NO_OP")] != -1);
+		return sat<F>("EDGE_NO_OP");
+	}
+
+	template<typename F = ::jint>
+	static auto EDGE_ZERO_FILL() {
+		static_assert(field_signatures[jField<F>("EDGE_ZERO_FILL")] != -1);
+		return sat<F>("EDGE_ZERO_FILL");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::image::Kernel)>(), //
+		jConstructor<::jvoid(::java::awt::image::Kernel, ::jint, ::java::awt::RenderingHints)>(), //
+		jMethod<::java::awt::image::BufferedImage(::java::awt::image::BufferedImage, ::java::awt::image::ColorModel)>("createCompatibleDestImage"), //
+		jMethod<::java::awt::image::WritableRaster(::java::awt::image::Raster)>("createCompatibleDestRaster"), //
+		jMethod<::java::awt::image::BufferedImage(::java::awt::image::BufferedImage, ::java::awt::image::BufferedImage)>("filter"), //
+		jMethod<::java::awt::image::WritableRaster(::java::awt::image::Raster, ::java::awt::image::WritableRaster)>("filter"), //
+		jMethod<::java::awt::geom::Rectangle2D(::java::awt::image::BufferedImage)>("getBounds2D"), //
+		jMethod<::java::awt::geom::Rectangle2D(::java::awt::image::Raster)>("getBounds2D"), //
+		jMethod<::jint()>("getEdgeCondition"), //
+		jMethod<::java::awt::image::Kernel()>("getKernel"), //
+		jMethod<::java::awt::geom::Point2D(::java::awt::geom::Point2D, ::java::awt::geom::Point2D)>("getPoint2D"), //
+		jMethod<::java::awt::RenderingHints()>("getRenderingHints"), //
+	};
+
+	template<typename R = ::java::awt::image::BufferedImage, typename... Args>
+	auto createCompatibleDestImage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createCompatibleDestImage")] != -1);
+		return call<R>("createCompatibleDestImage", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::image::WritableRaster, typename... Args>
+	auto createCompatibleDestRaster(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createCompatibleDestRaster")] != -1);
+		return call<R>("createCompatibleDestRaster", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::image::BufferedImage, typename... Args>
+	auto filter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("filter")] != -1);
+		return call<R>("filter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Rectangle2D, typename... Args>
+	auto getBounds2D(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBounds2D")] != -1);
+		return call<R>("getBounds2D", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getEdgeCondition(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEdgeCondition")] != -1);
+		return call<R>("getEdgeCondition", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::image::Kernel, typename... Args>
+	auto getKernel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getKernel")] != -1);
+		return call<R>("getKernel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Point2D, typename... Args>
+	auto getPoint2D(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPoint2D")] != -1);
+		return call<R>("getPoint2D", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::RenderingHints, typename... Args>
+	auto getRenderingHints(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRenderingHints")] != -1);
+		return call<R>("getRenderingHints", forward<Args>(args)...);
+	}
+
+};
+
+#endif

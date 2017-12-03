@@ -1,0 +1,64 @@
+#ifndef javax_print_attribute_AttributeSetUtilities_HPP
+#define javax_print_attribute_AttributeSetUtilities_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::print::attribute::AttributeSetUtilities : public jObject<::javax::print::attribute::AttributeSetUtilities, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_print_attribute / "AttributeSetUtilities";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::print::attribute::AttributeSet(::javax::print::attribute::AttributeSet)>("synchronizedView"), //
+		jMethod<::javax::print::attribute::DocAttributeSet(::javax::print::attribute::DocAttributeSet)>("synchronizedView"), //
+		jMethod<::javax::print::attribute::PrintJobAttributeSet(::javax::print::attribute::PrintJobAttributeSet)>("synchronizedView"), //
+		jMethod<::javax::print::attribute::PrintRequestAttributeSet(::javax::print::attribute::PrintRequestAttributeSet)>("synchronizedView"), //
+		jMethod<::javax::print::attribute::PrintServiceAttributeSet(::javax::print::attribute::PrintServiceAttributeSet)>("synchronizedView"), //
+		jMethod<::javax::print::attribute::AttributeSet(::javax::print::attribute::AttributeSet)>("unmodifiableView"), //
+		jMethod<::javax::print::attribute::DocAttributeSet(::javax::print::attribute::DocAttributeSet)>("unmodifiableView"), //
+		jMethod<::javax::print::attribute::PrintJobAttributeSet(::javax::print::attribute::PrintJobAttributeSet)>("unmodifiableView"), //
+		jMethod<::javax::print::attribute::PrintRequestAttributeSet(::javax::print::attribute::PrintRequestAttributeSet)>("unmodifiableView"), //
+		jMethod<::javax::print::attribute::PrintServiceAttributeSet(::javax::print::attribute::PrintServiceAttributeSet)>("unmodifiableView"), //
+		jMethod<::java::lang::Class(::java::lang::Object, ::java::lang::Class)>("verifyAttributeCategory"), //
+		jMethod<::javax::print::attribute::Attribute(::java::lang::Object, ::java::lang::Class)>("verifyAttributeValue"), //
+		jMethod<::jvoid(::java::lang::Class, ::javax::print::attribute::Attribute)>("verifyCategoryForValue"), //
+	};
+
+	template<typename R = ::javax::print::attribute::AttributeSet, typename... Args>
+	static auto synchronizedView(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("synchronizedView")] != -1);
+		return scall<R>("synchronizedView", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::print::attribute::AttributeSet, typename... Args>
+	static auto unmodifiableView(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unmodifiableView")] != -1);
+		return scall<R>("unmodifiableView", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	static auto verifyAttributeCategory(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("verifyAttributeCategory")] != -1);
+		return scall<R>("verifyAttributeCategory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::print::attribute::Attribute, typename... Args>
+	static auto verifyAttributeValue(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("verifyAttributeValue")] != -1);
+		return scall<R>("verifyAttributeValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto verifyCategoryForValue(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("verifyCategoryForValue")] != -1);
+		return scall<R>("verifyCategoryForValue", forward<Args>(args)...);
+	}
+
+};
+
+#endif

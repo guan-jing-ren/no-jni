@@ -1,0 +1,36 @@
+#ifndef org_omg_DynamicAny_NameDynAnyPair_HPP
+#define org_omg_DynamicAny_NameDynAnyPair_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::DynamicAny::NameDynAnyPair : public jObject<::org::omg::DynamicAny::NameDynAnyPair, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_DynamicAny / "NameDynAnyPair";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("id"), //
+		jField<::org::omg::DynamicAny::DynAny>("value"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	auto id() const {
+		static_assert(field_signatures[jField<F>("id")] != -1);
+		return at<F>("id");
+	}
+
+	template<typename F = ::org::omg::DynamicAny::DynAny>
+	auto value() const {
+		static_assert(field_signatures[jField<F>("value")] != -1);
+		return at<F>("value");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String, ::org::omg::DynamicAny::DynAny)>(), //
+	};
+
+};
+
+#endif

@@ -1,0 +1,41 @@
+#ifndef javax_xml_crypto_dsig_keyinfo_KeyValue_HPP
+#define javax_xml_crypto_dsig_keyinfo_KeyValue_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::javax::xml::crypto::dsig::keyinfo::KeyValue : public jObject<::javax::xml::crypto::dsig::keyinfo::KeyValue, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_crypto_dsig_keyinfo / "KeyValue";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("DSA_TYPE"), //
+		jField<::java::lang::String>("RSA_TYPE"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto DSA_TYPE() {
+		static_assert(field_signatures[jField<F>("DSA_TYPE")] != -1);
+		return sat<F>("DSA_TYPE");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto RSA_TYPE() {
+		static_assert(field_signatures[jField<F>("RSA_TYPE")] != -1);
+		return sat<F>("RSA_TYPE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::security::PublicKey()>("getPublicKey"), //
+	};
+
+	template<typename R = ::java::security::PublicKey, typename... Args>
+	auto getPublicKey(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPublicKey")] != -1);
+		return call<R>("getPublicKey", forward<Args>(args)...);
+	}
+
+};
+
+#endif

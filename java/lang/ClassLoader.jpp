@@ -1,0 +1,112 @@
+#ifndef java_lang_ClassLoader_HPP
+#define java_lang_ClassLoader_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::lang::ClassLoader : public jObject<::java::lang::ClassLoader, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang / "ClassLoader";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("clearAssertionStatus"), //
+		jMethod<::java::lang::ClassLoader()>("getParent"), //
+		jMethod<::java::net::URL(::java::lang::String)>("getResource"), //
+		jMethod<::java::io::InputStream(::java::lang::String)>("getResourceAsStream"), //
+		jMethod<::java::util::Enumeration(::java::lang::String)>("getResources"), //
+		jMethod<::java::lang::ClassLoader()>("getSystemClassLoader"), //
+		jMethod<::java::net::URL(::java::lang::String)>("getSystemResource"), //
+		jMethod<::java::io::InputStream(::java::lang::String)>("getSystemResourceAsStream"), //
+		jMethod<::java::util::Enumeration(::java::lang::String)>("getSystemResources"), //
+		jMethod<::java::lang::Class(::java::lang::String)>("loadClass"), //
+		jMethod<::jvoid(::java::lang::String, ::jboolean)>("setClassAssertionStatus"), //
+		jMethod<::jvoid(::jboolean)>("setDefaultAssertionStatus"), //
+		jMethod<::jvoid(::java::lang::String, ::jboolean)>("setPackageAssertionStatus"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto clearAssertionStatus(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clearAssertionStatus")] != -1);
+		return call<R>("clearAssertionStatus", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::ClassLoader, typename... Args>
+	auto getParent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParent")] != -1);
+		return call<R>("getParent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::URL, typename... Args>
+	auto getResource(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getResource")] != -1);
+		return call<R>("getResource", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::InputStream, typename... Args>
+	auto getResourceAsStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getResourceAsStream")] != -1);
+		return call<R>("getResourceAsStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	auto getResources(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getResources")] != -1);
+		return call<R>("getResources", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::ClassLoader, typename... Args>
+	static auto getSystemClassLoader(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSystemClassLoader")] != -1);
+		return scall<R>("getSystemClassLoader", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::URL, typename... Args>
+	static auto getSystemResource(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSystemResource")] != -1);
+		return scall<R>("getSystemResource", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::InputStream, typename... Args>
+	static auto getSystemResourceAsStream(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSystemResourceAsStream")] != -1);
+		return scall<R>("getSystemResourceAsStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	static auto getSystemResources(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSystemResources")] != -1);
+		return scall<R>("getSystemResources", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto loadClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("loadClass")] != -1);
+		return call<R>("loadClass", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setClassAssertionStatus(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setClassAssertionStatus")] != -1);
+		return call<R>("setClassAssertionStatus", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDefaultAssertionStatus(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDefaultAssertionStatus")] != -1);
+		return call<R>("setDefaultAssertionStatus", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setPackageAssertionStatus(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPackageAssertionStatus")] != -1);
+		return call<R>("setPackageAssertionStatus", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,64 @@
+#ifndef java_awt_image_Kernel_HPP
+#define java_awt_image_Kernel_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::image::Kernel : public jObject<::java::awt::image::Kernel, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_image / "Kernel";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::jint, ::jfloat *)>(), //
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::jint()>("getHeight"), //
+		jMethod<::jfloat *(::jfloat *)>("getKernelData"), //
+		jMethod<::jint()>("getWidth"), //
+		jMethod<::jint()>("getXOrigin"), //
+		jMethod<::jint()>("getYOrigin"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getHeight(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHeight")] != -1);
+		return call<R>("getHeight", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat *, typename... Args>
+	auto getKernelData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getKernelData")] != -1);
+		return call<R>("getKernelData", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getWidth(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWidth")] != -1);
+		return call<R>("getWidth", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getXOrigin(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getXOrigin")] != -1);
+		return call<R>("getXOrigin", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getYOrigin(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getYOrigin")] != -1);
+		return call<R>("getYOrigin", forward<Args>(args)...);
+	}
+
+};
+
+#endif

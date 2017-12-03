@@ -1,0 +1,70 @@
+#ifndef javax_swing_CellEditor_HPP
+#define javax_swing_CellEditor_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::CellEditor : public jObject<::javax::swing::CellEditor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "CellEditor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::swing::event::CellEditorListener)>("addCellEditorListener"), //
+		jMethod<::jvoid()>("cancelCellEditing"), //
+		jMethod<::java::lang::Object()>("getCellEditorValue"), //
+		jMethod<::jboolean(::java::util::EventObject)>("isCellEditable"), //
+		jMethod<::jvoid(::javax::swing::event::CellEditorListener)>("removeCellEditorListener"), //
+		jMethod<::jboolean(::java::util::EventObject)>("shouldSelectCell"), //
+		jMethod<::jboolean()>("stopCellEditing"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addCellEditorListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addCellEditorListener")] != -1);
+		return call<R>("addCellEditorListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto cancelCellEditing(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("cancelCellEditing")] != -1);
+		return call<R>("cancelCellEditing", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getCellEditorValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCellEditorValue")] != -1);
+		return call<R>("getCellEditorValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isCellEditable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isCellEditable")] != -1);
+		return call<R>("isCellEditable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeCellEditorListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeCellEditorListener")] != -1);
+		return call<R>("removeCellEditorListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto shouldSelectCell(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("shouldSelectCell")] != -1);
+		return call<R>("shouldSelectCell", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto stopCellEditing(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("stopCellEditing")] != -1);
+		return call<R>("stopCellEditing", forward<Args>(args)...);
+	}
+
+};
+
+#endif

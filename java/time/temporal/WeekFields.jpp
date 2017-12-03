@@ -1,0 +1,119 @@
+#ifndef java_time_temporal_WeekFields_HPP
+#define java_time_temporal_WeekFields_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::time::temporal::WeekFields : public jObject<::java::time::temporal::WeekFields, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_time_temporal / "WeekFields";
+
+	constexpr static Enume field_signatures{
+		jField<::java::time::temporal::WeekFields>("ISO"), //
+		jField<::java::time::temporal::WeekFields>("SUNDAY_START"), //
+		jField<::java::time::temporal::TemporalUnit>("WEEK_BASED_YEARS"), //
+	};
+
+	template<typename F = ::java::time::temporal::WeekFields>
+	static auto ISO() {
+		static_assert(field_signatures[jField<F>("ISO")] != -1);
+		return sat<F>("ISO");
+	}
+
+	template<typename F = ::java::time::temporal::WeekFields>
+	static auto SUNDAY_START() {
+		static_assert(field_signatures[jField<F>("SUNDAY_START")] != -1);
+		return sat<F>("SUNDAY_START");
+	}
+
+	template<typename F = ::java::time::temporal::TemporalUnit>
+	static auto WEEK_BASED_YEARS() {
+		static_assert(field_signatures[jField<F>("WEEK_BASED_YEARS")] != -1);
+		return sat<F>("WEEK_BASED_YEARS");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::time::temporal::TemporalField()>("dayOfWeek"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::time::DayOfWeek()>("getFirstDayOfWeek"), //
+		jMethod<::jint()>("getMinimalDaysInFirstWeek"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::time::temporal::WeekFields(::java::time::DayOfWeek, ::jint)>("of"), //
+		jMethod<::java::time::temporal::WeekFields(::java::util::Locale)>("of"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::java::time::temporal::TemporalField()>("weekBasedYear"), //
+		jMethod<::java::time::temporal::TemporalField()>("weekOfMonth"), //
+		jMethod<::java::time::temporal::TemporalField()>("weekOfWeekBasedYear"), //
+		jMethod<::java::time::temporal::TemporalField()>("weekOfYear"), //
+	};
+
+	template<typename R = ::java::time::temporal::TemporalField, typename... Args>
+	auto dayOfWeek(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dayOfWeek")] != -1);
+		return call<R>("dayOfWeek", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::DayOfWeek, typename... Args>
+	auto getFirstDayOfWeek(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFirstDayOfWeek")] != -1);
+		return call<R>("getFirstDayOfWeek", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getMinimalDaysInFirstWeek(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMinimalDaysInFirstWeek")] != -1);
+		return call<R>("getMinimalDaysInFirstWeek", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::temporal::WeekFields, typename... Args>
+	static auto of(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("of")] != -1);
+		return scall<R>("of", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::temporal::TemporalField, typename... Args>
+	auto weekBasedYear(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("weekBasedYear")] != -1);
+		return call<R>("weekBasedYear", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::temporal::TemporalField, typename... Args>
+	auto weekOfMonth(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("weekOfMonth")] != -1);
+		return call<R>("weekOfMonth", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::temporal::TemporalField, typename... Args>
+	auto weekOfWeekBasedYear(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("weekOfWeekBasedYear")] != -1);
+		return call<R>("weekOfWeekBasedYear", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::temporal::TemporalField, typename... Args>
+	auto weekOfYear(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("weekOfYear")] != -1);
+		return call<R>("weekOfYear", forward<Args>(args)...);
+	}
+
+};
+
+#endif

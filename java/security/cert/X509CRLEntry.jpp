@@ -1,0 +1,85 @@
+#ifndef java_security_cert_X509CRLEntry_HPP
+#define java_security_cert_X509CRLEntry_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::cert::X509CRLEntry : public jObject<::java::security::cert::X509CRLEntry, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_cert / "X509CRLEntry";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::javax::security::auth::x500::X500Principal()>("getCertificateIssuer"), //
+		jMethod<::jbyte *()>("getEncoded"), //
+		jMethod<::java::util::Date()>("getRevocationDate"), //
+		jMethod<::java::security::cert::CRLReason()>("getRevocationReason"), //
+		jMethod<::java::math::BigInteger()>("getSerialNumber"), //
+		jMethod<::jboolean()>("hasExtensions"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::security::auth::x500::X500Principal, typename... Args>
+	auto getCertificateIssuer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCertificateIssuer")] != -1);
+		return call<R>("getCertificateIssuer", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getEncoded(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEncoded")] != -1);
+		return call<R>("getEncoded", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Date, typename... Args>
+	auto getRevocationDate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRevocationDate")] != -1);
+		return call<R>("getRevocationDate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::CRLReason, typename... Args>
+	auto getRevocationReason(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRevocationReason")] != -1);
+		return call<R>("getRevocationReason", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getSerialNumber(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSerialNumber")] != -1);
+		return call<R>("getSerialNumber", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasExtensions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hasExtensions")] != -1);
+		return call<R>("hasExtensions", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

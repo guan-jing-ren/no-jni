@@ -1,0 +1,28 @@
+#ifndef java_util_concurrent_Executor_HPP
+#define java_util_concurrent_Executor_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::concurrent::Executor : public jObject<::java::util::concurrent::Executor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_concurrent / "Executor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::Runnable)>("execute"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto execute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("execute")] != -1);
+		return call<R>("execute", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,92 @@
+#ifndef javax_management_remote_JMXConnectorServer_HPP
+#define javax_management_remote_JMXConnectorServer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::management::remote::JMXConnectorServer : public jObject<::javax::management::remote::JMXConnectorServer, ::javax::management::NotificationBroadcasterSupport> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management_remote / "JMXConnectorServer";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("AUTHENTICATOR"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto AUTHENTICATOR() {
+		static_assert(field_signatures[jField<F>("AUTHENTICATOR")] != -1);
+		return sat<F>("AUTHENTICATOR");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::javax::management::MBeanServer)>(), //
+		jMethod<::java::lang::String *()>("getConnectionIds"), //
+		jMethod<::javax::management::MBeanServer()>("getMBeanServer"), //
+		jMethod<::javax::management::MBeanNotificationInfo *()>("getNotificationInfo"), //
+		jMethod<::jvoid()>("postDeregister"), //
+		jMethod<::jvoid(::java::lang::Boolean)>("postRegister"), //
+		jMethod<::jvoid()>("preDeregister"), //
+		jMethod<::javax::management::ObjectName(::javax::management::MBeanServer, ::javax::management::ObjectName)>("preRegister"), //
+		jMethod<::jvoid(::javax::management::remote::MBeanServerForwarder)>("setMBeanServerForwarder"), //
+		jMethod<::javax::management::remote::JMXConnector(::java::util::Map)>("toJMXConnector"), //
+	};
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getConnectionIds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getConnectionIds")] != -1);
+		return call<R>("getConnectionIds", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::MBeanServer, typename... Args>
+	auto getMBeanServer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMBeanServer")] != -1);
+		return call<R>("getMBeanServer", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::MBeanNotificationInfo *, typename... Args>
+	auto getNotificationInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNotificationInfo")] != -1);
+		return call<R>("getNotificationInfo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto postDeregister(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("postDeregister")] != -1);
+		return call<R>("postDeregister", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto postRegister(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("postRegister")] != -1);
+		return call<R>("postRegister", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto preDeregister(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("preDeregister")] != -1);
+		return call<R>("preDeregister", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::ObjectName, typename... Args>
+	auto preRegister(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("preRegister")] != -1);
+		return call<R>("preRegister", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setMBeanServerForwarder(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMBeanServerForwarder")] != -1);
+		return call<R>("setMBeanServerForwarder", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::remote::JMXConnector, typename... Args>
+	auto toJMXConnector(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toJMXConnector")] != -1);
+		return call<R>("toJMXConnector", forward<Args>(args)...);
+	}
+
+};
+
+#endif

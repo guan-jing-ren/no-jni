@@ -1,0 +1,56 @@
+#ifndef javax_xml_crypto_dsig_SignedInfo_HPP
+#define javax_xml_crypto_dsig_SignedInfo_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::crypto::dsig::SignedInfo : public jObject<::javax::xml::crypto::dsig::SignedInfo, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_crypto_dsig / "SignedInfo";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::crypto::dsig::CanonicalizationMethod()>("getCanonicalizationMethod"), //
+		jMethod<::java::io::InputStream()>("getCanonicalizedData"), //
+		jMethod<::java::lang::String()>("getId"), //
+		jMethod<::java::util::List()>("getReferences"), //
+		jMethod<::javax::xml::crypto::dsig::SignatureMethod()>("getSignatureMethod"), //
+	};
+
+	template<typename R = ::javax::xml::crypto::dsig::CanonicalizationMethod, typename... Args>
+	auto getCanonicalizationMethod(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCanonicalizationMethod")] != -1);
+		return call<R>("getCanonicalizationMethod", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::InputStream, typename... Args>
+	auto getCanonicalizedData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCanonicalizedData")] != -1);
+		return call<R>("getCanonicalizedData", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getId")] != -1);
+		return call<R>("getId", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getReferences(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getReferences")] != -1);
+		return call<R>("getReferences", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::crypto::dsig::SignatureMethod, typename... Args>
+	auto getSignatureMethod(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSignatureMethod")] != -1);
+		return call<R>("getSignatureMethod", forward<Args>(args)...);
+	}
+
+};
+
+#endif

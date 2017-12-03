@@ -1,0 +1,63 @@
+#ifndef javax_xml_bind_Validator_HPP
+#define javax_xml_bind_Validator_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::bind::Validator : public jObject<::javax::xml::bind::Validator, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_bind / "Validator";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::bind::ValidationEventHandler()>("getEventHandler"), //
+		jMethod<::java::lang::Object(::java::lang::String)>("getProperty"), //
+		jMethod<::jvoid(::javax::xml::bind::ValidationEventHandler)>("setEventHandler"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::Object)>("setProperty"), //
+		jMethod<::jboolean(::java::lang::Object)>("validate"), //
+		jMethod<::jboolean(::java::lang::Object)>("validateRoot"), //
+	};
+
+	template<typename R = ::javax::xml::bind::ValidationEventHandler, typename... Args>
+	auto getEventHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEventHandler")] != -1);
+		return call<R>("getEventHandler", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getProperty(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProperty")] != -1);
+		return call<R>("getProperty", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setEventHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setEventHandler")] != -1);
+		return call<R>("setEventHandler", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setProperty(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setProperty")] != -1);
+		return call<R>("setProperty", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto validate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("validate")] != -1);
+		return call<R>("validate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto validateRoot(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("validateRoot")] != -1);
+		return call<R>("validateRoot", forward<Args>(args)...);
+	}
+
+};
+
+#endif

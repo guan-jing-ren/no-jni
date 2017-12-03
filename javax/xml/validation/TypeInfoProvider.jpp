@@ -1,0 +1,49 @@
+#ifndef javax_xml_validation_TypeInfoProvider_HPP
+#define javax_xml_validation_TypeInfoProvider_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::validation::TypeInfoProvider : public jObject<::javax::xml::validation::TypeInfoProvider, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_validation / "TypeInfoProvider";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::w3c::dom::TypeInfo(::jint)>("getAttributeTypeInfo"), //
+		jMethod<::org::w3c::dom::TypeInfo()>("getElementTypeInfo"), //
+		jMethod<::jboolean(::jint)>("isIdAttribute"), //
+		jMethod<::jboolean(::jint)>("isSpecified"), //
+	};
+
+	template<typename R = ::org::w3c::dom::TypeInfo, typename... Args>
+	auto getAttributeTypeInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttributeTypeInfo")] != -1);
+		return call<R>("getAttributeTypeInfo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::TypeInfo, typename... Args>
+	auto getElementTypeInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getElementTypeInfo")] != -1);
+		return call<R>("getElementTypeInfo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isIdAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isIdAttribute")] != -1);
+		return call<R>("isIdAttribute", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isSpecified(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSpecified")] != -1);
+		return call<R>("isSpecified", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,63 @@
+#ifndef javax_naming_event_EventContext_HPP
+#define javax_naming_event_EventContext_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::naming::event::EventContext : public jObject<::javax::naming::event::EventContext, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_naming_event / "EventContext";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("OBJECT_SCOPE"), //
+		jField<::jint>("ONELEVEL_SCOPE"), //
+		jField<::jint>("SUBTREE_SCOPE"), //
+	};
+
+	template<typename F = ::jint>
+	static auto OBJECT_SCOPE() {
+		static_assert(field_signatures[jField<F>("OBJECT_SCOPE")] != -1);
+		return sat<F>("OBJECT_SCOPE");
+	}
+
+	template<typename F = ::jint>
+	static auto ONELEVEL_SCOPE() {
+		static_assert(field_signatures[jField<F>("ONELEVEL_SCOPE")] != -1);
+		return sat<F>("ONELEVEL_SCOPE");
+	}
+
+	template<typename F = ::jint>
+	static auto SUBTREE_SCOPE() {
+		static_assert(field_signatures[jField<F>("SUBTREE_SCOPE")] != -1);
+		return sat<F>("SUBTREE_SCOPE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::String, ::jint, ::javax::naming::event::NamingListener)>("addNamingListener"), //
+		jMethod<::jvoid(::javax::naming::Name, ::jint, ::javax::naming::event::NamingListener)>("addNamingListener"), //
+		jMethod<::jvoid(::javax::naming::event::NamingListener)>("removeNamingListener"), //
+		jMethod<::jboolean()>("targetMustExist"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addNamingListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addNamingListener")] != -1);
+		return call<R>("addNamingListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeNamingListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeNamingListener")] != -1);
+		return call<R>("removeNamingListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto targetMustExist(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("targetMustExist")] != -1);
+		return call<R>("targetMustExist", forward<Args>(args)...);
+	}
+
+};
+
+#endif

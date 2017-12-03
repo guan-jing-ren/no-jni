@@ -1,0 +1,278 @@
+#ifndef org_ietf_jgss_GSSContext_HPP
+#define org_ietf_jgss_GSSContext_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::ietf::jgss::GSSContext : public jObject<::org::ietf::jgss::GSSContext, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_ietf_jgss / "GSSContext";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("DEFAULT_LIFETIME"), //
+		jField<::jint>("INDEFINITE_LIFETIME"), //
+	};
+
+	template<typename F = ::jint>
+	static auto DEFAULT_LIFETIME() {
+		static_assert(field_signatures[jField<F>("DEFAULT_LIFETIME")] != -1);
+		return sat<F>("DEFAULT_LIFETIME");
+	}
+
+	template<typename F = ::jint>
+	static auto INDEFINITE_LIFETIME() {
+		static_assert(field_signatures[jField<F>("INDEFINITE_LIFETIME")] != -1);
+		return sat<F>("INDEFINITE_LIFETIME");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::io::InputStream, ::java::io::OutputStream)>("acceptSecContext"), //
+		jMethod<::jbyte *(::jbyte *, ::jint, ::jint)>("acceptSecContext"), //
+		jMethod<::jvoid()>("dispose"), //
+		jMethod<::jbyte *()>("export"), //
+		jMethod<::jboolean()>("getAnonymityState"), //
+		jMethod<::jboolean()>("getConfState"), //
+		jMethod<::jboolean()>("getCredDelegState"), //
+		jMethod<::org::ietf::jgss::GSSCredential()>("getDelegCred"), //
+		jMethod<::jboolean()>("getIntegState"), //
+		jMethod<::jint()>("getLifetime"), //
+		jMethod<::jvoid(::java::io::InputStream, ::java::io::OutputStream, ::org::ietf::jgss::MessageProp)>("getMIC"), //
+		jMethod<::jbyte *(::jbyte *, ::jint, ::jint, ::org::ietf::jgss::MessageProp)>("getMIC"), //
+		jMethod<::org::ietf::jgss::Oid()>("getMech"), //
+		jMethod<::jboolean()>("getMutualAuthState"), //
+		jMethod<::jboolean()>("getReplayDetState"), //
+		jMethod<::jboolean()>("getSequenceDetState"), //
+		jMethod<::org::ietf::jgss::GSSName()>("getSrcName"), //
+		jMethod<::org::ietf::jgss::GSSName()>("getTargName"), //
+		jMethod<::jint(::jint, ::jboolean, ::jint)>("getWrapSizeLimit"), //
+		jMethod<::jint(::java::io::InputStream, ::java::io::OutputStream)>("initSecContext"), //
+		jMethod<::jbyte *(::jbyte *, ::jint, ::jint)>("initSecContext"), //
+		jMethod<::jboolean()>("isEstablished"), //
+		jMethod<::jboolean()>("isInitiator"), //
+		jMethod<::jboolean()>("isProtReady"), //
+		jMethod<::jboolean()>("isTransferable"), //
+		jMethod<::jvoid(::jboolean)>("requestAnonymity"), //
+		jMethod<::jvoid(::jboolean)>("requestConf"), //
+		jMethod<::jvoid(::jboolean)>("requestCredDeleg"), //
+		jMethod<::jvoid(::jboolean)>("requestInteg"), //
+		jMethod<::jvoid(::jint)>("requestLifetime"), //
+		jMethod<::jvoid(::jboolean)>("requestMutualAuth"), //
+		jMethod<::jvoid(::jboolean)>("requestReplayDet"), //
+		jMethod<::jvoid(::jboolean)>("requestSequenceDet"), //
+		jMethod<::jvoid(::org::ietf::jgss::ChannelBinding)>("setChannelBinding"), //
+		jMethod<::jvoid(::java::io::InputStream, ::java::io::OutputStream, ::org::ietf::jgss::MessageProp)>("unwrap"), //
+		jMethod<::jbyte *(::jbyte *, ::jint, ::jint, ::org::ietf::jgss::MessageProp)>("unwrap"), //
+		jMethod<::jvoid(::java::io::InputStream, ::java::io::InputStream, ::org::ietf::jgss::MessageProp)>("verifyMIC"), //
+		jMethod<::jvoid(::jbyte *, ::jint, ::jint, ::jbyte *, ::jint, ::jint, ::org::ietf::jgss::MessageProp)>("verifyMIC"), //
+		jMethod<::jvoid(::java::io::InputStream, ::java::io::OutputStream, ::org::ietf::jgss::MessageProp)>("wrap"), //
+		jMethod<::jbyte *(::jbyte *, ::jint, ::jint, ::org::ietf::jgss::MessageProp)>("wrap"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto acceptSecContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("acceptSecContext")] != -1);
+		return call<R>("acceptSecContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispose(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dispose")] != -1);
+		return call<R>("dispose", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto export_(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("export")] != -1);
+		return call<R>("export", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getAnonymityState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAnonymityState")] != -1);
+		return call<R>("getAnonymityState", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getConfState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getConfState")] != -1);
+		return call<R>("getConfState", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getCredDelegState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCredDelegState")] != -1);
+		return call<R>("getCredDelegState", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::ietf::jgss::GSSCredential, typename... Args>
+	auto getDelegCred(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDelegCred")] != -1);
+		return call<R>("getDelegCred", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getIntegState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIntegState")] != -1);
+		return call<R>("getIntegState", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getLifetime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLifetime")] != -1);
+		return call<R>("getLifetime", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto getMIC(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMIC")] != -1);
+		return call<R>("getMIC", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::ietf::jgss::Oid, typename... Args>
+	auto getMech(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMech")] != -1);
+		return call<R>("getMech", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getMutualAuthState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMutualAuthState")] != -1);
+		return call<R>("getMutualAuthState", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getReplayDetState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getReplayDetState")] != -1);
+		return call<R>("getReplayDetState", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getSequenceDetState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSequenceDetState")] != -1);
+		return call<R>("getSequenceDetState", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::ietf::jgss::GSSName, typename... Args>
+	auto getSrcName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSrcName")] != -1);
+		return call<R>("getSrcName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::ietf::jgss::GSSName, typename... Args>
+	auto getTargName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTargName")] != -1);
+		return call<R>("getTargName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getWrapSizeLimit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWrapSizeLimit")] != -1);
+		return call<R>("getWrapSizeLimit", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto initSecContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("initSecContext")] != -1);
+		return call<R>("initSecContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isEstablished(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isEstablished")] != -1);
+		return call<R>("isEstablished", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isInitiator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isInitiator")] != -1);
+		return call<R>("isInitiator", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isProtReady(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isProtReady")] != -1);
+		return call<R>("isProtReady", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isTransferable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isTransferable")] != -1);
+		return call<R>("isTransferable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto requestAnonymity(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("requestAnonymity")] != -1);
+		return call<R>("requestAnonymity", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto requestConf(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("requestConf")] != -1);
+		return call<R>("requestConf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto requestCredDeleg(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("requestCredDeleg")] != -1);
+		return call<R>("requestCredDeleg", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto requestInteg(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("requestInteg")] != -1);
+		return call<R>("requestInteg", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto requestLifetime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("requestLifetime")] != -1);
+		return call<R>("requestLifetime", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto requestMutualAuth(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("requestMutualAuth")] != -1);
+		return call<R>("requestMutualAuth", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto requestReplayDet(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("requestReplayDet")] != -1);
+		return call<R>("requestReplayDet", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto requestSequenceDet(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("requestSequenceDet")] != -1);
+		return call<R>("requestSequenceDet", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setChannelBinding(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setChannelBinding")] != -1);
+		return call<R>("setChannelBinding", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto unwrap(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unwrap")] != -1);
+		return call<R>("unwrap", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto verifyMIC(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("verifyMIC")] != -1);
+		return call<R>("verifyMIC", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto wrap(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("wrap")] != -1);
+		return call<R>("wrap", forward<Args>(args)...);
+	}
+
+};
+
+#endif

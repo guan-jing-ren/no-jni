@@ -1,0 +1,63 @@
+#ifndef java_beans_beancontext_BeanContextChild_HPP
+#define java_beans_beancontext_BeanContextChild_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::beans::beancontext::BeanContextChild : public jObject<::java::beans::beancontext::BeanContextChild, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_beans_beancontext / "BeanContextChild";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::String, ::java::beans::PropertyChangeListener)>("addPropertyChangeListener"), //
+		jMethod<::jvoid(::java::lang::String, ::java::beans::VetoableChangeListener)>("addVetoableChangeListener"), //
+		jMethod<::java::beans::beancontext::BeanContext()>("getBeanContext"), //
+		jMethod<::jvoid(::java::lang::String, ::java::beans::PropertyChangeListener)>("removePropertyChangeListener"), //
+		jMethod<::jvoid(::java::lang::String, ::java::beans::VetoableChangeListener)>("removeVetoableChangeListener"), //
+		jMethod<::jvoid(::java::beans::beancontext::BeanContext)>("setBeanContext"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addPropertyChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addPropertyChangeListener")] != -1);
+		return call<R>("addPropertyChangeListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addVetoableChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addVetoableChangeListener")] != -1);
+		return call<R>("addVetoableChangeListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::beans::beancontext::BeanContext, typename... Args>
+	auto getBeanContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBeanContext")] != -1);
+		return call<R>("getBeanContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removePropertyChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removePropertyChangeListener")] != -1);
+		return call<R>("removePropertyChangeListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeVetoableChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeVetoableChangeListener")] != -1);
+		return call<R>("removeVetoableChangeListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setBeanContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setBeanContext")] != -1);
+		return call<R>("setBeanContext", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,72 @@
+#ifndef java_beans_XMLEncoder_HPP
+#define java_beans_XMLEncoder_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::beans::XMLEncoder : public jObject<::java::beans::XMLEncoder, ::java::beans::Encoder> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_beans / "XMLEncoder";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::OutputStream)>(), //
+		jConstructor<::jvoid(::java::io::OutputStream, ::java::lang::String, ::jboolean, ::jint)>(), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::jvoid()>("flush"), //
+		jMethod<::java::lang::Object()>("getOwner"), //
+		jMethod<::jvoid(::java::lang::Object)>("setOwner"), //
+		jMethod<::jvoid(::java::beans::Expression)>("writeExpression"), //
+		jMethod<::jvoid(::java::lang::Object)>("writeObject"), //
+		jMethod<::jvoid(::java::beans::Statement)>("writeStatement"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto flush(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("flush")] != -1);
+		return call<R>("flush", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getOwner(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOwner")] != -1);
+		return call<R>("getOwner", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setOwner(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setOwner")] != -1);
+		return call<R>("setOwner", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeExpression(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("writeExpression")] != -1);
+		return call<R>("writeExpression", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("writeObject")] != -1);
+		return call<R>("writeObject", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeStatement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("writeStatement")] != -1);
+		return call<R>("writeStatement", forward<Args>(args)...);
+	}
+
+};
+
+#endif

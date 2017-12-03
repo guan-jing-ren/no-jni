@@ -1,0 +1,48 @@
+#ifndef java_net_Authenticator$RequestorType_HPP
+#define java_net_Authenticator$RequestorType_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::net::Authenticator$RequestorType : public jObject<::java::net::Authenticator$RequestorType, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_net / "Authenticator$RequestorType";
+
+	constexpr static Enume field_signatures{
+		jField<::java::net::Authenticator$RequestorType>("PROXY"), //
+		jField<::java::net::Authenticator$RequestorType>("SERVER"), //
+	};
+
+	template<typename F = ::java::net::Authenticator$RequestorType>
+	static auto PROXY() {
+		static_assert(field_signatures[jField<F>("PROXY")] != -1);
+		return sat<F>("PROXY");
+	}
+
+	template<typename F = ::java::net::Authenticator$RequestorType>
+	static auto SERVER() {
+		static_assert(field_signatures[jField<F>("SERVER")] != -1);
+		return sat<F>("SERVER");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::net::Authenticator$RequestorType(::java::lang::String)>("valueOf"), //
+		jMethod<::java::net::Authenticator$RequestorType *()>("values"), //
+	};
+
+	template<typename R = ::java::net::Authenticator$RequestorType, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::Authenticator$RequestorType *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

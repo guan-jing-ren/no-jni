@@ -1,0 +1,57 @@
+#ifndef javax_swing_ComponentInputMap_HPP
+#define javax_swing_ComponentInputMap_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::ComponentInputMap : public jObject<::javax::swing::ComponentInputMap, ::javax::swing::InputMap> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "ComponentInputMap";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::swing::JComponent)>(), //
+		jMethod<::jvoid()>("clear"), //
+		jMethod<::javax::swing::JComponent()>("getComponent"), //
+		jMethod<::jvoid(::javax::swing::KeyStroke, ::java::lang::Object)>("put"), //
+		jMethod<::jvoid(::javax::swing::KeyStroke)>("remove"), //
+		jMethod<::jvoid(::javax::swing::InputMap)>("setParent"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto clear(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clear")] != -1);
+		return call<R>("clear", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::JComponent, typename... Args>
+	auto getComponent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getComponent")] != -1);
+		return call<R>("getComponent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto put(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("put")] != -1);
+		return call<R>("put", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto remove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setParent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setParent")] != -1);
+		return call<R>("setParent", forward<Args>(args)...);
+	}
+
+};
+
+#endif

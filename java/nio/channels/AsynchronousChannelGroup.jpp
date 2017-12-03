@@ -1,0 +1,84 @@
+#ifndef java_nio_channels_AsynchronousChannelGroup_HPP
+#define java_nio_channels_AsynchronousChannelGroup_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::channels::AsynchronousChannelGroup : public jObject<::java::nio::channels::AsynchronousChannelGroup, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_channels / "AsynchronousChannelGroup";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::jlong, ::java::util::concurrent::TimeUnit)>("awaitTermination"), //
+		jMethod<::jboolean()>("isShutdown"), //
+		jMethod<::jboolean()>("isTerminated"), //
+		jMethod<::java::nio::channels::spi::AsynchronousChannelProvider()>("provider"), //
+		jMethod<::jvoid()>("shutdown"), //
+		jMethod<::jvoid()>("shutdownNow"), //
+		jMethod<::java::nio::channels::AsynchronousChannelGroup(::java::util::concurrent::ExecutorService, ::jint)>("withCachedThreadPool"), //
+		jMethod<::java::nio::channels::AsynchronousChannelGroup(::jint, ::java::util::concurrent::ThreadFactory)>("withFixedThreadPool"), //
+		jMethod<::java::nio::channels::AsynchronousChannelGroup(::java::util::concurrent::ExecutorService)>("withThreadPool"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto awaitTermination(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("awaitTermination")] != -1);
+		return call<R>("awaitTermination", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isShutdown(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isShutdown")] != -1);
+		return call<R>("isShutdown", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isTerminated(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isTerminated")] != -1);
+		return call<R>("isTerminated", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::spi::AsynchronousChannelProvider, typename... Args>
+	auto provider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("provider")] != -1);
+		return call<R>("provider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto shutdown(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("shutdown")] != -1);
+		return call<R>("shutdown", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto shutdownNow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("shutdownNow")] != -1);
+		return call<R>("shutdownNow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::AsynchronousChannelGroup, typename... Args>
+	static auto withCachedThreadPool(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("withCachedThreadPool")] != -1);
+		return scall<R>("withCachedThreadPool", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::AsynchronousChannelGroup, typename... Args>
+	static auto withFixedThreadPool(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("withFixedThreadPool")] != -1);
+		return scall<R>("withFixedThreadPool", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::AsynchronousChannelGroup, typename... Args>
+	static auto withThreadPool(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("withThreadPool")] != -1);
+		return scall<R>("withThreadPool", forward<Args>(args)...);
+	}
+
+};
+
+#endif

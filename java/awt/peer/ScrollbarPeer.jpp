@@ -1,0 +1,42 @@
+#ifndef java_awt_peer_ScrollbarPeer_HPP
+#define java_awt_peer_ScrollbarPeer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::peer::ScrollbarPeer : public jObject<::java::awt::peer::ScrollbarPeer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_peer / "ScrollbarPeer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::jint)>("setLineIncrement"), //
+		jMethod<::jvoid(::jint)>("setPageIncrement"), //
+		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint)>("setValues"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLineIncrement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLineIncrement")] != -1);
+		return call<R>("setLineIncrement", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setPageIncrement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPageIncrement")] != -1);
+		return call<R>("setPageIncrement", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setValues(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setValues")] != -1);
+		return call<R>("setValues", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,78 @@
+#ifndef org_omg_DynamicAny_DynStructHelper_HPP
+#define org_omg_DynamicAny_DynStructHelper_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::DynamicAny::DynStructHelper : public jObject<::org::omg::DynamicAny::DynStructHelper, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_DynamicAny / "DynStructHelper";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::org::omg::DynamicAny::DynStruct(::org::omg::CORBA::Any)>("extract"), //
+		jMethod<::java::lang::String()>("id"), //
+		jMethod<::jvoid(::org::omg::CORBA::Any, ::org::omg::DynamicAny::DynStruct)>("insert"), //
+		jMethod<::org::omg::DynamicAny::DynStruct(::org::omg::CORBA::Object)>("narrow"), //
+		jMethod<::org::omg::DynamicAny::DynStruct(::org::omg::CORBA::portable::InputStream)>("read"), //
+		jMethod<::org::omg::CORBA::TypeCode()>("type"), //
+		jMethod<::org::omg::DynamicAny::DynStruct(::org::omg::CORBA::Object)>("unchecked_narrow"), //
+		jMethod<::jvoid(::org::omg::CORBA::portable::OutputStream, ::org::omg::DynamicAny::DynStruct)>("write"), //
+	};
+
+	template<typename R = ::org::omg::DynamicAny::DynStruct, typename... Args>
+	static auto extract(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("extract")] != -1);
+		return scall<R>("extract", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto id(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("id")] != -1);
+		return scall<R>("id", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto insert(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("insert")] != -1);
+		return scall<R>("insert", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::DynamicAny::DynStruct, typename... Args>
+	static auto narrow(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("narrow")] != -1);
+		return scall<R>("narrow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::DynamicAny::DynStruct, typename... Args>
+	static auto read(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read")] != -1);
+		return scall<R>("read", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
+	static auto type(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("type")] != -1);
+		return scall<R>("type", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::DynamicAny::DynStruct, typename... Args>
+	static auto unchecked_narrow(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unchecked_narrow")] != -1);
+		return scall<R>("unchecked_narrow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto write(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write")] != -1);
+		return scall<R>("write", forward<Args>(args)...);
+	}
+
+};
+
+#endif

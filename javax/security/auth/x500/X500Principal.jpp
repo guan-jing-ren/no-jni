@@ -1,0 +1,82 @@
+#ifndef javax_security_auth_x500_X500Principal_HPP
+#define javax_security_auth_x500_X500Principal_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::security::auth::x500::X500Principal : public jObject<::javax::security::auth::x500::X500Principal, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_security_auth_x500 / "X500Principal";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("CANONICAL"), //
+		jField<::java::lang::String>("RFC1779"), //
+		jField<::java::lang::String>("RFC2253"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto CANONICAL() {
+		static_assert(field_signatures[jField<F>("CANONICAL")] != -1);
+		return sat<F>("CANONICAL");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto RFC1779() {
+		static_assert(field_signatures[jField<F>("RFC1779")] != -1);
+		return sat<F>("RFC1779");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto RFC2253() {
+		static_assert(field_signatures[jField<F>("RFC2253")] != -1);
+		return sat<F>("RFC2253");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::InputStream)>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::util::Map)>(), //
+		jConstructor<::jvoid(::jbyte *)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jbyte *()>("getEncoded"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::java::lang::String(::java::lang::String)>("getName"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::util::Map)>("getName"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getEncoded(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEncoded")] != -1);
+		return call<R>("getEncoded", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

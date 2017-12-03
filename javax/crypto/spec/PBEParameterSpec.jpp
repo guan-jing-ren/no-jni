@@ -1,0 +1,44 @@
+#ifndef javax_crypto_spec_PBEParameterSpec_HPP
+#define javax_crypto_spec_PBEParameterSpec_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::crypto::spec::PBEParameterSpec : public jObject<::javax::crypto::spec::PBEParameterSpec, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_crypto_spec / "PBEParameterSpec";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jbyte *, ::jint)>(), //
+		jConstructor<::jvoid(::jbyte *, ::jint, ::java::security::spec::AlgorithmParameterSpec)>(), //
+		jMethod<::jint()>("getIterationCount"), //
+		jMethod<::java::security::spec::AlgorithmParameterSpec()>("getParameterSpec"), //
+		jMethod<::jbyte *()>("getSalt"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getIterationCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIterationCount")] != -1);
+		return call<R>("getIterationCount", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::spec::AlgorithmParameterSpec, typename... Args>
+	auto getParameterSpec(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParameterSpec")] != -1);
+		return call<R>("getParameterSpec", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getSalt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSalt")] != -1);
+		return call<R>("getSalt", forward<Args>(args)...);
+	}
+
+};
+
+#endif

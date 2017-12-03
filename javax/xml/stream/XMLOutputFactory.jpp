@@ -1,0 +1,84 @@
+#ifndef javax_xml_stream_XMLOutputFactory_HPP
+#define javax_xml_stream_XMLOutputFactory_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::stream::XMLOutputFactory : public jObject<::javax::xml::stream::XMLOutputFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_stream / "XMLOutputFactory";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("IS_REPAIRING_NAMESPACES"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto IS_REPAIRING_NAMESPACES() {
+		static_assert(field_signatures[jField<F>("IS_REPAIRING_NAMESPACES")] != -1);
+		return sat<F>("IS_REPAIRING_NAMESPACES");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::stream::XMLEventWriter(::java::io::OutputStream)>("createXMLEventWriter"), //
+		jMethod<::javax::xml::stream::XMLEventWriter(::java::io::OutputStream, ::java::lang::String)>("createXMLEventWriter"), //
+		jMethod<::javax::xml::stream::XMLEventWriter(::java::io::Writer)>("createXMLEventWriter"), //
+		jMethod<::javax::xml::stream::XMLEventWriter(::javax::xml::transform::Result)>("createXMLEventWriter"), //
+		jMethod<::javax::xml::stream::XMLStreamWriter(::java::io::OutputStream)>("createXMLStreamWriter"), //
+		jMethod<::javax::xml::stream::XMLStreamWriter(::java::io::OutputStream, ::java::lang::String)>("createXMLStreamWriter"), //
+		jMethod<::javax::xml::stream::XMLStreamWriter(::java::io::Writer)>("createXMLStreamWriter"), //
+		jMethod<::javax::xml::stream::XMLStreamWriter(::javax::xml::transform::Result)>("createXMLStreamWriter"), //
+		jMethod<::java::lang::Object(::java::lang::String)>("getProperty"), //
+		jMethod<::jboolean(::java::lang::String)>("isPropertySupported"), //
+		jMethod<::javax::xml::stream::XMLOutputFactory()>("newFactory"), //
+		jMethod<::javax::xml::stream::XMLOutputFactory(::java::lang::String, ::java::lang::ClassLoader)>("newFactory"), //
+		jMethod<::javax::xml::stream::XMLOutputFactory()>("newInstance"), //
+		jMethod<::javax::xml::stream::XMLInputFactory(::java::lang::String, ::java::lang::ClassLoader)>("newInstance"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::Object)>("setProperty"), //
+	};
+
+	template<typename R = ::javax::xml::stream::XMLEventWriter, typename... Args>
+	auto createXMLEventWriter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createXMLEventWriter")] != -1);
+		return call<R>("createXMLEventWriter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::stream::XMLStreamWriter, typename... Args>
+	auto createXMLStreamWriter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createXMLStreamWriter")] != -1);
+		return call<R>("createXMLStreamWriter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getProperty(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProperty")] != -1);
+		return call<R>("getProperty", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isPropertySupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isPropertySupported")] != -1);
+		return call<R>("isPropertySupported", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::stream::XMLOutputFactory, typename... Args>
+	static auto newFactory(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newFactory")] != -1);
+		return scall<R>("newFactory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::stream::XMLOutputFactory, typename... Args>
+	static auto newInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newInstance")] != -1);
+		return scall<R>("newInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setProperty(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setProperty")] != -1);
+		return call<R>("setProperty", forward<Args>(args)...);
+	}
+
+};
+
+#endif

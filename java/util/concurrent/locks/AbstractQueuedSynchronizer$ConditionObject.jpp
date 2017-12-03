@@ -1,0 +1,65 @@
+#ifndef java_util_concurrent_locks_AbstractQueuedSynchronizer$ConditionObject_HPP
+#define java_util_concurrent_locks_AbstractQueuedSynchronizer$ConditionObject_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::java::util::concurrent::locks::AbstractQueuedSynchronizer$ConditionObject : public jObject<::java::util::concurrent::locks::AbstractQueuedSynchronizer$ConditionObject, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_concurrent_locks / "AbstractQueuedSynchronizer$ConditionObject";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::util::concurrent::locks::AbstractQueuedSynchronizer)>(), //
+		jMethod<::jvoid()>("await"), //
+		jMethod<::jboolean(::jlong, ::java::util::concurrent::TimeUnit)>("await"), //
+		jMethod<::jlong(::jlong)>("awaitNanos"), //
+		jMethod<::jvoid()>("awaitUninterruptibly"), //
+		jMethod<::jboolean(::java::util::Date)>("awaitUntil"), //
+		jMethod<::jvoid()>("signal"), //
+		jMethod<::jvoid()>("signalAll"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto await(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("await")] != -1);
+		return call<R>("await", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto awaitNanos(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("awaitNanos")] != -1);
+		return call<R>("awaitNanos", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto awaitUninterruptibly(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("awaitUninterruptibly")] != -1);
+		return call<R>("awaitUninterruptibly", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto awaitUntil(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("awaitUntil")] != -1);
+		return call<R>("awaitUntil", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto signal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("signal")] != -1);
+		return call<R>("signal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto signalAll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("signalAll")] != -1);
+		return call<R>("signalAll", forward<Args>(args)...);
+	}
+
+};
+
+#endif

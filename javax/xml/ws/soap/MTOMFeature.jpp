@@ -1,0 +1,45 @@
+#ifndef javax_xml_ws_soap_MTOMFeature_HPP
+#define javax_xml_ws_soap_MTOMFeature_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::ws::soap::MTOMFeature : public jObject<::javax::xml::ws::soap::MTOMFeature, ::javax::xml::ws::WebServiceFeature> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_ws_soap / "MTOMFeature";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("ID"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto ID() {
+		static_assert(field_signatures[jField<F>("ID")] != -1);
+		return sat<F>("ID");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint)>(), //
+		jConstructor<::jvoid(::jboolean)>(), //
+		jConstructor<::jvoid(::jboolean, ::jint)>(), //
+		jMethod<::java::lang::String()>("getID"), //
+		jMethod<::jint()>("getThreshold"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getID")] != -1);
+		return call<R>("getID", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getThreshold(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getThreshold")] != -1);
+		return call<R>("getThreshold", forward<Args>(args)...);
+	}
+
+};
+
+#endif

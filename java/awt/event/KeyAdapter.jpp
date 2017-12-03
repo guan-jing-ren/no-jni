@@ -1,0 +1,43 @@
+#ifndef java_awt_event_KeyAdapter_HPP
+#define java_awt_event_KeyAdapter_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::event::KeyAdapter : public jObject<::java::awt::event::KeyAdapter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_event / "KeyAdapter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::awt::event::KeyEvent)>("keyPressed"), //
+		jMethod<::jvoid(::java::awt::event::KeyEvent)>("keyReleased"), //
+		jMethod<::jvoid(::java::awt::event::KeyEvent)>("keyTyped"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto keyPressed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("keyPressed")] != -1);
+		return call<R>("keyPressed", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto keyReleased(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("keyReleased")] != -1);
+		return call<R>("keyReleased", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto keyTyped(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("keyTyped")] != -1);
+		return call<R>("keyTyped", forward<Args>(args)...);
+	}
+
+};
+
+#endif

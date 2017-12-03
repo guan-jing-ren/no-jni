@@ -1,0 +1,97 @@
+#ifndef java_rmi_activation_ActivationSystem_HPP
+#define java_rmi_activation_ActivationSystem_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::rmi::activation::ActivationSystem : public jObject<::java::rmi::activation::ActivationSystem, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_rmi_activation / "ActivationSystem";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("SYSTEM_PORT"), //
+	};
+
+	template<typename F = ::jint>
+	static auto SYSTEM_PORT() {
+		static_assert(field_signatures[jField<F>("SYSTEM_PORT")] != -1);
+		return sat<F>("SYSTEM_PORT");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::rmi::activation::ActivationMonitor(::java::rmi::activation::ActivationGroupID, ::java::rmi::activation::ActivationInstantiator, ::jlong)>("activeGroup"), //
+		jMethod<::java::rmi::activation::ActivationDesc(::java::rmi::activation::ActivationID)>("getActivationDesc"), //
+		jMethod<::java::rmi::activation::ActivationGroupDesc(::java::rmi::activation::ActivationGroupID)>("getActivationGroupDesc"), //
+		jMethod<::java::rmi::activation::ActivationGroupID(::java::rmi::activation::ActivationGroupDesc)>("registerGroup"), //
+		jMethod<::java::rmi::activation::ActivationID(::java::rmi::activation::ActivationDesc)>("registerObject"), //
+		jMethod<::java::rmi::activation::ActivationDesc(::java::rmi::activation::ActivationID, ::java::rmi::activation::ActivationDesc)>("setActivationDesc"), //
+		jMethod<::java::rmi::activation::ActivationGroupDesc(::java::rmi::activation::ActivationGroupID, ::java::rmi::activation::ActivationGroupDesc)>("setActivationGroupDesc"), //
+		jMethod<::jvoid()>("shutdown"), //
+		jMethod<::jvoid(::java::rmi::activation::ActivationGroupID)>("unregisterGroup"), //
+		jMethod<::jvoid(::java::rmi::activation::ActivationID)>("unregisterObject"), //
+	};
+
+	template<typename R = ::java::rmi::activation::ActivationMonitor, typename... Args>
+	auto activeGroup(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("activeGroup")] != -1);
+		return call<R>("activeGroup", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::activation::ActivationDesc, typename... Args>
+	auto getActivationDesc(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getActivationDesc")] != -1);
+		return call<R>("getActivationDesc", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::activation::ActivationGroupDesc, typename... Args>
+	auto getActivationGroupDesc(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getActivationGroupDesc")] != -1);
+		return call<R>("getActivationGroupDesc", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::activation::ActivationGroupID, typename... Args>
+	auto registerGroup(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("registerGroup")] != -1);
+		return call<R>("registerGroup", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::activation::ActivationID, typename... Args>
+	auto registerObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("registerObject")] != -1);
+		return call<R>("registerObject", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::activation::ActivationDesc, typename... Args>
+	auto setActivationDesc(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setActivationDesc")] != -1);
+		return call<R>("setActivationDesc", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::activation::ActivationGroupDesc, typename... Args>
+	auto setActivationGroupDesc(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setActivationGroupDesc")] != -1);
+		return call<R>("setActivationGroupDesc", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto shutdown(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("shutdown")] != -1);
+		return call<R>("shutdown", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto unregisterGroup(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unregisterGroup")] != -1);
+		return call<R>("unregisterGroup", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto unregisterObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unregisterObject")] != -1);
+		return call<R>("unregisterObject", forward<Args>(args)...);
+	}
+
+};
+
+#endif

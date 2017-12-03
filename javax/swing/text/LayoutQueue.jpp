@@ -1,0 +1,43 @@
+#ifndef javax_swing_text_LayoutQueue_HPP
+#define javax_swing_text_LayoutQueue_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::text::LayoutQueue : public jObject<::javax::swing::text::LayoutQueue, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_text / "LayoutQueue";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::lang::Runnable)>("addTask"), //
+		jMethod<::javax::swing::text::LayoutQueue()>("getDefaultQueue"), //
+		jMethod<::jvoid(::javax::swing::text::LayoutQueue)>("setDefaultQueue"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addTask(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addTask")] != -1);
+		return call<R>("addTask", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::text::LayoutQueue, typename... Args>
+	static auto getDefaultQueue(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaultQueue")] != -1);
+		return scall<R>("getDefaultQueue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setDefaultQueue(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDefaultQueue")] != -1);
+		return scall<R>("setDefaultQueue", forward<Args>(args)...);
+	}
+
+};
+
+#endif

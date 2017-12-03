@@ -1,0 +1,344 @@
+#ifndef java_lang_String_HPP
+#define java_lang_String_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::lang::String : public jObject<::java::lang::String, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang / "String";
+
+	constexpr static Enume field_signatures{
+		jField<::java::util::Comparator>("CASE_INSENSITIVE_ORDER"), //
+	};
+
+	template<typename F = ::java::util::Comparator>
+	static auto CASE_INSENSITIVE_ORDER() {
+		static_assert(field_signatures[jField<F>("CASE_INSENSITIVE_ORDER")] != -1);
+		return sat<F>("CASE_INSENSITIVE_ORDER");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::StringBuffer)>(), //
+		jConstructor<::jvoid(::java::lang::StringBuilder)>(), //
+		jConstructor<::jvoid(::jbyte *)>(), //
+		jConstructor<::jvoid(::jbyte *, ::jint)>(), //
+		jConstructor<::jvoid(::jbyte *, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::jbyte *, ::jint, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::jbyte *, ::jint, ::jint, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::jbyte *, ::jint, ::jint, ::java::nio::charset::Charset)>(), //
+		jConstructor<::jvoid(::jbyte *, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::jbyte *, ::java::nio::charset::Charset)>(), //
+		jConstructor<::jvoid(::jchar *)>(), //
+		jConstructor<::jvoid(::jchar *, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::jint *, ::jint, ::jint)>(), //
+		jMethod<::jchar(::jint)>("charAt"), //
+		jMethod<::jint(::jint)>("codePointAt"), //
+		jMethod<::jint(::jint)>("codePointBefore"), //
+		jMethod<::jint(::jint, ::jint)>("codePointCount"), //
+		jMethod<::jint(::java::lang::Object)>("compareTo"), //
+		jMethod<::jint(::java::lang::String)>("compareTo"), //
+		jMethod<::jint(::java::lang::String)>("compareToIgnoreCase"), //
+		jMethod<::java::lang::String(::java::lang::String)>("concat"), //
+		jMethod<::jboolean(::java::lang::CharSequence)>("contains"), //
+		jMethod<::jboolean(::java::lang::CharSequence)>("contentEquals"), //
+		jMethod<::jboolean(::java::lang::StringBuffer)>("contentEquals"), //
+		jMethod<::java::lang::String(::jchar *)>("copyValueOf"), //
+		jMethod<::java::lang::String(::jchar *, ::jint, ::jint)>("copyValueOf"), //
+		jMethod<::jboolean(::java::lang::String)>("endsWith"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jboolean(::java::lang::String)>("equalsIgnoreCase"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::lang::Object *)>("format"), //
+		jMethod<::java::lang::String(::java::util::Locale, ::java::lang::String, ::java::lang::Object *)>("format"), //
+		jMethod<::jbyte *()>("getBytes"), //
+		jMethod<::jvoid(::jint, ::jint, ::jbyte *, ::jint)>("getBytes"), //
+		jMethod<::jbyte *(::java::lang::String)>("getBytes"), //
+		jMethod<::jbyte *(::java::nio::charset::Charset)>("getBytes"), //
+		jMethod<::jvoid(::jint, ::jint, ::jchar *, ::jint)>("getChars"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jint(::jint)>("indexOf"), //
+		jMethod<::jint(::jint, ::jint)>("indexOf"), //
+		jMethod<::jint(::java::lang::String)>("indexOf"), //
+		jMethod<::jint(::java::lang::String, ::jint)>("indexOf"), //
+		jMethod<::java::lang::String()>("intern"), //
+		jMethod<::jboolean()>("isEmpty"), //
+		jMethod<::java::lang::String(::java::lang::CharSequence, ::java::lang::Iterable)>("join"), //
+		jMethod<::java::lang::String(::java::lang::CharSequence, ::java::lang::CharSequence *)>("join"), //
+		jMethod<::jint(::jint)>("lastIndexOf"), //
+		jMethod<::jint(::jint, ::jint)>("lastIndexOf"), //
+		jMethod<::jint(::java::lang::String)>("lastIndexOf"), //
+		jMethod<::jint(::java::lang::String, ::jint)>("lastIndexOf"), //
+		jMethod<::jint()>("length"), //
+		jMethod<::jboolean(::java::lang::String)>("matches"), //
+		jMethod<::jint(::jint, ::jint)>("offsetByCodePoints"), //
+		jMethod<::jboolean(::jint, ::java::lang::String, ::jint, ::jint)>("regionMatches"), //
+		jMethod<::jboolean(::jboolean, ::jint, ::java::lang::String, ::jint, ::jint)>("regionMatches"), //
+		jMethod<::java::lang::String(::jchar, ::jchar)>("replace"), //
+		jMethod<::java::lang::String(::java::lang::CharSequence, ::java::lang::CharSequence)>("replace"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::lang::String)>("replaceAll"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::lang::String)>("replaceFirst"), //
+		jMethod<::java::lang::String *(::java::lang::String)>("split"), //
+		jMethod<::java::lang::String *(::java::lang::String, ::jint)>("split"), //
+		jMethod<::jboolean(::java::lang::String)>("startsWith"), //
+		jMethod<::jboolean(::java::lang::String, ::jint)>("startsWith"), //
+		jMethod<::java::lang::CharSequence(::jint, ::jint)>("subSequence"), //
+		jMethod<::java::lang::String(::jint)>("substring"), //
+		jMethod<::java::lang::String(::jint, ::jint)>("substring"), //
+		jMethod<::jchar *()>("toCharArray"), //
+		jMethod<::java::lang::String()>("toLowerCase"), //
+		jMethod<::java::lang::String(::java::util::Locale)>("toLowerCase"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::java::lang::String()>("toUpperCase"), //
+		jMethod<::java::lang::String(::java::util::Locale)>("toUpperCase"), //
+		jMethod<::java::lang::String()>("trim"), //
+		jMethod<::java::lang::String(::jchar)>("valueOf"), //
+		jMethod<::java::lang::String(::jdouble)>("valueOf"), //
+		jMethod<::java::lang::String(::jfloat)>("valueOf"), //
+		jMethod<::java::lang::String(::jint)>("valueOf"), //
+		jMethod<::java::lang::String(::jlong)>("valueOf"), //
+		jMethod<::java::lang::String(::java::lang::Object)>("valueOf"), //
+		jMethod<::java::lang::String(::jboolean)>("valueOf"), //
+		jMethod<::java::lang::String(::jchar *)>("valueOf"), //
+		jMethod<::java::lang::String(::jchar *, ::jint, ::jint)>("valueOf"), //
+	};
+
+	template<typename R = ::jchar, typename... Args>
+	auto charAt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("charAt")] != -1);
+		return call<R>("charAt", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto codePointAt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("codePointAt")] != -1);
+		return call<R>("codePointAt", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto codePointBefore(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("codePointBefore")] != -1);
+		return call<R>("codePointBefore", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto codePointCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("codePointCount")] != -1);
+		return call<R>("codePointCount", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto compareTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compareTo")] != -1);
+		return call<R>("compareTo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto compareToIgnoreCase(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compareToIgnoreCase")] != -1);
+		return call<R>("compareToIgnoreCase", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto concat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("concat")] != -1);
+		return call<R>("concat", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto contains(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("contains")] != -1);
+		return call<R>("contains", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto contentEquals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("contentEquals")] != -1);
+		return call<R>("contentEquals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto copyValueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("copyValueOf")] != -1);
+		return scall<R>("copyValueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto endsWith(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("endsWith")] != -1);
+		return call<R>("endsWith", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equalsIgnoreCase(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equalsIgnoreCase")] != -1);
+		return call<R>("equalsIgnoreCase", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto format(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("format")] != -1);
+		return scall<R>("format", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getBytes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBytes")] != -1);
+		return call<R>("getBytes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto getChars(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getChars")] != -1);
+		return call<R>("getChars", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto indexOf(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("indexOf")] != -1);
+		return call<R>("indexOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto intern(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("intern")] != -1);
+		return call<R>("intern", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isEmpty(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isEmpty")] != -1);
+		return call<R>("isEmpty", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto join(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("join")] != -1);
+		return scall<R>("join", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto lastIndexOf(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lastIndexOf")] != -1);
+		return call<R>("lastIndexOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto length(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("length")] != -1);
+		return call<R>("length", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto matches(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("matches")] != -1);
+		return call<R>("matches", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto offsetByCodePoints(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("offsetByCodePoints")] != -1);
+		return call<R>("offsetByCodePoints", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto regionMatches(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("regionMatches")] != -1);
+		return call<R>("regionMatches", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto replace(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("replace")] != -1);
+		return call<R>("replace", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto replaceAll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("replaceAll")] != -1);
+		return call<R>("replaceAll", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto replaceFirst(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("replaceFirst")] != -1);
+		return call<R>("replaceFirst", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto split(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("split")] != -1);
+		return call<R>("split", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto startsWith(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("startsWith")] != -1);
+		return call<R>("startsWith", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::CharSequence, typename... Args>
+	auto subSequence(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("subSequence")] != -1);
+		return call<R>("subSequence", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto substring(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("substring")] != -1);
+		return call<R>("substring", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jchar *, typename... Args>
+	auto toCharArray(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toCharArray")] != -1);
+		return call<R>("toCharArray", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toLowerCase(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toLowerCase")] != -1);
+		return call<R>("toLowerCase", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toUpperCase(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toUpperCase")] != -1);
+		return call<R>("toUpperCase", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto trim(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("trim")] != -1);
+		return call<R>("trim", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+};
+
+#endif

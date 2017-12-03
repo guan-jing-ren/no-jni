@@ -1,0 +1,30 @@
+#ifndef java_net_URLDecoder_HPP
+#define java_net_URLDecoder_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::net::URLDecoder : public jObject<::java::net::URLDecoder, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_net / "URLDecoder";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::String(::java::lang::String)>("decode"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::lang::String)>("decode"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto decode(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("decode")] != -1);
+		return scall<R>("decode", forward<Args>(args)...);
+	}
+
+};
+
+#endif

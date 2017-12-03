@@ -1,0 +1,49 @@
+#ifndef java_awt_dnd_peer_DragSourceContextPeer_HPP
+#define java_awt_dnd_peer_DragSourceContextPeer_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::java::awt::dnd::peer::DragSourceContextPeer : public jObject<::java::awt::dnd::peer::DragSourceContextPeer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_dnd_peer / "DragSourceContextPeer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::Cursor()>("getCursor"), //
+		jMethod<::jvoid(::java::awt::Cursor)>("setCursor"), //
+		jMethod<::jvoid(::java::awt::dnd::DragSourceContext, ::java::awt::Cursor, ::java::awt::Image, ::java::awt::Point)>("startDrag"), //
+		jMethod<::jvoid()>("transferablesFlavorsChanged"), //
+	};
+
+	template<typename R = ::java::awt::Cursor, typename... Args>
+	auto getCursor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCursor")] != -1);
+		return call<R>("getCursor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setCursor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setCursor")] != -1);
+		return call<R>("setCursor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto startDrag(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("startDrag")] != -1);
+		return call<R>("startDrag", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto transferablesFlavorsChanged(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("transferablesFlavorsChanged")] != -1);
+		return call<R>("transferablesFlavorsChanged", forward<Args>(args)...);
+	}
+
+};
+
+#endif

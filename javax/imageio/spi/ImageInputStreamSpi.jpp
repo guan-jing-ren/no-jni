@@ -1,0 +1,51 @@
+#ifndef javax_imageio_spi_ImageInputStreamSpi_HPP
+#define javax_imageio_spi_ImageInputStreamSpi_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::imageio::spi::ImageInputStreamSpi : public jObject<::javax::imageio::spi::ImageInputStreamSpi, ::javax::imageio::spi::IIOServiceProvider> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_imageio_spi / "ImageInputStreamSpi";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::Class)>(), //
+		jMethod<::jboolean()>("canUseCacheFile"), //
+		jMethod<::javax::imageio::stream::ImageInputStream(::java::lang::Object)>("createInputStreamInstance"), //
+		jMethod<::javax::imageio::stream::ImageInputStream(::java::lang::Object, ::jboolean, ::java::io::File)>("createInputStreamInstance"), //
+		jMethod<::java::lang::Class()>("getInputClass"), //
+		jMethod<::jboolean()>("needsCacheFile"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto canUseCacheFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("canUseCacheFile")] != -1);
+		return call<R>("canUseCacheFile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::imageio::stream::ImageInputStream, typename... Args>
+	auto createInputStreamInstance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createInputStreamInstance")] != -1);
+		return call<R>("createInputStreamInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getInputClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInputClass")] != -1);
+		return call<R>("getInputClass", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto needsCacheFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("needsCacheFile")] != -1);
+		return call<R>("needsCacheFile", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,64 @@
+#ifndef java_security_spec_PSSParameterSpec_HPP
+#define java_security_spec_PSSParameterSpec_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::spec::PSSParameterSpec : public jObject<::java::security::spec::PSSParameterSpec, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_spec / "PSSParameterSpec";
+
+	constexpr static Enume field_signatures{
+		jField<::java::security::spec::PSSParameterSpec>("DEFAULT"), //
+	};
+
+	template<typename F = ::java::security::spec::PSSParameterSpec>
+	static auto DEFAULT() {
+		static_assert(field_signatures[jField<F>("DEFAULT")] != -1);
+		return sat<F>("DEFAULT");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::security::spec::AlgorithmParameterSpec, ::jint, ::jint)>(), //
+		jMethod<::java::lang::String()>("getDigestAlgorithm"), //
+		jMethod<::java::lang::String()>("getMGFAlgorithm"), //
+		jMethod<::java::security::spec::AlgorithmParameterSpec()>("getMGFParameters"), //
+		jMethod<::jint()>("getSaltLength"), //
+		jMethod<::jint()>("getTrailerField"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDigestAlgorithm(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDigestAlgorithm")] != -1);
+		return call<R>("getDigestAlgorithm", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMGFAlgorithm(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMGFAlgorithm")] != -1);
+		return call<R>("getMGFAlgorithm", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::spec::AlgorithmParameterSpec, typename... Args>
+	auto getMGFParameters(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMGFParameters")] != -1);
+		return call<R>("getMGFParameters", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getSaltLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSaltLength")] != -1);
+		return call<R>("getSaltLength", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getTrailerField(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTrailerField")] != -1);
+		return call<R>("getTrailerField", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,55 @@
+#ifndef javax_jws_WebParam$Mode_HPP
+#define javax_jws_WebParam$Mode_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::jws::WebParam$Mode : public jObject<::javax::jws::WebParam$Mode, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_jws / "WebParam$Mode";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::jws::WebParam$Mode>("IN"), //
+		jField<::javax::jws::WebParam$Mode>("INOUT"), //
+		jField<::javax::jws::WebParam$Mode>("OUT"), //
+	};
+
+	template<typename F = ::javax::jws::WebParam$Mode>
+	static auto IN() {
+		static_assert(field_signatures[jField<F>("IN")] != -1);
+		return sat<F>("IN");
+	}
+
+	template<typename F = ::javax::jws::WebParam$Mode>
+	static auto INOUT() {
+		static_assert(field_signatures[jField<F>("INOUT")] != -1);
+		return sat<F>("INOUT");
+	}
+
+	template<typename F = ::javax::jws::WebParam$Mode>
+	static auto OUT() {
+		static_assert(field_signatures[jField<F>("OUT")] != -1);
+		return sat<F>("OUT");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::jws::WebParam$Mode(::java::lang::String)>("valueOf"), //
+		jMethod<::javax::jws::WebParam$Mode *()>("values"), //
+	};
+
+	template<typename R = ::javax::jws::WebParam$Mode, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::jws::WebParam$Mode *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

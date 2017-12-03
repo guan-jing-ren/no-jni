@@ -1,0 +1,42 @@
+#ifndef javax_management_loading_ClassLoaderRepository_HPP
+#define javax_management_loading_ClassLoaderRepository_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::management::loading::ClassLoaderRepository : public jObject<::javax::management::loading::ClassLoaderRepository, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management_loading / "ClassLoaderRepository";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Class(::java::lang::String)>("loadClass"), //
+		jMethod<::java::lang::Class(::java::lang::ClassLoader, ::java::lang::String)>("loadClassBefore"), //
+		jMethod<::java::lang::Class(::java::lang::ClassLoader, ::java::lang::String)>("loadClassWithout"), //
+	};
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto loadClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("loadClass")] != -1);
+		return call<R>("loadClass", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto loadClassBefore(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("loadClassBefore")] != -1);
+		return call<R>("loadClassBefore", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto loadClassWithout(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("loadClassWithout")] != -1);
+		return call<R>("loadClassWithout", forward<Args>(args)...);
+	}
+
+};
+
+#endif

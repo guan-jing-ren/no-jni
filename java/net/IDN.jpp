@@ -1,0 +1,50 @@
+#ifndef java_net_IDN_HPP
+#define java_net_IDN_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::net::IDN : public jObject<::java::net::IDN, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_net / "IDN";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("ALLOW_UNASSIGNED"), //
+		jField<::jint>("USE_STD3_ASCII_RULES"), //
+	};
+
+	template<typename F = ::jint>
+	static auto ALLOW_UNASSIGNED() {
+		static_assert(field_signatures[jField<F>("ALLOW_UNASSIGNED")] != -1);
+		return sat<F>("ALLOW_UNASSIGNED");
+	}
+
+	template<typename F = ::jint>
+	static auto USE_STD3_ASCII_RULES() {
+		static_assert(field_signatures[jField<F>("USE_STD3_ASCII_RULES")] != -1);
+		return sat<F>("USE_STD3_ASCII_RULES");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String(::java::lang::String)>("toASCII"), //
+		jMethod<::java::lang::String(::java::lang::String, ::jint)>("toASCII"), //
+		jMethod<::java::lang::String(::java::lang::String)>("toUnicode"), //
+		jMethod<::java::lang::String(::java::lang::String, ::jint)>("toUnicode"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto toASCII(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toASCII")] != -1);
+		return scall<R>("toASCII", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto toUnicode(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toUnicode")] != -1);
+		return scall<R>("toUnicode", forward<Args>(args)...);
+	}
+
+};
+
+#endif

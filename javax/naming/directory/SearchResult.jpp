@@ -1,0 +1,46 @@
+#ifndef javax_naming_directory_SearchResult_HPP
+#define javax_naming_directory_SearchResult_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::naming::directory::SearchResult : public jObject<::javax::naming::directory::SearchResult, ::javax::naming::Binding> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_naming_directory / "SearchResult";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Object, ::javax::naming::directory::Attributes)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Object, ::javax::naming::directory::Attributes, ::jboolean)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::Object, ::javax::naming::directory::Attributes)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::Object, ::javax::naming::directory::Attributes, ::jboolean)>(), //
+		jMethod<::javax::naming::directory::Attributes()>("getAttributes"), //
+		jMethod<::jvoid(::javax::naming::directory::Attributes)>("setAttributes"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::javax::naming::directory::Attributes, typename... Args>
+	auto getAttributes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttributes")] != -1);
+		return call<R>("getAttributes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setAttributes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setAttributes")] != -1);
+		return call<R>("setAttributes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,231 @@
+#ifndef java_util_Date_HPP
+#define java_util_Date_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::Date : public jObject<::java::util::Date, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "Date";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::jint, ::jint, ::jint, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::jint, ::jint, ::jint, ::jint, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::jlong)>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jMethod<::jlong(::jint, ::jint, ::jint, ::jint, ::jint, ::jint)>("UTC"), //
+		jMethod<::jboolean(::java::util::Date)>("after"), //
+		jMethod<::jboolean(::java::util::Date)>("before"), //
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::jint(::java::lang::Object)>("compareTo"), //
+		jMethod<::jint(::java::util::Date)>("compareTo"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::util::Date(::java::time::Instant)>("from"), //
+		jMethod<::jint()>("getDate"), //
+		jMethod<::jint()>("getDay"), //
+		jMethod<::jint()>("getHours"), //
+		jMethod<::jint()>("getMinutes"), //
+		jMethod<::jint()>("getMonth"), //
+		jMethod<::jint()>("getSeconds"), //
+		jMethod<::jlong()>("getTime"), //
+		jMethod<::jint()>("getTimezoneOffset"), //
+		jMethod<::jint()>("getYear"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jlong(::java::lang::String)>("parse"), //
+		jMethod<::jvoid(::jint)>("setDate"), //
+		jMethod<::jvoid(::jint)>("setHours"), //
+		jMethod<::jvoid(::jint)>("setMinutes"), //
+		jMethod<::jvoid(::jint)>("setMonth"), //
+		jMethod<::jvoid(::jint)>("setSeconds"), //
+		jMethod<::jvoid(::jlong)>("setTime"), //
+		jMethod<::jvoid(::jint)>("setYear"), //
+		jMethod<::java::lang::String()>("toGMTString"), //
+		jMethod<::java::time::Instant()>("toInstant"), //
+		jMethod<::java::lang::String()>("toLocaleString"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jlong, typename... Args>
+	static auto UTC(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("UTC")] != -1);
+		return scall<R>("UTC", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto after(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("after")] != -1);
+		return call<R>("after", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto before(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("before")] != -1);
+		return call<R>("before", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto compareTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compareTo")] != -1);
+		return call<R>("compareTo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Date, typename... Args>
+	static auto from(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("from")] != -1);
+		return scall<R>("from", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getDate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDate")] != -1);
+		return call<R>("getDate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getDay(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDay")] != -1);
+		return call<R>("getDay", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getHours(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHours")] != -1);
+		return call<R>("getHours", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getMinutes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMinutes")] != -1);
+		return call<R>("getMinutes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getMonth(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMonth")] != -1);
+		return call<R>("getMonth", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getSeconds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSeconds")] != -1);
+		return call<R>("getSeconds", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTime")] != -1);
+		return call<R>("getTime", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getTimezoneOffset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTimezoneOffset")] != -1);
+		return call<R>("getTimezoneOffset", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getYear(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getYear")] != -1);
+		return call<R>("getYear", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	static auto parse(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("parse")] != -1);
+		return scall<R>("parse", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDate")] != -1);
+		return call<R>("setDate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setHours(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setHours")] != -1);
+		return call<R>("setHours", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setMinutes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMinutes")] != -1);
+		return call<R>("setMinutes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setMonth(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMonth")] != -1);
+		return call<R>("setMonth", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setSeconds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSeconds")] != -1);
+		return call<R>("setSeconds", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setTime")] != -1);
+		return call<R>("setTime", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setYear(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setYear")] != -1);
+		return call<R>("setYear", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toGMTString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toGMTString")] != -1);
+		return call<R>("toGMTString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::Instant, typename... Args>
+	auto toInstant(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toInstant")] != -1);
+		return call<R>("toInstant", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toLocaleString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toLocaleString")] != -1);
+		return call<R>("toLocaleString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

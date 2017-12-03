@@ -1,0 +1,49 @@
+#ifndef java_security_cert_Extension_HPP
+#define java_security_cert_Extension_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::cert::Extension : public jObject<::java::security::cert::Extension, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_cert / "Extension";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::io::OutputStream)>("encode"), //
+		jMethod<::java::lang::String()>("getId"), //
+		jMethod<::jbyte *()>("getValue"), //
+		jMethod<::jboolean()>("isCritical"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto encode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("encode")] != -1);
+		return call<R>("encode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getId")] != -1);
+		return call<R>("getId", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getValue")] != -1);
+		return call<R>("getValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isCritical(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isCritical")] != -1);
+		return call<R>("isCritical", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,66 @@
+#ifndef java_rmi_server_RMIClassLoader_HPP
+#define java_rmi_server_RMIClassLoader_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::rmi::server::RMIClassLoader : public jObject<::java::rmi::server::RMIClassLoader, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_rmi_server / "RMIClassLoader";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String(::java::lang::Class)>("getClassAnnotation"), //
+		jMethod<::java::lang::ClassLoader(::java::lang::String)>("getClassLoader"), //
+		jMethod<::java::rmi::server::RMIClassLoaderSpi()>("getDefaultProviderInstance"), //
+		jMethod<::java::lang::Object(::java::lang::ClassLoader)>("getSecurityContext"), //
+		jMethod<::java::lang::Class(::java::lang::String)>("loadClass"), //
+		jMethod<::java::lang::Class(::java::lang::String, ::java::lang::String)>("loadClass"), //
+		jMethod<::java::lang::Class(::java::lang::String, ::java::lang::String, ::java::lang::ClassLoader)>("loadClass"), //
+		jMethod<::java::lang::Class(::java::net::URL, ::java::lang::String)>("loadClass"), //
+		jMethod<::java::lang::Class(::java::lang::String, ::java::lang::String *, ::java::lang::ClassLoader)>("loadProxyClass"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getClassAnnotation(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getClassAnnotation")] != -1);
+		return scall<R>("getClassAnnotation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::ClassLoader, typename... Args>
+	static auto getClassLoader(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getClassLoader")] != -1);
+		return scall<R>("getClassLoader", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::server::RMIClassLoaderSpi, typename... Args>
+	static auto getDefaultProviderInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaultProviderInstance")] != -1);
+		return scall<R>("getDefaultProviderInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto getSecurityContext(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSecurityContext")] != -1);
+		return scall<R>("getSecurityContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	static auto loadClass(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("loadClass")] != -1);
+		return scall<R>("loadClass", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	static auto loadProxyClass(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("loadProxyClass")] != -1);
+		return scall<R>("loadProxyClass", forward<Args>(args)...);
+	}
+
+};
+
+#endif

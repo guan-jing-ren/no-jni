@@ -1,0 +1,106 @@
+#ifndef java_lang_invoke_MethodHandle_HPP
+#define java_lang_invoke_MethodHandle_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::invoke::MethodHandle : public jObject<::java::lang::invoke::MethodHandle, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_invoke / "MethodHandle";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::invoke::MethodHandle(::java::lang::Class, ::jint)>("asCollector"), //
+		jMethod<::java::lang::invoke::MethodHandle()>("asFixedArity"), //
+		jMethod<::java::lang::invoke::MethodHandle(::java::lang::Class, ::jint)>("asSpreader"), //
+		jMethod<::java::lang::invoke::MethodHandle(::java::lang::invoke::MethodType)>("asType"), //
+		jMethod<::java::lang::invoke::MethodHandle(::java::lang::Class)>("asVarargsCollector"), //
+		jMethod<::java::lang::invoke::MethodHandle(::java::lang::Object)>("bindTo"), //
+		jMethod<::java::lang::Object(::java::lang::Object *)>("invoke"), //
+		jMethod<::java::lang::Object(::java::lang::Object *)>("invokeExact"), //
+		jMethod<::java::lang::Object(::java::util::List)>("invokeWithArguments"), //
+		jMethod<::java::lang::Object(::java::lang::Object *)>("invokeWithArguments"), //
+		jMethod<::jboolean()>("isVarargsCollector"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::java::lang::invoke::MethodType()>("type"), //
+	};
+
+	template<typename R = ::java::lang::invoke::MethodHandle, typename... Args>
+	auto asCollector(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("asCollector")] != -1);
+		return call<R>("asCollector", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::invoke::MethodHandle, typename... Args>
+	auto asFixedArity(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("asFixedArity")] != -1);
+		return call<R>("asFixedArity", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::invoke::MethodHandle, typename... Args>
+	auto asSpreader(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("asSpreader")] != -1);
+		return call<R>("asSpreader", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::invoke::MethodHandle, typename... Args>
+	auto asType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("asType")] != -1);
+		return call<R>("asType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::invoke::MethodHandle, typename... Args>
+	auto asVarargsCollector(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("asVarargsCollector")] != -1);
+		return call<R>("asVarargsCollector", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::invoke::MethodHandle, typename... Args>
+	auto bindTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("bindTo")] != -1);
+		return call<R>("bindTo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto invoke(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("invoke")] != -1);
+		return call<R>("invoke", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto invokeExact(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("invokeExact")] != -1);
+		return call<R>("invokeExact", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto invokeWithArguments(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("invokeWithArguments")] != -1);
+		return call<R>("invokeWithArguments", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isVarargsCollector(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isVarargsCollector")] != -1);
+		return call<R>("isVarargsCollector", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::invoke::MethodType, typename... Args>
+	auto type(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("type")] != -1);
+		return call<R>("type", forward<Args>(args)...);
+	}
+
+};
+
+#endif

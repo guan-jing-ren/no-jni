@@ -1,0 +1,95 @@
+#ifndef java_awt_Point_HPP
+#define java_awt_Point_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::Point : public jObject<::java::awt::Point, ::java::awt::geom::Point2D> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "Point";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("x"), //
+		jField<::jint>("y"), //
+	};
+
+	template<typename F = ::jint>
+	auto x() const {
+		static_assert(field_signatures[jField<F>("x")] != -1);
+		return at<F>("x");
+	}
+
+	template<typename F = ::jint>
+	auto y() const {
+		static_assert(field_signatures[jField<F>("y")] != -1);
+		return at<F>("y");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint, ::jint)>(), //
+		jConstructor<::jvoid(::java::awt::Point)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::awt::Point()>("getLocation"), //
+		jMethod<::jdouble()>("getX"), //
+		jMethod<::jdouble()>("getY"), //
+		jMethod<::jvoid(::jint, ::jint)>("move"), //
+		jMethod<::jvoid(::jdouble, ::jdouble)>("setLocation"), //
+		jMethod<::jvoid(::jint, ::jint)>("setLocation"), //
+		jMethod<::jvoid(::java::awt::Point)>("setLocation"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::jvoid(::jint, ::jint)>("translate"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Point, typename... Args>
+	auto getLocation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLocation")] != -1);
+		return call<R>("getLocation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	auto getX(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getX")] != -1);
+		return call<R>("getX", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	auto getY(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getY")] != -1);
+		return call<R>("getY", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto move(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("move")] != -1);
+		return call<R>("move", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLocation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLocation")] != -1);
+		return call<R>("setLocation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto translate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("translate")] != -1);
+		return call<R>("translate", forward<Args>(args)...);
+	}
+
+};
+
+#endif

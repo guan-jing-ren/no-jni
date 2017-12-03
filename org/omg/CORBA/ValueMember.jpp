@@ -1,0 +1,71 @@
+#ifndef org_omg_CORBA_ValueMember_HPP
+#define org_omg_CORBA_ValueMember_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::CORBA::ValueMember : public jObject<::org::omg::CORBA::ValueMember, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CORBA / "ValueMember";
+
+	constexpr static Enume field_signatures{
+		jField<::jshort>("access"), //
+		jField<::java::lang::String>("defined_in"), //
+		jField<::java::lang::String>("id"), //
+		jField<::java::lang::String>("name"), //
+		jField<::org::omg::CORBA::TypeCode>("type"), //
+		jField<::org::omg::CORBA::IDLType>("type_def"), //
+		jField<::java::lang::String>("version"), //
+	};
+
+	template<typename F = ::jshort>
+	auto access() const {
+		static_assert(field_signatures[jField<F>("access")] != -1);
+		return at<F>("access");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto defined_in() const {
+		static_assert(field_signatures[jField<F>("defined_in")] != -1);
+		return at<F>("defined_in");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto id() const {
+		static_assert(field_signatures[jField<F>("id")] != -1);
+		return at<F>("id");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto name() const {
+		static_assert(field_signatures[jField<F>("name")] != -1);
+		return at<F>("name");
+	}
+
+	template<typename F = ::org::omg::CORBA::TypeCode>
+	auto type() const {
+		static_assert(field_signatures[jField<F>("type")] != -1);
+		return at<F>("type");
+	}
+
+	template<typename F = ::org::omg::CORBA::IDLType>
+	auto type_def() const {
+		static_assert(field_signatures[jField<F>("type_def")] != -1);
+		return at<F>("type_def");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto version() const {
+		static_assert(field_signatures[jField<F>("version")] != -1);
+		return at<F>("version");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::org::omg::CORBA::TypeCode, ::org::omg::CORBA::IDLType, ::jshort)>(), //
+	};
+
+};
+
+#endif

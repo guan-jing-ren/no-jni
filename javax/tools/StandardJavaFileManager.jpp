@@ -1,0 +1,64 @@
+#ifndef javax_tools_StandardJavaFileManager_HPP
+#define javax_tools_StandardJavaFileManager_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::tools::StandardJavaFileManager : public jObject<::javax::tools::StandardJavaFileManager, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_tools / "StandardJavaFileManager";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Iterable(::java::io::File *)>("getJavaFileObjects"), //
+		jMethod<::java::lang::Iterable(::java::lang::String *)>("getJavaFileObjects"), //
+		jMethod<::java::lang::Iterable(::java::lang::Iterable)>("getJavaFileObjectsFromFiles"), //
+		jMethod<::java::lang::Iterable(::java::lang::Iterable)>("getJavaFileObjectsFromStrings"), //
+		jMethod<::java::lang::Iterable(::javax::tools::JavaFileManager$Location)>("getLocation"), //
+		jMethod<::jboolean(::javax::tools::FileObject, ::javax::tools::FileObject)>("isSameFile"), //
+		jMethod<::jvoid(::javax::tools::JavaFileManager$Location, ::java::lang::Iterable)>("setLocation"), //
+	};
+
+	template<typename R = ::java::lang::Iterable, typename... Args>
+	auto getJavaFileObjects(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getJavaFileObjects")] != -1);
+		return call<R>("getJavaFileObjects", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Iterable, typename... Args>
+	auto getJavaFileObjectsFromFiles(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getJavaFileObjectsFromFiles")] != -1);
+		return call<R>("getJavaFileObjectsFromFiles", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Iterable, typename... Args>
+	auto getJavaFileObjectsFromStrings(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getJavaFileObjectsFromStrings")] != -1);
+		return call<R>("getJavaFileObjectsFromStrings", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Iterable, typename... Args>
+	auto getLocation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLocation")] != -1);
+		return call<R>("getLocation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isSameFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSameFile")] != -1);
+		return call<R>("isSameFile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLocation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLocation")] != -1);
+		return call<R>("setLocation", forward<Args>(args)...);
+	}
+
+};
+
+#endif

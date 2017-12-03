@@ -1,0 +1,35 @@
+#ifndef java_awt_datatransfer_FlavorTable_HPP
+#define java_awt_datatransfer_FlavorTable_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::datatransfer::FlavorTable : public jObject<::java::awt::datatransfer::FlavorTable, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_datatransfer / "FlavorTable";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::List(::java::lang::String)>("getFlavorsForNative"), //
+		jMethod<::java::util::List(::java::awt::datatransfer::DataFlavor)>("getNativesForFlavor"), //
+	};
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getFlavorsForNative(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFlavorsForNative")] != -1);
+		return call<R>("getFlavorsForNative", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getNativesForFlavor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNativesForFlavor")] != -1);
+		return call<R>("getNativesForFlavor", forward<Args>(args)...);
+	}
+
+};
+
+#endif

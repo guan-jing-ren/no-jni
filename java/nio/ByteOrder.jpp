@@ -1,0 +1,48 @@
+#ifndef java_nio_ByteOrder_HPP
+#define java_nio_ByteOrder_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::nio::ByteOrder : public jObject<::java::nio::ByteOrder, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio / "ByteOrder";
+
+	constexpr static Enume field_signatures{
+		jField<::java::nio::ByteOrder>("BIG_ENDIAN"), //
+		jField<::java::nio::ByteOrder>("LITTLE_ENDIAN"), //
+	};
+
+	template<typename F = ::java::nio::ByteOrder>
+	static auto BIG_ENDIAN_() {
+		static_assert(field_signatures[jField<F>("BIG_ENDIAN")] != -1);
+		return sat<F>("BIG_ENDIAN");
+	}
+
+	template<typename F = ::java::nio::ByteOrder>
+	static auto LITTLE_ENDIAN_() {
+		static_assert(field_signatures[jField<F>("LITTLE_ENDIAN")] != -1);
+		return sat<F>("LITTLE_ENDIAN");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::nio::ByteOrder()>("nativeOrder"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::nio::ByteOrder, typename... Args>
+	static auto nativeOrder(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nativeOrder")] != -1);
+		return scall<R>("nativeOrder", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

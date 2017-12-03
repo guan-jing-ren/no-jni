@@ -1,0 +1,43 @@
+#ifndef javax_imageio_spi_ImageTranscoderSpi_HPP
+#define javax_imageio_spi_ImageTranscoderSpi_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::imageio::spi::ImageTranscoderSpi : public jObject<::javax::imageio::spi::ImageTranscoderSpi, ::javax::imageio::spi::IIOServiceProvider> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_imageio_spi / "ImageTranscoderSpi";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String)>(), //
+		jMethod<::javax::imageio::ImageTranscoder()>("createTranscoderInstance"), //
+		jMethod<::java::lang::String()>("getReaderServiceProviderName"), //
+		jMethod<::java::lang::String()>("getWriterServiceProviderName"), //
+	};
+
+	template<typename R = ::javax::imageio::ImageTranscoder, typename... Args>
+	auto createTranscoderInstance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createTranscoderInstance")] != -1);
+		return call<R>("createTranscoderInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getReaderServiceProviderName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getReaderServiceProviderName")] != -1);
+		return call<R>("getReaderServiceProviderName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getWriterServiceProviderName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWriterServiceProviderName")] != -1);
+		return call<R>("getWriterServiceProviderName", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,28 @@
+#ifndef java_util_function_LongSupplier_HPP
+#define java_util_function_LongSupplier_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::function::LongSupplier : public jObject<::java::util::function::LongSupplier, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_function / "LongSupplier";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jlong()>("getAsLong"), //
+	};
+
+	template<typename R = ::jlong, typename... Args>
+	auto getAsLong(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAsLong")] != -1);
+		return call<R>("getAsLong", forward<Args>(args)...);
+	}
+
+};
+
+#endif

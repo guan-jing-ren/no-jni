@@ -1,0 +1,47 @@
+#ifndef javax_print_attribute_standard_JobStateReasons_HPP
+#define javax_print_attribute_standard_JobStateReasons_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::print::attribute::standard::JobStateReasons : public jObject<::javax::print::attribute::standard::JobStateReasons, ::java::util::HashSet> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_print_attribute_standard / "JobStateReasons";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint)>(), //
+		jConstructor<::jvoid(::jint, ::jfloat)>(), //
+		jConstructor<::jvoid(::java::util::Collection)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("add"), //
+		jMethod<::jboolean(::javax::print::attribute::standard::JobStateReason)>("add"), //
+		jMethod<::java::lang::Class()>("getCategory"), //
+		jMethod<::java::lang::String()>("getName"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto add(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getCategory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCategory")] != -1);
+		return call<R>("getCategory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+};
+
+#endif

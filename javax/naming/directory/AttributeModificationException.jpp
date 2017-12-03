@@ -1,0 +1,44 @@
+#ifndef javax_naming_directory_AttributeModificationException_HPP
+#define javax_naming_directory_AttributeModificationException_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::naming::directory::AttributeModificationException : public jObject<::javax::naming::directory::AttributeModificationException, ::javax::naming::NamingException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_naming_directory / "AttributeModificationException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jMethod<::javax::naming::directory::ModificationItem *()>("getUnexecutedModifications"), //
+		jMethod<::jvoid(::javax::naming::directory::ModificationItem *)>("setUnexecutedModifications"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::javax::naming::directory::ModificationItem *, typename... Args>
+	auto getUnexecutedModifications(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUnexecutedModifications")] != -1);
+		return call<R>("getUnexecutedModifications", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setUnexecutedModifications(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setUnexecutedModifications")] != -1);
+		return call<R>("setUnexecutedModifications", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

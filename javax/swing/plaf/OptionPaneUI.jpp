@@ -1,0 +1,36 @@
+#ifndef javax_swing_plaf_OptionPaneUI_HPP
+#define javax_swing_plaf_OptionPaneUI_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::plaf::OptionPaneUI : public jObject<::javax::swing::plaf::OptionPaneUI, ::javax::swing::plaf::ComponentUI> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_plaf / "OptionPaneUI";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jboolean(::javax::swing::JOptionPane)>("containsCustomComponents"), //
+		jMethod<::jvoid(::javax::swing::JOptionPane)>("selectInitialValue"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto containsCustomComponents(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("containsCustomComponents")] != -1);
+		return call<R>("containsCustomComponents", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto selectInitialValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("selectInitialValue")] != -1);
+		return call<R>("selectInitialValue", forward<Args>(args)...);
+	}
+
+};
+
+#endif

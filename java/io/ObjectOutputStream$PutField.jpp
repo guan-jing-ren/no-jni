@@ -1,0 +1,44 @@
+#ifndef java_io_ObjectOutputStream$PutField_HPP
+#define java_io_ObjectOutputStream$PutField_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::io::ObjectOutputStream$PutField : public jObject<::java::io::ObjectOutputStream$PutField, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_io / "ObjectOutputStream$PutField";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::lang::String, ::jbyte)>("put"), //
+		jMethod<::jvoid(::java::lang::String, ::jchar)>("put"), //
+		jMethod<::jvoid(::java::lang::String, ::jdouble)>("put"), //
+		jMethod<::jvoid(::java::lang::String, ::jfloat)>("put"), //
+		jMethod<::jvoid(::java::lang::String, ::jint)>("put"), //
+		jMethod<::jvoid(::java::lang::String, ::jlong)>("put"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::Object)>("put"), //
+		jMethod<::jvoid(::java::lang::String, ::jshort)>("put"), //
+		jMethod<::jvoid(::java::lang::String, ::jboolean)>("put"), //
+		jMethod<::jvoid(::java::io::ObjectOutput)>("write"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto put(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("put")] != -1);
+		return call<R>("put", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", forward<Args>(args)...);
+	}
+
+};
+
+#endif

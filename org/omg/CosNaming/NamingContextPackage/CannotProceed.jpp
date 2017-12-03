@@ -1,0 +1,37 @@
+#ifndef org_omg_CosNaming_NamingContextPackage_CannotProceed_HPP
+#define org_omg_CosNaming_NamingContextPackage_CannotProceed_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::omg::CosNaming::NamingContextPackage::CannotProceed : public jObject<::org::omg::CosNaming::NamingContextPackage::CannotProceed, ::org::omg::CORBA::UserException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CosNaming_NamingContextPackage / "CannotProceed";
+
+	constexpr static Enume field_signatures{
+		jField<::org::omg::CosNaming::NamingContext>("cxt"), //
+		jField<::org::omg::CosNaming::NameComponent *>("rest_of_name"), //
+	};
+
+	template<typename F = ::org::omg::CosNaming::NamingContext>
+	auto cxt() const {
+		static_assert(field_signatures[jField<F>("cxt")] != -1);
+		return at<F>("cxt");
+	}
+
+	template<typename F = ::org::omg::CosNaming::NameComponent *>
+	auto rest_of_name() const {
+		static_assert(field_signatures[jField<F>("rest_of_name")] != -1);
+		return at<F>("rest_of_name");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String, ::org::omg::CosNaming::NamingContext, ::org::omg::CosNaming::NameComponent *)>(), //
+		jConstructor<::jvoid(::org::omg::CosNaming::NamingContext, ::org::omg::CosNaming::NameComponent *)>(), //
+	};
+
+};
+
+#endif

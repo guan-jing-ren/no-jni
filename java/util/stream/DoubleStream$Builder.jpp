@@ -1,0 +1,42 @@
+#ifndef java_util_stream_DoubleStream$Builder_HPP
+#define java_util_stream_DoubleStream$Builder_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::stream::DoubleStream$Builder : public jObject<::java::util::stream::DoubleStream$Builder, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_stream / "DoubleStream$Builder";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::jdouble)>("accept"), //
+		jMethod<::java::util::stream::DoubleStream$Builder(::jdouble)>("add"), //
+		jMethod<::java::util::stream::DoubleStream()>("build"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto accept(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("accept")] != -1);
+		return call<R>("accept", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::DoubleStream$Builder, typename... Args>
+	auto add(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::DoubleStream, typename... Args>
+	auto build(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("build")] != -1);
+		return call<R>("build", forward<Args>(args)...);
+	}
+
+};
+
+#endif

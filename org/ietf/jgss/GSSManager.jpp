@@ -1,0 +1,92 @@
+#ifndef org_ietf_jgss_GSSManager_HPP
+#define org_ietf_jgss_GSSManager_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::ietf::jgss::GSSManager : public jObject<::org::ietf::jgss::GSSManager, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_ietf_jgss / "GSSManager";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::security::Provider, ::org::ietf::jgss::Oid)>("addProviderAtEnd"), //
+		jMethod<::jvoid(::java::security::Provider, ::org::ietf::jgss::Oid)>("addProviderAtFront"), //
+		jMethod<::org::ietf::jgss::GSSContext(::org::ietf::jgss::GSSCredential)>("createContext"), //
+		jMethod<::org::ietf::jgss::GSSContext(::org::ietf::jgss::GSSName, ::org::ietf::jgss::Oid, ::org::ietf::jgss::GSSCredential, ::jint)>("createContext"), //
+		jMethod<::org::ietf::jgss::GSSContext(::jbyte *)>("createContext"), //
+		jMethod<::org::ietf::jgss::GSSCredential(::jint)>("createCredential"), //
+		jMethod<::org::ietf::jgss::GSSCredential(::org::ietf::jgss::GSSName, ::jint, ::org::ietf::jgss::Oid, ::jint)>("createCredential"), //
+		jMethod<::org::ietf::jgss::GSSCredential(::org::ietf::jgss::GSSName, ::jint, ::org::ietf::jgss::Oid *, ::jint)>("createCredential"), //
+		jMethod<::org::ietf::jgss::GSSName(::java::lang::String, ::org::ietf::jgss::Oid)>("createName"), //
+		jMethod<::org::ietf::jgss::GSSName(::java::lang::String, ::org::ietf::jgss::Oid, ::org::ietf::jgss::Oid)>("createName"), //
+		jMethod<::org::ietf::jgss::GSSName(::jbyte *, ::org::ietf::jgss::Oid)>("createName"), //
+		jMethod<::org::ietf::jgss::GSSName(::jbyte *, ::org::ietf::jgss::Oid, ::org::ietf::jgss::Oid)>("createName"), //
+		jMethod<::org::ietf::jgss::GSSManager()>("getInstance"), //
+		jMethod<::org::ietf::jgss::Oid *()>("getMechs"), //
+		jMethod<::org::ietf::jgss::Oid *(::org::ietf::jgss::Oid)>("getMechsForName"), //
+		jMethod<::org::ietf::jgss::Oid *(::org::ietf::jgss::Oid)>("getNamesForMech"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addProviderAtEnd(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addProviderAtEnd")] != -1);
+		return call<R>("addProviderAtEnd", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addProviderAtFront(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addProviderAtFront")] != -1);
+		return call<R>("addProviderAtFront", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::ietf::jgss::GSSContext, typename... Args>
+	auto createContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createContext")] != -1);
+		return call<R>("createContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::ietf::jgss::GSSCredential, typename... Args>
+	auto createCredential(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createCredential")] != -1);
+		return call<R>("createCredential", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::ietf::jgss::GSSName, typename... Args>
+	auto createName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createName")] != -1);
+		return call<R>("createName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::ietf::jgss::GSSManager, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::ietf::jgss::Oid *, typename... Args>
+	auto getMechs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMechs")] != -1);
+		return call<R>("getMechs", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::ietf::jgss::Oid *, typename... Args>
+	auto getMechsForName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMechsForName")] != -1);
+		return call<R>("getMechsForName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::ietf::jgss::Oid *, typename... Args>
+	auto getNamesForMech(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNamesForMech")] != -1);
+		return call<R>("getNamesForMech", forward<Args>(args)...);
+	}
+
+};
+
+#endif

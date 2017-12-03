@@ -1,0 +1,57 @@
+#ifndef javax_swing_text_IconView_HPP
+#define javax_swing_text_IconView_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::text::IconView : public jObject<::javax::swing::text::IconView, ::javax::swing::text::View> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_text / "IconView";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::swing::text::Element)>(), //
+		jMethod<::jfloat(::jint)>("getAlignment"), //
+		jMethod<::jfloat(::jint)>("getPreferredSpan"), //
+		jMethod<::java::awt::Shape(::jint, ::java::awt::Shape, ::javax::swing::text::Position$Bias)>("modelToView"), //
+		jMethod<::jvoid(::java::awt::Graphics, ::java::awt::Shape)>("paint"), //
+		jMethod<::jint(::jfloat, ::jfloat, ::java::awt::Shape, ::javax::swing::text::Position$Bias *)>("viewToModel"), //
+	};
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getAlignment(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlignment")] != -1);
+		return call<R>("getAlignment", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getPreferredSpan(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPreferredSpan")] != -1);
+		return call<R>("getPreferredSpan", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Shape, typename... Args>
+	auto modelToView(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("modelToView")] != -1);
+		return call<R>("modelToView", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto paint(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paint")] != -1);
+		return call<R>("paint", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto viewToModel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("viewToModel")] != -1);
+		return call<R>("viewToModel", forward<Args>(args)...);
+	}
+
+};
+
+#endif

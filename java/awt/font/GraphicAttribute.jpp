@@ -1,0 +1,111 @@
+#ifndef java_awt_font_GraphicAttribute_HPP
+#define java_awt_font_GraphicAttribute_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::font::GraphicAttribute : public jObject<::java::awt::font::GraphicAttribute, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_font / "GraphicAttribute";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("BOTTOM_ALIGNMENT"), //
+		jField<::jint>("CENTER_BASELINE"), //
+		jField<::jint>("HANGING_BASELINE"), //
+		jField<::jint>("ROMAN_BASELINE"), //
+		jField<::jint>("TOP_ALIGNMENT"), //
+	};
+
+	template<typename F = ::jint>
+	static auto BOTTOM_ALIGNMENT() {
+		static_assert(field_signatures[jField<F>("BOTTOM_ALIGNMENT")] != -1);
+		return sat<F>("BOTTOM_ALIGNMENT");
+	}
+
+	template<typename F = ::jint>
+	static auto CENTER_BASELINE() {
+		static_assert(field_signatures[jField<F>("CENTER_BASELINE")] != -1);
+		return sat<F>("CENTER_BASELINE");
+	}
+
+	template<typename F = ::jint>
+	static auto HANGING_BASELINE() {
+		static_assert(field_signatures[jField<F>("HANGING_BASELINE")] != -1);
+		return sat<F>("HANGING_BASELINE");
+	}
+
+	template<typename F = ::jint>
+	static auto ROMAN_BASELINE() {
+		static_assert(field_signatures[jField<F>("ROMAN_BASELINE")] != -1);
+		return sat<F>("ROMAN_BASELINE");
+	}
+
+	template<typename F = ::jint>
+	static auto TOP_ALIGNMENT() {
+		static_assert(field_signatures[jField<F>("TOP_ALIGNMENT")] != -1);
+		return sat<F>("TOP_ALIGNMENT");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::awt::Graphics2D, ::jfloat, ::jfloat)>("draw"), //
+		jMethod<::jfloat()>("getAdvance"), //
+		jMethod<::jint()>("getAlignment"), //
+		jMethod<::jfloat()>("getAscent"), //
+		jMethod<::java::awt::geom::Rectangle2D()>("getBounds"), //
+		jMethod<::jfloat()>("getDescent"), //
+		jMethod<::java::awt::font::GlyphJustificationInfo()>("getJustificationInfo"), //
+		jMethod<::java::awt::Shape(::java::awt::geom::AffineTransform)>("getOutline"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto draw(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("draw")] != -1);
+		return call<R>("draw", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getAdvance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAdvance")] != -1);
+		return call<R>("getAdvance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getAlignment(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlignment")] != -1);
+		return call<R>("getAlignment", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getAscent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAscent")] != -1);
+		return call<R>("getAscent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Rectangle2D, typename... Args>
+	auto getBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBounds")] != -1);
+		return call<R>("getBounds", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getDescent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDescent")] != -1);
+		return call<R>("getDescent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::font::GlyphJustificationInfo, typename... Args>
+	auto getJustificationInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getJustificationInfo")] != -1);
+		return call<R>("getJustificationInfo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Shape, typename... Args>
+	auto getOutline(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOutline")] != -1);
+		return call<R>("getOutline", forward<Args>(args)...);
+	}
+
+};
+
+#endif

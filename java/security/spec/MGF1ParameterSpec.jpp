@@ -1,0 +1,63 @@
+#ifndef java_security_spec_MGF1ParameterSpec_HPP
+#define java_security_spec_MGF1ParameterSpec_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::spec::MGF1ParameterSpec : public jObject<::java::security::spec::MGF1ParameterSpec, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_spec / "MGF1ParameterSpec";
+
+	constexpr static Enume field_signatures{
+		jField<::java::security::spec::MGF1ParameterSpec>("SHA1"), //
+		jField<::java::security::spec::MGF1ParameterSpec>("SHA224"), //
+		jField<::java::security::spec::MGF1ParameterSpec>("SHA256"), //
+		jField<::java::security::spec::MGF1ParameterSpec>("SHA384"), //
+		jField<::java::security::spec::MGF1ParameterSpec>("SHA512"), //
+	};
+
+	template<typename F = ::java::security::spec::MGF1ParameterSpec>
+	static auto SHA1() {
+		static_assert(field_signatures[jField<F>("SHA1")] != -1);
+		return sat<F>("SHA1");
+	}
+
+	template<typename F = ::java::security::spec::MGF1ParameterSpec>
+	static auto SHA224() {
+		static_assert(field_signatures[jField<F>("SHA224")] != -1);
+		return sat<F>("SHA224");
+	}
+
+	template<typename F = ::java::security::spec::MGF1ParameterSpec>
+	static auto SHA256() {
+		static_assert(field_signatures[jField<F>("SHA256")] != -1);
+		return sat<F>("SHA256");
+	}
+
+	template<typename F = ::java::security::spec::MGF1ParameterSpec>
+	static auto SHA384() {
+		static_assert(field_signatures[jField<F>("SHA384")] != -1);
+		return sat<F>("SHA384");
+	}
+
+	template<typename F = ::java::security::spec::MGF1ParameterSpec>
+	static auto SHA512() {
+		static_assert(field_signatures[jField<F>("SHA512")] != -1);
+		return sat<F>("SHA512");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jMethod<::java::lang::String()>("getDigestAlgorithm"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDigestAlgorithm(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDigestAlgorithm")] != -1);
+		return call<R>("getDigestAlgorithm", forward<Args>(args)...);
+	}
+
+};
+
+#endif

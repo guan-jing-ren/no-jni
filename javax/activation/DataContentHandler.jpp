@@ -1,0 +1,49 @@
+#ifndef javax_activation_DataContentHandler_HPP
+#define javax_activation_DataContentHandler_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::activation::DataContentHandler : public jObject<::javax::activation::DataContentHandler, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_activation / "DataContentHandler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object(::javax::activation::DataSource)>("getContent"), //
+		jMethod<::java::lang::Object(::java::awt::datatransfer::DataFlavor, ::javax::activation::DataSource)>("getTransferData"), //
+		jMethod<::java::awt::datatransfer::DataFlavor *()>("getTransferDataFlavors"), //
+		jMethod<::jvoid(::java::lang::Object, ::java::lang::String, ::java::io::OutputStream)>("writeTo"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getContent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getContent")] != -1);
+		return call<R>("getContent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getTransferData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTransferData")] != -1);
+		return call<R>("getTransferData", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::datatransfer::DataFlavor *, typename... Args>
+	auto getTransferDataFlavors(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTransferDataFlavors")] != -1);
+		return call<R>("getTransferDataFlavors", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("writeTo")] != -1);
+		return call<R>("writeTo", forward<Args>(args)...);
+	}
+
+};
+
+#endif

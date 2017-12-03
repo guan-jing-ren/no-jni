@@ -1,0 +1,66 @@
+#ifndef javax_sound_sampled_DataLine$Info_HPP
+#define javax_sound_sampled_DataLine$Info_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::sound::sampled::DataLine$Info : public jObject<::javax::sound::sampled::DataLine$Info, ::javax::sound::sampled::Line$Info> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sound_sampled / "DataLine$Info";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Class, ::javax::sound::sampled::AudioFormat)>(), //
+		jConstructor<::jvoid(::java::lang::Class, ::javax::sound::sampled::AudioFormat, ::jint)>(), //
+		jConstructor<::jvoid(::java::lang::Class, ::javax::sound::sampled::AudioFormat *, ::jint, ::jint)>(), //
+		jMethod<::javax::sound::sampled::AudioFormat *()>("getFormats"), //
+		jMethod<::jint()>("getMaxBufferSize"), //
+		jMethod<::jint()>("getMinBufferSize"), //
+		jMethod<::jboolean(::javax::sound::sampled::AudioFormat)>("isFormatSupported"), //
+		jMethod<::jboolean(::javax::sound::sampled::Line$Info)>("matches"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::javax::sound::sampled::AudioFormat *, typename... Args>
+	auto getFormats(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFormats")] != -1);
+		return call<R>("getFormats", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getMaxBufferSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMaxBufferSize")] != -1);
+		return call<R>("getMaxBufferSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getMinBufferSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMinBufferSize")] != -1);
+		return call<R>("getMinBufferSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isFormatSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isFormatSupported")] != -1);
+		return call<R>("isFormatSupported", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto matches(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("matches")] != -1);
+		return call<R>("matches", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

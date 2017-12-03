@@ -1,0 +1,84 @@
+#ifndef java_nio_channels_AsynchronousFileChannel_HPP
+#define java_nio_channels_AsynchronousFileChannel_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::channels::AsynchronousFileChannel : public jObject<::java::nio::channels::AsynchronousFileChannel, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_channels / "AsynchronousFileChannel";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::jboolean)>("force"), //
+		jMethod<::java::util::concurrent::Future()>("lock"), //
+		jMethod<::java::util::concurrent::Future(::jlong, ::jlong, ::jboolean)>("lock"), //
+		jMethod<::jvoid(::jlong, ::jlong, ::jboolean, ::java::lang::Object, ::java::nio::channels::CompletionHandler)>("lock"), //
+		jMethod<::jvoid(::java::lang::Object, ::java::nio::channels::CompletionHandler)>("lock"), //
+		jMethod<::java::nio::channels::AsynchronousFileChannel(::java::nio::file::Path, ::java::util::Set, ::java::util::concurrent::ExecutorService, ::java::nio::file::attribute::FileAttribute *)>("open"), //
+		jMethod<::java::nio::channels::AsynchronousFileChannel(::java::nio::file::Path, ::java::nio::file::OpenOption *)>("open"), //
+		jMethod<::java::util::concurrent::Future(::java::nio::ByteBuffer, ::jlong)>("read"), //
+		jMethod<::jvoid(::java::nio::ByteBuffer, ::jlong, ::java::lang::Object, ::java::nio::channels::CompletionHandler)>("read"), //
+		jMethod<::jlong()>("size"), //
+		jMethod<::java::nio::channels::AsynchronousFileChannel(::jlong)>("truncate"), //
+		jMethod<::java::nio::channels::FileLock()>("tryLock"), //
+		jMethod<::java::nio::channels::FileLock(::jlong, ::jlong, ::jboolean)>("tryLock"), //
+		jMethod<::java::util::concurrent::Future(::java::nio::ByteBuffer, ::jlong)>("write"), //
+		jMethod<::jvoid(::java::nio::ByteBuffer, ::jlong, ::java::lang::Object, ::java::nio::channels::CompletionHandler)>("write"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto force(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("force")] != -1);
+		return call<R>("force", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::concurrent::Future, typename... Args>
+	auto lock(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lock")] != -1);
+		return call<R>("lock", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::AsynchronousFileChannel, typename... Args>
+	static auto open(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("open")] != -1);
+		return scall<R>("open", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::concurrent::Future, typename... Args>
+	auto read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto size(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("size")] != -1);
+		return call<R>("size", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::AsynchronousFileChannel, typename... Args>
+	auto truncate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("truncate")] != -1);
+		return call<R>("truncate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::FileLock, typename... Args>
+	auto tryLock(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("tryLock")] != -1);
+		return call<R>("tryLock", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::concurrent::Future, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", forward<Args>(args)...);
+	}
+
+};
+
+#endif

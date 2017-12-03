@@ -1,0 +1,62 @@
+#ifndef org_omg_PortableServer_IdAssignmentPolicyValue_HPP
+#define org_omg_PortableServer_IdAssignmentPolicyValue_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::PortableServer::IdAssignmentPolicyValue : public jObject<::org::omg::PortableServer::IdAssignmentPolicyValue, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_PortableServer / "IdAssignmentPolicyValue";
+
+	constexpr static Enume field_signatures{
+		jField<::org::omg::PortableServer::IdAssignmentPolicyValue>("SYSTEM_ID"), //
+		jField<::org::omg::PortableServer::IdAssignmentPolicyValue>("USER_ID"), //
+		jField<::jint>("_SYSTEM_ID"), //
+		jField<::jint>("_USER_ID"), //
+	};
+
+	template<typename F = ::org::omg::PortableServer::IdAssignmentPolicyValue>
+	static auto SYSTEM_ID() {
+		static_assert(field_signatures[jField<F>("SYSTEM_ID")] != -1);
+		return sat<F>("SYSTEM_ID");
+	}
+
+	template<typename F = ::org::omg::PortableServer::IdAssignmentPolicyValue>
+	static auto USER_ID() {
+		static_assert(field_signatures[jField<F>("USER_ID")] != -1);
+		return sat<F>("USER_ID");
+	}
+
+	template<typename F = ::jint>
+	static auto _SYSTEM_ID() {
+		static_assert(field_signatures[jField<F>("_SYSTEM_ID")] != -1);
+		return sat<F>("_SYSTEM_ID");
+	}
+
+	template<typename F = ::jint>
+	static auto _USER_ID() {
+		static_assert(field_signatures[jField<F>("_USER_ID")] != -1);
+		return sat<F>("_USER_ID");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::omg::PortableServer::IdAssignmentPolicyValue(::jint)>("from_int"), //
+		jMethod<::jint()>("value"), //
+	};
+
+	template<typename R = ::org::omg::PortableServer::IdAssignmentPolicyValue, typename... Args>
+	static auto from_int(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("from_int")] != -1);
+		return scall<R>("from_int", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("value")] != -1);
+		return call<R>("value", forward<Args>(args)...);
+	}
+
+};
+
+#endif

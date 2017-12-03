@@ -1,0 +1,36 @@
+#ifndef java_awt_print_PrinterIOException_HPP
+#define java_awt_print_PrinterIOException_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::print::PrinterIOException : public jObject<::java::awt::print::PrinterIOException, ::java::awt::print::PrinterException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_print / "PrinterIOException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::IOException)>(), //
+		jMethod<::java::lang::Throwable()>("getCause"), //
+		jMethod<::java::io::IOException()>("getIOException"), //
+	};
+
+	template<typename R = ::java::lang::Throwable, typename... Args>
+	auto getCause(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCause")] != -1);
+		return call<R>("getCause", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::IOException, typename... Args>
+	auto getIOException(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIOException")] != -1);
+		return call<R>("getIOException", forward<Args>(args)...);
+	}
+
+};
+
+#endif

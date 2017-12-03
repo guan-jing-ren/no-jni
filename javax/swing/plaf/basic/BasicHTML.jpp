@@ -1,0 +1,63 @@
+#ifndef javax_swing_plaf_basic_BasicHTML_HPP
+#define javax_swing_plaf_basic_BasicHTML_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::swing::plaf::basic::BasicHTML : public jObject<::javax::swing::plaf::basic::BasicHTML, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_plaf_basic / "BasicHTML";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("documentBaseKey"), //
+		jField<::java::lang::String>("propertyKey"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto documentBaseKey() {
+		static_assert(field_signatures[jField<F>("documentBaseKey")] != -1);
+		return sat<F>("documentBaseKey");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto propertyKey() {
+		static_assert(field_signatures[jField<F>("propertyKey")] != -1);
+		return sat<F>("propertyKey");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::swing::text::View(::javax::swing::JComponent, ::java::lang::String)>("createHTMLView"), //
+		jMethod<::jint(::javax::swing::text::View, ::jint, ::jint)>("getHTMLBaseline"), //
+		jMethod<::jboolean(::java::lang::String)>("isHTMLString"), //
+		jMethod<::jvoid(::javax::swing::JComponent, ::java::lang::String)>("updateRenderer"), //
+	};
+
+	template<typename R = ::javax::swing::text::View, typename... Args>
+	static auto createHTMLView(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createHTMLView")] != -1);
+		return scall<R>("createHTMLView", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto getHTMLBaseline(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHTMLBaseline")] != -1);
+		return scall<R>("getHTMLBaseline", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isHTMLString(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isHTMLString")] != -1);
+		return scall<R>("isHTMLString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto updateRenderer(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateRenderer")] != -1);
+		return scall<R>("updateRenderer", forward<Args>(args)...);
+	}
+
+};
+
+#endif

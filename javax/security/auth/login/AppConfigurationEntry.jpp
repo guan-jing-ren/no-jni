@@ -1,0 +1,43 @@
+#ifndef javax_security_auth_login_AppConfigurationEntry_HPP
+#define javax_security_auth_login_AppConfigurationEntry_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::security::auth::login::AppConfigurationEntry : public jObject<::javax::security::auth::login::AppConfigurationEntry, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_security_auth_login / "AppConfigurationEntry";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::javax::security::auth::login::AppConfigurationEntry$LoginModuleControlFlag, ::java::util::Map)>(), //
+		jMethod<::javax::security::auth::login::AppConfigurationEntry$LoginModuleControlFlag()>("getControlFlag"), //
+		jMethod<::java::lang::String()>("getLoginModuleName"), //
+		jMethod<::java::util::Map()>("getOptions"), //
+	};
+
+	template<typename R = ::javax::security::auth::login::AppConfigurationEntry$LoginModuleControlFlag, typename... Args>
+	auto getControlFlag(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getControlFlag")] != -1);
+		return call<R>("getControlFlag", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getLoginModuleName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLoginModuleName")] != -1);
+		return call<R>("getLoginModuleName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto getOptions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOptions")] != -1);
+		return call<R>("getOptions", forward<Args>(args)...);
+	}
+
+};
+
+#endif

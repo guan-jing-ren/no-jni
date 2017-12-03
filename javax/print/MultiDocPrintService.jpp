@@ -1,0 +1,28 @@
+#ifndef javax_print_MultiDocPrintService_HPP
+#define javax_print_MultiDocPrintService_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::print::MultiDocPrintService : public jObject<::javax::print::MultiDocPrintService, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_print / "MultiDocPrintService";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::print::MultiDocPrintJob()>("createMultiDocPrintJob"), //
+	};
+
+	template<typename R = ::javax::print::MultiDocPrintJob, typename... Args>
+	auto createMultiDocPrintJob(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createMultiDocPrintJob")] != -1);
+		return call<R>("createMultiDocPrintJob", forward<Args>(args)...);
+	}
+
+};
+
+#endif

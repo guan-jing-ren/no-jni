@@ -1,0 +1,35 @@
+#ifndef javax_xml_ws_spi_WebServiceFeatureAnnotation_HPP
+#define javax_xml_ws_spi_WebServiceFeatureAnnotation_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::ws::spi::WebServiceFeatureAnnotation : public jObject<::javax::xml::ws::spi::WebServiceFeatureAnnotation, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_ws_spi / "WebServiceFeatureAnnotation";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Class()>("bean"), //
+		jMethod<::java::lang::String()>("id"), //
+	};
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto bean(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("bean")] != -1);
+		return call<R>("bean", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto id(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("id")] != -1);
+		return call<R>("id", forward<Args>(args)...);
+	}
+
+};
+
+#endif

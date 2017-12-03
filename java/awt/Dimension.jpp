@@ -1,0 +1,88 @@
+#ifndef java_awt_Dimension_HPP
+#define java_awt_Dimension_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::Dimension : public jObject<::java::awt::Dimension, ::java::awt::geom::Dimension2D> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "Dimension";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("height"), //
+		jField<::jint>("width"), //
+	};
+
+	template<typename F = ::jint>
+	auto height() const {
+		static_assert(field_signatures[jField<F>("height")] != -1);
+		return at<F>("height");
+	}
+
+	template<typename F = ::jint>
+	auto width() const {
+		static_assert(field_signatures[jField<F>("width")] != -1);
+		return at<F>("width");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint, ::jint)>(), //
+		jConstructor<::jvoid(::java::awt::Dimension)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jdouble()>("getHeight"), //
+		jMethod<::java::awt::Dimension()>("getSize"), //
+		jMethod<::jdouble()>("getWidth"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jvoid(::jdouble, ::jdouble)>("setSize"), //
+		jMethod<::jvoid(::jint, ::jint)>("setSize"), //
+		jMethod<::jvoid(::java::awt::Dimension)>("setSize"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	auto getHeight(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHeight")] != -1);
+		return call<R>("getHeight", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Dimension, typename... Args>
+	auto getSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSize")] != -1);
+		return call<R>("getSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	auto getWidth(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWidth")] != -1);
+		return call<R>("getWidth", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSize")] != -1);
+		return call<R>("setSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

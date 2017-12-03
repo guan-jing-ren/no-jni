@@ -1,0 +1,29 @@
+#ifndef javax_swing_text_TextAction_HPP
+#define javax_swing_text_TextAction_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::text::TextAction : public jObject<::javax::swing::text::TextAction, ::javax::swing::AbstractAction> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_text / "TextAction";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jMethod<::javax::swing::Action *(::javax::swing::Action *, ::javax::swing::Action *)>("augmentList"), //
+	};
+
+	template<typename R = ::javax::swing::Action *, typename... Args>
+	static auto augmentList(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("augmentList")] != -1);
+		return scall<R>("augmentList", forward<Args>(args)...);
+	}
+
+};
+
+#endif

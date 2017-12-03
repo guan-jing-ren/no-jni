@@ -1,0 +1,62 @@
+#ifndef java_nio_file_FileVisitResult_HPP
+#define java_nio_file_FileVisitResult_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::file::FileVisitResult : public jObject<::java::nio::file::FileVisitResult, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_file / "FileVisitResult";
+
+	constexpr static Enume field_signatures{
+		jField<::java::nio::file::FileVisitResult>("CONTINUE"), //
+		jField<::java::nio::file::FileVisitResult>("SKIP_SIBLINGS"), //
+		jField<::java::nio::file::FileVisitResult>("SKIP_SUBTREE"), //
+		jField<::java::nio::file::FileVisitResult>("TERMINATE"), //
+	};
+
+	template<typename F = ::java::nio::file::FileVisitResult>
+	static auto CONTINUE() {
+		static_assert(field_signatures[jField<F>("CONTINUE")] != -1);
+		return sat<F>("CONTINUE");
+	}
+
+	template<typename F = ::java::nio::file::FileVisitResult>
+	static auto SKIP_SIBLINGS() {
+		static_assert(field_signatures[jField<F>("SKIP_SIBLINGS")] != -1);
+		return sat<F>("SKIP_SIBLINGS");
+	}
+
+	template<typename F = ::java::nio::file::FileVisitResult>
+	static auto SKIP_SUBTREE() {
+		static_assert(field_signatures[jField<F>("SKIP_SUBTREE")] != -1);
+		return sat<F>("SKIP_SUBTREE");
+	}
+
+	template<typename F = ::java::nio::file::FileVisitResult>
+	static auto TERMINATE() {
+		static_assert(field_signatures[jField<F>("TERMINATE")] != -1);
+		return sat<F>("TERMINATE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::nio::file::FileVisitResult(::java::lang::String)>("valueOf"), //
+		jMethod<::java::nio::file::FileVisitResult *()>("values"), //
+	};
+
+	template<typename R = ::java::nio::file::FileVisitResult, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::FileVisitResult *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

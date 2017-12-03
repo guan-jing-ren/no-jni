@@ -1,0 +1,38 @@
+#ifndef java_awt_dnd_DragSourceDropEvent_HPP
+#define java_awt_dnd_DragSourceDropEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::dnd::DragSourceDropEvent : public jObject<::java::awt::dnd::DragSourceDropEvent, ::java::awt::dnd::DragSourceEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_dnd / "DragSourceDropEvent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::dnd::DragSourceContext)>(), //
+		jConstructor<::jvoid(::java::awt::dnd::DragSourceContext, ::jint, ::jboolean)>(), //
+		jConstructor<::jvoid(::java::awt::dnd::DragSourceContext, ::jint, ::jboolean, ::jint, ::jint)>(), //
+		jMethod<::jint()>("getDropAction"), //
+		jMethod<::jboolean()>("getDropSuccess"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getDropAction(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDropAction")] != -1);
+		return call<R>("getDropAction", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getDropSuccess(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDropSuccess")] != -1);
+		return call<R>("getDropSuccess", forward<Args>(args)...);
+	}
+
+};
+
+#endif

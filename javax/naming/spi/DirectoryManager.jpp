@@ -1,0 +1,42 @@
+#ifndef javax_naming_spi_DirectoryManager_HPP
+#define javax_naming_spi_DirectoryManager_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::naming::spi::DirectoryManager : public jObject<::javax::naming::spi::DirectoryManager, ::javax::naming::spi::NamingManager> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_naming_spi / "DirectoryManager";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::naming::directory::DirContext(::javax::naming::CannotProceedException)>("getContinuationDirContext"), //
+		jMethod<::java::lang::Object(::java::lang::Object, ::javax::naming::Name, ::javax::naming::Context, ::java::util::Hashtable, ::javax::naming::directory::Attributes)>("getObjectInstance"), //
+		jMethod<::javax::naming::spi::DirStateFactory$Result(::java::lang::Object, ::javax::naming::Name, ::javax::naming::Context, ::java::util::Hashtable, ::javax::naming::directory::Attributes)>("getStateToBind"), //
+	};
+
+	template<typename R = ::javax::naming::directory::DirContext, typename... Args>
+	static auto getContinuationDirContext(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getContinuationDirContext")] != -1);
+		return scall<R>("getContinuationDirContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto getObjectInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getObjectInstance")] != -1);
+		return scall<R>("getObjectInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::naming::spi::DirStateFactory$Result, typename... Args>
+	static auto getStateToBind(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStateToBind")] != -1);
+		return scall<R>("getStateToBind", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,28 @@
+#ifndef java_security_PublicKey_HPP
+#define java_security_PublicKey_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::PublicKey : public jObject<::java::security::PublicKey, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "PublicKey";
+
+	constexpr static Enume field_signatures{
+		jField<::jlong>("serialVersionUID"), //
+	};
+
+	template<typename F = ::jlong>
+	static auto serialVersionUID() {
+		static_assert(field_signatures[jField<F>("serialVersionUID")] != -1);
+		return sat<F>("serialVersionUID");
+	}
+
+	constexpr static Enume method_signatures{
+		cexprstr{"\0"}, //
+	};
+
+};
+
+#endif

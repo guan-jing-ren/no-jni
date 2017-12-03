@@ -1,0 +1,55 @@
+#ifndef javax_xml_crypto_KeySelector$Purpose_HPP
+#define javax_xml_crypto_KeySelector$Purpose_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::crypto::KeySelector$Purpose : public jObject<::javax::xml::crypto::KeySelector$Purpose, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_crypto / "KeySelector$Purpose";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::xml::crypto::KeySelector$Purpose>("DECRYPT"), //
+		jField<::javax::xml::crypto::KeySelector$Purpose>("ENCRYPT"), //
+		jField<::javax::xml::crypto::KeySelector$Purpose>("SIGN"), //
+		jField<::javax::xml::crypto::KeySelector$Purpose>("VERIFY"), //
+	};
+
+	template<typename F = ::javax::xml::crypto::KeySelector$Purpose>
+	static auto DECRYPT() {
+		static_assert(field_signatures[jField<F>("DECRYPT")] != -1);
+		return sat<F>("DECRYPT");
+	}
+
+	template<typename F = ::javax::xml::crypto::KeySelector$Purpose>
+	static auto ENCRYPT() {
+		static_assert(field_signatures[jField<F>("ENCRYPT")] != -1);
+		return sat<F>("ENCRYPT");
+	}
+
+	template<typename F = ::javax::xml::crypto::KeySelector$Purpose>
+	static auto SIGN() {
+		static_assert(field_signatures[jField<F>("SIGN")] != -1);
+		return sat<F>("SIGN");
+	}
+
+	template<typename F = ::javax::xml::crypto::KeySelector$Purpose>
+	static auto VERIFY() {
+		static_assert(field_signatures[jField<F>("VERIFY")] != -1);
+		return sat<F>("VERIFY");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

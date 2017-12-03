@@ -1,0 +1,36 @@
+#ifndef javax_swing_Box$Filler_HPP
+#define javax_swing_Box$Filler_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::Box$Filler : public jObject<::javax::swing::Box$Filler, ::javax::swing::JComponent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "Box$Filler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::Dimension, ::java::awt::Dimension, ::java::awt::Dimension)>(), //
+		jMethod<::jvoid(::java::awt::Dimension, ::java::awt::Dimension, ::java::awt::Dimension)>("changeShape"), //
+		jMethod<::javax::accessibility::AccessibleContext()>("getAccessibleContext"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto changeShape(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("changeShape")] != -1);
+		return call<R>("changeShape", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::accessibility::AccessibleContext, typename... Args>
+	auto getAccessibleContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAccessibleContext")] != -1);
+		return call<R>("getAccessibleContext", forward<Args>(args)...);
+	}
+
+};
+
+#endif

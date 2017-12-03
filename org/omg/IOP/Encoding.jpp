@@ -1,0 +1,43 @@
+#ifndef org_omg_IOP_Encoding_HPP
+#define org_omg_IOP_Encoding_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::IOP::Encoding : public jObject<::org::omg::IOP::Encoding, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_IOP / "Encoding";
+
+	constexpr static Enume field_signatures{
+		jField<::jshort>("format"), //
+		jField<::jbyte>("major_version"), //
+		jField<::jbyte>("minor_version"), //
+	};
+
+	template<typename F = ::jshort>
+	auto format() const {
+		static_assert(field_signatures[jField<F>("format")] != -1);
+		return at<F>("format");
+	}
+
+	template<typename F = ::jbyte>
+	auto major_version() const {
+		static_assert(field_signatures[jField<F>("major_version")] != -1);
+		return at<F>("major_version");
+	}
+
+	template<typename F = ::jbyte>
+	auto minor_version() const {
+		static_assert(field_signatures[jField<F>("minor_version")] != -1);
+		return at<F>("minor_version");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jshort, ::jbyte, ::jbyte)>(), //
+	};
+
+};
+
+#endif

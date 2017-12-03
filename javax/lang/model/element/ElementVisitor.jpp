@@ -1,0 +1,71 @@
+#ifndef javax_lang_model_element_ElementVisitor_HPP
+#define javax_lang_model_element_ElementVisitor_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::lang::model::element::ElementVisitor : public jObject<::javax::lang::model::element::ElementVisitor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_lang_model_element / "ElementVisitor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object(::javax::lang::model::element::Element)>("visit"), //
+		jMethod<::java::lang::Object(::javax::lang::model::element::Element, ::java::lang::Object)>("visit"), //
+		jMethod<::java::lang::Object(::javax::lang::model::element::ExecutableElement, ::java::lang::Object)>("visitExecutable"), //
+		jMethod<::java::lang::Object(::javax::lang::model::element::PackageElement, ::java::lang::Object)>("visitPackage"), //
+		jMethod<::java::lang::Object(::javax::lang::model::element::TypeElement, ::java::lang::Object)>("visitType"), //
+		jMethod<::java::lang::Object(::javax::lang::model::element::TypeParameterElement, ::java::lang::Object)>("visitTypeParameter"), //
+		jMethod<::java::lang::Object(::javax::lang::model::element::Element, ::java::lang::Object)>("visitUnknown"), //
+		jMethod<::java::lang::Object(::javax::lang::model::element::VariableElement, ::java::lang::Object)>("visitVariable"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto visit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("visit")] != -1);
+		return call<R>("visit", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto visitExecutable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("visitExecutable")] != -1);
+		return call<R>("visitExecutable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto visitPackage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("visitPackage")] != -1);
+		return call<R>("visitPackage", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto visitType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("visitType")] != -1);
+		return call<R>("visitType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto visitTypeParameter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("visitTypeParameter")] != -1);
+		return call<R>("visitTypeParameter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto visitUnknown(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("visitUnknown")] != -1);
+		return call<R>("visitUnknown", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto visitVariable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("visitVariable")] != -1);
+		return call<R>("visitVariable", forward<Args>(args)...);
+	}
+
+};
+
+#endif

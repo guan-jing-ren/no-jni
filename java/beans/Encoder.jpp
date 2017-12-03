@@ -1,0 +1,78 @@
+#ifndef java_beans_Encoder_HPP
+#define java_beans_Encoder_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::beans::Encoder : public jObject<::java::beans::Encoder, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_beans / "Encoder";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::Object(::java::lang::Object)>("get"), //
+		jMethod<::java::beans::ExceptionListener()>("getExceptionListener"), //
+		jMethod<::java::beans::PersistenceDelegate(::java::lang::Class)>("getPersistenceDelegate"), //
+		jMethod<::java::lang::Object(::java::lang::Object)>("remove"), //
+		jMethod<::jvoid(::java::beans::ExceptionListener)>("setExceptionListener"), //
+		jMethod<::jvoid(::java::lang::Class, ::java::beans::PersistenceDelegate)>("setPersistenceDelegate"), //
+		jMethod<::jvoid(::java::beans::Expression)>("writeExpression"), //
+		jMethod<::jvoid(::java::beans::Statement)>("writeStatement"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::beans::ExceptionListener, typename... Args>
+	auto getExceptionListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getExceptionListener")] != -1);
+		return call<R>("getExceptionListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::beans::PersistenceDelegate, typename... Args>
+	auto getPersistenceDelegate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPersistenceDelegate")] != -1);
+		return call<R>("getPersistenceDelegate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto remove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setExceptionListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setExceptionListener")] != -1);
+		return call<R>("setExceptionListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setPersistenceDelegate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPersistenceDelegate")] != -1);
+		return call<R>("setPersistenceDelegate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeExpression(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("writeExpression")] != -1);
+		return call<R>("writeExpression", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeStatement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("writeStatement")] != -1);
+		return call<R>("writeStatement", forward<Args>(args)...);
+	}
+
+};
+
+#endif

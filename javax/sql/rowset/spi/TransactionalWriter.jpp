@@ -1,0 +1,36 @@
+#ifndef javax_sql_rowset_spi_TransactionalWriter_HPP
+#define javax_sql_rowset_spi_TransactionalWriter_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::sql::rowset::spi::TransactionalWriter : public jObject<::javax::sql::rowset::spi::TransactionalWriter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sql_rowset_spi / "TransactionalWriter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("commit"), //
+		jMethod<::jvoid()>("rollback"), //
+		jMethod<::jvoid(::java::sql::Savepoint)>("rollback"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto commit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("commit")] != -1);
+		return call<R>("commit", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto rollback(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("rollback")] != -1);
+		return call<R>("rollback", forward<Args>(args)...);
+	}
+
+};
+
+#endif

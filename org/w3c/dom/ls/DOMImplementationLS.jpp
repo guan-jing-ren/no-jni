@@ -1,0 +1,62 @@
+#ifndef org_w3c_dom_ls_DOMImplementationLS_HPP
+#define org_w3c_dom_ls_DOMImplementationLS_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::w3c::dom::ls::DOMImplementationLS : public jObject<::org::w3c::dom::ls::DOMImplementationLS, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_w3c_dom_ls / "DOMImplementationLS";
+
+	constexpr static Enume field_signatures{
+		jField<::jshort>("MODE_ASYNCHRONOUS"), //
+		jField<::jshort>("MODE_SYNCHRONOUS"), //
+	};
+
+	template<typename F = ::jshort>
+	static auto MODE_ASYNCHRONOUS() {
+		static_assert(field_signatures[jField<F>("MODE_ASYNCHRONOUS")] != -1);
+		return sat<F>("MODE_ASYNCHRONOUS");
+	}
+
+	template<typename F = ::jshort>
+	static auto MODE_SYNCHRONOUS() {
+		static_assert(field_signatures[jField<F>("MODE_SYNCHRONOUS")] != -1);
+		return sat<F>("MODE_SYNCHRONOUS");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::w3c::dom::ls::LSInput()>("createLSInput"), //
+		jMethod<::org::w3c::dom::ls::LSOutput()>("createLSOutput"), //
+		jMethod<::org::w3c::dom::ls::LSParser(::jshort, ::java::lang::String)>("createLSParser"), //
+		jMethod<::org::w3c::dom::ls::LSSerializer()>("createLSSerializer"), //
+	};
+
+	template<typename R = ::org::w3c::dom::ls::LSInput, typename... Args>
+	auto createLSInput(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createLSInput")] != -1);
+		return call<R>("createLSInput", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::ls::LSOutput, typename... Args>
+	auto createLSOutput(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createLSOutput")] != -1);
+		return call<R>("createLSOutput", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::ls::LSParser, typename... Args>
+	auto createLSParser(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createLSParser")] != -1);
+		return call<R>("createLSParser", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::ls::LSSerializer, typename... Args>
+	auto createLSSerializer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createLSSerializer")] != -1);
+		return call<R>("createLSSerializer", forward<Args>(args)...);
+	}
+
+};
+
+#endif

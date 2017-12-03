@@ -1,0 +1,68 @@
+#ifndef java_security_KeyPairGenerator_HPP
+#define java_security_KeyPairGenerator_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::KeyPairGenerator : public jObject<::java::security::KeyPairGenerator, ::java::security::KeyPairGeneratorSpi> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "KeyPairGenerator";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::security::KeyPair()>("genKeyPair"), //
+		jMethod<::java::security::KeyPair()>("generateKeyPair"), //
+		jMethod<::java::lang::String()>("getAlgorithm"), //
+		jMethod<::java::security::KeyPairGenerator(::java::lang::String)>("getInstance"), //
+		jMethod<::java::security::KeyPairGenerator(::java::lang::String, ::java::lang::String)>("getInstance"), //
+		jMethod<::java::security::KeyPairGenerator(::java::lang::String, ::java::security::Provider)>("getInstance"), //
+		jMethod<::java::security::Provider()>("getProvider"), //
+		jMethod<::jvoid(::jint)>("initialize"), //
+		jMethod<::jvoid(::jint, ::java::security::SecureRandom)>("initialize"), //
+		jMethod<::jvoid(::java::security::spec::AlgorithmParameterSpec)>("initialize"), //
+		jMethod<::jvoid(::java::security::spec::AlgorithmParameterSpec, ::java::security::SecureRandom)>("initialize"), //
+	};
+
+	template<typename R = ::java::security::KeyPair, typename... Args>
+	auto genKeyPair(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("genKeyPair")] != -1);
+		return call<R>("genKeyPair", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::KeyPair, typename... Args>
+	auto generateKeyPair(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("generateKeyPair")] != -1);
+		return call<R>("generateKeyPair", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAlgorithm(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlgorithm")] != -1);
+		return call<R>("getAlgorithm", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::KeyPairGenerator, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Provider, typename... Args>
+	auto getProvider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProvider")] != -1);
+		return call<R>("getProvider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto initialize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("initialize")] != -1);
+		return call<R>("initialize", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,47 @@
+#ifndef javax_xml_bind_JAXB_HPP
+#define javax_xml_bind_JAXB_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::bind::JAXB : public jObject<::javax::xml::bind::JAXB, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_bind / "JAXB";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::Object, ::java::io::File)>("marshal"), //
+		jMethod<::jvoid(::java::lang::Object, ::java::io::OutputStream)>("marshal"), //
+		jMethod<::jvoid(::java::lang::Object, ::java::io::Writer)>("marshal"), //
+		jMethod<::jvoid(::java::lang::Object, ::java::lang::String)>("marshal"), //
+		jMethod<::jvoid(::java::lang::Object, ::java::net::URI)>("marshal"), //
+		jMethod<::jvoid(::java::lang::Object, ::java::net::URL)>("marshal"), //
+		jMethod<::jvoid(::java::lang::Object, ::javax::xml::transform::Result)>("marshal"), //
+		jMethod<::java::lang::Object(::java::io::File, ::java::lang::Class)>("unmarshal"), //
+		jMethod<::java::lang::Object(::java::io::InputStream, ::java::lang::Class)>("unmarshal"), //
+		jMethod<::java::lang::Object(::java::io::Reader, ::java::lang::Class)>("unmarshal"), //
+		jMethod<::java::lang::Object(::java::lang::String, ::java::lang::Class)>("unmarshal"), //
+		jMethod<::java::lang::Object(::java::net::URI, ::java::lang::Class)>("unmarshal"), //
+		jMethod<::java::lang::Object(::java::net::URL, ::java::lang::Class)>("unmarshal"), //
+		jMethod<::java::lang::Object(::javax::xml::transform::Source, ::java::lang::Class)>("unmarshal"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto marshal(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("marshal")] != -1);
+		return scall<R>("marshal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto unmarshal(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unmarshal")] != -1);
+		return scall<R>("unmarshal", forward<Args>(args)...);
+	}
+
+};
+
+#endif

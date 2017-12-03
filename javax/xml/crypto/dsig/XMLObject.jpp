@@ -1,0 +1,55 @@
+#ifndef javax_xml_crypto_dsig_XMLObject_HPP
+#define javax_xml_crypto_dsig_XMLObject_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::crypto::dsig::XMLObject : public jObject<::javax::xml::crypto::dsig::XMLObject, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_crypto_dsig / "XMLObject";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("TYPE"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto TYPE() {
+		static_assert(field_signatures[jField<F>("TYPE")] != -1);
+		return sat<F>("TYPE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::List()>("getContent"), //
+		jMethod<::java::lang::String()>("getEncoding"), //
+		jMethod<::java::lang::String()>("getId"), //
+		jMethod<::java::lang::String()>("getMimeType"), //
+	};
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getContent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getContent")] != -1);
+		return call<R>("getContent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getEncoding(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEncoding")] != -1);
+		return call<R>("getEncoding", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getId")] != -1);
+		return call<R>("getId", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMimeType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMimeType")] != -1);
+		return call<R>("getMimeType", forward<Args>(args)...);
+	}
+
+};
+
+#endif

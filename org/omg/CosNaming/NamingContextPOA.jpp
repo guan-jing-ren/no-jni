@@ -1,0 +1,44 @@
+#ifndef org_omg_CosNaming_NamingContextPOA_HPP
+#define org_omg_CosNaming_NamingContextPOA_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::CosNaming::NamingContextPOA : public jObject<::org::omg::CosNaming::NamingContextPOA, ::org::omg::PortableServer::Servant> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CosNaming / "NamingContextPOA";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::String *(::org::omg::PortableServer::POA, ::jbyte *)>("_all_interfaces"), //
+		jMethod<::org::omg::CORBA::portable::OutputStream(::java::lang::String, ::org::omg::CORBA::portable::InputStream, ::org::omg::CORBA::portable::ResponseHandler)>("_invoke"), //
+		jMethod<::org::omg::CosNaming::NamingContext()>("_this"), //
+		jMethod<::org::omg::CosNaming::NamingContext(::org::omg::CORBA::ORB)>("_this"), //
+	};
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto _all_interfaces(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("_all_interfaces")] != -1);
+		return call<R>("_all_interfaces", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::portable::OutputStream, typename... Args>
+	auto _invoke(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("_invoke")] != -1);
+		return call<R>("_invoke", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CosNaming::NamingContext, typename... Args>
+	auto _this(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("_this")] != -1);
+		return call<R>("_this", forward<Args>(args)...);
+	}
+
+};
+
+#endif

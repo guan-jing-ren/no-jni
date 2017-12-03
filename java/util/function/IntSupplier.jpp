@@ -1,0 +1,28 @@
+#ifndef java_util_function_IntSupplier_HPP
+#define java_util_function_IntSupplier_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::function::IntSupplier : public jObject<::java::util::function::IntSupplier, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_function / "IntSupplier";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("getAsInt"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getAsInt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAsInt")] != -1);
+		return call<R>("getAsInt", forward<Args>(args)...);
+	}
+
+};
+
+#endif

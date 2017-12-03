@@ -1,0 +1,36 @@
+#ifndef javax_naming_spi_DirStateFactory$Result_HPP
+#define javax_naming_spi_DirStateFactory$Result_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::naming::spi::DirStateFactory$Result : public jObject<::javax::naming::spi::DirStateFactory$Result, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_naming_spi / "DirStateFactory$Result";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Object, ::javax::naming::directory::Attributes)>(), //
+		jMethod<::javax::naming::directory::Attributes()>("getAttributes"), //
+		jMethod<::java::lang::Object()>("getObject"), //
+	};
+
+	template<typename R = ::javax::naming::directory::Attributes, typename... Args>
+	auto getAttributes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttributes")] != -1);
+		return call<R>("getAttributes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getObject")] != -1);
+		return call<R>("getObject", forward<Args>(args)...);
+	}
+
+};
+
+#endif

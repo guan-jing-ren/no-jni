@@ -1,0 +1,56 @@
+#ifndef java_awt_dnd_DropTargetContext_HPP
+#define java_awt_dnd_DropTargetContext_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::dnd::DropTargetContext : public jObject<::java::awt::dnd::DropTargetContext, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_dnd / "DropTargetContext";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::awt::dnd::peer::DropTargetContextPeer)>("addNotify"), //
+		jMethod<::jvoid(::jboolean)>("dropComplete"), //
+		jMethod<::java::awt::Component()>("getComponent"), //
+		jMethod<::java::awt::dnd::DropTarget()>("getDropTarget"), //
+		jMethod<::jvoid()>("removeNotify"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addNotify(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addNotify")] != -1);
+		return call<R>("addNotify", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dropComplete(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dropComplete")] != -1);
+		return call<R>("dropComplete", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Component, typename... Args>
+	auto getComponent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getComponent")] != -1);
+		return call<R>("getComponent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::dnd::DropTarget, typename... Args>
+	auto getDropTarget(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDropTarget")] != -1);
+		return call<R>("getDropTarget", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeNotify(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeNotify")] != -1);
+		return call<R>("removeNotify", forward<Args>(args)...);
+	}
+
+};
+
+#endif

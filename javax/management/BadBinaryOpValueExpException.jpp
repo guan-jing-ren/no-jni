@@ -1,0 +1,36 @@
+#ifndef javax_management_BadBinaryOpValueExpException_HPP
+#define javax_management_BadBinaryOpValueExpException_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::management::BadBinaryOpValueExpException : public jObject<::javax::management::BadBinaryOpValueExpException, ::java::lang::Exception> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management / "BadBinaryOpValueExpException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::management::ValueExp)>(), //
+		jMethod<::javax::management::ValueExp()>("getExp"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::javax::management::ValueExp, typename... Args>
+	auto getExp(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getExp")] != -1);
+		return call<R>("getExp", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

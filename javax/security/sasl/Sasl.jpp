@@ -1,0 +1,146 @@
+#ifndef javax_security_sasl_Sasl_HPP
+#define javax_security_sasl_Sasl_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::security::sasl::Sasl : public jObject<::javax::security::sasl::Sasl, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_security_sasl / "Sasl";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("BOUND_SERVER_NAME"), //
+		jField<::java::lang::String>("CREDENTIALS"), //
+		jField<::java::lang::String>("MAX_BUFFER"), //
+		jField<::java::lang::String>("POLICY_FORWARD_SECRECY"), //
+		jField<::java::lang::String>("POLICY_NOACTIVE"), //
+		jField<::java::lang::String>("POLICY_NOANONYMOUS"), //
+		jField<::java::lang::String>("POLICY_NODICTIONARY"), //
+		jField<::java::lang::String>("POLICY_NOPLAINTEXT"), //
+		jField<::java::lang::String>("POLICY_PASS_CREDENTIALS"), //
+		jField<::java::lang::String>("QOP"), //
+		jField<::java::lang::String>("RAW_SEND_SIZE"), //
+		jField<::java::lang::String>("REUSE"), //
+		jField<::java::lang::String>("SERVER_AUTH"), //
+		jField<::java::lang::String>("STRENGTH"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto BOUND_SERVER_NAME() {
+		static_assert(field_signatures[jField<F>("BOUND_SERVER_NAME")] != -1);
+		return sat<F>("BOUND_SERVER_NAME");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto CREDENTIALS() {
+		static_assert(field_signatures[jField<F>("CREDENTIALS")] != -1);
+		return sat<F>("CREDENTIALS");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto MAX_BUFFER() {
+		static_assert(field_signatures[jField<F>("MAX_BUFFER")] != -1);
+		return sat<F>("MAX_BUFFER");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto POLICY_FORWARD_SECRECY() {
+		static_assert(field_signatures[jField<F>("POLICY_FORWARD_SECRECY")] != -1);
+		return sat<F>("POLICY_FORWARD_SECRECY");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto POLICY_NOACTIVE() {
+		static_assert(field_signatures[jField<F>("POLICY_NOACTIVE")] != -1);
+		return sat<F>("POLICY_NOACTIVE");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto POLICY_NOANONYMOUS() {
+		static_assert(field_signatures[jField<F>("POLICY_NOANONYMOUS")] != -1);
+		return sat<F>("POLICY_NOANONYMOUS");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto POLICY_NODICTIONARY() {
+		static_assert(field_signatures[jField<F>("POLICY_NODICTIONARY")] != -1);
+		return sat<F>("POLICY_NODICTIONARY");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto POLICY_NOPLAINTEXT() {
+		static_assert(field_signatures[jField<F>("POLICY_NOPLAINTEXT")] != -1);
+		return sat<F>("POLICY_NOPLAINTEXT");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto POLICY_PASS_CREDENTIALS() {
+		static_assert(field_signatures[jField<F>("POLICY_PASS_CREDENTIALS")] != -1);
+		return sat<F>("POLICY_PASS_CREDENTIALS");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto QOP() {
+		static_assert(field_signatures[jField<F>("QOP")] != -1);
+		return sat<F>("QOP");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto RAW_SEND_SIZE() {
+		static_assert(field_signatures[jField<F>("RAW_SEND_SIZE")] != -1);
+		return sat<F>("RAW_SEND_SIZE");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto REUSE() {
+		static_assert(field_signatures[jField<F>("REUSE")] != -1);
+		return sat<F>("REUSE");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto SERVER_AUTH() {
+		static_assert(field_signatures[jField<F>("SERVER_AUTH")] != -1);
+		return sat<F>("SERVER_AUTH");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto STRENGTH() {
+		static_assert(field_signatures[jField<F>("STRENGTH")] != -1);
+		return sat<F>("STRENGTH");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::security::sasl::SaslClient(::java::lang::String *, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::util::Map, ::javax::security::auth::callback::CallbackHandler)>("createSaslClient"), //
+		jMethod<::javax::security::sasl::SaslServer(::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::util::Map, ::javax::security::auth::callback::CallbackHandler)>("createSaslServer"), //
+		jMethod<::java::util::Enumeration()>("getSaslClientFactories"), //
+		jMethod<::java::util::Enumeration()>("getSaslServerFactories"), //
+	};
+
+	template<typename R = ::javax::security::sasl::SaslClient, typename... Args>
+	static auto createSaslClient(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createSaslClient")] != -1);
+		return scall<R>("createSaslClient", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::security::sasl::SaslServer, typename... Args>
+	static auto createSaslServer(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createSaslServer")] != -1);
+		return scall<R>("createSaslServer", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	static auto getSaslClientFactories(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSaslClientFactories")] != -1);
+		return scall<R>("getSaslClientFactories", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	static auto getSaslServerFactories(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSaslServerFactories")] != -1);
+		return scall<R>("getSaslServerFactories", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,55 @@
+#ifndef javax_print_attribute_standard_PrintQuality_HPP
+#define javax_print_attribute_standard_PrintQuality_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::print::attribute::standard::PrintQuality : public jObject<::javax::print::attribute::standard::PrintQuality, ::javax::print::attribute::EnumSyntax> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_print_attribute_standard / "PrintQuality";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::print::attribute::standard::PrintQuality>("DRAFT"), //
+		jField<::javax::print::attribute::standard::PrintQuality>("HIGH"), //
+		jField<::javax::print::attribute::standard::PrintQuality>("NORMAL"), //
+	};
+
+	template<typename F = ::javax::print::attribute::standard::PrintQuality>
+	static auto DRAFT() {
+		static_assert(field_signatures[jField<F>("DRAFT")] != -1);
+		return sat<F>("DRAFT");
+	}
+
+	template<typename F = ::javax::print::attribute::standard::PrintQuality>
+	static auto HIGH() {
+		static_assert(field_signatures[jField<F>("HIGH")] != -1);
+		return sat<F>("HIGH");
+	}
+
+	template<typename F = ::javax::print::attribute::standard::PrintQuality>
+	static auto NORMAL() {
+		static_assert(field_signatures[jField<F>("NORMAL")] != -1);
+		return sat<F>("NORMAL");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Class()>("getCategory"), //
+		jMethod<::java::lang::String()>("getName"), //
+	};
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getCategory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCategory")] != -1);
+		return call<R>("getCategory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+};
+
+#endif

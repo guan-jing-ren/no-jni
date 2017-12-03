@@ -1,0 +1,72 @@
+#ifndef javax_naming_ldap_InitialLdapContext_HPP
+#define javax_naming_ldap_InitialLdapContext_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::naming::ldap::InitialLdapContext : public jObject<::javax::naming::ldap::InitialLdapContext, ::javax::naming::directory::InitialDirContext> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_naming_ldap / "InitialLdapContext";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::util::Hashtable, ::javax::naming::ldap::Control *)>(), //
+		jMethod<::javax::naming::ldap::ExtendedResponse(::javax::naming::ldap::ExtendedRequest)>("extendedOperation"), //
+		jMethod<::javax::naming::ldap::Control *()>("getConnectControls"), //
+		jMethod<::javax::naming::ldap::Control *()>("getRequestControls"), //
+		jMethod<::javax::naming::ldap::Control *()>("getResponseControls"), //
+		jMethod<::javax::naming::ldap::LdapContext(::javax::naming::ldap::Control *)>("newInstance"), //
+		jMethod<::jvoid(::javax::naming::ldap::Control *)>("reconnect"), //
+		jMethod<::jvoid(::javax::naming::ldap::Control *)>("setRequestControls"), //
+	};
+
+	template<typename R = ::javax::naming::ldap::ExtendedResponse, typename... Args>
+	auto extendedOperation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("extendedOperation")] != -1);
+		return call<R>("extendedOperation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::naming::ldap::Control *, typename... Args>
+	auto getConnectControls(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getConnectControls")] != -1);
+		return call<R>("getConnectControls", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::naming::ldap::Control *, typename... Args>
+	auto getRequestControls(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRequestControls")] != -1);
+		return call<R>("getRequestControls", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::naming::ldap::Control *, typename... Args>
+	auto getResponseControls(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getResponseControls")] != -1);
+		return call<R>("getResponseControls", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::naming::ldap::LdapContext, typename... Args>
+	auto newInstance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newInstance")] != -1);
+		return call<R>("newInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto reconnect(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("reconnect")] != -1);
+		return call<R>("reconnect", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setRequestControls(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setRequestControls")] != -1);
+		return call<R>("setRequestControls", forward<Args>(args)...);
+	}
+
+};
+
+#endif

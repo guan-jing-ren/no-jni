@@ -1,0 +1,30 @@
+#ifndef org_omg_CORBA_PolicyError_HPP
+#define org_omg_CORBA_PolicyError_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::CORBA::PolicyError : public jObject<::org::omg::CORBA::PolicyError, ::org::omg::CORBA::UserException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CORBA / "PolicyError";
+
+	constexpr static Enume field_signatures{
+		jField<::jshort>("reason"), //
+	};
+
+	template<typename F = ::jshort>
+	auto reason() const {
+		static_assert(field_signatures[jField<F>("reason")] != -1);
+		return at<F>("reason");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String, ::jshort)>(), //
+		jConstructor<::jvoid(::jshort)>(), //
+	};
+
+};
+
+#endif

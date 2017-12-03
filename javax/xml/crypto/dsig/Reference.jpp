@@ -1,0 +1,77 @@
+#ifndef javax_xml_crypto_dsig_Reference_HPP
+#define javax_xml_crypto_dsig_Reference_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::crypto::dsig::Reference : public jObject<::javax::xml::crypto::dsig::Reference, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_crypto_dsig / "Reference";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jbyte *()>("getCalculatedDigestValue"), //
+		jMethod<::javax::xml::crypto::Data()>("getDereferencedData"), //
+		jMethod<::java::io::InputStream()>("getDigestInputStream"), //
+		jMethod<::javax::xml::crypto::dsig::DigestMethod()>("getDigestMethod"), //
+		jMethod<::jbyte *()>("getDigestValue"), //
+		jMethod<::java::lang::String()>("getId"), //
+		jMethod<::java::util::List()>("getTransforms"), //
+		jMethod<::jboolean(::javax::xml::crypto::dsig::XMLValidateContext)>("validate"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getCalculatedDigestValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCalculatedDigestValue")] != -1);
+		return call<R>("getCalculatedDigestValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::crypto::Data, typename... Args>
+	auto getDereferencedData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDereferencedData")] != -1);
+		return call<R>("getDereferencedData", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::InputStream, typename... Args>
+	auto getDigestInputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDigestInputStream")] != -1);
+		return call<R>("getDigestInputStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::crypto::dsig::DigestMethod, typename... Args>
+	auto getDigestMethod(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDigestMethod")] != -1);
+		return call<R>("getDigestMethod", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getDigestValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDigestValue")] != -1);
+		return call<R>("getDigestValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getId")] != -1);
+		return call<R>("getId", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getTransforms(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTransforms")] != -1);
+		return call<R>("getTransforms", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto validate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("validate")] != -1);
+		return call<R>("validate", forward<Args>(args)...);
+	}
+
+};
+
+#endif

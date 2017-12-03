@@ -1,0 +1,76 @@
+#ifndef org_omg_PortableServer_RequestProcessingPolicyValue_HPP
+#define org_omg_PortableServer_RequestProcessingPolicyValue_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::PortableServer::RequestProcessingPolicyValue : public jObject<::org::omg::PortableServer::RequestProcessingPolicyValue, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_PortableServer / "RequestProcessingPolicyValue";
+
+	constexpr static Enume field_signatures{
+		jField<::org::omg::PortableServer::RequestProcessingPolicyValue>("USE_ACTIVE_OBJECT_MAP_ONLY"), //
+		jField<::org::omg::PortableServer::RequestProcessingPolicyValue>("USE_DEFAULT_SERVANT"), //
+		jField<::org::omg::PortableServer::RequestProcessingPolicyValue>("USE_SERVANT_MANAGER"), //
+		jField<::jint>("_USE_ACTIVE_OBJECT_MAP_ONLY"), //
+		jField<::jint>("_USE_DEFAULT_SERVANT"), //
+		jField<::jint>("_USE_SERVANT_MANAGER"), //
+	};
+
+	template<typename F = ::org::omg::PortableServer::RequestProcessingPolicyValue>
+	static auto USE_ACTIVE_OBJECT_MAP_ONLY() {
+		static_assert(field_signatures[jField<F>("USE_ACTIVE_OBJECT_MAP_ONLY")] != -1);
+		return sat<F>("USE_ACTIVE_OBJECT_MAP_ONLY");
+	}
+
+	template<typename F = ::org::omg::PortableServer::RequestProcessingPolicyValue>
+	static auto USE_DEFAULT_SERVANT() {
+		static_assert(field_signatures[jField<F>("USE_DEFAULT_SERVANT")] != -1);
+		return sat<F>("USE_DEFAULT_SERVANT");
+	}
+
+	template<typename F = ::org::omg::PortableServer::RequestProcessingPolicyValue>
+	static auto USE_SERVANT_MANAGER() {
+		static_assert(field_signatures[jField<F>("USE_SERVANT_MANAGER")] != -1);
+		return sat<F>("USE_SERVANT_MANAGER");
+	}
+
+	template<typename F = ::jint>
+	static auto _USE_ACTIVE_OBJECT_MAP_ONLY() {
+		static_assert(field_signatures[jField<F>("_USE_ACTIVE_OBJECT_MAP_ONLY")] != -1);
+		return sat<F>("_USE_ACTIVE_OBJECT_MAP_ONLY");
+	}
+
+	template<typename F = ::jint>
+	static auto _USE_DEFAULT_SERVANT() {
+		static_assert(field_signatures[jField<F>("_USE_DEFAULT_SERVANT")] != -1);
+		return sat<F>("_USE_DEFAULT_SERVANT");
+	}
+
+	template<typename F = ::jint>
+	static auto _USE_SERVANT_MANAGER() {
+		static_assert(field_signatures[jField<F>("_USE_SERVANT_MANAGER")] != -1);
+		return sat<F>("_USE_SERVANT_MANAGER");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::omg::PortableServer::RequestProcessingPolicyValue(::jint)>("from_int"), //
+		jMethod<::jint()>("value"), //
+	};
+
+	template<typename R = ::org::omg::PortableServer::RequestProcessingPolicyValue, typename... Args>
+	static auto from_int(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("from_int")] != -1);
+		return scall<R>("from_int", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("value")] != -1);
+		return call<R>("value", forward<Args>(args)...);
+	}
+
+};
+
+#endif

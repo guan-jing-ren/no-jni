@@ -1,0 +1,54 @@
+#ifndef javax_management_NotificationBroadcasterSupport_HPP
+#define javax_management_NotificationBroadcasterSupport_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::management::NotificationBroadcasterSupport : public jObject<::javax::management::NotificationBroadcasterSupport, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management / "NotificationBroadcasterSupport";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::util::concurrent::Executor)>(), //
+		jConstructor<::jvoid(::java::util::concurrent::Executor, ::javax::management::MBeanNotificationInfo *)>(), //
+		jConstructor<::jvoid(::javax::management::MBeanNotificationInfo *)>(), //
+		jMethod<::jvoid(::javax::management::NotificationListener, ::javax::management::NotificationFilter, ::java::lang::Object)>("addNotificationListener"), //
+		jMethod<::javax::management::MBeanNotificationInfo *()>("getNotificationInfo"), //
+		jMethod<::jvoid(::javax::management::NotificationListener)>("removeNotificationListener"), //
+		jMethod<::jvoid(::javax::management::NotificationListener, ::javax::management::NotificationFilter, ::java::lang::Object)>("removeNotificationListener"), //
+		jMethod<::jvoid(::javax::management::Notification)>("sendNotification"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addNotificationListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addNotificationListener")] != -1);
+		return call<R>("addNotificationListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::MBeanNotificationInfo *, typename... Args>
+	auto getNotificationInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNotificationInfo")] != -1);
+		return call<R>("getNotificationInfo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeNotificationListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeNotificationListener")] != -1);
+		return call<R>("removeNotificationListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto sendNotification(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("sendNotification")] != -1);
+		return call<R>("sendNotification", forward<Args>(args)...);
+	}
+
+};
+
+#endif

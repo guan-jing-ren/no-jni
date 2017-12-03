@@ -1,0 +1,29 @@
+#ifndef javax_swing_JSpinner$ListEditor_HPP
+#define javax_swing_JSpinner$ListEditor_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::JSpinner$ListEditor : public jObject<::javax::swing::JSpinner$ListEditor, ::javax::swing::JSpinner$DefaultEditor> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "JSpinner$ListEditor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::swing::JSpinner)>(), //
+		jMethod<::javax::swing::SpinnerListModel()>("getModel"), //
+	};
+
+	template<typename R = ::javax::swing::SpinnerListModel, typename... Args>
+	auto getModel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getModel")] != -1);
+		return call<R>("getModel", forward<Args>(args)...);
+	}
+
+};
+
+#endif

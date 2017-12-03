@@ -1,0 +1,69 @@
+#ifndef javax_net_ssl_SSLEngineResult$HandshakeStatus_HPP
+#define javax_net_ssl_SSLEngineResult$HandshakeStatus_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::net::ssl::SSLEngineResult$HandshakeStatus : public jObject<::javax::net::ssl::SSLEngineResult$HandshakeStatus, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_net_ssl / "SSLEngineResult$HandshakeStatus";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::net::ssl::SSLEngineResult$HandshakeStatus>("FINISHED"), //
+		jField<::javax::net::ssl::SSLEngineResult$HandshakeStatus>("NEED_TASK"), //
+		jField<::javax::net::ssl::SSLEngineResult$HandshakeStatus>("NEED_UNWRAP"), //
+		jField<::javax::net::ssl::SSLEngineResult$HandshakeStatus>("NEED_WRAP"), //
+		jField<::javax::net::ssl::SSLEngineResult$HandshakeStatus>("NOT_HANDSHAKING"), //
+	};
+
+	template<typename F = ::javax::net::ssl::SSLEngineResult$HandshakeStatus>
+	static auto FINISHED() {
+		static_assert(field_signatures[jField<F>("FINISHED")] != -1);
+		return sat<F>("FINISHED");
+	}
+
+	template<typename F = ::javax::net::ssl::SSLEngineResult$HandshakeStatus>
+	static auto NEED_TASK() {
+		static_assert(field_signatures[jField<F>("NEED_TASK")] != -1);
+		return sat<F>("NEED_TASK");
+	}
+
+	template<typename F = ::javax::net::ssl::SSLEngineResult$HandshakeStatus>
+	static auto NEED_UNWRAP() {
+		static_assert(field_signatures[jField<F>("NEED_UNWRAP")] != -1);
+		return sat<F>("NEED_UNWRAP");
+	}
+
+	template<typename F = ::javax::net::ssl::SSLEngineResult$HandshakeStatus>
+	static auto NEED_WRAP() {
+		static_assert(field_signatures[jField<F>("NEED_WRAP")] != -1);
+		return sat<F>("NEED_WRAP");
+	}
+
+	template<typename F = ::javax::net::ssl::SSLEngineResult$HandshakeStatus>
+	static auto NOT_HANDSHAKING() {
+		static_assert(field_signatures[jField<F>("NOT_HANDSHAKING")] != -1);
+		return sat<F>("NOT_HANDSHAKING");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::net::ssl::SSLEngineResult$HandshakeStatus(::java::lang::String)>("valueOf"), //
+		jMethod<::javax::net::ssl::SSLEngineResult$HandshakeStatus *()>("values"), //
+	};
+
+	template<typename R = ::javax::net::ssl::SSLEngineResult$HandshakeStatus, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::net::ssl::SSLEngineResult$HandshakeStatus *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

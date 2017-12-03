@@ -1,0 +1,35 @@
+#ifndef javax_sound_sampled_Control_HPP
+#define javax_sound_sampled_Control_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::sound::sampled::Control : public jObject<::javax::sound::sampled::Control, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sound_sampled / "Control";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::sound::sampled::Control$Type()>("getType"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::javax::sound::sampled::Control$Type, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,42 @@
+#ifndef javax_accessibility_AccessibleExtendedTable_HPP
+#define javax_accessibility_AccessibleExtendedTable_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::accessibility::AccessibleExtendedTable : public jObject<::javax::accessibility::AccessibleExtendedTable, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_accessibility / "AccessibleExtendedTable";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint(::jint)>("getAccessibleColumn"), //
+		jMethod<::jint(::jint, ::jint)>("getAccessibleIndex"), //
+		jMethod<::jint(::jint)>("getAccessibleRow"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getAccessibleColumn(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAccessibleColumn")] != -1);
+		return call<R>("getAccessibleColumn", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getAccessibleIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAccessibleIndex")] != -1);
+		return call<R>("getAccessibleIndex", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getAccessibleRow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAccessibleRow")] != -1);
+		return call<R>("getAccessibleRow", forward<Args>(args)...);
+	}
+
+};
+
+#endif

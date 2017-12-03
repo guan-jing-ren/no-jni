@@ -1,0 +1,63 @@
+#ifndef javax_imageio_event_IIOReadUpdateListener_HPP
+#define javax_imageio_event_IIOReadUpdateListener_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::imageio::event::IIOReadUpdateListener : public jObject<::javax::imageio::event::IIOReadUpdateListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_imageio_event / "IIOReadUpdateListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::imageio::ImageReader, ::java::awt::image::BufferedImage, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint *)>("imageUpdate"), //
+		jMethod<::jvoid(::javax::imageio::ImageReader, ::java::awt::image::BufferedImage)>("passComplete"), //
+		jMethod<::jvoid(::javax::imageio::ImageReader, ::java::awt::image::BufferedImage, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint *)>("passStarted"), //
+		jMethod<::jvoid(::javax::imageio::ImageReader, ::java::awt::image::BufferedImage)>("thumbnailPassComplete"), //
+		jMethod<::jvoid(::javax::imageio::ImageReader, ::java::awt::image::BufferedImage, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint *)>("thumbnailPassStarted"), //
+		jMethod<::jvoid(::javax::imageio::ImageReader, ::java::awt::image::BufferedImage, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint *)>("thumbnailUpdate"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto imageUpdate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("imageUpdate")] != -1);
+		return call<R>("imageUpdate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto passComplete(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("passComplete")] != -1);
+		return call<R>("passComplete", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto passStarted(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("passStarted")] != -1);
+		return call<R>("passStarted", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto thumbnailPassComplete(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("thumbnailPassComplete")] != -1);
+		return call<R>("thumbnailPassComplete", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto thumbnailPassStarted(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("thumbnailPassStarted")] != -1);
+		return call<R>("thumbnailPassStarted", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto thumbnailUpdate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("thumbnailUpdate")] != -1);
+		return call<R>("thumbnailUpdate", forward<Args>(args)...);
+	}
+
+};
+
+#endif

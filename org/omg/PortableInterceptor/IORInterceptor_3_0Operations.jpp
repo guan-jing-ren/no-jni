@@ -1,0 +1,42 @@
+#ifndef org_omg_PortableInterceptor_IORInterceptor_3_0Operations_HPP
+#define org_omg_PortableInterceptor_IORInterceptor_3_0Operations_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::PortableInterceptor::IORInterceptor_3_0Operations : public jObject<::org::omg::PortableInterceptor::IORInterceptor_3_0Operations, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_PortableInterceptor / "IORInterceptor_3_0Operations";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::jint, ::jshort)>("adapter_manager_state_changed"), //
+		jMethod<::jvoid(::org::omg::PortableInterceptor::ObjectReferenceTemplate *, ::jshort)>("adapter_state_changed"), //
+		jMethod<::jvoid(::org::omg::PortableInterceptor::IORInfo)>("components_established"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto adapter_manager_state_changed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("adapter_manager_state_changed")] != -1);
+		return call<R>("adapter_manager_state_changed", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto adapter_state_changed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("adapter_state_changed")] != -1);
+		return call<R>("adapter_state_changed", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto components_established(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("components_established")] != -1);
+		return call<R>("components_established", forward<Args>(args)...);
+	}
+
+};
+
+#endif

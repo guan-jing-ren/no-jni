@@ -1,0 +1,36 @@
+#ifndef java_lang_EnumConstantNotPresentException_HPP
+#define java_lang_EnumConstantNotPresentException_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::lang::EnumConstantNotPresentException : public jObject<::java::lang::EnumConstantNotPresentException, ::java::lang::RuntimeException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang / "EnumConstantNotPresentException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Class, ::java::lang::String)>(), //
+		jMethod<::java::lang::String()>("constantName"), //
+		jMethod<::java::lang::Class()>("enumType"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto constantName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("constantName")] != -1);
+		return call<R>("constantName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto enumType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("enumType")] != -1);
+		return call<R>("enumType", forward<Args>(args)...);
+	}
+
+};
+
+#endif

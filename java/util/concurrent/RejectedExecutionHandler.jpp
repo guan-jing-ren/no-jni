@@ -1,0 +1,28 @@
+#ifndef java_util_concurrent_RejectedExecutionHandler_HPP
+#define java_util_concurrent_RejectedExecutionHandler_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::concurrent::RejectedExecutionHandler : public jObject<::java::util::concurrent::RejectedExecutionHandler, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_concurrent / "RejectedExecutionHandler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::Runnable, ::java::util::concurrent::ThreadPoolExecutor)>("rejectedExecution"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto rejectedExecution(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("rejectedExecution")] != -1);
+		return call<R>("rejectedExecution", forward<Args>(args)...);
+	}
+
+};
+
+#endif

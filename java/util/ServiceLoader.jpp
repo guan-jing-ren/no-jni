@@ -1,0 +1,57 @@
+#ifndef java_util_ServiceLoader_HPP
+#define java_util_ServiceLoader_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::ServiceLoader : public jObject<::java::util::ServiceLoader, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "ServiceLoader";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::Iterator()>("iterator"), //
+		jMethod<::java::util::ServiceLoader(::java::lang::Class)>("load"), //
+		jMethod<::java::util::ServiceLoader(::java::lang::Class, ::java::lang::ClassLoader)>("load"), //
+		jMethod<::java::util::ServiceLoader(::java::lang::Class)>("loadInstalled"), //
+		jMethod<::jvoid()>("reload"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::util::Iterator, typename... Args>
+	auto iterator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("iterator")] != -1);
+		return call<R>("iterator", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::ServiceLoader, typename... Args>
+	static auto load(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("load")] != -1);
+		return scall<R>("load", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::ServiceLoader, typename... Args>
+	static auto loadInstalled(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("loadInstalled")] != -1);
+		return scall<R>("loadInstalled", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto reload(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("reload")] != -1);
+		return call<R>("reload", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

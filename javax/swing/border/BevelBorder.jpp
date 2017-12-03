@@ -1,0 +1,97 @@
+#ifndef javax_swing_border_BevelBorder_HPP
+#define javax_swing_border_BevelBorder_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::border::BevelBorder : public jObject<::javax::swing::border::BevelBorder, ::javax::swing::border::AbstractBorder> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_border / "BevelBorder";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("LOWERED"), //
+		jField<::jint>("RAISED"), //
+	};
+
+	template<typename F = ::jint>
+	static auto LOWERED() {
+		static_assert(field_signatures[jField<F>("LOWERED")] != -1);
+		return sat<F>("LOWERED");
+	}
+
+	template<typename F = ::jint>
+	static auto RAISED() {
+		static_assert(field_signatures[jField<F>("RAISED")] != -1);
+		return sat<F>("RAISED");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint)>(), //
+		jConstructor<::jvoid(::jint, ::java::awt::Color, ::java::awt::Color)>(), //
+		jConstructor<::jvoid(::jint, ::java::awt::Color, ::java::awt::Color, ::java::awt::Color, ::java::awt::Color)>(), //
+		jMethod<::jint()>("getBevelType"), //
+		jMethod<::java::awt::Insets(::java::awt::Component, ::java::awt::Insets)>("getBorderInsets"), //
+		jMethod<::java::awt::Color()>("getHighlightInnerColor"), //
+		jMethod<::java::awt::Color(::java::awt::Component)>("getHighlightInnerColor"), //
+		jMethod<::java::awt::Color()>("getHighlightOuterColor"), //
+		jMethod<::java::awt::Color(::java::awt::Component)>("getHighlightOuterColor"), //
+		jMethod<::java::awt::Color()>("getShadowInnerColor"), //
+		jMethod<::java::awt::Color(::java::awt::Component)>("getShadowInnerColor"), //
+		jMethod<::java::awt::Color()>("getShadowOuterColor"), //
+		jMethod<::java::awt::Color(::java::awt::Component)>("getShadowOuterColor"), //
+		jMethod<::jboolean()>("isBorderOpaque"), //
+		jMethod<::jvoid(::java::awt::Component, ::java::awt::Graphics, ::jint, ::jint, ::jint, ::jint)>("paintBorder"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getBevelType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBevelType")] != -1);
+		return call<R>("getBevelType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Insets, typename... Args>
+	auto getBorderInsets(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBorderInsets")] != -1);
+		return call<R>("getBorderInsets", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Color, typename... Args>
+	auto getHighlightInnerColor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHighlightInnerColor")] != -1);
+		return call<R>("getHighlightInnerColor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Color, typename... Args>
+	auto getHighlightOuterColor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHighlightOuterColor")] != -1);
+		return call<R>("getHighlightOuterColor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Color, typename... Args>
+	auto getShadowInnerColor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getShadowInnerColor")] != -1);
+		return call<R>("getShadowInnerColor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Color, typename... Args>
+	auto getShadowOuterColor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getShadowOuterColor")] != -1);
+		return call<R>("getShadowOuterColor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isBorderOpaque(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isBorderOpaque")] != -1);
+		return call<R>("isBorderOpaque", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto paintBorder(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paintBorder")] != -1);
+		return call<R>("paintBorder", forward<Args>(args)...);
+	}
+
+};
+
+#endif

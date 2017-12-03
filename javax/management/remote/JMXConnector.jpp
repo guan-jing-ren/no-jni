@@ -1,0 +1,72 @@
+#ifndef javax_management_remote_JMXConnector_HPP
+#define javax_management_remote_JMXConnector_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::management::remote::JMXConnector : public jObject<::javax::management::remote::JMXConnector, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management_remote / "JMXConnector";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("CREDENTIALS"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto CREDENTIALS() {
+		static_assert(field_signatures[jField<F>("CREDENTIALS")] != -1);
+		return sat<F>("CREDENTIALS");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::management::NotificationListener, ::javax::management::NotificationFilter, ::java::lang::Object)>("addConnectionNotificationListener"), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::jvoid()>("connect"), //
+		jMethod<::jvoid(::java::util::Map)>("connect"), //
+		jMethod<::java::lang::String()>("getConnectionId"), //
+		jMethod<::javax::management::MBeanServerConnection()>("getMBeanServerConnection"), //
+		jMethod<::javax::management::MBeanServerConnection(::javax::security::auth::Subject)>("getMBeanServerConnection"), //
+		jMethod<::jvoid(::javax::management::NotificationListener)>("removeConnectionNotificationListener"), //
+		jMethod<::jvoid(::javax::management::NotificationListener, ::javax::management::NotificationFilter, ::java::lang::Object)>("removeConnectionNotificationListener"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addConnectionNotificationListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addConnectionNotificationListener")] != -1);
+		return call<R>("addConnectionNotificationListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto connect(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("connect")] != -1);
+		return call<R>("connect", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getConnectionId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getConnectionId")] != -1);
+		return call<R>("getConnectionId", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::MBeanServerConnection, typename... Args>
+	auto getMBeanServerConnection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMBeanServerConnection")] != -1);
+		return call<R>("getMBeanServerConnection", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeConnectionNotificationListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeConnectionNotificationListener")] != -1);
+		return call<R>("removeConnectionNotificationListener", forward<Args>(args)...);
+	}
+
+};
+
+#endif

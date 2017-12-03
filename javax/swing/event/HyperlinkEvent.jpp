@@ -1,0 +1,60 @@
+#ifndef javax_swing_event_HyperlinkEvent_HPP
+#define javax_swing_event_HyperlinkEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::event::HyperlinkEvent : public jObject<::javax::swing::event::HyperlinkEvent, ::java::util::EventObject> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_event / "HyperlinkEvent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Object, ::javax::swing::event::HyperlinkEvent$EventType, ::java::net::URL)>(), //
+		jConstructor<::jvoid(::java::lang::Object, ::javax::swing::event::HyperlinkEvent$EventType, ::java::net::URL, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::Object, ::javax::swing::event::HyperlinkEvent$EventType, ::java::net::URL, ::java::lang::String, ::javax::swing::text::Element)>(), //
+		jConstructor<::jvoid(::java::lang::Object, ::javax::swing::event::HyperlinkEvent$EventType, ::java::net::URL, ::java::lang::String, ::javax::swing::text::Element, ::java::awt::event::InputEvent)>(), //
+		jMethod<::java::lang::String()>("getDescription"), //
+		jMethod<::javax::swing::event::HyperlinkEvent$EventType()>("getEventType"), //
+		jMethod<::java::awt::event::InputEvent()>("getInputEvent"), //
+		jMethod<::javax::swing::text::Element()>("getSourceElement"), //
+		jMethod<::java::net::URL()>("getURL"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDescription(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDescription")] != -1);
+		return call<R>("getDescription", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::event::HyperlinkEvent$EventType, typename... Args>
+	auto getEventType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEventType")] != -1);
+		return call<R>("getEventType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::event::InputEvent, typename... Args>
+	auto getInputEvent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInputEvent")] != -1);
+		return call<R>("getInputEvent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::text::Element, typename... Args>
+	auto getSourceElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSourceElement")] != -1);
+		return call<R>("getSourceElement", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::URL, typename... Args>
+	auto getURL(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getURL")] != -1);
+		return call<R>("getURL", forward<Args>(args)...);
+	}
+
+};
+
+#endif

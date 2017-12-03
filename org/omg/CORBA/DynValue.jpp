@@ -1,0 +1,49 @@
+#ifndef org_omg_CORBA_DynValue_HPP
+#define org_omg_CORBA_DynValue_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::CORBA::DynValue : public jObject<::org::omg::CORBA::DynValue, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CORBA / "DynValue";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::omg::CORBA::TCKind()>("current_member_kind"), //
+		jMethod<::java::lang::String()>("current_member_name"), //
+		jMethod<::org::omg::CORBA::NameValuePair *()>("get_members"), //
+		jMethod<::jvoid(::org::omg::CORBA::NameValuePair *)>("set_members"), //
+	};
+
+	template<typename R = ::org::omg::CORBA::TCKind, typename... Args>
+	auto current_member_kind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("current_member_kind")] != -1);
+		return call<R>("current_member_kind", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto current_member_name(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("current_member_name")] != -1);
+		return call<R>("current_member_name", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::NameValuePair *, typename... Args>
+	auto get_members(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get_members")] != -1);
+		return call<R>("get_members", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set_members(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set_members")] != -1);
+		return call<R>("set_members", forward<Args>(args)...);
+	}
+
+};
+
+#endif

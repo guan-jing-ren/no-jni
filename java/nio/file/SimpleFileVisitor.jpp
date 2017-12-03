@@ -1,0 +1,49 @@
+#ifndef java_nio_file_SimpleFileVisitor_HPP
+#define java_nio_file_SimpleFileVisitor_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::file::SimpleFileVisitor : public jObject<::java::nio::file::SimpleFileVisitor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_file / "SimpleFileVisitor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::nio::file::FileVisitResult(::java::lang::Object, ::java::io::IOException)>("postVisitDirectory"), //
+		jMethod<::java::nio::file::FileVisitResult(::java::lang::Object, ::java::nio::file::attribute::BasicFileAttributes)>("preVisitDirectory"), //
+		jMethod<::java::nio::file::FileVisitResult(::java::lang::Object, ::java::nio::file::attribute::BasicFileAttributes)>("visitFile"), //
+		jMethod<::java::nio::file::FileVisitResult(::java::lang::Object, ::java::io::IOException)>("visitFileFailed"), //
+	};
+
+	template<typename R = ::java::nio::file::FileVisitResult, typename... Args>
+	auto postVisitDirectory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("postVisitDirectory")] != -1);
+		return call<R>("postVisitDirectory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::FileVisitResult, typename... Args>
+	auto preVisitDirectory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("preVisitDirectory")] != -1);
+		return call<R>("preVisitDirectory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::FileVisitResult, typename... Args>
+	auto visitFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("visitFile")] != -1);
+		return call<R>("visitFile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::FileVisitResult, typename... Args>
+	auto visitFileFailed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("visitFileFailed")] != -1);
+		return call<R>("visitFileFailed", forward<Args>(args)...);
+	}
+
+};
+
+#endif

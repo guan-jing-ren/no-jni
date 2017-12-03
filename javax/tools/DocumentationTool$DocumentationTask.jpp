@@ -1,0 +1,36 @@
+#ifndef javax_tools_DocumentationTool$DocumentationTask_HPP
+#define javax_tools_DocumentationTool$DocumentationTask_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::tools::DocumentationTool$DocumentationTask : public jObject<::javax::tools::DocumentationTool$DocumentationTask, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_tools / "DocumentationTool$DocumentationTask";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Boolean()>("call"), //
+		jMethod<::java::lang::Object()>("call"), //
+		jMethod<::jvoid(::java::util::Locale)>("setLocale"), //
+	};
+
+	template<typename R = ::java::lang::Boolean, typename... Args>
+	auto call(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("call")] != -1);
+		return call<R>("call", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLocale(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLocale")] != -1);
+		return call<R>("setLocale", forward<Args>(args)...);
+	}
+
+};
+
+#endif

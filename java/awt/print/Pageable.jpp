@@ -1,0 +1,48 @@
+#ifndef java_awt_print_Pageable_HPP
+#define java_awt_print_Pageable_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::print::Pageable : public jObject<::java::awt::print::Pageable, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_print / "Pageable";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("UNKNOWN_NUMBER_OF_PAGES"), //
+	};
+
+	template<typename F = ::jint>
+	static auto UNKNOWN_NUMBER_OF_PAGES() {
+		static_assert(field_signatures[jField<F>("UNKNOWN_NUMBER_OF_PAGES")] != -1);
+		return sat<F>("UNKNOWN_NUMBER_OF_PAGES");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("getNumberOfPages"), //
+		jMethod<::java::awt::print::PageFormat(::jint)>("getPageFormat"), //
+		jMethod<::java::awt::print::Printable(::jint)>("getPrintable"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getNumberOfPages(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNumberOfPages")] != -1);
+		return call<R>("getNumberOfPages", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::print::PageFormat, typename... Args>
+	auto getPageFormat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPageFormat")] != -1);
+		return call<R>("getPageFormat", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::print::Printable, typename... Args>
+	auto getPrintable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrintable")] != -1);
+		return call<R>("getPrintable", forward<Args>(args)...);
+	}
+
+};
+
+#endif

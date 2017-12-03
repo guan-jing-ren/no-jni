@@ -1,0 +1,63 @@
+#ifndef java_net_CookieStore_HPP
+#define java_net_CookieStore_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::net::CookieStore : public jObject<::java::net::CookieStore, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_net / "CookieStore";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::net::URI, ::java::net::HttpCookie)>("add"), //
+		jMethod<::java::util::List(::java::net::URI)>("get"), //
+		jMethod<::java::util::List()>("getCookies"), //
+		jMethod<::java::util::List()>("getURIs"), //
+		jMethod<::jboolean(::java::net::URI, ::java::net::HttpCookie)>("remove"), //
+		jMethod<::jboolean()>("removeAll"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto add(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getCookies(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCookies")] != -1);
+		return call<R>("getCookies", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getURIs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getURIs")] != -1);
+		return call<R>("getURIs", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto remove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto removeAll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeAll")] != -1);
+		return call<R>("removeAll", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,77 @@
+#ifndef javax_management_remote_JMXConnectorServerMBean_HPP
+#define javax_management_remote_JMXConnectorServerMBean_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::management::remote::JMXConnectorServerMBean : public jObject<::javax::management::remote::JMXConnectorServerMBean, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management_remote / "JMXConnectorServerMBean";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::management::remote::JMXServiceURL()>("getAddress"), //
+		jMethod<::java::util::Map()>("getAttributes"), //
+		jMethod<::java::lang::String *()>("getConnectionIds"), //
+		jMethod<::jboolean()>("isActive"), //
+		jMethod<::jvoid(::javax::management::remote::MBeanServerForwarder)>("setMBeanServerForwarder"), //
+		jMethod<::jvoid()>("start"), //
+		jMethod<::jvoid()>("stop"), //
+		jMethod<::javax::management::remote::JMXConnector(::java::util::Map)>("toJMXConnector"), //
+	};
+
+	template<typename R = ::javax::management::remote::JMXServiceURL, typename... Args>
+	auto getAddress(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAddress")] != -1);
+		return call<R>("getAddress", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto getAttributes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttributes")] != -1);
+		return call<R>("getAttributes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getConnectionIds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getConnectionIds")] != -1);
+		return call<R>("getConnectionIds", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isActive(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isActive")] != -1);
+		return call<R>("isActive", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setMBeanServerForwarder(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMBeanServerForwarder")] != -1);
+		return call<R>("setMBeanServerForwarder", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto start(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("start")] != -1);
+		return call<R>("start", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto stop(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("stop")] != -1);
+		return call<R>("stop", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::remote::JMXConnector, typename... Args>
+	auto toJMXConnector(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toJMXConnector")] != -1);
+		return call<R>("toJMXConnector", forward<Args>(args)...);
+	}
+
+};
+
+#endif

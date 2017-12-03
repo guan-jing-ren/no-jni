@@ -1,0 +1,56 @@
+#ifndef javax_sql_RowSetInternal_HPP
+#define javax_sql_RowSetInternal_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::sql::RowSetInternal : public jObject<::javax::sql::RowSetInternal, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sql / "RowSetInternal";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::sql::Connection()>("getConnection"), //
+		jMethod<::java::sql::ResultSet()>("getOriginal"), //
+		jMethod<::java::sql::ResultSet()>("getOriginalRow"), //
+		jMethod<::java::lang::Object *()>("getParams"), //
+		jMethod<::jvoid(::javax::sql::RowSetMetaData)>("setMetaData"), //
+	};
+
+	template<typename R = ::java::sql::Connection, typename... Args>
+	auto getConnection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getConnection")] != -1);
+		return call<R>("getConnection", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::ResultSet, typename... Args>
+	auto getOriginal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOriginal")] != -1);
+		return call<R>("getOriginal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::ResultSet, typename... Args>
+	auto getOriginalRow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOriginalRow")] != -1);
+		return call<R>("getOriginalRow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object *, typename... Args>
+	auto getParams(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParams")] != -1);
+		return call<R>("getParams", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setMetaData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMetaData")] != -1);
+		return call<R>("setMetaData", forward<Args>(args)...);
+	}
+
+};
+
+#endif

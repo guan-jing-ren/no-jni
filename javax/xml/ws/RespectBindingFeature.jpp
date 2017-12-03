@@ -1,0 +1,36 @@
+#ifndef javax_xml_ws_RespectBindingFeature_HPP
+#define javax_xml_ws_RespectBindingFeature_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::ws::RespectBindingFeature : public jObject<::javax::xml::ws::RespectBindingFeature, ::javax::xml::ws::WebServiceFeature> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_ws / "RespectBindingFeature";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("ID"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto ID() {
+		static_assert(field_signatures[jField<F>("ID")] != -1);
+		return sat<F>("ID");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jboolean)>(), //
+		jMethod<::java::lang::String()>("getID"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getID")] != -1);
+		return call<R>("getID", forward<Args>(args)...);
+	}
+
+};
+
+#endif

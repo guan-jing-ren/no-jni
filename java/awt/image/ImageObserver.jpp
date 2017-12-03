@@ -1,0 +1,83 @@
+#ifndef java_awt_image_ImageObserver_HPP
+#define java_awt_image_ImageObserver_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::image::ImageObserver : public jObject<::java::awt::image::ImageObserver, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_image / "ImageObserver";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("ABORT"), //
+		jField<::jint>("ALLBITS"), //
+		jField<::jint>("ERROR"), //
+		jField<::jint>("FRAMEBITS"), //
+		jField<::jint>("HEIGHT"), //
+		jField<::jint>("PROPERTIES"), //
+		jField<::jint>("SOMEBITS"), //
+		jField<::jint>("WIDTH"), //
+	};
+
+	template<typename F = ::jint>
+	static auto ABORT() {
+		static_assert(field_signatures[jField<F>("ABORT")] != -1);
+		return sat<F>("ABORT");
+	}
+
+	template<typename F = ::jint>
+	static auto ALLBITS() {
+		static_assert(field_signatures[jField<F>("ALLBITS")] != -1);
+		return sat<F>("ALLBITS");
+	}
+
+	template<typename F = ::jint>
+	static auto ERROR() {
+		static_assert(field_signatures[jField<F>("ERROR")] != -1);
+		return sat<F>("ERROR");
+	}
+
+	template<typename F = ::jint>
+	static auto FRAMEBITS() {
+		static_assert(field_signatures[jField<F>("FRAMEBITS")] != -1);
+		return sat<F>("FRAMEBITS");
+	}
+
+	template<typename F = ::jint>
+	static auto HEIGHT() {
+		static_assert(field_signatures[jField<F>("HEIGHT")] != -1);
+		return sat<F>("HEIGHT");
+	}
+
+	template<typename F = ::jint>
+	static auto PROPERTIES() {
+		static_assert(field_signatures[jField<F>("PROPERTIES")] != -1);
+		return sat<F>("PROPERTIES");
+	}
+
+	template<typename F = ::jint>
+	static auto SOMEBITS() {
+		static_assert(field_signatures[jField<F>("SOMEBITS")] != -1);
+		return sat<F>("SOMEBITS");
+	}
+
+	template<typename F = ::jint>
+	static auto WIDTH() {
+		static_assert(field_signatures[jField<F>("WIDTH")] != -1);
+		return sat<F>("WIDTH");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::awt::Image, ::jint, ::jint, ::jint, ::jint, ::jint)>("imageUpdate"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto imageUpdate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("imageUpdate")] != -1);
+		return call<R>("imageUpdate", forward<Args>(args)...);
+	}
+
+};
+
+#endif

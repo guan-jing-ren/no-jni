@@ -1,0 +1,48 @@
+#ifndef javax_swing_event_HyperlinkEvent$EventType_HPP
+#define javax_swing_event_HyperlinkEvent$EventType_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::event::HyperlinkEvent$EventType : public jObject<::javax::swing::event::HyperlinkEvent$EventType, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_event / "HyperlinkEvent$EventType";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::swing::event::HyperlinkEvent$EventType>("ACTIVATED"), //
+		jField<::javax::swing::event::HyperlinkEvent$EventType>("ENTERED"), //
+		jField<::javax::swing::event::HyperlinkEvent$EventType>("EXITED"), //
+	};
+
+	template<typename F = ::javax::swing::event::HyperlinkEvent$EventType>
+	static auto ACTIVATED() {
+		static_assert(field_signatures[jField<F>("ACTIVATED")] != -1);
+		return sat<F>("ACTIVATED");
+	}
+
+	template<typename F = ::javax::swing::event::HyperlinkEvent$EventType>
+	static auto ENTERED() {
+		static_assert(field_signatures[jField<F>("ENTERED")] != -1);
+		return sat<F>("ENTERED");
+	}
+
+	template<typename F = ::javax::swing::event::HyperlinkEvent$EventType>
+	static auto EXITED() {
+		static_assert(field_signatures[jField<F>("EXITED")] != -1);
+		return sat<F>("EXITED");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,72 @@
+#ifndef java_awt_event_FocusEvent_HPP
+#define java_awt_event_FocusEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::event::FocusEvent : public jObject<::java::awt::event::FocusEvent, ::java::awt::event::ComponentEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_event / "FocusEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("FOCUS_FIRST"), //
+		jField<::jint>("FOCUS_GAINED"), //
+		jField<::jint>("FOCUS_LAST"), //
+		jField<::jint>("FOCUS_LOST"), //
+	};
+
+	template<typename F = ::jint>
+	static auto FOCUS_FIRST() {
+		static_assert(field_signatures[jField<F>("FOCUS_FIRST")] != -1);
+		return sat<F>("FOCUS_FIRST");
+	}
+
+	template<typename F = ::jint>
+	static auto FOCUS_GAINED() {
+		static_assert(field_signatures[jField<F>("FOCUS_GAINED")] != -1);
+		return sat<F>("FOCUS_GAINED");
+	}
+
+	template<typename F = ::jint>
+	static auto FOCUS_LAST() {
+		static_assert(field_signatures[jField<F>("FOCUS_LAST")] != -1);
+		return sat<F>("FOCUS_LAST");
+	}
+
+	template<typename F = ::jint>
+	static auto FOCUS_LOST() {
+		static_assert(field_signatures[jField<F>("FOCUS_LOST")] != -1);
+		return sat<F>("FOCUS_LOST");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::Component, ::jint)>(), //
+		jConstructor<::jvoid(::java::awt::Component, ::jint, ::jboolean)>(), //
+		jConstructor<::jvoid(::java::awt::Component, ::jint, ::jboolean, ::java::awt::Component)>(), //
+		jMethod<::java::awt::Component()>("getOppositeComponent"), //
+		jMethod<::jboolean()>("isTemporary"), //
+		jMethod<::java::lang::String()>("paramString"), //
+	};
+
+	template<typename R = ::java::awt::Component, typename... Args>
+	auto getOppositeComponent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOppositeComponent")] != -1);
+		return call<R>("getOppositeComponent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isTemporary(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isTemporary")] != -1);
+		return call<R>("isTemporary", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto paramString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paramString")] != -1);
+		return call<R>("paramString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,63 @@
+#ifndef javax_net_ssl_X509KeyManager_HPP
+#define javax_net_ssl_X509KeyManager_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::net::ssl::X509KeyManager : public jObject<::javax::net::ssl::X509KeyManager, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_net_ssl / "X509KeyManager";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String(::java::lang::String *, ::java::security::Principal *, ::java::net::Socket)>("chooseClientAlias"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::security::Principal *, ::java::net::Socket)>("chooseServerAlias"), //
+		jMethod<::java::security::cert::X509Certificate *(::java::lang::String)>("getCertificateChain"), //
+		jMethod<::java::lang::String *(::java::lang::String, ::java::security::Principal *)>("getClientAliases"), //
+		jMethod<::java::security::PrivateKey(::java::lang::String)>("getPrivateKey"), //
+		jMethod<::java::lang::String *(::java::lang::String, ::java::security::Principal *)>("getServerAliases"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto chooseClientAlias(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("chooseClientAlias")] != -1);
+		return call<R>("chooseClientAlias", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto chooseServerAlias(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("chooseServerAlias")] != -1);
+		return call<R>("chooseServerAlias", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::X509Certificate *, typename... Args>
+	auto getCertificateChain(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCertificateChain")] != -1);
+		return call<R>("getCertificateChain", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getClientAliases(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getClientAliases")] != -1);
+		return call<R>("getClientAliases", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::PrivateKey, typename... Args>
+	auto getPrivateKey(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrivateKey")] != -1);
+		return call<R>("getPrivateKey", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getServerAliases(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getServerAliases")] != -1);
+		return call<R>("getServerAliases", forward<Args>(args)...);
+	}
+
+};
+
+#endif

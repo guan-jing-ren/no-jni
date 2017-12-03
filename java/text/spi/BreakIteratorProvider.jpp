@@ -1,0 +1,49 @@
+#ifndef java_text_spi_BreakIteratorProvider_HPP
+#define java_text_spi_BreakIteratorProvider_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::text::spi::BreakIteratorProvider : public jObject<::java::text::spi::BreakIteratorProvider, ::java::util::spi::LocaleServiceProvider> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_text_spi / "BreakIteratorProvider";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::text::BreakIterator(::java::util::Locale)>("getCharacterInstance"), //
+		jMethod<::java::text::BreakIterator(::java::util::Locale)>("getLineInstance"), //
+		jMethod<::java::text::BreakIterator(::java::util::Locale)>("getSentenceInstance"), //
+		jMethod<::java::text::BreakIterator(::java::util::Locale)>("getWordInstance"), //
+	};
+
+	template<typename R = ::java::text::BreakIterator, typename... Args>
+	auto getCharacterInstance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCharacterInstance")] != -1);
+		return call<R>("getCharacterInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::text::BreakIterator, typename... Args>
+	auto getLineInstance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLineInstance")] != -1);
+		return call<R>("getLineInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::text::BreakIterator, typename... Args>
+	auto getSentenceInstance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSentenceInstance")] != -1);
+		return call<R>("getSentenceInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::text::BreakIterator, typename... Args>
+	auto getWordInstance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWordInstance")] != -1);
+		return call<R>("getWordInstance", forward<Args>(args)...);
+	}
+
+};
+
+#endif

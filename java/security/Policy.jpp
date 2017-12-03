@@ -1,0 +1,94 @@
+#ifndef java_security_Policy_HPP
+#define java_security_Policy_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::Policy : public jObject<::java::security::Policy, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "Policy";
+
+	constexpr static Enume field_signatures{
+		jField<::java::security::PermissionCollection>("UNSUPPORTED_EMPTY_COLLECTION"), //
+	};
+
+	template<typename F = ::java::security::PermissionCollection>
+	static auto UNSUPPORTED_EMPTY_COLLECTION() {
+		static_assert(field_signatures[jField<F>("UNSUPPORTED_EMPTY_COLLECTION")] != -1);
+		return sat<F>("UNSUPPORTED_EMPTY_COLLECTION");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::security::Policy(::java::lang::String, ::java::security::Policy$Parameters)>("getInstance"), //
+		jMethod<::java::security::Policy(::java::lang::String, ::java::security::Policy$Parameters, ::java::lang::String)>("getInstance"), //
+		jMethod<::java::security::Policy(::java::lang::String, ::java::security::Policy$Parameters, ::java::security::Provider)>("getInstance"), //
+		jMethod<::java::security::Policy$Parameters()>("getParameters"), //
+		jMethod<::java::security::PermissionCollection(::java::security::CodeSource)>("getPermissions"), //
+		jMethod<::java::security::PermissionCollection(::java::security::ProtectionDomain)>("getPermissions"), //
+		jMethod<::java::security::Policy()>("getPolicy"), //
+		jMethod<::java::security::Provider()>("getProvider"), //
+		jMethod<::java::lang::String()>("getType"), //
+		jMethod<::jboolean(::java::security::ProtectionDomain, ::java::security::Permission)>("implies"), //
+		jMethod<::jvoid()>("refresh"), //
+		jMethod<::jvoid(::java::security::Policy)>("setPolicy"), //
+	};
+
+	template<typename R = ::java::security::Policy, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Policy$Parameters, typename... Args>
+	auto getParameters(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParameters")] != -1);
+		return call<R>("getParameters", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::PermissionCollection, typename... Args>
+	auto getPermissions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPermissions")] != -1);
+		return call<R>("getPermissions", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Policy, typename... Args>
+	static auto getPolicy(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPolicy")] != -1);
+		return scall<R>("getPolicy", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Provider, typename... Args>
+	auto getProvider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProvider")] != -1);
+		return call<R>("getProvider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto implies(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("implies")] != -1);
+		return call<R>("implies", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto refresh(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("refresh")] != -1);
+		return call<R>("refresh", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setPolicy(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPolicy")] != -1);
+		return scall<R>("setPolicy", forward<Args>(args)...);
+	}
+
+};
+
+#endif

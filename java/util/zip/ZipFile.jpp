@@ -1,0 +1,96 @@
+#ifndef java_util_zip_ZipFile_HPP
+#define java_util_zip_ZipFile_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::zip::ZipFile : public jObject<::java::util::zip::ZipFile, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_zip / "ZipFile";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("OPEN_DELETE"), //
+		jField<::jint>("OPEN_READ"), //
+	};
+
+	template<typename F = ::jint>
+	static auto OPEN_DELETE() {
+		static_assert(field_signatures[jField<F>("OPEN_DELETE")] != -1);
+		return sat<F>("OPEN_DELETE");
+	}
+
+	template<typename F = ::jint>
+	static auto OPEN_READ() {
+		static_assert(field_signatures[jField<F>("OPEN_READ")] != -1);
+		return sat<F>("OPEN_READ");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::File)>(), //
+		jConstructor<::jvoid(::java::io::File, ::jint)>(), //
+		jConstructor<::jvoid(::java::io::File, ::jint, ::java::nio::charset::Charset)>(), //
+		jConstructor<::jvoid(::java::io::File, ::java::nio::charset::Charset)>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::nio::charset::Charset)>(), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::java::util::Enumeration()>("entries"), //
+		jMethod<::java::lang::String()>("getComment"), //
+		jMethod<::java::util::zip::ZipEntry(::java::lang::String)>("getEntry"), //
+		jMethod<::java::io::InputStream(::java::util::zip::ZipEntry)>("getInputStream"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::jint()>("size"), //
+		jMethod<::java::util::stream::Stream()>("stream"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	auto entries(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("entries")] != -1);
+		return call<R>("entries", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getComment(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getComment")] != -1);
+		return call<R>("getComment", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::zip::ZipEntry, typename... Args>
+	auto getEntry(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEntry")] != -1);
+		return call<R>("getEntry", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::InputStream, typename... Args>
+	auto getInputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInputStream")] != -1);
+		return call<R>("getInputStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto size(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("size")] != -1);
+		return call<R>("size", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::Stream, typename... Args>
+	auto stream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("stream")] != -1);
+		return call<R>("stream", forward<Args>(args)...);
+	}
+
+};
+
+#endif

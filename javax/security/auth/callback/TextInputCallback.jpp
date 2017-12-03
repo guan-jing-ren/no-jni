@@ -1,0 +1,51 @@
+#ifndef javax_security_auth_callback_TextInputCallback_HPP
+#define javax_security_auth_callback_TextInputCallback_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::security::auth::callback::TextInputCallback : public jObject<::javax::security::auth::callback::TextInputCallback, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_security_auth_callback / "TextInputCallback";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String)>(), //
+		jMethod<::java::lang::String()>("getDefaultText"), //
+		jMethod<::java::lang::String()>("getPrompt"), //
+		jMethod<::java::lang::String()>("getText"), //
+		jMethod<::jvoid(::java::lang::String)>("setText"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDefaultText(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaultText")] != -1);
+		return call<R>("getDefaultText", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getPrompt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrompt")] != -1);
+		return call<R>("getPrompt", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getText(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getText")] != -1);
+		return call<R>("getText", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setText(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setText")] != -1);
+		return call<R>("setText", forward<Args>(args)...);
+	}
+
+};
+
+#endif

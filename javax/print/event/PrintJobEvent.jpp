@@ -1,0 +1,77 @@
+#ifndef javax_print_event_PrintJobEvent_HPP
+#define javax_print_event_PrintJobEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::print::event::PrintJobEvent : public jObject<::javax::print::event::PrintJobEvent, ::javax::print::event::PrintEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_print_event / "PrintJobEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("DATA_TRANSFER_COMPLETE"), //
+		jField<::jint>("JOB_CANCELED"), //
+		jField<::jint>("JOB_COMPLETE"), //
+		jField<::jint>("JOB_FAILED"), //
+		jField<::jint>("NO_MORE_EVENTS"), //
+		jField<::jint>("REQUIRES_ATTENTION"), //
+	};
+
+	template<typename F = ::jint>
+	static auto DATA_TRANSFER_COMPLETE() {
+		static_assert(field_signatures[jField<F>("DATA_TRANSFER_COMPLETE")] != -1);
+		return sat<F>("DATA_TRANSFER_COMPLETE");
+	}
+
+	template<typename F = ::jint>
+	static auto JOB_CANCELED() {
+		static_assert(field_signatures[jField<F>("JOB_CANCELED")] != -1);
+		return sat<F>("JOB_CANCELED");
+	}
+
+	template<typename F = ::jint>
+	static auto JOB_COMPLETE() {
+		static_assert(field_signatures[jField<F>("JOB_COMPLETE")] != -1);
+		return sat<F>("JOB_COMPLETE");
+	}
+
+	template<typename F = ::jint>
+	static auto JOB_FAILED() {
+		static_assert(field_signatures[jField<F>("JOB_FAILED")] != -1);
+		return sat<F>("JOB_FAILED");
+	}
+
+	template<typename F = ::jint>
+	static auto NO_MORE_EVENTS() {
+		static_assert(field_signatures[jField<F>("NO_MORE_EVENTS")] != -1);
+		return sat<F>("NO_MORE_EVENTS");
+	}
+
+	template<typename F = ::jint>
+	static auto REQUIRES_ATTENTION() {
+		static_assert(field_signatures[jField<F>("REQUIRES_ATTENTION")] != -1);
+		return sat<F>("REQUIRES_ATTENTION");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::print::DocPrintJob, ::jint)>(), //
+		jMethod<::jint()>("getPrintEventType"), //
+		jMethod<::javax::print::DocPrintJob()>("getPrintJob"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getPrintEventType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrintEventType")] != -1);
+		return call<R>("getPrintEventType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::print::DocPrintJob, typename... Args>
+	auto getPrintJob(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrintJob")] != -1);
+		return call<R>("getPrintJob", forward<Args>(args)...);
+	}
+
+};
+
+#endif

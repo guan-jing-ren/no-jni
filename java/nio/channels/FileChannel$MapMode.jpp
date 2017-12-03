@@ -1,0 +1,48 @@
+#ifndef java_nio_channels_FileChannel$MapMode_HPP
+#define java_nio_channels_FileChannel$MapMode_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::channels::FileChannel$MapMode : public jObject<::java::nio::channels::FileChannel$MapMode, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_channels / "FileChannel$MapMode";
+
+	constexpr static Enume field_signatures{
+		jField<::java::nio::channels::FileChannel$MapMode>("PRIVATE"), //
+		jField<::java::nio::channels::FileChannel$MapMode>("READ_ONLY"), //
+		jField<::java::nio::channels::FileChannel$MapMode>("READ_WRITE"), //
+	};
+
+	template<typename F = ::java::nio::channels::FileChannel$MapMode>
+	static auto PRIVATE() {
+		static_assert(field_signatures[jField<F>("PRIVATE")] != -1);
+		return sat<F>("PRIVATE");
+	}
+
+	template<typename F = ::java::nio::channels::FileChannel$MapMode>
+	static auto READ_ONLY() {
+		static_assert(field_signatures[jField<F>("READ_ONLY")] != -1);
+		return sat<F>("READ_ONLY");
+	}
+
+	template<typename F = ::java::nio::channels::FileChannel$MapMode>
+	static auto READ_WRITE() {
+		static_assert(field_signatures[jField<F>("READ_WRITE")] != -1);
+		return sat<F>("READ_WRITE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

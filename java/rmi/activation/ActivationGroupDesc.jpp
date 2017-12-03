@@ -1,0 +1,72 @@
+#ifndef java_rmi_activation_ActivationGroupDesc_HPP
+#define java_rmi_activation_ActivationGroupDesc_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::rmi::activation::ActivationGroupDesc : public jObject<::java::rmi::activation::ActivationGroupDesc, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_rmi_activation / "ActivationGroupDesc";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::rmi::MarshalledObject, ::java::util::Properties, ::java::rmi::activation::ActivationGroupDesc$CommandEnvironment)>(), //
+		jConstructor<::jvoid(::java::util::Properties, ::java::rmi::activation::ActivationGroupDesc$CommandEnvironment)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::lang::String()>("getClassName"), //
+		jMethod<::java::rmi::activation::ActivationGroupDesc$CommandEnvironment()>("getCommandEnvironment"), //
+		jMethod<::java::rmi::MarshalledObject()>("getData"), //
+		jMethod<::java::lang::String()>("getLocation"), //
+		jMethod<::java::util::Properties()>("getPropertyOverrides"), //
+		jMethod<::jint()>("hashCode"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getClassName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getClassName")] != -1);
+		return call<R>("getClassName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::activation::ActivationGroupDesc$CommandEnvironment, typename... Args>
+	auto getCommandEnvironment(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCommandEnvironment")] != -1);
+		return call<R>("getCommandEnvironment", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::MarshalledObject, typename... Args>
+	auto getData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getData")] != -1);
+		return call<R>("getData", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getLocation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLocation")] != -1);
+		return call<R>("getLocation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Properties, typename... Args>
+	auto getPropertyOverrides(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPropertyOverrides")] != -1);
+		return call<R>("getPropertyOverrides", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+};
+
+#endif

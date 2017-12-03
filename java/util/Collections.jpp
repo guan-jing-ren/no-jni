@@ -1,0 +1,467 @@
+#ifndef java_util_Collections_HPP
+#define java_util_Collections_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::Collections : public jObject<::java::util::Collections, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "Collections";
+
+	constexpr static Enume field_signatures{
+		jField<::java::util::List>("EMPTY_LIST"), //
+		jField<::java::util::Map>("EMPTY_MAP"), //
+		jField<::java::util::Set>("EMPTY_SET"), //
+	};
+
+	template<typename F = ::java::util::List>
+	static auto EMPTY_LIST() {
+		static_assert(field_signatures[jField<F>("EMPTY_LIST")] != -1);
+		return sat<F>("EMPTY_LIST");
+	}
+
+	template<typename F = ::java::util::Map>
+	static auto EMPTY_MAP() {
+		static_assert(field_signatures[jField<F>("EMPTY_MAP")] != -1);
+		return sat<F>("EMPTY_MAP");
+	}
+
+	template<typename F = ::java::util::Set>
+	static auto EMPTY_SET() {
+		static_assert(field_signatures[jField<F>("EMPTY_SET")] != -1);
+		return sat<F>("EMPTY_SET");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::util::Collection, ::java::lang::Object *)>("addAll"), //
+		jMethod<::java::util::Queue(::java::util::Deque)>("asLifoQueue"), //
+		jMethod<::jint(::java::util::List, ::java::lang::Object)>("binarySearch"), //
+		jMethod<::jint(::java::util::List, ::java::lang::Object, ::java::util::Comparator)>("binarySearch"), //
+		jMethod<::java::util::Collection(::java::util::Collection, ::java::lang::Class)>("checkedCollection"), //
+		jMethod<::java::util::List(::java::util::List, ::java::lang::Class)>("checkedList"), //
+		jMethod<::java::util::Map(::java::util::Map, ::java::lang::Class, ::java::lang::Class)>("checkedMap"), //
+		jMethod<::java::util::NavigableMap(::java::util::NavigableMap, ::java::lang::Class, ::java::lang::Class)>("checkedNavigableMap"), //
+		jMethod<::java::util::NavigableSet(::java::util::NavigableSet, ::java::lang::Class)>("checkedNavigableSet"), //
+		jMethod<::java::util::Queue(::java::util::Queue, ::java::lang::Class)>("checkedQueue"), //
+		jMethod<::java::util::Set(::java::util::Set, ::java::lang::Class)>("checkedSet"), //
+		jMethod<::java::util::SortedMap(::java::util::SortedMap, ::java::lang::Class, ::java::lang::Class)>("checkedSortedMap"), //
+		jMethod<::java::util::SortedSet(::java::util::SortedSet, ::java::lang::Class)>("checkedSortedSet"), //
+		jMethod<::jvoid(::java::util::List, ::java::util::List)>("copy"), //
+		jMethod<::jboolean(::java::util::Collection, ::java::util::Collection)>("disjoint"), //
+		jMethod<::java::util::Enumeration()>("emptyEnumeration"), //
+		jMethod<::java::util::Iterator()>("emptyIterator"), //
+		jMethod<::java::util::List()>("emptyList"), //
+		jMethod<::java::util::ListIterator()>("emptyListIterator"), //
+		jMethod<::java::util::Map()>("emptyMap"), //
+		jMethod<::java::util::NavigableMap()>("emptyNavigableMap"), //
+		jMethod<::java::util::NavigableSet()>("emptyNavigableSet"), //
+		jMethod<::java::util::Set()>("emptySet"), //
+		jMethod<::java::util::SortedMap()>("emptySortedMap"), //
+		jMethod<::java::util::SortedSet()>("emptySortedSet"), //
+		jMethod<::java::util::Enumeration(::java::util::Collection)>("enumeration"), //
+		jMethod<::jvoid(::java::util::List, ::java::lang::Object)>("fill"), //
+		jMethod<::jint(::java::util::Collection, ::java::lang::Object)>("frequency"), //
+		jMethod<::jint(::java::util::List, ::java::util::List)>("indexOfSubList"), //
+		jMethod<::jint(::java::util::List, ::java::util::List)>("lastIndexOfSubList"), //
+		jMethod<::java::util::ArrayList(::java::util::Enumeration)>("list"), //
+		jMethod<::java::lang::Object(::java::util::Collection)>("max"), //
+		jMethod<::java::lang::Object(::java::util::Collection, ::java::util::Comparator)>("max"), //
+		jMethod<::java::lang::Object(::java::util::Collection)>("min"), //
+		jMethod<::java::lang::Object(::java::util::Collection, ::java::util::Comparator)>("min"), //
+		jMethod<::java::util::List(::jint, ::java::lang::Object)>("nCopies"), //
+		jMethod<::java::util::Set(::java::util::Map)>("newSetFromMap"), //
+		jMethod<::jboolean(::java::util::List, ::java::lang::Object, ::java::lang::Object)>("replaceAll"), //
+		jMethod<::jvoid(::java::util::List)>("reverse"), //
+		jMethod<::java::util::Comparator()>("reverseOrder"), //
+		jMethod<::java::util::Comparator(::java::util::Comparator)>("reverseOrder"), //
+		jMethod<::jvoid(::java::util::List, ::jint)>("rotate"), //
+		jMethod<::jvoid(::java::util::List)>("shuffle"), //
+		jMethod<::jvoid(::java::util::List, ::java::util::Random)>("shuffle"), //
+		jMethod<::java::util::Set(::java::lang::Object)>("singleton"), //
+		jMethod<::java::util::List(::java::lang::Object)>("singletonList"), //
+		jMethod<::java::util::Map(::java::lang::Object, ::java::lang::Object)>("singletonMap"), //
+		jMethod<::jvoid(::java::util::List)>("sort"), //
+		jMethod<::jvoid(::java::util::List, ::java::util::Comparator)>("sort"), //
+		jMethod<::jvoid(::java::util::List, ::jint, ::jint)>("swap"), //
+		jMethod<::java::util::Collection(::java::util::Collection)>("synchronizedCollection"), //
+		jMethod<::java::util::List(::java::util::List)>("synchronizedList"), //
+		jMethod<::java::util::Map(::java::util::Map)>("synchronizedMap"), //
+		jMethod<::java::util::NavigableMap(::java::util::NavigableMap)>("synchronizedNavigableMap"), //
+		jMethod<::java::util::NavigableSet(::java::util::NavigableSet)>("synchronizedNavigableSet"), //
+		jMethod<::java::util::Set(::java::util::Set)>("synchronizedSet"), //
+		jMethod<::java::util::SortedMap(::java::util::SortedMap)>("synchronizedSortedMap"), //
+		jMethod<::java::util::SortedSet(::java::util::SortedSet)>("synchronizedSortedSet"), //
+		jMethod<::java::util::Collection(::java::util::Collection)>("unmodifiableCollection"), //
+		jMethod<::java::util::List(::java::util::List)>("unmodifiableList"), //
+		jMethod<::java::util::Map(::java::util::Map)>("unmodifiableMap"), //
+		jMethod<::java::util::NavigableMap(::java::util::NavigableMap)>("unmodifiableNavigableMap"), //
+		jMethod<::java::util::NavigableSet(::java::util::NavigableSet)>("unmodifiableNavigableSet"), //
+		jMethod<::java::util::Set(::java::util::Set)>("unmodifiableSet"), //
+		jMethod<::java::util::SortedMap(::java::util::SortedMap)>("unmodifiableSortedMap"), //
+		jMethod<::java::util::SortedSet(::java::util::SortedSet)>("unmodifiableSortedSet"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto addAll(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addAll")] != -1);
+		return scall<R>("addAll", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Queue, typename... Args>
+	static auto asLifoQueue(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("asLifoQueue")] != -1);
+		return scall<R>("asLifoQueue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto binarySearch(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("binarySearch")] != -1);
+		return scall<R>("binarySearch", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Collection, typename... Args>
+	static auto checkedCollection(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("checkedCollection")] != -1);
+		return scall<R>("checkedCollection", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	static auto checkedList(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("checkedList")] != -1);
+		return scall<R>("checkedList", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	static auto checkedMap(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("checkedMap")] != -1);
+		return scall<R>("checkedMap", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::NavigableMap, typename... Args>
+	static auto checkedNavigableMap(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("checkedNavigableMap")] != -1);
+		return scall<R>("checkedNavigableMap", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::NavigableSet, typename... Args>
+	static auto checkedNavigableSet(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("checkedNavigableSet")] != -1);
+		return scall<R>("checkedNavigableSet", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Queue, typename... Args>
+	static auto checkedQueue(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("checkedQueue")] != -1);
+		return scall<R>("checkedQueue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	static auto checkedSet(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("checkedSet")] != -1);
+		return scall<R>("checkedSet", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::SortedMap, typename... Args>
+	static auto checkedSortedMap(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("checkedSortedMap")] != -1);
+		return scall<R>("checkedSortedMap", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::SortedSet, typename... Args>
+	static auto checkedSortedSet(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("checkedSortedSet")] != -1);
+		return scall<R>("checkedSortedSet", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto copy(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("copy")] != -1);
+		return scall<R>("copy", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto disjoint(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("disjoint")] != -1);
+		return scall<R>("disjoint", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	static auto emptyEnumeration(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("emptyEnumeration")] != -1);
+		return scall<R>("emptyEnumeration", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Iterator, typename... Args>
+	static auto emptyIterator(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("emptyIterator")] != -1);
+		return scall<R>("emptyIterator", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	static auto emptyList(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("emptyList")] != -1);
+		return scall<R>("emptyList", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::ListIterator, typename... Args>
+	static auto emptyListIterator(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("emptyListIterator")] != -1);
+		return scall<R>("emptyListIterator", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	static auto emptyMap(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("emptyMap")] != -1);
+		return scall<R>("emptyMap", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::NavigableMap, typename... Args>
+	static auto emptyNavigableMap(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("emptyNavigableMap")] != -1);
+		return scall<R>("emptyNavigableMap", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::NavigableSet, typename... Args>
+	static auto emptyNavigableSet(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("emptyNavigableSet")] != -1);
+		return scall<R>("emptyNavigableSet", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	static auto emptySet(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("emptySet")] != -1);
+		return scall<R>("emptySet", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::SortedMap, typename... Args>
+	static auto emptySortedMap(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("emptySortedMap")] != -1);
+		return scall<R>("emptySortedMap", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::SortedSet, typename... Args>
+	static auto emptySortedSet(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("emptySortedSet")] != -1);
+		return scall<R>("emptySortedSet", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	static auto enumeration(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("enumeration")] != -1);
+		return scall<R>("enumeration", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto fill(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("fill")] != -1);
+		return scall<R>("fill", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto frequency(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("frequency")] != -1);
+		return scall<R>("frequency", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto indexOfSubList(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("indexOfSubList")] != -1);
+		return scall<R>("indexOfSubList", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto lastIndexOfSubList(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lastIndexOfSubList")] != -1);
+		return scall<R>("lastIndexOfSubList", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::ArrayList, typename... Args>
+	static auto list(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("list")] != -1);
+		return scall<R>("list", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto max(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("max")] != -1);
+		return scall<R>("max", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto min(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("min")] != -1);
+		return scall<R>("min", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	static auto nCopies(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nCopies")] != -1);
+		return scall<R>("nCopies", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	static auto newSetFromMap(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newSetFromMap")] != -1);
+		return scall<R>("newSetFromMap", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto replaceAll(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("replaceAll")] != -1);
+		return scall<R>("replaceAll", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto reverse(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("reverse")] != -1);
+		return scall<R>("reverse", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Comparator, typename... Args>
+	static auto reverseOrder(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("reverseOrder")] != -1);
+		return scall<R>("reverseOrder", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto rotate(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("rotate")] != -1);
+		return scall<R>("rotate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto shuffle(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("shuffle")] != -1);
+		return scall<R>("shuffle", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	static auto singleton(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("singleton")] != -1);
+		return scall<R>("singleton", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	static auto singletonList(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("singletonList")] != -1);
+		return scall<R>("singletonList", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	static auto singletonMap(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("singletonMap")] != -1);
+		return scall<R>("singletonMap", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto sort(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("sort")] != -1);
+		return scall<R>("sort", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto swap(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("swap")] != -1);
+		return scall<R>("swap", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Collection, typename... Args>
+	static auto synchronizedCollection(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("synchronizedCollection")] != -1);
+		return scall<R>("synchronizedCollection", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	static auto synchronizedList(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("synchronizedList")] != -1);
+		return scall<R>("synchronizedList", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	static auto synchronizedMap(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("synchronizedMap")] != -1);
+		return scall<R>("synchronizedMap", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::NavigableMap, typename... Args>
+	static auto synchronizedNavigableMap(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("synchronizedNavigableMap")] != -1);
+		return scall<R>("synchronizedNavigableMap", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::NavigableSet, typename... Args>
+	static auto synchronizedNavigableSet(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("synchronizedNavigableSet")] != -1);
+		return scall<R>("synchronizedNavigableSet", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	static auto synchronizedSet(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("synchronizedSet")] != -1);
+		return scall<R>("synchronizedSet", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::SortedMap, typename... Args>
+	static auto synchronizedSortedMap(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("synchronizedSortedMap")] != -1);
+		return scall<R>("synchronizedSortedMap", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::SortedSet, typename... Args>
+	static auto synchronizedSortedSet(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("synchronizedSortedSet")] != -1);
+		return scall<R>("synchronizedSortedSet", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Collection, typename... Args>
+	static auto unmodifiableCollection(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unmodifiableCollection")] != -1);
+		return scall<R>("unmodifiableCollection", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	static auto unmodifiableList(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unmodifiableList")] != -1);
+		return scall<R>("unmodifiableList", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	static auto unmodifiableMap(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unmodifiableMap")] != -1);
+		return scall<R>("unmodifiableMap", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::NavigableMap, typename... Args>
+	static auto unmodifiableNavigableMap(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unmodifiableNavigableMap")] != -1);
+		return scall<R>("unmodifiableNavigableMap", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::NavigableSet, typename... Args>
+	static auto unmodifiableNavigableSet(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unmodifiableNavigableSet")] != -1);
+		return scall<R>("unmodifiableNavigableSet", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	static auto unmodifiableSet(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unmodifiableSet")] != -1);
+		return scall<R>("unmodifiableSet", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::SortedMap, typename... Args>
+	static auto unmodifiableSortedMap(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unmodifiableSortedMap")] != -1);
+		return scall<R>("unmodifiableSortedMap", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::SortedSet, typename... Args>
+	static auto unmodifiableSortedSet(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unmodifiableSortedSet")] != -1);
+		return scall<R>("unmodifiableSortedSet", forward<Args>(args)...);
+	}
+
+};
+
+#endif

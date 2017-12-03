@@ -1,0 +1,35 @@
+#ifndef org_omg_DynamicAny_DynAnyFactoryOperations_HPP
+#define org_omg_DynamicAny_DynAnyFactoryOperations_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::DynamicAny::DynAnyFactoryOperations : public jObject<::org::omg::DynamicAny::DynAnyFactoryOperations, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_DynamicAny / "DynAnyFactoryOperations";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::omg::DynamicAny::DynAny(::org::omg::CORBA::Any)>("create_dyn_any"), //
+		jMethod<::org::omg::DynamicAny::DynAny(::org::omg::CORBA::TypeCode)>("create_dyn_any_from_type_code"), //
+	};
+
+	template<typename R = ::org::omg::DynamicAny::DynAny, typename... Args>
+	auto create_dyn_any(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("create_dyn_any")] != -1);
+		return call<R>("create_dyn_any", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::DynamicAny::DynAny, typename... Args>
+	auto create_dyn_any_from_type_code(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("create_dyn_any_from_type_code")] != -1);
+		return call<R>("create_dyn_any_from_type_code", forward<Args>(args)...);
+	}
+
+};
+
+#endif

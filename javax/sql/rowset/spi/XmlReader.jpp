@@ -1,0 +1,28 @@
+#ifndef javax_sql_rowset_spi_XmlReader_HPP
+#define javax_sql_rowset_spi_XmlReader_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::sql::rowset::spi::XmlReader : public jObject<::javax::sql::rowset::spi::XmlReader, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sql_rowset_spi / "XmlReader";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::sql::rowset::WebRowSet, ::java::io::Reader)>("readXML"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto readXML(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("readXML")] != -1);
+		return call<R>("readXML", forward<Args>(args)...);
+	}
+
+};
+
+#endif

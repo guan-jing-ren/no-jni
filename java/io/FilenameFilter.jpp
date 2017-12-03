@@ -1,0 +1,28 @@
+#ifndef java_io_FilenameFilter_HPP
+#define java_io_FilenameFilter_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::io::FilenameFilter : public jObject<::java::io::FilenameFilter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_io / "FilenameFilter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::io::File, ::java::lang::String)>("accept"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto accept(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("accept")] != -1);
+		return call<R>("accept", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,55 @@
+#ifndef java_lang_annotation_RetentionPolicy_HPP
+#define java_lang_annotation_RetentionPolicy_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::annotation::RetentionPolicy : public jObject<::java::lang::annotation::RetentionPolicy, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_annotation / "RetentionPolicy";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::annotation::RetentionPolicy>("CLASS"), //
+		jField<::java::lang::annotation::RetentionPolicy>("RUNTIME"), //
+		jField<::java::lang::annotation::RetentionPolicy>("SOURCE"), //
+	};
+
+	template<typename F = ::java::lang::annotation::RetentionPolicy>
+	static auto CLASS() {
+		static_assert(field_signatures[jField<F>("CLASS")] != -1);
+		return sat<F>("CLASS");
+	}
+
+	template<typename F = ::java::lang::annotation::RetentionPolicy>
+	static auto RUNTIME() {
+		static_assert(field_signatures[jField<F>("RUNTIME")] != -1);
+		return sat<F>("RUNTIME");
+	}
+
+	template<typename F = ::java::lang::annotation::RetentionPolicy>
+	static auto SOURCE() {
+		static_assert(field_signatures[jField<F>("SOURCE")] != -1);
+		return sat<F>("SOURCE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::annotation::RetentionPolicy(::java::lang::String)>("valueOf"), //
+		jMethod<::java::lang::annotation::RetentionPolicy *()>("values"), //
+	};
+
+	template<typename R = ::java::lang::annotation::RetentionPolicy, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::annotation::RetentionPolicy *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

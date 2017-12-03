@@ -1,0 +1,51 @@
+#ifndef javax_imageio_spi_ImageOutputStreamSpi_HPP
+#define javax_imageio_spi_ImageOutputStreamSpi_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::imageio::spi::ImageOutputStreamSpi : public jObject<::javax::imageio::spi::ImageOutputStreamSpi, ::javax::imageio::spi::IIOServiceProvider> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_imageio_spi / "ImageOutputStreamSpi";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::Class)>(), //
+		jMethod<::jboolean()>("canUseCacheFile"), //
+		jMethod<::javax::imageio::stream::ImageOutputStream(::java::lang::Object)>("createOutputStreamInstance"), //
+		jMethod<::javax::imageio::stream::ImageOutputStream(::java::lang::Object, ::jboolean, ::java::io::File)>("createOutputStreamInstance"), //
+		jMethod<::java::lang::Class()>("getOutputClass"), //
+		jMethod<::jboolean()>("needsCacheFile"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto canUseCacheFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("canUseCacheFile")] != -1);
+		return call<R>("canUseCacheFile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::imageio::stream::ImageOutputStream, typename... Args>
+	auto createOutputStreamInstance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createOutputStreamInstance")] != -1);
+		return call<R>("createOutputStreamInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getOutputClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOutputClass")] != -1);
+		return call<R>("getOutputClass", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto needsCacheFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("needsCacheFile")] != -1);
+		return call<R>("needsCacheFile", forward<Args>(args)...);
+	}
+
+};
+
+#endif

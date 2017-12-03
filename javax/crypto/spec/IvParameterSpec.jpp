@@ -1,0 +1,30 @@
+#ifndef javax_crypto_spec_IvParameterSpec_HPP
+#define javax_crypto_spec_IvParameterSpec_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::crypto::spec::IvParameterSpec : public jObject<::javax::crypto::spec::IvParameterSpec, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_crypto_spec / "IvParameterSpec";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jbyte *)>(), //
+		jConstructor<::jvoid(::jbyte *, ::jint, ::jint)>(), //
+		jMethod<::jbyte *()>("getIV"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getIV(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIV")] != -1);
+		return call<R>("getIV", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,28 @@
+#ifndef org_w3c_dom_ls_LSResourceResolver_HPP
+#define org_w3c_dom_ls_LSResourceResolver_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::w3c::dom::ls::LSResourceResolver : public jObject<::org::w3c::dom::ls::LSResourceResolver, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_w3c_dom_ls / "LSResourceResolver";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::w3c::dom::ls::LSInput(::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::String)>("resolveResource"), //
+	};
+
+	template<typename R = ::org::w3c::dom::ls::LSInput, typename... Args>
+	auto resolveResource(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("resolveResource")] != -1);
+		return call<R>("resolveResource", forward<Args>(args)...);
+	}
+
+};
+
+#endif

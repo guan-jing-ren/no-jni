@@ -1,0 +1,30 @@
+#ifndef javax_sql_ConnectionEvent_HPP
+#define javax_sql_ConnectionEvent_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::sql::ConnectionEvent : public jObject<::javax::sql::ConnectionEvent, ::java::util::EventObject> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sql / "ConnectionEvent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::sql::PooledConnection)>(), //
+		jConstructor<::jvoid(::javax::sql::PooledConnection, ::java::sql::SQLException)>(), //
+		jMethod<::java::sql::SQLException()>("getSQLException"), //
+	};
+
+	template<typename R = ::java::sql::SQLException, typename... Args>
+	auto getSQLException(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSQLException")] != -1);
+		return call<R>("getSQLException", forward<Args>(args)...);
+	}
+
+};
+
+#endif

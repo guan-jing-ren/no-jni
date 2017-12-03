@@ -1,0 +1,94 @@
+#ifndef javax_swing_SizeRequirements_HPP
+#define javax_swing_SizeRequirements_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::SizeRequirements : public jObject<::javax::swing::SizeRequirements, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "SizeRequirements";
+
+	constexpr static Enume field_signatures{
+		jField<::jfloat>("alignment"), //
+		jField<::jint>("maximum"), //
+		jField<::jint>("minimum"), //
+		jField<::jint>("preferred"), //
+	};
+
+	template<typename F = ::jfloat>
+	auto alignment() const {
+		static_assert(field_signatures[jField<F>("alignment")] != -1);
+		return at<F>("alignment");
+	}
+
+	template<typename F = ::jint>
+	auto maximum() const {
+		static_assert(field_signatures[jField<F>("maximum")] != -1);
+		return at<F>("maximum");
+	}
+
+	template<typename F = ::jint>
+	auto minimum() const {
+		static_assert(field_signatures[jField<F>("minimum")] != -1);
+		return at<F>("minimum");
+	}
+
+	template<typename F = ::jint>
+	auto preferred() const {
+		static_assert(field_signatures[jField<F>("preferred")] != -1);
+		return at<F>("preferred");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint, ::jint, ::jint, ::jfloat)>(), //
+		jMethod<::jint *(::jint, ::javax::swing::SizeRequirements *)>("adjustSizes"), //
+		jMethod<::jvoid(::jint, ::javax::swing::SizeRequirements, ::javax::swing::SizeRequirements *, ::jint *, ::jint *)>("calculateAlignedPositions"), //
+		jMethod<::jvoid(::jint, ::javax::swing::SizeRequirements, ::javax::swing::SizeRequirements *, ::jint *, ::jint *, ::jboolean)>("calculateAlignedPositions"), //
+		jMethod<::jvoid(::jint, ::javax::swing::SizeRequirements, ::javax::swing::SizeRequirements *, ::jint *, ::jint *)>("calculateTiledPositions"), //
+		jMethod<::jvoid(::jint, ::javax::swing::SizeRequirements, ::javax::swing::SizeRequirements *, ::jint *, ::jint *, ::jboolean)>("calculateTiledPositions"), //
+		jMethod<::javax::swing::SizeRequirements(::javax::swing::SizeRequirements *)>("getAlignedSizeRequirements"), //
+		jMethod<::javax::swing::SizeRequirements(::javax::swing::SizeRequirements *)>("getTiledSizeRequirements"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jint *, typename... Args>
+	static auto adjustSizes(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("adjustSizes")] != -1);
+		return scall<R>("adjustSizes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto calculateAlignedPositions(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("calculateAlignedPositions")] != -1);
+		return scall<R>("calculateAlignedPositions", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto calculateTiledPositions(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("calculateTiledPositions")] != -1);
+		return scall<R>("calculateTiledPositions", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::SizeRequirements, typename... Args>
+	static auto getAlignedSizeRequirements(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlignedSizeRequirements")] != -1);
+		return scall<R>("getAlignedSizeRequirements", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::SizeRequirements, typename... Args>
+	static auto getTiledSizeRequirements(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTiledSizeRequirements")] != -1);
+		return scall<R>("getTiledSizeRequirements", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

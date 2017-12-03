@@ -1,0 +1,28 @@
+#ifndef java_time_temporal_TemporalQuery_HPP
+#define java_time_temporal_TemporalQuery_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::time::temporal::TemporalQuery : public jObject<::java::time::temporal::TemporalQuery, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_time_temporal / "TemporalQuery";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object(::java::time::temporal::TemporalAccessor)>("queryFrom"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto queryFrom(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("queryFrom")] != -1);
+		return call<R>("queryFrom", forward<Args>(args)...);
+	}
+
+};
+
+#endif

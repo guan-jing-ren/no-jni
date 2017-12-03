@@ -1,0 +1,28 @@
+#ifndef java_rmi_server_RMIClientSocketFactory_HPP
+#define java_rmi_server_RMIClientSocketFactory_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::rmi::server::RMIClientSocketFactory : public jObject<::java::rmi::server::RMIClientSocketFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_rmi_server / "RMIClientSocketFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::net::Socket(::java::lang::String, ::jint)>("createSocket"), //
+	};
+
+	template<typename R = ::java::net::Socket, typename... Args>
+	auto createSocket(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createSocket")] != -1);
+		return call<R>("createSocket", forward<Args>(args)...);
+	}
+
+};
+
+#endif

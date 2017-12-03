@@ -1,0 +1,28 @@
+#ifndef java_io_ObjectInputValidation_HPP
+#define java_io_ObjectInputValidation_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::io::ObjectInputValidation : public jObject<::java::io::ObjectInputValidation, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_io / "ObjectInputValidation";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("validateObject"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto validateObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("validateObject")] != -1);
+		return call<R>("validateObject", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,85 @@
+#ifndef java_beans_SimpleBeanInfo_HPP
+#define java_beans_SimpleBeanInfo_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::beans::SimpleBeanInfo : public jObject<::java::beans::SimpleBeanInfo, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_beans / "SimpleBeanInfo";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::beans::BeanInfo *()>("getAdditionalBeanInfo"), //
+		jMethod<::java::beans::BeanDescriptor()>("getBeanDescriptor"), //
+		jMethod<::jint()>("getDefaultEventIndex"), //
+		jMethod<::jint()>("getDefaultPropertyIndex"), //
+		jMethod<::java::beans::EventSetDescriptor *()>("getEventSetDescriptors"), //
+		jMethod<::java::awt::Image(::jint)>("getIcon"), //
+		jMethod<::java::beans::MethodDescriptor *()>("getMethodDescriptors"), //
+		jMethod<::java::beans::PropertyDescriptor *()>("getPropertyDescriptors"), //
+		jMethod<::java::awt::Image(::java::lang::String)>("loadImage"), //
+	};
+
+	template<typename R = ::java::beans::BeanInfo *, typename... Args>
+	auto getAdditionalBeanInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAdditionalBeanInfo")] != -1);
+		return call<R>("getAdditionalBeanInfo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::beans::BeanDescriptor, typename... Args>
+	auto getBeanDescriptor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBeanDescriptor")] != -1);
+		return call<R>("getBeanDescriptor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getDefaultEventIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaultEventIndex")] != -1);
+		return call<R>("getDefaultEventIndex", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getDefaultPropertyIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaultPropertyIndex")] != -1);
+		return call<R>("getDefaultPropertyIndex", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::beans::EventSetDescriptor *, typename... Args>
+	auto getEventSetDescriptors(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEventSetDescriptors")] != -1);
+		return call<R>("getEventSetDescriptors", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Image, typename... Args>
+	auto getIcon(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIcon")] != -1);
+		return call<R>("getIcon", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::beans::MethodDescriptor *, typename... Args>
+	auto getMethodDescriptors(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMethodDescriptors")] != -1);
+		return call<R>("getMethodDescriptors", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::beans::PropertyDescriptor *, typename... Args>
+	auto getPropertyDescriptors(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPropertyDescriptors")] != -1);
+		return call<R>("getPropertyDescriptors", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Image, typename... Args>
+	auto loadImage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("loadImage")] != -1);
+		return call<R>("loadImage", forward<Args>(args)...);
+	}
+
+};
+
+#endif

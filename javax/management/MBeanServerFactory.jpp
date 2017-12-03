@@ -1,0 +1,58 @@
+#ifndef javax_management_MBeanServerFactory_HPP
+#define javax_management_MBeanServerFactory_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::management::MBeanServerFactory : public jObject<::javax::management::MBeanServerFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management / "MBeanServerFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::management::MBeanServer()>("createMBeanServer"), //
+		jMethod<::javax::management::MBeanServer(::java::lang::String)>("createMBeanServer"), //
+		jMethod<::java::util::ArrayList(::java::lang::String)>("findMBeanServer"), //
+		jMethod<::javax::management::loading::ClassLoaderRepository(::javax::management::MBeanServer)>("getClassLoaderRepository"), //
+		jMethod<::javax::management::MBeanServer()>("newMBeanServer"), //
+		jMethod<::javax::management::MBeanServer(::java::lang::String)>("newMBeanServer"), //
+		jMethod<::jvoid(::javax::management::MBeanServer)>("releaseMBeanServer"), //
+	};
+
+	template<typename R = ::javax::management::MBeanServer, typename... Args>
+	static auto createMBeanServer(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createMBeanServer")] != -1);
+		return scall<R>("createMBeanServer", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::ArrayList, typename... Args>
+	static auto findMBeanServer(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("findMBeanServer")] != -1);
+		return scall<R>("findMBeanServer", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::loading::ClassLoaderRepository, typename... Args>
+	static auto getClassLoaderRepository(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getClassLoaderRepository")] != -1);
+		return scall<R>("getClassLoaderRepository", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::MBeanServer, typename... Args>
+	static auto newMBeanServer(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newMBeanServer")] != -1);
+		return scall<R>("newMBeanServer", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto releaseMBeanServer(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("releaseMBeanServer")] != -1);
+		return scall<R>("releaseMBeanServer", forward<Args>(args)...);
+	}
+
+};
+
+#endif

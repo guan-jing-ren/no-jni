@@ -1,0 +1,63 @@
+#ifndef javax_rmi_CORBA_ValueHandler_HPP
+#define javax_rmi_CORBA_ValueHandler_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::rmi::CORBA::ValueHandler : public jObject<::javax::rmi::CORBA::ValueHandler, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_rmi_CORBA / "ValueHandler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String(::java::lang::Class)>("getRMIRepositoryID"), //
+		jMethod<::org::omg::SendingContext::RunTime()>("getRunTimeCodeBase"), //
+		jMethod<::jboolean(::java::lang::Class)>("isCustomMarshaled"), //
+		jMethod<::java::io::Serializable(::org::omg::CORBA::portable::InputStream, ::jint, ::java::lang::Class, ::java::lang::String, ::org::omg::SendingContext::RunTime)>("readValue"), //
+		jMethod<::java::io::Serializable(::java::io::Serializable)>("writeReplace"), //
+		jMethod<::jvoid(::org::omg::CORBA::portable::OutputStream, ::java::io::Serializable)>("writeValue"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getRMIRepositoryID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRMIRepositoryID")] != -1);
+		return call<R>("getRMIRepositoryID", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::SendingContext::RunTime, typename... Args>
+	auto getRunTimeCodeBase(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRunTimeCodeBase")] != -1);
+		return call<R>("getRunTimeCodeBase", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isCustomMarshaled(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isCustomMarshaled")] != -1);
+		return call<R>("isCustomMarshaled", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::Serializable, typename... Args>
+	auto readValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("readValue")] != -1);
+		return call<R>("readValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::Serializable, typename... Args>
+	auto writeReplace(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("writeReplace")] != -1);
+		return call<R>("writeReplace", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("writeValue")] != -1);
+		return call<R>("writeValue", forward<Args>(args)...);
+	}
+
+};
+
+#endif

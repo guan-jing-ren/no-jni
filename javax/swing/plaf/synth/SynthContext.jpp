@@ -1,0 +1,50 @@
+#ifndef javax_swing_plaf_synth_SynthContext_HPP
+#define javax_swing_plaf_synth_SynthContext_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::swing::plaf::synth::SynthContext : public jObject<::javax::swing::plaf::synth::SynthContext, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_plaf_synth / "SynthContext";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::swing::JComponent, ::javax::swing::plaf::synth::Region, ::javax::swing::plaf::synth::SynthStyle, ::jint)>(), //
+		jMethod<::javax::swing::JComponent()>("getComponent"), //
+		jMethod<::jint()>("getComponentState"), //
+		jMethod<::javax::swing::plaf::synth::Region()>("getRegion"), //
+		jMethod<::javax::swing::plaf::synth::SynthStyle()>("getStyle"), //
+	};
+
+	template<typename R = ::javax::swing::JComponent, typename... Args>
+	auto getComponent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getComponent")] != -1);
+		return call<R>("getComponent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getComponentState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getComponentState")] != -1);
+		return call<R>("getComponentState", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::plaf::synth::Region, typename... Args>
+	auto getRegion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRegion")] != -1);
+		return call<R>("getRegion", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::plaf::synth::SynthStyle, typename... Args>
+	auto getStyle(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStyle")] != -1);
+		return call<R>("getStyle", forward<Args>(args)...);
+	}
+
+};
+
+#endif

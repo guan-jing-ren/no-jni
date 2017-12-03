@@ -1,0 +1,42 @@
+#ifndef java_nio_channels_spi_AbstractSelector_HPP
+#define java_nio_channels_spi_AbstractSelector_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::java::nio::channels::spi::AbstractSelector : public jObject<::java::nio::channels::spi::AbstractSelector, ::java::nio::channels::Selector> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_channels_spi / "AbstractSelector";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("close"), //
+		jMethod<::jboolean()>("isOpen"), //
+		jMethod<::java::nio::channels::spi::SelectorProvider()>("provider"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isOpen(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isOpen")] != -1);
+		return call<R>("isOpen", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::spi::SelectorProvider, typename... Args>
+	auto provider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("provider")] != -1);
+		return call<R>("provider", forward<Args>(args)...);
+	}
+
+};
+
+#endif

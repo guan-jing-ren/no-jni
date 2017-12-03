@@ -1,0 +1,78 @@
+#ifndef java_lang_Enum_HPP
+#define java_lang_Enum_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::lang::Enum : public jObject<::java::lang::Enum, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang / "Enum";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint(::java::lang::Enum)>("compareTo"), //
+		jMethod<::jint(::java::lang::Object)>("compareTo"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::lang::Class()>("getDeclaringClass"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::String()>("name"), //
+		jMethod<::jint()>("ordinal"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::java::lang::Enum(::java::lang::Class, ::java::lang::String)>("valueOf"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto compareTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compareTo")] != -1);
+		return call<R>("compareTo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getDeclaringClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDeclaringClass")] != -1);
+		return call<R>("getDeclaringClass", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto name(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("name")] != -1);
+		return call<R>("name", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto ordinal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("ordinal")] != -1);
+		return call<R>("ordinal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Enum, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+};
+
+#endif

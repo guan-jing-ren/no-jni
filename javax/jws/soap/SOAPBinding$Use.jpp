@@ -1,0 +1,48 @@
+#ifndef javax_jws_soap_SOAPBinding$Use_HPP
+#define javax_jws_soap_SOAPBinding$Use_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::jws::soap::SOAPBinding$Use : public jObject<::javax::jws::soap::SOAPBinding$Use, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_jws_soap / "SOAPBinding$Use";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::jws::soap::SOAPBinding$Use>("ENCODED"), //
+		jField<::javax::jws::soap::SOAPBinding$Use>("LITERAL"), //
+	};
+
+	template<typename F = ::javax::jws::soap::SOAPBinding$Use>
+	static auto ENCODED() {
+		static_assert(field_signatures[jField<F>("ENCODED")] != -1);
+		return sat<F>("ENCODED");
+	}
+
+	template<typename F = ::javax::jws::soap::SOAPBinding$Use>
+	static auto LITERAL() {
+		static_assert(field_signatures[jField<F>("LITERAL")] != -1);
+		return sat<F>("LITERAL");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::jws::soap::SOAPBinding$Use(::java::lang::String)>("valueOf"), //
+		jMethod<::javax::jws::soap::SOAPBinding$Use *()>("values"), //
+	};
+
+	template<typename R = ::javax::jws::soap::SOAPBinding$Use, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::jws::soap::SOAPBinding$Use *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

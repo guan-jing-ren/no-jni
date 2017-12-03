@@ -1,0 +1,85 @@
+#ifndef java_util_Formatter_HPP
+#define java_util_Formatter_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::Formatter : public jObject<::java::util::Formatter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "Formatter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::io::File)>(), //
+		jConstructor<::jvoid(::java::io::File, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::io::File, ::java::lang::String, ::java::util::Locale)>(), //
+		jConstructor<::jvoid(::java::io::OutputStream)>(), //
+		jConstructor<::jvoid(::java::io::OutputStream, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::io::OutputStream, ::java::lang::String, ::java::util::Locale)>(), //
+		jConstructor<::jvoid(::java::io::PrintStream)>(), //
+		jConstructor<::jvoid(::java::lang::Appendable)>(), //
+		jConstructor<::jvoid(::java::lang::Appendable, ::java::util::Locale)>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::util::Locale)>(), //
+		jConstructor<::jvoid(::java::util::Locale)>(), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::jvoid()>("flush"), //
+		jMethod<::java::util::Formatter(::java::lang::String, ::java::lang::Object *)>("format"), //
+		jMethod<::java::util::Formatter(::java::util::Locale, ::java::lang::String, ::java::lang::Object *)>("format"), //
+		jMethod<::java::io::IOException()>("ioException"), //
+		jMethod<::java::util::Locale()>("locale"), //
+		jMethod<::java::lang::Appendable()>("out"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto flush(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("flush")] != -1);
+		return call<R>("flush", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Formatter, typename... Args>
+	auto format(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("format")] != -1);
+		return call<R>("format", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::IOException, typename... Args>
+	auto ioException(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("ioException")] != -1);
+		return call<R>("ioException", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Locale, typename... Args>
+	auto locale(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("locale")] != -1);
+		return call<R>("locale", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Appendable, typename... Args>
+	auto out(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("out")] != -1);
+		return call<R>("out", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

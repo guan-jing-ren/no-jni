@@ -1,0 +1,83 @@
+#ifndef org_w3c_dom_events_MutationEvent_HPP
+#define org_w3c_dom_events_MutationEvent_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::w3c::dom::events::MutationEvent : public jObject<::org::w3c::dom::events::MutationEvent, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_w3c_dom_events / "MutationEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::jshort>("ADDITION"), //
+		jField<::jshort>("MODIFICATION"), //
+		jField<::jshort>("REMOVAL"), //
+	};
+
+	template<typename F = ::jshort>
+	static auto ADDITION() {
+		static_assert(field_signatures[jField<F>("ADDITION")] != -1);
+		return sat<F>("ADDITION");
+	}
+
+	template<typename F = ::jshort>
+	static auto MODIFICATION() {
+		static_assert(field_signatures[jField<F>("MODIFICATION")] != -1);
+		return sat<F>("MODIFICATION");
+	}
+
+	template<typename F = ::jshort>
+	static auto REMOVAL() {
+		static_assert(field_signatures[jField<F>("REMOVAL")] != -1);
+		return sat<F>("REMOVAL");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jshort()>("getAttrChange"), //
+		jMethod<::java::lang::String()>("getAttrName"), //
+		jMethod<::java::lang::String()>("getNewValue"), //
+		jMethod<::java::lang::String()>("getPrevValue"), //
+		jMethod<::org::w3c::dom::Node()>("getRelatedNode"), //
+		jMethod<::jvoid(::java::lang::String, ::jboolean, ::jboolean, ::org::w3c::dom::Node, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::jshort)>("initMutationEvent"), //
+	};
+
+	template<typename R = ::jshort, typename... Args>
+	auto getAttrChange(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttrChange")] != -1);
+		return call<R>("getAttrChange", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAttrName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttrName")] != -1);
+		return call<R>("getAttrName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getNewValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNewValue")] != -1);
+		return call<R>("getNewValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getPrevValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrevValue")] != -1);
+		return call<R>("getPrevValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Node, typename... Args>
+	auto getRelatedNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRelatedNode")] != -1);
+		return call<R>("getRelatedNode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto initMutationEvent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("initMutationEvent")] != -1);
+		return call<R>("initMutationEvent", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,71 @@
+#ifndef java_awt_color_ICC_ColorSpace_HPP
+#define java_awt_color_ICC_ColorSpace_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::color::ICC_ColorSpace : public jObject<::java::awt::color::ICC_ColorSpace, ::java::awt::color::ColorSpace> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_color / "ICC_ColorSpace";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::color::ICC_Profile)>(), //
+		jMethod<::jfloat *(::jfloat *)>("fromCIEXYZ"), //
+		jMethod<::jfloat *(::jfloat *)>("fromRGB"), //
+		jMethod<::jfloat(::jint)>("getMaxValue"), //
+		jMethod<::jfloat(::jint)>("getMinValue"), //
+		jMethod<::java::awt::color::ICC_Profile()>("getProfile"), //
+		jMethod<::jfloat *(::jfloat *)>("toCIEXYZ"), //
+		jMethod<::jfloat *(::jfloat *)>("toRGB"), //
+	};
+
+	template<typename R = ::jfloat *, typename... Args>
+	auto fromCIEXYZ(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("fromCIEXYZ")] != -1);
+		return call<R>("fromCIEXYZ", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat *, typename... Args>
+	auto fromRGB(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("fromRGB")] != -1);
+		return call<R>("fromRGB", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getMaxValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMaxValue")] != -1);
+		return call<R>("getMaxValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getMinValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMinValue")] != -1);
+		return call<R>("getMinValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::color::ICC_Profile, typename... Args>
+	auto getProfile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProfile")] != -1);
+		return call<R>("getProfile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat *, typename... Args>
+	auto toCIEXYZ(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toCIEXYZ")] != -1);
+		return call<R>("toCIEXYZ", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat *, typename... Args>
+	auto toRGB(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toRGB")] != -1);
+		return call<R>("toRGB", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,159 @@
+#ifndef java_lang_Runtime_HPP
+#define java_lang_Runtime_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::lang::Runtime : public jObject<::java::lang::Runtime, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang / "Runtime";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::Thread)>("addShutdownHook"), //
+		jMethod<::jint()>("availableProcessors"), //
+		jMethod<::java::lang::Process(::java::lang::String)>("exec"), //
+		jMethod<::java::lang::Process(::java::lang::String, ::java::lang::String *)>("exec"), //
+		jMethod<::java::lang::Process(::java::lang::String, ::java::lang::String *, ::java::io::File)>("exec"), //
+		jMethod<::java::lang::Process(::java::lang::String *)>("exec"), //
+		jMethod<::java::lang::Process(::java::lang::String *, ::java::lang::String *)>("exec"), //
+		jMethod<::java::lang::Process(::java::lang::String *, ::java::lang::String *, ::java::io::File)>("exec"), //
+		jMethod<::jvoid(::jint)>("exit"), //
+		jMethod<::jlong()>("freeMemory"), //
+		jMethod<::jvoid()>("gc"), //
+		jMethod<::java::io::InputStream(::java::io::InputStream)>("getLocalizedInputStream"), //
+		jMethod<::java::io::OutputStream(::java::io::OutputStream)>("getLocalizedOutputStream"), //
+		jMethod<::java::lang::Runtime()>("getRuntime"), //
+		jMethod<::jvoid(::jint)>("halt"), //
+		jMethod<::jvoid(::java::lang::String)>("load"), //
+		jMethod<::jvoid(::java::lang::String)>("loadLibrary"), //
+		jMethod<::jlong()>("maxMemory"), //
+		jMethod<::jboolean(::java::lang::Thread)>("removeShutdownHook"), //
+		jMethod<::jvoid()>("runFinalization"), //
+		jMethod<::jvoid(::jboolean)>("runFinalizersOnExit"), //
+		jMethod<::jlong()>("totalMemory"), //
+		jMethod<::jvoid(::jboolean)>("traceInstructions"), //
+		jMethod<::jvoid(::jboolean)>("traceMethodCalls"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addShutdownHook(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addShutdownHook")] != -1);
+		return call<R>("addShutdownHook", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto availableProcessors(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("availableProcessors")] != -1);
+		return call<R>("availableProcessors", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Process, typename... Args>
+	auto exec(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("exec")] != -1);
+		return call<R>("exec", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto exit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("exit")] != -1);
+		return call<R>("exit", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto freeMemory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("freeMemory")] != -1);
+		return call<R>("freeMemory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto gc(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("gc")] != -1);
+		return call<R>("gc", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::InputStream, typename... Args>
+	auto getLocalizedInputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLocalizedInputStream")] != -1);
+		return call<R>("getLocalizedInputStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::OutputStream, typename... Args>
+	auto getLocalizedOutputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLocalizedOutputStream")] != -1);
+		return call<R>("getLocalizedOutputStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Runtime, typename... Args>
+	static auto getRuntime(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRuntime")] != -1);
+		return scall<R>("getRuntime", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto halt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("halt")] != -1);
+		return call<R>("halt", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto load(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("load")] != -1);
+		return call<R>("load", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto loadLibrary(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("loadLibrary")] != -1);
+		return call<R>("loadLibrary", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto maxMemory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("maxMemory")] != -1);
+		return call<R>("maxMemory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto removeShutdownHook(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeShutdownHook")] != -1);
+		return call<R>("removeShutdownHook", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto runFinalization(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("runFinalization")] != -1);
+		return call<R>("runFinalization", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto runFinalizersOnExit(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("runFinalizersOnExit")] != -1);
+		return scall<R>("runFinalizersOnExit", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto totalMemory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("totalMemory")] != -1);
+		return call<R>("totalMemory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto traceInstructions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("traceInstructions")] != -1);
+		return call<R>("traceInstructions", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto traceMethodCalls(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("traceMethodCalls")] != -1);
+		return call<R>("traceMethodCalls", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,56 @@
+#ifndef javax_swing_FocusManager_HPP
+#define javax_swing_FocusManager_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::FocusManager : public jObject<::javax::swing::FocusManager, ::java::awt::DefaultKeyboardFocusManager> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "FocusManager";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("FOCUS_MANAGER_CLASS_PROPERTY"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto FOCUS_MANAGER_CLASS_PROPERTY() {
+		static_assert(field_signatures[jField<F>("FOCUS_MANAGER_CLASS_PROPERTY")] != -1);
+		return sat<F>("FOCUS_MANAGER_CLASS_PROPERTY");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid()>("disableSwingFocusManager"), //
+		jMethod<::javax::swing::FocusManager()>("getCurrentManager"), //
+		jMethod<::jboolean()>("isFocusManagerEnabled"), //
+		jMethod<::jvoid(::javax::swing::FocusManager)>("setCurrentManager"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto disableSwingFocusManager(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("disableSwingFocusManager")] != -1);
+		return scall<R>("disableSwingFocusManager", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::FocusManager, typename... Args>
+	static auto getCurrentManager(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCurrentManager")] != -1);
+		return scall<R>("getCurrentManager", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isFocusManagerEnabled(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isFocusManagerEnabled")] != -1);
+		return scall<R>("isFocusManagerEnabled", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setCurrentManager(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setCurrentManager")] != -1);
+		return scall<R>("setCurrentManager", forward<Args>(args)...);
+	}
+
+};
+
+#endif

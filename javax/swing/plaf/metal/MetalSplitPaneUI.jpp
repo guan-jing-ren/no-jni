@@ -1,0 +1,36 @@
+#ifndef javax_swing_plaf_metal_MetalSplitPaneUI_HPP
+#define javax_swing_plaf_metal_MetalSplitPaneUI_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::swing::plaf::metal::MetalSplitPaneUI : public jObject<::javax::swing::plaf::metal::MetalSplitPaneUI, ::javax::swing::plaf::basic::BasicSplitPaneUI> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_plaf_metal / "MetalSplitPaneUI";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::swing::plaf::basic::BasicSplitPaneDivider()>("createDefaultDivider"), //
+		jMethod<::javax::swing::plaf::ComponentUI(::javax::swing::JComponent)>("createUI"), //
+	};
+
+	template<typename R = ::javax::swing::plaf::basic::BasicSplitPaneDivider, typename... Args>
+	auto createDefaultDivider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createDefaultDivider")] != -1);
+		return call<R>("createDefaultDivider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::plaf::ComponentUI, typename... Args>
+	static auto createUI(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createUI")] != -1);
+		return scall<R>("createUI", forward<Args>(args)...);
+	}
+
+};
+
+#endif

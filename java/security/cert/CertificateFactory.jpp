@@ -1,0 +1,88 @@
+#ifndef java_security_cert_CertificateFactory_HPP
+#define java_security_cert_CertificateFactory_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::cert::CertificateFactory : public jObject<::java::security::cert::CertificateFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_cert / "CertificateFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::security::cert::CRL(::java::io::InputStream)>("generateCRL"), //
+		jMethod<::java::util::Collection(::java::io::InputStream)>("generateCRLs"), //
+		jMethod<::java::security::cert::CertPath(::java::io::InputStream)>("generateCertPath"), //
+		jMethod<::java::security::cert::CertPath(::java::io::InputStream, ::java::lang::String)>("generateCertPath"), //
+		jMethod<::java::security::cert::CertPath(::java::util::List)>("generateCertPath"), //
+		jMethod<::java::security::cert::Certificate(::java::io::InputStream)>("generateCertificate"), //
+		jMethod<::java::util::Collection(::java::io::InputStream)>("generateCertificates"), //
+		jMethod<::java::util::Iterator()>("getCertPathEncodings"), //
+		jMethod<::java::security::cert::CertificateFactory(::java::lang::String)>("getInstance"), //
+		jMethod<::java::security::cert::CertificateFactory(::java::lang::String, ::java::lang::String)>("getInstance"), //
+		jMethod<::java::security::cert::CertificateFactory(::java::lang::String, ::java::security::Provider)>("getInstance"), //
+		jMethod<::java::security::Provider()>("getProvider"), //
+		jMethod<::java::lang::String()>("getType"), //
+	};
+
+	template<typename R = ::java::security::cert::CRL, typename... Args>
+	auto generateCRL(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("generateCRL")] != -1);
+		return call<R>("generateCRL", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Collection, typename... Args>
+	auto generateCRLs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("generateCRLs")] != -1);
+		return call<R>("generateCRLs", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::CertPath, typename... Args>
+	auto generateCertPath(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("generateCertPath")] != -1);
+		return call<R>("generateCertPath", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::Certificate, typename... Args>
+	auto generateCertificate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("generateCertificate")] != -1);
+		return call<R>("generateCertificate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Collection, typename... Args>
+	auto generateCertificates(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("generateCertificates")] != -1);
+		return call<R>("generateCertificates", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Iterator, typename... Args>
+	auto getCertPathEncodings(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCertPathEncodings")] != -1);
+		return call<R>("getCertPathEncodings", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::CertificateFactory, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Provider, typename... Args>
+	auto getProvider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProvider")] != -1);
+		return call<R>("getProvider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", forward<Args>(args)...);
+	}
+
+};
+
+#endif

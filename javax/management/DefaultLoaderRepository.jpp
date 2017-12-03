@@ -1,0 +1,36 @@
+#ifndef javax_management_DefaultLoaderRepository_HPP
+#define javax_management_DefaultLoaderRepository_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::management::DefaultLoaderRepository : public jObject<::javax::management::DefaultLoaderRepository, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management / "DefaultLoaderRepository";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::Class(::java::lang::String)>("loadClass"), //
+		jMethod<::java::lang::Class(::java::lang::ClassLoader, ::java::lang::String)>("loadClassWithout"), //
+	};
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	static auto loadClass(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("loadClass")] != -1);
+		return scall<R>("loadClass", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	static auto loadClassWithout(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("loadClassWithout")] != -1);
+		return scall<R>("loadClassWithout", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,49 @@
+#ifndef javax_xml_ws_WebServiceProvider_HPP
+#define javax_xml_ws_WebServiceProvider_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::ws::WebServiceProvider : public jObject<::javax::xml::ws::WebServiceProvider, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_ws / "WebServiceProvider";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("portName"), //
+		jMethod<::java::lang::String()>("serviceName"), //
+		jMethod<::java::lang::String()>("targetNamespace"), //
+		jMethod<::java::lang::String()>("wsdlLocation"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto portName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("portName")] != -1);
+		return call<R>("portName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto serviceName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("serviceName")] != -1);
+		return call<R>("serviceName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto targetNamespace(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("targetNamespace")] != -1);
+		return call<R>("targetNamespace", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto wsdlLocation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("wsdlLocation")] != -1);
+		return call<R>("wsdlLocation", forward<Args>(args)...);
+	}
+
+};
+
+#endif

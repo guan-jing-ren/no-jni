@@ -1,0 +1,159 @@
+#ifndef javax_xml_crypto_dsig_XMLSignatureFactory_HPP
+#define javax_xml_crypto_dsig_XMLSignatureFactory_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::crypto::dsig::XMLSignatureFactory : public jObject<::javax::xml::crypto::dsig::XMLSignatureFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_crypto_dsig / "XMLSignatureFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::crypto::dsig::XMLSignatureFactory()>("getInstance"), //
+		jMethod<::javax::xml::crypto::dsig::XMLSignatureFactory(::java::lang::String)>("getInstance"), //
+		jMethod<::javax::xml::crypto::dsig::XMLSignatureFactory(::java::lang::String, ::java::lang::String)>("getInstance"), //
+		jMethod<::javax::xml::crypto::dsig::XMLSignatureFactory(::java::lang::String, ::java::security::Provider)>("getInstance"), //
+		jMethod<::javax::xml::crypto::dsig::keyinfo::KeyInfoFactory()>("getKeyInfoFactory"), //
+		jMethod<::java::lang::String()>("getMechanismType"), //
+		jMethod<::java::security::Provider()>("getProvider"), //
+		jMethod<::javax::xml::crypto::URIDereferencer()>("getURIDereferencer"), //
+		jMethod<::jboolean(::java::lang::String)>("isFeatureSupported"), //
+		jMethod<::javax::xml::crypto::dsig::CanonicalizationMethod(::java::lang::String, ::javax::xml::crypto::XMLStructure)>("newCanonicalizationMethod"), //
+		jMethod<::javax::xml::crypto::dsig::CanonicalizationMethod(::java::lang::String, ::javax::xml::crypto::dsig::spec::C14NMethodParameterSpec)>("newCanonicalizationMethod"), //
+		jMethod<::javax::xml::crypto::dsig::DigestMethod(::java::lang::String, ::javax::xml::crypto::dsig::spec::DigestMethodParameterSpec)>("newDigestMethod"), //
+		jMethod<::javax::xml::crypto::dsig::Manifest(::java::util::List)>("newManifest"), //
+		jMethod<::javax::xml::crypto::dsig::Manifest(::java::util::List, ::java::lang::String)>("newManifest"), //
+		jMethod<::javax::xml::crypto::dsig::Reference(::java::lang::String, ::javax::xml::crypto::dsig::DigestMethod)>("newReference"), //
+		jMethod<::javax::xml::crypto::dsig::Reference(::java::lang::String, ::javax::xml::crypto::dsig::DigestMethod, ::java::util::List, ::java::lang::String, ::java::lang::String)>("newReference"), //
+		jMethod<::javax::xml::crypto::dsig::Reference(::java::lang::String, ::javax::xml::crypto::dsig::DigestMethod, ::java::util::List, ::java::lang::String, ::java::lang::String, ::jbyte *)>("newReference"), //
+		jMethod<::javax::xml::crypto::dsig::Reference(::java::lang::String, ::javax::xml::crypto::dsig::DigestMethod, ::java::util::List, ::javax::xml::crypto::Data, ::java::util::List, ::java::lang::String, ::java::lang::String)>("newReference"), //
+		jMethod<::javax::xml::crypto::dsig::SignatureMethod(::java::lang::String, ::javax::xml::crypto::dsig::spec::SignatureMethodParameterSpec)>("newSignatureMethod"), //
+		jMethod<::javax::xml::crypto::dsig::SignatureProperties(::java::util::List, ::java::lang::String)>("newSignatureProperties"), //
+		jMethod<::javax::xml::crypto::dsig::SignatureProperty(::java::util::List, ::java::lang::String, ::java::lang::String)>("newSignatureProperty"), //
+		jMethod<::javax::xml::crypto::dsig::SignedInfo(::javax::xml::crypto::dsig::CanonicalizationMethod, ::javax::xml::crypto::dsig::SignatureMethod, ::java::util::List)>("newSignedInfo"), //
+		jMethod<::javax::xml::crypto::dsig::SignedInfo(::javax::xml::crypto::dsig::CanonicalizationMethod, ::javax::xml::crypto::dsig::SignatureMethod, ::java::util::List, ::java::lang::String)>("newSignedInfo"), //
+		jMethod<::javax::xml::crypto::dsig::Transform(::java::lang::String, ::javax::xml::crypto::XMLStructure)>("newTransform"), //
+		jMethod<::javax::xml::crypto::dsig::Transform(::java::lang::String, ::javax::xml::crypto::dsig::spec::TransformParameterSpec)>("newTransform"), //
+		jMethod<::javax::xml::crypto::dsig::XMLObject(::java::util::List, ::java::lang::String, ::java::lang::String, ::java::lang::String)>("newXMLObject"), //
+		jMethod<::javax::xml::crypto::dsig::XMLSignature(::javax::xml::crypto::dsig::SignedInfo, ::javax::xml::crypto::dsig::keyinfo::KeyInfo)>("newXMLSignature"), //
+		jMethod<::javax::xml::crypto::dsig::XMLSignature(::javax::xml::crypto::dsig::SignedInfo, ::javax::xml::crypto::dsig::keyinfo::KeyInfo, ::java::util::List, ::java::lang::String, ::java::lang::String)>("newXMLSignature"), //
+		jMethod<::javax::xml::crypto::dsig::XMLSignature(::javax::xml::crypto::XMLStructure)>("unmarshalXMLSignature"), //
+		jMethod<::javax::xml::crypto::dsig::XMLSignature(::javax::xml::crypto::dsig::XMLValidateContext)>("unmarshalXMLSignature"), //
+	};
+
+	template<typename R = ::javax::xml::crypto::dsig::XMLSignatureFactory, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::crypto::dsig::keyinfo::KeyInfoFactory, typename... Args>
+	auto getKeyInfoFactory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getKeyInfoFactory")] != -1);
+		return call<R>("getKeyInfoFactory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMechanismType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMechanismType")] != -1);
+		return call<R>("getMechanismType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Provider, typename... Args>
+	auto getProvider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProvider")] != -1);
+		return call<R>("getProvider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::crypto::URIDereferencer, typename... Args>
+	auto getURIDereferencer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getURIDereferencer")] != -1);
+		return call<R>("getURIDereferencer", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isFeatureSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isFeatureSupported")] != -1);
+		return call<R>("isFeatureSupported", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::crypto::dsig::CanonicalizationMethod, typename... Args>
+	auto newCanonicalizationMethod(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newCanonicalizationMethod")] != -1);
+		return call<R>("newCanonicalizationMethod", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::crypto::dsig::DigestMethod, typename... Args>
+	auto newDigestMethod(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newDigestMethod")] != -1);
+		return call<R>("newDigestMethod", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::crypto::dsig::Manifest, typename... Args>
+	auto newManifest(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newManifest")] != -1);
+		return call<R>("newManifest", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::crypto::dsig::Reference, typename... Args>
+	auto newReference(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newReference")] != -1);
+		return call<R>("newReference", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::crypto::dsig::SignatureMethod, typename... Args>
+	auto newSignatureMethod(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newSignatureMethod")] != -1);
+		return call<R>("newSignatureMethod", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::crypto::dsig::SignatureProperties, typename... Args>
+	auto newSignatureProperties(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newSignatureProperties")] != -1);
+		return call<R>("newSignatureProperties", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::crypto::dsig::SignatureProperty, typename... Args>
+	auto newSignatureProperty(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newSignatureProperty")] != -1);
+		return call<R>("newSignatureProperty", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::crypto::dsig::SignedInfo, typename... Args>
+	auto newSignedInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newSignedInfo")] != -1);
+		return call<R>("newSignedInfo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::crypto::dsig::Transform, typename... Args>
+	auto newTransform(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newTransform")] != -1);
+		return call<R>("newTransform", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::crypto::dsig::XMLObject, typename... Args>
+	auto newXMLObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newXMLObject")] != -1);
+		return call<R>("newXMLObject", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::crypto::dsig::XMLSignature, typename... Args>
+	auto newXMLSignature(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newXMLSignature")] != -1);
+		return call<R>("newXMLSignature", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::crypto::dsig::XMLSignature, typename... Args>
+	auto unmarshalXMLSignature(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unmarshalXMLSignature")] != -1);
+		return call<R>("unmarshalXMLSignature", forward<Args>(args)...);
+	}
+
+};
+
+#endif

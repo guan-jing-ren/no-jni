@@ -1,0 +1,69 @@
+#ifndef org_w3c_dom_css_CSSValue_HPP
+#define org_w3c_dom_css_CSSValue_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::w3c::dom::css::CSSValue : public jObject<::org::w3c::dom::css::CSSValue, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_w3c_dom_css / "CSSValue";
+
+	constexpr static Enume field_signatures{
+		jField<::jshort>("CSS_CUSTOM"), //
+		jField<::jshort>("CSS_INHERIT"), //
+		jField<::jshort>("CSS_PRIMITIVE_VALUE"), //
+		jField<::jshort>("CSS_VALUE_LIST"), //
+	};
+
+	template<typename F = ::jshort>
+	static auto CSS_CUSTOM() {
+		static_assert(field_signatures[jField<F>("CSS_CUSTOM")] != -1);
+		return sat<F>("CSS_CUSTOM");
+	}
+
+	template<typename F = ::jshort>
+	static auto CSS_INHERIT() {
+		static_assert(field_signatures[jField<F>("CSS_INHERIT")] != -1);
+		return sat<F>("CSS_INHERIT");
+	}
+
+	template<typename F = ::jshort>
+	static auto CSS_PRIMITIVE_VALUE() {
+		static_assert(field_signatures[jField<F>("CSS_PRIMITIVE_VALUE")] != -1);
+		return sat<F>("CSS_PRIMITIVE_VALUE");
+	}
+
+	template<typename F = ::jshort>
+	static auto CSS_VALUE_LIST() {
+		static_assert(field_signatures[jField<F>("CSS_VALUE_LIST")] != -1);
+		return sat<F>("CSS_VALUE_LIST");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getCssText"), //
+		jMethod<::jshort()>("getCssValueType"), //
+		jMethod<::jvoid(::java::lang::String)>("setCssText"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getCssText(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCssText")] != -1);
+		return call<R>("getCssText", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jshort, typename... Args>
+	auto getCssValueType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCssValueType")] != -1);
+		return call<R>("getCssValueType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setCssText(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setCssText")] != -1);
+		return call<R>("setCssText", forward<Args>(args)...);
+	}
+
+};
+
+#endif

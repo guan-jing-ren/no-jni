@@ -1,0 +1,42 @@
+#ifndef java_awt_peer_CheckboxPeer_HPP
+#define java_awt_peer_CheckboxPeer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::peer::CheckboxPeer : public jObject<::java::awt::peer::CheckboxPeer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_peer / "CheckboxPeer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::awt::CheckboxGroup)>("setCheckboxGroup"), //
+		jMethod<::jvoid(::java::lang::String)>("setLabel"), //
+		jMethod<::jvoid(::jboolean)>("setState"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setCheckboxGroup(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setCheckboxGroup")] != -1);
+		return call<R>("setCheckboxGroup", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLabel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLabel")] != -1);
+		return call<R>("setLabel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setState")] != -1);
+		return call<R>("setState", forward<Args>(args)...);
+	}
+
+};
+
+#endif

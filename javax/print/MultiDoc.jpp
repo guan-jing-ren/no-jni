@@ -1,0 +1,35 @@
+#ifndef javax_print_MultiDoc_HPP
+#define javax_print_MultiDoc_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::print::MultiDoc : public jObject<::javax::print::MultiDoc, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_print / "MultiDoc";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::print::Doc()>("getDoc"), //
+		jMethod<::javax::print::MultiDoc()>("next"), //
+	};
+
+	template<typename R = ::javax::print::Doc, typename... Args>
+	auto getDoc(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDoc")] != -1);
+		return call<R>("getDoc", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::print::MultiDoc, typename... Args>
+	auto next(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("next")] != -1);
+		return call<R>("next", forward<Args>(args)...);
+	}
+
+};
+
+#endif

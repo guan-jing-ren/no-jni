@@ -1,0 +1,44 @@
+#ifndef java_util_zip_CheckedInputStream_HPP
+#define java_util_zip_CheckedInputStream_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::zip::CheckedInputStream : public jObject<::java::util::zip::CheckedInputStream, ::java::io::FilterInputStream> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_zip / "CheckedInputStream";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::InputStream, ::java::util::zip::Checksum)>(), //
+		jMethod<::java::util::zip::Checksum()>("getChecksum"), //
+		jMethod<::jint()>("read"), //
+		jMethod<::jint(::jbyte *, ::jint, ::jint)>("read"), //
+		jMethod<::jlong(::jlong)>("skip"), //
+	};
+
+	template<typename R = ::java::util::zip::Checksum, typename... Args>
+	auto getChecksum(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getChecksum")] != -1);
+		return call<R>("getChecksum", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto skip(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("skip")] != -1);
+		return call<R>("skip", forward<Args>(args)...);
+	}
+
+};
+
+#endif

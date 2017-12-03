@@ -1,0 +1,36 @@
+#ifndef java_lang_annotation_AnnotationTypeMismatchException_HPP
+#define java_lang_annotation_AnnotationTypeMismatchException_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::annotation::AnnotationTypeMismatchException : public jObject<::java::lang::annotation::AnnotationTypeMismatchException, ::java::lang::RuntimeException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_annotation / "AnnotationTypeMismatchException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::reflect::Method, ::java::lang::String)>(), //
+		jMethod<::java::lang::reflect::Method()>("element"), //
+		jMethod<::java::lang::String()>("foundType"), //
+	};
+
+	template<typename R = ::java::lang::reflect::Method, typename... Args>
+	auto element(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("element")] != -1);
+		return call<R>("element", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto foundType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("foundType")] != -1);
+		return call<R>("foundType", forward<Args>(args)...);
+	}
+
+};
+
+#endif

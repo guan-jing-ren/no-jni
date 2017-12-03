@@ -1,0 +1,28 @@
+#ifndef java_util_concurrent_ForkJoinPool$ForkJoinWorkerThreadFactory_HPP
+#define java_util_concurrent_ForkJoinPool$ForkJoinWorkerThreadFactory_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::concurrent::ForkJoinPool$ForkJoinWorkerThreadFactory : public jObject<::java::util::concurrent::ForkJoinPool$ForkJoinWorkerThreadFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_concurrent / "ForkJoinPool$ForkJoinWorkerThreadFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::concurrent::ForkJoinWorkerThread(::java::util::concurrent::ForkJoinPool)>("newThread"), //
+	};
+
+	template<typename R = ::java::util::concurrent::ForkJoinWorkerThread, typename... Args>
+	auto newThread(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newThread")] != -1);
+		return call<R>("newThread", forward<Args>(args)...);
+	}
+
+};
+
+#endif

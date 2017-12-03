@@ -1,0 +1,43 @@
+#ifndef org_omg_CORBA_NamedValue_HPP
+#define org_omg_CORBA_NamedValue_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::CORBA::NamedValue : public jObject<::org::omg::CORBA::NamedValue, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CORBA / "NamedValue";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jint()>("flags"), //
+		jMethod<::java::lang::String()>("name"), //
+		jMethod<::org::omg::CORBA::Any()>("value"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto flags(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("flags")] != -1);
+		return call<R>("flags", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto name(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("name")] != -1);
+		return call<R>("name", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::Any, typename... Args>
+	auto value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("value")] != -1);
+		return call<R>("value", forward<Args>(args)...);
+	}
+
+};
+
+#endif

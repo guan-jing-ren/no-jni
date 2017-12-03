@@ -1,0 +1,64 @@
+#ifndef org_xml_sax_Parser_HPP
+#define org_xml_sax_Parser_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::xml::sax::Parser : public jObject<::org::xml::sax::Parser, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_xml_sax / "Parser";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::String)>("parse"), //
+		jMethod<::jvoid(::org::xml::sax::InputSource)>("parse"), //
+		jMethod<::jvoid(::org::xml::sax::DTDHandler)>("setDTDHandler"), //
+		jMethod<::jvoid(::org::xml::sax::DocumentHandler)>("setDocumentHandler"), //
+		jMethod<::jvoid(::org::xml::sax::EntityResolver)>("setEntityResolver"), //
+		jMethod<::jvoid(::org::xml::sax::ErrorHandler)>("setErrorHandler"), //
+		jMethod<::jvoid(::java::util::Locale)>("setLocale"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto parse(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("parse")] != -1);
+		return call<R>("parse", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDTDHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDTDHandler")] != -1);
+		return call<R>("setDTDHandler", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDocumentHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDocumentHandler")] != -1);
+		return call<R>("setDocumentHandler", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setEntityResolver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setEntityResolver")] != -1);
+		return call<R>("setEntityResolver", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setErrorHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setErrorHandler")] != -1);
+		return call<R>("setErrorHandler", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLocale(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLocale")] != -1);
+		return call<R>("setLocale", forward<Args>(args)...);
+	}
+
+};
+
+#endif

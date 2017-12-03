@@ -1,0 +1,36 @@
+#ifndef javax_security_auth_SubjectDomainCombiner_HPP
+#define javax_security_auth_SubjectDomainCombiner_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::security::auth::SubjectDomainCombiner : public jObject<::javax::security::auth::SubjectDomainCombiner, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_security_auth / "SubjectDomainCombiner";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::security::auth::Subject)>(), //
+		jMethod<::java::security::ProtectionDomain *(::java::security::ProtectionDomain *, ::java::security::ProtectionDomain *)>("combine"), //
+		jMethod<::javax::security::auth::Subject()>("getSubject"), //
+	};
+
+	template<typename R = ::java::security::ProtectionDomain *, typename... Args>
+	auto combine(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("combine")] != -1);
+		return call<R>("combine", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::security::auth::Subject, typename... Args>
+	auto getSubject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSubject")] != -1);
+		return call<R>("getSubject", forward<Args>(args)...);
+	}
+
+};
+
+#endif

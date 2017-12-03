@@ -1,0 +1,28 @@
+#ifndef java_awt_dnd_DragGestureListener_HPP
+#define java_awt_dnd_DragGestureListener_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::dnd::DragGestureListener : public jObject<::java::awt::dnd::DragGestureListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_dnd / "DragGestureListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::awt::dnd::DragGestureEvent)>("dragGestureRecognized"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dragGestureRecognized(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dragGestureRecognized")] != -1);
+		return call<R>("dragGestureRecognized", forward<Args>(args)...);
+	}
+
+};
+
+#endif

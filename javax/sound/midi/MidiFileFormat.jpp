@@ -1,0 +1,78 @@
+#ifndef javax_sound_midi_MidiFileFormat_HPP
+#define javax_sound_midi_MidiFileFormat_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::sound::midi::MidiFileFormat : public jObject<::javax::sound::midi::MidiFileFormat, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sound_midi / "MidiFileFormat";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("UNKNOWN_LENGTH"), //
+	};
+
+	template<typename F = ::jint>
+	static auto UNKNOWN_LENGTH() {
+		static_assert(field_signatures[jField<F>("UNKNOWN_LENGTH")] != -1);
+		return sat<F>("UNKNOWN_LENGTH");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::jfloat, ::jint, ::jint, ::jlong)>(), //
+		jConstructor<::jvoid(::jint, ::jfloat, ::jint, ::jint, ::jlong, ::java::util::Map)>(), //
+		jMethod<::jint()>("getByteLength"), //
+		jMethod<::jfloat()>("getDivisionType"), //
+		jMethod<::jlong()>("getMicrosecondLength"), //
+		jMethod<::java::lang::Object(::java::lang::String)>("getProperty"), //
+		jMethod<::jint()>("getResolution"), //
+		jMethod<::jint()>("getType"), //
+		jMethod<::java::util::Map()>("properties"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getByteLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getByteLength")] != -1);
+		return call<R>("getByteLength", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getDivisionType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDivisionType")] != -1);
+		return call<R>("getDivisionType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getMicrosecondLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMicrosecondLength")] != -1);
+		return call<R>("getMicrosecondLength", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getProperty(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProperty")] != -1);
+		return call<R>("getProperty", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getResolution(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getResolution")] != -1);
+		return call<R>("getResolution", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto properties(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("properties")] != -1);
+		return call<R>("properties", forward<Args>(args)...);
+	}
+
+};
+
+#endif

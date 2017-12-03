@@ -1,0 +1,42 @@
+#ifndef java_sql_SQLData_HPP
+#define java_sql_SQLData_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::sql::SQLData : public jObject<::java::sql::SQLData, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_sql / "SQLData";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getSQLTypeName"), //
+		jMethod<::jvoid(::java::sql::SQLInput, ::java::lang::String)>("readSQL"), //
+		jMethod<::jvoid(::java::sql::SQLOutput)>("writeSQL"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getSQLTypeName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSQLTypeName")] != -1);
+		return call<R>("getSQLTypeName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto readSQL(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("readSQL")] != -1);
+		return call<R>("readSQL", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeSQL(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("writeSQL")] != -1);
+		return call<R>("writeSQL", forward<Args>(args)...);
+	}
+
+};
+
+#endif

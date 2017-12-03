@@ -1,0 +1,37 @@
+#ifndef java_beans_MethodDescriptor_HPP
+#define java_beans_MethodDescriptor_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::beans::MethodDescriptor : public jObject<::java::beans::MethodDescriptor, ::java::beans::FeatureDescriptor> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_beans / "MethodDescriptor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::reflect::Method)>(), //
+		jConstructor<::jvoid(::java::lang::reflect::Method, ::java::beans::ParameterDescriptor *)>(), //
+		jMethod<::java::lang::reflect::Method()>("getMethod"), //
+		jMethod<::java::beans::ParameterDescriptor *()>("getParameterDescriptors"), //
+	};
+
+	template<typename R = ::java::lang::reflect::Method, typename... Args>
+	auto getMethod(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMethod")] != -1);
+		return call<R>("getMethod", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::beans::ParameterDescriptor *, typename... Args>
+	auto getParameterDescriptors(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParameterDescriptors")] != -1);
+		return call<R>("getParameterDescriptors", forward<Args>(args)...);
+	}
+
+};
+
+#endif

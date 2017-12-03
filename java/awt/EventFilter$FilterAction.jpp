@@ -1,0 +1,55 @@
+#ifndef java_awt_EventFilter$FilterAction_HPP
+#define java_awt_EventFilter$FilterAction_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::EventFilter$FilterAction : public jObject<::java::awt::EventFilter$FilterAction, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "EventFilter$FilterAction";
+
+	constexpr static Enume field_signatures{
+		jField<::java::awt::EventFilter$FilterAction>("ACCEPT"), //
+		jField<::java::awt::EventFilter$FilterAction>("ACCEPT_IMMEDIATELY"), //
+		jField<::java::awt::EventFilter$FilterAction>("REJECT"), //
+	};
+
+	template<typename F = ::java::awt::EventFilter$FilterAction>
+	static auto ACCEPT() {
+		static_assert(field_signatures[jField<F>("ACCEPT")] != -1);
+		return sat<F>("ACCEPT");
+	}
+
+	template<typename F = ::java::awt::EventFilter$FilterAction>
+	static auto ACCEPT_IMMEDIATELY() {
+		static_assert(field_signatures[jField<F>("ACCEPT_IMMEDIATELY")] != -1);
+		return sat<F>("ACCEPT_IMMEDIATELY");
+	}
+
+	template<typename F = ::java::awt::EventFilter$FilterAction>
+	static auto REJECT() {
+		static_assert(field_signatures[jField<F>("REJECT")] != -1);
+		return sat<F>("REJECT");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::EventFilter$FilterAction(::java::lang::String)>("valueOf"), //
+		jMethod<::java::awt::EventFilter$FilterAction *()>("values"), //
+	};
+
+	template<typename R = ::java::awt::EventFilter$FilterAction, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::EventFilter$FilterAction *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

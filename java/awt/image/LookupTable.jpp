@@ -1,0 +1,42 @@
+#ifndef java_awt_image_LookupTable_HPP
+#define java_awt_image_LookupTable_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::image::LookupTable : public jObject<::java::awt::image::LookupTable, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_image / "LookupTable";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("getNumComponents"), //
+		jMethod<::jint()>("getOffset"), //
+		jMethod<::jint *(::jint *, ::jint *)>("lookupPixel"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getNumComponents(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNumComponents")] != -1);
+		return call<R>("getNumComponents", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getOffset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOffset")] != -1);
+		return call<R>("getOffset", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint *, typename... Args>
+	auto lookupPixel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lookupPixel")] != -1);
+		return call<R>("lookupPixel", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,50 @@
+#ifndef javax_annotation_processing_RoundEnvironment_HPP
+#define javax_annotation_processing_RoundEnvironment_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::annotation::processing::RoundEnvironment : public jObject<::javax::annotation::processing::RoundEnvironment, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_annotation_processing / "RoundEnvironment";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean()>("errorRaised"), //
+		jMethod<::java::util::Set(::java::lang::Class)>("getElementsAnnotatedWith"), //
+		jMethod<::java::util::Set(::javax::lang::model::element::TypeElement)>("getElementsAnnotatedWith"), //
+		jMethod<::java::util::Set()>("getRootElements"), //
+		jMethod<::jboolean()>("processingOver"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto errorRaised(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("errorRaised")] != -1);
+		return call<R>("errorRaised", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto getElementsAnnotatedWith(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getElementsAnnotatedWith")] != -1);
+		return call<R>("getElementsAnnotatedWith", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto getRootElements(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRootElements")] != -1);
+		return call<R>("getRootElements", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto processingOver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("processingOver")] != -1);
+		return call<R>("processingOver", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,34 @@
+#ifndef org_w3c_dom_xpath_XPathNamespace_HPP
+#define org_w3c_dom_xpath_XPathNamespace_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::w3c::dom::xpath::XPathNamespace : public jObject<::org::w3c::dom::xpath::XPathNamespace, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_w3c_dom_xpath / "XPathNamespace";
+
+	constexpr static Enume field_signatures{
+		jField<::jshort>("XPATH_NAMESPACE_NODE"), //
+	};
+
+	template<typename F = ::jshort>
+	static auto XPATH_NAMESPACE_NODE() {
+		static_assert(field_signatures[jField<F>("XPATH_NAMESPACE_NODE")] != -1);
+		return sat<F>("XPATH_NAMESPACE_NODE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::w3c::dom::Element()>("getOwnerElement"), //
+	};
+
+	template<typename R = ::org::w3c::dom::Element, typename... Args>
+	auto getOwnerElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOwnerElement")] != -1);
+		return call<R>("getOwnerElement", forward<Args>(args)...);
+	}
+
+};
+
+#endif

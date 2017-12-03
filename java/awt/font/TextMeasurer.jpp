@@ -1,0 +1,57 @@
+#ifndef java_awt_font_TextMeasurer_HPP
+#define java_awt_font_TextMeasurer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::font::TextMeasurer : public jObject<::java::awt::font::TextMeasurer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_font / "TextMeasurer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::text::AttributedCharacterIterator, ::java::awt::font::FontRenderContext)>(), //
+		jMethod<::jvoid(::java::text::AttributedCharacterIterator, ::jint)>("deleteChar"), //
+		jMethod<::jfloat(::jint, ::jint)>("getAdvanceBetween"), //
+		jMethod<::java::awt::font::TextLayout(::jint, ::jint)>("getLayout"), //
+		jMethod<::jint(::jint, ::jfloat)>("getLineBreakIndex"), //
+		jMethod<::jvoid(::java::text::AttributedCharacterIterator, ::jint)>("insertChar"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto deleteChar(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("deleteChar")] != -1);
+		return call<R>("deleteChar", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getAdvanceBetween(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAdvanceBetween")] != -1);
+		return call<R>("getAdvanceBetween", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::font::TextLayout, typename... Args>
+	auto getLayout(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLayout")] != -1);
+		return call<R>("getLayout", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getLineBreakIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLineBreakIndex")] != -1);
+		return call<R>("getLineBreakIndex", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto insertChar(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("insertChar")] != -1);
+		return call<R>("insertChar", forward<Args>(args)...);
+	}
+
+};
+
+#endif

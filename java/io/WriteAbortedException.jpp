@@ -1,0 +1,42 @@
+#ifndef java_io_WriteAbortedException_HPP
+#define java_io_WriteAbortedException_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::io::WriteAbortedException : public jObject<::java::io::WriteAbortedException, ::java::io::ObjectStreamException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_io / "WriteAbortedException";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::Exception>("detail"), //
+	};
+
+	template<typename F = ::java::lang::Exception>
+	auto detail() const {
+		static_assert(field_signatures[jField<F>("detail")] != -1);
+		return at<F>("detail");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Exception)>(), //
+		jMethod<::java::lang::Throwable()>("getCause"), //
+		jMethod<::java::lang::String()>("getMessage"), //
+	};
+
+	template<typename R = ::java::lang::Throwable, typename... Args>
+	auto getCause(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCause")] != -1);
+		return call<R>("getCause", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMessage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMessage")] != -1);
+		return call<R>("getMessage", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,49 @@
+#ifndef javax_security_auth_Policy_HPP
+#define javax_security_auth_Policy_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::security::auth::Policy : public jObject<::javax::security::auth::Policy, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_security_auth / "Policy";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::security::PermissionCollection(::javax::security::auth::Subject, ::java::security::CodeSource)>("getPermissions"), //
+		jMethod<::javax::security::auth::Policy()>("getPolicy"), //
+		jMethod<::jvoid()>("refresh"), //
+		jMethod<::jvoid(::javax::security::auth::Policy)>("setPolicy"), //
+	};
+
+	template<typename R = ::java::security::PermissionCollection, typename... Args>
+	auto getPermissions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPermissions")] != -1);
+		return call<R>("getPermissions", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::security::auth::Policy, typename... Args>
+	static auto getPolicy(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPolicy")] != -1);
+		return scall<R>("getPolicy", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto refresh(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("refresh")] != -1);
+		return call<R>("refresh", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setPolicy(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPolicy")] != -1);
+		return scall<R>("setPolicy", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,36 @@
+#ifndef javax_swing_text_DefaultStyledDocument$AttributeUndoableEdit_HPP
+#define javax_swing_text_DefaultStyledDocument$AttributeUndoableEdit_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::text::DefaultStyledDocument$AttributeUndoableEdit : public jObject<::javax::swing::text::DefaultStyledDocument$AttributeUndoableEdit, ::javax::swing::undo::AbstractUndoableEdit> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_text / "DefaultStyledDocument$AttributeUndoableEdit";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::swing::text::Element, ::javax::swing::text::AttributeSet, ::jboolean)>(), //
+		jMethod<::jvoid()>("redo"), //
+		jMethod<::jvoid()>("undo"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto redo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("redo")] != -1);
+		return call<R>("redo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto undo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("undo")] != -1);
+		return call<R>("undo", forward<Args>(args)...);
+	}
+
+};
+
+#endif

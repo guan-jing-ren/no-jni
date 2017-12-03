@@ -1,0 +1,56 @@
+#ifndef java_rmi_Naming_HPP
+#define java_rmi_Naming_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::rmi::Naming : public jObject<::java::rmi::Naming, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_rmi / "Naming";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::String, ::java::rmi::Remote)>("bind"), //
+		jMethod<::java::lang::String *(::java::lang::String)>("list"), //
+		jMethod<::java::rmi::Remote(::java::lang::String)>("lookup"), //
+		jMethod<::jvoid(::java::lang::String, ::java::rmi::Remote)>("rebind"), //
+		jMethod<::jvoid(::java::lang::String)>("unbind"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto bind(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("bind")] != -1);
+		return scall<R>("bind", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	static auto list(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("list")] != -1);
+		return scall<R>("list", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::Remote, typename... Args>
+	static auto lookup(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lookup")] != -1);
+		return scall<R>("lookup", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto rebind(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("rebind")] != -1);
+		return scall<R>("rebind", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto unbind(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unbind")] != -1);
+		return scall<R>("unbind", forward<Args>(args)...);
+	}
+
+};
+
+#endif

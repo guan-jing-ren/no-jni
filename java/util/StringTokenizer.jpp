@@ -1,0 +1,60 @@
+#ifndef java_util_StringTokenizer_HPP
+#define java_util_StringTokenizer_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::StringTokenizer : public jObject<::java::util::StringTokenizer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "StringTokenizer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::jboolean)>(), //
+		jMethod<::jint()>("countTokens"), //
+		jMethod<::jboolean()>("hasMoreElements"), //
+		jMethod<::jboolean()>("hasMoreTokens"), //
+		jMethod<::java::lang::Object()>("nextElement"), //
+		jMethod<::java::lang::String()>("nextToken"), //
+		jMethod<::java::lang::String(::java::lang::String)>("nextToken"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto countTokens(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("countTokens")] != -1);
+		return call<R>("countTokens", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasMoreElements(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hasMoreElements")] != -1);
+		return call<R>("hasMoreElements", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasMoreTokens(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hasMoreTokens")] != -1);
+		return call<R>("hasMoreTokens", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto nextElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nextElement")] != -1);
+		return call<R>("nextElement", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto nextToken(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nextToken")] != -1);
+		return call<R>("nextToken", forward<Args>(args)...);
+	}
+
+};
+
+#endif

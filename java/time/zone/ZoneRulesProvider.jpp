@@ -1,0 +1,56 @@
+#ifndef java_time_zone_ZoneRulesProvider_HPP
+#define java_time_zone_ZoneRulesProvider_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::time::zone::ZoneRulesProvider : public jObject<::java::time::zone::ZoneRulesProvider, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_time_zone / "ZoneRulesProvider";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::Set()>("getAvailableZoneIds"), //
+		jMethod<::java::time::zone::ZoneRules(::java::lang::String, ::jboolean)>("getRules"), //
+		jMethod<::java::util::NavigableMap(::java::lang::String)>("getVersions"), //
+		jMethod<::jboolean()>("refresh"), //
+		jMethod<::jvoid(::java::time::zone::ZoneRulesProvider)>("registerProvider"), //
+	};
+
+	template<typename R = ::java::util::Set, typename... Args>
+	static auto getAvailableZoneIds(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAvailableZoneIds")] != -1);
+		return scall<R>("getAvailableZoneIds", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::zone::ZoneRules, typename... Args>
+	static auto getRules(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRules")] != -1);
+		return scall<R>("getRules", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::NavigableMap, typename... Args>
+	static auto getVersions(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getVersions")] != -1);
+		return scall<R>("getVersions", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto refresh(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("refresh")] != -1);
+		return scall<R>("refresh", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto registerProvider(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("registerProvider")] != -1);
+		return scall<R>("registerProvider", forward<Args>(args)...);
+	}
+
+};
+
+#endif

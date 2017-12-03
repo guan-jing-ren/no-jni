@@ -1,0 +1,42 @@
+#ifndef java_nio_channels_Pipe_HPP
+#define java_nio_channels_Pipe_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::channels::Pipe : public jObject<::java::nio::channels::Pipe, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_channels / "Pipe";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::nio::channels::Pipe()>("open"), //
+		jMethod<::java::nio::channels::Pipe$SinkChannel()>("sink"), //
+		jMethod<::java::nio::channels::Pipe$SourceChannel()>("source"), //
+	};
+
+	template<typename R = ::java::nio::channels::Pipe, typename... Args>
+	static auto open(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("open")] != -1);
+		return scall<R>("open", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::Pipe$SinkChannel, typename... Args>
+	auto sink(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("sink")] != -1);
+		return call<R>("sink", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::Pipe$SourceChannel, typename... Args>
+	auto source(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("source")] != -1);
+		return call<R>("source", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,91 @@
+#ifndef javax_swing_text_html_parser_Entity_HPP
+#define javax_swing_text_html_parser_Entity_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::javax::swing::text::html::parser::Entity : public jObject<::javax::swing::text::html::parser::Entity, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_text_html_parser / "Entity";
+
+	constexpr static Enume field_signatures{
+		jField<::jchar *>("data"), //
+		jField<::java::lang::String>("name"), //
+		jField<::jint>("type"), //
+	};
+
+	template<typename F = ::jchar *>
+	auto data() const {
+		static_assert(field_signatures[jField<F>("data")] != -1);
+		return at<F>("data");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto name() const {
+		static_assert(field_signatures[jField<F>("name")] != -1);
+		return at<F>("name");
+	}
+
+	template<typename F = ::jint>
+	auto type() const {
+		static_assert(field_signatures[jField<F>("type")] != -1);
+		return at<F>("type");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::jint, ::jchar *)>(), //
+		jMethod<::jchar *()>("getData"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::java::lang::String()>("getString"), //
+		jMethod<::jint()>("getType"), //
+		jMethod<::jboolean()>("isGeneral"), //
+		jMethod<::jboolean()>("isParameter"), //
+		jMethod<::jint(::java::lang::String)>("name2type"), //
+	};
+
+	template<typename R = ::jchar *, typename... Args>
+	auto getData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getData")] != -1);
+		return call<R>("getData", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getString")] != -1);
+		return call<R>("getString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isGeneral(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isGeneral")] != -1);
+		return call<R>("isGeneral", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isParameter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isParameter")] != -1);
+		return call<R>("isParameter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto name2type(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("name2type")] != -1);
+		return scall<R>("name2type", forward<Args>(args)...);
+	}
+
+};
+
+#endif

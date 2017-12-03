@@ -1,0 +1,38 @@
+#ifndef java_awt_image_ByteLookupTable_HPP
+#define java_awt_image_ByteLookupTable_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::image::ByteLookupTable : public jObject<::java::awt::image::ByteLookupTable, ::java::awt::image::LookupTable> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_image / "ByteLookupTable";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::jbyte *)>(), //
+		jConstructor<::jvoid(::jint, ::jbyte **)>(), //
+		jMethod<::jbyte **()>("getTable"), //
+		jMethod<::jbyte *(::jbyte *, ::jbyte *)>("lookupPixel"), //
+		jMethod<::jint *(::jint *, ::jint *)>("lookupPixel"), //
+	};
+
+	template<typename R = ::jbyte **, typename... Args>
+	auto getTable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTable")] != -1);
+		return call<R>("getTable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto lookupPixel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lookupPixel")] != -1);
+		return call<R>("lookupPixel", forward<Args>(args)...);
+	}
+
+};
+
+#endif

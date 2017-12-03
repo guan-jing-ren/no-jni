@@ -1,0 +1,203 @@
+#ifndef java_util_GregorianCalendar_HPP
+#define java_util_GregorianCalendar_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::GregorianCalendar : public jObject<::java::util::GregorianCalendar, ::java::util::Calendar> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "GregorianCalendar";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("AD"), //
+		jField<::jint>("BC"), //
+	};
+
+	template<typename F = ::jint>
+	static auto AD() {
+		static_assert(field_signatures[jField<F>("AD")] != -1);
+		return sat<F>("AD");
+	}
+
+	template<typename F = ::jint>
+	static auto BC() {
+		static_assert(field_signatures[jField<F>("BC")] != -1);
+		return sat<F>("BC");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::jint, ::jint, ::jint, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::jint, ::jint, ::jint, ::jint, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::java::util::Locale)>(), //
+		jConstructor<::jvoid(::java::util::TimeZone)>(), //
+		jConstructor<::jvoid(::java::util::TimeZone, ::java::util::Locale)>(), //
+		jMethod<::jvoid(::jint, ::jint)>("add"), //
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::util::GregorianCalendar(::java::time::ZonedDateTime)>("from"), //
+		jMethod<::jint(::jint)>("getActualMaximum"), //
+		jMethod<::jint(::jint)>("getActualMinimum"), //
+		jMethod<::java::lang::String()>("getCalendarType"), //
+		jMethod<::jint(::jint)>("getGreatestMinimum"), //
+		jMethod<::java::util::Date()>("getGregorianChange"), //
+		jMethod<::jint(::jint)>("getLeastMaximum"), //
+		jMethod<::jint(::jint)>("getMaximum"), //
+		jMethod<::jint(::jint)>("getMinimum"), //
+		jMethod<::java::util::TimeZone()>("getTimeZone"), //
+		jMethod<::jint()>("getWeekYear"), //
+		jMethod<::jint()>("getWeeksInWeekYear"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jboolean(::jint)>("isLeapYear"), //
+		jMethod<::jboolean()>("isWeekDateSupported"), //
+		jMethod<::jvoid(::jint, ::jint)>("roll"), //
+		jMethod<::jvoid(::jint, ::jboolean)>("roll"), //
+		jMethod<::jvoid(::java::util::Date)>("setGregorianChange"), //
+		jMethod<::jvoid(::java::util::TimeZone)>("setTimeZone"), //
+		jMethod<::jvoid(::jint, ::jint, ::jint)>("setWeekDate"), //
+		jMethod<::java::time::ZonedDateTime()>("toZonedDateTime"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto add(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::GregorianCalendar, typename... Args>
+	static auto from(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("from")] != -1);
+		return scall<R>("from", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getActualMaximum(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getActualMaximum")] != -1);
+		return call<R>("getActualMaximum", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getActualMinimum(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getActualMinimum")] != -1);
+		return call<R>("getActualMinimum", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getCalendarType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCalendarType")] != -1);
+		return call<R>("getCalendarType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getGreatestMinimum(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getGreatestMinimum")] != -1);
+		return call<R>("getGreatestMinimum", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Date, typename... Args>
+	auto getGregorianChange(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getGregorianChange")] != -1);
+		return call<R>("getGregorianChange", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getLeastMaximum(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLeastMaximum")] != -1);
+		return call<R>("getLeastMaximum", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getMaximum(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMaximum")] != -1);
+		return call<R>("getMaximum", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getMinimum(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMinimum")] != -1);
+		return call<R>("getMinimum", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::TimeZone, typename... Args>
+	auto getTimeZone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTimeZone")] != -1);
+		return call<R>("getTimeZone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getWeekYear(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWeekYear")] != -1);
+		return call<R>("getWeekYear", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getWeeksInWeekYear(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWeeksInWeekYear")] != -1);
+		return call<R>("getWeeksInWeekYear", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isLeapYear(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isLeapYear")] != -1);
+		return call<R>("isLeapYear", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isWeekDateSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isWeekDateSupported")] != -1);
+		return call<R>("isWeekDateSupported", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto roll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("roll")] != -1);
+		return call<R>("roll", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setGregorianChange(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setGregorianChange")] != -1);
+		return call<R>("setGregorianChange", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setTimeZone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setTimeZone")] != -1);
+		return call<R>("setTimeZone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setWeekDate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setWeekDate")] != -1);
+		return call<R>("setWeekDate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::ZonedDateTime, typename... Args>
+	auto toZonedDateTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toZonedDateTime")] != -1);
+		return call<R>("toZonedDateTime", forward<Args>(args)...);
+	}
+
+};
+
+#endif

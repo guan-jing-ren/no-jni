@@ -1,0 +1,85 @@
+#ifndef java_awt_datatransfer_Clipboard_HPP
+#define java_awt_datatransfer_Clipboard_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::datatransfer::Clipboard : public jObject<::java::awt::datatransfer::Clipboard, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_datatransfer / "Clipboard";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jMethod<::jvoid(::java::awt::datatransfer::FlavorListener)>("addFlavorListener"), //
+		jMethod<::java::awt::datatransfer::DataFlavor *()>("getAvailableDataFlavors"), //
+		jMethod<::java::awt::datatransfer::Transferable(::java::lang::Object)>("getContents"), //
+		jMethod<::java::lang::Object(::java::awt::datatransfer::DataFlavor)>("getData"), //
+		jMethod<::java::awt::datatransfer::FlavorListener *()>("getFlavorListeners"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::jboolean(::java::awt::datatransfer::DataFlavor)>("isDataFlavorAvailable"), //
+		jMethod<::jvoid(::java::awt::datatransfer::FlavorListener)>("removeFlavorListener"), //
+		jMethod<::jvoid(::java::awt::datatransfer::Transferable, ::java::awt::datatransfer::ClipboardOwner)>("setContents"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addFlavorListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addFlavorListener")] != -1);
+		return call<R>("addFlavorListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::datatransfer::DataFlavor *, typename... Args>
+	auto getAvailableDataFlavors(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAvailableDataFlavors")] != -1);
+		return call<R>("getAvailableDataFlavors", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::datatransfer::Transferable, typename... Args>
+	auto getContents(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getContents")] != -1);
+		return call<R>("getContents", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getData")] != -1);
+		return call<R>("getData", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::datatransfer::FlavorListener *, typename... Args>
+	auto getFlavorListeners(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFlavorListeners")] != -1);
+		return call<R>("getFlavorListeners", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDataFlavorAvailable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isDataFlavorAvailable")] != -1);
+		return call<R>("isDataFlavorAvailable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeFlavorListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeFlavorListener")] != -1);
+		return call<R>("removeFlavorListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setContents(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setContents")] != -1);
+		return call<R>("setContents", forward<Args>(args)...);
+	}
+
+};
+
+#endif

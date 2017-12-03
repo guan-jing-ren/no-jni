@@ -1,0 +1,30 @@
+#ifndef org_omg_PortableInterceptor_ForwardRequest_HPP
+#define org_omg_PortableInterceptor_ForwardRequest_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::PortableInterceptor::ForwardRequest : public jObject<::org::omg::PortableInterceptor::ForwardRequest, ::org::omg::CORBA::UserException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_PortableInterceptor / "ForwardRequest";
+
+	constexpr static Enume field_signatures{
+		jField<::org::omg::CORBA::Object>("forward"), //
+	};
+
+	template<typename F = ::org::omg::CORBA::Object>
+	auto forward() const {
+		static_assert(field_signatures[jField<F>("forward")] != -1);
+		return at<F>("forward");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String, ::org::omg::CORBA::Object)>(), //
+		jConstructor<::jvoid(::org::omg::CORBA::Object)>(), //
+	};
+
+};
+
+#endif

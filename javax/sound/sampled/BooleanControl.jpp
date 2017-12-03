@@ -1,0 +1,49 @@
+#ifndef javax_sound_sampled_BooleanControl_HPP
+#define javax_sound_sampled_BooleanControl_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::sound::sampled::BooleanControl : public jObject<::javax::sound::sampled::BooleanControl, ::javax::sound::sampled::Control> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sound_sampled / "BooleanControl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String(::jboolean)>("getStateLabel"), //
+		jMethod<::jboolean()>("getValue"), //
+		jMethod<::jvoid(::jboolean)>("setValue"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getStateLabel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStateLabel")] != -1);
+		return call<R>("getStateLabel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getValue")] != -1);
+		return call<R>("getValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setValue")] != -1);
+		return call<R>("setValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

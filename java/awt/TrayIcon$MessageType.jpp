@@ -1,0 +1,62 @@
+#ifndef java_awt_TrayIcon$MessageType_HPP
+#define java_awt_TrayIcon$MessageType_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::TrayIcon$MessageType : public jObject<::java::awt::TrayIcon$MessageType, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "TrayIcon$MessageType";
+
+	constexpr static Enume field_signatures{
+		jField<::java::awt::TrayIcon$MessageType>("ERROR"), //
+		jField<::java::awt::TrayIcon$MessageType>("INFO"), //
+		jField<::java::awt::TrayIcon$MessageType>("NONE"), //
+		jField<::java::awt::TrayIcon$MessageType>("WARNING"), //
+	};
+
+	template<typename F = ::java::awt::TrayIcon$MessageType>
+	static auto ERROR() {
+		static_assert(field_signatures[jField<F>("ERROR")] != -1);
+		return sat<F>("ERROR");
+	}
+
+	template<typename F = ::java::awt::TrayIcon$MessageType>
+	static auto INFO() {
+		static_assert(field_signatures[jField<F>("INFO")] != -1);
+		return sat<F>("INFO");
+	}
+
+	template<typename F = ::java::awt::TrayIcon$MessageType>
+	static auto NONE() {
+		static_assert(field_signatures[jField<F>("NONE")] != -1);
+		return sat<F>("NONE");
+	}
+
+	template<typename F = ::java::awt::TrayIcon$MessageType>
+	static auto WARNING() {
+		static_assert(field_signatures[jField<F>("WARNING")] != -1);
+		return sat<F>("WARNING");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::TrayIcon$MessageType(::java::lang::String)>("valueOf"), //
+		jMethod<::java::awt::TrayIcon$MessageType *()>("values"), //
+	};
+
+	template<typename R = ::java::awt::TrayIcon$MessageType, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::TrayIcon$MessageType *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

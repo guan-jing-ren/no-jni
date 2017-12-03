@@ -1,0 +1,43 @@
+#ifndef java_sql_SQLWarning_HPP
+#define java_sql_SQLWarning_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::sql::SQLWarning : public jObject<::java::sql::SQLWarning, ::java::sql::SQLException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_sql / "SQLWarning";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::jint)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::jint, ::java::lang::Throwable)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::Throwable)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Throwable)>(), //
+		jConstructor<::jvoid(::java::lang::Throwable)>(), //
+		jMethod<::java::sql::SQLWarning()>("getNextWarning"), //
+		jMethod<::jvoid(::java::sql::SQLWarning)>("setNextWarning"), //
+	};
+
+	template<typename R = ::java::sql::SQLWarning, typename... Args>
+	auto getNextWarning(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNextWarning")] != -1);
+		return call<R>("getNextWarning", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setNextWarning(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setNextWarning")] != -1);
+		return call<R>("setNextWarning", forward<Args>(args)...);
+	}
+
+};
+
+#endif

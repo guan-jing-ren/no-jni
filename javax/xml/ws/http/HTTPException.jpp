@@ -1,0 +1,29 @@
+#ifndef javax_xml_ws_http_HTTPException_HPP
+#define javax_xml_ws_http_HTTPException_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::ws::http::HTTPException : public jObject<::javax::xml::ws::http::HTTPException, ::javax::xml::ws::ProtocolException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_ws_http / "HTTPException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint)>(), //
+		jMethod<::jint()>("getStatusCode"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getStatusCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStatusCode")] != -1);
+		return call<R>("getStatusCode", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,41 @@
+#ifndef java_awt_print_Printable_HPP
+#define java_awt_print_Printable_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::print::Printable : public jObject<::java::awt::print::Printable, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_print / "Printable";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("NO_SUCH_PAGE"), //
+		jField<::jint>("PAGE_EXISTS"), //
+	};
+
+	template<typename F = ::jint>
+	static auto NO_SUCH_PAGE() {
+		static_assert(field_signatures[jField<F>("NO_SUCH_PAGE")] != -1);
+		return sat<F>("NO_SUCH_PAGE");
+	}
+
+	template<typename F = ::jint>
+	static auto PAGE_EXISTS() {
+		static_assert(field_signatures[jField<F>("PAGE_EXISTS")] != -1);
+		return sat<F>("PAGE_EXISTS");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint(::java::awt::Graphics, ::java::awt::print::PageFormat, ::jint)>("print"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto print(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("print")] != -1);
+		return call<R>("print", forward<Args>(args)...);
+	}
+
+};
+
+#endif

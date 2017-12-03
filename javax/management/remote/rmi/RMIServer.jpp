@@ -1,0 +1,35 @@
+#ifndef javax_management_remote_rmi_RMIServer_HPP
+#define javax_management_remote_rmi_RMIServer_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::management::remote::rmi::RMIServer : public jObject<::javax::management::remote::rmi::RMIServer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management_remote_rmi / "RMIServer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getVersion"), //
+		jMethod<::javax::management::remote::rmi::RMIConnection(::java::lang::Object)>("newClient"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getVersion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getVersion")] != -1);
+		return call<R>("getVersion", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::remote::rmi::RMIConnection, typename... Args>
+	auto newClient(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newClient")] != -1);
+		return call<R>("newClient", forward<Args>(args)...);
+	}
+
+};
+
+#endif

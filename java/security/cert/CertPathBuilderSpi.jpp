@@ -1,0 +1,36 @@
+#ifndef java_security_cert_CertPathBuilderSpi_HPP
+#define java_security_cert_CertPathBuilderSpi_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::cert::CertPathBuilderSpi : public jObject<::java::security::cert::CertPathBuilderSpi, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_cert / "CertPathBuilderSpi";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::security::cert::CertPathBuilderResult(::java::security::cert::CertPathParameters)>("engineBuild"), //
+		jMethod<::java::security::cert::CertPathChecker()>("engineGetRevocationChecker"), //
+	};
+
+	template<typename R = ::java::security::cert::CertPathBuilderResult, typename... Args>
+	auto engineBuild(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("engineBuild")] != -1);
+		return call<R>("engineBuild", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::CertPathChecker, typename... Args>
+	auto engineGetRevocationChecker(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("engineGetRevocationChecker")] != -1);
+		return call<R>("engineGetRevocationChecker", forward<Args>(args)...);
+	}
+
+};
+
+#endif

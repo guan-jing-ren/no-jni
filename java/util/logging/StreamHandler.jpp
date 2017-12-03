@@ -1,0 +1,58 @@
+#ifndef java_util_logging_StreamHandler_HPP
+#define java_util_logging_StreamHandler_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::logging::StreamHandler : public jObject<::java::util::logging::StreamHandler, ::java::util::logging::Handler> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_logging / "StreamHandler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::io::OutputStream, ::java::util::logging::Formatter)>(), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::jvoid()>("flush"), //
+		jMethod<::jboolean(::java::util::logging::LogRecord)>("isLoggable"), //
+		jMethod<::jvoid(::java::util::logging::LogRecord)>("publish"), //
+		jMethod<::jvoid(::java::lang::String)>("setEncoding"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto flush(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("flush")] != -1);
+		return call<R>("flush", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isLoggable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isLoggable")] != -1);
+		return call<R>("isLoggable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto publish(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("publish")] != -1);
+		return call<R>("publish", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setEncoding(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setEncoding")] != -1);
+		return call<R>("setEncoding", forward<Args>(args)...);
+	}
+
+};
+
+#endif

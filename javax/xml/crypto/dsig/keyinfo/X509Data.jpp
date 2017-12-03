@@ -1,0 +1,41 @@
+#ifndef javax_xml_crypto_dsig_keyinfo_X509Data_HPP
+#define javax_xml_crypto_dsig_keyinfo_X509Data_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::javax::xml::crypto::dsig::keyinfo::X509Data : public jObject<::javax::xml::crypto::dsig::keyinfo::X509Data, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_crypto_dsig_keyinfo / "X509Data";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("RAW_X509_CERTIFICATE_TYPE"), //
+		jField<::java::lang::String>("TYPE"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto RAW_X509_CERTIFICATE_TYPE() {
+		static_assert(field_signatures[jField<F>("RAW_X509_CERTIFICATE_TYPE")] != -1);
+		return sat<F>("RAW_X509_CERTIFICATE_TYPE");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto TYPE() {
+		static_assert(field_signatures[jField<F>("TYPE")] != -1);
+		return sat<F>("TYPE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::List()>("getContent"), //
+	};
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getContent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getContent")] != -1);
+		return call<R>("getContent", forward<Args>(args)...);
+	}
+
+};
+
+#endif

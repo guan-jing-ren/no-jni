@@ -1,0 +1,91 @@
+#ifndef java_math_RoundingMode_HPP
+#define java_math_RoundingMode_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::math::RoundingMode : public jObject<::java::math::RoundingMode, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_math / "RoundingMode";
+
+	constexpr static Enume field_signatures{
+		jField<::java::math::RoundingMode>("CEILING"), //
+		jField<::java::math::RoundingMode>("DOWN"), //
+		jField<::java::math::RoundingMode>("FLOOR"), //
+		jField<::java::math::RoundingMode>("HALF_DOWN"), //
+		jField<::java::math::RoundingMode>("HALF_EVEN"), //
+		jField<::java::math::RoundingMode>("HALF_UP"), //
+		jField<::java::math::RoundingMode>("UNNECESSARY"), //
+		jField<::java::math::RoundingMode>("UP"), //
+	};
+
+	template<typename F = ::java::math::RoundingMode>
+	static auto CEILING() {
+		static_assert(field_signatures[jField<F>("CEILING")] != -1);
+		return sat<F>("CEILING");
+	}
+
+	template<typename F = ::java::math::RoundingMode>
+	static auto DOWN() {
+		static_assert(field_signatures[jField<F>("DOWN")] != -1);
+		return sat<F>("DOWN");
+	}
+
+	template<typename F = ::java::math::RoundingMode>
+	static auto FLOOR() {
+		static_assert(field_signatures[jField<F>("FLOOR")] != -1);
+		return sat<F>("FLOOR");
+	}
+
+	template<typename F = ::java::math::RoundingMode>
+	static auto HALF_DOWN() {
+		static_assert(field_signatures[jField<F>("HALF_DOWN")] != -1);
+		return sat<F>("HALF_DOWN");
+	}
+
+	template<typename F = ::java::math::RoundingMode>
+	static auto HALF_EVEN() {
+		static_assert(field_signatures[jField<F>("HALF_EVEN")] != -1);
+		return sat<F>("HALF_EVEN");
+	}
+
+	template<typename F = ::java::math::RoundingMode>
+	static auto HALF_UP() {
+		static_assert(field_signatures[jField<F>("HALF_UP")] != -1);
+		return sat<F>("HALF_UP");
+	}
+
+	template<typename F = ::java::math::RoundingMode>
+	static auto UNNECESSARY() {
+		static_assert(field_signatures[jField<F>("UNNECESSARY")] != -1);
+		return sat<F>("UNNECESSARY");
+	}
+
+	template<typename F = ::java::math::RoundingMode>
+	static auto UP() {
+		static_assert(field_signatures[jField<F>("UP")] != -1);
+		return sat<F>("UP");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::math::RoundingMode(::jint)>("valueOf"), //
+		jMethod<::java::math::RoundingMode(::java::lang::String)>("valueOf"), //
+		jMethod<::java::math::RoundingMode *()>("values"), //
+	};
+
+	template<typename R = ::java::math::RoundingMode, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::RoundingMode *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

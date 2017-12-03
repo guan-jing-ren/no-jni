@@ -1,0 +1,28 @@
+#ifndef java_awt_PrintGraphics_HPP
+#define java_awt_PrintGraphics_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::PrintGraphics : public jObject<::java::awt::PrintGraphics, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "PrintGraphics";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::PrintJob()>("getPrintJob"), //
+	};
+
+	template<typename R = ::java::awt::PrintJob, typename... Args>
+	auto getPrintJob(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrintJob")] != -1);
+		return call<R>("getPrintJob", forward<Args>(args)...);
+	}
+
+};
+
+#endif

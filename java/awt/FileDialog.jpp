@@ -1,0 +1,124 @@
+#ifndef java_awt_FileDialog_HPP
+#define java_awt_FileDialog_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::FileDialog : public jObject<::java::awt::FileDialog, ::java::awt::Dialog> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "FileDialog";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("LOAD"), //
+		jField<::jint>("SAVE"), //
+	};
+
+	template<typename F = ::jint>
+	static auto LOAD() {
+		static_assert(field_signatures[jField<F>("LOAD")] != -1);
+		return sat<F>("LOAD");
+	}
+
+	template<typename F = ::jint>
+	static auto SAVE() {
+		static_assert(field_signatures[jField<F>("SAVE")] != -1);
+		return sat<F>("SAVE");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::Dialog)>(), //
+		jConstructor<::jvoid(::java::awt::Dialog, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::awt::Dialog, ::java::lang::String, ::jint)>(), //
+		jConstructor<::jvoid(::java::awt::Frame)>(), //
+		jConstructor<::jvoid(::java::awt::Frame, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::awt::Frame, ::java::lang::String, ::jint)>(), //
+		jMethod<::jvoid()>("addNotify"), //
+		jMethod<::java::lang::String()>("getDirectory"), //
+		jMethod<::java::lang::String()>("getFile"), //
+		jMethod<::java::io::FilenameFilter()>("getFilenameFilter"), //
+		jMethod<::java::io::File *()>("getFiles"), //
+		jMethod<::jint()>("getMode"), //
+		jMethod<::jboolean()>("isMultipleMode"), //
+		jMethod<::jvoid(::java::lang::String)>("setDirectory"), //
+		jMethod<::jvoid(::java::lang::String)>("setFile"), //
+		jMethod<::jvoid(::java::io::FilenameFilter)>("setFilenameFilter"), //
+		jMethod<::jvoid(::jint)>("setMode"), //
+		jMethod<::jvoid(::jboolean)>("setMultipleMode"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addNotify(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addNotify")] != -1);
+		return call<R>("addNotify", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDirectory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDirectory")] != -1);
+		return call<R>("getDirectory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFile")] != -1);
+		return call<R>("getFile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::FilenameFilter, typename... Args>
+	auto getFilenameFilter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFilenameFilter")] != -1);
+		return call<R>("getFilenameFilter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::File *, typename... Args>
+	auto getFiles(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFiles")] != -1);
+		return call<R>("getFiles", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getMode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMode")] != -1);
+		return call<R>("getMode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isMultipleMode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isMultipleMode")] != -1);
+		return call<R>("isMultipleMode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDirectory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDirectory")] != -1);
+		return call<R>("setDirectory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setFile")] != -1);
+		return call<R>("setFile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setFilenameFilter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setFilenameFilter")] != -1);
+		return call<R>("setFilenameFilter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setMode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMode")] != -1);
+		return call<R>("setMode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setMultipleMode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMultipleMode")] != -1);
+		return call<R>("setMultipleMode", forward<Args>(args)...);
+	}
+
+};
+
+#endif

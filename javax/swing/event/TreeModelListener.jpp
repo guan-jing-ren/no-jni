@@ -1,0 +1,49 @@
+#ifndef javax_swing_event_TreeModelListener_HPP
+#define javax_swing_event_TreeModelListener_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::event::TreeModelListener : public jObject<::javax::swing::event::TreeModelListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_event / "TreeModelListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::swing::event::TreeModelEvent)>("treeNodesChanged"), //
+		jMethod<::jvoid(::javax::swing::event::TreeModelEvent)>("treeNodesInserted"), //
+		jMethod<::jvoid(::javax::swing::event::TreeModelEvent)>("treeNodesRemoved"), //
+		jMethod<::jvoid(::javax::swing::event::TreeModelEvent)>("treeStructureChanged"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto treeNodesChanged(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("treeNodesChanged")] != -1);
+		return call<R>("treeNodesChanged", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto treeNodesInserted(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("treeNodesInserted")] != -1);
+		return call<R>("treeNodesInserted", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto treeNodesRemoved(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("treeNodesRemoved")] != -1);
+		return call<R>("treeNodesRemoved", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto treeStructureChanged(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("treeStructureChanged")] != -1);
+		return call<R>("treeStructureChanged", forward<Args>(args)...);
+	}
+
+};
+
+#endif

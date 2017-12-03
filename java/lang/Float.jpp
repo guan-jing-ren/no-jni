@@ -1,0 +1,267 @@
+#ifndef java_lang_Float_HPP
+#define java_lang_Float_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::lang::Float : public jObject<::java::lang::Float, ::java::lang::Number> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang / "Float";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("BYTES"), //
+		jField<::jint>("MAX_EXPONENT"), //
+		jField<::jfloat>("MAX_VALUE"), //
+		jField<::jint>("MIN_EXPONENT"), //
+		jField<::jfloat>("MIN_NORMAL"), //
+		jField<::jfloat>("MIN_VALUE"), //
+		jField<::jfloat>("NEGATIVE_INFINITY"), //
+		jField<::jfloat>("NaN"), //
+		jField<::jfloat>("POSITIVE_INFINITY"), //
+		jField<::jint>("SIZE"), //
+		jField<::java::lang::Class>("TYPE"), //
+	};
+
+	template<typename F = ::jint>
+	static auto BYTES() {
+		static_assert(field_signatures[jField<F>("BYTES")] != -1);
+		return sat<F>("BYTES");
+	}
+
+	template<typename F = ::jint>
+	static auto MAX_EXPONENT() {
+		static_assert(field_signatures[jField<F>("MAX_EXPONENT")] != -1);
+		return sat<F>("MAX_EXPONENT");
+	}
+
+	template<typename F = ::jfloat>
+	static auto MAX_VALUE() {
+		static_assert(field_signatures[jField<F>("MAX_VALUE")] != -1);
+		return sat<F>("MAX_VALUE");
+	}
+
+	template<typename F = ::jint>
+	static auto MIN_EXPONENT() {
+		static_assert(field_signatures[jField<F>("MIN_EXPONENT")] != -1);
+		return sat<F>("MIN_EXPONENT");
+	}
+
+	template<typename F = ::jfloat>
+	static auto MIN_NORMAL() {
+		static_assert(field_signatures[jField<F>("MIN_NORMAL")] != -1);
+		return sat<F>("MIN_NORMAL");
+	}
+
+	template<typename F = ::jfloat>
+	static auto MIN_VALUE() {
+		static_assert(field_signatures[jField<F>("MIN_VALUE")] != -1);
+		return sat<F>("MIN_VALUE");
+	}
+
+	template<typename F = ::jfloat>
+	static auto NEGATIVE_INFINITY() {
+		static_assert(field_signatures[jField<F>("NEGATIVE_INFINITY")] != -1);
+		return sat<F>("NEGATIVE_INFINITY");
+	}
+
+	template<typename F = ::jfloat>
+	static auto NaN() {
+		static_assert(field_signatures[jField<F>("NaN")] != -1);
+		return sat<F>("NaN");
+	}
+
+	template<typename F = ::jfloat>
+	static auto POSITIVE_INFINITY() {
+		static_assert(field_signatures[jField<F>("POSITIVE_INFINITY")] != -1);
+		return sat<F>("POSITIVE_INFINITY");
+	}
+
+	template<typename F = ::jint>
+	static auto SIZE() {
+		static_assert(field_signatures[jField<F>("SIZE")] != -1);
+		return sat<F>("SIZE");
+	}
+
+	template<typename F = ::java::lang::Class>
+	static auto TYPE() {
+		static_assert(field_signatures[jField<F>("TYPE")] != -1);
+		return sat<F>("TYPE");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jdouble)>(), //
+		jConstructor<::jvoid(::jfloat)>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jMethod<::jbyte()>("byteValue"), //
+		jMethod<::jint(::jfloat, ::jfloat)>("compare"), //
+		jMethod<::jint(::java::lang::Float)>("compareTo"), //
+		jMethod<::jint(::java::lang::Object)>("compareTo"), //
+		jMethod<::jdouble()>("doubleValue"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jint(::jfloat)>("floatToIntBits"), //
+		jMethod<::jint(::jfloat)>("floatToRawIntBits"), //
+		jMethod<::jfloat()>("floatValue"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jint(::jfloat)>("hashCode"), //
+		jMethod<::jfloat(::jint)>("intBitsToFloat"), //
+		jMethod<::jint()>("intValue"), //
+		jMethod<::jboolean(::jfloat)>("isFinite"), //
+		jMethod<::jboolean()>("isInfinite"), //
+		jMethod<::jboolean(::jfloat)>("isInfinite"), //
+		jMethod<::jboolean()>("isNaN"), //
+		jMethod<::jboolean(::jfloat)>("isNaN"), //
+		jMethod<::jlong()>("longValue"), //
+		jMethod<::jfloat(::jfloat, ::jfloat)>("max"), //
+		jMethod<::jfloat(::jfloat, ::jfloat)>("min"), //
+		jMethod<::jfloat(::java::lang::String)>("parseFloat"), //
+		jMethod<::jshort()>("shortValue"), //
+		jMethod<::jfloat(::jfloat, ::jfloat)>("sum"), //
+		jMethod<::java::lang::String(::jfloat)>("toHexString"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::java::lang::String(::jfloat)>("toString"), //
+		jMethod<::java::lang::Float(::jfloat)>("valueOf"), //
+		jMethod<::java::lang::Float(::java::lang::String)>("valueOf"), //
+	};
+
+	template<typename R = ::jbyte, typename... Args>
+	auto byteValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("byteValue")] != -1);
+		return call<R>("byteValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto compare(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compare")] != -1);
+		return scall<R>("compare", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto compareTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compareTo")] != -1);
+		return call<R>("compareTo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	auto doubleValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("doubleValue")] != -1);
+		return call<R>("doubleValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto floatToIntBits(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("floatToIntBits")] != -1);
+		return scall<R>("floatToIntBits", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto floatToRawIntBits(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("floatToRawIntBits")] != -1);
+		return scall<R>("floatToRawIntBits", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto floatValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("floatValue")] != -1);
+		return call<R>("floatValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	static auto intBitsToFloat(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("intBitsToFloat")] != -1);
+		return scall<R>("intBitsToFloat", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto intValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("intValue")] != -1);
+		return call<R>("intValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isFinite(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isFinite")] != -1);
+		return scall<R>("isFinite", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isInfinite(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isInfinite")] != -1);
+		return call<R>("isInfinite", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isNaN(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isNaN")] != -1);
+		return call<R>("isNaN", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto longValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("longValue")] != -1);
+		return call<R>("longValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	static auto max(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("max")] != -1);
+		return scall<R>("max", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	static auto min(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("min")] != -1);
+		return scall<R>("min", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	static auto parseFloat(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("parseFloat")] != -1);
+		return scall<R>("parseFloat", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jshort, typename... Args>
+	auto shortValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("shortValue")] != -1);
+		return call<R>("shortValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	static auto sum(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("sum")] != -1);
+		return scall<R>("sum", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto toHexString(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toHexString")] != -1);
+		return scall<R>("toHexString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Float, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+};
+
+#endif

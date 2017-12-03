@@ -1,0 +1,56 @@
+#ifndef java_awt_dnd_DropTargetListener_HPP
+#define java_awt_dnd_DropTargetListener_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::dnd::DropTargetListener : public jObject<::java::awt::dnd::DropTargetListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_dnd / "DropTargetListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::awt::dnd::DropTargetDragEvent)>("dragEnter"), //
+		jMethod<::jvoid(::java::awt::dnd::DropTargetEvent)>("dragExit"), //
+		jMethod<::jvoid(::java::awt::dnd::DropTargetDragEvent)>("dragOver"), //
+		jMethod<::jvoid(::java::awt::dnd::DropTargetDropEvent)>("drop"), //
+		jMethod<::jvoid(::java::awt::dnd::DropTargetDragEvent)>("dropActionChanged"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dragEnter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dragEnter")] != -1);
+		return call<R>("dragEnter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dragExit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dragExit")] != -1);
+		return call<R>("dragExit", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dragOver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dragOver")] != -1);
+		return call<R>("dragOver", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto drop(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("drop")] != -1);
+		return call<R>("drop", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dropActionChanged(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dropActionChanged")] != -1);
+		return call<R>("dropActionChanged", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,35 @@
+#ifndef java_sql_Wrapper_HPP
+#define java_sql_Wrapper_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::sql::Wrapper : public jObject<::java::sql::Wrapper, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_sql / "Wrapper";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::lang::Class)>("isWrapperFor"), //
+		jMethod<::java::lang::Object(::java::lang::Class)>("unwrap"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isWrapperFor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isWrapperFor")] != -1);
+		return call<R>("isWrapperFor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto unwrap(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unwrap")] != -1);
+		return call<R>("unwrap", forward<Args>(args)...);
+	}
+
+};
+
+#endif

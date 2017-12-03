@@ -1,0 +1,35 @@
+#ifndef javax_security_sasl_SaslServerFactory_HPP
+#define javax_security_sasl_SaslServerFactory_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::security::sasl::SaslServerFactory : public jObject<::javax::security::sasl::SaslServerFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_security_sasl / "SaslServerFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::security::sasl::SaslServer(::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::util::Map, ::javax::security::auth::callback::CallbackHandler)>("createSaslServer"), //
+		jMethod<::java::lang::String *(::java::util::Map)>("getMechanismNames"), //
+	};
+
+	template<typename R = ::javax::security::sasl::SaslServer, typename... Args>
+	auto createSaslServer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createSaslServer")] != -1);
+		return call<R>("createSaslServer", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getMechanismNames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMechanismNames")] != -1);
+		return call<R>("getMechanismNames", forward<Args>(args)...);
+	}
+
+};
+
+#endif

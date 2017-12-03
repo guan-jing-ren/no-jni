@@ -1,0 +1,55 @@
+#ifndef javax_xml_crypto_dsig_CanonicalizationMethod_HPP
+#define javax_xml_crypto_dsig_CanonicalizationMethod_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::crypto::dsig::CanonicalizationMethod : public jObject<::javax::xml::crypto::dsig::CanonicalizationMethod, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_crypto_dsig / "CanonicalizationMethod";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("EXCLUSIVE"), //
+		jField<::java::lang::String>("EXCLUSIVE_WITH_COMMENTS"), //
+		jField<::java::lang::String>("INCLUSIVE"), //
+		jField<::java::lang::String>("INCLUSIVE_WITH_COMMENTS"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto EXCLUSIVE() {
+		static_assert(field_signatures[jField<F>("EXCLUSIVE")] != -1);
+		return sat<F>("EXCLUSIVE");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto EXCLUSIVE_WITH_COMMENTS() {
+		static_assert(field_signatures[jField<F>("EXCLUSIVE_WITH_COMMENTS")] != -1);
+		return sat<F>("EXCLUSIVE_WITH_COMMENTS");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto INCLUSIVE() {
+		static_assert(field_signatures[jField<F>("INCLUSIVE")] != -1);
+		return sat<F>("INCLUSIVE");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto INCLUSIVE_WITH_COMMENTS() {
+		static_assert(field_signatures[jField<F>("INCLUSIVE_WITH_COMMENTS")] != -1);
+		return sat<F>("INCLUSIVE_WITH_COMMENTS");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::security::spec::AlgorithmParameterSpec()>("getParameterSpec"), //
+	};
+
+	template<typename R = ::java::security::spec::AlgorithmParameterSpec, typename... Args>
+	auto getParameterSpec(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParameterSpec")] != -1);
+		return call<R>("getParameterSpec", forward<Args>(args)...);
+	}
+
+};
+
+#endif

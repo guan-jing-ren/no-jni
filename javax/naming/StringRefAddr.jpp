@@ -1,0 +1,29 @@
+#ifndef javax_naming_StringRefAddr_HPP
+#define javax_naming_StringRefAddr_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::naming::StringRefAddr : public jObject<::javax::naming::StringRefAddr, ::javax::naming::RefAddr> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_naming / "StringRefAddr";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String)>(), //
+		jMethod<::java::lang::Object()>("getContent"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getContent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getContent")] != -1);
+		return call<R>("getContent", forward<Args>(args)...);
+	}
+
+};
+
+#endif

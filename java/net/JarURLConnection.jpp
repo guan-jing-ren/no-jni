@@ -1,0 +1,77 @@
+#ifndef java_net_JarURLConnection_HPP
+#define java_net_JarURLConnection_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::net::JarURLConnection : public jObject<::java::net::JarURLConnection, ::java::net::URLConnection> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_net / "JarURLConnection";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::jar::Attributes()>("getAttributes"), //
+		jMethod<::java::security::cert::Certificate *()>("getCertificates"), //
+		jMethod<::java::lang::String()>("getEntryName"), //
+		jMethod<::java::util::jar::JarEntry()>("getJarEntry"), //
+		jMethod<::java::util::jar::JarFile()>("getJarFile"), //
+		jMethod<::java::net::URL()>("getJarFileURL"), //
+		jMethod<::java::util::jar::Attributes()>("getMainAttributes"), //
+		jMethod<::java::util::jar::Manifest()>("getManifest"), //
+	};
+
+	template<typename R = ::java::util::jar::Attributes, typename... Args>
+	auto getAttributes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttributes")] != -1);
+		return call<R>("getAttributes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::Certificate *, typename... Args>
+	auto getCertificates(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCertificates")] != -1);
+		return call<R>("getCertificates", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getEntryName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEntryName")] != -1);
+		return call<R>("getEntryName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::jar::JarEntry, typename... Args>
+	auto getJarEntry(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getJarEntry")] != -1);
+		return call<R>("getJarEntry", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::jar::JarFile, typename... Args>
+	auto getJarFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getJarFile")] != -1);
+		return call<R>("getJarFile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::URL, typename... Args>
+	auto getJarFileURL(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getJarFileURL")] != -1);
+		return call<R>("getJarFileURL", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::jar::Attributes, typename... Args>
+	auto getMainAttributes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMainAttributes")] != -1);
+		return call<R>("getMainAttributes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::jar::Manifest, typename... Args>
+	auto getManifest(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getManifest")] != -1);
+		return call<R>("getManifest", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,51 @@
+#ifndef java_io_StringBufferInputStream_HPP
+#define java_io_StringBufferInputStream_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::io::StringBufferInputStream : public jObject<::java::io::StringBufferInputStream, ::java::io::InputStream> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_io / "StringBufferInputStream";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jMethod<::jint()>("available"), //
+		jMethod<::jint()>("read"), //
+		jMethod<::jint(::jbyte *, ::jint, ::jint)>("read"), //
+		jMethod<::jvoid()>("reset"), //
+		jMethod<::jlong(::jlong)>("skip"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto available(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("available")] != -1);
+		return call<R>("available", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto reset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("reset")] != -1);
+		return call<R>("reset", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto skip(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("skip")] != -1);
+		return call<R>("skip", forward<Args>(args)...);
+	}
+
+};
+
+#endif

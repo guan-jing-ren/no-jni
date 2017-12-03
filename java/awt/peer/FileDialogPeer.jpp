@@ -1,0 +1,42 @@
+#ifndef java_awt_peer_FileDialogPeer_HPP
+#define java_awt_peer_FileDialogPeer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::peer::FileDialogPeer : public jObject<::java::awt::peer::FileDialogPeer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_peer / "FileDialogPeer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::String)>("setDirectory"), //
+		jMethod<::jvoid(::java::lang::String)>("setFile"), //
+		jMethod<::jvoid(::java::io::FilenameFilter)>("setFilenameFilter"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDirectory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDirectory")] != -1);
+		return call<R>("setDirectory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setFile")] != -1);
+		return call<R>("setFile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setFilenameFilter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setFilenameFilter")] != -1);
+		return call<R>("setFilenameFilter", forward<Args>(args)...);
+	}
+
+};
+
+#endif

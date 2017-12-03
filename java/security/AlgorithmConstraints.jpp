@@ -1,0 +1,30 @@
+#ifndef java_security_AlgorithmConstraints_HPP
+#define java_security_AlgorithmConstraints_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::AlgorithmConstraints : public jObject<::java::security::AlgorithmConstraints, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "AlgorithmConstraints";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::util::Set, ::java::lang::String, ::java::security::AlgorithmParameters)>("permits"), //
+		jMethod<::jboolean(::java::util::Set, ::java::lang::String, ::java::security::Key, ::java::security::AlgorithmParameters)>("permits"), //
+		jMethod<::jboolean(::java::util::Set, ::java::security::Key)>("permits"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto permits(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("permits")] != -1);
+		return call<R>("permits", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,78 @@
+#ifndef javax_management_remote_rmi_RMIServerImpl_HPP
+#define javax_management_remote_rmi_RMIServerImpl_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::management::remote::rmi::RMIServerImpl : public jObject<::javax::management::remote::rmi::RMIServerImpl, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management_remote_rmi / "RMIServerImpl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::util::Map)>(), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::java::lang::ClassLoader()>("getDefaultClassLoader"), //
+		jMethod<::javax::management::MBeanServer()>("getMBeanServer"), //
+		jMethod<::java::lang::String()>("getVersion"), //
+		jMethod<::javax::management::remote::rmi::RMIConnection(::java::lang::Object)>("newClient"), //
+		jMethod<::jvoid(::java::lang::ClassLoader)>("setDefaultClassLoader"), //
+		jMethod<::jvoid(::javax::management::MBeanServer)>("setMBeanServer"), //
+		jMethod<::java::rmi::Remote()>("toStub"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::ClassLoader, typename... Args>
+	auto getDefaultClassLoader(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaultClassLoader")] != -1);
+		return call<R>("getDefaultClassLoader", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::MBeanServer, typename... Args>
+	auto getMBeanServer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMBeanServer")] != -1);
+		return call<R>("getMBeanServer", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getVersion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getVersion")] != -1);
+		return call<R>("getVersion", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::remote::rmi::RMIConnection, typename... Args>
+	auto newClient(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newClient")] != -1);
+		return call<R>("newClient", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDefaultClassLoader(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDefaultClassLoader")] != -1);
+		return call<R>("setDefaultClassLoader", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setMBeanServer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMBeanServer")] != -1);
+		return call<R>("setMBeanServer", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::Remote, typename... Args>
+	auto toStub(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toStub")] != -1);
+		return call<R>("toStub", forward<Args>(args)...);
+	}
+
+};
+
+#endif

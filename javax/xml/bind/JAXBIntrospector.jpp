@@ -1,0 +1,43 @@
+#ifndef javax_xml_bind_JAXBIntrospector_HPP
+#define javax_xml_bind_JAXBIntrospector_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::bind::JAXBIntrospector : public jObject<::javax::xml::bind::JAXBIntrospector, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_bind / "JAXBIntrospector";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::xml::namespace_::QName(::java::lang::Object)>("getElementName"), //
+		jMethod<::java::lang::Object(::java::lang::Object)>("getValue"), //
+		jMethod<::jboolean(::java::lang::Object)>("isElement"), //
+	};
+
+	template<typename R = ::javax::xml::namespace_::QName, typename... Args>
+	auto getElementName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getElementName")] != -1);
+		return call<R>("getElementName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto getValue(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getValue")] != -1);
+		return scall<R>("getValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isElement")] != -1);
+		return call<R>("isElement", forward<Args>(args)...);
+	}
+
+};
+
+#endif

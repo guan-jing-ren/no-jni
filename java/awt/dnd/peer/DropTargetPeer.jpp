@@ -1,0 +1,35 @@
+#ifndef java_awt_dnd_peer_DropTargetPeer_HPP
+#define java_awt_dnd_peer_DropTargetPeer_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::java::awt::dnd::peer::DropTargetPeer : public jObject<::java::awt::dnd::peer::DropTargetPeer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_dnd_peer / "DropTargetPeer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::awt::dnd::DropTarget)>("addDropTarget"), //
+		jMethod<::jvoid(::java::awt::dnd::DropTarget)>("removeDropTarget"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addDropTarget(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addDropTarget")] != -1);
+		return call<R>("addDropTarget", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeDropTarget(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeDropTarget")] != -1);
+		return call<R>("removeDropTarget", forward<Args>(args)...);
+	}
+
+};
+
+#endif

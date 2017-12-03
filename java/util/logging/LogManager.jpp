@@ -1,0 +1,105 @@
+#ifndef java_util_logging_LogManager_HPP
+#define java_util_logging_LogManager_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::logging::LogManager : public jObject<::java::util::logging::LogManager, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_logging / "LogManager";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("LOGGING_MXBEAN_NAME"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto LOGGING_MXBEAN_NAME() {
+		static_assert(field_signatures[jField<F>("LOGGING_MXBEAN_NAME")] != -1);
+		return sat<F>("LOGGING_MXBEAN_NAME");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::util::logging::Logger)>("addLogger"), //
+		jMethod<::jvoid(::java::beans::PropertyChangeListener)>("addPropertyChangeListener"), //
+		jMethod<::jvoid()>("checkAccess"), //
+		jMethod<::java::util::logging::LogManager()>("getLogManager"), //
+		jMethod<::java::util::logging::Logger(::java::lang::String)>("getLogger"), //
+		jMethod<::java::util::Enumeration()>("getLoggerNames"), //
+		jMethod<::java::util::logging::LoggingMXBean()>("getLoggingMXBean"), //
+		jMethod<::java::lang::String(::java::lang::String)>("getProperty"), //
+		jMethod<::jvoid()>("readConfiguration"), //
+		jMethod<::jvoid(::java::io::InputStream)>("readConfiguration"), //
+		jMethod<::jvoid(::java::beans::PropertyChangeListener)>("removePropertyChangeListener"), //
+		jMethod<::jvoid()>("reset"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto addLogger(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addLogger")] != -1);
+		return call<R>("addLogger", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addPropertyChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addPropertyChangeListener")] != -1);
+		return call<R>("addPropertyChangeListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto checkAccess(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("checkAccess")] != -1);
+		return call<R>("checkAccess", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::logging::LogManager, typename... Args>
+	static auto getLogManager(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLogManager")] != -1);
+		return scall<R>("getLogManager", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::logging::Logger, typename... Args>
+	auto getLogger(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLogger")] != -1);
+		return call<R>("getLogger", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	auto getLoggerNames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLoggerNames")] != -1);
+		return call<R>("getLoggerNames", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::logging::LoggingMXBean, typename... Args>
+	static auto getLoggingMXBean(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLoggingMXBean")] != -1);
+		return scall<R>("getLoggingMXBean", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getProperty(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProperty")] != -1);
+		return call<R>("getProperty", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto readConfiguration(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("readConfiguration")] != -1);
+		return call<R>("readConfiguration", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removePropertyChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removePropertyChangeListener")] != -1);
+		return call<R>("removePropertyChangeListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto reset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("reset")] != -1);
+		return call<R>("reset", forward<Args>(args)...);
+	}
+
+};
+
+#endif

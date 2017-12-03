@@ -1,0 +1,28 @@
+#ifndef javax_sound_midi_Instrument_HPP
+#define javax_sound_midi_Instrument_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::sound::midi::Instrument : public jObject<::javax::sound::midi::Instrument, ::javax::sound::midi::SoundbankResource> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sound_midi / "Instrument";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::sound::midi::Patch()>("getPatch"), //
+	};
+
+	template<typename R = ::javax::sound::midi::Patch, typename... Args>
+	auto getPatch(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPatch")] != -1);
+		return call<R>("getPatch", forward<Args>(args)...);
+	}
+
+};
+
+#endif

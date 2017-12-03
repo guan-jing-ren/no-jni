@@ -1,0 +1,49 @@
+#ifndef java_nio_file_attribute_DosFileAttributes_HPP
+#define java_nio_file_attribute_DosFileAttributes_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::java::nio::file::attribute::DosFileAttributes : public jObject<::java::nio::file::attribute::DosFileAttributes, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_file_attribute / "DosFileAttributes";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean()>("isArchive"), //
+		jMethod<::jboolean()>("isHidden"), //
+		jMethod<::jboolean()>("isReadOnly"), //
+		jMethod<::jboolean()>("isSystem"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isArchive(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isArchive")] != -1);
+		return call<R>("isArchive", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isHidden(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isHidden")] != -1);
+		return call<R>("isHidden", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isReadOnly(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isReadOnly")] != -1);
+		return call<R>("isReadOnly", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isSystem(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSystem")] != -1);
+		return call<R>("isSystem", forward<Args>(args)...);
+	}
+
+};
+
+#endif

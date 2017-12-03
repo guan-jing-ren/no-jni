@@ -1,0 +1,55 @@
+#ifndef javax_print_URIException_HPP
+#define javax_print_URIException_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::print::URIException : public jObject<::javax::print::URIException, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_print / "URIException";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("URIInaccessible"), //
+		jField<::jint>("URIOtherProblem"), //
+		jField<::jint>("URISchemeNotSupported"), //
+	};
+
+	template<typename F = ::jint>
+	static auto URIInaccessible() {
+		static_assert(field_signatures[jField<F>("URIInaccessible")] != -1);
+		return sat<F>("URIInaccessible");
+	}
+
+	template<typename F = ::jint>
+	static auto URIOtherProblem() {
+		static_assert(field_signatures[jField<F>("URIOtherProblem")] != -1);
+		return sat<F>("URIOtherProblem");
+	}
+
+	template<typename F = ::jint>
+	static auto URISchemeNotSupported() {
+		static_assert(field_signatures[jField<F>("URISchemeNotSupported")] != -1);
+		return sat<F>("URISchemeNotSupported");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("getReason"), //
+		jMethod<::java::net::URI()>("getUnsupportedURI"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getReason(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getReason")] != -1);
+		return call<R>("getReason", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::URI, typename... Args>
+	auto getUnsupportedURI(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUnsupportedURI")] != -1);
+		return call<R>("getUnsupportedURI", forward<Args>(args)...);
+	}
+
+};
+
+#endif

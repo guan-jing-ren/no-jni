@@ -1,0 +1,46 @@
+#ifndef javax_xml_transform_TransformerFactoryConfigurationError_HPP
+#define javax_xml_transform_TransformerFactoryConfigurationError_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::transform::TransformerFactoryConfigurationError : public jObject<::javax::xml::transform::TransformerFactoryConfigurationError, ::java::lang::Error> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_transform / "TransformerFactoryConfigurationError";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::Exception)>(), //
+		jConstructor<::jvoid(::java::lang::Exception, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jMethod<::java::lang::Throwable()>("getCause"), //
+		jMethod<::java::lang::Exception()>("getException"), //
+		jMethod<::java::lang::String()>("getMessage"), //
+	};
+
+	template<typename R = ::java::lang::Throwable, typename... Args>
+	auto getCause(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCause")] != -1);
+		return call<R>("getCause", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Exception, typename... Args>
+	auto getException(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getException")] != -1);
+		return call<R>("getException", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMessage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMessage")] != -1);
+		return call<R>("getMessage", forward<Args>(args)...);
+	}
+
+};
+
+#endif

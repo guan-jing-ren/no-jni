@@ -1,0 +1,126 @@
+#ifndef javax_script_ScriptContext_HPP
+#define javax_script_ScriptContext_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::script::ScriptContext : public jObject<::javax::script::ScriptContext, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_script / "ScriptContext";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("ENGINE_SCOPE"), //
+		jField<::jint>("GLOBAL_SCOPE"), //
+	};
+
+	template<typename F = ::jint>
+	static auto ENGINE_SCOPE() {
+		static_assert(field_signatures[jField<F>("ENGINE_SCOPE")] != -1);
+		return sat<F>("ENGINE_SCOPE");
+	}
+
+	template<typename F = ::jint>
+	static auto GLOBAL_SCOPE() {
+		static_assert(field_signatures[jField<F>("GLOBAL_SCOPE")] != -1);
+		return sat<F>("GLOBAL_SCOPE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object(::java::lang::String)>("getAttribute"), //
+		jMethod<::java::lang::Object(::java::lang::String, ::jint)>("getAttribute"), //
+		jMethod<::jint(::java::lang::String)>("getAttributesScope"), //
+		jMethod<::javax::script::Bindings(::jint)>("getBindings"), //
+		jMethod<::java::io::Writer()>("getErrorWriter"), //
+		jMethod<::java::io::Reader()>("getReader"), //
+		jMethod<::java::util::List()>("getScopes"), //
+		jMethod<::java::io::Writer()>("getWriter"), //
+		jMethod<::java::lang::Object(::java::lang::String, ::jint)>("removeAttribute"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::Object, ::jint)>("setAttribute"), //
+		jMethod<::jvoid(::javax::script::Bindings, ::jint)>("setBindings"), //
+		jMethod<::jvoid(::java::io::Writer)>("setErrorWriter"), //
+		jMethod<::jvoid(::java::io::Reader)>("setReader"), //
+		jMethod<::jvoid(::java::io::Writer)>("setWriter"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttribute")] != -1);
+		return call<R>("getAttribute", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getAttributesScope(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttributesScope")] != -1);
+		return call<R>("getAttributesScope", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::script::Bindings, typename... Args>
+	auto getBindings(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBindings")] != -1);
+		return call<R>("getBindings", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::Writer, typename... Args>
+	auto getErrorWriter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getErrorWriter")] != -1);
+		return call<R>("getErrorWriter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::Reader, typename... Args>
+	auto getReader(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getReader")] != -1);
+		return call<R>("getReader", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getScopes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getScopes")] != -1);
+		return call<R>("getScopes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::Writer, typename... Args>
+	auto getWriter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWriter")] != -1);
+		return call<R>("getWriter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto removeAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeAttribute")] != -1);
+		return call<R>("removeAttribute", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setAttribute")] != -1);
+		return call<R>("setAttribute", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setBindings(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setBindings")] != -1);
+		return call<R>("setBindings", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setErrorWriter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setErrorWriter")] != -1);
+		return call<R>("setErrorWriter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setReader(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setReader")] != -1);
+		return call<R>("setReader", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setWriter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setWriter")] != -1);
+		return call<R>("setWriter", forward<Args>(args)...);
+	}
+
+};
+
+#endif

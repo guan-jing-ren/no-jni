@@ -1,0 +1,28 @@
+#ifndef java_lang_reflect_Type_HPP
+#define java_lang_reflect_Type_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::reflect::Type : public jObject<::java::lang::reflect::Type, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_reflect / "Type";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getTypeName"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getTypeName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTypeName")] != -1);
+		return call<R>("getTypeName", forward<Args>(args)...);
+	}
+
+};
+
+#endif

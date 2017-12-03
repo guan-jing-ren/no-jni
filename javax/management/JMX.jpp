@@ -1,0 +1,106 @@
+#ifndef javax_management_JMX_HPP
+#define javax_management_JMX_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::management::JMX : public jObject<::javax::management::JMX, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management / "JMX";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("DEFAULT_VALUE_FIELD"), //
+		jField<::java::lang::String>("IMMUTABLE_INFO_FIELD"), //
+		jField<::java::lang::String>("INTERFACE_CLASS_NAME_FIELD"), //
+		jField<::java::lang::String>("LEGAL_VALUES_FIELD"), //
+		jField<::java::lang::String>("MAX_VALUE_FIELD"), //
+		jField<::java::lang::String>("MIN_VALUE_FIELD"), //
+		jField<::java::lang::String>("MXBEAN_FIELD"), //
+		jField<::java::lang::String>("OPEN_TYPE_FIELD"), //
+		jField<::java::lang::String>("ORIGINAL_TYPE_FIELD"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto DEFAULT_VALUE_FIELD() {
+		static_assert(field_signatures[jField<F>("DEFAULT_VALUE_FIELD")] != -1);
+		return sat<F>("DEFAULT_VALUE_FIELD");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto IMMUTABLE_INFO_FIELD() {
+		static_assert(field_signatures[jField<F>("IMMUTABLE_INFO_FIELD")] != -1);
+		return sat<F>("IMMUTABLE_INFO_FIELD");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto INTERFACE_CLASS_NAME_FIELD() {
+		static_assert(field_signatures[jField<F>("INTERFACE_CLASS_NAME_FIELD")] != -1);
+		return sat<F>("INTERFACE_CLASS_NAME_FIELD");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto LEGAL_VALUES_FIELD() {
+		static_assert(field_signatures[jField<F>("LEGAL_VALUES_FIELD")] != -1);
+		return sat<F>("LEGAL_VALUES_FIELD");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto MAX_VALUE_FIELD() {
+		static_assert(field_signatures[jField<F>("MAX_VALUE_FIELD")] != -1);
+		return sat<F>("MAX_VALUE_FIELD");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto MIN_VALUE_FIELD() {
+		static_assert(field_signatures[jField<F>("MIN_VALUE_FIELD")] != -1);
+		return sat<F>("MIN_VALUE_FIELD");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto MXBEAN_FIELD() {
+		static_assert(field_signatures[jField<F>("MXBEAN_FIELD")] != -1);
+		return sat<F>("MXBEAN_FIELD");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto OPEN_TYPE_FIELD() {
+		static_assert(field_signatures[jField<F>("OPEN_TYPE_FIELD")] != -1);
+		return sat<F>("OPEN_TYPE_FIELD");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto ORIGINAL_TYPE_FIELD() {
+		static_assert(field_signatures[jField<F>("ORIGINAL_TYPE_FIELD")] != -1);
+		return sat<F>("ORIGINAL_TYPE_FIELD");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::lang::Class)>("isMXBeanInterface"), //
+		jMethod<::java::lang::Object(::javax::management::MBeanServerConnection, ::javax::management::ObjectName, ::java::lang::Class)>("newMBeanProxy"), //
+		jMethod<::java::lang::Object(::javax::management::MBeanServerConnection, ::javax::management::ObjectName, ::java::lang::Class, ::jboolean)>("newMBeanProxy"), //
+		jMethod<::java::lang::Object(::javax::management::MBeanServerConnection, ::javax::management::ObjectName, ::java::lang::Class)>("newMXBeanProxy"), //
+		jMethod<::java::lang::Object(::javax::management::MBeanServerConnection, ::javax::management::ObjectName, ::java::lang::Class, ::jboolean)>("newMXBeanProxy"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isMXBeanInterface(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isMXBeanInterface")] != -1);
+		return scall<R>("isMXBeanInterface", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto newMBeanProxy(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newMBeanProxy")] != -1);
+		return scall<R>("newMBeanProxy", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto newMXBeanProxy(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newMXBeanProxy")] != -1);
+		return scall<R>("newMXBeanProxy", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,42 @@
+#ifndef org_omg_CosNaming_BindingIteratorOperations_HPP
+#define org_omg_CosNaming_BindingIteratorOperations_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::CosNaming::BindingIteratorOperations : public jObject<::org::omg::CosNaming::BindingIteratorOperations, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CosNaming / "BindingIteratorOperations";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("destroy"), //
+		jMethod<::jboolean(::jint, ::org::omg::CosNaming::BindingListHolder)>("next_n"), //
+		jMethod<::jboolean(::org::omg::CosNaming::BindingHolder)>("next_one"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto destroy(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("destroy")] != -1);
+		return call<R>("destroy", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto next_n(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("next_n")] != -1);
+		return call<R>("next_n", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto next_one(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("next_one")] != -1);
+		return call<R>("next_one", forward<Args>(args)...);
+	}
+
+};
+
+#endif

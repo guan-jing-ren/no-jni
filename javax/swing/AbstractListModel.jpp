@@ -1,0 +1,50 @@
+#ifndef javax_swing_AbstractListModel_HPP
+#define javax_swing_AbstractListModel_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::AbstractListModel : public jObject<::javax::swing::AbstractListModel, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "AbstractListModel";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::javax::swing::event::ListDataListener)>("addListDataListener"), //
+		jMethod<::javax::swing::event::ListDataListener *()>("getListDataListeners"), //
+		jMethod<::java::util::EventListener *(::java::lang::Class)>("getListeners"), //
+		jMethod<::jvoid(::javax::swing::event::ListDataListener)>("removeListDataListener"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addListDataListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addListDataListener")] != -1);
+		return call<R>("addListDataListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::event::ListDataListener *, typename... Args>
+	auto getListDataListeners(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getListDataListeners")] != -1);
+		return call<R>("getListDataListeners", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::EventListener *, typename... Args>
+	auto getListeners(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getListeners")] != -1);
+		return call<R>("getListeners", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeListDataListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeListDataListener")] != -1);
+		return call<R>("removeListDataListener", forward<Args>(args)...);
+	}
+
+};
+
+#endif

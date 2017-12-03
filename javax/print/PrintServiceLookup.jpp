@@ -1,0 +1,79 @@
+#ifndef javax_print_PrintServiceLookup_HPP
+#define javax_print_PrintServiceLookup_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::print::PrintServiceLookup : public jObject<::javax::print::PrintServiceLookup, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_print / "PrintServiceLookup";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::print::PrintService()>("getDefaultPrintService"), //
+		jMethod<::javax::print::MultiDocPrintService *(::javax::print::DocFlavor *, ::javax::print::attribute::AttributeSet)>("getMultiDocPrintServices"), //
+		jMethod<::javax::print::PrintService *()>("getPrintServices"), //
+		jMethod<::javax::print::PrintService *(::javax::print::DocFlavor, ::javax::print::attribute::AttributeSet)>("getPrintServices"), //
+		jMethod<::javax::print::PrintService()>("lookupDefaultPrintService"), //
+		jMethod<::javax::print::MultiDocPrintService *(::javax::print::DocFlavor *, ::javax::print::attribute::AttributeSet)>("lookupMultiDocPrintServices"), //
+		jMethod<::javax::print::PrintService *(::javax::print::DocFlavor, ::javax::print::attribute::AttributeSet)>("lookupPrintServices"), //
+		jMethod<::jboolean(::javax::print::PrintService)>("registerService"), //
+		jMethod<::jboolean(::javax::print::PrintServiceLookup)>("registerServiceProvider"), //
+	};
+
+	template<typename R = ::javax::print::PrintService, typename... Args>
+	auto getDefaultPrintService(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaultPrintService")] != -1);
+		return call<R>("getDefaultPrintService", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::print::MultiDocPrintService *, typename... Args>
+	auto getMultiDocPrintServices(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMultiDocPrintServices")] != -1);
+		return call<R>("getMultiDocPrintServices", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::print::PrintService *, typename... Args>
+	auto getPrintServices(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrintServices")] != -1);
+		return call<R>("getPrintServices", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::print::PrintService, typename... Args>
+	static auto lookupDefaultPrintService(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lookupDefaultPrintService")] != -1);
+		return scall<R>("lookupDefaultPrintService", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::print::MultiDocPrintService *, typename... Args>
+	static auto lookupMultiDocPrintServices(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lookupMultiDocPrintServices")] != -1);
+		return scall<R>("lookupMultiDocPrintServices", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::print::PrintService *, typename... Args>
+	static auto lookupPrintServices(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lookupPrintServices")] != -1);
+		return scall<R>("lookupPrintServices", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto registerService(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("registerService")] != -1);
+		return scall<R>("registerService", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto registerServiceProvider(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("registerServiceProvider")] != -1);
+		return scall<R>("registerServiceProvider", forward<Args>(args)...);
+	}
+
+};
+
+#endif

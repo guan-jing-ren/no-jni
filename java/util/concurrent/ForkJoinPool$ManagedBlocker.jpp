@@ -1,0 +1,35 @@
+#ifndef java_util_concurrent_ForkJoinPool$ManagedBlocker_HPP
+#define java_util_concurrent_ForkJoinPool$ManagedBlocker_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::concurrent::ForkJoinPool$ManagedBlocker : public jObject<::java::util::concurrent::ForkJoinPool$ManagedBlocker, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_concurrent / "ForkJoinPool$ManagedBlocker";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean()>("block"), //
+		jMethod<::jboolean()>("isReleasable"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto block(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("block")] != -1);
+		return call<R>("block", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isReleasable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isReleasable")] != -1);
+		return call<R>("isReleasable", forward<Args>(args)...);
+	}
+
+};
+
+#endif

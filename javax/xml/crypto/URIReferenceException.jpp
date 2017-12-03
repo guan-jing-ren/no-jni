@@ -1,0 +1,49 @@
+#ifndef javax_xml_crypto_URIReferenceException_HPP
+#define javax_xml_crypto_URIReferenceException_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::crypto::URIReferenceException : public jObject<::javax::xml::crypto::URIReferenceException, ::java::lang::Exception> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_crypto / "URIReferenceException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Throwable)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Throwable, ::javax::xml::crypto::URIReference)>(), //
+		jConstructor<::jvoid(::java::lang::Throwable)>(), //
+		jMethod<::java::lang::Throwable()>("getCause"), //
+		jMethod<::javax::xml::crypto::URIReference()>("getURIReference"), //
+		jMethod<::jvoid()>("printStackTrace"), //
+		jMethod<::jvoid(::java::io::PrintStream)>("printStackTrace"), //
+		jMethod<::jvoid(::java::io::PrintWriter)>("printStackTrace"), //
+	};
+
+	template<typename R = ::java::lang::Throwable, typename... Args>
+	auto getCause(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCause")] != -1);
+		return call<R>("getCause", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::crypto::URIReference, typename... Args>
+	auto getURIReference(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getURIReference")] != -1);
+		return call<R>("getURIReference", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto printStackTrace(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("printStackTrace")] != -1);
+		return call<R>("printStackTrace", forward<Args>(args)...);
+	}
+
+};
+
+#endif

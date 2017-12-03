@@ -1,0 +1,66 @@
+#ifndef java_security_cert_CertificateFactorySpi_HPP
+#define java_security_cert_CertificateFactorySpi_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::cert::CertificateFactorySpi : public jObject<::java::security::cert::CertificateFactorySpi, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_cert / "CertificateFactorySpi";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::security::cert::CRL(::java::io::InputStream)>("engineGenerateCRL"), //
+		jMethod<::java::util::Collection(::java::io::InputStream)>("engineGenerateCRLs"), //
+		jMethod<::java::security::cert::CertPath(::java::io::InputStream)>("engineGenerateCertPath"), //
+		jMethod<::java::security::cert::CertPath(::java::io::InputStream, ::java::lang::String)>("engineGenerateCertPath"), //
+		jMethod<::java::security::cert::CertPath(::java::util::List)>("engineGenerateCertPath"), //
+		jMethod<::java::security::cert::Certificate(::java::io::InputStream)>("engineGenerateCertificate"), //
+		jMethod<::java::util::Collection(::java::io::InputStream)>("engineGenerateCertificates"), //
+		jMethod<::java::util::Iterator()>("engineGetCertPathEncodings"), //
+	};
+
+	template<typename R = ::java::security::cert::CRL, typename... Args>
+	auto engineGenerateCRL(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("engineGenerateCRL")] != -1);
+		return call<R>("engineGenerateCRL", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Collection, typename... Args>
+	auto engineGenerateCRLs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("engineGenerateCRLs")] != -1);
+		return call<R>("engineGenerateCRLs", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::CertPath, typename... Args>
+	auto engineGenerateCertPath(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("engineGenerateCertPath")] != -1);
+		return call<R>("engineGenerateCertPath", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::Certificate, typename... Args>
+	auto engineGenerateCertificate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("engineGenerateCertificate")] != -1);
+		return call<R>("engineGenerateCertificate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Collection, typename... Args>
+	auto engineGenerateCertificates(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("engineGenerateCertificates")] != -1);
+		return call<R>("engineGenerateCertificates", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Iterator, typename... Args>
+	auto engineGetCertPathEncodings(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("engineGetCertPathEncodings")] != -1);
+		return call<R>("engineGetCertPathEncodings", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,41 @@
+#ifndef java_nio_file_LinkOption_HPP
+#define java_nio_file_LinkOption_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::file::LinkOption : public jObject<::java::nio::file::LinkOption, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_file / "LinkOption";
+
+	constexpr static Enume field_signatures{
+		jField<::java::nio::file::LinkOption>("NOFOLLOW_LINKS"), //
+	};
+
+	template<typename F = ::java::nio::file::LinkOption>
+	static auto NOFOLLOW_LINKS() {
+		static_assert(field_signatures[jField<F>("NOFOLLOW_LINKS")] != -1);
+		return sat<F>("NOFOLLOW_LINKS");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::nio::file::LinkOption(::java::lang::String)>("valueOf"), //
+		jMethod<::java::nio::file::LinkOption *()>("values"), //
+	};
+
+	template<typename R = ::java::nio::file::LinkOption, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::LinkOption *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

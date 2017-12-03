@@ -1,0 +1,71 @@
+#ifndef java_rmi_server_RMISocketFactory_HPP
+#define java_rmi_server_RMISocketFactory_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::rmi::server::RMISocketFactory : public jObject<::java::rmi::server::RMISocketFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_rmi_server / "RMISocketFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::net::ServerSocket(::jint)>("createServerSocket"), //
+		jMethod<::java::net::Socket(::java::lang::String, ::jint)>("createSocket"), //
+		jMethod<::java::rmi::server::RMISocketFactory()>("getDefaultSocketFactory"), //
+		jMethod<::java::rmi::server::RMIFailureHandler()>("getFailureHandler"), //
+		jMethod<::java::rmi::server::RMISocketFactory()>("getSocketFactory"), //
+		jMethod<::jvoid(::java::rmi::server::RMIFailureHandler)>("setFailureHandler"), //
+		jMethod<::jvoid(::java::rmi::server::RMISocketFactory)>("setSocketFactory"), //
+	};
+
+	template<typename R = ::java::net::ServerSocket, typename... Args>
+	auto createServerSocket(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createServerSocket")] != -1);
+		return call<R>("createServerSocket", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::Socket, typename... Args>
+	auto createSocket(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createSocket")] != -1);
+		return call<R>("createSocket", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::server::RMISocketFactory, typename... Args>
+	static auto getDefaultSocketFactory(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaultSocketFactory")] != -1);
+		return scall<R>("getDefaultSocketFactory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::server::RMIFailureHandler, typename... Args>
+	static auto getFailureHandler(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFailureHandler")] != -1);
+		return scall<R>("getFailureHandler", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::server::RMISocketFactory, typename... Args>
+	static auto getSocketFactory(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSocketFactory")] != -1);
+		return scall<R>("getSocketFactory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setFailureHandler(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setFailureHandler")] != -1);
+		return scall<R>("setFailureHandler", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setSocketFactory(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSocketFactory")] != -1);
+		return scall<R>("setSocketFactory", forward<Args>(args)...);
+	}
+
+};
+
+#endif

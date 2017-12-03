@@ -1,0 +1,77 @@
+#ifndef java_util_stream_BaseStream_HPP
+#define java_util_stream_BaseStream_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::stream::BaseStream : public jObject<::java::util::stream::BaseStream, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_stream / "BaseStream";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("close"), //
+		jMethod<::jboolean()>("isParallel"), //
+		jMethod<::java::util::Iterator()>("iterator"), //
+		jMethod<::java::util::stream::BaseStream(::java::lang::Runnable)>("onClose"), //
+		jMethod<::java::util::stream::BaseStream()>("parallel"), //
+		jMethod<::java::util::stream::BaseStream()>("sequential"), //
+		jMethod<::java::util::Spliterator()>("spliterator"), //
+		jMethod<::java::util::stream::BaseStream()>("unordered"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isParallel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isParallel")] != -1);
+		return call<R>("isParallel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Iterator, typename... Args>
+	auto iterator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("iterator")] != -1);
+		return call<R>("iterator", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::BaseStream, typename... Args>
+	auto onClose(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("onClose")] != -1);
+		return call<R>("onClose", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::BaseStream, typename... Args>
+	auto parallel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("parallel")] != -1);
+		return call<R>("parallel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::BaseStream, typename... Args>
+	auto sequential(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("sequential")] != -1);
+		return call<R>("sequential", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Spliterator, typename... Args>
+	auto spliterator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("spliterator")] != -1);
+		return call<R>("spliterator", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::BaseStream, typename... Args>
+	auto unordered(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unordered")] != -1);
+		return call<R>("unordered", forward<Args>(args)...);
+	}
+
+};
+
+#endif

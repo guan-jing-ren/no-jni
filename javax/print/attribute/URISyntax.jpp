@@ -1,0 +1,49 @@
+#ifndef javax_print_attribute_URISyntax_HPP
+#define javax_print_attribute_URISyntax_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::print::attribute::URISyntax : public jObject<::javax::print::attribute::URISyntax, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_print_attribute / "URISyntax";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::net::URI()>("getURI"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::URI, typename... Args>
+	auto getURI(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getURI")] != -1);
+		return call<R>("getURI", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

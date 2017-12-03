@@ -1,0 +1,167 @@
+#ifndef javax_transaction_xa_XAResource_HPP
+#define javax_transaction_xa_XAResource_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::transaction::xa::XAResource : public jObject<::javax::transaction::xa::XAResource, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_transaction_xa / "XAResource";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("TMENDRSCAN"), //
+		jField<::jint>("TMFAIL"), //
+		jField<::jint>("TMJOIN"), //
+		jField<::jint>("TMNOFLAGS"), //
+		jField<::jint>("TMONEPHASE"), //
+		jField<::jint>("TMRESUME"), //
+		jField<::jint>("TMSTARTRSCAN"), //
+		jField<::jint>("TMSUCCESS"), //
+		jField<::jint>("TMSUSPEND"), //
+		jField<::jint>("XA_OK"), //
+		jField<::jint>("XA_RDONLY"), //
+	};
+
+	template<typename F = ::jint>
+	static auto TMENDRSCAN() {
+		static_assert(field_signatures[jField<F>("TMENDRSCAN")] != -1);
+		return sat<F>("TMENDRSCAN");
+	}
+
+	template<typename F = ::jint>
+	static auto TMFAIL() {
+		static_assert(field_signatures[jField<F>("TMFAIL")] != -1);
+		return sat<F>("TMFAIL");
+	}
+
+	template<typename F = ::jint>
+	static auto TMJOIN() {
+		static_assert(field_signatures[jField<F>("TMJOIN")] != -1);
+		return sat<F>("TMJOIN");
+	}
+
+	template<typename F = ::jint>
+	static auto TMNOFLAGS() {
+		static_assert(field_signatures[jField<F>("TMNOFLAGS")] != -1);
+		return sat<F>("TMNOFLAGS");
+	}
+
+	template<typename F = ::jint>
+	static auto TMONEPHASE() {
+		static_assert(field_signatures[jField<F>("TMONEPHASE")] != -1);
+		return sat<F>("TMONEPHASE");
+	}
+
+	template<typename F = ::jint>
+	static auto TMRESUME() {
+		static_assert(field_signatures[jField<F>("TMRESUME")] != -1);
+		return sat<F>("TMRESUME");
+	}
+
+	template<typename F = ::jint>
+	static auto TMSTARTRSCAN() {
+		static_assert(field_signatures[jField<F>("TMSTARTRSCAN")] != -1);
+		return sat<F>("TMSTARTRSCAN");
+	}
+
+	template<typename F = ::jint>
+	static auto TMSUCCESS() {
+		static_assert(field_signatures[jField<F>("TMSUCCESS")] != -1);
+		return sat<F>("TMSUCCESS");
+	}
+
+	template<typename F = ::jint>
+	static auto TMSUSPEND() {
+		static_assert(field_signatures[jField<F>("TMSUSPEND")] != -1);
+		return sat<F>("TMSUSPEND");
+	}
+
+	template<typename F = ::jint>
+	static auto XA_OK() {
+		static_assert(field_signatures[jField<F>("XA_OK")] != -1);
+		return sat<F>("XA_OK");
+	}
+
+	template<typename F = ::jint>
+	static auto XA_RDONLY() {
+		static_assert(field_signatures[jField<F>("XA_RDONLY")] != -1);
+		return sat<F>("XA_RDONLY");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::transaction::xa::Xid, ::jboolean)>("commit"), //
+		jMethod<::jvoid(::javax::transaction::xa::Xid, ::jint)>("end"), //
+		jMethod<::jvoid(::javax::transaction::xa::Xid)>("forget"), //
+		jMethod<::jint()>("getTransactionTimeout"), //
+		jMethod<::jboolean(::javax::transaction::xa::XAResource)>("isSameRM"), //
+		jMethod<::jint(::javax::transaction::xa::Xid)>("prepare"), //
+		jMethod<::javax::transaction::xa::Xid *(::jint)>("recover"), //
+		jMethod<::jvoid(::javax::transaction::xa::Xid)>("rollback"), //
+		jMethod<::jboolean(::jint)>("setTransactionTimeout"), //
+		jMethod<::jvoid(::javax::transaction::xa::Xid, ::jint)>("start"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto commit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("commit")] != -1);
+		return call<R>("commit", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto end(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("end")] != -1);
+		return call<R>("end", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto forget(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("forget")] != -1);
+		return call<R>("forget", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getTransactionTimeout(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTransactionTimeout")] != -1);
+		return call<R>("getTransactionTimeout", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isSameRM(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSameRM")] != -1);
+		return call<R>("isSameRM", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto prepare(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("prepare")] != -1);
+		return call<R>("prepare", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::transaction::xa::Xid *, typename... Args>
+	auto recover(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("recover")] != -1);
+		return call<R>("recover", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto rollback(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("rollback")] != -1);
+		return call<R>("rollback", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto setTransactionTimeout(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setTransactionTimeout")] != -1);
+		return call<R>("setTransactionTimeout", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto start(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("start")] != -1);
+		return call<R>("start", forward<Args>(args)...);
+	}
+
+};
+
+#endif

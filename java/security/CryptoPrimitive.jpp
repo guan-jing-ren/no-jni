@@ -1,0 +1,104 @@
+#ifndef java_security_CryptoPrimitive_HPP
+#define java_security_CryptoPrimitive_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::CryptoPrimitive : public jObject<::java::security::CryptoPrimitive, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "CryptoPrimitive";
+
+	constexpr static Enume field_signatures{
+		jField<::java::security::CryptoPrimitive>("BLOCK_CIPHER"), //
+		jField<::java::security::CryptoPrimitive>("KEY_AGREEMENT"), //
+		jField<::java::security::CryptoPrimitive>("KEY_ENCAPSULATION"), //
+		jField<::java::security::CryptoPrimitive>("KEY_WRAP"), //
+		jField<::java::security::CryptoPrimitive>("MAC"), //
+		jField<::java::security::CryptoPrimitive>("MESSAGE_DIGEST"), //
+		jField<::java::security::CryptoPrimitive>("PUBLIC_KEY_ENCRYPTION"), //
+		jField<::java::security::CryptoPrimitive>("SECURE_RANDOM"), //
+		jField<::java::security::CryptoPrimitive>("SIGNATURE"), //
+		jField<::java::security::CryptoPrimitive>("STREAM_CIPHER"), //
+	};
+
+	template<typename F = ::java::security::CryptoPrimitive>
+	static auto BLOCK_CIPHER() {
+		static_assert(field_signatures[jField<F>("BLOCK_CIPHER")] != -1);
+		return sat<F>("BLOCK_CIPHER");
+	}
+
+	template<typename F = ::java::security::CryptoPrimitive>
+	static auto KEY_AGREEMENT() {
+		static_assert(field_signatures[jField<F>("KEY_AGREEMENT")] != -1);
+		return sat<F>("KEY_AGREEMENT");
+	}
+
+	template<typename F = ::java::security::CryptoPrimitive>
+	static auto KEY_ENCAPSULATION() {
+		static_assert(field_signatures[jField<F>("KEY_ENCAPSULATION")] != -1);
+		return sat<F>("KEY_ENCAPSULATION");
+	}
+
+	template<typename F = ::java::security::CryptoPrimitive>
+	static auto KEY_WRAP() {
+		static_assert(field_signatures[jField<F>("KEY_WRAP")] != -1);
+		return sat<F>("KEY_WRAP");
+	}
+
+	template<typename F = ::java::security::CryptoPrimitive>
+	static auto MAC() {
+		static_assert(field_signatures[jField<F>("MAC")] != -1);
+		return sat<F>("MAC");
+	}
+
+	template<typename F = ::java::security::CryptoPrimitive>
+	static auto MESSAGE_DIGEST() {
+		static_assert(field_signatures[jField<F>("MESSAGE_DIGEST")] != -1);
+		return sat<F>("MESSAGE_DIGEST");
+	}
+
+	template<typename F = ::java::security::CryptoPrimitive>
+	static auto PUBLIC_KEY_ENCRYPTION() {
+		static_assert(field_signatures[jField<F>("PUBLIC_KEY_ENCRYPTION")] != -1);
+		return sat<F>("PUBLIC_KEY_ENCRYPTION");
+	}
+
+	template<typename F = ::java::security::CryptoPrimitive>
+	static auto SECURE_RANDOM() {
+		static_assert(field_signatures[jField<F>("SECURE_RANDOM")] != -1);
+		return sat<F>("SECURE_RANDOM");
+	}
+
+	template<typename F = ::java::security::CryptoPrimitive>
+	static auto SIGNATURE() {
+		static_assert(field_signatures[jField<F>("SIGNATURE")] != -1);
+		return sat<F>("SIGNATURE");
+	}
+
+	template<typename F = ::java::security::CryptoPrimitive>
+	static auto STREAM_CIPHER() {
+		static_assert(field_signatures[jField<F>("STREAM_CIPHER")] != -1);
+		return sat<F>("STREAM_CIPHER");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::security::CryptoPrimitive(::java::lang::String)>("valueOf"), //
+		jMethod<::java::security::CryptoPrimitive *()>("values"), //
+	};
+
+	template<typename R = ::java::security::CryptoPrimitive, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::CryptoPrimitive *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

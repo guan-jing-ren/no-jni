@@ -1,0 +1,35 @@
+#ifndef javax_rmi_CORBA_ValueHandlerMultiFormat_HPP
+#define javax_rmi_CORBA_ValueHandlerMultiFormat_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::rmi::CORBA::ValueHandlerMultiFormat : public jObject<::javax::rmi::CORBA::ValueHandlerMultiFormat, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_rmi_CORBA / "ValueHandlerMultiFormat";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jbyte()>("getMaximumStreamFormatVersion"), //
+		jMethod<::jvoid(::org::omg::CORBA::portable::OutputStream, ::java::io::Serializable, ::jbyte)>("writeValue"), //
+	};
+
+	template<typename R = ::jbyte, typename... Args>
+	auto getMaximumStreamFormatVersion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMaximumStreamFormatVersion")] != -1);
+		return call<R>("getMaximumStreamFormatVersion", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("writeValue")] != -1);
+		return call<R>("writeValue", forward<Args>(args)...);
+	}
+
+};
+
+#endif

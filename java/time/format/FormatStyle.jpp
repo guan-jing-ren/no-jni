@@ -1,0 +1,62 @@
+#ifndef java_time_format_FormatStyle_HPP
+#define java_time_format_FormatStyle_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::time::format::FormatStyle : public jObject<::java::time::format::FormatStyle, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_time_format / "FormatStyle";
+
+	constexpr static Enume field_signatures{
+		jField<::java::time::format::FormatStyle>("FULL"), //
+		jField<::java::time::format::FormatStyle>("LONG"), //
+		jField<::java::time::format::FormatStyle>("MEDIUM"), //
+		jField<::java::time::format::FormatStyle>("SHORT"), //
+	};
+
+	template<typename F = ::java::time::format::FormatStyle>
+	static auto FULL() {
+		static_assert(field_signatures[jField<F>("FULL")] != -1);
+		return sat<F>("FULL");
+	}
+
+	template<typename F = ::java::time::format::FormatStyle>
+	static auto LONG() {
+		static_assert(field_signatures[jField<F>("LONG")] != -1);
+		return sat<F>("LONG");
+	}
+
+	template<typename F = ::java::time::format::FormatStyle>
+	static auto MEDIUM() {
+		static_assert(field_signatures[jField<F>("MEDIUM")] != -1);
+		return sat<F>("MEDIUM");
+	}
+
+	template<typename F = ::java::time::format::FormatStyle>
+	static auto SHORT() {
+		static_assert(field_signatures[jField<F>("SHORT")] != -1);
+		return sat<F>("SHORT");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::time::format::FormatStyle(::java::lang::String)>("valueOf"), //
+		jMethod<::java::time::format::FormatStyle *()>("values"), //
+	};
+
+	template<typename R = ::java::time::format::FormatStyle, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::format::FormatStyle *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

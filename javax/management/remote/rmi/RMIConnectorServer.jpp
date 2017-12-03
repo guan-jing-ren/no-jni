@@ -1,0 +1,93 @@
+#ifndef javax_management_remote_rmi_RMIConnectorServer_HPP
+#define javax_management_remote_rmi_RMIConnectorServer_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::management::remote::rmi::RMIConnectorServer : public jObject<::javax::management::remote::rmi::RMIConnectorServer, ::javax::management::remote::JMXConnectorServer> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management_remote_rmi / "RMIConnectorServer";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("JNDI_REBIND_ATTRIBUTE"), //
+		jField<::java::lang::String>("RMI_CLIENT_SOCKET_FACTORY_ATTRIBUTE"), //
+		jField<::java::lang::String>("RMI_SERVER_SOCKET_FACTORY_ATTRIBUTE"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto JNDI_REBIND_ATTRIBUTE() {
+		static_assert(field_signatures[jField<F>("JNDI_REBIND_ATTRIBUTE")] != -1);
+		return sat<F>("JNDI_REBIND_ATTRIBUTE");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto RMI_CLIENT_SOCKET_FACTORY_ATTRIBUTE() {
+		static_assert(field_signatures[jField<F>("RMI_CLIENT_SOCKET_FACTORY_ATTRIBUTE")] != -1);
+		return sat<F>("RMI_CLIENT_SOCKET_FACTORY_ATTRIBUTE");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto RMI_SERVER_SOCKET_FACTORY_ATTRIBUTE() {
+		static_assert(field_signatures[jField<F>("RMI_SERVER_SOCKET_FACTORY_ATTRIBUTE")] != -1);
+		return sat<F>("RMI_SERVER_SOCKET_FACTORY_ATTRIBUTE");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::management::remote::JMXServiceURL, ::java::util::Map)>(), //
+		jConstructor<::jvoid(::javax::management::remote::JMXServiceURL, ::java::util::Map, ::javax::management::MBeanServer)>(), //
+		jConstructor<::jvoid(::javax::management::remote::JMXServiceURL, ::java::util::Map, ::javax::management::remote::rmi::RMIServerImpl, ::javax::management::MBeanServer)>(), //
+		jMethod<::javax::management::remote::JMXServiceURL()>("getAddress"), //
+		jMethod<::java::util::Map()>("getAttributes"), //
+		jMethod<::jboolean()>("isActive"), //
+		jMethod<::jvoid(::javax::management::remote::MBeanServerForwarder)>("setMBeanServerForwarder"), //
+		jMethod<::jvoid()>("start"), //
+		jMethod<::jvoid()>("stop"), //
+		jMethod<::javax::management::remote::JMXConnector(::java::util::Map)>("toJMXConnector"), //
+	};
+
+	template<typename R = ::javax::management::remote::JMXServiceURL, typename... Args>
+	auto getAddress(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAddress")] != -1);
+		return call<R>("getAddress", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto getAttributes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttributes")] != -1);
+		return call<R>("getAttributes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isActive(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isActive")] != -1);
+		return call<R>("isActive", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setMBeanServerForwarder(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMBeanServerForwarder")] != -1);
+		return call<R>("setMBeanServerForwarder", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto start(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("start")] != -1);
+		return call<R>("start", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto stop(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("stop")] != -1);
+		return call<R>("stop", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::remote::JMXConnector, typename... Args>
+	auto toJMXConnector(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toJMXConnector")] != -1);
+		return call<R>("toJMXConnector", forward<Args>(args)...);
+	}
+
+};
+
+#endif

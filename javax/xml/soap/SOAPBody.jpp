@@ -1,0 +1,68 @@
+#ifndef javax_xml_soap_SOAPBody_HPP
+#define javax_xml_soap_SOAPBody_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::soap::SOAPBody : public jObject<::javax::xml::soap::SOAPBody, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_soap / "SOAPBody";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::soap::SOAPBodyElement(::javax::xml::namespace_::QName)>("addBodyElement"), //
+		jMethod<::javax::xml::soap::SOAPBodyElement(::javax::xml::soap::Name)>("addBodyElement"), //
+		jMethod<::javax::xml::soap::SOAPBodyElement(::org::w3c::dom::Document)>("addDocument"), //
+		jMethod<::javax::xml::soap::SOAPFault()>("addFault"), //
+		jMethod<::javax::xml::soap::SOAPFault(::javax::xml::namespace_::QName, ::java::lang::String)>("addFault"), //
+		jMethod<::javax::xml::soap::SOAPFault(::javax::xml::namespace_::QName, ::java::lang::String, ::java::util::Locale)>("addFault"), //
+		jMethod<::javax::xml::soap::SOAPFault(::javax::xml::soap::Name, ::java::lang::String)>("addFault"), //
+		jMethod<::javax::xml::soap::SOAPFault(::javax::xml::soap::Name, ::java::lang::String, ::java::util::Locale)>("addFault"), //
+		jMethod<::org::w3c::dom::Document()>("extractContentAsDocument"), //
+		jMethod<::javax::xml::soap::SOAPFault()>("getFault"), //
+		jMethod<::jboolean()>("hasFault"), //
+	};
+
+	template<typename R = ::javax::xml::soap::SOAPBodyElement, typename... Args>
+	auto addBodyElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addBodyElement")] != -1);
+		return call<R>("addBodyElement", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::soap::SOAPBodyElement, typename... Args>
+	auto addDocument(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addDocument")] != -1);
+		return call<R>("addDocument", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::soap::SOAPFault, typename... Args>
+	auto addFault(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addFault")] != -1);
+		return call<R>("addFault", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Document, typename... Args>
+	auto extractContentAsDocument(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("extractContentAsDocument")] != -1);
+		return call<R>("extractContentAsDocument", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::soap::SOAPFault, typename... Args>
+	auto getFault(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFault")] != -1);
+		return call<R>("getFault", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasFault(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hasFault")] != -1);
+		return call<R>("hasFault", forward<Args>(args)...);
+	}
+
+};
+
+#endif

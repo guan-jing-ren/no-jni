@@ -1,0 +1,96 @@
+#ifndef java_io_CharArrayWriter_HPP
+#define java_io_CharArrayWriter_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::io::CharArrayWriter : public jObject<::java::io::CharArrayWriter, ::java::io::Writer> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_io / "CharArrayWriter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint)>(), //
+		jMethod<::java::io::CharArrayWriter(::jchar)>("append"), //
+		jMethod<::java::io::Writer(::jchar)>("append"), //
+		jMethod<::java::lang::Appendable(::jchar)>("append"), //
+		jMethod<::java::io::CharArrayWriter(::java::lang::CharSequence)>("append"), //
+		jMethod<::java::io::Writer(::java::lang::CharSequence)>("append"), //
+		jMethod<::java::lang::Appendable(::java::lang::CharSequence)>("append"), //
+		jMethod<::java::io::CharArrayWriter(::java::lang::CharSequence, ::jint, ::jint)>("append"), //
+		jMethod<::java::io::Writer(::java::lang::CharSequence, ::jint, ::jint)>("append"), //
+		jMethod<::java::lang::Appendable(::java::lang::CharSequence, ::jint, ::jint)>("append"), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::jvoid()>("flush"), //
+		jMethod<::jvoid()>("reset"), //
+		jMethod<::jint()>("size"), //
+		jMethod<::jchar *()>("toCharArray"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::jvoid(::jint)>("write"), //
+		jMethod<::jvoid(::java::lang::String, ::jint, ::jint)>("write"), //
+		jMethod<::jvoid(::jchar *, ::jint, ::jint)>("write"), //
+		jMethod<::jvoid(::java::io::Writer)>("writeTo"), //
+	};
+
+	template<typename R = ::java::io::CharArrayWriter, typename... Args>
+	auto append(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("append")] != -1);
+		return call<R>("append", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto flush(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("flush")] != -1);
+		return call<R>("flush", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto reset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("reset")] != -1);
+		return call<R>("reset", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto size(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("size")] != -1);
+		return call<R>("size", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jchar *, typename... Args>
+	auto toCharArray(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toCharArray")] != -1);
+		return call<R>("toCharArray", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("writeTo")] != -1);
+		return call<R>("writeTo", forward<Args>(args)...);
+	}
+
+};
+
+#endif

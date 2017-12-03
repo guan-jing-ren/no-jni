@@ -1,0 +1,49 @@
+#ifndef java_util_function_LongPredicate_HPP
+#define java_util_function_LongPredicate_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::function::LongPredicate : public jObject<::java::util::function::LongPredicate, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_function / "LongPredicate";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::function::LongPredicate(::java::util::function::LongPredicate)>("and"), //
+		jMethod<::java::util::function::LongPredicate()>("negate"), //
+		jMethod<::java::util::function::LongPredicate(::java::util::function::LongPredicate)>("or"), //
+		jMethod<::jboolean(::jlong)>("test"), //
+	};
+
+	template<typename R = ::java::util::function::LongPredicate, typename... Args>
+	auto and_(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("and")] != -1);
+		return call<R>("and", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::function::LongPredicate, typename... Args>
+	auto negate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("negate")] != -1);
+		return call<R>("negate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::function::LongPredicate, typename... Args>
+	auto or_(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("or")] != -1);
+		return call<R>("or", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto test(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("test")] != -1);
+		return call<R>("test", forward<Args>(args)...);
+	}
+
+};
+
+#endif

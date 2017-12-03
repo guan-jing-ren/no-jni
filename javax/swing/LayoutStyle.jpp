@@ -1,0 +1,50 @@
+#ifndef javax_swing_LayoutStyle_HPP
+#define javax_swing_LayoutStyle_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::LayoutStyle : public jObject<::javax::swing::LayoutStyle, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "LayoutStyle";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jint(::javax::swing::JComponent, ::jint, ::java::awt::Container)>("getContainerGap"), //
+		jMethod<::javax::swing::LayoutStyle()>("getInstance"), //
+		jMethod<::jint(::javax::swing::JComponent, ::javax::swing::JComponent, ::javax::swing::LayoutStyle$ComponentPlacement, ::jint, ::java::awt::Container)>("getPreferredGap"), //
+		jMethod<::jvoid(::javax::swing::LayoutStyle)>("setInstance"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getContainerGap(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getContainerGap")] != -1);
+		return call<R>("getContainerGap", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::LayoutStyle, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getPreferredGap(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPreferredGap")] != -1);
+		return call<R>("getPreferredGap", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setInstance")] != -1);
+		return scall<R>("setInstance", forward<Args>(args)...);
+	}
+
+};
+
+#endif

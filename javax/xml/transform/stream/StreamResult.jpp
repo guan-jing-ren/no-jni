@@ -1,0 +1,75 @@
+#ifndef javax_xml_transform_stream_StreamResult_HPP
+#define javax_xml_transform_stream_StreamResult_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::transform::stream::StreamResult : public jObject<::javax::xml::transform::stream::StreamResult, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_transform_stream / "StreamResult";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("FEATURE"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto FEATURE() {
+		static_assert(field_signatures[jField<F>("FEATURE")] != -1);
+		return sat<F>("FEATURE");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::io::File)>(), //
+		jConstructor<::jvoid(::java::io::OutputStream)>(), //
+		jConstructor<::jvoid(::java::io::Writer)>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jMethod<::java::io::OutputStream()>("getOutputStream"), //
+		jMethod<::java::lang::String()>("getSystemId"), //
+		jMethod<::java::io::Writer()>("getWriter"), //
+		jMethod<::jvoid(::java::io::OutputStream)>("setOutputStream"), //
+		jMethod<::jvoid(::java::io::File)>("setSystemId"), //
+		jMethod<::jvoid(::java::lang::String)>("setSystemId"), //
+		jMethod<::jvoid(::java::io::Writer)>("setWriter"), //
+	};
+
+	template<typename R = ::java::io::OutputStream, typename... Args>
+	auto getOutputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOutputStream")] != -1);
+		return call<R>("getOutputStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getSystemId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSystemId")] != -1);
+		return call<R>("getSystemId", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::Writer, typename... Args>
+	auto getWriter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWriter")] != -1);
+		return call<R>("getWriter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setOutputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setOutputStream")] != -1);
+		return call<R>("setOutputStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setSystemId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSystemId")] != -1);
+		return call<R>("setSystemId", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setWriter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setWriter")] != -1);
+		return call<R>("setWriter", forward<Args>(args)...);
+	}
+
+};
+
+#endif

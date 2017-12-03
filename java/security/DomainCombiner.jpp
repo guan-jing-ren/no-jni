@@ -1,0 +1,28 @@
+#ifndef java_security_DomainCombiner_HPP
+#define java_security_DomainCombiner_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::DomainCombiner : public jObject<::java::security::DomainCombiner, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "DomainCombiner";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::security::ProtectionDomain *(::java::security::ProtectionDomain *, ::java::security::ProtectionDomain *)>("combine"), //
+	};
+
+	template<typename R = ::java::security::ProtectionDomain *, typename... Args>
+	auto combine(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("combine")] != -1);
+		return call<R>("combine", forward<Args>(args)...);
+	}
+
+};
+
+#endif

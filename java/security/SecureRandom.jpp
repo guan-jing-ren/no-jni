@@ -1,0 +1,82 @@
+#ifndef java_security_SecureRandom_HPP
+#define java_security_SecureRandom_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::SecureRandom : public jObject<::java::security::SecureRandom, ::java::util::Random> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "SecureRandom";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jbyte *)>(), //
+		jMethod<::jbyte *(::jint)>("generateSeed"), //
+		jMethod<::java::lang::String()>("getAlgorithm"), //
+		jMethod<::java::security::SecureRandom(::java::lang::String)>("getInstance"), //
+		jMethod<::java::security::SecureRandom(::java::lang::String, ::java::lang::String)>("getInstance"), //
+		jMethod<::java::security::SecureRandom(::java::lang::String, ::java::security::Provider)>("getInstance"), //
+		jMethod<::java::security::SecureRandom()>("getInstanceStrong"), //
+		jMethod<::java::security::Provider()>("getProvider"), //
+		jMethod<::jbyte *(::jint)>("getSeed"), //
+		jMethod<::jvoid(::jbyte *)>("nextBytes"), //
+		jMethod<::jvoid(::jlong)>("setSeed"), //
+		jMethod<::jvoid(::jbyte *)>("setSeed"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto generateSeed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("generateSeed")] != -1);
+		return call<R>("generateSeed", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAlgorithm(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlgorithm")] != -1);
+		return call<R>("getAlgorithm", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::SecureRandom, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::SecureRandom, typename... Args>
+	static auto getInstanceStrong(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstanceStrong")] != -1);
+		return scall<R>("getInstanceStrong", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Provider, typename... Args>
+	auto getProvider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProvider")] != -1);
+		return call<R>("getProvider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	static auto getSeed(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSeed")] != -1);
+		return scall<R>("getSeed", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto nextBytes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nextBytes")] != -1);
+		return call<R>("nextBytes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setSeed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSeed")] != -1);
+		return call<R>("setSeed", forward<Args>(args)...);
+	}
+
+};
+
+#endif

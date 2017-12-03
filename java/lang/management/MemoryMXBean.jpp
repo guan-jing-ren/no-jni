@@ -1,0 +1,63 @@
+#ifndef java_lang_management_MemoryMXBean_HPP
+#define java_lang_management_MemoryMXBean_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::management::MemoryMXBean : public jObject<::java::lang::management::MemoryMXBean, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_management / "MemoryMXBean";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("gc"), //
+		jMethod<::java::lang::management::MemoryUsage()>("getHeapMemoryUsage"), //
+		jMethod<::java::lang::management::MemoryUsage()>("getNonHeapMemoryUsage"), //
+		jMethod<::jint()>("getObjectPendingFinalizationCount"), //
+		jMethod<::jboolean()>("isVerbose"), //
+		jMethod<::jvoid(::jboolean)>("setVerbose"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto gc(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("gc")] != -1);
+		return call<R>("gc", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::management::MemoryUsage, typename... Args>
+	auto getHeapMemoryUsage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHeapMemoryUsage")] != -1);
+		return call<R>("getHeapMemoryUsage", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::management::MemoryUsage, typename... Args>
+	auto getNonHeapMemoryUsage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNonHeapMemoryUsage")] != -1);
+		return call<R>("getNonHeapMemoryUsage", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getObjectPendingFinalizationCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getObjectPendingFinalizationCount")] != -1);
+		return call<R>("getObjectPendingFinalizationCount", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isVerbose(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isVerbose")] != -1);
+		return call<R>("isVerbose", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setVerbose(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setVerbose")] != -1);
+		return call<R>("setVerbose", forward<Args>(args)...);
+	}
+
+};
+
+#endif

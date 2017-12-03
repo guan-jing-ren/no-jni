@@ -1,0 +1,51 @@
+#ifndef java_util_Base64$Encoder_HPP
+#define java_util_Base64$Encoder_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::Base64$Encoder : public jObject<::java::util::Base64$Encoder, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "Base64$Encoder";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::nio::ByteBuffer(::java::nio::ByteBuffer)>("encode"), //
+		jMethod<::jbyte *(::jbyte *)>("encode"), //
+		jMethod<::jint(::jbyte *, ::jbyte *)>("encode"), //
+		jMethod<::java::lang::String(::jbyte *)>("encodeToString"), //
+		jMethod<::java::util::Base64$Encoder()>("withoutPadding"), //
+		jMethod<::java::io::OutputStream(::java::io::OutputStream)>("wrap"), //
+	};
+
+	template<typename R = ::java::nio::ByteBuffer, typename... Args>
+	auto encode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("encode")] != -1);
+		return call<R>("encode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto encodeToString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("encodeToString")] != -1);
+		return call<R>("encodeToString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Base64$Encoder, typename... Args>
+	auto withoutPadding(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("withoutPadding")] != -1);
+		return call<R>("withoutPadding", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::OutputStream, typename... Args>
+	auto wrap(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("wrap")] != -1);
+		return call<R>("wrap", forward<Args>(args)...);
+	}
+
+};
+
+#endif

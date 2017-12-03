@@ -1,0 +1,56 @@
+#ifndef javax_management_remote_JMXConnectionNotification_HPP
+#define javax_management_remote_JMXConnectionNotification_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::management::remote::JMXConnectionNotification : public jObject<::javax::management::remote::JMXConnectionNotification, ::javax::management::Notification> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management_remote / "JMXConnectionNotification";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("CLOSED"), //
+		jField<::java::lang::String>("FAILED"), //
+		jField<::java::lang::String>("NOTIFS_LOST"), //
+		jField<::java::lang::String>("OPENED"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto CLOSED() {
+		static_assert(field_signatures[jField<F>("CLOSED")] != -1);
+		return sat<F>("CLOSED");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto FAILED() {
+		static_assert(field_signatures[jField<F>("FAILED")] != -1);
+		return sat<F>("FAILED");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto NOTIFS_LOST() {
+		static_assert(field_signatures[jField<F>("NOTIFS_LOST")] != -1);
+		return sat<F>("NOTIFS_LOST");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto OPENED() {
+		static_assert(field_signatures[jField<F>("OPENED")] != -1);
+		return sat<F>("OPENED");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Object, ::java::lang::String, ::jlong, ::java::lang::String, ::java::lang::Object)>(), //
+		jMethod<::java::lang::String()>("getConnectionId"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getConnectionId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getConnectionId")] != -1);
+		return call<R>("getConnectionId", forward<Args>(args)...);
+	}
+
+};
+
+#endif

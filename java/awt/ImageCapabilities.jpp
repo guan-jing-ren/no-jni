@@ -1,0 +1,43 @@
+#ifndef java_awt_ImageCapabilities_HPP
+#define java_awt_ImageCapabilities_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::ImageCapabilities : public jObject<::java::awt::ImageCapabilities, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "ImageCapabilities";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jboolean)>(), //
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::jboolean()>("isAccelerated"), //
+		jMethod<::jboolean()>("isTrueVolatile"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isAccelerated(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isAccelerated")] != -1);
+		return call<R>("isAccelerated", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isTrueVolatile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isTrueVolatile")] != -1);
+		return call<R>("isTrueVolatile", forward<Args>(args)...);
+	}
+
+};
+
+#endif

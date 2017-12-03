@@ -1,0 +1,36 @@
+#ifndef java_lang_annotation_IncompleteAnnotationException_HPP
+#define java_lang_annotation_IncompleteAnnotationException_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::annotation::IncompleteAnnotationException : public jObject<::java::lang::annotation::IncompleteAnnotationException, ::java::lang::RuntimeException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_annotation / "IncompleteAnnotationException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Class, ::java::lang::String)>(), //
+		jMethod<::java::lang::Class()>("annotationType"), //
+		jMethod<::java::lang::String()>("elementName"), //
+	};
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto annotationType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("annotationType")] != -1);
+		return call<R>("annotationType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto elementName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("elementName")] != -1);
+		return call<R>("elementName", forward<Args>(args)...);
+	}
+
+};
+
+#endif

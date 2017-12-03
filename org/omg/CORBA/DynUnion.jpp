@@ -1,0 +1,65 @@
+#ifndef org_omg_CORBA_DynUnion_HPP
+#define org_omg_CORBA_DynUnion_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::CORBA::DynUnion : public jObject<::org::omg::CORBA::DynUnion, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CORBA / "DynUnion";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::omg::CORBA::DynAny()>("discriminator"), //
+		jMethod<::org::omg::CORBA::TCKind()>("discriminator_kind"), //
+		jMethod<::org::omg::CORBA::DynAny()>("member"), //
+		jMethod<::org::omg::CORBA::TCKind()>("member_kind"), //
+		jMethod<::java::lang::String()>("member_name"), //
+		jMethod<::jvoid(::java::lang::String)>("member_name"), //
+		jMethod<::jboolean()>("set_as_default"), //
+		jMethod<::jvoid(::jboolean)>("set_as_default"), //
+	};
+
+	template<typename R = ::org::omg::CORBA::DynAny, typename... Args>
+	auto discriminator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("discriminator")] != -1);
+		return call<R>("discriminator", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::TCKind, typename... Args>
+	auto discriminator_kind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("discriminator_kind")] != -1);
+		return call<R>("discriminator_kind", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::DynAny, typename... Args>
+	auto member(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("member")] != -1);
+		return call<R>("member", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::TCKind, typename... Args>
+	auto member_kind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("member_kind")] != -1);
+		return call<R>("member_kind", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto member_name(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("member_name")] != -1);
+		return call<R>("member_name", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto set_as_default(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set_as_default")] != -1);
+		return call<R>("set_as_default", forward<Args>(args)...);
+	}
+
+};
+
+#endif

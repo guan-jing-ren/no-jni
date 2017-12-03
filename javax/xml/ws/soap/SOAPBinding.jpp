@@ -1,0 +1,90 @@
+#ifndef javax_xml_ws_soap_SOAPBinding_HPP
+#define javax_xml_ws_soap_SOAPBinding_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::ws::soap::SOAPBinding : public jObject<::javax::xml::ws::soap::SOAPBinding, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_ws_soap / "SOAPBinding";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("SOAP11HTTP_BINDING"), //
+		jField<::java::lang::String>("SOAP11HTTP_MTOM_BINDING"), //
+		jField<::java::lang::String>("SOAP12HTTP_BINDING"), //
+		jField<::java::lang::String>("SOAP12HTTP_MTOM_BINDING"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto SOAP11HTTP_BINDING() {
+		static_assert(field_signatures[jField<F>("SOAP11HTTP_BINDING")] != -1);
+		return sat<F>("SOAP11HTTP_BINDING");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto SOAP11HTTP_MTOM_BINDING() {
+		static_assert(field_signatures[jField<F>("SOAP11HTTP_MTOM_BINDING")] != -1);
+		return sat<F>("SOAP11HTTP_MTOM_BINDING");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto SOAP12HTTP_BINDING() {
+		static_assert(field_signatures[jField<F>("SOAP12HTTP_BINDING")] != -1);
+		return sat<F>("SOAP12HTTP_BINDING");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto SOAP12HTTP_MTOM_BINDING() {
+		static_assert(field_signatures[jField<F>("SOAP12HTTP_MTOM_BINDING")] != -1);
+		return sat<F>("SOAP12HTTP_MTOM_BINDING");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::soap::MessageFactory()>("getMessageFactory"), //
+		jMethod<::java::util::Set()>("getRoles"), //
+		jMethod<::javax::xml::soap::SOAPFactory()>("getSOAPFactory"), //
+		jMethod<::jboolean()>("isMTOMEnabled"), //
+		jMethod<::jvoid(::jboolean)>("setMTOMEnabled"), //
+		jMethod<::jvoid(::java::util::Set)>("setRoles"), //
+	};
+
+	template<typename R = ::javax::xml::soap::MessageFactory, typename... Args>
+	auto getMessageFactory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMessageFactory")] != -1);
+		return call<R>("getMessageFactory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto getRoles(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRoles")] != -1);
+		return call<R>("getRoles", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::soap::SOAPFactory, typename... Args>
+	auto getSOAPFactory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSOAPFactory")] != -1);
+		return call<R>("getSOAPFactory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isMTOMEnabled(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isMTOMEnabled")] != -1);
+		return call<R>("isMTOMEnabled", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setMTOMEnabled(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMTOMEnabled")] != -1);
+		return call<R>("setMTOMEnabled", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setRoles(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setRoles")] != -1);
+		return call<R>("setRoles", forward<Args>(args)...);
+	}
+
+};
+
+#endif

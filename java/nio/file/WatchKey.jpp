@@ -1,0 +1,56 @@
+#ifndef java_nio_file_WatchKey_HPP
+#define java_nio_file_WatchKey_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::file::WatchKey : public jObject<::java::nio::file::WatchKey, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_file / "WatchKey";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("cancel"), //
+		jMethod<::jboolean()>("isValid"), //
+		jMethod<::java::util::List()>("pollEvents"), //
+		jMethod<::jboolean()>("reset"), //
+		jMethod<::java::nio::file::Watchable()>("watchable"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto cancel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("cancel")] != -1);
+		return call<R>("cancel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isValid(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isValid")] != -1);
+		return call<R>("isValid", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto pollEvents(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("pollEvents")] != -1);
+		return call<R>("pollEvents", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto reset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("reset")] != -1);
+		return call<R>("reset", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::Watchable, typename... Args>
+	auto watchable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("watchable")] != -1);
+		return call<R>("watchable", forward<Args>(args)...);
+	}
+
+};
+
+#endif

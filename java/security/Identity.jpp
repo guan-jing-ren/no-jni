@@ -1,0 +1,108 @@
+#ifndef java_security_Identity_HPP
+#define java_security_Identity_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::Identity : public jObject<::java::security::Identity, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "Identity";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::security::IdentityScope)>(), //
+		jMethod<::jvoid(::java::security::Certificate)>("addCertificate"), //
+		jMethod<::java::security::Certificate *()>("certificates"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::lang::String()>("getInfo"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::java::security::PublicKey()>("getPublicKey"), //
+		jMethod<::java::security::IdentityScope()>("getScope"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jvoid(::java::security::Certificate)>("removeCertificate"), //
+		jMethod<::jvoid(::java::lang::String)>("setInfo"), //
+		jMethod<::jvoid(::java::security::PublicKey)>("setPublicKey"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::java::lang::String(::jboolean)>("toString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addCertificate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addCertificate")] != -1);
+		return call<R>("addCertificate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Certificate *, typename... Args>
+	auto certificates(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("certificates")] != -1);
+		return call<R>("certificates", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInfo")] != -1);
+		return call<R>("getInfo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::PublicKey, typename... Args>
+	auto getPublicKey(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPublicKey")] != -1);
+		return call<R>("getPublicKey", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::IdentityScope, typename... Args>
+	auto getScope(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getScope")] != -1);
+		return call<R>("getScope", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeCertificate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeCertificate")] != -1);
+		return call<R>("removeCertificate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setInfo")] != -1);
+		return call<R>("setInfo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setPublicKey(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPublicKey")] != -1);
+		return call<R>("setPublicKey", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

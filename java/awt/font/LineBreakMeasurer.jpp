@@ -1,0 +1,67 @@
+#ifndef java_awt_font_LineBreakMeasurer_HPP
+#define java_awt_font_LineBreakMeasurer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::font::LineBreakMeasurer : public jObject<::java::awt::font::LineBreakMeasurer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_font / "LineBreakMeasurer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::text::AttributedCharacterIterator, ::java::awt::font::FontRenderContext)>(), //
+		jConstructor<::jvoid(::java::text::AttributedCharacterIterator, ::java::text::BreakIterator, ::java::awt::font::FontRenderContext)>(), //
+		jMethod<::jvoid(::java::text::AttributedCharacterIterator, ::jint)>("deleteChar"), //
+		jMethod<::jint()>("getPosition"), //
+		jMethod<::jvoid(::java::text::AttributedCharacterIterator, ::jint)>("insertChar"), //
+		jMethod<::java::awt::font::TextLayout(::jfloat)>("nextLayout"), //
+		jMethod<::java::awt::font::TextLayout(::jfloat, ::jint, ::jboolean)>("nextLayout"), //
+		jMethod<::jint(::jfloat)>("nextOffset"), //
+		jMethod<::jint(::jfloat, ::jint, ::jboolean)>("nextOffset"), //
+		jMethod<::jvoid(::jint)>("setPosition"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto deleteChar(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("deleteChar")] != -1);
+		return call<R>("deleteChar", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getPosition(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPosition")] != -1);
+		return call<R>("getPosition", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto insertChar(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("insertChar")] != -1);
+		return call<R>("insertChar", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::font::TextLayout, typename... Args>
+	auto nextLayout(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nextLayout")] != -1);
+		return call<R>("nextLayout", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto nextOffset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nextOffset")] != -1);
+		return call<R>("nextOffset", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setPosition(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPosition")] != -1);
+		return call<R>("setPosition", forward<Args>(args)...);
+	}
+
+};
+
+#endif

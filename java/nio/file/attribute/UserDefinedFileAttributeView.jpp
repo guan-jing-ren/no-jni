@@ -1,0 +1,63 @@
+#ifndef java_nio_file_attribute_UserDefinedFileAttributeView_HPP
+#define java_nio_file_attribute_UserDefinedFileAttributeView_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::java::nio::file::attribute::UserDefinedFileAttributeView : public jObject<::java::nio::file::attribute::UserDefinedFileAttributeView, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_file_attribute / "UserDefinedFileAttributeView";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::String)>("delete"), //
+		jMethod<::java::util::List()>("list"), //
+		jMethod<::java::lang::String()>("name"), //
+		jMethod<::jint(::java::lang::String, ::java::nio::ByteBuffer)>("read"), //
+		jMethod<::jint(::java::lang::String)>("size"), //
+		jMethod<::jint(::java::lang::String, ::java::nio::ByteBuffer)>("write"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto delete_(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("delete")] != -1);
+		return call<R>("delete", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto list(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("list")] != -1);
+		return call<R>("list", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto name(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("name")] != -1);
+		return call<R>("name", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto size(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("size")] != -1);
+		return call<R>("size", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", forward<Args>(args)...);
+	}
+
+};
+
+#endif

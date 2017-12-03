@@ -1,0 +1,57 @@
+#ifndef javax_swing_plaf_basic_BasicSpinnerUI_HPP
+#define javax_swing_plaf_basic_BasicSpinnerUI_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::swing::plaf::basic::BasicSpinnerUI : public jObject<::javax::swing::plaf::basic::BasicSpinnerUI, ::javax::swing::plaf::SpinnerUI> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_plaf_basic / "BasicSpinnerUI";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::swing::plaf::ComponentUI(::javax::swing::JComponent)>("createUI"), //
+		jMethod<::jint(::javax::swing::JComponent, ::jint, ::jint)>("getBaseline"), //
+		jMethod<::java::awt::Component$BaselineResizeBehavior(::javax::swing::JComponent)>("getBaselineResizeBehavior"), //
+		jMethod<::jvoid(::javax::swing::JComponent)>("installUI"), //
+		jMethod<::jvoid(::javax::swing::JComponent)>("uninstallUI"), //
+	};
+
+	template<typename R = ::javax::swing::plaf::ComponentUI, typename... Args>
+	static auto createUI(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createUI")] != -1);
+		return scall<R>("createUI", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getBaseline(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBaseline")] != -1);
+		return call<R>("getBaseline", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Component$BaselineResizeBehavior, typename... Args>
+	auto getBaselineResizeBehavior(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBaselineResizeBehavior")] != -1);
+		return call<R>("getBaselineResizeBehavior", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto installUI(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("installUI")] != -1);
+		return call<R>("installUI", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto uninstallUI(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("uninstallUI")] != -1);
+		return call<R>("uninstallUI", forward<Args>(args)...);
+	}
+
+};
+
+#endif

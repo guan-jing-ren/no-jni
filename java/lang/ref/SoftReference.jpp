@@ -1,0 +1,30 @@
+#ifndef java_lang_ref_SoftReference_HPP
+#define java_lang_ref_SoftReference_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::ref::SoftReference : public jObject<::java::lang::ref::SoftReference, ::java::lang::ref::Reference> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_ref / "SoftReference";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Object)>(), //
+		jConstructor<::jvoid(::java::lang::Object, ::java::lang::ref::ReferenceQueue)>(), //
+		jMethod<::java::lang::Object()>("get"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", forward<Args>(args)...);
+	}
+
+};
+
+#endif

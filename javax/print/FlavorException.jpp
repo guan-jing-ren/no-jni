@@ -1,0 +1,28 @@
+#ifndef javax_print_FlavorException_HPP
+#define javax_print_FlavorException_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::print::FlavorException : public jObject<::javax::print::FlavorException, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_print / "FlavorException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::print::DocFlavor *()>("getUnsupportedFlavors"), //
+	};
+
+	template<typename R = ::javax::print::DocFlavor *, typename... Args>
+	auto getUnsupportedFlavors(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUnsupportedFlavors")] != -1);
+		return call<R>("getUnsupportedFlavors", forward<Args>(args)...);
+	}
+
+};
+
+#endif

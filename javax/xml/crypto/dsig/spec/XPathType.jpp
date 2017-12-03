@@ -1,0 +1,44 @@
+#ifndef javax_xml_crypto_dsig_spec_XPathType_HPP
+#define javax_xml_crypto_dsig_spec_XPathType_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::javax::xml::crypto::dsig::spec::XPathType : public jObject<::javax::xml::crypto::dsig::spec::XPathType, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_crypto_dsig_spec / "XPathType";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::javax::xml::crypto::dsig::spec::XPathType$Filter)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::javax::xml::crypto::dsig::spec::XPathType$Filter, ::java::util::Map)>(), //
+		jMethod<::java::lang::String()>("getExpression"), //
+		jMethod<::javax::xml::crypto::dsig::spec::XPathType$Filter()>("getFilter"), //
+		jMethod<::java::util::Map()>("getNamespaceMap"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getExpression(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getExpression")] != -1);
+		return call<R>("getExpression", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::crypto::dsig::spec::XPathType$Filter, typename... Args>
+	auto getFilter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFilter")] != -1);
+		return call<R>("getFilter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto getNamespaceMap(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNamespaceMap")] != -1);
+		return call<R>("getNamespaceMap", forward<Args>(args)...);
+	}
+
+};
+
+#endif

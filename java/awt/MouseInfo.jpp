@@ -1,0 +1,35 @@
+#ifndef java_awt_MouseInfo_HPP
+#define java_awt_MouseInfo_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::MouseInfo : public jObject<::java::awt::MouseInfo, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "MouseInfo";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("getNumberOfButtons"), //
+		jMethod<::java::awt::PointerInfo()>("getPointerInfo"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	static auto getNumberOfButtons(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNumberOfButtons")] != -1);
+		return scall<R>("getNumberOfButtons", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::PointerInfo, typename... Args>
+	static auto getPointerInfo(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPointerInfo")] != -1);
+		return scall<R>("getPointerInfo", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,55 @@
+#ifndef javax_xml_ws_soap_AddressingFeature$Responses_HPP
+#define javax_xml_ws_soap_AddressingFeature$Responses_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::ws::soap::AddressingFeature$Responses : public jObject<::javax::xml::ws::soap::AddressingFeature$Responses, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_ws_soap / "AddressingFeature$Responses";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::xml::ws::soap::AddressingFeature$Responses>("ALL"), //
+		jField<::javax::xml::ws::soap::AddressingFeature$Responses>("ANONYMOUS"), //
+		jField<::javax::xml::ws::soap::AddressingFeature$Responses>("NON_ANONYMOUS"), //
+	};
+
+	template<typename F = ::javax::xml::ws::soap::AddressingFeature$Responses>
+	static auto ALL() {
+		static_assert(field_signatures[jField<F>("ALL")] != -1);
+		return sat<F>("ALL");
+	}
+
+	template<typename F = ::javax::xml::ws::soap::AddressingFeature$Responses>
+	static auto ANONYMOUS() {
+		static_assert(field_signatures[jField<F>("ANONYMOUS")] != -1);
+		return sat<F>("ANONYMOUS");
+	}
+
+	template<typename F = ::javax::xml::ws::soap::AddressingFeature$Responses>
+	static auto NON_ANONYMOUS() {
+		static_assert(field_signatures[jField<F>("NON_ANONYMOUS")] != -1);
+		return sat<F>("NON_ANONYMOUS");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::ws::soap::AddressingFeature$Responses(::java::lang::String)>("valueOf"), //
+		jMethod<::javax::xml::ws::soap::AddressingFeature$Responses *()>("values"), //
+	};
+
+	template<typename R = ::javax::xml::ws::soap::AddressingFeature$Responses, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::ws::soap::AddressingFeature$Responses *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

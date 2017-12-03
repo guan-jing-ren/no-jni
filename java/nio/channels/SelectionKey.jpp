@@ -1,0 +1,133 @@
+#ifndef java_nio_channels_SelectionKey_HPP
+#define java_nio_channels_SelectionKey_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::channels::SelectionKey : public jObject<::java::nio::channels::SelectionKey, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_channels / "SelectionKey";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("OP_ACCEPT"), //
+		jField<::jint>("OP_CONNECT"), //
+		jField<::jint>("OP_READ"), //
+		jField<::jint>("OP_WRITE"), //
+	};
+
+	template<typename F = ::jint>
+	static auto OP_ACCEPT() {
+		static_assert(field_signatures[jField<F>("OP_ACCEPT")] != -1);
+		return sat<F>("OP_ACCEPT");
+	}
+
+	template<typename F = ::jint>
+	static auto OP_CONNECT() {
+		static_assert(field_signatures[jField<F>("OP_CONNECT")] != -1);
+		return sat<F>("OP_CONNECT");
+	}
+
+	template<typename F = ::jint>
+	static auto OP_READ() {
+		static_assert(field_signatures[jField<F>("OP_READ")] != -1);
+		return sat<F>("OP_READ");
+	}
+
+	template<typename F = ::jint>
+	static auto OP_WRITE() {
+		static_assert(field_signatures[jField<F>("OP_WRITE")] != -1);
+		return sat<F>("OP_WRITE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object(::java::lang::Object)>("attach"), //
+		jMethod<::java::lang::Object()>("attachment"), //
+		jMethod<::jvoid()>("cancel"), //
+		jMethod<::java::nio::channels::SelectableChannel()>("channel"), //
+		jMethod<::jint()>("interestOps"), //
+		jMethod<::java::nio::channels::SelectionKey(::jint)>("interestOps"), //
+		jMethod<::jboolean()>("isAcceptable"), //
+		jMethod<::jboolean()>("isConnectable"), //
+		jMethod<::jboolean()>("isReadable"), //
+		jMethod<::jboolean()>("isValid"), //
+		jMethod<::jboolean()>("isWritable"), //
+		jMethod<::jint()>("readyOps"), //
+		jMethod<::java::nio::channels::Selector()>("selector"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto attach(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("attach")] != -1);
+		return call<R>("attach", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto attachment(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("attachment")] != -1);
+		return call<R>("attachment", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto cancel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("cancel")] != -1);
+		return call<R>("cancel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::SelectableChannel, typename... Args>
+	auto channel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("channel")] != -1);
+		return call<R>("channel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto interestOps(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("interestOps")] != -1);
+		return call<R>("interestOps", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isAcceptable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isAcceptable")] != -1);
+		return call<R>("isAcceptable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isConnectable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isConnectable")] != -1);
+		return call<R>("isConnectable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isReadable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isReadable")] != -1);
+		return call<R>("isReadable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isValid(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isValid")] != -1);
+		return call<R>("isValid", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isWritable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isWritable")] != -1);
+		return call<R>("isWritable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto readyOps(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("readyOps")] != -1);
+		return call<R>("readyOps", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::Selector, typename... Args>
+	auto selector(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("selector")] != -1);
+		return call<R>("selector", forward<Args>(args)...);
+	}
+
+};
+
+#endif

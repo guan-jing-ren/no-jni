@@ -1,0 +1,43 @@
+#ifndef javax_swing_plaf_basic_BasicLookAndFeel_HPP
+#define javax_swing_plaf_basic_BasicLookAndFeel_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::swing::plaf::basic::BasicLookAndFeel : public jObject<::javax::swing::plaf::basic::BasicLookAndFeel, ::javax::swing::LookAndFeel> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_plaf_basic / "BasicLookAndFeel";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::swing::UIDefaults()>("getDefaults"), //
+		jMethod<::jvoid()>("initialize"), //
+		jMethod<::jvoid()>("uninitialize"), //
+	};
+
+	template<typename R = ::javax::swing::UIDefaults, typename... Args>
+	auto getDefaults(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaults")] != -1);
+		return call<R>("getDefaults", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto initialize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("initialize")] != -1);
+		return call<R>("initialize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto uninitialize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("uninitialize")] != -1);
+		return call<R>("uninitialize", forward<Args>(args)...);
+	}
+
+};
+
+#endif

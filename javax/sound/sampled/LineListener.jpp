@@ -1,0 +1,28 @@
+#ifndef javax_sound_sampled_LineListener_HPP
+#define javax_sound_sampled_LineListener_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::sound::sampled::LineListener : public jObject<::javax::sound::sampled::LineListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sound_sampled / "LineListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::sound::sampled::LineEvent)>("update"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto update(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("update")] != -1);
+		return call<R>("update", forward<Args>(args)...);
+	}
+
+};
+
+#endif

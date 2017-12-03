@@ -1,0 +1,36 @@
+#ifndef javax_swing_GrayFilter_HPP
+#define javax_swing_GrayFilter_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::GrayFilter : public jObject<::javax::swing::GrayFilter, ::java::awt::image::RGBImageFilter> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "GrayFilter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jboolean, ::jint)>(), //
+		jMethod<::java::awt::Image(::java::awt::Image)>("createDisabledImage"), //
+		jMethod<::jint(::jint, ::jint, ::jint)>("filterRGB"), //
+	};
+
+	template<typename R = ::java::awt::Image, typename... Args>
+	static auto createDisabledImage(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createDisabledImage")] != -1);
+		return scall<R>("createDisabledImage", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto filterRGB(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("filterRGB")] != -1);
+		return call<R>("filterRGB", forward<Args>(args)...);
+	}
+
+};
+
+#endif

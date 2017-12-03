@@ -1,0 +1,48 @@
+#ifndef javax_xml_crypto_dsig_spec_XPathType$Filter_HPP
+#define javax_xml_crypto_dsig_spec_XPathType$Filter_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::javax::xml::crypto::dsig::spec::XPathType$Filter : public jObject<::javax::xml::crypto::dsig::spec::XPathType$Filter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_crypto_dsig_spec / "XPathType$Filter";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::xml::crypto::dsig::spec::XPathType$Filter>("INTERSECT"), //
+		jField<::javax::xml::crypto::dsig::spec::XPathType$Filter>("SUBTRACT"), //
+		jField<::javax::xml::crypto::dsig::spec::XPathType$Filter>("UNION"), //
+	};
+
+	template<typename F = ::javax::xml::crypto::dsig::spec::XPathType$Filter>
+	static auto INTERSECT() {
+		static_assert(field_signatures[jField<F>("INTERSECT")] != -1);
+		return sat<F>("INTERSECT");
+	}
+
+	template<typename F = ::javax::xml::crypto::dsig::spec::XPathType$Filter>
+	static auto SUBTRACT() {
+		static_assert(field_signatures[jField<F>("SUBTRACT")] != -1);
+		return sat<F>("SUBTRACT");
+	}
+
+	template<typename F = ::javax::xml::crypto::dsig::spec::XPathType$Filter>
+	static auto UNION() {
+		static_assert(field_signatures[jField<F>("UNION")] != -1);
+		return sat<F>("UNION");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

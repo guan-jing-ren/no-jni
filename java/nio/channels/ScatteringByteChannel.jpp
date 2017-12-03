@@ -1,0 +1,29 @@
+#ifndef java_nio_channels_ScatteringByteChannel_HPP
+#define java_nio_channels_ScatteringByteChannel_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::channels::ScatteringByteChannel : public jObject<::java::nio::channels::ScatteringByteChannel, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_channels / "ScatteringByteChannel";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jlong(::java::nio::ByteBuffer *)>("read"), //
+		jMethod<::jlong(::java::nio::ByteBuffer *, ::jint, ::jint)>("read"), //
+	};
+
+	template<typename R = ::jlong, typename... Args>
+	auto read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", forward<Args>(args)...);
+	}
+
+};
+
+#endif

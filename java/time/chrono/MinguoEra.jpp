@@ -1,0 +1,62 @@
+#ifndef java_time_chrono_MinguoEra_HPP
+#define java_time_chrono_MinguoEra_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::time::chrono::MinguoEra : public jObject<::java::time::chrono::MinguoEra, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_time_chrono / "MinguoEra";
+
+	constexpr static Enume field_signatures{
+		jField<::java::time::chrono::MinguoEra>("BEFORE_ROC"), //
+		jField<::java::time::chrono::MinguoEra>("ROC"), //
+	};
+
+	template<typename F = ::java::time::chrono::MinguoEra>
+	static auto BEFORE_ROC() {
+		static_assert(field_signatures[jField<F>("BEFORE_ROC")] != -1);
+		return sat<F>("BEFORE_ROC");
+	}
+
+	template<typename F = ::java::time::chrono::MinguoEra>
+	static auto ROC() {
+		static_assert(field_signatures[jField<F>("ROC")] != -1);
+		return sat<F>("ROC");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("getValue"), //
+		jMethod<::java::time::chrono::MinguoEra(::jint)>("of"), //
+		jMethod<::java::time::chrono::MinguoEra(::java::lang::String)>("valueOf"), //
+		jMethod<::java::time::chrono::MinguoEra *()>("values"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getValue")] != -1);
+		return call<R>("getValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::chrono::MinguoEra, typename... Args>
+	static auto of(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("of")] != -1);
+		return scall<R>("of", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::chrono::MinguoEra, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::chrono::MinguoEra *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

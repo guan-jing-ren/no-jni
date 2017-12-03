@@ -1,0 +1,28 @@
+#ifndef java_awt_event_WindowStateListener_HPP
+#define java_awt_event_WindowStateListener_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::event::WindowStateListener : public jObject<::java::awt::event::WindowStateListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_event / "WindowStateListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::awt::event::WindowEvent)>("windowStateChanged"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto windowStateChanged(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("windowStateChanged")] != -1);
+		return call<R>("windowStateChanged", forward<Args>(args)...);
+	}
+
+};
+
+#endif

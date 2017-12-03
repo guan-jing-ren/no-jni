@@ -1,0 +1,43 @@
+#ifndef java_text_CollationKey_HPP
+#define java_text_CollationKey_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::text::CollationKey : public jObject<::java::text::CollationKey, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_text / "CollationKey";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint(::java::lang::Object)>("compareTo"), //
+		jMethod<::jint(::java::text::CollationKey)>("compareTo"), //
+		jMethod<::java::lang::String()>("getSourceString"), //
+		jMethod<::jbyte *()>("toByteArray"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto compareTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compareTo")] != -1);
+		return call<R>("compareTo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getSourceString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSourceString")] != -1);
+		return call<R>("getSourceString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto toByteArray(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toByteArray")] != -1);
+		return call<R>("toByteArray", forward<Args>(args)...);
+	}
+
+};
+
+#endif

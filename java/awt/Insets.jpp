@@ -1,0 +1,84 @@
+#ifndef java_awt_Insets_HPP
+#define java_awt_Insets_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::Insets : public jObject<::java::awt::Insets, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "Insets";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("bottom"), //
+		jField<::jint>("left"), //
+		jField<::jint>("right"), //
+		jField<::jint>("top"), //
+	};
+
+	template<typename F = ::jint>
+	auto bottom() const {
+		static_assert(field_signatures[jField<F>("bottom")] != -1);
+		return at<F>("bottom");
+	}
+
+	template<typename F = ::jint>
+	auto left() const {
+		static_assert(field_signatures[jField<F>("left")] != -1);
+		return at<F>("left");
+	}
+
+	template<typename F = ::jint>
+	auto right() const {
+		static_assert(field_signatures[jField<F>("right")] != -1);
+		return at<F>("right");
+	}
+
+	template<typename F = ::jint>
+	auto top() const {
+		static_assert(field_signatures[jField<F>("top")] != -1);
+		return at<F>("top");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::jint, ::jint, ::jint)>(), //
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint)>("set"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set")] != -1);
+		return call<R>("set", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

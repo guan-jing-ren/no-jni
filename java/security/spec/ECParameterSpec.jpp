@@ -1,0 +1,50 @@
+#ifndef java_security_spec_ECParameterSpec_HPP
+#define java_security_spec_ECParameterSpec_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::spec::ECParameterSpec : public jObject<::java::security::spec::ECParameterSpec, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_spec / "ECParameterSpec";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::security::spec::EllipticCurve, ::java::security::spec::ECPoint, ::java::math::BigInteger, ::jint)>(), //
+		jMethod<::jint()>("getCofactor"), //
+		jMethod<::java::security::spec::EllipticCurve()>("getCurve"), //
+		jMethod<::java::security::spec::ECPoint()>("getGenerator"), //
+		jMethod<::java::math::BigInteger()>("getOrder"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getCofactor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCofactor")] != -1);
+		return call<R>("getCofactor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::spec::EllipticCurve, typename... Args>
+	auto getCurve(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCurve")] != -1);
+		return call<R>("getCurve", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::spec::ECPoint, typename... Args>
+	auto getGenerator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getGenerator")] != -1);
+		return call<R>("getGenerator", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getOrder(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOrder")] != -1);
+		return call<R>("getOrder", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,37 @@
+#ifndef java_awt_Panel_HPP
+#define java_awt_Panel_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::Panel : public jObject<::java::awt::Panel, ::java::awt::Container> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "Panel";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::awt::LayoutManager)>(), //
+		jMethod<::jvoid()>("addNotify"), //
+		jMethod<::javax::accessibility::AccessibleContext()>("getAccessibleContext"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addNotify(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addNotify")] != -1);
+		return call<R>("addNotify", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::accessibility::AccessibleContext, typename... Args>
+	auto getAccessibleContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAccessibleContext")] != -1);
+		return call<R>("getAccessibleContext", forward<Args>(args)...);
+	}
+
+};
+
+#endif

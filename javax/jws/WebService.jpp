@@ -1,0 +1,63 @@
+#ifndef javax_jws_WebService_HPP
+#define javax_jws_WebService_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::jws::WebService : public jObject<::javax::jws::WebService, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_jws / "WebService";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("endpointInterface"), //
+		jMethod<::java::lang::String()>("name"), //
+		jMethod<::java::lang::String()>("portName"), //
+		jMethod<::java::lang::String()>("serviceName"), //
+		jMethod<::java::lang::String()>("targetNamespace"), //
+		jMethod<::java::lang::String()>("wsdlLocation"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto endpointInterface(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("endpointInterface")] != -1);
+		return call<R>("endpointInterface", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto name(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("name")] != -1);
+		return call<R>("name", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto portName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("portName")] != -1);
+		return call<R>("portName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto serviceName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("serviceName")] != -1);
+		return call<R>("serviceName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto targetNamespace(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("targetNamespace")] != -1);
+		return call<R>("targetNamespace", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto wsdlLocation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("wsdlLocation")] != -1);
+		return call<R>("wsdlLocation", forward<Args>(args)...);
+	}
+
+};
+
+#endif

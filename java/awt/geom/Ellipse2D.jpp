@@ -1,0 +1,57 @@
+#ifndef java_awt_geom_Ellipse2D_HPP
+#define java_awt_geom_Ellipse2D_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::geom::Ellipse2D : public jObject<::java::awt::geom::Ellipse2D, ::java::awt::geom::RectangularShape> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_geom / "Ellipse2D";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::jdouble, ::jdouble)>("contains"), //
+		jMethod<::jboolean(::jdouble, ::jdouble, ::jdouble, ::jdouble)>("contains"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::awt::geom::PathIterator(::java::awt::geom::AffineTransform)>("getPathIterator"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jboolean(::jdouble, ::jdouble, ::jdouble, ::jdouble)>("intersects"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto contains(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("contains")] != -1);
+		return call<R>("contains", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::PathIterator, typename... Args>
+	auto getPathIterator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPathIterator")] != -1);
+		return call<R>("getPathIterator", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto intersects(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("intersects")] != -1);
+		return call<R>("intersects", forward<Args>(args)...);
+	}
+
+};
+
+#endif

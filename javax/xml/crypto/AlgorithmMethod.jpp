@@ -1,0 +1,35 @@
+#ifndef javax_xml_crypto_AlgorithmMethod_HPP
+#define javax_xml_crypto_AlgorithmMethod_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::crypto::AlgorithmMethod : public jObject<::javax::xml::crypto::AlgorithmMethod, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_crypto / "AlgorithmMethod";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getAlgorithm"), //
+		jMethod<::java::security::spec::AlgorithmParameterSpec()>("getParameterSpec"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAlgorithm(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlgorithm")] != -1);
+		return call<R>("getAlgorithm", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::spec::AlgorithmParameterSpec, typename... Args>
+	auto getParameterSpec(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParameterSpec")] != -1);
+		return call<R>("getParameterSpec", forward<Args>(args)...);
+	}
+
+};
+
+#endif

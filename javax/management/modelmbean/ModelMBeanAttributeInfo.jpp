@@ -1,0 +1,54 @@
+#ifndef javax_management_modelmbean_ModelMBeanAttributeInfo_HPP
+#define javax_management_modelmbean_ModelMBeanAttributeInfo_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::management::modelmbean::ModelMBeanAttributeInfo : public jObject<::javax::management::modelmbean::ModelMBeanAttributeInfo, ::javax::management::MBeanAttributeInfo> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management_modelmbean / "ModelMBeanAttributeInfo";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::String, ::jboolean, ::jboolean, ::jboolean)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::String, ::jboolean, ::jboolean, ::jboolean, ::javax::management::Descriptor)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::reflect::Method, ::java::lang::reflect::Method)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::reflect::Method, ::java::lang::reflect::Method, ::javax::management::Descriptor)>(), //
+		jConstructor<::jvoid(::javax::management::modelmbean::ModelMBeanAttributeInfo)>(), //
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::javax::management::Descriptor()>("getDescriptor"), //
+		jMethod<::jvoid(::javax::management::Descriptor)>("setDescriptor"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::Descriptor, typename... Args>
+	auto getDescriptor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDescriptor")] != -1);
+		return call<R>("getDescriptor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDescriptor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDescriptor")] != -1);
+		return call<R>("setDescriptor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

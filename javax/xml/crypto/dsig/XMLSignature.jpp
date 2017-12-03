@@ -1,0 +1,83 @@
+#ifndef javax_xml_crypto_dsig_XMLSignature_HPP
+#define javax_xml_crypto_dsig_XMLSignature_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::crypto::dsig::XMLSignature : public jObject<::javax::xml::crypto::dsig::XMLSignature, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_crypto_dsig / "XMLSignature";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("XMLNS"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto XMLNS() {
+		static_assert(field_signatures[jField<F>("XMLNS")] != -1);
+		return sat<F>("XMLNS");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getId"), //
+		jMethod<::javax::xml::crypto::dsig::keyinfo::KeyInfo()>("getKeyInfo"), //
+		jMethod<::javax::xml::crypto::KeySelectorResult()>("getKeySelectorResult"), //
+		jMethod<::java::util::List()>("getObjects"), //
+		jMethod<::javax::xml::crypto::dsig::XMLSignature$SignatureValue()>("getSignatureValue"), //
+		jMethod<::javax::xml::crypto::dsig::SignedInfo()>("getSignedInfo"), //
+		jMethod<::jvoid(::javax::xml::crypto::dsig::XMLSignContext)>("sign"), //
+		jMethod<::jboolean(::javax::xml::crypto::dsig::XMLValidateContext)>("validate"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getId")] != -1);
+		return call<R>("getId", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::crypto::dsig::keyinfo::KeyInfo, typename... Args>
+	auto getKeyInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getKeyInfo")] != -1);
+		return call<R>("getKeyInfo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::crypto::KeySelectorResult, typename... Args>
+	auto getKeySelectorResult(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getKeySelectorResult")] != -1);
+		return call<R>("getKeySelectorResult", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getObjects(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getObjects")] != -1);
+		return call<R>("getObjects", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::crypto::dsig::XMLSignature$SignatureValue, typename... Args>
+	auto getSignatureValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSignatureValue")] != -1);
+		return call<R>("getSignatureValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::crypto::dsig::SignedInfo, typename... Args>
+	auto getSignedInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSignedInfo")] != -1);
+		return call<R>("getSignedInfo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto sign(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("sign")] != -1);
+		return call<R>("sign", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto validate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("validate")] != -1);
+		return call<R>("validate", forward<Args>(args)...);
+	}
+
+};
+
+#endif

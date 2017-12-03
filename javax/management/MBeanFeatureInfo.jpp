@@ -1,0 +1,58 @@
+#ifndef javax_management_MBeanFeatureInfo_HPP
+#define javax_management_MBeanFeatureInfo_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::management::MBeanFeatureInfo : public jObject<::javax::management::MBeanFeatureInfo, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management / "MBeanFeatureInfo";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::javax::management::Descriptor)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::lang::String()>("getDescription"), //
+		jMethod<::javax::management::Descriptor()>("getDescriptor"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::jint()>("hashCode"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDescription(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDescription")] != -1);
+		return call<R>("getDescription", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::Descriptor, typename... Args>
+	auto getDescriptor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDescriptor")] != -1);
+		return call<R>("getDescriptor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,42 @@
+#ifndef org_w3c_dom_xpath_XPathEvaluator_HPP
+#define org_w3c_dom_xpath_XPathEvaluator_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::w3c::dom::xpath::XPathEvaluator : public jObject<::org::w3c::dom::xpath::XPathEvaluator, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_w3c_dom_xpath / "XPathEvaluator";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::w3c::dom::xpath::XPathExpression(::java::lang::String, ::org::w3c::dom::xpath::XPathNSResolver)>("createExpression"), //
+		jMethod<::org::w3c::dom::xpath::XPathNSResolver(::org::w3c::dom::Node)>("createNSResolver"), //
+		jMethod<::java::lang::Object(::java::lang::String, ::org::w3c::dom::Node, ::org::w3c::dom::xpath::XPathNSResolver, ::jshort, ::java::lang::Object)>("evaluate"), //
+	};
+
+	template<typename R = ::org::w3c::dom::xpath::XPathExpression, typename... Args>
+	auto createExpression(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createExpression")] != -1);
+		return call<R>("createExpression", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::xpath::XPathNSResolver, typename... Args>
+	auto createNSResolver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createNSResolver")] != -1);
+		return call<R>("createNSResolver", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto evaluate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("evaluate")] != -1);
+		return call<R>("evaluate", forward<Args>(args)...);
+	}
+
+};
+
+#endif

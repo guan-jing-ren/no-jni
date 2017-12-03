@@ -1,0 +1,62 @@
+#ifndef org_omg_PortableServer_ThreadPolicyValue_HPP
+#define org_omg_PortableServer_ThreadPolicyValue_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::PortableServer::ThreadPolicyValue : public jObject<::org::omg::PortableServer::ThreadPolicyValue, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_PortableServer / "ThreadPolicyValue";
+
+	constexpr static Enume field_signatures{
+		jField<::org::omg::PortableServer::ThreadPolicyValue>("ORB_CTRL_MODEL"), //
+		jField<::org::omg::PortableServer::ThreadPolicyValue>("SINGLE_THREAD_MODEL"), //
+		jField<::jint>("_ORB_CTRL_MODEL"), //
+		jField<::jint>("_SINGLE_THREAD_MODEL"), //
+	};
+
+	template<typename F = ::org::omg::PortableServer::ThreadPolicyValue>
+	static auto ORB_CTRL_MODEL() {
+		static_assert(field_signatures[jField<F>("ORB_CTRL_MODEL")] != -1);
+		return sat<F>("ORB_CTRL_MODEL");
+	}
+
+	template<typename F = ::org::omg::PortableServer::ThreadPolicyValue>
+	static auto SINGLE_THREAD_MODEL() {
+		static_assert(field_signatures[jField<F>("SINGLE_THREAD_MODEL")] != -1);
+		return sat<F>("SINGLE_THREAD_MODEL");
+	}
+
+	template<typename F = ::jint>
+	static auto _ORB_CTRL_MODEL() {
+		static_assert(field_signatures[jField<F>("_ORB_CTRL_MODEL")] != -1);
+		return sat<F>("_ORB_CTRL_MODEL");
+	}
+
+	template<typename F = ::jint>
+	static auto _SINGLE_THREAD_MODEL() {
+		static_assert(field_signatures[jField<F>("_SINGLE_THREAD_MODEL")] != -1);
+		return sat<F>("_SINGLE_THREAD_MODEL");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::omg::PortableServer::ThreadPolicyValue(::jint)>("from_int"), //
+		jMethod<::jint()>("value"), //
+	};
+
+	template<typename R = ::org::omg::PortableServer::ThreadPolicyValue, typename... Args>
+	static auto from_int(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("from_int")] != -1);
+		return scall<R>("from_int", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("value")] != -1);
+		return call<R>("value", forward<Args>(args)...);
+	}
+
+};
+
+#endif

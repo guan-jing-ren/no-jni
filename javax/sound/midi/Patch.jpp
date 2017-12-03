@@ -1,0 +1,36 @@
+#ifndef javax_sound_midi_Patch_HPP
+#define javax_sound_midi_Patch_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::sound::midi::Patch : public jObject<::javax::sound::midi::Patch, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sound_midi / "Patch";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::jint)>(), //
+		jMethod<::jint()>("getBank"), //
+		jMethod<::jint()>("getProgram"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getBank(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBank")] != -1);
+		return call<R>("getBank", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getProgram(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProgram")] != -1);
+		return call<R>("getProgram", forward<Args>(args)...);
+	}
+
+};
+
+#endif

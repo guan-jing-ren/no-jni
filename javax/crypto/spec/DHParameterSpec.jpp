@@ -1,0 +1,44 @@
+#ifndef javax_crypto_spec_DHParameterSpec_HPP
+#define javax_crypto_spec_DHParameterSpec_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::crypto::spec::DHParameterSpec : public jObject<::javax::crypto::spec::DHParameterSpec, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_crypto_spec / "DHParameterSpec";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::math::BigInteger, ::java::math::BigInteger)>(), //
+		jConstructor<::jvoid(::java::math::BigInteger, ::java::math::BigInteger, ::jint)>(), //
+		jMethod<::java::math::BigInteger()>("getG"), //
+		jMethod<::jint()>("getL"), //
+		jMethod<::java::math::BigInteger()>("getP"), //
+	};
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getG(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getG")] != -1);
+		return call<R>("getG", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getL(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getL")] != -1);
+		return call<R>("getL", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getP(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getP")] != -1);
+		return call<R>("getP", forward<Args>(args)...);
+	}
+
+};
+
+#endif

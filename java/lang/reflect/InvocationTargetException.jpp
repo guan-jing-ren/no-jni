@@ -1,0 +1,37 @@
+#ifndef java_lang_reflect_InvocationTargetException_HPP
+#define java_lang_reflect_InvocationTargetException_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::reflect::InvocationTargetException : public jObject<::java::lang::reflect::InvocationTargetException, ::java::lang::ReflectiveOperationException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_reflect / "InvocationTargetException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Throwable)>(), //
+		jConstructor<::jvoid(::java::lang::Throwable, ::java::lang::String)>(), //
+		jMethod<::java::lang::Throwable()>("getCause"), //
+		jMethod<::java::lang::Throwable()>("getTargetException"), //
+	};
+
+	template<typename R = ::java::lang::Throwable, typename... Args>
+	auto getCause(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCause")] != -1);
+		return call<R>("getCause", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Throwable, typename... Args>
+	auto getTargetException(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTargetException")] != -1);
+		return call<R>("getTargetException", forward<Args>(args)...);
+	}
+
+};
+
+#endif

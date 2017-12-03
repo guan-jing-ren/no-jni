@@ -1,0 +1,43 @@
+#ifndef javax_sound_sampled_spi_MixerProvider_HPP
+#define javax_sound_sampled_spi_MixerProvider_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::sound::sampled::spi::MixerProvider : public jObject<::javax::sound::sampled::spi::MixerProvider, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sound_sampled_spi / "MixerProvider";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::sound::sampled::Mixer(::javax::sound::sampled::Mixer$Info)>("getMixer"), //
+		jMethod<::javax::sound::sampled::Mixer$Info *()>("getMixerInfo"), //
+		jMethod<::jboolean(::javax::sound::sampled::Mixer$Info)>("isMixerSupported"), //
+	};
+
+	template<typename R = ::javax::sound::sampled::Mixer, typename... Args>
+	auto getMixer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMixer")] != -1);
+		return call<R>("getMixer", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::sampled::Mixer$Info *, typename... Args>
+	auto getMixerInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMixerInfo")] != -1);
+		return call<R>("getMixerInfo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isMixerSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isMixerSupported")] != -1);
+		return call<R>("isMixerSupported", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,43 @@
+#ifndef javax_naming_directory_ModificationItem_HPP
+#define javax_naming_directory_ModificationItem_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::naming::directory::ModificationItem : public jObject<::javax::naming::directory::ModificationItem, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_naming_directory / "ModificationItem";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::javax::naming::directory::Attribute)>(), //
+		jMethod<::javax::naming::directory::Attribute()>("getAttribute"), //
+		jMethod<::jint()>("getModificationOp"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::javax::naming::directory::Attribute, typename... Args>
+	auto getAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttribute")] != -1);
+		return call<R>("getAttribute", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getModificationOp(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getModificationOp")] != -1);
+		return call<R>("getModificationOp", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,83 @@
+#ifndef java_lang_ProcessBuilder$Redirect_HPP
+#define java_lang_ProcessBuilder$Redirect_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::lang::ProcessBuilder$Redirect : public jObject<::java::lang::ProcessBuilder$Redirect, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang / "ProcessBuilder$Redirect";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::ProcessBuilder$Redirect>("INHERIT"), //
+		jField<::java::lang::ProcessBuilder$Redirect>("PIPE"), //
+	};
+
+	template<typename F = ::java::lang::ProcessBuilder$Redirect>
+	static auto INHERIT() {
+		static_assert(field_signatures[jField<F>("INHERIT")] != -1);
+		return sat<F>("INHERIT");
+	}
+
+	template<typename F = ::java::lang::ProcessBuilder$Redirect>
+	static auto PIPE() {
+		static_assert(field_signatures[jField<F>("PIPE")] != -1);
+		return sat<F>("PIPE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::ProcessBuilder$Redirect(::java::io::File)>("appendTo"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::io::File()>("file"), //
+		jMethod<::java::lang::ProcessBuilder$Redirect(::java::io::File)>("from"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::ProcessBuilder$Redirect(::java::io::File)>("to"), //
+		jMethod<::java::lang::ProcessBuilder$Redirect$Type()>("type"), //
+	};
+
+	template<typename R = ::java::lang::ProcessBuilder$Redirect, typename... Args>
+	static auto appendTo(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("appendTo")] != -1);
+		return scall<R>("appendTo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::File, typename... Args>
+	auto file(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("file")] != -1);
+		return call<R>("file", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::ProcessBuilder$Redirect, typename... Args>
+	static auto from(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("from")] != -1);
+		return scall<R>("from", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::ProcessBuilder$Redirect, typename... Args>
+	static auto to(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("to")] != -1);
+		return scall<R>("to", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::ProcessBuilder$Redirect$Type, typename... Args>
+	auto type(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("type")] != -1);
+		return call<R>("type", forward<Args>(args)...);
+	}
+
+};
+
+#endif

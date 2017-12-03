@@ -1,0 +1,60 @@
+#ifndef javax_swing_event_TreeModelEvent_HPP
+#define javax_swing_event_TreeModelEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::event::TreeModelEvent : public jObject<::javax::swing::event::TreeModelEvent, ::java::util::EventObject> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_event / "TreeModelEvent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Object, ::javax::swing::tree::TreePath)>(), //
+		jConstructor<::jvoid(::java::lang::Object, ::javax::swing::tree::TreePath, ::jint *, ::java::lang::Object *)>(), //
+		jConstructor<::jvoid(::java::lang::Object, ::java::lang::Object *)>(), //
+		jConstructor<::jvoid(::java::lang::Object, ::java::lang::Object *, ::jint *, ::java::lang::Object *)>(), //
+		jMethod<::jint *()>("getChildIndices"), //
+		jMethod<::java::lang::Object *()>("getChildren"), //
+		jMethod<::java::lang::Object *()>("getPath"), //
+		jMethod<::javax::swing::tree::TreePath()>("getTreePath"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jint *, typename... Args>
+	auto getChildIndices(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getChildIndices")] != -1);
+		return call<R>("getChildIndices", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object *, typename... Args>
+	auto getChildren(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getChildren")] != -1);
+		return call<R>("getChildren", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object *, typename... Args>
+	auto getPath(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPath")] != -1);
+		return call<R>("getPath", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::tree::TreePath, typename... Args>
+	auto getTreePath(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTreePath")] != -1);
+		return call<R>("getTreePath", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

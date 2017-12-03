@@ -1,0 +1,84 @@
+#ifndef java_awt_SystemTray_HPP
+#define java_awt_SystemTray_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::SystemTray : public jObject<::java::awt::SystemTray, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "SystemTray";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::awt::TrayIcon)>("add"), //
+		jMethod<::jvoid(::java::lang::String, ::java::beans::PropertyChangeListener)>("addPropertyChangeListener"), //
+		jMethod<::java::beans::PropertyChangeListener *(::java::lang::String)>("getPropertyChangeListeners"), //
+		jMethod<::java::awt::SystemTray()>("getSystemTray"), //
+		jMethod<::java::awt::Dimension()>("getTrayIconSize"), //
+		jMethod<::java::awt::TrayIcon *()>("getTrayIcons"), //
+		jMethod<::jboolean()>("isSupported"), //
+		jMethod<::jvoid(::java::awt::TrayIcon)>("remove"), //
+		jMethod<::jvoid(::java::lang::String, ::java::beans::PropertyChangeListener)>("removePropertyChangeListener"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto add(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addPropertyChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addPropertyChangeListener")] != -1);
+		return call<R>("addPropertyChangeListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::beans::PropertyChangeListener *, typename... Args>
+	auto getPropertyChangeListeners(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPropertyChangeListeners")] != -1);
+		return call<R>("getPropertyChangeListeners", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::SystemTray, typename... Args>
+	static auto getSystemTray(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSystemTray")] != -1);
+		return scall<R>("getSystemTray", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Dimension, typename... Args>
+	auto getTrayIconSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTrayIconSize")] != -1);
+		return call<R>("getTrayIconSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::TrayIcon *, typename... Args>
+	auto getTrayIcons(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTrayIcons")] != -1);
+		return call<R>("getTrayIcons", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isSupported(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSupported")] != -1);
+		return scall<R>("isSupported", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto remove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removePropertyChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removePropertyChangeListener")] != -1);
+		return call<R>("removePropertyChangeListener", forward<Args>(args)...);
+	}
+
+};
+
+#endif

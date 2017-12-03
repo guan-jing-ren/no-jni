@@ -1,0 +1,36 @@
+#ifndef org_omg_CosNaming_NameComponent_HPP
+#define org_omg_CosNaming_NameComponent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::CosNaming::NameComponent : public jObject<::org::omg::CosNaming::NameComponent, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CosNaming / "NameComponent";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("id"), //
+		jField<::java::lang::String>("kind"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	auto id() const {
+		static_assert(field_signatures[jField<F>("id")] != -1);
+		return at<F>("id");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto kind() const {
+		static_assert(field_signatures[jField<F>("kind")] != -1);
+		return at<F>("kind");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String)>(), //
+	};
+
+};
+
+#endif

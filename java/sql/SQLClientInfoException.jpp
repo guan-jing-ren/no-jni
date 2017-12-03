@@ -1,0 +1,37 @@
+#ifndef java_sql_SQLClientInfoException_HPP
+#define java_sql_SQLClientInfoException_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::sql::SQLClientInfoException : public jObject<::java::sql::SQLClientInfoException, ::java::sql::SQLException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_sql / "SQLClientInfoException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::jint, ::java::util::Map)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::jint, ::java::util::Map, ::java::lang::Throwable)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::util::Map)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::util::Map, ::java::lang::Throwable)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::util::Map)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::util::Map, ::java::lang::Throwable)>(), //
+		jConstructor<::jvoid(::java::util::Map)>(), //
+		jConstructor<::jvoid(::java::util::Map, ::java::lang::Throwable)>(), //
+		jMethod<::java::util::Map()>("getFailedProperties"), //
+	};
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto getFailedProperties(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFailedProperties")] != -1);
+		return call<R>("getFailedProperties", forward<Args>(args)...);
+	}
+
+};
+
+#endif

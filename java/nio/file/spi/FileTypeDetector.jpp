@@ -1,0 +1,28 @@
+#ifndef java_nio_file_spi_FileTypeDetector_HPP
+#define java_nio_file_spi_FileTypeDetector_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::java::nio::file::spi::FileTypeDetector : public jObject<::java::nio::file::spi::FileTypeDetector, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_file_spi / "FileTypeDetector";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String(::java::nio::file::Path)>("probeContentType"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto probeContentType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("probeContentType")] != -1);
+		return call<R>("probeContentType", forward<Args>(args)...);
+	}
+
+};
+
+#endif

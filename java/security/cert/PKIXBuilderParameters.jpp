@@ -1,0 +1,44 @@
+#ifndef java_security_cert_PKIXBuilderParameters_HPP
+#define java_security_cert_PKIXBuilderParameters_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::cert::PKIXBuilderParameters : public jObject<::java::security::cert::PKIXBuilderParameters, ::java::security::cert::PKIXParameters> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_cert / "PKIXBuilderParameters";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::security::KeyStore, ::java::security::cert::CertSelector)>(), //
+		jConstructor<::jvoid(::java::util::Set, ::java::security::cert::CertSelector)>(), //
+		jMethod<::jint()>("getMaxPathLength"), //
+		jMethod<::jvoid(::jint)>("setMaxPathLength"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getMaxPathLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMaxPathLength")] != -1);
+		return call<R>("getMaxPathLength", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setMaxPathLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMaxPathLength")] != -1);
+		return call<R>("setMaxPathLength", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

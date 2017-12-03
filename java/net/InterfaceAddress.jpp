@@ -1,0 +1,63 @@
+#ifndef java_net_InterfaceAddress_HPP
+#define java_net_InterfaceAddress_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::net::InterfaceAddress : public jObject<::java::net::InterfaceAddress, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_net / "InterfaceAddress";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::net::InetAddress()>("getAddress"), //
+		jMethod<::java::net::InetAddress()>("getBroadcast"), //
+		jMethod<::jshort()>("getNetworkPrefixLength"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::InetAddress, typename... Args>
+	auto getAddress(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAddress")] != -1);
+		return call<R>("getAddress", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::InetAddress, typename... Args>
+	auto getBroadcast(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBroadcast")] != -1);
+		return call<R>("getBroadcast", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jshort, typename... Args>
+	auto getNetworkPrefixLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNetworkPrefixLength")] != -1);
+		return call<R>("getNetworkPrefixLength", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

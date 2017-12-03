@@ -1,0 +1,41 @@
+#ifndef javax_xml_crypto_dsig_TransformException_HPP
+#define javax_xml_crypto_dsig_TransformException_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::crypto::dsig::TransformException : public jObject<::javax::xml::crypto::dsig::TransformException, ::java::lang::Exception> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_crypto_dsig / "TransformException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Throwable)>(), //
+		jConstructor<::jvoid(::java::lang::Throwable)>(), //
+		jMethod<::java::lang::Throwable()>("getCause"), //
+		jMethod<::jvoid()>("printStackTrace"), //
+		jMethod<::jvoid(::java::io::PrintStream)>("printStackTrace"), //
+		jMethod<::jvoid(::java::io::PrintWriter)>("printStackTrace"), //
+	};
+
+	template<typename R = ::java::lang::Throwable, typename... Args>
+	auto getCause(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCause")] != -1);
+		return call<R>("getCause", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto printStackTrace(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("printStackTrace")] != -1);
+		return call<R>("printStackTrace", forward<Args>(args)...);
+	}
+
+};
+
+#endif

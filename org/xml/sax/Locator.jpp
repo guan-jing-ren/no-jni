@@ -1,0 +1,49 @@
+#ifndef org_xml_sax_Locator_HPP
+#define org_xml_sax_Locator_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::xml::sax::Locator : public jObject<::org::xml::sax::Locator, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_xml_sax / "Locator";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("getColumnNumber"), //
+		jMethod<::jint()>("getLineNumber"), //
+		jMethod<::java::lang::String()>("getPublicId"), //
+		jMethod<::java::lang::String()>("getSystemId"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getColumnNumber(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getColumnNumber")] != -1);
+		return call<R>("getColumnNumber", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getLineNumber(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLineNumber")] != -1);
+		return call<R>("getLineNumber", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getPublicId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPublicId")] != -1);
+		return call<R>("getPublicId", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getSystemId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSystemId")] != -1);
+		return call<R>("getSystemId", forward<Args>(args)...);
+	}
+
+};
+
+#endif

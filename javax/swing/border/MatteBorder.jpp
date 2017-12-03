@@ -1,0 +1,62 @@
+#ifndef javax_swing_border_MatteBorder_HPP
+#define javax_swing_border_MatteBorder_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::border::MatteBorder : public jObject<::javax::swing::border::MatteBorder, ::javax::swing::border::EmptyBorder> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_border / "MatteBorder";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::jint, ::jint, ::jint, ::java::awt::Color)>(), //
+		jConstructor<::jvoid(::jint, ::jint, ::jint, ::jint, ::javax::swing::Icon)>(), //
+		jConstructor<::jvoid(::java::awt::Insets, ::java::awt::Color)>(), //
+		jConstructor<::jvoid(::java::awt::Insets, ::javax::swing::Icon)>(), //
+		jConstructor<::jvoid(::javax::swing::Icon)>(), //
+		jMethod<::java::awt::Insets()>("getBorderInsets"), //
+		jMethod<::java::awt::Insets(::java::awt::Component, ::java::awt::Insets)>("getBorderInsets"), //
+		jMethod<::java::awt::Color()>("getMatteColor"), //
+		jMethod<::javax::swing::Icon()>("getTileIcon"), //
+		jMethod<::jboolean()>("isBorderOpaque"), //
+		jMethod<::jvoid(::java::awt::Component, ::java::awt::Graphics, ::jint, ::jint, ::jint, ::jint)>("paintBorder"), //
+	};
+
+	template<typename R = ::java::awt::Insets, typename... Args>
+	auto getBorderInsets(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBorderInsets")] != -1);
+		return call<R>("getBorderInsets", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Color, typename... Args>
+	auto getMatteColor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMatteColor")] != -1);
+		return call<R>("getMatteColor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::Icon, typename... Args>
+	auto getTileIcon(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTileIcon")] != -1);
+		return call<R>("getTileIcon", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isBorderOpaque(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isBorderOpaque")] != -1);
+		return call<R>("isBorderOpaque", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto paintBorder(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paintBorder")] != -1);
+		return call<R>("paintBorder", forward<Args>(args)...);
+	}
+
+};
+
+#endif

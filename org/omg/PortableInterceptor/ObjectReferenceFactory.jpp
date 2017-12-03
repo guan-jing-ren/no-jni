@@ -1,0 +1,28 @@
+#ifndef org_omg_PortableInterceptor_ObjectReferenceFactory_HPP
+#define org_omg_PortableInterceptor_ObjectReferenceFactory_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::PortableInterceptor::ObjectReferenceFactory : public jObject<::org::omg::PortableInterceptor::ObjectReferenceFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_PortableInterceptor / "ObjectReferenceFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::omg::CORBA::Object(::java::lang::String, ::jbyte *)>("make_object"), //
+	};
+
+	template<typename R = ::org::omg::CORBA::Object, typename... Args>
+	auto make_object(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("make_object")] != -1);
+		return call<R>("make_object", forward<Args>(args)...);
+	}
+
+};
+
+#endif

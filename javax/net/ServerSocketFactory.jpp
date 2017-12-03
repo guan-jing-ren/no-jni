@@ -1,0 +1,38 @@
+#ifndef javax_net_ServerSocketFactory_HPP
+#define javax_net_ServerSocketFactory_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::net::ServerSocketFactory : public jObject<::javax::net::ServerSocketFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_net / "ServerSocketFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::net::ServerSocket()>("createServerSocket"), //
+		jMethod<::java::net::ServerSocket(::jint)>("createServerSocket"), //
+		jMethod<::java::net::ServerSocket(::jint, ::jint)>("createServerSocket"), //
+		jMethod<::java::net::ServerSocket(::jint, ::jint, ::java::net::InetAddress)>("createServerSocket"), //
+		jMethod<::javax::net::ServerSocketFactory()>("getDefault"), //
+	};
+
+	template<typename R = ::java::net::ServerSocket, typename... Args>
+	auto createServerSocket(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createServerSocket")] != -1);
+		return call<R>("createServerSocket", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::net::ServerSocketFactory, typename... Args>
+	static auto getDefault(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefault")] != -1);
+		return scall<R>("getDefault", forward<Args>(args)...);
+	}
+
+};
+
+#endif

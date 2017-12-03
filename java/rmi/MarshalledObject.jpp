@@ -1,0 +1,43 @@
+#ifndef java_rmi_MarshalledObject_HPP
+#define java_rmi_MarshalledObject_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::rmi::MarshalledObject : public jObject<::java::rmi::MarshalledObject, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_rmi / "MarshalledObject";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Object)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::lang::Object()>("get"), //
+		jMethod<::jint()>("hashCode"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+};
+
+#endif

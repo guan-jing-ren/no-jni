@@ -1,0 +1,53 @@
+#ifndef org_xml_sax_SAXException_HPP
+#define org_xml_sax_SAXException_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::xml::sax::SAXException : public jObject<::org::xml::sax::SAXException, ::java::lang::Exception> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_xml_sax / "SAXException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::Exception)>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Exception)>(), //
+		jMethod<::java::lang::Throwable()>("getCause"), //
+		jMethod<::java::lang::Exception()>("getException"), //
+		jMethod<::java::lang::String()>("getMessage"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::Throwable, typename... Args>
+	auto getCause(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCause")] != -1);
+		return call<R>("getCause", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Exception, typename... Args>
+	auto getException(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getException")] != -1);
+		return call<R>("getException", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMessage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMessage")] != -1);
+		return call<R>("getMessage", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

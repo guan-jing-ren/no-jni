@@ -1,0 +1,125 @@
+#ifndef java_sql_Timestamp_HPP
+#define java_sql_Timestamp_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::sql::Timestamp : public jObject<::java::sql::Timestamp, ::java::util::Date> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_sql / "Timestamp";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::jlong)>(), //
+		jMethod<::jboolean(::java::sql::Timestamp)>("after"), //
+		jMethod<::jboolean(::java::sql::Timestamp)>("before"), //
+		jMethod<::jint(::java::lang::Object)>("compareTo"), //
+		jMethod<::jint(::java::sql::Timestamp)>("compareTo"), //
+		jMethod<::jint(::java::util::Date)>("compareTo"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jboolean(::java::sql::Timestamp)>("equals"), //
+		jMethod<::java::sql::Timestamp(::java::time::Instant)>("from"), //
+		jMethod<::jint()>("getNanos"), //
+		jMethod<::jlong()>("getTime"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jvoid(::jint)>("setNanos"), //
+		jMethod<::jvoid(::jlong)>("setTime"), //
+		jMethod<::java::time::Instant()>("toInstant"), //
+		jMethod<::java::time::LocalDateTime()>("toLocalDateTime"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::java::sql::Timestamp(::java::lang::String)>("valueOf"), //
+		jMethod<::java::sql::Timestamp(::java::time::LocalDateTime)>("valueOf"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto after(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("after")] != -1);
+		return call<R>("after", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto before(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("before")] != -1);
+		return call<R>("before", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto compareTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compareTo")] != -1);
+		return call<R>("compareTo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::Timestamp, typename... Args>
+	static auto from(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("from")] != -1);
+		return scall<R>("from", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getNanos(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNanos")] != -1);
+		return call<R>("getNanos", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTime")] != -1);
+		return call<R>("getTime", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setNanos(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setNanos")] != -1);
+		return call<R>("setNanos", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setTime")] != -1);
+		return call<R>("setTime", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::Instant, typename... Args>
+	auto toInstant(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toInstant")] != -1);
+		return call<R>("toInstant", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::LocalDateTime, typename... Args>
+	auto toLocalDateTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toLocalDateTime")] != -1);
+		return call<R>("toLocalDateTime", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::Timestamp, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+};
+
+#endif

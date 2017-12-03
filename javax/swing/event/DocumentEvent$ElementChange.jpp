@@ -1,0 +1,49 @@
+#ifndef javax_swing_event_DocumentEvent$ElementChange_HPP
+#define javax_swing_event_DocumentEvent$ElementChange_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::event::DocumentEvent$ElementChange : public jObject<::javax::swing::event::DocumentEvent$ElementChange, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_event / "DocumentEvent$ElementChange";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::swing::text::Element *()>("getChildrenAdded"), //
+		jMethod<::javax::swing::text::Element *()>("getChildrenRemoved"), //
+		jMethod<::javax::swing::text::Element()>("getElement"), //
+		jMethod<::jint()>("getIndex"), //
+	};
+
+	template<typename R = ::javax::swing::text::Element *, typename... Args>
+	auto getChildrenAdded(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getChildrenAdded")] != -1);
+		return call<R>("getChildrenAdded", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::text::Element *, typename... Args>
+	auto getChildrenRemoved(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getChildrenRemoved")] != -1);
+		return call<R>("getChildrenRemoved", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::text::Element, typename... Args>
+	auto getElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getElement")] != -1);
+		return call<R>("getElement", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIndex")] != -1);
+		return call<R>("getIndex", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,42 @@
+#ifndef java_lang_management_CompilationMXBean_HPP
+#define java_lang_management_CompilationMXBean_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::management::CompilationMXBean : public jObject<::java::lang::management::CompilationMXBean, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_management / "CompilationMXBean";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::jlong()>("getTotalCompilationTime"), //
+		jMethod<::jboolean()>("isCompilationTimeMonitoringSupported"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getTotalCompilationTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTotalCompilationTime")] != -1);
+		return call<R>("getTotalCompilationTime", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isCompilationTimeMonitoringSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isCompilationTimeMonitoringSupported")] != -1);
+		return call<R>("isCompilationTimeMonitoringSupported", forward<Args>(args)...);
+	}
+
+};
+
+#endif

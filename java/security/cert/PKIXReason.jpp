@@ -1,0 +1,90 @@
+#ifndef java_security_cert_PKIXReason_HPP
+#define java_security_cert_PKIXReason_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::cert::PKIXReason : public jObject<::java::security::cert::PKIXReason, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_cert / "PKIXReason";
+
+	constexpr static Enume field_signatures{
+		jField<::java::security::cert::PKIXReason>("INVALID_KEY_USAGE"), //
+		jField<::java::security::cert::PKIXReason>("INVALID_NAME"), //
+		jField<::java::security::cert::PKIXReason>("INVALID_POLICY"), //
+		jField<::java::security::cert::PKIXReason>("NAME_CHAINING"), //
+		jField<::java::security::cert::PKIXReason>("NOT_CA_CERT"), //
+		jField<::java::security::cert::PKIXReason>("NO_TRUST_ANCHOR"), //
+		jField<::java::security::cert::PKIXReason>("PATH_TOO_LONG"), //
+		jField<::java::security::cert::PKIXReason>("UNRECOGNIZED_CRIT_EXT"), //
+	};
+
+	template<typename F = ::java::security::cert::PKIXReason>
+	static auto INVALID_KEY_USAGE() {
+		static_assert(field_signatures[jField<F>("INVALID_KEY_USAGE")] != -1);
+		return sat<F>("INVALID_KEY_USAGE");
+	}
+
+	template<typename F = ::java::security::cert::PKIXReason>
+	static auto INVALID_NAME() {
+		static_assert(field_signatures[jField<F>("INVALID_NAME")] != -1);
+		return sat<F>("INVALID_NAME");
+	}
+
+	template<typename F = ::java::security::cert::PKIXReason>
+	static auto INVALID_POLICY() {
+		static_assert(field_signatures[jField<F>("INVALID_POLICY")] != -1);
+		return sat<F>("INVALID_POLICY");
+	}
+
+	template<typename F = ::java::security::cert::PKIXReason>
+	static auto NAME_CHAINING() {
+		static_assert(field_signatures[jField<F>("NAME_CHAINING")] != -1);
+		return sat<F>("NAME_CHAINING");
+	}
+
+	template<typename F = ::java::security::cert::PKIXReason>
+	static auto NOT_CA_CERT() {
+		static_assert(field_signatures[jField<F>("NOT_CA_CERT")] != -1);
+		return sat<F>("NOT_CA_CERT");
+	}
+
+	template<typename F = ::java::security::cert::PKIXReason>
+	static auto NO_TRUST_ANCHOR() {
+		static_assert(field_signatures[jField<F>("NO_TRUST_ANCHOR")] != -1);
+		return sat<F>("NO_TRUST_ANCHOR");
+	}
+
+	template<typename F = ::java::security::cert::PKIXReason>
+	static auto PATH_TOO_LONG() {
+		static_assert(field_signatures[jField<F>("PATH_TOO_LONG")] != -1);
+		return sat<F>("PATH_TOO_LONG");
+	}
+
+	template<typename F = ::java::security::cert::PKIXReason>
+	static auto UNRECOGNIZED_CRIT_EXT() {
+		static_assert(field_signatures[jField<F>("UNRECOGNIZED_CRIT_EXT")] != -1);
+		return sat<F>("UNRECOGNIZED_CRIT_EXT");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::security::cert::PKIXReason(::java::lang::String)>("valueOf"), //
+		jMethod<::java::security::cert::PKIXReason *()>("values"), //
+	};
+
+	template<typename R = ::java::security::cert::PKIXReason, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::PKIXReason *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

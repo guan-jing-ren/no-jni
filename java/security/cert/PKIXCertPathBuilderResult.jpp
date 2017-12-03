@@ -1,0 +1,36 @@
+#ifndef java_security_cert_PKIXCertPathBuilderResult_HPP
+#define java_security_cert_PKIXCertPathBuilderResult_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::cert::PKIXCertPathBuilderResult : public jObject<::java::security::cert::PKIXCertPathBuilderResult, ::java::security::cert::PKIXCertPathValidatorResult> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_cert / "PKIXCertPathBuilderResult";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::security::cert::CertPath, ::java::security::cert::TrustAnchor, ::java::security::cert::PolicyNode, ::java::security::PublicKey)>(), //
+		jMethod<::java::security::cert::CertPath()>("getCertPath"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::security::cert::CertPath, typename... Args>
+	auto getCertPath(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCertPath")] != -1);
+		return call<R>("getCertPath", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

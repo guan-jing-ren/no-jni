@@ -1,0 +1,37 @@
+#ifndef javax_xml_soap_SOAPElementFactory_HPP
+#define javax_xml_soap_SOAPElementFactory_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::soap::SOAPElementFactory : public jObject<::javax::xml::soap::SOAPElementFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_soap / "SOAPElementFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::soap::SOAPElement(::java::lang::String)>("create"), //
+		jMethod<::javax::xml::soap::SOAPElement(::java::lang::String, ::java::lang::String, ::java::lang::String)>("create"), //
+		jMethod<::javax::xml::soap::SOAPElement(::javax::xml::soap::Name)>("create"), //
+		jMethod<::javax::xml::soap::SOAPElementFactory()>("newInstance"), //
+	};
+
+	template<typename R = ::javax::xml::soap::SOAPElement, typename... Args>
+	auto create(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("create")] != -1);
+		return call<R>("create", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::soap::SOAPElementFactory, typename... Args>
+	static auto newInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newInstance")] != -1);
+		return scall<R>("newInstance", forward<Args>(args)...);
+	}
+
+};
+
+#endif

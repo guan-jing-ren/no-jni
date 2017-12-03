@@ -1,0 +1,117 @@
+#ifndef java_nio_channels_FileChannel_HPP
+#define java_nio_channels_FileChannel_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::channels::FileChannel : public jObject<::java::nio::channels::FileChannel, ::java::nio::channels::spi::AbstractInterruptibleChannel> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_channels / "FileChannel";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::jboolean)>("force"), //
+		jMethod<::java::nio::channels::FileLock()>("lock"), //
+		jMethod<::java::nio::channels::FileLock(::jlong, ::jlong, ::jboolean)>("lock"), //
+		jMethod<::java::nio::MappedByteBuffer(::java::nio::channels::FileChannel$MapMode, ::jlong, ::jlong)>("map"), //
+		jMethod<::java::nio::channels::FileChannel(::java::nio::file::Path, ::java::util::Set, ::java::nio::file::attribute::FileAttribute *)>("open"), //
+		jMethod<::java::nio::channels::FileChannel(::java::nio::file::Path, ::java::nio::file::OpenOption *)>("open"), //
+		jMethod<::jlong()>("position"), //
+		jMethod<::java::nio::channels::FileChannel(::jlong)>("position"), //
+		jMethod<::java::nio::channels::SeekableByteChannel(::jlong)>("position"), //
+		jMethod<::jint(::java::nio::ByteBuffer)>("read"), //
+		jMethod<::jint(::java::nio::ByteBuffer, ::jlong)>("read"), //
+		jMethod<::jlong(::java::nio::ByteBuffer *)>("read"), //
+		jMethod<::jlong(::java::nio::ByteBuffer *, ::jint, ::jint)>("read"), //
+		jMethod<::jlong()>("size"), //
+		jMethod<::jlong(::java::nio::channels::ReadableByteChannel, ::jlong, ::jlong)>("transferFrom"), //
+		jMethod<::jlong(::jlong, ::jlong, ::java::nio::channels::WritableByteChannel)>("transferTo"), //
+		jMethod<::java::nio::channels::FileChannel(::jlong)>("truncate"), //
+		jMethod<::java::nio::channels::SeekableByteChannel(::jlong)>("truncate"), //
+		jMethod<::java::nio::channels::FileLock()>("tryLock"), //
+		jMethod<::java::nio::channels::FileLock(::jlong, ::jlong, ::jboolean)>("tryLock"), //
+		jMethod<::jint(::java::nio::ByteBuffer)>("write"), //
+		jMethod<::jint(::java::nio::ByteBuffer, ::jlong)>("write"), //
+		jMethod<::jlong(::java::nio::ByteBuffer *)>("write"), //
+		jMethod<::jlong(::java::nio::ByteBuffer *, ::jint, ::jint)>("write"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto force(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("force")] != -1);
+		return call<R>("force", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::FileLock, typename... Args>
+	auto lock(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lock")] != -1);
+		return call<R>("lock", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::MappedByteBuffer, typename... Args>
+	auto map(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("map")] != -1);
+		return call<R>("map", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::FileChannel, typename... Args>
+	static auto open(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("open")] != -1);
+		return scall<R>("open", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto position(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("position")] != -1);
+		return call<R>("position", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto size(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("size")] != -1);
+		return call<R>("size", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto transferFrom(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("transferFrom")] != -1);
+		return call<R>("transferFrom", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto transferTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("transferTo")] != -1);
+		return call<R>("transferTo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::FileChannel, typename... Args>
+	auto truncate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("truncate")] != -1);
+		return call<R>("truncate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::FileLock, typename... Args>
+	auto tryLock(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("tryLock")] != -1);
+		return call<R>("tryLock", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", forward<Args>(args)...);
+	}
+
+};
+
+#endif

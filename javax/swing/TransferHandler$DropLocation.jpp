@@ -1,0 +1,35 @@
+#ifndef javax_swing_TransferHandler$DropLocation_HPP
+#define javax_swing_TransferHandler$DropLocation_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::TransferHandler$DropLocation : public jObject<::javax::swing::TransferHandler$DropLocation, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "TransferHandler$DropLocation";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::Point()>("getDropPoint"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::awt::Point, typename... Args>
+	auto getDropPoint(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDropPoint")] != -1);
+		return call<R>("getDropPoint", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

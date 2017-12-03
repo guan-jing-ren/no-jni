@@ -1,0 +1,69 @@
+#ifndef java_time_format_SignStyle_HPP
+#define java_time_format_SignStyle_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::time::format::SignStyle : public jObject<::java::time::format::SignStyle, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_time_format / "SignStyle";
+
+	constexpr static Enume field_signatures{
+		jField<::java::time::format::SignStyle>("ALWAYS"), //
+		jField<::java::time::format::SignStyle>("EXCEEDS_PAD"), //
+		jField<::java::time::format::SignStyle>("NEVER"), //
+		jField<::java::time::format::SignStyle>("NORMAL"), //
+		jField<::java::time::format::SignStyle>("NOT_NEGATIVE"), //
+	};
+
+	template<typename F = ::java::time::format::SignStyle>
+	static auto ALWAYS() {
+		static_assert(field_signatures[jField<F>("ALWAYS")] != -1);
+		return sat<F>("ALWAYS");
+	}
+
+	template<typename F = ::java::time::format::SignStyle>
+	static auto EXCEEDS_PAD() {
+		static_assert(field_signatures[jField<F>("EXCEEDS_PAD")] != -1);
+		return sat<F>("EXCEEDS_PAD");
+	}
+
+	template<typename F = ::java::time::format::SignStyle>
+	static auto NEVER() {
+		static_assert(field_signatures[jField<F>("NEVER")] != -1);
+		return sat<F>("NEVER");
+	}
+
+	template<typename F = ::java::time::format::SignStyle>
+	static auto NORMAL() {
+		static_assert(field_signatures[jField<F>("NORMAL")] != -1);
+		return sat<F>("NORMAL");
+	}
+
+	template<typename F = ::java::time::format::SignStyle>
+	static auto NOT_NEGATIVE() {
+		static_assert(field_signatures[jField<F>("NOT_NEGATIVE")] != -1);
+		return sat<F>("NOT_NEGATIVE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::time::format::SignStyle(::java::lang::String)>("valueOf"), //
+		jMethod<::java::time::format::SignStyle *()>("values"), //
+	};
+
+	template<typename R = ::java::time::format::SignStyle, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::format::SignStyle *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

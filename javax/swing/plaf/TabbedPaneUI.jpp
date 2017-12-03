@@ -1,0 +1,43 @@
+#ifndef javax_swing_plaf_TabbedPaneUI_HPP
+#define javax_swing_plaf_TabbedPaneUI_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::plaf::TabbedPaneUI : public jObject<::javax::swing::plaf::TabbedPaneUI, ::javax::swing::plaf::ComponentUI> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_plaf / "TabbedPaneUI";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::awt::Rectangle(::javax::swing::JTabbedPane, ::jint)>("getTabBounds"), //
+		jMethod<::jint(::javax::swing::JTabbedPane)>("getTabRunCount"), //
+		jMethod<::jint(::javax::swing::JTabbedPane, ::jint, ::jint)>("tabForCoordinate"), //
+	};
+
+	template<typename R = ::java::awt::Rectangle, typename... Args>
+	auto getTabBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTabBounds")] != -1);
+		return call<R>("getTabBounds", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getTabRunCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTabRunCount")] != -1);
+		return call<R>("getTabRunCount", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto tabForCoordinate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("tabForCoordinate")] != -1);
+		return call<R>("tabForCoordinate", forward<Args>(args)...);
+	}
+
+};
+
+#endif

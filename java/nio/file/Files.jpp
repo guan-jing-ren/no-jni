@@ -1,0 +1,380 @@
+#ifndef java_nio_file_Files_HPP
+#define java_nio_file_Files_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::file::Files : public jObject<::java::nio::file::Files, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_file / "Files";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jlong(::java::io::InputStream, ::java::nio::file::Path, ::java::nio::file::CopyOption *)>("copy"), //
+		jMethod<::jlong(::java::nio::file::Path, ::java::io::OutputStream)>("copy"), //
+		jMethod<::java::nio::file::Path(::java::nio::file::Path, ::java::nio::file::Path, ::java::nio::file::CopyOption *)>("copy"), //
+		jMethod<::java::nio::file::Path(::java::nio::file::Path, ::java::nio::file::attribute::FileAttribute *)>("createDirectories"), //
+		jMethod<::java::nio::file::Path(::java::nio::file::Path, ::java::nio::file::attribute::FileAttribute *)>("createDirectory"), //
+		jMethod<::java::nio::file::Path(::java::nio::file::Path, ::java::nio::file::attribute::FileAttribute *)>("createFile"), //
+		jMethod<::java::nio::file::Path(::java::nio::file::Path, ::java::nio::file::Path)>("createLink"), //
+		jMethod<::java::nio::file::Path(::java::nio::file::Path, ::java::nio::file::Path, ::java::nio::file::attribute::FileAttribute *)>("createSymbolicLink"), //
+		jMethod<::java::nio::file::Path(::java::lang::String, ::java::nio::file::attribute::FileAttribute *)>("createTempDirectory"), //
+		jMethod<::java::nio::file::Path(::java::nio::file::Path, ::java::lang::String, ::java::nio::file::attribute::FileAttribute *)>("createTempDirectory"), //
+		jMethod<::java::nio::file::Path(::java::lang::String, ::java::lang::String, ::java::nio::file::attribute::FileAttribute *)>("createTempFile"), //
+		jMethod<::java::nio::file::Path(::java::nio::file::Path, ::java::lang::String, ::java::lang::String, ::java::nio::file::attribute::FileAttribute *)>("createTempFile"), //
+		jMethod<::jvoid(::java::nio::file::Path)>("delete"), //
+		jMethod<::jboolean(::java::nio::file::Path)>("deleteIfExists"), //
+		jMethod<::jboolean(::java::nio::file::Path, ::java::nio::file::LinkOption *)>("exists"), //
+		jMethod<::java::util::stream::Stream(::java::nio::file::Path, ::jint, ::java::util::function::BiPredicate, ::java::nio::file::FileVisitOption *)>("find"), //
+		jMethod<::java::lang::Object(::java::nio::file::Path, ::java::lang::String, ::java::nio::file::LinkOption *)>("getAttribute"), //
+		jMethod<::java::nio::file::attribute::FileAttributeView(::java::nio::file::Path, ::java::lang::Class, ::java::nio::file::LinkOption *)>("getFileAttributeView"), //
+		jMethod<::java::nio::file::FileStore(::java::nio::file::Path)>("getFileStore"), //
+		jMethod<::java::nio::file::attribute::FileTime(::java::nio::file::Path, ::java::nio::file::LinkOption *)>("getLastModifiedTime"), //
+		jMethod<::java::nio::file::attribute::UserPrincipal(::java::nio::file::Path, ::java::nio::file::LinkOption *)>("getOwner"), //
+		jMethod<::java::util::Set(::java::nio::file::Path, ::java::nio::file::LinkOption *)>("getPosixFilePermissions"), //
+		jMethod<::jboolean(::java::nio::file::Path, ::java::nio::file::LinkOption *)>("isDirectory"), //
+		jMethod<::jboolean(::java::nio::file::Path)>("isExecutable"), //
+		jMethod<::jboolean(::java::nio::file::Path)>("isHidden"), //
+		jMethod<::jboolean(::java::nio::file::Path)>("isReadable"), //
+		jMethod<::jboolean(::java::nio::file::Path, ::java::nio::file::LinkOption *)>("isRegularFile"), //
+		jMethod<::jboolean(::java::nio::file::Path, ::java::nio::file::Path)>("isSameFile"), //
+		jMethod<::jboolean(::java::nio::file::Path)>("isSymbolicLink"), //
+		jMethod<::jboolean(::java::nio::file::Path)>("isWritable"), //
+		jMethod<::java::util::stream::Stream(::java::nio::file::Path)>("lines"), //
+		jMethod<::java::util::stream::Stream(::java::nio::file::Path, ::java::nio::charset::Charset)>("lines"), //
+		jMethod<::java::util::stream::Stream(::java::nio::file::Path)>("list"), //
+		jMethod<::java::nio::file::Path(::java::nio::file::Path, ::java::nio::file::Path, ::java::nio::file::CopyOption *)>("move"), //
+		jMethod<::java::io::BufferedReader(::java::nio::file::Path)>("newBufferedReader"), //
+		jMethod<::java::io::BufferedReader(::java::nio::file::Path, ::java::nio::charset::Charset)>("newBufferedReader"), //
+		jMethod<::java::io::BufferedWriter(::java::nio::file::Path, ::java::nio::charset::Charset, ::java::nio::file::OpenOption *)>("newBufferedWriter"), //
+		jMethod<::java::io::BufferedWriter(::java::nio::file::Path, ::java::nio::file::OpenOption *)>("newBufferedWriter"), //
+		jMethod<::java::nio::channels::SeekableByteChannel(::java::nio::file::Path, ::java::util::Set, ::java::nio::file::attribute::FileAttribute *)>("newByteChannel"), //
+		jMethod<::java::nio::channels::SeekableByteChannel(::java::nio::file::Path, ::java::nio::file::OpenOption *)>("newByteChannel"), //
+		jMethod<::java::nio::file::DirectoryStream(::java::nio::file::Path)>("newDirectoryStream"), //
+		jMethod<::java::nio::file::DirectoryStream(::java::nio::file::Path, ::java::lang::String)>("newDirectoryStream"), //
+		jMethod<::java::nio::file::DirectoryStream(::java::nio::file::Path, ::java::nio::file::DirectoryStream$Filter)>("newDirectoryStream"), //
+		jMethod<::java::io::InputStream(::java::nio::file::Path, ::java::nio::file::OpenOption *)>("newInputStream"), //
+		jMethod<::java::io::OutputStream(::java::nio::file::Path, ::java::nio::file::OpenOption *)>("newOutputStream"), //
+		jMethod<::jboolean(::java::nio::file::Path, ::java::nio::file::LinkOption *)>("notExists"), //
+		jMethod<::java::lang::String(::java::nio::file::Path)>("probeContentType"), //
+		jMethod<::jbyte *(::java::nio::file::Path)>("readAllBytes"), //
+		jMethod<::java::util::List(::java::nio::file::Path)>("readAllLines"), //
+		jMethod<::java::util::List(::java::nio::file::Path, ::java::nio::charset::Charset)>("readAllLines"), //
+		jMethod<::java::nio::file::attribute::BasicFileAttributes(::java::nio::file::Path, ::java::lang::Class, ::java::nio::file::LinkOption *)>("readAttributes"), //
+		jMethod<::java::util::Map(::java::nio::file::Path, ::java::lang::String, ::java::nio::file::LinkOption *)>("readAttributes"), //
+		jMethod<::java::nio::file::Path(::java::nio::file::Path)>("readSymbolicLink"), //
+		jMethod<::java::nio::file::Path(::java::nio::file::Path, ::java::lang::String, ::java::lang::Object, ::java::nio::file::LinkOption *)>("setAttribute"), //
+		jMethod<::java::nio::file::Path(::java::nio::file::Path, ::java::nio::file::attribute::FileTime)>("setLastModifiedTime"), //
+		jMethod<::java::nio::file::Path(::java::nio::file::Path, ::java::nio::file::attribute::UserPrincipal)>("setOwner"), //
+		jMethod<::java::nio::file::Path(::java::nio::file::Path, ::java::util::Set)>("setPosixFilePermissions"), //
+		jMethod<::jlong(::java::nio::file::Path)>("size"), //
+		jMethod<::java::util::stream::Stream(::java::nio::file::Path, ::jint, ::java::nio::file::FileVisitOption *)>("walk"), //
+		jMethod<::java::util::stream::Stream(::java::nio::file::Path, ::java::nio::file::FileVisitOption *)>("walk"), //
+		jMethod<::java::nio::file::Path(::java::nio::file::Path, ::java::nio::file::FileVisitor)>("walkFileTree"), //
+		jMethod<::java::nio::file::Path(::java::nio::file::Path, ::java::util::Set, ::jint, ::java::nio::file::FileVisitor)>("walkFileTree"), //
+		jMethod<::java::nio::file::Path(::java::nio::file::Path, ::java::lang::Iterable, ::java::nio::charset::Charset, ::java::nio::file::OpenOption *)>("write"), //
+		jMethod<::java::nio::file::Path(::java::nio::file::Path, ::java::lang::Iterable, ::java::nio::file::OpenOption *)>("write"), //
+		jMethod<::java::nio::file::Path(::java::nio::file::Path, ::jbyte *, ::java::nio::file::OpenOption *)>("write"), //
+	};
+
+	template<typename R = ::jlong, typename... Args>
+	static auto copy(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("copy")] != -1);
+		return scall<R>("copy", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::Path, typename... Args>
+	static auto createDirectories(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createDirectories")] != -1);
+		return scall<R>("createDirectories", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::Path, typename... Args>
+	static auto createDirectory(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createDirectory")] != -1);
+		return scall<R>("createDirectory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::Path, typename... Args>
+	static auto createFile(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createFile")] != -1);
+		return scall<R>("createFile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::Path, typename... Args>
+	static auto createLink(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createLink")] != -1);
+		return scall<R>("createLink", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::Path, typename... Args>
+	static auto createSymbolicLink(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createSymbolicLink")] != -1);
+		return scall<R>("createSymbolicLink", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::Path, typename... Args>
+	static auto createTempDirectory(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createTempDirectory")] != -1);
+		return scall<R>("createTempDirectory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::Path, typename... Args>
+	static auto createTempFile(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createTempFile")] != -1);
+		return scall<R>("createTempFile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto delete_(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("delete")] != -1);
+		return scall<R>("delete", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto deleteIfExists(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("deleteIfExists")] != -1);
+		return scall<R>("deleteIfExists", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto exists(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("exists")] != -1);
+		return scall<R>("exists", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::Stream, typename... Args>
+	static auto find(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("find")] != -1);
+		return scall<R>("find", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto getAttribute(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttribute")] != -1);
+		return scall<R>("getAttribute", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::attribute::FileAttributeView, typename... Args>
+	static auto getFileAttributeView(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFileAttributeView")] != -1);
+		return scall<R>("getFileAttributeView", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::FileStore, typename... Args>
+	static auto getFileStore(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFileStore")] != -1);
+		return scall<R>("getFileStore", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::attribute::FileTime, typename... Args>
+	static auto getLastModifiedTime(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLastModifiedTime")] != -1);
+		return scall<R>("getLastModifiedTime", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::attribute::UserPrincipal, typename... Args>
+	static auto getOwner(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOwner")] != -1);
+		return scall<R>("getOwner", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	static auto getPosixFilePermissions(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPosixFilePermissions")] != -1);
+		return scall<R>("getPosixFilePermissions", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isDirectory(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isDirectory")] != -1);
+		return scall<R>("isDirectory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isExecutable(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isExecutable")] != -1);
+		return scall<R>("isExecutable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isHidden(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isHidden")] != -1);
+		return scall<R>("isHidden", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isReadable(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isReadable")] != -1);
+		return scall<R>("isReadable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isRegularFile(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isRegularFile")] != -1);
+		return scall<R>("isRegularFile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isSameFile(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSameFile")] != -1);
+		return scall<R>("isSameFile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isSymbolicLink(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSymbolicLink")] != -1);
+		return scall<R>("isSymbolicLink", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isWritable(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isWritable")] != -1);
+		return scall<R>("isWritable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::Stream, typename... Args>
+	static auto lines(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lines")] != -1);
+		return scall<R>("lines", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::Stream, typename... Args>
+	static auto list(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("list")] != -1);
+		return scall<R>("list", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::Path, typename... Args>
+	static auto move(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("move")] != -1);
+		return scall<R>("move", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::BufferedReader, typename... Args>
+	static auto newBufferedReader(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newBufferedReader")] != -1);
+		return scall<R>("newBufferedReader", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::BufferedWriter, typename... Args>
+	static auto newBufferedWriter(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newBufferedWriter")] != -1);
+		return scall<R>("newBufferedWriter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::SeekableByteChannel, typename... Args>
+	static auto newByteChannel(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newByteChannel")] != -1);
+		return scall<R>("newByteChannel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::DirectoryStream, typename... Args>
+	static auto newDirectoryStream(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newDirectoryStream")] != -1);
+		return scall<R>("newDirectoryStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::InputStream, typename... Args>
+	static auto newInputStream(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newInputStream")] != -1);
+		return scall<R>("newInputStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::OutputStream, typename... Args>
+	static auto newOutputStream(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newOutputStream")] != -1);
+		return scall<R>("newOutputStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto notExists(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("notExists")] != -1);
+		return scall<R>("notExists", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto probeContentType(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("probeContentType")] != -1);
+		return scall<R>("probeContentType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	static auto readAllBytes(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("readAllBytes")] != -1);
+		return scall<R>("readAllBytes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	static auto readAllLines(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("readAllLines")] != -1);
+		return scall<R>("readAllLines", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::attribute::BasicFileAttributes, typename... Args>
+	static auto readAttributes(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("readAttributes")] != -1);
+		return scall<R>("readAttributes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::Path, typename... Args>
+	static auto readSymbolicLink(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("readSymbolicLink")] != -1);
+		return scall<R>("readSymbolicLink", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::Path, typename... Args>
+	static auto setAttribute(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setAttribute")] != -1);
+		return scall<R>("setAttribute", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::Path, typename... Args>
+	static auto setLastModifiedTime(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLastModifiedTime")] != -1);
+		return scall<R>("setLastModifiedTime", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::Path, typename... Args>
+	static auto setOwner(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setOwner")] != -1);
+		return scall<R>("setOwner", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::Path, typename... Args>
+	static auto setPosixFilePermissions(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPosixFilePermissions")] != -1);
+		return scall<R>("setPosixFilePermissions", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	static auto size(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("size")] != -1);
+		return scall<R>("size", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::Stream, typename... Args>
+	static auto walk(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("walk")] != -1);
+		return scall<R>("walk", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::Path, typename... Args>
+	static auto walkFileTree(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("walkFileTree")] != -1);
+		return scall<R>("walkFileTree", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::Path, typename... Args>
+	static auto write(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write")] != -1);
+		return scall<R>("write", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,132 @@
+#ifndef java_util_Spliterator_HPP
+#define java_util_Spliterator_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::Spliterator : public jObject<::java::util::Spliterator, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "Spliterator";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("CONCURRENT"), //
+		jField<::jint>("DISTINCT"), //
+		jField<::jint>("IMMUTABLE"), //
+		jField<::jint>("NONNULL"), //
+		jField<::jint>("ORDERED"), //
+		jField<::jint>("SIZED"), //
+		jField<::jint>("SORTED"), //
+		jField<::jint>("SUBSIZED"), //
+	};
+
+	template<typename F = ::jint>
+	static auto CONCURRENT() {
+		static_assert(field_signatures[jField<F>("CONCURRENT")] != -1);
+		return sat<F>("CONCURRENT");
+	}
+
+	template<typename F = ::jint>
+	static auto DISTINCT() {
+		static_assert(field_signatures[jField<F>("DISTINCT")] != -1);
+		return sat<F>("DISTINCT");
+	}
+
+	template<typename F = ::jint>
+	static auto IMMUTABLE() {
+		static_assert(field_signatures[jField<F>("IMMUTABLE")] != -1);
+		return sat<F>("IMMUTABLE");
+	}
+
+	template<typename F = ::jint>
+	static auto NONNULL() {
+		static_assert(field_signatures[jField<F>("NONNULL")] != -1);
+		return sat<F>("NONNULL");
+	}
+
+	template<typename F = ::jint>
+	static auto ORDERED() {
+		static_assert(field_signatures[jField<F>("ORDERED")] != -1);
+		return sat<F>("ORDERED");
+	}
+
+	template<typename F = ::jint>
+	static auto SIZED() {
+		static_assert(field_signatures[jField<F>("SIZED")] != -1);
+		return sat<F>("SIZED");
+	}
+
+	template<typename F = ::jint>
+	static auto SORTED() {
+		static_assert(field_signatures[jField<F>("SORTED")] != -1);
+		return sat<F>("SORTED");
+	}
+
+	template<typename F = ::jint>
+	static auto SUBSIZED() {
+		static_assert(field_signatures[jField<F>("SUBSIZED")] != -1);
+		return sat<F>("SUBSIZED");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("characteristics"), //
+		jMethod<::jlong()>("estimateSize"), //
+		jMethod<::jvoid(::java::util::function::Consumer)>("forEachRemaining"), //
+		jMethod<::java::util::Comparator()>("getComparator"), //
+		jMethod<::jlong()>("getExactSizeIfKnown"), //
+		jMethod<::jboolean(::jint)>("hasCharacteristics"), //
+		jMethod<::jboolean(::java::util::function::Consumer)>("tryAdvance"), //
+		jMethod<::java::util::Spliterator()>("trySplit"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto characteristics(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("characteristics")] != -1);
+		return call<R>("characteristics", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto estimateSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("estimateSize")] != -1);
+		return call<R>("estimateSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto forEachRemaining(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("forEachRemaining")] != -1);
+		return call<R>("forEachRemaining", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Comparator, typename... Args>
+	auto getComparator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getComparator")] != -1);
+		return call<R>("getComparator", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getExactSizeIfKnown(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getExactSizeIfKnown")] != -1);
+		return call<R>("getExactSizeIfKnown", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasCharacteristics(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hasCharacteristics")] != -1);
+		return call<R>("hasCharacteristics", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto tryAdvance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("tryAdvance")] != -1);
+		return call<R>("tryAdvance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Spliterator, typename... Args>
+	auto trySplit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("trySplit")] != -1);
+		return call<R>("trySplit", forward<Args>(args)...);
+	}
+
+};
+
+#endif

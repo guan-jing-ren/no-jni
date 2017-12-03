@@ -1,0 +1,57 @@
+#ifndef javax_net_ssl_SSLEngineResult_HPP
+#define javax_net_ssl_SSLEngineResult_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::net::ssl::SSLEngineResult : public jObject<::javax::net::ssl::SSLEngineResult, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_net_ssl / "SSLEngineResult";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::net::ssl::SSLEngineResult$Status, ::javax::net::ssl::SSLEngineResult$HandshakeStatus, ::jint, ::jint)>(), //
+		jMethod<::jint()>("bytesConsumed"), //
+		jMethod<::jint()>("bytesProduced"), //
+		jMethod<::javax::net::ssl::SSLEngineResult$HandshakeStatus()>("getHandshakeStatus"), //
+		jMethod<::javax::net::ssl::SSLEngineResult$Status()>("getStatus"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto bytesConsumed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("bytesConsumed")] != -1);
+		return call<R>("bytesConsumed", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto bytesProduced(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("bytesProduced")] != -1);
+		return call<R>("bytesProduced", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::net::ssl::SSLEngineResult$HandshakeStatus, typename... Args>
+	auto getHandshakeStatus(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHandshakeStatus")] != -1);
+		return call<R>("getHandshakeStatus", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::net::ssl::SSLEngineResult$Status, typename... Args>
+	auto getStatus(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStatus")] != -1);
+		return call<R>("getStatus", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

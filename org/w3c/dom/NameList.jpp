@@ -1,0 +1,56 @@
+#ifndef org_w3c_dom_NameList_HPP
+#define org_w3c_dom_NameList_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::w3c::dom::NameList : public jObject<::org::w3c::dom::NameList, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_w3c_dom / "NameList";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::lang::String)>("contains"), //
+		jMethod<::jboolean(::java::lang::String, ::java::lang::String)>("containsNS"), //
+		jMethod<::jint()>("getLength"), //
+		jMethod<::java::lang::String(::jint)>("getName"), //
+		jMethod<::java::lang::String(::jint)>("getNamespaceURI"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto contains(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("contains")] != -1);
+		return call<R>("contains", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto containsNS(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("containsNS")] != -1);
+		return call<R>("containsNS", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLength")] != -1);
+		return call<R>("getLength", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getNamespaceURI(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNamespaceURI")] != -1);
+		return call<R>("getNamespaceURI", forward<Args>(args)...);
+	}
+
+};
+
+#endif

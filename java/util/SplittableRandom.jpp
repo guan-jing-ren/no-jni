@@ -1,0 +1,94 @@
+#ifndef java_util_SplittableRandom_HPP
+#define java_util_SplittableRandom_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::SplittableRandom : public jObject<::java::util::SplittableRandom, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "SplittableRandom";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jlong)>(), //
+		jMethod<::java::util::stream::DoubleStream()>("doubles"), //
+		jMethod<::java::util::stream::DoubleStream(::jdouble, ::jdouble)>("doubles"), //
+		jMethod<::java::util::stream::DoubleStream(::jlong)>("doubles"), //
+		jMethod<::java::util::stream::DoubleStream(::jlong, ::jdouble, ::jdouble)>("doubles"), //
+		jMethod<::java::util::stream::IntStream()>("ints"), //
+		jMethod<::java::util::stream::IntStream(::jint, ::jint)>("ints"), //
+		jMethod<::java::util::stream::IntStream(::jlong)>("ints"), //
+		jMethod<::java::util::stream::IntStream(::jlong, ::jint, ::jint)>("ints"), //
+		jMethod<::java::util::stream::LongStream()>("longs"), //
+		jMethod<::java::util::stream::LongStream(::jlong)>("longs"), //
+		jMethod<::java::util::stream::LongStream(::jlong, ::jlong)>("longs"), //
+		jMethod<::java::util::stream::LongStream(::jlong, ::jlong, ::jlong)>("longs"), //
+		jMethod<::jboolean()>("nextBoolean"), //
+		jMethod<::jdouble()>("nextDouble"), //
+		jMethod<::jdouble(::jdouble)>("nextDouble"), //
+		jMethod<::jdouble(::jdouble, ::jdouble)>("nextDouble"), //
+		jMethod<::jint()>("nextInt"), //
+		jMethod<::jint(::jint)>("nextInt"), //
+		jMethod<::jint(::jint, ::jint)>("nextInt"), //
+		jMethod<::jlong()>("nextLong"), //
+		jMethod<::jlong(::jlong)>("nextLong"), //
+		jMethod<::jlong(::jlong, ::jlong)>("nextLong"), //
+		jMethod<::java::util::SplittableRandom()>("split"), //
+	};
+
+	template<typename R = ::java::util::stream::DoubleStream, typename... Args>
+	auto doubles(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("doubles")] != -1);
+		return call<R>("doubles", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::IntStream, typename... Args>
+	auto ints(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("ints")] != -1);
+		return call<R>("ints", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::LongStream, typename... Args>
+	auto longs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("longs")] != -1);
+		return call<R>("longs", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto nextBoolean(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nextBoolean")] != -1);
+		return call<R>("nextBoolean", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	auto nextDouble(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nextDouble")] != -1);
+		return call<R>("nextDouble", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto nextInt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nextInt")] != -1);
+		return call<R>("nextInt", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto nextLong(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nextLong")] != -1);
+		return call<R>("nextLong", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::SplittableRandom, typename... Args>
+	auto split(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("split")] != -1);
+		return call<R>("split", forward<Args>(args)...);
+	}
+
+};
+
+#endif

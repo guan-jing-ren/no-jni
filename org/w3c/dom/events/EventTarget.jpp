@@ -1,0 +1,42 @@
+#ifndef org_w3c_dom_events_EventTarget_HPP
+#define org_w3c_dom_events_EventTarget_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::w3c::dom::events::EventTarget : public jObject<::org::w3c::dom::events::EventTarget, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_w3c_dom_events / "EventTarget";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::String, ::org::w3c::dom::events::EventListener, ::jboolean)>("addEventListener"), //
+		jMethod<::jboolean(::org::w3c::dom::events::Event)>("dispatchEvent"), //
+		jMethod<::jvoid(::java::lang::String, ::org::w3c::dom::events::EventListener, ::jboolean)>("removeEventListener"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addEventListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addEventListener")] != -1);
+		return call<R>("addEventListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto dispatchEvent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dispatchEvent")] != -1);
+		return call<R>("dispatchEvent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeEventListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeEventListener")] != -1);
+		return call<R>("removeEventListener", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,30 @@
+#ifndef javax_sql_rowset_Predicate_HPP
+#define javax_sql_rowset_Predicate_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::sql::rowset::Predicate : public jObject<::javax::sql::rowset::Predicate, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sql_rowset / "Predicate";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::lang::Object, ::jint)>("evaluate"), //
+		jMethod<::jboolean(::java::lang::Object, ::java::lang::String)>("evaluate"), //
+		jMethod<::jboolean(::javax::sql::RowSet)>("evaluate"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto evaluate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("evaluate")] != -1);
+		return call<R>("evaluate", forward<Args>(args)...);
+	}
+
+};
+
+#endif

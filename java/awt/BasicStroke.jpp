@@ -1,0 +1,130 @@
+#ifndef java_awt_BasicStroke_HPP
+#define java_awt_BasicStroke_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::BasicStroke : public jObject<::java::awt::BasicStroke, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "BasicStroke";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("CAP_BUTT"), //
+		jField<::jint>("CAP_ROUND"), //
+		jField<::jint>("CAP_SQUARE"), //
+		jField<::jint>("JOIN_BEVEL"), //
+		jField<::jint>("JOIN_MITER"), //
+		jField<::jint>("JOIN_ROUND"), //
+	};
+
+	template<typename F = ::jint>
+	static auto CAP_BUTT() {
+		static_assert(field_signatures[jField<F>("CAP_BUTT")] != -1);
+		return sat<F>("CAP_BUTT");
+	}
+
+	template<typename F = ::jint>
+	static auto CAP_ROUND() {
+		static_assert(field_signatures[jField<F>("CAP_ROUND")] != -1);
+		return sat<F>("CAP_ROUND");
+	}
+
+	template<typename F = ::jint>
+	static auto CAP_SQUARE() {
+		static_assert(field_signatures[jField<F>("CAP_SQUARE")] != -1);
+		return sat<F>("CAP_SQUARE");
+	}
+
+	template<typename F = ::jint>
+	static auto JOIN_BEVEL() {
+		static_assert(field_signatures[jField<F>("JOIN_BEVEL")] != -1);
+		return sat<F>("JOIN_BEVEL");
+	}
+
+	template<typename F = ::jint>
+	static auto JOIN_MITER() {
+		static_assert(field_signatures[jField<F>("JOIN_MITER")] != -1);
+		return sat<F>("JOIN_MITER");
+	}
+
+	template<typename F = ::jint>
+	static auto JOIN_ROUND() {
+		static_assert(field_signatures[jField<F>("JOIN_ROUND")] != -1);
+		return sat<F>("JOIN_ROUND");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jfloat)>(), //
+		jConstructor<::jvoid(::jfloat, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::jfloat, ::jint, ::jint, ::jfloat)>(), //
+		jConstructor<::jvoid(::jfloat, ::jint, ::jint, ::jfloat, ::jfloat *, ::jfloat)>(), //
+		jMethod<::java::awt::Shape(::java::awt::Shape)>("createStrokedShape"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jfloat *()>("getDashArray"), //
+		jMethod<::jfloat()>("getDashPhase"), //
+		jMethod<::jint()>("getEndCap"), //
+		jMethod<::jint()>("getLineJoin"), //
+		jMethod<::jfloat()>("getLineWidth"), //
+		jMethod<::jfloat()>("getMiterLimit"), //
+		jMethod<::jint()>("hashCode"), //
+	};
+
+	template<typename R = ::java::awt::Shape, typename... Args>
+	auto createStrokedShape(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createStrokedShape")] != -1);
+		return call<R>("createStrokedShape", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat *, typename... Args>
+	auto getDashArray(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDashArray")] != -1);
+		return call<R>("getDashArray", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getDashPhase(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDashPhase")] != -1);
+		return call<R>("getDashPhase", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getEndCap(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEndCap")] != -1);
+		return call<R>("getEndCap", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getLineJoin(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLineJoin")] != -1);
+		return call<R>("getLineJoin", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getLineWidth(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLineWidth")] != -1);
+		return call<R>("getLineWidth", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getMiterLimit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMiterLimit")] != -1);
+		return call<R>("getMiterLimit", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+};
+
+#endif

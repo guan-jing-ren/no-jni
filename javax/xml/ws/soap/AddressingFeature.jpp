@@ -1,0 +1,52 @@
+#ifndef javax_xml_ws_soap_AddressingFeature_HPP
+#define javax_xml_ws_soap_AddressingFeature_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::ws::soap::AddressingFeature : public jObject<::javax::xml::ws::soap::AddressingFeature, ::javax::xml::ws::WebServiceFeature> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_ws_soap / "AddressingFeature";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("ID"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto ID() {
+		static_assert(field_signatures[jField<F>("ID")] != -1);
+		return sat<F>("ID");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jboolean)>(), //
+		jConstructor<::jvoid(::jboolean, ::jboolean)>(), //
+		jConstructor<::jvoid(::jboolean, ::jboolean, ::javax::xml::ws::soap::AddressingFeature$Responses)>(), //
+		jMethod<::java::lang::String()>("getID"), //
+		jMethod<::javax::xml::ws::soap::AddressingFeature$Responses()>("getResponses"), //
+		jMethod<::jboolean()>("isRequired"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getID")] != -1);
+		return call<R>("getID", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::ws::soap::AddressingFeature$Responses, typename... Args>
+	auto getResponses(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getResponses")] != -1);
+		return call<R>("getResponses", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isRequired(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isRequired")] != -1);
+		return call<R>("isRequired", forward<Args>(args)...);
+	}
+
+};
+
+#endif

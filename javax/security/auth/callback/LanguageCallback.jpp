@@ -1,0 +1,36 @@
+#ifndef javax_security_auth_callback_LanguageCallback_HPP
+#define javax_security_auth_callback_LanguageCallback_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::security::auth::callback::LanguageCallback : public jObject<::javax::security::auth::callback::LanguageCallback, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_security_auth_callback / "LanguageCallback";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::util::Locale()>("getLocale"), //
+		jMethod<::jvoid(::java::util::Locale)>("setLocale"), //
+	};
+
+	template<typename R = ::java::util::Locale, typename... Args>
+	auto getLocale(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLocale")] != -1);
+		return call<R>("getLocale", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLocale(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLocale")] != -1);
+		return call<R>("setLocale", forward<Args>(args)...);
+	}
+
+};
+
+#endif

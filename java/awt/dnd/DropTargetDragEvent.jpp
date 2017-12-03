@@ -1,0 +1,85 @@
+#ifndef java_awt_dnd_DropTargetDragEvent_HPP
+#define java_awt_dnd_DropTargetDragEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::dnd::DropTargetDragEvent : public jObject<::java::awt::dnd::DropTargetDragEvent, ::java::awt::dnd::DropTargetEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_dnd / "DropTargetDragEvent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::dnd::DropTargetContext, ::java::awt::Point, ::jint, ::jint)>(), //
+		jMethod<::jvoid(::jint)>("acceptDrag"), //
+		jMethod<::java::awt::datatransfer::DataFlavor *()>("getCurrentDataFlavors"), //
+		jMethod<::java::util::List()>("getCurrentDataFlavorsAsList"), //
+		jMethod<::jint()>("getDropAction"), //
+		jMethod<::java::awt::Point()>("getLocation"), //
+		jMethod<::jint()>("getSourceActions"), //
+		jMethod<::java::awt::datatransfer::Transferable()>("getTransferable"), //
+		jMethod<::jboolean(::java::awt::datatransfer::DataFlavor)>("isDataFlavorSupported"), //
+		jMethod<::jvoid()>("rejectDrag"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto acceptDrag(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("acceptDrag")] != -1);
+		return call<R>("acceptDrag", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::datatransfer::DataFlavor *, typename... Args>
+	auto getCurrentDataFlavors(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCurrentDataFlavors")] != -1);
+		return call<R>("getCurrentDataFlavors", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getCurrentDataFlavorsAsList(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCurrentDataFlavorsAsList")] != -1);
+		return call<R>("getCurrentDataFlavorsAsList", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getDropAction(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDropAction")] != -1);
+		return call<R>("getDropAction", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Point, typename... Args>
+	auto getLocation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLocation")] != -1);
+		return call<R>("getLocation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getSourceActions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSourceActions")] != -1);
+		return call<R>("getSourceActions", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::datatransfer::Transferable, typename... Args>
+	auto getTransferable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTransferable")] != -1);
+		return call<R>("getTransferable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDataFlavorSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isDataFlavorSupported")] != -1);
+		return call<R>("isDataFlavorSupported", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto rejectDrag(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("rejectDrag")] != -1);
+		return call<R>("rejectDrag", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,50 @@
+#ifndef javax_xml_ws_spi_http_HttpContext_HPP
+#define javax_xml_ws_spi_http_HttpContext_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::javax::xml::ws::spi::http::HttpContext : public jObject<::javax::xml::ws::spi::http::HttpContext, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_ws_spi_http / "HttpContext";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::Object(::java::lang::String)>("getAttribute"), //
+		jMethod<::java::util::Set()>("getAttributeNames"), //
+		jMethod<::java::lang::String()>("getPath"), //
+		jMethod<::jvoid(::javax::xml::ws::spi::http::HttpHandler)>("setHandler"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttribute")] != -1);
+		return call<R>("getAttribute", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto getAttributeNames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttributeNames")] != -1);
+		return call<R>("getAttributeNames", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getPath(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPath")] != -1);
+		return call<R>("getPath", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setHandler")] != -1);
+		return call<R>("setHandler", forward<Args>(args)...);
+	}
+
+};
+
+#endif

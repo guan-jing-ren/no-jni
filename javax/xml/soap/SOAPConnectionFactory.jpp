@@ -1,0 +1,36 @@
+#ifndef javax_xml_soap_SOAPConnectionFactory_HPP
+#define javax_xml_soap_SOAPConnectionFactory_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::soap::SOAPConnectionFactory : public jObject<::javax::xml::soap::SOAPConnectionFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_soap / "SOAPConnectionFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::xml::soap::SOAPConnection()>("createConnection"), //
+		jMethod<::javax::xml::soap::SOAPConnectionFactory()>("newInstance"), //
+	};
+
+	template<typename R = ::javax::xml::soap::SOAPConnection, typename... Args>
+	auto createConnection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createConnection")] != -1);
+		return call<R>("createConnection", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::soap::SOAPConnectionFactory, typename... Args>
+	static auto newInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newInstance")] != -1);
+		return scall<R>("newInstance", forward<Args>(args)...);
+	}
+
+};
+
+#endif

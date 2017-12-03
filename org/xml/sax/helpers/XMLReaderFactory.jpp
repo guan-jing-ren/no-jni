@@ -1,0 +1,29 @@
+#ifndef org_xml_sax_helpers_XMLReaderFactory_HPP
+#define org_xml_sax_helpers_XMLReaderFactory_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::xml::sax::helpers::XMLReaderFactory : public jObject<::org::xml::sax::helpers::XMLReaderFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_xml_sax_helpers / "XMLReaderFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::xml::sax::XMLReader()>("createXMLReader"), //
+		jMethod<::org::xml::sax::XMLReader(::java::lang::String)>("createXMLReader"), //
+	};
+
+	template<typename R = ::org::xml::sax::XMLReader, typename... Args>
+	static auto createXMLReader(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createXMLReader")] != -1);
+		return scall<R>("createXMLReader", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,70 @@
+#ifndef java_awt_event_PaintEvent_HPP
+#define java_awt_event_PaintEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::event::PaintEvent : public jObject<::java::awt::event::PaintEvent, ::java::awt::event::ComponentEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_event / "PaintEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("PAINT"), //
+		jField<::jint>("PAINT_FIRST"), //
+		jField<::jint>("PAINT_LAST"), //
+		jField<::jint>("UPDATE"), //
+	};
+
+	template<typename F = ::jint>
+	static auto PAINT() {
+		static_assert(field_signatures[jField<F>("PAINT")] != -1);
+		return sat<F>("PAINT");
+	}
+
+	template<typename F = ::jint>
+	static auto PAINT_FIRST() {
+		static_assert(field_signatures[jField<F>("PAINT_FIRST")] != -1);
+		return sat<F>("PAINT_FIRST");
+	}
+
+	template<typename F = ::jint>
+	static auto PAINT_LAST() {
+		static_assert(field_signatures[jField<F>("PAINT_LAST")] != -1);
+		return sat<F>("PAINT_LAST");
+	}
+
+	template<typename F = ::jint>
+	static auto UPDATE() {
+		static_assert(field_signatures[jField<F>("UPDATE")] != -1);
+		return sat<F>("UPDATE");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::Component, ::jint, ::java::awt::Rectangle)>(), //
+		jMethod<::java::awt::Rectangle()>("getUpdateRect"), //
+		jMethod<::java::lang::String()>("paramString"), //
+		jMethod<::jvoid(::java::awt::Rectangle)>("setUpdateRect"), //
+	};
+
+	template<typename R = ::java::awt::Rectangle, typename... Args>
+	auto getUpdateRect(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUpdateRect")] != -1);
+		return call<R>("getUpdateRect", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto paramString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paramString")] != -1);
+		return call<R>("paramString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setUpdateRect(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setUpdateRect")] != -1);
+		return call<R>("setUpdateRect", forward<Args>(args)...);
+	}
+
+};
+
+#endif

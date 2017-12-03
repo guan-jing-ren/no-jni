@@ -1,0 +1,50 @@
+#ifndef javax_swing_plaf_basic_BasicTextFieldUI_HPP
+#define javax_swing_plaf_basic_BasicTextFieldUI_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::swing::plaf::basic::BasicTextFieldUI : public jObject<::javax::swing::plaf::basic::BasicTextFieldUI, ::javax::swing::plaf::basic::BasicTextUI> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_plaf_basic / "BasicTextFieldUI";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::swing::text::View(::javax::swing::text::Element)>("create"), //
+		jMethod<::javax::swing::plaf::ComponentUI(::javax::swing::JComponent)>("createUI"), //
+		jMethod<::jint(::javax::swing::JComponent, ::jint, ::jint)>("getBaseline"), //
+		jMethod<::java::awt::Component$BaselineResizeBehavior(::javax::swing::JComponent)>("getBaselineResizeBehavior"), //
+	};
+
+	template<typename R = ::javax::swing::text::View, typename... Args>
+	auto create(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("create")] != -1);
+		return call<R>("create", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::plaf::ComponentUI, typename... Args>
+	static auto createUI(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createUI")] != -1);
+		return scall<R>("createUI", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getBaseline(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBaseline")] != -1);
+		return call<R>("getBaseline", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Component$BaselineResizeBehavior, typename... Args>
+	auto getBaselineResizeBehavior(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBaselineResizeBehavior")] != -1);
+		return call<R>("getBaselineResizeBehavior", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,30 @@
+#ifndef java_security_AccessControlException_HPP
+#define java_security_AccessControlException_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::AccessControlException : public jObject<::java::security::AccessControlException, ::java::lang::SecurityException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "AccessControlException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::security::Permission)>(), //
+		jMethod<::java::security::Permission()>("getPermission"), //
+	};
+
+	template<typename R = ::java::security::Permission, typename... Args>
+	auto getPermission(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPermission")] != -1);
+		return call<R>("getPermission", forward<Args>(args)...);
+	}
+
+};
+
+#endif

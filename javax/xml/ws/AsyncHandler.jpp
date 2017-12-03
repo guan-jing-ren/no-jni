@@ -1,0 +1,28 @@
+#ifndef javax_xml_ws_AsyncHandler_HPP
+#define javax_xml_ws_AsyncHandler_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::ws::AsyncHandler : public jObject<::javax::xml::ws::AsyncHandler, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_ws / "AsyncHandler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::xml::ws::Response)>("handleResponse"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto handleResponse(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("handleResponse")] != -1);
+		return call<R>("handleResponse", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,42 @@
+#ifndef java_awt_PaintContext_HPP
+#define java_awt_PaintContext_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::PaintContext : public jObject<::java::awt::PaintContext, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "PaintContext";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("dispose"), //
+		jMethod<::java::awt::image::ColorModel()>("getColorModel"), //
+		jMethod<::java::awt::image::Raster(::jint, ::jint, ::jint, ::jint)>("getRaster"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispose(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dispose")] != -1);
+		return call<R>("dispose", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::image::ColorModel, typename... Args>
+	auto getColorModel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getColorModel")] != -1);
+		return call<R>("getColorModel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::image::Raster, typename... Args>
+	auto getRaster(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRaster")] != -1);
+		return call<R>("getRaster", forward<Args>(args)...);
+	}
+
+};
+
+#endif

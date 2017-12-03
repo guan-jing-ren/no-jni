@@ -1,0 +1,56 @@
+#ifndef javax_jws_soap_SOAPMessageHandler_HPP
+#define javax_jws_soap_SOAPMessageHandler_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::jws::soap::SOAPMessageHandler : public jObject<::javax::jws::soap::SOAPMessageHandler, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_jws_soap / "SOAPMessageHandler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("className"), //
+		jMethod<::java::lang::String *()>("headers"), //
+		jMethod<::javax::jws::soap::InitParam *()>("initParams"), //
+		jMethod<::java::lang::String()>("name"), //
+		jMethod<::java::lang::String *()>("roles"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto className(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("className")] != -1);
+		return call<R>("className", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto headers(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("headers")] != -1);
+		return call<R>("headers", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::jws::soap::InitParam *, typename... Args>
+	auto initParams(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("initParams")] != -1);
+		return call<R>("initParams", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto name(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("name")] != -1);
+		return call<R>("name", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto roles(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("roles")] != -1);
+		return call<R>("roles", forward<Args>(args)...);
+	}
+
+};
+
+#endif

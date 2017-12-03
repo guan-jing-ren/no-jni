@@ -1,0 +1,140 @@
+#ifndef java_awt_MediaTracker_HPP
+#define java_awt_MediaTracker_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::MediaTracker : public jObject<::java::awt::MediaTracker, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "MediaTracker";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("ABORTED"), //
+		jField<::jint>("COMPLETE"), //
+		jField<::jint>("ERRORED"), //
+		jField<::jint>("LOADING"), //
+	};
+
+	template<typename F = ::jint>
+	static auto ABORTED() {
+		static_assert(field_signatures[jField<F>("ABORTED")] != -1);
+		return sat<F>("ABORTED");
+	}
+
+	template<typename F = ::jint>
+	static auto COMPLETE() {
+		static_assert(field_signatures[jField<F>("COMPLETE")] != -1);
+		return sat<F>("COMPLETE");
+	}
+
+	template<typename F = ::jint>
+	static auto ERRORED() {
+		static_assert(field_signatures[jField<F>("ERRORED")] != -1);
+		return sat<F>("ERRORED");
+	}
+
+	template<typename F = ::jint>
+	static auto LOADING() {
+		static_assert(field_signatures[jField<F>("LOADING")] != -1);
+		return sat<F>("LOADING");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::Component)>(), //
+		jMethod<::jvoid(::java::awt::Image, ::jint)>("addImage"), //
+		jMethod<::jvoid(::java::awt::Image, ::jint, ::jint, ::jint)>("addImage"), //
+		jMethod<::jboolean()>("checkAll"), //
+		jMethod<::jboolean(::jboolean)>("checkAll"), //
+		jMethod<::jboolean(::jint)>("checkID"), //
+		jMethod<::jboolean(::jint, ::jboolean)>("checkID"), //
+		jMethod<::java::lang::Object *()>("getErrorsAny"), //
+		jMethod<::java::lang::Object *(::jint)>("getErrorsID"), //
+		jMethod<::jboolean()>("isErrorAny"), //
+		jMethod<::jboolean(::jint)>("isErrorID"), //
+		jMethod<::jvoid(::java::awt::Image)>("removeImage"), //
+		jMethod<::jvoid(::java::awt::Image, ::jint)>("removeImage"), //
+		jMethod<::jvoid(::java::awt::Image, ::jint, ::jint, ::jint)>("removeImage"), //
+		jMethod<::jint(::jboolean)>("statusAll"), //
+		jMethod<::jint(::jint, ::jboolean)>("statusID"), //
+		jMethod<::jvoid()>("waitForAll"), //
+		jMethod<::jboolean(::jlong)>("waitForAll"), //
+		jMethod<::jvoid(::jint)>("waitForID"), //
+		jMethod<::jboolean(::jint, ::jlong)>("waitForID"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addImage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addImage")] != -1);
+		return call<R>("addImage", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto checkAll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("checkAll")] != -1);
+		return call<R>("checkAll", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto checkID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("checkID")] != -1);
+		return call<R>("checkID", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object *, typename... Args>
+	auto getErrorsAny(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getErrorsAny")] != -1);
+		return call<R>("getErrorsAny", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object *, typename... Args>
+	auto getErrorsID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getErrorsID")] != -1);
+		return call<R>("getErrorsID", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isErrorAny(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isErrorAny")] != -1);
+		return call<R>("isErrorAny", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isErrorID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isErrorID")] != -1);
+		return call<R>("isErrorID", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeImage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeImage")] != -1);
+		return call<R>("removeImage", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto statusAll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("statusAll")] != -1);
+		return call<R>("statusAll", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto statusID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("statusID")] != -1);
+		return call<R>("statusID", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto waitForAll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("waitForAll")] != -1);
+		return call<R>("waitForAll", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto waitForID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("waitForID")] != -1);
+		return call<R>("waitForID", forward<Args>(args)...);
+	}
+
+};
+
+#endif

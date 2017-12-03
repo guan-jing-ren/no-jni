@@ -1,0 +1,42 @@
+#ifndef org_xml_sax_ErrorHandler_HPP
+#define org_xml_sax_ErrorHandler_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::xml::sax::ErrorHandler : public jObject<::org::xml::sax::ErrorHandler, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_xml_sax / "ErrorHandler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::org::xml::sax::SAXParseException)>("error"), //
+		jMethod<::jvoid(::org::xml::sax::SAXParseException)>("fatalError"), //
+		jMethod<::jvoid(::org::xml::sax::SAXParseException)>("warning"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto error(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("error")] != -1);
+		return call<R>("error", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto fatalError(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("fatalError")] != -1);
+		return call<R>("fatalError", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto warning(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("warning")] != -1);
+		return call<R>("warning", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,69 @@
+#ifndef java_awt_color_ICC_ProfileRGB_HPP
+#define java_awt_color_ICC_ProfileRGB_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::color::ICC_ProfileRGB : public jObject<::java::awt::color::ICC_ProfileRGB, ::java::awt::color::ICC_Profile> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_color / "ICC_ProfileRGB";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("BLUECOMPONENT"), //
+		jField<::jint>("GREENCOMPONENT"), //
+		jField<::jint>("REDCOMPONENT"), //
+	};
+
+	template<typename F = ::jint>
+	static auto BLUECOMPONENT() {
+		static_assert(field_signatures[jField<F>("BLUECOMPONENT")] != -1);
+		return sat<F>("BLUECOMPONENT");
+	}
+
+	template<typename F = ::jint>
+	static auto GREENCOMPONENT() {
+		static_assert(field_signatures[jField<F>("GREENCOMPONENT")] != -1);
+		return sat<F>("GREENCOMPONENT");
+	}
+
+	template<typename F = ::jint>
+	static auto REDCOMPONENT() {
+		static_assert(field_signatures[jField<F>("REDCOMPONENT")] != -1);
+		return sat<F>("REDCOMPONENT");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jfloat(::jint)>("getGamma"), //
+		jMethod<::jfloat **()>("getMatrix"), //
+		jMethod<::jfloat *()>("getMediaWhitePoint"), //
+		jMethod<::jshort *(::jint)>("getTRC"), //
+	};
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getGamma(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getGamma")] != -1);
+		return call<R>("getGamma", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat **, typename... Args>
+	auto getMatrix(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMatrix")] != -1);
+		return call<R>("getMatrix", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat *, typename... Args>
+	auto getMediaWhitePoint(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMediaWhitePoint")] != -1);
+		return call<R>("getMediaWhitePoint", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jshort *, typename... Args>
+	auto getTRC(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTRC")] != -1);
+		return call<R>("getTRC", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,39 @@
+#ifndef javax_activation_MimetypesFileTypeMap_HPP
+#define javax_activation_MimetypesFileTypeMap_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::activation::MimetypesFileTypeMap : public jObject<::javax::activation::MimetypesFileTypeMap, ::javax::activation::FileTypeMap> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_activation / "MimetypesFileTypeMap";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::io::InputStream)>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jMethod<::jvoid(::java::lang::String)>("addMimeTypes"), //
+		jMethod<::java::lang::String(::java::io::File)>("getContentType"), //
+		jMethod<::java::lang::String(::java::lang::String)>("getContentType"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addMimeTypes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addMimeTypes")] != -1);
+		return call<R>("addMimeTypes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getContentType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getContentType")] != -1);
+		return call<R>("getContentType", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,63 @@
+#ifndef javax_swing_SpinnerModel_HPP
+#define javax_swing_SpinnerModel_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::SpinnerModel : public jObject<::javax::swing::SpinnerModel, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "SpinnerModel";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::swing::event::ChangeListener)>("addChangeListener"), //
+		jMethod<::java::lang::Object()>("getNextValue"), //
+		jMethod<::java::lang::Object()>("getPreviousValue"), //
+		jMethod<::java::lang::Object()>("getValue"), //
+		jMethod<::jvoid(::javax::swing::event::ChangeListener)>("removeChangeListener"), //
+		jMethod<::jvoid(::java::lang::Object)>("setValue"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addChangeListener")] != -1);
+		return call<R>("addChangeListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getNextValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNextValue")] != -1);
+		return call<R>("getNextValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getPreviousValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPreviousValue")] != -1);
+		return call<R>("getPreviousValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getValue")] != -1);
+		return call<R>("getValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeChangeListener")] != -1);
+		return call<R>("removeChangeListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setValue")] != -1);
+		return call<R>("setValue", forward<Args>(args)...);
+	}
+
+};
+
+#endif

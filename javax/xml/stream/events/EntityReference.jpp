@@ -1,0 +1,35 @@
+#ifndef javax_xml_stream_events_EntityReference_HPP
+#define javax_xml_stream_events_EntityReference_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::stream::events::EntityReference : public jObject<::javax::xml::stream::events::EntityReference, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_stream_events / "EntityReference";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::stream::events::EntityDeclaration()>("getDeclaration"), //
+		jMethod<::java::lang::String()>("getName"), //
+	};
+
+	template<typename R = ::javax::xml::stream::events::EntityDeclaration, typename... Args>
+	auto getDeclaration(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDeclaration")] != -1);
+		return call<R>("getDeclaration", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+};
+
+#endif

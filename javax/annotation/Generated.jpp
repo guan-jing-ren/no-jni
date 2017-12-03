@@ -1,0 +1,42 @@
+#ifndef javax_annotation_Generated_HPP
+#define javax_annotation_Generated_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::annotation::Generated : public jObject<::javax::annotation::Generated, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_annotation / "Generated";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("comments"), //
+		jMethod<::java::lang::String()>("date"), //
+		jMethod<::java::lang::String *()>("value"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto comments(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("comments")] != -1);
+		return call<R>("comments", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto date(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("date")] != -1);
+		return call<R>("date", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("value")] != -1);
+		return call<R>("value", forward<Args>(args)...);
+	}
+
+};
+
+#endif

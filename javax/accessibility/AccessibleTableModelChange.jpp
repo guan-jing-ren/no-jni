@@ -1,0 +1,76 @@
+#ifndef javax_accessibility_AccessibleTableModelChange_HPP
+#define javax_accessibility_AccessibleTableModelChange_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::accessibility::AccessibleTableModelChange : public jObject<::javax::accessibility::AccessibleTableModelChange, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_accessibility / "AccessibleTableModelChange";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("DELETE"), //
+		jField<::jint>("INSERT"), //
+		jField<::jint>("UPDATE"), //
+	};
+
+	template<typename F = ::jint>
+	static auto DELETE() {
+		static_assert(field_signatures[jField<F>("DELETE")] != -1);
+		return sat<F>("DELETE");
+	}
+
+	template<typename F = ::jint>
+	static auto INSERT() {
+		static_assert(field_signatures[jField<F>("INSERT")] != -1);
+		return sat<F>("INSERT");
+	}
+
+	template<typename F = ::jint>
+	static auto UPDATE() {
+		static_assert(field_signatures[jField<F>("UPDATE")] != -1);
+		return sat<F>("UPDATE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("getFirstColumn"), //
+		jMethod<::jint()>("getFirstRow"), //
+		jMethod<::jint()>("getLastColumn"), //
+		jMethod<::jint()>("getLastRow"), //
+		jMethod<::jint()>("getType"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getFirstColumn(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFirstColumn")] != -1);
+		return call<R>("getFirstColumn", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getFirstRow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFirstRow")] != -1);
+		return call<R>("getFirstRow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getLastColumn(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLastColumn")] != -1);
+		return call<R>("getLastColumn", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getLastRow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLastRow")] != -1);
+		return call<R>("getLastRow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", forward<Args>(args)...);
+	}
+
+};
+
+#endif

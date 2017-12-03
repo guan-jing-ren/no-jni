@@ -1,0 +1,49 @@
+#ifndef javax_management_MBeanServerNotification_HPP
+#define javax_management_MBeanServerNotification_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::management::MBeanServerNotification : public jObject<::javax::management::MBeanServerNotification, ::javax::management::Notification> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management / "MBeanServerNotification";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("REGISTRATION_NOTIFICATION"), //
+		jField<::java::lang::String>("UNREGISTRATION_NOTIFICATION"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto REGISTRATION_NOTIFICATION() {
+		static_assert(field_signatures[jField<F>("REGISTRATION_NOTIFICATION")] != -1);
+		return sat<F>("REGISTRATION_NOTIFICATION");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto UNREGISTRATION_NOTIFICATION() {
+		static_assert(field_signatures[jField<F>("UNREGISTRATION_NOTIFICATION")] != -1);
+		return sat<F>("UNREGISTRATION_NOTIFICATION");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Object, ::jlong, ::javax::management::ObjectName)>(), //
+		jMethod<::javax::management::ObjectName()>("getMBeanName"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::javax::management::ObjectName, typename... Args>
+	auto getMBeanName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMBeanName")] != -1);
+		return call<R>("getMBeanName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

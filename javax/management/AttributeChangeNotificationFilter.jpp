@@ -1,0 +1,57 @@
+#ifndef javax_management_AttributeChangeNotificationFilter_HPP
+#define javax_management_AttributeChangeNotificationFilter_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::management::AttributeChangeNotificationFilter : public jObject<::javax::management::AttributeChangeNotificationFilter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management / "AttributeChangeNotificationFilter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid()>("disableAllAttributes"), //
+		jMethod<::jvoid(::java::lang::String)>("disableAttribute"), //
+		jMethod<::jvoid(::java::lang::String)>("enableAttribute"), //
+		jMethod<::java::util::Vector()>("getEnabledAttributes"), //
+		jMethod<::jboolean(::javax::management::Notification)>("isNotificationEnabled"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto disableAllAttributes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("disableAllAttributes")] != -1);
+		return call<R>("disableAllAttributes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto disableAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("disableAttribute")] != -1);
+		return call<R>("disableAttribute", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto enableAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("enableAttribute")] != -1);
+		return call<R>("enableAttribute", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Vector, typename... Args>
+	auto getEnabledAttributes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEnabledAttributes")] != -1);
+		return call<R>("getEnabledAttributes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isNotificationEnabled(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isNotificationEnabled")] != -1);
+		return call<R>("isNotificationEnabled", forward<Args>(args)...);
+	}
+
+};
+
+#endif

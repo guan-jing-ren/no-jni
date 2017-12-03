@@ -1,0 +1,47 @@
+#ifndef java_awt_LinearGradientPaint_HPP
+#define java_awt_LinearGradientPaint_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::LinearGradientPaint : public jObject<::java::awt::LinearGradientPaint, ::java::awt::MultipleGradientPaint> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "LinearGradientPaint";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jfloat, ::jfloat, ::jfloat, ::jfloat, ::jfloat *, ::java::awt::Color *)>(), //
+		jConstructor<::jvoid(::jfloat, ::jfloat, ::jfloat, ::jfloat, ::jfloat *, ::java::awt::Color *, ::java::awt::MultipleGradientPaint$CycleMethod)>(), //
+		jConstructor<::jvoid(::java::awt::geom::Point2D, ::java::awt::geom::Point2D, ::jfloat *, ::java::awt::Color *)>(), //
+		jConstructor<::jvoid(::java::awt::geom::Point2D, ::java::awt::geom::Point2D, ::jfloat *, ::java::awt::Color *, ::java::awt::MultipleGradientPaint$CycleMethod)>(), //
+		jConstructor<::jvoid(::java::awt::geom::Point2D, ::java::awt::geom::Point2D, ::jfloat *, ::java::awt::Color *, ::java::awt::MultipleGradientPaint$CycleMethod, ::java::awt::MultipleGradientPaint$ColorSpaceType, ::java::awt::geom::AffineTransform)>(), //
+		jMethod<::java::awt::PaintContext(::java::awt::image::ColorModel, ::java::awt::Rectangle, ::java::awt::geom::Rectangle2D, ::java::awt::geom::AffineTransform, ::java::awt::RenderingHints)>("createContext"), //
+		jMethod<::java::awt::geom::Point2D()>("getEndPoint"), //
+		jMethod<::java::awt::geom::Point2D()>("getStartPoint"), //
+	};
+
+	template<typename R = ::java::awt::PaintContext, typename... Args>
+	auto createContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createContext")] != -1);
+		return call<R>("createContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Point2D, typename... Args>
+	auto getEndPoint(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEndPoint")] != -1);
+		return call<R>("getEndPoint", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Point2D, typename... Args>
+	auto getStartPoint(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStartPoint")] != -1);
+		return call<R>("getStartPoint", forward<Args>(args)...);
+	}
+
+};
+
+#endif

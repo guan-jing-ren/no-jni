@@ -1,0 +1,57 @@
+#ifndef javax_xml_soap_SOAPEnvelope_HPP
+#define javax_xml_soap_SOAPEnvelope_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::soap::SOAPEnvelope : public jObject<::javax::xml::soap::SOAPEnvelope, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_soap / "SOAPEnvelope";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::soap::SOAPBody()>("addBody"), //
+		jMethod<::javax::xml::soap::SOAPHeader()>("addHeader"), //
+		jMethod<::javax::xml::soap::Name(::java::lang::String)>("createName"), //
+		jMethod<::javax::xml::soap::Name(::java::lang::String, ::java::lang::String, ::java::lang::String)>("createName"), //
+		jMethod<::javax::xml::soap::SOAPBody()>("getBody"), //
+		jMethod<::javax::xml::soap::SOAPHeader()>("getHeader"), //
+	};
+
+	template<typename R = ::javax::xml::soap::SOAPBody, typename... Args>
+	auto addBody(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addBody")] != -1);
+		return call<R>("addBody", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::soap::SOAPHeader, typename... Args>
+	auto addHeader(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addHeader")] != -1);
+		return call<R>("addHeader", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::soap::Name, typename... Args>
+	auto createName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createName")] != -1);
+		return call<R>("createName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::soap::SOAPBody, typename... Args>
+	auto getBody(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBody")] != -1);
+		return call<R>("getBody", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::soap::SOAPHeader, typename... Args>
+	auto getHeader(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHeader")] != -1);
+		return call<R>("getHeader", forward<Args>(args)...);
+	}
+
+};
+
+#endif

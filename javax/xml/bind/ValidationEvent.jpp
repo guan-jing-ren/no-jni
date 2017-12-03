@@ -1,0 +1,69 @@
+#ifndef javax_xml_bind_ValidationEvent_HPP
+#define javax_xml_bind_ValidationEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::bind::ValidationEvent : public jObject<::javax::xml::bind::ValidationEvent, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_bind / "ValidationEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("ERROR"), //
+		jField<::jint>("FATAL_ERROR"), //
+		jField<::jint>("WARNING"), //
+	};
+
+	template<typename F = ::jint>
+	static auto ERROR() {
+		static_assert(field_signatures[jField<F>("ERROR")] != -1);
+		return sat<F>("ERROR");
+	}
+
+	template<typename F = ::jint>
+	static auto FATAL_ERROR() {
+		static_assert(field_signatures[jField<F>("FATAL_ERROR")] != -1);
+		return sat<F>("FATAL_ERROR");
+	}
+
+	template<typename F = ::jint>
+	static auto WARNING() {
+		static_assert(field_signatures[jField<F>("WARNING")] != -1);
+		return sat<F>("WARNING");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Throwable()>("getLinkedException"), //
+		jMethod<::javax::xml::bind::ValidationEventLocator()>("getLocator"), //
+		jMethod<::java::lang::String()>("getMessage"), //
+		jMethod<::jint()>("getSeverity"), //
+	};
+
+	template<typename R = ::java::lang::Throwable, typename... Args>
+	auto getLinkedException(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLinkedException")] != -1);
+		return call<R>("getLinkedException", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::bind::ValidationEventLocator, typename... Args>
+	auto getLocator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLocator")] != -1);
+		return call<R>("getLocator", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMessage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMessage")] != -1);
+		return call<R>("getMessage", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getSeverity(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSeverity")] != -1);
+		return call<R>("getSeverity", forward<Args>(args)...);
+	}
+
+};
+
+#endif

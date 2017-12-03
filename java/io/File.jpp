@@ -1,0 +1,361 @@
+#ifndef java_io_File_HPP
+#define java_io_File_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::io::File : public jObject<::java::io::File, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_io / "File";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("pathSeparator"), //
+		jField<::jchar>("pathSeparatorChar"), //
+		jField<::java::lang::String>("separator"), //
+		jField<::jchar>("separatorChar"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto pathSeparator() {
+		static_assert(field_signatures[jField<F>("pathSeparator")] != -1);
+		return sat<F>("pathSeparator");
+	}
+
+	template<typename F = ::jchar>
+	static auto pathSeparatorChar() {
+		static_assert(field_signatures[jField<F>("pathSeparatorChar")] != -1);
+		return sat<F>("pathSeparatorChar");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto separator() {
+		static_assert(field_signatures[jField<F>("separator")] != -1);
+		return sat<F>("separator");
+	}
+
+	template<typename F = ::jchar>
+	static auto separatorChar() {
+		static_assert(field_signatures[jField<F>("separatorChar")] != -1);
+		return sat<F>("separatorChar");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::File, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::net::URI)>(), //
+		jMethod<::jboolean()>("canExecute"), //
+		jMethod<::jboolean()>("canRead"), //
+		jMethod<::jboolean()>("canWrite"), //
+		jMethod<::jint(::java::io::File)>("compareTo"), //
+		jMethod<::jint(::java::lang::Object)>("compareTo"), //
+		jMethod<::jboolean()>("createNewFile"), //
+		jMethod<::java::io::File(::java::lang::String, ::java::lang::String)>("createTempFile"), //
+		jMethod<::java::io::File(::java::lang::String, ::java::lang::String, ::java::io::File)>("createTempFile"), //
+		jMethod<::jboolean()>("delete"), //
+		jMethod<::jvoid()>("deleteOnExit"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jboolean()>("exists"), //
+		jMethod<::java::io::File()>("getAbsoluteFile"), //
+		jMethod<::java::lang::String()>("getAbsolutePath"), //
+		jMethod<::java::io::File()>("getCanonicalFile"), //
+		jMethod<::java::lang::String()>("getCanonicalPath"), //
+		jMethod<::jlong()>("getFreeSpace"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::java::lang::String()>("getParent"), //
+		jMethod<::java::io::File()>("getParentFile"), //
+		jMethod<::java::lang::String()>("getPath"), //
+		jMethod<::jlong()>("getTotalSpace"), //
+		jMethod<::jlong()>("getUsableSpace"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jboolean()>("isAbsolute"), //
+		jMethod<::jboolean()>("isDirectory"), //
+		jMethod<::jboolean()>("isFile"), //
+		jMethod<::jboolean()>("isHidden"), //
+		jMethod<::jlong()>("lastModified"), //
+		jMethod<::jlong()>("length"), //
+		jMethod<::java::lang::String *()>("list"), //
+		jMethod<::java::lang::String *(::java::io::FilenameFilter)>("list"), //
+		jMethod<::java::io::File *()>("listFiles"), //
+		jMethod<::java::io::File *(::java::io::FileFilter)>("listFiles"), //
+		jMethod<::java::io::File *(::java::io::FilenameFilter)>("listFiles"), //
+		jMethod<::java::io::File *()>("listRoots"), //
+		jMethod<::jboolean()>("mkdir"), //
+		jMethod<::jboolean()>("mkdirs"), //
+		jMethod<::jboolean(::java::io::File)>("renameTo"), //
+		jMethod<::jboolean(::jboolean)>("setExecutable"), //
+		jMethod<::jboolean(::jboolean, ::jboolean)>("setExecutable"), //
+		jMethod<::jboolean(::jlong)>("setLastModified"), //
+		jMethod<::jboolean()>("setReadOnly"), //
+		jMethod<::jboolean(::jboolean)>("setReadable"), //
+		jMethod<::jboolean(::jboolean, ::jboolean)>("setReadable"), //
+		jMethod<::jboolean(::jboolean)>("setWritable"), //
+		jMethod<::jboolean(::jboolean, ::jboolean)>("setWritable"), //
+		jMethod<::java::nio::file::Path()>("toPath"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::java::net::URI()>("toURI"), //
+		jMethod<::java::net::URL()>("toURL"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto canExecute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("canExecute")] != -1);
+		return call<R>("canExecute", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto canRead(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("canRead")] != -1);
+		return call<R>("canRead", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto canWrite(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("canWrite")] != -1);
+		return call<R>("canWrite", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto compareTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compareTo")] != -1);
+		return call<R>("compareTo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto createNewFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createNewFile")] != -1);
+		return call<R>("createNewFile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::File, typename... Args>
+	static auto createTempFile(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createTempFile")] != -1);
+		return scall<R>("createTempFile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto delete_(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("delete")] != -1);
+		return call<R>("delete", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto deleteOnExit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("deleteOnExit")] != -1);
+		return call<R>("deleteOnExit", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto exists(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("exists")] != -1);
+		return call<R>("exists", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::File, typename... Args>
+	auto getAbsoluteFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAbsoluteFile")] != -1);
+		return call<R>("getAbsoluteFile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAbsolutePath(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAbsolutePath")] != -1);
+		return call<R>("getAbsolutePath", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::File, typename... Args>
+	auto getCanonicalFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCanonicalFile")] != -1);
+		return call<R>("getCanonicalFile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getCanonicalPath(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCanonicalPath")] != -1);
+		return call<R>("getCanonicalPath", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getFreeSpace(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFreeSpace")] != -1);
+		return call<R>("getFreeSpace", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getParent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParent")] != -1);
+		return call<R>("getParent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::File, typename... Args>
+	auto getParentFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParentFile")] != -1);
+		return call<R>("getParentFile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getPath(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPath")] != -1);
+		return call<R>("getPath", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getTotalSpace(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTotalSpace")] != -1);
+		return call<R>("getTotalSpace", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getUsableSpace(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUsableSpace")] != -1);
+		return call<R>("getUsableSpace", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isAbsolute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isAbsolute")] != -1);
+		return call<R>("isAbsolute", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDirectory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isDirectory")] != -1);
+		return call<R>("isDirectory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isFile")] != -1);
+		return call<R>("isFile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isHidden(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isHidden")] != -1);
+		return call<R>("isHidden", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto lastModified(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lastModified")] != -1);
+		return call<R>("lastModified", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto length(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("length")] != -1);
+		return call<R>("length", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto list(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("list")] != -1);
+		return call<R>("list", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::File *, typename... Args>
+	auto listFiles(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("listFiles")] != -1);
+		return call<R>("listFiles", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::File *, typename... Args>
+	static auto listRoots(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("listRoots")] != -1);
+		return scall<R>("listRoots", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto mkdir(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("mkdir")] != -1);
+		return call<R>("mkdir", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto mkdirs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("mkdirs")] != -1);
+		return call<R>("mkdirs", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto renameTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("renameTo")] != -1);
+		return call<R>("renameTo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto setExecutable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setExecutable")] != -1);
+		return call<R>("setExecutable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto setLastModified(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLastModified")] != -1);
+		return call<R>("setLastModified", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto setReadOnly(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setReadOnly")] != -1);
+		return call<R>("setReadOnly", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto setReadable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setReadable")] != -1);
+		return call<R>("setReadable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto setWritable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setWritable")] != -1);
+		return call<R>("setWritable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::Path, typename... Args>
+	auto toPath(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toPath")] != -1);
+		return call<R>("toPath", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::URI, typename... Args>
+	auto toURI(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toURI")] != -1);
+		return call<R>("toURI", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::URL, typename... Args>
+	auto toURL(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toURL")] != -1);
+		return call<R>("toURL", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,29 @@
+#ifndef javax_swing_plaf_synth_SynthStyleFactory_HPP
+#define javax_swing_plaf_synth_SynthStyleFactory_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::swing::plaf::synth::SynthStyleFactory : public jObject<::javax::swing::plaf::synth::SynthStyleFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_plaf_synth / "SynthStyleFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::swing::plaf::synth::SynthStyle(::javax::swing::JComponent, ::javax::swing::plaf::synth::Region)>("getStyle"), //
+	};
+
+	template<typename R = ::javax::swing::plaf::synth::SynthStyle, typename... Args>
+	auto getStyle(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStyle")] != -1);
+		return call<R>("getStyle", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,141 @@
+#ifndef javax_xml_ws_Endpoint_HPP
+#define javax_xml_ws_Endpoint_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::ws::Endpoint : public jObject<::javax::xml::ws::Endpoint, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_ws / "Endpoint";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("WSDL_PORT"), //
+		jField<::java::lang::String>("WSDL_SERVICE"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto WSDL_PORT() {
+		static_assert(field_signatures[jField<F>("WSDL_PORT")] != -1);
+		return sat<F>("WSDL_PORT");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto WSDL_SERVICE() {
+		static_assert(field_signatures[jField<F>("WSDL_SERVICE")] != -1);
+		return sat<F>("WSDL_SERVICE");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::xml::ws::Endpoint(::java::lang::Object)>("create"), //
+		jMethod<::javax::xml::ws::Endpoint(::java::lang::Object, ::javax::xml::ws::WebServiceFeature *)>("create"), //
+		jMethod<::javax::xml::ws::Endpoint(::java::lang::String, ::java::lang::Object)>("create"), //
+		jMethod<::javax::xml::ws::Endpoint(::java::lang::String, ::java::lang::Object, ::javax::xml::ws::WebServiceFeature *)>("create"), //
+		jMethod<::javax::xml::ws::Binding()>("getBinding"), //
+		jMethod<::javax::xml::ws::EndpointReference(::java::lang::Class, ::org::w3c::dom::Element *)>("getEndpointReference"), //
+		jMethod<::javax::xml::ws::EndpointReference(::org::w3c::dom::Element *)>("getEndpointReference"), //
+		jMethod<::java::util::concurrent::Executor()>("getExecutor"), //
+		jMethod<::java::lang::Object()>("getImplementor"), //
+		jMethod<::java::util::List()>("getMetadata"), //
+		jMethod<::java::util::Map()>("getProperties"), //
+		jMethod<::jboolean()>("isPublished"), //
+		jMethod<::jvoid(::java::lang::Object)>("publish"), //
+		jMethod<::jvoid(::java::lang::String)>("publish"), //
+		jMethod<::javax::xml::ws::Endpoint(::java::lang::String, ::java::lang::Object)>("publish"), //
+		jMethod<::javax::xml::ws::Endpoint(::java::lang::String, ::java::lang::Object, ::javax::xml::ws::WebServiceFeature *)>("publish"), //
+		jMethod<::jvoid(::javax::xml::ws::spi::http::HttpContext)>("publish"), //
+		jMethod<::jvoid(::javax::xml::ws::EndpointContext)>("setEndpointContext"), //
+		jMethod<::jvoid(::java::util::concurrent::Executor)>("setExecutor"), //
+		jMethod<::jvoid(::java::util::List)>("setMetadata"), //
+		jMethod<::jvoid(::java::util::Map)>("setProperties"), //
+		jMethod<::jvoid()>("stop"), //
+	};
+
+	template<typename R = ::javax::xml::ws::Endpoint, typename... Args>
+	static auto create(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("create")] != -1);
+		return scall<R>("create", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::ws::Binding, typename... Args>
+	auto getBinding(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBinding")] != -1);
+		return call<R>("getBinding", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::ws::EndpointReference, typename... Args>
+	auto getEndpointReference(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEndpointReference")] != -1);
+		return call<R>("getEndpointReference", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::concurrent::Executor, typename... Args>
+	auto getExecutor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getExecutor")] != -1);
+		return call<R>("getExecutor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getImplementor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getImplementor")] != -1);
+		return call<R>("getImplementor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getMetadata(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMetadata")] != -1);
+		return call<R>("getMetadata", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto getProperties(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProperties")] != -1);
+		return call<R>("getProperties", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isPublished(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isPublished")] != -1);
+		return call<R>("isPublished", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto publish(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("publish")] != -1);
+		return call<R>("publish", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setEndpointContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setEndpointContext")] != -1);
+		return call<R>("setEndpointContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setExecutor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setExecutor")] != -1);
+		return call<R>("setExecutor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setMetadata(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMetadata")] != -1);
+		return call<R>("setMetadata", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setProperties(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setProperties")] != -1);
+		return call<R>("setProperties", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto stop(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("stop")] != -1);
+		return call<R>("stop", forward<Args>(args)...);
+	}
+
+};
+
+#endif

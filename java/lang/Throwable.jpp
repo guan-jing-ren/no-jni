@@ -1,0 +1,104 @@
+#ifndef java_lang_Throwable_HPP
+#define java_lang_Throwable_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::lang::Throwable : public jObject<::java::lang::Throwable, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang / "Throwable";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Throwable)>(), //
+		jConstructor<::jvoid(::java::lang::Throwable)>(), //
+		jMethod<::jvoid(::java::lang::Throwable)>("addSuppressed"), //
+		jMethod<::java::lang::Throwable()>("fillInStackTrace"), //
+		jMethod<::java::lang::Throwable()>("getCause"), //
+		jMethod<::java::lang::String()>("getLocalizedMessage"), //
+		jMethod<::java::lang::String()>("getMessage"), //
+		jMethod<::java::lang::StackTraceElement *()>("getStackTrace"), //
+		jMethod<::java::lang::Throwable *()>("getSuppressed"), //
+		jMethod<::java::lang::Throwable(::java::lang::Throwable)>("initCause"), //
+		jMethod<::jvoid()>("printStackTrace"), //
+		jMethod<::jvoid(::java::io::PrintStream)>("printStackTrace"), //
+		jMethod<::jvoid(::java::io::PrintWriter)>("printStackTrace"), //
+		jMethod<::jvoid(::java::lang::StackTraceElement *)>("setStackTrace"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addSuppressed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addSuppressed")] != -1);
+		return call<R>("addSuppressed", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Throwable, typename... Args>
+	auto fillInStackTrace(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("fillInStackTrace")] != -1);
+		return call<R>("fillInStackTrace", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Throwable, typename... Args>
+	auto getCause(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCause")] != -1);
+		return call<R>("getCause", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getLocalizedMessage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLocalizedMessage")] != -1);
+		return call<R>("getLocalizedMessage", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMessage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMessage")] != -1);
+		return call<R>("getMessage", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::StackTraceElement *, typename... Args>
+	auto getStackTrace(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStackTrace")] != -1);
+		return call<R>("getStackTrace", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Throwable *, typename... Args>
+	auto getSuppressed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSuppressed")] != -1);
+		return call<R>("getSuppressed", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Throwable, typename... Args>
+	auto initCause(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("initCause")] != -1);
+		return call<R>("initCause", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto printStackTrace(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("printStackTrace")] != -1);
+		return call<R>("printStackTrace", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setStackTrace(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setStackTrace")] != -1);
+		return call<R>("setStackTrace", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

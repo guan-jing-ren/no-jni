@@ -1,0 +1,35 @@
+#ifndef javax_tools_JavaCompiler_HPP
+#define javax_tools_JavaCompiler_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::tools::JavaCompiler : public jObject<::javax::tools::JavaCompiler, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_tools / "JavaCompiler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::tools::StandardJavaFileManager(::javax::tools::DiagnosticListener, ::java::util::Locale, ::java::nio::charset::Charset)>("getStandardFileManager"), //
+		jMethod<::javax::tools::JavaCompiler$CompilationTask(::java::io::Writer, ::javax::tools::JavaFileManager, ::javax::tools::DiagnosticListener, ::java::lang::Iterable, ::java::lang::Iterable, ::java::lang::Iterable)>("getTask"), //
+	};
+
+	template<typename R = ::javax::tools::StandardJavaFileManager, typename... Args>
+	auto getStandardFileManager(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStandardFileManager")] != -1);
+		return call<R>("getStandardFileManager", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::tools::JavaCompiler$CompilationTask, typename... Args>
+	auto getTask(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTask")] != -1);
+		return call<R>("getTask", forward<Args>(args)...);
+	}
+
+};
+
+#endif

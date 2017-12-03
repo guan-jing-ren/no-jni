@@ -1,0 +1,65 @@
+#ifndef javax_security_cert_Certificate_HPP
+#define javax_security_cert_Certificate_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::security::cert::Certificate : public jObject<::javax::security::cert::Certificate, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_security_cert / "Certificate";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jbyte *()>("getEncoded"), //
+		jMethod<::java::security::PublicKey()>("getPublicKey"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::jvoid(::java::security::PublicKey)>("verify"), //
+		jMethod<::jvoid(::java::security::PublicKey, ::java::lang::String)>("verify"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getEncoded(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEncoded")] != -1);
+		return call<R>("getEncoded", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::PublicKey, typename... Args>
+	auto getPublicKey(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPublicKey")] != -1);
+		return call<R>("getPublicKey", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto verify(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("verify")] != -1);
+		return call<R>("verify", forward<Args>(args)...);
+	}
+
+};
+
+#endif

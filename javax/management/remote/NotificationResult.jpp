@@ -1,0 +1,50 @@
+#ifndef javax_management_remote_NotificationResult_HPP
+#define javax_management_remote_NotificationResult_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::management::remote::NotificationResult : public jObject<::javax::management::remote::NotificationResult, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management_remote / "NotificationResult";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jlong, ::jlong, ::javax::management::remote::TargetedNotification *)>(), //
+		jMethod<::jlong()>("getEarliestSequenceNumber"), //
+		jMethod<::jlong()>("getNextSequenceNumber"), //
+		jMethod<::javax::management::remote::TargetedNotification *()>("getTargetedNotifications"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jlong, typename... Args>
+	auto getEarliestSequenceNumber(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEarliestSequenceNumber")] != -1);
+		return call<R>("getEarliestSequenceNumber", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getNextSequenceNumber(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNextSequenceNumber")] != -1);
+		return call<R>("getNextSequenceNumber", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::remote::TargetedNotification *, typename... Args>
+	auto getTargetedNotifications(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTargetedNotifications")] != -1);
+		return call<R>("getTargetedNotifications", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

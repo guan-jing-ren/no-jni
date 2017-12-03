@@ -1,0 +1,63 @@
+#ifndef java_rmi_activation_ActivationGroup_HPP
+#define java_rmi_activation_ActivationGroup_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::rmi::activation::ActivationGroup : public jObject<::java::rmi::activation::ActivationGroup, ::java::rmi::server::UnicastRemoteObject> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_rmi_activation / "ActivationGroup";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::rmi::activation::ActivationID, ::java::rmi::Remote)>("activeObject"), //
+		jMethod<::java::rmi::activation::ActivationGroup(::java::rmi::activation::ActivationGroupID, ::java::rmi::activation::ActivationGroupDesc, ::jlong)>("createGroup"), //
+		jMethod<::java::rmi::activation::ActivationGroupID()>("currentGroupID"), //
+		jMethod<::java::rmi::activation::ActivationSystem()>("getSystem"), //
+		jMethod<::jboolean(::java::rmi::activation::ActivationID)>("inactiveObject"), //
+		jMethod<::jvoid(::java::rmi::activation::ActivationSystem)>("setSystem"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto activeObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("activeObject")] != -1);
+		return call<R>("activeObject", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::activation::ActivationGroup, typename... Args>
+	static auto createGroup(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createGroup")] != -1);
+		return scall<R>("createGroup", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::activation::ActivationGroupID, typename... Args>
+	static auto currentGroupID(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("currentGroupID")] != -1);
+		return scall<R>("currentGroupID", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::activation::ActivationSystem, typename... Args>
+	static auto getSystem(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSystem")] != -1);
+		return scall<R>("getSystem", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto inactiveObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("inactiveObject")] != -1);
+		return call<R>("inactiveObject", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setSystem(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSystem")] != -1);
+		return scall<R>("setSystem", forward<Args>(args)...);
+	}
+
+};
+
+#endif

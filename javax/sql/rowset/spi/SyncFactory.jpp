@@ -1,0 +1,98 @@
+#ifndef javax_sql_rowset_spi_SyncFactory_HPP
+#define javax_sql_rowset_spi_SyncFactory_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::sql::rowset::spi::SyncFactory : public jObject<::javax::sql::rowset::spi::SyncFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sql_rowset_spi / "SyncFactory";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("ROWSET_SYNC_PROVIDER"), //
+		jField<::java::lang::String>("ROWSET_SYNC_PROVIDER_VERSION"), //
+		jField<::java::lang::String>("ROWSET_SYNC_VENDOR"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto ROWSET_SYNC_PROVIDER() {
+		static_assert(field_signatures[jField<F>("ROWSET_SYNC_PROVIDER")] != -1);
+		return sat<F>("ROWSET_SYNC_PROVIDER");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto ROWSET_SYNC_PROVIDER_VERSION() {
+		static_assert(field_signatures[jField<F>("ROWSET_SYNC_PROVIDER_VERSION")] != -1);
+		return sat<F>("ROWSET_SYNC_PROVIDER_VERSION");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto ROWSET_SYNC_VENDOR() {
+		static_assert(field_signatures[jField<F>("ROWSET_SYNC_VENDOR")] != -1);
+		return sat<F>("ROWSET_SYNC_VENDOR");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::sql::rowset::spi::SyncProvider(::java::lang::String)>("getInstance"), //
+		jMethod<::java::util::logging::Logger()>("getLogger"), //
+		jMethod<::java::util::Enumeration()>("getRegisteredProviders"), //
+		jMethod<::javax::sql::rowset::spi::SyncFactory()>("getSyncFactory"), //
+		jMethod<::jvoid(::java::lang::String)>("registerProvider"), //
+		jMethod<::jvoid(::javax::naming::Context)>("setJNDIContext"), //
+		jMethod<::jvoid(::java::util::logging::Logger)>("setLogger"), //
+		jMethod<::jvoid(::java::util::logging::Logger, ::java::util::logging::Level)>("setLogger"), //
+		jMethod<::jvoid(::java::lang::String)>("unregisterProvider"), //
+	};
+
+	template<typename R = ::javax::sql::rowset::spi::SyncProvider, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::logging::Logger, typename... Args>
+	static auto getLogger(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLogger")] != -1);
+		return scall<R>("getLogger", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	static auto getRegisteredProviders(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRegisteredProviders")] != -1);
+		return scall<R>("getRegisteredProviders", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sql::rowset::spi::SyncFactory, typename... Args>
+	static auto getSyncFactory(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSyncFactory")] != -1);
+		return scall<R>("getSyncFactory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto registerProvider(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("registerProvider")] != -1);
+		return scall<R>("registerProvider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setJNDIContext(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setJNDIContext")] != -1);
+		return scall<R>("setJNDIContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setLogger(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLogger")] != -1);
+		return scall<R>("setLogger", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto unregisterProvider(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unregisterProvider")] != -1);
+		return scall<R>("unregisterProvider", forward<Args>(args)...);
+	}
+
+};
+
+#endif

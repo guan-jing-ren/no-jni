@@ -1,0 +1,38 @@
+#ifndef javax_net_ssl_X509ExtendedTrustManager_HPP
+#define javax_net_ssl_X509ExtendedTrustManager_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::net::ssl::X509ExtendedTrustManager : public jObject<::javax::net::ssl::X509ExtendedTrustManager, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_net_ssl / "X509ExtendedTrustManager";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::security::cert::X509Certificate *, ::java::lang::String, ::java::net::Socket)>("checkClientTrusted"), //
+		jMethod<::jvoid(::java::security::cert::X509Certificate *, ::java::lang::String, ::javax::net::ssl::SSLEngine)>("checkClientTrusted"), //
+		jMethod<::jvoid(::java::security::cert::X509Certificate *, ::java::lang::String, ::java::net::Socket)>("checkServerTrusted"), //
+		jMethod<::jvoid(::java::security::cert::X509Certificate *, ::java::lang::String, ::javax::net::ssl::SSLEngine)>("checkServerTrusted"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto checkClientTrusted(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("checkClientTrusted")] != -1);
+		return call<R>("checkClientTrusted", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto checkServerTrusted(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("checkServerTrusted")] != -1);
+		return call<R>("checkServerTrusted", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,43 @@
+#ifndef javax_net_ssl_ExtendedSSLSession_HPP
+#define javax_net_ssl_ExtendedSSLSession_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::net::ssl::ExtendedSSLSession : public jObject<::javax::net::ssl::ExtendedSSLSession, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_net_ssl / "ExtendedSSLSession";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::String *()>("getLocalSupportedSignatureAlgorithms"), //
+		jMethod<::java::lang::String *()>("getPeerSupportedSignatureAlgorithms"), //
+		jMethod<::java::util::List()>("getRequestedServerNames"), //
+	};
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getLocalSupportedSignatureAlgorithms(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLocalSupportedSignatureAlgorithms")] != -1);
+		return call<R>("getLocalSupportedSignatureAlgorithms", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getPeerSupportedSignatureAlgorithms(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPeerSupportedSignatureAlgorithms")] != -1);
+		return call<R>("getPeerSupportedSignatureAlgorithms", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getRequestedServerNames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRequestedServerNames")] != -1);
+		return call<R>("getRequestedServerNames", forward<Args>(args)...);
+	}
+
+};
+
+#endif

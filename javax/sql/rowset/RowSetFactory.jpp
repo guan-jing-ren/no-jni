@@ -1,0 +1,56 @@
+#ifndef javax_sql_rowset_RowSetFactory_HPP
+#define javax_sql_rowset_RowSetFactory_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::sql::rowset::RowSetFactory : public jObject<::javax::sql::rowset::RowSetFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sql_rowset / "RowSetFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::sql::rowset::CachedRowSet()>("createCachedRowSet"), //
+		jMethod<::javax::sql::rowset::FilteredRowSet()>("createFilteredRowSet"), //
+		jMethod<::javax::sql::rowset::JdbcRowSet()>("createJdbcRowSet"), //
+		jMethod<::javax::sql::rowset::JoinRowSet()>("createJoinRowSet"), //
+		jMethod<::javax::sql::rowset::WebRowSet()>("createWebRowSet"), //
+	};
+
+	template<typename R = ::javax::sql::rowset::CachedRowSet, typename... Args>
+	auto createCachedRowSet(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createCachedRowSet")] != -1);
+		return call<R>("createCachedRowSet", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sql::rowset::FilteredRowSet, typename... Args>
+	auto createFilteredRowSet(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createFilteredRowSet")] != -1);
+		return call<R>("createFilteredRowSet", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sql::rowset::JdbcRowSet, typename... Args>
+	auto createJdbcRowSet(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createJdbcRowSet")] != -1);
+		return call<R>("createJdbcRowSet", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sql::rowset::JoinRowSet, typename... Args>
+	auto createJoinRowSet(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createJoinRowSet")] != -1);
+		return call<R>("createJoinRowSet", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sql::rowset::WebRowSet, typename... Args>
+	auto createWebRowSet(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createWebRowSet")] != -1);
+		return call<R>("createWebRowSet", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,113 @@
+#ifndef java_awt_event_AdjustmentEvent_HPP
+#define java_awt_event_AdjustmentEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::event::AdjustmentEvent : public jObject<::java::awt::event::AdjustmentEvent, ::java::awt::AWTEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_event / "AdjustmentEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("ADJUSTMENT_FIRST"), //
+		jField<::jint>("ADJUSTMENT_LAST"), //
+		jField<::jint>("ADJUSTMENT_VALUE_CHANGED"), //
+		jField<::jint>("BLOCK_DECREMENT"), //
+		jField<::jint>("BLOCK_INCREMENT"), //
+		jField<::jint>("TRACK"), //
+		jField<::jint>("UNIT_DECREMENT"), //
+		jField<::jint>("UNIT_INCREMENT"), //
+	};
+
+	template<typename F = ::jint>
+	static auto ADJUSTMENT_FIRST() {
+		static_assert(field_signatures[jField<F>("ADJUSTMENT_FIRST")] != -1);
+		return sat<F>("ADJUSTMENT_FIRST");
+	}
+
+	template<typename F = ::jint>
+	static auto ADJUSTMENT_LAST() {
+		static_assert(field_signatures[jField<F>("ADJUSTMENT_LAST")] != -1);
+		return sat<F>("ADJUSTMENT_LAST");
+	}
+
+	template<typename F = ::jint>
+	static auto ADJUSTMENT_VALUE_CHANGED() {
+		static_assert(field_signatures[jField<F>("ADJUSTMENT_VALUE_CHANGED")] != -1);
+		return sat<F>("ADJUSTMENT_VALUE_CHANGED");
+	}
+
+	template<typename F = ::jint>
+	static auto BLOCK_DECREMENT() {
+		static_assert(field_signatures[jField<F>("BLOCK_DECREMENT")] != -1);
+		return sat<F>("BLOCK_DECREMENT");
+	}
+
+	template<typename F = ::jint>
+	static auto BLOCK_INCREMENT() {
+		static_assert(field_signatures[jField<F>("BLOCK_INCREMENT")] != -1);
+		return sat<F>("BLOCK_INCREMENT");
+	}
+
+	template<typename F = ::jint>
+	static auto TRACK() {
+		static_assert(field_signatures[jField<F>("TRACK")] != -1);
+		return sat<F>("TRACK");
+	}
+
+	template<typename F = ::jint>
+	static auto UNIT_DECREMENT() {
+		static_assert(field_signatures[jField<F>("UNIT_DECREMENT")] != -1);
+		return sat<F>("UNIT_DECREMENT");
+	}
+
+	template<typename F = ::jint>
+	static auto UNIT_INCREMENT() {
+		static_assert(field_signatures[jField<F>("UNIT_INCREMENT")] != -1);
+		return sat<F>("UNIT_INCREMENT");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::Adjustable, ::jint, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::java::awt::Adjustable, ::jint, ::jint, ::jint, ::jboolean)>(), //
+		jMethod<::java::awt::Adjustable()>("getAdjustable"), //
+		jMethod<::jint()>("getAdjustmentType"), //
+		jMethod<::jint()>("getValue"), //
+		jMethod<::jboolean()>("getValueIsAdjusting"), //
+		jMethod<::java::lang::String()>("paramString"), //
+	};
+
+	template<typename R = ::java::awt::Adjustable, typename... Args>
+	auto getAdjustable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAdjustable")] != -1);
+		return call<R>("getAdjustable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getAdjustmentType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAdjustmentType")] != -1);
+		return call<R>("getAdjustmentType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getValue")] != -1);
+		return call<R>("getValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getValueIsAdjusting(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getValueIsAdjusting")] != -1);
+		return call<R>("getValueIsAdjusting", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto paramString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paramString")] != -1);
+		return call<R>("paramString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

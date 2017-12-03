@@ -1,0 +1,28 @@
+#ifndef javax_xml_stream_EventFilter_HPP
+#define javax_xml_stream_EventFilter_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::stream::EventFilter : public jObject<::javax::xml::stream::EventFilter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_stream / "EventFilter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::javax::xml::stream::events::XMLEvent)>("accept"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto accept(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("accept")] != -1);
+		return call<R>("accept", forward<Args>(args)...);
+	}
+
+};
+
+#endif

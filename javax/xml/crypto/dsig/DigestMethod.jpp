@@ -1,0 +1,55 @@
+#ifndef javax_xml_crypto_dsig_DigestMethod_HPP
+#define javax_xml_crypto_dsig_DigestMethod_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::crypto::dsig::DigestMethod : public jObject<::javax::xml::crypto::dsig::DigestMethod, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_crypto_dsig / "DigestMethod";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("RIPEMD160"), //
+		jField<::java::lang::String>("SHA1"), //
+		jField<::java::lang::String>("SHA256"), //
+		jField<::java::lang::String>("SHA512"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto RIPEMD160() {
+		static_assert(field_signatures[jField<F>("RIPEMD160")] != -1);
+		return sat<F>("RIPEMD160");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto SHA1() {
+		static_assert(field_signatures[jField<F>("SHA1")] != -1);
+		return sat<F>("SHA1");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto SHA256() {
+		static_assert(field_signatures[jField<F>("SHA256")] != -1);
+		return sat<F>("SHA256");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto SHA512() {
+		static_assert(field_signatures[jField<F>("SHA512")] != -1);
+		return sat<F>("SHA512");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::security::spec::AlgorithmParameterSpec()>("getParameterSpec"), //
+	};
+
+	template<typename R = ::java::security::spec::AlgorithmParameterSpec, typename... Args>
+	auto getParameterSpec(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParameterSpec")] != -1);
+		return call<R>("getParameterSpec", forward<Args>(args)...);
+	}
+
+};
+
+#endif

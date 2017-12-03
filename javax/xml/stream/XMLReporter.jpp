@@ -1,0 +1,28 @@
+#ifndef javax_xml_stream_XMLReporter_HPP
+#define javax_xml_stream_XMLReporter_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::stream::XMLReporter : public jObject<::javax::xml::stream::XMLReporter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_stream / "XMLReporter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::Object, ::javax::xml::stream::Location)>("report"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto report(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("report")] != -1);
+		return call<R>("report", forward<Args>(args)...);
+	}
+
+};
+
+#endif

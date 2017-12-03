@@ -1,0 +1,43 @@
+#ifndef java_util_prefs_PreferenceChangeEvent_HPP
+#define java_util_prefs_PreferenceChangeEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::prefs::PreferenceChangeEvent : public jObject<::java::util::prefs::PreferenceChangeEvent, ::java::util::EventObject> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_prefs / "PreferenceChangeEvent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::util::prefs::Preferences, ::java::lang::String, ::java::lang::String)>(), //
+		jMethod<::java::lang::String()>("getKey"), //
+		jMethod<::java::lang::String()>("getNewValue"), //
+		jMethod<::java::util::prefs::Preferences()>("getNode"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getKey(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getKey")] != -1);
+		return call<R>("getKey", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getNewValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNewValue")] != -1);
+		return call<R>("getNewValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::prefs::Preferences, typename... Args>
+	auto getNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNode")] != -1);
+		return call<R>("getNode", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,28 @@
+#ifndef javax_xml_crypto_NodeSetData_HPP
+#define javax_xml_crypto_NodeSetData_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::crypto::NodeSetData : public jObject<::javax::xml::crypto::NodeSetData, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_crypto / "NodeSetData";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::Iterator()>("iterator"), //
+	};
+
+	template<typename R = ::java::util::Iterator, typename... Args>
+	auto iterator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("iterator")] != -1);
+		return call<R>("iterator", forward<Args>(args)...);
+	}
+
+};
+
+#endif

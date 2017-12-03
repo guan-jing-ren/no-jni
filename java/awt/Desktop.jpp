@@ -1,0 +1,78 @@
+#ifndef java_awt_Desktop_HPP
+#define java_awt_Desktop_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::Desktop : public jObject<::java::awt::Desktop, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "Desktop";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::net::URI)>("browse"), //
+		jMethod<::jvoid(::java::io::File)>("edit"), //
+		jMethod<::java::awt::Desktop()>("getDesktop"), //
+		jMethod<::jboolean()>("isDesktopSupported"), //
+		jMethod<::jboolean(::java::awt::Desktop$Action)>("isSupported"), //
+		jMethod<::jvoid()>("mail"), //
+		jMethod<::jvoid(::java::net::URI)>("mail"), //
+		jMethod<::jvoid(::java::io::File)>("open"), //
+		jMethod<::jvoid(::java::io::File)>("print"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto browse(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("browse")] != -1);
+		return call<R>("browse", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto edit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("edit")] != -1);
+		return call<R>("edit", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Desktop, typename... Args>
+	static auto getDesktop(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDesktop")] != -1);
+		return scall<R>("getDesktop", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isDesktopSupported(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isDesktopSupported")] != -1);
+		return scall<R>("isDesktopSupported", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSupported")] != -1);
+		return call<R>("isSupported", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto mail(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("mail")] != -1);
+		return call<R>("mail", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto open(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("open")] != -1);
+		return call<R>("open", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto print(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("print")] != -1);
+		return call<R>("print", forward<Args>(args)...);
+	}
+
+};
+
+#endif

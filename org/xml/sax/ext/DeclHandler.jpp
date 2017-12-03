@@ -1,0 +1,49 @@
+#ifndef org_xml_sax_ext_DeclHandler_HPP
+#define org_xml_sax_ext_DeclHandler_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::xml::sax::ext::DeclHandler : public jObject<::org::xml::sax::ext::DeclHandler, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_xml_sax_ext / "DeclHandler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::String)>("attributeDecl"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String)>("elementDecl"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::String)>("externalEntityDecl"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String)>("internalEntityDecl"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto attributeDecl(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("attributeDecl")] != -1);
+		return call<R>("attributeDecl", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto elementDecl(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("elementDecl")] != -1);
+		return call<R>("elementDecl", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto externalEntityDecl(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("externalEntityDecl")] != -1);
+		return call<R>("externalEntityDecl", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto internalEntityDecl(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("internalEntityDecl")] != -1);
+		return call<R>("internalEntityDecl", forward<Args>(args)...);
+	}
+
+};
+
+#endif

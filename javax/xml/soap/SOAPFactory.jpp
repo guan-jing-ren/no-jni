@@ -1,0 +1,64 @@
+#ifndef javax_xml_soap_SOAPFactory_HPP
+#define javax_xml_soap_SOAPFactory_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::soap::SOAPFactory : public jObject<::javax::xml::soap::SOAPFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_soap / "SOAPFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::xml::soap::Detail()>("createDetail"), //
+		jMethod<::javax::xml::soap::SOAPElement(::java::lang::String)>("createElement"), //
+		jMethod<::javax::xml::soap::SOAPElement(::java::lang::String, ::java::lang::String, ::java::lang::String)>("createElement"), //
+		jMethod<::javax::xml::soap::SOAPElement(::javax::xml::namespace_::QName)>("createElement"), //
+		jMethod<::javax::xml::soap::SOAPElement(::javax::xml::soap::Name)>("createElement"), //
+		jMethod<::javax::xml::soap::SOAPElement(::org::w3c::dom::Element)>("createElement"), //
+		jMethod<::javax::xml::soap::SOAPFault()>("createFault"), //
+		jMethod<::javax::xml::soap::SOAPFault(::java::lang::String, ::javax::xml::namespace_::QName)>("createFault"), //
+		jMethod<::javax::xml::soap::Name(::java::lang::String)>("createName"), //
+		jMethod<::javax::xml::soap::Name(::java::lang::String, ::java::lang::String, ::java::lang::String)>("createName"), //
+		jMethod<::javax::xml::soap::SOAPFactory()>("newInstance"), //
+		jMethod<::javax::xml::soap::SOAPFactory(::java::lang::String)>("newInstance"), //
+	};
+
+	template<typename R = ::javax::xml::soap::Detail, typename... Args>
+	auto createDetail(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createDetail")] != -1);
+		return call<R>("createDetail", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::soap::SOAPElement, typename... Args>
+	auto createElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createElement")] != -1);
+		return call<R>("createElement", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::soap::SOAPFault, typename... Args>
+	auto createFault(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createFault")] != -1);
+		return call<R>("createFault", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::soap::Name, typename... Args>
+	auto createName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createName")] != -1);
+		return call<R>("createName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::soap::SOAPFactory, typename... Args>
+	static auto newInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newInstance")] != -1);
+		return scall<R>("newInstance", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,77 @@
+#ifndef java_security_acl_Acl_HPP
+#define java_security_acl_Acl_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::acl::Acl : public jObject<::java::security::acl::Acl, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_acl / "Acl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::security::Principal, ::java::security::acl::AclEntry)>("addEntry"), //
+		jMethod<::jboolean(::java::security::Principal, ::java::security::acl::Permission)>("checkPermission"), //
+		jMethod<::java::util::Enumeration()>("entries"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::java::util::Enumeration(::java::security::Principal)>("getPermissions"), //
+		jMethod<::jboolean(::java::security::Principal, ::java::security::acl::AclEntry)>("removeEntry"), //
+		jMethod<::jvoid(::java::security::Principal, ::java::lang::String)>("setName"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto addEntry(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addEntry")] != -1);
+		return call<R>("addEntry", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto checkPermission(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("checkPermission")] != -1);
+		return call<R>("checkPermission", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	auto entries(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("entries")] != -1);
+		return call<R>("entries", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	auto getPermissions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPermissions")] != -1);
+		return call<R>("getPermissions", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto removeEntry(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeEntry")] != -1);
+		return call<R>("removeEntry", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setName")] != -1);
+		return call<R>("setName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

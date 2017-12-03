@@ -1,0 +1,56 @@
+#ifndef javax_sql_CommonDataSource_HPP
+#define javax_sql_CommonDataSource_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::sql::CommonDataSource : public jObject<::javax::sql::CommonDataSource, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sql / "CommonDataSource";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::io::PrintWriter()>("getLogWriter"), //
+		jMethod<::jint()>("getLoginTimeout"), //
+		jMethod<::java::util::logging::Logger()>("getParentLogger"), //
+		jMethod<::jvoid(::java::io::PrintWriter)>("setLogWriter"), //
+		jMethod<::jvoid(::jint)>("setLoginTimeout"), //
+	};
+
+	template<typename R = ::java::io::PrintWriter, typename... Args>
+	auto getLogWriter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLogWriter")] != -1);
+		return call<R>("getLogWriter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getLoginTimeout(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLoginTimeout")] != -1);
+		return call<R>("getLoginTimeout", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::logging::Logger, typename... Args>
+	auto getParentLogger(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParentLogger")] != -1);
+		return call<R>("getParentLogger", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLogWriter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLogWriter")] != -1);
+		return call<R>("setLogWriter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLoginTimeout(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLoginTimeout")] != -1);
+		return call<R>("setLoginTimeout", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,57 @@
+#ifndef javax_swing_tree_MutableTreeNode_HPP
+#define javax_swing_tree_MutableTreeNode_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::tree::MutableTreeNode : public jObject<::javax::swing::tree::MutableTreeNode, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_tree / "MutableTreeNode";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::swing::tree::MutableTreeNode, ::jint)>("insert"), //
+		jMethod<::jvoid(::jint)>("remove"), //
+		jMethod<::jvoid(::javax::swing::tree::MutableTreeNode)>("remove"), //
+		jMethod<::jvoid()>("removeFromParent"), //
+		jMethod<::jvoid(::javax::swing::tree::MutableTreeNode)>("setParent"), //
+		jMethod<::jvoid(::java::lang::Object)>("setUserObject"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto insert(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("insert")] != -1);
+		return call<R>("insert", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto remove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeFromParent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeFromParent")] != -1);
+		return call<R>("removeFromParent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setParent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setParent")] != -1);
+		return call<R>("setParent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setUserObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setUserObject")] != -1);
+		return call<R>("setUserObject", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,50 @@
+#ifndef javax_swing_plaf_basic_BasicEditorPaneUI_HPP
+#define javax_swing_plaf_basic_BasicEditorPaneUI_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::swing::plaf::basic::BasicEditorPaneUI : public jObject<::javax::swing::plaf::basic::BasicEditorPaneUI, ::javax::swing::plaf::basic::BasicTextUI> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_plaf_basic / "BasicEditorPaneUI";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::swing::plaf::ComponentUI(::javax::swing::JComponent)>("createUI"), //
+		jMethod<::javax::swing::text::EditorKit(::javax::swing::text::JTextComponent)>("getEditorKit"), //
+		jMethod<::jvoid(::javax::swing::JComponent)>("installUI"), //
+		jMethod<::jvoid(::javax::swing::JComponent)>("uninstallUI"), //
+	};
+
+	template<typename R = ::javax::swing::plaf::ComponentUI, typename... Args>
+	static auto createUI(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createUI")] != -1);
+		return scall<R>("createUI", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::text::EditorKit, typename... Args>
+	auto getEditorKit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEditorKit")] != -1);
+		return call<R>("getEditorKit", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto installUI(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("installUI")] != -1);
+		return call<R>("installUI", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto uninstallUI(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("uninstallUI")] != -1);
+		return call<R>("uninstallUI", forward<Args>(args)...);
+	}
+
+};
+
+#endif

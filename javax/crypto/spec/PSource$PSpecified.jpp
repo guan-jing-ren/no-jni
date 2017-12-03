@@ -1,0 +1,35 @@
+#ifndef javax_crypto_spec_PSource$PSpecified_HPP
+#define javax_crypto_spec_PSource$PSpecified_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::crypto::spec::PSource$PSpecified : public jObject<::javax::crypto::spec::PSource$PSpecified, ::javax::crypto::spec::PSource> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_crypto_spec / "PSource$PSpecified";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::crypto::spec::PSource$PSpecified>("DEFAULT"), //
+	};
+
+	template<typename F = ::javax::crypto::spec::PSource$PSpecified>
+	static auto DEFAULT() {
+		static_assert(field_signatures[jField<F>("DEFAULT")] != -1);
+		return sat<F>("DEFAULT");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jbyte *)>(), //
+		jMethod<::jbyte *()>("getValue"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getValue")] != -1);
+		return call<R>("getValue", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,72 @@
+#ifndef java_security_cert_CertStore_HPP
+#define java_security_cert_CertStore_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::cert::CertStore : public jObject<::java::security::cert::CertStore, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_cert / "CertStore";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::Collection(::java::security::cert::CRLSelector)>("getCRLs"), //
+		jMethod<::java::security::cert::CertStoreParameters()>("getCertStoreParameters"), //
+		jMethod<::java::util::Collection(::java::security::cert::CertSelector)>("getCertificates"), //
+		jMethod<::java::lang::String()>("getDefaultType"), //
+		jMethod<::java::security::cert::CertStore(::java::lang::String, ::java::security::cert::CertStoreParameters)>("getInstance"), //
+		jMethod<::java::security::cert::CertStore(::java::lang::String, ::java::security::cert::CertStoreParameters, ::java::lang::String)>("getInstance"), //
+		jMethod<::java::security::cert::CertStore(::java::lang::String, ::java::security::cert::CertStoreParameters, ::java::security::Provider)>("getInstance"), //
+		jMethod<::java::security::Provider()>("getProvider"), //
+		jMethod<::java::lang::String()>("getType"), //
+	};
+
+	template<typename R = ::java::util::Collection, typename... Args>
+	auto getCRLs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCRLs")] != -1);
+		return call<R>("getCRLs", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::CertStoreParameters, typename... Args>
+	auto getCertStoreParameters(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCertStoreParameters")] != -1);
+		return call<R>("getCertStoreParameters", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Collection, typename... Args>
+	auto getCertificates(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCertificates")] != -1);
+		return call<R>("getCertificates", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getDefaultType(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaultType")] != -1);
+		return scall<R>("getDefaultType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::CertStore, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Provider, typename... Args>
+	auto getProvider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProvider")] != -1);
+		return call<R>("getProvider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", forward<Args>(args)...);
+	}
+
+};
+
+#endif

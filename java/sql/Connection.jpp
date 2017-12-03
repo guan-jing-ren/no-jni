@@ -1,0 +1,341 @@
+#ifndef java_sql_Connection_HPP
+#define java_sql_Connection_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::sql::Connection : public jObject<::java::sql::Connection, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_sql / "Connection";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("TRANSACTION_NONE"), //
+		jField<::jint>("TRANSACTION_READ_COMMITTED"), //
+		jField<::jint>("TRANSACTION_READ_UNCOMMITTED"), //
+		jField<::jint>("TRANSACTION_REPEATABLE_READ"), //
+		jField<::jint>("TRANSACTION_SERIALIZABLE"), //
+	};
+
+	template<typename F = ::jint>
+	static auto TRANSACTION_NONE() {
+		static_assert(field_signatures[jField<F>("TRANSACTION_NONE")] != -1);
+		return sat<F>("TRANSACTION_NONE");
+	}
+
+	template<typename F = ::jint>
+	static auto TRANSACTION_READ_COMMITTED() {
+		static_assert(field_signatures[jField<F>("TRANSACTION_READ_COMMITTED")] != -1);
+		return sat<F>("TRANSACTION_READ_COMMITTED");
+	}
+
+	template<typename F = ::jint>
+	static auto TRANSACTION_READ_UNCOMMITTED() {
+		static_assert(field_signatures[jField<F>("TRANSACTION_READ_UNCOMMITTED")] != -1);
+		return sat<F>("TRANSACTION_READ_UNCOMMITTED");
+	}
+
+	template<typename F = ::jint>
+	static auto TRANSACTION_REPEATABLE_READ() {
+		static_assert(field_signatures[jField<F>("TRANSACTION_REPEATABLE_READ")] != -1);
+		return sat<F>("TRANSACTION_REPEATABLE_READ");
+	}
+
+	template<typename F = ::jint>
+	static auto TRANSACTION_SERIALIZABLE() {
+		static_assert(field_signatures[jField<F>("TRANSACTION_SERIALIZABLE")] != -1);
+		return sat<F>("TRANSACTION_SERIALIZABLE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::util::concurrent::Executor)>("abort"), //
+		jMethod<::jvoid()>("clearWarnings"), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::jvoid()>("commit"), //
+		jMethod<::java::sql::Array(::java::lang::String, ::java::lang::Object *)>("createArrayOf"), //
+		jMethod<::java::sql::Blob()>("createBlob"), //
+		jMethod<::java::sql::Clob()>("createClob"), //
+		jMethod<::java::sql::NClob()>("createNClob"), //
+		jMethod<::java::sql::SQLXML()>("createSQLXML"), //
+		jMethod<::java::sql::Statement()>("createStatement"), //
+		jMethod<::java::sql::Statement(::jint, ::jint)>("createStatement"), //
+		jMethod<::java::sql::Statement(::jint, ::jint, ::jint)>("createStatement"), //
+		jMethod<::java::sql::Struct(::java::lang::String, ::java::lang::Object *)>("createStruct"), //
+		jMethod<::jboolean()>("getAutoCommit"), //
+		jMethod<::java::lang::String()>("getCatalog"), //
+		jMethod<::java::util::Properties()>("getClientInfo"), //
+		jMethod<::java::lang::String(::java::lang::String)>("getClientInfo"), //
+		jMethod<::jint()>("getHoldability"), //
+		jMethod<::java::sql::DatabaseMetaData()>("getMetaData"), //
+		jMethod<::jint()>("getNetworkTimeout"), //
+		jMethod<::java::lang::String()>("getSchema"), //
+		jMethod<::jint()>("getTransactionIsolation"), //
+		jMethod<::java::util::Map()>("getTypeMap"), //
+		jMethod<::java::sql::SQLWarning()>("getWarnings"), //
+		jMethod<::jboolean()>("isClosed"), //
+		jMethod<::jboolean()>("isReadOnly"), //
+		jMethod<::jboolean(::jint)>("isValid"), //
+		jMethod<::java::lang::String(::java::lang::String)>("nativeSQL"), //
+		jMethod<::java::sql::CallableStatement(::java::lang::String)>("prepareCall"), //
+		jMethod<::java::sql::CallableStatement(::java::lang::String, ::jint, ::jint)>("prepareCall"), //
+		jMethod<::java::sql::CallableStatement(::java::lang::String, ::jint, ::jint, ::jint)>("prepareCall"), //
+		jMethod<::java::sql::PreparedStatement(::java::lang::String)>("prepareStatement"), //
+		jMethod<::java::sql::PreparedStatement(::java::lang::String, ::jint)>("prepareStatement"), //
+		jMethod<::java::sql::PreparedStatement(::java::lang::String, ::jint, ::jint)>("prepareStatement"), //
+		jMethod<::java::sql::PreparedStatement(::java::lang::String, ::jint, ::jint, ::jint)>("prepareStatement"), //
+		jMethod<::java::sql::PreparedStatement(::java::lang::String, ::jint *)>("prepareStatement"), //
+		jMethod<::java::sql::PreparedStatement(::java::lang::String, ::java::lang::String *)>("prepareStatement"), //
+		jMethod<::jvoid(::java::sql::Savepoint)>("releaseSavepoint"), //
+		jMethod<::jvoid()>("rollback"), //
+		jMethod<::jvoid(::java::sql::Savepoint)>("rollback"), //
+		jMethod<::jvoid(::jboolean)>("setAutoCommit"), //
+		jMethod<::jvoid(::java::lang::String)>("setCatalog"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String)>("setClientInfo"), //
+		jMethod<::jvoid(::java::util::Properties)>("setClientInfo"), //
+		jMethod<::jvoid(::jint)>("setHoldability"), //
+		jMethod<::jvoid(::java::util::concurrent::Executor, ::jint)>("setNetworkTimeout"), //
+		jMethod<::jvoid(::jboolean)>("setReadOnly"), //
+		jMethod<::java::sql::Savepoint()>("setSavepoint"), //
+		jMethod<::java::sql::Savepoint(::java::lang::String)>("setSavepoint"), //
+		jMethod<::jvoid(::java::lang::String)>("setSchema"), //
+		jMethod<::jvoid(::jint)>("setTransactionIsolation"), //
+		jMethod<::jvoid(::java::util::Map)>("setTypeMap"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto abort(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("abort")] != -1);
+		return call<R>("abort", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto clearWarnings(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clearWarnings")] != -1);
+		return call<R>("clearWarnings", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto commit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("commit")] != -1);
+		return call<R>("commit", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::Array, typename... Args>
+	auto createArrayOf(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createArrayOf")] != -1);
+		return call<R>("createArrayOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::Blob, typename... Args>
+	auto createBlob(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createBlob")] != -1);
+		return call<R>("createBlob", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::Clob, typename... Args>
+	auto createClob(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createClob")] != -1);
+		return call<R>("createClob", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::NClob, typename... Args>
+	auto createNClob(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createNClob")] != -1);
+		return call<R>("createNClob", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::SQLXML, typename... Args>
+	auto createSQLXML(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createSQLXML")] != -1);
+		return call<R>("createSQLXML", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::Statement, typename... Args>
+	auto createStatement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createStatement")] != -1);
+		return call<R>("createStatement", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::Struct, typename... Args>
+	auto createStruct(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createStruct")] != -1);
+		return call<R>("createStruct", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getAutoCommit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAutoCommit")] != -1);
+		return call<R>("getAutoCommit", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getCatalog(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCatalog")] != -1);
+		return call<R>("getCatalog", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Properties, typename... Args>
+	auto getClientInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getClientInfo")] != -1);
+		return call<R>("getClientInfo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getHoldability(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHoldability")] != -1);
+		return call<R>("getHoldability", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::DatabaseMetaData, typename... Args>
+	auto getMetaData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMetaData")] != -1);
+		return call<R>("getMetaData", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getNetworkTimeout(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNetworkTimeout")] != -1);
+		return call<R>("getNetworkTimeout", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getSchema(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSchema")] != -1);
+		return call<R>("getSchema", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getTransactionIsolation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTransactionIsolation")] != -1);
+		return call<R>("getTransactionIsolation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto getTypeMap(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTypeMap")] != -1);
+		return call<R>("getTypeMap", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::SQLWarning, typename... Args>
+	auto getWarnings(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWarnings")] != -1);
+		return call<R>("getWarnings", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isClosed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isClosed")] != -1);
+		return call<R>("isClosed", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isReadOnly(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isReadOnly")] != -1);
+		return call<R>("isReadOnly", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isValid(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isValid")] != -1);
+		return call<R>("isValid", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto nativeSQL(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nativeSQL")] != -1);
+		return call<R>("nativeSQL", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::CallableStatement, typename... Args>
+	auto prepareCall(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("prepareCall")] != -1);
+		return call<R>("prepareCall", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::PreparedStatement, typename... Args>
+	auto prepareStatement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("prepareStatement")] != -1);
+		return call<R>("prepareStatement", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto releaseSavepoint(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("releaseSavepoint")] != -1);
+		return call<R>("releaseSavepoint", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto rollback(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("rollback")] != -1);
+		return call<R>("rollback", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setAutoCommit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setAutoCommit")] != -1);
+		return call<R>("setAutoCommit", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setCatalog(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setCatalog")] != -1);
+		return call<R>("setCatalog", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setClientInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setClientInfo")] != -1);
+		return call<R>("setClientInfo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setHoldability(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setHoldability")] != -1);
+		return call<R>("setHoldability", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setNetworkTimeout(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setNetworkTimeout")] != -1);
+		return call<R>("setNetworkTimeout", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setReadOnly(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setReadOnly")] != -1);
+		return call<R>("setReadOnly", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::Savepoint, typename... Args>
+	auto setSavepoint(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSavepoint")] != -1);
+		return call<R>("setSavepoint", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setSchema(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSchema")] != -1);
+		return call<R>("setSchema", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setTransactionIsolation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setTransactionIsolation")] != -1);
+		return call<R>("setTransactionIsolation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setTypeMap(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setTypeMap")] != -1);
+		return call<R>("setTypeMap", forward<Args>(args)...);
+	}
+
+};
+
+#endif

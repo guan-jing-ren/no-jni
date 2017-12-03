@@ -1,0 +1,67 @@
+#ifndef java_net_URLClassLoader_HPP
+#define java_net_URLClassLoader_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::net::URLClassLoader : public jObject<::java::net::URLClassLoader, ::java::security::SecureClassLoader> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_net / "URLClassLoader";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::net::URL *)>(), //
+		jConstructor<::jvoid(::java::net::URL *, ::java::lang::ClassLoader)>(), //
+		jConstructor<::jvoid(::java::net::URL *, ::java::lang::ClassLoader, ::java::net::URLStreamHandlerFactory)>(), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::java::net::URL(::java::lang::String)>("findResource"), //
+		jMethod<::java::util::Enumeration(::java::lang::String)>("findResources"), //
+		jMethod<::java::io::InputStream(::java::lang::String)>("getResourceAsStream"), //
+		jMethod<::java::net::URL *()>("getURLs"), //
+		jMethod<::java::net::URLClassLoader(::java::net::URL *)>("newInstance"), //
+		jMethod<::java::net::URLClassLoader(::java::net::URL *, ::java::lang::ClassLoader)>("newInstance"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::URL, typename... Args>
+	auto findResource(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("findResource")] != -1);
+		return call<R>("findResource", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	auto findResources(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("findResources")] != -1);
+		return call<R>("findResources", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::InputStream, typename... Args>
+	auto getResourceAsStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getResourceAsStream")] != -1);
+		return call<R>("getResourceAsStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::URL *, typename... Args>
+	auto getURLs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getURLs")] != -1);
+		return call<R>("getURLs", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::URLClassLoader, typename... Args>
+	static auto newInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newInstance")] != -1);
+		return scall<R>("newInstance", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,97 @@
+#ifndef java_beans_EventSetDescriptor_HPP
+#define java_beans_EventSetDescriptor_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::beans::EventSetDescriptor : public jObject<::java::beans::EventSetDescriptor, ::java::beans::FeatureDescriptor> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_beans / "EventSetDescriptor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Class, ::java::lang::String, ::java::lang::Class, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::Class, ::java::lang::String, ::java::lang::Class, ::java::lang::String *, ::java::lang::String, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::Class, ::java::lang::String, ::java::lang::Class, ::java::lang::String *, ::java::lang::String, ::java::lang::String, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Class, ::java::beans::MethodDescriptor *, ::java::lang::reflect::Method, ::java::lang::reflect::Method)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Class, ::java::lang::reflect::Method *, ::java::lang::reflect::Method, ::java::lang::reflect::Method)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Class, ::java::lang::reflect::Method *, ::java::lang::reflect::Method, ::java::lang::reflect::Method, ::java::lang::reflect::Method)>(), //
+		jMethod<::java::lang::reflect::Method()>("getAddListenerMethod"), //
+		jMethod<::java::lang::reflect::Method()>("getGetListenerMethod"), //
+		jMethod<::java::beans::MethodDescriptor *()>("getListenerMethodDescriptors"), //
+		jMethod<::java::lang::reflect::Method *()>("getListenerMethods"), //
+		jMethod<::java::lang::Class()>("getListenerType"), //
+		jMethod<::java::lang::reflect::Method()>("getRemoveListenerMethod"), //
+		jMethod<::jboolean()>("isInDefaultEventSet"), //
+		jMethod<::jboolean()>("isUnicast"), //
+		jMethod<::jvoid(::jboolean)>("setInDefaultEventSet"), //
+		jMethod<::jvoid(::jboolean)>("setUnicast"), //
+	};
+
+	template<typename R = ::java::lang::reflect::Method, typename... Args>
+	auto getAddListenerMethod(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAddListenerMethod")] != -1);
+		return call<R>("getAddListenerMethod", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Method, typename... Args>
+	auto getGetListenerMethod(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getGetListenerMethod")] != -1);
+		return call<R>("getGetListenerMethod", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::beans::MethodDescriptor *, typename... Args>
+	auto getListenerMethodDescriptors(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getListenerMethodDescriptors")] != -1);
+		return call<R>("getListenerMethodDescriptors", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Method *, typename... Args>
+	auto getListenerMethods(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getListenerMethods")] != -1);
+		return call<R>("getListenerMethods", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getListenerType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getListenerType")] != -1);
+		return call<R>("getListenerType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Method, typename... Args>
+	auto getRemoveListenerMethod(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRemoveListenerMethod")] != -1);
+		return call<R>("getRemoveListenerMethod", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isInDefaultEventSet(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isInDefaultEventSet")] != -1);
+		return call<R>("isInDefaultEventSet", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isUnicast(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isUnicast")] != -1);
+		return call<R>("isUnicast", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setInDefaultEventSet(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setInDefaultEventSet")] != -1);
+		return call<R>("setInDefaultEventSet", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setUnicast(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setUnicast")] != -1);
+		return call<R>("setUnicast", forward<Args>(args)...);
+	}
+
+};
+
+#endif

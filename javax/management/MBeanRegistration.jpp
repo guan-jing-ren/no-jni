@@ -1,0 +1,49 @@
+#ifndef javax_management_MBeanRegistration_HPP
+#define javax_management_MBeanRegistration_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::management::MBeanRegistration : public jObject<::javax::management::MBeanRegistration, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management / "MBeanRegistration";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("postDeregister"), //
+		jMethod<::jvoid(::java::lang::Boolean)>("postRegister"), //
+		jMethod<::jvoid()>("preDeregister"), //
+		jMethod<::javax::management::ObjectName(::javax::management::MBeanServer, ::javax::management::ObjectName)>("preRegister"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto postDeregister(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("postDeregister")] != -1);
+		return call<R>("postDeregister", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto postRegister(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("postRegister")] != -1);
+		return call<R>("postRegister", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto preDeregister(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("preDeregister")] != -1);
+		return call<R>("preDeregister", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::ObjectName, typename... Args>
+	auto preRegister(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("preRegister")] != -1);
+		return call<R>("preRegister", forward<Args>(args)...);
+	}
+
+};
+
+#endif

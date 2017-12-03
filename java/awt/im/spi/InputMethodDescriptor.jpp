@@ -1,0 +1,56 @@
+#ifndef java_awt_im_spi_InputMethodDescriptor_HPP
+#define java_awt_im_spi_InputMethodDescriptor_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::java::awt::im::spi::InputMethodDescriptor : public jObject<::java::awt::im::spi::InputMethodDescriptor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_im_spi / "InputMethodDescriptor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::im::spi::InputMethod()>("createInputMethod"), //
+		jMethod<::java::util::Locale *()>("getAvailableLocales"), //
+		jMethod<::java::lang::String(::java::util::Locale, ::java::util::Locale)>("getInputMethodDisplayName"), //
+		jMethod<::java::awt::Image(::java::util::Locale)>("getInputMethodIcon"), //
+		jMethod<::jboolean()>("hasDynamicLocaleList"), //
+	};
+
+	template<typename R = ::java::awt::im::spi::InputMethod, typename... Args>
+	auto createInputMethod(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createInputMethod")] != -1);
+		return call<R>("createInputMethod", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Locale *, typename... Args>
+	auto getAvailableLocales(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAvailableLocales")] != -1);
+		return call<R>("getAvailableLocales", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getInputMethodDisplayName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInputMethodDisplayName")] != -1);
+		return call<R>("getInputMethodDisplayName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Image, typename... Args>
+	auto getInputMethodIcon(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInputMethodIcon")] != -1);
+		return call<R>("getInputMethodIcon", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasDynamicLocaleList(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hasDynamicLocaleList")] != -1);
+		return call<R>("hasDynamicLocaleList", forward<Args>(args)...);
+	}
+
+};
+
+#endif

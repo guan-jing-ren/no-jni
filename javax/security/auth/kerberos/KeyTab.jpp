@@ -1,0 +1,88 @@
+#ifndef javax_security_auth_kerberos_KeyTab_HPP
+#define javax_security_auth_kerberos_KeyTab_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::security::auth::kerberos::KeyTab : public jObject<::javax::security::auth::kerberos::KeyTab, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_security_auth_kerberos / "KeyTab";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jboolean()>("exists"), //
+		jMethod<::javax::security::auth::kerberos::KeyTab()>("getInstance"), //
+		jMethod<::javax::security::auth::kerberos::KeyTab(::java::io::File)>("getInstance"), //
+		jMethod<::javax::security::auth::kerberos::KeyTab(::javax::security::auth::kerberos::KerberosPrincipal)>("getInstance"), //
+		jMethod<::javax::security::auth::kerberos::KeyTab(::javax::security::auth::kerberos::KerberosPrincipal, ::java::io::File)>("getInstance"), //
+		jMethod<::javax::security::auth::kerberos::KerberosKey *(::javax::security::auth::kerberos::KerberosPrincipal)>("getKeys"), //
+		jMethod<::javax::security::auth::kerberos::KerberosPrincipal()>("getPrincipal"), //
+		jMethod<::javax::security::auth::kerberos::KeyTab()>("getUnboundInstance"), //
+		jMethod<::javax::security::auth::kerberos::KeyTab(::java::io::File)>("getUnboundInstance"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jboolean()>("isBound"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto exists(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("exists")] != -1);
+		return call<R>("exists", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::security::auth::kerberos::KeyTab, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::security::auth::kerberos::KerberosKey *, typename... Args>
+	auto getKeys(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getKeys")] != -1);
+		return call<R>("getKeys", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::security::auth::kerberos::KerberosPrincipal, typename... Args>
+	auto getPrincipal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrincipal")] != -1);
+		return call<R>("getPrincipal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::security::auth::kerberos::KeyTab, typename... Args>
+	static auto getUnboundInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUnboundInstance")] != -1);
+		return scall<R>("getUnboundInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isBound(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isBound")] != -1);
+		return call<R>("isBound", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

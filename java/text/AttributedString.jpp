@@ -1,0 +1,50 @@
+#ifndef java_text_AttributedString_HPP
+#define java_text_AttributedString_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::text::AttributedString : public jObject<::java::text::AttributedString, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_text / "AttributedString";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::util::Map)>(), //
+		jConstructor<::jvoid(::java::text::AttributedCharacterIterator)>(), //
+		jConstructor<::jvoid(::java::text::AttributedCharacterIterator, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::java::text::AttributedCharacterIterator, ::jint, ::jint, ::java::text::AttributedCharacterIterator$Attribute *)>(), //
+		jMethod<::jvoid(::java::text::AttributedCharacterIterator$Attribute, ::java::lang::Object)>("addAttribute"), //
+		jMethod<::jvoid(::java::text::AttributedCharacterIterator$Attribute, ::java::lang::Object, ::jint, ::jint)>("addAttribute"), //
+		jMethod<::jvoid(::java::util::Map, ::jint, ::jint)>("addAttributes"), //
+		jMethod<::java::text::AttributedCharacterIterator()>("getIterator"), //
+		jMethod<::java::text::AttributedCharacterIterator(::java::text::AttributedCharacterIterator$Attribute *)>("getIterator"), //
+		jMethod<::java::text::AttributedCharacterIterator(::java::text::AttributedCharacterIterator$Attribute *, ::jint, ::jint)>("getIterator"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addAttribute")] != -1);
+		return call<R>("addAttribute", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addAttributes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addAttributes")] != -1);
+		return call<R>("addAttributes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::text::AttributedCharacterIterator, typename... Args>
+	auto getIterator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIterator")] != -1);
+		return call<R>("getIterator", forward<Args>(args)...);
+	}
+
+};
+
+#endif

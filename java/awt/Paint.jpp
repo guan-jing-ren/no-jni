@@ -1,0 +1,28 @@
+#ifndef java_awt_Paint_HPP
+#define java_awt_Paint_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::Paint : public jObject<::java::awt::Paint, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "Paint";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::PaintContext(::java::awt::image::ColorModel, ::java::awt::Rectangle, ::java::awt::geom::Rectangle2D, ::java::awt::geom::AffineTransform, ::java::awt::RenderingHints)>("createContext"), //
+	};
+
+	template<typename R = ::java::awt::PaintContext, typename... Args>
+	auto createContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createContext")] != -1);
+		return call<R>("createContext", forward<Args>(args)...);
+	}
+
+};
+
+#endif

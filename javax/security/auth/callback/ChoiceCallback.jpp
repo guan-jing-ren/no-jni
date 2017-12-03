@@ -1,0 +1,71 @@
+#ifndef javax_security_auth_callback_ChoiceCallback_HPP
+#define javax_security_auth_callback_ChoiceCallback_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::security::auth::callback::ChoiceCallback : public jObject<::javax::security::auth::callback::ChoiceCallback, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_security_auth_callback / "ChoiceCallback";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String *, ::jint, ::jboolean)>(), //
+		jMethod<::jboolean()>("allowMultipleSelections"), //
+		jMethod<::java::lang::String *()>("getChoices"), //
+		jMethod<::jint()>("getDefaultChoice"), //
+		jMethod<::java::lang::String()>("getPrompt"), //
+		jMethod<::jint *()>("getSelectedIndexes"), //
+		jMethod<::jvoid(::jint)>("setSelectedIndex"), //
+		jMethod<::jvoid(::jint *)>("setSelectedIndexes"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto allowMultipleSelections(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("allowMultipleSelections")] != -1);
+		return call<R>("allowMultipleSelections", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getChoices(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getChoices")] != -1);
+		return call<R>("getChoices", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getDefaultChoice(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaultChoice")] != -1);
+		return call<R>("getDefaultChoice", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getPrompt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrompt")] != -1);
+		return call<R>("getPrompt", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint *, typename... Args>
+	auto getSelectedIndexes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSelectedIndexes")] != -1);
+		return call<R>("getSelectedIndexes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setSelectedIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSelectedIndex")] != -1);
+		return call<R>("setSelectedIndex", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setSelectedIndexes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSelectedIndexes")] != -1);
+		return call<R>("setSelectedIndexes", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,43 @@
+#ifndef javax_naming_event_NamingExceptionEvent_HPP
+#define javax_naming_event_NamingExceptionEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::naming::event::NamingExceptionEvent : public jObject<::javax::naming::event::NamingExceptionEvent, ::java::util::EventObject> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_naming_event / "NamingExceptionEvent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::naming::event::EventContext, ::javax::naming::NamingException)>(), //
+		jMethod<::jvoid(::javax::naming::event::NamingListener)>("dispatch"), //
+		jMethod<::javax::naming::event::EventContext()>("getEventContext"), //
+		jMethod<::javax::naming::NamingException()>("getException"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispatch(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dispatch")] != -1);
+		return call<R>("dispatch", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::naming::event::EventContext, typename... Args>
+	auto getEventContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEventContext")] != -1);
+		return call<R>("getEventContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::naming::NamingException, typename... Args>
+	auto getException(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getException")] != -1);
+		return call<R>("getException", forward<Args>(args)...);
+	}
+
+};
+
+#endif

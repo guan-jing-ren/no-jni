@@ -1,0 +1,58 @@
+#ifndef java_io_ObjectInput_HPP
+#define java_io_ObjectInput_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::io::ObjectInput : public jObject<::java::io::ObjectInput, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_io / "ObjectInput";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("available"), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::jint()>("read"), //
+		jMethod<::jint(::jbyte *)>("read"), //
+		jMethod<::jint(::jbyte *, ::jint, ::jint)>("read"), //
+		jMethod<::java::lang::Object()>("readObject"), //
+		jMethod<::jlong(::jlong)>("skip"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto available(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("available")] != -1);
+		return call<R>("available", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto readObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("readObject")] != -1);
+		return call<R>("readObject", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto skip(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("skip")] != -1);
+		return call<R>("skip", forward<Args>(args)...);
+	}
+
+};
+
+#endif

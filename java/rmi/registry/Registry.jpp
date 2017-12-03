@@ -1,0 +1,62 @@
+#ifndef java_rmi_registry_Registry_HPP
+#define java_rmi_registry_Registry_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::rmi::registry::Registry : public jObject<::java::rmi::registry::Registry, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_rmi_registry / "Registry";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("REGISTRY_PORT"), //
+	};
+
+	template<typename F = ::jint>
+	static auto REGISTRY_PORT() {
+		static_assert(field_signatures[jField<F>("REGISTRY_PORT")] != -1);
+		return sat<F>("REGISTRY_PORT");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::String, ::java::rmi::Remote)>("bind"), //
+		jMethod<::java::lang::String *()>("list"), //
+		jMethod<::java::rmi::Remote(::java::lang::String)>("lookup"), //
+		jMethod<::jvoid(::java::lang::String, ::java::rmi::Remote)>("rebind"), //
+		jMethod<::jvoid(::java::lang::String)>("unbind"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto bind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("bind")] != -1);
+		return call<R>("bind", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto list(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("list")] != -1);
+		return call<R>("list", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::Remote, typename... Args>
+	auto lookup(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lookup")] != -1);
+		return call<R>("lookup", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto rebind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("rebind")] != -1);
+		return call<R>("rebind", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto unbind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unbind")] != -1);
+		return call<R>("unbind", forward<Args>(args)...);
+	}
+
+};
+
+#endif

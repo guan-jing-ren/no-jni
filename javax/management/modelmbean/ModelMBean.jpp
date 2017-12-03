@@ -1,0 +1,35 @@
+#ifndef javax_management_modelmbean_ModelMBean_HPP
+#define javax_management_modelmbean_ModelMBean_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::management::modelmbean::ModelMBean : public jObject<::javax::management::modelmbean::ModelMBean, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management_modelmbean / "ModelMBean";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::Object, ::java::lang::String)>("setManagedResource"), //
+		jMethod<::jvoid(::javax::management::modelmbean::ModelMBeanInfo)>("setModelMBeanInfo"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setManagedResource(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setManagedResource")] != -1);
+		return call<R>("setManagedResource", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setModelMBeanInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setModelMBeanInfo")] != -1);
+		return call<R>("setModelMBeanInfo", forward<Args>(args)...);
+	}
+
+};
+
+#endif

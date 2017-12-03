@@ -1,0 +1,43 @@
+#ifndef java_sql_Ref_HPP
+#define java_sql_Ref_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::sql::Ref : public jObject<::java::sql::Ref, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_sql / "Ref";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getBaseTypeName"), //
+		jMethod<::java::lang::Object()>("getObject"), //
+		jMethod<::java::lang::Object(::java::util::Map)>("getObject"), //
+		jMethod<::jvoid(::java::lang::Object)>("setObject"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getBaseTypeName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBaseTypeName")] != -1);
+		return call<R>("getBaseTypeName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getObject")] != -1);
+		return call<R>("getObject", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setObject")] != -1);
+		return call<R>("setObject", forward<Args>(args)...);
+	}
+
+};
+
+#endif

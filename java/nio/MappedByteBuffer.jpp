@@ -1,0 +1,42 @@
+#ifndef java_nio_MappedByteBuffer_HPP
+#define java_nio_MappedByteBuffer_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::nio::MappedByteBuffer : public jObject<::java::nio::MappedByteBuffer, ::java::nio::ByteBuffer> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio / "MappedByteBuffer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::nio::MappedByteBuffer()>("force"), //
+		jMethod<::jboolean()>("isLoaded"), //
+		jMethod<::java::nio::MappedByteBuffer()>("load"), //
+	};
+
+	template<typename R = ::java::nio::MappedByteBuffer, typename... Args>
+	auto force(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("force")] != -1);
+		return call<R>("force", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isLoaded(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isLoaded")] != -1);
+		return call<R>("isLoaded", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::MappedByteBuffer, typename... Args>
+	auto load(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("load")] != -1);
+		return call<R>("load", forward<Args>(args)...);
+	}
+
+};
+
+#endif

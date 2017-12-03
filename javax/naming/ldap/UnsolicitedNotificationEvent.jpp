@@ -1,0 +1,36 @@
+#ifndef javax_naming_ldap_UnsolicitedNotificationEvent_HPP
+#define javax_naming_ldap_UnsolicitedNotificationEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::naming::ldap::UnsolicitedNotificationEvent : public jObject<::javax::naming::ldap::UnsolicitedNotificationEvent, ::java::util::EventObject> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_naming_ldap / "UnsolicitedNotificationEvent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Object, ::javax::naming::ldap::UnsolicitedNotification)>(), //
+		jMethod<::jvoid(::javax::naming::ldap::UnsolicitedNotificationListener)>("dispatch"), //
+		jMethod<::javax::naming::ldap::UnsolicitedNotification()>("getNotification"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispatch(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dispatch")] != -1);
+		return call<R>("dispatch", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::naming::ldap::UnsolicitedNotification, typename... Args>
+	auto getNotification(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNotification")] != -1);
+		return call<R>("getNotification", forward<Args>(args)...);
+	}
+
+};
+
+#endif

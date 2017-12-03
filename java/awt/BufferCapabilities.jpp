@@ -1,0 +1,71 @@
+#ifndef java_awt_BufferCapabilities_HPP
+#define java_awt_BufferCapabilities_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::BufferCapabilities : public jObject<::java::awt::BufferCapabilities, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "BufferCapabilities";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::ImageCapabilities, ::java::awt::ImageCapabilities, ::java::awt::BufferCapabilities$FlipContents)>(), //
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::java::awt::ImageCapabilities()>("getBackBufferCapabilities"), //
+		jMethod<::java::awt::BufferCapabilities$FlipContents()>("getFlipContents"), //
+		jMethod<::java::awt::ImageCapabilities()>("getFrontBufferCapabilities"), //
+		jMethod<::jboolean()>("isFullScreenRequired"), //
+		jMethod<::jboolean()>("isMultiBufferAvailable"), //
+		jMethod<::jboolean()>("isPageFlipping"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::ImageCapabilities, typename... Args>
+	auto getBackBufferCapabilities(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBackBufferCapabilities")] != -1);
+		return call<R>("getBackBufferCapabilities", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::BufferCapabilities$FlipContents, typename... Args>
+	auto getFlipContents(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFlipContents")] != -1);
+		return call<R>("getFlipContents", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::ImageCapabilities, typename... Args>
+	auto getFrontBufferCapabilities(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFrontBufferCapabilities")] != -1);
+		return call<R>("getFrontBufferCapabilities", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isFullScreenRequired(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isFullScreenRequired")] != -1);
+		return call<R>("isFullScreenRequired", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isMultiBufferAvailable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isMultiBufferAvailable")] != -1);
+		return call<R>("isMultiBufferAvailable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isPageFlipping(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isPageFlipping")] != -1);
+		return call<R>("isPageFlipping", forward<Args>(args)...);
+	}
+
+};
+
+#endif

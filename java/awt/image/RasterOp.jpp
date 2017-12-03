@@ -1,0 +1,56 @@
+#ifndef java_awt_image_RasterOp_HPP
+#define java_awt_image_RasterOp_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::image::RasterOp : public jObject<::java::awt::image::RasterOp, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_image / "RasterOp";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::image::WritableRaster(::java::awt::image::Raster)>("createCompatibleDestRaster"), //
+		jMethod<::java::awt::image::WritableRaster(::java::awt::image::Raster, ::java::awt::image::WritableRaster)>("filter"), //
+		jMethod<::java::awt::geom::Rectangle2D(::java::awt::image::Raster)>("getBounds2D"), //
+		jMethod<::java::awt::geom::Point2D(::java::awt::geom::Point2D, ::java::awt::geom::Point2D)>("getPoint2D"), //
+		jMethod<::java::awt::RenderingHints()>("getRenderingHints"), //
+	};
+
+	template<typename R = ::java::awt::image::WritableRaster, typename... Args>
+	auto createCompatibleDestRaster(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createCompatibleDestRaster")] != -1);
+		return call<R>("createCompatibleDestRaster", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::image::WritableRaster, typename... Args>
+	auto filter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("filter")] != -1);
+		return call<R>("filter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Rectangle2D, typename... Args>
+	auto getBounds2D(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBounds2D")] != -1);
+		return call<R>("getBounds2D", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Point2D, typename... Args>
+	auto getPoint2D(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPoint2D")] != -1);
+		return call<R>("getPoint2D", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::RenderingHints, typename... Args>
+	auto getRenderingHints(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRenderingHints")] != -1);
+		return call<R>("getRenderingHints", forward<Args>(args)...);
+	}
+
+};
+
+#endif

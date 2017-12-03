@@ -1,0 +1,62 @@
+#ifndef java_time_chrono_ThaiBuddhistEra_HPP
+#define java_time_chrono_ThaiBuddhistEra_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::time::chrono::ThaiBuddhistEra : public jObject<::java::time::chrono::ThaiBuddhistEra, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_time_chrono / "ThaiBuddhistEra";
+
+	constexpr static Enume field_signatures{
+		jField<::java::time::chrono::ThaiBuddhistEra>("BE"), //
+		jField<::java::time::chrono::ThaiBuddhistEra>("BEFORE_BE"), //
+	};
+
+	template<typename F = ::java::time::chrono::ThaiBuddhistEra>
+	static auto BE() {
+		static_assert(field_signatures[jField<F>("BE")] != -1);
+		return sat<F>("BE");
+	}
+
+	template<typename F = ::java::time::chrono::ThaiBuddhistEra>
+	static auto BEFORE_BE() {
+		static_assert(field_signatures[jField<F>("BEFORE_BE")] != -1);
+		return sat<F>("BEFORE_BE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("getValue"), //
+		jMethod<::java::time::chrono::ThaiBuddhistEra(::jint)>("of"), //
+		jMethod<::java::time::chrono::ThaiBuddhistEra(::java::lang::String)>("valueOf"), //
+		jMethod<::java::time::chrono::ThaiBuddhistEra *()>("values"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getValue")] != -1);
+		return call<R>("getValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::chrono::ThaiBuddhistEra, typename... Args>
+	static auto of(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("of")] != -1);
+		return scall<R>("of", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::chrono::ThaiBuddhistEra, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::chrono::ThaiBuddhistEra *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

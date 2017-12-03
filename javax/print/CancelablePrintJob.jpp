@@ -1,0 +1,28 @@
+#ifndef javax_print_CancelablePrintJob_HPP
+#define javax_print_CancelablePrintJob_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::print::CancelablePrintJob : public jObject<::javax::print::CancelablePrintJob, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_print / "CancelablePrintJob";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("cancel"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto cancel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("cancel")] != -1);
+		return call<R>("cancel", forward<Args>(args)...);
+	}
+
+};
+
+#endif

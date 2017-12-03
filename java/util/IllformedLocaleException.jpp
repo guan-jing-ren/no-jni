@@ -1,0 +1,31 @@
+#ifndef java_util_IllformedLocaleException_HPP
+#define java_util_IllformedLocaleException_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::IllformedLocaleException : public jObject<::java::util::IllformedLocaleException, ::java::lang::RuntimeException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "IllformedLocaleException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::jint)>(), //
+		jMethod<::jint()>("getErrorIndex"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getErrorIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getErrorIndex")] != -1);
+		return call<R>("getErrorIndex", forward<Args>(args)...);
+	}
+
+};
+
+#endif

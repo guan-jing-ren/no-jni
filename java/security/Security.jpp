@@ -1,0 +1,86 @@
+#ifndef java_security_Security_HPP
+#define java_security_Security_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::Security : public jObject<::java::security::Security, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "Security";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint(::java::security::Provider)>("addProvider"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::lang::String)>("getAlgorithmProperty"), //
+		jMethod<::java::util::Set(::java::lang::String)>("getAlgorithms"), //
+		jMethod<::java::lang::String(::java::lang::String)>("getProperty"), //
+		jMethod<::java::security::Provider(::java::lang::String)>("getProvider"), //
+		jMethod<::java::security::Provider *()>("getProviders"), //
+		jMethod<::java::security::Provider *(::java::lang::String)>("getProviders"), //
+		jMethod<::java::security::Provider *(::java::util::Map)>("getProviders"), //
+		jMethod<::jint(::java::security::Provider, ::jint)>("insertProviderAt"), //
+		jMethod<::jvoid(::java::lang::String)>("removeProvider"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String)>("setProperty"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	static auto addProvider(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addProvider")] != -1);
+		return scall<R>("addProvider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getAlgorithmProperty(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlgorithmProperty")] != -1);
+		return scall<R>("getAlgorithmProperty", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	static auto getAlgorithms(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlgorithms")] != -1);
+		return scall<R>("getAlgorithms", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getProperty(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProperty")] != -1);
+		return scall<R>("getProperty", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Provider, typename... Args>
+	static auto getProvider(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProvider")] != -1);
+		return scall<R>("getProvider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Provider *, typename... Args>
+	static auto getProviders(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProviders")] != -1);
+		return scall<R>("getProviders", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto insertProviderAt(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("insertProviderAt")] != -1);
+		return scall<R>("insertProviderAt", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto removeProvider(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeProvider")] != -1);
+		return scall<R>("removeProvider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setProperty(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setProperty")] != -1);
+		return scall<R>("setProperty", forward<Args>(args)...);
+	}
+
+};
+
+#endif

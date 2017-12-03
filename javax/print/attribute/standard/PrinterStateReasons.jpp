@@ -1,0 +1,54 @@
+#ifndef javax_print_attribute_standard_PrinterStateReasons_HPP
+#define javax_print_attribute_standard_PrinterStateReasons_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::print::attribute::standard::PrinterStateReasons : public jObject<::javax::print::attribute::standard::PrinterStateReasons, ::java::util::HashMap> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_print_attribute_standard / "PrinterStateReasons";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint)>(), //
+		jConstructor<::jvoid(::jint, ::jfloat)>(), //
+		jConstructor<::jvoid(::java::util::Map)>(), //
+		jMethod<::java::lang::Class()>("getCategory"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::java::util::Set(::javax::print::attribute::standard::Severity)>("printerStateReasonSet"), //
+		jMethod<::java::lang::Object(::java::lang::Object, ::java::lang::Object)>("put"), //
+		jMethod<::javax::print::attribute::standard::Severity(::javax::print::attribute::standard::PrinterStateReason, ::javax::print::attribute::standard::Severity)>("put"), //
+	};
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getCategory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCategory")] != -1);
+		return call<R>("getCategory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto printerStateReasonSet(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("printerStateReasonSet")] != -1);
+		return call<R>("printerStateReasonSet", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto put(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("put")] != -1);
+		return call<R>("put", forward<Args>(args)...);
+	}
+
+};
+
+#endif

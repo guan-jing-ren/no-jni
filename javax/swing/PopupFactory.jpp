@@ -1,0 +1,43 @@
+#ifndef javax_swing_PopupFactory_HPP
+#define javax_swing_PopupFactory_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::PopupFactory : public jObject<::javax::swing::PopupFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "PopupFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::swing::Popup(::java::awt::Component, ::java::awt::Component, ::jint, ::jint)>("getPopup"), //
+		jMethod<::javax::swing::PopupFactory()>("getSharedInstance"), //
+		jMethod<::jvoid(::javax::swing::PopupFactory)>("setSharedInstance"), //
+	};
+
+	template<typename R = ::javax::swing::Popup, typename... Args>
+	auto getPopup(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPopup")] != -1);
+		return call<R>("getPopup", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::PopupFactory, typename... Args>
+	static auto getSharedInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSharedInstance")] != -1);
+		return scall<R>("getSharedInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setSharedInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSharedInstance")] != -1);
+		return scall<R>("setSharedInstance", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,36 @@
+#ifndef java_util_EventObject_HPP
+#define java_util_EventObject_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::EventObject : public jObject<::java::util::EventObject, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "EventObject";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Object)>(), //
+		jMethod<::java::lang::Object()>("getSource"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getSource(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSource")] != -1);
+		return call<R>("getSource", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

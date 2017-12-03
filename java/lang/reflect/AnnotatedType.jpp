@@ -1,0 +1,49 @@
+#ifndef java_lang_reflect_AnnotatedType_HPP
+#define java_lang_reflect_AnnotatedType_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::reflect::AnnotatedType : public jObject<::java::lang::reflect::AnnotatedType, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_reflect / "AnnotatedType";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::annotation::Annotation(::java::lang::Class)>("getAnnotation"), //
+		jMethod<::java::lang::annotation::Annotation *()>("getAnnotations"), //
+		jMethod<::java::lang::annotation::Annotation *()>("getDeclaredAnnotations"), //
+		jMethod<::java::lang::reflect::Type()>("getType"), //
+	};
+
+	template<typename R = ::java::lang::annotation::Annotation, typename... Args>
+	auto getAnnotation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAnnotation")] != -1);
+		return call<R>("getAnnotation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::annotation::Annotation *, typename... Args>
+	auto getAnnotations(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAnnotations")] != -1);
+		return call<R>("getAnnotations", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::annotation::Annotation *, typename... Args>
+	auto getDeclaredAnnotations(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDeclaredAnnotations")] != -1);
+		return call<R>("getDeclaredAnnotations", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Type, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", forward<Args>(args)...);
+	}
+
+};
+
+#endif

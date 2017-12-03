@@ -1,0 +1,62 @@
+#ifndef java_time_chrono_IsoEra_HPP
+#define java_time_chrono_IsoEra_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::time::chrono::IsoEra : public jObject<::java::time::chrono::IsoEra, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_time_chrono / "IsoEra";
+
+	constexpr static Enume field_signatures{
+		jField<::java::time::chrono::IsoEra>("BCE"), //
+		jField<::java::time::chrono::IsoEra>("CE"), //
+	};
+
+	template<typename F = ::java::time::chrono::IsoEra>
+	static auto BCE() {
+		static_assert(field_signatures[jField<F>("BCE")] != -1);
+		return sat<F>("BCE");
+	}
+
+	template<typename F = ::java::time::chrono::IsoEra>
+	static auto CE() {
+		static_assert(field_signatures[jField<F>("CE")] != -1);
+		return sat<F>("CE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("getValue"), //
+		jMethod<::java::time::chrono::IsoEra(::jint)>("of"), //
+		jMethod<::java::time::chrono::IsoEra(::java::lang::String)>("valueOf"), //
+		jMethod<::java::time::chrono::IsoEra *()>("values"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getValue")] != -1);
+		return call<R>("getValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::chrono::IsoEra, typename... Args>
+	static auto of(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("of")] != -1);
+		return scall<R>("of", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::chrono::IsoEra, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::chrono::IsoEra *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,35 @@
+#ifndef java_rmi_server_Skeleton_HPP
+#define java_rmi_server_Skeleton_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::rmi::server::Skeleton : public jObject<::java::rmi::server::Skeleton, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_rmi_server / "Skeleton";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::rmi::Remote, ::java::rmi::server::RemoteCall, ::jint, ::jlong)>("dispatch"), //
+		jMethod<::java::rmi::server::Operation *()>("getOperations"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispatch(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dispatch")] != -1);
+		return call<R>("dispatch", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::server::Operation *, typename... Args>
+	auto getOperations(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOperations")] != -1);
+		return call<R>("getOperations", forward<Args>(args)...);
+	}
+
+};
+
+#endif

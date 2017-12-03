@@ -1,0 +1,66 @@
+#ifndef java_awt_Canvas_HPP
+#define java_awt_Canvas_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::Canvas : public jObject<::java::awt::Canvas, ::java::awt::Component> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "Canvas";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::awt::GraphicsConfiguration)>(), //
+		jMethod<::jvoid()>("addNotify"), //
+		jMethod<::jvoid(::jint)>("createBufferStrategy"), //
+		jMethod<::jvoid(::jint, ::java::awt::BufferCapabilities)>("createBufferStrategy"), //
+		jMethod<::javax::accessibility::AccessibleContext()>("getAccessibleContext"), //
+		jMethod<::java::awt::image::BufferStrategy()>("getBufferStrategy"), //
+		jMethod<::jvoid(::java::awt::Graphics)>("paint"), //
+		jMethod<::jvoid(::java::awt::Graphics)>("update"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addNotify(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addNotify")] != -1);
+		return call<R>("addNotify", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto createBufferStrategy(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createBufferStrategy")] != -1);
+		return call<R>("createBufferStrategy", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::accessibility::AccessibleContext, typename... Args>
+	auto getAccessibleContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAccessibleContext")] != -1);
+		return call<R>("getAccessibleContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::image::BufferStrategy, typename... Args>
+	auto getBufferStrategy(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBufferStrategy")] != -1);
+		return call<R>("getBufferStrategy", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto paint(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paint")] != -1);
+		return call<R>("paint", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto update(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("update")] != -1);
+		return call<R>("update", forward<Args>(args)...);
+	}
+
+};
+
+#endif

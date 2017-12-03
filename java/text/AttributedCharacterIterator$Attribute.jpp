@@ -1,0 +1,62 @@
+#ifndef java_text_AttributedCharacterIterator$Attribute_HPP
+#define java_text_AttributedCharacterIterator$Attribute_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::text::AttributedCharacterIterator$Attribute : public jObject<::java::text::AttributedCharacterIterator$Attribute, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_text / "AttributedCharacterIterator$Attribute";
+
+	constexpr static Enume field_signatures{
+		jField<::java::text::AttributedCharacterIterator$Attribute>("INPUT_METHOD_SEGMENT"), //
+		jField<::java::text::AttributedCharacterIterator$Attribute>("LANGUAGE"), //
+		jField<::java::text::AttributedCharacterIterator$Attribute>("READING"), //
+	};
+
+	template<typename F = ::java::text::AttributedCharacterIterator$Attribute>
+	static auto INPUT_METHOD_SEGMENT() {
+		static_assert(field_signatures[jField<F>("INPUT_METHOD_SEGMENT")] != -1);
+		return sat<F>("INPUT_METHOD_SEGMENT");
+	}
+
+	template<typename F = ::java::text::AttributedCharacterIterator$Attribute>
+	static auto LANGUAGE() {
+		static_assert(field_signatures[jField<F>("LANGUAGE")] != -1);
+		return sat<F>("LANGUAGE");
+	}
+
+	template<typename F = ::java::text::AttributedCharacterIterator$Attribute>
+	static auto READING() {
+		static_assert(field_signatures[jField<F>("READING")] != -1);
+		return sat<F>("READING");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

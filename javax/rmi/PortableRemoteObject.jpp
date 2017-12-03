@@ -1,0 +1,56 @@
+#ifndef javax_rmi_PortableRemoteObject_HPP
+#define javax_rmi_PortableRemoteObject_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::rmi::PortableRemoteObject : public jObject<::javax::rmi::PortableRemoteObject, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_rmi / "PortableRemoteObject";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::rmi::Remote, ::java::rmi::Remote)>("connect"), //
+		jMethod<::jvoid(::java::rmi::Remote)>("exportObject"), //
+		jMethod<::java::lang::Object(::java::lang::Object, ::java::lang::Class)>("narrow"), //
+		jMethod<::java::rmi::Remote(::java::rmi::Remote)>("toStub"), //
+		jMethod<::jvoid(::java::rmi::Remote)>("unexportObject"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto connect(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("connect")] != -1);
+		return scall<R>("connect", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto exportObject(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("exportObject")] != -1);
+		return scall<R>("exportObject", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto narrow(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("narrow")] != -1);
+		return scall<R>("narrow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::Remote, typename... Args>
+	static auto toStub(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toStub")] != -1);
+		return scall<R>("toStub", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto unexportObject(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unexportObject")] != -1);
+		return scall<R>("unexportObject", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,74 @@
+#ifndef java_security_IdentityScope_HPP
+#define java_security_IdentityScope_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::IdentityScope : public jObject<::java::security::IdentityScope, ::java::security::Identity> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "IdentityScope";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::security::IdentityScope)>(), //
+		jMethod<::jvoid(::java::security::Identity)>("addIdentity"), //
+		jMethod<::java::security::Identity(::java::lang::String)>("getIdentity"), //
+		jMethod<::java::security::Identity(::java::security::Principal)>("getIdentity"), //
+		jMethod<::java::security::Identity(::java::security::PublicKey)>("getIdentity"), //
+		jMethod<::java::security::IdentityScope()>("getSystemScope"), //
+		jMethod<::java::util::Enumeration()>("identities"), //
+		jMethod<::jvoid(::java::security::Identity)>("removeIdentity"), //
+		jMethod<::jint()>("size"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addIdentity(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addIdentity")] != -1);
+		return call<R>("addIdentity", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Identity, typename... Args>
+	auto getIdentity(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIdentity")] != -1);
+		return call<R>("getIdentity", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::IdentityScope, typename... Args>
+	static auto getSystemScope(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSystemScope")] != -1);
+		return scall<R>("getSystemScope", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	auto identities(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("identities")] != -1);
+		return call<R>("identities", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeIdentity(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeIdentity")] != -1);
+		return call<R>("removeIdentity", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto size(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("size")] != -1);
+		return call<R>("size", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

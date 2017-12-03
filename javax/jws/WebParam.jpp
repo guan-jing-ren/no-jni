@@ -1,0 +1,56 @@
+#ifndef javax_jws_WebParam_HPP
+#define javax_jws_WebParam_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::jws::WebParam : public jObject<::javax::jws::WebParam, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_jws / "WebParam";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean()>("header"), //
+		jMethod<::javax::jws::WebParam$Mode()>("mode"), //
+		jMethod<::java::lang::String()>("name"), //
+		jMethod<::java::lang::String()>("partName"), //
+		jMethod<::java::lang::String()>("targetNamespace"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto header(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("header")] != -1);
+		return call<R>("header", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::jws::WebParam$Mode, typename... Args>
+	auto mode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("mode")] != -1);
+		return call<R>("mode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto name(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("name")] != -1);
+		return call<R>("name", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto partName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("partName")] != -1);
+		return call<R>("partName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto targetNamespace(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("targetNamespace")] != -1);
+		return call<R>("targetNamespace", forward<Args>(args)...);
+	}
+
+};
+
+#endif

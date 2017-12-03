@@ -1,0 +1,43 @@
+#ifndef javax_xml_soap_SOAPConnection_HPP
+#define javax_xml_soap_SOAPConnection_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::soap::SOAPConnection : public jObject<::javax::xml::soap::SOAPConnection, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_soap / "SOAPConnection";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::xml::soap::SOAPMessage(::javax::xml::soap::SOAPMessage, ::java::lang::Object)>("call"), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::javax::xml::soap::SOAPMessage(::java::lang::Object)>("get"), //
+	};
+
+	template<typename R = ::javax::xml::soap::SOAPMessage, typename... Args>
+	auto call(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("call")] != -1);
+		return call<R>("call", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::soap::SOAPMessage, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", forward<Args>(args)...);
+	}
+
+};
+
+#endif

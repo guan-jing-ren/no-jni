@@ -1,0 +1,56 @@
+#ifndef java_io_FileDescriptor_HPP
+#define java_io_FileDescriptor_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::io::FileDescriptor : public jObject<::java::io::FileDescriptor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_io / "FileDescriptor";
+
+	constexpr static Enume field_signatures{
+		jField<::java::io::FileDescriptor>("err"), //
+		jField<::java::io::FileDescriptor>("in"), //
+		jField<::java::io::FileDescriptor>("out"), //
+	};
+
+	template<typename F = ::java::io::FileDescriptor>
+	static auto err() {
+		static_assert(field_signatures[jField<F>("err")] != -1);
+		return sat<F>("err");
+	}
+
+	template<typename F = ::java::io::FileDescriptor>
+	static auto in() {
+		static_assert(field_signatures[jField<F>("in")] != -1);
+		return sat<F>("in");
+	}
+
+	template<typename F = ::java::io::FileDescriptor>
+	static auto out() {
+		static_assert(field_signatures[jField<F>("out")] != -1);
+		return sat<F>("out");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid()>("sync"), //
+		jMethod<::jboolean()>("valid"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto sync(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("sync")] != -1);
+		return call<R>("sync", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto valid(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valid")] != -1);
+		return call<R>("valid", forward<Args>(args)...);
+	}
+
+};
+
+#endif

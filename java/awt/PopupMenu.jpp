@@ -1,0 +1,51 @@
+#ifndef java_awt_PopupMenu_HPP
+#define java_awt_PopupMenu_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::PopupMenu : public jObject<::java::awt::PopupMenu, ::java::awt::Menu> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "PopupMenu";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jMethod<::jvoid()>("addNotify"), //
+		jMethod<::javax::accessibility::AccessibleContext()>("getAccessibleContext"), //
+		jMethod<::java::awt::MenuContainer()>("getParent"), //
+		jMethod<::jvoid(::java::awt::Component, ::jint, ::jint)>("show"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addNotify(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addNotify")] != -1);
+		return call<R>("addNotify", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::accessibility::AccessibleContext, typename... Args>
+	auto getAccessibleContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAccessibleContext")] != -1);
+		return call<R>("getAccessibleContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::MenuContainer, typename... Args>
+	auto getParent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParent")] != -1);
+		return call<R>("getParent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto show(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("show")] != -1);
+		return call<R>("show", forward<Args>(args)...);
+	}
+
+};
+
+#endif

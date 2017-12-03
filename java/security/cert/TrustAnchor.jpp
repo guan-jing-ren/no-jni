@@ -1,0 +1,66 @@
+#ifndef java_security_cert_TrustAnchor_HPP
+#define java_security_cert_TrustAnchor_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::cert::TrustAnchor : public jObject<::java::security::cert::TrustAnchor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_cert / "TrustAnchor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::security::PublicKey, ::jbyte *)>(), //
+		jConstructor<::jvoid(::java::security::cert::X509Certificate, ::jbyte *)>(), //
+		jConstructor<::jvoid(::javax::security::auth::x500::X500Principal, ::java::security::PublicKey, ::jbyte *)>(), //
+		jMethod<::javax::security::auth::x500::X500Principal()>("getCA"), //
+		jMethod<::java::lang::String()>("getCAName"), //
+		jMethod<::java::security::PublicKey()>("getCAPublicKey"), //
+		jMethod<::jbyte *()>("getNameConstraints"), //
+		jMethod<::java::security::cert::X509Certificate()>("getTrustedCert"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::javax::security::auth::x500::X500Principal, typename... Args>
+	auto getCA(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCA")] != -1);
+		return call<R>("getCA", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getCAName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCAName")] != -1);
+		return call<R>("getCAName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::PublicKey, typename... Args>
+	auto getCAPublicKey(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCAPublicKey")] != -1);
+		return call<R>("getCAPublicKey", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getNameConstraints(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNameConstraints")] != -1);
+		return call<R>("getNameConstraints", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::X509Certificate, typename... Args>
+	auto getTrustedCert(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTrustedCert")] != -1);
+		return call<R>("getTrustedCert", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

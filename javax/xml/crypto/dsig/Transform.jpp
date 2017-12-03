@@ -1,0 +1,70 @@
+#ifndef javax_xml_crypto_dsig_Transform_HPP
+#define javax_xml_crypto_dsig_Transform_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::crypto::dsig::Transform : public jObject<::javax::xml::crypto::dsig::Transform, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_crypto_dsig / "Transform";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("BASE64"), //
+		jField<::java::lang::String>("ENVELOPED"), //
+		jField<::java::lang::String>("XPATH"), //
+		jField<::java::lang::String>("XPATH2"), //
+		jField<::java::lang::String>("XSLT"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto BASE64() {
+		static_assert(field_signatures[jField<F>("BASE64")] != -1);
+		return sat<F>("BASE64");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto ENVELOPED() {
+		static_assert(field_signatures[jField<F>("ENVELOPED")] != -1);
+		return sat<F>("ENVELOPED");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto XPATH() {
+		static_assert(field_signatures[jField<F>("XPATH")] != -1);
+		return sat<F>("XPATH");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto XPATH2() {
+		static_assert(field_signatures[jField<F>("XPATH2")] != -1);
+		return sat<F>("XPATH2");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto XSLT() {
+		static_assert(field_signatures[jField<F>("XSLT")] != -1);
+		return sat<F>("XSLT");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::security::spec::AlgorithmParameterSpec()>("getParameterSpec"), //
+		jMethod<::javax::xml::crypto::Data(::javax::xml::crypto::Data, ::javax::xml::crypto::XMLCryptoContext)>("transform"), //
+		jMethod<::javax::xml::crypto::Data(::javax::xml::crypto::Data, ::javax::xml::crypto::XMLCryptoContext, ::java::io::OutputStream)>("transform"), //
+	};
+
+	template<typename R = ::java::security::spec::AlgorithmParameterSpec, typename... Args>
+	auto getParameterSpec(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParameterSpec")] != -1);
+		return call<R>("getParameterSpec", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::crypto::Data, typename... Args>
+	auto transform(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("transform")] != -1);
+		return call<R>("transform", forward<Args>(args)...);
+	}
+
+};
+
+#endif

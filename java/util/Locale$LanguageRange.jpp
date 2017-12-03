@@ -1,0 +1,79 @@
+#ifndef java_util_Locale$LanguageRange_HPP
+#define java_util_Locale$LanguageRange_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::Locale$LanguageRange : public jObject<::java::util::Locale$LanguageRange, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "Locale$LanguageRange";
+
+	constexpr static Enume field_signatures{
+		jField<::jdouble>("MAX_WEIGHT"), //
+		jField<::jdouble>("MIN_WEIGHT"), //
+	};
+
+	template<typename F = ::jdouble>
+	static auto MAX_WEIGHT() {
+		static_assert(field_signatures[jField<F>("MAX_WEIGHT")] != -1);
+		return sat<F>("MAX_WEIGHT");
+	}
+
+	template<typename F = ::jdouble>
+	static auto MIN_WEIGHT() {
+		static_assert(field_signatures[jField<F>("MIN_WEIGHT")] != -1);
+		return sat<F>("MIN_WEIGHT");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::jdouble)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::lang::String()>("getRange"), //
+		jMethod<::jdouble()>("getWeight"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::util::List(::java::util::List, ::java::util::Map)>("mapEquivalents"), //
+		jMethod<::java::util::List(::java::lang::String)>("parse"), //
+		jMethod<::java::util::List(::java::lang::String, ::java::util::Map)>("parse"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getRange(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRange")] != -1);
+		return call<R>("getRange", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	auto getWeight(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWeight")] != -1);
+		return call<R>("getWeight", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	static auto mapEquivalents(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("mapEquivalents")] != -1);
+		return scall<R>("mapEquivalents", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	static auto parse(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("parse")] != -1);
+		return scall<R>("parse", forward<Args>(args)...);
+	}
+
+};
+
+#endif

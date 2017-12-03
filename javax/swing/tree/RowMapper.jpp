@@ -1,0 +1,28 @@
+#ifndef javax_swing_tree_RowMapper_HPP
+#define javax_swing_tree_RowMapper_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::tree::RowMapper : public jObject<::javax::swing::tree::RowMapper, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_tree / "RowMapper";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint *(::javax::swing::tree::TreePath *)>("getRowsForPaths"), //
+	};
+
+	template<typename R = ::jint *, typename... Args>
+	auto getRowsForPaths(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRowsForPaths")] != -1);
+		return call<R>("getRowsForPaths", forward<Args>(args)...);
+	}
+
+};
+
+#endif

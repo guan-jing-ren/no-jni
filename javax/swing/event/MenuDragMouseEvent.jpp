@@ -1,0 +1,37 @@
+#ifndef javax_swing_event_MenuDragMouseEvent_HPP
+#define javax_swing_event_MenuDragMouseEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::event::MenuDragMouseEvent : public jObject<::javax::swing::event::MenuDragMouseEvent, ::java::awt::event::MouseEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_event / "MenuDragMouseEvent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::Component, ::jint, ::jlong, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::jboolean, ::javax::swing::MenuElement *, ::javax::swing::MenuSelectionManager)>(), //
+		jConstructor<::jvoid(::java::awt::Component, ::jint, ::jlong, ::jint, ::jint, ::jint, ::jint, ::jboolean, ::javax::swing::MenuElement *, ::javax::swing::MenuSelectionManager)>(), //
+		jMethod<::javax::swing::MenuSelectionManager()>("getMenuSelectionManager"), //
+		jMethod<::javax::swing::MenuElement *()>("getPath"), //
+	};
+
+	template<typename R = ::javax::swing::MenuSelectionManager, typename... Args>
+	auto getMenuSelectionManager(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMenuSelectionManager")] != -1);
+		return call<R>("getMenuSelectionManager", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::MenuElement *, typename... Args>
+	auto getPath(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPath")] != -1);
+		return call<R>("getPath", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,28 @@
+#ifndef java_util_function_IntToLongFunction_HPP
+#define java_util_function_IntToLongFunction_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::function::IntToLongFunction : public jObject<::java::util::function::IntToLongFunction, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_function / "IntToLongFunction";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jlong(::jint)>("applyAsLong"), //
+	};
+
+	template<typename R = ::jlong, typename... Args>
+	auto applyAsLong(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("applyAsLong")] != -1);
+		return call<R>("applyAsLong", forward<Args>(args)...);
+	}
+
+};
+
+#endif

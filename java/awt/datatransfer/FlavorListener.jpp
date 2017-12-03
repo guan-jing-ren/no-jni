@@ -1,0 +1,28 @@
+#ifndef java_awt_datatransfer_FlavorListener_HPP
+#define java_awt_datatransfer_FlavorListener_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::datatransfer::FlavorListener : public jObject<::java::awt::datatransfer::FlavorListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_datatransfer / "FlavorListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::awt::datatransfer::FlavorEvent)>("flavorsChanged"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto flavorsChanged(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("flavorsChanged")] != -1);
+		return call<R>("flavorsChanged", forward<Args>(args)...);
+	}
+
+};
+
+#endif

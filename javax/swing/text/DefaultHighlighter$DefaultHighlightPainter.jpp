@@ -1,0 +1,43 @@
+#ifndef javax_swing_text_DefaultHighlighter$DefaultHighlightPainter_HPP
+#define javax_swing_text_DefaultHighlighter$DefaultHighlightPainter_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::text::DefaultHighlighter$DefaultHighlightPainter : public jObject<::javax::swing::text::DefaultHighlighter$DefaultHighlightPainter, ::javax::swing::text::LayeredHighlighter$LayerPainter> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_text / "DefaultHighlighter$DefaultHighlightPainter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::Color)>(), //
+		jMethod<::java::awt::Color()>("getColor"), //
+		jMethod<::jvoid(::java::awt::Graphics, ::jint, ::jint, ::java::awt::Shape, ::javax::swing::text::JTextComponent)>("paint"), //
+		jMethod<::java::awt::Shape(::java::awt::Graphics, ::jint, ::jint, ::java::awt::Shape, ::javax::swing::text::JTextComponent, ::javax::swing::text::View)>("paintLayer"), //
+	};
+
+	template<typename R = ::java::awt::Color, typename... Args>
+	auto getColor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getColor")] != -1);
+		return call<R>("getColor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto paint(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paint")] != -1);
+		return call<R>("paint", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Shape, typename... Args>
+	auto paintLayer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paintLayer")] != -1);
+		return call<R>("paintLayer", forward<Args>(args)...);
+	}
+
+};
+
+#endif

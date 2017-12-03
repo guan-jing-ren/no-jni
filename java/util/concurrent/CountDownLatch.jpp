@@ -1,0 +1,51 @@
+#ifndef java_util_concurrent_CountDownLatch_HPP
+#define java_util_concurrent_CountDownLatch_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::concurrent::CountDownLatch : public jObject<::java::util::concurrent::CountDownLatch, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_concurrent / "CountDownLatch";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint)>(), //
+		jMethod<::jvoid()>("await"), //
+		jMethod<::jboolean(::jlong, ::java::util::concurrent::TimeUnit)>("await"), //
+		jMethod<::jvoid()>("countDown"), //
+		jMethod<::jlong()>("getCount"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto await(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("await")] != -1);
+		return call<R>("await", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto countDown(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("countDown")] != -1);
+		return call<R>("countDown", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCount")] != -1);
+		return call<R>("getCount", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

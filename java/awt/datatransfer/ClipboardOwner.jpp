@@ -1,0 +1,28 @@
+#ifndef java_awt_datatransfer_ClipboardOwner_HPP
+#define java_awt_datatransfer_ClipboardOwner_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::datatransfer::ClipboardOwner : public jObject<::java::awt::datatransfer::ClipboardOwner, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_datatransfer / "ClipboardOwner";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::awt::datatransfer::Clipboard, ::java::awt::datatransfer::Transferable)>("lostOwnership"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto lostOwnership(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lostOwnership")] != -1);
+		return call<R>("lostOwnership", forward<Args>(args)...);
+	}
+
+};
+
+#endif

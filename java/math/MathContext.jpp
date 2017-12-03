@@ -1,0 +1,86 @@
+#ifndef java_math_MathContext_HPP
+#define java_math_MathContext_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::math::MathContext : public jObject<::java::math::MathContext, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_math / "MathContext";
+
+	constexpr static Enume field_signatures{
+		jField<::java::math::MathContext>("DECIMAL128"), //
+		jField<::java::math::MathContext>("DECIMAL32"), //
+		jField<::java::math::MathContext>("DECIMAL64"), //
+		jField<::java::math::MathContext>("UNLIMITED"), //
+	};
+
+	template<typename F = ::java::math::MathContext>
+	static auto DECIMAL128() {
+		static_assert(field_signatures[jField<F>("DECIMAL128")] != -1);
+		return sat<F>("DECIMAL128");
+	}
+
+	template<typename F = ::java::math::MathContext>
+	static auto DECIMAL32() {
+		static_assert(field_signatures[jField<F>("DECIMAL32")] != -1);
+		return sat<F>("DECIMAL32");
+	}
+
+	template<typename F = ::java::math::MathContext>
+	static auto DECIMAL64() {
+		static_assert(field_signatures[jField<F>("DECIMAL64")] != -1);
+		return sat<F>("DECIMAL64");
+	}
+
+	template<typename F = ::java::math::MathContext>
+	static auto UNLIMITED() {
+		static_assert(field_signatures[jField<F>("UNLIMITED")] != -1);
+		return sat<F>("UNLIMITED");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint)>(), //
+		jConstructor<::jvoid(::jint, ::java::math::RoundingMode)>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jint()>("getPrecision"), //
+		jMethod<::java::math::RoundingMode()>("getRoundingMode"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getPrecision(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrecision")] != -1);
+		return call<R>("getPrecision", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::RoundingMode, typename... Args>
+	auto getRoundingMode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRoundingMode")] != -1);
+		return call<R>("getRoundingMode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

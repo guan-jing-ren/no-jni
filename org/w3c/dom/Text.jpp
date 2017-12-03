@@ -1,0 +1,49 @@
+#ifndef org_w3c_dom_Text_HPP
+#define org_w3c_dom_Text_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::w3c::dom::Text : public jObject<::org::w3c::dom::Text, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_w3c_dom / "Text";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getWholeText"), //
+		jMethod<::jboolean()>("isElementContentWhitespace"), //
+		jMethod<::org::w3c::dom::Text(::java::lang::String)>("replaceWholeText"), //
+		jMethod<::org::w3c::dom::Text(::jint)>("splitText"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getWholeText(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWholeText")] != -1);
+		return call<R>("getWholeText", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isElementContentWhitespace(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isElementContentWhitespace")] != -1);
+		return call<R>("isElementContentWhitespace", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Text, typename... Args>
+	auto replaceWholeText(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("replaceWholeText")] != -1);
+		return call<R>("replaceWholeText", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Text, typename... Args>
+	auto splitText(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("splitText")] != -1);
+		return call<R>("splitText", forward<Args>(args)...);
+	}
+
+};
+
+#endif

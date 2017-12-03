@@ -1,0 +1,29 @@
+#ifndef java_io_InterruptedIOException_HPP
+#define java_io_InterruptedIOException_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::io::InterruptedIOException : public jObject<::java::io::InterruptedIOException, ::java::io::IOException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_io / "InterruptedIOException";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("bytesTransferred"), //
+	};
+
+	template<typename F = ::jint>
+	auto bytesTransferred() const {
+		static_assert(field_signatures[jField<F>("bytesTransferred")] != -1);
+		return at<F>("bytesTransferred");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+	};
+
+};
+
+#endif

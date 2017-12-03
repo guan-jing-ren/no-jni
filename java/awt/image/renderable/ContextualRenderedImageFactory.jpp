@@ -1,0 +1,63 @@
+#ifndef java_awt_image_renderable_ContextualRenderedImageFactory_HPP
+#define java_awt_image_renderable_ContextualRenderedImageFactory_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::java::awt::image::renderable::ContextualRenderedImageFactory : public jObject<::java::awt::image::renderable::ContextualRenderedImageFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_image_renderable / "ContextualRenderedImageFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::image::RenderedImage(::java::awt::image::renderable::RenderContext, ::java::awt::image::renderable::ParameterBlock)>("create"), //
+		jMethod<::java::awt::geom::Rectangle2D(::java::awt::image::renderable::ParameterBlock)>("getBounds2D"), //
+		jMethod<::java::lang::Object(::java::awt::image::renderable::ParameterBlock, ::java::lang::String)>("getProperty"), //
+		jMethod<::java::lang::String *()>("getPropertyNames"), //
+		jMethod<::jboolean()>("isDynamic"), //
+		jMethod<::java::awt::image::renderable::RenderContext(::jint, ::java::awt::image::renderable::RenderContext, ::java::awt::image::renderable::ParameterBlock, ::java::awt::image::renderable::RenderableImage)>("mapRenderContext"), //
+	};
+
+	template<typename R = ::java::awt::image::RenderedImage, typename... Args>
+	auto create(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("create")] != -1);
+		return call<R>("create", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Rectangle2D, typename... Args>
+	auto getBounds2D(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBounds2D")] != -1);
+		return call<R>("getBounds2D", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getProperty(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProperty")] != -1);
+		return call<R>("getProperty", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getPropertyNames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPropertyNames")] != -1);
+		return call<R>("getPropertyNames", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDynamic(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isDynamic")] != -1);
+		return call<R>("isDynamic", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::image::renderable::RenderContext, typename... Args>
+	auto mapRenderContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("mapRenderContext")] != -1);
+		return call<R>("mapRenderContext", forward<Args>(args)...);
+	}
+
+};
+
+#endif

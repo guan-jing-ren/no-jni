@@ -1,0 +1,36 @@
+#ifndef javax_xml_crypto_dsig_spec_ExcC14NParameterSpec_HPP
+#define javax_xml_crypto_dsig_spec_ExcC14NParameterSpec_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::javax::xml::crypto::dsig::spec::ExcC14NParameterSpec : public jObject<::javax::xml::crypto::dsig::spec::ExcC14NParameterSpec, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_crypto_dsig_spec / "ExcC14NParameterSpec";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("DEFAULT"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto DEFAULT() {
+		static_assert(field_signatures[jField<F>("DEFAULT")] != -1);
+		return sat<F>("DEFAULT");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::util::List)>(), //
+		jMethod<::java::util::List()>("getPrefixList"), //
+	};
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getPrefixList(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrefixList")] != -1);
+		return call<R>("getPrefixList", forward<Args>(args)...);
+	}
+
+};
+
+#endif

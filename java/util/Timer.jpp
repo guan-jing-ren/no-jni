@@ -1,0 +1,57 @@
+#ifndef java_util_Timer_HPP
+#define java_util_Timer_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::Timer : public jObject<::java::util::Timer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "Timer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::jboolean)>(), //
+		jConstructor<::jvoid(::jboolean)>(), //
+		jMethod<::jvoid()>("cancel"), //
+		jMethod<::jint()>("purge"), //
+		jMethod<::jvoid(::java::util::TimerTask, ::jlong)>("schedule"), //
+		jMethod<::jvoid(::java::util::TimerTask, ::jlong, ::jlong)>("schedule"), //
+		jMethod<::jvoid(::java::util::TimerTask, ::java::util::Date)>("schedule"), //
+		jMethod<::jvoid(::java::util::TimerTask, ::java::util::Date, ::jlong)>("schedule"), //
+		jMethod<::jvoid(::java::util::TimerTask, ::jlong, ::jlong)>("scheduleAtFixedRate"), //
+		jMethod<::jvoid(::java::util::TimerTask, ::java::util::Date, ::jlong)>("scheduleAtFixedRate"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto cancel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("cancel")] != -1);
+		return call<R>("cancel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto purge(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("purge")] != -1);
+		return call<R>("purge", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto schedule(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("schedule")] != -1);
+		return call<R>("schedule", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto scheduleAtFixedRate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("scheduleAtFixedRate")] != -1);
+		return call<R>("scheduleAtFixedRate", forward<Args>(args)...);
+	}
+
+};
+
+#endif

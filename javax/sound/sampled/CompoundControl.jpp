@@ -1,0 +1,35 @@
+#ifndef javax_sound_sampled_CompoundControl_HPP
+#define javax_sound_sampled_CompoundControl_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::sound::sampled::CompoundControl : public jObject<::javax::sound::sampled::CompoundControl, ::javax::sound::sampled::Control> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sound_sampled / "CompoundControl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::sound::sampled::Control *()>("getMemberControls"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::javax::sound::sampled::Control *, typename... Args>
+	auto getMemberControls(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMemberControls")] != -1);
+		return call<R>("getMemberControls", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

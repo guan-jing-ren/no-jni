@@ -1,0 +1,68 @@
+#ifndef java_io_FileInputStream_HPP
+#define java_io_FileInputStream_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::io::FileInputStream : public jObject<::java::io::FileInputStream, ::java::io::InputStream> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_io / "FileInputStream";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::File)>(), //
+		jConstructor<::jvoid(::java::io::FileDescriptor)>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jMethod<::jint()>("available"), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::java::nio::channels::FileChannel()>("getChannel"), //
+		jMethod<::java::io::FileDescriptor()>("getFD"), //
+		jMethod<::jint()>("read"), //
+		jMethod<::jint(::jbyte *)>("read"), //
+		jMethod<::jint(::jbyte *, ::jint, ::jint)>("read"), //
+		jMethod<::jlong(::jlong)>("skip"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto available(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("available")] != -1);
+		return call<R>("available", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::FileChannel, typename... Args>
+	auto getChannel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getChannel")] != -1);
+		return call<R>("getChannel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::FileDescriptor, typename... Args>
+	auto getFD(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFD")] != -1);
+		return call<R>("getFD", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto skip(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("skip")] != -1);
+		return call<R>("skip", forward<Args>(args)...);
+	}
+
+};
+
+#endif

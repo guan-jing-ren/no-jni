@@ -1,0 +1,63 @@
+#ifndef javax_swing_text_html_HTML_HPP
+#define javax_swing_text_html_HTML_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::swing::text::html::HTML : public jObject<::javax::swing::text::html::HTML, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_text_html / "HTML";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("NULL_ATTRIBUTE_VALUE"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto NULL_ATTRIBUTE_VALUE() {
+		static_assert(field_signatures[jField<F>("NULL_ATTRIBUTE_VALUE")] != -1);
+		return sat<F>("NULL_ATTRIBUTE_VALUE");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::swing::text::html::HTML$Attribute *()>("getAllAttributeKeys"), //
+		jMethod<::javax::swing::text::html::HTML$Tag *()>("getAllTags"), //
+		jMethod<::javax::swing::text::html::HTML$Attribute(::java::lang::String)>("getAttributeKey"), //
+		jMethod<::jint(::javax::swing::text::AttributeSet, ::javax::swing::text::html::HTML$Attribute, ::jint)>("getIntegerAttributeValue"), //
+		jMethod<::javax::swing::text::html::HTML$Tag(::java::lang::String)>("getTag"), //
+	};
+
+	template<typename R = ::javax::swing::text::html::HTML$Attribute *, typename... Args>
+	static auto getAllAttributeKeys(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAllAttributeKeys")] != -1);
+		return scall<R>("getAllAttributeKeys", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::text::html::HTML$Tag *, typename... Args>
+	static auto getAllTags(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAllTags")] != -1);
+		return scall<R>("getAllTags", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::text::html::HTML$Attribute, typename... Args>
+	static auto getAttributeKey(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttributeKey")] != -1);
+		return scall<R>("getAttributeKey", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto getIntegerAttributeValue(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIntegerAttributeValue")] != -1);
+		return scall<R>("getIntegerAttributeValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::text::html::HTML$Tag, typename... Args>
+	static auto getTag(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTag")] != -1);
+		return scall<R>("getTag", forward<Args>(args)...);
+	}
+
+};
+
+#endif

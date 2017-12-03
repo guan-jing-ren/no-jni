@@ -1,0 +1,35 @@
+#ifndef javax_print_attribute_PrintServiceAttributeSet_HPP
+#define javax_print_attribute_PrintServiceAttributeSet_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::print::attribute::PrintServiceAttributeSet : public jObject<::javax::print::attribute::PrintServiceAttributeSet, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_print_attribute / "PrintServiceAttributeSet";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::javax::print::attribute::Attribute)>("add"), //
+		jMethod<::jboolean(::javax::print::attribute::AttributeSet)>("addAll"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto add(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto addAll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addAll")] != -1);
+		return call<R>("addAll", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,35 @@
+#ifndef javax_xml_transform_Source_HPP
+#define javax_xml_transform_Source_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::transform::Source : public jObject<::javax::xml::transform::Source, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_transform / "Source";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getSystemId"), //
+		jMethod<::jvoid(::java::lang::String)>("setSystemId"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getSystemId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSystemId")] != -1);
+		return call<R>("getSystemId", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setSystemId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSystemId")] != -1);
+		return call<R>("setSystemId", forward<Args>(args)...);
+	}
+
+};
+
+#endif

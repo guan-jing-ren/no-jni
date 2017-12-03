@@ -1,0 +1,28 @@
+#ifndef java_net_DatagramSocketImplFactory_HPP
+#define java_net_DatagramSocketImplFactory_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::net::DatagramSocketImplFactory : public jObject<::java::net::DatagramSocketImplFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_net / "DatagramSocketImplFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::net::DatagramSocketImpl()>("createDatagramSocketImpl"), //
+	};
+
+	template<typename R = ::java::net::DatagramSocketImpl, typename... Args>
+	auto createDatagramSocketImpl(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createDatagramSocketImpl")] != -1);
+		return call<R>("createDatagramSocketImpl", forward<Args>(args)...);
+	}
+
+};
+
+#endif

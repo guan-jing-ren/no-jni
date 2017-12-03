@@ -1,0 +1,50 @@
+#ifndef javax_swing_event_ListSelectionEvent_HPP
+#define javax_swing_event_ListSelectionEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::event::ListSelectionEvent : public jObject<::javax::swing::event::ListSelectionEvent, ::java::util::EventObject> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_event / "ListSelectionEvent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Object, ::jint, ::jint, ::jboolean)>(), //
+		jMethod<::jint()>("getFirstIndex"), //
+		jMethod<::jint()>("getLastIndex"), //
+		jMethod<::jboolean()>("getValueIsAdjusting"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getFirstIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFirstIndex")] != -1);
+		return call<R>("getFirstIndex", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getLastIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLastIndex")] != -1);
+		return call<R>("getLastIndex", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getValueIsAdjusting(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getValueIsAdjusting")] != -1);
+		return call<R>("getValueIsAdjusting", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

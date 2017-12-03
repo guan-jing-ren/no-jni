@@ -1,0 +1,28 @@
+#ifndef org_omg_CORBA_portable_UnknownException_HPP
+#define org_omg_CORBA_portable_UnknownException_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::omg::CORBA::portable::UnknownException : public jObject<::org::omg::CORBA::portable::UnknownException, ::org::omg::CORBA::SystemException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CORBA_portable / "UnknownException";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::Throwable>("originalEx"), //
+	};
+
+	template<typename F = ::java::lang::Throwable>
+	auto originalEx() const {
+		static_assert(field_signatures[jField<F>("originalEx")] != -1);
+		return at<F>("originalEx");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Throwable)>(), //
+	};
+
+};
+
+#endif

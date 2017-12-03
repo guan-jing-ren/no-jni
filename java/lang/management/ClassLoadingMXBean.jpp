@@ -1,0 +1,56 @@
+#ifndef java_lang_management_ClassLoadingMXBean_HPP
+#define java_lang_management_ClassLoadingMXBean_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::management::ClassLoadingMXBean : public jObject<::java::lang::management::ClassLoadingMXBean, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_management / "ClassLoadingMXBean";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("getLoadedClassCount"), //
+		jMethod<::jlong()>("getTotalLoadedClassCount"), //
+		jMethod<::jlong()>("getUnloadedClassCount"), //
+		jMethod<::jboolean()>("isVerbose"), //
+		jMethod<::jvoid(::jboolean)>("setVerbose"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getLoadedClassCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLoadedClassCount")] != -1);
+		return call<R>("getLoadedClassCount", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getTotalLoadedClassCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTotalLoadedClassCount")] != -1);
+		return call<R>("getTotalLoadedClassCount", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getUnloadedClassCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUnloadedClassCount")] != -1);
+		return call<R>("getUnloadedClassCount", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isVerbose(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isVerbose")] != -1);
+		return call<R>("isVerbose", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setVerbose(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setVerbose")] != -1);
+		return call<R>("setVerbose", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,42 @@
+#ifndef org_w3c_dom_xpath_XPathException_HPP
+#define org_w3c_dom_xpath_XPathException_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::w3c::dom::xpath::XPathException : public jObject<::org::w3c::dom::xpath::XPathException, ::java::lang::RuntimeException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_w3c_dom_xpath / "XPathException";
+
+	constexpr static Enume field_signatures{
+		jField<::jshort>("INVALID_EXPRESSION_ERR"), //
+		jField<::jshort>("TYPE_ERR"), //
+		jField<::jshort>("code"), //
+	};
+
+	template<typename F = ::jshort>
+	static auto INVALID_EXPRESSION_ERR() {
+		static_assert(field_signatures[jField<F>("INVALID_EXPRESSION_ERR")] != -1);
+		return sat<F>("INVALID_EXPRESSION_ERR");
+	}
+
+	template<typename F = ::jshort>
+	static auto TYPE_ERR() {
+		static_assert(field_signatures[jField<F>("TYPE_ERR")] != -1);
+		return sat<F>("TYPE_ERR");
+	}
+
+	template<typename F = ::jshort>
+	auto code() const {
+		static_assert(field_signatures[jField<F>("code")] != -1);
+		return at<F>("code");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jshort, ::java::lang::String)>(), //
+	};
+
+};
+
+#endif

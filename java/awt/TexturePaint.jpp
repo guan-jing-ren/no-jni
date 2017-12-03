@@ -1,0 +1,50 @@
+#ifndef java_awt_TexturePaint_HPP
+#define java_awt_TexturePaint_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::TexturePaint : public jObject<::java::awt::TexturePaint, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "TexturePaint";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::image::BufferedImage, ::java::awt::geom::Rectangle2D)>(), //
+		jMethod<::java::awt::PaintContext(::java::awt::image::ColorModel, ::java::awt::Rectangle, ::java::awt::geom::Rectangle2D, ::java::awt::geom::AffineTransform, ::java::awt::RenderingHints)>("createContext"), //
+		jMethod<::java::awt::geom::Rectangle2D()>("getAnchorRect"), //
+		jMethod<::java::awt::image::BufferedImage()>("getImage"), //
+		jMethod<::jint()>("getTransparency"), //
+	};
+
+	template<typename R = ::java::awt::PaintContext, typename... Args>
+	auto createContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createContext")] != -1);
+		return call<R>("createContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Rectangle2D, typename... Args>
+	auto getAnchorRect(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAnchorRect")] != -1);
+		return call<R>("getAnchorRect", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::image::BufferedImage, typename... Args>
+	auto getImage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getImage")] != -1);
+		return call<R>("getImage", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getTransparency(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTransparency")] != -1);
+		return call<R>("getTransparency", forward<Args>(args)...);
+	}
+
+};
+
+#endif

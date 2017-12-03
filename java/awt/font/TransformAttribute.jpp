@@ -1,0 +1,56 @@
+#ifndef java_awt_font_TransformAttribute_HPP
+#define java_awt_font_TransformAttribute_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::font::TransformAttribute : public jObject<::java::awt::font::TransformAttribute, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_font / "TransformAttribute";
+
+	constexpr static Enume field_signatures{
+		jField<::java::awt::font::TransformAttribute>("IDENTITY"), //
+	};
+
+	template<typename F = ::java::awt::font::TransformAttribute>
+	static auto IDENTITY() {
+		static_assert(field_signatures[jField<F>("IDENTITY")] != -1);
+		return sat<F>("IDENTITY");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::geom::AffineTransform)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::awt::geom::AffineTransform()>("getTransform"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jboolean()>("isIdentity"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::AffineTransform, typename... Args>
+	auto getTransform(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTransform")] != -1);
+		return call<R>("getTransform", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isIdentity(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isIdentity")] != -1);
+		return call<R>("isIdentity", forward<Args>(args)...);
+	}
+
+};
+
+#endif

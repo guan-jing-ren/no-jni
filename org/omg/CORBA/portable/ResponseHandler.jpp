@@ -1,0 +1,35 @@
+#ifndef org_omg_CORBA_portable_ResponseHandler_HPP
+#define org_omg_CORBA_portable_ResponseHandler_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::omg::CORBA::portable::ResponseHandler : public jObject<::org::omg::CORBA::portable::ResponseHandler, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CORBA_portable / "ResponseHandler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::omg::CORBA::portable::OutputStream()>("createExceptionReply"), //
+		jMethod<::org::omg::CORBA::portable::OutputStream()>("createReply"), //
+	};
+
+	template<typename R = ::org::omg::CORBA::portable::OutputStream, typename... Args>
+	auto createExceptionReply(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createExceptionReply")] != -1);
+		return call<R>("createExceptionReply", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::portable::OutputStream, typename... Args>
+	auto createReply(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createReply")] != -1);
+		return call<R>("createReply", forward<Args>(args)...);
+	}
+
+};
+
+#endif

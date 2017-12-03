@@ -1,0 +1,38 @@
+#ifndef javax_crypto_SealedObject_HPP
+#define javax_crypto_SealedObject_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::crypto::SealedObject : public jObject<::javax::crypto::SealedObject, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_crypto / "SealedObject";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::Serializable, ::javax::crypto::Cipher)>(), //
+		jMethod<::java::lang::String()>("getAlgorithm"), //
+		jMethod<::java::lang::Object(::java::security::Key)>("getObject"), //
+		jMethod<::java::lang::Object(::java::security::Key, ::java::lang::String)>("getObject"), //
+		jMethod<::java::lang::Object(::javax::crypto::Cipher)>("getObject"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAlgorithm(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlgorithm")] != -1);
+		return call<R>("getAlgorithm", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getObject")] != -1);
+		return call<R>("getObject", forward<Args>(args)...);
+	}
+
+};
+
+#endif

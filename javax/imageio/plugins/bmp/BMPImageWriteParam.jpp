@@ -1,0 +1,37 @@
+#ifndef javax_imageio_plugins_bmp_BMPImageWriteParam_HPP
+#define javax_imageio_plugins_bmp_BMPImageWriteParam_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::imageio::plugins::bmp::BMPImageWriteParam : public jObject<::javax::imageio::plugins::bmp::BMPImageWriteParam, ::javax::imageio::ImageWriteParam> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_imageio_plugins_bmp / "BMPImageWriteParam";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::util::Locale)>(), //
+		jMethod<::jboolean()>("isTopDown"), //
+		jMethod<::jvoid(::jboolean)>("setTopDown"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isTopDown(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isTopDown")] != -1);
+		return call<R>("isTopDown", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setTopDown(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setTopDown")] != -1);
+		return call<R>("setTopDown", forward<Args>(args)...);
+	}
+
+};
+
+#endif

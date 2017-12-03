@@ -1,0 +1,79 @@
+#ifndef java_awt_event_MouseWheelEvent_HPP
+#define java_awt_event_MouseWheelEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::event::MouseWheelEvent : public jObject<::java::awt::event::MouseWheelEvent, ::java::awt::event::MouseEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_event / "MouseWheelEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("WHEEL_BLOCK_SCROLL"), //
+		jField<::jint>("WHEEL_UNIT_SCROLL"), //
+	};
+
+	template<typename F = ::jint>
+	static auto WHEEL_BLOCK_SCROLL() {
+		static_assert(field_signatures[jField<F>("WHEEL_BLOCK_SCROLL")] != -1);
+		return sat<F>("WHEEL_BLOCK_SCROLL");
+	}
+
+	template<typename F = ::jint>
+	static auto WHEEL_UNIT_SCROLL() {
+		static_assert(field_signatures[jField<F>("WHEEL_UNIT_SCROLL")] != -1);
+		return sat<F>("WHEEL_UNIT_SCROLL");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::Component, ::jint, ::jlong, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::jboolean, ::jint, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::java::awt::Component, ::jint, ::jlong, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::jboolean, ::jint, ::jint, ::jint, ::jdouble)>(), //
+		jConstructor<::jvoid(::java::awt::Component, ::jint, ::jlong, ::jint, ::jint, ::jint, ::jint, ::jboolean, ::jint, ::jint, ::jint)>(), //
+		jMethod<::jdouble()>("getPreciseWheelRotation"), //
+		jMethod<::jint()>("getScrollAmount"), //
+		jMethod<::jint()>("getScrollType"), //
+		jMethod<::jint()>("getUnitsToScroll"), //
+		jMethod<::jint()>("getWheelRotation"), //
+		jMethod<::java::lang::String()>("paramString"), //
+	};
+
+	template<typename R = ::jdouble, typename... Args>
+	auto getPreciseWheelRotation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPreciseWheelRotation")] != -1);
+		return call<R>("getPreciseWheelRotation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getScrollAmount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getScrollAmount")] != -1);
+		return call<R>("getScrollAmount", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getScrollType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getScrollType")] != -1);
+		return call<R>("getScrollType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getUnitsToScroll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUnitsToScroll")] != -1);
+		return call<R>("getUnitsToScroll", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getWheelRotation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWheelRotation")] != -1);
+		return call<R>("getWheelRotation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto paramString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paramString")] != -1);
+		return call<R>("paramString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

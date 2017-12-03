@@ -1,0 +1,48 @@
+#ifndef java_security_PrivateKey_HPP
+#define java_security_PrivateKey_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::PrivateKey : public jObject<::java::security::PrivateKey, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "PrivateKey";
+
+	constexpr static Enume field_signatures{
+		jField<::jlong>("serialVersionUID"), //
+	};
+
+	template<typename F = ::jlong>
+	static auto serialVersionUID() {
+		static_assert(field_signatures[jField<F>("serialVersionUID")] != -1);
+		return sat<F>("serialVersionUID");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getAlgorithm"), //
+		jMethod<::jbyte *()>("getEncoded"), //
+		jMethod<::java::lang::String()>("getFormat"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAlgorithm(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlgorithm")] != -1);
+		return call<R>("getAlgorithm", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getEncoded(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEncoded")] != -1);
+		return call<R>("getEncoded", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getFormat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFormat")] != -1);
+		return call<R>("getFormat", forward<Args>(args)...);
+	}
+
+};
+
+#endif

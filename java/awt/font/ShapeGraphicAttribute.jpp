@@ -1,0 +1,92 @@
+#ifndef java_awt_font_ShapeGraphicAttribute_HPP
+#define java_awt_font_ShapeGraphicAttribute_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::font::ShapeGraphicAttribute : public jObject<::java::awt::font::ShapeGraphicAttribute, ::java::awt::font::GraphicAttribute> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_font / "ShapeGraphicAttribute";
+
+	constexpr static Enume field_signatures{
+		jField<::jboolean>("FILL"), //
+		jField<::jboolean>("STROKE"), //
+	};
+
+	template<typename F = ::jboolean>
+	static auto FILL() {
+		static_assert(field_signatures[jField<F>("FILL")] != -1);
+		return sat<F>("FILL");
+	}
+
+	template<typename F = ::jboolean>
+	static auto STROKE() {
+		static_assert(field_signatures[jField<F>("STROKE")] != -1);
+		return sat<F>("STROKE");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::Shape, ::jint, ::jboolean)>(), //
+		jMethod<::jvoid(::java::awt::Graphics2D, ::jfloat, ::jfloat)>("draw"), //
+		jMethod<::jboolean(::java::awt::font::ShapeGraphicAttribute)>("equals"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jfloat()>("getAdvance"), //
+		jMethod<::jfloat()>("getAscent"), //
+		jMethod<::java::awt::geom::Rectangle2D()>("getBounds"), //
+		jMethod<::jfloat()>("getDescent"), //
+		jMethod<::java::awt::Shape(::java::awt::geom::AffineTransform)>("getOutline"), //
+		jMethod<::jint()>("hashCode"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto draw(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("draw")] != -1);
+		return call<R>("draw", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getAdvance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAdvance")] != -1);
+		return call<R>("getAdvance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getAscent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAscent")] != -1);
+		return call<R>("getAscent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Rectangle2D, typename... Args>
+	auto getBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBounds")] != -1);
+		return call<R>("getBounds", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getDescent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDescent")] != -1);
+		return call<R>("getDescent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Shape, typename... Args>
+	auto getOutline(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOutline")] != -1);
+		return call<R>("getOutline", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+};
+
+#endif

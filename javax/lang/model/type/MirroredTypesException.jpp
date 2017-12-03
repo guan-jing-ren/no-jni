@@ -1,0 +1,29 @@
+#ifndef javax_lang_model_type_MirroredTypesException_HPP
+#define javax_lang_model_type_MirroredTypesException_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::lang::model::type::MirroredTypesException : public jObject<::javax::lang::model::type::MirroredTypesException, ::java::lang::RuntimeException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_lang_model_type / "MirroredTypesException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::util::List)>(), //
+		jMethod<::java::util::List()>("getTypeMirrors"), //
+	};
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getTypeMirrors(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTypeMirrors")] != -1);
+		return call<R>("getTypeMirrors", forward<Args>(args)...);
+	}
+
+};
+
+#endif

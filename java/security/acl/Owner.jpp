@@ -1,0 +1,42 @@
+#ifndef java_security_acl_Owner_HPP
+#define java_security_acl_Owner_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::acl::Owner : public jObject<::java::security::acl::Owner, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_acl / "Owner";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::security::Principal, ::java::security::Principal)>("addOwner"), //
+		jMethod<::jboolean(::java::security::Principal, ::java::security::Principal)>("deleteOwner"), //
+		jMethod<::jboolean(::java::security::Principal)>("isOwner"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto addOwner(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addOwner")] != -1);
+		return call<R>("addOwner", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto deleteOwner(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("deleteOwner")] != -1);
+		return call<R>("deleteOwner", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isOwner(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isOwner")] != -1);
+		return call<R>("isOwner", forward<Args>(args)...);
+	}
+
+};
+
+#endif

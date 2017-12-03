@@ -1,0 +1,42 @@
+#ifndef org_w3c_dom_DOMStringList_HPP
+#define org_w3c_dom_DOMStringList_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::w3c::dom::DOMStringList : public jObject<::org::w3c::dom::DOMStringList, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_w3c_dom / "DOMStringList";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::lang::String)>("contains"), //
+		jMethod<::jint()>("getLength"), //
+		jMethod<::java::lang::String(::jint)>("item"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto contains(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("contains")] != -1);
+		return call<R>("contains", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLength")] != -1);
+		return call<R>("getLength", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto item(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("item")] != -1);
+		return call<R>("item", forward<Args>(args)...);
+	}
+
+};
+
+#endif

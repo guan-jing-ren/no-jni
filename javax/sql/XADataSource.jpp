@@ -1,0 +1,29 @@
+#ifndef javax_sql_XADataSource_HPP
+#define javax_sql_XADataSource_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::sql::XADataSource : public jObject<::javax::sql::XADataSource, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sql / "XADataSource";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::sql::XAConnection()>("getXAConnection"), //
+		jMethod<::javax::sql::XAConnection(::java::lang::String, ::java::lang::String)>("getXAConnection"), //
+	};
+
+	template<typename R = ::javax::sql::XAConnection, typename... Args>
+	auto getXAConnection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getXAConnection")] != -1);
+		return call<R>("getXAConnection", forward<Args>(args)...);
+	}
+
+};
+
+#endif

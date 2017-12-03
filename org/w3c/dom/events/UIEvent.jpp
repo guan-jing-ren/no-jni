@@ -1,0 +1,42 @@
+#ifndef org_w3c_dom_events_UIEvent_HPP
+#define org_w3c_dom_events_UIEvent_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::w3c::dom::events::UIEvent : public jObject<::org::w3c::dom::events::UIEvent, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_w3c_dom_events / "UIEvent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("getDetail"), //
+		jMethod<::org::w3c::dom::views::AbstractView()>("getView"), //
+		jMethod<::jvoid(::java::lang::String, ::jboolean, ::jboolean, ::org::w3c::dom::views::AbstractView, ::jint)>("initUIEvent"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getDetail(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDetail")] != -1);
+		return call<R>("getDetail", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::views::AbstractView, typename... Args>
+	auto getView(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getView")] != -1);
+		return call<R>("getView", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto initUIEvent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("initUIEvent")] != -1);
+		return call<R>("initUIEvent", forward<Args>(args)...);
+	}
+
+};
+
+#endif

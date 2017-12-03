@@ -1,0 +1,143 @@
+#ifndef java_awt_event_WindowEvent_HPP
+#define java_awt_event_WindowEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::event::WindowEvent : public jObject<::java::awt::event::WindowEvent, ::java::awt::event::ComponentEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_event / "WindowEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("WINDOW_ACTIVATED"), //
+		jField<::jint>("WINDOW_CLOSED"), //
+		jField<::jint>("WINDOW_CLOSING"), //
+		jField<::jint>("WINDOW_DEACTIVATED"), //
+		jField<::jint>("WINDOW_DEICONIFIED"), //
+		jField<::jint>("WINDOW_FIRST"), //
+		jField<::jint>("WINDOW_GAINED_FOCUS"), //
+		jField<::jint>("WINDOW_ICONIFIED"), //
+		jField<::jint>("WINDOW_LAST"), //
+		jField<::jint>("WINDOW_LOST_FOCUS"), //
+		jField<::jint>("WINDOW_OPENED"), //
+		jField<::jint>("WINDOW_STATE_CHANGED"), //
+	};
+
+	template<typename F = ::jint>
+	static auto WINDOW_ACTIVATED() {
+		static_assert(field_signatures[jField<F>("WINDOW_ACTIVATED")] != -1);
+		return sat<F>("WINDOW_ACTIVATED");
+	}
+
+	template<typename F = ::jint>
+	static auto WINDOW_CLOSED() {
+		static_assert(field_signatures[jField<F>("WINDOW_CLOSED")] != -1);
+		return sat<F>("WINDOW_CLOSED");
+	}
+
+	template<typename F = ::jint>
+	static auto WINDOW_CLOSING() {
+		static_assert(field_signatures[jField<F>("WINDOW_CLOSING")] != -1);
+		return sat<F>("WINDOW_CLOSING");
+	}
+
+	template<typename F = ::jint>
+	static auto WINDOW_DEACTIVATED() {
+		static_assert(field_signatures[jField<F>("WINDOW_DEACTIVATED")] != -1);
+		return sat<F>("WINDOW_DEACTIVATED");
+	}
+
+	template<typename F = ::jint>
+	static auto WINDOW_DEICONIFIED() {
+		static_assert(field_signatures[jField<F>("WINDOW_DEICONIFIED")] != -1);
+		return sat<F>("WINDOW_DEICONIFIED");
+	}
+
+	template<typename F = ::jint>
+	static auto WINDOW_FIRST() {
+		static_assert(field_signatures[jField<F>("WINDOW_FIRST")] != -1);
+		return sat<F>("WINDOW_FIRST");
+	}
+
+	template<typename F = ::jint>
+	static auto WINDOW_GAINED_FOCUS() {
+		static_assert(field_signatures[jField<F>("WINDOW_GAINED_FOCUS")] != -1);
+		return sat<F>("WINDOW_GAINED_FOCUS");
+	}
+
+	template<typename F = ::jint>
+	static auto WINDOW_ICONIFIED() {
+		static_assert(field_signatures[jField<F>("WINDOW_ICONIFIED")] != -1);
+		return sat<F>("WINDOW_ICONIFIED");
+	}
+
+	template<typename F = ::jint>
+	static auto WINDOW_LAST() {
+		static_assert(field_signatures[jField<F>("WINDOW_LAST")] != -1);
+		return sat<F>("WINDOW_LAST");
+	}
+
+	template<typename F = ::jint>
+	static auto WINDOW_LOST_FOCUS() {
+		static_assert(field_signatures[jField<F>("WINDOW_LOST_FOCUS")] != -1);
+		return sat<F>("WINDOW_LOST_FOCUS");
+	}
+
+	template<typename F = ::jint>
+	static auto WINDOW_OPENED() {
+		static_assert(field_signatures[jField<F>("WINDOW_OPENED")] != -1);
+		return sat<F>("WINDOW_OPENED");
+	}
+
+	template<typename F = ::jint>
+	static auto WINDOW_STATE_CHANGED() {
+		static_assert(field_signatures[jField<F>("WINDOW_STATE_CHANGED")] != -1);
+		return sat<F>("WINDOW_STATE_CHANGED");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::Window, ::jint)>(), //
+		jConstructor<::jvoid(::java::awt::Window, ::jint, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::java::awt::Window, ::jint, ::java::awt::Window)>(), //
+		jConstructor<::jvoid(::java::awt::Window, ::jint, ::java::awt::Window, ::jint, ::jint)>(), //
+		jMethod<::jint()>("getNewState"), //
+		jMethod<::jint()>("getOldState"), //
+		jMethod<::java::awt::Window()>("getOppositeWindow"), //
+		jMethod<::java::awt::Window()>("getWindow"), //
+		jMethod<::java::lang::String()>("paramString"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getNewState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNewState")] != -1);
+		return call<R>("getNewState", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getOldState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOldState")] != -1);
+		return call<R>("getOldState", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Window, typename... Args>
+	auto getOppositeWindow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOppositeWindow")] != -1);
+		return call<R>("getOppositeWindow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Window, typename... Args>
+	auto getWindow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWindow")] != -1);
+		return call<R>("getWindow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto paramString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paramString")] != -1);
+		return call<R>("paramString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,98 @@
+#ifndef java_security_MessageDigest_HPP
+#define java_security_MessageDigest_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::MessageDigest : public jObject<::java::security::MessageDigest, ::java::security::MessageDigestSpi> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "MessageDigest";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::jbyte *()>("digest"), //
+		jMethod<::jbyte *(::jbyte *)>("digest"), //
+		jMethod<::jint(::jbyte *, ::jint, ::jint)>("digest"), //
+		jMethod<::java::lang::String()>("getAlgorithm"), //
+		jMethod<::jint()>("getDigestLength"), //
+		jMethod<::java::security::MessageDigest(::java::lang::String)>("getInstance"), //
+		jMethod<::java::security::MessageDigest(::java::lang::String, ::java::lang::String)>("getInstance"), //
+		jMethod<::java::security::MessageDigest(::java::lang::String, ::java::security::Provider)>("getInstance"), //
+		jMethod<::java::security::Provider()>("getProvider"), //
+		jMethod<::jboolean(::jbyte *, ::jbyte *)>("isEqual"), //
+		jMethod<::jvoid()>("reset"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::jvoid(::jbyte)>("update"), //
+		jMethod<::jvoid(::java::nio::ByteBuffer)>("update"), //
+		jMethod<::jvoid(::jbyte *)>("update"), //
+		jMethod<::jvoid(::jbyte *, ::jint, ::jint)>("update"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto digest(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("digest")] != -1);
+		return call<R>("digest", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAlgorithm(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlgorithm")] != -1);
+		return call<R>("getAlgorithm", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getDigestLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDigestLength")] != -1);
+		return call<R>("getDigestLength", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::MessageDigest, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Provider, typename... Args>
+	auto getProvider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProvider")] != -1);
+		return call<R>("getProvider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isEqual(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isEqual")] != -1);
+		return scall<R>("isEqual", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto reset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("reset")] != -1);
+		return call<R>("reset", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto update(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("update")] != -1);
+		return call<R>("update", forward<Args>(args)...);
+	}
+
+};
+
+#endif

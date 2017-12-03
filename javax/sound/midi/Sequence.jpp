@@ -1,0 +1,113 @@
+#ifndef javax_sound_midi_Sequence_HPP
+#define javax_sound_midi_Sequence_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::sound::midi::Sequence : public jObject<::javax::sound::midi::Sequence, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sound_midi / "Sequence";
+
+	constexpr static Enume field_signatures{
+		jField<::jfloat>("PPQ"), //
+		jField<::jfloat>("SMPTE_24"), //
+		jField<::jfloat>("SMPTE_25"), //
+		jField<::jfloat>("SMPTE_30"), //
+		jField<::jfloat>("SMPTE_30DROP"), //
+	};
+
+	template<typename F = ::jfloat>
+	static auto PPQ() {
+		static_assert(field_signatures[jField<F>("PPQ")] != -1);
+		return sat<F>("PPQ");
+	}
+
+	template<typename F = ::jfloat>
+	static auto SMPTE_24() {
+		static_assert(field_signatures[jField<F>("SMPTE_24")] != -1);
+		return sat<F>("SMPTE_24");
+	}
+
+	template<typename F = ::jfloat>
+	static auto SMPTE_25() {
+		static_assert(field_signatures[jField<F>("SMPTE_25")] != -1);
+		return sat<F>("SMPTE_25");
+	}
+
+	template<typename F = ::jfloat>
+	static auto SMPTE_30() {
+		static_assert(field_signatures[jField<F>("SMPTE_30")] != -1);
+		return sat<F>("SMPTE_30");
+	}
+
+	template<typename F = ::jfloat>
+	static auto SMPTE_30DROP() {
+		static_assert(field_signatures[jField<F>("SMPTE_30DROP")] != -1);
+		return sat<F>("SMPTE_30DROP");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jfloat, ::jint)>(), //
+		jConstructor<::jvoid(::jfloat, ::jint, ::jint)>(), //
+		jMethod<::javax::sound::midi::Track()>("createTrack"), //
+		jMethod<::jboolean(::javax::sound::midi::Track)>("deleteTrack"), //
+		jMethod<::jfloat()>("getDivisionType"), //
+		jMethod<::jlong()>("getMicrosecondLength"), //
+		jMethod<::javax::sound::midi::Patch *()>("getPatchList"), //
+		jMethod<::jint()>("getResolution"), //
+		jMethod<::jlong()>("getTickLength"), //
+		jMethod<::javax::sound::midi::Track *()>("getTracks"), //
+	};
+
+	template<typename R = ::javax::sound::midi::Track, typename... Args>
+	auto createTrack(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createTrack")] != -1);
+		return call<R>("createTrack", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto deleteTrack(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("deleteTrack")] != -1);
+		return call<R>("deleteTrack", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getDivisionType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDivisionType")] != -1);
+		return call<R>("getDivisionType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getMicrosecondLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMicrosecondLength")] != -1);
+		return call<R>("getMicrosecondLength", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::midi::Patch *, typename... Args>
+	auto getPatchList(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPatchList")] != -1);
+		return call<R>("getPatchList", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getResolution(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getResolution")] != -1);
+		return call<R>("getResolution", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getTickLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTickLength")] != -1);
+		return call<R>("getTickLength", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::midi::Track *, typename... Args>
+	auto getTracks(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTracks")] != -1);
+		return call<R>("getTracks", forward<Args>(args)...);
+	}
+
+};
+
+#endif

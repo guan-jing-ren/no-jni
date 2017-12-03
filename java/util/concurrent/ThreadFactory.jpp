@@ -1,0 +1,28 @@
+#ifndef java_util_concurrent_ThreadFactory_HPP
+#define java_util_concurrent_ThreadFactory_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::concurrent::ThreadFactory : public jObject<::java::util::concurrent::ThreadFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_concurrent / "ThreadFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Thread(::java::lang::Runnable)>("newThread"), //
+	};
+
+	template<typename R = ::java::lang::Thread, typename... Args>
+	auto newThread(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newThread")] != -1);
+		return call<R>("newThread", forward<Args>(args)...);
+	}
+
+};
+
+#endif

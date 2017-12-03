@@ -1,0 +1,42 @@
+#ifndef javax_lang_model_type_DeclaredType_HPP
+#define javax_lang_model_type_DeclaredType_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::lang::model::type::DeclaredType : public jObject<::javax::lang::model::type::DeclaredType, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_lang_model_type / "DeclaredType";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::lang::model::element::Element()>("asElement"), //
+		jMethod<::javax::lang::model::type::TypeMirror()>("getEnclosingType"), //
+		jMethod<::java::util::List()>("getTypeArguments"), //
+	};
+
+	template<typename R = ::javax::lang::model::element::Element, typename... Args>
+	auto asElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("asElement")] != -1);
+		return call<R>("asElement", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::lang::model::type::TypeMirror, typename... Args>
+	auto getEnclosingType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEnclosingType")] != -1);
+		return call<R>("getEnclosingType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getTypeArguments(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTypeArguments")] != -1);
+		return call<R>("getTypeArguments", forward<Args>(args)...);
+	}
+
+};
+
+#endif

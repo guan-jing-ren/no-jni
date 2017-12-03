@@ -1,0 +1,41 @@
+#ifndef java_rmi_server_ServerRef_HPP
+#define java_rmi_server_ServerRef_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::rmi::server::ServerRef : public jObject<::java::rmi::server::ServerRef, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_rmi_server / "ServerRef";
+
+	constexpr static Enume field_signatures{
+		jField<::jlong>("serialVersionUID"), //
+	};
+
+	template<typename F = ::jlong>
+	static auto serialVersionUID() {
+		static_assert(field_signatures[jField<F>("serialVersionUID")] != -1);
+		return sat<F>("serialVersionUID");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::rmi::server::RemoteStub(::java::rmi::Remote, ::java::lang::Object)>("exportObject"), //
+		jMethod<::java::lang::String()>("getClientHost"), //
+	};
+
+	template<typename R = ::java::rmi::server::RemoteStub, typename... Args>
+	auto exportObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("exportObject")] != -1);
+		return call<R>("exportObject", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getClientHost(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getClientHost")] != -1);
+		return call<R>("getClientHost", forward<Args>(args)...);
+	}
+
+};
+
+#endif

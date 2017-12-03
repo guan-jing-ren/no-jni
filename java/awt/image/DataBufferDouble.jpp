@@ -1,0 +1,90 @@
+#ifndef java_awt_image_DataBufferDouble_HPP
+#define java_awt_image_DataBufferDouble_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::image::DataBufferDouble : public jObject<::java::awt::image::DataBufferDouble, ::java::awt::image::DataBuffer> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_image / "DataBufferDouble";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint)>(), //
+		jConstructor<::jvoid(::jint, ::jint)>(), //
+		jConstructor<::jvoid(::jdouble *, ::jint)>(), //
+		jConstructor<::jvoid(::jdouble *, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::jdouble **, ::jint)>(), //
+		jConstructor<::jvoid(::jdouble **, ::jint, ::jint *)>(), //
+		jMethod<::jdouble **()>("getBankData"), //
+		jMethod<::jdouble *()>("getData"), //
+		jMethod<::jdouble *(::jint)>("getData"), //
+		jMethod<::jint(::jint)>("getElem"), //
+		jMethod<::jint(::jint, ::jint)>("getElem"), //
+		jMethod<::jdouble(::jint)>("getElemDouble"), //
+		jMethod<::jdouble(::jint, ::jint)>("getElemDouble"), //
+		jMethod<::jfloat(::jint)>("getElemFloat"), //
+		jMethod<::jfloat(::jint, ::jint)>("getElemFloat"), //
+		jMethod<::jvoid(::jint, ::jint)>("setElem"), //
+		jMethod<::jvoid(::jint, ::jint, ::jint)>("setElem"), //
+		jMethod<::jvoid(::jint, ::jdouble)>("setElemDouble"), //
+		jMethod<::jvoid(::jint, ::jint, ::jdouble)>("setElemDouble"), //
+		jMethod<::jvoid(::jint, ::jfloat)>("setElemFloat"), //
+		jMethod<::jvoid(::jint, ::jint, ::jfloat)>("setElemFloat"), //
+	};
+
+	template<typename R = ::jdouble **, typename... Args>
+	auto getBankData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBankData")] != -1);
+		return call<R>("getBankData", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble *, typename... Args>
+	auto getData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getData")] != -1);
+		return call<R>("getData", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getElem(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getElem")] != -1);
+		return call<R>("getElem", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	auto getElemDouble(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getElemDouble")] != -1);
+		return call<R>("getElemDouble", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getElemFloat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getElemFloat")] != -1);
+		return call<R>("getElemFloat", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setElem(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setElem")] != -1);
+		return call<R>("setElem", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setElemDouble(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setElemDouble")] != -1);
+		return call<R>("setElemDouble", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setElemFloat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setElemFloat")] != -1);
+		return call<R>("setElemFloat", forward<Args>(args)...);
+	}
+
+};
+
+#endif

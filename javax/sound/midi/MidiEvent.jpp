@@ -1,0 +1,43 @@
+#ifndef javax_sound_midi_MidiEvent_HPP
+#define javax_sound_midi_MidiEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::sound::midi::MidiEvent : public jObject<::javax::sound::midi::MidiEvent, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sound_midi / "MidiEvent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::sound::midi::MidiMessage, ::jlong)>(), //
+		jMethod<::javax::sound::midi::MidiMessage()>("getMessage"), //
+		jMethod<::jlong()>("getTick"), //
+		jMethod<::jvoid(::jlong)>("setTick"), //
+	};
+
+	template<typename R = ::javax::sound::midi::MidiMessage, typename... Args>
+	auto getMessage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMessage")] != -1);
+		return call<R>("getMessage", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getTick(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTick")] != -1);
+		return call<R>("getTick", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setTick(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setTick")] != -1);
+		return call<R>("setTick", forward<Args>(args)...);
+	}
+
+};
+
+#endif

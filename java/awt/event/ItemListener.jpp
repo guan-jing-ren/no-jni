@@ -1,0 +1,28 @@
+#ifndef java_awt_event_ItemListener_HPP
+#define java_awt_event_ItemListener_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::event::ItemListener : public jObject<::java::awt::event::ItemListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_event / "ItemListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::awt::event::ItemEvent)>("itemStateChanged"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto itemStateChanged(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("itemStateChanged")] != -1);
+		return call<R>("itemStateChanged", forward<Args>(args)...);
+	}
+
+};
+
+#endif

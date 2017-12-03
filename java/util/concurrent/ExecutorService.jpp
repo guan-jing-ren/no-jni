@@ -1,0 +1,81 @@
+#ifndef java_util_concurrent_ExecutorService_HPP
+#define java_util_concurrent_ExecutorService_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::concurrent::ExecutorService : public jObject<::java::util::concurrent::ExecutorService, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_concurrent / "ExecutorService";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::jlong, ::java::util::concurrent::TimeUnit)>("awaitTermination"), //
+		jMethod<::java::util::List(::java::util::Collection)>("invokeAll"), //
+		jMethod<::java::util::List(::java::util::Collection, ::jlong, ::java::util::concurrent::TimeUnit)>("invokeAll"), //
+		jMethod<::java::lang::Object(::java::util::Collection)>("invokeAny"), //
+		jMethod<::java::lang::Object(::java::util::Collection, ::jlong, ::java::util::concurrent::TimeUnit)>("invokeAny"), //
+		jMethod<::jboolean()>("isShutdown"), //
+		jMethod<::jboolean()>("isTerminated"), //
+		jMethod<::jvoid()>("shutdown"), //
+		jMethod<::java::util::List()>("shutdownNow"), //
+		jMethod<::java::util::concurrent::Future(::java::lang::Runnable)>("submit"), //
+		jMethod<::java::util::concurrent::Future(::java::lang::Runnable, ::java::lang::Object)>("submit"), //
+		jMethod<::java::util::concurrent::Future(::java::util::concurrent::Callable)>("submit"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto awaitTermination(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("awaitTermination")] != -1);
+		return call<R>("awaitTermination", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto invokeAll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("invokeAll")] != -1);
+		return call<R>("invokeAll", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto invokeAny(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("invokeAny")] != -1);
+		return call<R>("invokeAny", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isShutdown(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isShutdown")] != -1);
+		return call<R>("isShutdown", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isTerminated(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isTerminated")] != -1);
+		return call<R>("isTerminated", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto shutdown(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("shutdown")] != -1);
+		return call<R>("shutdown", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto shutdownNow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("shutdownNow")] != -1);
+		return call<R>("shutdownNow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::concurrent::Future, typename... Args>
+	auto submit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("submit")] != -1);
+		return call<R>("submit", forward<Args>(args)...);
+	}
+
+};
+
+#endif

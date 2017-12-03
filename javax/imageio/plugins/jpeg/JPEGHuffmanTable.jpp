@@ -1,0 +1,70 @@
+#ifndef javax_imageio_plugins_jpeg_JPEGHuffmanTable_HPP
+#define javax_imageio_plugins_jpeg_JPEGHuffmanTable_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::imageio::plugins::jpeg::JPEGHuffmanTable : public jObject<::javax::imageio::plugins::jpeg::JPEGHuffmanTable, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_imageio_plugins_jpeg / "JPEGHuffmanTable";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::imageio::plugins::jpeg::JPEGHuffmanTable>("StdACChrominance"), //
+		jField<::javax::imageio::plugins::jpeg::JPEGHuffmanTable>("StdACLuminance"), //
+		jField<::javax::imageio::plugins::jpeg::JPEGHuffmanTable>("StdDCChrominance"), //
+		jField<::javax::imageio::plugins::jpeg::JPEGHuffmanTable>("StdDCLuminance"), //
+	};
+
+	template<typename F = ::javax::imageio::plugins::jpeg::JPEGHuffmanTable>
+	static auto StdACChrominance() {
+		static_assert(field_signatures[jField<F>("StdACChrominance")] != -1);
+		return sat<F>("StdACChrominance");
+	}
+
+	template<typename F = ::javax::imageio::plugins::jpeg::JPEGHuffmanTable>
+	static auto StdACLuminance() {
+		static_assert(field_signatures[jField<F>("StdACLuminance")] != -1);
+		return sat<F>("StdACLuminance");
+	}
+
+	template<typename F = ::javax::imageio::plugins::jpeg::JPEGHuffmanTable>
+	static auto StdDCChrominance() {
+		static_assert(field_signatures[jField<F>("StdDCChrominance")] != -1);
+		return sat<F>("StdDCChrominance");
+	}
+
+	template<typename F = ::javax::imageio::plugins::jpeg::JPEGHuffmanTable>
+	static auto StdDCLuminance() {
+		static_assert(field_signatures[jField<F>("StdDCLuminance")] != -1);
+		return sat<F>("StdDCLuminance");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jshort *, ::jshort *)>(), //
+		jMethod<::jshort *()>("getLengths"), //
+		jMethod<::jshort *()>("getValues"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jshort *, typename... Args>
+	auto getLengths(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLengths")] != -1);
+		return call<R>("getLengths", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jshort *, typename... Args>
+	auto getValues(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getValues")] != -1);
+		return call<R>("getValues", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

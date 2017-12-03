@@ -1,0 +1,35 @@
+#ifndef java_awt_peer_MenuComponentPeer_HPP
+#define java_awt_peer_MenuComponentPeer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::peer::MenuComponentPeer : public jObject<::java::awt::peer::MenuComponentPeer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_peer / "MenuComponentPeer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("dispose"), //
+		jMethod<::jvoid(::java::awt::Font)>("setFont"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispose(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dispose")] != -1);
+		return call<R>("dispose", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setFont(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setFont")] != -1);
+		return call<R>("setFont", forward<Args>(args)...);
+	}
+
+};
+
+#endif

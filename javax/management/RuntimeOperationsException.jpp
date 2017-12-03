@@ -1,0 +1,37 @@
+#ifndef javax_management_RuntimeOperationsException_HPP
+#define javax_management_RuntimeOperationsException_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::management::RuntimeOperationsException : public jObject<::javax::management::RuntimeOperationsException, ::javax::management::JMRuntimeException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management / "RuntimeOperationsException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::RuntimeException)>(), //
+		jConstructor<::jvoid(::java::lang::RuntimeException, ::java::lang::String)>(), //
+		jMethod<::java::lang::Throwable()>("getCause"), //
+		jMethod<::java::lang::RuntimeException()>("getTargetException"), //
+	};
+
+	template<typename R = ::java::lang::Throwable, typename... Args>
+	auto getCause(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCause")] != -1);
+		return call<R>("getCause", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::RuntimeException, typename... Args>
+	auto getTargetException(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTargetException")] != -1);
+		return call<R>("getTargetException", forward<Args>(args)...);
+	}
+
+};
+
+#endif

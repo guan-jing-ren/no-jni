@@ -1,0 +1,70 @@
+#ifndef java_sql_Driver_HPP
+#define java_sql_Driver_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::sql::Driver : public jObject<::java::sql::Driver, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_sql / "Driver";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::lang::String)>("acceptsURL"), //
+		jMethod<::java::sql::Connection(::java::lang::String, ::java::util::Properties)>("connect"), //
+		jMethod<::jint()>("getMajorVersion"), //
+		jMethod<::jint()>("getMinorVersion"), //
+		jMethod<::java::util::logging::Logger()>("getParentLogger"), //
+		jMethod<::java::sql::DriverPropertyInfo *(::java::lang::String, ::java::util::Properties)>("getPropertyInfo"), //
+		jMethod<::jboolean()>("jdbcCompliant"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto acceptsURL(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("acceptsURL")] != -1);
+		return call<R>("acceptsURL", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::Connection, typename... Args>
+	auto connect(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("connect")] != -1);
+		return call<R>("connect", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getMajorVersion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMajorVersion")] != -1);
+		return call<R>("getMajorVersion", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getMinorVersion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMinorVersion")] != -1);
+		return call<R>("getMinorVersion", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::logging::Logger, typename... Args>
+	auto getParentLogger(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParentLogger")] != -1);
+		return call<R>("getParentLogger", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::DriverPropertyInfo *, typename... Args>
+	auto getPropertyInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPropertyInfo")] != -1);
+		return call<R>("getPropertyInfo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto jdbcCompliant(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("jdbcCompliant")] != -1);
+		return call<R>("jdbcCompliant", forward<Args>(args)...);
+	}
+
+};
+
+#endif

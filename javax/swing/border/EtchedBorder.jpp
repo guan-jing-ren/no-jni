@@ -1,0 +1,82 @@
+#ifndef javax_swing_border_EtchedBorder_HPP
+#define javax_swing_border_EtchedBorder_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::border::EtchedBorder : public jObject<::javax::swing::border::EtchedBorder, ::javax::swing::border::AbstractBorder> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_border / "EtchedBorder";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("LOWERED"), //
+		jField<::jint>("RAISED"), //
+	};
+
+	template<typename F = ::jint>
+	static auto LOWERED() {
+		static_assert(field_signatures[jField<F>("LOWERED")] != -1);
+		return sat<F>("LOWERED");
+	}
+
+	template<typename F = ::jint>
+	static auto RAISED() {
+		static_assert(field_signatures[jField<F>("RAISED")] != -1);
+		return sat<F>("RAISED");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint)>(), //
+		jConstructor<::jvoid(::jint, ::java::awt::Color, ::java::awt::Color)>(), //
+		jConstructor<::jvoid(::java::awt::Color, ::java::awt::Color)>(), //
+		jMethod<::java::awt::Insets(::java::awt::Component, ::java::awt::Insets)>("getBorderInsets"), //
+		jMethod<::jint()>("getEtchType"), //
+		jMethod<::java::awt::Color()>("getHighlightColor"), //
+		jMethod<::java::awt::Color(::java::awt::Component)>("getHighlightColor"), //
+		jMethod<::java::awt::Color()>("getShadowColor"), //
+		jMethod<::java::awt::Color(::java::awt::Component)>("getShadowColor"), //
+		jMethod<::jboolean()>("isBorderOpaque"), //
+		jMethod<::jvoid(::java::awt::Component, ::java::awt::Graphics, ::jint, ::jint, ::jint, ::jint)>("paintBorder"), //
+	};
+
+	template<typename R = ::java::awt::Insets, typename... Args>
+	auto getBorderInsets(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBorderInsets")] != -1);
+		return call<R>("getBorderInsets", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getEtchType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEtchType")] != -1);
+		return call<R>("getEtchType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Color, typename... Args>
+	auto getHighlightColor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHighlightColor")] != -1);
+		return call<R>("getHighlightColor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Color, typename... Args>
+	auto getShadowColor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getShadowColor")] != -1);
+		return call<R>("getShadowColor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isBorderOpaque(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isBorderOpaque")] != -1);
+		return call<R>("isBorderOpaque", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto paintBorder(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paintBorder")] != -1);
+		return call<R>("paintBorder", forward<Args>(args)...);
+	}
+
+};
+
+#endif

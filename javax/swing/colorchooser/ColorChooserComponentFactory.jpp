@@ -1,0 +1,35 @@
+#ifndef javax_swing_colorchooser_ColorChooserComponentFactory_HPP
+#define javax_swing_colorchooser_ColorChooserComponentFactory_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::colorchooser::ColorChooserComponentFactory : public jObject<::javax::swing::colorchooser::ColorChooserComponentFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_colorchooser / "ColorChooserComponentFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::swing::colorchooser::AbstractColorChooserPanel *()>("getDefaultChooserPanels"), //
+		jMethod<::javax::swing::JComponent()>("getPreviewPanel"), //
+	};
+
+	template<typename R = ::javax::swing::colorchooser::AbstractColorChooserPanel *, typename... Args>
+	static auto getDefaultChooserPanels(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaultChooserPanels")] != -1);
+		return scall<R>("getDefaultChooserPanels", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::JComponent, typename... Args>
+	static auto getPreviewPanel(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPreviewPanel")] != -1);
+		return scall<R>("getPreviewPanel", forward<Args>(args)...);
+	}
+
+};
+
+#endif

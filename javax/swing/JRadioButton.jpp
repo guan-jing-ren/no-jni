@@ -1,0 +1,50 @@
+#ifndef javax_swing_JRadioButton_HPP
+#define javax_swing_JRadioButton_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::JRadioButton : public jObject<::javax::swing::JRadioButton, ::javax::swing::JToggleButton> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "JRadioButton";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::javax::swing::Icon)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::javax::swing::Icon, ::jboolean)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::jboolean)>(), //
+		jConstructor<::jvoid(::javax::swing::Action)>(), //
+		jConstructor<::jvoid(::javax::swing::Icon)>(), //
+		jConstructor<::jvoid(::javax::swing::Icon, ::jboolean)>(), //
+		jMethod<::javax::accessibility::AccessibleContext()>("getAccessibleContext"), //
+		jMethod<::java::lang::String()>("getUIClassID"), //
+		jMethod<::jvoid()>("updateUI"), //
+	};
+
+	template<typename R = ::javax::accessibility::AccessibleContext, typename... Args>
+	auto getAccessibleContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAccessibleContext")] != -1);
+		return call<R>("getAccessibleContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getUIClassID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUIClassID")] != -1);
+		return call<R>("getUIClassID", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateUI(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateUI")] != -1);
+		return call<R>("updateUI", forward<Args>(args)...);
+	}
+
+};
+
+#endif

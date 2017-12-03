@@ -1,0 +1,28 @@
+#ifndef javax_swing_event_RowSorterListener_HPP
+#define javax_swing_event_RowSorterListener_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::event::RowSorterListener : public jObject<::javax::swing::event::RowSorterListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_event / "RowSorterListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::swing::event::RowSorterEvent)>("sorterChanged"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto sorterChanged(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("sorterChanged")] != -1);
+		return call<R>("sorterChanged", forward<Args>(args)...);
+	}
+
+};
+
+#endif

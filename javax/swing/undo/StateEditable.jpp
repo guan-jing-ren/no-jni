@@ -1,0 +1,41 @@
+#ifndef javax_swing_undo_StateEditable_HPP
+#define javax_swing_undo_StateEditable_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::undo::StateEditable : public jObject<::javax::swing::undo::StateEditable, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_undo / "StateEditable";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("RCSID"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto RCSID() {
+		static_assert(field_signatures[jField<F>("RCSID")] != -1);
+		return sat<F>("RCSID");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::util::Hashtable)>("restoreState"), //
+		jMethod<::jvoid(::java::util::Hashtable)>("storeState"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto restoreState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("restoreState")] != -1);
+		return call<R>("restoreState", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto storeState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("storeState")] != -1);
+		return call<R>("storeState", forward<Args>(args)...);
+	}
+
+};
+
+#endif

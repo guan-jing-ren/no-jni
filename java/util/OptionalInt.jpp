@@ -1,0 +1,98 @@
+#ifndef java_util_OptionalInt_HPP
+#define java_util_OptionalInt_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::OptionalInt : public jObject<::java::util::OptionalInt, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "OptionalInt";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::OptionalInt()>("empty"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jint()>("getAsInt"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jvoid(::java::util::function::IntConsumer)>("ifPresent"), //
+		jMethod<::jboolean()>("isPresent"), //
+		jMethod<::java::util::OptionalInt(::jint)>("of"), //
+		jMethod<::jint(::jint)>("orElse"), //
+		jMethod<::jint(::java::util::function::IntSupplier)>("orElseGet"), //
+		jMethod<::jint(::java::util::function::Supplier)>("orElseThrow"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::util::OptionalInt, typename... Args>
+	static auto empty(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("empty")] != -1);
+		return scall<R>("empty", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getAsInt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAsInt")] != -1);
+		return call<R>("getAsInt", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto ifPresent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("ifPresent")] != -1);
+		return call<R>("ifPresent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isPresent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isPresent")] != -1);
+		return call<R>("isPresent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::OptionalInt, typename... Args>
+	static auto of(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("of")] != -1);
+		return scall<R>("of", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto orElse(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("orElse")] != -1);
+		return call<R>("orElse", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto orElseGet(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("orElseGet")] != -1);
+		return call<R>("orElseGet", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto orElseThrow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("orElseThrow")] != -1);
+		return call<R>("orElseThrow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,63 @@
+#ifndef javax_xml_stream_events_StartElement_HPP
+#define javax_xml_stream_events_StartElement_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::stream::events::StartElement : public jObject<::javax::xml::stream::events::StartElement, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_stream_events / "StartElement";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::stream::events::Attribute(::javax::xml::namespace_::QName)>("getAttributeByName"), //
+		jMethod<::java::util::Iterator()>("getAttributes"), //
+		jMethod<::javax::xml::namespace_::QName()>("getName"), //
+		jMethod<::javax::xml::namespace_::NamespaceContext()>("getNamespaceContext"), //
+		jMethod<::java::lang::String(::java::lang::String)>("getNamespaceURI"), //
+		jMethod<::java::util::Iterator()>("getNamespaces"), //
+	};
+
+	template<typename R = ::javax::xml::stream::events::Attribute, typename... Args>
+	auto getAttributeByName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttributeByName")] != -1);
+		return call<R>("getAttributeByName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Iterator, typename... Args>
+	auto getAttributes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttributes")] != -1);
+		return call<R>("getAttributes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::namespace_::QName, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::namespace_::NamespaceContext, typename... Args>
+	auto getNamespaceContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNamespaceContext")] != -1);
+		return call<R>("getNamespaceContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getNamespaceURI(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNamespaceURI")] != -1);
+		return call<R>("getNamespaceURI", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Iterator, typename... Args>
+	auto getNamespaces(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNamespaces")] != -1);
+		return call<R>("getNamespaces", forward<Args>(args)...);
+	}
+
+};
+
+#endif

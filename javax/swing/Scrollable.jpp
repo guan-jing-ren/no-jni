@@ -1,0 +1,56 @@
+#ifndef javax_swing_Scrollable_HPP
+#define javax_swing_Scrollable_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::Scrollable : public jObject<::javax::swing::Scrollable, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "Scrollable";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::Dimension()>("getPreferredScrollableViewportSize"), //
+		jMethod<::jint(::java::awt::Rectangle, ::jint, ::jint)>("getScrollableBlockIncrement"), //
+		jMethod<::jboolean()>("getScrollableTracksViewportHeight"), //
+		jMethod<::jboolean()>("getScrollableTracksViewportWidth"), //
+		jMethod<::jint(::java::awt::Rectangle, ::jint, ::jint)>("getScrollableUnitIncrement"), //
+	};
+
+	template<typename R = ::java::awt::Dimension, typename... Args>
+	auto getPreferredScrollableViewportSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPreferredScrollableViewportSize")] != -1);
+		return call<R>("getPreferredScrollableViewportSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getScrollableBlockIncrement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getScrollableBlockIncrement")] != -1);
+		return call<R>("getScrollableBlockIncrement", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getScrollableTracksViewportHeight(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getScrollableTracksViewportHeight")] != -1);
+		return call<R>("getScrollableTracksViewportHeight", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getScrollableTracksViewportWidth(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getScrollableTracksViewportWidth")] != -1);
+		return call<R>("getScrollableTracksViewportWidth", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getScrollableUnitIncrement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getScrollableUnitIncrement")] != -1);
+		return call<R>("getScrollableUnitIncrement", forward<Args>(args)...);
+	}
+
+};
+
+#endif

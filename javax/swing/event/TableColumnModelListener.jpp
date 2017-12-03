@@ -1,0 +1,56 @@
+#ifndef javax_swing_event_TableColumnModelListener_HPP
+#define javax_swing_event_TableColumnModelListener_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::event::TableColumnModelListener : public jObject<::javax::swing::event::TableColumnModelListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_event / "TableColumnModelListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::swing::event::TableColumnModelEvent)>("columnAdded"), //
+		jMethod<::jvoid(::javax::swing::event::ChangeEvent)>("columnMarginChanged"), //
+		jMethod<::jvoid(::javax::swing::event::TableColumnModelEvent)>("columnMoved"), //
+		jMethod<::jvoid(::javax::swing::event::TableColumnModelEvent)>("columnRemoved"), //
+		jMethod<::jvoid(::javax::swing::event::ListSelectionEvent)>("columnSelectionChanged"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto columnAdded(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("columnAdded")] != -1);
+		return call<R>("columnAdded", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto columnMarginChanged(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("columnMarginChanged")] != -1);
+		return call<R>("columnMarginChanged", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto columnMoved(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("columnMoved")] != -1);
+		return call<R>("columnMoved", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto columnRemoved(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("columnRemoved")] != -1);
+		return call<R>("columnRemoved", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto columnSelectionChanged(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("columnSelectionChanged")] != -1);
+		return call<R>("columnSelectionChanged", forward<Args>(args)...);
+	}
+
+};
+
+#endif

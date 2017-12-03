@@ -1,0 +1,149 @@
+#ifndef java_text_Collator_HPP
+#define java_text_Collator_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::text::Collator : public jObject<::java::text::Collator, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_text / "Collator";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("CANONICAL_DECOMPOSITION"), //
+		jField<::jint>("FULL_DECOMPOSITION"), //
+		jField<::jint>("IDENTICAL"), //
+		jField<::jint>("NO_DECOMPOSITION"), //
+		jField<::jint>("PRIMARY"), //
+		jField<::jint>("SECONDARY"), //
+		jField<::jint>("TERTIARY"), //
+	};
+
+	template<typename F = ::jint>
+	static auto CANONICAL_DECOMPOSITION() {
+		static_assert(field_signatures[jField<F>("CANONICAL_DECOMPOSITION")] != -1);
+		return sat<F>("CANONICAL_DECOMPOSITION");
+	}
+
+	template<typename F = ::jint>
+	static auto FULL_DECOMPOSITION() {
+		static_assert(field_signatures[jField<F>("FULL_DECOMPOSITION")] != -1);
+		return sat<F>("FULL_DECOMPOSITION");
+	}
+
+	template<typename F = ::jint>
+	static auto IDENTICAL() {
+		static_assert(field_signatures[jField<F>("IDENTICAL")] != -1);
+		return sat<F>("IDENTICAL");
+	}
+
+	template<typename F = ::jint>
+	static auto NO_DECOMPOSITION() {
+		static_assert(field_signatures[jField<F>("NO_DECOMPOSITION")] != -1);
+		return sat<F>("NO_DECOMPOSITION");
+	}
+
+	template<typename F = ::jint>
+	static auto PRIMARY() {
+		static_assert(field_signatures[jField<F>("PRIMARY")] != -1);
+		return sat<F>("PRIMARY");
+	}
+
+	template<typename F = ::jint>
+	static auto SECONDARY() {
+		static_assert(field_signatures[jField<F>("SECONDARY")] != -1);
+		return sat<F>("SECONDARY");
+	}
+
+	template<typename F = ::jint>
+	static auto TERTIARY() {
+		static_assert(field_signatures[jField<F>("TERTIARY")] != -1);
+		return sat<F>("TERTIARY");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::jint(::java::lang::Object, ::java::lang::Object)>("compare"), //
+		jMethod<::jint(::java::lang::String, ::java::lang::String)>("compare"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jboolean(::java::lang::String, ::java::lang::String)>("equals"), //
+		jMethod<::java::util::Locale *()>("getAvailableLocales"), //
+		jMethod<::java::text::CollationKey(::java::lang::String)>("getCollationKey"), //
+		jMethod<::jint()>("getDecomposition"), //
+		jMethod<::java::text::Collator()>("getInstance"), //
+		jMethod<::java::text::Collator(::java::util::Locale)>("getInstance"), //
+		jMethod<::jint()>("getStrength"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jvoid(::jint)>("setDecomposition"), //
+		jMethod<::jvoid(::jint)>("setStrength"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto compare(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compare")] != -1);
+		return call<R>("compare", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Locale *, typename... Args>
+	static auto getAvailableLocales(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAvailableLocales")] != -1);
+		return scall<R>("getAvailableLocales", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::text::CollationKey, typename... Args>
+	auto getCollationKey(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCollationKey")] != -1);
+		return call<R>("getCollationKey", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getDecomposition(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDecomposition")] != -1);
+		return call<R>("getDecomposition", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::text::Collator, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getStrength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStrength")] != -1);
+		return call<R>("getStrength", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDecomposition(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDecomposition")] != -1);
+		return call<R>("setDecomposition", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setStrength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setStrength")] != -1);
+		return call<R>("setStrength", forward<Args>(args)...);
+	}
+
+};
+
+#endif

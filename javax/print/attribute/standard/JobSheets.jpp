@@ -1,0 +1,48 @@
+#ifndef javax_print_attribute_standard_JobSheets_HPP
+#define javax_print_attribute_standard_JobSheets_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::print::attribute::standard::JobSheets : public jObject<::javax::print::attribute::standard::JobSheets, ::javax::print::attribute::EnumSyntax> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_print_attribute_standard / "JobSheets";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::print::attribute::standard::JobSheets>("NONE"), //
+		jField<::javax::print::attribute::standard::JobSheets>("STANDARD"), //
+	};
+
+	template<typename F = ::javax::print::attribute::standard::JobSheets>
+	static auto NONE() {
+		static_assert(field_signatures[jField<F>("NONE")] != -1);
+		return sat<F>("NONE");
+	}
+
+	template<typename F = ::javax::print::attribute::standard::JobSheets>
+	static auto STANDARD() {
+		static_assert(field_signatures[jField<F>("STANDARD")] != -1);
+		return sat<F>("STANDARD");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Class()>("getCategory"), //
+		jMethod<::java::lang::String()>("getName"), //
+	};
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getCategory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCategory")] != -1);
+		return call<R>("getCategory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+};
+
+#endif

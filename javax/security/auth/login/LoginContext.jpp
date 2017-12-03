@@ -1,0 +1,47 @@
+#ifndef javax_security_auth_login_LoginContext_HPP
+#define javax_security_auth_login_LoginContext_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::security::auth::login::LoginContext : public jObject<::javax::security::auth::login::LoginContext, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_security_auth_login / "LoginContext";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::javax::security::auth::Subject)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::javax::security::auth::Subject, ::javax::security::auth::callback::CallbackHandler)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::javax::security::auth::Subject, ::javax::security::auth::callback::CallbackHandler, ::javax::security::auth::login::Configuration)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::javax::security::auth::callback::CallbackHandler)>(), //
+		jMethod<::javax::security::auth::Subject()>("getSubject"), //
+		jMethod<::jvoid()>("login"), //
+		jMethod<::jvoid()>("logout"), //
+	};
+
+	template<typename R = ::javax::security::auth::Subject, typename... Args>
+	auto getSubject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSubject")] != -1);
+		return call<R>("getSubject", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto login(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("login")] != -1);
+		return call<R>("login", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto logout(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("logout")] != -1);
+		return call<R>("logout", forward<Args>(args)...);
+	}
+
+};
+
+#endif

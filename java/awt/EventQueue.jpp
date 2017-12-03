@@ -1,0 +1,93 @@
+#ifndef java_awt_EventQueue_HPP
+#define java_awt_EventQueue_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::EventQueue : public jObject<::java::awt::EventQueue, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "EventQueue";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::awt::SecondaryLoop()>("createSecondaryLoop"), //
+		jMethod<::java::awt::AWTEvent()>("getCurrentEvent"), //
+		jMethod<::jlong()>("getMostRecentEventTime"), //
+		jMethod<::java::awt::AWTEvent()>("getNextEvent"), //
+		jMethod<::jvoid(::java::lang::Runnable)>("invokeAndWait"), //
+		jMethod<::jvoid(::java::lang::Runnable)>("invokeLater"), //
+		jMethod<::jboolean()>("isDispatchThread"), //
+		jMethod<::java::awt::AWTEvent()>("peekEvent"), //
+		jMethod<::java::awt::AWTEvent(::jint)>("peekEvent"), //
+		jMethod<::jvoid(::java::awt::AWTEvent)>("postEvent"), //
+		jMethod<::jvoid(::java::awt::EventQueue)>("push"), //
+	};
+
+	template<typename R = ::java::awt::SecondaryLoop, typename... Args>
+	auto createSecondaryLoop(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createSecondaryLoop")] != -1);
+		return call<R>("createSecondaryLoop", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::AWTEvent, typename... Args>
+	static auto getCurrentEvent(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCurrentEvent")] != -1);
+		return scall<R>("getCurrentEvent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	static auto getMostRecentEventTime(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMostRecentEventTime")] != -1);
+		return scall<R>("getMostRecentEventTime", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::AWTEvent, typename... Args>
+	auto getNextEvent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNextEvent")] != -1);
+		return call<R>("getNextEvent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto invokeAndWait(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("invokeAndWait")] != -1);
+		return scall<R>("invokeAndWait", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto invokeLater(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("invokeLater")] != -1);
+		return scall<R>("invokeLater", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isDispatchThread(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isDispatchThread")] != -1);
+		return scall<R>("isDispatchThread", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::AWTEvent, typename... Args>
+	auto peekEvent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("peekEvent")] != -1);
+		return call<R>("peekEvent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto postEvent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("postEvent")] != -1);
+		return call<R>("postEvent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto push(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("push")] != -1);
+		return call<R>("push", forward<Args>(args)...);
+	}
+
+};
+
+#endif

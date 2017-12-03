@@ -1,0 +1,56 @@
+#ifndef java_awt_peer_KeyboardFocusManagerPeer_HPP
+#define java_awt_peer_KeyboardFocusManagerPeer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::peer::KeyboardFocusManagerPeer : public jObject<::java::awt::peer::KeyboardFocusManagerPeer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_peer / "KeyboardFocusManagerPeer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::awt::Window)>("clearGlobalFocusOwner"), //
+		jMethod<::java::awt::Component()>("getCurrentFocusOwner"), //
+		jMethod<::java::awt::Window()>("getCurrentFocusedWindow"), //
+		jMethod<::jvoid(::java::awt::Component)>("setCurrentFocusOwner"), //
+		jMethod<::jvoid(::java::awt::Window)>("setCurrentFocusedWindow"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto clearGlobalFocusOwner(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clearGlobalFocusOwner")] != -1);
+		return call<R>("clearGlobalFocusOwner", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Component, typename... Args>
+	auto getCurrentFocusOwner(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCurrentFocusOwner")] != -1);
+		return call<R>("getCurrentFocusOwner", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Window, typename... Args>
+	auto getCurrentFocusedWindow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCurrentFocusedWindow")] != -1);
+		return call<R>("getCurrentFocusedWindow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setCurrentFocusOwner(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setCurrentFocusOwner")] != -1);
+		return call<R>("setCurrentFocusOwner", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setCurrentFocusedWindow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setCurrentFocusedWindow")] != -1);
+		return call<R>("setCurrentFocusedWindow", forward<Args>(args)...);
+	}
+
+};
+
+#endif

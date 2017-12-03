@@ -1,0 +1,35 @@
+#ifndef javax_xml_stream_events_ProcessingInstruction_HPP
+#define javax_xml_stream_events_ProcessingInstruction_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::stream::events::ProcessingInstruction : public jObject<::javax::xml::stream::events::ProcessingInstruction, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_stream_events / "ProcessingInstruction";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getData"), //
+		jMethod<::java::lang::String()>("getTarget"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getData")] != -1);
+		return call<R>("getData", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getTarget(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTarget")] != -1);
+		return call<R>("getTarget", forward<Args>(args)...);
+	}
+
+};
+
+#endif

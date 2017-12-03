@@ -1,0 +1,42 @@
+#ifndef java_beans_beancontext_BeanContextServiceProvider_HPP
+#define java_beans_beancontext_BeanContextServiceProvider_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::beans::beancontext::BeanContextServiceProvider : public jObject<::java::beans::beancontext::BeanContextServiceProvider, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_beans_beancontext / "BeanContextServiceProvider";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::Iterator(::java::beans::beancontext::BeanContextServices, ::java::lang::Class)>("getCurrentServiceSelectors"), //
+		jMethod<::java::lang::Object(::java::beans::beancontext::BeanContextServices, ::java::lang::Object, ::java::lang::Class, ::java::lang::Object)>("getService"), //
+		jMethod<::jvoid(::java::beans::beancontext::BeanContextServices, ::java::lang::Object, ::java::lang::Object)>("releaseService"), //
+	};
+
+	template<typename R = ::java::util::Iterator, typename... Args>
+	auto getCurrentServiceSelectors(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCurrentServiceSelectors")] != -1);
+		return call<R>("getCurrentServiceSelectors", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getService(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getService")] != -1);
+		return call<R>("getService", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto releaseService(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("releaseService")] != -1);
+		return call<R>("releaseService", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,43 @@
+#ifndef java_lang_invoke_ConstantCallSite_HPP
+#define java_lang_invoke_ConstantCallSite_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::invoke::ConstantCallSite : public jObject<::java::lang::invoke::ConstantCallSite, ::java::lang::invoke::CallSite> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_invoke / "ConstantCallSite";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::invoke::MethodHandle)>(), //
+		jMethod<::java::lang::invoke::MethodHandle()>("dynamicInvoker"), //
+		jMethod<::java::lang::invoke::MethodHandle()>("getTarget"), //
+		jMethod<::jvoid(::java::lang::invoke::MethodHandle)>("setTarget"), //
+	};
+
+	template<typename R = ::java::lang::invoke::MethodHandle, typename... Args>
+	auto dynamicInvoker(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dynamicInvoker")] != -1);
+		return call<R>("dynamicInvoker", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::invoke::MethodHandle, typename... Args>
+	auto getTarget(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTarget")] != -1);
+		return call<R>("getTarget", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setTarget(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setTarget")] != -1);
+		return call<R>("setTarget", forward<Args>(args)...);
+	}
+
+};
+
+#endif

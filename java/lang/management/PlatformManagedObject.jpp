@@ -1,0 +1,28 @@
+#ifndef java_lang_management_PlatformManagedObject_HPP
+#define java_lang_management_PlatformManagedObject_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::management::PlatformManagedObject : public jObject<::java::lang::management::PlatformManagedObject, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_management / "PlatformManagedObject";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::management::ObjectName()>("getObjectName"), //
+	};
+
+	template<typename R = ::javax::management::ObjectName, typename... Args>
+	auto getObjectName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getObjectName")] != -1);
+		return call<R>("getObjectName", forward<Args>(args)...);
+	}
+
+};
+
+#endif

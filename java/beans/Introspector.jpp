@@ -1,0 +1,86 @@
+#ifndef java_beans_Introspector_HPP
+#define java_beans_Introspector_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::beans::Introspector : public jObject<::java::beans::Introspector, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_beans / "Introspector";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("IGNORE_ALL_BEANINFO"), //
+		jField<::jint>("IGNORE_IMMEDIATE_BEANINFO"), //
+		jField<::jint>("USE_ALL_BEANINFO"), //
+	};
+
+	template<typename F = ::jint>
+	static auto IGNORE_ALL_BEANINFO() {
+		static_assert(field_signatures[jField<F>("IGNORE_ALL_BEANINFO")] != -1);
+		return sat<F>("IGNORE_ALL_BEANINFO");
+	}
+
+	template<typename F = ::jint>
+	static auto IGNORE_IMMEDIATE_BEANINFO() {
+		static_assert(field_signatures[jField<F>("IGNORE_IMMEDIATE_BEANINFO")] != -1);
+		return sat<F>("IGNORE_IMMEDIATE_BEANINFO");
+	}
+
+	template<typename F = ::jint>
+	static auto USE_ALL_BEANINFO() {
+		static_assert(field_signatures[jField<F>("USE_ALL_BEANINFO")] != -1);
+		return sat<F>("USE_ALL_BEANINFO");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String(::java::lang::String)>("decapitalize"), //
+		jMethod<::jvoid()>("flushCaches"), //
+		jMethod<::jvoid(::java::lang::Class)>("flushFromCaches"), //
+		jMethod<::java::beans::BeanInfo(::java::lang::Class)>("getBeanInfo"), //
+		jMethod<::java::beans::BeanInfo(::java::lang::Class, ::jint)>("getBeanInfo"), //
+		jMethod<::java::beans::BeanInfo(::java::lang::Class, ::java::lang::Class)>("getBeanInfo"), //
+		jMethod<::java::beans::BeanInfo(::java::lang::Class, ::java::lang::Class, ::jint)>("getBeanInfo"), //
+		jMethod<::java::lang::String *()>("getBeanInfoSearchPath"), //
+		jMethod<::jvoid(::java::lang::String *)>("setBeanInfoSearchPath"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto decapitalize(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("decapitalize")] != -1);
+		return scall<R>("decapitalize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto flushCaches(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("flushCaches")] != -1);
+		return scall<R>("flushCaches", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto flushFromCaches(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("flushFromCaches")] != -1);
+		return scall<R>("flushFromCaches", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::beans::BeanInfo, typename... Args>
+	static auto getBeanInfo(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBeanInfo")] != -1);
+		return scall<R>("getBeanInfo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	static auto getBeanInfoSearchPath(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBeanInfoSearchPath")] != -1);
+		return scall<R>("getBeanInfoSearchPath", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setBeanInfoSearchPath(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setBeanInfoSearchPath")] != -1);
+		return scall<R>("setBeanInfoSearchPath", forward<Args>(args)...);
+	}
+
+};
+
+#endif

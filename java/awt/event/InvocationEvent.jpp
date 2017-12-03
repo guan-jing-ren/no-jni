@@ -1,0 +1,86 @@
+#ifndef java_awt_event_InvocationEvent_HPP
+#define java_awt_event_InvocationEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::event::InvocationEvent : public jObject<::java::awt::event::InvocationEvent, ::java::awt::AWTEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_event / "InvocationEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("INVOCATION_DEFAULT"), //
+		jField<::jint>("INVOCATION_FIRST"), //
+		jField<::jint>("INVOCATION_LAST"), //
+	};
+
+	template<typename F = ::jint>
+	static auto INVOCATION_DEFAULT() {
+		static_assert(field_signatures[jField<F>("INVOCATION_DEFAULT")] != -1);
+		return sat<F>("INVOCATION_DEFAULT");
+	}
+
+	template<typename F = ::jint>
+	static auto INVOCATION_FIRST() {
+		static_assert(field_signatures[jField<F>("INVOCATION_FIRST")] != -1);
+		return sat<F>("INVOCATION_FIRST");
+	}
+
+	template<typename F = ::jint>
+	static auto INVOCATION_LAST() {
+		static_assert(field_signatures[jField<F>("INVOCATION_LAST")] != -1);
+		return sat<F>("INVOCATION_LAST");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Object, ::java::lang::Runnable)>(), //
+		jConstructor<::jvoid(::java::lang::Object, ::java::lang::Runnable, ::java::lang::Object, ::jboolean)>(), //
+		jConstructor<::jvoid(::java::lang::Object, ::java::lang::Runnable, ::java::lang::Runnable, ::jboolean)>(), //
+		jMethod<::jvoid()>("dispatch"), //
+		jMethod<::java::lang::Exception()>("getException"), //
+		jMethod<::java::lang::Throwable()>("getThrowable"), //
+		jMethod<::jlong()>("getWhen"), //
+		jMethod<::jboolean()>("isDispatched"), //
+		jMethod<::java::lang::String()>("paramString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispatch(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dispatch")] != -1);
+		return call<R>("dispatch", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Exception, typename... Args>
+	auto getException(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getException")] != -1);
+		return call<R>("getException", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Throwable, typename... Args>
+	auto getThrowable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getThrowable")] != -1);
+		return call<R>("getThrowable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getWhen(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWhen")] != -1);
+		return call<R>("getWhen", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDispatched(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isDispatched")] != -1);
+		return call<R>("isDispatched", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto paramString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paramString")] != -1);
+		return call<R>("paramString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

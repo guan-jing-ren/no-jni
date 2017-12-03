@@ -1,0 +1,92 @@
+#ifndef java_security_UnresolvedPermission_HPP
+#define java_security_UnresolvedPermission_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::UnresolvedPermission : public jObject<::java::security::UnresolvedPermission, ::java::security::Permission> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "UnresolvedPermission";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::security::cert::Certificate *)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::lang::String()>("getActions"), //
+		jMethod<::java::lang::String()>("getUnresolvedActions"), //
+		jMethod<::java::security::cert::Certificate *()>("getUnresolvedCerts"), //
+		jMethod<::java::lang::String()>("getUnresolvedName"), //
+		jMethod<::java::lang::String()>("getUnresolvedType"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jboolean(::java::security::Permission)>("implies"), //
+		jMethod<::java::security::PermissionCollection()>("newPermissionCollection"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getActions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getActions")] != -1);
+		return call<R>("getActions", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getUnresolvedActions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUnresolvedActions")] != -1);
+		return call<R>("getUnresolvedActions", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::Certificate *, typename... Args>
+	auto getUnresolvedCerts(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUnresolvedCerts")] != -1);
+		return call<R>("getUnresolvedCerts", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getUnresolvedName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUnresolvedName")] != -1);
+		return call<R>("getUnresolvedName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getUnresolvedType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUnresolvedType")] != -1);
+		return call<R>("getUnresolvedType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto implies(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("implies")] != -1);
+		return call<R>("implies", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::PermissionCollection, typename... Args>
+	auto newPermissionCollection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newPermissionCollection")] != -1);
+		return call<R>("newPermissionCollection", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

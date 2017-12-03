@@ -1,0 +1,63 @@
+#ifndef javax_xml_ws_WebServiceRef_HPP
+#define javax_xml_ws_WebServiceRef_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::ws::WebServiceRef : public jObject<::javax::xml::ws::WebServiceRef, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_ws / "WebServiceRef";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("lookup"), //
+		jMethod<::java::lang::String()>("mappedName"), //
+		jMethod<::java::lang::String()>("name"), //
+		jMethod<::java::lang::Class()>("type"), //
+		jMethod<::java::lang::Class()>("value"), //
+		jMethod<::java::lang::String()>("wsdlLocation"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto lookup(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lookup")] != -1);
+		return call<R>("lookup", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto mappedName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("mappedName")] != -1);
+		return call<R>("mappedName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto name(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("name")] != -1);
+		return call<R>("name", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto type(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("type")] != -1);
+		return call<R>("type", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("value")] != -1);
+		return call<R>("value", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto wsdlLocation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("wsdlLocation")] != -1);
+		return call<R>("wsdlLocation", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,70 @@
+#ifndef javax_swing_plaf_metal_MetalToolTipUI_HPP
+#define javax_swing_plaf_metal_MetalToolTipUI_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::swing::plaf::metal::MetalToolTipUI : public jObject<::javax::swing::plaf::metal::MetalToolTipUI, ::javax::swing::plaf::basic::BasicToolTipUI> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_plaf_metal / "MetalToolTipUI";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("padSpaceBetweenStrings"), //
+	};
+
+	template<typename F = ::jint>
+	static auto padSpaceBetweenStrings() {
+		static_assert(field_signatures[jField<F>("padSpaceBetweenStrings")] != -1);
+		return sat<F>("padSpaceBetweenStrings");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::swing::plaf::ComponentUI(::javax::swing::JComponent)>("createUI"), //
+		jMethod<::java::lang::String()>("getAcceleratorString"), //
+		jMethod<::java::awt::Dimension(::javax::swing::JComponent)>("getPreferredSize"), //
+		jMethod<::jvoid(::javax::swing::JComponent)>("installUI"), //
+		jMethod<::jvoid(::java::awt::Graphics, ::javax::swing::JComponent)>("paint"), //
+		jMethod<::jvoid(::javax::swing::JComponent)>("uninstallUI"), //
+	};
+
+	template<typename R = ::javax::swing::plaf::ComponentUI, typename... Args>
+	static auto createUI(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createUI")] != -1);
+		return scall<R>("createUI", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAcceleratorString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAcceleratorString")] != -1);
+		return call<R>("getAcceleratorString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Dimension, typename... Args>
+	auto getPreferredSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPreferredSize")] != -1);
+		return call<R>("getPreferredSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto installUI(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("installUI")] != -1);
+		return call<R>("installUI", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto paint(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paint")] != -1);
+		return call<R>("paint", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto uninstallUI(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("uninstallUI")] != -1);
+		return call<R>("uninstallUI", forward<Args>(args)...);
+	}
+
+};
+
+#endif

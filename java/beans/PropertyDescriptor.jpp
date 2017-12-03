@@ -1,0 +1,122 @@
+#ifndef java_beans_PropertyDescriptor_HPP
+#define java_beans_PropertyDescriptor_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::beans::PropertyDescriptor : public jObject<::java::beans::PropertyDescriptor, ::java::beans::FeatureDescriptor> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_beans / "PropertyDescriptor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Class)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Class, ::java::lang::String, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::reflect::Method, ::java::lang::reflect::Method)>(), //
+		jMethod<::java::beans::PropertyEditor(::java::lang::Object)>("createPropertyEditor"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::lang::Class()>("getPropertyEditorClass"), //
+		jMethod<::java::lang::Class()>("getPropertyType"), //
+		jMethod<::java::lang::reflect::Method()>("getReadMethod"), //
+		jMethod<::java::lang::reflect::Method()>("getWriteMethod"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jboolean()>("isBound"), //
+		jMethod<::jboolean()>("isConstrained"), //
+		jMethod<::jvoid(::jboolean)>("setBound"), //
+		jMethod<::jvoid(::jboolean)>("setConstrained"), //
+		jMethod<::jvoid(::java::lang::Class)>("setPropertyEditorClass"), //
+		jMethod<::jvoid(::java::lang::reflect::Method)>("setReadMethod"), //
+		jMethod<::jvoid(::java::lang::reflect::Method)>("setWriteMethod"), //
+	};
+
+	template<typename R = ::java::beans::PropertyEditor, typename... Args>
+	auto createPropertyEditor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createPropertyEditor")] != -1);
+		return call<R>("createPropertyEditor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getPropertyEditorClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPropertyEditorClass")] != -1);
+		return call<R>("getPropertyEditorClass", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getPropertyType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPropertyType")] != -1);
+		return call<R>("getPropertyType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Method, typename... Args>
+	auto getReadMethod(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getReadMethod")] != -1);
+		return call<R>("getReadMethod", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Method, typename... Args>
+	auto getWriteMethod(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWriteMethod")] != -1);
+		return call<R>("getWriteMethod", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isBound(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isBound")] != -1);
+		return call<R>("isBound", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isConstrained(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isConstrained")] != -1);
+		return call<R>("isConstrained", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setBound(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setBound")] != -1);
+		return call<R>("setBound", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setConstrained(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setConstrained")] != -1);
+		return call<R>("setConstrained", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setPropertyEditorClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPropertyEditorClass")] != -1);
+		return call<R>("setPropertyEditorClass", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setReadMethod(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setReadMethod")] != -1);
+		return call<R>("setReadMethod", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setWriteMethod(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setWriteMethod")] != -1);
+		return call<R>("setWriteMethod", forward<Args>(args)...);
+	}
+
+};
+
+#endif

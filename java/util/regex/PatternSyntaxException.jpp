@@ -1,0 +1,50 @@
+#ifndef java_util_regex_PatternSyntaxException_HPP
+#define java_util_regex_PatternSyntaxException_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::regex::PatternSyntaxException : public jObject<::java::util::regex::PatternSyntaxException, ::java::lang::IllegalArgumentException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_regex / "PatternSyntaxException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::jint)>(), //
+		jMethod<::java::lang::String()>("getDescription"), //
+		jMethod<::jint()>("getIndex"), //
+		jMethod<::java::lang::String()>("getMessage"), //
+		jMethod<::java::lang::String()>("getPattern"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDescription(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDescription")] != -1);
+		return call<R>("getDescription", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIndex")] != -1);
+		return call<R>("getIndex", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMessage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMessage")] != -1);
+		return call<R>("getMessage", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getPattern(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPattern")] != -1);
+		return call<R>("getPattern", forward<Args>(args)...);
+	}
+
+};
+
+#endif

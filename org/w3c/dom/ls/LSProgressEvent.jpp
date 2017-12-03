@@ -1,0 +1,42 @@
+#ifndef org_w3c_dom_ls_LSProgressEvent_HPP
+#define org_w3c_dom_ls_LSProgressEvent_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::w3c::dom::ls::LSProgressEvent : public jObject<::org::w3c::dom::ls::LSProgressEvent, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_w3c_dom_ls / "LSProgressEvent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::w3c::dom::ls::LSInput()>("getInput"), //
+		jMethod<::jint()>("getPosition"), //
+		jMethod<::jint()>("getTotalSize"), //
+	};
+
+	template<typename R = ::org::w3c::dom::ls::LSInput, typename... Args>
+	auto getInput(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInput")] != -1);
+		return call<R>("getInput", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getPosition(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPosition")] != -1);
+		return call<R>("getPosition", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getTotalSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTotalSize")] != -1);
+		return call<R>("getTotalSize", forward<Args>(args)...);
+	}
+
+};
+
+#endif

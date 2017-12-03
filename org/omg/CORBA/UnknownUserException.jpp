@@ -1,0 +1,29 @@
+#ifndef org_omg_CORBA_UnknownUserException_HPP
+#define org_omg_CORBA_UnknownUserException_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::CORBA::UnknownUserException : public jObject<::org::omg::CORBA::UnknownUserException, ::org::omg::CORBA::UserException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CORBA / "UnknownUserException";
+
+	constexpr static Enume field_signatures{
+		jField<::org::omg::CORBA::Any>("except"), //
+	};
+
+	template<typename F = ::org::omg::CORBA::Any>
+	auto except() const {
+		static_assert(field_signatures[jField<F>("except")] != -1);
+		return at<F>("except");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::org::omg::CORBA::Any)>(), //
+	};
+
+};
+
+#endif

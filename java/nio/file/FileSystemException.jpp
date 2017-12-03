@@ -1,0 +1,51 @@
+#ifndef java_nio_file_FileSystemException_HPP
+#define java_nio_file_FileSystemException_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::file::FileSystemException : public jObject<::java::nio::file::FileSystemException, ::java::io::IOException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_file / "FileSystemException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::String)>(), //
+		jMethod<::java::lang::String()>("getFile"), //
+		jMethod<::java::lang::String()>("getMessage"), //
+		jMethod<::java::lang::String()>("getOtherFile"), //
+		jMethod<::java::lang::String()>("getReason"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFile")] != -1);
+		return call<R>("getFile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMessage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMessage")] != -1);
+		return call<R>("getMessage", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getOtherFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOtherFile")] != -1);
+		return call<R>("getOtherFile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getReason(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getReason")] != -1);
+		return call<R>("getReason", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,98 @@
+#ifndef java_rmi_server_LogStream_HPP
+#define java_rmi_server_LogStream_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::rmi::server::LogStream : public jObject<::java::rmi::server::LogStream, ::java::io::PrintStream> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_rmi_server / "LogStream";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("BRIEF"), //
+		jField<::jint>("SILENT"), //
+		jField<::jint>("VERBOSE"), //
+	};
+
+	template<typename F = ::jint>
+	static auto BRIEF() {
+		static_assert(field_signatures[jField<F>("BRIEF")] != -1);
+		return sat<F>("BRIEF");
+	}
+
+	template<typename F = ::jint>
+	static auto SILENT() {
+		static_assert(field_signatures[jField<F>("SILENT")] != -1);
+		return sat<F>("SILENT");
+	}
+
+	template<typename F = ::jint>
+	static auto VERBOSE() {
+		static_assert(field_signatures[jField<F>("VERBOSE")] != -1);
+		return sat<F>("VERBOSE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::io::PrintStream()>("getDefaultStream"), //
+		jMethod<::java::io::OutputStream()>("getOutputStream"), //
+		jMethod<::java::rmi::server::LogStream(::java::lang::String)>("log"), //
+		jMethod<::jint(::java::lang::String)>("parseLevel"), //
+		jMethod<::jvoid(::java::io::PrintStream)>("setDefaultStream"), //
+		jMethod<::jvoid(::java::io::OutputStream)>("setOutputStream"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::jvoid(::jint)>("write"), //
+		jMethod<::jvoid(::jbyte *, ::jint, ::jint)>("write"), //
+	};
+
+	template<typename R = ::java::io::PrintStream, typename... Args>
+	static auto getDefaultStream(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaultStream")] != -1);
+		return scall<R>("getDefaultStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::OutputStream, typename... Args>
+	auto getOutputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOutputStream")] != -1);
+		return call<R>("getOutputStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::server::LogStream, typename... Args>
+	static auto log(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("log")] != -1);
+		return scall<R>("log", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto parseLevel(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("parseLevel")] != -1);
+		return scall<R>("parseLevel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setDefaultStream(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDefaultStream")] != -1);
+		return scall<R>("setDefaultStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setOutputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setOutputStream")] != -1);
+		return call<R>("setOutputStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", forward<Args>(args)...);
+	}
+
+};
+
+#endif

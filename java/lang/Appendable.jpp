@@ -1,0 +1,30 @@
+#ifndef java_lang_Appendable_HPP
+#define java_lang_Appendable_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::lang::Appendable : public jObject<::java::lang::Appendable, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang / "Appendable";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Appendable(::jchar)>("append"), //
+		jMethod<::java::lang::Appendable(::java::lang::CharSequence)>("append"), //
+		jMethod<::java::lang::Appendable(::java::lang::CharSequence, ::jint, ::jint)>("append"), //
+	};
+
+	template<typename R = ::java::lang::Appendable, typename... Args>
+	auto append(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("append")] != -1);
+		return call<R>("append", forward<Args>(args)...);
+	}
+
+};
+
+#endif

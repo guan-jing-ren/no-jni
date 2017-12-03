@@ -1,0 +1,35 @@
+#ifndef java_util_spi_CurrencyNameProvider_HPP
+#define java_util_spi_CurrencyNameProvider_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::spi::CurrencyNameProvider : public jObject<::java::util::spi::CurrencyNameProvider, ::java::util::spi::LocaleServiceProvider> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_spi / "CurrencyNameProvider";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String(::java::lang::String, ::java::util::Locale)>("getDisplayName"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::util::Locale)>("getSymbol"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDisplayName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDisplayName")] != -1);
+		return call<R>("getDisplayName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getSymbol(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSymbol")] != -1);
+		return call<R>("getSymbol", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,84 @@
+#ifndef javax_print_DocFlavor_HPP
+#define javax_print_DocFlavor_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::print::DocFlavor : public jObject<::javax::print::DocFlavor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_print / "DocFlavor";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("hostEncoding"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto hostEncoding() {
+		static_assert(field_signatures[jField<F>("hostEncoding")] != -1);
+		return sat<F>("hostEncoding");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::lang::String()>("getMediaSubtype"), //
+		jMethod<::java::lang::String()>("getMediaType"), //
+		jMethod<::java::lang::String()>("getMimeType"), //
+		jMethod<::java::lang::String(::java::lang::String)>("getParameter"), //
+		jMethod<::java::lang::String()>("getRepresentationClassName"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMediaSubtype(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMediaSubtype")] != -1);
+		return call<R>("getMediaSubtype", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMediaType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMediaType")] != -1);
+		return call<R>("getMediaType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMimeType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMimeType")] != -1);
+		return call<R>("getMimeType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getParameter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParameter")] != -1);
+		return call<R>("getParameter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getRepresentationClassName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRepresentationClassName")] != -1);
+		return call<R>("getRepresentationClassName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

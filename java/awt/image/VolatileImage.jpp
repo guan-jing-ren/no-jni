@@ -1,0 +1,112 @@
+#ifndef java_awt_image_VolatileImage_HPP
+#define java_awt_image_VolatileImage_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::image::VolatileImage : public jObject<::java::awt::image::VolatileImage, ::java::awt::Image> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_image / "VolatileImage";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("IMAGE_INCOMPATIBLE"), //
+		jField<::jint>("IMAGE_OK"), //
+		jField<::jint>("IMAGE_RESTORED"), //
+	};
+
+	template<typename F = ::jint>
+	static auto IMAGE_INCOMPATIBLE() {
+		static_assert(field_signatures[jField<F>("IMAGE_INCOMPATIBLE")] != -1);
+		return sat<F>("IMAGE_INCOMPATIBLE");
+	}
+
+	template<typename F = ::jint>
+	static auto IMAGE_OK() {
+		static_assert(field_signatures[jField<F>("IMAGE_OK")] != -1);
+		return sat<F>("IMAGE_OK");
+	}
+
+	template<typename F = ::jint>
+	static auto IMAGE_RESTORED() {
+		static_assert(field_signatures[jField<F>("IMAGE_RESTORED")] != -1);
+		return sat<F>("IMAGE_RESTORED");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jboolean()>("contentsLost"), //
+		jMethod<::java::awt::Graphics2D()>("createGraphics"), //
+		jMethod<::java::awt::ImageCapabilities()>("getCapabilities"), //
+		jMethod<::java::awt::Graphics()>("getGraphics"), //
+		jMethod<::jint()>("getHeight"), //
+		jMethod<::java::awt::image::BufferedImage()>("getSnapshot"), //
+		jMethod<::java::awt::image::ImageProducer()>("getSource"), //
+		jMethod<::jint()>("getTransparency"), //
+		jMethod<::jint()>("getWidth"), //
+		jMethod<::jint(::java::awt::GraphicsConfiguration)>("validate"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto contentsLost(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("contentsLost")] != -1);
+		return call<R>("contentsLost", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Graphics2D, typename... Args>
+	auto createGraphics(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createGraphics")] != -1);
+		return call<R>("createGraphics", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::ImageCapabilities, typename... Args>
+	auto getCapabilities(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCapabilities")] != -1);
+		return call<R>("getCapabilities", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Graphics, typename... Args>
+	auto getGraphics(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getGraphics")] != -1);
+		return call<R>("getGraphics", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getHeight(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHeight")] != -1);
+		return call<R>("getHeight", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::image::BufferedImage, typename... Args>
+	auto getSnapshot(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSnapshot")] != -1);
+		return call<R>("getSnapshot", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::image::ImageProducer, typename... Args>
+	auto getSource(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSource")] != -1);
+		return call<R>("getSource", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getTransparency(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTransparency")] != -1);
+		return call<R>("getTransparency", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getWidth(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWidth")] != -1);
+		return call<R>("getWidth", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto validate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("validate")] != -1);
+		return call<R>("validate", forward<Args>(args)...);
+	}
+
+};
+
+#endif

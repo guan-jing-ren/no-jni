@@ -1,0 +1,41 @@
+#ifndef java_beans_DesignMode_HPP
+#define java_beans_DesignMode_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::beans::DesignMode : public jObject<::java::beans::DesignMode, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_beans / "DesignMode";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("PROPERTYNAME"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto PROPERTYNAME() {
+		static_assert(field_signatures[jField<F>("PROPERTYNAME")] != -1);
+		return sat<F>("PROPERTYNAME");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean()>("isDesignTime"), //
+		jMethod<::jvoid(::jboolean)>("setDesignTime"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDesignTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isDesignTime")] != -1);
+		return call<R>("isDesignTime", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDesignTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDesignTime")] != -1);
+		return call<R>("setDesignTime", forward<Args>(args)...);
+	}
+
+};
+
+#endif

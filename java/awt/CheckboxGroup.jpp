@@ -1,0 +1,57 @@
+#ifndef java_awt_CheckboxGroup_HPP
+#define java_awt_CheckboxGroup_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::CheckboxGroup : public jObject<::java::awt::CheckboxGroup, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "CheckboxGroup";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::awt::Checkbox()>("getCurrent"), //
+		jMethod<::java::awt::Checkbox()>("getSelectedCheckbox"), //
+		jMethod<::jvoid(::java::awt::Checkbox)>("setCurrent"), //
+		jMethod<::jvoid(::java::awt::Checkbox)>("setSelectedCheckbox"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::awt::Checkbox, typename... Args>
+	auto getCurrent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCurrent")] != -1);
+		return call<R>("getCurrent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Checkbox, typename... Args>
+	auto getSelectedCheckbox(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSelectedCheckbox")] != -1);
+		return call<R>("getSelectedCheckbox", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setCurrent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setCurrent")] != -1);
+		return call<R>("setCurrent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setSelectedCheckbox(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSelectedCheckbox")] != -1);
+		return call<R>("setSelectedCheckbox", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,49 @@
+#ifndef org_omg_DynamicAny_DynValueBoxOperations_HPP
+#define org_omg_DynamicAny_DynValueBoxOperations_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::DynamicAny::DynValueBoxOperations : public jObject<::org::omg::DynamicAny::DynValueBoxOperations, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_DynamicAny / "DynValueBoxOperations";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::omg::CORBA::Any()>("get_boxed_value"), //
+		jMethod<::org::omg::DynamicAny::DynAny()>("get_boxed_value_as_dyn_any"), //
+		jMethod<::jvoid(::org::omg::CORBA::Any)>("set_boxed_value"), //
+		jMethod<::jvoid(::org::omg::DynamicAny::DynAny)>("set_boxed_value_as_dyn_any"), //
+	};
+
+	template<typename R = ::org::omg::CORBA::Any, typename... Args>
+	auto get_boxed_value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get_boxed_value")] != -1);
+		return call<R>("get_boxed_value", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::DynamicAny::DynAny, typename... Args>
+	auto get_boxed_value_as_dyn_any(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get_boxed_value_as_dyn_any")] != -1);
+		return call<R>("get_boxed_value_as_dyn_any", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set_boxed_value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set_boxed_value")] != -1);
+		return call<R>("set_boxed_value", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set_boxed_value_as_dyn_any(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set_boxed_value_as_dyn_any")] != -1);
+		return call<R>("set_boxed_value_as_dyn_any", forward<Args>(args)...);
+	}
+
+};
+
+#endif

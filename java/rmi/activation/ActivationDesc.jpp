@@ -1,0 +1,74 @@
+#ifndef java_rmi_activation_ActivationDesc_HPP
+#define java_rmi_activation_ActivationDesc_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::rmi::activation::ActivationDesc : public jObject<::java::rmi::activation::ActivationDesc, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_rmi_activation / "ActivationDesc";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::rmi::MarshalledObject)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::rmi::MarshalledObject, ::jboolean)>(), //
+		jConstructor<::jvoid(::java::rmi::activation::ActivationGroupID, ::java::lang::String, ::java::lang::String, ::java::rmi::MarshalledObject)>(), //
+		jConstructor<::jvoid(::java::rmi::activation::ActivationGroupID, ::java::lang::String, ::java::lang::String, ::java::rmi::MarshalledObject, ::jboolean)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::lang::String()>("getClassName"), //
+		jMethod<::java::rmi::MarshalledObject()>("getData"), //
+		jMethod<::java::rmi::activation::ActivationGroupID()>("getGroupID"), //
+		jMethod<::java::lang::String()>("getLocation"), //
+		jMethod<::jboolean()>("getRestartMode"), //
+		jMethod<::jint()>("hashCode"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getClassName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getClassName")] != -1);
+		return call<R>("getClassName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::MarshalledObject, typename... Args>
+	auto getData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getData")] != -1);
+		return call<R>("getData", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::activation::ActivationGroupID, typename... Args>
+	auto getGroupID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getGroupID")] != -1);
+		return call<R>("getGroupID", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getLocation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLocation")] != -1);
+		return call<R>("getLocation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getRestartMode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRestartMode")] != -1);
+		return call<R>("getRestartMode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+};
+
+#endif

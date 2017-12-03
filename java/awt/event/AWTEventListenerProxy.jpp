@@ -1,0 +1,36 @@
+#ifndef java_awt_event_AWTEventListenerProxy_HPP
+#define java_awt_event_AWTEventListenerProxy_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::event::AWTEventListenerProxy : public jObject<::java::awt::event::AWTEventListenerProxy, ::java::util::EventListenerProxy> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_event / "AWTEventListenerProxy";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jlong, ::java::awt::event::AWTEventListener)>(), //
+		jMethod<::jvoid(::java::awt::AWTEvent)>("eventDispatched"), //
+		jMethod<::jlong()>("getEventMask"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto eventDispatched(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("eventDispatched")] != -1);
+		return call<R>("eventDispatched", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getEventMask(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEventMask")] != -1);
+		return call<R>("getEventMask", forward<Args>(args)...);
+	}
+
+};
+
+#endif

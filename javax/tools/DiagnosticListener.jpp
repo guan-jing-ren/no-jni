@@ -1,0 +1,28 @@
+#ifndef javax_tools_DiagnosticListener_HPP
+#define javax_tools_DiagnosticListener_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::tools::DiagnosticListener : public jObject<::javax::tools::DiagnosticListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_tools / "DiagnosticListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::tools::Diagnostic)>("report"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto report(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("report")] != -1);
+		return call<R>("report", forward<Args>(args)...);
+	}
+
+};
+
+#endif

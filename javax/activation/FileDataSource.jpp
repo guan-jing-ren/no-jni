@@ -1,0 +1,65 @@
+#ifndef javax_activation_FileDataSource_HPP
+#define javax_activation_FileDataSource_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::activation::FileDataSource : public jObject<::javax::activation::FileDataSource, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_activation / "FileDataSource";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::File)>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jMethod<::java::lang::String()>("getContentType"), //
+		jMethod<::java::io::File()>("getFile"), //
+		jMethod<::java::io::InputStream()>("getInputStream"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::java::io::OutputStream()>("getOutputStream"), //
+		jMethod<::jvoid(::javax::activation::FileTypeMap)>("setFileTypeMap"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getContentType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getContentType")] != -1);
+		return call<R>("getContentType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::File, typename... Args>
+	auto getFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFile")] != -1);
+		return call<R>("getFile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::InputStream, typename... Args>
+	auto getInputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInputStream")] != -1);
+		return call<R>("getInputStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::OutputStream, typename... Args>
+	auto getOutputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOutputStream")] != -1);
+		return call<R>("getOutputStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setFileTypeMap(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setFileTypeMap")] != -1);
+		return call<R>("setFileTypeMap", forward<Args>(args)...);
+	}
+
+};
+
+#endif

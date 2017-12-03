@@ -1,0 +1,35 @@
+#ifndef javax_sql_StatementEventListener_HPP
+#define javax_sql_StatementEventListener_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::sql::StatementEventListener : public jObject<::javax::sql::StatementEventListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sql / "StatementEventListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::sql::StatementEvent)>("statementClosed"), //
+		jMethod<::jvoid(::javax::sql::StatementEvent)>("statementErrorOccurred"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto statementClosed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("statementClosed")] != -1);
+		return call<R>("statementClosed", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto statementErrorOccurred(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("statementErrorOccurred")] != -1);
+		return call<R>("statementErrorOccurred", forward<Args>(args)...);
+	}
+
+};
+
+#endif

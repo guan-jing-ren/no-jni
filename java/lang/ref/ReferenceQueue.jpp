@@ -1,0 +1,37 @@
+#ifndef java_lang_ref_ReferenceQueue_HPP
+#define java_lang_ref_ReferenceQueue_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::ref::ReferenceQueue : public jObject<::java::lang::ref::ReferenceQueue, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_ref / "ReferenceQueue";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::ref::Reference()>("poll"), //
+		jMethod<::java::lang::ref::Reference()>("remove"), //
+		jMethod<::java::lang::ref::Reference(::jlong)>("remove"), //
+	};
+
+	template<typename R = ::java::lang::ref::Reference, typename... Args>
+	auto poll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("poll")] != -1);
+		return call<R>("poll", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::ref::Reference, typename... Args>
+	auto remove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", forward<Args>(args)...);
+	}
+
+};
+
+#endif

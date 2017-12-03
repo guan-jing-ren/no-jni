@@ -1,0 +1,28 @@
+#ifndef javax_management_remote_JMXConnectorServerProvider_HPP
+#define javax_management_remote_JMXConnectorServerProvider_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::management::remote::JMXConnectorServerProvider : public jObject<::javax::management::remote::JMXConnectorServerProvider, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management_remote / "JMXConnectorServerProvider";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::management::remote::JMXConnectorServer(::javax::management::remote::JMXServiceURL, ::java::util::Map, ::javax::management::MBeanServer)>("newJMXConnectorServer"), //
+	};
+
+	template<typename R = ::javax::management::remote::JMXConnectorServer, typename... Args>
+	auto newJMXConnectorServer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newJMXConnectorServer")] != -1);
+		return call<R>("newJMXConnectorServer", forward<Args>(args)...);
+	}
+
+};
+
+#endif

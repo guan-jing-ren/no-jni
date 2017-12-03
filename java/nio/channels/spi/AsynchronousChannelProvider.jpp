@@ -1,0 +1,50 @@
+#ifndef java_nio_channels_spi_AsynchronousChannelProvider_HPP
+#define java_nio_channels_spi_AsynchronousChannelProvider_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::java::nio::channels::spi::AsynchronousChannelProvider : public jObject<::java::nio::channels::spi::AsynchronousChannelProvider, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_channels_spi / "AsynchronousChannelProvider";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::nio::channels::AsynchronousChannelGroup(::jint, ::java::util::concurrent::ThreadFactory)>("openAsynchronousChannelGroup"), //
+		jMethod<::java::nio::channels::AsynchronousChannelGroup(::java::util::concurrent::ExecutorService, ::jint)>("openAsynchronousChannelGroup"), //
+		jMethod<::java::nio::channels::AsynchronousServerSocketChannel(::java::nio::channels::AsynchronousChannelGroup)>("openAsynchronousServerSocketChannel"), //
+		jMethod<::java::nio::channels::AsynchronousSocketChannel(::java::nio::channels::AsynchronousChannelGroup)>("openAsynchronousSocketChannel"), //
+		jMethod<::java::nio::channels::spi::AsynchronousChannelProvider()>("provider"), //
+	};
+
+	template<typename R = ::java::nio::channels::AsynchronousChannelGroup, typename... Args>
+	auto openAsynchronousChannelGroup(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("openAsynchronousChannelGroup")] != -1);
+		return call<R>("openAsynchronousChannelGroup", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::AsynchronousServerSocketChannel, typename... Args>
+	auto openAsynchronousServerSocketChannel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("openAsynchronousServerSocketChannel")] != -1);
+		return call<R>("openAsynchronousServerSocketChannel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::AsynchronousSocketChannel, typename... Args>
+	auto openAsynchronousSocketChannel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("openAsynchronousSocketChannel")] != -1);
+		return call<R>("openAsynchronousSocketChannel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::spi::AsynchronousChannelProvider, typename... Args>
+	static auto provider(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("provider")] != -1);
+		return scall<R>("provider", forward<Args>(args)...);
+	}
+
+};
+
+#endif

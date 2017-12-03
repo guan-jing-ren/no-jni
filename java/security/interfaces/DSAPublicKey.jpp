@@ -1,0 +1,34 @@
+#ifndef java_security_interfaces_DSAPublicKey_HPP
+#define java_security_interfaces_DSAPublicKey_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::interfaces::DSAPublicKey : public jObject<::java::security::interfaces::DSAPublicKey, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_interfaces / "DSAPublicKey";
+
+	constexpr static Enume field_signatures{
+		jField<::jlong>("serialVersionUID"), //
+	};
+
+	template<typename F = ::jlong>
+	static auto serialVersionUID() {
+		static_assert(field_signatures[jField<F>("serialVersionUID")] != -1);
+		return sat<F>("serialVersionUID");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::math::BigInteger()>("getY"), //
+	};
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getY(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getY")] != -1);
+		return call<R>("getY", forward<Args>(args)...);
+	}
+
+};
+
+#endif

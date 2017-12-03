@@ -1,0 +1,108 @@
+#ifndef java_sql_DriverManager_HPP
+#define java_sql_DriverManager_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::sql::DriverManager : public jObject<::java::sql::DriverManager, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_sql / "DriverManager";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::sql::Driver)>("deregisterDriver"), //
+		jMethod<::java::sql::Connection(::java::lang::String)>("getConnection"), //
+		jMethod<::java::sql::Connection(::java::lang::String, ::java::lang::String, ::java::lang::String)>("getConnection"), //
+		jMethod<::java::sql::Connection(::java::lang::String, ::java::util::Properties)>("getConnection"), //
+		jMethod<::java::sql::Driver(::java::lang::String)>("getDriver"), //
+		jMethod<::java::util::Enumeration()>("getDrivers"), //
+		jMethod<::java::io::PrintStream()>("getLogStream"), //
+		jMethod<::java::io::PrintWriter()>("getLogWriter"), //
+		jMethod<::jint()>("getLoginTimeout"), //
+		jMethod<::jvoid(::java::lang::String)>("println"), //
+		jMethod<::jvoid(::java::sql::Driver)>("registerDriver"), //
+		jMethod<::jvoid(::java::sql::Driver, ::java::sql::DriverAction)>("registerDriver"), //
+		jMethod<::jvoid(::java::io::PrintStream)>("setLogStream"), //
+		jMethod<::jvoid(::java::io::PrintWriter)>("setLogWriter"), //
+		jMethod<::jvoid(::jint)>("setLoginTimeout"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto deregisterDriver(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("deregisterDriver")] != -1);
+		return scall<R>("deregisterDriver", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::Connection, typename... Args>
+	static auto getConnection(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getConnection")] != -1);
+		return scall<R>("getConnection", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::Driver, typename... Args>
+	static auto getDriver(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDriver")] != -1);
+		return scall<R>("getDriver", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	static auto getDrivers(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDrivers")] != -1);
+		return scall<R>("getDrivers", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::PrintStream, typename... Args>
+	static auto getLogStream(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLogStream")] != -1);
+		return scall<R>("getLogStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::PrintWriter, typename... Args>
+	static auto getLogWriter(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLogWriter")] != -1);
+		return scall<R>("getLogWriter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto getLoginTimeout(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLoginTimeout")] != -1);
+		return scall<R>("getLoginTimeout", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto println(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("println")] != -1);
+		return scall<R>("println", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto registerDriver(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("registerDriver")] != -1);
+		return scall<R>("registerDriver", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setLogStream(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLogStream")] != -1);
+		return scall<R>("setLogStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setLogWriter(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLogWriter")] != -1);
+		return scall<R>("setLogWriter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setLoginTimeout(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLoginTimeout")] != -1);
+		return scall<R>("setLoginTimeout", forward<Args>(args)...);
+	}
+
+};
+
+#endif

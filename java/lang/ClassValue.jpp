@@ -1,0 +1,35 @@
+#ifndef java_lang_ClassValue_HPP
+#define java_lang_ClassValue_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::lang::ClassValue : public jObject<::java::lang::ClassValue, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang / "ClassValue";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object(::java::lang::Class)>("get"), //
+		jMethod<::jvoid(::java::lang::Class)>("remove"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto remove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", forward<Args>(args)...);
+	}
+
+};
+
+#endif

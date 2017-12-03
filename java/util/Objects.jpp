@@ -1,0 +1,87 @@
+#ifndef java_util_Objects_HPP
+#define java_util_Objects_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::Objects : public jObject<::java::util::Objects, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "Objects";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint(::java::lang::Object, ::java::lang::Object, ::java::util::Comparator)>("compare"), //
+		jMethod<::jboolean(::java::lang::Object, ::java::lang::Object)>("deepEquals"), //
+		jMethod<::jboolean(::java::lang::Object, ::java::lang::Object)>("equals"), //
+		jMethod<::jint(::java::lang::Object *)>("hash"), //
+		jMethod<::jint(::java::lang::Object)>("hashCode"), //
+		jMethod<::jboolean(::java::lang::Object)>("isNull"), //
+		jMethod<::jboolean(::java::lang::Object)>("nonNull"), //
+		jMethod<::java::lang::Object(::java::lang::Object)>("requireNonNull"), //
+		jMethod<::java::lang::Object(::java::lang::Object, ::java::lang::String)>("requireNonNull"), //
+		jMethod<::java::lang::Object(::java::lang::Object, ::java::util::function::Supplier)>("requireNonNull"), //
+		jMethod<::java::lang::String(::java::lang::Object)>("toString"), //
+		jMethod<::java::lang::String(::java::lang::Object, ::java::lang::String)>("toString"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	static auto compare(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compare")] != -1);
+		return scall<R>("compare", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto deepEquals(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("deepEquals")] != -1);
+		return scall<R>("deepEquals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto equals(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return scall<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto hash(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hash")] != -1);
+		return scall<R>("hash", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto hashCode(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return scall<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isNull(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isNull")] != -1);
+		return scall<R>("isNull", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto nonNull(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nonNull")] != -1);
+		return scall<R>("nonNull", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto requireNonNull(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("requireNonNull")] != -1);
+		return scall<R>("requireNonNull", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto toString(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return scall<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

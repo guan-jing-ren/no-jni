@@ -1,0 +1,97 @@
+#ifndef java_time_format_TextStyle_HPP
+#define java_time_format_TextStyle_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::time::format::TextStyle : public jObject<::java::time::format::TextStyle, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_time_format / "TextStyle";
+
+	constexpr static Enume field_signatures{
+		jField<::java::time::format::TextStyle>("FULL"), //
+		jField<::java::time::format::TextStyle>("FULL_STANDALONE"), //
+		jField<::java::time::format::TextStyle>("NARROW"), //
+		jField<::java::time::format::TextStyle>("NARROW_STANDALONE"), //
+		jField<::java::time::format::TextStyle>("SHORT"), //
+		jField<::java::time::format::TextStyle>("SHORT_STANDALONE"), //
+	};
+
+	template<typename F = ::java::time::format::TextStyle>
+	static auto FULL() {
+		static_assert(field_signatures[jField<F>("FULL")] != -1);
+		return sat<F>("FULL");
+	}
+
+	template<typename F = ::java::time::format::TextStyle>
+	static auto FULL_STANDALONE() {
+		static_assert(field_signatures[jField<F>("FULL_STANDALONE")] != -1);
+		return sat<F>("FULL_STANDALONE");
+	}
+
+	template<typename F = ::java::time::format::TextStyle>
+	static auto NARROW() {
+		static_assert(field_signatures[jField<F>("NARROW")] != -1);
+		return sat<F>("NARROW");
+	}
+
+	template<typename F = ::java::time::format::TextStyle>
+	static auto NARROW_STANDALONE() {
+		static_assert(field_signatures[jField<F>("NARROW_STANDALONE")] != -1);
+		return sat<F>("NARROW_STANDALONE");
+	}
+
+	template<typename F = ::java::time::format::TextStyle>
+	static auto SHORT() {
+		static_assert(field_signatures[jField<F>("SHORT")] != -1);
+		return sat<F>("SHORT");
+	}
+
+	template<typename F = ::java::time::format::TextStyle>
+	static auto SHORT_STANDALONE() {
+		static_assert(field_signatures[jField<F>("SHORT_STANDALONE")] != -1);
+		return sat<F>("SHORT_STANDALONE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::time::format::TextStyle()>("asNormal"), //
+		jMethod<::java::time::format::TextStyle()>("asStandalone"), //
+		jMethod<::jboolean()>("isStandalone"), //
+		jMethod<::java::time::format::TextStyle(::java::lang::String)>("valueOf"), //
+		jMethod<::java::time::format::TextStyle *()>("values"), //
+	};
+
+	template<typename R = ::java::time::format::TextStyle, typename... Args>
+	auto asNormal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("asNormal")] != -1);
+		return call<R>("asNormal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::format::TextStyle, typename... Args>
+	auto asStandalone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("asStandalone")] != -1);
+		return call<R>("asStandalone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isStandalone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isStandalone")] != -1);
+		return call<R>("isStandalone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::format::TextStyle, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::format::TextStyle *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

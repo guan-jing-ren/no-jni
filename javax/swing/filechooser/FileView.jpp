@@ -1,0 +1,57 @@
+#ifndef javax_swing_filechooser_FileView_HPP
+#define javax_swing_filechooser_FileView_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::filechooser::FileView : public jObject<::javax::swing::filechooser::FileView, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_filechooser / "FileView";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::String(::java::io::File)>("getDescription"), //
+		jMethod<::javax::swing::Icon(::java::io::File)>("getIcon"), //
+		jMethod<::java::lang::String(::java::io::File)>("getName"), //
+		jMethod<::java::lang::String(::java::io::File)>("getTypeDescription"), //
+		jMethod<::java::lang::Boolean(::java::io::File)>("isTraversable"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDescription(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDescription")] != -1);
+		return call<R>("getDescription", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::Icon, typename... Args>
+	auto getIcon(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIcon")] != -1);
+		return call<R>("getIcon", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getTypeDescription(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTypeDescription")] != -1);
+		return call<R>("getTypeDescription", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Boolean, typename... Args>
+	auto isTraversable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isTraversable")] != -1);
+		return call<R>("isTraversable", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,59 @@
+#ifndef javax_crypto_spec_PBEKeySpec_HPP
+#define javax_crypto_spec_PBEKeySpec_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::crypto::spec::PBEKeySpec : public jObject<::javax::crypto::spec::PBEKeySpec, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_crypto_spec / "PBEKeySpec";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jchar *)>(), //
+		jConstructor<::jvoid(::jchar *, ::jbyte *, ::jint)>(), //
+		jConstructor<::jvoid(::jchar *, ::jbyte *, ::jint, ::jint)>(), //
+		jMethod<::jvoid()>("clearPassword"), //
+		jMethod<::jint()>("getIterationCount"), //
+		jMethod<::jint()>("getKeyLength"), //
+		jMethod<::jchar *()>("getPassword"), //
+		jMethod<::jbyte *()>("getSalt"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto clearPassword(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clearPassword")] != -1);
+		return call<R>("clearPassword", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getIterationCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIterationCount")] != -1);
+		return call<R>("getIterationCount", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getKeyLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getKeyLength")] != -1);
+		return call<R>("getKeyLength", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jchar *, typename... Args>
+	auto getPassword(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPassword")] != -1);
+		return call<R>("getPassword", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getSalt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSalt")] != -1);
+		return call<R>("getSalt", forward<Args>(args)...);
+	}
+
+};
+
+#endif

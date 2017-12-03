@@ -1,0 +1,34 @@
+#ifndef javax_crypto_interfaces_DHPublicKey_HPP
+#define javax_crypto_interfaces_DHPublicKey_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::crypto::interfaces::DHPublicKey : public jObject<::javax::crypto::interfaces::DHPublicKey, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_crypto_interfaces / "DHPublicKey";
+
+	constexpr static Enume field_signatures{
+		jField<::jlong>("serialVersionUID"), //
+	};
+
+	template<typename F = ::jlong>
+	static auto serialVersionUID() {
+		static_assert(field_signatures[jField<F>("serialVersionUID")] != -1);
+		return sat<F>("serialVersionUID");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::math::BigInteger()>("getY"), //
+	};
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getY(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getY")] != -1);
+		return call<R>("getY", forward<Args>(args)...);
+	}
+
+};
+
+#endif

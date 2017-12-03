@@ -1,0 +1,35 @@
+#ifndef java_security_cert_CRLSelector_HPP
+#define java_security_cert_CRLSelector_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::cert::CRLSelector : public jObject<::java::security::cert::CRLSelector, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_cert / "CRLSelector";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::jboolean(::java::security::cert::CRL)>("match"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto match(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("match")] != -1);
+		return call<R>("match", forward<Args>(args)...);
+	}
+
+};
+
+#endif

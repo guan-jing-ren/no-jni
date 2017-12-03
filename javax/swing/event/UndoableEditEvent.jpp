@@ -1,0 +1,29 @@
+#ifndef javax_swing_event_UndoableEditEvent_HPP
+#define javax_swing_event_UndoableEditEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::event::UndoableEditEvent : public jObject<::javax::swing::event::UndoableEditEvent, ::java::util::EventObject> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_event / "UndoableEditEvent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Object, ::javax::swing::undo::UndoableEdit)>(), //
+		jMethod<::javax::swing::undo::UndoableEdit()>("getEdit"), //
+	};
+
+	template<typename R = ::javax::swing::undo::UndoableEdit, typename... Args>
+	auto getEdit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEdit")] != -1);
+		return call<R>("getEdit", forward<Args>(args)...);
+	}
+
+};
+
+#endif

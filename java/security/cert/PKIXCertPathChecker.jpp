@@ -1,0 +1,57 @@
+#ifndef java_security_cert_PKIXCertPathChecker_HPP
+#define java_security_cert_PKIXCertPathChecker_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::cert::PKIXCertPathChecker : public jObject<::java::security::cert::PKIXCertPathChecker, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_cert / "PKIXCertPathChecker";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::security::cert::Certificate)>("check"), //
+		jMethod<::jvoid(::java::security::cert::Certificate, ::java::util::Collection)>("check"), //
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::java::util::Set()>("getSupportedExtensions"), //
+		jMethod<::jvoid(::jboolean)>("init"), //
+		jMethod<::jboolean()>("isForwardCheckingSupported"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto check(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("check")] != -1);
+		return call<R>("check", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto getSupportedExtensions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSupportedExtensions")] != -1);
+		return call<R>("getSupportedExtensions", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto init(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("init")] != -1);
+		return call<R>("init", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isForwardCheckingSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isForwardCheckingSupported")] != -1);
+		return call<R>("isForwardCheckingSupported", forward<Args>(args)...);
+	}
+
+};
+
+#endif

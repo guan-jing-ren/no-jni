@@ -1,0 +1,64 @@
+#ifndef java_awt_PrintJob_HPP
+#define java_awt_PrintJob_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::PrintJob : public jObject<::java::awt::PrintJob, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "PrintJob";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid()>("end"), //
+		jMethod<::jvoid()>("finalize"), //
+		jMethod<::java::awt::Graphics()>("getGraphics"), //
+		jMethod<::java::awt::Dimension()>("getPageDimension"), //
+		jMethod<::jint()>("getPageResolution"), //
+		jMethod<::jboolean()>("lastPageFirst"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto end(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("end")] != -1);
+		return call<R>("end", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto finalize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("finalize")] != -1);
+		return call<R>("finalize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Graphics, typename... Args>
+	auto getGraphics(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getGraphics")] != -1);
+		return call<R>("getGraphics", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Dimension, typename... Args>
+	auto getPageDimension(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPageDimension")] != -1);
+		return call<R>("getPageDimension", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getPageResolution(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPageResolution")] != -1);
+		return call<R>("getPageResolution", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto lastPageFirst(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lastPageFirst")] != -1);
+		return call<R>("lastPageFirst", forward<Args>(args)...);
+	}
+
+};
+
+#endif

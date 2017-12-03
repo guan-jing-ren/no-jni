@@ -1,0 +1,50 @@
+#ifndef org_omg_CORBA_ShortSeqHolder_HPP
+#define org_omg_CORBA_ShortSeqHolder_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::CORBA::ShortSeqHolder : public jObject<::org::omg::CORBA::ShortSeqHolder, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CORBA / "ShortSeqHolder";
+
+	constexpr static Enume field_signatures{
+		jField<::jshort *>("value"), //
+	};
+
+	template<typename F = ::jshort *>
+	auto value() const {
+		static_assert(field_signatures[jField<F>("value")] != -1);
+		return at<F>("value");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jshort *)>(), //
+		jMethod<::jvoid(::org::omg::CORBA::portable::InputStream)>("_read"), //
+		jMethod<::org::omg::CORBA::TypeCode()>("_type"), //
+		jMethod<::jvoid(::org::omg::CORBA::portable::OutputStream)>("_write"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto _read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("_read")] != -1);
+		return call<R>("_read", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
+	auto _type(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("_type")] != -1);
+		return call<R>("_type", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto _write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("_write")] != -1);
+		return call<R>("_write", forward<Args>(args)...);
+	}
+
+};
+
+#endif

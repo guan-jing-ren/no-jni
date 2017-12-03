@@ -1,0 +1,59 @@
+#ifndef javax_management_MBeanConstructorInfo_HPP
+#define javax_management_MBeanConstructorInfo_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::management::MBeanConstructorInfo : public jObject<::javax::management::MBeanConstructorInfo, ::javax::management::MBeanFeatureInfo> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management / "MBeanConstructorInfo";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::javax::management::MBeanParameterInfo *)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::javax::management::MBeanParameterInfo *, ::javax::management::Descriptor)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::reflect::Constructor)>(), //
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::javax::management::MBeanParameterInfo *()>("getSignature"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::MBeanParameterInfo *, typename... Args>
+	auto getSignature(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSignature")] != -1);
+		return call<R>("getSignature", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

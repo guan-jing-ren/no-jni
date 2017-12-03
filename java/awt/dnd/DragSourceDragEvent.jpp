@@ -1,0 +1,58 @@
+#ifndef java_awt_dnd_DragSourceDragEvent_HPP
+#define java_awt_dnd_DragSourceDragEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::dnd::DragSourceDragEvent : public jObject<::java::awt::dnd::DragSourceDragEvent, ::java::awt::dnd::DragSourceEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_dnd / "DragSourceDragEvent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::dnd::DragSourceContext, ::jint, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::java::awt::dnd::DragSourceContext, ::jint, ::jint, ::jint, ::jint, ::jint)>(), //
+		jMethod<::jint()>("getDropAction"), //
+		jMethod<::jint()>("getGestureModifiers"), //
+		jMethod<::jint()>("getGestureModifiersEx"), //
+		jMethod<::jint()>("getTargetActions"), //
+		jMethod<::jint()>("getUserAction"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getDropAction(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDropAction")] != -1);
+		return call<R>("getDropAction", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getGestureModifiers(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getGestureModifiers")] != -1);
+		return call<R>("getGestureModifiers", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getGestureModifiersEx(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getGestureModifiersEx")] != -1);
+		return call<R>("getGestureModifiersEx", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getTargetActions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTargetActions")] != -1);
+		return call<R>("getTargetActions", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getUserAction(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUserAction")] != -1);
+		return call<R>("getUserAction", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,37 @@
+#ifndef org_omg_CORBA_Environment_HPP
+#define org_omg_CORBA_Environment_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::CORBA::Environment : public jObject<::org::omg::CORBA::Environment, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CORBA / "Environment";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid()>("clear"), //
+		jMethod<::java::lang::Exception()>("exception"), //
+		jMethod<::jvoid(::java::lang::Exception)>("exception"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto clear(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clear")] != -1);
+		return call<R>("clear", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Exception, typename... Args>
+	auto exception(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("exception")] != -1);
+		return call<R>("exception", forward<Args>(args)...);
+	}
+
+};
+
+#endif

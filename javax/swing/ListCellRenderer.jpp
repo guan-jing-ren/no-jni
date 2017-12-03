@@ -1,0 +1,28 @@
+#ifndef javax_swing_ListCellRenderer_HPP
+#define javax_swing_ListCellRenderer_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::ListCellRenderer : public jObject<::javax::swing::ListCellRenderer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "ListCellRenderer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::Component(::javax::swing::JList, ::java::lang::Object, ::jint, ::jboolean, ::jboolean)>("getListCellRendererComponent"), //
+	};
+
+	template<typename R = ::java::awt::Component, typename... Args>
+	auto getListCellRendererComponent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getListCellRendererComponent")] != -1);
+		return call<R>("getListCellRendererComponent", forward<Args>(args)...);
+	}
+
+};
+
+#endif

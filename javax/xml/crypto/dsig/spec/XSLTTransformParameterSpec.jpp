@@ -1,0 +1,29 @@
+#ifndef javax_xml_crypto_dsig_spec_XSLTTransformParameterSpec_HPP
+#define javax_xml_crypto_dsig_spec_XSLTTransformParameterSpec_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::javax::xml::crypto::dsig::spec::XSLTTransformParameterSpec : public jObject<::javax::xml::crypto::dsig::spec::XSLTTransformParameterSpec, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_crypto_dsig_spec / "XSLTTransformParameterSpec";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::xml::crypto::XMLStructure)>(), //
+		jMethod<::javax::xml::crypto::XMLStructure()>("getStylesheet"), //
+	};
+
+	template<typename R = ::javax::xml::crypto::XMLStructure, typename... Args>
+	auto getStylesheet(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStylesheet")] != -1);
+		return call<R>("getStylesheet", forward<Args>(args)...);
+	}
+
+};
+
+#endif

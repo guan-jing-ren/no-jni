@@ -1,0 +1,35 @@
+#ifndef java_util_function_BiFunction_HPP
+#define java_util_function_BiFunction_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::function::BiFunction : public jObject<::java::util::function::BiFunction, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_function / "BiFunction";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::function::BiFunction(::java::util::function::Function)>("andThen"), //
+		jMethod<::java::lang::Object(::java::lang::Object, ::java::lang::Object)>("apply"), //
+	};
+
+	template<typename R = ::java::util::function::BiFunction, typename... Args>
+	auto andThen(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("andThen")] != -1);
+		return call<R>("andThen", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto apply(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("apply")] != -1);
+		return call<R>("apply", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,42 @@
+#ifndef javax_accessibility_AccessibleExtendedComponent_HPP
+#define javax_accessibility_AccessibleExtendedComponent_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::accessibility::AccessibleExtendedComponent : public jObject<::javax::accessibility::AccessibleExtendedComponent, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_accessibility / "AccessibleExtendedComponent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::accessibility::AccessibleKeyBinding()>("getAccessibleKeyBinding"), //
+		jMethod<::java::lang::String()>("getTitledBorderText"), //
+		jMethod<::java::lang::String()>("getToolTipText"), //
+	};
+
+	template<typename R = ::javax::accessibility::AccessibleKeyBinding, typename... Args>
+	auto getAccessibleKeyBinding(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAccessibleKeyBinding")] != -1);
+		return call<R>("getAccessibleKeyBinding", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getTitledBorderText(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTitledBorderText")] != -1);
+		return call<R>("getTitledBorderText", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getToolTipText(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getToolTipText")] != -1);
+		return call<R>("getToolTipText", forward<Args>(args)...);
+	}
+
+};
+
+#endif

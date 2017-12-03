@@ -1,0 +1,42 @@
+#ifndef org_omg_CORBA_PolicyOperations_HPP
+#define org_omg_CORBA_PolicyOperations_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::CORBA::PolicyOperations : public jObject<::org::omg::CORBA::PolicyOperations, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CORBA / "PolicyOperations";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::omg::CORBA::Policy()>("copy"), //
+		jMethod<::jvoid()>("destroy"), //
+		jMethod<::jint()>("policy_type"), //
+	};
+
+	template<typename R = ::org::omg::CORBA::Policy, typename... Args>
+	auto copy(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("copy")] != -1);
+		return call<R>("copy", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto destroy(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("destroy")] != -1);
+		return call<R>("destroy", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto policy_type(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("policy_type")] != -1);
+		return call<R>("policy_type", forward<Args>(args)...);
+	}
+
+};
+
+#endif

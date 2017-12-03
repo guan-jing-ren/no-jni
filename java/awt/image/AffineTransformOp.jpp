@@ -1,0 +1,101 @@
+#ifndef java_awt_image_AffineTransformOp_HPP
+#define java_awt_image_AffineTransformOp_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::image::AffineTransformOp : public jObject<::java::awt::image::AffineTransformOp, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_image / "AffineTransformOp";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("TYPE_BICUBIC"), //
+		jField<::jint>("TYPE_BILINEAR"), //
+		jField<::jint>("TYPE_NEAREST_NEIGHBOR"), //
+	};
+
+	template<typename F = ::jint>
+	static auto TYPE_BICUBIC() {
+		static_assert(field_signatures[jField<F>("TYPE_BICUBIC")] != -1);
+		return sat<F>("TYPE_BICUBIC");
+	}
+
+	template<typename F = ::jint>
+	static auto TYPE_BILINEAR() {
+		static_assert(field_signatures[jField<F>("TYPE_BILINEAR")] != -1);
+		return sat<F>("TYPE_BILINEAR");
+	}
+
+	template<typename F = ::jint>
+	static auto TYPE_NEAREST_NEIGHBOR() {
+		static_assert(field_signatures[jField<F>("TYPE_NEAREST_NEIGHBOR")] != -1);
+		return sat<F>("TYPE_NEAREST_NEIGHBOR");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::geom::AffineTransform, ::jint)>(), //
+		jConstructor<::jvoid(::java::awt::geom::AffineTransform, ::java::awt::RenderingHints)>(), //
+		jMethod<::java::awt::image::BufferedImage(::java::awt::image::BufferedImage, ::java::awt::image::ColorModel)>("createCompatibleDestImage"), //
+		jMethod<::java::awt::image::WritableRaster(::java::awt::image::Raster)>("createCompatibleDestRaster"), //
+		jMethod<::java::awt::image::BufferedImage(::java::awt::image::BufferedImage, ::java::awt::image::BufferedImage)>("filter"), //
+		jMethod<::java::awt::image::WritableRaster(::java::awt::image::Raster, ::java::awt::image::WritableRaster)>("filter"), //
+		jMethod<::java::awt::geom::Rectangle2D(::java::awt::image::BufferedImage)>("getBounds2D"), //
+		jMethod<::java::awt::geom::Rectangle2D(::java::awt::image::Raster)>("getBounds2D"), //
+		jMethod<::jint()>("getInterpolationType"), //
+		jMethod<::java::awt::geom::Point2D(::java::awt::geom::Point2D, ::java::awt::geom::Point2D)>("getPoint2D"), //
+		jMethod<::java::awt::RenderingHints()>("getRenderingHints"), //
+		jMethod<::java::awt::geom::AffineTransform()>("getTransform"), //
+	};
+
+	template<typename R = ::java::awt::image::BufferedImage, typename... Args>
+	auto createCompatibleDestImage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createCompatibleDestImage")] != -1);
+		return call<R>("createCompatibleDestImage", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::image::WritableRaster, typename... Args>
+	auto createCompatibleDestRaster(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createCompatibleDestRaster")] != -1);
+		return call<R>("createCompatibleDestRaster", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::image::BufferedImage, typename... Args>
+	auto filter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("filter")] != -1);
+		return call<R>("filter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Rectangle2D, typename... Args>
+	auto getBounds2D(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBounds2D")] != -1);
+		return call<R>("getBounds2D", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getInterpolationType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInterpolationType")] != -1);
+		return call<R>("getInterpolationType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Point2D, typename... Args>
+	auto getPoint2D(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPoint2D")] != -1);
+		return call<R>("getPoint2D", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::RenderingHints, typename... Args>
+	auto getRenderingHints(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRenderingHints")] != -1);
+		return call<R>("getRenderingHints", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::AffineTransform, typename... Args>
+	auto getTransform(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTransform")] != -1);
+		return call<R>("getTransform", forward<Args>(args)...);
+	}
+
+};
+
+#endif

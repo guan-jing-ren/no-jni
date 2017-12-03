@@ -1,0 +1,49 @@
+#ifndef java_util_function_DoubleUnaryOperator_HPP
+#define java_util_function_DoubleUnaryOperator_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::function::DoubleUnaryOperator : public jObject<::java::util::function::DoubleUnaryOperator, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_function / "DoubleUnaryOperator";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::function::DoubleUnaryOperator(::java::util::function::DoubleUnaryOperator)>("andThen"), //
+		jMethod<::jdouble(::jdouble)>("applyAsDouble"), //
+		jMethod<::java::util::function::DoubleUnaryOperator(::java::util::function::DoubleUnaryOperator)>("compose"), //
+		jMethod<::java::util::function::DoubleUnaryOperator()>("identity"), //
+	};
+
+	template<typename R = ::java::util::function::DoubleUnaryOperator, typename... Args>
+	auto andThen(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("andThen")] != -1);
+		return call<R>("andThen", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	auto applyAsDouble(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("applyAsDouble")] != -1);
+		return call<R>("applyAsDouble", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::function::DoubleUnaryOperator, typename... Args>
+	auto compose(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compose")] != -1);
+		return call<R>("compose", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::function::DoubleUnaryOperator, typename... Args>
+	static auto identity(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("identity")] != -1);
+		return scall<R>("identity", forward<Args>(args)...);
+	}
+
+};
+
+#endif

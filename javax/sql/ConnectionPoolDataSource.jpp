@@ -1,0 +1,29 @@
+#ifndef javax_sql_ConnectionPoolDataSource_HPP
+#define javax_sql_ConnectionPoolDataSource_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::sql::ConnectionPoolDataSource : public jObject<::javax::sql::ConnectionPoolDataSource, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sql / "ConnectionPoolDataSource";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::sql::PooledConnection()>("getPooledConnection"), //
+		jMethod<::javax::sql::PooledConnection(::java::lang::String, ::java::lang::String)>("getPooledConnection"), //
+	};
+
+	template<typename R = ::javax::sql::PooledConnection, typename... Args>
+	auto getPooledConnection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPooledConnection")] != -1);
+		return call<R>("getPooledConnection", forward<Args>(args)...);
+	}
+
+};
+
+#endif

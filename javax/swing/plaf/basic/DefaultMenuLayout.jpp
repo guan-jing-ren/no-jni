@@ -1,0 +1,29 @@
+#ifndef javax_swing_plaf_basic_DefaultMenuLayout_HPP
+#define javax_swing_plaf_basic_DefaultMenuLayout_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::swing::plaf::basic::DefaultMenuLayout : public jObject<::javax::swing::plaf::basic::DefaultMenuLayout, ::javax::swing::BoxLayout> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_plaf_basic / "DefaultMenuLayout";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::Container, ::jint)>(), //
+		jMethod<::java::awt::Dimension(::java::awt::Container)>("preferredLayoutSize"), //
+	};
+
+	template<typename R = ::java::awt::Dimension, typename... Args>
+	auto preferredLayoutSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("preferredLayoutSize")] != -1);
+		return call<R>("preferredLayoutSize", forward<Args>(args)...);
+	}
+
+};
+
+#endif

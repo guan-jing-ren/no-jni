@@ -1,0 +1,55 @@
+#ifndef java_awt_JobAttributes$DefaultSelectionType_HPP
+#define java_awt_JobAttributes$DefaultSelectionType_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::JobAttributes$DefaultSelectionType : public jObject<::java::awt::JobAttributes$DefaultSelectionType, ::java::awt::AttributeValue> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "JobAttributes$DefaultSelectionType";
+
+	constexpr static Enume field_signatures{
+		jField<::java::awt::JobAttributes$DefaultSelectionType>("ALL"), //
+		jField<::java::awt::JobAttributes$DefaultSelectionType>("RANGE"), //
+		jField<::java::awt::JobAttributes$DefaultSelectionType>("SELECTION"), //
+	};
+
+	template<typename F = ::java::awt::JobAttributes$DefaultSelectionType>
+	static auto ALL() {
+		static_assert(field_signatures[jField<F>("ALL")] != -1);
+		return sat<F>("ALL");
+	}
+
+	template<typename F = ::java::awt::JobAttributes$DefaultSelectionType>
+	static auto RANGE() {
+		static_assert(field_signatures[jField<F>("RANGE")] != -1);
+		return sat<F>("RANGE");
+	}
+
+	template<typename F = ::java::awt::JobAttributes$DefaultSelectionType>
+	static auto SELECTION() {
+		static_assert(field_signatures[jField<F>("SELECTION")] != -1);
+		return sat<F>("SELECTION");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

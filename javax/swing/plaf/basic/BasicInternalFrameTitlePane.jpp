@@ -1,0 +1,29 @@
+#ifndef javax_swing_plaf_basic_BasicInternalFrameTitlePane_HPP
+#define javax_swing_plaf_basic_BasicInternalFrameTitlePane_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::swing::plaf::basic::BasicInternalFrameTitlePane : public jObject<::javax::swing::plaf::basic::BasicInternalFrameTitlePane, ::javax::swing::JComponent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_plaf_basic / "BasicInternalFrameTitlePane";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::swing::JInternalFrame)>(), //
+		jMethod<::jvoid(::java::awt::Graphics)>("paintComponent"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto paintComponent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paintComponent")] != -1);
+		return call<R>("paintComponent", forward<Args>(args)...);
+	}
+
+};
+
+#endif

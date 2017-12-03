@@ -1,0 +1,36 @@
+#ifndef java_awt_font_LayoutPath_HPP
+#define java_awt_font_LayoutPath_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::font::LayoutPath : public jObject<::java::awt::font::LayoutPath, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_font / "LayoutPath";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::awt::geom::Point2D, ::jboolean, ::java::awt::geom::Point2D)>("pathToPoint"), //
+		jMethod<::jboolean(::java::awt::geom::Point2D, ::java::awt::geom::Point2D)>("pointToPath"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto pathToPoint(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("pathToPoint")] != -1);
+		return call<R>("pathToPoint", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto pointToPath(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("pointToPath")] != -1);
+		return call<R>("pointToPath", forward<Args>(args)...);
+	}
+
+};
+
+#endif

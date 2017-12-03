@@ -1,0 +1,91 @@
+#ifndef javax_xml_ws_BindingProvider_HPP
+#define javax_xml_ws_BindingProvider_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::ws::BindingProvider : public jObject<::javax::xml::ws::BindingProvider, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_ws / "BindingProvider";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("ENDPOINT_ADDRESS_PROPERTY"), //
+		jField<::java::lang::String>("PASSWORD_PROPERTY"), //
+		jField<::java::lang::String>("SESSION_MAINTAIN_PROPERTY"), //
+		jField<::java::lang::String>("SOAPACTION_URI_PROPERTY"), //
+		jField<::java::lang::String>("SOAPACTION_USE_PROPERTY"), //
+		jField<::java::lang::String>("USERNAME_PROPERTY"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto ENDPOINT_ADDRESS_PROPERTY() {
+		static_assert(field_signatures[jField<F>("ENDPOINT_ADDRESS_PROPERTY")] != -1);
+		return sat<F>("ENDPOINT_ADDRESS_PROPERTY");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto PASSWORD_PROPERTY() {
+		static_assert(field_signatures[jField<F>("PASSWORD_PROPERTY")] != -1);
+		return sat<F>("PASSWORD_PROPERTY");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto SESSION_MAINTAIN_PROPERTY() {
+		static_assert(field_signatures[jField<F>("SESSION_MAINTAIN_PROPERTY")] != -1);
+		return sat<F>("SESSION_MAINTAIN_PROPERTY");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto SOAPACTION_URI_PROPERTY() {
+		static_assert(field_signatures[jField<F>("SOAPACTION_URI_PROPERTY")] != -1);
+		return sat<F>("SOAPACTION_URI_PROPERTY");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto SOAPACTION_USE_PROPERTY() {
+		static_assert(field_signatures[jField<F>("SOAPACTION_USE_PROPERTY")] != -1);
+		return sat<F>("SOAPACTION_USE_PROPERTY");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto USERNAME_PROPERTY() {
+		static_assert(field_signatures[jField<F>("USERNAME_PROPERTY")] != -1);
+		return sat<F>("USERNAME_PROPERTY");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::ws::Binding()>("getBinding"), //
+		jMethod<::javax::xml::ws::EndpointReference()>("getEndpointReference"), //
+		jMethod<::javax::xml::ws::EndpointReference(::java::lang::Class)>("getEndpointReference"), //
+		jMethod<::java::util::Map()>("getRequestContext"), //
+		jMethod<::java::util::Map()>("getResponseContext"), //
+	};
+
+	template<typename R = ::javax::xml::ws::Binding, typename... Args>
+	auto getBinding(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBinding")] != -1);
+		return call<R>("getBinding", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::ws::EndpointReference, typename... Args>
+	auto getEndpointReference(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEndpointReference")] != -1);
+		return call<R>("getEndpointReference", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto getRequestContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRequestContext")] != -1);
+		return call<R>("getRequestContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto getResponseContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getResponseContext")] != -1);
+		return call<R>("getResponseContext", forward<Args>(args)...);
+	}
+
+};
+
+#endif

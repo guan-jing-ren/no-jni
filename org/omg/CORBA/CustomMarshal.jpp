@@ -1,0 +1,35 @@
+#ifndef org_omg_CORBA_CustomMarshal_HPP
+#define org_omg_CORBA_CustomMarshal_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::CORBA::CustomMarshal : public jObject<::org::omg::CORBA::CustomMarshal, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CORBA / "CustomMarshal";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::org::omg::CORBA::DataOutputStream)>("marshal"), //
+		jMethod<::jvoid(::org::omg::CORBA::DataInputStream)>("unmarshal"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto marshal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("marshal")] != -1);
+		return call<R>("marshal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto unmarshal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unmarshal")] != -1);
+		return call<R>("unmarshal", forward<Args>(args)...);
+	}
+
+};
+
+#endif

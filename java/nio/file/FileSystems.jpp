@@ -1,0 +1,44 @@
+#ifndef java_nio_file_FileSystems_HPP
+#define java_nio_file_FileSystems_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::file::FileSystems : public jObject<::java::nio::file::FileSystems, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_file / "FileSystems";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::nio::file::FileSystem()>("getDefault"), //
+		jMethod<::java::nio::file::FileSystem(::java::net::URI)>("getFileSystem"), //
+		jMethod<::java::nio::file::FileSystem(::java::net::URI, ::java::util::Map)>("newFileSystem"), //
+		jMethod<::java::nio::file::FileSystem(::java::net::URI, ::java::util::Map, ::java::lang::ClassLoader)>("newFileSystem"), //
+		jMethod<::java::nio::file::FileSystem(::java::nio::file::Path, ::java::lang::ClassLoader)>("newFileSystem"), //
+	};
+
+	template<typename R = ::java::nio::file::FileSystem, typename... Args>
+	static auto getDefault(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefault")] != -1);
+		return scall<R>("getDefault", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::FileSystem, typename... Args>
+	static auto getFileSystem(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFileSystem")] != -1);
+		return scall<R>("getFileSystem", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::FileSystem, typename... Args>
+	static auto newFileSystem(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newFileSystem")] != -1);
+		return scall<R>("newFileSystem", forward<Args>(args)...);
+	}
+
+};
+
+#endif

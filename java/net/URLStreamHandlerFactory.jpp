@@ -1,0 +1,28 @@
+#ifndef java_net_URLStreamHandlerFactory_HPP
+#define java_net_URLStreamHandlerFactory_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::net::URLStreamHandlerFactory : public jObject<::java::net::URLStreamHandlerFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_net / "URLStreamHandlerFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::net::URLStreamHandler(::java::lang::String)>("createURLStreamHandler"), //
+	};
+
+	template<typename R = ::java::net::URLStreamHandler, typename... Args>
+	auto createURLStreamHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createURLStreamHandler")] != -1);
+		return call<R>("createURLStreamHandler", forward<Args>(args)...);
+	}
+
+};
+
+#endif

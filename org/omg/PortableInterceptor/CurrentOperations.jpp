@@ -1,0 +1,35 @@
+#ifndef org_omg_PortableInterceptor_CurrentOperations_HPP
+#define org_omg_PortableInterceptor_CurrentOperations_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::PortableInterceptor::CurrentOperations : public jObject<::org::omg::PortableInterceptor::CurrentOperations, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_PortableInterceptor / "CurrentOperations";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::omg::CORBA::Any(::jint)>("get_slot"), //
+		jMethod<::jvoid(::jint, ::org::omg::CORBA::Any)>("set_slot"), //
+	};
+
+	template<typename R = ::org::omg::CORBA::Any, typename... Args>
+	auto get_slot(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get_slot")] != -1);
+		return call<R>("get_slot", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set_slot(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set_slot")] != -1);
+		return call<R>("set_slot", forward<Args>(args)...);
+	}
+
+};
+
+#endif

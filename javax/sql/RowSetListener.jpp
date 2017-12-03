@@ -1,0 +1,42 @@
+#ifndef javax_sql_RowSetListener_HPP
+#define javax_sql_RowSetListener_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::sql::RowSetListener : public jObject<::javax::sql::RowSetListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sql / "RowSetListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::sql::RowSetEvent)>("cursorMoved"), //
+		jMethod<::jvoid(::javax::sql::RowSetEvent)>("rowChanged"), //
+		jMethod<::jvoid(::javax::sql::RowSetEvent)>("rowSetChanged"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto cursorMoved(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("cursorMoved")] != -1);
+		return call<R>("cursorMoved", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto rowChanged(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("rowChanged")] != -1);
+		return call<R>("rowChanged", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto rowSetChanged(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("rowSetChanged")] != -1);
+		return call<R>("rowSetChanged", forward<Args>(args)...);
+	}
+
+};
+
+#endif

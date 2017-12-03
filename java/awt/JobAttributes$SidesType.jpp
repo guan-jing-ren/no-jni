@@ -1,0 +1,55 @@
+#ifndef java_awt_JobAttributes$SidesType_HPP
+#define java_awt_JobAttributes$SidesType_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::JobAttributes$SidesType : public jObject<::java::awt::JobAttributes$SidesType, ::java::awt::AttributeValue> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "JobAttributes$SidesType";
+
+	constexpr static Enume field_signatures{
+		jField<::java::awt::JobAttributes$SidesType>("ONE_SIDED"), //
+		jField<::java::awt::JobAttributes$SidesType>("TWO_SIDED_LONG_EDGE"), //
+		jField<::java::awt::JobAttributes$SidesType>("TWO_SIDED_SHORT_EDGE"), //
+	};
+
+	template<typename F = ::java::awt::JobAttributes$SidesType>
+	static auto ONE_SIDED() {
+		static_assert(field_signatures[jField<F>("ONE_SIDED")] != -1);
+		return sat<F>("ONE_SIDED");
+	}
+
+	template<typename F = ::java::awt::JobAttributes$SidesType>
+	static auto TWO_SIDED_LONG_EDGE() {
+		static_assert(field_signatures[jField<F>("TWO_SIDED_LONG_EDGE")] != -1);
+		return sat<F>("TWO_SIDED_LONG_EDGE");
+	}
+
+	template<typename F = ::java::awt::JobAttributes$SidesType>
+	static auto TWO_SIDED_SHORT_EDGE() {
+		static_assert(field_signatures[jField<F>("TWO_SIDED_SHORT_EDGE")] != -1);
+		return sat<F>("TWO_SIDED_SHORT_EDGE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

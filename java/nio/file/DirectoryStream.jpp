@@ -1,0 +1,35 @@
+#ifndef java_nio_file_DirectoryStream_HPP
+#define java_nio_file_DirectoryStream_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::file::DirectoryStream : public jObject<::java::nio::file::DirectoryStream, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_file / "DirectoryStream";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("close"), //
+		jMethod<::java::util::Iterator()>("iterator"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Iterator, typename... Args>
+	auto iterator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("iterator")] != -1);
+		return call<R>("iterator", forward<Args>(args)...);
+	}
+
+};
+
+#endif

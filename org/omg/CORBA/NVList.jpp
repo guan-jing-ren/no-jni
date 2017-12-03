@@ -1,0 +1,64 @@
+#ifndef org_omg_CORBA_NVList_HPP
+#define org_omg_CORBA_NVList_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::CORBA::NVList : public jObject<::org::omg::CORBA::NVList, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CORBA / "NVList";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::org::omg::CORBA::NamedValue(::jint)>("add"), //
+		jMethod<::org::omg::CORBA::NamedValue(::java::lang::String, ::jint)>("add_item"), //
+		jMethod<::org::omg::CORBA::NamedValue(::java::lang::String, ::org::omg::CORBA::Any, ::jint)>("add_value"), //
+		jMethod<::jint()>("count"), //
+		jMethod<::org::omg::CORBA::NamedValue(::jint)>("item"), //
+		jMethod<::jvoid(::jint)>("remove"), //
+	};
+
+	template<typename R = ::org::omg::CORBA::NamedValue, typename... Args>
+	auto add(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::NamedValue, typename... Args>
+	auto add_item(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("add_item")] != -1);
+		return call<R>("add_item", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::NamedValue, typename... Args>
+	auto add_value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("add_value")] != -1);
+		return call<R>("add_value", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto count(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("count")] != -1);
+		return call<R>("count", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::NamedValue, typename... Args>
+	auto item(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("item")] != -1);
+		return call<R>("item", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto remove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", forward<Args>(args)...);
+	}
+
+};
+
+#endif

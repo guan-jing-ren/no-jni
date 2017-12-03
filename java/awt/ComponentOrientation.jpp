@@ -1,0 +1,63 @@
+#ifndef java_awt_ComponentOrientation_HPP
+#define java_awt_ComponentOrientation_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::ComponentOrientation : public jObject<::java::awt::ComponentOrientation, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "ComponentOrientation";
+
+	constexpr static Enume field_signatures{
+		jField<::java::awt::ComponentOrientation>("LEFT_TO_RIGHT"), //
+		jField<::java::awt::ComponentOrientation>("RIGHT_TO_LEFT"), //
+		jField<::java::awt::ComponentOrientation>("UNKNOWN"), //
+	};
+
+	template<typename F = ::java::awt::ComponentOrientation>
+	static auto LEFT_TO_RIGHT() {
+		static_assert(field_signatures[jField<F>("LEFT_TO_RIGHT")] != -1);
+		return sat<F>("LEFT_TO_RIGHT");
+	}
+
+	template<typename F = ::java::awt::ComponentOrientation>
+	static auto RIGHT_TO_LEFT() {
+		static_assert(field_signatures[jField<F>("RIGHT_TO_LEFT")] != -1);
+		return sat<F>("RIGHT_TO_LEFT");
+	}
+
+	template<typename F = ::java::awt::ComponentOrientation>
+	static auto UNKNOWN() {
+		static_assert(field_signatures[jField<F>("UNKNOWN")] != -1);
+		return sat<F>("UNKNOWN");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::ComponentOrientation(::java::util::Locale)>("getOrientation"), //
+		jMethod<::java::awt::ComponentOrientation(::java::util::ResourceBundle)>("getOrientation"), //
+		jMethod<::jboolean()>("isHorizontal"), //
+		jMethod<::jboolean()>("isLeftToRight"), //
+	};
+
+	template<typename R = ::java::awt::ComponentOrientation, typename... Args>
+	static auto getOrientation(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOrientation")] != -1);
+		return scall<R>("getOrientation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isHorizontal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isHorizontal")] != -1);
+		return call<R>("isHorizontal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isLeftToRight(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isLeftToRight")] != -1);
+		return call<R>("isLeftToRight", forward<Args>(args)...);
+	}
+
+};
+
+#endif

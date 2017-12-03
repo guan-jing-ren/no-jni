@@ -1,0 +1,49 @@
+#ifndef javax_tools_JavaFileObject_HPP
+#define javax_tools_JavaFileObject_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::tools::JavaFileObject : public jObject<::javax::tools::JavaFileObject, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_tools / "JavaFileObject";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::lang::model::element::Modifier()>("getAccessLevel"), //
+		jMethod<::javax::tools::JavaFileObject$Kind()>("getKind"), //
+		jMethod<::javax::lang::model::element::NestingKind()>("getNestingKind"), //
+		jMethod<::jboolean(::java::lang::String, ::javax::tools::JavaFileObject$Kind)>("isNameCompatible"), //
+	};
+
+	template<typename R = ::javax::lang::model::element::Modifier, typename... Args>
+	auto getAccessLevel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAccessLevel")] != -1);
+		return call<R>("getAccessLevel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::tools::JavaFileObject$Kind, typename... Args>
+	auto getKind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getKind")] != -1);
+		return call<R>("getKind", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::lang::model::element::NestingKind, typename... Args>
+	auto getNestingKind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNestingKind")] != -1);
+		return call<R>("getNestingKind", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isNameCompatible(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isNameCompatible")] != -1);
+		return call<R>("isNameCompatible", forward<Args>(args)...);
+	}
+
+};
+
+#endif

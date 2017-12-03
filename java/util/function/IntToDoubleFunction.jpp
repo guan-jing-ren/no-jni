@@ -1,0 +1,28 @@
+#ifndef java_util_function_IntToDoubleFunction_HPP
+#define java_util_function_IntToDoubleFunction_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::function::IntToDoubleFunction : public jObject<::java::util::function::IntToDoubleFunction, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_function / "IntToDoubleFunction";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jdouble(::jint)>("applyAsDouble"), //
+	};
+
+	template<typename R = ::jdouble, typename... Args>
+	auto applyAsDouble(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("applyAsDouble")] != -1);
+		return call<R>("applyAsDouble", forward<Args>(args)...);
+	}
+
+};
+
+#endif

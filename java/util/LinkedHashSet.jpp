@@ -1,0 +1,32 @@
+#ifndef java_util_LinkedHashSet_HPP
+#define java_util_LinkedHashSet_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::LinkedHashSet : public jObject<::java::util::LinkedHashSet, ::java::util::HashSet> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "LinkedHashSet";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint)>(), //
+		jConstructor<::jvoid(::jint, ::jfloat)>(), //
+		jConstructor<::jvoid(::java::util::Collection)>(), //
+		jMethod<::java::util::Spliterator()>("spliterator"), //
+	};
+
+	template<typename R = ::java::util::Spliterator, typename... Args>
+	auto spliterator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("spliterator")] != -1);
+		return call<R>("spliterator", forward<Args>(args)...);
+	}
+
+};
+
+#endif

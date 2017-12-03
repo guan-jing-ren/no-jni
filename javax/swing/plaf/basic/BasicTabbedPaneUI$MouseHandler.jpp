@@ -1,0 +1,29 @@
+#ifndef javax_swing_plaf_basic_BasicTabbedPaneUI$MouseHandler_HPP
+#define javax_swing_plaf_basic_BasicTabbedPaneUI$MouseHandler_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::swing::plaf::basic::BasicTabbedPaneUI$MouseHandler : public jObject<::javax::swing::plaf::basic::BasicTabbedPaneUI$MouseHandler, ::java::awt::event::MouseAdapter> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_plaf_basic / "BasicTabbedPaneUI$MouseHandler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::swing::plaf::basic::BasicTabbedPaneUI)>(), //
+		jMethod<::jvoid(::java::awt::event::MouseEvent)>("mousePressed"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto mousePressed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("mousePressed")] != -1);
+		return call<R>("mousePressed", forward<Args>(args)...);
+	}
+
+};
+
+#endif

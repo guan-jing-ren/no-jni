@@ -1,0 +1,58 @@
+#ifndef org_ietf_jgss_ChannelBinding_HPP
+#define org_ietf_jgss_ChannelBinding_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::ietf::jgss::ChannelBinding : public jObject<::org::ietf::jgss::ChannelBinding, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_ietf_jgss / "ChannelBinding";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::net::InetAddress, ::java::net::InetAddress, ::jbyte *)>(), //
+		jConstructor<::jvoid(::jbyte *)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::net::InetAddress()>("getAcceptorAddress"), //
+		jMethod<::jbyte *()>("getApplicationData"), //
+		jMethod<::java::net::InetAddress()>("getInitiatorAddress"), //
+		jMethod<::jint()>("hashCode"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::InetAddress, typename... Args>
+	auto getAcceptorAddress(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAcceptorAddress")] != -1);
+		return call<R>("getAcceptorAddress", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getApplicationData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getApplicationData")] != -1);
+		return call<R>("getApplicationData", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::InetAddress, typename... Args>
+	auto getInitiatorAddress(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInitiatorAddress")] != -1);
+		return call<R>("getInitiatorAddress", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+};
+
+#endif

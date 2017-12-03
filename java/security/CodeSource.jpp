@@ -1,0 +1,72 @@
+#ifndef java_security_CodeSource_HPP
+#define java_security_CodeSource_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::CodeSource : public jObject<::java::security::CodeSource, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "CodeSource";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::net::URL, ::java::security::CodeSigner *)>(), //
+		jConstructor<::jvoid(::java::net::URL, ::java::security::cert::Certificate *)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::security::cert::Certificate *()>("getCertificates"), //
+		jMethod<::java::security::CodeSigner *()>("getCodeSigners"), //
+		jMethod<::java::net::URL()>("getLocation"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jboolean(::java::security::CodeSource)>("implies"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::Certificate *, typename... Args>
+	auto getCertificates(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCertificates")] != -1);
+		return call<R>("getCertificates", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::CodeSigner *, typename... Args>
+	auto getCodeSigners(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCodeSigners")] != -1);
+		return call<R>("getCodeSigners", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::URL, typename... Args>
+	auto getLocation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLocation")] != -1);
+		return call<R>("getLocation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto implies(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("implies")] != -1);
+		return call<R>("implies", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

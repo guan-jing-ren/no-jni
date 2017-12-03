@@ -1,0 +1,28 @@
+#ifndef javax_crypto_spec_PSource_HPP
+#define javax_crypto_spec_PSource_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::crypto::spec::PSource : public jObject<::javax::crypto::spec::PSource, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_crypto_spec / "PSource";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getAlgorithm"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAlgorithm(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlgorithm")] != -1);
+		return call<R>("getAlgorithm", forward<Args>(args)...);
+	}
+
+};
+
+#endif

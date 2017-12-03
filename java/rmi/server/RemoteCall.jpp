@@ -1,0 +1,70 @@
+#ifndef java_rmi_server_RemoteCall_HPP
+#define java_rmi_server_RemoteCall_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::rmi::server::RemoteCall : public jObject<::java::rmi::server::RemoteCall, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_rmi_server / "RemoteCall";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("done"), //
+		jMethod<::jvoid()>("executeCall"), //
+		jMethod<::java::io::ObjectInput()>("getInputStream"), //
+		jMethod<::java::io::ObjectOutput()>("getOutputStream"), //
+		jMethod<::java::io::ObjectOutput(::jboolean)>("getResultStream"), //
+		jMethod<::jvoid()>("releaseInputStream"), //
+		jMethod<::jvoid()>("releaseOutputStream"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto done(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("done")] != -1);
+		return call<R>("done", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto executeCall(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("executeCall")] != -1);
+		return call<R>("executeCall", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::ObjectInput, typename... Args>
+	auto getInputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInputStream")] != -1);
+		return call<R>("getInputStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::ObjectOutput, typename... Args>
+	auto getOutputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOutputStream")] != -1);
+		return call<R>("getOutputStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::ObjectOutput, typename... Args>
+	auto getResultStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getResultStream")] != -1);
+		return call<R>("getResultStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto releaseInputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("releaseInputStream")] != -1);
+		return call<R>("releaseInputStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto releaseOutputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("releaseOutputStream")] != -1);
+		return call<R>("releaseOutputStream", forward<Args>(args)...);
+	}
+
+};
+
+#endif

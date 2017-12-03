@@ -1,0 +1,76 @@
+#ifndef javax_crypto_ExemptionMechanism_HPP
+#define javax_crypto_ExemptionMechanism_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::crypto::ExemptionMechanism : public jObject<::javax::crypto::ExemptionMechanism, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_crypto / "ExemptionMechanism";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jbyte *()>("genExemptionBlob"), //
+		jMethod<::jint(::jbyte *)>("genExemptionBlob"), //
+		jMethod<::jint(::jbyte *, ::jint)>("genExemptionBlob"), //
+		jMethod<::javax::crypto::ExemptionMechanism(::java::lang::String)>("getInstance"), //
+		jMethod<::javax::crypto::ExemptionMechanism(::java::lang::String, ::java::lang::String)>("getInstance"), //
+		jMethod<::javax::crypto::ExemptionMechanism(::java::lang::String, ::java::security::Provider)>("getInstance"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::jint(::jint)>("getOutputSize"), //
+		jMethod<::java::security::Provider()>("getProvider"), //
+		jMethod<::jvoid(::java::security::Key)>("init"), //
+		jMethod<::jvoid(::java::security::Key, ::java::security::AlgorithmParameters)>("init"), //
+		jMethod<::jvoid(::java::security::Key, ::java::security::spec::AlgorithmParameterSpec)>("init"), //
+		jMethod<::jboolean(::java::security::Key)>("isCryptoAllowed"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto genExemptionBlob(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("genExemptionBlob")] != -1);
+		return call<R>("genExemptionBlob", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::crypto::ExemptionMechanism, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getOutputSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOutputSize")] != -1);
+		return call<R>("getOutputSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Provider, typename... Args>
+	auto getProvider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProvider")] != -1);
+		return call<R>("getProvider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto init(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("init")] != -1);
+		return call<R>("init", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isCryptoAllowed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isCryptoAllowed")] != -1);
+		return call<R>("isCryptoAllowed", forward<Args>(args)...);
+	}
+
+};
+
+#endif

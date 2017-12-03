@@ -1,0 +1,50 @@
+#ifndef javax_swing_LayoutFocusTraversalPolicy_HPP
+#define javax_swing_LayoutFocusTraversalPolicy_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::LayoutFocusTraversalPolicy : public jObject<::javax::swing::LayoutFocusTraversalPolicy, ::javax::swing::SortingFocusTraversalPolicy> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "LayoutFocusTraversalPolicy";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::awt::Component(::java::awt::Container, ::java::awt::Component)>("getComponentAfter"), //
+		jMethod<::java::awt::Component(::java::awt::Container, ::java::awt::Component)>("getComponentBefore"), //
+		jMethod<::java::awt::Component(::java::awt::Container)>("getFirstComponent"), //
+		jMethod<::java::awt::Component(::java::awt::Container)>("getLastComponent"), //
+	};
+
+	template<typename R = ::java::awt::Component, typename... Args>
+	auto getComponentAfter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getComponentAfter")] != -1);
+		return call<R>("getComponentAfter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Component, typename... Args>
+	auto getComponentBefore(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getComponentBefore")] != -1);
+		return call<R>("getComponentBefore", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Component, typename... Args>
+	auto getFirstComponent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFirstComponent")] != -1);
+		return call<R>("getFirstComponent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Component, typename... Args>
+	auto getLastComponent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLastComponent")] != -1);
+		return call<R>("getLastComponent", forward<Args>(args)...);
+	}
+
+};
+
+#endif

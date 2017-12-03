@@ -1,0 +1,38 @@
+#ifndef javax_sql_rowset_spi_SyncProviderException_HPP
+#define javax_sql_rowset_spi_SyncProviderException_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::sql::rowset::spi::SyncProviderException : public jObject<::javax::sql::rowset::spi::SyncProviderException, ::java::sql::SQLException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sql_rowset_spi / "SyncProviderException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::javax::sql::rowset::spi::SyncResolver)>(), //
+		jMethod<::javax::sql::rowset::spi::SyncResolver()>("getSyncResolver"), //
+		jMethod<::jvoid(::javax::sql::rowset::spi::SyncResolver)>("setSyncResolver"), //
+	};
+
+	template<typename R = ::javax::sql::rowset::spi::SyncResolver, typename... Args>
+	auto getSyncResolver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSyncResolver")] != -1);
+		return call<R>("getSyncResolver", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setSyncResolver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSyncResolver")] != -1);
+		return call<R>("setSyncResolver", forward<Args>(args)...);
+	}
+
+};
+
+#endif

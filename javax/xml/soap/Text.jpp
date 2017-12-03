@@ -1,0 +1,28 @@
+#ifndef javax_xml_soap_Text_HPP
+#define javax_xml_soap_Text_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::soap::Text : public jObject<::javax::xml::soap::Text, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_soap / "Text";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean()>("isComment"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isComment(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isComment")] != -1);
+		return call<R>("isComment", forward<Args>(args)...);
+	}
+
+};
+
+#endif

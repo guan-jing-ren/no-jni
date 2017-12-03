@@ -1,0 +1,37 @@
+#ifndef javax_sql_StatementEvent_HPP
+#define javax_sql_StatementEvent_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::sql::StatementEvent : public jObject<::javax::sql::StatementEvent, ::java::util::EventObject> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sql / "StatementEvent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::sql::PooledConnection, ::java::sql::PreparedStatement)>(), //
+		jConstructor<::jvoid(::javax::sql::PooledConnection, ::java::sql::PreparedStatement, ::java::sql::SQLException)>(), //
+		jMethod<::java::sql::SQLException()>("getSQLException"), //
+		jMethod<::java::sql::PreparedStatement()>("getStatement"), //
+	};
+
+	template<typename R = ::java::sql::SQLException, typename... Args>
+	auto getSQLException(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSQLException")] != -1);
+		return call<R>("getSQLException", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::PreparedStatement, typename... Args>
+	auto getStatement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStatement")] != -1);
+		return call<R>("getStatement", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,105 @@
+#ifndef javax_security_auth_Subject_HPP
+#define javax_security_auth_Subject_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::security::auth::Subject : public jObject<::javax::security::auth::Subject, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_security_auth / "Subject";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jboolean, ::java::util::Set, ::java::util::Set, ::java::util::Set)>(), //
+		jMethod<::java::lang::Object(::javax::security::auth::Subject, ::java::security::PrivilegedAction)>("doAs"), //
+		jMethod<::java::lang::Object(::javax::security::auth::Subject, ::java::security::PrivilegedExceptionAction)>("doAs"), //
+		jMethod<::java::lang::Object(::javax::security::auth::Subject, ::java::security::PrivilegedAction, ::java::security::AccessControlContext)>("doAsPrivileged"), //
+		jMethod<::java::lang::Object(::javax::security::auth::Subject, ::java::security::PrivilegedExceptionAction, ::java::security::AccessControlContext)>("doAsPrivileged"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::util::Set()>("getPrincipals"), //
+		jMethod<::java::util::Set(::java::lang::Class)>("getPrincipals"), //
+		jMethod<::java::util::Set()>("getPrivateCredentials"), //
+		jMethod<::java::util::Set(::java::lang::Class)>("getPrivateCredentials"), //
+		jMethod<::java::util::Set()>("getPublicCredentials"), //
+		jMethod<::java::util::Set(::java::lang::Class)>("getPublicCredentials"), //
+		jMethod<::javax::security::auth::Subject(::java::security::AccessControlContext)>("getSubject"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jboolean()>("isReadOnly"), //
+		jMethod<::jvoid()>("setReadOnly"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto doAs(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("doAs")] != -1);
+		return scall<R>("doAs", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto doAsPrivileged(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("doAsPrivileged")] != -1);
+		return scall<R>("doAsPrivileged", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto getPrincipals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrincipals")] != -1);
+		return call<R>("getPrincipals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto getPrivateCredentials(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrivateCredentials")] != -1);
+		return call<R>("getPrivateCredentials", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto getPublicCredentials(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPublicCredentials")] != -1);
+		return call<R>("getPublicCredentials", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::security::auth::Subject, typename... Args>
+	static auto getSubject(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSubject")] != -1);
+		return scall<R>("getSubject", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isReadOnly(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isReadOnly")] != -1);
+		return call<R>("isReadOnly", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setReadOnly(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setReadOnly")] != -1);
+		return call<R>("setReadOnly", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

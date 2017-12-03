@@ -1,0 +1,42 @@
+#ifndef javax_lang_model_element_TypeParameterElement_HPP
+#define javax_lang_model_element_TypeParameterElement_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::lang::model::element::TypeParameterElement : public jObject<::javax::lang::model::element::TypeParameterElement, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_lang_model_element / "TypeParameterElement";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::List()>("getBounds"), //
+		jMethod<::javax::lang::model::element::Element()>("getEnclosingElement"), //
+		jMethod<::javax::lang::model::element::Element()>("getGenericElement"), //
+	};
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBounds")] != -1);
+		return call<R>("getBounds", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::lang::model::element::Element, typename... Args>
+	auto getEnclosingElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEnclosingElement")] != -1);
+		return call<R>("getEnclosingElement", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::lang::model::element::Element, typename... Args>
+	auto getGenericElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getGenericElement")] != -1);
+		return call<R>("getGenericElement", forward<Args>(args)...);
+	}
+
+};
+
+#endif

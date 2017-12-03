@@ -1,0 +1,28 @@
+#ifndef org_omg_CORBA_DomainManagerOperations_HPP
+#define org_omg_CORBA_DomainManagerOperations_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::CORBA::DomainManagerOperations : public jObject<::org::omg::CORBA::DomainManagerOperations, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CORBA / "DomainManagerOperations";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::omg::CORBA::Policy(::jint)>("get_domain_policy"), //
+	};
+
+	template<typename R = ::org::omg::CORBA::Policy, typename... Args>
+	auto get_domain_policy(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get_domain_policy")] != -1);
+		return call<R>("get_domain_policy", forward<Args>(args)...);
+	}
+
+};
+
+#endif

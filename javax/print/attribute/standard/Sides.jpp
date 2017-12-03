@@ -1,0 +1,69 @@
+#ifndef javax_print_attribute_standard_Sides_HPP
+#define javax_print_attribute_standard_Sides_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::print::attribute::standard::Sides : public jObject<::javax::print::attribute::standard::Sides, ::javax::print::attribute::EnumSyntax> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_print_attribute_standard / "Sides";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::print::attribute::standard::Sides>("DUPLEX"), //
+		jField<::javax::print::attribute::standard::Sides>("ONE_SIDED"), //
+		jField<::javax::print::attribute::standard::Sides>("TUMBLE"), //
+		jField<::javax::print::attribute::standard::Sides>("TWO_SIDED_LONG_EDGE"), //
+		jField<::javax::print::attribute::standard::Sides>("TWO_SIDED_SHORT_EDGE"), //
+	};
+
+	template<typename F = ::javax::print::attribute::standard::Sides>
+	static auto DUPLEX() {
+		static_assert(field_signatures[jField<F>("DUPLEX")] != -1);
+		return sat<F>("DUPLEX");
+	}
+
+	template<typename F = ::javax::print::attribute::standard::Sides>
+	static auto ONE_SIDED() {
+		static_assert(field_signatures[jField<F>("ONE_SIDED")] != -1);
+		return sat<F>("ONE_SIDED");
+	}
+
+	template<typename F = ::javax::print::attribute::standard::Sides>
+	static auto TUMBLE() {
+		static_assert(field_signatures[jField<F>("TUMBLE")] != -1);
+		return sat<F>("TUMBLE");
+	}
+
+	template<typename F = ::javax::print::attribute::standard::Sides>
+	static auto TWO_SIDED_LONG_EDGE() {
+		static_assert(field_signatures[jField<F>("TWO_SIDED_LONG_EDGE")] != -1);
+		return sat<F>("TWO_SIDED_LONG_EDGE");
+	}
+
+	template<typename F = ::javax::print::attribute::standard::Sides>
+	static auto TWO_SIDED_SHORT_EDGE() {
+		static_assert(field_signatures[jField<F>("TWO_SIDED_SHORT_EDGE")] != -1);
+		return sat<F>("TWO_SIDED_SHORT_EDGE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Class()>("getCategory"), //
+		jMethod<::java::lang::String()>("getName"), //
+	};
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getCategory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCategory")] != -1);
+		return call<R>("getCategory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+};
+
+#endif

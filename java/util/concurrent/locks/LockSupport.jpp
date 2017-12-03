@@ -1,0 +1,59 @@
+#ifndef java_util_concurrent_locks_LockSupport_HPP
+#define java_util_concurrent_locks_LockSupport_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::java::util::concurrent::locks::LockSupport : public jObject<::java::util::concurrent::locks::LockSupport, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_concurrent_locks / "LockSupport";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object(::java::lang::Thread)>("getBlocker"), //
+		jMethod<::jvoid()>("park"), //
+		jMethod<::jvoid(::java::lang::Object)>("park"), //
+		jMethod<::jvoid(::jlong)>("parkNanos"), //
+		jMethod<::jvoid(::java::lang::Object, ::jlong)>("parkNanos"), //
+		jMethod<::jvoid(::jlong)>("parkUntil"), //
+		jMethod<::jvoid(::java::lang::Object, ::jlong)>("parkUntil"), //
+		jMethod<::jvoid(::java::lang::Thread)>("unpark"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto getBlocker(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBlocker")] != -1);
+		return scall<R>("getBlocker", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto park(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("park")] != -1);
+		return scall<R>("park", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto parkNanos(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("parkNanos")] != -1);
+		return scall<R>("parkNanos", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto parkUntil(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("parkUntil")] != -1);
+		return scall<R>("parkUntil", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto unpark(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unpark")] != -1);
+		return scall<R>("unpark", forward<Args>(args)...);
+	}
+
+};
+
+#endif

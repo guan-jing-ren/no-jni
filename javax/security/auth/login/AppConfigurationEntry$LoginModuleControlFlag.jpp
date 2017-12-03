@@ -1,0 +1,55 @@
+#ifndef javax_security_auth_login_AppConfigurationEntry$LoginModuleControlFlag_HPP
+#define javax_security_auth_login_AppConfigurationEntry$LoginModuleControlFlag_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::security::auth::login::AppConfigurationEntry$LoginModuleControlFlag : public jObject<::javax::security::auth::login::AppConfigurationEntry$LoginModuleControlFlag, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_security_auth_login / "AppConfigurationEntry$LoginModuleControlFlag";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::security::auth::login::AppConfigurationEntry$LoginModuleControlFlag>("OPTIONAL"), //
+		jField<::javax::security::auth::login::AppConfigurationEntry$LoginModuleControlFlag>("REQUIRED"), //
+		jField<::javax::security::auth::login::AppConfigurationEntry$LoginModuleControlFlag>("REQUISITE"), //
+		jField<::javax::security::auth::login::AppConfigurationEntry$LoginModuleControlFlag>("SUFFICIENT"), //
+	};
+
+	template<typename F = ::javax::security::auth::login::AppConfigurationEntry$LoginModuleControlFlag>
+	static auto OPTIONAL() {
+		static_assert(field_signatures[jField<F>("OPTIONAL")] != -1);
+		return sat<F>("OPTIONAL");
+	}
+
+	template<typename F = ::javax::security::auth::login::AppConfigurationEntry$LoginModuleControlFlag>
+	static auto REQUIRED() {
+		static_assert(field_signatures[jField<F>("REQUIRED")] != -1);
+		return sat<F>("REQUIRED");
+	}
+
+	template<typename F = ::javax::security::auth::login::AppConfigurationEntry$LoginModuleControlFlag>
+	static auto REQUISITE() {
+		static_assert(field_signatures[jField<F>("REQUISITE")] != -1);
+		return sat<F>("REQUISITE");
+	}
+
+	template<typename F = ::javax::security::auth::login::AppConfigurationEntry$LoginModuleControlFlag>
+	static auto SUFFICIENT() {
+		static_assert(field_signatures[jField<F>("SUFFICIENT")] != -1);
+		return sat<F>("SUFFICIENT");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

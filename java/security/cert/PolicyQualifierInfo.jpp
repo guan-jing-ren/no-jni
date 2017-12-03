@@ -1,0 +1,50 @@
+#ifndef java_security_cert_PolicyQualifierInfo_HPP
+#define java_security_cert_PolicyQualifierInfo_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::cert::PolicyQualifierInfo : public jObject<::java::security::cert::PolicyQualifierInfo, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_cert / "PolicyQualifierInfo";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jbyte *)>(), //
+		jMethod<::jbyte *()>("getEncoded"), //
+		jMethod<::jbyte *()>("getPolicyQualifier"), //
+		jMethod<::java::lang::String()>("getPolicyQualifierId"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getEncoded(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEncoded")] != -1);
+		return call<R>("getEncoded", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getPolicyQualifier(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPolicyQualifier")] != -1);
+		return call<R>("getPolicyQualifier", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getPolicyQualifierId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPolicyQualifierId")] != -1);
+		return call<R>("getPolicyQualifierId", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

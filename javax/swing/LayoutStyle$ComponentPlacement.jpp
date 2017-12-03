@@ -1,0 +1,55 @@
+#ifndef javax_swing_LayoutStyle$ComponentPlacement_HPP
+#define javax_swing_LayoutStyle$ComponentPlacement_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::LayoutStyle$ComponentPlacement : public jObject<::javax::swing::LayoutStyle$ComponentPlacement, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "LayoutStyle$ComponentPlacement";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::swing::LayoutStyle$ComponentPlacement>("INDENT"), //
+		jField<::javax::swing::LayoutStyle$ComponentPlacement>("RELATED"), //
+		jField<::javax::swing::LayoutStyle$ComponentPlacement>("UNRELATED"), //
+	};
+
+	template<typename F = ::javax::swing::LayoutStyle$ComponentPlacement>
+	static auto INDENT() {
+		static_assert(field_signatures[jField<F>("INDENT")] != -1);
+		return sat<F>("INDENT");
+	}
+
+	template<typename F = ::javax::swing::LayoutStyle$ComponentPlacement>
+	static auto RELATED() {
+		static_assert(field_signatures[jField<F>("RELATED")] != -1);
+		return sat<F>("RELATED");
+	}
+
+	template<typename F = ::javax::swing::LayoutStyle$ComponentPlacement>
+	static auto UNRELATED() {
+		static_assert(field_signatures[jField<F>("UNRELATED")] != -1);
+		return sat<F>("UNRELATED");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::swing::LayoutStyle$ComponentPlacement(::java::lang::String)>("valueOf"), //
+		jMethod<::javax::swing::LayoutStyle$ComponentPlacement *()>("values"), //
+	};
+
+	template<typename R = ::javax::swing::LayoutStyle$ComponentPlacement, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::LayoutStyle$ComponentPlacement *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

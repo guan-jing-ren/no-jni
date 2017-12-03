@@ -1,0 +1,29 @@
+#ifndef javax_xml_bind_SchemaOutputResolver_HPP
+#define javax_xml_bind_SchemaOutputResolver_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::bind::SchemaOutputResolver : public jObject<::javax::xml::bind::SchemaOutputResolver, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_bind / "SchemaOutputResolver";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::xml::transform::Result(::java::lang::String, ::java::lang::String)>("createOutput"), //
+	};
+
+	template<typename R = ::javax::xml::transform::Result, typename... Args>
+	auto createOutput(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createOutput")] != -1);
+		return call<R>("createOutput", forward<Args>(args)...);
+	}
+
+};
+
+#endif

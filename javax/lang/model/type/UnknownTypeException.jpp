@@ -1,0 +1,36 @@
+#ifndef javax_lang_model_type_UnknownTypeException_HPP
+#define javax_lang_model_type_UnknownTypeException_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::lang::model::type::UnknownTypeException : public jObject<::javax::lang::model::type::UnknownTypeException, ::javax::lang::model::UnknownEntityException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_lang_model_type / "UnknownTypeException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::lang::model::type::TypeMirror, ::java::lang::Object)>(), //
+		jMethod<::java::lang::Object()>("getArgument"), //
+		jMethod<::javax::lang::model::type::TypeMirror()>("getUnknownType"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getArgument(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getArgument")] != -1);
+		return call<R>("getArgument", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::lang::model::type::TypeMirror, typename... Args>
+	auto getUnknownType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUnknownType")] != -1);
+		return call<R>("getUnknownType", forward<Args>(args)...);
+	}
+
+};
+
+#endif

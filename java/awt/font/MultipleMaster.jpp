@@ -1,0 +1,57 @@
+#ifndef java_awt_font_MultipleMaster_HPP
+#define java_awt_font_MultipleMaster_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::font::MultipleMaster : public jObject<::java::awt::font::MultipleMaster, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_font / "MultipleMaster";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::Font(::jfloat *)>("deriveMMFont"), //
+		jMethod<::java::awt::Font(::jfloat *, ::jfloat, ::jfloat, ::jfloat, ::jfloat)>("deriveMMFont"), //
+		jMethod<::jfloat *()>("getDesignAxisDefaults"), //
+		jMethod<::java::lang::String *()>("getDesignAxisNames"), //
+		jMethod<::jfloat *()>("getDesignAxisRanges"), //
+		jMethod<::jint()>("getNumDesignAxes"), //
+	};
+
+	template<typename R = ::java::awt::Font, typename... Args>
+	auto deriveMMFont(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("deriveMMFont")] != -1);
+		return call<R>("deriveMMFont", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat *, typename... Args>
+	auto getDesignAxisDefaults(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDesignAxisDefaults")] != -1);
+		return call<R>("getDesignAxisDefaults", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getDesignAxisNames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDesignAxisNames")] != -1);
+		return call<R>("getDesignAxisNames", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat *, typename... Args>
+	auto getDesignAxisRanges(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDesignAxisRanges")] != -1);
+		return call<R>("getDesignAxisRanges", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getNumDesignAxes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNumDesignAxes")] != -1);
+		return call<R>("getNumDesignAxes", forward<Args>(args)...);
+	}
+
+};
+
+#endif

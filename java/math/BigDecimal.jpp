@@ -1,0 +1,420 @@
+#ifndef java_math_BigDecimal_HPP
+#define java_math_BigDecimal_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::math::BigDecimal : public jObject<::java::math::BigDecimal, ::java::lang::Number> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_math / "BigDecimal";
+
+	constexpr static Enume field_signatures{
+		jField<::java::math::BigDecimal>("ONE"), //
+		jField<::jint>("ROUND_CEILING"), //
+		jField<::jint>("ROUND_DOWN"), //
+		jField<::jint>("ROUND_FLOOR"), //
+		jField<::jint>("ROUND_HALF_DOWN"), //
+		jField<::jint>("ROUND_HALF_EVEN"), //
+		jField<::jint>("ROUND_HALF_UP"), //
+		jField<::jint>("ROUND_UNNECESSARY"), //
+		jField<::jint>("ROUND_UP"), //
+		jField<::java::math::BigDecimal>("TEN"), //
+		jField<::java::math::BigDecimal>("ZERO"), //
+	};
+
+	template<typename F = ::java::math::BigDecimal>
+	static auto ONE() {
+		static_assert(field_signatures[jField<F>("ONE")] != -1);
+		return sat<F>("ONE");
+	}
+
+	template<typename F = ::jint>
+	static auto ROUND_CEILING() {
+		static_assert(field_signatures[jField<F>("ROUND_CEILING")] != -1);
+		return sat<F>("ROUND_CEILING");
+	}
+
+	template<typename F = ::jint>
+	static auto ROUND_DOWN() {
+		static_assert(field_signatures[jField<F>("ROUND_DOWN")] != -1);
+		return sat<F>("ROUND_DOWN");
+	}
+
+	template<typename F = ::jint>
+	static auto ROUND_FLOOR() {
+		static_assert(field_signatures[jField<F>("ROUND_FLOOR")] != -1);
+		return sat<F>("ROUND_FLOOR");
+	}
+
+	template<typename F = ::jint>
+	static auto ROUND_HALF_DOWN() {
+		static_assert(field_signatures[jField<F>("ROUND_HALF_DOWN")] != -1);
+		return sat<F>("ROUND_HALF_DOWN");
+	}
+
+	template<typename F = ::jint>
+	static auto ROUND_HALF_EVEN() {
+		static_assert(field_signatures[jField<F>("ROUND_HALF_EVEN")] != -1);
+		return sat<F>("ROUND_HALF_EVEN");
+	}
+
+	template<typename F = ::jint>
+	static auto ROUND_HALF_UP() {
+		static_assert(field_signatures[jField<F>("ROUND_HALF_UP")] != -1);
+		return sat<F>("ROUND_HALF_UP");
+	}
+
+	template<typename F = ::jint>
+	static auto ROUND_UNNECESSARY() {
+		static_assert(field_signatures[jField<F>("ROUND_UNNECESSARY")] != -1);
+		return sat<F>("ROUND_UNNECESSARY");
+	}
+
+	template<typename F = ::jint>
+	static auto ROUND_UP() {
+		static_assert(field_signatures[jField<F>("ROUND_UP")] != -1);
+		return sat<F>("ROUND_UP");
+	}
+
+	template<typename F = ::java::math::BigDecimal>
+	static auto TEN() {
+		static_assert(field_signatures[jField<F>("TEN")] != -1);
+		return sat<F>("TEN");
+	}
+
+	template<typename F = ::java::math::BigDecimal>
+	static auto ZERO() {
+		static_assert(field_signatures[jField<F>("ZERO")] != -1);
+		return sat<F>("ZERO");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jdouble)>(), //
+		jConstructor<::jvoid(::jdouble, ::java::math::MathContext)>(), //
+		jConstructor<::jvoid(::jint)>(), //
+		jConstructor<::jvoid(::jint, ::java::math::MathContext)>(), //
+		jConstructor<::jvoid(::jlong)>(), //
+		jConstructor<::jvoid(::jlong, ::java::math::MathContext)>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::math::MathContext)>(), //
+		jConstructor<::jvoid(::java::math::BigInteger)>(), //
+		jConstructor<::jvoid(::java::math::BigInteger, ::jint)>(), //
+		jConstructor<::jvoid(::java::math::BigInteger, ::jint, ::java::math::MathContext)>(), //
+		jConstructor<::jvoid(::java::math::BigInteger, ::java::math::MathContext)>(), //
+		jConstructor<::jvoid(::jchar *)>(), //
+		jConstructor<::jvoid(::jchar *, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::jchar *, ::jint, ::jint, ::java::math::MathContext)>(), //
+		jConstructor<::jvoid(::jchar *, ::java::math::MathContext)>(), //
+		jMethod<::java::math::BigDecimal()>("abs"), //
+		jMethod<::java::math::BigDecimal(::java::math::MathContext)>("abs"), //
+		jMethod<::java::math::BigDecimal(::java::math::BigDecimal)>("add"), //
+		jMethod<::java::math::BigDecimal(::java::math::BigDecimal, ::java::math::MathContext)>("add"), //
+		jMethod<::jbyte()>("byteValueExact"), //
+		jMethod<::jint(::java::lang::Object)>("compareTo"), //
+		jMethod<::jint(::java::math::BigDecimal)>("compareTo"), //
+		jMethod<::java::math::BigDecimal(::java::math::BigDecimal)>("divide"), //
+		jMethod<::java::math::BigDecimal(::java::math::BigDecimal, ::jint)>("divide"), //
+		jMethod<::java::math::BigDecimal(::java::math::BigDecimal, ::jint, ::jint)>("divide"), //
+		jMethod<::java::math::BigDecimal(::java::math::BigDecimal, ::jint, ::java::math::RoundingMode)>("divide"), //
+		jMethod<::java::math::BigDecimal(::java::math::BigDecimal, ::java::math::MathContext)>("divide"), //
+		jMethod<::java::math::BigDecimal(::java::math::BigDecimal, ::java::math::RoundingMode)>("divide"), //
+		jMethod<::java::math::BigDecimal *(::java::math::BigDecimal)>("divideAndRemainder"), //
+		jMethod<::java::math::BigDecimal *(::java::math::BigDecimal, ::java::math::MathContext)>("divideAndRemainder"), //
+		jMethod<::java::math::BigDecimal(::java::math::BigDecimal)>("divideToIntegralValue"), //
+		jMethod<::java::math::BigDecimal(::java::math::BigDecimal, ::java::math::MathContext)>("divideToIntegralValue"), //
+		jMethod<::jdouble()>("doubleValue"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jfloat()>("floatValue"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jint()>("intValue"), //
+		jMethod<::jint()>("intValueExact"), //
+		jMethod<::jlong()>("longValue"), //
+		jMethod<::jlong()>("longValueExact"), //
+		jMethod<::java::math::BigDecimal(::java::math::BigDecimal)>("max"), //
+		jMethod<::java::math::BigDecimal(::java::math::BigDecimal)>("min"), //
+		jMethod<::java::math::BigDecimal(::jint)>("movePointLeft"), //
+		jMethod<::java::math::BigDecimal(::jint)>("movePointRight"), //
+		jMethod<::java::math::BigDecimal(::java::math::BigDecimal)>("multiply"), //
+		jMethod<::java::math::BigDecimal(::java::math::BigDecimal, ::java::math::MathContext)>("multiply"), //
+		jMethod<::java::math::BigDecimal()>("negate"), //
+		jMethod<::java::math::BigDecimal(::java::math::MathContext)>("negate"), //
+		jMethod<::java::math::BigDecimal()>("plus"), //
+		jMethod<::java::math::BigDecimal(::java::math::MathContext)>("plus"), //
+		jMethod<::java::math::BigDecimal(::jint)>("pow"), //
+		jMethod<::java::math::BigDecimal(::jint, ::java::math::MathContext)>("pow"), //
+		jMethod<::jint()>("precision"), //
+		jMethod<::java::math::BigDecimal(::java::math::BigDecimal)>("remainder"), //
+		jMethod<::java::math::BigDecimal(::java::math::BigDecimal, ::java::math::MathContext)>("remainder"), //
+		jMethod<::java::math::BigDecimal(::java::math::MathContext)>("round"), //
+		jMethod<::jint()>("scale"), //
+		jMethod<::java::math::BigDecimal(::jint)>("scaleByPowerOfTen"), //
+		jMethod<::java::math::BigDecimal(::jint)>("setScale"), //
+		jMethod<::java::math::BigDecimal(::jint, ::jint)>("setScale"), //
+		jMethod<::java::math::BigDecimal(::jint, ::java::math::RoundingMode)>("setScale"), //
+		jMethod<::jshort()>("shortValueExact"), //
+		jMethod<::jint()>("signum"), //
+		jMethod<::java::math::BigDecimal()>("stripTrailingZeros"), //
+		jMethod<::java::math::BigDecimal(::java::math::BigDecimal)>("subtract"), //
+		jMethod<::java::math::BigDecimal(::java::math::BigDecimal, ::java::math::MathContext)>("subtract"), //
+		jMethod<::java::math::BigInteger()>("toBigInteger"), //
+		jMethod<::java::math::BigInteger()>("toBigIntegerExact"), //
+		jMethod<::java::lang::String()>("toEngineeringString"), //
+		jMethod<::java::lang::String()>("toPlainString"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::java::math::BigDecimal()>("ulp"), //
+		jMethod<::java::math::BigInteger()>("unscaledValue"), //
+		jMethod<::java::math::BigDecimal(::jdouble)>("valueOf"), //
+		jMethod<::java::math::BigDecimal(::jlong)>("valueOf"), //
+		jMethod<::java::math::BigDecimal(::jlong, ::jint)>("valueOf"), //
+	};
+
+	template<typename R = ::java::math::BigDecimal, typename... Args>
+	auto abs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("abs")] != -1);
+		return call<R>("abs", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigDecimal, typename... Args>
+	auto add(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte, typename... Args>
+	auto byteValueExact(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("byteValueExact")] != -1);
+		return call<R>("byteValueExact", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto compareTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compareTo")] != -1);
+		return call<R>("compareTo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigDecimal, typename... Args>
+	auto divide(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("divide")] != -1);
+		return call<R>("divide", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigDecimal *, typename... Args>
+	auto divideAndRemainder(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("divideAndRemainder")] != -1);
+		return call<R>("divideAndRemainder", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigDecimal, typename... Args>
+	auto divideToIntegralValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("divideToIntegralValue")] != -1);
+		return call<R>("divideToIntegralValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	auto doubleValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("doubleValue")] != -1);
+		return call<R>("doubleValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto floatValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("floatValue")] != -1);
+		return call<R>("floatValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto intValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("intValue")] != -1);
+		return call<R>("intValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto intValueExact(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("intValueExact")] != -1);
+		return call<R>("intValueExact", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto longValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("longValue")] != -1);
+		return call<R>("longValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto longValueExact(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("longValueExact")] != -1);
+		return call<R>("longValueExact", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigDecimal, typename... Args>
+	auto max(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("max")] != -1);
+		return call<R>("max", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigDecimal, typename... Args>
+	auto min(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("min")] != -1);
+		return call<R>("min", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigDecimal, typename... Args>
+	auto movePointLeft(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("movePointLeft")] != -1);
+		return call<R>("movePointLeft", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigDecimal, typename... Args>
+	auto movePointRight(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("movePointRight")] != -1);
+		return call<R>("movePointRight", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigDecimal, typename... Args>
+	auto multiply(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("multiply")] != -1);
+		return call<R>("multiply", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigDecimal, typename... Args>
+	auto negate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("negate")] != -1);
+		return call<R>("negate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigDecimal, typename... Args>
+	auto plus(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("plus")] != -1);
+		return call<R>("plus", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigDecimal, typename... Args>
+	auto pow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("pow")] != -1);
+		return call<R>("pow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto precision(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("precision")] != -1);
+		return call<R>("precision", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigDecimal, typename... Args>
+	auto remainder(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("remainder")] != -1);
+		return call<R>("remainder", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigDecimal, typename... Args>
+	auto round(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("round")] != -1);
+		return call<R>("round", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto scale(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("scale")] != -1);
+		return call<R>("scale", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigDecimal, typename... Args>
+	auto scaleByPowerOfTen(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("scaleByPowerOfTen")] != -1);
+		return call<R>("scaleByPowerOfTen", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigDecimal, typename... Args>
+	auto setScale(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setScale")] != -1);
+		return call<R>("setScale", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jshort, typename... Args>
+	auto shortValueExact(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("shortValueExact")] != -1);
+		return call<R>("shortValueExact", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto signum(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("signum")] != -1);
+		return call<R>("signum", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigDecimal, typename... Args>
+	auto stripTrailingZeros(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("stripTrailingZeros")] != -1);
+		return call<R>("stripTrailingZeros", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigDecimal, typename... Args>
+	auto subtract(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("subtract")] != -1);
+		return call<R>("subtract", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto toBigInteger(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toBigInteger")] != -1);
+		return call<R>("toBigInteger", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto toBigIntegerExact(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toBigIntegerExact")] != -1);
+		return call<R>("toBigIntegerExact", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toEngineeringString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toEngineeringString")] != -1);
+		return call<R>("toEngineeringString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toPlainString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toPlainString")] != -1);
+		return call<R>("toPlainString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigDecimal, typename... Args>
+	auto ulp(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("ulp")] != -1);
+		return call<R>("ulp", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto unscaledValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unscaledValue")] != -1);
+		return call<R>("unscaledValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigDecimal, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+};
+
+#endif

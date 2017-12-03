@@ -1,0 +1,118 @@
+#ifndef javax_accessibility_AccessibleText_HPP
+#define javax_accessibility_AccessibleText_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::accessibility::AccessibleText : public jObject<::javax::accessibility::AccessibleText, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_accessibility / "AccessibleText";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("CHARACTER"), //
+		jField<::jint>("SENTENCE"), //
+		jField<::jint>("WORD"), //
+	};
+
+	template<typename F = ::jint>
+	static auto CHARACTER() {
+		static_assert(field_signatures[jField<F>("CHARACTER")] != -1);
+		return sat<F>("CHARACTER");
+	}
+
+	template<typename F = ::jint>
+	static auto SENTENCE() {
+		static_assert(field_signatures[jField<F>("SENTENCE")] != -1);
+		return sat<F>("SENTENCE");
+	}
+
+	template<typename F = ::jint>
+	static auto WORD() {
+		static_assert(field_signatures[jField<F>("WORD")] != -1);
+		return sat<F>("WORD");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String(::jint, ::jint)>("getAfterIndex"), //
+		jMethod<::java::lang::String(::jint, ::jint)>("getAtIndex"), //
+		jMethod<::java::lang::String(::jint, ::jint)>("getBeforeIndex"), //
+		jMethod<::jint()>("getCaretPosition"), //
+		jMethod<::jint()>("getCharCount"), //
+		jMethod<::javax::swing::text::AttributeSet(::jint)>("getCharacterAttribute"), //
+		jMethod<::java::awt::Rectangle(::jint)>("getCharacterBounds"), //
+		jMethod<::jint(::java::awt::Point)>("getIndexAtPoint"), //
+		jMethod<::java::lang::String()>("getSelectedText"), //
+		jMethod<::jint()>("getSelectionEnd"), //
+		jMethod<::jint()>("getSelectionStart"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAfterIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAfterIndex")] != -1);
+		return call<R>("getAfterIndex", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAtIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAtIndex")] != -1);
+		return call<R>("getAtIndex", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getBeforeIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBeforeIndex")] != -1);
+		return call<R>("getBeforeIndex", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getCaretPosition(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCaretPosition")] != -1);
+		return call<R>("getCaretPosition", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getCharCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCharCount")] != -1);
+		return call<R>("getCharCount", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::text::AttributeSet, typename... Args>
+	auto getCharacterAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCharacterAttribute")] != -1);
+		return call<R>("getCharacterAttribute", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Rectangle, typename... Args>
+	auto getCharacterBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCharacterBounds")] != -1);
+		return call<R>("getCharacterBounds", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getIndexAtPoint(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIndexAtPoint")] != -1);
+		return call<R>("getIndexAtPoint", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getSelectedText(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSelectedText")] != -1);
+		return call<R>("getSelectedText", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getSelectionEnd(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSelectionEnd")] != -1);
+		return call<R>("getSelectionEnd", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getSelectionStart(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSelectionStart")] != -1);
+		return call<R>("getSelectionStart", forward<Args>(args)...);
+	}
+
+};
+
+#endif

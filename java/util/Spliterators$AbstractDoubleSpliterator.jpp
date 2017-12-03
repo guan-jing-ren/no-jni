@@ -1,0 +1,51 @@
+#ifndef java_util_Spliterators$AbstractDoubleSpliterator_HPP
+#define java_util_Spliterators$AbstractDoubleSpliterator_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::Spliterators$AbstractDoubleSpliterator : public jObject<::java::util::Spliterators$AbstractDoubleSpliterator, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "Spliterators$AbstractDoubleSpliterator";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("characteristics"), //
+		jMethod<::jlong()>("estimateSize"), //
+		jMethod<::jboolean(::java::util::function::DoubleConsumer)>("tryAdvance"), //
+		jMethod<::java::util::Spliterator$OfDouble()>("trySplit"), //
+		jMethod<::java::util::Spliterator$OfPrimitive()>("trySplit"), //
+		jMethod<::java::util::Spliterator()>("trySplit"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto characteristics(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("characteristics")] != -1);
+		return call<R>("characteristics", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto estimateSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("estimateSize")] != -1);
+		return call<R>("estimateSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto tryAdvance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("tryAdvance")] != -1);
+		return call<R>("tryAdvance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Spliterator$OfDouble, typename... Args>
+	auto trySplit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("trySplit")] != -1);
+		return call<R>("trySplit", forward<Args>(args)...);
+	}
+
+};
+
+#endif

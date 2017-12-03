@@ -1,0 +1,75 @@
+#ifndef java_beans_XMLDecoder_HPP
+#define java_beans_XMLDecoder_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::beans::XMLDecoder : public jObject<::java::beans::XMLDecoder, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_beans / "XMLDecoder";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::InputStream)>(), //
+		jConstructor<::jvoid(::java::io::InputStream, ::java::lang::Object)>(), //
+		jConstructor<::jvoid(::java::io::InputStream, ::java::lang::Object, ::java::beans::ExceptionListener)>(), //
+		jConstructor<::jvoid(::java::io::InputStream, ::java::lang::Object, ::java::beans::ExceptionListener, ::java::lang::ClassLoader)>(), //
+		jConstructor<::jvoid(::org::xml::sax::InputSource)>(), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::org::xml::sax::helpers::DefaultHandler(::java::lang::Object, ::java::beans::ExceptionListener, ::java::lang::ClassLoader)>("createHandler"), //
+		jMethod<::java::beans::ExceptionListener()>("getExceptionListener"), //
+		jMethod<::java::lang::Object()>("getOwner"), //
+		jMethod<::java::lang::Object()>("readObject"), //
+		jMethod<::jvoid(::java::beans::ExceptionListener)>("setExceptionListener"), //
+		jMethod<::jvoid(::java::lang::Object)>("setOwner"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::xml::sax::helpers::DefaultHandler, typename... Args>
+	static auto createHandler(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createHandler")] != -1);
+		return scall<R>("createHandler", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::beans::ExceptionListener, typename... Args>
+	auto getExceptionListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getExceptionListener")] != -1);
+		return call<R>("getExceptionListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getOwner(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOwner")] != -1);
+		return call<R>("getOwner", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto readObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("readObject")] != -1);
+		return call<R>("readObject", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setExceptionListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setExceptionListener")] != -1);
+		return call<R>("setExceptionListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setOwner(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setOwner")] != -1);
+		return call<R>("setOwner", forward<Args>(args)...);
+	}
+
+};
+
+#endif

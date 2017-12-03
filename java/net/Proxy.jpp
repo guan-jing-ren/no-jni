@@ -1,0 +1,63 @@
+#ifndef java_net_Proxy_HPP
+#define java_net_Proxy_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::net::Proxy : public jObject<::java::net::Proxy, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_net / "Proxy";
+
+	constexpr static Enume field_signatures{
+		jField<::java::net::Proxy>("NO_PROXY"), //
+	};
+
+	template<typename F = ::java::net::Proxy>
+	static auto NO_PROXY() {
+		static_assert(field_signatures[jField<F>("NO_PROXY")] != -1);
+		return sat<F>("NO_PROXY");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::net::Proxy$Type, ::java::net::SocketAddress)>(), //
+		jMethod<::java::net::SocketAddress()>("address"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::java::net::Proxy$Type()>("type"), //
+	};
+
+	template<typename R = ::java::net::SocketAddress, typename... Args>
+	auto address(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("address")] != -1);
+		return call<R>("address", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::Proxy$Type, typename... Args>
+	auto type(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("type")] != -1);
+		return call<R>("type", forward<Args>(args)...);
+	}
+
+};
+
+#endif

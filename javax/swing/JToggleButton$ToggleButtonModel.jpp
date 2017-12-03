@@ -1,0 +1,43 @@
+#ifndef javax_swing_JToggleButton$ToggleButtonModel_HPP
+#define javax_swing_JToggleButton$ToggleButtonModel_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::JToggleButton$ToggleButtonModel : public jObject<::javax::swing::JToggleButton$ToggleButtonModel, ::javax::swing::DefaultButtonModel> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "JToggleButton$ToggleButtonModel";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jboolean()>("isSelected"), //
+		jMethod<::jvoid(::jboolean)>("setPressed"), //
+		jMethod<::jvoid(::jboolean)>("setSelected"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isSelected(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSelected")] != -1);
+		return call<R>("isSelected", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setPressed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPressed")] != -1);
+		return call<R>("setPressed", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setSelected(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSelected")] != -1);
+		return call<R>("setSelected", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,72 @@
+#ifndef java_io_Console_HPP
+#define java_io_Console_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::io::Console : public jObject<::java::io::Console, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_io / "Console";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("flush"), //
+		jMethod<::java::io::Console(::java::lang::String, ::java::lang::Object *)>("format"), //
+		jMethod<::java::io::Console(::java::lang::String, ::java::lang::Object *)>("printf"), //
+		jMethod<::java::lang::String()>("readLine"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::lang::Object *)>("readLine"), //
+		jMethod<::jchar *()>("readPassword"), //
+		jMethod<::jchar *(::java::lang::String, ::java::lang::Object *)>("readPassword"), //
+		jMethod<::java::io::Reader()>("reader"), //
+		jMethod<::java::io::PrintWriter()>("writer"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto flush(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("flush")] != -1);
+		return call<R>("flush", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::Console, typename... Args>
+	auto format(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("format")] != -1);
+		return call<R>("format", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::Console, typename... Args>
+	auto printf(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("printf")] != -1);
+		return call<R>("printf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto readLine(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("readLine")] != -1);
+		return call<R>("readLine", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jchar *, typename... Args>
+	auto readPassword(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("readPassword")] != -1);
+		return call<R>("readPassword", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::Reader, typename... Args>
+	auto reader(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("reader")] != -1);
+		return call<R>("reader", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::PrintWriter, typename... Args>
+	auto writer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("writer")] != -1);
+		return call<R>("writer", forward<Args>(args)...);
+	}
+
+};
+
+#endif

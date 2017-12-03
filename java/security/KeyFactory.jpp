@@ -1,0 +1,72 @@
+#ifndef java_security_KeyFactory_HPP
+#define java_security_KeyFactory_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::KeyFactory : public jObject<::java::security::KeyFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "KeyFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::security::PrivateKey(::java::security::spec::KeySpec)>("generatePrivate"), //
+		jMethod<::java::security::PublicKey(::java::security::spec::KeySpec)>("generatePublic"), //
+		jMethod<::java::lang::String()>("getAlgorithm"), //
+		jMethod<::java::security::KeyFactory(::java::lang::String)>("getInstance"), //
+		jMethod<::java::security::KeyFactory(::java::lang::String, ::java::lang::String)>("getInstance"), //
+		jMethod<::java::security::KeyFactory(::java::lang::String, ::java::security::Provider)>("getInstance"), //
+		jMethod<::java::security::spec::KeySpec(::java::security::Key, ::java::lang::Class)>("getKeySpec"), //
+		jMethod<::java::security::Provider()>("getProvider"), //
+		jMethod<::java::security::Key(::java::security::Key)>("translateKey"), //
+	};
+
+	template<typename R = ::java::security::PrivateKey, typename... Args>
+	auto generatePrivate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("generatePrivate")] != -1);
+		return call<R>("generatePrivate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::PublicKey, typename... Args>
+	auto generatePublic(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("generatePublic")] != -1);
+		return call<R>("generatePublic", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAlgorithm(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlgorithm")] != -1);
+		return call<R>("getAlgorithm", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::KeyFactory, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::spec::KeySpec, typename... Args>
+	auto getKeySpec(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getKeySpec")] != -1);
+		return call<R>("getKeySpec", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Provider, typename... Args>
+	auto getProvider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProvider")] != -1);
+		return call<R>("getProvider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Key, typename... Args>
+	auto translateKey(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("translateKey")] != -1);
+		return call<R>("translateKey", forward<Args>(args)...);
+	}
+
+};
+
+#endif

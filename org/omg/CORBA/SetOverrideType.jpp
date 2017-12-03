@@ -1,0 +1,62 @@
+#ifndef org_omg_CORBA_SetOverrideType_HPP
+#define org_omg_CORBA_SetOverrideType_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::CORBA::SetOverrideType : public jObject<::org::omg::CORBA::SetOverrideType, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CORBA / "SetOverrideType";
+
+	constexpr static Enume field_signatures{
+		jField<::org::omg::CORBA::SetOverrideType>("ADD_OVERRIDE"), //
+		jField<::org::omg::CORBA::SetOverrideType>("SET_OVERRIDE"), //
+		jField<::jint>("_ADD_OVERRIDE"), //
+		jField<::jint>("_SET_OVERRIDE"), //
+	};
+
+	template<typename F = ::org::omg::CORBA::SetOverrideType>
+	static auto ADD_OVERRIDE() {
+		static_assert(field_signatures[jField<F>("ADD_OVERRIDE")] != -1);
+		return sat<F>("ADD_OVERRIDE");
+	}
+
+	template<typename F = ::org::omg::CORBA::SetOverrideType>
+	static auto SET_OVERRIDE() {
+		static_assert(field_signatures[jField<F>("SET_OVERRIDE")] != -1);
+		return sat<F>("SET_OVERRIDE");
+	}
+
+	template<typename F = ::jint>
+	static auto _ADD_OVERRIDE() {
+		static_assert(field_signatures[jField<F>("_ADD_OVERRIDE")] != -1);
+		return sat<F>("_ADD_OVERRIDE");
+	}
+
+	template<typename F = ::jint>
+	static auto _SET_OVERRIDE() {
+		static_assert(field_signatures[jField<F>("_SET_OVERRIDE")] != -1);
+		return sat<F>("_SET_OVERRIDE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::omg::CORBA::SetOverrideType(::jint)>("from_int"), //
+		jMethod<::jint()>("value"), //
+	};
+
+	template<typename R = ::org::omg::CORBA::SetOverrideType, typename... Args>
+	static auto from_int(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("from_int")] != -1);
+		return scall<R>("from_int", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("value")] != -1);
+		return call<R>("value", forward<Args>(args)...);
+	}
+
+};
+
+#endif

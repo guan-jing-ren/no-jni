@@ -1,0 +1,69 @@
+#ifndef javax_tools_JavaFileObject$Kind_HPP
+#define javax_tools_JavaFileObject$Kind_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::tools::JavaFileObject$Kind : public jObject<::javax::tools::JavaFileObject$Kind, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_tools / "JavaFileObject$Kind";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::tools::JavaFileObject$Kind>("CLASS"), //
+		jField<::javax::tools::JavaFileObject$Kind>("HTML"), //
+		jField<::javax::tools::JavaFileObject$Kind>("OTHER"), //
+		jField<::javax::tools::JavaFileObject$Kind>("SOURCE"), //
+		jField<::java::lang::String>("extension"), //
+	};
+
+	template<typename F = ::javax::tools::JavaFileObject$Kind>
+	static auto CLASS() {
+		static_assert(field_signatures[jField<F>("CLASS")] != -1);
+		return sat<F>("CLASS");
+	}
+
+	template<typename F = ::javax::tools::JavaFileObject$Kind>
+	static auto HTML() {
+		static_assert(field_signatures[jField<F>("HTML")] != -1);
+		return sat<F>("HTML");
+	}
+
+	template<typename F = ::javax::tools::JavaFileObject$Kind>
+	static auto OTHER() {
+		static_assert(field_signatures[jField<F>("OTHER")] != -1);
+		return sat<F>("OTHER");
+	}
+
+	template<typename F = ::javax::tools::JavaFileObject$Kind>
+	static auto SOURCE() {
+		static_assert(field_signatures[jField<F>("SOURCE")] != -1);
+		return sat<F>("SOURCE");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto extension() const {
+		static_assert(field_signatures[jField<F>("extension")] != -1);
+		return at<F>("extension");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::tools::JavaFileObject$Kind(::java::lang::String)>("valueOf"), //
+		jMethod<::javax::tools::JavaFileObject$Kind *()>("values"), //
+	};
+
+	template<typename R = ::javax::tools::JavaFileObject$Kind, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::tools::JavaFileObject$Kind *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

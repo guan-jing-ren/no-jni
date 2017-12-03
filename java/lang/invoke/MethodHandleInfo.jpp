@@ -1,0 +1,146 @@
+#ifndef java_lang_invoke_MethodHandleInfo_HPP
+#define java_lang_invoke_MethodHandleInfo_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::invoke::MethodHandleInfo : public jObject<::java::lang::invoke::MethodHandleInfo, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_invoke / "MethodHandleInfo";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("REF_getField"), //
+		jField<::jint>("REF_getStatic"), //
+		jField<::jint>("REF_invokeInterface"), //
+		jField<::jint>("REF_invokeSpecial"), //
+		jField<::jint>("REF_invokeStatic"), //
+		jField<::jint>("REF_invokeVirtual"), //
+		jField<::jint>("REF_newInvokeSpecial"), //
+		jField<::jint>("REF_putField"), //
+		jField<::jint>("REF_putStatic"), //
+	};
+
+	template<typename F = ::jint>
+	static auto REF_getField() {
+		static_assert(field_signatures[jField<F>("REF_getField")] != -1);
+		return sat<F>("REF_getField");
+	}
+
+	template<typename F = ::jint>
+	static auto REF_getStatic() {
+		static_assert(field_signatures[jField<F>("REF_getStatic")] != -1);
+		return sat<F>("REF_getStatic");
+	}
+
+	template<typename F = ::jint>
+	static auto REF_invokeInterface() {
+		static_assert(field_signatures[jField<F>("REF_invokeInterface")] != -1);
+		return sat<F>("REF_invokeInterface");
+	}
+
+	template<typename F = ::jint>
+	static auto REF_invokeSpecial() {
+		static_assert(field_signatures[jField<F>("REF_invokeSpecial")] != -1);
+		return sat<F>("REF_invokeSpecial");
+	}
+
+	template<typename F = ::jint>
+	static auto REF_invokeStatic() {
+		static_assert(field_signatures[jField<F>("REF_invokeStatic")] != -1);
+		return sat<F>("REF_invokeStatic");
+	}
+
+	template<typename F = ::jint>
+	static auto REF_invokeVirtual() {
+		static_assert(field_signatures[jField<F>("REF_invokeVirtual")] != -1);
+		return sat<F>("REF_invokeVirtual");
+	}
+
+	template<typename F = ::jint>
+	static auto REF_newInvokeSpecial() {
+		static_assert(field_signatures[jField<F>("REF_newInvokeSpecial")] != -1);
+		return sat<F>("REF_newInvokeSpecial");
+	}
+
+	template<typename F = ::jint>
+	static auto REF_putField() {
+		static_assert(field_signatures[jField<F>("REF_putField")] != -1);
+		return sat<F>("REF_putField");
+	}
+
+	template<typename F = ::jint>
+	static auto REF_putStatic() {
+		static_assert(field_signatures[jField<F>("REF_putStatic")] != -1);
+		return sat<F>("REF_putStatic");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Class()>("getDeclaringClass"), //
+		jMethod<::java::lang::invoke::MethodType()>("getMethodType"), //
+		jMethod<::jint()>("getModifiers"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::jint()>("getReferenceKind"), //
+		jMethod<::jboolean()>("isVarArgs"), //
+		jMethod<::java::lang::String(::jint)>("referenceKindToString"), //
+		jMethod<::java::lang::reflect::Member(::java::lang::Class, ::java::lang::invoke::MethodHandles$Lookup)>("reflectAs"), //
+		jMethod<::java::lang::String(::jint, ::java::lang::Class, ::java::lang::String, ::java::lang::invoke::MethodType)>("toString"), //
+	};
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getDeclaringClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDeclaringClass")] != -1);
+		return call<R>("getDeclaringClass", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::invoke::MethodType, typename... Args>
+	auto getMethodType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMethodType")] != -1);
+		return call<R>("getMethodType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getModifiers(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getModifiers")] != -1);
+		return call<R>("getModifiers", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getReferenceKind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getReferenceKind")] != -1);
+		return call<R>("getReferenceKind", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isVarArgs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isVarArgs")] != -1);
+		return call<R>("isVarArgs", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto referenceKindToString(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("referenceKindToString")] != -1);
+		return scall<R>("referenceKindToString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Member, typename... Args>
+	auto reflectAs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("reflectAs")] != -1);
+		return call<R>("reflectAs", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto toString(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return scall<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

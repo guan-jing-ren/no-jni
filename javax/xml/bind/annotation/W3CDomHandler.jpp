@@ -1,0 +1,61 @@
+#ifndef javax_xml_bind_annotation_W3CDomHandler_HPP
+#define javax_xml_bind_annotation_W3CDomHandler_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::bind::annotation::W3CDomHandler : public jObject<::javax::xml::bind::annotation::W3CDomHandler, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_bind_annotation / "W3CDomHandler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::javax::xml::parsers::DocumentBuilder)>(), //
+		jMethod<::javax::xml::transform::Result(::javax::xml::bind::ValidationEventHandler)>("createUnmarshaller"), //
+		jMethod<::javax::xml::transform::dom::DOMResult(::javax::xml::bind::ValidationEventHandler)>("createUnmarshaller"), //
+		jMethod<::javax::xml::parsers::DocumentBuilder()>("getBuilder"), //
+		jMethod<::java::lang::Object(::javax::xml::transform::Result)>("getElement"), //
+		jMethod<::org::w3c::dom::Element(::javax::xml::transform::dom::DOMResult)>("getElement"), //
+		jMethod<::javax::xml::transform::Source(::java::lang::Object, ::javax::xml::bind::ValidationEventHandler)>("marshal"), //
+		jMethod<::javax::xml::transform::Source(::org::w3c::dom::Element, ::javax::xml::bind::ValidationEventHandler)>("marshal"), //
+		jMethod<::jvoid(::javax::xml::parsers::DocumentBuilder)>("setBuilder"), //
+	};
+
+	template<typename R = ::javax::xml::transform::Result, typename... Args>
+	auto createUnmarshaller(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createUnmarshaller")] != -1);
+		return call<R>("createUnmarshaller", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::parsers::DocumentBuilder, typename... Args>
+	auto getBuilder(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBuilder")] != -1);
+		return call<R>("getBuilder", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getElement")] != -1);
+		return call<R>("getElement", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::transform::Source, typename... Args>
+	auto marshal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("marshal")] != -1);
+		return call<R>("marshal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setBuilder(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setBuilder")] != -1);
+		return call<R>("setBuilder", forward<Args>(args)...);
+	}
+
+};
+
+#endif

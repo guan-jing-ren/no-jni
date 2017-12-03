@@ -1,0 +1,78 @@
+#ifndef java_rmi_server_ObjID_HPP
+#define java_rmi_server_ObjID_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::rmi::server::ObjID : public jObject<::java::rmi::server::ObjID, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_rmi_server / "ObjID";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("ACTIVATOR_ID"), //
+		jField<::jint>("DGC_ID"), //
+		jField<::jint>("REGISTRY_ID"), //
+	};
+
+	template<typename F = ::jint>
+	static auto ACTIVATOR_ID() {
+		static_assert(field_signatures[jField<F>("ACTIVATOR_ID")] != -1);
+		return sat<F>("ACTIVATOR_ID");
+	}
+
+	template<typename F = ::jint>
+	static auto DGC_ID() {
+		static_assert(field_signatures[jField<F>("DGC_ID")] != -1);
+		return sat<F>("DGC_ID");
+	}
+
+	template<typename F = ::jint>
+	static auto REGISTRY_ID() {
+		static_assert(field_signatures[jField<F>("REGISTRY_ID")] != -1);
+		return sat<F>("REGISTRY_ID");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::rmi::server::ObjID(::java::io::ObjectInput)>("read"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::jvoid(::java::io::ObjectOutput)>("write"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::server::ObjID, typename... Args>
+	static auto read(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read")] != -1);
+		return scall<R>("read", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", forward<Args>(args)...);
+	}
+
+};
+
+#endif

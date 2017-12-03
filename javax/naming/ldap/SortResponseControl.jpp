@@ -1,0 +1,56 @@
+#ifndef javax_naming_ldap_SortResponseControl_HPP
+#define javax_naming_ldap_SortResponseControl_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::naming::ldap::SortResponseControl : public jObject<::javax::naming::ldap::SortResponseControl, ::javax::naming::ldap::BasicControl> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_naming_ldap / "SortResponseControl";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("OID"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto OID() {
+		static_assert(field_signatures[jField<F>("OID")] != -1);
+		return sat<F>("OID");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::jboolean, ::jbyte *)>(), //
+		jMethod<::java::lang::String()>("getAttributeID"), //
+		jMethod<::javax::naming::NamingException()>("getException"), //
+		jMethod<::jint()>("getResultCode"), //
+		jMethod<::jboolean()>("isSorted"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAttributeID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttributeID")] != -1);
+		return call<R>("getAttributeID", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::naming::NamingException, typename... Args>
+	auto getException(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getException")] != -1);
+		return call<R>("getException", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getResultCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getResultCode")] != -1);
+		return call<R>("getResultCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isSorted(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSorted")] != -1);
+		return call<R>("isSorted", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,43 @@
+#ifndef org_omg_stub_javax_management_remote_rmi__RMIServer_Stub_HPP
+#define org_omg_stub_javax_management_remote_rmi__RMIServer_Stub_HPP
+
+#include "../../../../../../../jfwd_decl.hpp"
+
+class ::org::omg::stub::javax::management::remote::rmi::_RMIServer_Stub : public jObject<::org::omg::stub::javax::management::remote::rmi::_RMIServer_Stub, ::javax::rmi::CORBA::Stub> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_stub_javax_management_remote_rmi / "_RMIServer_Stub";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::String *()>("_ids"), //
+		jMethod<::java::lang::String()>("getVersion"), //
+		jMethod<::javax::management::remote::rmi::RMIConnection(::java::lang::Object)>("newClient"), //
+	};
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto _ids(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("_ids")] != -1);
+		return call<R>("_ids", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getVersion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getVersion")] != -1);
+		return call<R>("getVersion", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::remote::rmi::RMIConnection, typename... Args>
+	auto newClient(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newClient")] != -1);
+		return call<R>("newClient", forward<Args>(args)...);
+	}
+
+};
+
+#endif

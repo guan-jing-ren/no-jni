@@ -1,0 +1,64 @@
+#ifndef javax_security_sasl_AuthorizeCallback_HPP
+#define javax_security_sasl_AuthorizeCallback_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::security::sasl::AuthorizeCallback : public jObject<::javax::security::sasl::AuthorizeCallback, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_security_sasl / "AuthorizeCallback";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String)>(), //
+		jMethod<::java::lang::String()>("getAuthenticationID"), //
+		jMethod<::java::lang::String()>("getAuthorizationID"), //
+		jMethod<::java::lang::String()>("getAuthorizedID"), //
+		jMethod<::jboolean()>("isAuthorized"), //
+		jMethod<::jvoid(::jboolean)>("setAuthorized"), //
+		jMethod<::jvoid(::java::lang::String)>("setAuthorizedID"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAuthenticationID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAuthenticationID")] != -1);
+		return call<R>("getAuthenticationID", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAuthorizationID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAuthorizationID")] != -1);
+		return call<R>("getAuthorizationID", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAuthorizedID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAuthorizedID")] != -1);
+		return call<R>("getAuthorizedID", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isAuthorized(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isAuthorized")] != -1);
+		return call<R>("isAuthorized", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setAuthorized(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setAuthorized")] != -1);
+		return call<R>("setAuthorized", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setAuthorizedID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setAuthorizedID")] != -1);
+		return call<R>("setAuthorizedID", forward<Args>(args)...);
+	}
+
+};
+
+#endif

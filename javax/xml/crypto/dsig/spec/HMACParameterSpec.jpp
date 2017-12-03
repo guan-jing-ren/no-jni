@@ -1,0 +1,29 @@
+#ifndef javax_xml_crypto_dsig_spec_HMACParameterSpec_HPP
+#define javax_xml_crypto_dsig_spec_HMACParameterSpec_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::javax::xml::crypto::dsig::spec::HMACParameterSpec : public jObject<::javax::xml::crypto::dsig::spec::HMACParameterSpec, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_crypto_dsig_spec / "HMACParameterSpec";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint)>(), //
+		jMethod<::jint()>("getOutputLength"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getOutputLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOutputLength")] != -1);
+		return call<R>("getOutputLength", forward<Args>(args)...);
+	}
+
+};
+
+#endif

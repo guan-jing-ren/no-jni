@@ -1,0 +1,84 @@
+#ifndef java_rmi_server_RemoteRef_HPP
+#define java_rmi_server_RemoteRef_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::rmi::server::RemoteRef : public jObject<::java::rmi::server::RemoteRef, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_rmi_server / "RemoteRef";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("packagePrefix"), //
+		jField<::jlong>("serialVersionUID"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto packagePrefix() {
+		static_assert(field_signatures[jField<F>("packagePrefix")] != -1);
+		return sat<F>("packagePrefix");
+	}
+
+	template<typename F = ::jlong>
+	static auto serialVersionUID() {
+		static_assert(field_signatures[jField<F>("serialVersionUID")] != -1);
+		return sat<F>("serialVersionUID");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::rmi::server::RemoteCall)>("done"), //
+		jMethod<::java::lang::String(::java::io::ObjectOutput)>("getRefClass"), //
+		jMethod<::java::lang::Object(::java::rmi::Remote, ::java::lang::reflect::Method, ::java::lang::Object *, ::jlong)>("invoke"), //
+		jMethod<::jvoid(::java::rmi::server::RemoteCall)>("invoke"), //
+		jMethod<::java::rmi::server::RemoteCall(::java::rmi::server::RemoteObject, ::java::rmi::server::Operation *, ::jint, ::jlong)>("newCall"), //
+		jMethod<::jboolean(::java::rmi::server::RemoteRef)>("remoteEquals"), //
+		jMethod<::jint()>("remoteHashCode"), //
+		jMethod<::java::lang::String()>("remoteToString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto done(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("done")] != -1);
+		return call<R>("done", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getRefClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRefClass")] != -1);
+		return call<R>("getRefClass", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto invoke(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("invoke")] != -1);
+		return call<R>("invoke", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::server::RemoteCall, typename... Args>
+	auto newCall(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newCall")] != -1);
+		return call<R>("newCall", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto remoteEquals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("remoteEquals")] != -1);
+		return call<R>("remoteEquals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto remoteHashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("remoteHashCode")] != -1);
+		return call<R>("remoteHashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto remoteToString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("remoteToString")] != -1);
+		return call<R>("remoteToString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

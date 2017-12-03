@@ -1,0 +1,50 @@
+#ifndef javax_swing_plaf_metal_MetalInternalFrameTitlePane_HPP
+#define javax_swing_plaf_metal_MetalInternalFrameTitlePane_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::swing::plaf::metal::MetalInternalFrameTitlePane : public jObject<::javax::swing::plaf::metal::MetalInternalFrameTitlePane, ::javax::swing::plaf::basic::BasicInternalFrameTitlePane> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_plaf_metal / "MetalInternalFrameTitlePane";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::swing::JInternalFrame)>(), //
+		jMethod<::jvoid()>("addNotify"), //
+		jMethod<::jvoid(::java::awt::Graphics)>("paintComponent"), //
+		jMethod<::jvoid(::java::awt::Graphics)>("paintPalette"), //
+		jMethod<::jvoid(::jboolean)>("setPalette"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addNotify(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addNotify")] != -1);
+		return call<R>("addNotify", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto paintComponent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paintComponent")] != -1);
+		return call<R>("paintComponent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto paintPalette(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paintPalette")] != -1);
+		return call<R>("paintPalette", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setPalette(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPalette")] != -1);
+		return call<R>("setPalette", forward<Args>(args)...);
+	}
+
+};
+
+#endif

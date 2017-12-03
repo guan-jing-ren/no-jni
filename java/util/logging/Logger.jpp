@@ -1,0 +1,286 @@
+#ifndef java_util_logging_Logger_HPP
+#define java_util_logging_Logger_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::logging::Logger : public jObject<::java::util::logging::Logger, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_logging / "Logger";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("GLOBAL_LOGGER_NAME"), //
+		jField<::java::util::logging::Logger>("global"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto GLOBAL_LOGGER_NAME() {
+		static_assert(field_signatures[jField<F>("GLOBAL_LOGGER_NAME")] != -1);
+		return sat<F>("GLOBAL_LOGGER_NAME");
+	}
+
+	template<typename F = ::java::util::logging::Logger>
+	static auto global() {
+		static_assert(field_signatures[jField<F>("global")] != -1);
+		return sat<F>("global");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::util::logging::Handler)>("addHandler"), //
+		jMethod<::jvoid(::java::lang::String)>("config"), //
+		jMethod<::jvoid(::java::util::function::Supplier)>("config"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String)>("entering"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::Object)>("entering"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::Object *)>("entering"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String)>("exiting"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::Object)>("exiting"), //
+		jMethod<::jvoid(::java::lang::String)>("fine"), //
+		jMethod<::jvoid(::java::util::function::Supplier)>("fine"), //
+		jMethod<::jvoid(::java::lang::String)>("finer"), //
+		jMethod<::jvoid(::java::util::function::Supplier)>("finer"), //
+		jMethod<::jvoid(::java::lang::String)>("finest"), //
+		jMethod<::jvoid(::java::util::function::Supplier)>("finest"), //
+		jMethod<::java::util::logging::Logger()>("getAnonymousLogger"), //
+		jMethod<::java::util::logging::Logger(::java::lang::String)>("getAnonymousLogger"), //
+		jMethod<::java::util::logging::Filter()>("getFilter"), //
+		jMethod<::java::util::logging::Logger()>("getGlobal"), //
+		jMethod<::java::util::logging::Handler *()>("getHandlers"), //
+		jMethod<::java::util::logging::Level()>("getLevel"), //
+		jMethod<::java::util::logging::Logger(::java::lang::String)>("getLogger"), //
+		jMethod<::java::util::logging::Logger(::java::lang::String, ::java::lang::String)>("getLogger"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::java::util::logging::Logger()>("getParent"), //
+		jMethod<::java::util::ResourceBundle()>("getResourceBundle"), //
+		jMethod<::java::lang::String()>("getResourceBundleName"), //
+		jMethod<::jboolean()>("getUseParentHandlers"), //
+		jMethod<::jvoid(::java::lang::String)>("info"), //
+		jMethod<::jvoid(::java::util::function::Supplier)>("info"), //
+		jMethod<::jboolean(::java::util::logging::Level)>("isLoggable"), //
+		jMethod<::jvoid(::java::util::logging::Level, ::java::lang::String)>("log"), //
+		jMethod<::jvoid(::java::util::logging::Level, ::java::lang::String, ::java::lang::Object)>("log"), //
+		jMethod<::jvoid(::java::util::logging::Level, ::java::lang::String, ::java::lang::Throwable)>("log"), //
+		jMethod<::jvoid(::java::util::logging::Level, ::java::lang::String, ::java::lang::Object *)>("log"), //
+		jMethod<::jvoid(::java::util::logging::Level, ::java::lang::Throwable, ::java::util::function::Supplier)>("log"), //
+		jMethod<::jvoid(::java::util::logging::Level, ::java::util::function::Supplier)>("log"), //
+		jMethod<::jvoid(::java::util::logging::LogRecord)>("log"), //
+		jMethod<::jvoid(::java::util::logging::Level, ::java::lang::String, ::java::lang::String, ::java::lang::String)>("logp"), //
+		jMethod<::jvoid(::java::util::logging::Level, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::Object)>("logp"), //
+		jMethod<::jvoid(::java::util::logging::Level, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::Throwable)>("logp"), //
+		jMethod<::jvoid(::java::util::logging::Level, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::Object *)>("logp"), //
+		jMethod<::jvoid(::java::util::logging::Level, ::java::lang::String, ::java::lang::String, ::java::lang::Throwable, ::java::util::function::Supplier)>("logp"), //
+		jMethod<::jvoid(::java::util::logging::Level, ::java::lang::String, ::java::lang::String, ::java::util::function::Supplier)>("logp"), //
+		jMethod<::jvoid(::java::util::logging::Level, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::String)>("logrb"), //
+		jMethod<::jvoid(::java::util::logging::Level, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::Object)>("logrb"), //
+		jMethod<::jvoid(::java::util::logging::Level, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::Throwable)>("logrb"), //
+		jMethod<::jvoid(::java::util::logging::Level, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::Object *)>("logrb"), //
+		jMethod<::jvoid(::java::util::logging::Level, ::java::lang::String, ::java::lang::String, ::java::util::ResourceBundle, ::java::lang::String, ::java::lang::Throwable)>("logrb"), //
+		jMethod<::jvoid(::java::util::logging::Level, ::java::lang::String, ::java::lang::String, ::java::util::ResourceBundle, ::java::lang::String, ::java::lang::Object *)>("logrb"), //
+		jMethod<::jvoid(::java::util::logging::Handler)>("removeHandler"), //
+		jMethod<::jvoid(::java::util::logging::Filter)>("setFilter"), //
+		jMethod<::jvoid(::java::util::logging::Level)>("setLevel"), //
+		jMethod<::jvoid(::java::util::logging::Logger)>("setParent"), //
+		jMethod<::jvoid(::java::util::ResourceBundle)>("setResourceBundle"), //
+		jMethod<::jvoid(::jboolean)>("setUseParentHandlers"), //
+		jMethod<::jvoid(::java::lang::String)>("severe"), //
+		jMethod<::jvoid(::java::util::function::Supplier)>("severe"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::Throwable)>("throwing"), //
+		jMethod<::jvoid(::java::lang::String)>("warning"), //
+		jMethod<::jvoid(::java::util::function::Supplier)>("warning"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addHandler")] != -1);
+		return call<R>("addHandler", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto config(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("config")] != -1);
+		return call<R>("config", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto entering(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("entering")] != -1);
+		return call<R>("entering", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto exiting(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("exiting")] != -1);
+		return call<R>("exiting", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto fine(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("fine")] != -1);
+		return call<R>("fine", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto finer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("finer")] != -1);
+		return call<R>("finer", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto finest(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("finest")] != -1);
+		return call<R>("finest", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::logging::Logger, typename... Args>
+	static auto getAnonymousLogger(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAnonymousLogger")] != -1);
+		return scall<R>("getAnonymousLogger", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::logging::Filter, typename... Args>
+	auto getFilter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFilter")] != -1);
+		return call<R>("getFilter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::logging::Logger, typename... Args>
+	static auto getGlobal(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getGlobal")] != -1);
+		return scall<R>("getGlobal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::logging::Handler *, typename... Args>
+	auto getHandlers(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHandlers")] != -1);
+		return call<R>("getHandlers", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::logging::Level, typename... Args>
+	auto getLevel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLevel")] != -1);
+		return call<R>("getLevel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::logging::Logger, typename... Args>
+	static auto getLogger(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLogger")] != -1);
+		return scall<R>("getLogger", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::logging::Logger, typename... Args>
+	auto getParent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParent")] != -1);
+		return call<R>("getParent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::ResourceBundle, typename... Args>
+	auto getResourceBundle(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getResourceBundle")] != -1);
+		return call<R>("getResourceBundle", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getResourceBundleName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getResourceBundleName")] != -1);
+		return call<R>("getResourceBundleName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getUseParentHandlers(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUseParentHandlers")] != -1);
+		return call<R>("getUseParentHandlers", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto info(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("info")] != -1);
+		return call<R>("info", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isLoggable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isLoggable")] != -1);
+		return call<R>("isLoggable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto log(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("log")] != -1);
+		return call<R>("log", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto logp(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("logp")] != -1);
+		return call<R>("logp", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto logrb(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("logrb")] != -1);
+		return call<R>("logrb", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeHandler")] != -1);
+		return call<R>("removeHandler", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setFilter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setFilter")] != -1);
+		return call<R>("setFilter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLevel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLevel")] != -1);
+		return call<R>("setLevel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setParent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setParent")] != -1);
+		return call<R>("setParent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setResourceBundle(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setResourceBundle")] != -1);
+		return call<R>("setResourceBundle", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setUseParentHandlers(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setUseParentHandlers")] != -1);
+		return call<R>("setUseParentHandlers", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto severe(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("severe")] != -1);
+		return call<R>("severe", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto throwing(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("throwing")] != -1);
+		return call<R>("throwing", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto warning(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("warning")] != -1);
+		return call<R>("warning", forward<Args>(args)...);
+	}
+
+};
+
+#endif

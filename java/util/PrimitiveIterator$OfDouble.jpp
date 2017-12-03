@@ -1,0 +1,52 @@
+#ifndef java_util_PrimitiveIterator$OfDouble_HPP
+#define java_util_PrimitiveIterator$OfDouble_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::PrimitiveIterator$OfDouble : public jObject<::java::util::PrimitiveIterator$OfDouble, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "PrimitiveIterator$OfDouble";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::Object)>("forEachRemaining"), //
+		jMethod<::jvoid(::java::util::function::Consumer)>("forEachRemaining"), //
+		jMethod<::jvoid(::java::util::function::DoubleConsumer)>("forEachRemaining"), //
+		jMethod<::jboolean()>("hasNext"), //
+		jMethod<::java::lang::Double()>("next"), //
+		jMethod<::java::lang::Object()>("next"), //
+		jMethod<::jdouble()>("nextDouble"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto forEachRemaining(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("forEachRemaining")] != -1);
+		return call<R>("forEachRemaining", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasNext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hasNext")] != -1);
+		return call<R>("hasNext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Double, typename... Args>
+	auto next(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("next")] != -1);
+		return call<R>("next", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	auto nextDouble(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nextDouble")] != -1);
+		return call<R>("nextDouble", forward<Args>(args)...);
+	}
+
+};
+
+#endif

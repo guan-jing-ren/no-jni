@@ -1,0 +1,43 @@
+#ifndef javax_script_Invocable_HPP
+#define javax_script_Invocable_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::script::Invocable : public jObject<::javax::script::Invocable, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_script / "Invocable";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object(::java::lang::Class)>("getInterface"), //
+		jMethod<::java::lang::Object(::java::lang::Object, ::java::lang::Class)>("getInterface"), //
+		jMethod<::java::lang::Object(::java::lang::String, ::java::lang::Object *)>("invokeFunction"), //
+		jMethod<::java::lang::Object(::java::lang::Object, ::java::lang::String, ::java::lang::Object *)>("invokeMethod"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getInterface(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInterface")] != -1);
+		return call<R>("getInterface", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto invokeFunction(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("invokeFunction")] != -1);
+		return call<R>("invokeFunction", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto invokeMethod(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("invokeMethod")] != -1);
+		return call<R>("invokeMethod", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,43 @@
+#ifndef javax_xml_ws_Dispatch_HPP
+#define javax_xml_ws_Dispatch_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::ws::Dispatch : public jObject<::javax::xml::ws::Dispatch, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_ws / "Dispatch";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object(::java::lang::Object)>("invoke"), //
+		jMethod<::javax::xml::ws::Response(::java::lang::Object)>("invokeAsync"), //
+		jMethod<::java::util::concurrent::Future(::java::lang::Object, ::javax::xml::ws::AsyncHandler)>("invokeAsync"), //
+		jMethod<::jvoid(::java::lang::Object)>("invokeOneWay"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto invoke(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("invoke")] != -1);
+		return call<R>("invoke", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::ws::Response, typename... Args>
+	auto invokeAsync(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("invokeAsync")] != -1);
+		return call<R>("invokeAsync", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto invokeOneWay(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("invokeOneWay")] != -1);
+		return call<R>("invokeOneWay", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,78 @@
+#ifndef javax_swing_ButtonGroup_HPP
+#define javax_swing_ButtonGroup_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::ButtonGroup : public jObject<::javax::swing::ButtonGroup, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "ButtonGroup";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::javax::swing::AbstractButton)>("add"), //
+		jMethod<::jvoid()>("clearSelection"), //
+		jMethod<::jint()>("getButtonCount"), //
+		jMethod<::java::util::Enumeration()>("getElements"), //
+		jMethod<::javax::swing::ButtonModel()>("getSelection"), //
+		jMethod<::jboolean(::javax::swing::ButtonModel)>("isSelected"), //
+		jMethod<::jvoid(::javax::swing::AbstractButton)>("remove"), //
+		jMethod<::jvoid(::javax::swing::ButtonModel, ::jboolean)>("setSelected"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto add(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto clearSelection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clearSelection")] != -1);
+		return call<R>("clearSelection", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getButtonCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getButtonCount")] != -1);
+		return call<R>("getButtonCount", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	auto getElements(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getElements")] != -1);
+		return call<R>("getElements", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::ButtonModel, typename... Args>
+	auto getSelection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSelection")] != -1);
+		return call<R>("getSelection", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isSelected(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSelected")] != -1);
+		return call<R>("isSelected", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto remove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setSelected(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSelected")] != -1);
+		return call<R>("setSelected", forward<Args>(args)...);
+	}
+
+};
+
+#endif

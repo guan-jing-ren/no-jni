@@ -1,0 +1,67 @@
+#ifndef java_time_temporal_Temporal_HPP
+#define java_time_temporal_Temporal_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::time::temporal::Temporal : public jObject<::java::time::temporal::Temporal, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_time_temporal / "Temporal";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jlong(::java::time::temporal::TemporalField)>("getLong"), //
+		jMethod<::jboolean(::java::time::temporal::TemporalField)>("isSupported"), //
+		jMethod<::jboolean(::java::time::temporal::TemporalUnit)>("isSupported"), //
+		jMethod<::java::time::temporal::Temporal(::jlong, ::java::time::temporal::TemporalUnit)>("minus"), //
+		jMethod<::java::time::temporal::Temporal(::java::time::temporal::TemporalAmount)>("minus"), //
+		jMethod<::java::time::temporal::Temporal(::jlong, ::java::time::temporal::TemporalUnit)>("plus"), //
+		jMethod<::java::time::temporal::Temporal(::java::time::temporal::TemporalAmount)>("plus"), //
+		jMethod<::jlong(::java::time::temporal::Temporal, ::java::time::temporal::TemporalUnit)>("until"), //
+		jMethod<::java::time::temporal::Temporal(::java::time::temporal::TemporalAdjuster)>("with"), //
+		jMethod<::java::time::temporal::Temporal(::java::time::temporal::TemporalField, ::jlong)>("with"), //
+	};
+
+	template<typename R = ::jlong, typename... Args>
+	auto getLong(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLong")] != -1);
+		return call<R>("getLong", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSupported")] != -1);
+		return call<R>("isSupported", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::temporal::Temporal, typename... Args>
+	auto minus(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("minus")] != -1);
+		return call<R>("minus", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::temporal::Temporal, typename... Args>
+	auto plus(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("plus")] != -1);
+		return call<R>("plus", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto until(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("until")] != -1);
+		return call<R>("until", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::temporal::Temporal, typename... Args>
+	auto with(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("with")] != -1);
+		return call<R>("with", forward<Args>(args)...);
+	}
+
+};
+
+#endif

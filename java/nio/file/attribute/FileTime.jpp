@@ -1,0 +1,86 @@
+#ifndef java_nio_file_attribute_FileTime_HPP
+#define java_nio_file_attribute_FileTime_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::java::nio::file::attribute::FileTime : public jObject<::java::nio::file::attribute::FileTime, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_file_attribute / "FileTime";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint(::java::lang::Object)>("compareTo"), //
+		jMethod<::jint(::java::nio::file::attribute::FileTime)>("compareTo"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::nio::file::attribute::FileTime(::jlong, ::java::util::concurrent::TimeUnit)>("from"), //
+		jMethod<::java::nio::file::attribute::FileTime(::java::time::Instant)>("from"), //
+		jMethod<::java::nio::file::attribute::FileTime(::jlong)>("fromMillis"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jlong(::java::util::concurrent::TimeUnit)>("to"), //
+		jMethod<::java::time::Instant()>("toInstant"), //
+		jMethod<::jlong()>("toMillis"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto compareTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compareTo")] != -1);
+		return call<R>("compareTo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::attribute::FileTime, typename... Args>
+	static auto from(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("from")] != -1);
+		return scall<R>("from", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::attribute::FileTime, typename... Args>
+	static auto fromMillis(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("fromMillis")] != -1);
+		return scall<R>("fromMillis", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto to(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("to")] != -1);
+		return call<R>("to", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::Instant, typename... Args>
+	auto toInstant(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toInstant")] != -1);
+		return call<R>("toInstant", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto toMillis(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toMillis")] != -1);
+		return call<R>("toMillis", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

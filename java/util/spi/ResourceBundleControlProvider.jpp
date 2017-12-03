@@ -1,0 +1,28 @@
+#ifndef java_util_spi_ResourceBundleControlProvider_HPP
+#define java_util_spi_ResourceBundleControlProvider_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::spi::ResourceBundleControlProvider : public jObject<::java::util::spi::ResourceBundleControlProvider, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_spi / "ResourceBundleControlProvider";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::ResourceBundle$Control(::java::lang::String)>("getControl"), //
+	};
+
+	template<typename R = ::java::util::ResourceBundle$Control, typename... Args>
+	auto getControl(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getControl")] != -1);
+		return call<R>("getControl", forward<Args>(args)...);
+	}
+
+};
+
+#endif

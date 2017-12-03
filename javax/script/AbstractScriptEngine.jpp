@@ -1,0 +1,75 @@
+#ifndef javax_script_AbstractScriptEngine_HPP
+#define javax_script_AbstractScriptEngine_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::script::AbstractScriptEngine : public jObject<::javax::script::AbstractScriptEngine, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_script / "AbstractScriptEngine";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::javax::script::Bindings)>(), //
+		jMethod<::java::lang::Object(::java::io::Reader)>("eval"), //
+		jMethod<::java::lang::Object(::java::io::Reader, ::javax::script::Bindings)>("eval"), //
+		jMethod<::java::lang::Object(::java::lang::String)>("eval"), //
+		jMethod<::java::lang::Object(::java::lang::String, ::javax::script::Bindings)>("eval"), //
+		jMethod<::java::lang::Object(::java::lang::String)>("get"), //
+		jMethod<::javax::script::Bindings(::jint)>("getBindings"), //
+		jMethod<::javax::script::ScriptContext()>("getContext"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::Object)>("put"), //
+		jMethod<::jvoid(::javax::script::Bindings, ::jint)>("setBindings"), //
+		jMethod<::jvoid(::javax::script::ScriptContext)>("setContext"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto eval(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("eval")] != -1);
+		return call<R>("eval", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::script::Bindings, typename... Args>
+	auto getBindings(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBindings")] != -1);
+		return call<R>("getBindings", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::script::ScriptContext, typename... Args>
+	auto getContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getContext")] != -1);
+		return call<R>("getContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto put(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("put")] != -1);
+		return call<R>("put", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setBindings(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setBindings")] != -1);
+		return call<R>("setBindings", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setContext")] != -1);
+		return call<R>("setContext", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,48 @@
+#ifndef java_awt_PageAttributes$ColorType_HPP
+#define java_awt_PageAttributes$ColorType_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::PageAttributes$ColorType : public jObject<::java::awt::PageAttributes$ColorType, ::java::awt::AttributeValue> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "PageAttributes$ColorType";
+
+	constexpr static Enume field_signatures{
+		jField<::java::awt::PageAttributes$ColorType>("COLOR"), //
+		jField<::java::awt::PageAttributes$ColorType>("MONOCHROME"), //
+	};
+
+	template<typename F = ::java::awt::PageAttributes$ColorType>
+	static auto COLOR() {
+		static_assert(field_signatures[jField<F>("COLOR")] != -1);
+		return sat<F>("COLOR");
+	}
+
+	template<typename F = ::java::awt::PageAttributes$ColorType>
+	static auto MONOCHROME() {
+		static_assert(field_signatures[jField<F>("MONOCHROME")] != -1);
+		return sat<F>("MONOCHROME");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

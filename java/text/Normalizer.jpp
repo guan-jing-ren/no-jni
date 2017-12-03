@@ -1,0 +1,35 @@
+#ifndef java_text_Normalizer_HPP
+#define java_text_Normalizer_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::text::Normalizer : public jObject<::java::text::Normalizer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_text / "Normalizer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::lang::CharSequence, ::java::text::Normalizer$Form)>("isNormalized"), //
+		jMethod<::java::lang::String(::java::lang::CharSequence, ::java::text::Normalizer$Form)>("normalize"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isNormalized(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isNormalized")] != -1);
+		return scall<R>("isNormalized", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto normalize(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("normalize")] != -1);
+		return scall<R>("normalize", forward<Args>(args)...);
+	}
+
+};
+
+#endif

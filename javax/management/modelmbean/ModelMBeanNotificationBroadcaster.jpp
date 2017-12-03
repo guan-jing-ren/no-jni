@@ -1,0 +1,51 @@
+#ifndef javax_management_modelmbean_ModelMBeanNotificationBroadcaster_HPP
+#define javax_management_modelmbean_ModelMBeanNotificationBroadcaster_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::management::modelmbean::ModelMBeanNotificationBroadcaster : public jObject<::javax::management::modelmbean::ModelMBeanNotificationBroadcaster, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management_modelmbean / "ModelMBeanNotificationBroadcaster";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::management::NotificationListener, ::java::lang::String, ::java::lang::Object)>("addAttributeChangeNotificationListener"), //
+		jMethod<::jvoid(::javax::management::NotificationListener, ::java::lang::String)>("removeAttributeChangeNotificationListener"), //
+		jMethod<::jvoid(::javax::management::Attribute, ::javax::management::Attribute)>("sendAttributeChangeNotification"), //
+		jMethod<::jvoid(::javax::management::AttributeChangeNotification)>("sendAttributeChangeNotification"), //
+		jMethod<::jvoid(::java::lang::String)>("sendNotification"), //
+		jMethod<::jvoid(::javax::management::Notification)>("sendNotification"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addAttributeChangeNotificationListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addAttributeChangeNotificationListener")] != -1);
+		return call<R>("addAttributeChangeNotificationListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeAttributeChangeNotificationListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeAttributeChangeNotificationListener")] != -1);
+		return call<R>("removeAttributeChangeNotificationListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto sendAttributeChangeNotification(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("sendAttributeChangeNotification")] != -1);
+		return call<R>("sendAttributeChangeNotification", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto sendNotification(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("sendNotification")] != -1);
+		return call<R>("sendNotification", forward<Args>(args)...);
+	}
+
+};
+
+#endif

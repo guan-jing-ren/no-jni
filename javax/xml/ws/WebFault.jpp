@@ -1,0 +1,49 @@
+#ifndef javax_xml_ws_WebFault_HPP
+#define javax_xml_ws_WebFault_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::ws::WebFault : public jObject<::javax::xml::ws::WebFault, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_ws / "WebFault";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("faultBean"), //
+		jMethod<::java::lang::String()>("messageName"), //
+		jMethod<::java::lang::String()>("name"), //
+		jMethod<::java::lang::String()>("targetNamespace"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto faultBean(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("faultBean")] != -1);
+		return call<R>("faultBean", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto messageName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("messageName")] != -1);
+		return call<R>("messageName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto name(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("name")] != -1);
+		return call<R>("name", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto targetNamespace(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("targetNamespace")] != -1);
+		return call<R>("targetNamespace", forward<Args>(args)...);
+	}
+
+};
+
+#endif

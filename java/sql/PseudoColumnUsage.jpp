@@ -1,0 +1,62 @@
+#ifndef java_sql_PseudoColumnUsage_HPP
+#define java_sql_PseudoColumnUsage_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::sql::PseudoColumnUsage : public jObject<::java::sql::PseudoColumnUsage, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_sql / "PseudoColumnUsage";
+
+	constexpr static Enume field_signatures{
+		jField<::java::sql::PseudoColumnUsage>("NO_USAGE_RESTRICTIONS"), //
+		jField<::java::sql::PseudoColumnUsage>("SELECT_LIST_ONLY"), //
+		jField<::java::sql::PseudoColumnUsage>("USAGE_UNKNOWN"), //
+		jField<::java::sql::PseudoColumnUsage>("WHERE_CLAUSE_ONLY"), //
+	};
+
+	template<typename F = ::java::sql::PseudoColumnUsage>
+	static auto NO_USAGE_RESTRICTIONS() {
+		static_assert(field_signatures[jField<F>("NO_USAGE_RESTRICTIONS")] != -1);
+		return sat<F>("NO_USAGE_RESTRICTIONS");
+	}
+
+	template<typename F = ::java::sql::PseudoColumnUsage>
+	static auto SELECT_LIST_ONLY() {
+		static_assert(field_signatures[jField<F>("SELECT_LIST_ONLY")] != -1);
+		return sat<F>("SELECT_LIST_ONLY");
+	}
+
+	template<typename F = ::java::sql::PseudoColumnUsage>
+	static auto USAGE_UNKNOWN() {
+		static_assert(field_signatures[jField<F>("USAGE_UNKNOWN")] != -1);
+		return sat<F>("USAGE_UNKNOWN");
+	}
+
+	template<typename F = ::java::sql::PseudoColumnUsage>
+	static auto WHERE_CLAUSE_ONLY() {
+		static_assert(field_signatures[jField<F>("WHERE_CLAUSE_ONLY")] != -1);
+		return sat<F>("WHERE_CLAUSE_ONLY");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::sql::PseudoColumnUsage(::java::lang::String)>("valueOf"), //
+		jMethod<::java::sql::PseudoColumnUsage *()>("values"), //
+	};
+
+	template<typename R = ::java::sql::PseudoColumnUsage, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::PseudoColumnUsage *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

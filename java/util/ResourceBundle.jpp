@@ -1,0 +1,98 @@
+#ifndef java_util_ResourceBundle_HPP
+#define java_util_ResourceBundle_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::ResourceBundle : public jObject<::java::util::ResourceBundle, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "ResourceBundle";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid()>("clearCache"), //
+		jMethod<::jvoid(::java::lang::ClassLoader)>("clearCache"), //
+		jMethod<::jboolean(::java::lang::String)>("containsKey"), //
+		jMethod<::java::lang::String()>("getBaseBundleName"), //
+		jMethod<::java::util::ResourceBundle(::java::lang::String)>("getBundle"), //
+		jMethod<::java::util::ResourceBundle(::java::lang::String, ::java::util::Locale)>("getBundle"), //
+		jMethod<::java::util::ResourceBundle(::java::lang::String, ::java::util::Locale, ::java::lang::ClassLoader)>("getBundle"), //
+		jMethod<::java::util::ResourceBundle(::java::lang::String, ::java::util::Locale, ::java::lang::ClassLoader, ::java::util::ResourceBundle$Control)>("getBundle"), //
+		jMethod<::java::util::ResourceBundle(::java::lang::String, ::java::util::Locale, ::java::util::ResourceBundle$Control)>("getBundle"), //
+		jMethod<::java::util::ResourceBundle(::java::lang::String, ::java::util::ResourceBundle$Control)>("getBundle"), //
+		jMethod<::java::util::Enumeration()>("getKeys"), //
+		jMethod<::java::util::Locale()>("getLocale"), //
+		jMethod<::java::lang::Object(::java::lang::String)>("getObject"), //
+		jMethod<::java::lang::String(::java::lang::String)>("getString"), //
+		jMethod<::java::lang::String *(::java::lang::String)>("getStringArray"), //
+		jMethod<::java::util::Set()>("keySet"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto clearCache(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clearCache")] != -1);
+		return scall<R>("clearCache", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto containsKey(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("containsKey")] != -1);
+		return call<R>("containsKey", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getBaseBundleName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBaseBundleName")] != -1);
+		return call<R>("getBaseBundleName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::ResourceBundle, typename... Args>
+	static auto getBundle(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBundle")] != -1);
+		return scall<R>("getBundle", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	auto getKeys(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getKeys")] != -1);
+		return call<R>("getKeys", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Locale, typename... Args>
+	auto getLocale(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLocale")] != -1);
+		return call<R>("getLocale", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getObject")] != -1);
+		return call<R>("getObject", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getString")] != -1);
+		return call<R>("getString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getStringArray(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStringArray")] != -1);
+		return call<R>("getStringArray", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto keySet(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("keySet")] != -1);
+		return call<R>("keySet", forward<Args>(args)...);
+	}
+
+};
+
+#endif

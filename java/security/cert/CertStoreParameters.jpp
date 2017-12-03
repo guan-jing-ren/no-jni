@@ -1,0 +1,28 @@
+#ifndef java_security_cert_CertStoreParameters_HPP
+#define java_security_cert_CertStoreParameters_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::cert::CertStoreParameters : public jObject<::java::security::cert::CertStoreParameters, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_cert / "CertStoreParameters";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object()>("clone"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", forward<Args>(args)...);
+	}
+
+};
+
+#endif

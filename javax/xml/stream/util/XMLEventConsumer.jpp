@@ -1,0 +1,28 @@
+#ifndef javax_xml_stream_util_XMLEventConsumer_HPP
+#define javax_xml_stream_util_XMLEventConsumer_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::stream::util::XMLEventConsumer : public jObject<::javax::xml::stream::util::XMLEventConsumer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_stream_util / "XMLEventConsumer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::xml::stream::events::XMLEvent)>("add"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto add(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", forward<Args>(args)...);
+	}
+
+};
+
+#endif

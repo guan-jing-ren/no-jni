@@ -1,0 +1,28 @@
+#ifndef java_beans_ExceptionListener_HPP
+#define java_beans_ExceptionListener_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::beans::ExceptionListener : public jObject<::java::beans::ExceptionListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_beans / "ExceptionListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::Exception)>("exceptionThrown"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto exceptionThrown(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("exceptionThrown")] != -1);
+		return call<R>("exceptionThrown", forward<Args>(args)...);
+	}
+
+};
+
+#endif

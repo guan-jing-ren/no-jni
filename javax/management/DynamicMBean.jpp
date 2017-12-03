@@ -1,0 +1,63 @@
+#ifndef javax_management_DynamicMBean_HPP
+#define javax_management_DynamicMBean_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::management::DynamicMBean : public jObject<::javax::management::DynamicMBean, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management / "DynamicMBean";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object(::java::lang::String)>("getAttribute"), //
+		jMethod<::javax::management::AttributeList(::java::lang::String *)>("getAttributes"), //
+		jMethod<::javax::management::MBeanInfo()>("getMBeanInfo"), //
+		jMethod<::java::lang::Object(::java::lang::String, ::java::lang::Object *, ::java::lang::String *)>("invoke"), //
+		jMethod<::jvoid(::javax::management::Attribute)>("setAttribute"), //
+		jMethod<::javax::management::AttributeList(::javax::management::AttributeList)>("setAttributes"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttribute")] != -1);
+		return call<R>("getAttribute", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::AttributeList, typename... Args>
+	auto getAttributes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttributes")] != -1);
+		return call<R>("getAttributes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::MBeanInfo, typename... Args>
+	auto getMBeanInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMBeanInfo")] != -1);
+		return call<R>("getMBeanInfo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto invoke(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("invoke")] != -1);
+		return call<R>("invoke", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setAttribute")] != -1);
+		return call<R>("setAttribute", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::AttributeList, typename... Args>
+	auto setAttributes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setAttributes")] != -1);
+		return call<R>("setAttributes", forward<Args>(args)...);
+	}
+
+};
+
+#endif

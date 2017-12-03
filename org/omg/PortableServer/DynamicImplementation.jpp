@@ -1,0 +1,29 @@
+#ifndef org_omg_PortableServer_DynamicImplementation_HPP
+#define org_omg_PortableServer_DynamicImplementation_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::PortableServer::DynamicImplementation : public jObject<::org::omg::PortableServer::DynamicImplementation, ::org::omg::PortableServer::Servant> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_PortableServer / "DynamicImplementation";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::org::omg::CORBA::ServerRequest)>("invoke"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto invoke(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("invoke")] != -1);
+		return call<R>("invoke", forward<Args>(args)...);
+	}
+
+};
+
+#endif

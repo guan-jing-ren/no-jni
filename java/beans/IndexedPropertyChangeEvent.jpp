@@ -1,0 +1,29 @@
+#ifndef java_beans_IndexedPropertyChangeEvent_HPP
+#define java_beans_IndexedPropertyChangeEvent_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::beans::IndexedPropertyChangeEvent : public jObject<::java::beans::IndexedPropertyChangeEvent, ::java::beans::PropertyChangeEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_beans / "IndexedPropertyChangeEvent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Object, ::java::lang::String, ::java::lang::Object, ::java::lang::Object, ::jint)>(), //
+		jMethod<::jint()>("getIndex"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIndex")] != -1);
+		return call<R>("getIndex", forward<Args>(args)...);
+	}
+
+};
+
+#endif

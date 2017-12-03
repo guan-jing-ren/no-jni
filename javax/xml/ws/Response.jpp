@@ -1,0 +1,28 @@
+#ifndef javax_xml_ws_Response_HPP
+#define javax_xml_ws_Response_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::ws::Response : public jObject<::javax::xml::ws::Response, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_ws / "Response";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::Map()>("getContext"), //
+	};
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto getContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getContext")] != -1);
+		return call<R>("getContext", forward<Args>(args)...);
+	}
+
+};
+
+#endif

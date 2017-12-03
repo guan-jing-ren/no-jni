@@ -1,0 +1,28 @@
+#ifndef javax_swing_event_TableModelListener_HPP
+#define javax_swing_event_TableModelListener_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::event::TableModelListener : public jObject<::javax::swing::event::TableModelListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_event / "TableModelListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::swing::event::TableModelEvent)>("tableChanged"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto tableChanged(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("tableChanged")] != -1);
+		return call<R>("tableChanged", forward<Args>(args)...);
+	}
+
+};
+
+#endif

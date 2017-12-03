@@ -1,0 +1,78 @@
+#ifndef javax_net_ssl_HandshakeCompletedEvent_HPP
+#define javax_net_ssl_HandshakeCompletedEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::net::ssl::HandshakeCompletedEvent : public jObject<::javax::net::ssl::HandshakeCompletedEvent, ::java::util::EventObject> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_net_ssl / "HandshakeCompletedEvent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::net::ssl::SSLSocket, ::javax::net::ssl::SSLSession)>(), //
+		jMethod<::java::lang::String()>("getCipherSuite"), //
+		jMethod<::java::security::cert::Certificate *()>("getLocalCertificates"), //
+		jMethod<::java::security::Principal()>("getLocalPrincipal"), //
+		jMethod<::javax::security::cert::X509Certificate *()>("getPeerCertificateChain"), //
+		jMethod<::java::security::cert::Certificate *()>("getPeerCertificates"), //
+		jMethod<::java::security::Principal()>("getPeerPrincipal"), //
+		jMethod<::javax::net::ssl::SSLSession()>("getSession"), //
+		jMethod<::javax::net::ssl::SSLSocket()>("getSocket"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getCipherSuite(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCipherSuite")] != -1);
+		return call<R>("getCipherSuite", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::Certificate *, typename... Args>
+	auto getLocalCertificates(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLocalCertificates")] != -1);
+		return call<R>("getLocalCertificates", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Principal, typename... Args>
+	auto getLocalPrincipal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLocalPrincipal")] != -1);
+		return call<R>("getLocalPrincipal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::security::cert::X509Certificate *, typename... Args>
+	auto getPeerCertificateChain(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPeerCertificateChain")] != -1);
+		return call<R>("getPeerCertificateChain", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::Certificate *, typename... Args>
+	auto getPeerCertificates(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPeerCertificates")] != -1);
+		return call<R>("getPeerCertificates", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Principal, typename... Args>
+	auto getPeerPrincipal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPeerPrincipal")] != -1);
+		return call<R>("getPeerPrincipal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::net::ssl::SSLSession, typename... Args>
+	auto getSession(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSession")] != -1);
+		return call<R>("getSession", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::net::ssl::SSLSocket, typename... Args>
+	auto getSocket(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSocket")] != -1);
+		return call<R>("getSocket", forward<Args>(args)...);
+	}
+
+};
+
+#endif

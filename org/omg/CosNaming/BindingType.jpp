@@ -1,0 +1,62 @@
+#ifndef org_omg_CosNaming_BindingType_HPP
+#define org_omg_CosNaming_BindingType_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::CosNaming::BindingType : public jObject<::org::omg::CosNaming::BindingType, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CosNaming / "BindingType";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("_ncontext"), //
+		jField<::jint>("_nobject"), //
+		jField<::org::omg::CosNaming::BindingType>("ncontext"), //
+		jField<::org::omg::CosNaming::BindingType>("nobject"), //
+	};
+
+	template<typename F = ::jint>
+	static auto _ncontext() {
+		static_assert(field_signatures[jField<F>("_ncontext")] != -1);
+		return sat<F>("_ncontext");
+	}
+
+	template<typename F = ::jint>
+	static auto _nobject() {
+		static_assert(field_signatures[jField<F>("_nobject")] != -1);
+		return sat<F>("_nobject");
+	}
+
+	template<typename F = ::org::omg::CosNaming::BindingType>
+	static auto ncontext() {
+		static_assert(field_signatures[jField<F>("ncontext")] != -1);
+		return sat<F>("ncontext");
+	}
+
+	template<typename F = ::org::omg::CosNaming::BindingType>
+	static auto nobject() {
+		static_assert(field_signatures[jField<F>("nobject")] != -1);
+		return sat<F>("nobject");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::omg::CosNaming::BindingType(::jint)>("from_int"), //
+		jMethod<::jint()>("value"), //
+	};
+
+	template<typename R = ::org::omg::CosNaming::BindingType, typename... Args>
+	static auto from_int(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("from_int")] != -1);
+		return scall<R>("from_int", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("value")] != -1);
+		return call<R>("value", forward<Args>(args)...);
+	}
+
+};
+
+#endif

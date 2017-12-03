@@ -1,0 +1,50 @@
+#ifndef java_security_spec_ECFieldFp_HPP
+#define java_security_spec_ECFieldFp_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::spec::ECFieldFp : public jObject<::java::security::spec::ECFieldFp, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_spec / "ECFieldFp";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::math::BigInteger)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jint()>("getFieldSize"), //
+		jMethod<::java::math::BigInteger()>("getP"), //
+		jMethod<::jint()>("hashCode"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getFieldSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFieldSize")] != -1);
+		return call<R>("getFieldSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getP(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getP")] != -1);
+		return call<R>("getP", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,63 @@
+#ifndef java_beans_VetoableChangeSupport_HPP
+#define java_beans_VetoableChangeSupport_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::beans::VetoableChangeSupport : public jObject<::java::beans::VetoableChangeSupport, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_beans / "VetoableChangeSupport";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Object)>(), //
+		jMethod<::jvoid(::java::beans::VetoableChangeListener)>("addVetoableChangeListener"), //
+		jMethod<::jvoid(::java::lang::String, ::java::beans::VetoableChangeListener)>("addVetoableChangeListener"), //
+		jMethod<::jvoid(::java::beans::PropertyChangeEvent)>("fireVetoableChange"), //
+		jMethod<::jvoid(::java::lang::String, ::jint, ::jint)>("fireVetoableChange"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::Object, ::java::lang::Object)>("fireVetoableChange"), //
+		jMethod<::jvoid(::java::lang::String, ::jboolean, ::jboolean)>("fireVetoableChange"), //
+		jMethod<::java::beans::VetoableChangeListener *()>("getVetoableChangeListeners"), //
+		jMethod<::java::beans::VetoableChangeListener *(::java::lang::String)>("getVetoableChangeListeners"), //
+		jMethod<::jboolean(::java::lang::String)>("hasListeners"), //
+		jMethod<::jvoid(::java::beans::VetoableChangeListener)>("removeVetoableChangeListener"), //
+		jMethod<::jvoid(::java::lang::String, ::java::beans::VetoableChangeListener)>("removeVetoableChangeListener"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addVetoableChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addVetoableChangeListener")] != -1);
+		return call<R>("addVetoableChangeListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto fireVetoableChange(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("fireVetoableChange")] != -1);
+		return call<R>("fireVetoableChange", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::beans::VetoableChangeListener *, typename... Args>
+	auto getVetoableChangeListeners(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getVetoableChangeListeners")] != -1);
+		return call<R>("getVetoableChangeListeners", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasListeners(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hasListeners")] != -1);
+		return call<R>("hasListeners", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeVetoableChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeVetoableChangeListener")] != -1);
+		return call<R>("removeVetoableChangeListener", forward<Args>(args)...);
+	}
+
+};
+
+#endif

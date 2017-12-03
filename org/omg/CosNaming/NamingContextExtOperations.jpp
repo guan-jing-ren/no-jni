@@ -1,0 +1,49 @@
+#ifndef org_omg_CosNaming_NamingContextExtOperations_HPP
+#define org_omg_CosNaming_NamingContextExtOperations_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::CosNaming::NamingContextExtOperations : public jObject<::org::omg::CosNaming::NamingContextExtOperations, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CosNaming / "NamingContextExtOperations";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::omg::CORBA::Object(::java::lang::String)>("resolve_str"), //
+		jMethod<::org::omg::CosNaming::NameComponent *(::java::lang::String)>("to_name"), //
+		jMethod<::java::lang::String(::org::omg::CosNaming::NameComponent *)>("to_string"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::lang::String)>("to_url"), //
+	};
+
+	template<typename R = ::org::omg::CORBA::Object, typename... Args>
+	auto resolve_str(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("resolve_str")] != -1);
+		return call<R>("resolve_str", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CosNaming::NameComponent *, typename... Args>
+	auto to_name(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("to_name")] != -1);
+		return call<R>("to_name", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto to_string(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("to_string")] != -1);
+		return call<R>("to_string", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto to_url(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("to_url")] != -1);
+		return call<R>("to_url", forward<Args>(args)...);
+	}
+
+};
+
+#endif

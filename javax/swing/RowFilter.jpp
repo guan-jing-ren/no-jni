@@ -1,0 +1,71 @@
+#ifndef javax_swing_RowFilter_HPP
+#define javax_swing_RowFilter_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::RowFilter : public jObject<::javax::swing::RowFilter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "RowFilter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::swing::RowFilter(::java::lang::Iterable)>("andFilter"), //
+		jMethod<::javax::swing::RowFilter(::javax::swing::RowFilter$ComparisonType, ::java::util::Date, ::jint *)>("dateFilter"), //
+		jMethod<::jboolean(::javax::swing::RowFilter$Entry)>("include"), //
+		jMethod<::javax::swing::RowFilter(::javax::swing::RowFilter)>("notFilter"), //
+		jMethod<::javax::swing::RowFilter(::javax::swing::RowFilter$ComparisonType, ::java::lang::Number, ::jint *)>("numberFilter"), //
+		jMethod<::javax::swing::RowFilter(::java::lang::Iterable)>("orFilter"), //
+		jMethod<::javax::swing::RowFilter(::java::lang::String, ::jint *)>("regexFilter"), //
+	};
+
+	template<typename R = ::javax::swing::RowFilter, typename... Args>
+	static auto andFilter(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("andFilter")] != -1);
+		return scall<R>("andFilter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::RowFilter, typename... Args>
+	static auto dateFilter(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dateFilter")] != -1);
+		return scall<R>("dateFilter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto include(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("include")] != -1);
+		return call<R>("include", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::RowFilter, typename... Args>
+	static auto notFilter(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("notFilter")] != -1);
+		return scall<R>("notFilter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::RowFilter, typename... Args>
+	static auto numberFilter(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("numberFilter")] != -1);
+		return scall<R>("numberFilter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::RowFilter, typename... Args>
+	static auto orFilter(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("orFilter")] != -1);
+		return scall<R>("orFilter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::RowFilter, typename... Args>
+	static auto regexFilter(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("regexFilter")] != -1);
+		return scall<R>("regexFilter", forward<Args>(args)...);
+	}
+
+};
+
+#endif

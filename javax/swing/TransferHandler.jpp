@@ -1,0 +1,149 @@
+#ifndef javax_swing_TransferHandler_HPP
+#define javax_swing_TransferHandler_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::TransferHandler : public jObject<::javax::swing::TransferHandler, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "TransferHandler";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("COPY"), //
+		jField<::jint>("COPY_OR_MOVE"), //
+		jField<::jint>("LINK"), //
+		jField<::jint>("MOVE"), //
+		jField<::jint>("NONE"), //
+	};
+
+	template<typename F = ::jint>
+	static auto COPY() {
+		static_assert(field_signatures[jField<F>("COPY")] != -1);
+		return sat<F>("COPY");
+	}
+
+	template<typename F = ::jint>
+	static auto COPY_OR_MOVE() {
+		static_assert(field_signatures[jField<F>("COPY_OR_MOVE")] != -1);
+		return sat<F>("COPY_OR_MOVE");
+	}
+
+	template<typename F = ::jint>
+	static auto LINK() {
+		static_assert(field_signatures[jField<F>("LINK")] != -1);
+		return sat<F>("LINK");
+	}
+
+	template<typename F = ::jint>
+	static auto MOVE() {
+		static_assert(field_signatures[jField<F>("MOVE")] != -1);
+		return sat<F>("MOVE");
+	}
+
+	template<typename F = ::jint>
+	static auto NONE() {
+		static_assert(field_signatures[jField<F>("NONE")] != -1);
+		return sat<F>("NONE");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jMethod<::jboolean(::javax::swing::JComponent, ::java::awt::datatransfer::DataFlavor *)>("canImport"), //
+		jMethod<::jboolean(::javax::swing::TransferHandler$TransferSupport)>("canImport"), //
+		jMethod<::jvoid(::javax::swing::JComponent, ::java::awt::event::InputEvent, ::jint)>("exportAsDrag"), //
+		jMethod<::jvoid(::javax::swing::JComponent, ::java::awt::datatransfer::Clipboard, ::jint)>("exportToClipboard"), //
+		jMethod<::javax::swing::Action()>("getCopyAction"), //
+		jMethod<::javax::swing::Action()>("getCutAction"), //
+		jMethod<::java::awt::Image()>("getDragImage"), //
+		jMethod<::java::awt::Point()>("getDragImageOffset"), //
+		jMethod<::javax::swing::Action()>("getPasteAction"), //
+		jMethod<::jint(::javax::swing::JComponent)>("getSourceActions"), //
+		jMethod<::javax::swing::Icon(::java::awt::datatransfer::Transferable)>("getVisualRepresentation"), //
+		jMethod<::jboolean(::javax::swing::JComponent, ::java::awt::datatransfer::Transferable)>("importData"), //
+		jMethod<::jboolean(::javax::swing::TransferHandler$TransferSupport)>("importData"), //
+		jMethod<::jvoid(::java::awt::Image)>("setDragImage"), //
+		jMethod<::jvoid(::java::awt::Point)>("setDragImageOffset"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto canImport(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("canImport")] != -1);
+		return call<R>("canImport", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto exportAsDrag(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("exportAsDrag")] != -1);
+		return call<R>("exportAsDrag", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto exportToClipboard(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("exportToClipboard")] != -1);
+		return call<R>("exportToClipboard", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::Action, typename... Args>
+	static auto getCopyAction(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCopyAction")] != -1);
+		return scall<R>("getCopyAction", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::Action, typename... Args>
+	static auto getCutAction(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCutAction")] != -1);
+		return scall<R>("getCutAction", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Image, typename... Args>
+	auto getDragImage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDragImage")] != -1);
+		return call<R>("getDragImage", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Point, typename... Args>
+	auto getDragImageOffset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDragImageOffset")] != -1);
+		return call<R>("getDragImageOffset", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::Action, typename... Args>
+	static auto getPasteAction(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPasteAction")] != -1);
+		return scall<R>("getPasteAction", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getSourceActions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSourceActions")] != -1);
+		return call<R>("getSourceActions", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::Icon, typename... Args>
+	auto getVisualRepresentation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getVisualRepresentation")] != -1);
+		return call<R>("getVisualRepresentation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto importData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("importData")] != -1);
+		return call<R>("importData", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDragImage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDragImage")] != -1);
+		return call<R>("setDragImage", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDragImageOffset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDragImageOffset")] != -1);
+		return call<R>("setDragImageOffset", forward<Args>(args)...);
+	}
+
+};
+
+#endif

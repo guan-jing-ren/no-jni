@@ -1,0 +1,44 @@
+#ifndef java_io_FilterWriter_HPP
+#define java_io_FilterWriter_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::io::FilterWriter : public jObject<::java::io::FilterWriter, ::java::io::Writer> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_io / "FilterWriter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("close"), //
+		jMethod<::jvoid()>("flush"), //
+		jMethod<::jvoid(::jint)>("write"), //
+		jMethod<::jvoid(::java::lang::String, ::jint, ::jint)>("write"), //
+		jMethod<::jvoid(::jchar *, ::jint, ::jint)>("write"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto flush(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("flush")] != -1);
+		return call<R>("flush", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", forward<Args>(args)...);
+	}
+
+};
+
+#endif

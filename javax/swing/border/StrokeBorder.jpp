@@ -1,0 +1,51 @@
+#ifndef javax_swing_border_StrokeBorder_HPP
+#define javax_swing_border_StrokeBorder_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::border::StrokeBorder : public jObject<::javax::swing::border::StrokeBorder, ::javax::swing::border::AbstractBorder> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_border / "StrokeBorder";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::BasicStroke)>(), //
+		jConstructor<::jvoid(::java::awt::BasicStroke, ::java::awt::Paint)>(), //
+		jMethod<::java::awt::Insets(::java::awt::Component, ::java::awt::Insets)>("getBorderInsets"), //
+		jMethod<::java::awt::Paint()>("getPaint"), //
+		jMethod<::java::awt::BasicStroke()>("getStroke"), //
+		jMethod<::jvoid(::java::awt::Component, ::java::awt::Graphics, ::jint, ::jint, ::jint, ::jint)>("paintBorder"), //
+	};
+
+	template<typename R = ::java::awt::Insets, typename... Args>
+	auto getBorderInsets(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBorderInsets")] != -1);
+		return call<R>("getBorderInsets", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Paint, typename... Args>
+	auto getPaint(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPaint")] != -1);
+		return call<R>("getPaint", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::BasicStroke, typename... Args>
+	auto getStroke(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStroke")] != -1);
+		return call<R>("getStroke", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto paintBorder(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paintBorder")] != -1);
+		return call<R>("paintBorder", forward<Args>(args)...);
+	}
+
+};
+
+#endif

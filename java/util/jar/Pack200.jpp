@@ -1,0 +1,35 @@
+#ifndef java_util_jar_Pack200_HPP
+#define java_util_jar_Pack200_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::jar::Pack200 : public jObject<::java::util::jar::Pack200, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_jar / "Pack200";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::jar::Pack200$Packer()>("newPacker"), //
+		jMethod<::java::util::jar::Pack200$Unpacker()>("newUnpacker"), //
+	};
+
+	template<typename R = ::java::util::jar::Pack200$Packer, typename... Args>
+	static auto newPacker(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newPacker")] != -1);
+		return scall<R>("newPacker", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::jar::Pack200$Unpacker, typename... Args>
+	static auto newUnpacker(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newUnpacker")] != -1);
+		return scall<R>("newUnpacker", forward<Args>(args)...);
+	}
+
+};
+
+#endif

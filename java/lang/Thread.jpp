@@ -1,0 +1,319 @@
+#ifndef java_lang_Thread_HPP
+#define java_lang_Thread_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::lang::Thread : public jObject<::java::lang::Thread, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang / "Thread";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("MAX_PRIORITY"), //
+		jField<::jint>("MIN_PRIORITY"), //
+		jField<::jint>("NORM_PRIORITY"), //
+	};
+
+	template<typename F = ::jint>
+	static auto MAX_PRIORITY() {
+		static_assert(field_signatures[jField<F>("MAX_PRIORITY")] != -1);
+		return sat<F>("MAX_PRIORITY");
+	}
+
+	template<typename F = ::jint>
+	static auto MIN_PRIORITY() {
+		static_assert(field_signatures[jField<F>("MIN_PRIORITY")] != -1);
+		return sat<F>("MIN_PRIORITY");
+	}
+
+	template<typename F = ::jint>
+	static auto NORM_PRIORITY() {
+		static_assert(field_signatures[jField<F>("NORM_PRIORITY")] != -1);
+		return sat<F>("NORM_PRIORITY");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::Runnable)>(), //
+		jConstructor<::jvoid(::java::lang::Runnable, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::ThreadGroup, ::java::lang::Runnable)>(), //
+		jConstructor<::jvoid(::java::lang::ThreadGroup, ::java::lang::Runnable, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::ThreadGroup, ::java::lang::Runnable, ::java::lang::String, ::jlong)>(), //
+		jConstructor<::jvoid(::java::lang::ThreadGroup, ::java::lang::String)>(), //
+		jMethod<::jint()>("activeCount"), //
+		jMethod<::jvoid()>("checkAccess"), //
+		jMethod<::jint()>("countStackFrames"), //
+		jMethod<::java::lang::Thread()>("currentThread"), //
+		jMethod<::jvoid()>("destroy"), //
+		jMethod<::jvoid()>("dumpStack"), //
+		jMethod<::jint(::java::lang::Thread *)>("enumerate"), //
+		jMethod<::java::util::Map()>("getAllStackTraces"), //
+		jMethod<::java::lang::ClassLoader()>("getContextClassLoader"), //
+		jMethod<::java::lang::Thread$UncaughtExceptionHandler()>("getDefaultUncaughtExceptionHandler"), //
+		jMethod<::jlong()>("getId"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::jint()>("getPriority"), //
+		jMethod<::java::lang::StackTraceElement *()>("getStackTrace"), //
+		jMethod<::java::lang::Thread$State()>("getState"), //
+		jMethod<::java::lang::ThreadGroup()>("getThreadGroup"), //
+		jMethod<::java::lang::Thread$UncaughtExceptionHandler()>("getUncaughtExceptionHandler"), //
+		jMethod<::jboolean(::java::lang::Object)>("holdsLock"), //
+		jMethod<::jvoid()>("interrupt"), //
+		jMethod<::jboolean()>("interrupted"), //
+		jMethod<::jboolean()>("isAlive"), //
+		jMethod<::jboolean()>("isDaemon"), //
+		jMethod<::jboolean()>("isInterrupted"), //
+		jMethod<::jvoid()>("join"), //
+		jMethod<::jvoid(::jlong)>("join"), //
+		jMethod<::jvoid(::jlong, ::jint)>("join"), //
+		jMethod<::jvoid()>("resume"), //
+		jMethod<::jvoid()>("run"), //
+		jMethod<::jvoid(::java::lang::ClassLoader)>("setContextClassLoader"), //
+		jMethod<::jvoid(::jboolean)>("setDaemon"), //
+		jMethod<::jvoid(::java::lang::Thread$UncaughtExceptionHandler)>("setDefaultUncaughtExceptionHandler"), //
+		jMethod<::jvoid(::java::lang::String)>("setName"), //
+		jMethod<::jvoid(::jint)>("setPriority"), //
+		jMethod<::jvoid(::java::lang::Thread$UncaughtExceptionHandler)>("setUncaughtExceptionHandler"), //
+		jMethod<::jvoid(::jlong)>("sleep"), //
+		jMethod<::jvoid(::jlong, ::jint)>("sleep"), //
+		jMethod<::jvoid()>("start"), //
+		jMethod<::jvoid()>("stop"), //
+		jMethod<::jvoid(::java::lang::Throwable)>("stop"), //
+		jMethod<::jvoid()>("suspend"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::jvoid()>("yield"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	static auto activeCount(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("activeCount")] != -1);
+		return scall<R>("activeCount", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto checkAccess(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("checkAccess")] != -1);
+		return call<R>("checkAccess", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto countStackFrames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("countStackFrames")] != -1);
+		return call<R>("countStackFrames", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Thread, typename... Args>
+	static auto currentThread(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("currentThread")] != -1);
+		return scall<R>("currentThread", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto destroy(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("destroy")] != -1);
+		return call<R>("destroy", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto dumpStack(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dumpStack")] != -1);
+		return scall<R>("dumpStack", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto enumerate(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("enumerate")] != -1);
+		return scall<R>("enumerate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	static auto getAllStackTraces(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAllStackTraces")] != -1);
+		return scall<R>("getAllStackTraces", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::ClassLoader, typename... Args>
+	auto getContextClassLoader(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getContextClassLoader")] != -1);
+		return call<R>("getContextClassLoader", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Thread$UncaughtExceptionHandler, typename... Args>
+	static auto getDefaultUncaughtExceptionHandler(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaultUncaughtExceptionHandler")] != -1);
+		return scall<R>("getDefaultUncaughtExceptionHandler", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getId")] != -1);
+		return call<R>("getId", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getPriority(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPriority")] != -1);
+		return call<R>("getPriority", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::StackTraceElement *, typename... Args>
+	auto getStackTrace(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStackTrace")] != -1);
+		return call<R>("getStackTrace", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Thread$State, typename... Args>
+	auto getState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getState")] != -1);
+		return call<R>("getState", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::ThreadGroup, typename... Args>
+	auto getThreadGroup(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getThreadGroup")] != -1);
+		return call<R>("getThreadGroup", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Thread$UncaughtExceptionHandler, typename... Args>
+	auto getUncaughtExceptionHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUncaughtExceptionHandler")] != -1);
+		return call<R>("getUncaughtExceptionHandler", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto holdsLock(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("holdsLock")] != -1);
+		return scall<R>("holdsLock", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto interrupt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("interrupt")] != -1);
+		return call<R>("interrupt", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto interrupted(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("interrupted")] != -1);
+		return scall<R>("interrupted", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isAlive(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isAlive")] != -1);
+		return call<R>("isAlive", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDaemon(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isDaemon")] != -1);
+		return call<R>("isDaemon", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isInterrupted(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isInterrupted")] != -1);
+		return call<R>("isInterrupted", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto join(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("join")] != -1);
+		return call<R>("join", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto resume(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("resume")] != -1);
+		return call<R>("resume", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto run(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("run")] != -1);
+		return call<R>("run", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setContextClassLoader(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setContextClassLoader")] != -1);
+		return call<R>("setContextClassLoader", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDaemon(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDaemon")] != -1);
+		return call<R>("setDaemon", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setDefaultUncaughtExceptionHandler(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDefaultUncaughtExceptionHandler")] != -1);
+		return scall<R>("setDefaultUncaughtExceptionHandler", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setName")] != -1);
+		return call<R>("setName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setPriority(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPriority")] != -1);
+		return call<R>("setPriority", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setUncaughtExceptionHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setUncaughtExceptionHandler")] != -1);
+		return call<R>("setUncaughtExceptionHandler", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto sleep(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("sleep")] != -1);
+		return scall<R>("sleep", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto start(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("start")] != -1);
+		return call<R>("start", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto stop(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("stop")] != -1);
+		return call<R>("stop", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto suspend(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("suspend")] != -1);
+		return call<R>("suspend", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto yield(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("yield")] != -1);
+		return scall<R>("yield", forward<Args>(args)...);
+	}
+
+};
+
+#endif

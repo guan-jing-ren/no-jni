@@ -1,0 +1,42 @@
+#ifndef java_security_AuthProvider_HPP
+#define java_security_AuthProvider_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::AuthProvider : public jObject<::java::security::AuthProvider, ::java::security::Provider> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "AuthProvider";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::security::auth::Subject, ::javax::security::auth::callback::CallbackHandler)>("login"), //
+		jMethod<::jvoid()>("logout"), //
+		jMethod<::jvoid(::javax::security::auth::callback::CallbackHandler)>("setCallbackHandler"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto login(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("login")] != -1);
+		return call<R>("login", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto logout(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("logout")] != -1);
+		return call<R>("logout", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setCallbackHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setCallbackHandler")] != -1);
+		return call<R>("setCallbackHandler", forward<Args>(args)...);
+	}
+
+};
+
+#endif

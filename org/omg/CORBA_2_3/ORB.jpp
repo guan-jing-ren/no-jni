@@ -1,0 +1,57 @@
+#ifndef org_omg_CORBA_2_3_ORB_HPP
+#define org_omg_CORBA_2_3_ORB_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::CORBA_2_3::ORB : public jObject<::org::omg::CORBA_2_3::ORB, ::org::omg::CORBA::ORB> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CORBA_2_3 / "ORB";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::org::omg::CORBA::Object(::java::lang::String)>("get_value_def"), //
+		jMethod<::org::omg::CORBA::portable::ValueFactory(::java::lang::String)>("lookup_value_factory"), //
+		jMethod<::org::omg::CORBA::portable::ValueFactory(::java::lang::String, ::org::omg::CORBA::portable::ValueFactory)>("register_value_factory"), //
+		jMethod<::jvoid(::java::lang::Object)>("set_delegate"), //
+		jMethod<::jvoid(::java::lang::String)>("unregister_value_factory"), //
+	};
+
+	template<typename R = ::org::omg::CORBA::Object, typename... Args>
+	auto get_value_def(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get_value_def")] != -1);
+		return call<R>("get_value_def", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::portable::ValueFactory, typename... Args>
+	auto lookup_value_factory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lookup_value_factory")] != -1);
+		return call<R>("lookup_value_factory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::portable::ValueFactory, typename... Args>
+	auto register_value_factory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("register_value_factory")] != -1);
+		return call<R>("register_value_factory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set_delegate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set_delegate")] != -1);
+		return call<R>("set_delegate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto unregister_value_factory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unregister_value_factory")] != -1);
+		return call<R>("unregister_value_factory", forward<Args>(args)...);
+	}
+
+};
+
+#endif

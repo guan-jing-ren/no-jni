@@ -1,0 +1,36 @@
+#ifndef javax_swing_plaf_basic_BasicComboBoxRenderer_HPP
+#define javax_swing_plaf_basic_BasicComboBoxRenderer_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::swing::plaf::basic::BasicComboBoxRenderer : public jObject<::javax::swing::plaf::basic::BasicComboBoxRenderer, ::javax::swing::JLabel> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_plaf_basic / "BasicComboBoxRenderer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::awt::Component(::javax::swing::JList, ::java::lang::Object, ::jint, ::jboolean, ::jboolean)>("getListCellRendererComponent"), //
+		jMethod<::java::awt::Dimension()>("getPreferredSize"), //
+	};
+
+	template<typename R = ::java::awt::Component, typename... Args>
+	auto getListCellRendererComponent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getListCellRendererComponent")] != -1);
+		return call<R>("getListCellRendererComponent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Dimension, typename... Args>
+	auto getPreferredSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPreferredSize")] != -1);
+		return call<R>("getPreferredSize", forward<Args>(args)...);
+	}
+
+};
+
+#endif

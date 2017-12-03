@@ -1,0 +1,63 @@
+#ifndef javax_xml_soap_Node_HPP
+#define javax_xml_soap_Node_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::soap::Node : public jObject<::javax::xml::soap::Node, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_soap / "Node";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("detachNode"), //
+		jMethod<::javax::xml::soap::SOAPElement()>("getParentElement"), //
+		jMethod<::java::lang::String()>("getValue"), //
+		jMethod<::jvoid()>("recycleNode"), //
+		jMethod<::jvoid(::javax::xml::soap::SOAPElement)>("setParentElement"), //
+		jMethod<::jvoid(::java::lang::String)>("setValue"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto detachNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("detachNode")] != -1);
+		return call<R>("detachNode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::soap::SOAPElement, typename... Args>
+	auto getParentElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParentElement")] != -1);
+		return call<R>("getParentElement", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getValue")] != -1);
+		return call<R>("getValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto recycleNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("recycleNode")] != -1);
+		return call<R>("recycleNode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setParentElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setParentElement")] != -1);
+		return call<R>("setParentElement", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setValue")] != -1);
+		return call<R>("setValue", forward<Args>(args)...);
+	}
+
+};
+
+#endif

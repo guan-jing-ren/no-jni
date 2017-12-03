@@ -1,0 +1,42 @@
+#ifndef javax_xml_ws_soap_Addressing_HPP
+#define javax_xml_ws_soap_Addressing_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::ws::soap::Addressing : public jObject<::javax::xml::ws::soap::Addressing, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_ws_soap / "Addressing";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean()>("enabled"), //
+		jMethod<::jboolean()>("required"), //
+		jMethod<::javax::xml::ws::soap::AddressingFeature$Responses()>("responses"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto enabled(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("enabled")] != -1);
+		return call<R>("enabled", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto required(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("required")] != -1);
+		return call<R>("required", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::ws::soap::AddressingFeature$Responses, typename... Args>
+	auto responses(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("responses")] != -1);
+		return call<R>("responses", forward<Args>(args)...);
+	}
+
+};
+
+#endif

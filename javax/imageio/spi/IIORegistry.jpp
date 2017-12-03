@@ -1,0 +1,35 @@
+#ifndef javax_imageio_spi_IIORegistry_HPP
+#define javax_imageio_spi_IIORegistry_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::imageio::spi::IIORegistry : public jObject<::javax::imageio::spi::IIORegistry, ::javax::imageio::spi::ServiceRegistry> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_imageio_spi / "IIORegistry";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::imageio::spi::IIORegistry()>("getDefaultInstance"), //
+		jMethod<::jvoid()>("registerApplicationClasspathSpis"), //
+	};
+
+	template<typename R = ::javax::imageio::spi::IIORegistry, typename... Args>
+	static auto getDefaultInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaultInstance")] != -1);
+		return scall<R>("getDefaultInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto registerApplicationClasspathSpis(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("registerApplicationClasspathSpis")] != -1);
+		return call<R>("registerApplicationClasspathSpis", forward<Args>(args)...);
+	}
+
+};
+
+#endif

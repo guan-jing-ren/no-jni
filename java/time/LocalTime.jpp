@@ -1,0 +1,372 @@
+#ifndef java_time_LocalTime_HPP
+#define java_time_LocalTime_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::time::LocalTime : public jObject<::java::time::LocalTime, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_time / "LocalTime";
+
+	constexpr static Enume field_signatures{
+		jField<::java::time::LocalTime>("MAX"), //
+		jField<::java::time::LocalTime>("MIDNIGHT"), //
+		jField<::java::time::LocalTime>("MIN"), //
+		jField<::java::time::LocalTime>("NOON"), //
+	};
+
+	template<typename F = ::java::time::LocalTime>
+	static auto MAX() {
+		static_assert(field_signatures[jField<F>("MAX")] != -1);
+		return sat<F>("MAX");
+	}
+
+	template<typename F = ::java::time::LocalTime>
+	static auto MIDNIGHT() {
+		static_assert(field_signatures[jField<F>("MIDNIGHT")] != -1);
+		return sat<F>("MIDNIGHT");
+	}
+
+	template<typename F = ::java::time::LocalTime>
+	static auto MIN() {
+		static_assert(field_signatures[jField<F>("MIN")] != -1);
+		return sat<F>("MIN");
+	}
+
+	template<typename F = ::java::time::LocalTime>
+	static auto NOON() {
+		static_assert(field_signatures[jField<F>("NOON")] != -1);
+		return sat<F>("NOON");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::time::temporal::Temporal(::java::time::temporal::Temporal)>("adjustInto"), //
+		jMethod<::java::time::LocalDateTime(::java::time::LocalDate)>("atDate"), //
+		jMethod<::java::time::OffsetTime(::java::time::ZoneOffset)>("atOffset"), //
+		jMethod<::jint(::java::lang::Object)>("compareTo"), //
+		jMethod<::jint(::java::time::LocalTime)>("compareTo"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::lang::String(::java::time::format::DateTimeFormatter)>("format"), //
+		jMethod<::java::time::LocalTime(::java::time::temporal::TemporalAccessor)>("from"), //
+		jMethod<::jint(::java::time::temporal::TemporalField)>("get"), //
+		jMethod<::jint()>("getHour"), //
+		jMethod<::jlong(::java::time::temporal::TemporalField)>("getLong"), //
+		jMethod<::jint()>("getMinute"), //
+		jMethod<::jint()>("getNano"), //
+		jMethod<::jint()>("getSecond"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jboolean(::java::time::LocalTime)>("isAfter"), //
+		jMethod<::jboolean(::java::time::LocalTime)>("isBefore"), //
+		jMethod<::jboolean(::java::time::temporal::TemporalField)>("isSupported"), //
+		jMethod<::jboolean(::java::time::temporal::TemporalUnit)>("isSupported"), //
+		jMethod<::java::time::LocalTime(::jlong, ::java::time::temporal::TemporalUnit)>("minus"), //
+		jMethod<::java::time::temporal::Temporal(::jlong, ::java::time::temporal::TemporalUnit)>("minus"), //
+		jMethod<::java::time::LocalTime(::java::time::temporal::TemporalAmount)>("minus"), //
+		jMethod<::java::time::temporal::Temporal(::java::time::temporal::TemporalAmount)>("minus"), //
+		jMethod<::java::time::LocalTime(::jlong)>("minusHours"), //
+		jMethod<::java::time::LocalTime(::jlong)>("minusMinutes"), //
+		jMethod<::java::time::LocalTime(::jlong)>("minusNanos"), //
+		jMethod<::java::time::LocalTime(::jlong)>("minusSeconds"), //
+		jMethod<::java::time::LocalTime()>("now"), //
+		jMethod<::java::time::LocalTime(::java::time::Clock)>("now"), //
+		jMethod<::java::time::LocalTime(::java::time::ZoneId)>("now"), //
+		jMethod<::java::time::LocalTime(::jint, ::jint)>("of"), //
+		jMethod<::java::time::LocalTime(::jint, ::jint, ::jint)>("of"), //
+		jMethod<::java::time::LocalTime(::jint, ::jint, ::jint, ::jint)>("of"), //
+		jMethod<::java::time::LocalTime(::jlong)>("ofNanoOfDay"), //
+		jMethod<::java::time::LocalTime(::jlong)>("ofSecondOfDay"), //
+		jMethod<::java::time::LocalTime(::java::lang::CharSequence)>("parse"), //
+		jMethod<::java::time::LocalTime(::java::lang::CharSequence, ::java::time::format::DateTimeFormatter)>("parse"), //
+		jMethod<::java::time::LocalTime(::jlong, ::java::time::temporal::TemporalUnit)>("plus"), //
+		jMethod<::java::time::temporal::Temporal(::jlong, ::java::time::temporal::TemporalUnit)>("plus"), //
+		jMethod<::java::time::LocalTime(::java::time::temporal::TemporalAmount)>("plus"), //
+		jMethod<::java::time::temporal::Temporal(::java::time::temporal::TemporalAmount)>("plus"), //
+		jMethod<::java::time::LocalTime(::jlong)>("plusHours"), //
+		jMethod<::java::time::LocalTime(::jlong)>("plusMinutes"), //
+		jMethod<::java::time::LocalTime(::jlong)>("plusNanos"), //
+		jMethod<::java::time::LocalTime(::jlong)>("plusSeconds"), //
+		jMethod<::java::lang::Object(::java::time::temporal::TemporalQuery)>("query"), //
+		jMethod<::java::time::temporal::ValueRange(::java::time::temporal::TemporalField)>("range"), //
+		jMethod<::jlong()>("toNanoOfDay"), //
+		jMethod<::jint()>("toSecondOfDay"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::java::time::LocalTime(::java::time::temporal::TemporalUnit)>("truncatedTo"), //
+		jMethod<::jlong(::java::time::temporal::Temporal, ::java::time::temporal::TemporalUnit)>("until"), //
+		jMethod<::java::time::LocalTime(::java::time::temporal::TemporalAdjuster)>("with"), //
+		jMethod<::java::time::temporal::Temporal(::java::time::temporal::TemporalAdjuster)>("with"), //
+		jMethod<::java::time::LocalTime(::java::time::temporal::TemporalField, ::jlong)>("with"), //
+		jMethod<::java::time::temporal::Temporal(::java::time::temporal::TemporalField, ::jlong)>("with"), //
+		jMethod<::java::time::LocalTime(::jint)>("withHour"), //
+		jMethod<::java::time::LocalTime(::jint)>("withMinute"), //
+		jMethod<::java::time::LocalTime(::jint)>("withNano"), //
+		jMethod<::java::time::LocalTime(::jint)>("withSecond"), //
+	};
+
+	template<typename R = ::java::time::temporal::Temporal, typename... Args>
+	auto adjustInto(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("adjustInto")] != -1);
+		return call<R>("adjustInto", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::LocalDateTime, typename... Args>
+	auto atDate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("atDate")] != -1);
+		return call<R>("atDate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetTime, typename... Args>
+	auto atOffset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("atOffset")] != -1);
+		return call<R>("atOffset", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto compareTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compareTo")] != -1);
+		return call<R>("compareTo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto format(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("format")] != -1);
+		return call<R>("format", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::LocalTime, typename... Args>
+	static auto from(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("from")] != -1);
+		return scall<R>("from", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getHour(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHour")] != -1);
+		return call<R>("getHour", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getLong(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLong")] != -1);
+		return call<R>("getLong", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getMinute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMinute")] != -1);
+		return call<R>("getMinute", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getNano(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNano")] != -1);
+		return call<R>("getNano", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getSecond(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSecond")] != -1);
+		return call<R>("getSecond", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isAfter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isAfter")] != -1);
+		return call<R>("isAfter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isBefore(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isBefore")] != -1);
+		return call<R>("isBefore", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSupported")] != -1);
+		return call<R>("isSupported", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::LocalTime, typename... Args>
+	auto minus(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("minus")] != -1);
+		return call<R>("minus", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::LocalTime, typename... Args>
+	auto minusHours(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("minusHours")] != -1);
+		return call<R>("minusHours", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::LocalTime, typename... Args>
+	auto minusMinutes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("minusMinutes")] != -1);
+		return call<R>("minusMinutes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::LocalTime, typename... Args>
+	auto minusNanos(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("minusNanos")] != -1);
+		return call<R>("minusNanos", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::LocalTime, typename... Args>
+	auto minusSeconds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("minusSeconds")] != -1);
+		return call<R>("minusSeconds", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::LocalTime, typename... Args>
+	static auto now(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("now")] != -1);
+		return scall<R>("now", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::LocalTime, typename... Args>
+	static auto of(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("of")] != -1);
+		return scall<R>("of", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::LocalTime, typename... Args>
+	static auto ofNanoOfDay(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("ofNanoOfDay")] != -1);
+		return scall<R>("ofNanoOfDay", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::LocalTime, typename... Args>
+	static auto ofSecondOfDay(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("ofSecondOfDay")] != -1);
+		return scall<R>("ofSecondOfDay", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::LocalTime, typename... Args>
+	static auto parse(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("parse")] != -1);
+		return scall<R>("parse", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::LocalTime, typename... Args>
+	auto plus(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("plus")] != -1);
+		return call<R>("plus", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::LocalTime, typename... Args>
+	auto plusHours(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("plusHours")] != -1);
+		return call<R>("plusHours", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::LocalTime, typename... Args>
+	auto plusMinutes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("plusMinutes")] != -1);
+		return call<R>("plusMinutes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::LocalTime, typename... Args>
+	auto plusNanos(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("plusNanos")] != -1);
+		return call<R>("plusNanos", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::LocalTime, typename... Args>
+	auto plusSeconds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("plusSeconds")] != -1);
+		return call<R>("plusSeconds", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto query(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("query")] != -1);
+		return call<R>("query", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::temporal::ValueRange, typename... Args>
+	auto range(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("range")] != -1);
+		return call<R>("range", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto toNanoOfDay(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toNanoOfDay")] != -1);
+		return call<R>("toNanoOfDay", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto toSecondOfDay(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toSecondOfDay")] != -1);
+		return call<R>("toSecondOfDay", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::LocalTime, typename... Args>
+	auto truncatedTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("truncatedTo")] != -1);
+		return call<R>("truncatedTo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto until(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("until")] != -1);
+		return call<R>("until", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::LocalTime, typename... Args>
+	auto with(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("with")] != -1);
+		return call<R>("with", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::LocalTime, typename... Args>
+	auto withHour(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("withHour")] != -1);
+		return call<R>("withHour", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::LocalTime, typename... Args>
+	auto withMinute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("withMinute")] != -1);
+		return call<R>("withMinute", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::LocalTime, typename... Args>
+	auto withNano(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("withNano")] != -1);
+		return call<R>("withNano", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::LocalTime, typename... Args>
+	auto withSecond(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("withSecond")] != -1);
+		return call<R>("withSecond", forward<Args>(args)...);
+	}
+
+};
+
+#endif

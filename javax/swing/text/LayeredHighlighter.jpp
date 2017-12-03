@@ -1,0 +1,29 @@
+#ifndef javax_swing_text_LayeredHighlighter_HPP
+#define javax_swing_text_LayeredHighlighter_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::text::LayeredHighlighter : public jObject<::javax::swing::text::LayeredHighlighter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_text / "LayeredHighlighter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::awt::Graphics, ::jint, ::jint, ::java::awt::Shape, ::javax::swing::text::JTextComponent, ::javax::swing::text::View)>("paintLayeredHighlights"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto paintLayeredHighlights(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paintLayeredHighlights")] != -1);
+		return call<R>("paintLayeredHighlights", forward<Args>(args)...);
+	}
+
+};
+
+#endif

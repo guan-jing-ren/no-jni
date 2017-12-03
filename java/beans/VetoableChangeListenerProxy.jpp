@@ -1,0 +1,36 @@
+#ifndef java_beans_VetoableChangeListenerProxy_HPP
+#define java_beans_VetoableChangeListenerProxy_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::beans::VetoableChangeListenerProxy : public jObject<::java::beans::VetoableChangeListenerProxy, ::java::util::EventListenerProxy> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_beans / "VetoableChangeListenerProxy";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::beans::VetoableChangeListener)>(), //
+		jMethod<::java::lang::String()>("getPropertyName"), //
+		jMethod<::jvoid(::java::beans::PropertyChangeEvent)>("vetoableChange"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getPropertyName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPropertyName")] != -1);
+		return call<R>("getPropertyName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto vetoableChange(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("vetoableChange")] != -1);
+		return call<R>("vetoableChange", forward<Args>(args)...);
+	}
+
+};
+
+#endif

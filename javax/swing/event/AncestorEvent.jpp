@@ -1,0 +1,63 @@
+#ifndef javax_swing_event_AncestorEvent_HPP
+#define javax_swing_event_AncestorEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::event::AncestorEvent : public jObject<::javax::swing::event::AncestorEvent, ::java::awt::AWTEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_event / "AncestorEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("ANCESTOR_ADDED"), //
+		jField<::jint>("ANCESTOR_MOVED"), //
+		jField<::jint>("ANCESTOR_REMOVED"), //
+	};
+
+	template<typename F = ::jint>
+	static auto ANCESTOR_ADDED() {
+		static_assert(field_signatures[jField<F>("ANCESTOR_ADDED")] != -1);
+		return sat<F>("ANCESTOR_ADDED");
+	}
+
+	template<typename F = ::jint>
+	static auto ANCESTOR_MOVED() {
+		static_assert(field_signatures[jField<F>("ANCESTOR_MOVED")] != -1);
+		return sat<F>("ANCESTOR_MOVED");
+	}
+
+	template<typename F = ::jint>
+	static auto ANCESTOR_REMOVED() {
+		static_assert(field_signatures[jField<F>("ANCESTOR_REMOVED")] != -1);
+		return sat<F>("ANCESTOR_REMOVED");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::swing::JComponent, ::jint, ::java::awt::Container, ::java::awt::Container)>(), //
+		jMethod<::java::awt::Container()>("getAncestor"), //
+		jMethod<::java::awt::Container()>("getAncestorParent"), //
+		jMethod<::javax::swing::JComponent()>("getComponent"), //
+	};
+
+	template<typename R = ::java::awt::Container, typename... Args>
+	auto getAncestor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAncestor")] != -1);
+		return call<R>("getAncestor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Container, typename... Args>
+	auto getAncestorParent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAncestorParent")] != -1);
+		return call<R>("getAncestorParent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::JComponent, typename... Args>
+	auto getComponent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getComponent")] != -1);
+		return call<R>("getComponent", forward<Args>(args)...);
+	}
+
+};
+
+#endif

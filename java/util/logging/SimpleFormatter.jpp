@@ -1,0 +1,29 @@
+#ifndef java_util_logging_SimpleFormatter_HPP
+#define java_util_logging_SimpleFormatter_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::logging::SimpleFormatter : public jObject<::java::util::logging::SimpleFormatter, ::java::util::logging::Formatter> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_logging / "SimpleFormatter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::String(::java::util::logging::LogRecord)>("format"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto format(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("format")] != -1);
+		return call<R>("format", forward<Args>(args)...);
+	}
+
+};
+
+#endif

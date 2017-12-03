@@ -1,0 +1,87 @@
+#ifndef java_net_InetSocketAddress_HPP
+#define java_net_InetSocketAddress_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::net::InetSocketAddress : public jObject<::java::net::InetSocketAddress, ::java::net::SocketAddress> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_net / "InetSocketAddress";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::jint)>(), //
+		jConstructor<::jvoid(::java::net::InetAddress, ::jint)>(), //
+		jMethod<::java::net::InetSocketAddress(::java::lang::String, ::jint)>("createUnresolved"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::net::InetAddress()>("getAddress"), //
+		jMethod<::java::lang::String()>("getHostName"), //
+		jMethod<::java::lang::String()>("getHostString"), //
+		jMethod<::jint()>("getPort"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jboolean()>("isUnresolved"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::net::InetSocketAddress, typename... Args>
+	static auto createUnresolved(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createUnresolved")] != -1);
+		return scall<R>("createUnresolved", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::InetAddress, typename... Args>
+	auto getAddress(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAddress")] != -1);
+		return call<R>("getAddress", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getHostName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHostName")] != -1);
+		return call<R>("getHostName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getHostString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHostString")] != -1);
+		return call<R>("getHostString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getPort(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPort")] != -1);
+		return call<R>("getPort", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isUnresolved(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isUnresolved")] != -1);
+		return call<R>("isUnresolved", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,28 @@
+#ifndef java_util_function_ToIntBiFunction_HPP
+#define java_util_function_ToIntBiFunction_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::function::ToIntBiFunction : public jObject<::java::util::function::ToIntBiFunction, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_function / "ToIntBiFunction";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint(::java::lang::Object, ::java::lang::Object)>("applyAsInt"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto applyAsInt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("applyAsInt")] != -1);
+		return call<R>("applyAsInt", forward<Args>(args)...);
+	}
+
+};
+
+#endif

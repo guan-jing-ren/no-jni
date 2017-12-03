@@ -1,0 +1,42 @@
+#ifndef java_sql_SQLType_HPP
+#define java_sql_SQLType_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::sql::SQLType : public jObject<::java::sql::SQLType, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_sql / "SQLType";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::java::lang::String()>("getVendor"), //
+		jMethod<::java::lang::Integer()>("getVendorTypeNumber"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getVendor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getVendor")] != -1);
+		return call<R>("getVendor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Integer, typename... Args>
+	auto getVendorTypeNumber(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getVendorTypeNumber")] != -1);
+		return call<R>("getVendorTypeNumber", forward<Args>(args)...);
+	}
+
+};
+
+#endif

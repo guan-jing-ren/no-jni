@@ -1,0 +1,83 @@
+#ifndef javax_naming_spi_NamingManager_HPP
+#define javax_naming_spi_NamingManager_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::naming::spi::NamingManager : public jObject<::javax::naming::spi::NamingManager, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_naming_spi / "NamingManager";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("CPE"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto CPE() {
+		static_assert(field_signatures[jField<F>("CPE")] != -1);
+		return sat<F>("CPE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::naming::Context(::javax::naming::CannotProceedException)>("getContinuationContext"), //
+		jMethod<::javax::naming::Context(::java::util::Hashtable)>("getInitialContext"), //
+		jMethod<::java::lang::Object(::java::lang::Object, ::javax::naming::Name, ::javax::naming::Context, ::java::util::Hashtable)>("getObjectInstance"), //
+		jMethod<::java::lang::Object(::java::lang::Object, ::javax::naming::Name, ::javax::naming::Context, ::java::util::Hashtable)>("getStateToBind"), //
+		jMethod<::javax::naming::Context(::java::lang::String, ::java::util::Hashtable)>("getURLContext"), //
+		jMethod<::jboolean()>("hasInitialContextFactoryBuilder"), //
+		jMethod<::jvoid(::javax::naming::spi::InitialContextFactoryBuilder)>("setInitialContextFactoryBuilder"), //
+		jMethod<::jvoid(::javax::naming::spi::ObjectFactoryBuilder)>("setObjectFactoryBuilder"), //
+	};
+
+	template<typename R = ::javax::naming::Context, typename... Args>
+	static auto getContinuationContext(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getContinuationContext")] != -1);
+		return scall<R>("getContinuationContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::naming::Context, typename... Args>
+	static auto getInitialContext(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInitialContext")] != -1);
+		return scall<R>("getInitialContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto getObjectInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getObjectInstance")] != -1);
+		return scall<R>("getObjectInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto getStateToBind(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStateToBind")] != -1);
+		return scall<R>("getStateToBind", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::naming::Context, typename... Args>
+	static auto getURLContext(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getURLContext")] != -1);
+		return scall<R>("getURLContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto hasInitialContextFactoryBuilder(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hasInitialContextFactoryBuilder")] != -1);
+		return scall<R>("hasInitialContextFactoryBuilder", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setInitialContextFactoryBuilder(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setInitialContextFactoryBuilder")] != -1);
+		return scall<R>("setInitialContextFactoryBuilder", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setObjectFactoryBuilder(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setObjectFactoryBuilder")] != -1);
+		return scall<R>("setObjectFactoryBuilder", forward<Args>(args)...);
+	}
+
+};
+
+#endif

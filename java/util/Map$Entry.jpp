@@ -1,0 +1,72 @@
+#ifndef java_util_Map$Entry_HPP
+#define java_util_Map$Entry_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::Map$Entry : public jObject<::java::util::Map$Entry, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "Map$Entry";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::Comparator()>("comparingByKey"), //
+		jMethod<::java::util::Comparator(::java::util::Comparator)>("comparingByKey"), //
+		jMethod<::java::util::Comparator()>("comparingByValue"), //
+		jMethod<::java::util::Comparator(::java::util::Comparator)>("comparingByValue"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::lang::Object()>("getKey"), //
+		jMethod<::java::lang::Object()>("getValue"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::Object(::java::lang::Object)>("setValue"), //
+	};
+
+	template<typename R = ::java::util::Comparator, typename... Args>
+	static auto comparingByKey(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("comparingByKey")] != -1);
+		return scall<R>("comparingByKey", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Comparator, typename... Args>
+	static auto comparingByValue(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("comparingByValue")] != -1);
+		return scall<R>("comparingByValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getKey(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getKey")] != -1);
+		return call<R>("getKey", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getValue")] != -1);
+		return call<R>("getValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto setValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setValue")] != -1);
+		return call<R>("setValue", forward<Args>(args)...);
+	}
+
+};
+
+#endif

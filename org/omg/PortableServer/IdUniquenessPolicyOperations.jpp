@@ -1,0 +1,28 @@
+#ifndef org_omg_PortableServer_IdUniquenessPolicyOperations_HPP
+#define org_omg_PortableServer_IdUniquenessPolicyOperations_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::PortableServer::IdUniquenessPolicyOperations : public jObject<::org::omg::PortableServer::IdUniquenessPolicyOperations, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_PortableServer / "IdUniquenessPolicyOperations";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::omg::PortableServer::IdUniquenessPolicyValue()>("value"), //
+	};
+
+	template<typename R = ::org::omg::PortableServer::IdUniquenessPolicyValue, typename... Args>
+	auto value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("value")] != -1);
+		return call<R>("value", forward<Args>(args)...);
+	}
+
+};
+
+#endif

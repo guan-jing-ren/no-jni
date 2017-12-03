@@ -1,0 +1,35 @@
+#ifndef java_nio_channels_spi_AbstractSelectionKey_HPP
+#define java_nio_channels_spi_AbstractSelectionKey_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::java::nio::channels::spi::AbstractSelectionKey : public jObject<::java::nio::channels::spi::AbstractSelectionKey, ::java::nio::channels::SelectionKey> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_channels_spi / "AbstractSelectionKey";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("cancel"), //
+		jMethod<::jboolean()>("isValid"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto cancel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("cancel")] != -1);
+		return call<R>("cancel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isValid(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isValid")] != -1);
+		return call<R>("isValid", forward<Args>(args)...);
+	}
+
+};
+
+#endif

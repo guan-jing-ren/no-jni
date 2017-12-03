@@ -1,0 +1,49 @@
+#ifndef javax_swing_text_html_FormView_HPP
+#define javax_swing_text_html_FormView_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::swing::text::html::FormView : public jObject<::javax::swing::text::html::FormView, ::javax::swing::text::ComponentView> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_text_html / "FormView";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("RESET"), //
+		jField<::java::lang::String>("SUBMIT"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto RESET() {
+		static_assert(field_signatures[jField<F>("RESET")] != -1);
+		return sat<F>("RESET");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto SUBMIT() {
+		static_assert(field_signatures[jField<F>("SUBMIT")] != -1);
+		return sat<F>("SUBMIT");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::swing::text::Element)>(), //
+		jMethod<::jvoid(::java::awt::event::ActionEvent)>("actionPerformed"), //
+		jMethod<::jfloat(::jint)>("getMaximumSpan"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto actionPerformed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("actionPerformed")] != -1);
+		return call<R>("actionPerformed", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getMaximumSpan(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMaximumSpan")] != -1);
+		return call<R>("getMaximumSpan", forward<Args>(args)...);
+	}
+
+};
+
+#endif

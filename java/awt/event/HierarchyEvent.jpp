@@ -1,0 +1,113 @@
+#ifndef java_awt_event_HierarchyEvent_HPP
+#define java_awt_event_HierarchyEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::event::HierarchyEvent : public jObject<::java::awt::event::HierarchyEvent, ::java::awt::AWTEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_event / "HierarchyEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("ANCESTOR_MOVED"), //
+		jField<::jint>("ANCESTOR_RESIZED"), //
+		jField<::jint>("DISPLAYABILITY_CHANGED"), //
+		jField<::jint>("HIERARCHY_CHANGED"), //
+		jField<::jint>("HIERARCHY_FIRST"), //
+		jField<::jint>("HIERARCHY_LAST"), //
+		jField<::jint>("PARENT_CHANGED"), //
+		jField<::jint>("SHOWING_CHANGED"), //
+	};
+
+	template<typename F = ::jint>
+	static auto ANCESTOR_MOVED() {
+		static_assert(field_signatures[jField<F>("ANCESTOR_MOVED")] != -1);
+		return sat<F>("ANCESTOR_MOVED");
+	}
+
+	template<typename F = ::jint>
+	static auto ANCESTOR_RESIZED() {
+		static_assert(field_signatures[jField<F>("ANCESTOR_RESIZED")] != -1);
+		return sat<F>("ANCESTOR_RESIZED");
+	}
+
+	template<typename F = ::jint>
+	static auto DISPLAYABILITY_CHANGED() {
+		static_assert(field_signatures[jField<F>("DISPLAYABILITY_CHANGED")] != -1);
+		return sat<F>("DISPLAYABILITY_CHANGED");
+	}
+
+	template<typename F = ::jint>
+	static auto HIERARCHY_CHANGED() {
+		static_assert(field_signatures[jField<F>("HIERARCHY_CHANGED")] != -1);
+		return sat<F>("HIERARCHY_CHANGED");
+	}
+
+	template<typename F = ::jint>
+	static auto HIERARCHY_FIRST() {
+		static_assert(field_signatures[jField<F>("HIERARCHY_FIRST")] != -1);
+		return sat<F>("HIERARCHY_FIRST");
+	}
+
+	template<typename F = ::jint>
+	static auto HIERARCHY_LAST() {
+		static_assert(field_signatures[jField<F>("HIERARCHY_LAST")] != -1);
+		return sat<F>("HIERARCHY_LAST");
+	}
+
+	template<typename F = ::jint>
+	static auto PARENT_CHANGED() {
+		static_assert(field_signatures[jField<F>("PARENT_CHANGED")] != -1);
+		return sat<F>("PARENT_CHANGED");
+	}
+
+	template<typename F = ::jint>
+	static auto SHOWING_CHANGED() {
+		static_assert(field_signatures[jField<F>("SHOWING_CHANGED")] != -1);
+		return sat<F>("SHOWING_CHANGED");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::Component, ::jint, ::java::awt::Component, ::java::awt::Container)>(), //
+		jConstructor<::jvoid(::java::awt::Component, ::jint, ::java::awt::Component, ::java::awt::Container, ::jlong)>(), //
+		jMethod<::jlong()>("getChangeFlags"), //
+		jMethod<::java::awt::Component()>("getChanged"), //
+		jMethod<::java::awt::Container()>("getChangedParent"), //
+		jMethod<::java::awt::Component()>("getComponent"), //
+		jMethod<::java::lang::String()>("paramString"), //
+	};
+
+	template<typename R = ::jlong, typename... Args>
+	auto getChangeFlags(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getChangeFlags")] != -1);
+		return call<R>("getChangeFlags", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Component, typename... Args>
+	auto getChanged(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getChanged")] != -1);
+		return call<R>("getChanged", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Container, typename... Args>
+	auto getChangedParent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getChangedParent")] != -1);
+		return call<R>("getChangedParent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Component, typename... Args>
+	auto getComponent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getComponent")] != -1);
+		return call<R>("getComponent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto paramString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paramString")] != -1);
+		return call<R>("paramString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

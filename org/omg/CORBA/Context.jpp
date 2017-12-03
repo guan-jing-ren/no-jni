@@ -1,0 +1,71 @@
+#ifndef org_omg_CORBA_Context_HPP
+#define org_omg_CORBA_Context_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::CORBA::Context : public jObject<::org::omg::CORBA::Context, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CORBA / "Context";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::String()>("context_name"), //
+		jMethod<::org::omg::CORBA::Context(::java::lang::String)>("create_child"), //
+		jMethod<::jvoid(::java::lang::String)>("delete_values"), //
+		jMethod<::org::omg::CORBA::NVList(::java::lang::String, ::jint, ::java::lang::String)>("get_values"), //
+		jMethod<::org::omg::CORBA::Context()>("parent"), //
+		jMethod<::jvoid(::java::lang::String, ::org::omg::CORBA::Any)>("set_one_value"), //
+		jMethod<::jvoid(::org::omg::CORBA::NVList)>("set_values"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto context_name(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("context_name")] != -1);
+		return call<R>("context_name", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::Context, typename... Args>
+	auto create_child(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("create_child")] != -1);
+		return call<R>("create_child", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto delete_values(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("delete_values")] != -1);
+		return call<R>("delete_values", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::NVList, typename... Args>
+	auto get_values(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get_values")] != -1);
+		return call<R>("get_values", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::Context, typename... Args>
+	auto parent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("parent")] != -1);
+		return call<R>("parent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set_one_value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set_one_value")] != -1);
+		return call<R>("set_one_value", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set_values(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set_values")] != -1);
+		return call<R>("set_values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

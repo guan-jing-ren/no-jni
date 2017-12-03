@@ -1,0 +1,42 @@
+#ifndef java_rmi_server_RemoteServer_HPP
+#define java_rmi_server_RemoteServer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::rmi::server::RemoteServer : public jObject<::java::rmi::server::RemoteServer, ::java::rmi::server::RemoteObject> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_rmi_server / "RemoteServer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getClientHost"), //
+		jMethod<::java::io::PrintStream()>("getLog"), //
+		jMethod<::jvoid(::java::io::OutputStream)>("setLog"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getClientHost(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getClientHost")] != -1);
+		return scall<R>("getClientHost", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::PrintStream, typename... Args>
+	static auto getLog(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLog")] != -1);
+		return scall<R>("getLog", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setLog(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLog")] != -1);
+		return scall<R>("setLog", forward<Args>(args)...);
+	}
+
+};
+
+#endif

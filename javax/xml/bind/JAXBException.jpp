@@ -1,0 +1,70 @@
+#ifndef javax_xml_bind_JAXBException_HPP
+#define javax_xml_bind_JAXBException_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::bind::JAXBException : public jObject<::javax::xml::bind::JAXBException, ::java::lang::Exception> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_bind / "JAXBException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::Throwable)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Throwable)>(), //
+		jConstructor<::jvoid(::java::lang::Throwable)>(), //
+		jMethod<::java::lang::Throwable()>("getCause"), //
+		jMethod<::java::lang::String()>("getErrorCode"), //
+		jMethod<::java::lang::Throwable()>("getLinkedException"), //
+		jMethod<::jvoid()>("printStackTrace"), //
+		jMethod<::jvoid(::java::io::PrintStream)>("printStackTrace"), //
+		jMethod<::jvoid(::java::io::PrintWriter)>("printStackTrace"), //
+		jMethod<::jvoid(::java::lang::Throwable)>("setLinkedException"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::Throwable, typename... Args>
+	auto getCause(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCause")] != -1);
+		return call<R>("getCause", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getErrorCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getErrorCode")] != -1);
+		return call<R>("getErrorCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Throwable, typename... Args>
+	auto getLinkedException(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLinkedException")] != -1);
+		return call<R>("getLinkedException", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto printStackTrace(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("printStackTrace")] != -1);
+		return call<R>("printStackTrace", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLinkedException(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLinkedException")] != -1);
+		return call<R>("setLinkedException", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

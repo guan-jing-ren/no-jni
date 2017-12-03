@@ -1,0 +1,44 @@
+#ifndef javax_activation_FileTypeMap_HPP
+#define javax_activation_FileTypeMap_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::activation::FileTypeMap : public jObject<::javax::activation::FileTypeMap, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_activation / "FileTypeMap";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::String(::java::io::File)>("getContentType"), //
+		jMethod<::java::lang::String(::java::lang::String)>("getContentType"), //
+		jMethod<::javax::activation::FileTypeMap()>("getDefaultFileTypeMap"), //
+		jMethod<::jvoid(::javax::activation::FileTypeMap)>("setDefaultFileTypeMap"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getContentType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getContentType")] != -1);
+		return call<R>("getContentType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::activation::FileTypeMap, typename... Args>
+	static auto getDefaultFileTypeMap(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaultFileTypeMap")] != -1);
+		return scall<R>("getDefaultFileTypeMap", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setDefaultFileTypeMap(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDefaultFileTypeMap")] != -1);
+		return scall<R>("setDefaultFileTypeMap", forward<Args>(args)...);
+	}
+
+};
+
+#endif

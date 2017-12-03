@@ -1,0 +1,28 @@
+#ifndef java_security_interfaces_DSAKey_HPP
+#define java_security_interfaces_DSAKey_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::interfaces::DSAKey : public jObject<::java::security::interfaces::DSAKey, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_interfaces / "DSAKey";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::security::interfaces::DSAParams()>("getParams"), //
+	};
+
+	template<typename R = ::java::security::interfaces::DSAParams, typename... Args>
+	auto getParams(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParams")] != -1);
+		return call<R>("getParams", forward<Args>(args)...);
+	}
+
+};
+
+#endif

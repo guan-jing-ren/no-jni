@@ -1,0 +1,70 @@
+#ifndef javax_print_DocPrintJob_HPP
+#define javax_print_DocPrintJob_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::print::DocPrintJob : public jObject<::javax::print::DocPrintJob, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_print / "DocPrintJob";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::print::event::PrintJobAttributeListener, ::javax::print::attribute::PrintJobAttributeSet)>("addPrintJobAttributeListener"), //
+		jMethod<::jvoid(::javax::print::event::PrintJobListener)>("addPrintJobListener"), //
+		jMethod<::javax::print::attribute::PrintJobAttributeSet()>("getAttributes"), //
+		jMethod<::javax::print::PrintService()>("getPrintService"), //
+		jMethod<::jvoid(::javax::print::Doc, ::javax::print::attribute::PrintRequestAttributeSet)>("print"), //
+		jMethod<::jvoid(::javax::print::event::PrintJobAttributeListener)>("removePrintJobAttributeListener"), //
+		jMethod<::jvoid(::javax::print::event::PrintJobListener)>("removePrintJobListener"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addPrintJobAttributeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addPrintJobAttributeListener")] != -1);
+		return call<R>("addPrintJobAttributeListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addPrintJobListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addPrintJobListener")] != -1);
+		return call<R>("addPrintJobListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::print::attribute::PrintJobAttributeSet, typename... Args>
+	auto getAttributes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttributes")] != -1);
+		return call<R>("getAttributes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::print::PrintService, typename... Args>
+	auto getPrintService(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrintService")] != -1);
+		return call<R>("getPrintService", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto print(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("print")] != -1);
+		return call<R>("print", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removePrintJobAttributeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removePrintJobAttributeListener")] != -1);
+		return call<R>("removePrintJobAttributeListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removePrintJobListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removePrintJobListener")] != -1);
+		return call<R>("removePrintJobListener", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,36 @@
+#ifndef javax_xml_soap_Detail_HPP
+#define javax_xml_soap_Detail_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::soap::Detail : public jObject<::javax::xml::soap::Detail, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_soap / "Detail";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::soap::DetailEntry(::javax::xml::namespace_::QName)>("addDetailEntry"), //
+		jMethod<::javax::xml::soap::DetailEntry(::javax::xml::soap::Name)>("addDetailEntry"), //
+		jMethod<::java::util::Iterator()>("getDetailEntries"), //
+	};
+
+	template<typename R = ::javax::xml::soap::DetailEntry, typename... Args>
+	auto addDetailEntry(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addDetailEntry")] != -1);
+		return call<R>("addDetailEntry", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Iterator, typename... Args>
+	auto getDetailEntries(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDetailEntries")] != -1);
+		return call<R>("getDetailEntries", forward<Args>(args)...);
+	}
+
+};
+
+#endif

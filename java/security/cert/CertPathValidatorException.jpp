@@ -1,0 +1,48 @@
+#ifndef java_security_cert_CertPathValidatorException_HPP
+#define java_security_cert_CertPathValidatorException_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::cert::CertPathValidatorException : public jObject<::java::security::cert::CertPathValidatorException, ::java::security::GeneralSecurityException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_cert / "CertPathValidatorException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Throwable)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Throwable, ::java::security::cert::CertPath, ::jint)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Throwable, ::java::security::cert::CertPath, ::jint, ::java::security::cert::CertPathValidatorException$Reason)>(), //
+		jConstructor<::jvoid(::java::lang::Throwable)>(), //
+		jMethod<::java::security::cert::CertPath()>("getCertPath"), //
+		jMethod<::jint()>("getIndex"), //
+		jMethod<::java::security::cert::CertPathValidatorException$Reason()>("getReason"), //
+	};
+
+	template<typename R = ::java::security::cert::CertPath, typename... Args>
+	auto getCertPath(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCertPath")] != -1);
+		return call<R>("getCertPath", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIndex")] != -1);
+		return call<R>("getIndex", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::CertPathValidatorException$Reason, typename... Args>
+	auto getReason(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getReason")] != -1);
+		return call<R>("getReason", forward<Args>(args)...);
+	}
+
+};
+
+#endif

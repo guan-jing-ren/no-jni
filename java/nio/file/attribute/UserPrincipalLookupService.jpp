@@ -1,0 +1,35 @@
+#ifndef java_nio_file_attribute_UserPrincipalLookupService_HPP
+#define java_nio_file_attribute_UserPrincipalLookupService_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::java::nio::file::attribute::UserPrincipalLookupService : public jObject<::java::nio::file::attribute::UserPrincipalLookupService, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_file_attribute / "UserPrincipalLookupService";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::nio::file::attribute::GroupPrincipal(::java::lang::String)>("lookupPrincipalByGroupName"), //
+		jMethod<::java::nio::file::attribute::UserPrincipal(::java::lang::String)>("lookupPrincipalByName"), //
+	};
+
+	template<typename R = ::java::nio::file::attribute::GroupPrincipal, typename... Args>
+	auto lookupPrincipalByGroupName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lookupPrincipalByGroupName")] != -1);
+		return call<R>("lookupPrincipalByGroupName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::attribute::UserPrincipal, typename... Args>
+	auto lookupPrincipalByName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lookupPrincipalByName")] != -1);
+		return call<R>("lookupPrincipalByName", forward<Args>(args)...);
+	}
+
+};
+
+#endif

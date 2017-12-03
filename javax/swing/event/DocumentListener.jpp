@@ -1,0 +1,42 @@
+#ifndef javax_swing_event_DocumentListener_HPP
+#define javax_swing_event_DocumentListener_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::event::DocumentListener : public jObject<::javax::swing::event::DocumentListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_event / "DocumentListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::swing::event::DocumentEvent)>("changedUpdate"), //
+		jMethod<::jvoid(::javax::swing::event::DocumentEvent)>("insertUpdate"), //
+		jMethod<::jvoid(::javax::swing::event::DocumentEvent)>("removeUpdate"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto changedUpdate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("changedUpdate")] != -1);
+		return call<R>("changedUpdate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto insertUpdate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("insertUpdate")] != -1);
+		return call<R>("insertUpdate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeUpdate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeUpdate")] != -1);
+		return call<R>("removeUpdate", forward<Args>(args)...);
+	}
+
+};
+
+#endif

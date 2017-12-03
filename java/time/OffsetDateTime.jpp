@@ -1,0 +1,547 @@
+#ifndef java_time_OffsetDateTime_HPP
+#define java_time_OffsetDateTime_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::time::OffsetDateTime : public jObject<::java::time::OffsetDateTime, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_time / "OffsetDateTime";
+
+	constexpr static Enume field_signatures{
+		jField<::java::time::OffsetDateTime>("MAX"), //
+		jField<::java::time::OffsetDateTime>("MIN"), //
+	};
+
+	template<typename F = ::java::time::OffsetDateTime>
+	static auto MAX() {
+		static_assert(field_signatures[jField<F>("MAX")] != -1);
+		return sat<F>("MAX");
+	}
+
+	template<typename F = ::java::time::OffsetDateTime>
+	static auto MIN() {
+		static_assert(field_signatures[jField<F>("MIN")] != -1);
+		return sat<F>("MIN");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::time::temporal::Temporal(::java::time::temporal::Temporal)>("adjustInto"), //
+		jMethod<::java::time::ZonedDateTime(::java::time::ZoneId)>("atZoneSameInstant"), //
+		jMethod<::java::time::ZonedDateTime(::java::time::ZoneId)>("atZoneSimilarLocal"), //
+		jMethod<::jint(::java::lang::Object)>("compareTo"), //
+		jMethod<::jint(::java::time::OffsetDateTime)>("compareTo"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::lang::String(::java::time::format::DateTimeFormatter)>("format"), //
+		jMethod<::java::time::OffsetDateTime(::java::time::temporal::TemporalAccessor)>("from"), //
+		jMethod<::jint(::java::time::temporal::TemporalField)>("get"), //
+		jMethod<::jint()>("getDayOfMonth"), //
+		jMethod<::java::time::DayOfWeek()>("getDayOfWeek"), //
+		jMethod<::jint()>("getDayOfYear"), //
+		jMethod<::jint()>("getHour"), //
+		jMethod<::jlong(::java::time::temporal::TemporalField)>("getLong"), //
+		jMethod<::jint()>("getMinute"), //
+		jMethod<::java::time::Month()>("getMonth"), //
+		jMethod<::jint()>("getMonthValue"), //
+		jMethod<::jint()>("getNano"), //
+		jMethod<::java::time::ZoneOffset()>("getOffset"), //
+		jMethod<::jint()>("getSecond"), //
+		jMethod<::jint()>("getYear"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jboolean(::java::time::OffsetDateTime)>("isAfter"), //
+		jMethod<::jboolean(::java::time::OffsetDateTime)>("isBefore"), //
+		jMethod<::jboolean(::java::time::OffsetDateTime)>("isEqual"), //
+		jMethod<::jboolean(::java::time::temporal::TemporalField)>("isSupported"), //
+		jMethod<::jboolean(::java::time::temporal::TemporalUnit)>("isSupported"), //
+		jMethod<::java::time::OffsetDateTime(::jlong, ::java::time::temporal::TemporalUnit)>("minus"), //
+		jMethod<::java::time::temporal::Temporal(::jlong, ::java::time::temporal::TemporalUnit)>("minus"), //
+		jMethod<::java::time::OffsetDateTime(::java::time::temporal::TemporalAmount)>("minus"), //
+		jMethod<::java::time::temporal::Temporal(::java::time::temporal::TemporalAmount)>("minus"), //
+		jMethod<::java::time::OffsetDateTime(::jlong)>("minusDays"), //
+		jMethod<::java::time::OffsetDateTime(::jlong)>("minusHours"), //
+		jMethod<::java::time::OffsetDateTime(::jlong)>("minusMinutes"), //
+		jMethod<::java::time::OffsetDateTime(::jlong)>("minusMonths"), //
+		jMethod<::java::time::OffsetDateTime(::jlong)>("minusNanos"), //
+		jMethod<::java::time::OffsetDateTime(::jlong)>("minusSeconds"), //
+		jMethod<::java::time::OffsetDateTime(::jlong)>("minusWeeks"), //
+		jMethod<::java::time::OffsetDateTime(::jlong)>("minusYears"), //
+		jMethod<::java::time::OffsetDateTime()>("now"), //
+		jMethod<::java::time::OffsetDateTime(::java::time::Clock)>("now"), //
+		jMethod<::java::time::OffsetDateTime(::java::time::ZoneId)>("now"), //
+		jMethod<::java::time::OffsetDateTime(::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::java::time::ZoneOffset)>("of"), //
+		jMethod<::java::time::OffsetDateTime(::java::time::LocalDate, ::java::time::LocalTime, ::java::time::ZoneOffset)>("of"), //
+		jMethod<::java::time::OffsetDateTime(::java::time::LocalDateTime, ::java::time::ZoneOffset)>("of"), //
+		jMethod<::java::time::OffsetDateTime(::java::time::Instant, ::java::time::ZoneId)>("ofInstant"), //
+		jMethod<::java::time::OffsetDateTime(::java::lang::CharSequence)>("parse"), //
+		jMethod<::java::time::OffsetDateTime(::java::lang::CharSequence, ::java::time::format::DateTimeFormatter)>("parse"), //
+		jMethod<::java::time::OffsetDateTime(::jlong, ::java::time::temporal::TemporalUnit)>("plus"), //
+		jMethod<::java::time::temporal::Temporal(::jlong, ::java::time::temporal::TemporalUnit)>("plus"), //
+		jMethod<::java::time::OffsetDateTime(::java::time::temporal::TemporalAmount)>("plus"), //
+		jMethod<::java::time::temporal::Temporal(::java::time::temporal::TemporalAmount)>("plus"), //
+		jMethod<::java::time::OffsetDateTime(::jlong)>("plusDays"), //
+		jMethod<::java::time::OffsetDateTime(::jlong)>("plusHours"), //
+		jMethod<::java::time::OffsetDateTime(::jlong)>("plusMinutes"), //
+		jMethod<::java::time::OffsetDateTime(::jlong)>("plusMonths"), //
+		jMethod<::java::time::OffsetDateTime(::jlong)>("plusNanos"), //
+		jMethod<::java::time::OffsetDateTime(::jlong)>("plusSeconds"), //
+		jMethod<::java::time::OffsetDateTime(::jlong)>("plusWeeks"), //
+		jMethod<::java::time::OffsetDateTime(::jlong)>("plusYears"), //
+		jMethod<::java::lang::Object(::java::time::temporal::TemporalQuery)>("query"), //
+		jMethod<::java::time::temporal::ValueRange(::java::time::temporal::TemporalField)>("range"), //
+		jMethod<::java::util::Comparator()>("timeLineOrder"), //
+		jMethod<::jlong()>("toEpochSecond"), //
+		jMethod<::java::time::Instant()>("toInstant"), //
+		jMethod<::java::time::LocalDate()>("toLocalDate"), //
+		jMethod<::java::time::LocalDateTime()>("toLocalDateTime"), //
+		jMethod<::java::time::LocalTime()>("toLocalTime"), //
+		jMethod<::java::time::OffsetTime()>("toOffsetTime"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::java::time::ZonedDateTime()>("toZonedDateTime"), //
+		jMethod<::java::time::OffsetDateTime(::java::time::temporal::TemporalUnit)>("truncatedTo"), //
+		jMethod<::jlong(::java::time::temporal::Temporal, ::java::time::temporal::TemporalUnit)>("until"), //
+		jMethod<::java::time::OffsetDateTime(::java::time::temporal::TemporalAdjuster)>("with"), //
+		jMethod<::java::time::temporal::Temporal(::java::time::temporal::TemporalAdjuster)>("with"), //
+		jMethod<::java::time::OffsetDateTime(::java::time::temporal::TemporalField, ::jlong)>("with"), //
+		jMethod<::java::time::temporal::Temporal(::java::time::temporal::TemporalField, ::jlong)>("with"), //
+		jMethod<::java::time::OffsetDateTime(::jint)>("withDayOfMonth"), //
+		jMethod<::java::time::OffsetDateTime(::jint)>("withDayOfYear"), //
+		jMethod<::java::time::OffsetDateTime(::jint)>("withHour"), //
+		jMethod<::java::time::OffsetDateTime(::jint)>("withMinute"), //
+		jMethod<::java::time::OffsetDateTime(::jint)>("withMonth"), //
+		jMethod<::java::time::OffsetDateTime(::jint)>("withNano"), //
+		jMethod<::java::time::OffsetDateTime(::java::time::ZoneOffset)>("withOffsetSameInstant"), //
+		jMethod<::java::time::OffsetDateTime(::java::time::ZoneOffset)>("withOffsetSameLocal"), //
+		jMethod<::java::time::OffsetDateTime(::jint)>("withSecond"), //
+		jMethod<::java::time::OffsetDateTime(::jint)>("withYear"), //
+	};
+
+	template<typename R = ::java::time::temporal::Temporal, typename... Args>
+	auto adjustInto(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("adjustInto")] != -1);
+		return call<R>("adjustInto", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::ZonedDateTime, typename... Args>
+	auto atZoneSameInstant(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("atZoneSameInstant")] != -1);
+		return call<R>("atZoneSameInstant", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::ZonedDateTime, typename... Args>
+	auto atZoneSimilarLocal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("atZoneSimilarLocal")] != -1);
+		return call<R>("atZoneSimilarLocal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto compareTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compareTo")] != -1);
+		return call<R>("compareTo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto format(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("format")] != -1);
+		return call<R>("format", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	static auto from(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("from")] != -1);
+		return scall<R>("from", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getDayOfMonth(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDayOfMonth")] != -1);
+		return call<R>("getDayOfMonth", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::DayOfWeek, typename... Args>
+	auto getDayOfWeek(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDayOfWeek")] != -1);
+		return call<R>("getDayOfWeek", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getDayOfYear(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDayOfYear")] != -1);
+		return call<R>("getDayOfYear", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getHour(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHour")] != -1);
+		return call<R>("getHour", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getLong(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLong")] != -1);
+		return call<R>("getLong", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getMinute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMinute")] != -1);
+		return call<R>("getMinute", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::Month, typename... Args>
+	auto getMonth(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMonth")] != -1);
+		return call<R>("getMonth", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getMonthValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMonthValue")] != -1);
+		return call<R>("getMonthValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getNano(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNano")] != -1);
+		return call<R>("getNano", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::ZoneOffset, typename... Args>
+	auto getOffset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOffset")] != -1);
+		return call<R>("getOffset", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getSecond(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSecond")] != -1);
+		return call<R>("getSecond", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getYear(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getYear")] != -1);
+		return call<R>("getYear", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isAfter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isAfter")] != -1);
+		return call<R>("isAfter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isBefore(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isBefore")] != -1);
+		return call<R>("isBefore", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isEqual(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isEqual")] != -1);
+		return call<R>("isEqual", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSupported")] != -1);
+		return call<R>("isSupported", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto minus(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("minus")] != -1);
+		return call<R>("minus", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto minusDays(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("minusDays")] != -1);
+		return call<R>("minusDays", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto minusHours(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("minusHours")] != -1);
+		return call<R>("minusHours", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto minusMinutes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("minusMinutes")] != -1);
+		return call<R>("minusMinutes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto minusMonths(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("minusMonths")] != -1);
+		return call<R>("minusMonths", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto minusNanos(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("minusNanos")] != -1);
+		return call<R>("minusNanos", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto minusSeconds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("minusSeconds")] != -1);
+		return call<R>("minusSeconds", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto minusWeeks(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("minusWeeks")] != -1);
+		return call<R>("minusWeeks", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto minusYears(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("minusYears")] != -1);
+		return call<R>("minusYears", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	static auto now(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("now")] != -1);
+		return scall<R>("now", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	static auto of(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("of")] != -1);
+		return scall<R>("of", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	static auto ofInstant(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("ofInstant")] != -1);
+		return scall<R>("ofInstant", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	static auto parse(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("parse")] != -1);
+		return scall<R>("parse", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto plus(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("plus")] != -1);
+		return call<R>("plus", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto plusDays(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("plusDays")] != -1);
+		return call<R>("plusDays", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto plusHours(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("plusHours")] != -1);
+		return call<R>("plusHours", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto plusMinutes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("plusMinutes")] != -1);
+		return call<R>("plusMinutes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto plusMonths(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("plusMonths")] != -1);
+		return call<R>("plusMonths", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto plusNanos(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("plusNanos")] != -1);
+		return call<R>("plusNanos", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto plusSeconds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("plusSeconds")] != -1);
+		return call<R>("plusSeconds", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto plusWeeks(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("plusWeeks")] != -1);
+		return call<R>("plusWeeks", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto plusYears(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("plusYears")] != -1);
+		return call<R>("plusYears", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto query(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("query")] != -1);
+		return call<R>("query", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::temporal::ValueRange, typename... Args>
+	auto range(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("range")] != -1);
+		return call<R>("range", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Comparator, typename... Args>
+	static auto timeLineOrder(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("timeLineOrder")] != -1);
+		return scall<R>("timeLineOrder", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto toEpochSecond(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toEpochSecond")] != -1);
+		return call<R>("toEpochSecond", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::Instant, typename... Args>
+	auto toInstant(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toInstant")] != -1);
+		return call<R>("toInstant", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::LocalDate, typename... Args>
+	auto toLocalDate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toLocalDate")] != -1);
+		return call<R>("toLocalDate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::LocalDateTime, typename... Args>
+	auto toLocalDateTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toLocalDateTime")] != -1);
+		return call<R>("toLocalDateTime", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::LocalTime, typename... Args>
+	auto toLocalTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toLocalTime")] != -1);
+		return call<R>("toLocalTime", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetTime, typename... Args>
+	auto toOffsetTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toOffsetTime")] != -1);
+		return call<R>("toOffsetTime", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::ZonedDateTime, typename... Args>
+	auto toZonedDateTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toZonedDateTime")] != -1);
+		return call<R>("toZonedDateTime", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto truncatedTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("truncatedTo")] != -1);
+		return call<R>("truncatedTo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto until(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("until")] != -1);
+		return call<R>("until", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto with(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("with")] != -1);
+		return call<R>("with", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto withDayOfMonth(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("withDayOfMonth")] != -1);
+		return call<R>("withDayOfMonth", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto withDayOfYear(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("withDayOfYear")] != -1);
+		return call<R>("withDayOfYear", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto withHour(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("withHour")] != -1);
+		return call<R>("withHour", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto withMinute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("withMinute")] != -1);
+		return call<R>("withMinute", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto withMonth(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("withMonth")] != -1);
+		return call<R>("withMonth", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto withNano(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("withNano")] != -1);
+		return call<R>("withNano", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto withOffsetSameInstant(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("withOffsetSameInstant")] != -1);
+		return call<R>("withOffsetSameInstant", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto withOffsetSameLocal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("withOffsetSameLocal")] != -1);
+		return call<R>("withOffsetSameLocal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto withSecond(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("withSecond")] != -1);
+		return call<R>("withSecond", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::OffsetDateTime, typename... Args>
+	auto withYear(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("withYear")] != -1);
+		return call<R>("withYear", forward<Args>(args)...);
+	}
+
+};
+
+#endif

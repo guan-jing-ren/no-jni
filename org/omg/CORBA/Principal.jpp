@@ -1,0 +1,30 @@
+#ifndef org_omg_CORBA_Principal_HPP
+#define org_omg_CORBA_Principal_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::CORBA::Principal : public jObject<::org::omg::CORBA::Principal, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CORBA / "Principal";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jbyte *()>("name"), //
+		jMethod<::jvoid(::jbyte *)>("name"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto name(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("name")] != -1);
+		return call<R>("name", forward<Args>(args)...);
+	}
+
+};
+
+#endif

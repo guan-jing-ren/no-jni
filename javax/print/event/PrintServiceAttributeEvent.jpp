@@ -1,0 +1,36 @@
+#ifndef javax_print_event_PrintServiceAttributeEvent_HPP
+#define javax_print_event_PrintServiceAttributeEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::print::event::PrintServiceAttributeEvent : public jObject<::javax::print::event::PrintServiceAttributeEvent, ::javax::print::event::PrintEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_print_event / "PrintServiceAttributeEvent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::print::PrintService, ::javax::print::attribute::PrintServiceAttributeSet)>(), //
+		jMethod<::javax::print::attribute::PrintServiceAttributeSet()>("getAttributes"), //
+		jMethod<::javax::print::PrintService()>("getPrintService"), //
+	};
+
+	template<typename R = ::javax::print::attribute::PrintServiceAttributeSet, typename... Args>
+	auto getAttributes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttributes")] != -1);
+		return call<R>("getAttributes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::print::PrintService, typename... Args>
+	auto getPrintService(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrintService")] != -1);
+		return call<R>("getPrintService", forward<Args>(args)...);
+	}
+
+};
+
+#endif

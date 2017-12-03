@@ -1,0 +1,50 @@
+#ifndef java_security_spec_DSAPublicKeySpec_HPP
+#define java_security_spec_DSAPublicKeySpec_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::spec::DSAPublicKeySpec : public jObject<::java::security::spec::DSAPublicKeySpec, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_spec / "DSAPublicKeySpec";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::math::BigInteger, ::java::math::BigInteger, ::java::math::BigInteger, ::java::math::BigInteger)>(), //
+		jMethod<::java::math::BigInteger()>("getG"), //
+		jMethod<::java::math::BigInteger()>("getP"), //
+		jMethod<::java::math::BigInteger()>("getQ"), //
+		jMethod<::java::math::BigInteger()>("getY"), //
+	};
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getG(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getG")] != -1);
+		return call<R>("getG", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getP(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getP")] != -1);
+		return call<R>("getP", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getQ(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getQ")] != -1);
+		return call<R>("getQ", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getY(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getY")] != -1);
+		return call<R>("getY", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,42 @@
+#ifndef javax_swing_event_MenuListener_HPP
+#define javax_swing_event_MenuListener_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::event::MenuListener : public jObject<::javax::swing::event::MenuListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_event / "MenuListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::swing::event::MenuEvent)>("menuCanceled"), //
+		jMethod<::jvoid(::javax::swing::event::MenuEvent)>("menuDeselected"), //
+		jMethod<::jvoid(::javax::swing::event::MenuEvent)>("menuSelected"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto menuCanceled(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("menuCanceled")] != -1);
+		return call<R>("menuCanceled", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto menuDeselected(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("menuDeselected")] != -1);
+		return call<R>("menuDeselected", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto menuSelected(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("menuSelected")] != -1);
+		return call<R>("menuSelected", forward<Args>(args)...);
+	}
+
+};
+
+#endif

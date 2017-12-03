@@ -1,0 +1,28 @@
+#ifndef java_lang_annotation_Repeatable_HPP
+#define java_lang_annotation_Repeatable_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::annotation::Repeatable : public jObject<::java::lang::annotation::Repeatable, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_annotation / "Repeatable";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Class()>("value"), //
+	};
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("value")] != -1);
+		return call<R>("value", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,55 @@
+#ifndef java_lang_management_MemoryType_HPP
+#define java_lang_management_MemoryType_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::management::MemoryType : public jObject<::java::lang::management::MemoryType, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_management / "MemoryType";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::management::MemoryType>("HEAP"), //
+		jField<::java::lang::management::MemoryType>("NON_HEAP"), //
+	};
+
+	template<typename F = ::java::lang::management::MemoryType>
+	static auto HEAP() {
+		static_assert(field_signatures[jField<F>("HEAP")] != -1);
+		return sat<F>("HEAP");
+	}
+
+	template<typename F = ::java::lang::management::MemoryType>
+	static auto NON_HEAP() {
+		static_assert(field_signatures[jField<F>("NON_HEAP")] != -1);
+		return sat<F>("NON_HEAP");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::java::lang::management::MemoryType(::java::lang::String)>("valueOf"), //
+		jMethod<::java::lang::management::MemoryType *()>("values"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::management::MemoryType, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::management::MemoryType *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

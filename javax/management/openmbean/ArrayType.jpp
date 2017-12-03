@@ -1,0 +1,86 @@
+#ifndef javax_management_openmbean_ArrayType_HPP
+#define javax_management_openmbean_ArrayType_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::management::openmbean::ArrayType : public jObject<::javax::management::openmbean::ArrayType, ::javax::management::openmbean::OpenType> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management_openmbean / "ArrayType";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::javax::management::openmbean::OpenType)>(), //
+		jConstructor<::jvoid(::javax::management::openmbean::SimpleType, ::jboolean)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::javax::management::openmbean::ArrayType(::javax::management::openmbean::OpenType)>("getArrayType"), //
+		jMethod<::jint()>("getDimension"), //
+		jMethod<::javax::management::openmbean::OpenType()>("getElementOpenType"), //
+		jMethod<::javax::management::openmbean::ArrayType(::java::lang::Class)>("getPrimitiveArrayType"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jboolean()>("isPrimitiveArray"), //
+		jMethod<::jboolean(::java::lang::Object)>("isValue"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::openmbean::ArrayType, typename... Args>
+	static auto getArrayType(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getArrayType")] != -1);
+		return scall<R>("getArrayType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getDimension(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDimension")] != -1);
+		return call<R>("getDimension", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::openmbean::OpenType, typename... Args>
+	auto getElementOpenType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getElementOpenType")] != -1);
+		return call<R>("getElementOpenType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::openmbean::ArrayType, typename... Args>
+	static auto getPrimitiveArrayType(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrimitiveArrayType")] != -1);
+		return scall<R>("getPrimitiveArrayType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isPrimitiveArray(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isPrimitiveArray")] != -1);
+		return call<R>("isPrimitiveArray", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isValue")] != -1);
+		return call<R>("isValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,36 @@
+#ifndef java_nio_channels_MulticastChannel_HPP
+#define java_nio_channels_MulticastChannel_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::channels::MulticastChannel : public jObject<::java::nio::channels::MulticastChannel, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_channels / "MulticastChannel";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("close"), //
+		jMethod<::java::nio::channels::MembershipKey(::java::net::InetAddress, ::java::net::NetworkInterface)>("join"), //
+		jMethod<::java::nio::channels::MembershipKey(::java::net::InetAddress, ::java::net::NetworkInterface, ::java::net::InetAddress)>("join"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::MembershipKey, typename... Args>
+	auto join(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("join")] != -1);
+		return call<R>("join", forward<Args>(args)...);
+	}
+
+};
+
+#endif

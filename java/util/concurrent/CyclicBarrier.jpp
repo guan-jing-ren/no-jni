@@ -1,0 +1,59 @@
+#ifndef java_util_concurrent_CyclicBarrier_HPP
+#define java_util_concurrent_CyclicBarrier_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::concurrent::CyclicBarrier : public jObject<::java::util::concurrent::CyclicBarrier, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_concurrent / "CyclicBarrier";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint)>(), //
+		jConstructor<::jvoid(::jint, ::java::lang::Runnable)>(), //
+		jMethod<::jint()>("await"), //
+		jMethod<::jint(::jlong, ::java::util::concurrent::TimeUnit)>("await"), //
+		jMethod<::jint()>("getNumberWaiting"), //
+		jMethod<::jint()>("getParties"), //
+		jMethod<::jboolean()>("isBroken"), //
+		jMethod<::jvoid()>("reset"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto await(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("await")] != -1);
+		return call<R>("await", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getNumberWaiting(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNumberWaiting")] != -1);
+		return call<R>("getNumberWaiting", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getParties(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParties")] != -1);
+		return call<R>("getParties", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isBroken(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isBroken")] != -1);
+		return call<R>("isBroken", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto reset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("reset")] != -1);
+		return call<R>("reset", forward<Args>(args)...);
+	}
+
+};
+
+#endif

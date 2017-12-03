@@ -1,0 +1,52 @@
+#ifndef java_io_PipedWriter_HPP
+#define java_io_PipedWriter_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::io::PipedWriter : public jObject<::java::io::PipedWriter, ::java::io::Writer> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_io / "PipedWriter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::io::PipedReader)>(), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::jvoid(::java::io::PipedReader)>("connect"), //
+		jMethod<::jvoid()>("flush"), //
+		jMethod<::jvoid(::jint)>("write"), //
+		jMethod<::jvoid(::jchar *, ::jint, ::jint)>("write"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto connect(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("connect")] != -1);
+		return call<R>("connect", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto flush(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("flush")] != -1);
+		return call<R>("flush", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", forward<Args>(args)...);
+	}
+
+};
+
+#endif

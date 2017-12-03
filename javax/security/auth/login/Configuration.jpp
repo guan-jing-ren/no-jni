@@ -1,0 +1,79 @@
+#ifndef javax_security_auth_login_Configuration_HPP
+#define javax_security_auth_login_Configuration_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::security::auth::login::Configuration : public jObject<::javax::security::auth::login::Configuration, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_security_auth_login / "Configuration";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::security::auth::login::AppConfigurationEntry *(::java::lang::String)>("getAppConfigurationEntry"), //
+		jMethod<::javax::security::auth::login::Configuration()>("getConfiguration"), //
+		jMethod<::javax::security::auth::login::Configuration(::java::lang::String, ::javax::security::auth::login::Configuration$Parameters)>("getInstance"), //
+		jMethod<::javax::security::auth::login::Configuration(::java::lang::String, ::javax::security::auth::login::Configuration$Parameters, ::java::lang::String)>("getInstance"), //
+		jMethod<::javax::security::auth::login::Configuration(::java::lang::String, ::javax::security::auth::login::Configuration$Parameters, ::java::security::Provider)>("getInstance"), //
+		jMethod<::javax::security::auth::login::Configuration$Parameters()>("getParameters"), //
+		jMethod<::java::security::Provider()>("getProvider"), //
+		jMethod<::java::lang::String()>("getType"), //
+		jMethod<::jvoid()>("refresh"), //
+		jMethod<::jvoid(::javax::security::auth::login::Configuration)>("setConfiguration"), //
+	};
+
+	template<typename R = ::javax::security::auth::login::AppConfigurationEntry *, typename... Args>
+	auto getAppConfigurationEntry(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAppConfigurationEntry")] != -1);
+		return call<R>("getAppConfigurationEntry", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::security::auth::login::Configuration, typename... Args>
+	static auto getConfiguration(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getConfiguration")] != -1);
+		return scall<R>("getConfiguration", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::security::auth::login::Configuration, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::security::auth::login::Configuration$Parameters, typename... Args>
+	auto getParameters(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParameters")] != -1);
+		return call<R>("getParameters", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Provider, typename... Args>
+	auto getProvider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProvider")] != -1);
+		return call<R>("getProvider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto refresh(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("refresh")] != -1);
+		return call<R>("refresh", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setConfiguration(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setConfiguration")] != -1);
+		return scall<R>("setConfiguration", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,55 @@
+#ifndef java_nio_file_StandardCopyOption_HPP
+#define java_nio_file_StandardCopyOption_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::file::StandardCopyOption : public jObject<::java::nio::file::StandardCopyOption, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_file / "StandardCopyOption";
+
+	constexpr static Enume field_signatures{
+		jField<::java::nio::file::StandardCopyOption>("ATOMIC_MOVE"), //
+		jField<::java::nio::file::StandardCopyOption>("COPY_ATTRIBUTES"), //
+		jField<::java::nio::file::StandardCopyOption>("REPLACE_EXISTING"), //
+	};
+
+	template<typename F = ::java::nio::file::StandardCopyOption>
+	static auto ATOMIC_MOVE() {
+		static_assert(field_signatures[jField<F>("ATOMIC_MOVE")] != -1);
+		return sat<F>("ATOMIC_MOVE");
+	}
+
+	template<typename F = ::java::nio::file::StandardCopyOption>
+	static auto COPY_ATTRIBUTES() {
+		static_assert(field_signatures[jField<F>("COPY_ATTRIBUTES")] != -1);
+		return sat<F>("COPY_ATTRIBUTES");
+	}
+
+	template<typename F = ::java::nio::file::StandardCopyOption>
+	static auto REPLACE_EXISTING() {
+		static_assert(field_signatures[jField<F>("REPLACE_EXISTING")] != -1);
+		return sat<F>("REPLACE_EXISTING");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::nio::file::StandardCopyOption(::java::lang::String)>("valueOf"), //
+		jMethod<::java::nio::file::StandardCopyOption *()>("values"), //
+	};
+
+	template<typename R = ::java::nio::file::StandardCopyOption, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::StandardCopyOption *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

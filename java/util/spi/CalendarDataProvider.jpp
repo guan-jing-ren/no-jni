@@ -1,0 +1,35 @@
+#ifndef java_util_spi_CalendarDataProvider_HPP
+#define java_util_spi_CalendarDataProvider_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::spi::CalendarDataProvider : public jObject<::java::util::spi::CalendarDataProvider, ::java::util::spi::LocaleServiceProvider> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_spi / "CalendarDataProvider";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint(::java::util::Locale)>("getFirstDayOfWeek"), //
+		jMethod<::jint(::java::util::Locale)>("getMinimalDaysInFirstWeek"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getFirstDayOfWeek(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFirstDayOfWeek")] != -1);
+		return call<R>("getFirstDayOfWeek", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getMinimalDaysInFirstWeek(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMinimalDaysInFirstWeek")] != -1);
+		return call<R>("getMinimalDaysInFirstWeek", forward<Args>(args)...);
+	}
+
+};
+
+#endif

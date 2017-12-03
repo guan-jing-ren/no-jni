@@ -1,0 +1,54 @@
+#ifndef java_io_PipedReader_HPP
+#define java_io_PipedReader_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::io::PipedReader : public jObject<::java::io::PipedReader, ::java::io::Reader> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_io / "PipedReader";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint)>(), //
+		jConstructor<::jvoid(::java::io::PipedWriter)>(), //
+		jConstructor<::jvoid(::java::io::PipedWriter, ::jint)>(), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::jvoid(::java::io::PipedWriter)>("connect"), //
+		jMethod<::jint()>("read"), //
+		jMethod<::jint(::jchar *, ::jint, ::jint)>("read"), //
+		jMethod<::jboolean()>("ready"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto connect(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("connect")] != -1);
+		return call<R>("connect", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto ready(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("ready")] != -1);
+		return call<R>("ready", forward<Args>(args)...);
+	}
+
+};
+
+#endif

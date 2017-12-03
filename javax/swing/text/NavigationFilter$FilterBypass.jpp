@@ -1,0 +1,43 @@
+#ifndef javax_swing_text_NavigationFilter$FilterBypass_HPP
+#define javax_swing_text_NavigationFilter$FilterBypass_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::text::NavigationFilter$FilterBypass : public jObject<::javax::swing::text::NavigationFilter$FilterBypass, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_text / "NavigationFilter$FilterBypass";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::swing::text::Caret()>("getCaret"), //
+		jMethod<::jvoid(::jint, ::javax::swing::text::Position$Bias)>("moveDot"), //
+		jMethod<::jvoid(::jint, ::javax::swing::text::Position$Bias)>("setDot"), //
+	};
+
+	template<typename R = ::javax::swing::text::Caret, typename... Args>
+	auto getCaret(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCaret")] != -1);
+		return call<R>("getCaret", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto moveDot(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("moveDot")] != -1);
+		return call<R>("moveDot", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDot(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDot")] != -1);
+		return call<R>("setDot", forward<Args>(args)...);
+	}
+
+};
+
+#endif

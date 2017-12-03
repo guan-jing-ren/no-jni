@@ -1,0 +1,29 @@
+#ifndef java_awt_font_TextLayout$CaretPolicy_HPP
+#define java_awt_font_TextLayout$CaretPolicy_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::font::TextLayout$CaretPolicy : public jObject<::java::awt::font::TextLayout$CaretPolicy, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_font / "TextLayout$CaretPolicy";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::awt::font::TextHitInfo(::java::awt::font::TextHitInfo, ::java::awt::font::TextHitInfo, ::java::awt::font::TextLayout)>("getStrongCaret"), //
+	};
+
+	template<typename R = ::java::awt::font::TextHitInfo, typename... Args>
+	auto getStrongCaret(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStrongCaret")] != -1);
+		return call<R>("getStrongCaret", forward<Args>(args)...);
+	}
+
+};
+
+#endif

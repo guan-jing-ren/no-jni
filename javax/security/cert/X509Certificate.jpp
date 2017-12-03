@@ -1,0 +1,101 @@
+#ifndef javax_security_cert_X509Certificate_HPP
+#define javax_security_cert_X509Certificate_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::security::cert::X509Certificate : public jObject<::javax::security::cert::X509Certificate, ::javax::security::cert::Certificate> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_security_cert / "X509Certificate";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid()>("checkValidity"), //
+		jMethod<::jvoid(::java::util::Date)>("checkValidity"), //
+		jMethod<::javax::security::cert::X509Certificate(::java::io::InputStream)>("getInstance"), //
+		jMethod<::javax::security::cert::X509Certificate(::jbyte *)>("getInstance"), //
+		jMethod<::java::security::Principal()>("getIssuerDN"), //
+		jMethod<::java::util::Date()>("getNotAfter"), //
+		jMethod<::java::util::Date()>("getNotBefore"), //
+		jMethod<::java::math::BigInteger()>("getSerialNumber"), //
+		jMethod<::java::lang::String()>("getSigAlgName"), //
+		jMethod<::java::lang::String()>("getSigAlgOID"), //
+		jMethod<::jbyte *()>("getSigAlgParams"), //
+		jMethod<::java::security::Principal()>("getSubjectDN"), //
+		jMethod<::jint()>("getVersion"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto checkValidity(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("checkValidity")] != -1);
+		return call<R>("checkValidity", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::security::cert::X509Certificate, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Principal, typename... Args>
+	auto getIssuerDN(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIssuerDN")] != -1);
+		return call<R>("getIssuerDN", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Date, typename... Args>
+	auto getNotAfter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNotAfter")] != -1);
+		return call<R>("getNotAfter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Date, typename... Args>
+	auto getNotBefore(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNotBefore")] != -1);
+		return call<R>("getNotBefore", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getSerialNumber(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSerialNumber")] != -1);
+		return call<R>("getSerialNumber", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getSigAlgName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSigAlgName")] != -1);
+		return call<R>("getSigAlgName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getSigAlgOID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSigAlgOID")] != -1);
+		return call<R>("getSigAlgOID", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getSigAlgParams(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSigAlgParams")] != -1);
+		return call<R>("getSigAlgParams", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Principal, typename... Args>
+	auto getSubjectDN(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSubjectDN")] != -1);
+		return call<R>("getSubjectDN", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getVersion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getVersion")] != -1);
+		return call<R>("getVersion", forward<Args>(args)...);
+	}
+
+};
+
+#endif

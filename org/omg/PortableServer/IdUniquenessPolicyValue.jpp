@@ -1,0 +1,62 @@
+#ifndef org_omg_PortableServer_IdUniquenessPolicyValue_HPP
+#define org_omg_PortableServer_IdUniquenessPolicyValue_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::PortableServer::IdUniquenessPolicyValue : public jObject<::org::omg::PortableServer::IdUniquenessPolicyValue, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_PortableServer / "IdUniquenessPolicyValue";
+
+	constexpr static Enume field_signatures{
+		jField<::org::omg::PortableServer::IdUniquenessPolicyValue>("MULTIPLE_ID"), //
+		jField<::org::omg::PortableServer::IdUniquenessPolicyValue>("UNIQUE_ID"), //
+		jField<::jint>("_MULTIPLE_ID"), //
+		jField<::jint>("_UNIQUE_ID"), //
+	};
+
+	template<typename F = ::org::omg::PortableServer::IdUniquenessPolicyValue>
+	static auto MULTIPLE_ID() {
+		static_assert(field_signatures[jField<F>("MULTIPLE_ID")] != -1);
+		return sat<F>("MULTIPLE_ID");
+	}
+
+	template<typename F = ::org::omg::PortableServer::IdUniquenessPolicyValue>
+	static auto UNIQUE_ID() {
+		static_assert(field_signatures[jField<F>("UNIQUE_ID")] != -1);
+		return sat<F>("UNIQUE_ID");
+	}
+
+	template<typename F = ::jint>
+	static auto _MULTIPLE_ID() {
+		static_assert(field_signatures[jField<F>("_MULTIPLE_ID")] != -1);
+		return sat<F>("_MULTIPLE_ID");
+	}
+
+	template<typename F = ::jint>
+	static auto _UNIQUE_ID() {
+		static_assert(field_signatures[jField<F>("_UNIQUE_ID")] != -1);
+		return sat<F>("_UNIQUE_ID");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::omg::PortableServer::IdUniquenessPolicyValue(::jint)>("from_int"), //
+		jMethod<::jint()>("value"), //
+	};
+
+	template<typename R = ::org::omg::PortableServer::IdUniquenessPolicyValue, typename... Args>
+	static auto from_int(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("from_int")] != -1);
+		return scall<R>("from_int", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("value")] != -1);
+		return call<R>("value", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,36 @@
+#ifndef java_security_KeyPair_HPP
+#define java_security_KeyPair_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::KeyPair : public jObject<::java::security::KeyPair, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "KeyPair";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::security::PublicKey, ::java::security::PrivateKey)>(), //
+		jMethod<::java::security::PrivateKey()>("getPrivate"), //
+		jMethod<::java::security::PublicKey()>("getPublic"), //
+	};
+
+	template<typename R = ::java::security::PrivateKey, typename... Args>
+	auto getPrivate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrivate")] != -1);
+		return call<R>("getPrivate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::PublicKey, typename... Args>
+	auto getPublic(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPublic")] != -1);
+		return call<R>("getPublic", forward<Args>(args)...);
+	}
+
+};
+
+#endif

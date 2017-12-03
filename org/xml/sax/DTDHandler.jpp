@@ -1,0 +1,35 @@
+#ifndef org_xml_sax_DTDHandler_HPP
+#define org_xml_sax_DTDHandler_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::xml::sax::DTDHandler : public jObject<::org::xml::sax::DTDHandler, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_xml_sax / "DTDHandler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::String)>("notationDecl"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::String)>("unparsedEntityDecl"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto notationDecl(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("notationDecl")] != -1);
+		return call<R>("notationDecl", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto unparsedEntityDecl(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unparsedEntityDecl")] != -1);
+		return call<R>("unparsedEntityDecl", forward<Args>(args)...);
+	}
+
+};
+
+#endif

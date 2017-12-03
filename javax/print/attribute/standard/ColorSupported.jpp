@@ -1,0 +1,48 @@
+#ifndef javax_print_attribute_standard_ColorSupported_HPP
+#define javax_print_attribute_standard_ColorSupported_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::print::attribute::standard::ColorSupported : public jObject<::javax::print::attribute::standard::ColorSupported, ::javax::print::attribute::EnumSyntax> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_print_attribute_standard / "ColorSupported";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::print::attribute::standard::ColorSupported>("NOT_SUPPORTED"), //
+		jField<::javax::print::attribute::standard::ColorSupported>("SUPPORTED"), //
+	};
+
+	template<typename F = ::javax::print::attribute::standard::ColorSupported>
+	static auto NOT_SUPPORTED() {
+		static_assert(field_signatures[jField<F>("NOT_SUPPORTED")] != -1);
+		return sat<F>("NOT_SUPPORTED");
+	}
+
+	template<typename F = ::javax::print::attribute::standard::ColorSupported>
+	static auto SUPPORTED() {
+		static_assert(field_signatures[jField<F>("SUPPORTED")] != -1);
+		return sat<F>("SUPPORTED");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Class()>("getCategory"), //
+		jMethod<::java::lang::String()>("getName"), //
+	};
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getCategory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCategory")] != -1);
+		return call<R>("getCategory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+};
+
+#endif

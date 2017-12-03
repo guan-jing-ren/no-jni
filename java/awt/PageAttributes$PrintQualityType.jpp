@@ -1,0 +1,55 @@
+#ifndef java_awt_PageAttributes$PrintQualityType_HPP
+#define java_awt_PageAttributes$PrintQualityType_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::PageAttributes$PrintQualityType : public jObject<::java::awt::PageAttributes$PrintQualityType, ::java::awt::AttributeValue> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "PageAttributes$PrintQualityType";
+
+	constexpr static Enume field_signatures{
+		jField<::java::awt::PageAttributes$PrintQualityType>("DRAFT"), //
+		jField<::java::awt::PageAttributes$PrintQualityType>("HIGH"), //
+		jField<::java::awt::PageAttributes$PrintQualityType>("NORMAL"), //
+	};
+
+	template<typename F = ::java::awt::PageAttributes$PrintQualityType>
+	static auto DRAFT() {
+		static_assert(field_signatures[jField<F>("DRAFT")] != -1);
+		return sat<F>("DRAFT");
+	}
+
+	template<typename F = ::java::awt::PageAttributes$PrintQualityType>
+	static auto HIGH() {
+		static_assert(field_signatures[jField<F>("HIGH")] != -1);
+		return sat<F>("HIGH");
+	}
+
+	template<typename F = ::java::awt::PageAttributes$PrintQualityType>
+	static auto NORMAL() {
+		static_assert(field_signatures[jField<F>("NORMAL")] != -1);
+		return sat<F>("NORMAL");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

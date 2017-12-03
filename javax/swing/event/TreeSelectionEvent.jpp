@@ -1,0 +1,67 @@
+#ifndef javax_swing_event_TreeSelectionEvent_HPP
+#define javax_swing_event_TreeSelectionEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::event::TreeSelectionEvent : public jObject<::javax::swing::event::TreeSelectionEvent, ::java::util::EventObject> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_event / "TreeSelectionEvent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Object, ::javax::swing::tree::TreePath, ::jboolean, ::javax::swing::tree::TreePath, ::javax::swing::tree::TreePath)>(), //
+		jConstructor<::jvoid(::java::lang::Object, ::javax::swing::tree::TreePath *, ::jboolean *, ::javax::swing::tree::TreePath, ::javax::swing::tree::TreePath)>(), //
+		jMethod<::java::lang::Object(::java::lang::Object)>("cloneWithSource"), //
+		jMethod<::javax::swing::tree::TreePath()>("getNewLeadSelectionPath"), //
+		jMethod<::javax::swing::tree::TreePath()>("getOldLeadSelectionPath"), //
+		jMethod<::javax::swing::tree::TreePath()>("getPath"), //
+		jMethod<::javax::swing::tree::TreePath *()>("getPaths"), //
+		jMethod<::jboolean()>("isAddedPath"), //
+		jMethod<::jboolean(::jint)>("isAddedPath"), //
+		jMethod<::jboolean(::javax::swing::tree::TreePath)>("isAddedPath"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto cloneWithSource(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("cloneWithSource")] != -1);
+		return call<R>("cloneWithSource", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::tree::TreePath, typename... Args>
+	auto getNewLeadSelectionPath(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNewLeadSelectionPath")] != -1);
+		return call<R>("getNewLeadSelectionPath", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::tree::TreePath, typename... Args>
+	auto getOldLeadSelectionPath(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOldLeadSelectionPath")] != -1);
+		return call<R>("getOldLeadSelectionPath", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::tree::TreePath, typename... Args>
+	auto getPath(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPath")] != -1);
+		return call<R>("getPath", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::tree::TreePath *, typename... Args>
+	auto getPaths(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPaths")] != -1);
+		return call<R>("getPaths", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isAddedPath(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isAddedPath")] != -1);
+		return call<R>("isAddedPath", forward<Args>(args)...);
+	}
+
+};
+
+#endif

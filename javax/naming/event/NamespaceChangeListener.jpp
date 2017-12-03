@@ -1,0 +1,42 @@
+#ifndef javax_naming_event_NamespaceChangeListener_HPP
+#define javax_naming_event_NamespaceChangeListener_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::naming::event::NamespaceChangeListener : public jObject<::javax::naming::event::NamespaceChangeListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_naming_event / "NamespaceChangeListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::naming::event::NamingEvent)>("objectAdded"), //
+		jMethod<::jvoid(::javax::naming::event::NamingEvent)>("objectRemoved"), //
+		jMethod<::jvoid(::javax::naming::event::NamingEvent)>("objectRenamed"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto objectAdded(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("objectAdded")] != -1);
+		return call<R>("objectAdded", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto objectRemoved(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("objectRemoved")] != -1);
+		return call<R>("objectRemoved", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto objectRenamed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("objectRenamed")] != -1);
+		return call<R>("objectRenamed", forward<Args>(args)...);
+	}
+
+};
+
+#endif

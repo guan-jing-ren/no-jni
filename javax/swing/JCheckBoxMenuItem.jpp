@@ -1,0 +1,63 @@
+#ifndef javax_swing_JCheckBoxMenuItem_HPP
+#define javax_swing_JCheckBoxMenuItem_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::JCheckBoxMenuItem : public jObject<::javax::swing::JCheckBoxMenuItem, ::javax::swing::JMenuItem> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "JCheckBoxMenuItem";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::javax::swing::Icon)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::javax::swing::Icon, ::jboolean)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::jboolean)>(), //
+		jConstructor<::jvoid(::javax::swing::Action)>(), //
+		jConstructor<::jvoid(::javax::swing::Icon)>(), //
+		jMethod<::javax::accessibility::AccessibleContext()>("getAccessibleContext"), //
+		jMethod<::java::lang::Object *()>("getSelectedObjects"), //
+		jMethod<::jboolean()>("getState"), //
+		jMethod<::java::lang::String()>("getUIClassID"), //
+		jMethod<::jvoid(::jboolean)>("setState"), //
+	};
+
+	template<typename R = ::javax::accessibility::AccessibleContext, typename... Args>
+	auto getAccessibleContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAccessibleContext")] != -1);
+		return call<R>("getAccessibleContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object *, typename... Args>
+	auto getSelectedObjects(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSelectedObjects")] != -1);
+		return call<R>("getSelectedObjects", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getState")] != -1);
+		return call<R>("getState", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getUIClassID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUIClassID")] != -1);
+		return call<R>("getUIClassID", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setState")] != -1);
+		return call<R>("setState", forward<Args>(args)...);
+	}
+
+};
+
+#endif

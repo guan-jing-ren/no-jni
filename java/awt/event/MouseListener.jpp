@@ -1,0 +1,56 @@
+#ifndef java_awt_event_MouseListener_HPP
+#define java_awt_event_MouseListener_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::event::MouseListener : public jObject<::java::awt::event::MouseListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_event / "MouseListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::awt::event::MouseEvent)>("mouseClicked"), //
+		jMethod<::jvoid(::java::awt::event::MouseEvent)>("mouseEntered"), //
+		jMethod<::jvoid(::java::awt::event::MouseEvent)>("mouseExited"), //
+		jMethod<::jvoid(::java::awt::event::MouseEvent)>("mousePressed"), //
+		jMethod<::jvoid(::java::awt::event::MouseEvent)>("mouseReleased"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto mouseClicked(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("mouseClicked")] != -1);
+		return call<R>("mouseClicked", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto mouseEntered(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("mouseEntered")] != -1);
+		return call<R>("mouseEntered", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto mouseExited(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("mouseExited")] != -1);
+		return call<R>("mouseExited", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto mousePressed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("mousePressed")] != -1);
+		return call<R>("mousePressed", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto mouseReleased(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("mouseReleased")] != -1);
+		return call<R>("mouseReleased", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,44 @@
+#ifndef javax_smartcardio_CardTerminals_HPP
+#define javax_smartcardio_CardTerminals_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::smartcardio::CardTerminals : public jObject<::javax::smartcardio::CardTerminals, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_smartcardio / "CardTerminals";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::smartcardio::CardTerminal(::java::lang::String)>("getTerminal"), //
+		jMethod<::java::util::List()>("list"), //
+		jMethod<::java::util::List(::javax::smartcardio::CardTerminals$State)>("list"), //
+		jMethod<::jvoid()>("waitForChange"), //
+		jMethod<::jboolean(::jlong)>("waitForChange"), //
+	};
+
+	template<typename R = ::javax::smartcardio::CardTerminal, typename... Args>
+	auto getTerminal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTerminal")] != -1);
+		return call<R>("getTerminal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto list(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("list")] != -1);
+		return call<R>("list", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto waitForChange(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("waitForChange")] != -1);
+		return call<R>("waitForChange", forward<Args>(args)...);
+	}
+
+};
+
+#endif

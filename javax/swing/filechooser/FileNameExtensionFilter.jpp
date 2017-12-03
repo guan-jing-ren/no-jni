@@ -1,0 +1,50 @@
+#ifndef javax_swing_filechooser_FileNameExtensionFilter_HPP
+#define javax_swing_filechooser_FileNameExtensionFilter_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::filechooser::FileNameExtensionFilter : public jObject<::javax::swing::filechooser::FileNameExtensionFilter, ::javax::swing::filechooser::FileFilter> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_filechooser / "FileNameExtensionFilter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String *)>(), //
+		jMethod<::jboolean(::java::io::File)>("accept"), //
+		jMethod<::java::lang::String()>("getDescription"), //
+		jMethod<::java::lang::String *()>("getExtensions"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto accept(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("accept")] != -1);
+		return call<R>("accept", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDescription(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDescription")] != -1);
+		return call<R>("getDescription", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getExtensions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getExtensions")] != -1);
+		return call<R>("getExtensions", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

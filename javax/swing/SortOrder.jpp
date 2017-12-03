@@ -1,0 +1,55 @@
+#ifndef javax_swing_SortOrder_HPP
+#define javax_swing_SortOrder_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::SortOrder : public jObject<::javax::swing::SortOrder, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "SortOrder";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::swing::SortOrder>("ASCENDING"), //
+		jField<::javax::swing::SortOrder>("DESCENDING"), //
+		jField<::javax::swing::SortOrder>("UNSORTED"), //
+	};
+
+	template<typename F = ::javax::swing::SortOrder>
+	static auto ASCENDING() {
+		static_assert(field_signatures[jField<F>("ASCENDING")] != -1);
+		return sat<F>("ASCENDING");
+	}
+
+	template<typename F = ::javax::swing::SortOrder>
+	static auto DESCENDING() {
+		static_assert(field_signatures[jField<F>("DESCENDING")] != -1);
+		return sat<F>("DESCENDING");
+	}
+
+	template<typename F = ::javax::swing::SortOrder>
+	static auto UNSORTED() {
+		static_assert(field_signatures[jField<F>("UNSORTED")] != -1);
+		return sat<F>("UNSORTED");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::swing::SortOrder(::java::lang::String)>("valueOf"), //
+		jMethod<::javax::swing::SortOrder *()>("values"), //
+	};
+
+	template<typename R = ::javax::swing::SortOrder, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::SortOrder *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

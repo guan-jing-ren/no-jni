@@ -1,0 +1,72 @@
+#ifndef javax_smartcardio_TerminalFactory_HPP
+#define javax_smartcardio_TerminalFactory_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::smartcardio::TerminalFactory : public jObject<::javax::smartcardio::TerminalFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_smartcardio / "TerminalFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::smartcardio::TerminalFactory()>("getDefault"), //
+		jMethod<::java::lang::String()>("getDefaultType"), //
+		jMethod<::javax::smartcardio::TerminalFactory(::java::lang::String, ::java::lang::Object)>("getInstance"), //
+		jMethod<::javax::smartcardio::TerminalFactory(::java::lang::String, ::java::lang::Object, ::java::lang::String)>("getInstance"), //
+		jMethod<::javax::smartcardio::TerminalFactory(::java::lang::String, ::java::lang::Object, ::java::security::Provider)>("getInstance"), //
+		jMethod<::java::security::Provider()>("getProvider"), //
+		jMethod<::java::lang::String()>("getType"), //
+		jMethod<::javax::smartcardio::CardTerminals()>("terminals"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::javax::smartcardio::TerminalFactory, typename... Args>
+	static auto getDefault(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefault")] != -1);
+		return scall<R>("getDefault", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getDefaultType(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaultType")] != -1);
+		return scall<R>("getDefaultType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::smartcardio::TerminalFactory, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Provider, typename... Args>
+	auto getProvider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProvider")] != -1);
+		return call<R>("getProvider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::smartcardio::CardTerminals, typename... Args>
+	auto terminals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("terminals")] != -1);
+		return call<R>("terminals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

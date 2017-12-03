@@ -1,0 +1,57 @@
+#ifndef java_util_concurrent_locks_Lock_HPP
+#define java_util_concurrent_locks_Lock_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::java::util::concurrent::locks::Lock : public jObject<::java::util::concurrent::locks::Lock, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_concurrent_locks / "Lock";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("lock"), //
+		jMethod<::jvoid()>("lockInterruptibly"), //
+		jMethod<::java::util::concurrent::locks::Condition()>("newCondition"), //
+		jMethod<::jboolean()>("tryLock"), //
+		jMethod<::jboolean(::jlong, ::java::util::concurrent::TimeUnit)>("tryLock"), //
+		jMethod<::jvoid()>("unlock"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto lock(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lock")] != -1);
+		return call<R>("lock", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto lockInterruptibly(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lockInterruptibly")] != -1);
+		return call<R>("lockInterruptibly", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::concurrent::locks::Condition, typename... Args>
+	auto newCondition(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newCondition")] != -1);
+		return call<R>("newCondition", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto tryLock(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("tryLock")] != -1);
+		return call<R>("tryLock", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto unlock(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unlock")] != -1);
+		return call<R>("unlock", forward<Args>(args)...);
+	}
+
+};
+
+#endif

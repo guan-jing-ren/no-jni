@@ -1,0 +1,64 @@
+#ifndef java_sql_SQLException_HPP
+#define java_sql_SQLException_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::sql::SQLException : public jObject<::java::sql::SQLException, ::java::lang::Exception> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_sql / "SQLException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::jint)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::jint, ::java::lang::Throwable)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::Throwable)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Throwable)>(), //
+		jConstructor<::jvoid(::java::lang::Throwable)>(), //
+		jMethod<::jint()>("getErrorCode"), //
+		jMethod<::java::sql::SQLException()>("getNextException"), //
+		jMethod<::java::lang::String()>("getSQLState"), //
+		jMethod<::java::util::Iterator()>("iterator"), //
+		jMethod<::jvoid(::java::sql::SQLException)>("setNextException"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getErrorCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getErrorCode")] != -1);
+		return call<R>("getErrorCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::SQLException, typename... Args>
+	auto getNextException(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNextException")] != -1);
+		return call<R>("getNextException", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getSQLState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSQLState")] != -1);
+		return call<R>("getSQLState", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Iterator, typename... Args>
+	auto iterator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("iterator")] != -1);
+		return call<R>("iterator", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setNextException(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setNextException")] != -1);
+		return call<R>("setNextException", forward<Args>(args)...);
+	}
+
+};
+
+#endif

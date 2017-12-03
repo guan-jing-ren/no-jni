@@ -1,0 +1,69 @@
+#ifndef javax_accessibility_AccessibleExtendedText_HPP
+#define javax_accessibility_AccessibleExtendedText_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::accessibility::AccessibleExtendedText : public jObject<::javax::accessibility::AccessibleExtendedText, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_accessibility / "AccessibleExtendedText";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("ATTRIBUTE_RUN"), //
+		jField<::jint>("LINE"), //
+	};
+
+	template<typename F = ::jint>
+	static auto ATTRIBUTE_RUN() {
+		static_assert(field_signatures[jField<F>("ATTRIBUTE_RUN")] != -1);
+		return sat<F>("ATTRIBUTE_RUN");
+	}
+
+	template<typename F = ::jint>
+	static auto LINE() {
+		static_assert(field_signatures[jField<F>("LINE")] != -1);
+		return sat<F>("LINE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::Rectangle(::jint, ::jint)>("getTextBounds"), //
+		jMethod<::java::lang::String(::jint, ::jint)>("getTextRange"), //
+		jMethod<::javax::accessibility::AccessibleTextSequence(::jint, ::jint)>("getTextSequenceAfter"), //
+		jMethod<::javax::accessibility::AccessibleTextSequence(::jint, ::jint)>("getTextSequenceAt"), //
+		jMethod<::javax::accessibility::AccessibleTextSequence(::jint, ::jint)>("getTextSequenceBefore"), //
+	};
+
+	template<typename R = ::java::awt::Rectangle, typename... Args>
+	auto getTextBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTextBounds")] != -1);
+		return call<R>("getTextBounds", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getTextRange(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTextRange")] != -1);
+		return call<R>("getTextRange", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::accessibility::AccessibleTextSequence, typename... Args>
+	auto getTextSequenceAfter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTextSequenceAfter")] != -1);
+		return call<R>("getTextSequenceAfter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::accessibility::AccessibleTextSequence, typename... Args>
+	auto getTextSequenceAt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTextSequenceAt")] != -1);
+		return call<R>("getTextSequenceAt", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::accessibility::AccessibleTextSequence, typename... Args>
+	auto getTextSequenceBefore(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTextSequenceBefore")] != -1);
+		return call<R>("getTextSequenceBefore", forward<Args>(args)...);
+	}
+
+};
+
+#endif

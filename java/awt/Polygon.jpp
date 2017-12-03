@@ -1,0 +1,127 @@
+#ifndef java_awt_Polygon_HPP
+#define java_awt_Polygon_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::Polygon : public jObject<::java::awt::Polygon, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "Polygon";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("npoints"), //
+		jField<::jint *>("xpoints"), //
+		jField<::jint *>("ypoints"), //
+	};
+
+	template<typename F = ::jint>
+	auto npoints() const {
+		static_assert(field_signatures[jField<F>("npoints")] != -1);
+		return at<F>("npoints");
+	}
+
+	template<typename F = ::jint *>
+	auto xpoints() const {
+		static_assert(field_signatures[jField<F>("xpoints")] != -1);
+		return at<F>("xpoints");
+	}
+
+	template<typename F = ::jint *>
+	auto ypoints() const {
+		static_assert(field_signatures[jField<F>("ypoints")] != -1);
+		return at<F>("ypoints");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint *, ::jint *, ::jint)>(), //
+		jMethod<::jvoid(::jint, ::jint)>("addPoint"), //
+		jMethod<::jboolean(::jdouble, ::jdouble)>("contains"), //
+		jMethod<::jboolean(::jdouble, ::jdouble, ::jdouble, ::jdouble)>("contains"), //
+		jMethod<::jboolean(::jint, ::jint)>("contains"), //
+		jMethod<::jboolean(::java::awt::Point)>("contains"), //
+		jMethod<::jboolean(::java::awt::geom::Point2D)>("contains"), //
+		jMethod<::jboolean(::java::awt::geom::Rectangle2D)>("contains"), //
+		jMethod<::java::awt::Rectangle()>("getBoundingBox"), //
+		jMethod<::java::awt::Rectangle()>("getBounds"), //
+		jMethod<::java::awt::geom::Rectangle2D()>("getBounds2D"), //
+		jMethod<::java::awt::geom::PathIterator(::java::awt::geom::AffineTransform)>("getPathIterator"), //
+		jMethod<::java::awt::geom::PathIterator(::java::awt::geom::AffineTransform, ::jdouble)>("getPathIterator"), //
+		jMethod<::jboolean(::jint, ::jint)>("inside"), //
+		jMethod<::jboolean(::jdouble, ::jdouble, ::jdouble, ::jdouble)>("intersects"), //
+		jMethod<::jboolean(::java::awt::geom::Rectangle2D)>("intersects"), //
+		jMethod<::jvoid()>("invalidate"), //
+		jMethod<::jvoid()>("reset"), //
+		jMethod<::jvoid(::jint, ::jint)>("translate"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addPoint(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addPoint")] != -1);
+		return call<R>("addPoint", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto contains(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("contains")] != -1);
+		return call<R>("contains", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Rectangle, typename... Args>
+	auto getBoundingBox(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBoundingBox")] != -1);
+		return call<R>("getBoundingBox", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Rectangle, typename... Args>
+	auto getBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBounds")] != -1);
+		return call<R>("getBounds", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Rectangle2D, typename... Args>
+	auto getBounds2D(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBounds2D")] != -1);
+		return call<R>("getBounds2D", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::PathIterator, typename... Args>
+	auto getPathIterator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPathIterator")] != -1);
+		return call<R>("getPathIterator", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto inside(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("inside")] != -1);
+		return call<R>("inside", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto intersects(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("intersects")] != -1);
+		return call<R>("intersects", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto invalidate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("invalidate")] != -1);
+		return call<R>("invalidate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto reset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("reset")] != -1);
+		return call<R>("reset", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto translate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("translate")] != -1);
+		return call<R>("translate", forward<Args>(args)...);
+	}
+
+};
+
+#endif

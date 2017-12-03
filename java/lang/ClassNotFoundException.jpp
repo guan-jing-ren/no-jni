@@ -1,0 +1,38 @@
+#ifndef java_lang_ClassNotFoundException_HPP
+#define java_lang_ClassNotFoundException_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::lang::ClassNotFoundException : public jObject<::java::lang::ClassNotFoundException, ::java::lang::ReflectiveOperationException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang / "ClassNotFoundException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Throwable)>(), //
+		jMethod<::java::lang::Throwable()>("getCause"), //
+		jMethod<::java::lang::Throwable()>("getException"), //
+	};
+
+	template<typename R = ::java::lang::Throwable, typename... Args>
+	auto getCause(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCause")] != -1);
+		return call<R>("getCause", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Throwable, typename... Args>
+	auto getException(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getException")] != -1);
+		return call<R>("getException", forward<Args>(args)...);
+	}
+
+};
+
+#endif

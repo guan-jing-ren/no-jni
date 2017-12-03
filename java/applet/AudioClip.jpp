@@ -1,0 +1,42 @@
+#ifndef java_applet_AudioClip_HPP
+#define java_applet_AudioClip_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::applet::AudioClip : public jObject<::java::applet::AudioClip, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_applet / "AudioClip";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("loop"), //
+		jMethod<::jvoid()>("play"), //
+		jMethod<::jvoid()>("stop"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto loop(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("loop")] != -1);
+		return call<R>("loop", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto play(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("play")] != -1);
+		return call<R>("play", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto stop(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("stop")] != -1);
+		return call<R>("stop", forward<Args>(args)...);
+	}
+
+};
+
+#endif

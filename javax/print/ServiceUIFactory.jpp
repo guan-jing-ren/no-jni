@@ -1,0 +1,91 @@
+#ifndef javax_print_ServiceUIFactory_HPP
+#define javax_print_ServiceUIFactory_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::print::ServiceUIFactory : public jObject<::javax::print::ServiceUIFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_print / "ServiceUIFactory";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("ABOUT_UIROLE"), //
+		jField<::jint>("ADMIN_UIROLE"), //
+		jField<::java::lang::String>("DIALOG_UI"), //
+		jField<::java::lang::String>("JCOMPONENT_UI"), //
+		jField<::java::lang::String>("JDIALOG_UI"), //
+		jField<::jint>("MAIN_UIROLE"), //
+		jField<::java::lang::String>("PANEL_UI"), //
+		jField<::jint>("RESERVED_UIROLE"), //
+	};
+
+	template<typename F = ::jint>
+	static auto ABOUT_UIROLE() {
+		static_assert(field_signatures[jField<F>("ABOUT_UIROLE")] != -1);
+		return sat<F>("ABOUT_UIROLE");
+	}
+
+	template<typename F = ::jint>
+	static auto ADMIN_UIROLE() {
+		static_assert(field_signatures[jField<F>("ADMIN_UIROLE")] != -1);
+		return sat<F>("ADMIN_UIROLE");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto DIALOG_UI() {
+		static_assert(field_signatures[jField<F>("DIALOG_UI")] != -1);
+		return sat<F>("DIALOG_UI");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto JCOMPONENT_UI() {
+		static_assert(field_signatures[jField<F>("JCOMPONENT_UI")] != -1);
+		return sat<F>("JCOMPONENT_UI");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto JDIALOG_UI() {
+		static_assert(field_signatures[jField<F>("JDIALOG_UI")] != -1);
+		return sat<F>("JDIALOG_UI");
+	}
+
+	template<typename F = ::jint>
+	static auto MAIN_UIROLE() {
+		static_assert(field_signatures[jField<F>("MAIN_UIROLE")] != -1);
+		return sat<F>("MAIN_UIROLE");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto PANEL_UI() {
+		static_assert(field_signatures[jField<F>("PANEL_UI")] != -1);
+		return sat<F>("PANEL_UI");
+	}
+
+	template<typename F = ::jint>
+	static auto RESERVED_UIROLE() {
+		static_assert(field_signatures[jField<F>("RESERVED_UIROLE")] != -1);
+		return sat<F>("RESERVED_UIROLE");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::Object(::jint, ::java::lang::String)>("getUI"), //
+		jMethod<::java::lang::String *(::jint)>("getUIClassNamesForRole"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getUI(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUI")] != -1);
+		return call<R>("getUI", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getUIClassNamesForRole(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUIClassNamesForRole")] != -1);
+		return call<R>("getUIClassNamesForRole", forward<Args>(args)...);
+	}
+
+};
+
+#endif

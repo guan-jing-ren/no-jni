@@ -1,0 +1,80 @@
+#ifndef javax_swing_AbstractAction_HPP
+#define javax_swing_AbstractAction_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::AbstractAction : public jObject<::javax::swing::AbstractAction, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "AbstractAction";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::javax::swing::Icon)>(), //
+		jMethod<::jvoid(::java::beans::PropertyChangeListener)>("addPropertyChangeListener"), //
+		jMethod<::java::lang::Object *()>("getKeys"), //
+		jMethod<::java::beans::PropertyChangeListener *()>("getPropertyChangeListeners"), //
+		jMethod<::java::lang::Object(::java::lang::String)>("getValue"), //
+		jMethod<::jboolean()>("isEnabled"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::Object)>("putValue"), //
+		jMethod<::jvoid(::java::beans::PropertyChangeListener)>("removePropertyChangeListener"), //
+		jMethod<::jvoid(::jboolean)>("setEnabled"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addPropertyChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addPropertyChangeListener")] != -1);
+		return call<R>("addPropertyChangeListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object *, typename... Args>
+	auto getKeys(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getKeys")] != -1);
+		return call<R>("getKeys", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::beans::PropertyChangeListener *, typename... Args>
+	auto getPropertyChangeListeners(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPropertyChangeListeners")] != -1);
+		return call<R>("getPropertyChangeListeners", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getValue")] != -1);
+		return call<R>("getValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isEnabled(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isEnabled")] != -1);
+		return call<R>("isEnabled", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto putValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("putValue")] != -1);
+		return call<R>("putValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removePropertyChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removePropertyChangeListener")] != -1);
+		return call<R>("removePropertyChangeListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setEnabled(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setEnabled")] != -1);
+		return call<R>("setEnabled", forward<Args>(args)...);
+	}
+
+};
+
+#endif

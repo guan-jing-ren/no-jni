@@ -1,0 +1,53 @@
+#ifndef java_util_stream_StreamSupport_HPP
+#define java_util_stream_StreamSupport_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::stream::StreamSupport : public jObject<::java::util::stream::StreamSupport, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_stream / "StreamSupport";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::stream::DoubleStream(::java::util::Spliterator$OfDouble, ::jboolean)>("doubleStream"), //
+		jMethod<::java::util::stream::DoubleStream(::java::util::function::Supplier, ::jint, ::jboolean)>("doubleStream"), //
+		jMethod<::java::util::stream::IntStream(::java::util::Spliterator$OfInt, ::jboolean)>("intStream"), //
+		jMethod<::java::util::stream::IntStream(::java::util::function::Supplier, ::jint, ::jboolean)>("intStream"), //
+		jMethod<::java::util::stream::LongStream(::java::util::Spliterator$OfLong, ::jboolean)>("longStream"), //
+		jMethod<::java::util::stream::LongStream(::java::util::function::Supplier, ::jint, ::jboolean)>("longStream"), //
+		jMethod<::java::util::stream::Stream(::java::util::Spliterator, ::jboolean)>("stream"), //
+		jMethod<::java::util::stream::Stream(::java::util::function::Supplier, ::jint, ::jboolean)>("stream"), //
+	};
+
+	template<typename R = ::java::util::stream::DoubleStream, typename... Args>
+	static auto doubleStream(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("doubleStream")] != -1);
+		return scall<R>("doubleStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::IntStream, typename... Args>
+	static auto intStream(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("intStream")] != -1);
+		return scall<R>("intStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::LongStream, typename... Args>
+	static auto longStream(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("longStream")] != -1);
+		return scall<R>("longStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::Stream, typename... Args>
+	static auto stream(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("stream")] != -1);
+		return scall<R>("stream", forward<Args>(args)...);
+	}
+
+};
+
+#endif

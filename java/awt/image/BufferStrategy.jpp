@@ -1,0 +1,64 @@
+#ifndef java_awt_image_BufferStrategy_HPP
+#define java_awt_image_BufferStrategy_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::image::BufferStrategy : public jObject<::java::awt::image::BufferStrategy, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_image / "BufferStrategy";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jboolean()>("contentsLost"), //
+		jMethod<::jboolean()>("contentsRestored"), //
+		jMethod<::jvoid()>("dispose"), //
+		jMethod<::java::awt::BufferCapabilities()>("getCapabilities"), //
+		jMethod<::java::awt::Graphics()>("getDrawGraphics"), //
+		jMethod<::jvoid()>("show"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto contentsLost(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("contentsLost")] != -1);
+		return call<R>("contentsLost", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto contentsRestored(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("contentsRestored")] != -1);
+		return call<R>("contentsRestored", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispose(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dispose")] != -1);
+		return call<R>("dispose", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::BufferCapabilities, typename... Args>
+	auto getCapabilities(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCapabilities")] != -1);
+		return call<R>("getCapabilities", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Graphics, typename... Args>
+	auto getDrawGraphics(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDrawGraphics")] != -1);
+		return call<R>("getDrawGraphics", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto show(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("show")] != -1);
+		return call<R>("show", forward<Args>(args)...);
+	}
+
+};
+
+#endif

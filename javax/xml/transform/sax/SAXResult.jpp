@@ -1,0 +1,71 @@
+#ifndef javax_xml_transform_sax_SAXResult_HPP
+#define javax_xml_transform_sax_SAXResult_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::transform::sax::SAXResult : public jObject<::javax::xml::transform::sax::SAXResult, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_transform_sax / "SAXResult";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("FEATURE"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto FEATURE() {
+		static_assert(field_signatures[jField<F>("FEATURE")] != -1);
+		return sat<F>("FEATURE");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::org::xml::sax::ContentHandler)>(), //
+		jMethod<::org::xml::sax::ContentHandler()>("getHandler"), //
+		jMethod<::org::xml::sax::ext::LexicalHandler()>("getLexicalHandler"), //
+		jMethod<::java::lang::String()>("getSystemId"), //
+		jMethod<::jvoid(::org::xml::sax::ContentHandler)>("setHandler"), //
+		jMethod<::jvoid(::org::xml::sax::ext::LexicalHandler)>("setLexicalHandler"), //
+		jMethod<::jvoid(::java::lang::String)>("setSystemId"), //
+	};
+
+	template<typename R = ::org::xml::sax::ContentHandler, typename... Args>
+	auto getHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHandler")] != -1);
+		return call<R>("getHandler", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::xml::sax::ext::LexicalHandler, typename... Args>
+	auto getLexicalHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLexicalHandler")] != -1);
+		return call<R>("getLexicalHandler", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getSystemId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSystemId")] != -1);
+		return call<R>("getSystemId", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setHandler")] != -1);
+		return call<R>("setHandler", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLexicalHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLexicalHandler")] != -1);
+		return call<R>("setLexicalHandler", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setSystemId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSystemId")] != -1);
+		return call<R>("setSystemId", forward<Args>(args)...);
+	}
+
+};
+
+#endif

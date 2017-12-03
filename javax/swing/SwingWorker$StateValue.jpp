@@ -1,0 +1,55 @@
+#ifndef javax_swing_SwingWorker$StateValue_HPP
+#define javax_swing_SwingWorker$StateValue_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::SwingWorker$StateValue : public jObject<::javax::swing::SwingWorker$StateValue, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "SwingWorker$StateValue";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::swing::SwingWorker$StateValue>("DONE"), //
+		jField<::javax::swing::SwingWorker$StateValue>("PENDING"), //
+		jField<::javax::swing::SwingWorker$StateValue>("STARTED"), //
+	};
+
+	template<typename F = ::javax::swing::SwingWorker$StateValue>
+	static auto DONE() {
+		static_assert(field_signatures[jField<F>("DONE")] != -1);
+		return sat<F>("DONE");
+	}
+
+	template<typename F = ::javax::swing::SwingWorker$StateValue>
+	static auto PENDING() {
+		static_assert(field_signatures[jField<F>("PENDING")] != -1);
+		return sat<F>("PENDING");
+	}
+
+	template<typename F = ::javax::swing::SwingWorker$StateValue>
+	static auto STARTED() {
+		static_assert(field_signatures[jField<F>("STARTED")] != -1);
+		return sat<F>("STARTED");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::swing::SwingWorker$StateValue(::java::lang::String)>("valueOf"), //
+		jMethod<::javax::swing::SwingWorker$StateValue *()>("values"), //
+	};
+
+	template<typename R = ::javax::swing::SwingWorker$StateValue, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::SwingWorker$StateValue *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

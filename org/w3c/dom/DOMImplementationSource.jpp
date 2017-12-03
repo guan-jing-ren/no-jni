@@ -1,0 +1,35 @@
+#ifndef org_w3c_dom_DOMImplementationSource_HPP
+#define org_w3c_dom_DOMImplementationSource_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::w3c::dom::DOMImplementationSource : public jObject<::org::w3c::dom::DOMImplementationSource, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_w3c_dom / "DOMImplementationSource";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::w3c::dom::DOMImplementation(::java::lang::String)>("getDOMImplementation"), //
+		jMethod<::org::w3c::dom::DOMImplementationList(::java::lang::String)>("getDOMImplementationList"), //
+	};
+
+	template<typename R = ::org::w3c::dom::DOMImplementation, typename... Args>
+	auto getDOMImplementation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDOMImplementation")] != -1);
+		return call<R>("getDOMImplementation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::DOMImplementationList, typename... Args>
+	auto getDOMImplementationList(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDOMImplementationList")] != -1);
+		return call<R>("getDOMImplementationList", forward<Args>(args)...);
+	}
+
+};
+
+#endif

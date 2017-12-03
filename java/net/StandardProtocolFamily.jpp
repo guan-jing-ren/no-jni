@@ -1,0 +1,48 @@
+#ifndef java_net_StandardProtocolFamily_HPP
+#define java_net_StandardProtocolFamily_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::net::StandardProtocolFamily : public jObject<::java::net::StandardProtocolFamily, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_net / "StandardProtocolFamily";
+
+	constexpr static Enume field_signatures{
+		jField<::java::net::StandardProtocolFamily>("INET"), //
+		jField<::java::net::StandardProtocolFamily>("INET6"), //
+	};
+
+	template<typename F = ::java::net::StandardProtocolFamily>
+	static auto INET() {
+		static_assert(field_signatures[jField<F>("INET")] != -1);
+		return sat<F>("INET");
+	}
+
+	template<typename F = ::java::net::StandardProtocolFamily>
+	static auto INET6() {
+		static_assert(field_signatures[jField<F>("INET6")] != -1);
+		return sat<F>("INET6");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::net::StandardProtocolFamily(::java::lang::String)>("valueOf"), //
+		jMethod<::java::net::StandardProtocolFamily *()>("values"), //
+	};
+
+	template<typename R = ::java::net::StandardProtocolFamily, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::StandardProtocolFamily *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

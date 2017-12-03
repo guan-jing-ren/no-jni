@@ -1,0 +1,50 @@
+#ifndef java_beans_PropertyEditorManager_HPP
+#define java_beans_PropertyEditorManager_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::beans::PropertyEditorManager : public jObject<::java::beans::PropertyEditorManager, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_beans / "PropertyEditorManager";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::beans::PropertyEditor(::java::lang::Class)>("findEditor"), //
+		jMethod<::java::lang::String *()>("getEditorSearchPath"), //
+		jMethod<::jvoid(::java::lang::Class, ::java::lang::Class)>("registerEditor"), //
+		jMethod<::jvoid(::java::lang::String *)>("setEditorSearchPath"), //
+	};
+
+	template<typename R = ::java::beans::PropertyEditor, typename... Args>
+	static auto findEditor(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("findEditor")] != -1);
+		return scall<R>("findEditor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	static auto getEditorSearchPath(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEditorSearchPath")] != -1);
+		return scall<R>("getEditorSearchPath", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto registerEditor(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("registerEditor")] != -1);
+		return scall<R>("registerEditor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setEditorSearchPath(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setEditorSearchPath")] != -1);
+		return scall<R>("setEditorSearchPath", forward<Args>(args)...);
+	}
+
+};
+
+#endif

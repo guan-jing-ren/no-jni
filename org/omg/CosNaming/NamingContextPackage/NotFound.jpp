@@ -1,0 +1,37 @@
+#ifndef org_omg_CosNaming_NamingContextPackage_NotFound_HPP
+#define org_omg_CosNaming_NamingContextPackage_NotFound_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::omg::CosNaming::NamingContextPackage::NotFound : public jObject<::org::omg::CosNaming::NamingContextPackage::NotFound, ::org::omg::CORBA::UserException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CosNaming_NamingContextPackage / "NotFound";
+
+	constexpr static Enume field_signatures{
+		jField<::org::omg::CosNaming::NameComponent *>("rest_of_name"), //
+		jField<::org::omg::CosNaming::NamingContextPackage::NotFoundReason>("why"), //
+	};
+
+	template<typename F = ::org::omg::CosNaming::NameComponent *>
+	auto rest_of_name() const {
+		static_assert(field_signatures[jField<F>("rest_of_name")] != -1);
+		return at<F>("rest_of_name");
+	}
+
+	template<typename F = ::org::omg::CosNaming::NamingContextPackage::NotFoundReason>
+	auto why() const {
+		static_assert(field_signatures[jField<F>("why")] != -1);
+		return at<F>("why");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String, ::org::omg::CosNaming::NamingContextPackage::NotFoundReason, ::org::omg::CosNaming::NameComponent *)>(), //
+		jConstructor<::jvoid(::org::omg::CosNaming::NamingContextPackage::NotFoundReason, ::org::omg::CosNaming::NameComponent *)>(), //
+	};
+
+};
+
+#endif

@@ -1,0 +1,37 @@
+#ifndef java_util_logging_SocketHandler_HPP
+#define java_util_logging_SocketHandler_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::logging::SocketHandler : public jObject<::java::util::logging::SocketHandler, ::java::util::logging::StreamHandler> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_logging / "SocketHandler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String, ::jint)>(), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::jvoid(::java::util::logging::LogRecord)>("publish"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto publish(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("publish")] != -1);
+		return call<R>("publish", forward<Args>(args)...);
+	}
+
+};
+
+#endif

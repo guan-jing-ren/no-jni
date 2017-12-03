@@ -1,0 +1,68 @@
+#ifndef java_nio_channels_AsynchronousServerSocketChannel_HPP
+#define java_nio_channels_AsynchronousServerSocketChannel_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::channels::AsynchronousServerSocketChannel : public jObject<::java::nio::channels::AsynchronousServerSocketChannel, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_channels / "AsynchronousServerSocketChannel";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::concurrent::Future()>("accept"), //
+		jMethod<::jvoid(::java::lang::Object, ::java::nio::channels::CompletionHandler)>("accept"), //
+		jMethod<::java::nio::channels::AsynchronousServerSocketChannel(::java::net::SocketAddress)>("bind"), //
+		jMethod<::java::nio::channels::NetworkChannel(::java::net::SocketAddress)>("bind"), //
+		jMethod<::java::nio::channels::AsynchronousServerSocketChannel(::java::net::SocketAddress, ::jint)>("bind"), //
+		jMethod<::java::net::SocketAddress()>("getLocalAddress"), //
+		jMethod<::java::nio::channels::AsynchronousServerSocketChannel()>("open"), //
+		jMethod<::java::nio::channels::AsynchronousServerSocketChannel(::java::nio::channels::AsynchronousChannelGroup)>("open"), //
+		jMethod<::java::nio::channels::spi::AsynchronousChannelProvider()>("provider"), //
+		jMethod<::java::nio::channels::AsynchronousServerSocketChannel(::java::net::SocketOption, ::java::lang::Object)>("setOption"), //
+		jMethod<::java::nio::channels::NetworkChannel(::java::net::SocketOption, ::java::lang::Object)>("setOption"), //
+	};
+
+	template<typename R = ::java::util::concurrent::Future, typename... Args>
+	auto accept(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("accept")] != -1);
+		return call<R>("accept", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::AsynchronousServerSocketChannel, typename... Args>
+	auto bind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("bind")] != -1);
+		return call<R>("bind", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::SocketAddress, typename... Args>
+	auto getLocalAddress(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLocalAddress")] != -1);
+		return call<R>("getLocalAddress", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::AsynchronousServerSocketChannel, typename... Args>
+	static auto open(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("open")] != -1);
+		return scall<R>("open", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::spi::AsynchronousChannelProvider, typename... Args>
+	auto provider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("provider")] != -1);
+		return call<R>("provider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::AsynchronousServerSocketChannel, typename... Args>
+	auto setOption(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setOption")] != -1);
+		return call<R>("setOption", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,35 @@
+#ifndef org_omg_CORBA_IRObjectOperations_HPP
+#define org_omg_CORBA_IRObjectOperations_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::CORBA::IRObjectOperations : public jObject<::org::omg::CORBA::IRObjectOperations, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CORBA / "IRObjectOperations";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::omg::CORBA::DefinitionKind()>("def_kind"), //
+		jMethod<::jvoid()>("destroy"), //
+	};
+
+	template<typename R = ::org::omg::CORBA::DefinitionKind, typename... Args>
+	auto def_kind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("def_kind")] != -1);
+		return call<R>("def_kind", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto destroy(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("destroy")] != -1);
+		return call<R>("destroy", forward<Args>(args)...);
+	}
+
+};
+
+#endif

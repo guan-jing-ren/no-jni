@@ -1,0 +1,37 @@
+#ifndef java_util_zip_CheckedOutputStream_HPP
+#define java_util_zip_CheckedOutputStream_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::zip::CheckedOutputStream : public jObject<::java::util::zip::CheckedOutputStream, ::java::io::FilterOutputStream> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_zip / "CheckedOutputStream";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::OutputStream, ::java::util::zip::Checksum)>(), //
+		jMethod<::java::util::zip::Checksum()>("getChecksum"), //
+		jMethod<::jvoid(::jint)>("write"), //
+		jMethod<::jvoid(::jbyte *, ::jint, ::jint)>("write"), //
+	};
+
+	template<typename R = ::java::util::zip::Checksum, typename... Args>
+	auto getChecksum(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getChecksum")] != -1);
+		return call<R>("getChecksum", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", forward<Args>(args)...);
+	}
+
+};
+
+#endif

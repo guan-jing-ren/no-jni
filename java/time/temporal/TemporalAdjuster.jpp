@@ -1,0 +1,28 @@
+#ifndef java_time_temporal_TemporalAdjuster_HPP
+#define java_time_temporal_TemporalAdjuster_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::time::temporal::TemporalAdjuster : public jObject<::java::time::temporal::TemporalAdjuster, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_time_temporal / "TemporalAdjuster";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::time::temporal::Temporal(::java::time::temporal::Temporal)>("adjustInto"), //
+	};
+
+	template<typename R = ::java::time::temporal::Temporal, typename... Args>
+	auto adjustInto(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("adjustInto")] != -1);
+		return call<R>("adjustInto", forward<Args>(args)...);
+	}
+
+};
+
+#endif

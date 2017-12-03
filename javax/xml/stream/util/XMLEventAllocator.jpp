@@ -1,0 +1,36 @@
+#ifndef javax_xml_stream_util_XMLEventAllocator_HPP
+#define javax_xml_stream_util_XMLEventAllocator_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::stream::util::XMLEventAllocator : public jObject<::javax::xml::stream::util::XMLEventAllocator, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_stream_util / "XMLEventAllocator";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::stream::events::XMLEvent(::javax::xml::stream::XMLStreamReader)>("allocate"), //
+		jMethod<::jvoid(::javax::xml::stream::XMLStreamReader, ::javax::xml::stream::util::XMLEventConsumer)>("allocate"), //
+		jMethod<::javax::xml::stream::util::XMLEventAllocator()>("newInstance"), //
+	};
+
+	template<typename R = ::javax::xml::stream::events::XMLEvent, typename... Args>
+	auto allocate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("allocate")] != -1);
+		return call<R>("allocate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::stream::util::XMLEventAllocator, typename... Args>
+	auto newInstance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newInstance")] != -1);
+		return call<R>("newInstance", forward<Args>(args)...);
+	}
+
+};
+
+#endif

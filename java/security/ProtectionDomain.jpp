@@ -1,0 +1,65 @@
+#ifndef java_security_ProtectionDomain_HPP
+#define java_security_ProtectionDomain_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::ProtectionDomain : public jObject<::java::security::ProtectionDomain, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "ProtectionDomain";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::security::CodeSource, ::java::security::PermissionCollection)>(), //
+		jConstructor<::jvoid(::java::security::CodeSource, ::java::security::PermissionCollection, ::java::lang::ClassLoader, ::java::security::Principal *)>(), //
+		jMethod<::java::lang::ClassLoader()>("getClassLoader"), //
+		jMethod<::java::security::CodeSource()>("getCodeSource"), //
+		jMethod<::java::security::PermissionCollection()>("getPermissions"), //
+		jMethod<::java::security::Principal *()>("getPrincipals"), //
+		jMethod<::jboolean(::java::security::Permission)>("implies"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::ClassLoader, typename... Args>
+	auto getClassLoader(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getClassLoader")] != -1);
+		return call<R>("getClassLoader", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::CodeSource, typename... Args>
+	auto getCodeSource(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCodeSource")] != -1);
+		return call<R>("getCodeSource", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::PermissionCollection, typename... Args>
+	auto getPermissions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPermissions")] != -1);
+		return call<R>("getPermissions", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Principal *, typename... Args>
+	auto getPrincipals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrincipals")] != -1);
+		return call<R>("getPrincipals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto implies(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("implies")] != -1);
+		return call<R>("implies", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

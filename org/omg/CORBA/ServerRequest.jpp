@@ -1,0 +1,85 @@
+#ifndef org_omg_CORBA_ServerRequest_HPP
+#define org_omg_CORBA_ServerRequest_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::CORBA::ServerRequest : public jObject<::org::omg::CORBA::ServerRequest, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CORBA / "ServerRequest";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::org::omg::CORBA::NVList)>("arguments"), //
+		jMethod<::org::omg::CORBA::Context()>("ctx"), //
+		jMethod<::jvoid(::org::omg::CORBA::Any)>("except"), //
+		jMethod<::java::lang::String()>("op_name"), //
+		jMethod<::java::lang::String()>("operation"), //
+		jMethod<::jvoid(::org::omg::CORBA::NVList)>("params"), //
+		jMethod<::jvoid(::org::omg::CORBA::Any)>("result"), //
+		jMethod<::jvoid(::org::omg::CORBA::Any)>("set_exception"), //
+		jMethod<::jvoid(::org::omg::CORBA::Any)>("set_result"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto arguments(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("arguments")] != -1);
+		return call<R>("arguments", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::Context, typename... Args>
+	auto ctx(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("ctx")] != -1);
+		return call<R>("ctx", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto except(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("except")] != -1);
+		return call<R>("except", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto op_name(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("op_name")] != -1);
+		return call<R>("op_name", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto operation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("operation")] != -1);
+		return call<R>("operation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto params(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("params")] != -1);
+		return call<R>("params", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto result(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("result")] != -1);
+		return call<R>("result", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set_exception(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set_exception")] != -1);
+		return call<R>("set_exception", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set_result(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set_result")] != -1);
+		return call<R>("set_result", forward<Args>(args)...);
+	}
+
+};
+
+#endif

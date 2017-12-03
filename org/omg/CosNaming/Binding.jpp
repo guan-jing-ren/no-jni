@@ -1,0 +1,36 @@
+#ifndef org_omg_CosNaming_Binding_HPP
+#define org_omg_CosNaming_Binding_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::CosNaming::Binding : public jObject<::org::omg::CosNaming::Binding, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CosNaming / "Binding";
+
+	constexpr static Enume field_signatures{
+		jField<::org::omg::CosNaming::NameComponent *>("binding_name"), //
+		jField<::org::omg::CosNaming::BindingType>("binding_type"), //
+	};
+
+	template<typename F = ::org::omg::CosNaming::NameComponent *>
+	auto binding_name() const {
+		static_assert(field_signatures[jField<F>("binding_name")] != -1);
+		return at<F>("binding_name");
+	}
+
+	template<typename F = ::org::omg::CosNaming::BindingType>
+	auto binding_type() const {
+		static_assert(field_signatures[jField<F>("binding_type")] != -1);
+		return at<F>("binding_type");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::org::omg::CosNaming::NameComponent *, ::org::omg::CosNaming::BindingType)>(), //
+	};
+
+};
+
+#endif

@@ -1,0 +1,71 @@
+#ifndef java_awt_ContainerOrderFocusTraversalPolicy_HPP
+#define java_awt_ContainerOrderFocusTraversalPolicy_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::ContainerOrderFocusTraversalPolicy : public jObject<::java::awt::ContainerOrderFocusTraversalPolicy, ::java::awt::FocusTraversalPolicy> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "ContainerOrderFocusTraversalPolicy";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::awt::Component(::java::awt::Container, ::java::awt::Component)>("getComponentAfter"), //
+		jMethod<::java::awt::Component(::java::awt::Container, ::java::awt::Component)>("getComponentBefore"), //
+		jMethod<::java::awt::Component(::java::awt::Container)>("getDefaultComponent"), //
+		jMethod<::java::awt::Component(::java::awt::Container)>("getFirstComponent"), //
+		jMethod<::jboolean()>("getImplicitDownCycleTraversal"), //
+		jMethod<::java::awt::Component(::java::awt::Container)>("getLastComponent"), //
+		jMethod<::jvoid(::jboolean)>("setImplicitDownCycleTraversal"), //
+	};
+
+	template<typename R = ::java::awt::Component, typename... Args>
+	auto getComponentAfter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getComponentAfter")] != -1);
+		return call<R>("getComponentAfter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Component, typename... Args>
+	auto getComponentBefore(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getComponentBefore")] != -1);
+		return call<R>("getComponentBefore", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Component, typename... Args>
+	auto getDefaultComponent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaultComponent")] != -1);
+		return call<R>("getDefaultComponent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Component, typename... Args>
+	auto getFirstComponent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFirstComponent")] != -1);
+		return call<R>("getFirstComponent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getImplicitDownCycleTraversal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getImplicitDownCycleTraversal")] != -1);
+		return call<R>("getImplicitDownCycleTraversal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Component, typename... Args>
+	auto getLastComponent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLastComponent")] != -1);
+		return call<R>("getLastComponent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setImplicitDownCycleTraversal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setImplicitDownCycleTraversal")] != -1);
+		return call<R>("setImplicitDownCycleTraversal", forward<Args>(args)...);
+	}
+
+};
+
+#endif

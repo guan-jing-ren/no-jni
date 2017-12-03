@@ -1,0 +1,57 @@
+#ifndef java_net_SecureCacheResponse_HPP
+#define java_net_SecureCacheResponse_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::net::SecureCacheResponse : public jObject<::java::net::SecureCacheResponse, ::java::net::CacheResponse> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_net / "SecureCacheResponse";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::String()>("getCipherSuite"), //
+		jMethod<::java::util::List()>("getLocalCertificateChain"), //
+		jMethod<::java::security::Principal()>("getLocalPrincipal"), //
+		jMethod<::java::security::Principal()>("getPeerPrincipal"), //
+		jMethod<::java::util::List()>("getServerCertificateChain"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getCipherSuite(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCipherSuite")] != -1);
+		return call<R>("getCipherSuite", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getLocalCertificateChain(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLocalCertificateChain")] != -1);
+		return call<R>("getLocalCertificateChain", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Principal, typename... Args>
+	auto getLocalPrincipal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLocalPrincipal")] != -1);
+		return call<R>("getLocalPrincipal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Principal, typename... Args>
+	auto getPeerPrincipal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPeerPrincipal")] != -1);
+		return call<R>("getPeerPrincipal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getServerCertificateChain(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getServerCertificateChain")] != -1);
+		return call<R>("getServerCertificateChain", forward<Args>(args)...);
+	}
+
+};
+
+#endif

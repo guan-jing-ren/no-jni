@@ -1,0 +1,56 @@
+#ifndef javax_sound_midi_Track_HPP
+#define javax_sound_midi_Track_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::sound::midi::Track : public jObject<::javax::sound::midi::Track, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sound_midi / "Track";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::javax::sound::midi::MidiEvent)>("add"), //
+		jMethod<::javax::sound::midi::MidiEvent(::jint)>("get"), //
+		jMethod<::jboolean(::javax::sound::midi::MidiEvent)>("remove"), //
+		jMethod<::jint()>("size"), //
+		jMethod<::jlong()>("ticks"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto add(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::midi::MidiEvent, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto remove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto size(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("size")] != -1);
+		return call<R>("size", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto ticks(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("ticks")] != -1);
+		return call<R>("ticks", forward<Args>(args)...);
+	}
+
+};
+
+#endif

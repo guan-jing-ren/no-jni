@@ -1,0 +1,66 @@
+#ifndef java_awt_geom_FlatteningPathIterator_HPP
+#define java_awt_geom_FlatteningPathIterator_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::geom::FlatteningPathIterator : public jObject<::java::awt::geom::FlatteningPathIterator, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_geom / "FlatteningPathIterator";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::geom::PathIterator, ::jdouble)>(), //
+		jConstructor<::jvoid(::java::awt::geom::PathIterator, ::jdouble, ::jint)>(), //
+		jMethod<::jint(::jdouble *)>("currentSegment"), //
+		jMethod<::jint(::jfloat *)>("currentSegment"), //
+		jMethod<::jdouble()>("getFlatness"), //
+		jMethod<::jint()>("getRecursionLimit"), //
+		jMethod<::jint()>("getWindingRule"), //
+		jMethod<::jboolean()>("isDone"), //
+		jMethod<::jvoid()>("next"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto currentSegment(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("currentSegment")] != -1);
+		return call<R>("currentSegment", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	auto getFlatness(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFlatness")] != -1);
+		return call<R>("getFlatness", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getRecursionLimit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRecursionLimit")] != -1);
+		return call<R>("getRecursionLimit", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getWindingRule(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWindingRule")] != -1);
+		return call<R>("getWindingRule", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isDone")] != -1);
+		return call<R>("isDone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto next(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("next")] != -1);
+		return call<R>("next", forward<Args>(args)...);
+	}
+
+};
+
+#endif

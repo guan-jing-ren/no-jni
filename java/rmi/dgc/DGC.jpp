@@ -1,0 +1,35 @@
+#ifndef java_rmi_dgc_DGC_HPP
+#define java_rmi_dgc_DGC_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::rmi::dgc::DGC : public jObject<::java::rmi::dgc::DGC, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_rmi_dgc / "DGC";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::rmi::server::ObjID *, ::jlong, ::java::rmi::dgc::VMID, ::jboolean)>("clean"), //
+		jMethod<::java::rmi::dgc::Lease(::java::rmi::server::ObjID *, ::jlong, ::java::rmi::dgc::Lease)>("dirty"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto clean(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clean")] != -1);
+		return call<R>("clean", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::dgc::Lease, typename... Args>
+	auto dirty(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dirty")] != -1);
+		return call<R>("dirty", forward<Args>(args)...);
+	}
+
+};
+
+#endif

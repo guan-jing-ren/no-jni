@@ -1,0 +1,70 @@
+#ifndef java_nio_channels_spi_AbstractSelectableChannel_HPP
+#define java_nio_channels_spi_AbstractSelectableChannel_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::java::nio::channels::spi::AbstractSelectableChannel : public jObject<::java::nio::channels::spi::AbstractSelectableChannel, ::java::nio::channels::SelectableChannel> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_channels_spi / "AbstractSelectableChannel";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object()>("blockingLock"), //
+		jMethod<::java::nio::channels::SelectableChannel(::jboolean)>("configureBlocking"), //
+		jMethod<::jboolean()>("isBlocking"), //
+		jMethod<::jboolean()>("isRegistered"), //
+		jMethod<::java::nio::channels::SelectionKey(::java::nio::channels::Selector)>("keyFor"), //
+		jMethod<::java::nio::channels::spi::SelectorProvider()>("provider"), //
+		jMethod<::java::nio::channels::SelectionKey(::java::nio::channels::Selector, ::jint, ::java::lang::Object)>("register"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto blockingLock(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("blockingLock")] != -1);
+		return call<R>("blockingLock", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::SelectableChannel, typename... Args>
+	auto configureBlocking(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("configureBlocking")] != -1);
+		return call<R>("configureBlocking", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isBlocking(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isBlocking")] != -1);
+		return call<R>("isBlocking", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isRegistered(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isRegistered")] != -1);
+		return call<R>("isRegistered", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::SelectionKey, typename... Args>
+	auto keyFor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("keyFor")] != -1);
+		return call<R>("keyFor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::spi::SelectorProvider, typename... Args>
+	auto provider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("provider")] != -1);
+		return call<R>("provider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::SelectionKey, typename... Args>
+	auto register_(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("register")] != -1);
+		return call<R>("register", forward<Args>(args)...);
+	}
+
+};
+
+#endif

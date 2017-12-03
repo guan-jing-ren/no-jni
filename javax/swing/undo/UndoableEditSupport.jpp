@@ -1,0 +1,79 @@
+#ifndef javax_swing_undo_UndoableEditSupport_HPP
+#define javax_swing_undo_UndoableEditSupport_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::undo::UndoableEditSupport : public jObject<::javax::swing::undo::UndoableEditSupport, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_undo / "UndoableEditSupport";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::Object)>(), //
+		jMethod<::jvoid(::javax::swing::event::UndoableEditListener)>("addUndoableEditListener"), //
+		jMethod<::jvoid()>("beginUpdate"), //
+		jMethod<::jvoid()>("endUpdate"), //
+		jMethod<::javax::swing::event::UndoableEditListener *()>("getUndoableEditListeners"), //
+		jMethod<::jint()>("getUpdateLevel"), //
+		jMethod<::jvoid(::javax::swing::undo::UndoableEdit)>("postEdit"), //
+		jMethod<::jvoid(::javax::swing::event::UndoableEditListener)>("removeUndoableEditListener"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addUndoableEditListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addUndoableEditListener")] != -1);
+		return call<R>("addUndoableEditListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto beginUpdate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("beginUpdate")] != -1);
+		return call<R>("beginUpdate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto endUpdate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("endUpdate")] != -1);
+		return call<R>("endUpdate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::event::UndoableEditListener *, typename... Args>
+	auto getUndoableEditListeners(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUndoableEditListeners")] != -1);
+		return call<R>("getUndoableEditListeners", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getUpdateLevel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUpdateLevel")] != -1);
+		return call<R>("getUpdateLevel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto postEdit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("postEdit")] != -1);
+		return call<R>("postEdit", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeUndoableEditListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeUndoableEditListener")] != -1);
+		return call<R>("removeUndoableEditListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

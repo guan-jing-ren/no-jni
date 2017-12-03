@@ -1,0 +1,69 @@
+#ifndef java_sql_RowIdLifetime_HPP
+#define java_sql_RowIdLifetime_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::sql::RowIdLifetime : public jObject<::java::sql::RowIdLifetime, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_sql / "RowIdLifetime";
+
+	constexpr static Enume field_signatures{
+		jField<::java::sql::RowIdLifetime>("ROWID_UNSUPPORTED"), //
+		jField<::java::sql::RowIdLifetime>("ROWID_VALID_FOREVER"), //
+		jField<::java::sql::RowIdLifetime>("ROWID_VALID_OTHER"), //
+		jField<::java::sql::RowIdLifetime>("ROWID_VALID_SESSION"), //
+		jField<::java::sql::RowIdLifetime>("ROWID_VALID_TRANSACTION"), //
+	};
+
+	template<typename F = ::java::sql::RowIdLifetime>
+	static auto ROWID_UNSUPPORTED() {
+		static_assert(field_signatures[jField<F>("ROWID_UNSUPPORTED")] != -1);
+		return sat<F>("ROWID_UNSUPPORTED");
+	}
+
+	template<typename F = ::java::sql::RowIdLifetime>
+	static auto ROWID_VALID_FOREVER() {
+		static_assert(field_signatures[jField<F>("ROWID_VALID_FOREVER")] != -1);
+		return sat<F>("ROWID_VALID_FOREVER");
+	}
+
+	template<typename F = ::java::sql::RowIdLifetime>
+	static auto ROWID_VALID_OTHER() {
+		static_assert(field_signatures[jField<F>("ROWID_VALID_OTHER")] != -1);
+		return sat<F>("ROWID_VALID_OTHER");
+	}
+
+	template<typename F = ::java::sql::RowIdLifetime>
+	static auto ROWID_VALID_SESSION() {
+		static_assert(field_signatures[jField<F>("ROWID_VALID_SESSION")] != -1);
+		return sat<F>("ROWID_VALID_SESSION");
+	}
+
+	template<typename F = ::java::sql::RowIdLifetime>
+	static auto ROWID_VALID_TRANSACTION() {
+		static_assert(field_signatures[jField<F>("ROWID_VALID_TRANSACTION")] != -1);
+		return sat<F>("ROWID_VALID_TRANSACTION");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::sql::RowIdLifetime(::java::lang::String)>("valueOf"), //
+		jMethod<::java::sql::RowIdLifetime *()>("values"), //
+	};
+
+	template<typename R = ::java::sql::RowIdLifetime, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::RowIdLifetime *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

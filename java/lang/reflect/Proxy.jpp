@@ -1,0 +1,49 @@
+#ifndef java_lang_reflect_Proxy_HPP
+#define java_lang_reflect_Proxy_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::reflect::Proxy : public jObject<::java::lang::reflect::Proxy, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_reflect / "Proxy";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::reflect::InvocationHandler(::java::lang::Object)>("getInvocationHandler"), //
+		jMethod<::java::lang::Class(::java::lang::ClassLoader, ::java::lang::Class *)>("getProxyClass"), //
+		jMethod<::jboolean(::java::lang::Class)>("isProxyClass"), //
+		jMethod<::java::lang::Object(::java::lang::ClassLoader, ::java::lang::Class *, ::java::lang::reflect::InvocationHandler)>("newProxyInstance"), //
+	};
+
+	template<typename R = ::java::lang::reflect::InvocationHandler, typename... Args>
+	static auto getInvocationHandler(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInvocationHandler")] != -1);
+		return scall<R>("getInvocationHandler", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	static auto getProxyClass(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProxyClass")] != -1);
+		return scall<R>("getProxyClass", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isProxyClass(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isProxyClass")] != -1);
+		return scall<R>("isProxyClass", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto newProxyInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newProxyInstance")] != -1);
+		return scall<R>("newProxyInstance", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,50 @@
+#ifndef javax_crypto_spec_DESKeySpec_HPP
+#define javax_crypto_spec_DESKeySpec_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::crypto::spec::DESKeySpec : public jObject<::javax::crypto::spec::DESKeySpec, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_crypto_spec / "DESKeySpec";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("DES_KEY_LEN"), //
+	};
+
+	template<typename F = ::jint>
+	static auto DES_KEY_LEN() {
+		static_assert(field_signatures[jField<F>("DES_KEY_LEN")] != -1);
+		return sat<F>("DES_KEY_LEN");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jbyte *)>(), //
+		jConstructor<::jvoid(::jbyte *, ::jint)>(), //
+		jMethod<::jbyte *()>("getKey"), //
+		jMethod<::jboolean(::jbyte *, ::jint)>("isParityAdjusted"), //
+		jMethod<::jboolean(::jbyte *, ::jint)>("isWeak"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getKey(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getKey")] != -1);
+		return call<R>("getKey", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isParityAdjusted(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isParityAdjusted")] != -1);
+		return scall<R>("isParityAdjusted", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isWeak(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isWeak")] != -1);
+		return scall<R>("isWeak", forward<Args>(args)...);
+	}
+
+};
+
+#endif

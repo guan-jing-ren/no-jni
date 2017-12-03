@@ -1,0 +1,69 @@
+#ifndef javax_tools_DocumentationTool$Location_HPP
+#define javax_tools_DocumentationTool$Location_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::tools::DocumentationTool$Location : public jObject<::javax::tools::DocumentationTool$Location, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_tools / "DocumentationTool$Location";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::tools::DocumentationTool$Location>("DOCLET_PATH"), //
+		jField<::javax::tools::DocumentationTool$Location>("DOCUMENTATION_OUTPUT"), //
+		jField<::javax::tools::DocumentationTool$Location>("TAGLET_PATH"), //
+	};
+
+	template<typename F = ::javax::tools::DocumentationTool$Location>
+	static auto DOCLET_PATH() {
+		static_assert(field_signatures[jField<F>("DOCLET_PATH")] != -1);
+		return sat<F>("DOCLET_PATH");
+	}
+
+	template<typename F = ::javax::tools::DocumentationTool$Location>
+	static auto DOCUMENTATION_OUTPUT() {
+		static_assert(field_signatures[jField<F>("DOCUMENTATION_OUTPUT")] != -1);
+		return sat<F>("DOCUMENTATION_OUTPUT");
+	}
+
+	template<typename F = ::javax::tools::DocumentationTool$Location>
+	static auto TAGLET_PATH() {
+		static_assert(field_signatures[jField<F>("TAGLET_PATH")] != -1);
+		return sat<F>("TAGLET_PATH");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::jboolean()>("isOutputLocation"), //
+		jMethod<::javax::tools::DocumentationTool$Location(::java::lang::String)>("valueOf"), //
+		jMethod<::javax::tools::DocumentationTool$Location *()>("values"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isOutputLocation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isOutputLocation")] != -1);
+		return call<R>("isOutputLocation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::tools::DocumentationTool$Location, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::tools::DocumentationTool$Location *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

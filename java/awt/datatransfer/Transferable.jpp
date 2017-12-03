@@ -1,0 +1,42 @@
+#ifndef java_awt_datatransfer_Transferable_HPP
+#define java_awt_datatransfer_Transferable_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::datatransfer::Transferable : public jObject<::java::awt::datatransfer::Transferable, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_datatransfer / "Transferable";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object(::java::awt::datatransfer::DataFlavor)>("getTransferData"), //
+		jMethod<::java::awt::datatransfer::DataFlavor *()>("getTransferDataFlavors"), //
+		jMethod<::jboolean(::java::awt::datatransfer::DataFlavor)>("isDataFlavorSupported"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getTransferData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTransferData")] != -1);
+		return call<R>("getTransferData", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::datatransfer::DataFlavor *, typename... Args>
+	auto getTransferDataFlavors(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTransferDataFlavors")] != -1);
+		return call<R>("getTransferDataFlavors", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDataFlavorSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isDataFlavorSupported")] != -1);
+		return call<R>("isDataFlavorSupported", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,35 @@
+#ifndef java_util_Enumeration_HPP
+#define java_util_Enumeration_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::Enumeration : public jObject<::java::util::Enumeration, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "Enumeration";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean()>("hasMoreElements"), //
+		jMethod<::java::lang::Object()>("nextElement"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasMoreElements(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hasMoreElements")] != -1);
+		return call<R>("hasMoreElements", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto nextElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nextElement")] != -1);
+		return call<R>("nextElement", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,28 @@
+#ifndef java_beans_beancontext_BeanContextProxy_HPP
+#define java_beans_beancontext_BeanContextProxy_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::beans::beancontext::BeanContextProxy : public jObject<::java::beans::beancontext::BeanContextProxy, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_beans_beancontext / "BeanContextProxy";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::beans::beancontext::BeanContextChild()>("getBeanContextProxy"), //
+	};
+
+	template<typename R = ::java::beans::beancontext::BeanContextChild, typename... Args>
+	auto getBeanContextProxy(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBeanContextProxy")] != -1);
+		return call<R>("getBeanContextProxy", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,37 @@
+#ifndef java_lang_reflect_UndeclaredThrowableException_HPP
+#define java_lang_reflect_UndeclaredThrowableException_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::reflect::UndeclaredThrowableException : public jObject<::java::lang::reflect::UndeclaredThrowableException, ::java::lang::RuntimeException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_reflect / "UndeclaredThrowableException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Throwable)>(), //
+		jConstructor<::jvoid(::java::lang::Throwable, ::java::lang::String)>(), //
+		jMethod<::java::lang::Throwable()>("getCause"), //
+		jMethod<::java::lang::Throwable()>("getUndeclaredThrowable"), //
+	};
+
+	template<typename R = ::java::lang::Throwable, typename... Args>
+	auto getCause(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCause")] != -1);
+		return call<R>("getCause", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Throwable, typename... Args>
+	auto getUndeclaredThrowable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUndeclaredThrowable")] != -1);
+		return call<R>("getUndeclaredThrowable", forward<Args>(args)...);
+	}
+
+};
+
+#endif

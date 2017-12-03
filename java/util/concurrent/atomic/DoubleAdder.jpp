@@ -1,0 +1,85 @@
+#ifndef java_util_concurrent_atomic_DoubleAdder_HPP
+#define java_util_concurrent_atomic_DoubleAdder_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::java::util::concurrent::atomic::DoubleAdder : public jObject<::java::util::concurrent::atomic::DoubleAdder, ::java::util::concurrent::atomic::Striped64> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_concurrent_atomic / "DoubleAdder";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::jdouble)>("add"), //
+		jMethod<::jdouble()>("doubleValue"), //
+		jMethod<::jfloat()>("floatValue"), //
+		jMethod<::jint()>("intValue"), //
+		jMethod<::jlong()>("longValue"), //
+		jMethod<::jvoid()>("reset"), //
+		jMethod<::jdouble()>("sum"), //
+		jMethod<::jdouble()>("sumThenReset"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto add(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	auto doubleValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("doubleValue")] != -1);
+		return call<R>("doubleValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto floatValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("floatValue")] != -1);
+		return call<R>("floatValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto intValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("intValue")] != -1);
+		return call<R>("intValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto longValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("longValue")] != -1);
+		return call<R>("longValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto reset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("reset")] != -1);
+		return call<R>("reset", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	auto sum(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("sum")] != -1);
+		return call<R>("sum", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	auto sumThenReset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("sumThenReset")] != -1);
+		return call<R>("sumThenReset", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

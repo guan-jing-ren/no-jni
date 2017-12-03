@@ -1,0 +1,28 @@
+#ifndef org_omg_IOP_CodecFactoryOperations_HPP
+#define org_omg_IOP_CodecFactoryOperations_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::IOP::CodecFactoryOperations : public jObject<::org::omg::IOP::CodecFactoryOperations, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_IOP / "CodecFactoryOperations";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::omg::IOP::Codec(::org::omg::IOP::Encoding)>("create_codec"), //
+	};
+
+	template<typename R = ::org::omg::IOP::Codec, typename... Args>
+	auto create_codec(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("create_codec")] != -1);
+		return call<R>("create_codec", forward<Args>(args)...);
+	}
+
+};
+
+#endif

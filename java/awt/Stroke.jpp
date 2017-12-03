@@ -1,0 +1,28 @@
+#ifndef java_awt_Stroke_HPP
+#define java_awt_Stroke_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::Stroke : public jObject<::java::awt::Stroke, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "Stroke";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::Shape(::java::awt::Shape)>("createStrokedShape"), //
+	};
+
+	template<typename R = ::java::awt::Shape, typename... Args>
+	auto createStrokedShape(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createStrokedShape")] != -1);
+		return call<R>("createStrokedShape", forward<Args>(args)...);
+	}
+
+};
+
+#endif

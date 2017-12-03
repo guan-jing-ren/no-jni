@@ -1,0 +1,28 @@
+#ifndef javax_xml_validation_SchemaFactoryLoader_HPP
+#define javax_xml_validation_SchemaFactoryLoader_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::validation::SchemaFactoryLoader : public jObject<::javax::xml::validation::SchemaFactoryLoader, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_validation / "SchemaFactoryLoader";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::validation::SchemaFactory(::java::lang::String)>("newFactory"), //
+	};
+
+	template<typename R = ::javax::xml::validation::SchemaFactory, typename... Args>
+	auto newFactory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newFactory")] != -1);
+		return call<R>("newFactory", forward<Args>(args)...);
+	}
+
+};
+
+#endif

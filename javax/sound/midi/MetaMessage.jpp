@@ -1,0 +1,57 @@
+#ifndef javax_sound_midi_MetaMessage_HPP
+#define javax_sound_midi_MetaMessage_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::sound::midi::MetaMessage : public jObject<::javax::sound::midi::MetaMessage, ::javax::sound::midi::MidiMessage> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sound_midi / "MetaMessage";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("META"), //
+	};
+
+	template<typename F = ::jint>
+	static auto META() {
+		static_assert(field_signatures[jField<F>("META")] != -1);
+		return sat<F>("META");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint, ::jbyte *, ::jint)>(), //
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::jbyte *()>("getData"), //
+		jMethod<::jint()>("getType"), //
+		jMethod<::jvoid(::jint, ::jbyte *, ::jint)>("setMessage"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getData")] != -1);
+		return call<R>("getData", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setMessage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMessage")] != -1);
+		return call<R>("setMessage", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,49 @@
+#ifndef java_awt_peer_TextAreaPeer_HPP
+#define java_awt_peer_TextAreaPeer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::peer::TextAreaPeer : public jObject<::java::awt::peer::TextAreaPeer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_peer / "TextAreaPeer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::Dimension(::jint, ::jint)>("getMinimumSize"), //
+		jMethod<::java::awt::Dimension(::jint, ::jint)>("getPreferredSize"), //
+		jMethod<::jvoid(::java::lang::String, ::jint)>("insert"), //
+		jMethod<::jvoid(::java::lang::String, ::jint, ::jint)>("replaceRange"), //
+	};
+
+	template<typename R = ::java::awt::Dimension, typename... Args>
+	auto getMinimumSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMinimumSize")] != -1);
+		return call<R>("getMinimumSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Dimension, typename... Args>
+	auto getPreferredSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPreferredSize")] != -1);
+		return call<R>("getPreferredSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto insert(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("insert")] != -1);
+		return call<R>("insert", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto replaceRange(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("replaceRange")] != -1);
+		return call<R>("replaceRange", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,36 @@
+#ifndef org_omg_IOP_IOR_HPP
+#define org_omg_IOP_IOR_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::IOP::IOR : public jObject<::org::omg::IOP::IOR, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_IOP / "IOR";
+
+	constexpr static Enume field_signatures{
+		jField<::org::omg::IOP::TaggedProfile *>("profiles"), //
+		jField<::java::lang::String>("type_id"), //
+	};
+
+	template<typename F = ::org::omg::IOP::TaggedProfile *>
+	auto profiles() const {
+		static_assert(field_signatures[jField<F>("profiles")] != -1);
+		return at<F>("profiles");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto type_id() const {
+		static_assert(field_signatures[jField<F>("type_id")] != -1);
+		return at<F>("type_id");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String, ::org::omg::IOP::TaggedProfile *)>(), //
+	};
+
+};
+
+#endif

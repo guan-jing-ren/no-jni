@@ -1,0 +1,55 @@
+#ifndef javax_transaction_xa_Xid_HPP
+#define javax_transaction_xa_Xid_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::transaction::xa::Xid : public jObject<::javax::transaction::xa::Xid, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_transaction_xa / "Xid";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("MAXBQUALSIZE"), //
+		jField<::jint>("MAXGTRIDSIZE"), //
+	};
+
+	template<typename F = ::jint>
+	static auto MAXBQUALSIZE() {
+		static_assert(field_signatures[jField<F>("MAXBQUALSIZE")] != -1);
+		return sat<F>("MAXBQUALSIZE");
+	}
+
+	template<typename F = ::jint>
+	static auto MAXGTRIDSIZE() {
+		static_assert(field_signatures[jField<F>("MAXGTRIDSIZE")] != -1);
+		return sat<F>("MAXGTRIDSIZE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jbyte *()>("getBranchQualifier"), //
+		jMethod<::jint()>("getFormatId"), //
+		jMethod<::jbyte *()>("getGlobalTransactionId"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getBranchQualifier(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBranchQualifier")] != -1);
+		return call<R>("getBranchQualifier", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getFormatId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFormatId")] != -1);
+		return call<R>("getFormatId", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getGlobalTransactionId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getGlobalTransactionId")] != -1);
+		return call<R>("getGlobalTransactionId", forward<Args>(args)...);
+	}
+
+};
+
+#endif

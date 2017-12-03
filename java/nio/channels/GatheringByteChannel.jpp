@@ -1,0 +1,29 @@
+#ifndef java_nio_channels_GatheringByteChannel_HPP
+#define java_nio_channels_GatheringByteChannel_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::channels::GatheringByteChannel : public jObject<::java::nio::channels::GatheringByteChannel, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_channels / "GatheringByteChannel";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jlong(::java::nio::ByteBuffer *)>("write"), //
+		jMethod<::jlong(::java::nio::ByteBuffer *, ::jint, ::jint)>("write"), //
+	};
+
+	template<typename R = ::jlong, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", forward<Args>(args)...);
+	}
+
+};
+
+#endif

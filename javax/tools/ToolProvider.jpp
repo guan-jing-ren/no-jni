@@ -1,0 +1,42 @@
+#ifndef javax_tools_ToolProvider_HPP
+#define javax_tools_ToolProvider_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::tools::ToolProvider : public jObject<::javax::tools::ToolProvider, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_tools / "ToolProvider";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::tools::DocumentationTool()>("getSystemDocumentationTool"), //
+		jMethod<::javax::tools::JavaCompiler()>("getSystemJavaCompiler"), //
+		jMethod<::java::lang::ClassLoader()>("getSystemToolClassLoader"), //
+	};
+
+	template<typename R = ::javax::tools::DocumentationTool, typename... Args>
+	static auto getSystemDocumentationTool(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSystemDocumentationTool")] != -1);
+		return scall<R>("getSystemDocumentationTool", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::tools::JavaCompiler, typename... Args>
+	static auto getSystemJavaCompiler(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSystemJavaCompiler")] != -1);
+		return scall<R>("getSystemJavaCompiler", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::ClassLoader, typename... Args>
+	static auto getSystemToolClassLoader(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSystemToolClassLoader")] != -1);
+		return scall<R>("getSystemToolClassLoader", forward<Args>(args)...);
+	}
+
+};
+
+#endif

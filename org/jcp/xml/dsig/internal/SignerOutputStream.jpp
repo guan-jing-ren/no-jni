@@ -1,0 +1,30 @@
+#ifndef org_jcp_xml_dsig_internal_SignerOutputStream_HPP
+#define org_jcp_xml_dsig_internal_SignerOutputStream_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::org::jcp::xml::dsig::internal::SignerOutputStream : public jObject<::org::jcp::xml::dsig::internal::SignerOutputStream, ::java::io::ByteArrayOutputStream> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_jcp_xml_dsig_internal / "SignerOutputStream";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::security::Signature)>(), //
+		jMethod<::jvoid(::jint)>("write"), //
+		jMethod<::jvoid(::jbyte *, ::jint, ::jint)>("write"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", forward<Args>(args)...);
+	}
+
+};
+
+#endif

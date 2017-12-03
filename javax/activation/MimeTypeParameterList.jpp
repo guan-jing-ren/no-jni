@@ -1,0 +1,72 @@
+#ifndef javax_activation_MimeTypeParameterList_HPP
+#define javax_activation_MimeTypeParameterList_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::activation::MimeTypeParameterList : public jObject<::javax::activation::MimeTypeParameterList, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_activation / "MimeTypeParameterList";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jMethod<::java::lang::String(::java::lang::String)>("get"), //
+		jMethod<::java::util::Enumeration()>("getNames"), //
+		jMethod<::jboolean()>("isEmpty"), //
+		jMethod<::jvoid(::java::lang::String)>("remove"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String)>("set"), //
+		jMethod<::jint()>("size"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	auto getNames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNames")] != -1);
+		return call<R>("getNames", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isEmpty(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isEmpty")] != -1);
+		return call<R>("isEmpty", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto remove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set")] != -1);
+		return call<R>("set", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto size(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("size")] != -1);
+		return call<R>("size", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,49 @@
+#ifndef java_awt_im_spi_InputMethodContext_HPP
+#define java_awt_im_spi_InputMethodContext_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::java::awt::im::spi::InputMethodContext : public jObject<::java::awt::im::spi::InputMethodContext, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_im_spi / "InputMethodContext";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::swing::JFrame(::java::lang::String, ::jboolean)>("createInputMethodJFrame"), //
+		jMethod<::java::awt::Window(::java::lang::String, ::jboolean)>("createInputMethodWindow"), //
+		jMethod<::jvoid(::jint, ::java::text::AttributedCharacterIterator, ::jint, ::java::awt::font::TextHitInfo, ::java::awt::font::TextHitInfo)>("dispatchInputMethodEvent"), //
+		jMethod<::jvoid(::java::awt::im::spi::InputMethod, ::jboolean)>("enableClientWindowNotification"), //
+	};
+
+	template<typename R = ::javax::swing::JFrame, typename... Args>
+	auto createInputMethodJFrame(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createInputMethodJFrame")] != -1);
+		return call<R>("createInputMethodJFrame", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Window, typename... Args>
+	auto createInputMethodWindow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createInputMethodWindow")] != -1);
+		return call<R>("createInputMethodWindow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispatchInputMethodEvent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dispatchInputMethodEvent")] != -1);
+		return call<R>("dispatchInputMethodEvent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto enableClientWindowNotification(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("enableClientWindowNotification")] != -1);
+		return call<R>("enableClientWindowNotification", forward<Args>(args)...);
+	}
+
+};
+
+#endif

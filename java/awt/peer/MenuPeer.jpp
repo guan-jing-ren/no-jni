@@ -1,0 +1,42 @@
+#ifndef java_awt_peer_MenuPeer_HPP
+#define java_awt_peer_MenuPeer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::peer::MenuPeer : public jObject<::java::awt::peer::MenuPeer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_peer / "MenuPeer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::awt::MenuItem)>("addItem"), //
+		jMethod<::jvoid()>("addSeparator"), //
+		jMethod<::jvoid(::jint)>("delItem"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addItem(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addItem")] != -1);
+		return call<R>("addItem", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addSeparator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addSeparator")] != -1);
+		return call<R>("addSeparator", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto delItem(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("delItem")] != -1);
+		return call<R>("delItem", forward<Args>(args)...);
+	}
+
+};
+
+#endif

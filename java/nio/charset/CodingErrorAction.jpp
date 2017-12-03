@@ -1,0 +1,48 @@
+#ifndef java_nio_charset_CodingErrorAction_HPP
+#define java_nio_charset_CodingErrorAction_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::charset::CodingErrorAction : public jObject<::java::nio::charset::CodingErrorAction, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_charset / "CodingErrorAction";
+
+	constexpr static Enume field_signatures{
+		jField<::java::nio::charset::CodingErrorAction>("IGNORE"), //
+		jField<::java::nio::charset::CodingErrorAction>("REPLACE"), //
+		jField<::java::nio::charset::CodingErrorAction>("REPORT"), //
+	};
+
+	template<typename F = ::java::nio::charset::CodingErrorAction>
+	static auto IGNORE() {
+		static_assert(field_signatures[jField<F>("IGNORE")] != -1);
+		return sat<F>("IGNORE");
+	}
+
+	template<typename F = ::java::nio::charset::CodingErrorAction>
+	static auto REPLACE() {
+		static_assert(field_signatures[jField<F>("REPLACE")] != -1);
+		return sat<F>("REPLACE");
+	}
+
+	template<typename F = ::java::nio::charset::CodingErrorAction>
+	static auto REPORT() {
+		static_assert(field_signatures[jField<F>("REPORT")] != -1);
+		return sat<F>("REPORT");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

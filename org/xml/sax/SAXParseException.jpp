@@ -1,0 +1,60 @@
+#ifndef org_xml_sax_SAXParseException_HPP
+#define org_xml_sax_SAXParseException_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::xml::sax::SAXParseException : public jObject<::org::xml::sax::SAXParseException, ::org::xml::sax::SAXException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_xml_sax / "SAXParseException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::String, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::String, ::jint, ::jint, ::java::lang::Exception)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::org::xml::sax::Locator)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::org::xml::sax::Locator, ::java::lang::Exception)>(), //
+		jMethod<::jint()>("getColumnNumber"), //
+		jMethod<::jint()>("getLineNumber"), //
+		jMethod<::java::lang::String()>("getPublicId"), //
+		jMethod<::java::lang::String()>("getSystemId"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getColumnNumber(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getColumnNumber")] != -1);
+		return call<R>("getColumnNumber", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getLineNumber(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLineNumber")] != -1);
+		return call<R>("getLineNumber", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getPublicId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPublicId")] != -1);
+		return call<R>("getPublicId", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getSystemId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSystemId")] != -1);
+		return call<R>("getSystemId", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

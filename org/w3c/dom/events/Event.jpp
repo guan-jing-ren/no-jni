@@ -1,0 +1,111 @@
+#ifndef org_w3c_dom_events_Event_HPP
+#define org_w3c_dom_events_Event_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::w3c::dom::events::Event : public jObject<::org::w3c::dom::events::Event, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_w3c_dom_events / "Event";
+
+	constexpr static Enume field_signatures{
+		jField<::jshort>("AT_TARGET"), //
+		jField<::jshort>("BUBBLING_PHASE"), //
+		jField<::jshort>("CAPTURING_PHASE"), //
+	};
+
+	template<typename F = ::jshort>
+	static auto AT_TARGET() {
+		static_assert(field_signatures[jField<F>("AT_TARGET")] != -1);
+		return sat<F>("AT_TARGET");
+	}
+
+	template<typename F = ::jshort>
+	static auto BUBBLING_PHASE() {
+		static_assert(field_signatures[jField<F>("BUBBLING_PHASE")] != -1);
+		return sat<F>("BUBBLING_PHASE");
+	}
+
+	template<typename F = ::jshort>
+	static auto CAPTURING_PHASE() {
+		static_assert(field_signatures[jField<F>("CAPTURING_PHASE")] != -1);
+		return sat<F>("CAPTURING_PHASE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean()>("getBubbles"), //
+		jMethod<::jboolean()>("getCancelable"), //
+		jMethod<::org::w3c::dom::events::EventTarget()>("getCurrentTarget"), //
+		jMethod<::jshort()>("getEventPhase"), //
+		jMethod<::org::w3c::dom::events::EventTarget()>("getTarget"), //
+		jMethod<::jlong()>("getTimeStamp"), //
+		jMethod<::java::lang::String()>("getType"), //
+		jMethod<::jvoid(::java::lang::String, ::jboolean, ::jboolean)>("initEvent"), //
+		jMethod<::jvoid()>("preventDefault"), //
+		jMethod<::jvoid()>("stopPropagation"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getBubbles(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBubbles")] != -1);
+		return call<R>("getBubbles", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getCancelable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCancelable")] != -1);
+		return call<R>("getCancelable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::events::EventTarget, typename... Args>
+	auto getCurrentTarget(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCurrentTarget")] != -1);
+		return call<R>("getCurrentTarget", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jshort, typename... Args>
+	auto getEventPhase(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEventPhase")] != -1);
+		return call<R>("getEventPhase", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::events::EventTarget, typename... Args>
+	auto getTarget(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTarget")] != -1);
+		return call<R>("getTarget", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getTimeStamp(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTimeStamp")] != -1);
+		return call<R>("getTimeStamp", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto initEvent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("initEvent")] != -1);
+		return call<R>("initEvent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto preventDefault(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("preventDefault")] != -1);
+		return call<R>("preventDefault", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto stopPropagation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("stopPropagation")] != -1);
+		return call<R>("stopPropagation", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,49 @@
+#ifndef org_omg_IOP_CodecOperations_HPP
+#define org_omg_IOP_CodecOperations_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::IOP::CodecOperations : public jObject<::org::omg::IOP::CodecOperations, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_IOP / "CodecOperations";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::omg::CORBA::Any(::jbyte *)>("decode"), //
+		jMethod<::org::omg::CORBA::Any(::jbyte *, ::org::omg::CORBA::TypeCode)>("decode_value"), //
+		jMethod<::jbyte *(::org::omg::CORBA::Any)>("encode"), //
+		jMethod<::jbyte *(::org::omg::CORBA::Any)>("encode_value"), //
+	};
+
+	template<typename R = ::org::omg::CORBA::Any, typename... Args>
+	auto decode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("decode")] != -1);
+		return call<R>("decode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::Any, typename... Args>
+	auto decode_value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("decode_value")] != -1);
+		return call<R>("decode_value", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto encode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("encode")] != -1);
+		return call<R>("encode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto encode_value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("encode_value")] != -1);
+		return call<R>("encode_value", forward<Args>(args)...);
+	}
+
+};
+
+#endif

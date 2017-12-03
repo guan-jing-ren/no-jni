@@ -1,0 +1,28 @@
+#ifndef java_awt_peer_CanvasPeer_HPP
+#define java_awt_peer_CanvasPeer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::peer::CanvasPeer : public jObject<::java::awt::peer::CanvasPeer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_peer / "CanvasPeer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::GraphicsConfiguration(::java::awt::GraphicsConfiguration)>("getAppropriateGraphicsConfiguration"), //
+	};
+
+	template<typename R = ::java::awt::GraphicsConfiguration, typename... Args>
+	auto getAppropriateGraphicsConfiguration(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAppropriateGraphicsConfiguration")] != -1);
+		return call<R>("getAppropriateGraphicsConfiguration", forward<Args>(args)...);
+	}
+
+};
+
+#endif

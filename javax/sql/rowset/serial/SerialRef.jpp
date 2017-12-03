@@ -1,0 +1,65 @@
+#ifndef javax_sql_rowset_serial_SerialRef_HPP
+#define javax_sql_rowset_serial_SerialRef_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::sql::rowset::serial::SerialRef : public jObject<::javax::sql::rowset::serial::SerialRef, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sql_rowset_serial / "SerialRef";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::sql::Ref)>(), //
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::lang::String()>("getBaseTypeName"), //
+		jMethod<::java::lang::Object()>("getObject"), //
+		jMethod<::java::lang::Object(::java::util::Map)>("getObject"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jvoid(::java::lang::Object)>("setObject"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getBaseTypeName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBaseTypeName")] != -1);
+		return call<R>("getBaseTypeName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getObject")] != -1);
+		return call<R>("getObject", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setObject")] != -1);
+		return call<R>("setObject", forward<Args>(args)...);
+	}
+
+};
+
+#endif

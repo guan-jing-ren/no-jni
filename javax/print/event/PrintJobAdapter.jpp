@@ -1,0 +1,64 @@
+#ifndef javax_print_event_PrintJobAdapter_HPP
+#define javax_print_event_PrintJobAdapter_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::print::event::PrintJobAdapter : public jObject<::javax::print::event::PrintJobAdapter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_print_event / "PrintJobAdapter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::javax::print::event::PrintJobEvent)>("printDataTransferCompleted"), //
+		jMethod<::jvoid(::javax::print::event::PrintJobEvent)>("printJobCanceled"), //
+		jMethod<::jvoid(::javax::print::event::PrintJobEvent)>("printJobCompleted"), //
+		jMethod<::jvoid(::javax::print::event::PrintJobEvent)>("printJobFailed"), //
+		jMethod<::jvoid(::javax::print::event::PrintJobEvent)>("printJobNoMoreEvents"), //
+		jMethod<::jvoid(::javax::print::event::PrintJobEvent)>("printJobRequiresAttention"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto printDataTransferCompleted(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("printDataTransferCompleted")] != -1);
+		return call<R>("printDataTransferCompleted", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto printJobCanceled(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("printJobCanceled")] != -1);
+		return call<R>("printJobCanceled", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto printJobCompleted(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("printJobCompleted")] != -1);
+		return call<R>("printJobCompleted", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto printJobFailed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("printJobFailed")] != -1);
+		return call<R>("printJobFailed", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto printJobNoMoreEvents(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("printJobNoMoreEvents")] != -1);
+		return call<R>("printJobNoMoreEvents", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto printJobRequiresAttention(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("printJobRequiresAttention")] != -1);
+		return call<R>("printJobRequiresAttention", forward<Args>(args)...);
+	}
+
+};
+
+#endif

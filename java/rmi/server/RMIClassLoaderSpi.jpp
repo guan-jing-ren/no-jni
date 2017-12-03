@@ -1,0 +1,50 @@
+#ifndef java_rmi_server_RMIClassLoaderSpi_HPP
+#define java_rmi_server_RMIClassLoaderSpi_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::rmi::server::RMIClassLoaderSpi : public jObject<::java::rmi::server::RMIClassLoaderSpi, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_rmi_server / "RMIClassLoaderSpi";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::String(::java::lang::Class)>("getClassAnnotation"), //
+		jMethod<::java::lang::ClassLoader(::java::lang::String)>("getClassLoader"), //
+		jMethod<::java::lang::Class(::java::lang::String, ::java::lang::String, ::java::lang::ClassLoader)>("loadClass"), //
+		jMethod<::java::lang::Class(::java::lang::String, ::java::lang::String *, ::java::lang::ClassLoader)>("loadProxyClass"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getClassAnnotation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getClassAnnotation")] != -1);
+		return call<R>("getClassAnnotation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::ClassLoader, typename... Args>
+	auto getClassLoader(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getClassLoader")] != -1);
+		return call<R>("getClassLoader", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto loadClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("loadClass")] != -1);
+		return call<R>("loadClass", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto loadProxyClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("loadProxyClass")] != -1);
+		return call<R>("loadProxyClass", forward<Args>(args)...);
+	}
+
+};
+
+#endif

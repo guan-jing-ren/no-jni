@@ -1,0 +1,35 @@
+#ifndef javax_management_remote_MBeanServerForwarder_HPP
+#define javax_management_remote_MBeanServerForwarder_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::management::remote::MBeanServerForwarder : public jObject<::javax::management::remote::MBeanServerForwarder, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management_remote / "MBeanServerForwarder";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::management::MBeanServer()>("getMBeanServer"), //
+		jMethod<::jvoid(::javax::management::MBeanServer)>("setMBeanServer"), //
+	};
+
+	template<typename R = ::javax::management::MBeanServer, typename... Args>
+	auto getMBeanServer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMBeanServer")] != -1);
+		return call<R>("getMBeanServer", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setMBeanServer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMBeanServer")] != -1);
+		return call<R>("setMBeanServer", forward<Args>(args)...);
+	}
+
+};
+
+#endif

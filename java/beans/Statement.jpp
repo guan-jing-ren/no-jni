@@ -1,0 +1,57 @@
+#ifndef java_beans_Statement_HPP
+#define java_beans_Statement_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::beans::Statement : public jObject<::java::beans::Statement, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_beans / "Statement";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Object, ::java::lang::String, ::java::lang::Object *)>(), //
+		jMethod<::jvoid()>("execute"), //
+		jMethod<::java::lang::Object *()>("getArguments"), //
+		jMethod<::java::lang::String()>("getMethodName"), //
+		jMethod<::java::lang::Object()>("getTarget"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto execute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("execute")] != -1);
+		return call<R>("execute", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object *, typename... Args>
+	auto getArguments(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getArguments")] != -1);
+		return call<R>("getArguments", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMethodName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMethodName")] != -1);
+		return call<R>("getMethodName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getTarget(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTarget")] != -1);
+		return call<R>("getTarget", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

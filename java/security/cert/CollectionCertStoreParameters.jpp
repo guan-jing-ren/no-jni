@@ -1,0 +1,44 @@
+#ifndef java_security_cert_CollectionCertStoreParameters_HPP
+#define java_security_cert_CollectionCertStoreParameters_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::cert::CollectionCertStoreParameters : public jObject<::java::security::cert::CollectionCertStoreParameters, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_cert / "CollectionCertStoreParameters";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::util::Collection)>(), //
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::java::util::Collection()>("getCollection"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Collection, typename... Args>
+	auto getCollection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCollection")] != -1);
+		return call<R>("getCollection", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

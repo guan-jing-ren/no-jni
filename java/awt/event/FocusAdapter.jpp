@@ -1,0 +1,36 @@
+#ifndef java_awt_event_FocusAdapter_HPP
+#define java_awt_event_FocusAdapter_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::event::FocusAdapter : public jObject<::java::awt::event::FocusAdapter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_event / "FocusAdapter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::awt::event::FocusEvent)>("focusGained"), //
+		jMethod<::jvoid(::java::awt::event::FocusEvent)>("focusLost"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto focusGained(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("focusGained")] != -1);
+		return call<R>("focusGained", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto focusLost(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("focusLost")] != -1);
+		return call<R>("focusLost", forward<Args>(args)...);
+	}
+
+};
+
+#endif

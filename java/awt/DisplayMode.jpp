@@ -1,0 +1,78 @@
+#ifndef java_awt_DisplayMode_HPP
+#define java_awt_DisplayMode_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::DisplayMode : public jObject<::java::awt::DisplayMode, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "DisplayMode";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("BIT_DEPTH_MULTI"), //
+		jField<::jint>("REFRESH_RATE_UNKNOWN"), //
+	};
+
+	template<typename F = ::jint>
+	static auto BIT_DEPTH_MULTI() {
+		static_assert(field_signatures[jField<F>("BIT_DEPTH_MULTI")] != -1);
+		return sat<F>("BIT_DEPTH_MULTI");
+	}
+
+	template<typename F = ::jint>
+	static auto REFRESH_RATE_UNKNOWN() {
+		static_assert(field_signatures[jField<F>("REFRESH_RATE_UNKNOWN")] != -1);
+		return sat<F>("REFRESH_RATE_UNKNOWN");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::jint, ::jint, ::jint)>(), //
+		jMethod<::jboolean(::java::awt::DisplayMode)>("equals"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jint()>("getBitDepth"), //
+		jMethod<::jint()>("getHeight"), //
+		jMethod<::jint()>("getRefreshRate"), //
+		jMethod<::jint()>("getWidth"), //
+		jMethod<::jint()>("hashCode"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getBitDepth(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBitDepth")] != -1);
+		return call<R>("getBitDepth", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getHeight(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHeight")] != -1);
+		return call<R>("getHeight", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getRefreshRate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRefreshRate")] != -1);
+		return call<R>("getRefreshRate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getWidth(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWidth")] != -1);
+		return call<R>("getWidth", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+};
+
+#endif

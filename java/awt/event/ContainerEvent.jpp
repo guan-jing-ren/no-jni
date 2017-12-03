@@ -1,0 +1,70 @@
+#ifndef java_awt_event_ContainerEvent_HPP
+#define java_awt_event_ContainerEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::event::ContainerEvent : public jObject<::java::awt::event::ContainerEvent, ::java::awt::event::ComponentEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_event / "ContainerEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("COMPONENT_ADDED"), //
+		jField<::jint>("COMPONENT_REMOVED"), //
+		jField<::jint>("CONTAINER_FIRST"), //
+		jField<::jint>("CONTAINER_LAST"), //
+	};
+
+	template<typename F = ::jint>
+	static auto COMPONENT_ADDED() {
+		static_assert(field_signatures[jField<F>("COMPONENT_ADDED")] != -1);
+		return sat<F>("COMPONENT_ADDED");
+	}
+
+	template<typename F = ::jint>
+	static auto COMPONENT_REMOVED() {
+		static_assert(field_signatures[jField<F>("COMPONENT_REMOVED")] != -1);
+		return sat<F>("COMPONENT_REMOVED");
+	}
+
+	template<typename F = ::jint>
+	static auto CONTAINER_FIRST() {
+		static_assert(field_signatures[jField<F>("CONTAINER_FIRST")] != -1);
+		return sat<F>("CONTAINER_FIRST");
+	}
+
+	template<typename F = ::jint>
+	static auto CONTAINER_LAST() {
+		static_assert(field_signatures[jField<F>("CONTAINER_LAST")] != -1);
+		return sat<F>("CONTAINER_LAST");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::Component, ::jint, ::java::awt::Component)>(), //
+		jMethod<::java::awt::Component()>("getChild"), //
+		jMethod<::java::awt::Container()>("getContainer"), //
+		jMethod<::java::lang::String()>("paramString"), //
+	};
+
+	template<typename R = ::java::awt::Component, typename... Args>
+	auto getChild(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getChild")] != -1);
+		return call<R>("getChild", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Container, typename... Args>
+	auto getContainer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getContainer")] != -1);
+		return call<R>("getContainer", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto paramString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paramString")] != -1);
+		return call<R>("paramString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

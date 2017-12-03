@@ -1,0 +1,56 @@
+#ifndef java_nio_channels_NetworkChannel_HPP
+#define java_nio_channels_NetworkChannel_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::channels::NetworkChannel : public jObject<::java::nio::channels::NetworkChannel, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_channels / "NetworkChannel";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::nio::channels::NetworkChannel(::java::net::SocketAddress)>("bind"), //
+		jMethod<::java::net::SocketAddress()>("getLocalAddress"), //
+		jMethod<::java::lang::Object(::java::net::SocketOption)>("getOption"), //
+		jMethod<::java::nio::channels::NetworkChannel(::java::net::SocketOption, ::java::lang::Object)>("setOption"), //
+		jMethod<::java::util::Set()>("supportedOptions"), //
+	};
+
+	template<typename R = ::java::nio::channels::NetworkChannel, typename... Args>
+	auto bind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("bind")] != -1);
+		return call<R>("bind", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::SocketAddress, typename... Args>
+	auto getLocalAddress(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLocalAddress")] != -1);
+		return call<R>("getLocalAddress", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getOption(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOption")] != -1);
+		return call<R>("getOption", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::NetworkChannel, typename... Args>
+	auto setOption(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setOption")] != -1);
+		return call<R>("setOption", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto supportedOptions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("supportedOptions")] != -1);
+		return call<R>("supportedOptions", forward<Args>(args)...);
+	}
+
+};
+
+#endif

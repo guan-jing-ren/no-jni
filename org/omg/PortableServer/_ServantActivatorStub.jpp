@@ -1,0 +1,49 @@
+#ifndef org_omg_PortableServer__ServantActivatorStub_HPP
+#define org_omg_PortableServer__ServantActivatorStub_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::PortableServer::_ServantActivatorStub : public jObject<::org::omg::PortableServer::_ServantActivatorStub, ::org::omg::CORBA::portable::ObjectImpl> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_PortableServer / "_ServantActivatorStub";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::Class>("_opsClass"), //
+	};
+
+	template<typename F = ::java::lang::Class>
+	static auto _opsClass() {
+		static_assert(field_signatures[jField<F>("_opsClass")] != -1);
+		return sat<F>("_opsClass");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::String *()>("_ids"), //
+		jMethod<::jvoid(::jbyte *, ::org::omg::PortableServer::POA, ::org::omg::PortableServer::Servant, ::jboolean, ::jboolean)>("etherealize"), //
+		jMethod<::org::omg::PortableServer::Servant(::jbyte *, ::org::omg::PortableServer::POA)>("incarnate"), //
+	};
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto _ids(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("_ids")] != -1);
+		return call<R>("_ids", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto etherealize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("etherealize")] != -1);
+		return call<R>("etherealize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::PortableServer::Servant, typename... Args>
+	auto incarnate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("incarnate")] != -1);
+		return call<R>("incarnate", forward<Args>(args)...);
+	}
+
+};
+
+#endif

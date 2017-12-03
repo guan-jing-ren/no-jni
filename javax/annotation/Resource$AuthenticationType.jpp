@@ -1,0 +1,48 @@
+#ifndef javax_annotation_Resource$AuthenticationType_HPP
+#define javax_annotation_Resource$AuthenticationType_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::annotation::Resource$AuthenticationType : public jObject<::javax::annotation::Resource$AuthenticationType, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_annotation / "Resource$AuthenticationType";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::annotation::Resource$AuthenticationType>("APPLICATION"), //
+		jField<::javax::annotation::Resource$AuthenticationType>("CONTAINER"), //
+	};
+
+	template<typename F = ::javax::annotation::Resource$AuthenticationType>
+	static auto APPLICATION() {
+		static_assert(field_signatures[jField<F>("APPLICATION")] != -1);
+		return sat<F>("APPLICATION");
+	}
+
+	template<typename F = ::javax::annotation::Resource$AuthenticationType>
+	static auto CONTAINER() {
+		static_assert(field_signatures[jField<F>("CONTAINER")] != -1);
+		return sat<F>("CONTAINER");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::annotation::Resource$AuthenticationType(::java::lang::String)>("valueOf"), //
+		jMethod<::javax::annotation::Resource$AuthenticationType *()>("values"), //
+	};
+
+	template<typename R = ::javax::annotation::Resource$AuthenticationType, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::annotation::Resource$AuthenticationType *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

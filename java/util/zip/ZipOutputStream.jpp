@@ -1,0 +1,92 @@
+#ifndef java_util_zip_ZipOutputStream_HPP
+#define java_util_zip_ZipOutputStream_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::zip::ZipOutputStream : public jObject<::java::util::zip::ZipOutputStream, ::java::util::zip::DeflaterOutputStream> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_zip / "ZipOutputStream";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("DEFLATED"), //
+		jField<::jint>("STORED"), //
+	};
+
+	template<typename F = ::jint>
+	static auto DEFLATED() {
+		static_assert(field_signatures[jField<F>("DEFLATED")] != -1);
+		return sat<F>("DEFLATED");
+	}
+
+	template<typename F = ::jint>
+	static auto STORED() {
+		static_assert(field_signatures[jField<F>("STORED")] != -1);
+		return sat<F>("STORED");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::OutputStream)>(), //
+		jConstructor<::jvoid(::java::io::OutputStream, ::java::nio::charset::Charset)>(), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::jvoid()>("closeEntry"), //
+		jMethod<::jvoid()>("finish"), //
+		jMethod<::jvoid(::java::util::zip::ZipEntry)>("putNextEntry"), //
+		jMethod<::jvoid(::java::lang::String)>("setComment"), //
+		jMethod<::jvoid(::jint)>("setLevel"), //
+		jMethod<::jvoid(::jint)>("setMethod"), //
+		jMethod<::jvoid(::jbyte *, ::jint, ::jint)>("write"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto closeEntry(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("closeEntry")] != -1);
+		return call<R>("closeEntry", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto finish(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("finish")] != -1);
+		return call<R>("finish", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto putNextEntry(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("putNextEntry")] != -1);
+		return call<R>("putNextEntry", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setComment(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setComment")] != -1);
+		return call<R>("setComment", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLevel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLevel")] != -1);
+		return call<R>("setLevel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setMethod(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMethod")] != -1);
+		return call<R>("setMethod", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", forward<Args>(args)...);
+	}
+
+};
+
+#endif

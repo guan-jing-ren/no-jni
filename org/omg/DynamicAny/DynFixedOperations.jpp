@@ -1,0 +1,35 @@
+#ifndef org_omg_DynamicAny_DynFixedOperations_HPP
+#define org_omg_DynamicAny_DynFixedOperations_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::DynamicAny::DynFixedOperations : public jObject<::org::omg::DynamicAny::DynFixedOperations, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_DynamicAny / "DynFixedOperations";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("get_value"), //
+		jMethod<::jboolean(::java::lang::String)>("set_value"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto get_value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get_value")] != -1);
+		return call<R>("get_value", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto set_value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set_value")] != -1);
+		return call<R>("set_value", forward<Args>(args)...);
+	}
+
+};
+
+#endif

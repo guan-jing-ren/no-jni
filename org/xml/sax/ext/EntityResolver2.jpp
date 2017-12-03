@@ -1,0 +1,35 @@
+#ifndef org_xml_sax_ext_EntityResolver2_HPP
+#define org_xml_sax_ext_EntityResolver2_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::xml::sax::ext::EntityResolver2 : public jObject<::org::xml::sax::ext::EntityResolver2, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_xml_sax_ext / "EntityResolver2";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::xml::sax::InputSource(::java::lang::String, ::java::lang::String)>("getExternalSubset"), //
+		jMethod<::org::xml::sax::InputSource(::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::String)>("resolveEntity"), //
+	};
+
+	template<typename R = ::org::xml::sax::InputSource, typename... Args>
+	auto getExternalSubset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getExternalSubset")] != -1);
+		return call<R>("getExternalSubset", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::xml::sax::InputSource, typename... Args>
+	auto resolveEntity(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("resolveEntity")] != -1);
+		return call<R>("resolveEntity", forward<Args>(args)...);
+	}
+
+};
+
+#endif

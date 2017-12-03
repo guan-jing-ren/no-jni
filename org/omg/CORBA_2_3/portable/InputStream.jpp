@@ -1,0 +1,41 @@
+#ifndef org_omg_CORBA_2_3_portable_InputStream_HPP
+#define org_omg_CORBA_2_3_portable_InputStream_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::omg::CORBA_2_3::portable::InputStream : public jObject<::org::omg::CORBA_2_3::portable::InputStream, ::org::omg::CORBA::portable::InputStream> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CORBA_2_3_portable / "InputStream";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::Object()>("read_abstract_interface"), //
+		jMethod<::java::lang::Object(::java::lang::Class)>("read_abstract_interface"), //
+		jMethod<::java::io::Serializable()>("read_value"), //
+		jMethod<::java::io::Serializable(::java::io::Serializable)>("read_value"), //
+		jMethod<::java::io::Serializable(::java::lang::Class)>("read_value"), //
+		jMethod<::java::io::Serializable(::java::lang::String)>("read_value"), //
+		jMethod<::java::io::Serializable(::org::omg::CORBA::portable::BoxedValueHelper)>("read_value"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto read_abstract_interface(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read_abstract_interface")] != -1);
+		return call<R>("read_abstract_interface", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::Serializable, typename... Args>
+	auto read_value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read_value")] != -1);
+		return call<R>("read_value", forward<Args>(args)...);
+	}
+
+};
+
+#endif

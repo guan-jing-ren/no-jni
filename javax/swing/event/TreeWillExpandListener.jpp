@@ -1,0 +1,35 @@
+#ifndef javax_swing_event_TreeWillExpandListener_HPP
+#define javax_swing_event_TreeWillExpandListener_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::event::TreeWillExpandListener : public jObject<::javax::swing::event::TreeWillExpandListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_event / "TreeWillExpandListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::swing::event::TreeExpansionEvent)>("treeWillCollapse"), //
+		jMethod<::jvoid(::javax::swing::event::TreeExpansionEvent)>("treeWillExpand"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto treeWillCollapse(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("treeWillCollapse")] != -1);
+		return call<R>("treeWillCollapse", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto treeWillExpand(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("treeWillExpand")] != -1);
+		return call<R>("treeWillExpand", forward<Args>(args)...);
+	}
+
+};
+
+#endif

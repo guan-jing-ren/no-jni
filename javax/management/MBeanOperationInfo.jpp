@@ -1,0 +1,100 @@
+#ifndef javax_management_MBeanOperationInfo_HPP
+#define javax_management_MBeanOperationInfo_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::management::MBeanOperationInfo : public jObject<::javax::management::MBeanOperationInfo, ::javax::management::MBeanFeatureInfo> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management / "MBeanOperationInfo";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("ACTION"), //
+		jField<::jint>("ACTION_INFO"), //
+		jField<::jint>("INFO"), //
+		jField<::jint>("UNKNOWN"), //
+	};
+
+	template<typename F = ::jint>
+	static auto ACTION() {
+		static_assert(field_signatures[jField<F>("ACTION")] != -1);
+		return sat<F>("ACTION");
+	}
+
+	template<typename F = ::jint>
+	static auto ACTION_INFO() {
+		static_assert(field_signatures[jField<F>("ACTION_INFO")] != -1);
+		return sat<F>("ACTION_INFO");
+	}
+
+	template<typename F = ::jint>
+	static auto INFO() {
+		static_assert(field_signatures[jField<F>("INFO")] != -1);
+		return sat<F>("INFO");
+	}
+
+	template<typename F = ::jint>
+	static auto UNKNOWN() {
+		static_assert(field_signatures[jField<F>("UNKNOWN")] != -1);
+		return sat<F>("UNKNOWN");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::javax::management::MBeanParameterInfo *, ::java::lang::String, ::jint)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::javax::management::MBeanParameterInfo *, ::java::lang::String, ::jint, ::javax::management::Descriptor)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::reflect::Method)>(), //
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jint()>("getImpact"), //
+		jMethod<::java::lang::String()>("getReturnType"), //
+		jMethod<::javax::management::MBeanParameterInfo *()>("getSignature"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getImpact(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getImpact")] != -1);
+		return call<R>("getImpact", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getReturnType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getReturnType")] != -1);
+		return call<R>("getReturnType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::MBeanParameterInfo *, typename... Args>
+	auto getSignature(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSignature")] != -1);
+		return call<R>("getSignature", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

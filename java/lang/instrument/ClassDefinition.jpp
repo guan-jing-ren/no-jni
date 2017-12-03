@@ -1,0 +1,36 @@
+#ifndef java_lang_instrument_ClassDefinition_HPP
+#define java_lang_instrument_ClassDefinition_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::instrument::ClassDefinition : public jObject<::java::lang::instrument::ClassDefinition, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_instrument / "ClassDefinition";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Class, ::jbyte *)>(), //
+		jMethod<::java::lang::Class()>("getDefinitionClass"), //
+		jMethod<::jbyte *()>("getDefinitionClassFile"), //
+	};
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getDefinitionClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefinitionClass")] != -1);
+		return call<R>("getDefinitionClass", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getDefinitionClassFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefinitionClassFile")] != -1);
+		return call<R>("getDefinitionClassFile", forward<Args>(args)...);
+	}
+
+};
+
+#endif

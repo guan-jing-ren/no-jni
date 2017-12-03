@@ -1,0 +1,39 @@
+#ifndef org_omg_CORBA_2_3_portable_OutputStream_HPP
+#define org_omg_CORBA_2_3_portable_OutputStream_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::omg::CORBA_2_3::portable::OutputStream : public jObject<::org::omg::CORBA_2_3::portable::OutputStream, ::org::omg::CORBA::portable::OutputStream> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CORBA_2_3_portable / "OutputStream";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::lang::Object)>("write_abstract_interface"), //
+		jMethod<::jvoid(::java::io::Serializable)>("write_value"), //
+		jMethod<::jvoid(::java::io::Serializable, ::java::lang::Class)>("write_value"), //
+		jMethod<::jvoid(::java::io::Serializable, ::java::lang::String)>("write_value"), //
+		jMethod<::jvoid(::java::io::Serializable, ::org::omg::CORBA::portable::BoxedValueHelper)>("write_value"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto write_abstract_interface(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write_abstract_interface")] != -1);
+		return call<R>("write_abstract_interface", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto write_value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write_value")] != -1);
+		return call<R>("write_value", forward<Args>(args)...);
+	}
+
+};
+
+#endif

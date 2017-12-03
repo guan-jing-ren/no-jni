@@ -1,0 +1,70 @@
+#ifndef javax_crypto_KeyAgreement_HPP
+#define javax_crypto_KeyAgreement_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::crypto::KeyAgreement : public jObject<::javax::crypto::KeyAgreement, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_crypto / "KeyAgreement";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::security::Key(::java::security::Key, ::jboolean)>("doPhase"), //
+		jMethod<::jbyte *()>("generateSecret"), //
+		jMethod<::javax::crypto::SecretKey(::java::lang::String)>("generateSecret"), //
+		jMethod<::jint(::jbyte *, ::jint)>("generateSecret"), //
+		jMethod<::java::lang::String()>("getAlgorithm"), //
+		jMethod<::javax::crypto::KeyAgreement(::java::lang::String)>("getInstance"), //
+		jMethod<::javax::crypto::KeyAgreement(::java::lang::String, ::java::lang::String)>("getInstance"), //
+		jMethod<::javax::crypto::KeyAgreement(::java::lang::String, ::java::security::Provider)>("getInstance"), //
+		jMethod<::java::security::Provider()>("getProvider"), //
+		jMethod<::jvoid(::java::security::Key)>("init"), //
+		jMethod<::jvoid(::java::security::Key, ::java::security::SecureRandom)>("init"), //
+		jMethod<::jvoid(::java::security::Key, ::java::security::spec::AlgorithmParameterSpec)>("init"), //
+		jMethod<::jvoid(::java::security::Key, ::java::security::spec::AlgorithmParameterSpec, ::java::security::SecureRandom)>("init"), //
+	};
+
+	template<typename R = ::java::security::Key, typename... Args>
+	auto doPhase(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("doPhase")] != -1);
+		return call<R>("doPhase", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto generateSecret(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("generateSecret")] != -1);
+		return call<R>("generateSecret", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAlgorithm(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlgorithm")] != -1);
+		return call<R>("getAlgorithm", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::crypto::KeyAgreement, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Provider, typename... Args>
+	auto getProvider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProvider")] != -1);
+		return call<R>("getProvider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto init(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("init")] != -1);
+		return call<R>("init", forward<Args>(args)...);
+	}
+
+};
+
+#endif

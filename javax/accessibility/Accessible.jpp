@@ -1,0 +1,28 @@
+#ifndef javax_accessibility_Accessible_HPP
+#define javax_accessibility_Accessible_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::accessibility::Accessible : public jObject<::javax::accessibility::Accessible, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_accessibility / "Accessible";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::accessibility::AccessibleContext()>("getAccessibleContext"), //
+	};
+
+	template<typename R = ::javax::accessibility::AccessibleContext, typename... Args>
+	auto getAccessibleContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAccessibleContext")] != -1);
+		return call<R>("getAccessibleContext", forward<Args>(args)...);
+	}
+
+};
+
+#endif

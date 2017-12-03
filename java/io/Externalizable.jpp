@@ -1,0 +1,35 @@
+#ifndef java_io_Externalizable_HPP
+#define java_io_Externalizable_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::io::Externalizable : public jObject<::java::io::Externalizable, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_io / "Externalizable";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::io::ObjectInput)>("readExternal"), //
+		jMethod<::jvoid(::java::io::ObjectOutput)>("writeExternal"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto readExternal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("readExternal")] != -1);
+		return call<R>("readExternal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeExternal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("writeExternal")] != -1);
+		return call<R>("writeExternal", forward<Args>(args)...);
+	}
+
+};
+
+#endif

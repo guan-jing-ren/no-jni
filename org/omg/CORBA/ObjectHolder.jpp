@@ -1,0 +1,50 @@
+#ifndef org_omg_CORBA_ObjectHolder_HPP
+#define org_omg_CORBA_ObjectHolder_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::CORBA::ObjectHolder : public jObject<::org::omg::CORBA::ObjectHolder, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CORBA / "ObjectHolder";
+
+	constexpr static Enume field_signatures{
+		jField<::org::omg::CORBA::Object>("value"), //
+	};
+
+	template<typename F = ::org::omg::CORBA::Object>
+	auto value() const {
+		static_assert(field_signatures[jField<F>("value")] != -1);
+		return at<F>("value");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::org::omg::CORBA::Object)>(), //
+		jMethod<::jvoid(::org::omg::CORBA::portable::InputStream)>("_read"), //
+		jMethod<::org::omg::CORBA::TypeCode()>("_type"), //
+		jMethod<::jvoid(::org::omg::CORBA::portable::OutputStream)>("_write"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto _read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("_read")] != -1);
+		return call<R>("_read", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
+	auto _type(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("_type")] != -1);
+		return call<R>("_type", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto _write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("_write")] != -1);
+		return call<R>("_write", forward<Args>(args)...);
+	}
+
+};
+
+#endif

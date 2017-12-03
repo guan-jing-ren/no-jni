@@ -1,0 +1,137 @@
+#ifndef javax_script_ScriptEngine_HPP
+#define javax_script_ScriptEngine_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::script::ScriptEngine : public jObject<::javax::script::ScriptEngine, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_script / "ScriptEngine";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("ARGV"), //
+		jField<::java::lang::String>("ENGINE"), //
+		jField<::java::lang::String>("ENGINE_VERSION"), //
+		jField<::java::lang::String>("FILENAME"), //
+		jField<::java::lang::String>("LANGUAGE"), //
+		jField<::java::lang::String>("LANGUAGE_VERSION"), //
+		jField<::java::lang::String>("NAME"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto ARGV() {
+		static_assert(field_signatures[jField<F>("ARGV")] != -1);
+		return sat<F>("ARGV");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto ENGINE() {
+		static_assert(field_signatures[jField<F>("ENGINE")] != -1);
+		return sat<F>("ENGINE");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto ENGINE_VERSION() {
+		static_assert(field_signatures[jField<F>("ENGINE_VERSION")] != -1);
+		return sat<F>("ENGINE_VERSION");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto FILENAME() {
+		static_assert(field_signatures[jField<F>("FILENAME")] != -1);
+		return sat<F>("FILENAME");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto LANGUAGE() {
+		static_assert(field_signatures[jField<F>("LANGUAGE")] != -1);
+		return sat<F>("LANGUAGE");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto LANGUAGE_VERSION() {
+		static_assert(field_signatures[jField<F>("LANGUAGE_VERSION")] != -1);
+		return sat<F>("LANGUAGE_VERSION");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto NAME() {
+		static_assert(field_signatures[jField<F>("NAME")] != -1);
+		return sat<F>("NAME");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::script::Bindings()>("createBindings"), //
+		jMethod<::java::lang::Object(::java::io::Reader)>("eval"), //
+		jMethod<::java::lang::Object(::java::io::Reader, ::javax::script::Bindings)>("eval"), //
+		jMethod<::java::lang::Object(::java::io::Reader, ::javax::script::ScriptContext)>("eval"), //
+		jMethod<::java::lang::Object(::java::lang::String)>("eval"), //
+		jMethod<::java::lang::Object(::java::lang::String, ::javax::script::Bindings)>("eval"), //
+		jMethod<::java::lang::Object(::java::lang::String, ::javax::script::ScriptContext)>("eval"), //
+		jMethod<::java::lang::Object(::java::lang::String)>("get"), //
+		jMethod<::javax::script::Bindings(::jint)>("getBindings"), //
+		jMethod<::javax::script::ScriptContext()>("getContext"), //
+		jMethod<::javax::script::ScriptEngineFactory()>("getFactory"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::Object)>("put"), //
+		jMethod<::jvoid(::javax::script::Bindings, ::jint)>("setBindings"), //
+		jMethod<::jvoid(::javax::script::ScriptContext)>("setContext"), //
+	};
+
+	template<typename R = ::javax::script::Bindings, typename... Args>
+	auto createBindings(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createBindings")] != -1);
+		return call<R>("createBindings", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto eval(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("eval")] != -1);
+		return call<R>("eval", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::script::Bindings, typename... Args>
+	auto getBindings(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBindings")] != -1);
+		return call<R>("getBindings", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::script::ScriptContext, typename... Args>
+	auto getContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getContext")] != -1);
+		return call<R>("getContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::script::ScriptEngineFactory, typename... Args>
+	auto getFactory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFactory")] != -1);
+		return call<R>("getFactory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto put(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("put")] != -1);
+		return call<R>("put", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setBindings(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setBindings")] != -1);
+		return call<R>("setBindings", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setContext")] != -1);
+		return call<R>("setContext", forward<Args>(args)...);
+	}
+
+};
+
+#endif

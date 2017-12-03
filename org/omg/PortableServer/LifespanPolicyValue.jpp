@@ -1,0 +1,62 @@
+#ifndef org_omg_PortableServer_LifespanPolicyValue_HPP
+#define org_omg_PortableServer_LifespanPolicyValue_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::PortableServer::LifespanPolicyValue : public jObject<::org::omg::PortableServer::LifespanPolicyValue, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_PortableServer / "LifespanPolicyValue";
+
+	constexpr static Enume field_signatures{
+		jField<::org::omg::PortableServer::LifespanPolicyValue>("PERSISTENT"), //
+		jField<::org::omg::PortableServer::LifespanPolicyValue>("TRANSIENT"), //
+		jField<::jint>("_PERSISTENT"), //
+		jField<::jint>("_TRANSIENT"), //
+	};
+
+	template<typename F = ::org::omg::PortableServer::LifespanPolicyValue>
+	static auto PERSISTENT() {
+		static_assert(field_signatures[jField<F>("PERSISTENT")] != -1);
+		return sat<F>("PERSISTENT");
+	}
+
+	template<typename F = ::org::omg::PortableServer::LifespanPolicyValue>
+	static auto TRANSIENT() {
+		static_assert(field_signatures[jField<F>("TRANSIENT")] != -1);
+		return sat<F>("TRANSIENT");
+	}
+
+	template<typename F = ::jint>
+	static auto _PERSISTENT() {
+		static_assert(field_signatures[jField<F>("_PERSISTENT")] != -1);
+		return sat<F>("_PERSISTENT");
+	}
+
+	template<typename F = ::jint>
+	static auto _TRANSIENT() {
+		static_assert(field_signatures[jField<F>("_TRANSIENT")] != -1);
+		return sat<F>("_TRANSIENT");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::omg::PortableServer::LifespanPolicyValue(::jint)>("from_int"), //
+		jMethod<::jint()>("value"), //
+	};
+
+	template<typename R = ::org::omg::PortableServer::LifespanPolicyValue, typename... Args>
+	static auto from_int(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("from_int")] != -1);
+		return scall<R>("from_int", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("value")] != -1);
+		return call<R>("value", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,28 @@
+#ifndef javax_xml_transform_URIResolver_HPP
+#define javax_xml_transform_URIResolver_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::transform::URIResolver : public jObject<::javax::xml::transform::URIResolver, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_transform / "URIResolver";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::transform::Source(::java::lang::String, ::java::lang::String)>("resolve"), //
+	};
+
+	template<typename R = ::javax::xml::transform::Source, typename... Args>
+	auto resolve(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("resolve")] != -1);
+		return call<R>("resolve", forward<Args>(args)...);
+	}
+
+};
+
+#endif

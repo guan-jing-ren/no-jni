@@ -1,0 +1,37 @@
+#ifndef javax_swing_JSpinner$NumberEditor_HPP
+#define javax_swing_JSpinner$NumberEditor_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::JSpinner$NumberEditor : public jObject<::javax::swing::JSpinner$NumberEditor, ::javax::swing::JSpinner$DefaultEditor> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "JSpinner$NumberEditor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::swing::JSpinner)>(), //
+		jConstructor<::jvoid(::javax::swing::JSpinner, ::java::lang::String)>(), //
+		jMethod<::java::text::DecimalFormat()>("getFormat"), //
+		jMethod<::javax::swing::SpinnerNumberModel()>("getModel"), //
+	};
+
+	template<typename R = ::java::text::DecimalFormat, typename... Args>
+	auto getFormat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFormat")] != -1);
+		return call<R>("getFormat", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::SpinnerNumberModel, typename... Args>
+	auto getModel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getModel")] != -1);
+		return call<R>("getModel", forward<Args>(args)...);
+	}
+
+};
+
+#endif

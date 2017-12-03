@@ -1,0 +1,73 @@
+#ifndef javax_activation_MailcapCommandMap_HPP
+#define javax_activation_MailcapCommandMap_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::activation::MailcapCommandMap : public jObject<::javax::activation::MailcapCommandMap, ::javax::activation::CommandMap> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_activation / "MailcapCommandMap";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::io::InputStream)>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jMethod<::jvoid(::java::lang::String)>("addMailcap"), //
+		jMethod<::javax::activation::DataContentHandler(::java::lang::String)>("createDataContentHandler"), //
+		jMethod<::javax::activation::CommandInfo *(::java::lang::String)>("getAllCommands"), //
+		jMethod<::javax::activation::CommandInfo(::java::lang::String, ::java::lang::String)>("getCommand"), //
+		jMethod<::java::lang::String *()>("getMimeTypes"), //
+		jMethod<::java::lang::String *(::java::lang::String)>("getNativeCommands"), //
+		jMethod<::javax::activation::CommandInfo *(::java::lang::String)>("getPreferredCommands"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addMailcap(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addMailcap")] != -1);
+		return call<R>("addMailcap", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::activation::DataContentHandler, typename... Args>
+	auto createDataContentHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createDataContentHandler")] != -1);
+		return call<R>("createDataContentHandler", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::activation::CommandInfo *, typename... Args>
+	auto getAllCommands(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAllCommands")] != -1);
+		return call<R>("getAllCommands", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::activation::CommandInfo, typename... Args>
+	auto getCommand(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCommand")] != -1);
+		return call<R>("getCommand", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getMimeTypes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMimeTypes")] != -1);
+		return call<R>("getMimeTypes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getNativeCommands(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNativeCommands")] != -1);
+		return call<R>("getNativeCommands", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::activation::CommandInfo *, typename... Args>
+	auto getPreferredCommands(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPreferredCommands")] != -1);
+		return call<R>("getPreferredCommands", forward<Args>(args)...);
+	}
+
+};
+
+#endif

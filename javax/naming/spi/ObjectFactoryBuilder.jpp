@@ -1,0 +1,28 @@
+#ifndef javax_naming_spi_ObjectFactoryBuilder_HPP
+#define javax_naming_spi_ObjectFactoryBuilder_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::naming::spi::ObjectFactoryBuilder : public jObject<::javax::naming::spi::ObjectFactoryBuilder, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_naming_spi / "ObjectFactoryBuilder";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::naming::spi::ObjectFactory(::java::lang::Object, ::java::util::Hashtable)>("createObjectFactory"), //
+	};
+
+	template<typename R = ::javax::naming::spi::ObjectFactory, typename... Args>
+	auto createObjectFactory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createObjectFactory")] != -1);
+		return call<R>("createObjectFactory", forward<Args>(args)...);
+	}
+
+};
+
+#endif

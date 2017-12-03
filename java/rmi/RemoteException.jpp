@@ -1,0 +1,44 @@
+#ifndef java_rmi_RemoteException_HPP
+#define java_rmi_RemoteException_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::rmi::RemoteException : public jObject<::java::rmi::RemoteException, ::java::io::IOException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_rmi / "RemoteException";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::Throwable>("detail"), //
+	};
+
+	template<typename F = ::java::lang::Throwable>
+	auto detail() const {
+		static_assert(field_signatures[jField<F>("detail")] != -1);
+		return at<F>("detail");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Throwable)>(), //
+		jMethod<::java::lang::Throwable()>("getCause"), //
+		jMethod<::java::lang::String()>("getMessage"), //
+	};
+
+	template<typename R = ::java::lang::Throwable, typename... Args>
+	auto getCause(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCause")] != -1);
+		return call<R>("getCause", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMessage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMessage")] != -1);
+		return call<R>("getMessage", forward<Args>(args)...);
+	}
+
+};
+
+#endif

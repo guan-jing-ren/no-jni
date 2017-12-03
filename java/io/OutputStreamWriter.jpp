@@ -1,0 +1,55 @@
+#ifndef java_io_OutputStreamWriter_HPP
+#define java_io_OutputStreamWriter_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::io::OutputStreamWriter : public jObject<::java::io::OutputStreamWriter, ::java::io::Writer> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_io / "OutputStreamWriter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::OutputStream)>(), //
+		jConstructor<::jvoid(::java::io::OutputStream, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::io::OutputStream, ::java::nio::charset::Charset)>(), //
+		jConstructor<::jvoid(::java::io::OutputStream, ::java::nio::charset::CharsetEncoder)>(), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::jvoid()>("flush"), //
+		jMethod<::java::lang::String()>("getEncoding"), //
+		jMethod<::jvoid(::jint)>("write"), //
+		jMethod<::jvoid(::java::lang::String, ::jint, ::jint)>("write"), //
+		jMethod<::jvoid(::jchar *, ::jint, ::jint)>("write"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto flush(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("flush")] != -1);
+		return call<R>("flush", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getEncoding(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEncoding")] != -1);
+		return call<R>("getEncoding", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", forward<Args>(args)...);
+	}
+
+};
+
+#endif

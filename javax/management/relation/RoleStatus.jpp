@@ -1,0 +1,77 @@
+#ifndef javax_management_relation_RoleStatus_HPP
+#define javax_management_relation_RoleStatus_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::management::relation::RoleStatus : public jObject<::javax::management::relation::RoleStatus, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management_relation / "RoleStatus";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("LESS_THAN_MIN_ROLE_DEGREE"), //
+		jField<::jint>("MORE_THAN_MAX_ROLE_DEGREE"), //
+		jField<::jint>("NO_ROLE_WITH_NAME"), //
+		jField<::jint>("REF_MBEAN_NOT_REGISTERED"), //
+		jField<::jint>("REF_MBEAN_OF_INCORRECT_CLASS"), //
+		jField<::jint>("ROLE_NOT_READABLE"), //
+		jField<::jint>("ROLE_NOT_WRITABLE"), //
+	};
+
+	template<typename F = ::jint>
+	static auto LESS_THAN_MIN_ROLE_DEGREE() {
+		static_assert(field_signatures[jField<F>("LESS_THAN_MIN_ROLE_DEGREE")] != -1);
+		return sat<F>("LESS_THAN_MIN_ROLE_DEGREE");
+	}
+
+	template<typename F = ::jint>
+	static auto MORE_THAN_MAX_ROLE_DEGREE() {
+		static_assert(field_signatures[jField<F>("MORE_THAN_MAX_ROLE_DEGREE")] != -1);
+		return sat<F>("MORE_THAN_MAX_ROLE_DEGREE");
+	}
+
+	template<typename F = ::jint>
+	static auto NO_ROLE_WITH_NAME() {
+		static_assert(field_signatures[jField<F>("NO_ROLE_WITH_NAME")] != -1);
+		return sat<F>("NO_ROLE_WITH_NAME");
+	}
+
+	template<typename F = ::jint>
+	static auto REF_MBEAN_NOT_REGISTERED() {
+		static_assert(field_signatures[jField<F>("REF_MBEAN_NOT_REGISTERED")] != -1);
+		return sat<F>("REF_MBEAN_NOT_REGISTERED");
+	}
+
+	template<typename F = ::jint>
+	static auto REF_MBEAN_OF_INCORRECT_CLASS() {
+		static_assert(field_signatures[jField<F>("REF_MBEAN_OF_INCORRECT_CLASS")] != -1);
+		return sat<F>("REF_MBEAN_OF_INCORRECT_CLASS");
+	}
+
+	template<typename F = ::jint>
+	static auto ROLE_NOT_READABLE() {
+		static_assert(field_signatures[jField<F>("ROLE_NOT_READABLE")] != -1);
+		return sat<F>("ROLE_NOT_READABLE");
+	}
+
+	template<typename F = ::jint>
+	static auto ROLE_NOT_WRITABLE() {
+		static_assert(field_signatures[jField<F>("ROLE_NOT_WRITABLE")] != -1);
+		return sat<F>("ROLE_NOT_WRITABLE");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jboolean(::jint)>("isRoleStatus"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isRoleStatus(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isRoleStatus")] != -1);
+		return scall<R>("isRoleStatus", forward<Args>(args)...);
+	}
+
+};
+
+#endif

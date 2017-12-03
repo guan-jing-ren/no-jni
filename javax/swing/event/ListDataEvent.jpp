@@ -1,0 +1,70 @@
+#ifndef javax_swing_event_ListDataEvent_HPP
+#define javax_swing_event_ListDataEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::event::ListDataEvent : public jObject<::javax::swing::event::ListDataEvent, ::java::util::EventObject> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_event / "ListDataEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("CONTENTS_CHANGED"), //
+		jField<::jint>("INTERVAL_ADDED"), //
+		jField<::jint>("INTERVAL_REMOVED"), //
+	};
+
+	template<typename F = ::jint>
+	static auto CONTENTS_CHANGED() {
+		static_assert(field_signatures[jField<F>("CONTENTS_CHANGED")] != -1);
+		return sat<F>("CONTENTS_CHANGED");
+	}
+
+	template<typename F = ::jint>
+	static auto INTERVAL_ADDED() {
+		static_assert(field_signatures[jField<F>("INTERVAL_ADDED")] != -1);
+		return sat<F>("INTERVAL_ADDED");
+	}
+
+	template<typename F = ::jint>
+	static auto INTERVAL_REMOVED() {
+		static_assert(field_signatures[jField<F>("INTERVAL_REMOVED")] != -1);
+		return sat<F>("INTERVAL_REMOVED");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Object, ::jint, ::jint, ::jint)>(), //
+		jMethod<::jint()>("getIndex0"), //
+		jMethod<::jint()>("getIndex1"), //
+		jMethod<::jint()>("getType"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getIndex0(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIndex0")] != -1);
+		return call<R>("getIndex0", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getIndex1(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIndex1")] != -1);
+		return call<R>("getIndex1", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

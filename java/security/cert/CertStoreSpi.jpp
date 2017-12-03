@@ -1,0 +1,36 @@
+#ifndef java_security_cert_CertStoreSpi_HPP
+#define java_security_cert_CertStoreSpi_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::cert::CertStoreSpi : public jObject<::java::security::cert::CertStoreSpi, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_cert / "CertStoreSpi";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::security::cert::CertStoreParameters)>(), //
+		jMethod<::java::util::Collection(::java::security::cert::CRLSelector)>("engineGetCRLs"), //
+		jMethod<::java::util::Collection(::java::security::cert::CertSelector)>("engineGetCertificates"), //
+	};
+
+	template<typename R = ::java::util::Collection, typename... Args>
+	auto engineGetCRLs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("engineGetCRLs")] != -1);
+		return call<R>("engineGetCRLs", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Collection, typename... Args>
+	auto engineGetCertificates(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("engineGetCertificates")] != -1);
+		return call<R>("engineGetCertificates", forward<Args>(args)...);
+	}
+
+};
+
+#endif

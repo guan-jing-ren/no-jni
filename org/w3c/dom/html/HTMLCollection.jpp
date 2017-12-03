@@ -1,0 +1,42 @@
+#ifndef org_w3c_dom_html_HTMLCollection_HPP
+#define org_w3c_dom_html_HTMLCollection_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::w3c::dom::html::HTMLCollection : public jObject<::org::w3c::dom::html::HTMLCollection, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_w3c_dom_html / "HTMLCollection";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("getLength"), //
+		jMethod<::org::w3c::dom::Node(::jint)>("item"), //
+		jMethod<::org::w3c::dom::Node(::java::lang::String)>("namedItem"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLength")] != -1);
+		return call<R>("getLength", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Node, typename... Args>
+	auto item(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("item")] != -1);
+		return call<R>("item", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Node, typename... Args>
+	auto namedItem(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("namedItem")] != -1);
+		return call<R>("namedItem", forward<Args>(args)...);
+	}
+
+};
+
+#endif

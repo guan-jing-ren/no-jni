@@ -1,0 +1,49 @@
+#ifndef java_util_function_LongUnaryOperator_HPP
+#define java_util_function_LongUnaryOperator_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::function::LongUnaryOperator : public jObject<::java::util::function::LongUnaryOperator, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_function / "LongUnaryOperator";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::function::LongUnaryOperator(::java::util::function::LongUnaryOperator)>("andThen"), //
+		jMethod<::jlong(::jlong)>("applyAsLong"), //
+		jMethod<::java::util::function::LongUnaryOperator(::java::util::function::LongUnaryOperator)>("compose"), //
+		jMethod<::java::util::function::LongUnaryOperator()>("identity"), //
+	};
+
+	template<typename R = ::java::util::function::LongUnaryOperator, typename... Args>
+	auto andThen(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("andThen")] != -1);
+		return call<R>("andThen", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto applyAsLong(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("applyAsLong")] != -1);
+		return call<R>("applyAsLong", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::function::LongUnaryOperator, typename... Args>
+	auto compose(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compose")] != -1);
+		return call<R>("compose", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::function::LongUnaryOperator, typename... Args>
+	static auto identity(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("identity")] != -1);
+		return scall<R>("identity", forward<Args>(args)...);
+	}
+
+};
+
+#endif

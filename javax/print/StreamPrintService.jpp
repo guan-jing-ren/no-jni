@@ -1,0 +1,49 @@
+#ifndef javax_print_StreamPrintService_HPP
+#define javax_print_StreamPrintService_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::print::StreamPrintService : public jObject<::javax::print::StreamPrintService, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_print / "StreamPrintService";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("dispose"), //
+		jMethod<::java::lang::String()>("getOutputFormat"), //
+		jMethod<::java::io::OutputStream()>("getOutputStream"), //
+		jMethod<::jboolean()>("isDisposed"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispose(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dispose")] != -1);
+		return call<R>("dispose", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getOutputFormat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOutputFormat")] != -1);
+		return call<R>("getOutputFormat", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::OutputStream, typename... Args>
+	auto getOutputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOutputStream")] != -1);
+		return call<R>("getOutputStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDisposed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isDisposed")] != -1);
+		return call<R>("isDisposed", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,31 @@
+#ifndef javax_xml_xpath_XPathExpression_HPP
+#define javax_xml_xpath_XPathExpression_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::xpath::XPathExpression : public jObject<::javax::xml::xpath::XPathExpression, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_xpath / "XPathExpression";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String(::java::lang::Object)>("evaluate"), //
+		jMethod<::java::lang::Object(::java::lang::Object, ::javax::xml::namespace_::QName)>("evaluate"), //
+		jMethod<::java::lang::String(::org::xml::sax::InputSource)>("evaluate"), //
+		jMethod<::java::lang::Object(::org::xml::sax::InputSource, ::javax::xml::namespace_::QName)>("evaluate"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto evaluate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("evaluate")] != -1);
+		return call<R>("evaluate", forward<Args>(args)...);
+	}
+
+};
+
+#endif

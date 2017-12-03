@@ -1,0 +1,44 @@
+#ifndef javax_naming_ldap_SortKey_HPP
+#define javax_naming_ldap_SortKey_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::naming::ldap::SortKey : public jObject<::javax::naming::ldap::SortKey, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_naming_ldap / "SortKey";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::jboolean, ::java::lang::String)>(), //
+		jMethod<::java::lang::String()>("getAttributeID"), //
+		jMethod<::java::lang::String()>("getMatchingRuleID"), //
+		jMethod<::jboolean()>("isAscending"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAttributeID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttributeID")] != -1);
+		return call<R>("getAttributeID", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMatchingRuleID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMatchingRuleID")] != -1);
+		return call<R>("getMatchingRuleID", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isAscending(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isAscending")] != -1);
+		return call<R>("isAscending", forward<Args>(args)...);
+	}
+
+};
+
+#endif

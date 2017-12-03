@@ -1,0 +1,36 @@
+#ifndef java_security_spec_RSAPrivateKeySpec_HPP
+#define java_security_spec_RSAPrivateKeySpec_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::spec::RSAPrivateKeySpec : public jObject<::java::security::spec::RSAPrivateKeySpec, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_spec / "RSAPrivateKeySpec";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::math::BigInteger, ::java::math::BigInteger)>(), //
+		jMethod<::java::math::BigInteger()>("getModulus"), //
+		jMethod<::java::math::BigInteger()>("getPrivateExponent"), //
+	};
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getModulus(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getModulus")] != -1);
+		return call<R>("getModulus", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getPrivateExponent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrivateExponent")] != -1);
+		return call<R>("getPrivateExponent", forward<Args>(args)...);
+	}
+
+};
+
+#endif

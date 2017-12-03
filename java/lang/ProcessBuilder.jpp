@@ -1,0 +1,96 @@
+#ifndef java_lang_ProcessBuilder_HPP
+#define java_lang_ProcessBuilder_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::lang::ProcessBuilder : public jObject<::java::lang::ProcessBuilder, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang / "ProcessBuilder";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::util::List)>(), //
+		jConstructor<::jvoid(::java::lang::String *)>(), //
+		jMethod<::java::util::List()>("command"), //
+		jMethod<::java::lang::ProcessBuilder(::java::util::List)>("command"), //
+		jMethod<::java::lang::ProcessBuilder(::java::lang::String *)>("command"), //
+		jMethod<::java::io::File()>("directory"), //
+		jMethod<::java::lang::ProcessBuilder(::java::io::File)>("directory"), //
+		jMethod<::java::util::Map()>("environment"), //
+		jMethod<::java::lang::ProcessBuilder()>("inheritIO"), //
+		jMethod<::java::lang::ProcessBuilder$Redirect()>("redirectError"), //
+		jMethod<::java::lang::ProcessBuilder(::java::io::File)>("redirectError"), //
+		jMethod<::java::lang::ProcessBuilder(::java::lang::ProcessBuilder$Redirect)>("redirectError"), //
+		jMethod<::jboolean()>("redirectErrorStream"), //
+		jMethod<::java::lang::ProcessBuilder(::jboolean)>("redirectErrorStream"), //
+		jMethod<::java::lang::ProcessBuilder$Redirect()>("redirectInput"), //
+		jMethod<::java::lang::ProcessBuilder(::java::io::File)>("redirectInput"), //
+		jMethod<::java::lang::ProcessBuilder(::java::lang::ProcessBuilder$Redirect)>("redirectInput"), //
+		jMethod<::java::lang::ProcessBuilder$Redirect()>("redirectOutput"), //
+		jMethod<::java::lang::ProcessBuilder(::java::io::File)>("redirectOutput"), //
+		jMethod<::java::lang::ProcessBuilder(::java::lang::ProcessBuilder$Redirect)>("redirectOutput"), //
+		jMethod<::java::lang::Process()>("start"), //
+	};
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto command(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("command")] != -1);
+		return call<R>("command", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::File, typename... Args>
+	auto directory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("directory")] != -1);
+		return call<R>("directory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto environment(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("environment")] != -1);
+		return call<R>("environment", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::ProcessBuilder, typename... Args>
+	auto inheritIO(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("inheritIO")] != -1);
+		return call<R>("inheritIO", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::ProcessBuilder$Redirect, typename... Args>
+	auto redirectError(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("redirectError")] != -1);
+		return call<R>("redirectError", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto redirectErrorStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("redirectErrorStream")] != -1);
+		return call<R>("redirectErrorStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::ProcessBuilder$Redirect, typename... Args>
+	auto redirectInput(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("redirectInput")] != -1);
+		return call<R>("redirectInput", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::ProcessBuilder$Redirect, typename... Args>
+	auto redirectOutput(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("redirectOutput")] != -1);
+		return call<R>("redirectOutput", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Process, typename... Args>
+	auto start(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("start")] != -1);
+		return call<R>("start", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,28 @@
+#ifndef java_rmi_server_RMIFailureHandler_HPP
+#define java_rmi_server_RMIFailureHandler_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::rmi::server::RMIFailureHandler : public jObject<::java::rmi::server::RMIFailureHandler, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_rmi_server / "RMIFailureHandler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::lang::Exception)>("failure"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto failure(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("failure")] != -1);
+		return call<R>("failure", forward<Args>(args)...);
+	}
+
+};
+
+#endif

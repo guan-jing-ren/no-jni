@@ -1,0 +1,58 @@
+#ifndef javax_imageio_spi_IIOServiceProvider_HPP
+#define javax_imageio_spi_IIOServiceProvider_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::imageio::spi::IIOServiceProvider : public jObject<::javax::imageio::spi::IIOServiceProvider, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_imageio_spi / "IIOServiceProvider";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String)>(), //
+		jMethod<::java::lang::String(::java::util::Locale)>("getDescription"), //
+		jMethod<::java::lang::String()>("getVendorName"), //
+		jMethod<::java::lang::String()>("getVersion"), //
+		jMethod<::jvoid(::javax::imageio::spi::ServiceRegistry, ::java::lang::Class)>("onDeregistration"), //
+		jMethod<::jvoid(::javax::imageio::spi::ServiceRegistry, ::java::lang::Class)>("onRegistration"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDescription(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDescription")] != -1);
+		return call<R>("getDescription", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getVendorName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getVendorName")] != -1);
+		return call<R>("getVendorName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getVersion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getVersion")] != -1);
+		return call<R>("getVersion", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto onDeregistration(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("onDeregistration")] != -1);
+		return call<R>("onDeregistration", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto onRegistration(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("onRegistration")] != -1);
+		return call<R>("onRegistration", forward<Args>(args)...);
+	}
+
+};
+
+#endif

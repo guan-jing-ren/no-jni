@@ -1,0 +1,29 @@
+#ifndef javax_sql_rowset_RowSetProvider_HPP
+#define javax_sql_rowset_RowSetProvider_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::sql::rowset::RowSetProvider : public jObject<::javax::sql::rowset::RowSetProvider, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sql_rowset / "RowSetProvider";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::sql::rowset::RowSetFactory()>("newFactory"), //
+		jMethod<::javax::sql::rowset::RowSetFactory(::java::lang::String, ::java::lang::ClassLoader)>("newFactory"), //
+	};
+
+	template<typename R = ::javax::sql::rowset::RowSetFactory, typename... Args>
+	static auto newFactory(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newFactory")] != -1);
+		return scall<R>("newFactory", forward<Args>(args)...);
+	}
+
+};
+
+#endif

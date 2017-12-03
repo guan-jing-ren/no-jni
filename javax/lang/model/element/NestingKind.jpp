@@ -1,0 +1,69 @@
+#ifndef javax_lang_model_element_NestingKind_HPP
+#define javax_lang_model_element_NestingKind_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::lang::model::element::NestingKind : public jObject<::javax::lang::model::element::NestingKind, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_lang_model_element / "NestingKind";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::lang::model::element::NestingKind>("ANONYMOUS"), //
+		jField<::javax::lang::model::element::NestingKind>("LOCAL"), //
+		jField<::javax::lang::model::element::NestingKind>("MEMBER"), //
+		jField<::javax::lang::model::element::NestingKind>("TOP_LEVEL"), //
+	};
+
+	template<typename F = ::javax::lang::model::element::NestingKind>
+	static auto ANONYMOUS() {
+		static_assert(field_signatures[jField<F>("ANONYMOUS")] != -1);
+		return sat<F>("ANONYMOUS");
+	}
+
+	template<typename F = ::javax::lang::model::element::NestingKind>
+	static auto LOCAL() {
+		static_assert(field_signatures[jField<F>("LOCAL")] != -1);
+		return sat<F>("LOCAL");
+	}
+
+	template<typename F = ::javax::lang::model::element::NestingKind>
+	static auto MEMBER() {
+		static_assert(field_signatures[jField<F>("MEMBER")] != -1);
+		return sat<F>("MEMBER");
+	}
+
+	template<typename F = ::javax::lang::model::element::NestingKind>
+	static auto TOP_LEVEL() {
+		static_assert(field_signatures[jField<F>("TOP_LEVEL")] != -1);
+		return sat<F>("TOP_LEVEL");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean()>("isNested"), //
+		jMethod<::javax::lang::model::element::NestingKind(::java::lang::String)>("valueOf"), //
+		jMethod<::javax::lang::model::element::NestingKind *()>("values"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isNested(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isNested")] != -1);
+		return call<R>("isNested", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::lang::model::element::NestingKind, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::lang::model::element::NestingKind *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

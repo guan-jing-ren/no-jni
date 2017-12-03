@@ -1,0 +1,85 @@
+#ifndef javax_xml_xpath_XPathFactory_HPP
+#define javax_xml_xpath_XPathFactory_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::xpath::XPathFactory : public jObject<::javax::xml::xpath::XPathFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_xpath / "XPathFactory";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("DEFAULT_OBJECT_MODEL_URI"), //
+		jField<::java::lang::String>("DEFAULT_PROPERTY_NAME"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto DEFAULT_OBJECT_MODEL_URI() {
+		static_assert(field_signatures[jField<F>("DEFAULT_OBJECT_MODEL_URI")] != -1);
+		return sat<F>("DEFAULT_OBJECT_MODEL_URI");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto DEFAULT_PROPERTY_NAME() {
+		static_assert(field_signatures[jField<F>("DEFAULT_PROPERTY_NAME")] != -1);
+		return sat<F>("DEFAULT_PROPERTY_NAME");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::lang::String)>("getFeature"), //
+		jMethod<::jboolean(::java::lang::String)>("isObjectModelSupported"), //
+		jMethod<::javax::xml::xpath::XPathFactory()>("newInstance"), //
+		jMethod<::javax::xml::xpath::XPathFactory(::java::lang::String)>("newInstance"), //
+		jMethod<::javax::xml::xpath::XPathFactory(::java::lang::String, ::java::lang::String, ::java::lang::ClassLoader)>("newInstance"), //
+		jMethod<::javax::xml::xpath::XPath()>("newXPath"), //
+		jMethod<::jvoid(::java::lang::String, ::jboolean)>("setFeature"), //
+		jMethod<::jvoid(::javax::xml::xpath::XPathFunctionResolver)>("setXPathFunctionResolver"), //
+		jMethod<::jvoid(::javax::xml::xpath::XPathVariableResolver)>("setXPathVariableResolver"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getFeature(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFeature")] != -1);
+		return call<R>("getFeature", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isObjectModelSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isObjectModelSupported")] != -1);
+		return call<R>("isObjectModelSupported", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::xpath::XPathFactory, typename... Args>
+	static auto newInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newInstance")] != -1);
+		return scall<R>("newInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::xpath::XPath, typename... Args>
+	auto newXPath(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newXPath")] != -1);
+		return call<R>("newXPath", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setFeature(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setFeature")] != -1);
+		return call<R>("setFeature", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setXPathFunctionResolver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setXPathFunctionResolver")] != -1);
+		return call<R>("setXPathFunctionResolver", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setXPathVariableResolver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setXPathVariableResolver")] != -1);
+		return call<R>("setXPathVariableResolver", forward<Args>(args)...);
+	}
+
+};
+
+#endif

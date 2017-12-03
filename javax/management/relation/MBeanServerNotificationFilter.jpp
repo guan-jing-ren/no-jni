@@ -1,0 +1,71 @@
+#ifndef javax_management_relation_MBeanServerNotificationFilter_HPP
+#define javax_management_relation_MBeanServerNotificationFilter_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::management::relation::MBeanServerNotificationFilter : public jObject<::javax::management::relation::MBeanServerNotificationFilter, ::javax::management::NotificationFilterSupport> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management_relation / "MBeanServerNotificationFilter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid()>("disableAllObjectNames"), //
+		jMethod<::jvoid(::javax::management::ObjectName)>("disableObjectName"), //
+		jMethod<::jvoid()>("enableAllObjectNames"), //
+		jMethod<::jvoid(::javax::management::ObjectName)>("enableObjectName"), //
+		jMethod<::java::util::Vector()>("getDisabledObjectNames"), //
+		jMethod<::java::util::Vector()>("getEnabledObjectNames"), //
+		jMethod<::jboolean(::javax::management::Notification)>("isNotificationEnabled"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto disableAllObjectNames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("disableAllObjectNames")] != -1);
+		return call<R>("disableAllObjectNames", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto disableObjectName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("disableObjectName")] != -1);
+		return call<R>("disableObjectName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto enableAllObjectNames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("enableAllObjectNames")] != -1);
+		return call<R>("enableAllObjectNames", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto enableObjectName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("enableObjectName")] != -1);
+		return call<R>("enableObjectName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Vector, typename... Args>
+	auto getDisabledObjectNames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDisabledObjectNames")] != -1);
+		return call<R>("getDisabledObjectNames", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Vector, typename... Args>
+	auto getEnabledObjectNames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEnabledObjectNames")] != -1);
+		return call<R>("getEnabledObjectNames", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isNotificationEnabled(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isNotificationEnabled")] != -1);
+		return call<R>("isNotificationEnabled", forward<Args>(args)...);
+	}
+
+};
+
+#endif

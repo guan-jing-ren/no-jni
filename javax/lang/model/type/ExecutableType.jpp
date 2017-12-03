@@ -1,0 +1,56 @@
+#ifndef javax_lang_model_type_ExecutableType_HPP
+#define javax_lang_model_type_ExecutableType_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::lang::model::type::ExecutableType : public jObject<::javax::lang::model::type::ExecutableType, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_lang_model_type / "ExecutableType";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::List()>("getParameterTypes"), //
+		jMethod<::javax::lang::model::type::TypeMirror()>("getReceiverType"), //
+		jMethod<::javax::lang::model::type::TypeMirror()>("getReturnType"), //
+		jMethod<::java::util::List()>("getThrownTypes"), //
+		jMethod<::java::util::List()>("getTypeVariables"), //
+	};
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getParameterTypes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParameterTypes")] != -1);
+		return call<R>("getParameterTypes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::lang::model::type::TypeMirror, typename... Args>
+	auto getReceiverType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getReceiverType")] != -1);
+		return call<R>("getReceiverType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::lang::model::type::TypeMirror, typename... Args>
+	auto getReturnType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getReturnType")] != -1);
+		return call<R>("getReturnType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getThrownTypes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getThrownTypes")] != -1);
+		return call<R>("getThrownTypes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getTypeVariables(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTypeVariables")] != -1);
+		return call<R>("getTypeVariables", forward<Args>(args)...);
+	}
+
+};
+
+#endif

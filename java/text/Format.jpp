@@ -1,0 +1,51 @@
+#ifndef java_text_Format_HPP
+#define java_text_Format_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::text::Format : public jObject<::java::text::Format, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_text / "Format";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::java::lang::String(::java::lang::Object)>("format"), //
+		jMethod<::java::lang::StringBuffer(::java::lang::Object, ::java::lang::StringBuffer, ::java::text::FieldPosition)>("format"), //
+		jMethod<::java::text::AttributedCharacterIterator(::java::lang::Object)>("formatToCharacterIterator"), //
+		jMethod<::java::lang::Object(::java::lang::String)>("parseObject"), //
+		jMethod<::java::lang::Object(::java::lang::String, ::java::text::ParsePosition)>("parseObject"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto format(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("format")] != -1);
+		return call<R>("format", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::text::AttributedCharacterIterator, typename... Args>
+	auto formatToCharacterIterator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("formatToCharacterIterator")] != -1);
+		return call<R>("formatToCharacterIterator", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto parseObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("parseObject")] != -1);
+		return call<R>("parseObject", forward<Args>(args)...);
+	}
+
+};
+
+#endif

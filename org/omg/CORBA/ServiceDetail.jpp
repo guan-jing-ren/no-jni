@@ -1,0 +1,36 @@
+#ifndef org_omg_CORBA_ServiceDetail_HPP
+#define org_omg_CORBA_ServiceDetail_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::CORBA::ServiceDetail : public jObject<::org::omg::CORBA::ServiceDetail, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CORBA / "ServiceDetail";
+
+	constexpr static Enume field_signatures{
+		jField<::jbyte *>("service_detail"), //
+		jField<::jint>("service_detail_type"), //
+	};
+
+	template<typename F = ::jbyte *>
+	auto service_detail() const {
+		static_assert(field_signatures[jField<F>("service_detail")] != -1);
+		return at<F>("service_detail");
+	}
+
+	template<typename F = ::jint>
+	auto service_detail_type() const {
+		static_assert(field_signatures[jField<F>("service_detail_type")] != -1);
+		return at<F>("service_detail_type");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint, ::jbyte *)>(), //
+	};
+
+};
+
+#endif

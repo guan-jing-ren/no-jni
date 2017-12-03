@@ -1,0 +1,28 @@
+#ifndef javax_management_NotificationFilter_HPP
+#define javax_management_NotificationFilter_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::management::NotificationFilter : public jObject<::javax::management::NotificationFilter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management / "NotificationFilter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::javax::management::Notification)>("isNotificationEnabled"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isNotificationEnabled(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isNotificationEnabled")] != -1);
+		return call<R>("isNotificationEnabled", forward<Args>(args)...);
+	}
+
+};
+
+#endif

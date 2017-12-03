@@ -1,0 +1,35 @@
+#ifndef org_omg_PortableInterceptor_ORBInitializerOperations_HPP
+#define org_omg_PortableInterceptor_ORBInitializerOperations_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::PortableInterceptor::ORBInitializerOperations : public jObject<::org::omg::PortableInterceptor::ORBInitializerOperations, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_PortableInterceptor / "ORBInitializerOperations";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::org::omg::PortableInterceptor::ORBInitInfo)>("post_init"), //
+		jMethod<::jvoid(::org::omg::PortableInterceptor::ORBInitInfo)>("pre_init"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto post_init(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("post_init")] != -1);
+		return call<R>("post_init", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto pre_init(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("pre_init")] != -1);
+		return call<R>("pre_init", forward<Args>(args)...);
+	}
+
+};
+
+#endif

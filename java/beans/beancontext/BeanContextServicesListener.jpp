@@ -1,0 +1,28 @@
+#ifndef java_beans_beancontext_BeanContextServicesListener_HPP
+#define java_beans_beancontext_BeanContextServicesListener_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::beans::beancontext::BeanContextServicesListener : public jObject<::java::beans::beancontext::BeanContextServicesListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_beans_beancontext / "BeanContextServicesListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::beans::beancontext::BeanContextServiceAvailableEvent)>("serviceAvailable"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto serviceAvailable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("serviceAvailable")] != -1);
+		return call<R>("serviceAvailable", forward<Args>(args)...);
+	}
+
+};
+
+#endif

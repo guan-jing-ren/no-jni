@@ -1,0 +1,28 @@
+#ifndef javax_naming_Referenceable_HPP
+#define javax_naming_Referenceable_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::naming::Referenceable : public jObject<::javax::naming::Referenceable, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_naming / "Referenceable";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::naming::Reference()>("getReference"), //
+	};
+
+	template<typename R = ::javax::naming::Reference, typename... Args>
+	auto getReference(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getReference")] != -1);
+		return call<R>("getReference", forward<Args>(args)...);
+	}
+
+};
+
+#endif

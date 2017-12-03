@@ -1,0 +1,59 @@
+#ifndef java_util_concurrent_FutureTask_HPP
+#define java_util_concurrent_FutureTask_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::concurrent::FutureTask : public jObject<::java::util::concurrent::FutureTask, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_concurrent / "FutureTask";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Runnable, ::java::lang::Object)>(), //
+		jConstructor<::jvoid(::java::util::concurrent::Callable)>(), //
+		jMethod<::jboolean(::jboolean)>("cancel"), //
+		jMethod<::java::lang::Object()>("get"), //
+		jMethod<::java::lang::Object(::jlong, ::java::util::concurrent::TimeUnit)>("get"), //
+		jMethod<::jboolean()>("isCancelled"), //
+		jMethod<::jboolean()>("isDone"), //
+		jMethod<::jvoid()>("run"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto cancel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("cancel")] != -1);
+		return call<R>("cancel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isCancelled(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isCancelled")] != -1);
+		return call<R>("isCancelled", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isDone")] != -1);
+		return call<R>("isDone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto run(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("run")] != -1);
+		return call<R>("run", forward<Args>(args)...);
+	}
+
+};
+
+#endif

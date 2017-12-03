@@ -1,0 +1,84 @@
+#ifndef java_awt_SplashScreen_HPP
+#define java_awt_SplashScreen_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::SplashScreen : public jObject<::java::awt::SplashScreen, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "SplashScreen";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("close"), //
+		jMethod<::java::awt::Graphics2D()>("createGraphics"), //
+		jMethod<::java::awt::Rectangle()>("getBounds"), //
+		jMethod<::java::net::URL()>("getImageURL"), //
+		jMethod<::java::awt::Dimension()>("getSize"), //
+		jMethod<::java::awt::SplashScreen()>("getSplashScreen"), //
+		jMethod<::jboolean()>("isVisible"), //
+		jMethod<::jvoid(::java::net::URL)>("setImageURL"), //
+		jMethod<::jvoid()>("update"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Graphics2D, typename... Args>
+	auto createGraphics(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createGraphics")] != -1);
+		return call<R>("createGraphics", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Rectangle, typename... Args>
+	auto getBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBounds")] != -1);
+		return call<R>("getBounds", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::URL, typename... Args>
+	auto getImageURL(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getImageURL")] != -1);
+		return call<R>("getImageURL", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Dimension, typename... Args>
+	auto getSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSize")] != -1);
+		return call<R>("getSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::SplashScreen, typename... Args>
+	static auto getSplashScreen(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSplashScreen")] != -1);
+		return scall<R>("getSplashScreen", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isVisible(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isVisible")] != -1);
+		return call<R>("isVisible", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setImageURL(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setImageURL")] != -1);
+		return call<R>("setImageURL", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto update(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("update")] != -1);
+		return call<R>("update", forward<Args>(args)...);
+	}
+
+};
+
+#endif

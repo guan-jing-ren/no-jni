@@ -1,0 +1,66 @@
+#ifndef javax_crypto_spec_RC5ParameterSpec_HPP
+#define javax_crypto_spec_RC5ParameterSpec_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::crypto::spec::RC5ParameterSpec : public jObject<::javax::crypto::spec::RC5ParameterSpec, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_crypto_spec / "RC5ParameterSpec";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::jint, ::jint, ::jint, ::jbyte *)>(), //
+		jConstructor<::jvoid(::jint, ::jint, ::jint, ::jbyte *, ::jint)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jbyte *()>("getIV"), //
+		jMethod<::jint()>("getRounds"), //
+		jMethod<::jint()>("getVersion"), //
+		jMethod<::jint()>("getWordSize"), //
+		jMethod<::jint()>("hashCode"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getIV(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIV")] != -1);
+		return call<R>("getIV", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getRounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRounds")] != -1);
+		return call<R>("getRounds", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getVersion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getVersion")] != -1);
+		return call<R>("getVersion", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getWordSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWordSize")] != -1);
+		return call<R>("getWordSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+};
+
+#endif

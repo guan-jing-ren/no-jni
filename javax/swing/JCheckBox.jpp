@@ -1,0 +1,70 @@
+#ifndef javax_swing_JCheckBox_HPP
+#define javax_swing_JCheckBox_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::JCheckBox : public jObject<::javax::swing::JCheckBox, ::javax::swing::JToggleButton> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "JCheckBox";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("BORDER_PAINTED_FLAT_CHANGED_PROPERTY"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto BORDER_PAINTED_FLAT_CHANGED_PROPERTY() {
+		static_assert(field_signatures[jField<F>("BORDER_PAINTED_FLAT_CHANGED_PROPERTY")] != -1);
+		return sat<F>("BORDER_PAINTED_FLAT_CHANGED_PROPERTY");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::javax::swing::Icon)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::javax::swing::Icon, ::jboolean)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::jboolean)>(), //
+		jConstructor<::jvoid(::javax::swing::Action)>(), //
+		jConstructor<::jvoid(::javax::swing::Icon)>(), //
+		jConstructor<::jvoid(::javax::swing::Icon, ::jboolean)>(), //
+		jMethod<::javax::accessibility::AccessibleContext()>("getAccessibleContext"), //
+		jMethod<::java::lang::String()>("getUIClassID"), //
+		jMethod<::jboolean()>("isBorderPaintedFlat"), //
+		jMethod<::jvoid(::jboolean)>("setBorderPaintedFlat"), //
+		jMethod<::jvoid()>("updateUI"), //
+	};
+
+	template<typename R = ::javax::accessibility::AccessibleContext, typename... Args>
+	auto getAccessibleContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAccessibleContext")] != -1);
+		return call<R>("getAccessibleContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getUIClassID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUIClassID")] != -1);
+		return call<R>("getUIClassID", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isBorderPaintedFlat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isBorderPaintedFlat")] != -1);
+		return call<R>("isBorderPaintedFlat", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setBorderPaintedFlat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setBorderPaintedFlat")] != -1);
+		return call<R>("setBorderPaintedFlat", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateUI(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateUI")] != -1);
+		return call<R>("updateUI", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,55 @@
+#ifndef java_util_stream_Collector$Characteristics_HPP
+#define java_util_stream_Collector$Characteristics_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::stream::Collector$Characteristics : public jObject<::java::util::stream::Collector$Characteristics, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_stream / "Collector$Characteristics";
+
+	constexpr static Enume field_signatures{
+		jField<::java::util::stream::Collector$Characteristics>("CONCURRENT"), //
+		jField<::java::util::stream::Collector$Characteristics>("IDENTITY_FINISH"), //
+		jField<::java::util::stream::Collector$Characteristics>("UNORDERED"), //
+	};
+
+	template<typename F = ::java::util::stream::Collector$Characteristics>
+	static auto CONCURRENT() {
+		static_assert(field_signatures[jField<F>("CONCURRENT")] != -1);
+		return sat<F>("CONCURRENT");
+	}
+
+	template<typename F = ::java::util::stream::Collector$Characteristics>
+	static auto IDENTITY_FINISH() {
+		static_assert(field_signatures[jField<F>("IDENTITY_FINISH")] != -1);
+		return sat<F>("IDENTITY_FINISH");
+	}
+
+	template<typename F = ::java::util::stream::Collector$Characteristics>
+	static auto UNORDERED() {
+		static_assert(field_signatures[jField<F>("UNORDERED")] != -1);
+		return sat<F>("UNORDERED");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::stream::Collector$Characteristics(::java::lang::String)>("valueOf"), //
+		jMethod<::java::util::stream::Collector$Characteristics *()>("values"), //
+	};
+
+	template<typename R = ::java::util::stream::Collector$Characteristics, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::Collector$Characteristics *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

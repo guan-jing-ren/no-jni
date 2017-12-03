@@ -1,0 +1,35 @@
+#ifndef org_omg_CORBA_portable_ValueOutputStream_HPP
+#define org_omg_CORBA_portable_ValueOutputStream_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::omg::CORBA::portable::ValueOutputStream : public jObject<::org::omg::CORBA::portable::ValueOutputStream, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CORBA_portable / "ValueOutputStream";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("end_value"), //
+		jMethod<::jvoid(::java::lang::String)>("start_value"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto end_value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("end_value")] != -1);
+		return call<R>("end_value", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto start_value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("start_value")] != -1);
+		return call<R>("start_value", forward<Args>(args)...);
+	}
+
+};
+
+#endif

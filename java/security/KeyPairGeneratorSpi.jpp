@@ -1,0 +1,37 @@
+#ifndef java_security_KeyPairGeneratorSpi_HPP
+#define java_security_KeyPairGeneratorSpi_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::KeyPairGeneratorSpi : public jObject<::java::security::KeyPairGeneratorSpi, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "KeyPairGeneratorSpi";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::security::KeyPair()>("generateKeyPair"), //
+		jMethod<::jvoid(::jint, ::java::security::SecureRandom)>("initialize"), //
+		jMethod<::jvoid(::java::security::spec::AlgorithmParameterSpec, ::java::security::SecureRandom)>("initialize"), //
+	};
+
+	template<typename R = ::java::security::KeyPair, typename... Args>
+	auto generateKeyPair(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("generateKeyPair")] != -1);
+		return call<R>("generateKeyPair", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto initialize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("initialize")] != -1);
+		return call<R>("initialize", forward<Args>(args)...);
+	}
+
+};
+
+#endif

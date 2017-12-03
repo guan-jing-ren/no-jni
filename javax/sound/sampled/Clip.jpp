@@ -1,0 +1,77 @@
+#ifndef javax_sound_sampled_Clip_HPP
+#define javax_sound_sampled_Clip_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::sound::sampled::Clip : public jObject<::javax::sound::sampled::Clip, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sound_sampled / "Clip";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("LOOP_CONTINUOUSLY"), //
+	};
+
+	template<typename F = ::jint>
+	static auto LOOP_CONTINUOUSLY() {
+		static_assert(field_signatures[jField<F>("LOOP_CONTINUOUSLY")] != -1);
+		return sat<F>("LOOP_CONTINUOUSLY");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("getFrameLength"), //
+		jMethod<::jlong()>("getMicrosecondLength"), //
+		jMethod<::jvoid(::jint)>("loop"), //
+		jMethod<::jvoid(::javax::sound::sampled::AudioFormat, ::jbyte *, ::jint, ::jint)>("open"), //
+		jMethod<::jvoid(::javax::sound::sampled::AudioInputStream)>("open"), //
+		jMethod<::jvoid(::jint)>("setFramePosition"), //
+		jMethod<::jvoid(::jint, ::jint)>("setLoopPoints"), //
+		jMethod<::jvoid(::jlong)>("setMicrosecondPosition"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getFrameLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFrameLength")] != -1);
+		return call<R>("getFrameLength", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getMicrosecondLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMicrosecondLength")] != -1);
+		return call<R>("getMicrosecondLength", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto loop(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("loop")] != -1);
+		return call<R>("loop", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto open(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("open")] != -1);
+		return call<R>("open", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setFramePosition(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setFramePosition")] != -1);
+		return call<R>("setFramePosition", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLoopPoints(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLoopPoints")] != -1);
+		return call<R>("setLoopPoints", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setMicrosecondPosition(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMicrosecondPosition")] != -1);
+		return call<R>("setMicrosecondPosition", forward<Args>(args)...);
+	}
+
+};
+
+#endif

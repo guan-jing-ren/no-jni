@@ -1,0 +1,39 @@
+#ifndef javax_sql_rowset_RowSetWarning_HPP
+#define javax_sql_rowset_RowSetWarning_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::sql::rowset::RowSetWarning : public jObject<::javax::sql::rowset::RowSetWarning, ::java::sql::SQLException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sql_rowset / "RowSetWarning";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::jint)>(), //
+		jMethod<::javax::sql::rowset::RowSetWarning()>("getNextWarning"), //
+		jMethod<::jvoid(::javax::sql::rowset::RowSetWarning)>("setNextWarning"), //
+	};
+
+	template<typename R = ::javax::sql::rowset::RowSetWarning, typename... Args>
+	auto getNextWarning(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNextWarning")] != -1);
+		return call<R>("getNextWarning", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setNextWarning(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setNextWarning")] != -1);
+		return call<R>("setNextWarning", forward<Args>(args)...);
+	}
+
+};
+
+#endif

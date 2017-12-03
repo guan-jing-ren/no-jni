@@ -1,0 +1,57 @@
+#ifndef javax_security_auth_kerberos_ServicePermission_HPP
+#define javax_security_auth_kerberos_ServicePermission_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::security::auth::kerberos::ServicePermission : public jObject<::javax::security::auth::kerberos::ServicePermission, ::java::security::Permission> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_security_auth_kerberos / "ServicePermission";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::lang::String()>("getActions"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jboolean(::java::security::Permission)>("implies"), //
+		jMethod<::java::security::PermissionCollection()>("newPermissionCollection"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getActions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getActions")] != -1);
+		return call<R>("getActions", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto implies(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("implies")] != -1);
+		return call<R>("implies", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::PermissionCollection, typename... Args>
+	auto newPermissionCollection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newPermissionCollection")] != -1);
+		return call<R>("newPermissionCollection", forward<Args>(args)...);
+	}
+
+};
+
+#endif

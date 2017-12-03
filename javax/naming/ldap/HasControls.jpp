@@ -1,0 +1,28 @@
+#ifndef javax_naming_ldap_HasControls_HPP
+#define javax_naming_ldap_HasControls_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::naming::ldap::HasControls : public jObject<::javax::naming::ldap::HasControls, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_naming_ldap / "HasControls";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::naming::ldap::Control *()>("getControls"), //
+	};
+
+	template<typename R = ::javax::naming::ldap::Control *, typename... Args>
+	auto getControls(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getControls")] != -1);
+		return call<R>("getControls", forward<Args>(args)...);
+	}
+
+};
+
+#endif

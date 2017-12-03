@@ -1,0 +1,42 @@
+#ifndef javax_xml_ws_handler_PortInfo_HPP
+#define javax_xml_ws_handler_PortInfo_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::ws::handler::PortInfo : public jObject<::javax::xml::ws::handler::PortInfo, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_ws_handler / "PortInfo";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getBindingID"), //
+		jMethod<::javax::xml::namespace_::QName()>("getPortName"), //
+		jMethod<::javax::xml::namespace_::QName()>("getServiceName"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getBindingID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBindingID")] != -1);
+		return call<R>("getBindingID", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::namespace_::QName, typename... Args>
+	auto getPortName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPortName")] != -1);
+		return call<R>("getPortName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::namespace_::QName, typename... Args>
+	auto getServiceName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getServiceName")] != -1);
+		return call<R>("getServiceName", forward<Args>(args)...);
+	}
+
+};
+
+#endif

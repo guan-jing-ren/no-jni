@@ -1,0 +1,83 @@
+#ifndef org_w3c_dom_DOMError_HPP
+#define org_w3c_dom_DOMError_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::w3c::dom::DOMError : public jObject<::org::w3c::dom::DOMError, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_w3c_dom / "DOMError";
+
+	constexpr static Enume field_signatures{
+		jField<::jshort>("SEVERITY_ERROR"), //
+		jField<::jshort>("SEVERITY_FATAL_ERROR"), //
+		jField<::jshort>("SEVERITY_WARNING"), //
+	};
+
+	template<typename F = ::jshort>
+	static auto SEVERITY_ERROR() {
+		static_assert(field_signatures[jField<F>("SEVERITY_ERROR")] != -1);
+		return sat<F>("SEVERITY_ERROR");
+	}
+
+	template<typename F = ::jshort>
+	static auto SEVERITY_FATAL_ERROR() {
+		static_assert(field_signatures[jField<F>("SEVERITY_FATAL_ERROR")] != -1);
+		return sat<F>("SEVERITY_FATAL_ERROR");
+	}
+
+	template<typename F = ::jshort>
+	static auto SEVERITY_WARNING() {
+		static_assert(field_signatures[jField<F>("SEVERITY_WARNING")] != -1);
+		return sat<F>("SEVERITY_WARNING");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::w3c::dom::DOMLocator()>("getLocation"), //
+		jMethod<::java::lang::String()>("getMessage"), //
+		jMethod<::java::lang::Object()>("getRelatedData"), //
+		jMethod<::java::lang::Object()>("getRelatedException"), //
+		jMethod<::jshort()>("getSeverity"), //
+		jMethod<::java::lang::String()>("getType"), //
+	};
+
+	template<typename R = ::org::w3c::dom::DOMLocator, typename... Args>
+	auto getLocation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLocation")] != -1);
+		return call<R>("getLocation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMessage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMessage")] != -1);
+		return call<R>("getMessage", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getRelatedData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRelatedData")] != -1);
+		return call<R>("getRelatedData", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getRelatedException(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRelatedException")] != -1);
+		return call<R>("getRelatedException", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jshort, typename... Args>
+	auto getSeverity(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSeverity")] != -1);
+		return call<R>("getSeverity", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", forward<Args>(args)...);
+	}
+
+};
+
+#endif

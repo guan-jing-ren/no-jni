@@ -1,0 +1,36 @@
+#ifndef javax_xml_ws_spi_Invoker_HPP
+#define javax_xml_ws_spi_Invoker_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::ws::spi::Invoker : public jObject<::javax::xml::ws::spi::Invoker, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_ws_spi / "Invoker";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::javax::xml::ws::WebServiceContext)>("inject"), //
+		jMethod<::java::lang::Object(::java::lang::reflect::Method, ::java::lang::Object *)>("invoke"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto inject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("inject")] != -1);
+		return call<R>("inject", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto invoke(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("invoke")] != -1);
+		return call<R>("invoke", forward<Args>(args)...);
+	}
+
+};
+
+#endif

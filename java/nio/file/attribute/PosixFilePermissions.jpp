@@ -1,0 +1,42 @@
+#ifndef java_nio_file_attribute_PosixFilePermissions_HPP
+#define java_nio_file_attribute_PosixFilePermissions_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::java::nio::file::attribute::PosixFilePermissions : public jObject<::java::nio::file::attribute::PosixFilePermissions, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_file_attribute / "PosixFilePermissions";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::nio::file::attribute::FileAttribute(::java::util::Set)>("asFileAttribute"), //
+		jMethod<::java::util::Set(::java::lang::String)>("fromString"), //
+		jMethod<::java::lang::String(::java::util::Set)>("toString"), //
+	};
+
+	template<typename R = ::java::nio::file::attribute::FileAttribute, typename... Args>
+	static auto asFileAttribute(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("asFileAttribute")] != -1);
+		return scall<R>("asFileAttribute", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	static auto fromString(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("fromString")] != -1);
+		return scall<R>("fromString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto toString(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return scall<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

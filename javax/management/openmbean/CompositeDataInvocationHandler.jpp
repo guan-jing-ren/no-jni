@@ -1,0 +1,36 @@
+#ifndef javax_management_openmbean_CompositeDataInvocationHandler_HPP
+#define javax_management_openmbean_CompositeDataInvocationHandler_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::management::openmbean::CompositeDataInvocationHandler : public jObject<::javax::management::openmbean::CompositeDataInvocationHandler, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management_openmbean / "CompositeDataInvocationHandler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::management::openmbean::CompositeData)>(), //
+		jMethod<::javax::management::openmbean::CompositeData()>("getCompositeData"), //
+		jMethod<::java::lang::Object(::java::lang::Object, ::java::lang::reflect::Method, ::java::lang::Object *)>("invoke"), //
+	};
+
+	template<typename R = ::javax::management::openmbean::CompositeData, typename... Args>
+	auto getCompositeData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCompositeData")] != -1);
+		return call<R>("getCompositeData", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto invoke(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("invoke")] != -1);
+		return call<R>("invoke", forward<Args>(args)...);
+	}
+
+};
+
+#endif

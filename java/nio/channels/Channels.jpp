@@ -1,0 +1,61 @@
+#ifndef java_nio_channels_Channels_HPP
+#define java_nio_channels_Channels_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::channels::Channels : public jObject<::java::nio::channels::Channels, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_channels / "Channels";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::nio::channels::ReadableByteChannel(::java::io::InputStream)>("newChannel"), //
+		jMethod<::java::nio::channels::WritableByteChannel(::java::io::OutputStream)>("newChannel"), //
+		jMethod<::java::io::InputStream(::java::nio::channels::AsynchronousByteChannel)>("newInputStream"), //
+		jMethod<::java::io::InputStream(::java::nio::channels::ReadableByteChannel)>("newInputStream"), //
+		jMethod<::java::io::OutputStream(::java::nio::channels::AsynchronousByteChannel)>("newOutputStream"), //
+		jMethod<::java::io::OutputStream(::java::nio::channels::WritableByteChannel)>("newOutputStream"), //
+		jMethod<::java::io::Reader(::java::nio::channels::ReadableByteChannel, ::java::lang::String)>("newReader"), //
+		jMethod<::java::io::Reader(::java::nio::channels::ReadableByteChannel, ::java::nio::charset::CharsetDecoder, ::jint)>("newReader"), //
+		jMethod<::java::io::Writer(::java::nio::channels::WritableByteChannel, ::java::lang::String)>("newWriter"), //
+		jMethod<::java::io::Writer(::java::nio::channels::WritableByteChannel, ::java::nio::charset::CharsetEncoder, ::jint)>("newWriter"), //
+	};
+
+	template<typename R = ::java::nio::channels::ReadableByteChannel, typename... Args>
+	static auto newChannel(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newChannel")] != -1);
+		return scall<R>("newChannel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::InputStream, typename... Args>
+	static auto newInputStream(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newInputStream")] != -1);
+		return scall<R>("newInputStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::OutputStream, typename... Args>
+	static auto newOutputStream(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newOutputStream")] != -1);
+		return scall<R>("newOutputStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::Reader, typename... Args>
+	static auto newReader(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newReader")] != -1);
+		return scall<R>("newReader", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::Writer, typename... Args>
+	static auto newWriter(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newWriter")] != -1);
+		return scall<R>("newWriter", forward<Args>(args)...);
+	}
+
+};
+
+#endif

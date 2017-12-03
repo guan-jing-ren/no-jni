@@ -1,0 +1,36 @@
+#ifndef org_omg_IOP_TaggedProfile_HPP
+#define org_omg_IOP_TaggedProfile_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::IOP::TaggedProfile : public jObject<::org::omg::IOP::TaggedProfile, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_IOP / "TaggedProfile";
+
+	constexpr static Enume field_signatures{
+		jField<::jbyte *>("profile_data"), //
+		jField<::jint>("tag"), //
+	};
+
+	template<typename F = ::jbyte *>
+	auto profile_data() const {
+		static_assert(field_signatures[jField<F>("profile_data")] != -1);
+		return at<F>("profile_data");
+	}
+
+	template<typename F = ::jint>
+	auto tag() const {
+		static_assert(field_signatures[jField<F>("tag")] != -1);
+		return at<F>("tag");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint, ::jbyte *)>(), //
+	};
+
+};
+
+#endif

@@ -1,0 +1,58 @@
+#ifndef java_sql_DataTruncation_HPP
+#define java_sql_DataTruncation_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::sql::DataTruncation : public jObject<::java::sql::DataTruncation, ::java::sql::SQLWarning> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_sql / "DataTruncation";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::jboolean, ::jboolean, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::jint, ::jboolean, ::jboolean, ::jint, ::jint, ::java::lang::Throwable)>(), //
+		jMethod<::jint()>("getDataSize"), //
+		jMethod<::jint()>("getIndex"), //
+		jMethod<::jboolean()>("getParameter"), //
+		jMethod<::jboolean()>("getRead"), //
+		jMethod<::jint()>("getTransferSize"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getDataSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDataSize")] != -1);
+		return call<R>("getDataSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIndex")] != -1);
+		return call<R>("getIndex", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getParameter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParameter")] != -1);
+		return call<R>("getParameter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getRead(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRead")] != -1);
+		return call<R>("getRead", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getTransferSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTransferSize")] != -1);
+		return call<R>("getTransferSize", forward<Args>(args)...);
+	}
+
+};
+
+#endif

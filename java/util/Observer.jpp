@@ -1,0 +1,28 @@
+#ifndef java_util_Observer_HPP
+#define java_util_Observer_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::Observer : public jObject<::java::util::Observer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "Observer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::util::Observable, ::java::lang::Object)>("update"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto update(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("update")] != -1);
+		return call<R>("update", forward<Args>(args)...);
+	}
+
+};
+
+#endif

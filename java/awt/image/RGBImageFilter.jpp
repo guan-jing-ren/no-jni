@@ -1,0 +1,65 @@
+#ifndef java_awt_image_RGBImageFilter_HPP
+#define java_awt_image_RGBImageFilter_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::image::RGBImageFilter : public jObject<::java::awt::image::RGBImageFilter, ::java::awt::image::ImageFilter> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_image / "RGBImageFilter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::awt::image::IndexColorModel(::java::awt::image::IndexColorModel)>("filterIndexColorModel"), //
+		jMethod<::jint(::jint, ::jint, ::jint)>("filterRGB"), //
+		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint, ::jint *, ::jint, ::jint)>("filterRGBPixels"), //
+		jMethod<::jvoid(::java::awt::image::ColorModel)>("setColorModel"), //
+		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint, ::java::awt::image::ColorModel, ::jbyte *, ::jint, ::jint)>("setPixels"), //
+		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint, ::java::awt::image::ColorModel, ::jint *, ::jint, ::jint)>("setPixels"), //
+		jMethod<::jvoid(::java::awt::image::ColorModel, ::java::awt::image::ColorModel)>("substituteColorModel"), //
+	};
+
+	template<typename R = ::java::awt::image::IndexColorModel, typename... Args>
+	auto filterIndexColorModel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("filterIndexColorModel")] != -1);
+		return call<R>("filterIndexColorModel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto filterRGB(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("filterRGB")] != -1);
+		return call<R>("filterRGB", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto filterRGBPixels(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("filterRGBPixels")] != -1);
+		return call<R>("filterRGBPixels", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setColorModel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setColorModel")] != -1);
+		return call<R>("setColorModel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setPixels(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPixels")] != -1);
+		return call<R>("setPixels", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto substituteColorModel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("substituteColorModel")] != -1);
+		return call<R>("substituteColorModel", forward<Args>(args)...);
+	}
+
+};
+
+#endif

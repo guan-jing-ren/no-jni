@@ -1,0 +1,73 @@
+#ifndef java_beans_IndexedPropertyDescriptor_HPP
+#define java_beans_IndexedPropertyDescriptor_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::beans::IndexedPropertyDescriptor : public jObject<::java::beans::IndexedPropertyDescriptor, ::java::beans::PropertyDescriptor> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_beans / "IndexedPropertyDescriptor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Class)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Class, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::reflect::Method, ::java::lang::reflect::Method, ::java::lang::reflect::Method, ::java::lang::reflect::Method)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::lang::Class()>("getIndexedPropertyType"), //
+		jMethod<::java::lang::reflect::Method()>("getIndexedReadMethod"), //
+		jMethod<::java::lang::reflect::Method()>("getIndexedWriteMethod"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jvoid(::java::lang::reflect::Method)>("setIndexedReadMethod"), //
+		jMethod<::jvoid(::java::lang::reflect::Method)>("setIndexedWriteMethod"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getIndexedPropertyType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIndexedPropertyType")] != -1);
+		return call<R>("getIndexedPropertyType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Method, typename... Args>
+	auto getIndexedReadMethod(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIndexedReadMethod")] != -1);
+		return call<R>("getIndexedReadMethod", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Method, typename... Args>
+	auto getIndexedWriteMethod(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIndexedWriteMethod")] != -1);
+		return call<R>("getIndexedWriteMethod", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setIndexedReadMethod(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setIndexedReadMethod")] != -1);
+		return call<R>("setIndexedReadMethod", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setIndexedWriteMethod(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setIndexedWriteMethod")] != -1);
+		return call<R>("setIndexedWriteMethod", forward<Args>(args)...);
+	}
+
+};
+
+#endif

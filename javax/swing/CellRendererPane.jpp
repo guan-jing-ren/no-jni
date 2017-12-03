@@ -1,0 +1,59 @@
+#ifndef javax_swing_CellRendererPane_HPP
+#define javax_swing_CellRendererPane_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::CellRendererPane : public jObject<::javax::swing::CellRendererPane, ::java::awt::Container> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "CellRendererPane";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::accessibility::AccessibleContext()>("getAccessibleContext"), //
+		jMethod<::jvoid()>("invalidate"), //
+		jMethod<::jvoid(::java::awt::Graphics)>("paint"), //
+		jMethod<::jvoid(::java::awt::Graphics, ::java::awt::Component, ::java::awt::Container, ::jint, ::jint, ::jint, ::jint)>("paintComponent"), //
+		jMethod<::jvoid(::java::awt::Graphics, ::java::awt::Component, ::java::awt::Container, ::jint, ::jint, ::jint, ::jint, ::jboolean)>("paintComponent"), //
+		jMethod<::jvoid(::java::awt::Graphics, ::java::awt::Component, ::java::awt::Container, ::java::awt::Rectangle)>("paintComponent"), //
+		jMethod<::jvoid(::java::awt::Graphics)>("update"), //
+	};
+
+	template<typename R = ::javax::accessibility::AccessibleContext, typename... Args>
+	auto getAccessibleContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAccessibleContext")] != -1);
+		return call<R>("getAccessibleContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto invalidate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("invalidate")] != -1);
+		return call<R>("invalidate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto paint(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paint")] != -1);
+		return call<R>("paint", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto paintComponent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paintComponent")] != -1);
+		return call<R>("paintComponent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto update(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("update")] != -1);
+		return call<R>("update", forward<Args>(args)...);
+	}
+
+};
+
+#endif

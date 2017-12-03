@@ -1,0 +1,28 @@
+#ifndef java_util_function_LongBinaryOperator_HPP
+#define java_util_function_LongBinaryOperator_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::function::LongBinaryOperator : public jObject<::java::util::function::LongBinaryOperator, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_function / "LongBinaryOperator";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jlong(::jlong, ::jlong)>("applyAsLong"), //
+	};
+
+	template<typename R = ::jlong, typename... Args>
+	auto applyAsLong(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("applyAsLong")] != -1);
+		return call<R>("applyAsLong", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,74 @@
+#ifndef java_util_jar_JarFile_HPP
+#define java_util_jar_JarFile_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::jar::JarFile : public jObject<::java::util::jar::JarFile, ::java::util::zip::ZipFile> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_jar / "JarFile";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("MANIFEST_NAME"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto MANIFEST_NAME() {
+		static_assert(field_signatures[jField<F>("MANIFEST_NAME")] != -1);
+		return sat<F>("MANIFEST_NAME");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::File)>(), //
+		jConstructor<::jvoid(::java::io::File, ::jboolean)>(), //
+		jConstructor<::jvoid(::java::io::File, ::jboolean, ::jint)>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::jboolean)>(), //
+		jMethod<::java::util::Enumeration()>("entries"), //
+		jMethod<::java::util::zip::ZipEntry(::java::lang::String)>("getEntry"), //
+		jMethod<::java::io::InputStream(::java::util::zip::ZipEntry)>("getInputStream"), //
+		jMethod<::java::util::jar::JarEntry(::java::lang::String)>("getJarEntry"), //
+		jMethod<::java::util::jar::Manifest()>("getManifest"), //
+		jMethod<::java::util::stream::Stream()>("stream"), //
+	};
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	auto entries(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("entries")] != -1);
+		return call<R>("entries", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::zip::ZipEntry, typename... Args>
+	auto getEntry(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEntry")] != -1);
+		return call<R>("getEntry", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::InputStream, typename... Args>
+	auto getInputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInputStream")] != -1);
+		return call<R>("getInputStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::jar::JarEntry, typename... Args>
+	auto getJarEntry(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getJarEntry")] != -1);
+		return call<R>("getJarEntry", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::jar::Manifest, typename... Args>
+	auto getManifest(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getManifest")] != -1);
+		return call<R>("getManifest", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::Stream, typename... Args>
+	auto stream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("stream")] != -1);
+		return call<R>("stream", forward<Args>(args)...);
+	}
+
+};
+
+#endif

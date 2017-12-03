@@ -1,0 +1,36 @@
+#ifndef java_security_spec_X509EncodedKeySpec_HPP
+#define java_security_spec_X509EncodedKeySpec_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::spec::X509EncodedKeySpec : public jObject<::java::security::spec::X509EncodedKeySpec, ::java::security::spec::EncodedKeySpec> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_spec / "X509EncodedKeySpec";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jbyte *)>(), //
+		jMethod<::jbyte *()>("getEncoded"), //
+		jMethod<::java::lang::String()>("getFormat"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getEncoded(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEncoded")] != -1);
+		return call<R>("getEncoded", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getFormat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFormat")] != -1);
+		return call<R>("getFormat", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,28 @@
+#ifndef java_lang_Runnable_HPP
+#define java_lang_Runnable_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::lang::Runnable : public jObject<::java::lang::Runnable, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang / "Runnable";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("run"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto run(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("run")] != -1);
+		return call<R>("run", forward<Args>(args)...);
+	}
+
+};
+
+#endif

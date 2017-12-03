@@ -1,0 +1,49 @@
+#ifndef java_security_cert_X509Extension_HPP
+#define java_security_cert_X509Extension_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::cert::X509Extension : public jObject<::java::security::cert::X509Extension, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_cert / "X509Extension";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::Set()>("getCriticalExtensionOIDs"), //
+		jMethod<::jbyte *(::java::lang::String)>("getExtensionValue"), //
+		jMethod<::java::util::Set()>("getNonCriticalExtensionOIDs"), //
+		jMethod<::jboolean()>("hasUnsupportedCriticalExtension"), //
+	};
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto getCriticalExtensionOIDs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCriticalExtensionOIDs")] != -1);
+		return call<R>("getCriticalExtensionOIDs", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getExtensionValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getExtensionValue")] != -1);
+		return call<R>("getExtensionValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto getNonCriticalExtensionOIDs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNonCriticalExtensionOIDs")] != -1);
+		return call<R>("getNonCriticalExtensionOIDs", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasUnsupportedCriticalExtension(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hasUnsupportedCriticalExtension")] != -1);
+		return call<R>("hasUnsupportedCriticalExtension", forward<Args>(args)...);
+	}
+
+};
+
+#endif

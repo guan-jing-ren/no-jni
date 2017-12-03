@@ -1,0 +1,57 @@
+#ifndef javax_swing_JTree$DynamicUtilTreeNode_HPP
+#define javax_swing_JTree$DynamicUtilTreeNode_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::JTree$DynamicUtilTreeNode : public jObject<::javax::swing::JTree$DynamicUtilTreeNode, ::javax::swing::tree::DefaultMutableTreeNode> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "JTree$DynamicUtilTreeNode";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Object, ::java::lang::Object)>(), //
+		jMethod<::java::util::Enumeration()>("children"), //
+		jMethod<::jvoid(::javax::swing::tree::DefaultMutableTreeNode, ::java::lang::Object)>("createChildren"), //
+		jMethod<::javax::swing::tree::TreeNode(::jint)>("getChildAt"), //
+		jMethod<::jint()>("getChildCount"), //
+		jMethod<::jboolean()>("isLeaf"), //
+	};
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	auto children(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("children")] != -1);
+		return call<R>("children", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto createChildren(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createChildren")] != -1);
+		return scall<R>("createChildren", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::tree::TreeNode, typename... Args>
+	auto getChildAt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getChildAt")] != -1);
+		return call<R>("getChildAt", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getChildCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getChildCount")] != -1);
+		return call<R>("getChildCount", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isLeaf(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isLeaf")] != -1);
+		return call<R>("isLeaf", forward<Args>(args)...);
+	}
+
+};
+
+#endif

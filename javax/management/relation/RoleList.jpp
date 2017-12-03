@@ -1,0 +1,59 @@
+#ifndef javax_management_relation_RoleList_HPP
+#define javax_management_relation_RoleList_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::management::relation::RoleList : public jObject<::javax::management::relation::RoleList, ::java::util::ArrayList> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management_relation / "RoleList";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint)>(), //
+		jConstructor<::jvoid(::java::util::List)>(), //
+		jMethod<::jvoid(::jint, ::java::lang::Object)>("add"), //
+		jMethod<::jvoid(::jint, ::javax::management::relation::Role)>("add"), //
+		jMethod<::jboolean(::java::lang::Object)>("add"), //
+		jMethod<::jvoid(::javax::management::relation::Role)>("add"), //
+		jMethod<::jboolean(::jint, ::java::util::Collection)>("addAll"), //
+		jMethod<::jboolean(::jint, ::javax::management::relation::RoleList)>("addAll"), //
+		jMethod<::jboolean(::java::util::Collection)>("addAll"), //
+		jMethod<::jboolean(::javax::management::relation::RoleList)>("addAll"), //
+		jMethod<::java::util::List()>("asList"), //
+		jMethod<::java::lang::Object(::jint, ::java::lang::Object)>("set"), //
+		jMethod<::jvoid(::jint, ::javax::management::relation::Role)>("set"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto add(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto addAll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addAll")] != -1);
+		return call<R>("addAll", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto asList(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("asList")] != -1);
+		return call<R>("asList", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto set(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set")] != -1);
+		return call<R>("set", forward<Args>(args)...);
+	}
+
+};
+
+#endif

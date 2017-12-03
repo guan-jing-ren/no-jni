@@ -1,0 +1,48 @@
+#ifndef javax_xml_ws_Service$Mode_HPP
+#define javax_xml_ws_Service$Mode_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::ws::Service$Mode : public jObject<::javax::xml::ws::Service$Mode, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_ws / "Service$Mode";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::xml::ws::Service$Mode>("MESSAGE"), //
+		jField<::javax::xml::ws::Service$Mode>("PAYLOAD"), //
+	};
+
+	template<typename F = ::javax::xml::ws::Service$Mode>
+	static auto MESSAGE() {
+		static_assert(field_signatures[jField<F>("MESSAGE")] != -1);
+		return sat<F>("MESSAGE");
+	}
+
+	template<typename F = ::javax::xml::ws::Service$Mode>
+	static auto PAYLOAD() {
+		static_assert(field_signatures[jField<F>("PAYLOAD")] != -1);
+		return sat<F>("PAYLOAD");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::ws::Service$Mode(::java::lang::String)>("valueOf"), //
+		jMethod<::javax::xml::ws::Service$Mode *()>("values"), //
+	};
+
+	template<typename R = ::javax::xml::ws::Service$Mode, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::ws::Service$Mode *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

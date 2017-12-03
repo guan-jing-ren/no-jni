@@ -1,0 +1,69 @@
+#ifndef javax_crypto_interfaces_PBEKey_HPP
+#define javax_crypto_interfaces_PBEKey_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::crypto::interfaces::PBEKey : public jObject<::javax::crypto::interfaces::PBEKey, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_crypto_interfaces / "PBEKey";
+
+	constexpr static Enume field_signatures{
+		jField<::jlong>("serialVersionUID"), //
+	};
+
+	template<typename F = ::jlong>
+	static auto serialVersionUID() {
+		static_assert(field_signatures[jField<F>("serialVersionUID")] != -1);
+		return sat<F>("serialVersionUID");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getAlgorithm"), //
+		jMethod<::jbyte *()>("getEncoded"), //
+		jMethod<::java::lang::String()>("getFormat"), //
+		jMethod<::jint()>("getIterationCount"), //
+		jMethod<::jchar *()>("getPassword"), //
+		jMethod<::jbyte *()>("getSalt"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAlgorithm(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlgorithm")] != -1);
+		return call<R>("getAlgorithm", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getEncoded(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEncoded")] != -1);
+		return call<R>("getEncoded", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getFormat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFormat")] != -1);
+		return call<R>("getFormat", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getIterationCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIterationCount")] != -1);
+		return call<R>("getIterationCount", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jchar *, typename... Args>
+	auto getPassword(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPassword")] != -1);
+		return call<R>("getPassword", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getSalt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSalt")] != -1);
+		return call<R>("getSalt", forward<Args>(args)...);
+	}
+
+};
+
+#endif

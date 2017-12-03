@@ -1,0 +1,84 @@
+#ifndef javax_swing_plaf_basic_BasicOptionPaneUI_HPP
+#define javax_swing_plaf_basic_BasicOptionPaneUI_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::swing::plaf::basic::BasicOptionPaneUI : public jObject<::javax::swing::plaf::basic::BasicOptionPaneUI, ::javax::swing::plaf::OptionPaneUI> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_plaf_basic / "BasicOptionPaneUI";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("MinimumHeight"), //
+		jField<::jint>("MinimumWidth"), //
+	};
+
+	template<typename F = ::jint>
+	static auto MinimumHeight() {
+		static_assert(field_signatures[jField<F>("MinimumHeight")] != -1);
+		return sat<F>("MinimumHeight");
+	}
+
+	template<typename F = ::jint>
+	static auto MinimumWidth() {
+		static_assert(field_signatures[jField<F>("MinimumWidth")] != -1);
+		return sat<F>("MinimumWidth");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jboolean(::javax::swing::JOptionPane)>("containsCustomComponents"), //
+		jMethod<::javax::swing::plaf::ComponentUI(::javax::swing::JComponent)>("createUI"), //
+		jMethod<::java::awt::Dimension()>("getMinimumOptionPaneSize"), //
+		jMethod<::java::awt::Dimension(::javax::swing::JComponent)>("getPreferredSize"), //
+		jMethod<::jvoid(::javax::swing::JComponent)>("installUI"), //
+		jMethod<::jvoid(::javax::swing::JOptionPane)>("selectInitialValue"), //
+		jMethod<::jvoid(::javax::swing::JComponent)>("uninstallUI"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto containsCustomComponents(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("containsCustomComponents")] != -1);
+		return call<R>("containsCustomComponents", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::plaf::ComponentUI, typename... Args>
+	static auto createUI(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createUI")] != -1);
+		return scall<R>("createUI", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Dimension, typename... Args>
+	auto getMinimumOptionPaneSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMinimumOptionPaneSize")] != -1);
+		return call<R>("getMinimumOptionPaneSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Dimension, typename... Args>
+	auto getPreferredSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPreferredSize")] != -1);
+		return call<R>("getPreferredSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto installUI(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("installUI")] != -1);
+		return call<R>("installUI", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto selectInitialValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("selectInitialValue")] != -1);
+		return call<R>("selectInitialValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto uninstallUI(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("uninstallUI")] != -1);
+		return call<R>("uninstallUI", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,29 @@
+#ifndef javax_accessibility_AccessibleResourceBundle_HPP
+#define javax_accessibility_AccessibleResourceBundle_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::accessibility::AccessibleResourceBundle : public jObject<::javax::accessibility::AccessibleResourceBundle, ::java::util::ListResourceBundle> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_accessibility / "AccessibleResourceBundle";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::Object **()>("getContents"), //
+	};
+
+	template<typename R = ::java::lang::Object **, typename... Args>
+	auto getContents(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getContents")] != -1);
+		return call<R>("getContents", forward<Args>(args)...);
+	}
+
+};
+
+#endif

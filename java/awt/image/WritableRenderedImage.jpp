@@ -1,0 +1,77 @@
+#ifndef java_awt_image_WritableRenderedImage_HPP
+#define java_awt_image_WritableRenderedImage_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::image::WritableRenderedImage : public jObject<::java::awt::image::WritableRenderedImage, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_image / "WritableRenderedImage";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::awt::image::TileObserver)>("addTileObserver"), //
+		jMethod<::java::awt::image::WritableRaster(::jint, ::jint)>("getWritableTile"), //
+		jMethod<::java::awt::Point *()>("getWritableTileIndices"), //
+		jMethod<::jboolean()>("hasTileWriters"), //
+		jMethod<::jboolean(::jint, ::jint)>("isTileWritable"), //
+		jMethod<::jvoid(::jint, ::jint)>("releaseWritableTile"), //
+		jMethod<::jvoid(::java::awt::image::TileObserver)>("removeTileObserver"), //
+		jMethod<::jvoid(::java::awt::image::Raster)>("setData"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addTileObserver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addTileObserver")] != -1);
+		return call<R>("addTileObserver", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::image::WritableRaster, typename... Args>
+	auto getWritableTile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWritableTile")] != -1);
+		return call<R>("getWritableTile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Point *, typename... Args>
+	auto getWritableTileIndices(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWritableTileIndices")] != -1);
+		return call<R>("getWritableTileIndices", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasTileWriters(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hasTileWriters")] != -1);
+		return call<R>("hasTileWriters", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isTileWritable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isTileWritable")] != -1);
+		return call<R>("isTileWritable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto releaseWritableTile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("releaseWritableTile")] != -1);
+		return call<R>("releaseWritableTile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeTileObserver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeTileObserver")] != -1);
+		return call<R>("removeTileObserver", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setData")] != -1);
+		return call<R>("setData", forward<Args>(args)...);
+	}
+
+};
+
+#endif

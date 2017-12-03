@@ -1,0 +1,49 @@
+#ifndef org_w3c_dom_css_CSSMediaRule_HPP
+#define org_w3c_dom_css_CSSMediaRule_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::w3c::dom::css::CSSMediaRule : public jObject<::org::w3c::dom::css::CSSMediaRule, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_w3c_dom_css / "CSSMediaRule";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::jint)>("deleteRule"), //
+		jMethod<::org::w3c::dom::css::CSSRuleList()>("getCssRules"), //
+		jMethod<::org::w3c::dom::stylesheets::MediaList()>("getMedia"), //
+		jMethod<::jint(::java::lang::String, ::jint)>("insertRule"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto deleteRule(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("deleteRule")] != -1);
+		return call<R>("deleteRule", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::css::CSSRuleList, typename... Args>
+	auto getCssRules(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCssRules")] != -1);
+		return call<R>("getCssRules", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::stylesheets::MediaList, typename... Args>
+	auto getMedia(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMedia")] != -1);
+		return call<R>("getMedia", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto insertRule(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("insertRule")] != -1);
+		return call<R>("insertRule", forward<Args>(args)...);
+	}
+
+};
+
+#endif

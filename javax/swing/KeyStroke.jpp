@@ -1,0 +1,40 @@
+#ifndef javax_swing_KeyStroke_HPP
+#define javax_swing_KeyStroke_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::KeyStroke : public jObject<::javax::swing::KeyStroke, ::java::awt::AWTKeyStroke> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "KeyStroke";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::swing::KeyStroke(::jchar)>("getKeyStroke"), //
+		jMethod<::javax::swing::KeyStroke(::jchar, ::jboolean)>("getKeyStroke"), //
+		jMethod<::javax::swing::KeyStroke(::jint, ::jint)>("getKeyStroke"), //
+		jMethod<::javax::swing::KeyStroke(::jint, ::jint, ::jboolean)>("getKeyStroke"), //
+		jMethod<::javax::swing::KeyStroke(::java::lang::Character, ::jint)>("getKeyStroke"), //
+		jMethod<::javax::swing::KeyStroke(::java::lang::String)>("getKeyStroke"), //
+		jMethod<::javax::swing::KeyStroke(::java::awt::event::KeyEvent)>("getKeyStrokeForEvent"), //
+	};
+
+	template<typename R = ::javax::swing::KeyStroke, typename... Args>
+	static auto getKeyStroke(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getKeyStroke")] != -1);
+		return scall<R>("getKeyStroke", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::KeyStroke, typename... Args>
+	static auto getKeyStrokeForEvent(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getKeyStrokeForEvent")] != -1);
+		return scall<R>("getKeyStrokeForEvent", forward<Args>(args)...);
+	}
+
+};
+
+#endif

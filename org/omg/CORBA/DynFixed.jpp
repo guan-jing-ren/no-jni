@@ -1,0 +1,35 @@
+#ifndef org_omg_CORBA_DynFixed_HPP
+#define org_omg_CORBA_DynFixed_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::CORBA::DynFixed : public jObject<::org::omg::CORBA::DynFixed, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CORBA / "DynFixed";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jbyte *()>("get_value"), //
+		jMethod<::jvoid(::jbyte *)>("set_value"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto get_value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get_value")] != -1);
+		return call<R>("get_value", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set_value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set_value")] != -1);
+		return call<R>("set_value", forward<Args>(args)...);
+	}
+
+};
+
+#endif

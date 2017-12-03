@@ -1,0 +1,56 @@
+#ifndef java_security_spec_ECPoint_HPP
+#define java_security_spec_ECPoint_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::spec::ECPoint : public jObject<::java::security::spec::ECPoint, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_spec / "ECPoint";
+
+	constexpr static Enume field_signatures{
+		jField<::java::security::spec::ECPoint>("POINT_INFINITY"), //
+	};
+
+	template<typename F = ::java::security::spec::ECPoint>
+	static auto POINT_INFINITY() {
+		static_assert(field_signatures[jField<F>("POINT_INFINITY")] != -1);
+		return sat<F>("POINT_INFINITY");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::math::BigInteger, ::java::math::BigInteger)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::math::BigInteger()>("getAffineX"), //
+		jMethod<::java::math::BigInteger()>("getAffineY"), //
+		jMethod<::jint()>("hashCode"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getAffineX(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAffineX")] != -1);
+		return call<R>("getAffineX", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getAffineY(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAffineY")] != -1);
+		return call<R>("getAffineY", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+};
+
+#endif

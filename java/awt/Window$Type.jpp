@@ -1,0 +1,55 @@
+#ifndef java_awt_Window$Type_HPP
+#define java_awt_Window$Type_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::Window$Type : public jObject<::java::awt::Window$Type, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "Window$Type";
+
+	constexpr static Enume field_signatures{
+		jField<::java::awt::Window$Type>("NORMAL"), //
+		jField<::java::awt::Window$Type>("POPUP"), //
+		jField<::java::awt::Window$Type>("UTILITY"), //
+	};
+
+	template<typename F = ::java::awt::Window$Type>
+	static auto NORMAL() {
+		static_assert(field_signatures[jField<F>("NORMAL")] != -1);
+		return sat<F>("NORMAL");
+	}
+
+	template<typename F = ::java::awt::Window$Type>
+	static auto POPUP() {
+		static_assert(field_signatures[jField<F>("POPUP")] != -1);
+		return sat<F>("POPUP");
+	}
+
+	template<typename F = ::java::awt::Window$Type>
+	static auto UTILITY() {
+		static_assert(field_signatures[jField<F>("UTILITY")] != -1);
+		return sat<F>("UTILITY");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::Window$Type(::java::lang::String)>("valueOf"), //
+		jMethod<::java::awt::Window$Type *()>("values"), //
+	};
+
+	template<typename R = ::java::awt::Window$Type, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Window$Type *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

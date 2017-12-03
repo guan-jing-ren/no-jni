@@ -1,0 +1,162 @@
+#ifndef java_util_SimpleTimeZone_HPP
+#define java_util_SimpleTimeZone_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::SimpleTimeZone : public jObject<::java::util::SimpleTimeZone, ::java::util::TimeZone> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "SimpleTimeZone";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("STANDARD_TIME"), //
+		jField<::jint>("UTC_TIME"), //
+		jField<::jint>("WALL_TIME"), //
+	};
+
+	template<typename F = ::jint>
+	static auto STANDARD_TIME() {
+		static_assert(field_signatures[jField<F>("STANDARD_TIME")] != -1);
+		return sat<F>("STANDARD_TIME");
+	}
+
+	template<typename F = ::jint>
+	static auto UTC_TIME() {
+		static_assert(field_signatures[jField<F>("UTC_TIME")] != -1);
+		return sat<F>("UTC_TIME");
+	}
+
+	template<typename F = ::jint>
+	static auto WALL_TIME() {
+		static_assert(field_signatures[jField<F>("WALL_TIME")] != -1);
+		return sat<F>("WALL_TIME");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::jint, ::java::lang::String, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::jint, ::java::lang::String, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::jint, ::java::lang::String, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint)>(), //
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jint()>("getDSTSavings"), //
+		jMethod<::jint(::jint, ::jint, ::jint, ::jint, ::jint, ::jint)>("getOffset"), //
+		jMethod<::jint(::jlong)>("getOffset"), //
+		jMethod<::jint()>("getRawOffset"), //
+		jMethod<::jboolean(::java::util::TimeZone)>("hasSameRules"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jboolean(::java::util::Date)>("inDaylightTime"), //
+		jMethod<::jboolean()>("observesDaylightTime"), //
+		jMethod<::jvoid(::jint)>("setDSTSavings"), //
+		jMethod<::jvoid(::jint, ::jint, ::jint)>("setEndRule"), //
+		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint)>("setEndRule"), //
+		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint, ::jboolean)>("setEndRule"), //
+		jMethod<::jvoid(::jint)>("setRawOffset"), //
+		jMethod<::jvoid(::jint, ::jint, ::jint)>("setStartRule"), //
+		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint)>("setStartRule"), //
+		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint, ::jboolean)>("setStartRule"), //
+		jMethod<::jvoid(::jint)>("setStartYear"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::jboolean()>("useDaylightTime"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getDSTSavings(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDSTSavings")] != -1);
+		return call<R>("getDSTSavings", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getOffset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOffset")] != -1);
+		return call<R>("getOffset", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getRawOffset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRawOffset")] != -1);
+		return call<R>("getRawOffset", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasSameRules(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hasSameRules")] != -1);
+		return call<R>("hasSameRules", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto inDaylightTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("inDaylightTime")] != -1);
+		return call<R>("inDaylightTime", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto observesDaylightTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("observesDaylightTime")] != -1);
+		return call<R>("observesDaylightTime", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDSTSavings(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDSTSavings")] != -1);
+		return call<R>("setDSTSavings", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setEndRule(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setEndRule")] != -1);
+		return call<R>("setEndRule", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setRawOffset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setRawOffset")] != -1);
+		return call<R>("setRawOffset", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setStartRule(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setStartRule")] != -1);
+		return call<R>("setStartRule", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setStartYear(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setStartYear")] != -1);
+		return call<R>("setStartYear", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto useDaylightTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("useDaylightTime")] != -1);
+		return call<R>("useDaylightTime", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,72 @@
+#ifndef java_util_concurrent_atomic_AtomicBoolean_HPP
+#define java_util_concurrent_atomic_AtomicBoolean_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::java::util::concurrent::atomic::AtomicBoolean : public jObject<::java::util::concurrent::atomic::AtomicBoolean, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_concurrent_atomic / "AtomicBoolean";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jboolean)>(), //
+		jMethod<::jboolean(::jboolean, ::jboolean)>("compareAndSet"), //
+		jMethod<::jboolean()>("get"), //
+		jMethod<::jboolean(::jboolean)>("getAndSet"), //
+		jMethod<::jvoid(::jboolean)>("lazySet"), //
+		jMethod<::jvoid(::jboolean)>("set"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::jboolean(::jboolean, ::jboolean)>("weakCompareAndSet"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto compareAndSet(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compareAndSet")] != -1);
+		return call<R>("compareAndSet", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getAndSet(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAndSet")] != -1);
+		return call<R>("getAndSet", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto lazySet(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lazySet")] != -1);
+		return call<R>("lazySet", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set")] != -1);
+		return call<R>("set", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto weakCompareAndSet(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("weakCompareAndSet")] != -1);
+		return call<R>("weakCompareAndSet", forward<Args>(args)...);
+	}
+
+};
+
+#endif

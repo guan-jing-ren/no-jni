@@ -1,0 +1,36 @@
+#ifndef javax_management_QueryEval_HPP
+#define javax_management_QueryEval_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::management::QueryEval : public jObject<::javax::management::QueryEval, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management / "QueryEval";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::management::MBeanServer()>("getMBeanServer"), //
+		jMethod<::jvoid(::javax::management::MBeanServer)>("setMBeanServer"), //
+	};
+
+	template<typename R = ::javax::management::MBeanServer, typename... Args>
+	static auto getMBeanServer(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMBeanServer")] != -1);
+		return scall<R>("getMBeanServer", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setMBeanServer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMBeanServer")] != -1);
+		return call<R>("setMBeanServer", forward<Args>(args)...);
+	}
+
+};
+
+#endif

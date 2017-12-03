@@ -1,0 +1,35 @@
+#ifndef java_awt_event_InputMethodListener_HPP
+#define java_awt_event_InputMethodListener_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::event::InputMethodListener : public jObject<::java::awt::event::InputMethodListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_event / "InputMethodListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::awt::event::InputMethodEvent)>("caretPositionChanged"), //
+		jMethod<::jvoid(::java::awt::event::InputMethodEvent)>("inputMethodTextChanged"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto caretPositionChanged(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("caretPositionChanged")] != -1);
+		return call<R>("caretPositionChanged", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto inputMethodTextChanged(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("inputMethodTextChanged")] != -1);
+		return call<R>("inputMethodTextChanged", forward<Args>(args)...);
+	}
+
+};
+
+#endif

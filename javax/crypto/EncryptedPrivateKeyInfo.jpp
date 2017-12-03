@@ -1,0 +1,62 @@
+#ifndef javax_crypto_EncryptedPrivateKeyInfo_HPP
+#define javax_crypto_EncryptedPrivateKeyInfo_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::crypto::EncryptedPrivateKeyInfo : public jObject<::javax::crypto::EncryptedPrivateKeyInfo, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_crypto / "EncryptedPrivateKeyInfo";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::jbyte *)>(), //
+		jConstructor<::jvoid(::java::security::AlgorithmParameters, ::jbyte *)>(), //
+		jConstructor<::jvoid(::jbyte *)>(), //
+		jMethod<::java::lang::String()>("getAlgName"), //
+		jMethod<::java::security::AlgorithmParameters()>("getAlgParameters"), //
+		jMethod<::jbyte *()>("getEncoded"), //
+		jMethod<::jbyte *()>("getEncryptedData"), //
+		jMethod<::java::security::spec::PKCS8EncodedKeySpec(::java::security::Key)>("getKeySpec"), //
+		jMethod<::java::security::spec::PKCS8EncodedKeySpec(::java::security::Key, ::java::lang::String)>("getKeySpec"), //
+		jMethod<::java::security::spec::PKCS8EncodedKeySpec(::java::security::Key, ::java::security::Provider)>("getKeySpec"), //
+		jMethod<::java::security::spec::PKCS8EncodedKeySpec(::javax::crypto::Cipher)>("getKeySpec"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAlgName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlgName")] != -1);
+		return call<R>("getAlgName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::AlgorithmParameters, typename... Args>
+	auto getAlgParameters(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlgParameters")] != -1);
+		return call<R>("getAlgParameters", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getEncoded(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEncoded")] != -1);
+		return call<R>("getEncoded", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getEncryptedData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEncryptedData")] != -1);
+		return call<R>("getEncryptedData", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::spec::PKCS8EncodedKeySpec, typename... Args>
+	auto getKeySpec(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getKeySpec")] != -1);
+		return call<R>("getKeySpec", forward<Args>(args)...);
+	}
+
+};
+
+#endif

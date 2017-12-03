@@ -1,0 +1,63 @@
+#ifndef java_lang_CharSequence_HPP
+#define java_lang_CharSequence_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::lang::CharSequence : public jObject<::java::lang::CharSequence, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang / "CharSequence";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jchar(::jint)>("charAt"), //
+		jMethod<::java::util::stream::IntStream()>("chars"), //
+		jMethod<::java::util::stream::IntStream()>("codePoints"), //
+		jMethod<::jint()>("length"), //
+		jMethod<::java::lang::CharSequence(::jint, ::jint)>("subSequence"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jchar, typename... Args>
+	auto charAt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("charAt")] != -1);
+		return call<R>("charAt", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::IntStream, typename... Args>
+	auto chars(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("chars")] != -1);
+		return call<R>("chars", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::IntStream, typename... Args>
+	auto codePoints(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("codePoints")] != -1);
+		return call<R>("codePoints", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto length(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("length")] != -1);
+		return call<R>("length", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::CharSequence, typename... Args>
+	auto subSequence(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("subSequence")] != -1);
+		return call<R>("subSequence", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

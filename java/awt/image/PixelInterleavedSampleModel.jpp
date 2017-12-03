@@ -1,0 +1,43 @@
+#ifndef java_awt_image_PixelInterleavedSampleModel_HPP
+#define java_awt_image_PixelInterleavedSampleModel_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::image::PixelInterleavedSampleModel : public jObject<::java::awt::image::PixelInterleavedSampleModel, ::java::awt::image::ComponentSampleModel> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_image / "PixelInterleavedSampleModel";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::jint, ::jint, ::jint, ::jint, ::jint *)>(), //
+		jMethod<::java::awt::image::SampleModel(::jint, ::jint)>("createCompatibleSampleModel"), //
+		jMethod<::java::awt::image::SampleModel(::jint *)>("createSubsetSampleModel"), //
+		jMethod<::jint()>("hashCode"), //
+	};
+
+	template<typename R = ::java::awt::image::SampleModel, typename... Args>
+	auto createCompatibleSampleModel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createCompatibleSampleModel")] != -1);
+		return call<R>("createCompatibleSampleModel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::image::SampleModel, typename... Args>
+	auto createSubsetSampleModel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createSubsetSampleModel")] != -1);
+		return call<R>("createSubsetSampleModel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+};
+
+#endif

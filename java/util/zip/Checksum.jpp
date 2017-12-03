@@ -1,0 +1,43 @@
+#ifndef java_util_zip_Checksum_HPP
+#define java_util_zip_Checksum_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::zip::Checksum : public jObject<::java::util::zip::Checksum, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_zip / "Checksum";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jlong()>("getValue"), //
+		jMethod<::jvoid()>("reset"), //
+		jMethod<::jvoid(::jint)>("update"), //
+		jMethod<::jvoid(::jbyte *, ::jint, ::jint)>("update"), //
+	};
+
+	template<typename R = ::jlong, typename... Args>
+	auto getValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getValue")] != -1);
+		return call<R>("getValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto reset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("reset")] != -1);
+		return call<R>("reset", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto update(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("update")] != -1);
+		return call<R>("update", forward<Args>(args)...);
+	}
+
+};
+
+#endif

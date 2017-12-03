@@ -1,0 +1,35 @@
+#ifndef javax_lang_model_element_AnnotationMirror_HPP
+#define javax_lang_model_element_AnnotationMirror_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::lang::model::element::AnnotationMirror : public jObject<::javax::lang::model::element::AnnotationMirror, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_lang_model_element / "AnnotationMirror";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::lang::model::type::DeclaredType()>("getAnnotationType"), //
+		jMethod<::java::util::Map()>("getElementValues"), //
+	};
+
+	template<typename R = ::javax::lang::model::type::DeclaredType, typename... Args>
+	auto getAnnotationType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAnnotationType")] != -1);
+		return call<R>("getAnnotationType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto getElementValues(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getElementValues")] != -1);
+		return call<R>("getElementValues", forward<Args>(args)...);
+	}
+
+};
+
+#endif

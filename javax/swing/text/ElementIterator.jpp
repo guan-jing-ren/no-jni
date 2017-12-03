@@ -1,0 +1,65 @@
+#ifndef javax_swing_text_ElementIterator_HPP
+#define javax_swing_text_ElementIterator_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::text::ElementIterator : public jObject<::javax::swing::text::ElementIterator, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_text / "ElementIterator";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::swing::text::Document)>(), //
+		jConstructor<::jvoid(::javax::swing::text::Element)>(), //
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::javax::swing::text::Element()>("current"), //
+		jMethod<::jint()>("depth"), //
+		jMethod<::javax::swing::text::Element()>("first"), //
+		jMethod<::javax::swing::text::Element()>("next"), //
+		jMethod<::javax::swing::text::Element()>("previous"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::text::Element, typename... Args>
+	auto current(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("current")] != -1);
+		return call<R>("current", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto depth(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("depth")] != -1);
+		return call<R>("depth", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::text::Element, typename... Args>
+	auto first(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("first")] != -1);
+		return call<R>("first", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::text::Element, typename... Args>
+	auto next(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("next")] != -1);
+		return call<R>("next", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::text::Element, typename... Args>
+	auto previous(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("previous")] != -1);
+		return call<R>("previous", forward<Args>(args)...);
+	}
+
+};
+
+#endif

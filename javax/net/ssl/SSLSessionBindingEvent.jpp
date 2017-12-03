@@ -1,0 +1,36 @@
+#ifndef javax_net_ssl_SSLSessionBindingEvent_HPP
+#define javax_net_ssl_SSLSessionBindingEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::net::ssl::SSLSessionBindingEvent : public jObject<::javax::net::ssl::SSLSessionBindingEvent, ::java::util::EventObject> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_net_ssl / "SSLSessionBindingEvent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::net::ssl::SSLSession, ::java::lang::String)>(), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::javax::net::ssl::SSLSession()>("getSession"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::net::ssl::SSLSession, typename... Args>
+	auto getSession(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSession")] != -1);
+		return call<R>("getSession", forward<Args>(args)...);
+	}
+
+};
+
+#endif

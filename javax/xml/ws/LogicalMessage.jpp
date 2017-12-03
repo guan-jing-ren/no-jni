@@ -1,0 +1,37 @@
+#ifndef javax_xml_ws_LogicalMessage_HPP
+#define javax_xml_ws_LogicalMessage_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::ws::LogicalMessage : public jObject<::javax::xml::ws::LogicalMessage, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_ws / "LogicalMessage";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::transform::Source()>("getPayload"), //
+		jMethod<::java::lang::Object(::javax::xml::bind::JAXBContext)>("getPayload"), //
+		jMethod<::jvoid(::java::lang::Object, ::javax::xml::bind::JAXBContext)>("setPayload"), //
+		jMethod<::jvoid(::javax::xml::transform::Source)>("setPayload"), //
+	};
+
+	template<typename R = ::javax::xml::transform::Source, typename... Args>
+	auto getPayload(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPayload")] != -1);
+		return call<R>("getPayload", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setPayload(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPayload")] != -1);
+		return call<R>("setPayload", forward<Args>(args)...);
+	}
+
+};
+
+#endif

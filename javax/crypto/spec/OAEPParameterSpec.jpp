@@ -1,0 +1,56 @@
+#ifndef javax_crypto_spec_OAEPParameterSpec_HPP
+#define javax_crypto_spec_OAEPParameterSpec_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::crypto::spec::OAEPParameterSpec : public jObject<::javax::crypto::spec::OAEPParameterSpec, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_crypto_spec / "OAEPParameterSpec";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::crypto::spec::OAEPParameterSpec>("DEFAULT"), //
+	};
+
+	template<typename F = ::javax::crypto::spec::OAEPParameterSpec>
+	static auto DEFAULT() {
+		static_assert(field_signatures[jField<F>("DEFAULT")] != -1);
+		return sat<F>("DEFAULT");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::security::spec::AlgorithmParameterSpec, ::javax::crypto::spec::PSource)>(), //
+		jMethod<::java::lang::String()>("getDigestAlgorithm"), //
+		jMethod<::java::lang::String()>("getMGFAlgorithm"), //
+		jMethod<::java::security::spec::AlgorithmParameterSpec()>("getMGFParameters"), //
+		jMethod<::javax::crypto::spec::PSource()>("getPSource"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDigestAlgorithm(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDigestAlgorithm")] != -1);
+		return call<R>("getDigestAlgorithm", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMGFAlgorithm(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMGFAlgorithm")] != -1);
+		return call<R>("getMGFAlgorithm", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::spec::AlgorithmParameterSpec, typename... Args>
+	auto getMGFParameters(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMGFParameters")] != -1);
+		return call<R>("getMGFParameters", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::crypto::spec::PSource, typename... Args>
+	auto getPSource(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPSource")] != -1);
+		return call<R>("getPSource", forward<Args>(args)...);
+	}
+
+};
+
+#endif

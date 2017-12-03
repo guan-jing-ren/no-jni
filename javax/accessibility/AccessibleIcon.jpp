@@ -1,0 +1,49 @@
+#ifndef javax_accessibility_AccessibleIcon_HPP
+#define javax_accessibility_AccessibleIcon_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::accessibility::AccessibleIcon : public jObject<::javax::accessibility::AccessibleIcon, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_accessibility / "AccessibleIcon";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getAccessibleIconDescription"), //
+		jMethod<::jint()>("getAccessibleIconHeight"), //
+		jMethod<::jint()>("getAccessibleIconWidth"), //
+		jMethod<::jvoid(::java::lang::String)>("setAccessibleIconDescription"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAccessibleIconDescription(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAccessibleIconDescription")] != -1);
+		return call<R>("getAccessibleIconDescription", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getAccessibleIconHeight(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAccessibleIconHeight")] != -1);
+		return call<R>("getAccessibleIconHeight", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getAccessibleIconWidth(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAccessibleIconWidth")] != -1);
+		return call<R>("getAccessibleIconWidth", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setAccessibleIconDescription(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setAccessibleIconDescription")] != -1);
+		return call<R>("setAccessibleIconDescription", forward<Args>(args)...);
+	}
+
+};
+
+#endif

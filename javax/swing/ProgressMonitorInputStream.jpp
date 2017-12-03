@@ -1,0 +1,59 @@
+#ifndef javax_swing_ProgressMonitorInputStream_HPP
+#define javax_swing_ProgressMonitorInputStream_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::ProgressMonitorInputStream : public jObject<::javax::swing::ProgressMonitorInputStream, ::java::io::FilterInputStream> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "ProgressMonitorInputStream";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::Component, ::java::lang::Object, ::java::io::InputStream)>(), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::javax::swing::ProgressMonitor()>("getProgressMonitor"), //
+		jMethod<::jint()>("read"), //
+		jMethod<::jint(::jbyte *)>("read"), //
+		jMethod<::jint(::jbyte *, ::jint, ::jint)>("read"), //
+		jMethod<::jvoid()>("reset"), //
+		jMethod<::jlong(::jlong)>("skip"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::ProgressMonitor, typename... Args>
+	auto getProgressMonitor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProgressMonitor")] != -1);
+		return call<R>("getProgressMonitor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto reset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("reset")] != -1);
+		return call<R>("reset", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto skip(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("skip")] != -1);
+		return call<R>("skip", forward<Args>(args)...);
+	}
+
+};
+
+#endif

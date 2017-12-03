@@ -1,0 +1,43 @@
+#ifndef javax_tools_JavaCompiler$CompilationTask_HPP
+#define javax_tools_JavaCompiler$CompilationTask_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::tools::JavaCompiler$CompilationTask : public jObject<::javax::tools::JavaCompiler$CompilationTask, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_tools / "JavaCompiler$CompilationTask";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Boolean()>("call"), //
+		jMethod<::java::lang::Object()>("call"), //
+		jMethod<::jvoid(::java::util::Locale)>("setLocale"), //
+		jMethod<::jvoid(::java::lang::Iterable)>("setProcessors"), //
+	};
+
+	template<typename R = ::java::lang::Boolean, typename... Args>
+	auto call(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("call")] != -1);
+		return call<R>("call", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLocale(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLocale")] != -1);
+		return call<R>("setLocale", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setProcessors(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setProcessors")] != -1);
+		return call<R>("setProcessors", forward<Args>(args)...);
+	}
+
+};
+
+#endif

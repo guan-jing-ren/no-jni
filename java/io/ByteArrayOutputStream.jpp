@@ -1,0 +1,75 @@
+#ifndef java_io_ByteArrayOutputStream_HPP
+#define java_io_ByteArrayOutputStream_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::io::ByteArrayOutputStream : public jObject<::java::io::ByteArrayOutputStream, ::java::io::OutputStream> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_io / "ByteArrayOutputStream";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint)>(), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::jvoid()>("reset"), //
+		jMethod<::jint()>("size"), //
+		jMethod<::jbyte *()>("toByteArray"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::java::lang::String(::jint)>("toString"), //
+		jMethod<::java::lang::String(::java::lang::String)>("toString"), //
+		jMethod<::jvoid(::jint)>("write"), //
+		jMethod<::jvoid(::jbyte *, ::jint, ::jint)>("write"), //
+		jMethod<::jvoid(::java::io::OutputStream)>("writeTo"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto reset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("reset")] != -1);
+		return call<R>("reset", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto size(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("size")] != -1);
+		return call<R>("size", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto toByteArray(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toByteArray")] != -1);
+		return call<R>("toByteArray", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("writeTo")] != -1);
+		return call<R>("writeTo", forward<Args>(args)...);
+	}
+
+};
+
+#endif

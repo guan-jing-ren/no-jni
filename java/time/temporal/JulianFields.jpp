@@ -1,0 +1,42 @@
+#ifndef java_time_temporal_JulianFields_HPP
+#define java_time_temporal_JulianFields_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::time::temporal::JulianFields : public jObject<::java::time::temporal::JulianFields, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_time_temporal / "JulianFields";
+
+	constexpr static Enume field_signatures{
+		jField<::java::time::temporal::TemporalField>("JULIAN_DAY"), //
+		jField<::java::time::temporal::TemporalField>("MODIFIED_JULIAN_DAY"), //
+		jField<::java::time::temporal::TemporalField>("RATA_DIE"), //
+	};
+
+	template<typename F = ::java::time::temporal::TemporalField>
+	static auto JULIAN_DAY() {
+		static_assert(field_signatures[jField<F>("JULIAN_DAY")] != -1);
+		return sat<F>("JULIAN_DAY");
+	}
+
+	template<typename F = ::java::time::temporal::TemporalField>
+	static auto MODIFIED_JULIAN_DAY() {
+		static_assert(field_signatures[jField<F>("MODIFIED_JULIAN_DAY")] != -1);
+		return sat<F>("MODIFIED_JULIAN_DAY");
+	}
+
+	template<typename F = ::java::time::temporal::TemporalField>
+	static auto RATA_DIE() {
+		static_assert(field_signatures[jField<F>("RATA_DIE")] != -1);
+		return sat<F>("RATA_DIE");
+	}
+
+	constexpr static Enume method_signatures{
+		cexprstr{"\0"}, //
+	};
+
+};
+
+#endif

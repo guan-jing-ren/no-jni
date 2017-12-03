@@ -1,0 +1,51 @@
+#ifndef java_security_AccessControlContext_HPP
+#define java_security_AccessControlContext_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::AccessControlContext : public jObject<::java::security::AccessControlContext, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "AccessControlContext";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::security::AccessControlContext, ::java::security::DomainCombiner)>(), //
+		jConstructor<::jvoid(::java::security::ProtectionDomain *)>(), //
+		jMethod<::jvoid(::java::security::Permission)>("checkPermission"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::security::DomainCombiner()>("getDomainCombiner"), //
+		jMethod<::jint()>("hashCode"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto checkPermission(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("checkPermission")] != -1);
+		return call<R>("checkPermission", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::DomainCombiner, typename... Args>
+	auto getDomainCombiner(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDomainCombiner")] != -1);
+		return call<R>("getDomainCombiner", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+};
+
+#endif

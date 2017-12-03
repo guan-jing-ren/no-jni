@@ -1,0 +1,29 @@
+#ifndef java_awt_dnd_DropTargetEvent_HPP
+#define java_awt_dnd_DropTargetEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::dnd::DropTargetEvent : public jObject<::java::awt::dnd::DropTargetEvent, ::java::util::EventObject> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_dnd / "DropTargetEvent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::dnd::DropTargetContext)>(), //
+		jMethod<::java::awt::dnd::DropTargetContext()>("getDropTargetContext"), //
+	};
+
+	template<typename R = ::java::awt::dnd::DropTargetContext, typename... Args>
+	auto getDropTargetContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDropTargetContext")] != -1);
+		return call<R>("getDropTargetContext", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,70 @@
+#ifndef javax_sound_midi_Soundbank_HPP
+#define javax_sound_midi_Soundbank_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::sound::midi::Soundbank : public jObject<::javax::sound::midi::Soundbank, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sound_midi / "Soundbank";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getDescription"), //
+		jMethod<::javax::sound::midi::Instrument(::javax::sound::midi::Patch)>("getInstrument"), //
+		jMethod<::javax::sound::midi::Instrument *()>("getInstruments"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::javax::sound::midi::SoundbankResource *()>("getResources"), //
+		jMethod<::java::lang::String()>("getVendor"), //
+		jMethod<::java::lang::String()>("getVersion"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDescription(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDescription")] != -1);
+		return call<R>("getDescription", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::midi::Instrument, typename... Args>
+	auto getInstrument(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstrument")] != -1);
+		return call<R>("getInstrument", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::midi::Instrument *, typename... Args>
+	auto getInstruments(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstruments")] != -1);
+		return call<R>("getInstruments", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::midi::SoundbankResource *, typename... Args>
+	auto getResources(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getResources")] != -1);
+		return call<R>("getResources", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getVendor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getVendor")] != -1);
+		return call<R>("getVendor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getVersion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getVersion")] != -1);
+		return call<R>("getVersion", forward<Args>(args)...);
+	}
+
+};
+
+#endif

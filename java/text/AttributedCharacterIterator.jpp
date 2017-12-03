@@ -1,0 +1,60 @@
+#ifndef java_text_AttributedCharacterIterator_HPP
+#define java_text_AttributedCharacterIterator_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::text::AttributedCharacterIterator : public jObject<::java::text::AttributedCharacterIterator, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_text / "AttributedCharacterIterator";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::Set()>("getAllAttributeKeys"), //
+		jMethod<::java::lang::Object(::java::text::AttributedCharacterIterator$Attribute)>("getAttribute"), //
+		jMethod<::java::util::Map()>("getAttributes"), //
+		jMethod<::jint()>("getRunLimit"), //
+		jMethod<::jint(::java::text::AttributedCharacterIterator$Attribute)>("getRunLimit"), //
+		jMethod<::jint(::java::util::Set)>("getRunLimit"), //
+		jMethod<::jint()>("getRunStart"), //
+		jMethod<::jint(::java::text::AttributedCharacterIterator$Attribute)>("getRunStart"), //
+		jMethod<::jint(::java::util::Set)>("getRunStart"), //
+	};
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto getAllAttributeKeys(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAllAttributeKeys")] != -1);
+		return call<R>("getAllAttributeKeys", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttribute")] != -1);
+		return call<R>("getAttribute", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto getAttributes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttributes")] != -1);
+		return call<R>("getAttributes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getRunLimit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRunLimit")] != -1);
+		return call<R>("getRunLimit", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getRunStart(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRunStart")] != -1);
+		return call<R>("getRunStart", forward<Args>(args)...);
+	}
+
+};
+
+#endif

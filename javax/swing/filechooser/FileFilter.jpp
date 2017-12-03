@@ -1,0 +1,36 @@
+#ifndef javax_swing_filechooser_FileFilter_HPP
+#define javax_swing_filechooser_FileFilter_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::filechooser::FileFilter : public jObject<::javax::swing::filechooser::FileFilter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_filechooser / "FileFilter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jboolean(::java::io::File)>("accept"), //
+		jMethod<::java::lang::String()>("getDescription"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto accept(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("accept")] != -1);
+		return call<R>("accept", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDescription(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDescription")] != -1);
+		return call<R>("getDescription", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,65 @@
+#ifndef java_util_Observable_HPP
+#define java_util_Observable_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::Observable : public jObject<::java::util::Observable, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "Observable";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::util::Observer)>("addObserver"), //
+		jMethod<::jint()>("countObservers"), //
+		jMethod<::jvoid(::java::util::Observer)>("deleteObserver"), //
+		jMethod<::jvoid()>("deleteObservers"), //
+		jMethod<::jboolean()>("hasChanged"), //
+		jMethod<::jvoid()>("notifyObservers"), //
+		jMethod<::jvoid(::java::lang::Object)>("notifyObservers"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addObserver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addObserver")] != -1);
+		return call<R>("addObserver", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto countObservers(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("countObservers")] != -1);
+		return call<R>("countObservers", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto deleteObserver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("deleteObserver")] != -1);
+		return call<R>("deleteObserver", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto deleteObservers(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("deleteObservers")] != -1);
+		return call<R>("deleteObservers", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasChanged(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hasChanged")] != -1);
+		return call<R>("hasChanged", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto notifyObservers(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("notifyObservers")] != -1);
+		return call<R>("notifyObservers", forward<Args>(args)...);
+	}
+
+};
+
+#endif

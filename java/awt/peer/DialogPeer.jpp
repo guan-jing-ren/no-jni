@@ -1,0 +1,42 @@
+#ifndef java_awt_peer_DialogPeer_HPP
+#define java_awt_peer_DialogPeer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::peer::DialogPeer : public jObject<::java::awt::peer::DialogPeer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_peer / "DialogPeer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::util::List)>("blockWindows"), //
+		jMethod<::jvoid(::jboolean)>("setResizable"), //
+		jMethod<::jvoid(::java::lang::String)>("setTitle"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto blockWindows(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("blockWindows")] != -1);
+		return call<R>("blockWindows", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setResizable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setResizable")] != -1);
+		return call<R>("setResizable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setTitle(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setTitle")] != -1);
+		return call<R>("setTitle", forward<Args>(args)...);
+	}
+
+};
+
+#endif

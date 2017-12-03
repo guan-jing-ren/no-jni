@@ -1,0 +1,55 @@
+#ifndef java_nio_file_AccessMode_HPP
+#define java_nio_file_AccessMode_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::file::AccessMode : public jObject<::java::nio::file::AccessMode, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_file / "AccessMode";
+
+	constexpr static Enume field_signatures{
+		jField<::java::nio::file::AccessMode>("EXECUTE"), //
+		jField<::java::nio::file::AccessMode>("READ"), //
+		jField<::java::nio::file::AccessMode>("WRITE"), //
+	};
+
+	template<typename F = ::java::nio::file::AccessMode>
+	static auto EXECUTE() {
+		static_assert(field_signatures[jField<F>("EXECUTE")] != -1);
+		return sat<F>("EXECUTE");
+	}
+
+	template<typename F = ::java::nio::file::AccessMode>
+	static auto READ() {
+		static_assert(field_signatures[jField<F>("READ")] != -1);
+		return sat<F>("READ");
+	}
+
+	template<typename F = ::java::nio::file::AccessMode>
+	static auto WRITE() {
+		static_assert(field_signatures[jField<F>("WRITE")] != -1);
+		return sat<F>("WRITE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::nio::file::AccessMode(::java::lang::String)>("valueOf"), //
+		jMethod<::java::nio::file::AccessMode *()>("values"), //
+	};
+
+	template<typename R = ::java::nio::file::AccessMode, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::AccessMode *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

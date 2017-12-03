@@ -1,0 +1,42 @@
+#ifndef javax_naming_ldap_PagedResultsResponseControl_HPP
+#define javax_naming_ldap_PagedResultsResponseControl_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::naming::ldap::PagedResultsResponseControl : public jObject<::javax::naming::ldap::PagedResultsResponseControl, ::javax::naming::ldap::BasicControl> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_naming_ldap / "PagedResultsResponseControl";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("OID"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto OID() {
+		static_assert(field_signatures[jField<F>("OID")] != -1);
+		return sat<F>("OID");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::jboolean, ::jbyte *)>(), //
+		jMethod<::jbyte *()>("getCookie"), //
+		jMethod<::jint()>("getResultSize"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getCookie(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCookie")] != -1);
+		return call<R>("getCookie", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getResultSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getResultSize")] != -1);
+		return call<R>("getResultSize", forward<Args>(args)...);
+	}
+
+};
+
+#endif

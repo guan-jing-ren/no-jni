@@ -1,0 +1,29 @@
+#ifndef javax_annotation_processing_Completions_HPP
+#define javax_annotation_processing_Completions_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::annotation::processing::Completions : public jObject<::javax::annotation::processing::Completions, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_annotation_processing / "Completions";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::annotation::processing::Completion(::java::lang::String)>("of"), //
+		jMethod<::javax::annotation::processing::Completion(::java::lang::String, ::java::lang::String)>("of"), //
+	};
+
+	template<typename R = ::javax::annotation::processing::Completion, typename... Args>
+	static auto of(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("of")] != -1);
+		return scall<R>("of", forward<Args>(args)...);
+	}
+
+};
+
+#endif

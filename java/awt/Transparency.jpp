@@ -1,0 +1,48 @@
+#ifndef java_awt_Transparency_HPP
+#define java_awt_Transparency_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::Transparency : public jObject<::java::awt::Transparency, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "Transparency";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("BITMASK"), //
+		jField<::jint>("OPAQUE"), //
+		jField<::jint>("TRANSLUCENT"), //
+	};
+
+	template<typename F = ::jint>
+	static auto BITMASK() {
+		static_assert(field_signatures[jField<F>("BITMASK")] != -1);
+		return sat<F>("BITMASK");
+	}
+
+	template<typename F = ::jint>
+	static auto OPAQUE() {
+		static_assert(field_signatures[jField<F>("OPAQUE")] != -1);
+		return sat<F>("OPAQUE");
+	}
+
+	template<typename F = ::jint>
+	static auto TRANSLUCENT() {
+		static_assert(field_signatures[jField<F>("TRANSLUCENT")] != -1);
+		return sat<F>("TRANSLUCENT");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("getTransparency"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getTransparency(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTransparency")] != -1);
+		return call<R>("getTransparency", forward<Args>(args)...);
+	}
+
+};
+
+#endif

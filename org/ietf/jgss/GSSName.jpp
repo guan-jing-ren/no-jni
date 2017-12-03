@@ -1,0 +1,119 @@
+#ifndef org_ietf_jgss_GSSName_HPP
+#define org_ietf_jgss_GSSName_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::ietf::jgss::GSSName : public jObject<::org::ietf::jgss::GSSName, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_ietf_jgss / "GSSName";
+
+	constexpr static Enume field_signatures{
+		jField<::org::ietf::jgss::Oid>("NT_ANONYMOUS"), //
+		jField<::org::ietf::jgss::Oid>("NT_EXPORT_NAME"), //
+		jField<::org::ietf::jgss::Oid>("NT_HOSTBASED_SERVICE"), //
+		jField<::org::ietf::jgss::Oid>("NT_MACHINE_UID_NAME"), //
+		jField<::org::ietf::jgss::Oid>("NT_STRING_UID_NAME"), //
+		jField<::org::ietf::jgss::Oid>("NT_USER_NAME"), //
+	};
+
+	template<typename F = ::org::ietf::jgss::Oid>
+	static auto NT_ANONYMOUS() {
+		static_assert(field_signatures[jField<F>("NT_ANONYMOUS")] != -1);
+		return sat<F>("NT_ANONYMOUS");
+	}
+
+	template<typename F = ::org::ietf::jgss::Oid>
+	static auto NT_EXPORT_NAME() {
+		static_assert(field_signatures[jField<F>("NT_EXPORT_NAME")] != -1);
+		return sat<F>("NT_EXPORT_NAME");
+	}
+
+	template<typename F = ::org::ietf::jgss::Oid>
+	static auto NT_HOSTBASED_SERVICE() {
+		static_assert(field_signatures[jField<F>("NT_HOSTBASED_SERVICE")] != -1);
+		return sat<F>("NT_HOSTBASED_SERVICE");
+	}
+
+	template<typename F = ::org::ietf::jgss::Oid>
+	static auto NT_MACHINE_UID_NAME() {
+		static_assert(field_signatures[jField<F>("NT_MACHINE_UID_NAME")] != -1);
+		return sat<F>("NT_MACHINE_UID_NAME");
+	}
+
+	template<typename F = ::org::ietf::jgss::Oid>
+	static auto NT_STRING_UID_NAME() {
+		static_assert(field_signatures[jField<F>("NT_STRING_UID_NAME")] != -1);
+		return sat<F>("NT_STRING_UID_NAME");
+	}
+
+	template<typename F = ::org::ietf::jgss::Oid>
+	static auto NT_USER_NAME() {
+		static_assert(field_signatures[jField<F>("NT_USER_NAME")] != -1);
+		return sat<F>("NT_USER_NAME");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::ietf::jgss::GSSName(::org::ietf::jgss::Oid)>("canonicalize"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jboolean(::org::ietf::jgss::GSSName)>("equals"), //
+		jMethod<::jbyte *()>("export"), //
+		jMethod<::org::ietf::jgss::Oid()>("getStringNameType"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jboolean()>("isAnonymous"), //
+		jMethod<::jboolean()>("isMN"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::org::ietf::jgss::GSSName, typename... Args>
+	auto canonicalize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("canonicalize")] != -1);
+		return call<R>("canonicalize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto export_(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("export")] != -1);
+		return call<R>("export", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::ietf::jgss::Oid, typename... Args>
+	auto getStringNameType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStringNameType")] != -1);
+		return call<R>("getStringNameType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isAnonymous(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isAnonymous")] != -1);
+		return call<R>("isAnonymous", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isMN(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isMN")] != -1);
+		return call<R>("isMN", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

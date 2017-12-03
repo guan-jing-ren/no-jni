@@ -1,0 +1,69 @@
+#ifndef javax_sound_midi_Sequencer$SyncMode_HPP
+#define javax_sound_midi_Sequencer$SyncMode_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::sound::midi::Sequencer$SyncMode : public jObject<::javax::sound::midi::Sequencer$SyncMode, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sound_midi / "Sequencer$SyncMode";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::sound::midi::Sequencer$SyncMode>("INTERNAL_CLOCK"), //
+		jField<::javax::sound::midi::Sequencer$SyncMode>("MIDI_SYNC"), //
+		jField<::javax::sound::midi::Sequencer$SyncMode>("MIDI_TIME_CODE"), //
+		jField<::javax::sound::midi::Sequencer$SyncMode>("NO_SYNC"), //
+	};
+
+	template<typename F = ::javax::sound::midi::Sequencer$SyncMode>
+	static auto INTERNAL_CLOCK() {
+		static_assert(field_signatures[jField<F>("INTERNAL_CLOCK")] != -1);
+		return sat<F>("INTERNAL_CLOCK");
+	}
+
+	template<typename F = ::javax::sound::midi::Sequencer$SyncMode>
+	static auto MIDI_SYNC() {
+		static_assert(field_signatures[jField<F>("MIDI_SYNC")] != -1);
+		return sat<F>("MIDI_SYNC");
+	}
+
+	template<typename F = ::javax::sound::midi::Sequencer$SyncMode>
+	static auto MIDI_TIME_CODE() {
+		static_assert(field_signatures[jField<F>("MIDI_TIME_CODE")] != -1);
+		return sat<F>("MIDI_TIME_CODE");
+	}
+
+	template<typename F = ::javax::sound::midi::Sequencer$SyncMode>
+	static auto NO_SYNC() {
+		static_assert(field_signatures[jField<F>("NO_SYNC")] != -1);
+		return sat<F>("NO_SYNC");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

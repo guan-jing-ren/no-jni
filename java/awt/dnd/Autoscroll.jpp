@@ -1,0 +1,35 @@
+#ifndef java_awt_dnd_Autoscroll_HPP
+#define java_awt_dnd_Autoscroll_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::dnd::Autoscroll : public jObject<::java::awt::dnd::Autoscroll, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_dnd / "Autoscroll";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::awt::Point)>("autoscroll"), //
+		jMethod<::java::awt::Insets()>("getAutoscrollInsets"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto autoscroll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("autoscroll")] != -1);
+		return call<R>("autoscroll", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Insets, typename... Args>
+	auto getAutoscrollInsets(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAutoscrollInsets")] != -1);
+		return call<R>("getAutoscrollInsets", forward<Args>(args)...);
+	}
+
+};
+
+#endif

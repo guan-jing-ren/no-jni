@@ -1,0 +1,36 @@
+#ifndef javax_swing_plaf_PopupMenuUI_HPP
+#define javax_swing_plaf_PopupMenuUI_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::plaf::PopupMenuUI : public jObject<::javax::swing::plaf::PopupMenuUI, ::javax::swing::plaf::ComponentUI> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_plaf / "PopupMenuUI";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::swing::Popup(::javax::swing::JPopupMenu, ::jint, ::jint)>("getPopup"), //
+		jMethod<::jboolean(::java::awt::event::MouseEvent)>("isPopupTrigger"), //
+	};
+
+	template<typename R = ::javax::swing::Popup, typename... Args>
+	auto getPopup(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPopup")] != -1);
+		return call<R>("getPopup", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isPopupTrigger(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isPopupTrigger")] != -1);
+		return call<R>("isPopupTrigger", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,49 @@
+#ifndef java_time_temporal_TemporalAmount_HPP
+#define java_time_temporal_TemporalAmount_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::time::temporal::TemporalAmount : public jObject<::java::time::temporal::TemporalAmount, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_time_temporal / "TemporalAmount";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::time::temporal::Temporal(::java::time::temporal::Temporal)>("addTo"), //
+		jMethod<::jlong(::java::time::temporal::TemporalUnit)>("get"), //
+		jMethod<::java::util::List()>("getUnits"), //
+		jMethod<::java::time::temporal::Temporal(::java::time::temporal::Temporal)>("subtractFrom"), //
+	};
+
+	template<typename R = ::java::time::temporal::Temporal, typename... Args>
+	auto addTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addTo")] != -1);
+		return call<R>("addTo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getUnits(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUnits")] != -1);
+		return call<R>("getUnits", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::temporal::Temporal, typename... Args>
+	auto subtractFrom(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("subtractFrom")] != -1);
+		return call<R>("subtractFrom", forward<Args>(args)...);
+	}
+
+};
+
+#endif

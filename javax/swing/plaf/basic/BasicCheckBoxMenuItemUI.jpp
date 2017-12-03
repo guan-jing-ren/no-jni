@@ -1,0 +1,36 @@
+#ifndef javax_swing_plaf_basic_BasicCheckBoxMenuItemUI_HPP
+#define javax_swing_plaf_basic_BasicCheckBoxMenuItemUI_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::swing::plaf::basic::BasicCheckBoxMenuItemUI : public jObject<::javax::swing::plaf::basic::BasicCheckBoxMenuItemUI, ::javax::swing::plaf::basic::BasicMenuItemUI> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_plaf_basic / "BasicCheckBoxMenuItemUI";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::swing::plaf::ComponentUI(::javax::swing::JComponent)>("createUI"), //
+		jMethod<::jvoid(::javax::swing::JMenuItem, ::java::awt::event::MouseEvent, ::javax::swing::MenuElement *, ::javax::swing::MenuSelectionManager)>("processMouseEvent"), //
+	};
+
+	template<typename R = ::javax::swing::plaf::ComponentUI, typename... Args>
+	static auto createUI(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createUI")] != -1);
+		return scall<R>("createUI", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto processMouseEvent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("processMouseEvent")] != -1);
+		return call<R>("processMouseEvent", forward<Args>(args)...);
+	}
+
+};
+
+#endif

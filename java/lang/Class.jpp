@@ -1,0 +1,463 @@
+#ifndef java_lang_Class_HPP
+#define java_lang_Class_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::lang::Class : public jObject<::java::lang::Class, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang / "Class";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Class(::java::lang::Class)>("asSubclass"), //
+		jMethod<::java::lang::Object(::java::lang::Object)>("cast"), //
+		jMethod<::jboolean()>("desiredAssertionStatus"), //
+		jMethod<::java::lang::Class(::java::lang::String)>("forName"), //
+		jMethod<::java::lang::Class(::java::lang::String, ::jboolean, ::java::lang::ClassLoader)>("forName"), //
+		jMethod<::java::lang::reflect::AnnotatedType *()>("getAnnotatedInterfaces"), //
+		jMethod<::java::lang::reflect::AnnotatedType()>("getAnnotatedSuperclass"), //
+		jMethod<::java::lang::annotation::Annotation(::java::lang::Class)>("getAnnotation"), //
+		jMethod<::java::lang::annotation::Annotation *()>("getAnnotations"), //
+		jMethod<::java::lang::annotation::Annotation *(::java::lang::Class)>("getAnnotationsByType"), //
+		jMethod<::java::lang::String()>("getCanonicalName"), //
+		jMethod<::java::lang::ClassLoader()>("getClassLoader"), //
+		jMethod<::java::lang::Class *()>("getClasses"), //
+		jMethod<::java::lang::Class()>("getComponentType"), //
+		jMethod<::java::lang::reflect::Constructor(::java::lang::Class *)>("getConstructor"), //
+		jMethod<::java::lang::reflect::Constructor *()>("getConstructors"), //
+		jMethod<::java::lang::annotation::Annotation(::java::lang::Class)>("getDeclaredAnnotation"), //
+		jMethod<::java::lang::annotation::Annotation *()>("getDeclaredAnnotations"), //
+		jMethod<::java::lang::annotation::Annotation *(::java::lang::Class)>("getDeclaredAnnotationsByType"), //
+		jMethod<::java::lang::Class *()>("getDeclaredClasses"), //
+		jMethod<::java::lang::reflect::Constructor(::java::lang::Class *)>("getDeclaredConstructor"), //
+		jMethod<::java::lang::reflect::Constructor *()>("getDeclaredConstructors"), //
+		jMethod<::java::lang::reflect::Field(::java::lang::String)>("getDeclaredField"), //
+		jMethod<::java::lang::reflect::Field *()>("getDeclaredFields"), //
+		jMethod<::java::lang::reflect::Method(::java::lang::String, ::java::lang::Class *)>("getDeclaredMethod"), //
+		jMethod<::java::lang::reflect::Method *()>("getDeclaredMethods"), //
+		jMethod<::java::lang::Class()>("getDeclaringClass"), //
+		jMethod<::java::lang::Class()>("getEnclosingClass"), //
+		jMethod<::java::lang::reflect::Constructor()>("getEnclosingConstructor"), //
+		jMethod<::java::lang::reflect::Method()>("getEnclosingMethod"), //
+		jMethod<::java::lang::Object *()>("getEnumConstants"), //
+		jMethod<::java::lang::reflect::Field(::java::lang::String)>("getField"), //
+		jMethod<::java::lang::reflect::Field *()>("getFields"), //
+		jMethod<::java::lang::reflect::Type *()>("getGenericInterfaces"), //
+		jMethod<::java::lang::reflect::Type()>("getGenericSuperclass"), //
+		jMethod<::java::lang::Class *()>("getInterfaces"), //
+		jMethod<::java::lang::reflect::Method(::java::lang::String, ::java::lang::Class *)>("getMethod"), //
+		jMethod<::java::lang::reflect::Method *()>("getMethods"), //
+		jMethod<::jint()>("getModifiers"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::java::lang::Package()>("getPackage"), //
+		jMethod<::java::security::ProtectionDomain()>("getProtectionDomain"), //
+		jMethod<::java::net::URL(::java::lang::String)>("getResource"), //
+		jMethod<::java::io::InputStream(::java::lang::String)>("getResourceAsStream"), //
+		jMethod<::java::lang::Object *()>("getSigners"), //
+		jMethod<::java::lang::String()>("getSimpleName"), //
+		jMethod<::java::lang::Class()>("getSuperclass"), //
+		jMethod<::java::lang::String()>("getTypeName"), //
+		jMethod<::java::lang::reflect::TypeVariable *()>("getTypeParameters"), //
+		jMethod<::jboolean()>("isAnnotation"), //
+		jMethod<::jboolean(::java::lang::Class)>("isAnnotationPresent"), //
+		jMethod<::jboolean()>("isAnonymousClass"), //
+		jMethod<::jboolean()>("isArray"), //
+		jMethod<::jboolean(::java::lang::Class)>("isAssignableFrom"), //
+		jMethod<::jboolean()>("isEnum"), //
+		jMethod<::jboolean(::java::lang::Object)>("isInstance"), //
+		jMethod<::jboolean()>("isInterface"), //
+		jMethod<::jboolean()>("isLocalClass"), //
+		jMethod<::jboolean()>("isMemberClass"), //
+		jMethod<::jboolean()>("isPrimitive"), //
+		jMethod<::jboolean()>("isSynthetic"), //
+		jMethod<::java::lang::Object()>("newInstance"), //
+		jMethod<::java::lang::String()>("toGenericString"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto asSubclass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("asSubclass")] != -1);
+		return call<R>("asSubclass", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto cast(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("cast")] != -1);
+		return call<R>("cast", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto desiredAssertionStatus(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("desiredAssertionStatus")] != -1);
+		return call<R>("desiredAssertionStatus", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	static auto forName(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("forName")] != -1);
+		return scall<R>("forName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::AnnotatedType *, typename... Args>
+	auto getAnnotatedInterfaces(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAnnotatedInterfaces")] != -1);
+		return call<R>("getAnnotatedInterfaces", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::AnnotatedType, typename... Args>
+	auto getAnnotatedSuperclass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAnnotatedSuperclass")] != -1);
+		return call<R>("getAnnotatedSuperclass", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::annotation::Annotation, typename... Args>
+	auto getAnnotation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAnnotation")] != -1);
+		return call<R>("getAnnotation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::annotation::Annotation *, typename... Args>
+	auto getAnnotations(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAnnotations")] != -1);
+		return call<R>("getAnnotations", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::annotation::Annotation *, typename... Args>
+	auto getAnnotationsByType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAnnotationsByType")] != -1);
+		return call<R>("getAnnotationsByType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getCanonicalName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCanonicalName")] != -1);
+		return call<R>("getCanonicalName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::ClassLoader, typename... Args>
+	auto getClassLoader(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getClassLoader")] != -1);
+		return call<R>("getClassLoader", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class *, typename... Args>
+	auto getClasses(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getClasses")] != -1);
+		return call<R>("getClasses", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getComponentType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getComponentType")] != -1);
+		return call<R>("getComponentType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Constructor, typename... Args>
+	auto getConstructor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getConstructor")] != -1);
+		return call<R>("getConstructor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Constructor *, typename... Args>
+	auto getConstructors(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getConstructors")] != -1);
+		return call<R>("getConstructors", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::annotation::Annotation, typename... Args>
+	auto getDeclaredAnnotation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDeclaredAnnotation")] != -1);
+		return call<R>("getDeclaredAnnotation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::annotation::Annotation *, typename... Args>
+	auto getDeclaredAnnotations(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDeclaredAnnotations")] != -1);
+		return call<R>("getDeclaredAnnotations", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::annotation::Annotation *, typename... Args>
+	auto getDeclaredAnnotationsByType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDeclaredAnnotationsByType")] != -1);
+		return call<R>("getDeclaredAnnotationsByType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class *, typename... Args>
+	auto getDeclaredClasses(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDeclaredClasses")] != -1);
+		return call<R>("getDeclaredClasses", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Constructor, typename... Args>
+	auto getDeclaredConstructor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDeclaredConstructor")] != -1);
+		return call<R>("getDeclaredConstructor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Constructor *, typename... Args>
+	auto getDeclaredConstructors(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDeclaredConstructors")] != -1);
+		return call<R>("getDeclaredConstructors", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Field, typename... Args>
+	auto getDeclaredField(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDeclaredField")] != -1);
+		return call<R>("getDeclaredField", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Field *, typename... Args>
+	auto getDeclaredFields(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDeclaredFields")] != -1);
+		return call<R>("getDeclaredFields", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Method, typename... Args>
+	auto getDeclaredMethod(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDeclaredMethod")] != -1);
+		return call<R>("getDeclaredMethod", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Method *, typename... Args>
+	auto getDeclaredMethods(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDeclaredMethods")] != -1);
+		return call<R>("getDeclaredMethods", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getDeclaringClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDeclaringClass")] != -1);
+		return call<R>("getDeclaringClass", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getEnclosingClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEnclosingClass")] != -1);
+		return call<R>("getEnclosingClass", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Constructor, typename... Args>
+	auto getEnclosingConstructor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEnclosingConstructor")] != -1);
+		return call<R>("getEnclosingConstructor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Method, typename... Args>
+	auto getEnclosingMethod(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEnclosingMethod")] != -1);
+		return call<R>("getEnclosingMethod", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object *, typename... Args>
+	auto getEnumConstants(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEnumConstants")] != -1);
+		return call<R>("getEnumConstants", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Field, typename... Args>
+	auto getField(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getField")] != -1);
+		return call<R>("getField", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Field *, typename... Args>
+	auto getFields(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFields")] != -1);
+		return call<R>("getFields", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Type *, typename... Args>
+	auto getGenericInterfaces(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getGenericInterfaces")] != -1);
+		return call<R>("getGenericInterfaces", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Type, typename... Args>
+	auto getGenericSuperclass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getGenericSuperclass")] != -1);
+		return call<R>("getGenericSuperclass", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class *, typename... Args>
+	auto getInterfaces(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInterfaces")] != -1);
+		return call<R>("getInterfaces", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Method, typename... Args>
+	auto getMethod(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMethod")] != -1);
+		return call<R>("getMethod", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Method *, typename... Args>
+	auto getMethods(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMethods")] != -1);
+		return call<R>("getMethods", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getModifiers(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getModifiers")] != -1);
+		return call<R>("getModifiers", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Package, typename... Args>
+	auto getPackage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPackage")] != -1);
+		return call<R>("getPackage", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::ProtectionDomain, typename... Args>
+	auto getProtectionDomain(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProtectionDomain")] != -1);
+		return call<R>("getProtectionDomain", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::URL, typename... Args>
+	auto getResource(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getResource")] != -1);
+		return call<R>("getResource", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::InputStream, typename... Args>
+	auto getResourceAsStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getResourceAsStream")] != -1);
+		return call<R>("getResourceAsStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object *, typename... Args>
+	auto getSigners(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSigners")] != -1);
+		return call<R>("getSigners", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getSimpleName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSimpleName")] != -1);
+		return call<R>("getSimpleName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getSuperclass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSuperclass")] != -1);
+		return call<R>("getSuperclass", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getTypeName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTypeName")] != -1);
+		return call<R>("getTypeName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::TypeVariable *, typename... Args>
+	auto getTypeParameters(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTypeParameters")] != -1);
+		return call<R>("getTypeParameters", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isAnnotation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isAnnotation")] != -1);
+		return call<R>("isAnnotation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isAnnotationPresent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isAnnotationPresent")] != -1);
+		return call<R>("isAnnotationPresent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isAnonymousClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isAnonymousClass")] != -1);
+		return call<R>("isAnonymousClass", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isArray(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isArray")] != -1);
+		return call<R>("isArray", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isAssignableFrom(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isAssignableFrom")] != -1);
+		return call<R>("isAssignableFrom", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isEnum(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isEnum")] != -1);
+		return call<R>("isEnum", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isInstance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isInstance")] != -1);
+		return call<R>("isInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isInterface(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isInterface")] != -1);
+		return call<R>("isInterface", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isLocalClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isLocalClass")] != -1);
+		return call<R>("isLocalClass", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isMemberClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isMemberClass")] != -1);
+		return call<R>("isMemberClass", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isPrimitive(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isPrimitive")] != -1);
+		return call<R>("isPrimitive", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isSynthetic(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSynthetic")] != -1);
+		return call<R>("isSynthetic", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto newInstance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newInstance")] != -1);
+		return call<R>("newInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toGenericString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toGenericString")] != -1);
+		return call<R>("toGenericString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

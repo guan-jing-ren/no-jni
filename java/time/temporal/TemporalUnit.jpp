@@ -1,0 +1,77 @@
+#ifndef java_time_temporal_TemporalUnit_HPP
+#define java_time_temporal_TemporalUnit_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::time::temporal::TemporalUnit : public jObject<::java::time::temporal::TemporalUnit, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_time_temporal / "TemporalUnit";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::time::temporal::Temporal(::java::time::temporal::Temporal, ::jlong)>("addTo"), //
+		jMethod<::jlong(::java::time::temporal::Temporal, ::java::time::temporal::Temporal)>("between"), //
+		jMethod<::java::time::Duration()>("getDuration"), //
+		jMethod<::jboolean()>("isDateBased"), //
+		jMethod<::jboolean()>("isDurationEstimated"), //
+		jMethod<::jboolean(::java::time::temporal::Temporal)>("isSupportedBy"), //
+		jMethod<::jboolean()>("isTimeBased"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::time::temporal::Temporal, typename... Args>
+	auto addTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addTo")] != -1);
+		return call<R>("addTo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto between(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("between")] != -1);
+		return call<R>("between", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::Duration, typename... Args>
+	auto getDuration(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDuration")] != -1);
+		return call<R>("getDuration", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDateBased(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isDateBased")] != -1);
+		return call<R>("isDateBased", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDurationEstimated(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isDurationEstimated")] != -1);
+		return call<R>("isDurationEstimated", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isSupportedBy(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSupportedBy")] != -1);
+		return call<R>("isSupportedBy", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isTimeBased(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isTimeBased")] != -1);
+		return call<R>("isTimeBased", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

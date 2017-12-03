@@ -1,0 +1,36 @@
+#ifndef javax_crypto_spec_DHGenParameterSpec_HPP
+#define javax_crypto_spec_DHGenParameterSpec_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::crypto::spec::DHGenParameterSpec : public jObject<::javax::crypto::spec::DHGenParameterSpec, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_crypto_spec / "DHGenParameterSpec";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::jint)>(), //
+		jMethod<::jint()>("getExponentSize"), //
+		jMethod<::jint()>("getPrimeSize"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getExponentSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getExponentSize")] != -1);
+		return call<R>("getExponentSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getPrimeSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrimeSize")] != -1);
+		return call<R>("getPrimeSize", forward<Args>(args)...);
+	}
+
+};
+
+#endif

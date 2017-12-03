@@ -1,0 +1,48 @@
+#ifndef java_awt_PageAttributes$OrientationRequestedType_HPP
+#define java_awt_PageAttributes$OrientationRequestedType_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::PageAttributes$OrientationRequestedType : public jObject<::java::awt::PageAttributes$OrientationRequestedType, ::java::awt::AttributeValue> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "PageAttributes$OrientationRequestedType";
+
+	constexpr static Enume field_signatures{
+		jField<::java::awt::PageAttributes$OrientationRequestedType>("LANDSCAPE"), //
+		jField<::java::awt::PageAttributes$OrientationRequestedType>("PORTRAIT"), //
+	};
+
+	template<typename F = ::java::awt::PageAttributes$OrientationRequestedType>
+	static auto LANDSCAPE() {
+		static_assert(field_signatures[jField<F>("LANDSCAPE")] != -1);
+		return sat<F>("LANDSCAPE");
+	}
+
+	template<typename F = ::java::awt::PageAttributes$OrientationRequestedType>
+	static auto PORTRAIT() {
+		static_assert(field_signatures[jField<F>("PORTRAIT")] != -1);
+		return sat<F>("PORTRAIT");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

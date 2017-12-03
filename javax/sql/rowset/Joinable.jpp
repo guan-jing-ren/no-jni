@@ -1,0 +1,55 @@
+#ifndef javax_sql_rowset_Joinable_HPP
+#define javax_sql_rowset_Joinable_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::sql::rowset::Joinable : public jObject<::javax::sql::rowset::Joinable, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sql_rowset / "Joinable";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint *()>("getMatchColumnIndexes"), //
+		jMethod<::java::lang::String *()>("getMatchColumnNames"), //
+		jMethod<::jvoid(::jint)>("setMatchColumn"), //
+		jMethod<::jvoid(::java::lang::String)>("setMatchColumn"), //
+		jMethod<::jvoid(::jint *)>("setMatchColumn"), //
+		jMethod<::jvoid(::java::lang::String *)>("setMatchColumn"), //
+		jMethod<::jvoid(::jint)>("unsetMatchColumn"), //
+		jMethod<::jvoid(::java::lang::String)>("unsetMatchColumn"), //
+		jMethod<::jvoid(::jint *)>("unsetMatchColumn"), //
+		jMethod<::jvoid(::java::lang::String *)>("unsetMatchColumn"), //
+	};
+
+	template<typename R = ::jint *, typename... Args>
+	auto getMatchColumnIndexes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMatchColumnIndexes")] != -1);
+		return call<R>("getMatchColumnIndexes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getMatchColumnNames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMatchColumnNames")] != -1);
+		return call<R>("getMatchColumnNames", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setMatchColumn(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMatchColumn")] != -1);
+		return call<R>("setMatchColumn", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto unsetMatchColumn(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unsetMatchColumn")] != -1);
+		return call<R>("unsetMatchColumn", forward<Args>(args)...);
+	}
+
+};
+
+#endif

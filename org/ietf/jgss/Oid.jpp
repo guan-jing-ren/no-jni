@@ -1,0 +1,59 @@
+#ifndef org_ietf_jgss_Oid_HPP
+#define org_ietf_jgss_Oid_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::ietf::jgss::Oid : public jObject<::org::ietf::jgss::Oid, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_ietf_jgss / "Oid";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::InputStream)>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::jbyte *)>(), //
+		jMethod<::jboolean(::org::ietf::jgss::Oid *)>("containedIn"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jbyte *()>("getDER"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto containedIn(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("containedIn")] != -1);
+		return call<R>("containedIn", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getDER(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDER")] != -1);
+		return call<R>("getDER", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

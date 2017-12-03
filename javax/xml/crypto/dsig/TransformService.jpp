@@ -1,0 +1,66 @@
+#ifndef javax_xml_crypto_dsig_TransformService_HPP
+#define javax_xml_crypto_dsig_TransformService_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::crypto::dsig::TransformService : public jObject<::javax::xml::crypto::dsig::TransformService, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_crypto_dsig / "TransformService";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getAlgorithm"), //
+		jMethod<::javax::xml::crypto::dsig::TransformService(::java::lang::String, ::java::lang::String)>("getInstance"), //
+		jMethod<::javax::xml::crypto::dsig::TransformService(::java::lang::String, ::java::lang::String, ::java::lang::String)>("getInstance"), //
+		jMethod<::javax::xml::crypto::dsig::TransformService(::java::lang::String, ::java::lang::String, ::java::security::Provider)>("getInstance"), //
+		jMethod<::java::lang::String()>("getMechanismType"), //
+		jMethod<::java::security::Provider()>("getProvider"), //
+		jMethod<::jvoid(::javax::xml::crypto::XMLStructure, ::javax::xml::crypto::XMLCryptoContext)>("init"), //
+		jMethod<::jvoid(::javax::xml::crypto::dsig::spec::TransformParameterSpec)>("init"), //
+		jMethod<::jvoid(::javax::xml::crypto::XMLStructure, ::javax::xml::crypto::XMLCryptoContext)>("marshalParams"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAlgorithm(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlgorithm")] != -1);
+		return call<R>("getAlgorithm", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::crypto::dsig::TransformService, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMechanismType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMechanismType")] != -1);
+		return call<R>("getMechanismType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Provider, typename... Args>
+	auto getProvider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProvider")] != -1);
+		return call<R>("getProvider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto init(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("init")] != -1);
+		return call<R>("init", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto marshalParams(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("marshalParams")] != -1);
+		return call<R>("marshalParams", forward<Args>(args)...);
+	}
+
+};
+
+#endif

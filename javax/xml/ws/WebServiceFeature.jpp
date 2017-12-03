@@ -1,0 +1,35 @@
+#ifndef javax_xml_ws_WebServiceFeature_HPP
+#define javax_xml_ws_WebServiceFeature_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::ws::WebServiceFeature : public jObject<::javax::xml::ws::WebServiceFeature, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_ws / "WebServiceFeature";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getID"), //
+		jMethod<::jboolean()>("isEnabled"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getID")] != -1);
+		return call<R>("getID", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isEnabled(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isEnabled")] != -1);
+		return call<R>("isEnabled", forward<Args>(args)...);
+	}
+
+};
+
+#endif

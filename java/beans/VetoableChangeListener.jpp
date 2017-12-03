@@ -1,0 +1,28 @@
+#ifndef java_beans_VetoableChangeListener_HPP
+#define java_beans_VetoableChangeListener_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::beans::VetoableChangeListener : public jObject<::java::beans::VetoableChangeListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_beans / "VetoableChangeListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::beans::PropertyChangeEvent)>("vetoableChange"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto vetoableChange(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("vetoableChange")] != -1);
+		return call<R>("vetoableChange", forward<Args>(args)...);
+	}
+
+};
+
+#endif

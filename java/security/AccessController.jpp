@@ -1,0 +1,57 @@
+#ifndef java_security_AccessController_HPP
+#define java_security_AccessController_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::AccessController : public jObject<::java::security::AccessController, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "AccessController";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::security::Permission)>("checkPermission"), //
+		jMethod<::java::lang::Object(::java::security::PrivilegedAction)>("doPrivileged"), //
+		jMethod<::java::lang::Object(::java::security::PrivilegedAction, ::java::security::AccessControlContext)>("doPrivileged"), //
+		jMethod<::java::lang::Object(::java::security::PrivilegedAction, ::java::security::AccessControlContext, ::java::security::Permission *)>("doPrivileged"), //
+		jMethod<::java::lang::Object(::java::security::PrivilegedExceptionAction)>("doPrivileged"), //
+		jMethod<::java::lang::Object(::java::security::PrivilegedExceptionAction, ::java::security::AccessControlContext)>("doPrivileged"), //
+		jMethod<::java::lang::Object(::java::security::PrivilegedExceptionAction, ::java::security::AccessControlContext, ::java::security::Permission *)>("doPrivileged"), //
+		jMethod<::java::lang::Object(::java::security::PrivilegedAction)>("doPrivilegedWithCombiner"), //
+		jMethod<::java::lang::Object(::java::security::PrivilegedAction, ::java::security::AccessControlContext, ::java::security::Permission *)>("doPrivilegedWithCombiner"), //
+		jMethod<::java::lang::Object(::java::security::PrivilegedExceptionAction)>("doPrivilegedWithCombiner"), //
+		jMethod<::java::lang::Object(::java::security::PrivilegedExceptionAction, ::java::security::AccessControlContext, ::java::security::Permission *)>("doPrivilegedWithCombiner"), //
+		jMethod<::java::security::AccessControlContext()>("getContext"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto checkPermission(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("checkPermission")] != -1);
+		return scall<R>("checkPermission", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto doPrivileged(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("doPrivileged")] != -1);
+		return scall<R>("doPrivileged", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto doPrivilegedWithCombiner(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("doPrivilegedWithCombiner")] != -1);
+		return scall<R>("doPrivilegedWithCombiner", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::AccessControlContext, typename... Args>
+	static auto getContext(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getContext")] != -1);
+		return scall<R>("getContext", forward<Args>(args)...);
+	}
+
+};
+
+#endif

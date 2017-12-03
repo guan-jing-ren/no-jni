@@ -1,0 +1,69 @@
+#ifndef org_w3c_dom_TypeInfo_HPP
+#define org_w3c_dom_TypeInfo_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::w3c::dom::TypeInfo : public jObject<::org::w3c::dom::TypeInfo, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_w3c_dom / "TypeInfo";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("DERIVATION_EXTENSION"), //
+		jField<::jint>("DERIVATION_LIST"), //
+		jField<::jint>("DERIVATION_RESTRICTION"), //
+		jField<::jint>("DERIVATION_UNION"), //
+	};
+
+	template<typename F = ::jint>
+	static auto DERIVATION_EXTENSION() {
+		static_assert(field_signatures[jField<F>("DERIVATION_EXTENSION")] != -1);
+		return sat<F>("DERIVATION_EXTENSION");
+	}
+
+	template<typename F = ::jint>
+	static auto DERIVATION_LIST() {
+		static_assert(field_signatures[jField<F>("DERIVATION_LIST")] != -1);
+		return sat<F>("DERIVATION_LIST");
+	}
+
+	template<typename F = ::jint>
+	static auto DERIVATION_RESTRICTION() {
+		static_assert(field_signatures[jField<F>("DERIVATION_RESTRICTION")] != -1);
+		return sat<F>("DERIVATION_RESTRICTION");
+	}
+
+	template<typename F = ::jint>
+	static auto DERIVATION_UNION() {
+		static_assert(field_signatures[jField<F>("DERIVATION_UNION")] != -1);
+		return sat<F>("DERIVATION_UNION");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getTypeName"), //
+		jMethod<::java::lang::String()>("getTypeNamespace"), //
+		jMethod<::jboolean(::java::lang::String, ::java::lang::String, ::jint)>("isDerivedFrom"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getTypeName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTypeName")] != -1);
+		return call<R>("getTypeName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getTypeNamespace(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTypeNamespace")] != -1);
+		return call<R>("getTypeNamespace", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDerivedFrom(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isDerivedFrom")] != -1);
+		return call<R>("isDerivedFrom", forward<Args>(args)...);
+	}
+
+};
+
+#endif

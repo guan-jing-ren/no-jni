@@ -1,0 +1,72 @@
+#ifndef javax_imageio_spi_ImageWriterSpi_HPP
+#define javax_imageio_spi_ImageWriterSpi_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::imageio::spi::ImageWriterSpi : public jObject<::javax::imageio::spi::ImageWriterSpi, ::javax::imageio::spi::ImageReaderWriterSpi> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_imageio_spi / "ImageWriterSpi";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::Class *>("STANDARD_OUTPUT_TYPE"), //
+	};
+
+	template<typename F = ::java::lang::Class *>
+	static auto STANDARD_OUTPUT_TYPE() {
+		static_assert(field_signatures[jField<F>("STANDARD_OUTPUT_TYPE")] != -1);
+		return sat<F>("STANDARD_OUTPUT_TYPE");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::String *, ::java::lang::String *, ::java::lang::String *, ::java::lang::String, ::java::lang::Class *, ::java::lang::String *, ::jboolean, ::java::lang::String, ::java::lang::String, ::java::lang::String *, ::java::lang::String *, ::jboolean, ::java::lang::String, ::java::lang::String, ::java::lang::String *, ::java::lang::String *)>(), //
+		jMethod<::jboolean(::java::awt::image::RenderedImage)>("canEncodeImage"), //
+		jMethod<::jboolean(::javax::imageio::ImageTypeSpecifier)>("canEncodeImage"), //
+		jMethod<::javax::imageio::ImageWriter()>("createWriterInstance"), //
+		jMethod<::javax::imageio::ImageWriter(::java::lang::Object)>("createWriterInstance"), //
+		jMethod<::java::lang::String *()>("getImageReaderSpiNames"), //
+		jMethod<::java::lang::Class *()>("getOutputTypes"), //
+		jMethod<::jboolean()>("isFormatLossless"), //
+		jMethod<::jboolean(::javax::imageio::ImageWriter)>("isOwnWriter"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto canEncodeImage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("canEncodeImage")] != -1);
+		return call<R>("canEncodeImage", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::imageio::ImageWriter, typename... Args>
+	auto createWriterInstance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createWriterInstance")] != -1);
+		return call<R>("createWriterInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getImageReaderSpiNames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getImageReaderSpiNames")] != -1);
+		return call<R>("getImageReaderSpiNames", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class *, typename... Args>
+	auto getOutputTypes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOutputTypes")] != -1);
+		return call<R>("getOutputTypes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isFormatLossless(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isFormatLossless")] != -1);
+		return call<R>("isFormatLossless", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isOwnWriter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isOwnWriter")] != -1);
+		return call<R>("isOwnWriter", forward<Args>(args)...);
+	}
+
+};
+
+#endif

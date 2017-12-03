@@ -1,0 +1,28 @@
+#ifndef java_awt_peer_SystemTrayPeer_HPP
+#define java_awt_peer_SystemTrayPeer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::peer::SystemTrayPeer : public jObject<::java::awt::peer::SystemTrayPeer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_peer / "SystemTrayPeer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::Dimension()>("getTrayIconSize"), //
+	};
+
+	template<typename R = ::java::awt::Dimension, typename... Args>
+	auto getTrayIconSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTrayIconSize")] != -1);
+		return call<R>("getTrayIconSize", forward<Args>(args)...);
+	}
+
+};
+
+#endif

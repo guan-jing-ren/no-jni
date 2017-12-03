@@ -1,0 +1,55 @@
+#ifndef org_w3c_dom_bootstrap_DOMImplementationRegistry_HPP
+#define org_w3c_dom_bootstrap_DOMImplementationRegistry_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::w3c::dom::bootstrap::DOMImplementationRegistry : public jObject<::org::w3c::dom::bootstrap::DOMImplementationRegistry, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_w3c_dom_bootstrap / "DOMImplementationRegistry";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("PROPERTY"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto PROPERTY() {
+		static_assert(field_signatures[jField<F>("PROPERTY")] != -1);
+		return sat<F>("PROPERTY");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::org::w3c::dom::DOMImplementationSource)>("addSource"), //
+		jMethod<::org::w3c::dom::DOMImplementation(::java::lang::String)>("getDOMImplementation"), //
+		jMethod<::org::w3c::dom::DOMImplementationList(::java::lang::String)>("getDOMImplementationList"), //
+		jMethod<::org::w3c::dom::bootstrap::DOMImplementationRegistry()>("newInstance"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addSource(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addSource")] != -1);
+		return call<R>("addSource", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::DOMImplementation, typename... Args>
+	auto getDOMImplementation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDOMImplementation")] != -1);
+		return call<R>("getDOMImplementation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::DOMImplementationList, typename... Args>
+	auto getDOMImplementationList(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDOMImplementationList")] != -1);
+		return call<R>("getDOMImplementationList", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::bootstrap::DOMImplementationRegistry, typename... Args>
+	static auto newInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newInstance")] != -1);
+		return scall<R>("newInstance", forward<Args>(args)...);
+	}
+
+};
+
+#endif

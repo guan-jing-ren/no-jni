@@ -1,0 +1,36 @@
+#ifndef javax_sound_sampled_SourceDataLine_HPP
+#define javax_sound_sampled_SourceDataLine_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::sound::sampled::SourceDataLine : public jObject<::javax::sound::sampled::SourceDataLine, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sound_sampled / "SourceDataLine";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::sound::sampled::AudioFormat)>("open"), //
+		jMethod<::jvoid(::javax::sound::sampled::AudioFormat, ::jint)>("open"), //
+		jMethod<::jint(::jbyte *, ::jint, ::jint)>("write"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto open(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("open")] != -1);
+		return call<R>("open", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", forward<Args>(args)...);
+	}
+
+};
+
+#endif

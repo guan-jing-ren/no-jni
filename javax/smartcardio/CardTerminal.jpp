@@ -1,0 +1,56 @@
+#ifndef javax_smartcardio_CardTerminal_HPP
+#define javax_smartcardio_CardTerminal_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::smartcardio::CardTerminal : public jObject<::javax::smartcardio::CardTerminal, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_smartcardio / "CardTerminal";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::smartcardio::Card(::java::lang::String)>("connect"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::jboolean()>("isCardPresent"), //
+		jMethod<::jboolean(::jlong)>("waitForCardAbsent"), //
+		jMethod<::jboolean(::jlong)>("waitForCardPresent"), //
+	};
+
+	template<typename R = ::javax::smartcardio::Card, typename... Args>
+	auto connect(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("connect")] != -1);
+		return call<R>("connect", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isCardPresent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isCardPresent")] != -1);
+		return call<R>("isCardPresent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto waitForCardAbsent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("waitForCardAbsent")] != -1);
+		return call<R>("waitForCardAbsent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto waitForCardPresent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("waitForCardPresent")] != -1);
+		return call<R>("waitForCardPresent", forward<Args>(args)...);
+	}
+
+};
+
+#endif

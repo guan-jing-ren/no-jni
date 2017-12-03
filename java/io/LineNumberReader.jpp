@@ -1,0 +1,73 @@
+#ifndef java_io_LineNumberReader_HPP
+#define java_io_LineNumberReader_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::io::LineNumberReader : public jObject<::java::io::LineNumberReader, ::java::io::BufferedReader> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_io / "LineNumberReader";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::Reader)>(), //
+		jConstructor<::jvoid(::java::io::Reader, ::jint)>(), //
+		jMethod<::jint()>("getLineNumber"), //
+		jMethod<::jvoid(::jint)>("mark"), //
+		jMethod<::jint()>("read"), //
+		jMethod<::jint(::jchar *, ::jint, ::jint)>("read"), //
+		jMethod<::java::lang::String()>("readLine"), //
+		jMethod<::jvoid()>("reset"), //
+		jMethod<::jvoid(::jint)>("setLineNumber"), //
+		jMethod<::jlong(::jlong)>("skip"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getLineNumber(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLineNumber")] != -1);
+		return call<R>("getLineNumber", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto mark(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("mark")] != -1);
+		return call<R>("mark", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto readLine(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("readLine")] != -1);
+		return call<R>("readLine", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto reset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("reset")] != -1);
+		return call<R>("reset", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLineNumber(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLineNumber")] != -1);
+		return call<R>("setLineNumber", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto skip(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("skip")] != -1);
+		return call<R>("skip", forward<Args>(args)...);
+	}
+
+};
+
+#endif

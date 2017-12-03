@@ -1,0 +1,44 @@
+#ifndef java_rmi_server_UnicastRemoteObject_HPP
+#define java_rmi_server_UnicastRemoteObject_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::rmi::server::UnicastRemoteObject : public jObject<::java::rmi::server::UnicastRemoteObject, ::java::rmi::server::RemoteServer> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_rmi_server / "UnicastRemoteObject";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::java::rmi::server::RemoteStub(::java::rmi::Remote)>("exportObject"), //
+		jMethod<::java::rmi::Remote(::java::rmi::Remote, ::jint)>("exportObject"), //
+		jMethod<::java::rmi::Remote(::java::rmi::Remote, ::jint, ::java::rmi::server::RMIClientSocketFactory, ::java::rmi::server::RMIServerSocketFactory)>("exportObject"), //
+		jMethod<::jboolean(::java::rmi::Remote, ::jboolean)>("unexportObject"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::server::RemoteStub, typename... Args>
+	static auto exportObject(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("exportObject")] != -1);
+		return scall<R>("exportObject", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto unexportObject(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unexportObject")] != -1);
+		return scall<R>("unexportObject", forward<Args>(args)...);
+	}
+
+};
+
+#endif

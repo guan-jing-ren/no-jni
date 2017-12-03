@@ -1,0 +1,42 @@
+#ifndef javax_accessibility_AccessibleHypertext_HPP
+#define javax_accessibility_AccessibleHypertext_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::accessibility::AccessibleHypertext : public jObject<::javax::accessibility::AccessibleHypertext, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_accessibility / "AccessibleHypertext";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::accessibility::AccessibleHyperlink(::jint)>("getLink"), //
+		jMethod<::jint()>("getLinkCount"), //
+		jMethod<::jint(::jint)>("getLinkIndex"), //
+	};
+
+	template<typename R = ::javax::accessibility::AccessibleHyperlink, typename... Args>
+	auto getLink(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLink")] != -1);
+		return call<R>("getLink", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getLinkCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLinkCount")] != -1);
+		return call<R>("getLinkCount", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getLinkIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLinkIndex")] != -1);
+		return call<R>("getLinkIndex", forward<Args>(args)...);
+	}
+
+};
+
+#endif

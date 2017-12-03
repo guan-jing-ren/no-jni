@@ -1,0 +1,29 @@
+#ifndef javax_naming_spi_Resolver_HPP
+#define javax_naming_spi_Resolver_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::naming::spi::Resolver : public jObject<::javax::naming::spi::Resolver, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_naming_spi / "Resolver";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::naming::spi::ResolveResult(::java::lang::String, ::java::lang::Class)>("resolveToClass"), //
+		jMethod<::javax::naming::spi::ResolveResult(::javax::naming::Name, ::java::lang::Class)>("resolveToClass"), //
+	};
+
+	template<typename R = ::javax::naming::spi::ResolveResult, typename... Args>
+	auto resolveToClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("resolveToClass")] != -1);
+		return call<R>("resolveToClass", forward<Args>(args)...);
+	}
+
+};
+
+#endif

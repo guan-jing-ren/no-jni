@@ -1,0 +1,35 @@
+#ifndef java_sql_Savepoint_HPP
+#define java_sql_Savepoint_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::sql::Savepoint : public jObject<::java::sql::Savepoint, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_sql / "Savepoint";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("getSavepointId"), //
+		jMethod<::java::lang::String()>("getSavepointName"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getSavepointId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSavepointId")] != -1);
+		return call<R>("getSavepointId", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getSavepointName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSavepointName")] != -1);
+		return call<R>("getSavepointName", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,49 @@
+#ifndef javax_swing_ListModel_HPP
+#define javax_swing_ListModel_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::ListModel : public jObject<::javax::swing::ListModel, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "ListModel";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::swing::event::ListDataListener)>("addListDataListener"), //
+		jMethod<::java::lang::Object(::jint)>("getElementAt"), //
+		jMethod<::jint()>("getSize"), //
+		jMethod<::jvoid(::javax::swing::event::ListDataListener)>("removeListDataListener"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addListDataListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addListDataListener")] != -1);
+		return call<R>("addListDataListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getElementAt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getElementAt")] != -1);
+		return call<R>("getElementAt", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSize")] != -1);
+		return call<R>("getSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeListDataListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeListDataListener")] != -1);
+		return call<R>("removeListDataListener", forward<Args>(args)...);
+	}
+
+};
+
+#endif

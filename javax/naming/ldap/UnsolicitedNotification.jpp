@@ -1,0 +1,35 @@
+#ifndef javax_naming_ldap_UnsolicitedNotification_HPP
+#define javax_naming_ldap_UnsolicitedNotification_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::naming::ldap::UnsolicitedNotification : public jObject<::javax::naming::ldap::UnsolicitedNotification, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_naming_ldap / "UnsolicitedNotification";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::naming::NamingException()>("getException"), //
+		jMethod<::java::lang::String *()>("getReferrals"), //
+	};
+
+	template<typename R = ::javax::naming::NamingException, typename... Args>
+	auto getException(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getException")] != -1);
+		return call<R>("getException", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getReferrals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getReferrals")] != -1);
+		return call<R>("getReferrals", forward<Args>(args)...);
+	}
+
+};
+
+#endif

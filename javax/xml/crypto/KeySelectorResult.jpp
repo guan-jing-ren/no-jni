@@ -1,0 +1,28 @@
+#ifndef javax_xml_crypto_KeySelectorResult_HPP
+#define javax_xml_crypto_KeySelectorResult_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::crypto::KeySelectorResult : public jObject<::javax::xml::crypto::KeySelectorResult, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_crypto / "KeySelectorResult";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::security::Key()>("getKey"), //
+	};
+
+	template<typename R = ::java::security::Key, typename... Args>
+	auto getKey(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getKey")] != -1);
+		return call<R>("getKey", forward<Args>(args)...);
+	}
+
+};
+
+#endif

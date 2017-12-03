@@ -1,0 +1,28 @@
+#ifndef javax_naming_spi_DirObjectFactory_HPP
+#define javax_naming_spi_DirObjectFactory_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::naming::spi::DirObjectFactory : public jObject<::javax::naming::spi::DirObjectFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_naming_spi / "DirObjectFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object(::java::lang::Object, ::javax::naming::Name, ::javax::naming::Context, ::java::util::Hashtable, ::javax::naming::directory::Attributes)>("getObjectInstance"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getObjectInstance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getObjectInstance")] != -1);
+		return call<R>("getObjectInstance", forward<Args>(args)...);
+	}
+
+};
+
+#endif

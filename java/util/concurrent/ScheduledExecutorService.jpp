@@ -1,0 +1,43 @@
+#ifndef java_util_concurrent_ScheduledExecutorService_HPP
+#define java_util_concurrent_ScheduledExecutorService_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::concurrent::ScheduledExecutorService : public jObject<::java::util::concurrent::ScheduledExecutorService, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_concurrent / "ScheduledExecutorService";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::concurrent::ScheduledFuture(::java::lang::Runnable, ::jlong, ::java::util::concurrent::TimeUnit)>("schedule"), //
+		jMethod<::java::util::concurrent::ScheduledFuture(::java::util::concurrent::Callable, ::jlong, ::java::util::concurrent::TimeUnit)>("schedule"), //
+		jMethod<::java::util::concurrent::ScheduledFuture(::java::lang::Runnable, ::jlong, ::jlong, ::java::util::concurrent::TimeUnit)>("scheduleAtFixedRate"), //
+		jMethod<::java::util::concurrent::ScheduledFuture(::java::lang::Runnable, ::jlong, ::jlong, ::java::util::concurrent::TimeUnit)>("scheduleWithFixedDelay"), //
+	};
+
+	template<typename R = ::java::util::concurrent::ScheduledFuture, typename... Args>
+	auto schedule(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("schedule")] != -1);
+		return call<R>("schedule", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::concurrent::ScheduledFuture, typename... Args>
+	auto scheduleAtFixedRate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("scheduleAtFixedRate")] != -1);
+		return call<R>("scheduleAtFixedRate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::concurrent::ScheduledFuture, typename... Args>
+	auto scheduleWithFixedDelay(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("scheduleWithFixedDelay")] != -1);
+		return call<R>("scheduleWithFixedDelay", forward<Args>(args)...);
+	}
+
+};
+
+#endif

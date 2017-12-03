@@ -1,0 +1,46 @@
+#ifndef javax_sound_midi_spi_MidiFileWriter_HPP
+#define javax_sound_midi_spi_MidiFileWriter_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::sound::midi::spi::MidiFileWriter : public jObject<::javax::sound::midi::spi::MidiFileWriter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sound_midi_spi / "MidiFileWriter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jint *()>("getMidiFileTypes"), //
+		jMethod<::jint *(::javax::sound::midi::Sequence)>("getMidiFileTypes"), //
+		jMethod<::jboolean(::jint)>("isFileTypeSupported"), //
+		jMethod<::jboolean(::jint, ::javax::sound::midi::Sequence)>("isFileTypeSupported"), //
+		jMethod<::jint(::javax::sound::midi::Sequence, ::jint, ::java::io::File)>("write"), //
+		jMethod<::jint(::javax::sound::midi::Sequence, ::jint, ::java::io::OutputStream)>("write"), //
+	};
+
+	template<typename R = ::jint *, typename... Args>
+	auto getMidiFileTypes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMidiFileTypes")] != -1);
+		return call<R>("getMidiFileTypes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isFileTypeSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isFileTypeSupported")] != -1);
+		return call<R>("isFileTypeSupported", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", forward<Args>(args)...);
+	}
+
+};
+
+#endif

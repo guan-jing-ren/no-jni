@@ -1,0 +1,28 @@
+#ifndef javax_swing_event_ListSelectionListener_HPP
+#define javax_swing_event_ListSelectionListener_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::event::ListSelectionListener : public jObject<::javax::swing::event::ListSelectionListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_event / "ListSelectionListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::swing::event::ListSelectionEvent)>("valueChanged"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto valueChanged(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueChanged")] != -1);
+		return call<R>("valueChanged", forward<Args>(args)...);
+	}
+
+};
+
+#endif

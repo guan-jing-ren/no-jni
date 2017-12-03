@@ -1,0 +1,62 @@
+#ifndef java_security_cert_PKIXRevocationChecker$Option_HPP
+#define java_security_cert_PKIXRevocationChecker$Option_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::cert::PKIXRevocationChecker$Option : public jObject<::java::security::cert::PKIXRevocationChecker$Option, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_cert / "PKIXRevocationChecker$Option";
+
+	constexpr static Enume field_signatures{
+		jField<::java::security::cert::PKIXRevocationChecker$Option>("NO_FALLBACK"), //
+		jField<::java::security::cert::PKIXRevocationChecker$Option>("ONLY_END_ENTITY"), //
+		jField<::java::security::cert::PKIXRevocationChecker$Option>("PREFER_CRLS"), //
+		jField<::java::security::cert::PKIXRevocationChecker$Option>("SOFT_FAIL"), //
+	};
+
+	template<typename F = ::java::security::cert::PKIXRevocationChecker$Option>
+	static auto NO_FALLBACK() {
+		static_assert(field_signatures[jField<F>("NO_FALLBACK")] != -1);
+		return sat<F>("NO_FALLBACK");
+	}
+
+	template<typename F = ::java::security::cert::PKIXRevocationChecker$Option>
+	static auto ONLY_END_ENTITY() {
+		static_assert(field_signatures[jField<F>("ONLY_END_ENTITY")] != -1);
+		return sat<F>("ONLY_END_ENTITY");
+	}
+
+	template<typename F = ::java::security::cert::PKIXRevocationChecker$Option>
+	static auto PREFER_CRLS() {
+		static_assert(field_signatures[jField<F>("PREFER_CRLS")] != -1);
+		return sat<F>("PREFER_CRLS");
+	}
+
+	template<typename F = ::java::security::cert::PKIXRevocationChecker$Option>
+	static auto SOFT_FAIL() {
+		static_assert(field_signatures[jField<F>("SOFT_FAIL")] != -1);
+		return sat<F>("SOFT_FAIL");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::security::cert::PKIXRevocationChecker$Option(::java::lang::String)>("valueOf"), //
+		jMethod<::java::security::cert::PKIXRevocationChecker$Option *()>("values"), //
+	};
+
+	template<typename R = ::java::security::cert::PKIXRevocationChecker$Option, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::PKIXRevocationChecker$Option *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

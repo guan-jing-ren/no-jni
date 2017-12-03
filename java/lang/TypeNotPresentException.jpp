@@ -1,0 +1,29 @@
+#ifndef java_lang_TypeNotPresentException_HPP
+#define java_lang_TypeNotPresentException_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::lang::TypeNotPresentException : public jObject<::java::lang::TypeNotPresentException, ::java::lang::RuntimeException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang / "TypeNotPresentException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Throwable)>(), //
+		jMethod<::java::lang::String()>("typeName"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto typeName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("typeName")] != -1);
+		return call<R>("typeName", forward<Args>(args)...);
+	}
+
+};
+
+#endif

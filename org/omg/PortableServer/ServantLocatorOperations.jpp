@@ -1,0 +1,35 @@
+#ifndef org_omg_PortableServer_ServantLocatorOperations_HPP
+#define org_omg_PortableServer_ServantLocatorOperations_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::PortableServer::ServantLocatorOperations : public jObject<::org::omg::PortableServer::ServantLocatorOperations, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_PortableServer / "ServantLocatorOperations";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::jbyte *, ::org::omg::PortableServer::POA, ::java::lang::String, ::java::lang::Object, ::org::omg::PortableServer::Servant)>("postinvoke"), //
+		jMethod<::org::omg::PortableServer::Servant(::jbyte *, ::org::omg::PortableServer::POA, ::java::lang::String, ::org::omg::PortableServer::ServantLocatorPackage::CookieHolder)>("preinvoke"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto postinvoke(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("postinvoke")] != -1);
+		return call<R>("postinvoke", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::PortableServer::Servant, typename... Args>
+	auto preinvoke(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("preinvoke")] != -1);
+		return call<R>("preinvoke", forward<Args>(args)...);
+	}
+
+};
+
+#endif

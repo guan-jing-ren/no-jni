@@ -1,0 +1,42 @@
+#ifndef java_nio_file_WatchEvent_HPP
+#define java_nio_file_WatchEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::file::WatchEvent : public jObject<::java::nio::file::WatchEvent, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_file / "WatchEvent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object()>("context"), //
+		jMethod<::jint()>("count"), //
+		jMethod<::java::nio::file::WatchEvent$Kind()>("kind"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto context(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("context")] != -1);
+		return call<R>("context", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto count(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("count")] != -1);
+		return call<R>("count", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::WatchEvent$Kind, typename... Args>
+	auto kind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("kind")] != -1);
+		return call<R>("kind", forward<Args>(args)...);
+	}
+
+};
+
+#endif

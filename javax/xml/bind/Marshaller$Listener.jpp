@@ -1,0 +1,36 @@
+#ifndef javax_xml_bind_Marshaller$Listener_HPP
+#define javax_xml_bind_Marshaller$Listener_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::bind::Marshaller$Listener : public jObject<::javax::xml::bind::Marshaller$Listener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_bind / "Marshaller$Listener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::lang::Object)>("afterMarshal"), //
+		jMethod<::jvoid(::java::lang::Object)>("beforeMarshal"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto afterMarshal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("afterMarshal")] != -1);
+		return call<R>("afterMarshal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto beforeMarshal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("beforeMarshal")] != -1);
+		return call<R>("beforeMarshal", forward<Args>(args)...);
+	}
+
+};
+
+#endif

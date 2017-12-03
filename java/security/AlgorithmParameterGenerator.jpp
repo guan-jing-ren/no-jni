@@ -1,0 +1,61 @@
+#ifndef java_security_AlgorithmParameterGenerator_HPP
+#define java_security_AlgorithmParameterGenerator_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::AlgorithmParameterGenerator : public jObject<::java::security::AlgorithmParameterGenerator, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "AlgorithmParameterGenerator";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::security::AlgorithmParameters()>("generateParameters"), //
+		jMethod<::java::lang::String()>("getAlgorithm"), //
+		jMethod<::java::security::AlgorithmParameterGenerator(::java::lang::String)>("getInstance"), //
+		jMethod<::java::security::AlgorithmParameterGenerator(::java::lang::String, ::java::lang::String)>("getInstance"), //
+		jMethod<::java::security::AlgorithmParameterGenerator(::java::lang::String, ::java::security::Provider)>("getInstance"), //
+		jMethod<::java::security::Provider()>("getProvider"), //
+		jMethod<::jvoid(::jint)>("init"), //
+		jMethod<::jvoid(::jint, ::java::security::SecureRandom)>("init"), //
+		jMethod<::jvoid(::java::security::spec::AlgorithmParameterSpec)>("init"), //
+		jMethod<::jvoid(::java::security::spec::AlgorithmParameterSpec, ::java::security::SecureRandom)>("init"), //
+	};
+
+	template<typename R = ::java::security::AlgorithmParameters, typename... Args>
+	auto generateParameters(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("generateParameters")] != -1);
+		return call<R>("generateParameters", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAlgorithm(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlgorithm")] != -1);
+		return call<R>("getAlgorithm", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::AlgorithmParameterGenerator, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Provider, typename... Args>
+	auto getProvider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProvider")] != -1);
+		return call<R>("getProvider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto init(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("init")] != -1);
+		return call<R>("init", forward<Args>(args)...);
+	}
+
+};
+
+#endif

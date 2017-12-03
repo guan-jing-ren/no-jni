@@ -1,0 +1,62 @@
+#ifndef org_omg_PortableServer_ServantRetentionPolicyValue_HPP
+#define org_omg_PortableServer_ServantRetentionPolicyValue_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::PortableServer::ServantRetentionPolicyValue : public jObject<::org::omg::PortableServer::ServantRetentionPolicyValue, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_PortableServer / "ServantRetentionPolicyValue";
+
+	constexpr static Enume field_signatures{
+		jField<::org::omg::PortableServer::ServantRetentionPolicyValue>("NON_RETAIN"), //
+		jField<::org::omg::PortableServer::ServantRetentionPolicyValue>("RETAIN"), //
+		jField<::jint>("_NON_RETAIN"), //
+		jField<::jint>("_RETAIN"), //
+	};
+
+	template<typename F = ::org::omg::PortableServer::ServantRetentionPolicyValue>
+	static auto NON_RETAIN() {
+		static_assert(field_signatures[jField<F>("NON_RETAIN")] != -1);
+		return sat<F>("NON_RETAIN");
+	}
+
+	template<typename F = ::org::omg::PortableServer::ServantRetentionPolicyValue>
+	static auto RETAIN() {
+		static_assert(field_signatures[jField<F>("RETAIN")] != -1);
+		return sat<F>("RETAIN");
+	}
+
+	template<typename F = ::jint>
+	static auto _NON_RETAIN() {
+		static_assert(field_signatures[jField<F>("_NON_RETAIN")] != -1);
+		return sat<F>("_NON_RETAIN");
+	}
+
+	template<typename F = ::jint>
+	static auto _RETAIN() {
+		static_assert(field_signatures[jField<F>("_RETAIN")] != -1);
+		return sat<F>("_RETAIN");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::omg::PortableServer::ServantRetentionPolicyValue(::jint)>("from_int"), //
+		jMethod<::jint()>("value"), //
+	};
+
+	template<typename R = ::org::omg::PortableServer::ServantRetentionPolicyValue, typename... Args>
+	static auto from_int(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("from_int")] != -1);
+		return scall<R>("from_int", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("value")] != -1);
+		return call<R>("value", forward<Args>(args)...);
+	}
+
+};
+
+#endif

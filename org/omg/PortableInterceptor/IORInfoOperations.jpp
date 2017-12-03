@@ -1,0 +1,71 @@
+#ifndef org_omg_PortableInterceptor_IORInfoOperations_HPP
+#define org_omg_PortableInterceptor_IORInfoOperations_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::PortableInterceptor::IORInfoOperations : public jObject<::org::omg::PortableInterceptor::IORInfoOperations, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_PortableInterceptor / "IORInfoOperations";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::omg::PortableInterceptor::ObjectReferenceTemplate()>("adapter_template"), //
+		jMethod<::jvoid(::org::omg::IOP::TaggedComponent)>("add_ior_component"), //
+		jMethod<::jvoid(::org::omg::IOP::TaggedComponent, ::jint)>("add_ior_component_to_profile"), //
+		jMethod<::org::omg::PortableInterceptor::ObjectReferenceFactory()>("current_factory"), //
+		jMethod<::jvoid(::org::omg::PortableInterceptor::ObjectReferenceFactory)>("current_factory"), //
+		jMethod<::org::omg::CORBA::Policy(::jint)>("get_effective_policy"), //
+		jMethod<::jint()>("manager_id"), //
+		jMethod<::jshort()>("state"), //
+	};
+
+	template<typename R = ::org::omg::PortableInterceptor::ObjectReferenceTemplate, typename... Args>
+	auto adapter_template(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("adapter_template")] != -1);
+		return call<R>("adapter_template", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto add_ior_component(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("add_ior_component")] != -1);
+		return call<R>("add_ior_component", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto add_ior_component_to_profile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("add_ior_component_to_profile")] != -1);
+		return call<R>("add_ior_component_to_profile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::PortableInterceptor::ObjectReferenceFactory, typename... Args>
+	auto current_factory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("current_factory")] != -1);
+		return call<R>("current_factory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::Policy, typename... Args>
+	auto get_effective_policy(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get_effective_policy")] != -1);
+		return call<R>("get_effective_policy", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto manager_id(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("manager_id")] != -1);
+		return call<R>("manager_id", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jshort, typename... Args>
+	auto state(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("state")] != -1);
+		return call<R>("state", forward<Args>(args)...);
+	}
+
+};
+
+#endif

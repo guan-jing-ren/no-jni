@@ -1,0 +1,42 @@
+#ifndef javax_swing_event_AncestorListener_HPP
+#define javax_swing_event_AncestorListener_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::event::AncestorListener : public jObject<::javax::swing::event::AncestorListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_event / "AncestorListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::swing::event::AncestorEvent)>("ancestorAdded"), //
+		jMethod<::jvoid(::javax::swing::event::AncestorEvent)>("ancestorMoved"), //
+		jMethod<::jvoid(::javax::swing::event::AncestorEvent)>("ancestorRemoved"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto ancestorAdded(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("ancestorAdded")] != -1);
+		return call<R>("ancestorAdded", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto ancestorMoved(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("ancestorMoved")] != -1);
+		return call<R>("ancestorMoved", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto ancestorRemoved(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("ancestorRemoved")] != -1);
+		return call<R>("ancestorRemoved", forward<Args>(args)...);
+	}
+
+};
+
+#endif

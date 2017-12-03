@@ -1,0 +1,52 @@
+#ifndef java_security_cert_LDAPCertStoreParameters_HPP
+#define java_security_cert_LDAPCertStoreParameters_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::cert::LDAPCertStoreParameters : public jObject<::java::security::cert::LDAPCertStoreParameters, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_cert / "LDAPCertStoreParameters";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::jint)>(), //
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::jint()>("getPort"), //
+		jMethod<::java::lang::String()>("getServerName"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getPort(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPort")] != -1);
+		return call<R>("getPort", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getServerName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getServerName")] != -1);
+		return call<R>("getServerName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

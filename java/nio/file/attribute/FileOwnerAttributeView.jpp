@@ -1,0 +1,42 @@
+#ifndef java_nio_file_attribute_FileOwnerAttributeView_HPP
+#define java_nio_file_attribute_FileOwnerAttributeView_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::java::nio::file::attribute::FileOwnerAttributeView : public jObject<::java::nio::file::attribute::FileOwnerAttributeView, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_file_attribute / "FileOwnerAttributeView";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::nio::file::attribute::UserPrincipal()>("getOwner"), //
+		jMethod<::java::lang::String()>("name"), //
+		jMethod<::jvoid(::java::nio::file::attribute::UserPrincipal)>("setOwner"), //
+	};
+
+	template<typename R = ::java::nio::file::attribute::UserPrincipal, typename... Args>
+	auto getOwner(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOwner")] != -1);
+		return call<R>("getOwner", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto name(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("name")] != -1);
+		return call<R>("name", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setOwner(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setOwner")] != -1);
+		return call<R>("setOwner", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,86 @@
+#ifndef java_io_ObjectStreamField_HPP
+#define java_io_ObjectStreamField_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::io::ObjectStreamField : public jObject<::java::io::ObjectStreamField, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_io / "ObjectStreamField";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Class)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Class, ::jboolean)>(), //
+		jMethod<::jint(::java::lang::Object)>("compareTo"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::jint()>("getOffset"), //
+		jMethod<::java::lang::Class()>("getType"), //
+		jMethod<::jchar()>("getTypeCode"), //
+		jMethod<::java::lang::String()>("getTypeString"), //
+		jMethod<::jboolean()>("isPrimitive"), //
+		jMethod<::jboolean()>("isUnshared"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto compareTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compareTo")] != -1);
+		return call<R>("compareTo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getOffset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOffset")] != -1);
+		return call<R>("getOffset", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jchar, typename... Args>
+	auto getTypeCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTypeCode")] != -1);
+		return call<R>("getTypeCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getTypeString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTypeString")] != -1);
+		return call<R>("getTypeString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isPrimitive(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isPrimitive")] != -1);
+		return call<R>("isPrimitive", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isUnshared(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isUnshared")] != -1);
+		return call<R>("isUnshared", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

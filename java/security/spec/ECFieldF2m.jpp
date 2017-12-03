@@ -1,0 +1,66 @@
+#ifndef java_security_spec_ECFieldF2m_HPP
+#define java_security_spec_ECFieldF2m_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::spec::ECFieldF2m : public jObject<::java::security::spec::ECFieldF2m, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_spec / "ECFieldF2m";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint)>(), //
+		jConstructor<::jvoid(::jint, ::java::math::BigInteger)>(), //
+		jConstructor<::jvoid(::jint, ::jint *)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jint()>("getFieldSize"), //
+		jMethod<::jint()>("getM"), //
+		jMethod<::jint *()>("getMidTermsOfReductionPolynomial"), //
+		jMethod<::java::math::BigInteger()>("getReductionPolynomial"), //
+		jMethod<::jint()>("hashCode"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getFieldSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFieldSize")] != -1);
+		return call<R>("getFieldSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getM(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getM")] != -1);
+		return call<R>("getM", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint *, typename... Args>
+	auto getMidTermsOfReductionPolynomial(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMidTermsOfReductionPolynomial")] != -1);
+		return call<R>("getMidTermsOfReductionPolynomial", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getReductionPolynomial(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getReductionPolynomial")] != -1);
+		return call<R>("getReductionPolynomial", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,67 @@
+#ifndef javax_print_attribute_standard_MediaSize_HPP
+#define javax_print_attribute_standard_MediaSize_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::print::attribute::standard::MediaSize : public jObject<::javax::print::attribute::standard::MediaSize, ::javax::print::attribute::Size2DSyntax> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_print_attribute_standard / "MediaSize";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jfloat, ::jfloat, ::jint)>(), //
+		jConstructor<::jvoid(::jfloat, ::jfloat, ::jint, ::javax::print::attribute::standard::MediaSizeName)>(), //
+		jConstructor<::jvoid(::jint, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::jint, ::jint, ::jint, ::javax::print::attribute::standard::MediaSizeName)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::javax::print::attribute::standard::MediaSizeName(::jfloat, ::jfloat, ::jint)>("findMedia"), //
+		jMethod<::java::lang::Class()>("getCategory"), //
+		jMethod<::javax::print::attribute::standard::MediaSize(::javax::print::attribute::standard::MediaSizeName)>("getMediaSizeForName"), //
+		jMethod<::javax::print::attribute::standard::MediaSizeName()>("getMediaSizeName"), //
+		jMethod<::java::lang::String()>("getName"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::print::attribute::standard::MediaSizeName, typename... Args>
+	static auto findMedia(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("findMedia")] != -1);
+		return scall<R>("findMedia", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getCategory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCategory")] != -1);
+		return call<R>("getCategory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::print::attribute::standard::MediaSize, typename... Args>
+	static auto getMediaSizeForName(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMediaSizeForName")] != -1);
+		return scall<R>("getMediaSizeForName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::print::attribute::standard::MediaSizeName, typename... Args>
+	auto getMediaSizeName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMediaSizeName")] != -1);
+		return call<R>("getMediaSizeName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+};
+
+#endif

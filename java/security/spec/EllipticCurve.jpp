@@ -1,0 +1,65 @@
+#ifndef java_security_spec_EllipticCurve_HPP
+#define java_security_spec_EllipticCurve_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::spec::EllipticCurve : public jObject<::java::security::spec::EllipticCurve, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_spec / "EllipticCurve";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::security::spec::ECField, ::java::math::BigInteger, ::java::math::BigInteger)>(), //
+		jConstructor<::jvoid(::java::security::spec::ECField, ::java::math::BigInteger, ::java::math::BigInteger, ::jbyte *)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::math::BigInteger()>("getA"), //
+		jMethod<::java::math::BigInteger()>("getB"), //
+		jMethod<::java::security::spec::ECField()>("getField"), //
+		jMethod<::jbyte *()>("getSeed"), //
+		jMethod<::jint()>("hashCode"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getA(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getA")] != -1);
+		return call<R>("getA", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getB(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getB")] != -1);
+		return call<R>("getB", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::spec::ECField, typename... Args>
+	auto getField(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getField")] != -1);
+		return call<R>("getField", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getSeed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSeed")] != -1);
+		return call<R>("getSeed", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+};
+
+#endif

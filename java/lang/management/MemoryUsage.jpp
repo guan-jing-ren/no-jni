@@ -1,0 +1,64 @@
+#ifndef java_lang_management_MemoryUsage_HPP
+#define java_lang_management_MemoryUsage_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::management::MemoryUsage : public jObject<::java::lang::management::MemoryUsage, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_management / "MemoryUsage";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jlong, ::jlong, ::jlong, ::jlong)>(), //
+		jMethod<::java::lang::management::MemoryUsage(::javax::management::openmbean::CompositeData)>("from"), //
+		jMethod<::jlong()>("getCommitted"), //
+		jMethod<::jlong()>("getInit"), //
+		jMethod<::jlong()>("getMax"), //
+		jMethod<::jlong()>("getUsed"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::management::MemoryUsage, typename... Args>
+	static auto from(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("from")] != -1);
+		return scall<R>("from", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getCommitted(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCommitted")] != -1);
+		return call<R>("getCommitted", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getInit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInit")] != -1);
+		return call<R>("getInit", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getMax(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMax")] != -1);
+		return call<R>("getMax", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getUsed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUsed")] != -1);
+		return call<R>("getUsed", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

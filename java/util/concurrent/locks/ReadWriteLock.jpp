@@ -1,0 +1,35 @@
+#ifndef java_util_concurrent_locks_ReadWriteLock_HPP
+#define java_util_concurrent_locks_ReadWriteLock_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::java::util::concurrent::locks::ReadWriteLock : public jObject<::java::util::concurrent::locks::ReadWriteLock, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_concurrent_locks / "ReadWriteLock";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::concurrent::locks::Lock()>("readLock"), //
+		jMethod<::java::util::concurrent::locks::Lock()>("writeLock"), //
+	};
+
+	template<typename R = ::java::util::concurrent::locks::Lock, typename... Args>
+	auto readLock(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("readLock")] != -1);
+		return call<R>("readLock", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::concurrent::locks::Lock, typename... Args>
+	auto writeLock(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("writeLock")] != -1);
+		return call<R>("writeLock", forward<Args>(args)...);
+	}
+
+};
+
+#endif

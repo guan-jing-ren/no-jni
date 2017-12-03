@@ -1,0 +1,36 @@
+#ifndef java_nio_charset_MalformedInputException_HPP
+#define java_nio_charset_MalformedInputException_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::charset::MalformedInputException : public jObject<::java::nio::charset::MalformedInputException, ::java::nio::charset::CharacterCodingException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_charset / "MalformedInputException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint)>(), //
+		jMethod<::jint()>("getInputLength"), //
+		jMethod<::java::lang::String()>("getMessage"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getInputLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInputLength")] != -1);
+		return call<R>("getInputLength", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMessage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMessage")] != -1);
+		return call<R>("getMessage", forward<Args>(args)...);
+	}
+
+};
+
+#endif

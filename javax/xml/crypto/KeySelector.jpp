@@ -1,0 +1,35 @@
+#ifndef javax_xml_crypto_KeySelector_HPP
+#define javax_xml_crypto_KeySelector_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::crypto::KeySelector : public jObject<::javax::xml::crypto::KeySelector, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_crypto / "KeySelector";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::crypto::KeySelectorResult(::javax::xml::crypto::dsig::keyinfo::KeyInfo, ::javax::xml::crypto::KeySelector$Purpose, ::javax::xml::crypto::AlgorithmMethod, ::javax::xml::crypto::XMLCryptoContext)>("select"), //
+		jMethod<::javax::xml::crypto::KeySelector(::java::security::Key)>("singletonKeySelector"), //
+	};
+
+	template<typename R = ::javax::xml::crypto::KeySelectorResult, typename... Args>
+	auto select(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("select")] != -1);
+		return call<R>("select", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::crypto::KeySelector, typename... Args>
+	static auto singletonKeySelector(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("singletonKeySelector")] != -1);
+		return scall<R>("singletonKeySelector", forward<Args>(args)...);
+	}
+
+};
+
+#endif

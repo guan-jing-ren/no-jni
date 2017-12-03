@@ -1,0 +1,53 @@
+#ifndef javax_script_ScriptException_HPP
+#define javax_script_ScriptException_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::script::ScriptException : public jObject<::javax::script::ScriptException, ::java::lang::Exception> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_script / "ScriptException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Exception)>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::jint)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::jint, ::jint)>(), //
+		jMethod<::jint()>("getColumnNumber"), //
+		jMethod<::java::lang::String()>("getFileName"), //
+		jMethod<::jint()>("getLineNumber"), //
+		jMethod<::java::lang::String()>("getMessage"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getColumnNumber(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getColumnNumber")] != -1);
+		return call<R>("getColumnNumber", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getFileName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFileName")] != -1);
+		return call<R>("getFileName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getLineNumber(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLineNumber")] != -1);
+		return call<R>("getLineNumber", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMessage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMessage")] != -1);
+		return call<R>("getMessage", forward<Args>(args)...);
+	}
+
+};
+
+#endif

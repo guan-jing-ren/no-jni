@@ -1,0 +1,57 @@
+#ifndef javax_management_NotificationFilterSupport_HPP
+#define javax_management_NotificationFilterSupport_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::management::NotificationFilterSupport : public jObject<::javax::management::NotificationFilterSupport, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management / "NotificationFilterSupport";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid()>("disableAllTypes"), //
+		jMethod<::jvoid(::java::lang::String)>("disableType"), //
+		jMethod<::jvoid(::java::lang::String)>("enableType"), //
+		jMethod<::java::util::Vector()>("getEnabledTypes"), //
+		jMethod<::jboolean(::javax::management::Notification)>("isNotificationEnabled"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto disableAllTypes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("disableAllTypes")] != -1);
+		return call<R>("disableAllTypes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto disableType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("disableType")] != -1);
+		return call<R>("disableType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto enableType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("enableType")] != -1);
+		return call<R>("enableType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Vector, typename... Args>
+	auto getEnabledTypes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEnabledTypes")] != -1);
+		return call<R>("getEnabledTypes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isNotificationEnabled(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isNotificationEnabled")] != -1);
+		return call<R>("isNotificationEnabled", forward<Args>(args)...);
+	}
+
+};
+
+#endif

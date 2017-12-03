@@ -1,0 +1,77 @@
+#ifndef java_util_EnumSet_HPP
+#define java_util_EnumSet_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::EnumSet : public jObject<::java::util::EnumSet, ::java::util::AbstractSet> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "EnumSet";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::EnumSet(::java::lang::Class)>("allOf"), //
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::java::util::EnumSet()>("clone"), //
+		jMethod<::java::util::EnumSet(::java::util::EnumSet)>("complementOf"), //
+		jMethod<::java::util::EnumSet(::java::util::Collection)>("copyOf"), //
+		jMethod<::java::util::EnumSet(::java::util::EnumSet)>("copyOf"), //
+		jMethod<::java::util::EnumSet(::java::lang::Class)>("noneOf"), //
+		jMethod<::java::util::EnumSet(::java::lang::Enum)>("of"), //
+		jMethod<::java::util::EnumSet(::java::lang::Enum, ::java::lang::Enum)>("of"), //
+		jMethod<::java::util::EnumSet(::java::lang::Enum, ::java::lang::Enum, ::java::lang::Enum)>("of"), //
+		jMethod<::java::util::EnumSet(::java::lang::Enum, ::java::lang::Enum, ::java::lang::Enum, ::java::lang::Enum)>("of"), //
+		jMethod<::java::util::EnumSet(::java::lang::Enum, ::java::lang::Enum, ::java::lang::Enum, ::java::lang::Enum, ::java::lang::Enum)>("of"), //
+		jMethod<::java::util::EnumSet(::java::lang::Enum, ::java::lang::Enum *)>("of"), //
+		jMethod<::java::util::EnumSet(::java::lang::Enum, ::java::lang::Enum)>("range"), //
+	};
+
+	template<typename R = ::java::util::EnumSet, typename... Args>
+	static auto allOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("allOf")] != -1);
+		return scall<R>("allOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::EnumSet, typename... Args>
+	static auto complementOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("complementOf")] != -1);
+		return scall<R>("complementOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::EnumSet, typename... Args>
+	static auto copyOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("copyOf")] != -1);
+		return scall<R>("copyOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::EnumSet, typename... Args>
+	static auto noneOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("noneOf")] != -1);
+		return scall<R>("noneOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::EnumSet, typename... Args>
+	static auto of(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("of")] != -1);
+		return scall<R>("of", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::EnumSet, typename... Args>
+	static auto range(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("range")] != -1);
+		return scall<R>("range", forward<Args>(args)...);
+	}
+
+};
+
+#endif

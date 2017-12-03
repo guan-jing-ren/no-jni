@@ -1,0 +1,49 @@
+#ifndef java_awt_peer_ChoicePeer_HPP
+#define java_awt_peer_ChoicePeer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::peer::ChoicePeer : public jObject<::java::awt::peer::ChoicePeer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_peer / "ChoicePeer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::String, ::jint)>("add"), //
+		jMethod<::jvoid(::jint)>("remove"), //
+		jMethod<::jvoid()>("removeAll"), //
+		jMethod<::jvoid(::jint)>("select"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto add(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto remove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeAll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeAll")] != -1);
+		return call<R>("removeAll", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto select(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("select")] != -1);
+		return call<R>("select", forward<Args>(args)...);
+	}
+
+};
+
+#endif

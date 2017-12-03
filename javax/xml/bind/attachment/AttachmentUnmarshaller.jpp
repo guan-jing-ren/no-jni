@@ -1,0 +1,43 @@
+#ifndef javax_xml_bind_attachment_AttachmentUnmarshaller_HPP
+#define javax_xml_bind_attachment_AttachmentUnmarshaller_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::bind::attachment::AttachmentUnmarshaller : public jObject<::javax::xml::bind::attachment::AttachmentUnmarshaller, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_bind_attachment / "AttachmentUnmarshaller";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jbyte *(::java::lang::String)>("getAttachmentAsByteArray"), //
+		jMethod<::javax::activation::DataHandler(::java::lang::String)>("getAttachmentAsDataHandler"), //
+		jMethod<::jboolean()>("isXOPPackage"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getAttachmentAsByteArray(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttachmentAsByteArray")] != -1);
+		return call<R>("getAttachmentAsByteArray", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::activation::DataHandler, typename... Args>
+	auto getAttachmentAsDataHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttachmentAsDataHandler")] != -1);
+		return call<R>("getAttachmentAsDataHandler", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isXOPPackage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isXOPPackage")] != -1);
+		return call<R>("isXOPPackage", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,62 @@
+#ifndef java_sql_ClientInfoStatus_HPP
+#define java_sql_ClientInfoStatus_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::sql::ClientInfoStatus : public jObject<::java::sql::ClientInfoStatus, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_sql / "ClientInfoStatus";
+
+	constexpr static Enume field_signatures{
+		jField<::java::sql::ClientInfoStatus>("REASON_UNKNOWN"), //
+		jField<::java::sql::ClientInfoStatus>("REASON_UNKNOWN_PROPERTY"), //
+		jField<::java::sql::ClientInfoStatus>("REASON_VALUE_INVALID"), //
+		jField<::java::sql::ClientInfoStatus>("REASON_VALUE_TRUNCATED"), //
+	};
+
+	template<typename F = ::java::sql::ClientInfoStatus>
+	static auto REASON_UNKNOWN() {
+		static_assert(field_signatures[jField<F>("REASON_UNKNOWN")] != -1);
+		return sat<F>("REASON_UNKNOWN");
+	}
+
+	template<typename F = ::java::sql::ClientInfoStatus>
+	static auto REASON_UNKNOWN_PROPERTY() {
+		static_assert(field_signatures[jField<F>("REASON_UNKNOWN_PROPERTY")] != -1);
+		return sat<F>("REASON_UNKNOWN_PROPERTY");
+	}
+
+	template<typename F = ::java::sql::ClientInfoStatus>
+	static auto REASON_VALUE_INVALID() {
+		static_assert(field_signatures[jField<F>("REASON_VALUE_INVALID")] != -1);
+		return sat<F>("REASON_VALUE_INVALID");
+	}
+
+	template<typename F = ::java::sql::ClientInfoStatus>
+	static auto REASON_VALUE_TRUNCATED() {
+		static_assert(field_signatures[jField<F>("REASON_VALUE_TRUNCATED")] != -1);
+		return sat<F>("REASON_VALUE_TRUNCATED");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::sql::ClientInfoStatus(::java::lang::String)>("valueOf"), //
+		jMethod<::java::sql::ClientInfoStatus *()>("values"), //
+	};
+
+	template<typename R = ::java::sql::ClientInfoStatus, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::ClientInfoStatus *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,50 @@
+#ifndef java_security_SignedObject_HPP
+#define java_security_SignedObject_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::SignedObject : public jObject<::java::security::SignedObject, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "SignedObject";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::Serializable, ::java::security::PrivateKey, ::java::security::Signature)>(), //
+		jMethod<::java::lang::String()>("getAlgorithm"), //
+		jMethod<::java::lang::Object()>("getObject"), //
+		jMethod<::jbyte *()>("getSignature"), //
+		jMethod<::jboolean(::java::security::PublicKey, ::java::security::Signature)>("verify"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAlgorithm(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlgorithm")] != -1);
+		return call<R>("getAlgorithm", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getObject")] != -1);
+		return call<R>("getObject", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getSignature(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSignature")] != -1);
+		return call<R>("getSignature", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto verify(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("verify")] != -1);
+		return call<R>("verify", forward<Args>(args)...);
+	}
+
+};
+
+#endif

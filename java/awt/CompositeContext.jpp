@@ -1,0 +1,35 @@
+#ifndef java_awt_CompositeContext_HPP
+#define java_awt_CompositeContext_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::CompositeContext : public jObject<::java::awt::CompositeContext, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "CompositeContext";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::awt::image::Raster, ::java::awt::image::Raster, ::java::awt::image::WritableRaster)>("compose"), //
+		jMethod<::jvoid()>("dispose"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto compose(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compose")] != -1);
+		return call<R>("compose", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispose(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dispose")] != -1);
+		return call<R>("dispose", forward<Args>(args)...);
+	}
+
+};
+
+#endif

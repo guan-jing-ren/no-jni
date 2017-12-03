@@ -1,0 +1,42 @@
+#ifndef java_security_cert_CRL_HPP
+#define java_security_cert_CRL_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::cert::CRL : public jObject<::java::security::cert::CRL, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_cert / "CRL";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getType"), //
+		jMethod<::jboolean(::java::security::cert::Certificate)>("isRevoked"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isRevoked(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isRevoked")] != -1);
+		return call<R>("isRevoked", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

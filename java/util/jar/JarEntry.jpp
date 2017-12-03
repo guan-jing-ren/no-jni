@@ -1,0 +1,45 @@
+#ifndef java_util_jar_JarEntry_HPP
+#define java_util_jar_JarEntry_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::jar::JarEntry : public jObject<::java::util::jar::JarEntry, ::java::util::zip::ZipEntry> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_jar / "JarEntry";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::util::jar::JarEntry)>(), //
+		jConstructor<::jvoid(::java::util::zip::ZipEntry)>(), //
+		jMethod<::java::util::jar::Attributes()>("getAttributes"), //
+		jMethod<::java::security::cert::Certificate *()>("getCertificates"), //
+		jMethod<::java::security::CodeSigner *()>("getCodeSigners"), //
+	};
+
+	template<typename R = ::java::util::jar::Attributes, typename... Args>
+	auto getAttributes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttributes")] != -1);
+		return call<R>("getAttributes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::Certificate *, typename... Args>
+	auto getCertificates(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCertificates")] != -1);
+		return call<R>("getCertificates", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::CodeSigner *, typename... Args>
+	auto getCodeSigners(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCodeSigners")] != -1);
+		return call<R>("getCodeSigners", forward<Args>(args)...);
+	}
+
+};
+
+#endif

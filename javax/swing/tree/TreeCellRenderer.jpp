@@ -1,0 +1,28 @@
+#ifndef javax_swing_tree_TreeCellRenderer_HPP
+#define javax_swing_tree_TreeCellRenderer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::tree::TreeCellRenderer : public jObject<::javax::swing::tree::TreeCellRenderer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_tree / "TreeCellRenderer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::Component(::javax::swing::JTree, ::java::lang::Object, ::jboolean, ::jboolean, ::jboolean, ::jint, ::jboolean)>("getTreeCellRendererComponent"), //
+	};
+
+	template<typename R = ::java::awt::Component, typename... Args>
+	auto getTreeCellRendererComponent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTreeCellRendererComponent")] != -1);
+		return call<R>("getTreeCellRendererComponent", forward<Args>(args)...);
+	}
+
+};
+
+#endif

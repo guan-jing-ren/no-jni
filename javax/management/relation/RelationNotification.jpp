@@ -1,0 +1,113 @@
+#ifndef javax_management_relation_RelationNotification_HPP
+#define javax_management_relation_RelationNotification_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::management::relation::RelationNotification : public jObject<::javax::management::relation::RelationNotification, ::javax::management::Notification> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management_relation / "RelationNotification";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("RELATION_BASIC_CREATION"), //
+		jField<::java::lang::String>("RELATION_BASIC_REMOVAL"), //
+		jField<::java::lang::String>("RELATION_BASIC_UPDATE"), //
+		jField<::java::lang::String>("RELATION_MBEAN_CREATION"), //
+		jField<::java::lang::String>("RELATION_MBEAN_REMOVAL"), //
+		jField<::java::lang::String>("RELATION_MBEAN_UPDATE"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto RELATION_BASIC_CREATION() {
+		static_assert(field_signatures[jField<F>("RELATION_BASIC_CREATION")] != -1);
+		return sat<F>("RELATION_BASIC_CREATION");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto RELATION_BASIC_REMOVAL() {
+		static_assert(field_signatures[jField<F>("RELATION_BASIC_REMOVAL")] != -1);
+		return sat<F>("RELATION_BASIC_REMOVAL");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto RELATION_BASIC_UPDATE() {
+		static_assert(field_signatures[jField<F>("RELATION_BASIC_UPDATE")] != -1);
+		return sat<F>("RELATION_BASIC_UPDATE");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto RELATION_MBEAN_CREATION() {
+		static_assert(field_signatures[jField<F>("RELATION_MBEAN_CREATION")] != -1);
+		return sat<F>("RELATION_MBEAN_CREATION");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto RELATION_MBEAN_REMOVAL() {
+		static_assert(field_signatures[jField<F>("RELATION_MBEAN_REMOVAL")] != -1);
+		return sat<F>("RELATION_MBEAN_REMOVAL");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto RELATION_MBEAN_UPDATE() {
+		static_assert(field_signatures[jField<F>("RELATION_MBEAN_UPDATE")] != -1);
+		return sat<F>("RELATION_MBEAN_UPDATE");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Object, ::jlong, ::jlong, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::javax::management::ObjectName, ::java::lang::String, ::java::util::List, ::java::util::List)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Object, ::jlong, ::jlong, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::javax::management::ObjectName, ::java::util::List)>(), //
+		jMethod<::java::util::List()>("getMBeansToUnregister"), //
+		jMethod<::java::util::List()>("getNewRoleValue"), //
+		jMethod<::javax::management::ObjectName()>("getObjectName"), //
+		jMethod<::java::util::List()>("getOldRoleValue"), //
+		jMethod<::java::lang::String()>("getRelationId"), //
+		jMethod<::java::lang::String()>("getRelationTypeName"), //
+		jMethod<::java::lang::String()>("getRoleName"), //
+	};
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getMBeansToUnregister(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMBeansToUnregister")] != -1);
+		return call<R>("getMBeansToUnregister", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getNewRoleValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNewRoleValue")] != -1);
+		return call<R>("getNewRoleValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::ObjectName, typename... Args>
+	auto getObjectName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getObjectName")] != -1);
+		return call<R>("getObjectName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getOldRoleValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOldRoleValue")] != -1);
+		return call<R>("getOldRoleValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getRelationId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRelationId")] != -1);
+		return call<R>("getRelationId", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getRelationTypeName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRelationTypeName")] != -1);
+		return call<R>("getRelationTypeName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getRoleName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRoleName")] != -1);
+		return call<R>("getRoleName", forward<Args>(args)...);
+	}
+
+};
+
+#endif

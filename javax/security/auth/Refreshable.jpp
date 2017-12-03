@@ -1,0 +1,35 @@
+#ifndef javax_security_auth_Refreshable_HPP
+#define javax_security_auth_Refreshable_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::security::auth::Refreshable : public jObject<::javax::security::auth::Refreshable, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_security_auth / "Refreshable";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean()>("isCurrent"), //
+		jMethod<::jvoid()>("refresh"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isCurrent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isCurrent")] != -1);
+		return call<R>("isCurrent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto refresh(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("refresh")] != -1);
+		return call<R>("refresh", forward<Args>(args)...);
+	}
+
+};
+
+#endif

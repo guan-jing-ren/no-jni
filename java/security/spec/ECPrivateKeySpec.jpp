@@ -1,0 +1,36 @@
+#ifndef java_security_spec_ECPrivateKeySpec_HPP
+#define java_security_spec_ECPrivateKeySpec_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::spec::ECPrivateKeySpec : public jObject<::java::security::spec::ECPrivateKeySpec, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_spec / "ECPrivateKeySpec";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::math::BigInteger, ::java::security::spec::ECParameterSpec)>(), //
+		jMethod<::java::security::spec::ECParameterSpec()>("getParams"), //
+		jMethod<::java::math::BigInteger()>("getS"), //
+	};
+
+	template<typename R = ::java::security::spec::ECParameterSpec, typename... Args>
+	auto getParams(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParams")] != -1);
+		return call<R>("getParams", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getS(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getS")] != -1);
+		return call<R>("getS", forward<Args>(args)...);
+	}
+
+};
+
+#endif

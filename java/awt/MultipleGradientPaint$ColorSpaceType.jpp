@@ -1,0 +1,48 @@
+#ifndef java_awt_MultipleGradientPaint$ColorSpaceType_HPP
+#define java_awt_MultipleGradientPaint$ColorSpaceType_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::MultipleGradientPaint$ColorSpaceType : public jObject<::java::awt::MultipleGradientPaint$ColorSpaceType, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "MultipleGradientPaint$ColorSpaceType";
+
+	constexpr static Enume field_signatures{
+		jField<::java::awt::MultipleGradientPaint$ColorSpaceType>("LINEAR_RGB"), //
+		jField<::java::awt::MultipleGradientPaint$ColorSpaceType>("SRGB"), //
+	};
+
+	template<typename F = ::java::awt::MultipleGradientPaint$ColorSpaceType>
+	static auto LINEAR_RGB() {
+		static_assert(field_signatures[jField<F>("LINEAR_RGB")] != -1);
+		return sat<F>("LINEAR_RGB");
+	}
+
+	template<typename F = ::java::awt::MultipleGradientPaint$ColorSpaceType>
+	static auto SRGB() {
+		static_assert(field_signatures[jField<F>("SRGB")] != -1);
+		return sat<F>("SRGB");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::MultipleGradientPaint$ColorSpaceType(::java::lang::String)>("valueOf"), //
+		jMethod<::java::awt::MultipleGradientPaint$ColorSpaceType *()>("values"), //
+	};
+
+	template<typename R = ::java::awt::MultipleGradientPaint$ColorSpaceType, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::MultipleGradientPaint$ColorSpaceType *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

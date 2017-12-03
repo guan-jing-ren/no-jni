@@ -1,0 +1,42 @@
+#ifndef java_awt_ItemSelectable_HPP
+#define java_awt_ItemSelectable_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::ItemSelectable : public jObject<::java::awt::ItemSelectable, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "ItemSelectable";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::awt::event::ItemListener)>("addItemListener"), //
+		jMethod<::java::lang::Object *()>("getSelectedObjects"), //
+		jMethod<::jvoid(::java::awt::event::ItemListener)>("removeItemListener"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addItemListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addItemListener")] != -1);
+		return call<R>("addItemListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object *, typename... Args>
+	auto getSelectedObjects(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSelectedObjects")] != -1);
+		return call<R>("getSelectedObjects", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeItemListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeItemListener")] != -1);
+		return call<R>("removeItemListener", forward<Args>(args)...);
+	}
+
+};
+
+#endif

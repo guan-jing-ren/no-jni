@@ -1,0 +1,49 @@
+#ifndef javax_xml_soap_Name_HPP
+#define javax_xml_soap_Name_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::soap::Name : public jObject<::javax::xml::soap::Name, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_soap / "Name";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getLocalName"), //
+		jMethod<::java::lang::String()>("getPrefix"), //
+		jMethod<::java::lang::String()>("getQualifiedName"), //
+		jMethod<::java::lang::String()>("getURI"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getLocalName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLocalName")] != -1);
+		return call<R>("getLocalName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getPrefix(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrefix")] != -1);
+		return call<R>("getPrefix", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getQualifiedName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getQualifiedName")] != -1);
+		return call<R>("getQualifiedName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getURI(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getURI")] != -1);
+		return call<R>("getURI", forward<Args>(args)...);
+	}
+
+};
+
+#endif

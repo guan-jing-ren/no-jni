@@ -1,0 +1,65 @@
+#ifndef java_security_cert_CertPathValidator_HPP
+#define java_security_cert_CertPathValidator_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::cert::CertPathValidator : public jObject<::java::security::cert::CertPathValidator, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_cert / "CertPathValidator";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getAlgorithm"), //
+		jMethod<::java::lang::String()>("getDefaultType"), //
+		jMethod<::java::security::cert::CertPathValidator(::java::lang::String)>("getInstance"), //
+		jMethod<::java::security::cert::CertPathValidator(::java::lang::String, ::java::lang::String)>("getInstance"), //
+		jMethod<::java::security::cert::CertPathValidator(::java::lang::String, ::java::security::Provider)>("getInstance"), //
+		jMethod<::java::security::Provider()>("getProvider"), //
+		jMethod<::java::security::cert::CertPathChecker()>("getRevocationChecker"), //
+		jMethod<::java::security::cert::CertPathValidatorResult(::java::security::cert::CertPath, ::java::security::cert::CertPathParameters)>("validate"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAlgorithm(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlgorithm")] != -1);
+		return call<R>("getAlgorithm", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getDefaultType(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaultType")] != -1);
+		return scall<R>("getDefaultType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::CertPathValidator, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Provider, typename... Args>
+	auto getProvider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProvider")] != -1);
+		return call<R>("getProvider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::CertPathChecker, typename... Args>
+	auto getRevocationChecker(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRevocationChecker")] != -1);
+		return call<R>("getRevocationChecker", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::CertPathValidatorResult, typename... Args>
+	auto validate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("validate")] != -1);
+		return call<R>("validate", forward<Args>(args)...);
+	}
+
+};
+
+#endif

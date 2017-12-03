@@ -1,0 +1,56 @@
+#ifndef javax_lang_model_element_PackageElement_HPP
+#define javax_lang_model_element_PackageElement_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::lang::model::element::PackageElement : public jObject<::javax::lang::model::element::PackageElement, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_lang_model_element / "PackageElement";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::List()>("getEnclosedElements"), //
+		jMethod<::javax::lang::model::element::Element()>("getEnclosingElement"), //
+		jMethod<::javax::lang::model::element::Name()>("getQualifiedName"), //
+		jMethod<::javax::lang::model::element::Name()>("getSimpleName"), //
+		jMethod<::jboolean()>("isUnnamed"), //
+	};
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getEnclosedElements(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEnclosedElements")] != -1);
+		return call<R>("getEnclosedElements", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::lang::model::element::Element, typename... Args>
+	auto getEnclosingElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEnclosingElement")] != -1);
+		return call<R>("getEnclosingElement", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::lang::model::element::Name, typename... Args>
+	auto getQualifiedName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getQualifiedName")] != -1);
+		return call<R>("getQualifiedName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::lang::model::element::Name, typename... Args>
+	auto getSimpleName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSimpleName")] != -1);
+		return call<R>("getSimpleName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isUnnamed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isUnnamed")] != -1);
+		return call<R>("isUnnamed", forward<Args>(args)...);
+	}
+
+};
+
+#endif

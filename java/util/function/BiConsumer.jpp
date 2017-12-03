@@ -1,0 +1,35 @@
+#ifndef java_util_function_BiConsumer_HPP
+#define java_util_function_BiConsumer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::function::BiConsumer : public jObject<::java::util::function::BiConsumer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_function / "BiConsumer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::Object, ::java::lang::Object)>("accept"), //
+		jMethod<::java::util::function::BiConsumer(::java::util::function::BiConsumer)>("andThen"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto accept(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("accept")] != -1);
+		return call<R>("accept", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::function::BiConsumer, typename... Args>
+	auto andThen(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("andThen")] != -1);
+		return call<R>("andThen", forward<Args>(args)...);
+	}
+
+};
+
+#endif

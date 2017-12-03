@@ -1,0 +1,35 @@
+#ifndef javax_xml_bind_annotation_XmlNs_HPP
+#define javax_xml_bind_annotation_XmlNs_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::bind::annotation::XmlNs : public jObject<::javax::xml::bind::annotation::XmlNs, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_bind_annotation / "XmlNs";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("namespaceURI"), //
+		jMethod<::java::lang::String()>("prefix"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto namespaceURI(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("namespaceURI")] != -1);
+		return call<R>("namespaceURI", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto prefix(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("prefix")] != -1);
+		return call<R>("prefix", forward<Args>(args)...);
+	}
+
+};
+
+#endif

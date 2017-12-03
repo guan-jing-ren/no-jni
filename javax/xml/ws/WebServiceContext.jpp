@@ -1,0 +1,50 @@
+#ifndef javax_xml_ws_WebServiceContext_HPP
+#define javax_xml_ws_WebServiceContext_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::ws::WebServiceContext : public jObject<::javax::xml::ws::WebServiceContext, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_ws / "WebServiceContext";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::ws::EndpointReference(::java::lang::Class, ::org::w3c::dom::Element *)>("getEndpointReference"), //
+		jMethod<::javax::xml::ws::EndpointReference(::org::w3c::dom::Element *)>("getEndpointReference"), //
+		jMethod<::javax::xml::ws::handler::MessageContext()>("getMessageContext"), //
+		jMethod<::java::security::Principal()>("getUserPrincipal"), //
+		jMethod<::jboolean(::java::lang::String)>("isUserInRole"), //
+	};
+
+	template<typename R = ::javax::xml::ws::EndpointReference, typename... Args>
+	auto getEndpointReference(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEndpointReference")] != -1);
+		return call<R>("getEndpointReference", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::ws::handler::MessageContext, typename... Args>
+	auto getMessageContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMessageContext")] != -1);
+		return call<R>("getMessageContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Principal, typename... Args>
+	auto getUserPrincipal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUserPrincipal")] != -1);
+		return call<R>("getUserPrincipal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isUserInRole(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isUserInRole")] != -1);
+		return call<R>("isUserInRole", forward<Args>(args)...);
+	}
+
+};
+
+#endif

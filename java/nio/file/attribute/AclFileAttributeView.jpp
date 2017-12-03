@@ -1,0 +1,42 @@
+#ifndef java_nio_file_attribute_AclFileAttributeView_HPP
+#define java_nio_file_attribute_AclFileAttributeView_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::java::nio::file::attribute::AclFileAttributeView : public jObject<::java::nio::file::attribute::AclFileAttributeView, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_file_attribute / "AclFileAttributeView";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::List()>("getAcl"), //
+		jMethod<::java::lang::String()>("name"), //
+		jMethod<::jvoid(::java::util::List)>("setAcl"), //
+	};
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getAcl(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAcl")] != -1);
+		return call<R>("getAcl", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto name(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("name")] != -1);
+		return call<R>("name", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setAcl(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setAcl")] != -1);
+		return call<R>("setAcl", forward<Args>(args)...);
+	}
+
+};
+
+#endif

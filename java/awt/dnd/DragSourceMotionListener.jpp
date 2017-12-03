@@ -1,0 +1,28 @@
+#ifndef java_awt_dnd_DragSourceMotionListener_HPP
+#define java_awt_dnd_DragSourceMotionListener_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::dnd::DragSourceMotionListener : public jObject<::java::awt::dnd::DragSourceMotionListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_dnd / "DragSourceMotionListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::awt::dnd::DragSourceDragEvent)>("dragMouseMoved"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dragMouseMoved(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dragMouseMoved")] != -1);
+		return call<R>("dragMouseMoved", forward<Args>(args)...);
+	}
+
+};
+
+#endif

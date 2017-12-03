@@ -1,0 +1,55 @@
+#ifndef java_time_format_ResolverStyle_HPP
+#define java_time_format_ResolverStyle_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::time::format::ResolverStyle : public jObject<::java::time::format::ResolverStyle, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_time_format / "ResolverStyle";
+
+	constexpr static Enume field_signatures{
+		jField<::java::time::format::ResolverStyle>("LENIENT"), //
+		jField<::java::time::format::ResolverStyle>("SMART"), //
+		jField<::java::time::format::ResolverStyle>("STRICT"), //
+	};
+
+	template<typename F = ::java::time::format::ResolverStyle>
+	static auto LENIENT() {
+		static_assert(field_signatures[jField<F>("LENIENT")] != -1);
+		return sat<F>("LENIENT");
+	}
+
+	template<typename F = ::java::time::format::ResolverStyle>
+	static auto SMART() {
+		static_assert(field_signatures[jField<F>("SMART")] != -1);
+		return sat<F>("SMART");
+	}
+
+	template<typename F = ::java::time::format::ResolverStyle>
+	static auto STRICT() {
+		static_assert(field_signatures[jField<F>("STRICT")] != -1);
+		return sat<F>("STRICT");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::time::format::ResolverStyle(::java::lang::String)>("valueOf"), //
+		jMethod<::java::time::format::ResolverStyle *()>("values"), //
+	};
+
+	template<typename R = ::java::time::format::ResolverStyle, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::format::ResolverStyle *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

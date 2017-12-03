@@ -1,0 +1,65 @@
+#ifndef java_util_zip_ZipInputStream_HPP
+#define java_util_zip_ZipInputStream_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::zip::ZipInputStream : public jObject<::java::util::zip::ZipInputStream, ::java::util::zip::InflaterInputStream> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_zip / "ZipInputStream";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::InputStream)>(), //
+		jConstructor<::jvoid(::java::io::InputStream, ::java::nio::charset::Charset)>(), //
+		jMethod<::jint()>("available"), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::jvoid()>("closeEntry"), //
+		jMethod<::java::util::zip::ZipEntry()>("getNextEntry"), //
+		jMethod<::jint(::jbyte *, ::jint, ::jint)>("read"), //
+		jMethod<::jlong(::jlong)>("skip"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto available(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("available")] != -1);
+		return call<R>("available", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto closeEntry(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("closeEntry")] != -1);
+		return call<R>("closeEntry", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::zip::ZipEntry, typename... Args>
+	auto getNextEntry(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNextEntry")] != -1);
+		return call<R>("getNextEntry", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto skip(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("skip")] != -1);
+		return call<R>("skip", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,35 @@
+#ifndef javax_lang_model_type_WildcardType_HPP
+#define javax_lang_model_type_WildcardType_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::lang::model::type::WildcardType : public jObject<::javax::lang::model::type::WildcardType, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_lang_model_type / "WildcardType";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::lang::model::type::TypeMirror()>("getExtendsBound"), //
+		jMethod<::javax::lang::model::type::TypeMirror()>("getSuperBound"), //
+	};
+
+	template<typename R = ::javax::lang::model::type::TypeMirror, typename... Args>
+	auto getExtendsBound(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getExtendsBound")] != -1);
+		return call<R>("getExtendsBound", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::lang::model::type::TypeMirror, typename... Args>
+	auto getSuperBound(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSuperBound")] != -1);
+		return call<R>("getSuperBound", forward<Args>(args)...);
+	}
+
+};
+
+#endif

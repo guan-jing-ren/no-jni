@@ -1,0 +1,48 @@
+#ifndef javax_xml_crypto_dsig_SignatureMethod_HPP
+#define javax_xml_crypto_dsig_SignatureMethod_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::crypto::dsig::SignatureMethod : public jObject<::javax::xml::crypto::dsig::SignatureMethod, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_crypto_dsig / "SignatureMethod";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("DSA_SHA1"), //
+		jField<::java::lang::String>("HMAC_SHA1"), //
+		jField<::java::lang::String>("RSA_SHA1"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto DSA_SHA1() {
+		static_assert(field_signatures[jField<F>("DSA_SHA1")] != -1);
+		return sat<F>("DSA_SHA1");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto HMAC_SHA1() {
+		static_assert(field_signatures[jField<F>("HMAC_SHA1")] != -1);
+		return sat<F>("HMAC_SHA1");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto RSA_SHA1() {
+		static_assert(field_signatures[jField<F>("RSA_SHA1")] != -1);
+		return sat<F>("RSA_SHA1");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::security::spec::AlgorithmParameterSpec()>("getParameterSpec"), //
+	};
+
+	template<typename R = ::java::security::spec::AlgorithmParameterSpec, typename... Args>
+	auto getParameterSpec(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParameterSpec")] != -1);
+		return call<R>("getParameterSpec", forward<Args>(args)...);
+	}
+
+};
+
+#endif

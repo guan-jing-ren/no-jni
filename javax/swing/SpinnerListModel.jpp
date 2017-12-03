@@ -1,0 +1,66 @@
+#ifndef javax_swing_SpinnerListModel_HPP
+#define javax_swing_SpinnerListModel_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::SpinnerListModel : public jObject<::javax::swing::SpinnerListModel, ::javax::swing::AbstractSpinnerModel> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "SpinnerListModel";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::util::List)>(), //
+		jConstructor<::jvoid(::java::lang::Object *)>(), //
+		jMethod<::java::util::List()>("getList"), //
+		jMethod<::java::lang::Object()>("getNextValue"), //
+		jMethod<::java::lang::Object()>("getPreviousValue"), //
+		jMethod<::java::lang::Object()>("getValue"), //
+		jMethod<::jvoid(::java::util::List)>("setList"), //
+		jMethod<::jvoid(::java::lang::Object)>("setValue"), //
+	};
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getList(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getList")] != -1);
+		return call<R>("getList", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getNextValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNextValue")] != -1);
+		return call<R>("getNextValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getPreviousValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPreviousValue")] != -1);
+		return call<R>("getPreviousValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getValue")] != -1);
+		return call<R>("getValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setList(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setList")] != -1);
+		return call<R>("setList", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setValue")] != -1);
+		return call<R>("setValue", forward<Args>(args)...);
+	}
+
+};
+
+#endif

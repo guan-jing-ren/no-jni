@@ -1,0 +1,35 @@
+#ifndef java_nio_charset_spi_CharsetProvider_HPP
+#define java_nio_charset_spi_CharsetProvider_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::java::nio::charset::spi::CharsetProvider : public jObject<::java::nio::charset::spi::CharsetProvider, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_charset_spi / "CharsetProvider";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::nio::charset::Charset(::java::lang::String)>("charsetForName"), //
+		jMethod<::java::util::Iterator()>("charsets"), //
+	};
+
+	template<typename R = ::java::nio::charset::Charset, typename... Args>
+	auto charsetForName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("charsetForName")] != -1);
+		return call<R>("charsetForName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Iterator, typename... Args>
+	auto charsets(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("charsets")] != -1);
+		return call<R>("charsets", forward<Args>(args)...);
+	}
+
+};
+
+#endif

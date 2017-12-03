@@ -1,0 +1,64 @@
+#ifndef java_util_Base64_HPP
+#define java_util_Base64_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::Base64 : public jObject<::java::util::Base64, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "Base64";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::Base64$Decoder()>("getDecoder"), //
+		jMethod<::java::util::Base64$Encoder()>("getEncoder"), //
+		jMethod<::java::util::Base64$Decoder()>("getMimeDecoder"), //
+		jMethod<::java::util::Base64$Encoder()>("getMimeEncoder"), //
+		jMethod<::java::util::Base64$Encoder(::jint, ::jbyte *)>("getMimeEncoder"), //
+		jMethod<::java::util::Base64$Decoder()>("getUrlDecoder"), //
+		jMethod<::java::util::Base64$Encoder()>("getUrlEncoder"), //
+	};
+
+	template<typename R = ::java::util::Base64$Decoder, typename... Args>
+	static auto getDecoder(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDecoder")] != -1);
+		return scall<R>("getDecoder", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Base64$Encoder, typename... Args>
+	static auto getEncoder(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEncoder")] != -1);
+		return scall<R>("getEncoder", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Base64$Decoder, typename... Args>
+	static auto getMimeDecoder(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMimeDecoder")] != -1);
+		return scall<R>("getMimeDecoder", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Base64$Encoder, typename... Args>
+	static auto getMimeEncoder(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMimeEncoder")] != -1);
+		return scall<R>("getMimeEncoder", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Base64$Decoder, typename... Args>
+	static auto getUrlDecoder(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUrlDecoder")] != -1);
+		return scall<R>("getUrlDecoder", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Base64$Encoder, typename... Args>
+	static auto getUrlEncoder(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUrlEncoder")] != -1);
+		return scall<R>("getUrlEncoder", forward<Args>(args)...);
+	}
+
+};
+
+#endif

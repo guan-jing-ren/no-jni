@@ -1,0 +1,76 @@
+#ifndef org_omg_CORBA_CompletionStatus_HPP
+#define org_omg_CORBA_CompletionStatus_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::CORBA::CompletionStatus : public jObject<::org::omg::CORBA::CompletionStatus, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CORBA / "CompletionStatus";
+
+	constexpr static Enume field_signatures{
+		jField<::org::omg::CORBA::CompletionStatus>("COMPLETED_MAYBE"), //
+		jField<::org::omg::CORBA::CompletionStatus>("COMPLETED_NO"), //
+		jField<::org::omg::CORBA::CompletionStatus>("COMPLETED_YES"), //
+		jField<::jint>("_COMPLETED_MAYBE"), //
+		jField<::jint>("_COMPLETED_NO"), //
+		jField<::jint>("_COMPLETED_YES"), //
+	};
+
+	template<typename F = ::org::omg::CORBA::CompletionStatus>
+	static auto COMPLETED_MAYBE() {
+		static_assert(field_signatures[jField<F>("COMPLETED_MAYBE")] != -1);
+		return sat<F>("COMPLETED_MAYBE");
+	}
+
+	template<typename F = ::org::omg::CORBA::CompletionStatus>
+	static auto COMPLETED_NO() {
+		static_assert(field_signatures[jField<F>("COMPLETED_NO")] != -1);
+		return sat<F>("COMPLETED_NO");
+	}
+
+	template<typename F = ::org::omg::CORBA::CompletionStatus>
+	static auto COMPLETED_YES() {
+		static_assert(field_signatures[jField<F>("COMPLETED_YES")] != -1);
+		return sat<F>("COMPLETED_YES");
+	}
+
+	template<typename F = ::jint>
+	static auto _COMPLETED_MAYBE() {
+		static_assert(field_signatures[jField<F>("_COMPLETED_MAYBE")] != -1);
+		return sat<F>("_COMPLETED_MAYBE");
+	}
+
+	template<typename F = ::jint>
+	static auto _COMPLETED_NO() {
+		static_assert(field_signatures[jField<F>("_COMPLETED_NO")] != -1);
+		return sat<F>("_COMPLETED_NO");
+	}
+
+	template<typename F = ::jint>
+	static auto _COMPLETED_YES() {
+		static_assert(field_signatures[jField<F>("_COMPLETED_YES")] != -1);
+		return sat<F>("_COMPLETED_YES");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::omg::CORBA::CompletionStatus(::jint)>("from_int"), //
+		jMethod<::jint()>("value"), //
+	};
+
+	template<typename R = ::org::omg::CORBA::CompletionStatus, typename... Args>
+	static auto from_int(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("from_int")] != -1);
+		return scall<R>("from_int", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("value")] != -1);
+		return call<R>("value", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,58 @@
+#ifndef javax_net_ssl_SNIHostName_HPP
+#define javax_net_ssl_SNIHostName_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::net::ssl::SNIHostName : public jObject<::javax::net::ssl::SNIHostName, ::javax::net::ssl::SNIServerName> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_net_ssl / "SNIHostName";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::jbyte *)>(), //
+		jMethod<::javax::net::ssl::SNIMatcher(::java::lang::String)>("createSNIMatcher"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::lang::String()>("getAsciiName"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::javax::net::ssl::SNIMatcher, typename... Args>
+	static auto createSNIMatcher(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createSNIMatcher")] != -1);
+		return scall<R>("createSNIMatcher", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAsciiName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAsciiName")] != -1);
+		return call<R>("getAsciiName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,43 @@
+#ifndef javax_sound_sampled_Line$Info_HPP
+#define javax_sound_sampled_Line$Info_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::sound::sampled::Line$Info : public jObject<::javax::sound::sampled::Line$Info, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sound_sampled / "Line$Info";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Class)>(), //
+		jMethod<::java::lang::Class()>("getLineClass"), //
+		jMethod<::jboolean(::javax::sound::sampled::Line$Info)>("matches"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getLineClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLineClass")] != -1);
+		return call<R>("getLineClass", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto matches(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("matches")] != -1);
+		return call<R>("matches", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

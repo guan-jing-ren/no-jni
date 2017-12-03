@@ -1,0 +1,28 @@
+#ifndef javax_naming_event_ObjectChangeListener_HPP
+#define javax_naming_event_ObjectChangeListener_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::naming::event::ObjectChangeListener : public jObject<::javax::naming::event::ObjectChangeListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_naming_event / "ObjectChangeListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::naming::event::NamingEvent)>("objectChanged"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto objectChanged(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("objectChanged")] != -1);
+		return call<R>("objectChanged", forward<Args>(args)...);
+	}
+
+};
+
+#endif

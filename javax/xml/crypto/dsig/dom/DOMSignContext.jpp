@@ -1,0 +1,53 @@
+#ifndef javax_xml_crypto_dsig_dom_DOMSignContext_HPP
+#define javax_xml_crypto_dsig_dom_DOMSignContext_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::javax::xml::crypto::dsig::dom::DOMSignContext : public jObject<::javax::xml::crypto::dsig::dom::DOMSignContext, ::javax::xml::crypto::dom::DOMCryptoContext> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_crypto_dsig_dom / "DOMSignContext";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::security::Key, ::org::w3c::dom::Node)>(), //
+		jConstructor<::jvoid(::java::security::Key, ::org::w3c::dom::Node, ::org::w3c::dom::Node)>(), //
+		jConstructor<::jvoid(::javax::xml::crypto::KeySelector, ::org::w3c::dom::Node)>(), //
+		jConstructor<::jvoid(::javax::xml::crypto::KeySelector, ::org::w3c::dom::Node, ::org::w3c::dom::Node)>(), //
+		jMethod<::org::w3c::dom::Node()>("getNextSibling"), //
+		jMethod<::org::w3c::dom::Node()>("getParent"), //
+		jMethod<::jvoid(::org::w3c::dom::Node)>("setNextSibling"), //
+		jMethod<::jvoid(::org::w3c::dom::Node)>("setParent"), //
+	};
+
+	template<typename R = ::org::w3c::dom::Node, typename... Args>
+	auto getNextSibling(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNextSibling")] != -1);
+		return call<R>("getNextSibling", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Node, typename... Args>
+	auto getParent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParent")] != -1);
+		return call<R>("getParent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setNextSibling(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setNextSibling")] != -1);
+		return call<R>("setNextSibling", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setParent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setParent")] != -1);
+		return call<R>("setParent", forward<Args>(args)...);
+	}
+
+};
+
+#endif

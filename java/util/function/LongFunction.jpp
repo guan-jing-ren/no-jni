@@ -1,0 +1,28 @@
+#ifndef java_util_function_LongFunction_HPP
+#define java_util_function_LongFunction_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::function::LongFunction : public jObject<::java::util::function::LongFunction, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_function / "LongFunction";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object(::jlong)>("apply"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto apply(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("apply")] != -1);
+		return call<R>("apply", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,48 @@
+#ifndef javax_xml_transform_Result_HPP
+#define javax_xml_transform_Result_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::transform::Result : public jObject<::javax::xml::transform::Result, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_transform / "Result";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("PI_DISABLE_OUTPUT_ESCAPING"), //
+		jField<::java::lang::String>("PI_ENABLE_OUTPUT_ESCAPING"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto PI_DISABLE_OUTPUT_ESCAPING() {
+		static_assert(field_signatures[jField<F>("PI_DISABLE_OUTPUT_ESCAPING")] != -1);
+		return sat<F>("PI_DISABLE_OUTPUT_ESCAPING");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto PI_ENABLE_OUTPUT_ESCAPING() {
+		static_assert(field_signatures[jField<F>("PI_ENABLE_OUTPUT_ESCAPING")] != -1);
+		return sat<F>("PI_ENABLE_OUTPUT_ESCAPING");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getSystemId"), //
+		jMethod<::jvoid(::java::lang::String)>("setSystemId"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getSystemId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSystemId")] != -1);
+		return call<R>("getSystemId", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setSystemId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSystemId")] != -1);
+		return call<R>("setSystemId", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,28 @@
+#ifndef javax_sql_RowSetWriter_HPP
+#define javax_sql_RowSetWriter_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::sql::RowSetWriter : public jObject<::javax::sql::RowSetWriter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sql / "RowSetWriter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::javax::sql::RowSetInternal)>("writeData"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto writeData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("writeData")] != -1);
+		return call<R>("writeData", forward<Args>(args)...);
+	}
+
+};
+
+#endif

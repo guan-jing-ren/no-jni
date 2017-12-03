@@ -1,0 +1,42 @@
+#ifndef java_rmi_server_LoaderHandler_HPP
+#define java_rmi_server_LoaderHandler_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::rmi::server::LoaderHandler : public jObject<::java::rmi::server::LoaderHandler, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_rmi_server / "LoaderHandler";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("packagePrefix"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto packagePrefix() {
+		static_assert(field_signatures[jField<F>("packagePrefix")] != -1);
+		return sat<F>("packagePrefix");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object(::java::lang::ClassLoader)>("getSecurityContext"), //
+		jMethod<::java::lang::Class(::java::lang::String)>("loadClass"), //
+		jMethod<::java::lang::Class(::java::net::URL, ::java::lang::String)>("loadClass"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getSecurityContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSecurityContext")] != -1);
+		return call<R>("getSecurityContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto loadClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("loadClass")] != -1);
+		return call<R>("loadClass", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,42 @@
+#ifndef java_awt_color_ICC_ProfileGray_HPP
+#define java_awt_color_ICC_ProfileGray_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::color::ICC_ProfileGray : public jObject<::java::awt::color::ICC_ProfileGray, ::java::awt::color::ICC_Profile> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_color / "ICC_ProfileGray";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jfloat()>("getGamma"), //
+		jMethod<::jfloat *()>("getMediaWhitePoint"), //
+		jMethod<::jshort *()>("getTRC"), //
+	};
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getGamma(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getGamma")] != -1);
+		return call<R>("getGamma", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat *, typename... Args>
+	auto getMediaWhitePoint(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMediaWhitePoint")] != -1);
+		return call<R>("getMediaWhitePoint", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jshort *, typename... Args>
+	auto getTRC(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTRC")] != -1);
+		return call<R>("getTRC", forward<Args>(args)...);
+	}
+
+};
+
+#endif

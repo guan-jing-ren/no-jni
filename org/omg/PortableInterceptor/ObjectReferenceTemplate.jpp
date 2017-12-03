@@ -1,0 +1,42 @@
+#ifndef org_omg_PortableInterceptor_ObjectReferenceTemplate_HPP
+#define org_omg_PortableInterceptor_ObjectReferenceTemplate_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::PortableInterceptor::ObjectReferenceTemplate : public jObject<::org::omg::PortableInterceptor::ObjectReferenceTemplate, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_PortableInterceptor / "ObjectReferenceTemplate";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String *()>("adapter_name"), //
+		jMethod<::java::lang::String()>("orb_id"), //
+		jMethod<::java::lang::String()>("server_id"), //
+	};
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto adapter_name(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("adapter_name")] != -1);
+		return call<R>("adapter_name", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto orb_id(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("orb_id")] != -1);
+		return call<R>("orb_id", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto server_id(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("server_id")] != -1);
+		return call<R>("server_id", forward<Args>(args)...);
+	}
+
+};
+
+#endif

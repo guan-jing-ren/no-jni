@@ -1,0 +1,85 @@
+#ifndef java_nio_file_FileStore_HPP
+#define java_nio_file_FileStore_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::file::FileStore : public jObject<::java::nio::file::FileStore, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_file / "FileStore";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object(::java::lang::String)>("getAttribute"), //
+		jMethod<::java::nio::file::attribute::FileStoreAttributeView(::java::lang::Class)>("getFileStoreAttributeView"), //
+		jMethod<::jlong()>("getTotalSpace"), //
+		jMethod<::jlong()>("getUnallocatedSpace"), //
+		jMethod<::jlong()>("getUsableSpace"), //
+		jMethod<::jboolean()>("isReadOnly"), //
+		jMethod<::java::lang::String()>("name"), //
+		jMethod<::jboolean(::java::lang::Class)>("supportsFileAttributeView"), //
+		jMethod<::jboolean(::java::lang::String)>("supportsFileAttributeView"), //
+		jMethod<::java::lang::String()>("type"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttribute")] != -1);
+		return call<R>("getAttribute", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::attribute::FileStoreAttributeView, typename... Args>
+	auto getFileStoreAttributeView(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFileStoreAttributeView")] != -1);
+		return call<R>("getFileStoreAttributeView", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getTotalSpace(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTotalSpace")] != -1);
+		return call<R>("getTotalSpace", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getUnallocatedSpace(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUnallocatedSpace")] != -1);
+		return call<R>("getUnallocatedSpace", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getUsableSpace(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUsableSpace")] != -1);
+		return call<R>("getUsableSpace", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isReadOnly(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isReadOnly")] != -1);
+		return call<R>("isReadOnly", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto name(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("name")] != -1);
+		return call<R>("name", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto supportsFileAttributeView(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("supportsFileAttributeView")] != -1);
+		return call<R>("supportsFileAttributeView", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto type(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("type")] != -1);
+		return call<R>("type", forward<Args>(args)...);
+	}
+
+};
+
+#endif

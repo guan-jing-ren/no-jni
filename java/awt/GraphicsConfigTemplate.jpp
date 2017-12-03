@@ -1,0 +1,56 @@
+#ifndef java_awt_GraphicsConfigTemplate_HPP
+#define java_awt_GraphicsConfigTemplate_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::GraphicsConfigTemplate : public jObject<::java::awt::GraphicsConfigTemplate, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "GraphicsConfigTemplate";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("PREFERRED"), //
+		jField<::jint>("REQUIRED"), //
+		jField<::jint>("UNNECESSARY"), //
+	};
+
+	template<typename F = ::jint>
+	static auto PREFERRED() {
+		static_assert(field_signatures[jField<F>("PREFERRED")] != -1);
+		return sat<F>("PREFERRED");
+	}
+
+	template<typename F = ::jint>
+	static auto REQUIRED() {
+		static_assert(field_signatures[jField<F>("REQUIRED")] != -1);
+		return sat<F>("REQUIRED");
+	}
+
+	template<typename F = ::jint>
+	static auto UNNECESSARY() {
+		static_assert(field_signatures[jField<F>("UNNECESSARY")] != -1);
+		return sat<F>("UNNECESSARY");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::awt::GraphicsConfiguration(::java::awt::GraphicsConfiguration *)>("getBestConfiguration"), //
+		jMethod<::jboolean(::java::awt::GraphicsConfiguration)>("isGraphicsConfigSupported"), //
+	};
+
+	template<typename R = ::java::awt::GraphicsConfiguration, typename... Args>
+	auto getBestConfiguration(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBestConfiguration")] != -1);
+		return call<R>("getBestConfiguration", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isGraphicsConfigSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isGraphicsConfigSupported")] != -1);
+		return call<R>("isGraphicsConfigSupported", forward<Args>(args)...);
+	}
+
+};
+
+#endif

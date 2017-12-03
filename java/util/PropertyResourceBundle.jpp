@@ -1,0 +1,37 @@
+#ifndef java_util_PropertyResourceBundle_HPP
+#define java_util_PropertyResourceBundle_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::PropertyResourceBundle : public jObject<::java::util::PropertyResourceBundle, ::java::util::ResourceBundle> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "PropertyResourceBundle";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::InputStream)>(), //
+		jConstructor<::jvoid(::java::io::Reader)>(), //
+		jMethod<::java::util::Enumeration()>("getKeys"), //
+		jMethod<::java::lang::Object(::java::lang::String)>("handleGetObject"), //
+	};
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	auto getKeys(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getKeys")] != -1);
+		return call<R>("getKeys", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto handleGetObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("handleGetObject")] != -1);
+		return call<R>("handleGetObject", forward<Args>(args)...);
+	}
+
+};
+
+#endif

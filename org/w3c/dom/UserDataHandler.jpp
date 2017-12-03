@@ -1,0 +1,62 @@
+#ifndef org_w3c_dom_UserDataHandler_HPP
+#define org_w3c_dom_UserDataHandler_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::w3c::dom::UserDataHandler : public jObject<::org::w3c::dom::UserDataHandler, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_w3c_dom / "UserDataHandler";
+
+	constexpr static Enume field_signatures{
+		jField<::jshort>("NODE_ADOPTED"), //
+		jField<::jshort>("NODE_CLONED"), //
+		jField<::jshort>("NODE_DELETED"), //
+		jField<::jshort>("NODE_IMPORTED"), //
+		jField<::jshort>("NODE_RENAMED"), //
+	};
+
+	template<typename F = ::jshort>
+	static auto NODE_ADOPTED() {
+		static_assert(field_signatures[jField<F>("NODE_ADOPTED")] != -1);
+		return sat<F>("NODE_ADOPTED");
+	}
+
+	template<typename F = ::jshort>
+	static auto NODE_CLONED() {
+		static_assert(field_signatures[jField<F>("NODE_CLONED")] != -1);
+		return sat<F>("NODE_CLONED");
+	}
+
+	template<typename F = ::jshort>
+	static auto NODE_DELETED() {
+		static_assert(field_signatures[jField<F>("NODE_DELETED")] != -1);
+		return sat<F>("NODE_DELETED");
+	}
+
+	template<typename F = ::jshort>
+	static auto NODE_IMPORTED() {
+		static_assert(field_signatures[jField<F>("NODE_IMPORTED")] != -1);
+		return sat<F>("NODE_IMPORTED");
+	}
+
+	template<typename F = ::jshort>
+	static auto NODE_RENAMED() {
+		static_assert(field_signatures[jField<F>("NODE_RENAMED")] != -1);
+		return sat<F>("NODE_RENAMED");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::jshort, ::java::lang::String, ::java::lang::Object, ::org::w3c::dom::Node, ::org::w3c::dom::Node)>("handle"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto handle(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("handle")] != -1);
+		return call<R>("handle", forward<Args>(args)...);
+	}
+
+};
+
+#endif

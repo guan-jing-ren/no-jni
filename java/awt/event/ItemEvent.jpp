@@ -1,0 +1,84 @@
+#ifndef java_awt_event_ItemEvent_HPP
+#define java_awt_event_ItemEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::event::ItemEvent : public jObject<::java::awt::event::ItemEvent, ::java::awt::AWTEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_event / "ItemEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("DESELECTED"), //
+		jField<::jint>("ITEM_FIRST"), //
+		jField<::jint>("ITEM_LAST"), //
+		jField<::jint>("ITEM_STATE_CHANGED"), //
+		jField<::jint>("SELECTED"), //
+	};
+
+	template<typename F = ::jint>
+	static auto DESELECTED() {
+		static_assert(field_signatures[jField<F>("DESELECTED")] != -1);
+		return sat<F>("DESELECTED");
+	}
+
+	template<typename F = ::jint>
+	static auto ITEM_FIRST() {
+		static_assert(field_signatures[jField<F>("ITEM_FIRST")] != -1);
+		return sat<F>("ITEM_FIRST");
+	}
+
+	template<typename F = ::jint>
+	static auto ITEM_LAST() {
+		static_assert(field_signatures[jField<F>("ITEM_LAST")] != -1);
+		return sat<F>("ITEM_LAST");
+	}
+
+	template<typename F = ::jint>
+	static auto ITEM_STATE_CHANGED() {
+		static_assert(field_signatures[jField<F>("ITEM_STATE_CHANGED")] != -1);
+		return sat<F>("ITEM_STATE_CHANGED");
+	}
+
+	template<typename F = ::jint>
+	static auto SELECTED() {
+		static_assert(field_signatures[jField<F>("SELECTED")] != -1);
+		return sat<F>("SELECTED");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::ItemSelectable, ::jint, ::java::lang::Object, ::jint)>(), //
+		jMethod<::java::lang::Object()>("getItem"), //
+		jMethod<::java::awt::ItemSelectable()>("getItemSelectable"), //
+		jMethod<::jint()>("getStateChange"), //
+		jMethod<::java::lang::String()>("paramString"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getItem(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getItem")] != -1);
+		return call<R>("getItem", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::ItemSelectable, typename... Args>
+	auto getItemSelectable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getItemSelectable")] != -1);
+		return call<R>("getItemSelectable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getStateChange(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStateChange")] != -1);
+		return call<R>("getStateChange", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto paramString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paramString")] != -1);
+		return call<R>("paramString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

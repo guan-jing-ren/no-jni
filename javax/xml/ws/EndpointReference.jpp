@@ -1,0 +1,49 @@
+#ifndef javax_xml_ws_EndpointReference_HPP
+#define javax_xml_ws_EndpointReference_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::ws::EndpointReference : public jObject<::javax::xml::ws::EndpointReference, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_ws / "EndpointReference";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object(::java::lang::Class, ::javax::xml::ws::WebServiceFeature *)>("getPort"), //
+		jMethod<::javax::xml::ws::EndpointReference(::javax::xml::transform::Source)>("readFrom"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::jvoid(::javax::xml::transform::Result)>("writeTo"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getPort(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPort")] != -1);
+		return call<R>("getPort", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::ws::EndpointReference, typename... Args>
+	static auto readFrom(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("readFrom")] != -1);
+		return scall<R>("readFrom", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("writeTo")] != -1);
+		return call<R>("writeTo", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,62 @@
+#ifndef javax_print_attribute_standard_PrinterState_HPP
+#define javax_print_attribute_standard_PrinterState_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::print::attribute::standard::PrinterState : public jObject<::javax::print::attribute::standard::PrinterState, ::javax::print::attribute::EnumSyntax> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_print_attribute_standard / "PrinterState";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::print::attribute::standard::PrinterState>("IDLE"), //
+		jField<::javax::print::attribute::standard::PrinterState>("PROCESSING"), //
+		jField<::javax::print::attribute::standard::PrinterState>("STOPPED"), //
+		jField<::javax::print::attribute::standard::PrinterState>("UNKNOWN"), //
+	};
+
+	template<typename F = ::javax::print::attribute::standard::PrinterState>
+	static auto IDLE() {
+		static_assert(field_signatures[jField<F>("IDLE")] != -1);
+		return sat<F>("IDLE");
+	}
+
+	template<typename F = ::javax::print::attribute::standard::PrinterState>
+	static auto PROCESSING() {
+		static_assert(field_signatures[jField<F>("PROCESSING")] != -1);
+		return sat<F>("PROCESSING");
+	}
+
+	template<typename F = ::javax::print::attribute::standard::PrinterState>
+	static auto STOPPED() {
+		static_assert(field_signatures[jField<F>("STOPPED")] != -1);
+		return sat<F>("STOPPED");
+	}
+
+	template<typename F = ::javax::print::attribute::standard::PrinterState>
+	static auto UNKNOWN() {
+		static_assert(field_signatures[jField<F>("UNKNOWN")] != -1);
+		return sat<F>("UNKNOWN");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Class()>("getCategory"), //
+		jMethod<::java::lang::String()>("getName"), //
+	};
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getCategory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCategory")] != -1);
+		return call<R>("getCategory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,51 @@
+#ifndef java_beans_beancontext_BeanContextMembershipEvent_HPP
+#define java_beans_beancontext_BeanContextMembershipEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::beans::beancontext::BeanContextMembershipEvent : public jObject<::java::beans::beancontext::BeanContextMembershipEvent, ::java::beans::beancontext::BeanContextEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_beans_beancontext / "BeanContextMembershipEvent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::beans::beancontext::BeanContext, ::java::util::Collection)>(), //
+		jConstructor<::jvoid(::java::beans::beancontext::BeanContext, ::java::lang::Object *)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("contains"), //
+		jMethod<::java::util::Iterator()>("iterator"), //
+		jMethod<::jint()>("size"), //
+		jMethod<::java::lang::Object *()>("toArray"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto contains(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("contains")] != -1);
+		return call<R>("contains", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Iterator, typename... Args>
+	auto iterator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("iterator")] != -1);
+		return call<R>("iterator", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto size(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("size")] != -1);
+		return call<R>("size", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object *, typename... Args>
+	auto toArray(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toArray")] != -1);
+		return call<R>("toArray", forward<Args>(args)...);
+	}
+
+};
+
+#endif

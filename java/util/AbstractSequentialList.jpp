@@ -1,0 +1,70 @@
+#ifndef java_util_AbstractSequentialList_HPP
+#define java_util_AbstractSequentialList_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::AbstractSequentialList : public jObject<::java::util::AbstractSequentialList, ::java::util::AbstractList> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "AbstractSequentialList";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::jint, ::java::lang::Object)>("add"), //
+		jMethod<::jboolean(::jint, ::java::util::Collection)>("addAll"), //
+		jMethod<::java::lang::Object(::jint)>("get"), //
+		jMethod<::java::util::Iterator()>("iterator"), //
+		jMethod<::java::util::ListIterator(::jint)>("listIterator"), //
+		jMethod<::java::lang::Object(::jint)>("remove"), //
+		jMethod<::java::lang::Object(::jint, ::java::lang::Object)>("set"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto add(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto addAll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addAll")] != -1);
+		return call<R>("addAll", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Iterator, typename... Args>
+	auto iterator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("iterator")] != -1);
+		return call<R>("iterator", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::ListIterator, typename... Args>
+	auto listIterator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("listIterator")] != -1);
+		return call<R>("listIterator", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto remove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto set(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set")] != -1);
+		return call<R>("set", forward<Args>(args)...);
+	}
+
+};
+
+#endif

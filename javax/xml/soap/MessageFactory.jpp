@@ -1,0 +1,38 @@
+#ifndef javax_xml_soap_MessageFactory_HPP
+#define javax_xml_soap_MessageFactory_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::soap::MessageFactory : public jObject<::javax::xml::soap::MessageFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_soap / "MessageFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::xml::soap::SOAPMessage()>("createMessage"), //
+		jMethod<::javax::xml::soap::SOAPMessage(::javax::xml::soap::MimeHeaders, ::java::io::InputStream)>("createMessage"), //
+		jMethod<::javax::xml::soap::MessageFactory()>("newInstance"), //
+		jMethod<::javax::xml::soap::MessageFactory(::java::lang::String)>("newInstance"), //
+	};
+
+	template<typename R = ::javax::xml::soap::SOAPMessage, typename... Args>
+	auto createMessage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createMessage")] != -1);
+		return call<R>("createMessage", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::soap::MessageFactory, typename... Args>
+	static auto newInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newInstance")] != -1);
+		return scall<R>("newInstance", forward<Args>(args)...);
+	}
+
+};
+
+#endif

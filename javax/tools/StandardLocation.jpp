@@ -1,0 +1,104 @@
+#ifndef javax_tools_StandardLocation_HPP
+#define javax_tools_StandardLocation_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::tools::StandardLocation : public jObject<::javax::tools::StandardLocation, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_tools / "StandardLocation";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::tools::StandardLocation>("ANNOTATION_PROCESSOR_PATH"), //
+		jField<::javax::tools::StandardLocation>("CLASS_OUTPUT"), //
+		jField<::javax::tools::StandardLocation>("CLASS_PATH"), //
+		jField<::javax::tools::StandardLocation>("NATIVE_HEADER_OUTPUT"), //
+		jField<::javax::tools::StandardLocation>("PLATFORM_CLASS_PATH"), //
+		jField<::javax::tools::StandardLocation>("SOURCE_OUTPUT"), //
+		jField<::javax::tools::StandardLocation>("SOURCE_PATH"), //
+	};
+
+	template<typename F = ::javax::tools::StandardLocation>
+	static auto ANNOTATION_PROCESSOR_PATH() {
+		static_assert(field_signatures[jField<F>("ANNOTATION_PROCESSOR_PATH")] != -1);
+		return sat<F>("ANNOTATION_PROCESSOR_PATH");
+	}
+
+	template<typename F = ::javax::tools::StandardLocation>
+	static auto CLASS_OUTPUT() {
+		static_assert(field_signatures[jField<F>("CLASS_OUTPUT")] != -1);
+		return sat<F>("CLASS_OUTPUT");
+	}
+
+	template<typename F = ::javax::tools::StandardLocation>
+	static auto CLASS_PATH() {
+		static_assert(field_signatures[jField<F>("CLASS_PATH")] != -1);
+		return sat<F>("CLASS_PATH");
+	}
+
+	template<typename F = ::javax::tools::StandardLocation>
+	static auto NATIVE_HEADER_OUTPUT() {
+		static_assert(field_signatures[jField<F>("NATIVE_HEADER_OUTPUT")] != -1);
+		return sat<F>("NATIVE_HEADER_OUTPUT");
+	}
+
+	template<typename F = ::javax::tools::StandardLocation>
+	static auto PLATFORM_CLASS_PATH() {
+		static_assert(field_signatures[jField<F>("PLATFORM_CLASS_PATH")] != -1);
+		return sat<F>("PLATFORM_CLASS_PATH");
+	}
+
+	template<typename F = ::javax::tools::StandardLocation>
+	static auto SOURCE_OUTPUT() {
+		static_assert(field_signatures[jField<F>("SOURCE_OUTPUT")] != -1);
+		return sat<F>("SOURCE_OUTPUT");
+	}
+
+	template<typename F = ::javax::tools::StandardLocation>
+	static auto SOURCE_PATH() {
+		static_assert(field_signatures[jField<F>("SOURCE_PATH")] != -1);
+		return sat<F>("SOURCE_PATH");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::jboolean()>("isOutputLocation"), //
+		jMethod<::javax::tools::JavaFileManager$Location(::java::lang::String)>("locationFor"), //
+		jMethod<::javax::tools::StandardLocation(::java::lang::String)>("valueOf"), //
+		jMethod<::javax::tools::StandardLocation *()>("values"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isOutputLocation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isOutputLocation")] != -1);
+		return call<R>("isOutputLocation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::tools::JavaFileManager$Location, typename... Args>
+	static auto locationFor(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("locationFor")] != -1);
+		return scall<R>("locationFor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::tools::StandardLocation, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::tools::StandardLocation *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

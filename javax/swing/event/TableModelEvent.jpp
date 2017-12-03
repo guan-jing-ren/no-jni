@@ -1,0 +1,88 @@
+#ifndef javax_swing_event_TableModelEvent_HPP
+#define javax_swing_event_TableModelEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::event::TableModelEvent : public jObject<::javax::swing::event::TableModelEvent, ::java::util::EventObject> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_event / "TableModelEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("ALL_COLUMNS"), //
+		jField<::jint>("DELETE"), //
+		jField<::jint>("HEADER_ROW"), //
+		jField<::jint>("INSERT"), //
+		jField<::jint>("UPDATE"), //
+	};
+
+	template<typename F = ::jint>
+	static auto ALL_COLUMNS() {
+		static_assert(field_signatures[jField<F>("ALL_COLUMNS")] != -1);
+		return sat<F>("ALL_COLUMNS");
+	}
+
+	template<typename F = ::jint>
+	static auto DELETE() {
+		static_assert(field_signatures[jField<F>("DELETE")] != -1);
+		return sat<F>("DELETE");
+	}
+
+	template<typename F = ::jint>
+	static auto HEADER_ROW() {
+		static_assert(field_signatures[jField<F>("HEADER_ROW")] != -1);
+		return sat<F>("HEADER_ROW");
+	}
+
+	template<typename F = ::jint>
+	static auto INSERT() {
+		static_assert(field_signatures[jField<F>("INSERT")] != -1);
+		return sat<F>("INSERT");
+	}
+
+	template<typename F = ::jint>
+	static auto UPDATE() {
+		static_assert(field_signatures[jField<F>("UPDATE")] != -1);
+		return sat<F>("UPDATE");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::swing::table::TableModel)>(), //
+		jConstructor<::jvoid(::javax::swing::table::TableModel, ::jint)>(), //
+		jConstructor<::jvoid(::javax::swing::table::TableModel, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::javax::swing::table::TableModel, ::jint, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::javax::swing::table::TableModel, ::jint, ::jint, ::jint, ::jint)>(), //
+		jMethod<::jint()>("getColumn"), //
+		jMethod<::jint()>("getFirstRow"), //
+		jMethod<::jint()>("getLastRow"), //
+		jMethod<::jint()>("getType"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getColumn(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getColumn")] != -1);
+		return call<R>("getColumn", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getFirstRow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFirstRow")] != -1);
+		return call<R>("getFirstRow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getLastRow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLastRow")] != -1);
+		return call<R>("getLastRow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", forward<Args>(args)...);
+	}
+
+};
+
+#endif

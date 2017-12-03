@@ -1,0 +1,28 @@
+#ifndef javax_xml_xpath_XPathFunctionResolver_HPP
+#define javax_xml_xpath_XPathFunctionResolver_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::xpath::XPathFunctionResolver : public jObject<::javax::xml::xpath::XPathFunctionResolver, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_xpath / "XPathFunctionResolver";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::xpath::XPathFunction(::javax::xml::namespace_::QName, ::jint)>("resolveFunction"), //
+	};
+
+	template<typename R = ::javax::xml::xpath::XPathFunction, typename... Args>
+	auto resolveFunction(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("resolveFunction")] != -1);
+		return call<R>("resolveFunction", forward<Args>(args)...);
+	}
+
+};
+
+#endif

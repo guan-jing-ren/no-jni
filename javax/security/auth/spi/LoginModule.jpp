@@ -1,0 +1,56 @@
+#ifndef javax_security_auth_spi_LoginModule_HPP
+#define javax_security_auth_spi_LoginModule_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::security::auth::spi::LoginModule : public jObject<::javax::security::auth::spi::LoginModule, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_security_auth_spi / "LoginModule";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean()>("abort"), //
+		jMethod<::jboolean()>("commit"), //
+		jMethod<::jvoid(::javax::security::auth::Subject, ::javax::security::auth::callback::CallbackHandler, ::java::util::Map, ::java::util::Map)>("initialize"), //
+		jMethod<::jboolean()>("login"), //
+		jMethod<::jboolean()>("logout"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto abort(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("abort")] != -1);
+		return call<R>("abort", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto commit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("commit")] != -1);
+		return call<R>("commit", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto initialize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("initialize")] != -1);
+		return call<R>("initialize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto login(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("login")] != -1);
+		return call<R>("login", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto logout(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("logout")] != -1);
+		return call<R>("logout", forward<Args>(args)...);
+	}
+
+};
+
+#endif

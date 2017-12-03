@@ -1,0 +1,71 @@
+#ifndef javax_swing_plaf_multi_MultiLookAndFeel_HPP
+#define javax_swing_plaf_multi_MultiLookAndFeel_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::swing::plaf::multi::MultiLookAndFeel : public jObject<::javax::swing::plaf::multi::MultiLookAndFeel, ::javax::swing::LookAndFeel> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_plaf_multi / "MultiLookAndFeel";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::swing::plaf::ComponentUI(::javax::swing::plaf::ComponentUI, ::java::util::Vector, ::javax::swing::JComponent)>("createUIs"), //
+		jMethod<::javax::swing::UIDefaults()>("getDefaults"), //
+		jMethod<::java::lang::String()>("getDescription"), //
+		jMethod<::java::lang::String()>("getID"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::jboolean()>("isNativeLookAndFeel"), //
+		jMethod<::jboolean()>("isSupportedLookAndFeel"), //
+	};
+
+	template<typename R = ::javax::swing::plaf::ComponentUI, typename... Args>
+	static auto createUIs(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createUIs")] != -1);
+		return scall<R>("createUIs", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::UIDefaults, typename... Args>
+	auto getDefaults(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaults")] != -1);
+		return call<R>("getDefaults", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDescription(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDescription")] != -1);
+		return call<R>("getDescription", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getID")] != -1);
+		return call<R>("getID", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isNativeLookAndFeel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isNativeLookAndFeel")] != -1);
+		return call<R>("isNativeLookAndFeel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isSupportedLookAndFeel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSupportedLookAndFeel")] != -1);
+		return call<R>("isSupportedLookAndFeel", forward<Args>(args)...);
+	}
+
+};
+
+#endif

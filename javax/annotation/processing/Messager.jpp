@@ -1,0 +1,31 @@
+#ifndef javax_annotation_processing_Messager_HPP
+#define javax_annotation_processing_Messager_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::annotation::processing::Messager : public jObject<::javax::annotation::processing::Messager, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_annotation_processing / "Messager";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::tools::Diagnostic$Kind, ::java::lang::CharSequence)>("printMessage"), //
+		jMethod<::jvoid(::javax::tools::Diagnostic$Kind, ::java::lang::CharSequence, ::javax::lang::model::element::Element)>("printMessage"), //
+		jMethod<::jvoid(::javax::tools::Diagnostic$Kind, ::java::lang::CharSequence, ::javax::lang::model::element::Element, ::javax::lang::model::element::AnnotationMirror)>("printMessage"), //
+		jMethod<::jvoid(::javax::tools::Diagnostic$Kind, ::java::lang::CharSequence, ::javax::lang::model::element::Element, ::javax::lang::model::element::AnnotationMirror, ::javax::lang::model::element::AnnotationValue)>("printMessage"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto printMessage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("printMessage")] != -1);
+		return call<R>("printMessage", forward<Args>(args)...);
+	}
+
+};
+
+#endif

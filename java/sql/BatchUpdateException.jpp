@@ -1,0 +1,46 @@
+#ifndef java_sql_BatchUpdateException_HPP
+#define java_sql_BatchUpdateException_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::sql::BatchUpdateException : public jObject<::java::sql::BatchUpdateException, ::java::sql::SQLException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_sql / "BatchUpdateException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::jint, ::jint *)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::jint, ::jint *, ::java::lang::Throwable)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::jint, ::jlong *, ::java::lang::Throwable)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::jint *)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::jint *, ::java::lang::Throwable)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::jint *)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::jint *, ::java::lang::Throwable)>(), //
+		jConstructor<::jvoid(::java::lang::Throwable)>(), //
+		jConstructor<::jvoid(::jint *)>(), //
+		jConstructor<::jvoid(::jint *, ::java::lang::Throwable)>(), //
+		jMethod<::jlong *()>("getLargeUpdateCounts"), //
+		jMethod<::jint *()>("getUpdateCounts"), //
+	};
+
+	template<typename R = ::jlong *, typename... Args>
+	auto getLargeUpdateCounts(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLargeUpdateCounts")] != -1);
+		return call<R>("getLargeUpdateCounts", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint *, typename... Args>
+	auto getUpdateCounts(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUpdateCounts")] != -1);
+		return call<R>("getUpdateCounts", forward<Args>(args)...);
+	}
+
+};
+
+#endif

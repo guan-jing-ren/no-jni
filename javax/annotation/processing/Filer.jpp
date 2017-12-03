@@ -1,0 +1,49 @@
+#ifndef javax_annotation_processing_Filer_HPP
+#define javax_annotation_processing_Filer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::annotation::processing::Filer : public jObject<::javax::annotation::processing::Filer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_annotation_processing / "Filer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::tools::JavaFileObject(::java::lang::CharSequence, ::javax::lang::model::element::Element *)>("createClassFile"), //
+		jMethod<::javax::tools::FileObject(::javax::tools::JavaFileManager$Location, ::java::lang::CharSequence, ::java::lang::CharSequence, ::javax::lang::model::element::Element *)>("createResource"), //
+		jMethod<::javax::tools::JavaFileObject(::java::lang::CharSequence, ::javax::lang::model::element::Element *)>("createSourceFile"), //
+		jMethod<::javax::tools::FileObject(::javax::tools::JavaFileManager$Location, ::java::lang::CharSequence, ::java::lang::CharSequence)>("getResource"), //
+	};
+
+	template<typename R = ::javax::tools::JavaFileObject, typename... Args>
+	auto createClassFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createClassFile")] != -1);
+		return call<R>("createClassFile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::tools::FileObject, typename... Args>
+	auto createResource(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createResource")] != -1);
+		return call<R>("createResource", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::tools::JavaFileObject, typename... Args>
+	auto createSourceFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createSourceFile")] != -1);
+		return call<R>("createSourceFile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::tools::FileObject, typename... Args>
+	auto getResource(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getResource")] != -1);
+		return call<R>("getResource", forward<Args>(args)...);
+	}
+
+};
+
+#endif

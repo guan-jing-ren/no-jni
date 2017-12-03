@@ -1,0 +1,28 @@
+#ifndef java_beans_ConstructorProperties_HPP
+#define java_beans_ConstructorProperties_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::beans::ConstructorProperties : public jObject<::java::beans::ConstructorProperties, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_beans / "ConstructorProperties";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String *()>("value"), //
+	};
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("value")] != -1);
+		return call<R>("value", forward<Args>(args)...);
+	}
+
+};
+
+#endif

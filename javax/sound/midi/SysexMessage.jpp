@@ -1,0 +1,59 @@
+#ifndef javax_sound_midi_SysexMessage_HPP
+#define javax_sound_midi_SysexMessage_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::sound::midi::SysexMessage : public jObject<::javax::sound::midi::SysexMessage, ::javax::sound::midi::MidiMessage> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sound_midi / "SysexMessage";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("SPECIAL_SYSTEM_EXCLUSIVE"), //
+		jField<::jint>("SYSTEM_EXCLUSIVE"), //
+	};
+
+	template<typename F = ::jint>
+	static auto SPECIAL_SYSTEM_EXCLUSIVE() {
+		static_assert(field_signatures[jField<F>("SPECIAL_SYSTEM_EXCLUSIVE")] != -1);
+		return sat<F>("SPECIAL_SYSTEM_EXCLUSIVE");
+	}
+
+	template<typename F = ::jint>
+	static auto SYSTEM_EXCLUSIVE() {
+		static_assert(field_signatures[jField<F>("SYSTEM_EXCLUSIVE")] != -1);
+		return sat<F>("SYSTEM_EXCLUSIVE");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint, ::jbyte *, ::jint)>(), //
+		jConstructor<::jvoid(::jbyte *, ::jint)>(), //
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::jbyte *()>("getData"), //
+		jMethod<::jvoid(::jint, ::jbyte *, ::jint)>("setMessage"), //
+		jMethod<::jvoid(::jbyte *, ::jint)>("setMessage"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getData")] != -1);
+		return call<R>("getData", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setMessage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMessage")] != -1);
+		return call<R>("setMessage", forward<Args>(args)...);
+	}
+
+};
+
+#endif

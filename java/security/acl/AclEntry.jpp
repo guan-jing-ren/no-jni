@@ -1,0 +1,91 @@
+#ifndef java_security_acl_AclEntry_HPP
+#define java_security_acl_AclEntry_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::acl::AclEntry : public jObject<::java::security::acl::AclEntry, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_acl / "AclEntry";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::security::acl::Permission)>("addPermission"), //
+		jMethod<::jboolean(::java::security::acl::Permission)>("checkPermission"), //
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::java::security::Principal()>("getPrincipal"), //
+		jMethod<::jboolean()>("isNegative"), //
+		jMethod<::java::util::Enumeration()>("permissions"), //
+		jMethod<::jboolean(::java::security::acl::Permission)>("removePermission"), //
+		jMethod<::jvoid()>("setNegativePermissions"), //
+		jMethod<::jboolean(::java::security::Principal)>("setPrincipal"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto addPermission(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addPermission")] != -1);
+		return call<R>("addPermission", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto checkPermission(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("checkPermission")] != -1);
+		return call<R>("checkPermission", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Principal, typename... Args>
+	auto getPrincipal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrincipal")] != -1);
+		return call<R>("getPrincipal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isNegative(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isNegative")] != -1);
+		return call<R>("isNegative", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	auto permissions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("permissions")] != -1);
+		return call<R>("permissions", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto removePermission(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removePermission")] != -1);
+		return call<R>("removePermission", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setNegativePermissions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setNegativePermissions")] != -1);
+		return call<R>("setNegativePermissions", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto setPrincipal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPrincipal")] != -1);
+		return call<R>("setPrincipal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,90 @@
+#ifndef java_time_chrono_JapaneseEra_HPP
+#define java_time_chrono_JapaneseEra_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::time::chrono::JapaneseEra : public jObject<::java::time::chrono::JapaneseEra, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_time_chrono / "JapaneseEra";
+
+	constexpr static Enume field_signatures{
+		jField<::java::time::chrono::JapaneseEra>("HEISEI"), //
+		jField<::java::time::chrono::JapaneseEra>("MEIJI"), //
+		jField<::java::time::chrono::JapaneseEra>("SHOWA"), //
+		jField<::java::time::chrono::JapaneseEra>("TAISHO"), //
+	};
+
+	template<typename F = ::java::time::chrono::JapaneseEra>
+	static auto HEISEI() {
+		static_assert(field_signatures[jField<F>("HEISEI")] != -1);
+		return sat<F>("HEISEI");
+	}
+
+	template<typename F = ::java::time::chrono::JapaneseEra>
+	static auto MEIJI() {
+		static_assert(field_signatures[jField<F>("MEIJI")] != -1);
+		return sat<F>("MEIJI");
+	}
+
+	template<typename F = ::java::time::chrono::JapaneseEra>
+	static auto SHOWA() {
+		static_assert(field_signatures[jField<F>("SHOWA")] != -1);
+		return sat<F>("SHOWA");
+	}
+
+	template<typename F = ::java::time::chrono::JapaneseEra>
+	static auto TAISHO() {
+		static_assert(field_signatures[jField<F>("TAISHO")] != -1);
+		return sat<F>("TAISHO");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("getValue"), //
+		jMethod<::java::time::chrono::JapaneseEra(::jint)>("of"), //
+		jMethod<::java::time::temporal::ValueRange(::java::time::temporal::TemporalField)>("range"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::java::time::chrono::JapaneseEra(::java::lang::String)>("valueOf"), //
+		jMethod<::java::time::chrono::JapaneseEra *()>("values"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getValue")] != -1);
+		return call<R>("getValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::chrono::JapaneseEra, typename... Args>
+	static auto of(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("of")] != -1);
+		return scall<R>("of", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::temporal::ValueRange, typename... Args>
+	auto range(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("range")] != -1);
+		return call<R>("range", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::chrono::JapaneseEra, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::chrono::JapaneseEra *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

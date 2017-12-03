@@ -1,0 +1,62 @@
+#ifndef javax_xml_bind_annotation_XmlSchema_HPP
+#define javax_xml_bind_annotation_XmlSchema_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::bind::annotation::XmlSchema : public jObject<::javax::xml::bind::annotation::XmlSchema, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_bind_annotation / "XmlSchema";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("NO_LOCATION"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto NO_LOCATION() {
+		static_assert(field_signatures[jField<F>("NO_LOCATION")] != -1);
+		return sat<F>("NO_LOCATION");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::bind::annotation::XmlNsForm()>("attributeFormDefault"), //
+		jMethod<::javax::xml::bind::annotation::XmlNsForm()>("elementFormDefault"), //
+		jMethod<::java::lang::String()>("location"), //
+		jMethod<::java::lang::String()>("namespace"), //
+		jMethod<::javax::xml::bind::annotation::XmlNs *()>("xmlns"), //
+	};
+
+	template<typename R = ::javax::xml::bind::annotation::XmlNsForm, typename... Args>
+	auto attributeFormDefault(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("attributeFormDefault")] != -1);
+		return call<R>("attributeFormDefault", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::bind::annotation::XmlNsForm, typename... Args>
+	auto elementFormDefault(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("elementFormDefault")] != -1);
+		return call<R>("elementFormDefault", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto location(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("location")] != -1);
+		return call<R>("location", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto namespace_(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("namespace")] != -1);
+		return call<R>("namespace", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::bind::annotation::XmlNs *, typename... Args>
+	auto xmlns(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("xmlns")] != -1);
+		return call<R>("xmlns", forward<Args>(args)...);
+	}
+
+};
+
+#endif

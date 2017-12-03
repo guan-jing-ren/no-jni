@@ -1,0 +1,28 @@
+#ifndef java_rmi_activation_Activator_HPP
+#define java_rmi_activation_Activator_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::rmi::activation::Activator : public jObject<::java::rmi::activation::Activator, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_rmi_activation / "Activator";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::rmi::MarshalledObject(::java::rmi::activation::ActivationID, ::jboolean)>("activate"), //
+	};
+
+	template<typename R = ::java::rmi::MarshalledObject, typename... Args>
+	auto activate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("activate")] != -1);
+		return call<R>("activate", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,29 @@
+#ifndef java_security_URIParameter_HPP
+#define java_security_URIParameter_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::URIParameter : public jObject<::java::security::URIParameter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "URIParameter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::net::URI)>(), //
+		jMethod<::java::net::URI()>("getURI"), //
+	};
+
+	template<typename R = ::java::net::URI, typename... Args>
+	auto getURI(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getURI")] != -1);
+		return call<R>("getURI", forward<Args>(args)...);
+	}
+
+};
+
+#endif

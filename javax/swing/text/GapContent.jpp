@@ -1,0 +1,65 @@
+#ifndef javax_swing_text_GapContent_HPP
+#define javax_swing_text_GapContent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::text::GapContent : public jObject<::javax::swing::text::GapContent, ::javax::swing::text::GapVector> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_text / "GapContent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint)>(), //
+		jMethod<::javax::swing::text::Position(::jint)>("createPosition"), //
+		jMethod<::jvoid(::jint, ::jint, ::javax::swing::text::Segment)>("getChars"), //
+		jMethod<::java::lang::String(::jint, ::jint)>("getString"), //
+		jMethod<::javax::swing::undo::UndoableEdit(::jint, ::java::lang::String)>("insertString"), //
+		jMethod<::jint()>("length"), //
+		jMethod<::javax::swing::undo::UndoableEdit(::jint, ::jint)>("remove"), //
+	};
+
+	template<typename R = ::javax::swing::text::Position, typename... Args>
+	auto createPosition(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createPosition")] != -1);
+		return call<R>("createPosition", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto getChars(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getChars")] != -1);
+		return call<R>("getChars", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getString")] != -1);
+		return call<R>("getString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::undo::UndoableEdit, typename... Args>
+	auto insertString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("insertString")] != -1);
+		return call<R>("insertString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto length(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("length")] != -1);
+		return call<R>("length", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::undo::UndoableEdit, typename... Args>
+	auto remove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", forward<Args>(args)...);
+	}
+
+};
+
+#endif

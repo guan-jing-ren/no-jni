@@ -1,0 +1,122 @@
+#ifndef java_security_Signature_HPP
+#define java_security_Signature_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::Signature : public jObject<::java::security::Signature, ::java::security::SignatureSpi> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "Signature";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::java::lang::String()>("getAlgorithm"), //
+		jMethod<::java::security::Signature(::java::lang::String)>("getInstance"), //
+		jMethod<::java::security::Signature(::java::lang::String, ::java::lang::String)>("getInstance"), //
+		jMethod<::java::security::Signature(::java::lang::String, ::java::security::Provider)>("getInstance"), //
+		jMethod<::java::lang::Object(::java::lang::String)>("getParameter"), //
+		jMethod<::java::security::AlgorithmParameters()>("getParameters"), //
+		jMethod<::java::security::Provider()>("getProvider"), //
+		jMethod<::jvoid(::java::security::PrivateKey)>("initSign"), //
+		jMethod<::jvoid(::java::security::PrivateKey, ::java::security::SecureRandom)>("initSign"), //
+		jMethod<::jvoid(::java::security::PublicKey)>("initVerify"), //
+		jMethod<::jvoid(::java::security::cert::Certificate)>("initVerify"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::Object)>("setParameter"), //
+		jMethod<::jvoid(::java::security::spec::AlgorithmParameterSpec)>("setParameter"), //
+		jMethod<::jbyte *()>("sign"), //
+		jMethod<::jint(::jbyte *, ::jint, ::jint)>("sign"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::jvoid(::jbyte)>("update"), //
+		jMethod<::jvoid(::java::nio::ByteBuffer)>("update"), //
+		jMethod<::jvoid(::jbyte *)>("update"), //
+		jMethod<::jvoid(::jbyte *, ::jint, ::jint)>("update"), //
+		jMethod<::jboolean(::jbyte *)>("verify"), //
+		jMethod<::jboolean(::jbyte *, ::jint, ::jint)>("verify"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAlgorithm(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlgorithm")] != -1);
+		return call<R>("getAlgorithm", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Signature, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getParameter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParameter")] != -1);
+		return call<R>("getParameter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::AlgorithmParameters, typename... Args>
+	auto getParameters(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParameters")] != -1);
+		return call<R>("getParameters", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Provider, typename... Args>
+	auto getProvider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProvider")] != -1);
+		return call<R>("getProvider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto initSign(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("initSign")] != -1);
+		return call<R>("initSign", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto initVerify(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("initVerify")] != -1);
+		return call<R>("initVerify", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setParameter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setParameter")] != -1);
+		return call<R>("setParameter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto sign(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("sign")] != -1);
+		return call<R>("sign", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto update(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("update")] != -1);
+		return call<R>("update", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto verify(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("verify")] != -1);
+		return call<R>("verify", forward<Args>(args)...);
+	}
+
+};
+
+#endif

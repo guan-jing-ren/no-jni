@@ -1,0 +1,104 @@
+#ifndef java_lang_annotation_ElementType_HPP
+#define java_lang_annotation_ElementType_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::annotation::ElementType : public jObject<::java::lang::annotation::ElementType, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_annotation / "ElementType";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::annotation::ElementType>("ANNOTATION_TYPE"), //
+		jField<::java::lang::annotation::ElementType>("CONSTRUCTOR"), //
+		jField<::java::lang::annotation::ElementType>("FIELD"), //
+		jField<::java::lang::annotation::ElementType>("LOCAL_VARIABLE"), //
+		jField<::java::lang::annotation::ElementType>("METHOD"), //
+		jField<::java::lang::annotation::ElementType>("PACKAGE"), //
+		jField<::java::lang::annotation::ElementType>("PARAMETER"), //
+		jField<::java::lang::annotation::ElementType>("TYPE"), //
+		jField<::java::lang::annotation::ElementType>("TYPE_PARAMETER"), //
+		jField<::java::lang::annotation::ElementType>("TYPE_USE"), //
+	};
+
+	template<typename F = ::java::lang::annotation::ElementType>
+	static auto ANNOTATION_TYPE() {
+		static_assert(field_signatures[jField<F>("ANNOTATION_TYPE")] != -1);
+		return sat<F>("ANNOTATION_TYPE");
+	}
+
+	template<typename F = ::java::lang::annotation::ElementType>
+	static auto CONSTRUCTOR() {
+		static_assert(field_signatures[jField<F>("CONSTRUCTOR")] != -1);
+		return sat<F>("CONSTRUCTOR");
+	}
+
+	template<typename F = ::java::lang::annotation::ElementType>
+	static auto FIELD() {
+		static_assert(field_signatures[jField<F>("FIELD")] != -1);
+		return sat<F>("FIELD");
+	}
+
+	template<typename F = ::java::lang::annotation::ElementType>
+	static auto LOCAL_VARIABLE() {
+		static_assert(field_signatures[jField<F>("LOCAL_VARIABLE")] != -1);
+		return sat<F>("LOCAL_VARIABLE");
+	}
+
+	template<typename F = ::java::lang::annotation::ElementType>
+	static auto METHOD() {
+		static_assert(field_signatures[jField<F>("METHOD")] != -1);
+		return sat<F>("METHOD");
+	}
+
+	template<typename F = ::java::lang::annotation::ElementType>
+	static auto PACKAGE() {
+		static_assert(field_signatures[jField<F>("PACKAGE")] != -1);
+		return sat<F>("PACKAGE");
+	}
+
+	template<typename F = ::java::lang::annotation::ElementType>
+	static auto PARAMETER() {
+		static_assert(field_signatures[jField<F>("PARAMETER")] != -1);
+		return sat<F>("PARAMETER");
+	}
+
+	template<typename F = ::java::lang::annotation::ElementType>
+	static auto TYPE() {
+		static_assert(field_signatures[jField<F>("TYPE")] != -1);
+		return sat<F>("TYPE");
+	}
+
+	template<typename F = ::java::lang::annotation::ElementType>
+	static auto TYPE_PARAMETER() {
+		static_assert(field_signatures[jField<F>("TYPE_PARAMETER")] != -1);
+		return sat<F>("TYPE_PARAMETER");
+	}
+
+	template<typename F = ::java::lang::annotation::ElementType>
+	static auto TYPE_USE() {
+		static_assert(field_signatures[jField<F>("TYPE_USE")] != -1);
+		return sat<F>("TYPE_USE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::annotation::ElementType(::java::lang::String)>("valueOf"), //
+		jMethod<::java::lang::annotation::ElementType *()>("values"), //
+	};
+
+	template<typename R = ::java::lang::annotation::ElementType, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::annotation::ElementType *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

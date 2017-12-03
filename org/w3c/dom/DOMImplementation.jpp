@@ -1,0 +1,49 @@
+#ifndef org_w3c_dom_DOMImplementation_HPP
+#define org_w3c_dom_DOMImplementation_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::w3c::dom::DOMImplementation : public jObject<::org::w3c::dom::DOMImplementation, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_w3c_dom / "DOMImplementation";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::w3c::dom::Document(::java::lang::String, ::java::lang::String, ::org::w3c::dom::DocumentType)>("createDocument"), //
+		jMethod<::org::w3c::dom::DocumentType(::java::lang::String, ::java::lang::String, ::java::lang::String)>("createDocumentType"), //
+		jMethod<::java::lang::Object(::java::lang::String, ::java::lang::String)>("getFeature"), //
+		jMethod<::jboolean(::java::lang::String, ::java::lang::String)>("hasFeature"), //
+	};
+
+	template<typename R = ::org::w3c::dom::Document, typename... Args>
+	auto createDocument(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createDocument")] != -1);
+		return call<R>("createDocument", forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::DocumentType, typename... Args>
+	auto createDocumentType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createDocumentType")] != -1);
+		return call<R>("createDocumentType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getFeature(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFeature")] != -1);
+		return call<R>("getFeature", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasFeature(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hasFeature")] != -1);
+		return call<R>("hasFeature", forward<Args>(args)...);
+	}
+
+};
+
+#endif

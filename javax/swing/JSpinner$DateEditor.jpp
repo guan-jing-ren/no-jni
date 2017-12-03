@@ -1,0 +1,37 @@
+#ifndef javax_swing_JSpinner$DateEditor_HPP
+#define javax_swing_JSpinner$DateEditor_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::JSpinner$DateEditor : public jObject<::javax::swing::JSpinner$DateEditor, ::javax::swing::JSpinner$DefaultEditor> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "JSpinner$DateEditor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::swing::JSpinner)>(), //
+		jConstructor<::jvoid(::javax::swing::JSpinner, ::java::lang::String)>(), //
+		jMethod<::java::text::SimpleDateFormat()>("getFormat"), //
+		jMethod<::javax::swing::SpinnerDateModel()>("getModel"), //
+	};
+
+	template<typename R = ::java::text::SimpleDateFormat, typename... Args>
+	auto getFormat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFormat")] != -1);
+		return call<R>("getFormat", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::SpinnerDateModel, typename... Args>
+	auto getModel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getModel")] != -1);
+		return call<R>("getModel", forward<Args>(args)...);
+	}
+
+};
+
+#endif

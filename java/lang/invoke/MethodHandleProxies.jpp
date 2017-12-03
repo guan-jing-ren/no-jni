@@ -1,0 +1,49 @@
+#ifndef java_lang_invoke_MethodHandleProxies_HPP
+#define java_lang_invoke_MethodHandleProxies_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::invoke::MethodHandleProxies : public jObject<::java::lang::invoke::MethodHandleProxies, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_invoke / "MethodHandleProxies";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object(::java::lang::Class, ::java::lang::invoke::MethodHandle)>("asInterfaceInstance"), //
+		jMethod<::jboolean(::java::lang::Object)>("isWrapperInstance"), //
+		jMethod<::java::lang::invoke::MethodHandle(::java::lang::Object)>("wrapperInstanceTarget"), //
+		jMethod<::java::lang::Class(::java::lang::Object)>("wrapperInstanceType"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto asInterfaceInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("asInterfaceInstance")] != -1);
+		return scall<R>("asInterfaceInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isWrapperInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isWrapperInstance")] != -1);
+		return scall<R>("isWrapperInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::invoke::MethodHandle, typename... Args>
+	static auto wrapperInstanceTarget(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("wrapperInstanceTarget")] != -1);
+		return scall<R>("wrapperInstanceTarget", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	static auto wrapperInstanceType(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("wrapperInstanceType")] != -1);
+		return scall<R>("wrapperInstanceType", forward<Args>(args)...);
+	}
+
+};
+
+#endif

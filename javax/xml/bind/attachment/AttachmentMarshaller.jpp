@@ -1,0 +1,44 @@
+#ifndef javax_xml_bind_attachment_AttachmentMarshaller_HPP
+#define javax_xml_bind_attachment_AttachmentMarshaller_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::bind::attachment::AttachmentMarshaller : public jObject<::javax::xml::bind::attachment::AttachmentMarshaller, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_bind_attachment / "AttachmentMarshaller";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::String(::javax::activation::DataHandler, ::java::lang::String, ::java::lang::String)>("addMtomAttachment"), //
+		jMethod<::java::lang::String(::jbyte *, ::jint, ::jint, ::java::lang::String, ::java::lang::String, ::java::lang::String)>("addMtomAttachment"), //
+		jMethod<::java::lang::String(::javax::activation::DataHandler)>("addSwaRefAttachment"), //
+		jMethod<::jboolean()>("isXOPPackage"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto addMtomAttachment(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addMtomAttachment")] != -1);
+		return call<R>("addMtomAttachment", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto addSwaRefAttachment(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addSwaRefAttachment")] != -1);
+		return call<R>("addSwaRefAttachment", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isXOPPackage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isXOPPackage")] != -1);
+		return call<R>("isXOPPackage", forward<Args>(args)...);
+	}
+
+};
+
+#endif

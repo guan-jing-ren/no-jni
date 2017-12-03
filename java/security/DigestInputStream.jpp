@@ -1,0 +1,58 @@
+#ifndef java_security_DigestInputStream_HPP
+#define java_security_DigestInputStream_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::security::DigestInputStream : public jObject<::java::security::DigestInputStream, ::java::io::FilterInputStream> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security / "DigestInputStream";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::InputStream, ::java::security::MessageDigest)>(), //
+		jMethod<::java::security::MessageDigest()>("getMessageDigest"), //
+		jMethod<::jvoid(::jboolean)>("on"), //
+		jMethod<::jint()>("read"), //
+		jMethod<::jint(::jbyte *, ::jint, ::jint)>("read"), //
+		jMethod<::jvoid(::java::security::MessageDigest)>("setMessageDigest"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::security::MessageDigest, typename... Args>
+	auto getMessageDigest(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMessageDigest")] != -1);
+		return call<R>("getMessageDigest", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto on(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("on")] != -1);
+		return call<R>("on", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setMessageDigest(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMessageDigest")] != -1);
+		return call<R>("setMessageDigest", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

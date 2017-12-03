@@ -1,0 +1,28 @@
+#ifndef java_lang_annotation_Retention_HPP
+#define java_lang_annotation_Retention_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::annotation::Retention : public jObject<::java::lang::annotation::Retention, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_annotation / "Retention";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::annotation::RetentionPolicy()>("value"), //
+	};
+
+	template<typename R = ::java::lang::annotation::RetentionPolicy, typename... Args>
+	auto value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("value")] != -1);
+		return call<R>("value", forward<Args>(args)...);
+	}
+
+};
+
+#endif

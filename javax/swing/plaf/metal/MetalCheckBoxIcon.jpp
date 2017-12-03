@@ -1,0 +1,43 @@
+#ifndef javax_swing_plaf_metal_MetalCheckBoxIcon_HPP
+#define javax_swing_plaf_metal_MetalCheckBoxIcon_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::swing::plaf::metal::MetalCheckBoxIcon : public jObject<::javax::swing::plaf::metal::MetalCheckBoxIcon, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_plaf_metal / "MetalCheckBoxIcon";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jint()>("getIconHeight"), //
+		jMethod<::jint()>("getIconWidth"), //
+		jMethod<::jvoid(::java::awt::Component, ::java::awt::Graphics, ::jint, ::jint)>("paintIcon"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getIconHeight(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIconHeight")] != -1);
+		return call<R>("getIconHeight", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getIconWidth(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIconWidth")] != -1);
+		return call<R>("getIconWidth", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto paintIcon(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paintIcon")] != -1);
+		return call<R>("paintIcon", forward<Args>(args)...);
+	}
+
+};
+
+#endif

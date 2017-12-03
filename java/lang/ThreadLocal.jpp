@@ -1,0 +1,50 @@
+#ifndef java_lang_ThreadLocal_HPP
+#define java_lang_ThreadLocal_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::lang::ThreadLocal : public jObject<::java::lang::ThreadLocal, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang / "ThreadLocal";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::Object()>("get"), //
+		jMethod<::jvoid()>("remove"), //
+		jMethod<::jvoid(::java::lang::Object)>("set"), //
+		jMethod<::java::lang::ThreadLocal(::java::util::function::Supplier)>("withInitial"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto remove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set")] != -1);
+		return call<R>("set", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::ThreadLocal, typename... Args>
+	static auto withInitial(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("withInitial")] != -1);
+		return scall<R>("withInitial", forward<Args>(args)...);
+	}
+
+};
+
+#endif

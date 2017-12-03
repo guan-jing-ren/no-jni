@@ -1,0 +1,62 @@
+#ifndef java_time_chrono_HijrahEra_HPP
+#define java_time_chrono_HijrahEra_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::time::chrono::HijrahEra : public jObject<::java::time::chrono::HijrahEra, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_time_chrono / "HijrahEra";
+
+	constexpr static Enume field_signatures{
+		jField<::java::time::chrono::HijrahEra>("AH"), //
+	};
+
+	template<typename F = ::java::time::chrono::HijrahEra>
+	static auto AH() {
+		static_assert(field_signatures[jField<F>("AH")] != -1);
+		return sat<F>("AH");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("getValue"), //
+		jMethod<::java::time::chrono::HijrahEra(::jint)>("of"), //
+		jMethod<::java::time::temporal::ValueRange(::java::time::temporal::TemporalField)>("range"), //
+		jMethod<::java::time::chrono::HijrahEra(::java::lang::String)>("valueOf"), //
+		jMethod<::java::time::chrono::HijrahEra *()>("values"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getValue")] != -1);
+		return call<R>("getValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::chrono::HijrahEra, typename... Args>
+	static auto of(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("of")] != -1);
+		return scall<R>("of", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::temporal::ValueRange, typename... Args>
+	auto range(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("range")] != -1);
+		return call<R>("range", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::chrono::HijrahEra, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::chrono::HijrahEra *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

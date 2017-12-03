@@ -1,0 +1,87 @@
+#ifndef javax_xml_xpath_XPath_HPP
+#define javax_xml_xpath_XPath_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::xpath::XPath : public jObject<::javax::xml::xpath::XPath, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_xpath / "XPath";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::xpath::XPathExpression(::java::lang::String)>("compile"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::lang::Object)>("evaluate"), //
+		jMethod<::java::lang::Object(::java::lang::String, ::java::lang::Object, ::javax::xml::namespace_::QName)>("evaluate"), //
+		jMethod<::java::lang::String(::java::lang::String, ::org::xml::sax::InputSource)>("evaluate"), //
+		jMethod<::java::lang::Object(::java::lang::String, ::org::xml::sax::InputSource, ::javax::xml::namespace_::QName)>("evaluate"), //
+		jMethod<::javax::xml::namespace_::NamespaceContext()>("getNamespaceContext"), //
+		jMethod<::javax::xml::xpath::XPathFunctionResolver()>("getXPathFunctionResolver"), //
+		jMethod<::javax::xml::xpath::XPathVariableResolver()>("getXPathVariableResolver"), //
+		jMethod<::jvoid()>("reset"), //
+		jMethod<::jvoid(::javax::xml::namespace_::NamespaceContext)>("setNamespaceContext"), //
+		jMethod<::jvoid(::javax::xml::xpath::XPathFunctionResolver)>("setXPathFunctionResolver"), //
+		jMethod<::jvoid(::javax::xml::xpath::XPathVariableResolver)>("setXPathVariableResolver"), //
+	};
+
+	template<typename R = ::javax::xml::xpath::XPathExpression, typename... Args>
+	auto compile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compile")] != -1);
+		return call<R>("compile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto evaluate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("evaluate")] != -1);
+		return call<R>("evaluate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::namespace_::NamespaceContext, typename... Args>
+	auto getNamespaceContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNamespaceContext")] != -1);
+		return call<R>("getNamespaceContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::xpath::XPathFunctionResolver, typename... Args>
+	auto getXPathFunctionResolver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getXPathFunctionResolver")] != -1);
+		return call<R>("getXPathFunctionResolver", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::xpath::XPathVariableResolver, typename... Args>
+	auto getXPathVariableResolver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getXPathVariableResolver")] != -1);
+		return call<R>("getXPathVariableResolver", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto reset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("reset")] != -1);
+		return call<R>("reset", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setNamespaceContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setNamespaceContext")] != -1);
+		return call<R>("setNamespaceContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setXPathFunctionResolver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setXPathFunctionResolver")] != -1);
+		return call<R>("setXPathFunctionResolver", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setXPathVariableResolver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setXPathVariableResolver")] != -1);
+		return call<R>("setXPathVariableResolver", forward<Args>(args)...);
+	}
+
+};
+
+#endif

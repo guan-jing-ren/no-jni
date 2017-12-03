@@ -1,0 +1,77 @@
+#ifndef javax_smartcardio_Card_HPP
+#define javax_smartcardio_Card_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::smartcardio::Card : public jObject<::javax::smartcardio::Card, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_smartcardio / "Card";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("beginExclusive"), //
+		jMethod<::jvoid(::jboolean)>("disconnect"), //
+		jMethod<::jvoid()>("endExclusive"), //
+		jMethod<::javax::smartcardio::ATR()>("getATR"), //
+		jMethod<::javax::smartcardio::CardChannel()>("getBasicChannel"), //
+		jMethod<::java::lang::String()>("getProtocol"), //
+		jMethod<::javax::smartcardio::CardChannel()>("openLogicalChannel"), //
+		jMethod<::jbyte *(::jint, ::jbyte *)>("transmitControlCommand"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto beginExclusive(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("beginExclusive")] != -1);
+		return call<R>("beginExclusive", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto disconnect(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("disconnect")] != -1);
+		return call<R>("disconnect", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto endExclusive(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("endExclusive")] != -1);
+		return call<R>("endExclusive", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::smartcardio::ATR, typename... Args>
+	auto getATR(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getATR")] != -1);
+		return call<R>("getATR", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::smartcardio::CardChannel, typename... Args>
+	auto getBasicChannel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBasicChannel")] != -1);
+		return call<R>("getBasicChannel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getProtocol(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProtocol")] != -1);
+		return call<R>("getProtocol", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::smartcardio::CardChannel, typename... Args>
+	auto openLogicalChannel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("openLogicalChannel")] != -1);
+		return call<R>("openLogicalChannel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto transmitControlCommand(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("transmitControlCommand")] != -1);
+		return call<R>("transmitControlCommand", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,49 @@
+#ifndef java_awt_event_TextEvent_HPP
+#define java_awt_event_TextEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::event::TextEvent : public jObject<::java::awt::event::TextEvent, ::java::awt::AWTEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_event / "TextEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("TEXT_FIRST"), //
+		jField<::jint>("TEXT_LAST"), //
+		jField<::jint>("TEXT_VALUE_CHANGED"), //
+	};
+
+	template<typename F = ::jint>
+	static auto TEXT_FIRST() {
+		static_assert(field_signatures[jField<F>("TEXT_FIRST")] != -1);
+		return sat<F>("TEXT_FIRST");
+	}
+
+	template<typename F = ::jint>
+	static auto TEXT_LAST() {
+		static_assert(field_signatures[jField<F>("TEXT_LAST")] != -1);
+		return sat<F>("TEXT_LAST");
+	}
+
+	template<typename F = ::jint>
+	static auto TEXT_VALUE_CHANGED() {
+		static_assert(field_signatures[jField<F>("TEXT_VALUE_CHANGED")] != -1);
+		return sat<F>("TEXT_VALUE_CHANGED");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Object, ::jint)>(), //
+		jMethod<::java::lang::String()>("paramString"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto paramString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paramString")] != -1);
+		return call<R>("paramString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,70 @@
+#ifndef java_awt_event_WindowListener_HPP
+#define java_awt_event_WindowListener_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::event::WindowListener : public jObject<::java::awt::event::WindowListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_event / "WindowListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::awt::event::WindowEvent)>("windowActivated"), //
+		jMethod<::jvoid(::java::awt::event::WindowEvent)>("windowClosed"), //
+		jMethod<::jvoid(::java::awt::event::WindowEvent)>("windowClosing"), //
+		jMethod<::jvoid(::java::awt::event::WindowEvent)>("windowDeactivated"), //
+		jMethod<::jvoid(::java::awt::event::WindowEvent)>("windowDeiconified"), //
+		jMethod<::jvoid(::java::awt::event::WindowEvent)>("windowIconified"), //
+		jMethod<::jvoid(::java::awt::event::WindowEvent)>("windowOpened"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto windowActivated(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("windowActivated")] != -1);
+		return call<R>("windowActivated", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto windowClosed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("windowClosed")] != -1);
+		return call<R>("windowClosed", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto windowClosing(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("windowClosing")] != -1);
+		return call<R>("windowClosing", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto windowDeactivated(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("windowDeactivated")] != -1);
+		return call<R>("windowDeactivated", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto windowDeiconified(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("windowDeiconified")] != -1);
+		return call<R>("windowDeiconified", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto windowIconified(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("windowIconified")] != -1);
+		return call<R>("windowIconified", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto windowOpened(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("windowOpened")] != -1);
+		return call<R>("windowOpened", forward<Args>(args)...);
+	}
+
+};
+
+#endif

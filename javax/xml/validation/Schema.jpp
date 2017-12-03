@@ -1,0 +1,35 @@
+#ifndef javax_xml_validation_Schema_HPP
+#define javax_xml_validation_Schema_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::validation::Schema : public jObject<::javax::xml::validation::Schema, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_validation / "Schema";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::validation::Validator()>("newValidator"), //
+		jMethod<::javax::xml::validation::ValidatorHandler()>("newValidatorHandler"), //
+	};
+
+	template<typename R = ::javax::xml::validation::Validator, typename... Args>
+	auto newValidator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newValidator")] != -1);
+		return call<R>("newValidator", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::validation::ValidatorHandler, typename... Args>
+	auto newValidatorHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newValidatorHandler")] != -1);
+		return call<R>("newValidatorHandler", forward<Args>(args)...);
+	}
+
+};
+
+#endif

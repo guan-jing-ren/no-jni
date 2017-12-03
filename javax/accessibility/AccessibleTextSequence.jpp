@@ -1,0 +1,42 @@
+#ifndef javax_accessibility_AccessibleTextSequence_HPP
+#define javax_accessibility_AccessibleTextSequence_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::accessibility::AccessibleTextSequence : public jObject<::javax::accessibility::AccessibleTextSequence, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_accessibility / "AccessibleTextSequence";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("endIndex"), //
+		jField<::jint>("startIndex"), //
+		jField<::java::lang::String>("text"), //
+	};
+
+	template<typename F = ::jint>
+	auto endIndex() const {
+		static_assert(field_signatures[jField<F>("endIndex")] != -1);
+		return at<F>("endIndex");
+	}
+
+	template<typename F = ::jint>
+	auto startIndex() const {
+		static_assert(field_signatures[jField<F>("startIndex")] != -1);
+		return at<F>("startIndex");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto text() const {
+		static_assert(field_signatures[jField<F>("text")] != -1);
+		return at<F>("text");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::jint, ::java::lang::String)>(), //
+	};
+
+};
+
+#endif

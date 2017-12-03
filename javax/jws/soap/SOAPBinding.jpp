@@ -1,0 +1,42 @@
+#ifndef javax_jws_soap_SOAPBinding_HPP
+#define javax_jws_soap_SOAPBinding_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::jws::soap::SOAPBinding : public jObject<::javax::jws::soap::SOAPBinding, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_jws_soap / "SOAPBinding";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::jws::soap::SOAPBinding$ParameterStyle()>("parameterStyle"), //
+		jMethod<::javax::jws::soap::SOAPBinding$Style()>("style"), //
+		jMethod<::javax::jws::soap::SOAPBinding$Use()>("use"), //
+	};
+
+	template<typename R = ::javax::jws::soap::SOAPBinding$ParameterStyle, typename... Args>
+	auto parameterStyle(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("parameterStyle")] != -1);
+		return call<R>("parameterStyle", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::jws::soap::SOAPBinding$Style, typename... Args>
+	auto style(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("style")] != -1);
+		return call<R>("style", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::jws::soap::SOAPBinding$Use, typename... Args>
+	auto use(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("use")] != -1);
+		return call<R>("use", forward<Args>(args)...);
+	}
+
+};
+
+#endif

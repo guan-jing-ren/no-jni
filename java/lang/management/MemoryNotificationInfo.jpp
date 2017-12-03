@@ -1,0 +1,63 @@
+#ifndef java_lang_management_MemoryNotificationInfo_HPP
+#define java_lang_management_MemoryNotificationInfo_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::management::MemoryNotificationInfo : public jObject<::java::lang::management::MemoryNotificationInfo, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_management / "MemoryNotificationInfo";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("MEMORY_COLLECTION_THRESHOLD_EXCEEDED"), //
+		jField<::java::lang::String>("MEMORY_THRESHOLD_EXCEEDED"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto MEMORY_COLLECTION_THRESHOLD_EXCEEDED() {
+		static_assert(field_signatures[jField<F>("MEMORY_COLLECTION_THRESHOLD_EXCEEDED")] != -1);
+		return sat<F>("MEMORY_COLLECTION_THRESHOLD_EXCEEDED");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto MEMORY_THRESHOLD_EXCEEDED() {
+		static_assert(field_signatures[jField<F>("MEMORY_THRESHOLD_EXCEEDED")] != -1);
+		return sat<F>("MEMORY_THRESHOLD_EXCEEDED");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::management::MemoryUsage, ::jlong)>(), //
+		jMethod<::java::lang::management::MemoryNotificationInfo(::javax::management::openmbean::CompositeData)>("from"), //
+		jMethod<::jlong()>("getCount"), //
+		jMethod<::java::lang::String()>("getPoolName"), //
+		jMethod<::java::lang::management::MemoryUsage()>("getUsage"), //
+	};
+
+	template<typename R = ::java::lang::management::MemoryNotificationInfo, typename... Args>
+	static auto from(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("from")] != -1);
+		return scall<R>("from", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCount")] != -1);
+		return call<R>("getCount", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getPoolName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPoolName")] != -1);
+		return call<R>("getPoolName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::management::MemoryUsage, typename... Args>
+	auto getUsage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUsage")] != -1);
+		return call<R>("getUsage", forward<Args>(args)...);
+	}
+
+};
+
+#endif

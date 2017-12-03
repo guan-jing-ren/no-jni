@@ -1,0 +1,65 @@
+#ifndef javax_imageio_stream_MemoryCacheImageInputStream_HPP
+#define javax_imageio_stream_MemoryCacheImageInputStream_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::imageio::stream::MemoryCacheImageInputStream : public jObject<::javax::imageio::stream::MemoryCacheImageInputStream, ::javax::imageio::stream::ImageInputStreamImpl> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_imageio_stream / "MemoryCacheImageInputStream";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::InputStream)>(), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::jvoid(::jlong)>("flushBefore"), //
+		jMethod<::jboolean()>("isCached"), //
+		jMethod<::jboolean()>("isCachedFile"), //
+		jMethod<::jboolean()>("isCachedMemory"), //
+		jMethod<::jint()>("read"), //
+		jMethod<::jint(::jbyte *, ::jint, ::jint)>("read"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto flushBefore(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("flushBefore")] != -1);
+		return call<R>("flushBefore", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isCached(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isCached")] != -1);
+		return call<R>("isCached", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isCachedFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isCachedFile")] != -1);
+		return call<R>("isCachedFile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isCachedMemory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isCachedMemory")] != -1);
+		return call<R>("isCachedMemory", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", forward<Args>(args)...);
+	}
+
+};
+
+#endif

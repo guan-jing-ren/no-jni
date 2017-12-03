@@ -1,0 +1,73 @@
+#ifndef java_beans_Beans_HPP
+#define java_beans_Beans_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::beans::Beans : public jObject<::java::beans::Beans, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_beans / "Beans";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::Object(::java::lang::Object, ::java::lang::Class)>("getInstanceOf"), //
+		jMethod<::java::lang::Object(::java::lang::ClassLoader, ::java::lang::String)>("instantiate"), //
+		jMethod<::java::lang::Object(::java::lang::ClassLoader, ::java::lang::String, ::java::beans::beancontext::BeanContext)>("instantiate"), //
+		jMethod<::java::lang::Object(::java::lang::ClassLoader, ::java::lang::String, ::java::beans::beancontext::BeanContext, ::java::beans::AppletInitializer)>("instantiate"), //
+		jMethod<::jboolean()>("isDesignTime"), //
+		jMethod<::jboolean()>("isGuiAvailable"), //
+		jMethod<::jboolean(::java::lang::Object, ::java::lang::Class)>("isInstanceOf"), //
+		jMethod<::jvoid(::jboolean)>("setDesignTime"), //
+		jMethod<::jvoid(::jboolean)>("setGuiAvailable"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto getInstanceOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstanceOf")] != -1);
+		return scall<R>("getInstanceOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto instantiate(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("instantiate")] != -1);
+		return scall<R>("instantiate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isDesignTime(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isDesignTime")] != -1);
+		return scall<R>("isDesignTime", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isGuiAvailable(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isGuiAvailable")] != -1);
+		return scall<R>("isGuiAvailable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isInstanceOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isInstanceOf")] != -1);
+		return scall<R>("isInstanceOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setDesignTime(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDesignTime")] != -1);
+		return scall<R>("setDesignTime", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setGuiAvailable(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setGuiAvailable")] != -1);
+		return scall<R>("setGuiAvailable", forward<Args>(args)...);
+	}
+
+};
+
+#endif

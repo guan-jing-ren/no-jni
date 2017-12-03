@@ -1,0 +1,42 @@
+#ifndef javax_accessibility_AccessibleAttributeSequence_HPP
+#define javax_accessibility_AccessibleAttributeSequence_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::accessibility::AccessibleAttributeSequence : public jObject<::javax::accessibility::AccessibleAttributeSequence, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_accessibility / "AccessibleAttributeSequence";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::swing::text::AttributeSet>("attributes"), //
+		jField<::jint>("endIndex"), //
+		jField<::jint>("startIndex"), //
+	};
+
+	template<typename F = ::javax::swing::text::AttributeSet>
+	auto attributes() const {
+		static_assert(field_signatures[jField<F>("attributes")] != -1);
+		return at<F>("attributes");
+	}
+
+	template<typename F = ::jint>
+	auto endIndex() const {
+		static_assert(field_signatures[jField<F>("endIndex")] != -1);
+		return at<F>("endIndex");
+	}
+
+	template<typename F = ::jint>
+	auto startIndex() const {
+		static_assert(field_signatures[jField<F>("startIndex")] != -1);
+		return at<F>("startIndex");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::jint, ::javax::swing::text::AttributeSet)>(), //
+	};
+
+};
+
+#endif

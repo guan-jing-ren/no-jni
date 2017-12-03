@@ -1,0 +1,28 @@
+#ifndef java_awt_event_TextListener_HPP
+#define java_awt_event_TextListener_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::event::TextListener : public jObject<::java::awt::event::TextListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_event / "TextListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::awt::event::TextEvent)>("textValueChanged"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto textValueChanged(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("textValueChanged")] != -1);
+		return call<R>("textValueChanged", forward<Args>(args)...);
+	}
+
+};
+
+#endif

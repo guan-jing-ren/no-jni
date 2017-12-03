@@ -1,0 +1,28 @@
+#ifndef javax_sound_midi_ControllerEventListener_HPP
+#define javax_sound_midi_ControllerEventListener_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::sound::midi::ControllerEventListener : public jObject<::javax::sound::midi::ControllerEventListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sound_midi / "ControllerEventListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::sound::midi::ShortMessage)>("controlChange"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto controlChange(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("controlChange")] != -1);
+		return call<R>("controlChange", forward<Args>(args)...);
+	}
+
+};
+
+#endif

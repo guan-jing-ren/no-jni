@@ -1,0 +1,28 @@
+#ifndef java_sql_DriverAction_HPP
+#define java_sql_DriverAction_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::sql::DriverAction : public jObject<::java::sql::DriverAction, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_sql / "DriverAction";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("deregister"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto deregister(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("deregister")] != -1);
+		return call<R>("deregister", forward<Args>(args)...);
+	}
+
+};
+
+#endif

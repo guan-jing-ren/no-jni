@@ -1,0 +1,30 @@
+#ifndef java_util_concurrent_RecursiveAction_HPP
+#define java_util_concurrent_RecursiveAction_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::concurrent::RecursiveAction : public jObject<::java::util::concurrent::RecursiveAction, ::java::util::concurrent::ForkJoinTask> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_concurrent / "RecursiveAction";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::Object()>("getRawResult"), //
+		jMethod<::java::lang::Void()>("getRawResult"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getRawResult(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRawResult")] != -1);
+		return call<R>("getRawResult", forward<Args>(args)...);
+	}
+
+};
+
+#endif

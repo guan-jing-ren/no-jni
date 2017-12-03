@@ -1,0 +1,49 @@
+#ifndef java_text_spi_NumberFormatProvider_HPP
+#define java_text_spi_NumberFormatProvider_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::text::spi::NumberFormatProvider : public jObject<::java::text::spi::NumberFormatProvider, ::java::util::spi::LocaleServiceProvider> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_text_spi / "NumberFormatProvider";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::text::NumberFormat(::java::util::Locale)>("getCurrencyInstance"), //
+		jMethod<::java::text::NumberFormat(::java::util::Locale)>("getIntegerInstance"), //
+		jMethod<::java::text::NumberFormat(::java::util::Locale)>("getNumberInstance"), //
+		jMethod<::java::text::NumberFormat(::java::util::Locale)>("getPercentInstance"), //
+	};
+
+	template<typename R = ::java::text::NumberFormat, typename... Args>
+	auto getCurrencyInstance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCurrencyInstance")] != -1);
+		return call<R>("getCurrencyInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::text::NumberFormat, typename... Args>
+	auto getIntegerInstance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIntegerInstance")] != -1);
+		return call<R>("getIntegerInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::text::NumberFormat, typename... Args>
+	auto getNumberInstance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNumberInstance")] != -1);
+		return call<R>("getNumberInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::text::NumberFormat, typename... Args>
+	auto getPercentInstance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPercentInstance")] != -1);
+		return call<R>("getPercentInstance", forward<Args>(args)...);
+	}
+
+};
+
+#endif

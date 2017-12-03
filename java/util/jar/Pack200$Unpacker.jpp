@@ -1,0 +1,84 @@
+#ifndef java_util_jar_Pack200$Unpacker_HPP
+#define java_util_jar_Pack200$Unpacker_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::jar::Pack200$Unpacker : public jObject<::java::util::jar::Pack200$Unpacker, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_jar / "Pack200$Unpacker";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("DEFLATE_HINT"), //
+		jField<::java::lang::String>("FALSE"), //
+		jField<::java::lang::String>("KEEP"), //
+		jField<::java::lang::String>("PROGRESS"), //
+		jField<::java::lang::String>("TRUE"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto DEFLATE_HINT() {
+		static_assert(field_signatures[jField<F>("DEFLATE_HINT")] != -1);
+		return sat<F>("DEFLATE_HINT");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto FALSE() {
+		static_assert(field_signatures[jField<F>("FALSE")] != -1);
+		return sat<F>("FALSE");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto KEEP() {
+		static_assert(field_signatures[jField<F>("KEEP")] != -1);
+		return sat<F>("KEEP");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto PROGRESS() {
+		static_assert(field_signatures[jField<F>("PROGRESS")] != -1);
+		return sat<F>("PROGRESS");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto TRUE() {
+		static_assert(field_signatures[jField<F>("TRUE")] != -1);
+		return sat<F>("TRUE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::beans::PropertyChangeListener)>("addPropertyChangeListener"), //
+		jMethod<::java::util::SortedMap()>("properties"), //
+		jMethod<::jvoid(::java::beans::PropertyChangeListener)>("removePropertyChangeListener"), //
+		jMethod<::jvoid(::java::io::File, ::java::util::jar::JarOutputStream)>("unpack"), //
+		jMethod<::jvoid(::java::io::InputStream, ::java::util::jar::JarOutputStream)>("unpack"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addPropertyChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addPropertyChangeListener")] != -1);
+		return call<R>("addPropertyChangeListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::SortedMap, typename... Args>
+	auto properties(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("properties")] != -1);
+		return call<R>("properties", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removePropertyChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removePropertyChangeListener")] != -1);
+		return call<R>("removePropertyChangeListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto unpack(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unpack")] != -1);
+		return call<R>("unpack", forward<Args>(args)...);
+	}
+
+};
+
+#endif

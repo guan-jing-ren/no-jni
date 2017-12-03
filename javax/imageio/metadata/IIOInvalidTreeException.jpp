@@ -1,0 +1,30 @@
+#ifndef javax_imageio_metadata_IIOInvalidTreeException_HPP
+#define javax_imageio_metadata_IIOInvalidTreeException_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::imageio::metadata::IIOInvalidTreeException : public jObject<::javax::imageio::metadata::IIOInvalidTreeException, ::javax::imageio::IIOException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_imageio_metadata / "IIOInvalidTreeException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Throwable, ::org::w3c::dom::Node)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::org::w3c::dom::Node)>(), //
+		jMethod<::org::w3c::dom::Node()>("getOffendingNode"), //
+	};
+
+	template<typename R = ::org::w3c::dom::Node, typename... Args>
+	auto getOffendingNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOffendingNode")] != -1);
+		return call<R>("getOffendingNode", forward<Args>(args)...);
+	}
+
+};
+
+#endif

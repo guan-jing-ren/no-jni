@@ -1,0 +1,51 @@
+#ifndef java_awt_dnd_DragSourceEvent_HPP
+#define java_awt_dnd_DragSourceEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::dnd::DragSourceEvent : public jObject<::java::awt::dnd::DragSourceEvent, ::java::util::EventObject> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_dnd / "DragSourceEvent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::dnd::DragSourceContext)>(), //
+		jConstructor<::jvoid(::java::awt::dnd::DragSourceContext, ::jint, ::jint)>(), //
+		jMethod<::java::awt::dnd::DragSourceContext()>("getDragSourceContext"), //
+		jMethod<::java::awt::Point()>("getLocation"), //
+		jMethod<::jint()>("getX"), //
+		jMethod<::jint()>("getY"), //
+	};
+
+	template<typename R = ::java::awt::dnd::DragSourceContext, typename... Args>
+	auto getDragSourceContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDragSourceContext")] != -1);
+		return call<R>("getDragSourceContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Point, typename... Args>
+	auto getLocation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLocation")] != -1);
+		return call<R>("getLocation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getX(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getX")] != -1);
+		return call<R>("getX", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getY(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getY")] != -1);
+		return call<R>("getY", forward<Args>(args)...);
+	}
+
+};
+
+#endif

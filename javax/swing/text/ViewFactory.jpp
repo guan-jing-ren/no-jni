@@ -1,0 +1,28 @@
+#ifndef javax_swing_text_ViewFactory_HPP
+#define javax_swing_text_ViewFactory_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::text::ViewFactory : public jObject<::javax::swing::text::ViewFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_text / "ViewFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::swing::text::View(::javax::swing::text::Element)>("create"), //
+	};
+
+	template<typename R = ::javax::swing::text::View, typename... Args>
+	auto create(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("create")] != -1);
+		return call<R>("create", forward<Args>(args)...);
+	}
+
+};
+
+#endif

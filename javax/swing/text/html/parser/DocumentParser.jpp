@@ -1,0 +1,29 @@
+#ifndef javax_swing_text_html_parser_DocumentParser_HPP
+#define javax_swing_text_html_parser_DocumentParser_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::javax::swing::text::html::parser::DocumentParser : public jObject<::javax::swing::text::html::parser::DocumentParser, ::javax::swing::text::html::parser::Parser> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_text_html_parser / "DocumentParser";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::swing::text::html::parser::DTD)>(), //
+		jMethod<::jvoid(::java::io::Reader, ::javax::swing::text::html::HTMLEditorKit$ParserCallback, ::jboolean)>("parse"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto parse(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("parse")] != -1);
+		return call<R>("parse", forward<Args>(args)...);
+	}
+
+};
+
+#endif

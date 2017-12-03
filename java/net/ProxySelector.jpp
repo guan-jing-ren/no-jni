@@ -1,0 +1,50 @@
+#ifndef java_net_ProxySelector_HPP
+#define java_net_ProxySelector_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::net::ProxySelector : public jObject<::java::net::ProxySelector, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_net / "ProxySelector";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::net::URI, ::java::net::SocketAddress, ::java::io::IOException)>("connectFailed"), //
+		jMethod<::java::net::ProxySelector()>("getDefault"), //
+		jMethod<::java::util::List(::java::net::URI)>("select"), //
+		jMethod<::jvoid(::java::net::ProxySelector)>("setDefault"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto connectFailed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("connectFailed")] != -1);
+		return call<R>("connectFailed", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::ProxySelector, typename... Args>
+	static auto getDefault(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefault")] != -1);
+		return scall<R>("getDefault", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto select(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("select")] != -1);
+		return call<R>("select", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setDefault(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDefault")] != -1);
+		return scall<R>("setDefault", forward<Args>(args)...);
+	}
+
+};
+
+#endif

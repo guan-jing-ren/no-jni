@@ -1,0 +1,36 @@
+#ifndef javax_swing_InputVerifier_HPP
+#define javax_swing_InputVerifier_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::swing::InputVerifier : public jObject<::javax::swing::InputVerifier, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing / "InputVerifier";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jboolean(::javax::swing::JComponent)>("shouldYieldFocus"), //
+		jMethod<::jboolean(::javax::swing::JComponent)>("verify"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto shouldYieldFocus(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("shouldYieldFocus")] != -1);
+		return call<R>("shouldYieldFocus", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto verify(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("verify")] != -1);
+		return call<R>("verify", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,50 @@
+#ifndef javax_smartcardio_CardChannel_HPP
+#define javax_smartcardio_CardChannel_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::smartcardio::CardChannel : public jObject<::javax::smartcardio::CardChannel, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_smartcardio / "CardChannel";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("close"), //
+		jMethod<::javax::smartcardio::Card()>("getCard"), //
+		jMethod<::jint()>("getChannelNumber"), //
+		jMethod<::jint(::java::nio::ByteBuffer, ::java::nio::ByteBuffer)>("transmit"), //
+		jMethod<::javax::smartcardio::ResponseAPDU(::javax::smartcardio::CommandAPDU)>("transmit"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::smartcardio::Card, typename... Args>
+	auto getCard(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCard")] != -1);
+		return call<R>("getCard", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getChannelNumber(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getChannelNumber")] != -1);
+		return call<R>("getChannelNumber", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto transmit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("transmit")] != -1);
+		return call<R>("transmit", forward<Args>(args)...);
+	}
+
+};
+
+#endif

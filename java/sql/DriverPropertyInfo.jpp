@@ -1,0 +1,56 @@
+#ifndef java_sql_DriverPropertyInfo_HPP
+#define java_sql_DriverPropertyInfo_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::sql::DriverPropertyInfo : public jObject<::java::sql::DriverPropertyInfo, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_sql / "DriverPropertyInfo";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String *>("choices"), //
+		jField<::java::lang::String>("description"), //
+		jField<::java::lang::String>("name"), //
+		jField<::jboolean>("required"), //
+		jField<::java::lang::String>("value"), //
+	};
+
+	template<typename F = ::java::lang::String *>
+	auto choices() const {
+		static_assert(field_signatures[jField<F>("choices")] != -1);
+		return at<F>("choices");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto description() const {
+		static_assert(field_signatures[jField<F>("description")] != -1);
+		return at<F>("description");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto name() const {
+		static_assert(field_signatures[jField<F>("name")] != -1);
+		return at<F>("name");
+	}
+
+	template<typename F = ::jboolean>
+	auto required() const {
+		static_assert(field_signatures[jField<F>("required")] != -1);
+		return at<F>("required");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto value() const {
+		static_assert(field_signatures[jField<F>("value")] != -1);
+		return at<F>("value");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String)>(), //
+	};
+
+};
+
+#endif

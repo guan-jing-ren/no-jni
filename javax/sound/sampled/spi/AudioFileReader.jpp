@@ -1,0 +1,40 @@
+#ifndef javax_sound_sampled_spi_AudioFileReader_HPP
+#define javax_sound_sampled_spi_AudioFileReader_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::sound::sampled::spi::AudioFileReader : public jObject<::javax::sound::sampled::spi::AudioFileReader, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sound_sampled_spi / "AudioFileReader";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::sound::sampled::AudioFileFormat(::java::io::File)>("getAudioFileFormat"), //
+		jMethod<::javax::sound::sampled::AudioFileFormat(::java::io::InputStream)>("getAudioFileFormat"), //
+		jMethod<::javax::sound::sampled::AudioFileFormat(::java::net::URL)>("getAudioFileFormat"), //
+		jMethod<::javax::sound::sampled::AudioInputStream(::java::io::File)>("getAudioInputStream"), //
+		jMethod<::javax::sound::sampled::AudioInputStream(::java::io::InputStream)>("getAudioInputStream"), //
+		jMethod<::javax::sound::sampled::AudioInputStream(::java::net::URL)>("getAudioInputStream"), //
+	};
+
+	template<typename R = ::javax::sound::sampled::AudioFileFormat, typename... Args>
+	auto getAudioFileFormat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAudioFileFormat")] != -1);
+		return call<R>("getAudioFileFormat", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::sampled::AudioInputStream, typename... Args>
+	auto getAudioInputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAudioInputStream")] != -1);
+		return call<R>("getAudioInputStream", forward<Args>(args)...);
+	}
+
+};
+
+#endif

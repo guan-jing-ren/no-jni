@@ -1,0 +1,62 @@
+#ifndef java_nio_file_attribute_AclEntryFlag_HPP
+#define java_nio_file_attribute_AclEntryFlag_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::java::nio::file::attribute::AclEntryFlag : public jObject<::java::nio::file::attribute::AclEntryFlag, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_file_attribute / "AclEntryFlag";
+
+	constexpr static Enume field_signatures{
+		jField<::java::nio::file::attribute::AclEntryFlag>("DIRECTORY_INHERIT"), //
+		jField<::java::nio::file::attribute::AclEntryFlag>("FILE_INHERIT"), //
+		jField<::java::nio::file::attribute::AclEntryFlag>("INHERIT_ONLY"), //
+		jField<::java::nio::file::attribute::AclEntryFlag>("NO_PROPAGATE_INHERIT"), //
+	};
+
+	template<typename F = ::java::nio::file::attribute::AclEntryFlag>
+	static auto DIRECTORY_INHERIT() {
+		static_assert(field_signatures[jField<F>("DIRECTORY_INHERIT")] != -1);
+		return sat<F>("DIRECTORY_INHERIT");
+	}
+
+	template<typename F = ::java::nio::file::attribute::AclEntryFlag>
+	static auto FILE_INHERIT() {
+		static_assert(field_signatures[jField<F>("FILE_INHERIT")] != -1);
+		return sat<F>("FILE_INHERIT");
+	}
+
+	template<typename F = ::java::nio::file::attribute::AclEntryFlag>
+	static auto INHERIT_ONLY() {
+		static_assert(field_signatures[jField<F>("INHERIT_ONLY")] != -1);
+		return sat<F>("INHERIT_ONLY");
+	}
+
+	template<typename F = ::java::nio::file::attribute::AclEntryFlag>
+	static auto NO_PROPAGATE_INHERIT() {
+		static_assert(field_signatures[jField<F>("NO_PROPAGATE_INHERIT")] != -1);
+		return sat<F>("NO_PROPAGATE_INHERIT");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::nio::file::attribute::AclEntryFlag(::java::lang::String)>("valueOf"), //
+		jMethod<::java::nio::file::attribute::AclEntryFlag *()>("values"), //
+	};
+
+	template<typename R = ::java::nio::file::attribute::AclEntryFlag, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::attribute::AclEntryFlag *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,56 @@
+#ifndef java_security_acl_Group_HPP
+#define java_security_acl_Group_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::acl::Group : public jObject<::java::security::acl::Group, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_acl / "Group";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::security::Principal)>("addMember"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::jboolean(::java::security::Principal)>("isMember"), //
+		jMethod<::java::util::Enumeration()>("members"), //
+		jMethod<::jboolean(::java::security::Principal)>("removeMember"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto addMember(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addMember")] != -1);
+		return call<R>("addMember", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isMember(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isMember")] != -1);
+		return call<R>("isMember", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	auto members(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("members")] != -1);
+		return call<R>("members", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto removeMember(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeMember")] != -1);
+		return call<R>("removeMember", forward<Args>(args)...);
+	}
+
+};
+
+#endif

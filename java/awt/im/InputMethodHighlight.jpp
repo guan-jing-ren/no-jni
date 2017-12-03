@@ -1,0 +1,93 @@
+#ifndef java_awt_im_InputMethodHighlight_HPP
+#define java_awt_im_InputMethodHighlight_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::im::InputMethodHighlight : public jObject<::java::awt::im::InputMethodHighlight, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_im / "InputMethodHighlight";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("CONVERTED_TEXT"), //
+		jField<::jint>("RAW_TEXT"), //
+		jField<::java::awt::im::InputMethodHighlight>("SELECTED_CONVERTED_TEXT_HIGHLIGHT"), //
+		jField<::java::awt::im::InputMethodHighlight>("SELECTED_RAW_TEXT_HIGHLIGHT"), //
+		jField<::java::awt::im::InputMethodHighlight>("UNSELECTED_CONVERTED_TEXT_HIGHLIGHT"), //
+		jField<::java::awt::im::InputMethodHighlight>("UNSELECTED_RAW_TEXT_HIGHLIGHT"), //
+	};
+
+	template<typename F = ::jint>
+	static auto CONVERTED_TEXT() {
+		static_assert(field_signatures[jField<F>("CONVERTED_TEXT")] != -1);
+		return sat<F>("CONVERTED_TEXT");
+	}
+
+	template<typename F = ::jint>
+	static auto RAW_TEXT() {
+		static_assert(field_signatures[jField<F>("RAW_TEXT")] != -1);
+		return sat<F>("RAW_TEXT");
+	}
+
+	template<typename F = ::java::awt::im::InputMethodHighlight>
+	static auto SELECTED_CONVERTED_TEXT_HIGHLIGHT() {
+		static_assert(field_signatures[jField<F>("SELECTED_CONVERTED_TEXT_HIGHLIGHT")] != -1);
+		return sat<F>("SELECTED_CONVERTED_TEXT_HIGHLIGHT");
+	}
+
+	template<typename F = ::java::awt::im::InputMethodHighlight>
+	static auto SELECTED_RAW_TEXT_HIGHLIGHT() {
+		static_assert(field_signatures[jField<F>("SELECTED_RAW_TEXT_HIGHLIGHT")] != -1);
+		return sat<F>("SELECTED_RAW_TEXT_HIGHLIGHT");
+	}
+
+	template<typename F = ::java::awt::im::InputMethodHighlight>
+	static auto UNSELECTED_CONVERTED_TEXT_HIGHLIGHT() {
+		static_assert(field_signatures[jField<F>("UNSELECTED_CONVERTED_TEXT_HIGHLIGHT")] != -1);
+		return sat<F>("UNSELECTED_CONVERTED_TEXT_HIGHLIGHT");
+	}
+
+	template<typename F = ::java::awt::im::InputMethodHighlight>
+	static auto UNSELECTED_RAW_TEXT_HIGHLIGHT() {
+		static_assert(field_signatures[jField<F>("UNSELECTED_RAW_TEXT_HIGHLIGHT")] != -1);
+		return sat<F>("UNSELECTED_RAW_TEXT_HIGHLIGHT");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jboolean, ::jint)>(), //
+		jConstructor<::jvoid(::jboolean, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::jboolean, ::jint, ::jint, ::java::util::Map)>(), //
+		jMethod<::jint()>("getState"), //
+		jMethod<::java::util::Map()>("getStyle"), //
+		jMethod<::jint()>("getVariation"), //
+		jMethod<::jboolean()>("isSelected"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getState")] != -1);
+		return call<R>("getState", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto getStyle(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStyle")] != -1);
+		return call<R>("getStyle", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getVariation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getVariation")] != -1);
+		return call<R>("getVariation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isSelected(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSelected")] != -1);
+		return call<R>("isSelected", forward<Args>(args)...);
+	}
+
+};
+
+#endif

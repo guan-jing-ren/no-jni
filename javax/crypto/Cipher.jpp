@@ -1,0 +1,202 @@
+#ifndef javax_crypto_Cipher_HPP
+#define javax_crypto_Cipher_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::crypto::Cipher : public jObject<::javax::crypto::Cipher, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_crypto / "Cipher";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("DECRYPT_MODE"), //
+		jField<::jint>("ENCRYPT_MODE"), //
+		jField<::jint>("PRIVATE_KEY"), //
+		jField<::jint>("PUBLIC_KEY"), //
+		jField<::jint>("SECRET_KEY"), //
+		jField<::jint>("UNWRAP_MODE"), //
+		jField<::jint>("WRAP_MODE"), //
+	};
+
+	template<typename F = ::jint>
+	static auto DECRYPT_MODE() {
+		static_assert(field_signatures[jField<F>("DECRYPT_MODE")] != -1);
+		return sat<F>("DECRYPT_MODE");
+	}
+
+	template<typename F = ::jint>
+	static auto ENCRYPT_MODE() {
+		static_assert(field_signatures[jField<F>("ENCRYPT_MODE")] != -1);
+		return sat<F>("ENCRYPT_MODE");
+	}
+
+	template<typename F = ::jint>
+	static auto PRIVATE_KEY() {
+		static_assert(field_signatures[jField<F>("PRIVATE_KEY")] != -1);
+		return sat<F>("PRIVATE_KEY");
+	}
+
+	template<typename F = ::jint>
+	static auto PUBLIC_KEY() {
+		static_assert(field_signatures[jField<F>("PUBLIC_KEY")] != -1);
+		return sat<F>("PUBLIC_KEY");
+	}
+
+	template<typename F = ::jint>
+	static auto SECRET_KEY() {
+		static_assert(field_signatures[jField<F>("SECRET_KEY")] != -1);
+		return sat<F>("SECRET_KEY");
+	}
+
+	template<typename F = ::jint>
+	static auto UNWRAP_MODE() {
+		static_assert(field_signatures[jField<F>("UNWRAP_MODE")] != -1);
+		return sat<F>("UNWRAP_MODE");
+	}
+
+	template<typename F = ::jint>
+	static auto WRAP_MODE() {
+		static_assert(field_signatures[jField<F>("WRAP_MODE")] != -1);
+		return sat<F>("WRAP_MODE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jbyte *()>("doFinal"), //
+		jMethod<::jint(::java::nio::ByteBuffer, ::java::nio::ByteBuffer)>("doFinal"), //
+		jMethod<::jbyte *(::jbyte *)>("doFinal"), //
+		jMethod<::jint(::jbyte *, ::jint)>("doFinal"), //
+		jMethod<::jbyte *(::jbyte *, ::jint, ::jint)>("doFinal"), //
+		jMethod<::jint(::jbyte *, ::jint, ::jint, ::jbyte *)>("doFinal"), //
+		jMethod<::jint(::jbyte *, ::jint, ::jint, ::jbyte *, ::jint)>("doFinal"), //
+		jMethod<::java::lang::String()>("getAlgorithm"), //
+		jMethod<::jint()>("getBlockSize"), //
+		jMethod<::javax::crypto::ExemptionMechanism()>("getExemptionMechanism"), //
+		jMethod<::jbyte *()>("getIV"), //
+		jMethod<::javax::crypto::Cipher(::java::lang::String)>("getInstance"), //
+		jMethod<::javax::crypto::Cipher(::java::lang::String, ::java::lang::String)>("getInstance"), //
+		jMethod<::javax::crypto::Cipher(::java::lang::String, ::java::security::Provider)>("getInstance"), //
+		jMethod<::jint(::java::lang::String)>("getMaxAllowedKeyLength"), //
+		jMethod<::java::security::spec::AlgorithmParameterSpec(::java::lang::String)>("getMaxAllowedParameterSpec"), //
+		jMethod<::jint(::jint)>("getOutputSize"), //
+		jMethod<::java::security::AlgorithmParameters()>("getParameters"), //
+		jMethod<::java::security::Provider()>("getProvider"), //
+		jMethod<::jvoid(::jint, ::java::security::Key)>("init"), //
+		jMethod<::jvoid(::jint, ::java::security::Key, ::java::security::AlgorithmParameters)>("init"), //
+		jMethod<::jvoid(::jint, ::java::security::Key, ::java::security::AlgorithmParameters, ::java::security::SecureRandom)>("init"), //
+		jMethod<::jvoid(::jint, ::java::security::Key, ::java::security::SecureRandom)>("init"), //
+		jMethod<::jvoid(::jint, ::java::security::Key, ::java::security::spec::AlgorithmParameterSpec)>("init"), //
+		jMethod<::jvoid(::jint, ::java::security::Key, ::java::security::spec::AlgorithmParameterSpec, ::java::security::SecureRandom)>("init"), //
+		jMethod<::jvoid(::jint, ::java::security::cert::Certificate)>("init"), //
+		jMethod<::jvoid(::jint, ::java::security::cert::Certificate, ::java::security::SecureRandom)>("init"), //
+		jMethod<::java::security::Key(::jbyte *, ::java::lang::String, ::jint)>("unwrap"), //
+		jMethod<::jint(::java::nio::ByteBuffer, ::java::nio::ByteBuffer)>("update"), //
+		jMethod<::jbyte *(::jbyte *)>("update"), //
+		jMethod<::jbyte *(::jbyte *, ::jint, ::jint)>("update"), //
+		jMethod<::jint(::jbyte *, ::jint, ::jint, ::jbyte *)>("update"), //
+		jMethod<::jint(::jbyte *, ::jint, ::jint, ::jbyte *, ::jint)>("update"), //
+		jMethod<::jvoid(::java::nio::ByteBuffer)>("updateAAD"), //
+		jMethod<::jvoid(::jbyte *)>("updateAAD"), //
+		jMethod<::jvoid(::jbyte *, ::jint, ::jint)>("updateAAD"), //
+		jMethod<::jbyte *(::java::security::Key)>("wrap"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto doFinal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("doFinal")] != -1);
+		return call<R>("doFinal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAlgorithm(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlgorithm")] != -1);
+		return call<R>("getAlgorithm", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getBlockSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBlockSize")] != -1);
+		return call<R>("getBlockSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::crypto::ExemptionMechanism, typename... Args>
+	auto getExemptionMechanism(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getExemptionMechanism")] != -1);
+		return call<R>("getExemptionMechanism", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getIV(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIV")] != -1);
+		return call<R>("getIV", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::crypto::Cipher, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto getMaxAllowedKeyLength(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMaxAllowedKeyLength")] != -1);
+		return scall<R>("getMaxAllowedKeyLength", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::spec::AlgorithmParameterSpec, typename... Args>
+	static auto getMaxAllowedParameterSpec(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMaxAllowedParameterSpec")] != -1);
+		return scall<R>("getMaxAllowedParameterSpec", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getOutputSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOutputSize")] != -1);
+		return call<R>("getOutputSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::AlgorithmParameters, typename... Args>
+	auto getParameters(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParameters")] != -1);
+		return call<R>("getParameters", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Provider, typename... Args>
+	auto getProvider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProvider")] != -1);
+		return call<R>("getProvider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto init(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("init")] != -1);
+		return call<R>("init", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Key, typename... Args>
+	auto unwrap(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unwrap")] != -1);
+		return call<R>("unwrap", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto update(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("update")] != -1);
+		return call<R>("update", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateAAD(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateAAD")] != -1);
+		return call<R>("updateAAD", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto wrap(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("wrap")] != -1);
+		return call<R>("wrap", forward<Args>(args)...);
+	}
+
+};
+
+#endif

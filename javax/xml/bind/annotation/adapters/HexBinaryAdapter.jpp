@@ -1,0 +1,38 @@
+#ifndef javax_xml_bind_annotation_adapters_HexBinaryAdapter_HPP
+#define javax_xml_bind_annotation_adapters_HexBinaryAdapter_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::javax::xml::bind::annotation::adapters::HexBinaryAdapter : public jObject<::javax::xml::bind::annotation::adapters::HexBinaryAdapter, ::javax::xml::bind::annotation::adapters::XmlAdapter> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_bind_annotation_adapters / "HexBinaryAdapter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::Object(::java::lang::Object)>("marshal"), //
+		jMethod<::java::lang::String(::jbyte *)>("marshal"), //
+		jMethod<::java::lang::Object(::java::lang::Object)>("unmarshal"), //
+		jMethod<::jbyte *(::java::lang::String)>("unmarshal"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto marshal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("marshal")] != -1);
+		return call<R>("marshal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto unmarshal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unmarshal")] != -1);
+		return call<R>("unmarshal", forward<Args>(args)...);
+	}
+
+};
+
+#endif

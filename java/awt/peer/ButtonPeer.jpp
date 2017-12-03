@@ -1,0 +1,28 @@
+#ifndef java_awt_peer_ButtonPeer_HPP
+#define java_awt_peer_ButtonPeer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::peer::ButtonPeer : public jObject<::java::awt::peer::ButtonPeer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_peer / "ButtonPeer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::String)>("setLabel"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLabel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLabel")] != -1);
+		return call<R>("setLabel", forward<Args>(args)...);
+	}
+
+};
+
+#endif

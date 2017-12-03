@@ -1,0 +1,55 @@
+#ifndef java_awt_JobAttributes$DialogType_HPP
+#define java_awt_JobAttributes$DialogType_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::JobAttributes$DialogType : public jObject<::java::awt::JobAttributes$DialogType, ::java::awt::AttributeValue> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "JobAttributes$DialogType";
+
+	constexpr static Enume field_signatures{
+		jField<::java::awt::JobAttributes$DialogType>("COMMON"), //
+		jField<::java::awt::JobAttributes$DialogType>("NATIVE"), //
+		jField<::java::awt::JobAttributes$DialogType>("NONE"), //
+	};
+
+	template<typename F = ::java::awt::JobAttributes$DialogType>
+	static auto COMMON() {
+		static_assert(field_signatures[jField<F>("COMMON")] != -1);
+		return sat<F>("COMMON");
+	}
+
+	template<typename F = ::java::awt::JobAttributes$DialogType>
+	static auto NATIVE() {
+		static_assert(field_signatures[jField<F>("NATIVE")] != -1);
+		return sat<F>("NATIVE");
+	}
+
+	template<typename F = ::java::awt::JobAttributes$DialogType>
+	static auto NONE() {
+		static_assert(field_signatures[jField<F>("NONE")] != -1);
+		return sat<F>("NONE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,42 @@
+#ifndef java_lang_reflect_ParameterizedType_HPP
+#define java_lang_reflect_ParameterizedType_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::reflect::ParameterizedType : public jObject<::java::lang::reflect::ParameterizedType, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_reflect / "ParameterizedType";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::reflect::Type *()>("getActualTypeArguments"), //
+		jMethod<::java::lang::reflect::Type()>("getOwnerType"), //
+		jMethod<::java::lang::reflect::Type()>("getRawType"), //
+	};
+
+	template<typename R = ::java::lang::reflect::Type *, typename... Args>
+	auto getActualTypeArguments(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getActualTypeArguments")] != -1);
+		return call<R>("getActualTypeArguments", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Type, typename... Args>
+	auto getOwnerType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOwnerType")] != -1);
+		return call<R>("getOwnerType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Type, typename... Args>
+	auto getRawType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRawType")] != -1);
+		return call<R>("getRawType", forward<Args>(args)...);
+	}
+
+};
+
+#endif

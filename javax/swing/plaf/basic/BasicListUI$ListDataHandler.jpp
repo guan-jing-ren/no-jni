@@ -1,0 +1,43 @@
+#ifndef javax_swing_plaf_basic_BasicListUI$ListDataHandler_HPP
+#define javax_swing_plaf_basic_BasicListUI$ListDataHandler_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::swing::plaf::basic::BasicListUI$ListDataHandler : public jObject<::javax::swing::plaf::basic::BasicListUI$ListDataHandler, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_plaf_basic / "BasicListUI$ListDataHandler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::swing::plaf::basic::BasicListUI)>(), //
+		jMethod<::jvoid(::javax::swing::event::ListDataEvent)>("contentsChanged"), //
+		jMethod<::jvoid(::javax::swing::event::ListDataEvent)>("intervalAdded"), //
+		jMethod<::jvoid(::javax::swing::event::ListDataEvent)>("intervalRemoved"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto contentsChanged(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("contentsChanged")] != -1);
+		return call<R>("contentsChanged", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto intervalAdded(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("intervalAdded")] != -1);
+		return call<R>("intervalAdded", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto intervalRemoved(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("intervalRemoved")] != -1);
+		return call<R>("intervalRemoved", forward<Args>(args)...);
+	}
+
+};
+
+#endif

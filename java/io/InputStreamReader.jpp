@@ -1,0 +1,54 @@
+#ifndef java_io_InputStreamReader_HPP
+#define java_io_InputStreamReader_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::io::InputStreamReader : public jObject<::java::io::InputStreamReader, ::java::io::Reader> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_io / "InputStreamReader";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::InputStream)>(), //
+		jConstructor<::jvoid(::java::io::InputStream, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::io::InputStream, ::java::nio::charset::Charset)>(), //
+		jConstructor<::jvoid(::java::io::InputStream, ::java::nio::charset::CharsetDecoder)>(), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::java::lang::String()>("getEncoding"), //
+		jMethod<::jint()>("read"), //
+		jMethod<::jint(::jchar *, ::jint, ::jint)>("read"), //
+		jMethod<::jboolean()>("ready"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getEncoding(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEncoding")] != -1);
+		return call<R>("getEncoding", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto ready(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("ready")] != -1);
+		return call<R>("ready", forward<Args>(args)...);
+	}
+
+};
+
+#endif

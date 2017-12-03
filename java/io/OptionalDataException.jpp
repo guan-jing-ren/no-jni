@@ -1,0 +1,35 @@
+#ifndef java_io_OptionalDataException_HPP
+#define java_io_OptionalDataException_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::io::OptionalDataException : public jObject<::java::io::OptionalDataException, ::java::io::ObjectStreamException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_io / "OptionalDataException";
+
+	constexpr static Enume field_signatures{
+		jField<::jboolean>("eof"), //
+		jField<::jint>("length"), //
+	};
+
+	template<typename F = ::jboolean>
+	auto eof() const {
+		static_assert(field_signatures[jField<F>("eof")] != -1);
+		return at<F>("eof");
+	}
+
+	template<typename F = ::jint>
+	auto length() const {
+		static_assert(field_signatures[jField<F>("length")] != -1);
+		return at<F>("length");
+	}
+
+	constexpr static Enume method_signatures{
+		cexprstr{"\0"}, //
+	};
+
+};
+
+#endif

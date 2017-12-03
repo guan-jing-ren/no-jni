@@ -1,0 +1,49 @@
+#ifndef java_util_logging_Formatter_HPP
+#define java_util_logging_Formatter_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::logging::Formatter : public jObject<::java::util::logging::Formatter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_logging / "Formatter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String(::java::util::logging::LogRecord)>("format"), //
+		jMethod<::java::lang::String(::java::util::logging::LogRecord)>("formatMessage"), //
+		jMethod<::java::lang::String(::java::util::logging::Handler)>("getHead"), //
+		jMethod<::java::lang::String(::java::util::logging::Handler)>("getTail"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto format(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("format")] != -1);
+		return call<R>("format", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto formatMessage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("formatMessage")] != -1);
+		return call<R>("formatMessage", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getHead(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHead")] != -1);
+		return call<R>("getHead", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getTail(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTail")] != -1);
+		return call<R>("getTail", forward<Args>(args)...);
+	}
+
+};
+
+#endif

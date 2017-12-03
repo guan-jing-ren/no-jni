@@ -1,0 +1,50 @@
+#ifndef javax_swing_plaf_metal_MetalInternalFrameUI_HPP
+#define javax_swing_plaf_metal_MetalInternalFrameUI_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::swing::plaf::metal::MetalInternalFrameUI : public jObject<::javax::swing::plaf::metal::MetalInternalFrameUI, ::javax::swing::plaf::basic::BasicInternalFrameUI> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_plaf_metal / "MetalInternalFrameUI";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::swing::JInternalFrame)>(), //
+		jMethod<::javax::swing::plaf::ComponentUI(::javax::swing::JComponent)>("createUI"), //
+		jMethod<::jvoid(::javax::swing::JComponent)>("installUI"), //
+		jMethod<::jvoid(::jboolean)>("setPalette"), //
+		jMethod<::jvoid(::javax::swing::JComponent)>("uninstallUI"), //
+	};
+
+	template<typename R = ::javax::swing::plaf::ComponentUI, typename... Args>
+	static auto createUI(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createUI")] != -1);
+		return scall<R>("createUI", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto installUI(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("installUI")] != -1);
+		return call<R>("installUI", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setPalette(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPalette")] != -1);
+		return call<R>("setPalette", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto uninstallUI(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("uninstallUI")] != -1);
+		return call<R>("uninstallUI", forward<Args>(args)...);
+	}
+
+};
+
+#endif

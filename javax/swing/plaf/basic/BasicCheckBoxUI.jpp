@@ -1,0 +1,36 @@
+#ifndef javax_swing_plaf_basic_BasicCheckBoxUI_HPP
+#define javax_swing_plaf_basic_BasicCheckBoxUI_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::swing::plaf::basic::BasicCheckBoxUI : public jObject<::javax::swing::plaf::basic::BasicCheckBoxUI, ::javax::swing::plaf::basic::BasicRadioButtonUI> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_plaf_basic / "BasicCheckBoxUI";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::swing::plaf::ComponentUI(::javax::swing::JComponent)>("createUI"), //
+		jMethod<::java::lang::String()>("getPropertyPrefix"), //
+	};
+
+	template<typename R = ::javax::swing::plaf::ComponentUI, typename... Args>
+	static auto createUI(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createUI")] != -1);
+		return scall<R>("createUI", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getPropertyPrefix(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPropertyPrefix")] != -1);
+		return call<R>("getPropertyPrefix", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,1562 @@
+#ifndef javax_sql_rowset_FilteredRowSet_HPP
+#define javax_sql_rowset_FilteredRowSet_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::sql::rowset::FilteredRowSet : public jObject<::javax::sql::rowset::FilteredRowSet, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sql_rowset / "FilteredRowSet";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::jint)>("absolute"), //
+		jMethod<::jvoid()>("acceptChanges"), //
+		jMethod<::jvoid(::java::sql::Connection)>("acceptChanges"), //
+		jMethod<::jvoid(::javax::sql::RowSetListener)>("addRowSetListener"), //
+		jMethod<::jvoid()>("afterLast"), //
+		jMethod<::jvoid()>("beforeFirst"), //
+		jMethod<::jvoid()>("cancelRowUpdates"), //
+		jMethod<::jvoid()>("clearParameters"), //
+		jMethod<::jvoid()>("clearWarnings"), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::jboolean(::jint)>("columnUpdated"), //
+		jMethod<::jboolean(::java::lang::String)>("columnUpdated"), //
+		jMethod<::jvoid()>("commit"), //
+		jMethod<::javax::sql::rowset::CachedRowSet()>("createCopy"), //
+		jMethod<::javax::sql::rowset::CachedRowSet()>("createCopyNoConstraints"), //
+		jMethod<::javax::sql::rowset::CachedRowSet()>("createCopySchema"), //
+		jMethod<::javax::sql::RowSet()>("createShared"), //
+		jMethod<::jvoid()>("deleteRow"), //
+		jMethod<::jvoid()>("execute"), //
+		jMethod<::jvoid(::java::sql::Connection)>("execute"), //
+		jMethod<::jint(::java::lang::String)>("findColumn"), //
+		jMethod<::jboolean()>("first"), //
+		jMethod<::java::sql::Array(::jint)>("getArray"), //
+		jMethod<::java::sql::Array(::java::lang::String)>("getArray"), //
+		jMethod<::java::io::InputStream(::jint)>("getAsciiStream"), //
+		jMethod<::java::io::InputStream(::java::lang::String)>("getAsciiStream"), //
+		jMethod<::java::math::BigDecimal(::jint)>("getBigDecimal"), //
+		jMethod<::java::math::BigDecimal(::jint, ::jint)>("getBigDecimal"), //
+		jMethod<::java::math::BigDecimal(::java::lang::String)>("getBigDecimal"), //
+		jMethod<::java::math::BigDecimal(::java::lang::String, ::jint)>("getBigDecimal"), //
+		jMethod<::java::io::InputStream(::jint)>("getBinaryStream"), //
+		jMethod<::java::io::InputStream(::java::lang::String)>("getBinaryStream"), //
+		jMethod<::java::sql::Blob(::jint)>("getBlob"), //
+		jMethod<::java::sql::Blob(::java::lang::String)>("getBlob"), //
+		jMethod<::jboolean(::jint)>("getBoolean"), //
+		jMethod<::jboolean(::java::lang::String)>("getBoolean"), //
+		jMethod<::jbyte(::jint)>("getByte"), //
+		jMethod<::jbyte(::java::lang::String)>("getByte"), //
+		jMethod<::jbyte *(::jint)>("getBytes"), //
+		jMethod<::jbyte *(::java::lang::String)>("getBytes"), //
+		jMethod<::java::io::Reader(::jint)>("getCharacterStream"), //
+		jMethod<::java::io::Reader(::java::lang::String)>("getCharacterStream"), //
+		jMethod<::java::sql::Clob(::jint)>("getClob"), //
+		jMethod<::java::sql::Clob(::java::lang::String)>("getClob"), //
+		jMethod<::java::lang::String()>("getCommand"), //
+		jMethod<::jint()>("getConcurrency"), //
+		jMethod<::java::lang::String()>("getCursorName"), //
+		jMethod<::java::lang::String()>("getDataSourceName"), //
+		jMethod<::java::sql::Date(::jint)>("getDate"), //
+		jMethod<::java::sql::Date(::jint, ::java::util::Calendar)>("getDate"), //
+		jMethod<::java::sql::Date(::java::lang::String)>("getDate"), //
+		jMethod<::java::sql::Date(::java::lang::String, ::java::util::Calendar)>("getDate"), //
+		jMethod<::jdouble(::jint)>("getDouble"), //
+		jMethod<::jdouble(::java::lang::String)>("getDouble"), //
+		jMethod<::jboolean()>("getEscapeProcessing"), //
+		jMethod<::jint()>("getFetchDirection"), //
+		jMethod<::jint()>("getFetchSize"), //
+		jMethod<::javax::sql::rowset::Predicate()>("getFilter"), //
+		jMethod<::jfloat(::jint)>("getFloat"), //
+		jMethod<::jfloat(::java::lang::String)>("getFloat"), //
+		jMethod<::jint()>("getHoldability"), //
+		jMethod<::jint(::jint)>("getInt"), //
+		jMethod<::jint(::java::lang::String)>("getInt"), //
+		jMethod<::jint *()>("getKeyColumns"), //
+		jMethod<::jlong(::jint)>("getLong"), //
+		jMethod<::jlong(::java::lang::String)>("getLong"), //
+		jMethod<::jint *()>("getMatchColumnIndexes"), //
+		jMethod<::java::lang::String *()>("getMatchColumnNames"), //
+		jMethod<::jint()>("getMaxFieldSize"), //
+		jMethod<::jint()>("getMaxRows"), //
+		jMethod<::java::sql::ResultSetMetaData()>("getMetaData"), //
+		jMethod<::java::io::Reader(::jint)>("getNCharacterStream"), //
+		jMethod<::java::io::Reader(::java::lang::String)>("getNCharacterStream"), //
+		jMethod<::java::sql::NClob(::jint)>("getNClob"), //
+		jMethod<::java::sql::NClob(::java::lang::String)>("getNClob"), //
+		jMethod<::java::lang::String(::jint)>("getNString"), //
+		jMethod<::java::lang::String(::java::lang::String)>("getNString"), //
+		jMethod<::java::lang::Object(::jint)>("getObject"), //
+		jMethod<::java::lang::Object(::jint, ::java::lang::Class)>("getObject"), //
+		jMethod<::java::lang::Object(::jint, ::java::util::Map)>("getObject"), //
+		jMethod<::java::lang::Object(::java::lang::String)>("getObject"), //
+		jMethod<::java::lang::Object(::java::lang::String, ::java::lang::Class)>("getObject"), //
+		jMethod<::java::lang::Object(::java::lang::String, ::java::util::Map)>("getObject"), //
+		jMethod<::java::sql::ResultSet()>("getOriginal"), //
+		jMethod<::java::sql::ResultSet()>("getOriginalRow"), //
+		jMethod<::jint()>("getPageSize"), //
+		jMethod<::java::lang::String()>("getPassword"), //
+		jMethod<::jint()>("getQueryTimeout"), //
+		jMethod<::java::sql::Ref(::jint)>("getRef"), //
+		jMethod<::java::sql::Ref(::java::lang::String)>("getRef"), //
+		jMethod<::jint()>("getRow"), //
+		jMethod<::java::sql::RowId(::jint)>("getRowId"), //
+		jMethod<::java::sql::RowId(::java::lang::String)>("getRowId"), //
+		jMethod<::javax::sql::rowset::RowSetWarning()>("getRowSetWarnings"), //
+		jMethod<::java::sql::SQLXML(::jint)>("getSQLXML"), //
+		jMethod<::java::sql::SQLXML(::java::lang::String)>("getSQLXML"), //
+		jMethod<::jshort(::jint)>("getShort"), //
+		jMethod<::jshort(::java::lang::String)>("getShort"), //
+		jMethod<::jboolean()>("getShowDeleted"), //
+		jMethod<::java::sql::Statement()>("getStatement"), //
+		jMethod<::java::lang::String(::jint)>("getString"), //
+		jMethod<::java::lang::String(::java::lang::String)>("getString"), //
+		jMethod<::javax::sql::rowset::spi::SyncProvider()>("getSyncProvider"), //
+		jMethod<::java::lang::String()>("getTableName"), //
+		jMethod<::java::sql::Time(::jint)>("getTime"), //
+		jMethod<::java::sql::Time(::jint, ::java::util::Calendar)>("getTime"), //
+		jMethod<::java::sql::Time(::java::lang::String)>("getTime"), //
+		jMethod<::java::sql::Time(::java::lang::String, ::java::util::Calendar)>("getTime"), //
+		jMethod<::java::sql::Timestamp(::jint)>("getTimestamp"), //
+		jMethod<::java::sql::Timestamp(::jint, ::java::util::Calendar)>("getTimestamp"), //
+		jMethod<::java::sql::Timestamp(::java::lang::String)>("getTimestamp"), //
+		jMethod<::java::sql::Timestamp(::java::lang::String, ::java::util::Calendar)>("getTimestamp"), //
+		jMethod<::jint()>("getTransactionIsolation"), //
+		jMethod<::jint()>("getType"), //
+		jMethod<::java::util::Map()>("getTypeMap"), //
+		jMethod<::java::net::URL(::jint)>("getURL"), //
+		jMethod<::java::net::URL(::java::lang::String)>("getURL"), //
+		jMethod<::java::io::InputStream(::jint)>("getUnicodeStream"), //
+		jMethod<::java::io::InputStream(::java::lang::String)>("getUnicodeStream"), //
+		jMethod<::java::lang::String()>("getUrl"), //
+		jMethod<::java::lang::String()>("getUsername"), //
+		jMethod<::java::sql::SQLWarning()>("getWarnings"), //
+		jMethod<::jvoid()>("insertRow"), //
+		jMethod<::jboolean()>("isAfterLast"), //
+		jMethod<::jboolean()>("isBeforeFirst"), //
+		jMethod<::jboolean()>("isClosed"), //
+		jMethod<::jboolean()>("isFirst"), //
+		jMethod<::jboolean()>("isLast"), //
+		jMethod<::jboolean()>("isReadOnly"), //
+		jMethod<::jboolean(::java::lang::Class)>("isWrapperFor"), //
+		jMethod<::jboolean()>("last"), //
+		jMethod<::jvoid()>("moveToCurrentRow"), //
+		jMethod<::jvoid()>("moveToInsertRow"), //
+		jMethod<::jboolean()>("next"), //
+		jMethod<::jboolean()>("nextPage"), //
+		jMethod<::jvoid(::java::sql::ResultSet)>("populate"), //
+		jMethod<::jvoid(::java::sql::ResultSet, ::jint)>("populate"), //
+		jMethod<::jboolean()>("previous"), //
+		jMethod<::jboolean()>("previousPage"), //
+		jMethod<::jvoid(::java::io::InputStream)>("readXml"), //
+		jMethod<::jvoid(::java::io::Reader)>("readXml"), //
+		jMethod<::jvoid()>("refreshRow"), //
+		jMethod<::jboolean(::jint)>("relative"), //
+		jMethod<::jvoid()>("release"), //
+		jMethod<::jvoid(::javax::sql::RowSetListener)>("removeRowSetListener"), //
+		jMethod<::jvoid()>("restoreOriginal"), //
+		jMethod<::jvoid()>("rollback"), //
+		jMethod<::jvoid(::java::sql::Savepoint)>("rollback"), //
+		jMethod<::jboolean()>("rowDeleted"), //
+		jMethod<::jboolean()>("rowInserted"), //
+		jMethod<::jvoid(::javax::sql::RowSetEvent, ::jint)>("rowSetPopulated"), //
+		jMethod<::jboolean()>("rowUpdated"), //
+		jMethod<::jvoid(::jint, ::java::sql::Array)>("setArray"), //
+		jMethod<::jvoid(::jint, ::java::io::InputStream)>("setAsciiStream"), //
+		jMethod<::jvoid(::jint, ::java::io::InputStream, ::jint)>("setAsciiStream"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::InputStream)>("setAsciiStream"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::InputStream, ::jint)>("setAsciiStream"), //
+		jMethod<::jvoid(::jint, ::java::math::BigDecimal)>("setBigDecimal"), //
+		jMethod<::jvoid(::java::lang::String, ::java::math::BigDecimal)>("setBigDecimal"), //
+		jMethod<::jvoid(::jint, ::java::io::InputStream)>("setBinaryStream"), //
+		jMethod<::jvoid(::jint, ::java::io::InputStream, ::jint)>("setBinaryStream"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::InputStream)>("setBinaryStream"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::InputStream, ::jint)>("setBinaryStream"), //
+		jMethod<::jvoid(::jint, ::java::io::InputStream)>("setBlob"), //
+		jMethod<::jvoid(::jint, ::java::io::InputStream, ::jlong)>("setBlob"), //
+		jMethod<::jvoid(::jint, ::java::sql::Blob)>("setBlob"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::InputStream)>("setBlob"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::InputStream, ::jlong)>("setBlob"), //
+		jMethod<::jvoid(::java::lang::String, ::java::sql::Blob)>("setBlob"), //
+		jMethod<::jvoid(::jint, ::jboolean)>("setBoolean"), //
+		jMethod<::jvoid(::java::lang::String, ::jboolean)>("setBoolean"), //
+		jMethod<::jvoid(::jint, ::jbyte)>("setByte"), //
+		jMethod<::jvoid(::java::lang::String, ::jbyte)>("setByte"), //
+		jMethod<::jvoid(::jint, ::jbyte *)>("setBytes"), //
+		jMethod<::jvoid(::java::lang::String, ::jbyte *)>("setBytes"), //
+		jMethod<::jvoid(::jint, ::java::io::Reader)>("setCharacterStream"), //
+		jMethod<::jvoid(::jint, ::java::io::Reader, ::jint)>("setCharacterStream"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::Reader)>("setCharacterStream"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::Reader, ::jint)>("setCharacterStream"), //
+		jMethod<::jvoid(::jint, ::java::io::Reader)>("setClob"), //
+		jMethod<::jvoid(::jint, ::java::io::Reader, ::jlong)>("setClob"), //
+		jMethod<::jvoid(::jint, ::java::sql::Clob)>("setClob"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::Reader)>("setClob"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::Reader, ::jlong)>("setClob"), //
+		jMethod<::jvoid(::java::lang::String, ::java::sql::Clob)>("setClob"), //
+		jMethod<::jvoid(::java::lang::String)>("setCommand"), //
+		jMethod<::jvoid(::jint)>("setConcurrency"), //
+		jMethod<::jvoid(::java::lang::String)>("setDataSourceName"), //
+		jMethod<::jvoid(::jint, ::java::sql::Date)>("setDate"), //
+		jMethod<::jvoid(::jint, ::java::sql::Date, ::java::util::Calendar)>("setDate"), //
+		jMethod<::jvoid(::java::lang::String, ::java::sql::Date)>("setDate"), //
+		jMethod<::jvoid(::java::lang::String, ::java::sql::Date, ::java::util::Calendar)>("setDate"), //
+		jMethod<::jvoid(::jint, ::jdouble)>("setDouble"), //
+		jMethod<::jvoid(::java::lang::String, ::jdouble)>("setDouble"), //
+		jMethod<::jvoid(::jboolean)>("setEscapeProcessing"), //
+		jMethod<::jvoid(::jint)>("setFetchDirection"), //
+		jMethod<::jvoid(::jint)>("setFetchSize"), //
+		jMethod<::jvoid(::javax::sql::rowset::Predicate)>("setFilter"), //
+		jMethod<::jvoid(::jint, ::jfloat)>("setFloat"), //
+		jMethod<::jvoid(::java::lang::String, ::jfloat)>("setFloat"), //
+		jMethod<::jvoid(::jint, ::jint)>("setInt"), //
+		jMethod<::jvoid(::java::lang::String, ::jint)>("setInt"), //
+		jMethod<::jvoid(::jint *)>("setKeyColumns"), //
+		jMethod<::jvoid(::jint, ::jlong)>("setLong"), //
+		jMethod<::jvoid(::java::lang::String, ::jlong)>("setLong"), //
+		jMethod<::jvoid(::jint)>("setMatchColumn"), //
+		jMethod<::jvoid(::java::lang::String)>("setMatchColumn"), //
+		jMethod<::jvoid(::jint *)>("setMatchColumn"), //
+		jMethod<::jvoid(::java::lang::String *)>("setMatchColumn"), //
+		jMethod<::jvoid(::jint)>("setMaxFieldSize"), //
+		jMethod<::jvoid(::jint)>("setMaxRows"), //
+		jMethod<::jvoid(::javax::sql::RowSetMetaData)>("setMetaData"), //
+		jMethod<::jvoid(::jint, ::java::io::Reader)>("setNCharacterStream"), //
+		jMethod<::jvoid(::jint, ::java::io::Reader, ::jlong)>("setNCharacterStream"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::Reader)>("setNCharacterStream"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::Reader, ::jlong)>("setNCharacterStream"), //
+		jMethod<::jvoid(::jint, ::java::io::Reader)>("setNClob"), //
+		jMethod<::jvoid(::jint, ::java::io::Reader, ::jlong)>("setNClob"), //
+		jMethod<::jvoid(::jint, ::java::sql::NClob)>("setNClob"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::Reader)>("setNClob"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::Reader, ::jlong)>("setNClob"), //
+		jMethod<::jvoid(::java::lang::String, ::java::sql::NClob)>("setNClob"), //
+		jMethod<::jvoid(::jint, ::java::lang::String)>("setNString"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String)>("setNString"), //
+		jMethod<::jvoid(::jint, ::jint)>("setNull"), //
+		jMethod<::jvoid(::jint, ::jint, ::java::lang::String)>("setNull"), //
+		jMethod<::jvoid(::java::lang::String, ::jint)>("setNull"), //
+		jMethod<::jvoid(::java::lang::String, ::jint, ::java::lang::String)>("setNull"), //
+		jMethod<::jvoid(::jint, ::java::lang::Object)>("setObject"), //
+		jMethod<::jvoid(::jint, ::java::lang::Object, ::jint)>("setObject"), //
+		jMethod<::jvoid(::jint, ::java::lang::Object, ::jint, ::jint)>("setObject"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::Object)>("setObject"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::Object, ::jint)>("setObject"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::Object, ::jint, ::jint)>("setObject"), //
+		jMethod<::jvoid()>("setOriginalRow"), //
+		jMethod<::jvoid(::jint)>("setPageSize"), //
+		jMethod<::jvoid(::java::lang::String)>("setPassword"), //
+		jMethod<::jvoid(::jint)>("setQueryTimeout"), //
+		jMethod<::jvoid(::jboolean)>("setReadOnly"), //
+		jMethod<::jvoid(::jint, ::java::sql::Ref)>("setRef"), //
+		jMethod<::jvoid(::jint, ::java::sql::RowId)>("setRowId"), //
+		jMethod<::jvoid(::java::lang::String, ::java::sql::RowId)>("setRowId"), //
+		jMethod<::jvoid(::jint, ::java::sql::SQLXML)>("setSQLXML"), //
+		jMethod<::jvoid(::java::lang::String, ::java::sql::SQLXML)>("setSQLXML"), //
+		jMethod<::jvoid(::jint, ::jshort)>("setShort"), //
+		jMethod<::jvoid(::java::lang::String, ::jshort)>("setShort"), //
+		jMethod<::jvoid(::jboolean)>("setShowDeleted"), //
+		jMethod<::jvoid(::jint, ::java::lang::String)>("setString"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String)>("setString"), //
+		jMethod<::jvoid(::java::lang::String)>("setSyncProvider"), //
+		jMethod<::jvoid(::java::lang::String)>("setTableName"), //
+		jMethod<::jvoid(::jint, ::java::sql::Time)>("setTime"), //
+		jMethod<::jvoid(::jint, ::java::sql::Time, ::java::util::Calendar)>("setTime"), //
+		jMethod<::jvoid(::java::lang::String, ::java::sql::Time)>("setTime"), //
+		jMethod<::jvoid(::java::lang::String, ::java::sql::Time, ::java::util::Calendar)>("setTime"), //
+		jMethod<::jvoid(::jint, ::java::sql::Timestamp)>("setTimestamp"), //
+		jMethod<::jvoid(::jint, ::java::sql::Timestamp, ::java::util::Calendar)>("setTimestamp"), //
+		jMethod<::jvoid(::java::lang::String, ::java::sql::Timestamp)>("setTimestamp"), //
+		jMethod<::jvoid(::java::lang::String, ::java::sql::Timestamp, ::java::util::Calendar)>("setTimestamp"), //
+		jMethod<::jvoid(::jint)>("setTransactionIsolation"), //
+		jMethod<::jvoid(::jint)>("setType"), //
+		jMethod<::jvoid(::java::util::Map)>("setTypeMap"), //
+		jMethod<::jvoid(::jint, ::java::net::URL)>("setURL"), //
+		jMethod<::jvoid(::java::lang::String)>("setUrl"), //
+		jMethod<::jvoid(::java::lang::String)>("setUsername"), //
+		jMethod<::jint()>("size"), //
+		jMethod<::java::util::Collection()>("toCollection"), //
+		jMethod<::java::util::Collection(::jint)>("toCollection"), //
+		jMethod<::java::util::Collection(::java::lang::String)>("toCollection"), //
+		jMethod<::jvoid()>("undoDelete"), //
+		jMethod<::jvoid()>("undoInsert"), //
+		jMethod<::jvoid()>("undoUpdate"), //
+		jMethod<::jvoid(::jint)>("unsetMatchColumn"), //
+		jMethod<::jvoid(::java::lang::String)>("unsetMatchColumn"), //
+		jMethod<::jvoid(::jint *)>("unsetMatchColumn"), //
+		jMethod<::jvoid(::java::lang::String *)>("unsetMatchColumn"), //
+		jMethod<::java::lang::Object(::java::lang::Class)>("unwrap"), //
+		jMethod<::jvoid(::jint, ::java::sql::Array)>("updateArray"), //
+		jMethod<::jvoid(::java::lang::String, ::java::sql::Array)>("updateArray"), //
+		jMethod<::jvoid(::jint, ::java::io::InputStream)>("updateAsciiStream"), //
+		jMethod<::jvoid(::jint, ::java::io::InputStream, ::jint)>("updateAsciiStream"), //
+		jMethod<::jvoid(::jint, ::java::io::InputStream, ::jlong)>("updateAsciiStream"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::InputStream)>("updateAsciiStream"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::InputStream, ::jint)>("updateAsciiStream"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::InputStream, ::jlong)>("updateAsciiStream"), //
+		jMethod<::jvoid(::jint, ::java::math::BigDecimal)>("updateBigDecimal"), //
+		jMethod<::jvoid(::java::lang::String, ::java::math::BigDecimal)>("updateBigDecimal"), //
+		jMethod<::jvoid(::jint, ::java::io::InputStream)>("updateBinaryStream"), //
+		jMethod<::jvoid(::jint, ::java::io::InputStream, ::jint)>("updateBinaryStream"), //
+		jMethod<::jvoid(::jint, ::java::io::InputStream, ::jlong)>("updateBinaryStream"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::InputStream)>("updateBinaryStream"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::InputStream, ::jint)>("updateBinaryStream"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::InputStream, ::jlong)>("updateBinaryStream"), //
+		jMethod<::jvoid(::jint, ::java::io::InputStream)>("updateBlob"), //
+		jMethod<::jvoid(::jint, ::java::io::InputStream, ::jlong)>("updateBlob"), //
+		jMethod<::jvoid(::jint, ::java::sql::Blob)>("updateBlob"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::InputStream)>("updateBlob"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::InputStream, ::jlong)>("updateBlob"), //
+		jMethod<::jvoid(::java::lang::String, ::java::sql::Blob)>("updateBlob"), //
+		jMethod<::jvoid(::jint, ::jboolean)>("updateBoolean"), //
+		jMethod<::jvoid(::java::lang::String, ::jboolean)>("updateBoolean"), //
+		jMethod<::jvoid(::jint, ::jbyte)>("updateByte"), //
+		jMethod<::jvoid(::java::lang::String, ::jbyte)>("updateByte"), //
+		jMethod<::jvoid(::jint, ::jbyte *)>("updateBytes"), //
+		jMethod<::jvoid(::java::lang::String, ::jbyte *)>("updateBytes"), //
+		jMethod<::jvoid(::jint, ::java::io::Reader)>("updateCharacterStream"), //
+		jMethod<::jvoid(::jint, ::java::io::Reader, ::jint)>("updateCharacterStream"), //
+		jMethod<::jvoid(::jint, ::java::io::Reader, ::jlong)>("updateCharacterStream"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::Reader)>("updateCharacterStream"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::Reader, ::jint)>("updateCharacterStream"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::Reader, ::jlong)>("updateCharacterStream"), //
+		jMethod<::jvoid(::jint, ::java::io::Reader)>("updateClob"), //
+		jMethod<::jvoid(::jint, ::java::io::Reader, ::jlong)>("updateClob"), //
+		jMethod<::jvoid(::jint, ::java::sql::Clob)>("updateClob"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::Reader)>("updateClob"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::Reader, ::jlong)>("updateClob"), //
+		jMethod<::jvoid(::java::lang::String, ::java::sql::Clob)>("updateClob"), //
+		jMethod<::jvoid(::jint, ::java::sql::Date)>("updateDate"), //
+		jMethod<::jvoid(::java::lang::String, ::java::sql::Date)>("updateDate"), //
+		jMethod<::jvoid(::jint, ::jdouble)>("updateDouble"), //
+		jMethod<::jvoid(::java::lang::String, ::jdouble)>("updateDouble"), //
+		jMethod<::jvoid(::jint, ::jfloat)>("updateFloat"), //
+		jMethod<::jvoid(::java::lang::String, ::jfloat)>("updateFloat"), //
+		jMethod<::jvoid(::jint, ::jint)>("updateInt"), //
+		jMethod<::jvoid(::java::lang::String, ::jint)>("updateInt"), //
+		jMethod<::jvoid(::jint, ::jlong)>("updateLong"), //
+		jMethod<::jvoid(::java::lang::String, ::jlong)>("updateLong"), //
+		jMethod<::jvoid(::jint, ::java::io::Reader)>("updateNCharacterStream"), //
+		jMethod<::jvoid(::jint, ::java::io::Reader, ::jlong)>("updateNCharacterStream"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::Reader)>("updateNCharacterStream"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::Reader, ::jlong)>("updateNCharacterStream"), //
+		jMethod<::jvoid(::jint, ::java::io::Reader)>("updateNClob"), //
+		jMethod<::jvoid(::jint, ::java::io::Reader, ::jlong)>("updateNClob"), //
+		jMethod<::jvoid(::jint, ::java::sql::NClob)>("updateNClob"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::Reader)>("updateNClob"), //
+		jMethod<::jvoid(::java::lang::String, ::java::io::Reader, ::jlong)>("updateNClob"), //
+		jMethod<::jvoid(::java::lang::String, ::java::sql::NClob)>("updateNClob"), //
+		jMethod<::jvoid(::jint, ::java::lang::String)>("updateNString"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String)>("updateNString"), //
+		jMethod<::jvoid(::jint)>("updateNull"), //
+		jMethod<::jvoid(::java::lang::String)>("updateNull"), //
+		jMethod<::jvoid(::jint, ::java::lang::Object)>("updateObject"), //
+		jMethod<::jvoid(::jint, ::java::lang::Object, ::jint)>("updateObject"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::Object)>("updateObject"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::Object, ::jint)>("updateObject"), //
+		jMethod<::jvoid(::jint, ::java::sql::Ref)>("updateRef"), //
+		jMethod<::jvoid(::java::lang::String, ::java::sql::Ref)>("updateRef"), //
+		jMethod<::jvoid()>("updateRow"), //
+		jMethod<::jvoid(::jint, ::java::sql::RowId)>("updateRowId"), //
+		jMethod<::jvoid(::java::lang::String, ::java::sql::RowId)>("updateRowId"), //
+		jMethod<::jvoid(::jint, ::java::sql::SQLXML)>("updateSQLXML"), //
+		jMethod<::jvoid(::java::lang::String, ::java::sql::SQLXML)>("updateSQLXML"), //
+		jMethod<::jvoid(::jint, ::jshort)>("updateShort"), //
+		jMethod<::jvoid(::java::lang::String, ::jshort)>("updateShort"), //
+		jMethod<::jvoid(::jint, ::java::lang::String)>("updateString"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String)>("updateString"), //
+		jMethod<::jvoid(::jint, ::java::sql::Time)>("updateTime"), //
+		jMethod<::jvoid(::java::lang::String, ::java::sql::Time)>("updateTime"), //
+		jMethod<::jvoid(::jint, ::java::sql::Timestamp)>("updateTimestamp"), //
+		jMethod<::jvoid(::java::lang::String, ::java::sql::Timestamp)>("updateTimestamp"), //
+		jMethod<::jboolean()>("wasNull"), //
+		jMethod<::jvoid(::java::io::OutputStream)>("writeXml"), //
+		jMethod<::jvoid(::java::io::Writer)>("writeXml"), //
+		jMethod<::jvoid(::java::sql::ResultSet, ::java::io::OutputStream)>("writeXml"), //
+		jMethod<::jvoid(::java::sql::ResultSet, ::java::io::Writer)>("writeXml"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto absolute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("absolute")] != -1);
+		return call<R>("absolute", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto acceptChanges(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("acceptChanges")] != -1);
+		return call<R>("acceptChanges", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addRowSetListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addRowSetListener")] != -1);
+		return call<R>("addRowSetListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto afterLast(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("afterLast")] != -1);
+		return call<R>("afterLast", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto beforeFirst(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("beforeFirst")] != -1);
+		return call<R>("beforeFirst", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto cancelRowUpdates(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("cancelRowUpdates")] != -1);
+		return call<R>("cancelRowUpdates", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto clearParameters(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clearParameters")] != -1);
+		return call<R>("clearParameters", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto clearWarnings(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clearWarnings")] != -1);
+		return call<R>("clearWarnings", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto columnUpdated(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("columnUpdated")] != -1);
+		return call<R>("columnUpdated", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto commit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("commit")] != -1);
+		return call<R>("commit", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sql::rowset::CachedRowSet, typename... Args>
+	auto createCopy(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createCopy")] != -1);
+		return call<R>("createCopy", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sql::rowset::CachedRowSet, typename... Args>
+	auto createCopyNoConstraints(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createCopyNoConstraints")] != -1);
+		return call<R>("createCopyNoConstraints", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sql::rowset::CachedRowSet, typename... Args>
+	auto createCopySchema(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createCopySchema")] != -1);
+		return call<R>("createCopySchema", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sql::RowSet, typename... Args>
+	auto createShared(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createShared")] != -1);
+		return call<R>("createShared", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto deleteRow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("deleteRow")] != -1);
+		return call<R>("deleteRow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto execute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("execute")] != -1);
+		return call<R>("execute", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto findColumn(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("findColumn")] != -1);
+		return call<R>("findColumn", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto first(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("first")] != -1);
+		return call<R>("first", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::Array, typename... Args>
+	auto getArray(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getArray")] != -1);
+		return call<R>("getArray", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::InputStream, typename... Args>
+	auto getAsciiStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAsciiStream")] != -1);
+		return call<R>("getAsciiStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigDecimal, typename... Args>
+	auto getBigDecimal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBigDecimal")] != -1);
+		return call<R>("getBigDecimal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::InputStream, typename... Args>
+	auto getBinaryStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBinaryStream")] != -1);
+		return call<R>("getBinaryStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::Blob, typename... Args>
+	auto getBlob(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBlob")] != -1);
+		return call<R>("getBlob", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getBoolean(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBoolean")] != -1);
+		return call<R>("getBoolean", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte, typename... Args>
+	auto getByte(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getByte")] != -1);
+		return call<R>("getByte", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getBytes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBytes")] != -1);
+		return call<R>("getBytes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::Reader, typename... Args>
+	auto getCharacterStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCharacterStream")] != -1);
+		return call<R>("getCharacterStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::Clob, typename... Args>
+	auto getClob(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getClob")] != -1);
+		return call<R>("getClob", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getCommand(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCommand")] != -1);
+		return call<R>("getCommand", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getConcurrency(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getConcurrency")] != -1);
+		return call<R>("getConcurrency", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getCursorName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCursorName")] != -1);
+		return call<R>("getCursorName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDataSourceName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDataSourceName")] != -1);
+		return call<R>("getDataSourceName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::Date, typename... Args>
+	auto getDate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDate")] != -1);
+		return call<R>("getDate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	auto getDouble(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDouble")] != -1);
+		return call<R>("getDouble", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getEscapeProcessing(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEscapeProcessing")] != -1);
+		return call<R>("getEscapeProcessing", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getFetchDirection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFetchDirection")] != -1);
+		return call<R>("getFetchDirection", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getFetchSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFetchSize")] != -1);
+		return call<R>("getFetchSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sql::rowset::Predicate, typename... Args>
+	auto getFilter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFilter")] != -1);
+		return call<R>("getFilter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getFloat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFloat")] != -1);
+		return call<R>("getFloat", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getHoldability(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHoldability")] != -1);
+		return call<R>("getHoldability", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getInt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInt")] != -1);
+		return call<R>("getInt", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint *, typename... Args>
+	auto getKeyColumns(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getKeyColumns")] != -1);
+		return call<R>("getKeyColumns", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getLong(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLong")] != -1);
+		return call<R>("getLong", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint *, typename... Args>
+	auto getMatchColumnIndexes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMatchColumnIndexes")] != -1);
+		return call<R>("getMatchColumnIndexes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getMatchColumnNames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMatchColumnNames")] != -1);
+		return call<R>("getMatchColumnNames", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getMaxFieldSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMaxFieldSize")] != -1);
+		return call<R>("getMaxFieldSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getMaxRows(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMaxRows")] != -1);
+		return call<R>("getMaxRows", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::ResultSetMetaData, typename... Args>
+	auto getMetaData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMetaData")] != -1);
+		return call<R>("getMetaData", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::Reader, typename... Args>
+	auto getNCharacterStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNCharacterStream")] != -1);
+		return call<R>("getNCharacterStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::NClob, typename... Args>
+	auto getNClob(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNClob")] != -1);
+		return call<R>("getNClob", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getNString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNString")] != -1);
+		return call<R>("getNString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getObject")] != -1);
+		return call<R>("getObject", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::ResultSet, typename... Args>
+	auto getOriginal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOriginal")] != -1);
+		return call<R>("getOriginal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::ResultSet, typename... Args>
+	auto getOriginalRow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOriginalRow")] != -1);
+		return call<R>("getOriginalRow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getPageSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPageSize")] != -1);
+		return call<R>("getPageSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getPassword(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPassword")] != -1);
+		return call<R>("getPassword", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getQueryTimeout(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getQueryTimeout")] != -1);
+		return call<R>("getQueryTimeout", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::Ref, typename... Args>
+	auto getRef(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRef")] != -1);
+		return call<R>("getRef", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getRow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRow")] != -1);
+		return call<R>("getRow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::RowId, typename... Args>
+	auto getRowId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRowId")] != -1);
+		return call<R>("getRowId", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sql::rowset::RowSetWarning, typename... Args>
+	auto getRowSetWarnings(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRowSetWarnings")] != -1);
+		return call<R>("getRowSetWarnings", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::SQLXML, typename... Args>
+	auto getSQLXML(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSQLXML")] != -1);
+		return call<R>("getSQLXML", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jshort, typename... Args>
+	auto getShort(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getShort")] != -1);
+		return call<R>("getShort", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getShowDeleted(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getShowDeleted")] != -1);
+		return call<R>("getShowDeleted", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::Statement, typename... Args>
+	auto getStatement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStatement")] != -1);
+		return call<R>("getStatement", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getString")] != -1);
+		return call<R>("getString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sql::rowset::spi::SyncProvider, typename... Args>
+	auto getSyncProvider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSyncProvider")] != -1);
+		return call<R>("getSyncProvider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getTableName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTableName")] != -1);
+		return call<R>("getTableName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::Time, typename... Args>
+	auto getTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTime")] != -1);
+		return call<R>("getTime", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::Timestamp, typename... Args>
+	auto getTimestamp(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTimestamp")] != -1);
+		return call<R>("getTimestamp", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getTransactionIsolation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTransactionIsolation")] != -1);
+		return call<R>("getTransactionIsolation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto getTypeMap(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTypeMap")] != -1);
+		return call<R>("getTypeMap", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::URL, typename... Args>
+	auto getURL(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getURL")] != -1);
+		return call<R>("getURL", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::InputStream, typename... Args>
+	auto getUnicodeStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUnicodeStream")] != -1);
+		return call<R>("getUnicodeStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getUrl(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUrl")] != -1);
+		return call<R>("getUrl", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getUsername(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUsername")] != -1);
+		return call<R>("getUsername", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::SQLWarning, typename... Args>
+	auto getWarnings(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWarnings")] != -1);
+		return call<R>("getWarnings", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto insertRow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("insertRow")] != -1);
+		return call<R>("insertRow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isAfterLast(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isAfterLast")] != -1);
+		return call<R>("isAfterLast", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isBeforeFirst(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isBeforeFirst")] != -1);
+		return call<R>("isBeforeFirst", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isClosed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isClosed")] != -1);
+		return call<R>("isClosed", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isFirst(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isFirst")] != -1);
+		return call<R>("isFirst", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isLast(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isLast")] != -1);
+		return call<R>("isLast", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isReadOnly(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isReadOnly")] != -1);
+		return call<R>("isReadOnly", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isWrapperFor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isWrapperFor")] != -1);
+		return call<R>("isWrapperFor", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto last(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("last")] != -1);
+		return call<R>("last", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto moveToCurrentRow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("moveToCurrentRow")] != -1);
+		return call<R>("moveToCurrentRow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto moveToInsertRow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("moveToInsertRow")] != -1);
+		return call<R>("moveToInsertRow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto next(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("next")] != -1);
+		return call<R>("next", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto nextPage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nextPage")] != -1);
+		return call<R>("nextPage", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto populate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("populate")] != -1);
+		return call<R>("populate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto previous(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("previous")] != -1);
+		return call<R>("previous", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto previousPage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("previousPage")] != -1);
+		return call<R>("previousPage", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto readXml(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("readXml")] != -1);
+		return call<R>("readXml", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto refreshRow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("refreshRow")] != -1);
+		return call<R>("refreshRow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto relative(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("relative")] != -1);
+		return call<R>("relative", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto release(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("release")] != -1);
+		return call<R>("release", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeRowSetListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeRowSetListener")] != -1);
+		return call<R>("removeRowSetListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto restoreOriginal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("restoreOriginal")] != -1);
+		return call<R>("restoreOriginal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto rollback(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("rollback")] != -1);
+		return call<R>("rollback", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto rowDeleted(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("rowDeleted")] != -1);
+		return call<R>("rowDeleted", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto rowInserted(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("rowInserted")] != -1);
+		return call<R>("rowInserted", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto rowSetPopulated(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("rowSetPopulated")] != -1);
+		return call<R>("rowSetPopulated", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto rowUpdated(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("rowUpdated")] != -1);
+		return call<R>("rowUpdated", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setArray(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setArray")] != -1);
+		return call<R>("setArray", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setAsciiStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setAsciiStream")] != -1);
+		return call<R>("setAsciiStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setBigDecimal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setBigDecimal")] != -1);
+		return call<R>("setBigDecimal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setBinaryStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setBinaryStream")] != -1);
+		return call<R>("setBinaryStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setBlob(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setBlob")] != -1);
+		return call<R>("setBlob", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setBoolean(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setBoolean")] != -1);
+		return call<R>("setBoolean", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setByte(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setByte")] != -1);
+		return call<R>("setByte", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setBytes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setBytes")] != -1);
+		return call<R>("setBytes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setCharacterStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setCharacterStream")] != -1);
+		return call<R>("setCharacterStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setClob(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setClob")] != -1);
+		return call<R>("setClob", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setCommand(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setCommand")] != -1);
+		return call<R>("setCommand", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setConcurrency(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setConcurrency")] != -1);
+		return call<R>("setConcurrency", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDataSourceName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDataSourceName")] != -1);
+		return call<R>("setDataSourceName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDate")] != -1);
+		return call<R>("setDate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDouble(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDouble")] != -1);
+		return call<R>("setDouble", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setEscapeProcessing(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setEscapeProcessing")] != -1);
+		return call<R>("setEscapeProcessing", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setFetchDirection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setFetchDirection")] != -1);
+		return call<R>("setFetchDirection", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setFetchSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setFetchSize")] != -1);
+		return call<R>("setFetchSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setFilter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setFilter")] != -1);
+		return call<R>("setFilter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setFloat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setFloat")] != -1);
+		return call<R>("setFloat", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setInt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setInt")] != -1);
+		return call<R>("setInt", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setKeyColumns(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setKeyColumns")] != -1);
+		return call<R>("setKeyColumns", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLong(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLong")] != -1);
+		return call<R>("setLong", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setMatchColumn(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMatchColumn")] != -1);
+		return call<R>("setMatchColumn", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setMaxFieldSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMaxFieldSize")] != -1);
+		return call<R>("setMaxFieldSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setMaxRows(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMaxRows")] != -1);
+		return call<R>("setMaxRows", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setMetaData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMetaData")] != -1);
+		return call<R>("setMetaData", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setNCharacterStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setNCharacterStream")] != -1);
+		return call<R>("setNCharacterStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setNClob(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setNClob")] != -1);
+		return call<R>("setNClob", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setNString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setNString")] != -1);
+		return call<R>("setNString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setNull(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setNull")] != -1);
+		return call<R>("setNull", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setObject")] != -1);
+		return call<R>("setObject", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setOriginalRow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setOriginalRow")] != -1);
+		return call<R>("setOriginalRow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setPageSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPageSize")] != -1);
+		return call<R>("setPageSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setPassword(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPassword")] != -1);
+		return call<R>("setPassword", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setQueryTimeout(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setQueryTimeout")] != -1);
+		return call<R>("setQueryTimeout", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setReadOnly(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setReadOnly")] != -1);
+		return call<R>("setReadOnly", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setRef(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setRef")] != -1);
+		return call<R>("setRef", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setRowId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setRowId")] != -1);
+		return call<R>("setRowId", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setSQLXML(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSQLXML")] != -1);
+		return call<R>("setSQLXML", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setShort(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setShort")] != -1);
+		return call<R>("setShort", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setShowDeleted(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setShowDeleted")] != -1);
+		return call<R>("setShowDeleted", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setString")] != -1);
+		return call<R>("setString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setSyncProvider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSyncProvider")] != -1);
+		return call<R>("setSyncProvider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setTableName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setTableName")] != -1);
+		return call<R>("setTableName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setTime")] != -1);
+		return call<R>("setTime", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setTimestamp(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setTimestamp")] != -1);
+		return call<R>("setTimestamp", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setTransactionIsolation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setTransactionIsolation")] != -1);
+		return call<R>("setTransactionIsolation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setType")] != -1);
+		return call<R>("setType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setTypeMap(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setTypeMap")] != -1);
+		return call<R>("setTypeMap", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setURL(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setURL")] != -1);
+		return call<R>("setURL", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setUrl(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setUrl")] != -1);
+		return call<R>("setUrl", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setUsername(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setUsername")] != -1);
+		return call<R>("setUsername", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto size(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("size")] != -1);
+		return call<R>("size", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Collection, typename... Args>
+	auto toCollection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toCollection")] != -1);
+		return call<R>("toCollection", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto undoDelete(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("undoDelete")] != -1);
+		return call<R>("undoDelete", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto undoInsert(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("undoInsert")] != -1);
+		return call<R>("undoInsert", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto undoUpdate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("undoUpdate")] != -1);
+		return call<R>("undoUpdate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto unsetMatchColumn(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unsetMatchColumn")] != -1);
+		return call<R>("unsetMatchColumn", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto unwrap(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unwrap")] != -1);
+		return call<R>("unwrap", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateArray(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateArray")] != -1);
+		return call<R>("updateArray", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateAsciiStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateAsciiStream")] != -1);
+		return call<R>("updateAsciiStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateBigDecimal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateBigDecimal")] != -1);
+		return call<R>("updateBigDecimal", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateBinaryStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateBinaryStream")] != -1);
+		return call<R>("updateBinaryStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateBlob(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateBlob")] != -1);
+		return call<R>("updateBlob", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateBoolean(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateBoolean")] != -1);
+		return call<R>("updateBoolean", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateByte(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateByte")] != -1);
+		return call<R>("updateByte", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateBytes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateBytes")] != -1);
+		return call<R>("updateBytes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateCharacterStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateCharacterStream")] != -1);
+		return call<R>("updateCharacterStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateClob(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateClob")] != -1);
+		return call<R>("updateClob", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateDate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateDate")] != -1);
+		return call<R>("updateDate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateDouble(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateDouble")] != -1);
+		return call<R>("updateDouble", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateFloat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateFloat")] != -1);
+		return call<R>("updateFloat", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateInt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateInt")] != -1);
+		return call<R>("updateInt", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateLong(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateLong")] != -1);
+		return call<R>("updateLong", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateNCharacterStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateNCharacterStream")] != -1);
+		return call<R>("updateNCharacterStream", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateNClob(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateNClob")] != -1);
+		return call<R>("updateNClob", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateNString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateNString")] != -1);
+		return call<R>("updateNString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateNull(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateNull")] != -1);
+		return call<R>("updateNull", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateObject")] != -1);
+		return call<R>("updateObject", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateRef(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateRef")] != -1);
+		return call<R>("updateRef", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateRow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateRow")] != -1);
+		return call<R>("updateRow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateRowId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateRowId")] != -1);
+		return call<R>("updateRowId", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateSQLXML(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateSQLXML")] != -1);
+		return call<R>("updateSQLXML", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateShort(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateShort")] != -1);
+		return call<R>("updateShort", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateString")] != -1);
+		return call<R>("updateString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateTime")] != -1);
+		return call<R>("updateTime", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateTimestamp(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateTimestamp")] != -1);
+		return call<R>("updateTimestamp", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto wasNull(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("wasNull")] != -1);
+		return call<R>("wasNull", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeXml(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("writeXml")] != -1);
+		return call<R>("writeXml", forward<Args>(args)...);
+	}
+
+};
+
+#endif

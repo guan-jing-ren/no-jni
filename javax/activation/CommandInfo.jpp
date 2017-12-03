@@ -1,0 +1,43 @@
+#ifndef javax_activation_CommandInfo_HPP
+#define javax_activation_CommandInfo_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::activation::CommandInfo : public jObject<::javax::activation::CommandInfo, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_activation / "CommandInfo";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String)>(), //
+		jMethod<::java::lang::String()>("getCommandClass"), //
+		jMethod<::java::lang::String()>("getCommandName"), //
+		jMethod<::java::lang::Object(::javax::activation::DataHandler, ::java::lang::ClassLoader)>("getCommandObject"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getCommandClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCommandClass")] != -1);
+		return call<R>("getCommandClass", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getCommandName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCommandName")] != -1);
+		return call<R>("getCommandName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getCommandObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCommandObject")] != -1);
+		return call<R>("getCommandObject", forward<Args>(args)...);
+	}
+
+};
+
+#endif

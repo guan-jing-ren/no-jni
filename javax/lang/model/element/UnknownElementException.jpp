@@ -1,0 +1,36 @@
+#ifndef javax_lang_model_element_UnknownElementException_HPP
+#define javax_lang_model_element_UnknownElementException_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::lang::model::element::UnknownElementException : public jObject<::javax::lang::model::element::UnknownElementException, ::javax::lang::model::UnknownEntityException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_lang_model_element / "UnknownElementException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::lang::model::element::Element, ::java::lang::Object)>(), //
+		jMethod<::java::lang::Object()>("getArgument"), //
+		jMethod<::javax::lang::model::element::Element()>("getUnknownElement"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getArgument(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getArgument")] != -1);
+		return call<R>("getArgument", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::lang::model::element::Element, typename... Args>
+	auto getUnknownElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUnknownElement")] != -1);
+		return call<R>("getUnknownElement", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,28 @@
+#ifndef javax_lang_model_element_QualifiedNameable_HPP
+#define javax_lang_model_element_QualifiedNameable_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::lang::model::element::QualifiedNameable : public jObject<::javax::lang::model::element::QualifiedNameable, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_lang_model_element / "QualifiedNameable";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::lang::model::element::Name()>("getQualifiedName"), //
+	};
+
+	template<typename R = ::javax::lang::model::element::Name, typename... Args>
+	auto getQualifiedName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getQualifiedName")] != -1);
+		return call<R>("getQualifiedName", forward<Args>(args)...);
+	}
+
+};
+
+#endif

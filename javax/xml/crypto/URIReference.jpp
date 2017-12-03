@@ -1,0 +1,35 @@
+#ifndef javax_xml_crypto_URIReference_HPP
+#define javax_xml_crypto_URIReference_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::crypto::URIReference : public jObject<::javax::xml::crypto::URIReference, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_crypto / "URIReference";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getType"), //
+		jMethod<::java::lang::String()>("getURI"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getURI(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getURI")] != -1);
+		return call<R>("getURI", forward<Args>(args)...);
+	}
+
+};
+
+#endif

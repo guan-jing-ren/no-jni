@@ -1,0 +1,108 @@
+#ifndef java_nio_channels_AsynchronousSocketChannel_HPP
+#define java_nio_channels_AsynchronousSocketChannel_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::channels::AsynchronousSocketChannel : public jObject<::java::nio::channels::AsynchronousSocketChannel, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_channels / "AsynchronousSocketChannel";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::nio::channels::AsynchronousSocketChannel(::java::net::SocketAddress)>("bind"), //
+		jMethod<::java::nio::channels::NetworkChannel(::java::net::SocketAddress)>("bind"), //
+		jMethod<::java::util::concurrent::Future(::java::net::SocketAddress)>("connect"), //
+		jMethod<::jvoid(::java::net::SocketAddress, ::java::lang::Object, ::java::nio::channels::CompletionHandler)>("connect"), //
+		jMethod<::java::net::SocketAddress()>("getLocalAddress"), //
+		jMethod<::java::net::SocketAddress()>("getRemoteAddress"), //
+		jMethod<::java::nio::channels::AsynchronousSocketChannel()>("open"), //
+		jMethod<::java::nio::channels::AsynchronousSocketChannel(::java::nio::channels::AsynchronousChannelGroup)>("open"), //
+		jMethod<::java::nio::channels::spi::AsynchronousChannelProvider()>("provider"), //
+		jMethod<::java::util::concurrent::Future(::java::nio::ByteBuffer)>("read"), //
+		jMethod<::jvoid(::java::nio::ByteBuffer, ::jlong, ::java::util::concurrent::TimeUnit, ::java::lang::Object, ::java::nio::channels::CompletionHandler)>("read"), //
+		jMethod<::jvoid(::java::nio::ByteBuffer, ::java::lang::Object, ::java::nio::channels::CompletionHandler)>("read"), //
+		jMethod<::jvoid(::java::nio::ByteBuffer *, ::jint, ::jint, ::jlong, ::java::util::concurrent::TimeUnit, ::java::lang::Object, ::java::nio::channels::CompletionHandler)>("read"), //
+		jMethod<::java::nio::channels::AsynchronousSocketChannel(::java::net::SocketOption, ::java::lang::Object)>("setOption"), //
+		jMethod<::java::nio::channels::NetworkChannel(::java::net::SocketOption, ::java::lang::Object)>("setOption"), //
+		jMethod<::java::nio::channels::AsynchronousSocketChannel()>("shutdownInput"), //
+		jMethod<::java::nio::channels::AsynchronousSocketChannel()>("shutdownOutput"), //
+		jMethod<::java::util::concurrent::Future(::java::nio::ByteBuffer)>("write"), //
+		jMethod<::jvoid(::java::nio::ByteBuffer, ::jlong, ::java::util::concurrent::TimeUnit, ::java::lang::Object, ::java::nio::channels::CompletionHandler)>("write"), //
+		jMethod<::jvoid(::java::nio::ByteBuffer, ::java::lang::Object, ::java::nio::channels::CompletionHandler)>("write"), //
+		jMethod<::jvoid(::java::nio::ByteBuffer *, ::jint, ::jint, ::jlong, ::java::util::concurrent::TimeUnit, ::java::lang::Object, ::java::nio::channels::CompletionHandler)>("write"), //
+	};
+
+	template<typename R = ::java::nio::channels::AsynchronousSocketChannel, typename... Args>
+	auto bind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("bind")] != -1);
+		return call<R>("bind", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::concurrent::Future, typename... Args>
+	auto connect(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("connect")] != -1);
+		return call<R>("connect", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::SocketAddress, typename... Args>
+	auto getLocalAddress(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLocalAddress")] != -1);
+		return call<R>("getLocalAddress", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::SocketAddress, typename... Args>
+	auto getRemoteAddress(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRemoteAddress")] != -1);
+		return call<R>("getRemoteAddress", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::AsynchronousSocketChannel, typename... Args>
+	static auto open(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("open")] != -1);
+		return scall<R>("open", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::spi::AsynchronousChannelProvider, typename... Args>
+	auto provider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("provider")] != -1);
+		return call<R>("provider", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::concurrent::Future, typename... Args>
+	auto read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::AsynchronousSocketChannel, typename... Args>
+	auto setOption(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setOption")] != -1);
+		return call<R>("setOption", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::AsynchronousSocketChannel, typename... Args>
+	auto shutdownInput(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("shutdownInput")] != -1);
+		return call<R>("shutdownInput", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::AsynchronousSocketChannel, typename... Args>
+	auto shutdownOutput(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("shutdownOutput")] != -1);
+		return call<R>("shutdownOutput", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::concurrent::Future, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", forward<Args>(args)...);
+	}
+
+};
+
+#endif

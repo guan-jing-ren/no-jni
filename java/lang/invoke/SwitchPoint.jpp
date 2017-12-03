@@ -1,0 +1,43 @@
+#ifndef java_lang_invoke_SwitchPoint_HPP
+#define java_lang_invoke_SwitchPoint_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::lang::invoke::SwitchPoint : public jObject<::java::lang::invoke::SwitchPoint, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_lang_invoke / "SwitchPoint";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::invoke::MethodHandle(::java::lang::invoke::MethodHandle, ::java::lang::invoke::MethodHandle)>("guardWithTest"), //
+		jMethod<::jboolean()>("hasBeenInvalidated"), //
+		jMethod<::jvoid(::java::lang::invoke::SwitchPoint *)>("invalidateAll"), //
+	};
+
+	template<typename R = ::java::lang::invoke::MethodHandle, typename... Args>
+	auto guardWithTest(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("guardWithTest")] != -1);
+		return call<R>("guardWithTest", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasBeenInvalidated(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hasBeenInvalidated")] != -1);
+		return call<R>("hasBeenInvalidated", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto invalidateAll(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("invalidateAll")] != -1);
+		return scall<R>("invalidateAll", forward<Args>(args)...);
+	}
+
+};
+
+#endif

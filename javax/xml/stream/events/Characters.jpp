@@ -1,0 +1,49 @@
+#ifndef javax_xml_stream_events_Characters_HPP
+#define javax_xml_stream_events_Characters_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::stream::events::Characters : public jObject<::javax::xml::stream::events::Characters, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_stream_events / "Characters";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getData"), //
+		jMethod<::jboolean()>("isCData"), //
+		jMethod<::jboolean()>("isIgnorableWhiteSpace"), //
+		jMethod<::jboolean()>("isWhiteSpace"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getData")] != -1);
+		return call<R>("getData", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isCData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isCData")] != -1);
+		return call<R>("isCData", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isIgnorableWhiteSpace(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isIgnorableWhiteSpace")] != -1);
+		return call<R>("isIgnorableWhiteSpace", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isWhiteSpace(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isWhiteSpace")] != -1);
+		return call<R>("isWhiteSpace", forward<Args>(args)...);
+	}
+
+};
+
+#endif

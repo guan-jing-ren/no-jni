@@ -1,0 +1,37 @@
+#ifndef java_awt_image_AreaAveragingScaleFilter_HPP
+#define java_awt_image_AreaAveragingScaleFilter_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::image::AreaAveragingScaleFilter : public jObject<::java::awt::image::AreaAveragingScaleFilter, ::java::awt::image::ReplicateScaleFilter> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_image / "AreaAveragingScaleFilter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::jint)>(), //
+		jMethod<::jvoid(::jint)>("setHints"), //
+		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint, ::java::awt::image::ColorModel, ::jbyte *, ::jint, ::jint)>("setPixels"), //
+		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint, ::java::awt::image::ColorModel, ::jint *, ::jint, ::jint)>("setPixels"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setHints(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setHints")] != -1);
+		return call<R>("setHints", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setPixels(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPixels")] != -1);
+		return call<R>("setPixels", forward<Args>(args)...);
+	}
+
+};
+
+#endif

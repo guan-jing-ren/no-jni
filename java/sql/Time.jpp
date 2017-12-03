@@ -1,0 +1,108 @@
+#ifndef java_sql_Time_HPP
+#define java_sql_Time_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::sql::Time : public jObject<::java::sql::Time, ::java::util::Date> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_sql / "Time";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::jlong)>(), //
+		jMethod<::jint()>("getDate"), //
+		jMethod<::jint()>("getDay"), //
+		jMethod<::jint()>("getMonth"), //
+		jMethod<::jint()>("getYear"), //
+		jMethod<::jvoid(::jint)>("setDate"), //
+		jMethod<::jvoid(::jint)>("setMonth"), //
+		jMethod<::jvoid(::jlong)>("setTime"), //
+		jMethod<::jvoid(::jint)>("setYear"), //
+		jMethod<::java::time::Instant()>("toInstant"), //
+		jMethod<::java::time::LocalTime()>("toLocalTime"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::java::sql::Time(::java::lang::String)>("valueOf"), //
+		jMethod<::java::sql::Time(::java::time::LocalTime)>("valueOf"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getDate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDate")] != -1);
+		return call<R>("getDate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getDay(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDay")] != -1);
+		return call<R>("getDay", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getMonth(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMonth")] != -1);
+		return call<R>("getMonth", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getYear(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getYear")] != -1);
+		return call<R>("getYear", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDate")] != -1);
+		return call<R>("setDate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setMonth(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMonth")] != -1);
+		return call<R>("setMonth", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setTime")] != -1);
+		return call<R>("setTime", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setYear(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setYear")] != -1);
+		return call<R>("setYear", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::Instant, typename... Args>
+	auto toInstant(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toInstant")] != -1);
+		return call<R>("toInstant", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::LocalTime, typename... Args>
+	auto toLocalTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toLocalTime")] != -1);
+		return call<R>("toLocalTime", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::sql::Time, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+};
+
+#endif

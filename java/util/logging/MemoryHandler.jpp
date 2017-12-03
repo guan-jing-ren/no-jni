@@ -1,0 +1,72 @@
+#ifndef java_util_logging_MemoryHandler_HPP
+#define java_util_logging_MemoryHandler_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::logging::MemoryHandler : public jObject<::java::util::logging::MemoryHandler, ::java::util::logging::Handler> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_logging / "MemoryHandler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::util::logging::Handler, ::jint, ::java::util::logging::Level)>(), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::jvoid()>("flush"), //
+		jMethod<::java::util::logging::Level()>("getPushLevel"), //
+		jMethod<::jboolean(::java::util::logging::LogRecord)>("isLoggable"), //
+		jMethod<::jvoid(::java::util::logging::LogRecord)>("publish"), //
+		jMethod<::jvoid()>("push"), //
+		jMethod<::jvoid(::java::util::logging::Level)>("setPushLevel"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto flush(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("flush")] != -1);
+		return call<R>("flush", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::logging::Level, typename... Args>
+	auto getPushLevel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPushLevel")] != -1);
+		return call<R>("getPushLevel", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isLoggable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isLoggable")] != -1);
+		return call<R>("isLoggable", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto publish(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("publish")] != -1);
+		return call<R>("publish", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto push(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("push")] != -1);
+		return call<R>("push", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setPushLevel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPushLevel")] != -1);
+		return call<R>("setPushLevel", forward<Args>(args)...);
+	}
+
+};
+
+#endif

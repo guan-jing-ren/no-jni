@@ -1,0 +1,35 @@
+#ifndef org_w3c_dom_html_HTMLHeadElement_HPP
+#define org_w3c_dom_html_HTMLHeadElement_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::org::w3c::dom::html::HTMLHeadElement : public jObject<::org::w3c::dom::html::HTMLHeadElement, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_w3c_dom_html / "HTMLHeadElement";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getProfile"), //
+		jMethod<::jvoid(::java::lang::String)>("setProfile"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getProfile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProfile")] != -1);
+		return call<R>("getProfile", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setProfile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setProfile")] != -1);
+		return call<R>("setProfile", forward<Args>(args)...);
+	}
+
+};
+
+#endif

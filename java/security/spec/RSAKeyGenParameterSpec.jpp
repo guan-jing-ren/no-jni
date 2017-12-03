@@ -1,0 +1,49 @@
+#ifndef java_security_spec_RSAKeyGenParameterSpec_HPP
+#define java_security_spec_RSAKeyGenParameterSpec_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::spec::RSAKeyGenParameterSpec : public jObject<::java::security::spec::RSAKeyGenParameterSpec, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_spec / "RSAKeyGenParameterSpec";
+
+	constexpr static Enume field_signatures{
+		jField<::java::math::BigInteger>("F0"), //
+		jField<::java::math::BigInteger>("F4"), //
+	};
+
+	template<typename F = ::java::math::BigInteger>
+	static auto F0() {
+		static_assert(field_signatures[jField<F>("F0")] != -1);
+		return sat<F>("F0");
+	}
+
+	template<typename F = ::java::math::BigInteger>
+	static auto F4() {
+		static_assert(field_signatures[jField<F>("F4")] != -1);
+		return sat<F>("F4");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::java::math::BigInteger)>(), //
+		jMethod<::jint()>("getKeysize"), //
+		jMethod<::java::math::BigInteger()>("getPublicExponent"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getKeysize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getKeysize")] != -1);
+		return call<R>("getKeysize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getPublicExponent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPublicExponent")] != -1);
+		return call<R>("getPublicExponent", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,28 @@
+#ifndef javax_activation_DataContentHandlerFactory_HPP
+#define javax_activation_DataContentHandlerFactory_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::activation::DataContentHandlerFactory : public jObject<::javax::activation::DataContentHandlerFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_activation / "DataContentHandlerFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::activation::DataContentHandler(::java::lang::String)>("createDataContentHandler"), //
+	};
+
+	template<typename R = ::javax::activation::DataContentHandler, typename... Args>
+	auto createDataContentHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createDataContentHandler")] != -1);
+		return call<R>("createDataContentHandler", forward<Args>(args)...);
+	}
+
+};
+
+#endif

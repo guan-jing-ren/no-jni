@@ -1,0 +1,113 @@
+#ifndef java_util_concurrent_ThreadLocalRandom_HPP
+#define java_util_concurrent_ThreadLocalRandom_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::concurrent::ThreadLocalRandom : public jObject<::java::util::concurrent::ThreadLocalRandom, ::java::util::Random> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_concurrent / "ThreadLocalRandom";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::concurrent::ThreadLocalRandom()>("current"), //
+		jMethod<::java::util::stream::DoubleStream()>("doubles"), //
+		jMethod<::java::util::stream::DoubleStream(::jdouble, ::jdouble)>("doubles"), //
+		jMethod<::java::util::stream::DoubleStream(::jlong)>("doubles"), //
+		jMethod<::java::util::stream::DoubleStream(::jlong, ::jdouble, ::jdouble)>("doubles"), //
+		jMethod<::java::util::stream::IntStream()>("ints"), //
+		jMethod<::java::util::stream::IntStream(::jint, ::jint)>("ints"), //
+		jMethod<::java::util::stream::IntStream(::jlong)>("ints"), //
+		jMethod<::java::util::stream::IntStream(::jlong, ::jint, ::jint)>("ints"), //
+		jMethod<::java::util::stream::LongStream()>("longs"), //
+		jMethod<::java::util::stream::LongStream(::jlong)>("longs"), //
+		jMethod<::java::util::stream::LongStream(::jlong, ::jlong)>("longs"), //
+		jMethod<::java::util::stream::LongStream(::jlong, ::jlong, ::jlong)>("longs"), //
+		jMethod<::jboolean()>("nextBoolean"), //
+		jMethod<::jdouble()>("nextDouble"), //
+		jMethod<::jdouble(::jdouble)>("nextDouble"), //
+		jMethod<::jdouble(::jdouble, ::jdouble)>("nextDouble"), //
+		jMethod<::jfloat()>("nextFloat"), //
+		jMethod<::jdouble()>("nextGaussian"), //
+		jMethod<::jint()>("nextInt"), //
+		jMethod<::jint(::jint)>("nextInt"), //
+		jMethod<::jint(::jint, ::jint)>("nextInt"), //
+		jMethod<::jlong()>("nextLong"), //
+		jMethod<::jlong(::jlong)>("nextLong"), //
+		jMethod<::jlong(::jlong, ::jlong)>("nextLong"), //
+		jMethod<::jvoid(::jlong)>("setSeed"), //
+	};
+
+	template<typename R = ::java::util::concurrent::ThreadLocalRandom, typename... Args>
+	static auto current(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("current")] != -1);
+		return scall<R>("current", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::DoubleStream, typename... Args>
+	auto doubles(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("doubles")] != -1);
+		return call<R>("doubles", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::IntStream, typename... Args>
+	auto ints(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("ints")] != -1);
+		return call<R>("ints", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::LongStream, typename... Args>
+	auto longs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("longs")] != -1);
+		return call<R>("longs", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto nextBoolean(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nextBoolean")] != -1);
+		return call<R>("nextBoolean", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	auto nextDouble(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nextDouble")] != -1);
+		return call<R>("nextDouble", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto nextFloat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nextFloat")] != -1);
+		return call<R>("nextFloat", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	auto nextGaussian(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nextGaussian")] != -1);
+		return call<R>("nextGaussian", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto nextInt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nextInt")] != -1);
+		return call<R>("nextInt", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto nextLong(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nextLong")] != -1);
+		return call<R>("nextLong", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setSeed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSeed")] != -1);
+		return call<R>("setSeed", forward<Args>(args)...);
+	}
+
+};
+
+#endif

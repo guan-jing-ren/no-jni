@@ -1,0 +1,31 @@
+#ifndef javax_naming_event_EventDirContext_HPP
+#define javax_naming_event_EventDirContext_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::naming::event::EventDirContext : public jObject<::javax::naming::event::EventDirContext, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_naming_event / "EventDirContext";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String, ::javax::naming::directory::SearchControls, ::javax::naming::event::NamingListener)>("addNamingListener"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::Object *, ::javax::naming::directory::SearchControls, ::javax::naming::event::NamingListener)>("addNamingListener"), //
+		jMethod<::jvoid(::javax::naming::Name, ::java::lang::String, ::javax::naming::directory::SearchControls, ::javax::naming::event::NamingListener)>("addNamingListener"), //
+		jMethod<::jvoid(::javax::naming::Name, ::java::lang::String, ::java::lang::Object *, ::javax::naming::directory::SearchControls, ::javax::naming::event::NamingListener)>("addNamingListener"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addNamingListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addNamingListener")] != -1);
+		return call<R>("addNamingListener", forward<Args>(args)...);
+	}
+
+};
+
+#endif

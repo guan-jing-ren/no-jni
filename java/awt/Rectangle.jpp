@@ -1,0 +1,266 @@
+#ifndef java_awt_Rectangle_HPP
+#define java_awt_Rectangle_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::awt::Rectangle : public jObject<::java::awt::Rectangle, ::java::awt::geom::Rectangle2D> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt / "Rectangle";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("height"), //
+		jField<::jint>("width"), //
+		jField<::jint>("x"), //
+		jField<::jint>("y"), //
+	};
+
+	template<typename F = ::jint>
+	auto height() const {
+		static_assert(field_signatures[jField<F>("height")] != -1);
+		return at<F>("height");
+	}
+
+	template<typename F = ::jint>
+	auto width() const {
+		static_assert(field_signatures[jField<F>("width")] != -1);
+		return at<F>("width");
+	}
+
+	template<typename F = ::jint>
+	auto x() const {
+		static_assert(field_signatures[jField<F>("x")] != -1);
+		return at<F>("x");
+	}
+
+	template<typename F = ::jint>
+	auto y() const {
+		static_assert(field_signatures[jField<F>("y")] != -1);
+		return at<F>("y");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint, ::jint)>(), //
+		jConstructor<::jvoid(::jint, ::jint, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::java::awt::Dimension)>(), //
+		jConstructor<::jvoid(::java::awt::Point)>(), //
+		jConstructor<::jvoid(::java::awt::Point, ::java::awt::Dimension)>(), //
+		jConstructor<::jvoid(::java::awt::Rectangle)>(), //
+		jMethod<::jvoid(::jint, ::jint)>("add"), //
+		jMethod<::jvoid(::java::awt::Point)>("add"), //
+		jMethod<::jvoid(::java::awt::Rectangle)>("add"), //
+		jMethod<::jboolean(::jint, ::jint)>("contains"), //
+		jMethod<::jboolean(::jint, ::jint, ::jint, ::jint)>("contains"), //
+		jMethod<::jboolean(::java::awt::Point)>("contains"), //
+		jMethod<::jboolean(::java::awt::Rectangle)>("contains"), //
+		jMethod<::java::awt::geom::Rectangle2D(::java::awt::geom::Rectangle2D)>("createIntersection"), //
+		jMethod<::java::awt::geom::Rectangle2D(::java::awt::geom::Rectangle2D)>("createUnion"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::awt::Rectangle()>("getBounds"), //
+		jMethod<::java::awt::geom::Rectangle2D()>("getBounds2D"), //
+		jMethod<::jdouble()>("getHeight"), //
+		jMethod<::java::awt::Point()>("getLocation"), //
+		jMethod<::java::awt::Dimension()>("getSize"), //
+		jMethod<::jdouble()>("getWidth"), //
+		jMethod<::jdouble()>("getX"), //
+		jMethod<::jdouble()>("getY"), //
+		jMethod<::jvoid(::jint, ::jint)>("grow"), //
+		jMethod<::jboolean(::jint, ::jint)>("inside"), //
+		jMethod<::java::awt::Rectangle(::java::awt::Rectangle)>("intersection"), //
+		jMethod<::jboolean(::java::awt::Rectangle)>("intersects"), //
+		jMethod<::jboolean()>("isEmpty"), //
+		jMethod<::jvoid(::jint, ::jint)>("move"), //
+		jMethod<::jint(::jdouble, ::jdouble)>("outcode"), //
+		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint)>("reshape"), //
+		jMethod<::jvoid(::jint, ::jint)>("resize"), //
+		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint)>("setBounds"), //
+		jMethod<::jvoid(::java::awt::Rectangle)>("setBounds"), //
+		jMethod<::jvoid(::jint, ::jint)>("setLocation"), //
+		jMethod<::jvoid(::java::awt::Point)>("setLocation"), //
+		jMethod<::jvoid(::jdouble, ::jdouble, ::jdouble, ::jdouble)>("setRect"), //
+		jMethod<::jvoid(::jint, ::jint)>("setSize"), //
+		jMethod<::jvoid(::java::awt::Dimension)>("setSize"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::jvoid(::jint, ::jint)>("translate"), //
+		jMethod<::java::awt::Rectangle(::java::awt::Rectangle)>("union"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto add(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto contains(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("contains")] != -1);
+		return call<R>("contains", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Rectangle2D, typename... Args>
+	auto createIntersection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createIntersection")] != -1);
+		return call<R>("createIntersection", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Rectangle2D, typename... Args>
+	auto createUnion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createUnion")] != -1);
+		return call<R>("createUnion", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Rectangle, typename... Args>
+	auto getBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBounds")] != -1);
+		return call<R>("getBounds", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Rectangle2D, typename... Args>
+	auto getBounds2D(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBounds2D")] != -1);
+		return call<R>("getBounds2D", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	auto getHeight(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHeight")] != -1);
+		return call<R>("getHeight", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Point, typename... Args>
+	auto getLocation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLocation")] != -1);
+		return call<R>("getLocation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Dimension, typename... Args>
+	auto getSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSize")] != -1);
+		return call<R>("getSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	auto getWidth(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWidth")] != -1);
+		return call<R>("getWidth", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	auto getX(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getX")] != -1);
+		return call<R>("getX", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	auto getY(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getY")] != -1);
+		return call<R>("getY", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto grow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("grow")] != -1);
+		return call<R>("grow", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto inside(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("inside")] != -1);
+		return call<R>("inside", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Rectangle, typename... Args>
+	auto intersection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("intersection")] != -1);
+		return call<R>("intersection", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto intersects(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("intersects")] != -1);
+		return call<R>("intersects", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isEmpty(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isEmpty")] != -1);
+		return call<R>("isEmpty", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto move(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("move")] != -1);
+		return call<R>("move", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto outcode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("outcode")] != -1);
+		return call<R>("outcode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto reshape(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("reshape")] != -1);
+		return call<R>("reshape", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto resize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("resize")] != -1);
+		return call<R>("resize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setBounds")] != -1);
+		return call<R>("setBounds", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLocation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLocation")] != -1);
+		return call<R>("setLocation", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setRect(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setRect")] != -1);
+		return call<R>("setRect", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSize")] != -1);
+		return call<R>("setSize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto translate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("translate")] != -1);
+		return call<R>("translate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Rectangle, typename... Args>
+	auto union_(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("union")] != -1);
+		return call<R>("union", forward<Args>(args)...);
+	}
+
+};
+
+#endif

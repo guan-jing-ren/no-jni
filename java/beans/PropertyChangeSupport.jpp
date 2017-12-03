@@ -1,0 +1,72 @@
+#ifndef java_beans_PropertyChangeSupport_HPP
+#define java_beans_PropertyChangeSupport_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::beans::PropertyChangeSupport : public jObject<::java::beans::PropertyChangeSupport, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_beans / "PropertyChangeSupport";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Object)>(), //
+		jMethod<::jvoid(::java::beans::PropertyChangeListener)>("addPropertyChangeListener"), //
+		jMethod<::jvoid(::java::lang::String, ::java::beans::PropertyChangeListener)>("addPropertyChangeListener"), //
+		jMethod<::jvoid(::java::lang::String, ::jint, ::jint, ::jint)>("fireIndexedPropertyChange"), //
+		jMethod<::jvoid(::java::lang::String, ::jint, ::java::lang::Object, ::java::lang::Object)>("fireIndexedPropertyChange"), //
+		jMethod<::jvoid(::java::lang::String, ::jint, ::jboolean, ::jboolean)>("fireIndexedPropertyChange"), //
+		jMethod<::jvoid(::java::beans::PropertyChangeEvent)>("firePropertyChange"), //
+		jMethod<::jvoid(::java::lang::String, ::jint, ::jint)>("firePropertyChange"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::Object, ::java::lang::Object)>("firePropertyChange"), //
+		jMethod<::jvoid(::java::lang::String, ::jboolean, ::jboolean)>("firePropertyChange"), //
+		jMethod<::java::beans::PropertyChangeListener *()>("getPropertyChangeListeners"), //
+		jMethod<::java::beans::PropertyChangeListener *(::java::lang::String)>("getPropertyChangeListeners"), //
+		jMethod<::jboolean(::java::lang::String)>("hasListeners"), //
+		jMethod<::jvoid(::java::beans::PropertyChangeListener)>("removePropertyChangeListener"), //
+		jMethod<::jvoid(::java::lang::String, ::java::beans::PropertyChangeListener)>("removePropertyChangeListener"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addPropertyChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addPropertyChangeListener")] != -1);
+		return call<R>("addPropertyChangeListener", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto fireIndexedPropertyChange(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("fireIndexedPropertyChange")] != -1);
+		return call<R>("fireIndexedPropertyChange", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto firePropertyChange(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("firePropertyChange")] != -1);
+		return call<R>("firePropertyChange", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::beans::PropertyChangeListener *, typename... Args>
+	auto getPropertyChangeListeners(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPropertyChangeListeners")] != -1);
+		return call<R>("getPropertyChangeListeners", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasListeners(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hasListeners")] != -1);
+		return call<R>("hasListeners", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removePropertyChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removePropertyChangeListener")] != -1);
+		return call<R>("removePropertyChangeListener", forward<Args>(args)...);
+	}
+
+};
+
+#endif

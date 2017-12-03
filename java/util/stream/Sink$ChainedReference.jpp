@@ -1,0 +1,50 @@
+#ifndef java_util_stream_Sink$ChainedReference_HPP
+#define java_util_stream_Sink$ChainedReference_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::util::stream::Sink$ChainedReference : public jObject<::java::util::stream::Sink$ChainedReference, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util_stream / "Sink$ChainedReference";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::util::stream::Sink)>(), //
+		jMethod<::jvoid(::java::lang::Object)>("accept"), //
+		jMethod<::jvoid(::jlong)>("begin"), //
+		jMethod<::jboolean()>("cancellationRequested"), //
+		jMethod<::jvoid()>("end"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto accept(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("accept")] != -1);
+		return call<R>("accept", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto begin(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("begin")] != -1);
+		return call<R>("begin", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto cancellationRequested(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("cancellationRequested")] != -1);
+		return call<R>("cancellationRequested", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto end(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("end")] != -1);
+		return call<R>("end", forward<Args>(args)...);
+	}
+
+};
+
+#endif

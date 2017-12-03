@@ -1,0 +1,29 @@
+#ifndef javax_xml_ws_spi_http_HttpHandler_HPP
+#define javax_xml_ws_spi_http_HttpHandler_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::javax::xml::ws::spi::http::HttpHandler : public jObject<::javax::xml::ws::spi::http::HttpHandler, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_ws_spi_http / "HttpHandler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::javax::xml::ws::spi::http::HttpExchange)>("handle"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto handle(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("handle")] != -1);
+		return call<R>("handle", forward<Args>(args)...);
+	}
+
+};
+
+#endif

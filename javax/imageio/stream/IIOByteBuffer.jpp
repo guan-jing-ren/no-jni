@@ -1,0 +1,64 @@
+#ifndef javax_imageio_stream_IIOByteBuffer_HPP
+#define javax_imageio_stream_IIOByteBuffer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::imageio::stream::IIOByteBuffer : public jObject<::javax::imageio::stream::IIOByteBuffer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_imageio_stream / "IIOByteBuffer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jbyte *, ::jint, ::jint)>(), //
+		jMethod<::jbyte *()>("getData"), //
+		jMethod<::jint()>("getLength"), //
+		jMethod<::jint()>("getOffset"), //
+		jMethod<::jvoid(::jbyte *)>("setData"), //
+		jMethod<::jvoid(::jint)>("setLength"), //
+		jMethod<::jvoid(::jint)>("setOffset"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getData")] != -1);
+		return call<R>("getData", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLength")] != -1);
+		return call<R>("getLength", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getOffset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOffset")] != -1);
+		return call<R>("getOffset", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setData")] != -1);
+		return call<R>("setData", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLength")] != -1);
+		return call<R>("setLength", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setOffset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setOffset")] != -1);
+		return call<R>("setOffset", forward<Args>(args)...);
+	}
+
+};
+
+#endif

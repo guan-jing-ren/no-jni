@@ -1,0 +1,64 @@
+#ifndef java_security_cert_CertificateRevokedException_HPP
+#define java_security_cert_CertificateRevokedException_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::security::cert::CertificateRevokedException : public jObject<::java::security::cert::CertificateRevokedException, ::java::security::cert::CertificateException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_security_cert / "CertificateRevokedException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::util::Date, ::java::security::cert::CRLReason, ::javax::security::auth::x500::X500Principal, ::java::util::Map)>(), //
+		jMethod<::javax::security::auth::x500::X500Principal()>("getAuthorityName"), //
+		jMethod<::java::util::Map()>("getExtensions"), //
+		jMethod<::java::util::Date()>("getInvalidityDate"), //
+		jMethod<::java::lang::String()>("getMessage"), //
+		jMethod<::java::util::Date()>("getRevocationDate"), //
+		jMethod<::java::security::cert::CRLReason()>("getRevocationReason"), //
+	};
+
+	template<typename R = ::javax::security::auth::x500::X500Principal, typename... Args>
+	auto getAuthorityName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAuthorityName")] != -1);
+		return call<R>("getAuthorityName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto getExtensions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getExtensions")] != -1);
+		return call<R>("getExtensions", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Date, typename... Args>
+	auto getInvalidityDate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInvalidityDate")] != -1);
+		return call<R>("getInvalidityDate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMessage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMessage")] != -1);
+		return call<R>("getMessage", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Date, typename... Args>
+	auto getRevocationDate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRevocationDate")] != -1);
+		return call<R>("getRevocationDate", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::CRLReason, typename... Args>
+	auto getRevocationReason(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRevocationReason")] != -1);
+		return call<R>("getRevocationReason", forward<Args>(args)...);
+	}
+
+};
+
+#endif

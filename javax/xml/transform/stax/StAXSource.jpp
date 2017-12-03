@@ -1,0 +1,57 @@
+#ifndef javax_xml_transform_stax_StAXSource_HPP
+#define javax_xml_transform_stax_StAXSource_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::transform::stax::StAXSource : public jObject<::javax::xml::transform::stax::StAXSource, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_transform_stax / "StAXSource";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("FEATURE"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto FEATURE() {
+		static_assert(field_signatures[jField<F>("FEATURE")] != -1);
+		return sat<F>("FEATURE");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::xml::stream::XMLEventReader)>(), //
+		jConstructor<::jvoid(::javax::xml::stream::XMLStreamReader)>(), //
+		jMethod<::java::lang::String()>("getSystemId"), //
+		jMethod<::javax::xml::stream::XMLEventReader()>("getXMLEventReader"), //
+		jMethod<::javax::xml::stream::XMLStreamReader()>("getXMLStreamReader"), //
+		jMethod<::jvoid(::java::lang::String)>("setSystemId"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getSystemId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSystemId")] != -1);
+		return call<R>("getSystemId", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::stream::XMLEventReader, typename... Args>
+	auto getXMLEventReader(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getXMLEventReader")] != -1);
+		return call<R>("getXMLEventReader", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::stream::XMLStreamReader, typename... Args>
+	auto getXMLStreamReader(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getXMLStreamReader")] != -1);
+		return call<R>("getXMLStreamReader", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setSystemId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSystemId")] != -1);
+		return call<R>("setSystemId", forward<Args>(args)...);
+	}
+
+};
+
+#endif

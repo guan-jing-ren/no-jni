@@ -1,0 +1,48 @@
+#ifndef java_util_Locale$Category_HPP
+#define java_util_Locale$Category_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::Locale$Category : public jObject<::java::util::Locale$Category, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "Locale$Category";
+
+	constexpr static Enume field_signatures{
+		jField<::java::util::Locale$Category>("DISPLAY"), //
+		jField<::java::util::Locale$Category>("FORMAT"), //
+	};
+
+	template<typename F = ::java::util::Locale$Category>
+	static auto DISPLAY() {
+		static_assert(field_signatures[jField<F>("DISPLAY")] != -1);
+		return sat<F>("DISPLAY");
+	}
+
+	template<typename F = ::java::util::Locale$Category>
+	static auto FORMAT() {
+		static_assert(field_signatures[jField<F>("FORMAT")] != -1);
+		return sat<F>("FORMAT");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::Locale$Category(::java::lang::String)>("valueOf"), //
+		jMethod<::java::util::Locale$Category *()>("values"), //
+	};
+
+	template<typename R = ::java::util::Locale$Category, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Locale$Category *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

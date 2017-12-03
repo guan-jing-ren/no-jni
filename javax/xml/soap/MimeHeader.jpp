@@ -1,0 +1,36 @@
+#ifndef javax_xml_soap_MimeHeader_HPP
+#define javax_xml_soap_MimeHeader_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::xml::soap::MimeHeader : public jObject<::javax::xml::soap::MimeHeader, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_soap / "MimeHeader";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String)>(), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::java::lang::String()>("getValue"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getValue")] != -1);
+		return call<R>("getValue", forward<Args>(args)...);
+	}
+
+};
+
+#endif

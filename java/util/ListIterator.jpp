@@ -1,0 +1,84 @@
+#ifndef java_util_ListIterator_HPP
+#define java_util_ListIterator_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::ListIterator : public jObject<::java::util::ListIterator, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "ListIterator";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::Object)>("add"), //
+		jMethod<::jboolean()>("hasNext"), //
+		jMethod<::jboolean()>("hasPrevious"), //
+		jMethod<::java::lang::Object()>("next"), //
+		jMethod<::jint()>("nextIndex"), //
+		jMethod<::java::lang::Object()>("previous"), //
+		jMethod<::jint()>("previousIndex"), //
+		jMethod<::jvoid()>("remove"), //
+		jMethod<::jvoid(::java::lang::Object)>("set"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto add(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasNext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hasNext")] != -1);
+		return call<R>("hasNext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasPrevious(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hasPrevious")] != -1);
+		return call<R>("hasPrevious", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto next(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("next")] != -1);
+		return call<R>("next", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto nextIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nextIndex")] != -1);
+		return call<R>("nextIndex", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto previous(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("previous")] != -1);
+		return call<R>("previous", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto previousIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("previousIndex")] != -1);
+		return call<R>("previousIndex", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto remove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set")] != -1);
+		return call<R>("set", forward<Args>(args)...);
+	}
+
+};
+
+#endif

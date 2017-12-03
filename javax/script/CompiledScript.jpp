@@ -1,0 +1,38 @@
+#ifndef javax_script_CompiledScript_HPP
+#define javax_script_CompiledScript_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::script::CompiledScript : public jObject<::javax::script::CompiledScript, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_script / "CompiledScript";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::Object()>("eval"), //
+		jMethod<::java::lang::Object(::javax::script::Bindings)>("eval"), //
+		jMethod<::java::lang::Object(::javax::script::ScriptContext)>("eval"), //
+		jMethod<::javax::script::ScriptEngine()>("getEngine"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto eval(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("eval")] != -1);
+		return call<R>("eval", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::script::ScriptEngine, typename... Args>
+	auto getEngine(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEngine")] != -1);
+		return call<R>("getEngine", forward<Args>(args)...);
+	}
+
+};
+
+#endif

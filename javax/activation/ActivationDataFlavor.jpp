@@ -1,0 +1,66 @@
+#ifndef javax_activation_ActivationDataFlavor_HPP
+#define javax_activation_ActivationDataFlavor_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::activation::ActivationDataFlavor : public jObject<::javax::activation::ActivationDataFlavor, ::java::awt::datatransfer::DataFlavor> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_activation / "ActivationDataFlavor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Class, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::Class, ::java::lang::String, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String)>(), //
+		jMethod<::jboolean(::java::awt::datatransfer::DataFlavor)>("equals"), //
+		jMethod<::java::lang::String()>("getHumanPresentableName"), //
+		jMethod<::java::lang::String()>("getMimeType"), //
+		jMethod<::java::lang::Class()>("getRepresentationClass"), //
+		jMethod<::jboolean(::java::lang::String)>("isMimeTypeEqual"), //
+		jMethod<::jvoid(::java::lang::String)>("setHumanPresentableName"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getHumanPresentableName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHumanPresentableName")] != -1);
+		return call<R>("getHumanPresentableName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMimeType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMimeType")] != -1);
+		return call<R>("getMimeType", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getRepresentationClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRepresentationClass")] != -1);
+		return call<R>("getRepresentationClass", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isMimeTypeEqual(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isMimeTypeEqual")] != -1);
+		return call<R>("isMimeTypeEqual", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setHumanPresentableName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setHumanPresentableName")] != -1);
+		return call<R>("setHumanPresentableName", forward<Args>(args)...);
+	}
+
+};
+
+#endif

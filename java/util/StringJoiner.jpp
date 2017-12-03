@@ -1,0 +1,58 @@
+#ifndef java_util_StringJoiner_HPP
+#define java_util_StringJoiner_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::StringJoiner : public jObject<::java::util::StringJoiner, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "StringJoiner";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::CharSequence)>(), //
+		jConstructor<::jvoid(::java::lang::CharSequence, ::java::lang::CharSequence, ::java::lang::CharSequence)>(), //
+		jMethod<::java::util::StringJoiner(::java::lang::CharSequence)>("add"), //
+		jMethod<::jint()>("length"), //
+		jMethod<::java::util::StringJoiner(::java::util::StringJoiner)>("merge"), //
+		jMethod<::java::util::StringJoiner(::java::lang::CharSequence)>("setEmptyValue"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::util::StringJoiner, typename... Args>
+	auto add(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto length(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("length")] != -1);
+		return call<R>("length", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::StringJoiner, typename... Args>
+	auto merge(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("merge")] != -1);
+		return call<R>("merge", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::StringJoiner, typename... Args>
+	auto setEmptyValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setEmptyValue")] != -1);
+		return call<R>("setEmptyValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

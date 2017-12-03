@@ -1,0 +1,77 @@
+#ifndef java_awt_event_ComponentEvent_HPP
+#define java_awt_event_ComponentEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::awt::event::ComponentEvent : public jObject<::java::awt::event::ComponentEvent, ::java::awt::AWTEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_awt_event / "ComponentEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("COMPONENT_FIRST"), //
+		jField<::jint>("COMPONENT_HIDDEN"), //
+		jField<::jint>("COMPONENT_LAST"), //
+		jField<::jint>("COMPONENT_MOVED"), //
+		jField<::jint>("COMPONENT_RESIZED"), //
+		jField<::jint>("COMPONENT_SHOWN"), //
+	};
+
+	template<typename F = ::jint>
+	static auto COMPONENT_FIRST() {
+		static_assert(field_signatures[jField<F>("COMPONENT_FIRST")] != -1);
+		return sat<F>("COMPONENT_FIRST");
+	}
+
+	template<typename F = ::jint>
+	static auto COMPONENT_HIDDEN() {
+		static_assert(field_signatures[jField<F>("COMPONENT_HIDDEN")] != -1);
+		return sat<F>("COMPONENT_HIDDEN");
+	}
+
+	template<typename F = ::jint>
+	static auto COMPONENT_LAST() {
+		static_assert(field_signatures[jField<F>("COMPONENT_LAST")] != -1);
+		return sat<F>("COMPONENT_LAST");
+	}
+
+	template<typename F = ::jint>
+	static auto COMPONENT_MOVED() {
+		static_assert(field_signatures[jField<F>("COMPONENT_MOVED")] != -1);
+		return sat<F>("COMPONENT_MOVED");
+	}
+
+	template<typename F = ::jint>
+	static auto COMPONENT_RESIZED() {
+		static_assert(field_signatures[jField<F>("COMPONENT_RESIZED")] != -1);
+		return sat<F>("COMPONENT_RESIZED");
+	}
+
+	template<typename F = ::jint>
+	static auto COMPONENT_SHOWN() {
+		static_assert(field_signatures[jField<F>("COMPONENT_SHOWN")] != -1);
+		return sat<F>("COMPONENT_SHOWN");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::Component, ::jint)>(), //
+		jMethod<::java::awt::Component()>("getComponent"), //
+		jMethod<::java::lang::String()>("paramString"), //
+	};
+
+	template<typename R = ::java::awt::Component, typename... Args>
+	auto getComponent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getComponent")] != -1);
+		return call<R>("getComponent", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto paramString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paramString")] != -1);
+		return call<R>("paramString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

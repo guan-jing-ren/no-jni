@@ -1,0 +1,62 @@
+#ifndef java_text_Normalizer$Form_HPP
+#define java_text_Normalizer$Form_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::text::Normalizer$Form : public jObject<::java::text::Normalizer$Form, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_text / "Normalizer$Form";
+
+	constexpr static Enume field_signatures{
+		jField<::java::text::Normalizer$Form>("NFC"), //
+		jField<::java::text::Normalizer$Form>("NFD"), //
+		jField<::java::text::Normalizer$Form>("NFKC"), //
+		jField<::java::text::Normalizer$Form>("NFKD"), //
+	};
+
+	template<typename F = ::java::text::Normalizer$Form>
+	static auto NFC() {
+		static_assert(field_signatures[jField<F>("NFC")] != -1);
+		return sat<F>("NFC");
+	}
+
+	template<typename F = ::java::text::Normalizer$Form>
+	static auto NFD() {
+		static_assert(field_signatures[jField<F>("NFD")] != -1);
+		return sat<F>("NFD");
+	}
+
+	template<typename F = ::java::text::Normalizer$Form>
+	static auto NFKC() {
+		static_assert(field_signatures[jField<F>("NFKC")] != -1);
+		return sat<F>("NFKC");
+	}
+
+	template<typename F = ::java::text::Normalizer$Form>
+	static auto NFKD() {
+		static_assert(field_signatures[jField<F>("NFKD")] != -1);
+		return sat<F>("NFKD");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::text::Normalizer$Form(::java::lang::String)>("valueOf"), //
+		jMethod<::java::text::Normalizer$Form *()>("values"), //
+	};
+
+	template<typename R = ::java::text::Normalizer$Form, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::text::Normalizer$Form *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

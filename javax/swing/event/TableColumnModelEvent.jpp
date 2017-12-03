@@ -1,0 +1,36 @@
+#ifndef javax_swing_event_TableColumnModelEvent_HPP
+#define javax_swing_event_TableColumnModelEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::event::TableColumnModelEvent : public jObject<::javax::swing::event::TableColumnModelEvent, ::java::util::EventObject> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_event / "TableColumnModelEvent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::swing::table::TableColumnModel, ::jint, ::jint)>(), //
+		jMethod<::jint()>("getFromIndex"), //
+		jMethod<::jint()>("getToIndex"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getFromIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFromIndex")] != -1);
+		return call<R>("getFromIndex", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getToIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getToIndex")] != -1);
+		return call<R>("getToIndex", forward<Args>(args)...);
+	}
+
+};
+
+#endif

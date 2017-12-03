@@ -1,0 +1,63 @@
+#ifndef java_applet_AppletStub_HPP
+#define java_applet_AppletStub_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::applet::AppletStub : public jObject<::java::applet::AppletStub, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_applet / "AppletStub";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::jint, ::jint)>("appletResize"), //
+		jMethod<::java::applet::AppletContext()>("getAppletContext"), //
+		jMethod<::java::net::URL()>("getCodeBase"), //
+		jMethod<::java::net::URL()>("getDocumentBase"), //
+		jMethod<::java::lang::String(::java::lang::String)>("getParameter"), //
+		jMethod<::jboolean()>("isActive"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto appletResize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("appletResize")] != -1);
+		return call<R>("appletResize", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::applet::AppletContext, typename... Args>
+	auto getAppletContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAppletContext")] != -1);
+		return call<R>("getAppletContext", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::URL, typename... Args>
+	auto getCodeBase(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCodeBase")] != -1);
+		return call<R>("getCodeBase", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::URL, typename... Args>
+	auto getDocumentBase(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDocumentBase")] != -1);
+		return call<R>("getDocumentBase", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getParameter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParameter")] != -1);
+		return call<R>("getParameter", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isActive(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isActive")] != -1);
+		return call<R>("isActive", forward<Args>(args)...);
+	}
+
+};
+
+#endif

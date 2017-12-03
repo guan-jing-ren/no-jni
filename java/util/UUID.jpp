@@ -1,0 +1,121 @@
+#ifndef java_util_UUID_HPP
+#define java_util_UUID_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::UUID : public jObject<::java::util::UUID, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "UUID";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jlong, ::jlong)>(), //
+		jMethod<::jint()>("clockSequence"), //
+		jMethod<::jint(::java::lang::Object)>("compareTo"), //
+		jMethod<::jint(::java::util::UUID)>("compareTo"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::util::UUID(::java::lang::String)>("fromString"), //
+		jMethod<::jlong()>("getLeastSignificantBits"), //
+		jMethod<::jlong()>("getMostSignificantBits"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::util::UUID(::jbyte *)>("nameUUIDFromBytes"), //
+		jMethod<::jlong()>("node"), //
+		jMethod<::java::util::UUID()>("randomUUID"), //
+		jMethod<::jlong()>("timestamp"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::jint()>("variant"), //
+		jMethod<::jint()>("version"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto clockSequence(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clockSequence")] != -1);
+		return call<R>("clockSequence", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto compareTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compareTo")] != -1);
+		return call<R>("compareTo", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::UUID, typename... Args>
+	static auto fromString(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("fromString")] != -1);
+		return scall<R>("fromString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getLeastSignificantBits(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLeastSignificantBits")] != -1);
+		return call<R>("getLeastSignificantBits", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getMostSignificantBits(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMostSignificantBits")] != -1);
+		return call<R>("getMostSignificantBits", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::UUID, typename... Args>
+	static auto nameUUIDFromBytes(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nameUUIDFromBytes")] != -1);
+		return scall<R>("nameUUIDFromBytes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto node(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("node")] != -1);
+		return call<R>("node", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::UUID, typename... Args>
+	static auto randomUUID(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("randomUUID")] != -1);
+		return scall<R>("randomUUID", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto timestamp(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("timestamp")] != -1);
+		return call<R>("timestamp", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto variant(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("variant")] != -1);
+		return call<R>("variant", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto version(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("version")] != -1);
+		return call<R>("version", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,30 @@
+#ifndef javax_swing_text_DateFormatter_HPP
+#define javax_swing_text_DateFormatter_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::text::DateFormatter : public jObject<::javax::swing::text::DateFormatter, ::javax::swing::text::InternationalFormatter> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_text / "DateFormatter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::text::DateFormat)>(), //
+		jMethod<::jvoid(::java::text::DateFormat)>("setFormat"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setFormat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setFormat")] != -1);
+		return call<R>("setFormat", forward<Args>(args)...);
+	}
+
+};
+
+#endif

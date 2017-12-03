@@ -1,0 +1,43 @@
+#ifndef org_omg_CORBA_DynSequence_HPP
+#define org_omg_CORBA_DynSequence_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::org::omg::CORBA::DynSequence : public jObject<::org::omg::CORBA::DynSequence, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::org_omg_CORBA / "DynSequence";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::omg::CORBA::Any *()>("get_elements"), //
+		jMethod<::jint()>("length"), //
+		jMethod<::jvoid(::jint)>("length"), //
+		jMethod<::jvoid(::org::omg::CORBA::Any *)>("set_elements"), //
+	};
+
+	template<typename R = ::org::omg::CORBA::Any *, typename... Args>
+	auto get_elements(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get_elements")] != -1);
+		return call<R>("get_elements", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto length(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("length")] != -1);
+		return call<R>("length", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set_elements(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set_elements")] != -1);
+		return call<R>("set_elements", forward<Args>(args)...);
+	}
+
+};
+
+#endif

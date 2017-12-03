@@ -1,0 +1,46 @@
+#ifndef javax_sound_sampled_spi_AudioFileWriter_HPP
+#define javax_sound_sampled_spi_AudioFileWriter_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::sound::sampled::spi::AudioFileWriter : public jObject<::javax::sound::sampled::spi::AudioFileWriter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_sound_sampled_spi / "AudioFileWriter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::sound::sampled::AudioFileFormat$Type *()>("getAudioFileTypes"), //
+		jMethod<::javax::sound::sampled::AudioFileFormat$Type *(::javax::sound::sampled::AudioInputStream)>("getAudioFileTypes"), //
+		jMethod<::jboolean(::javax::sound::sampled::AudioFileFormat$Type)>("isFileTypeSupported"), //
+		jMethod<::jboolean(::javax::sound::sampled::AudioFileFormat$Type, ::javax::sound::sampled::AudioInputStream)>("isFileTypeSupported"), //
+		jMethod<::jint(::javax::sound::sampled::AudioInputStream, ::javax::sound::sampled::AudioFileFormat$Type, ::java::io::File)>("write"), //
+		jMethod<::jint(::javax::sound::sampled::AudioInputStream, ::javax::sound::sampled::AudioFileFormat$Type, ::java::io::OutputStream)>("write"), //
+	};
+
+	template<typename R = ::javax::sound::sampled::AudioFileFormat$Type *, typename... Args>
+	auto getAudioFileTypes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAudioFileTypes")] != -1);
+		return call<R>("getAudioFileTypes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isFileTypeSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isFileTypeSupported")] != -1);
+		return call<R>("isFileTypeSupported", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,52 @@
+#ifndef javax_imageio_stream_FileImageInputStream_HPP
+#define javax_imageio_stream_FileImageInputStream_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::imageio::stream::FileImageInputStream : public jObject<::javax::imageio::stream::FileImageInputStream, ::javax::imageio::stream::ImageInputStreamImpl> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_imageio_stream / "FileImageInputStream";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::File)>(), //
+		jConstructor<::jvoid(::java::io::RandomAccessFile)>(), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::jlong()>("length"), //
+		jMethod<::jint()>("read"), //
+		jMethod<::jint(::jbyte *, ::jint, ::jint)>("read"), //
+		jMethod<::jvoid(::jlong)>("seek"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto length(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("length")] != -1);
+		return call<R>("length", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto seek(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("seek")] != -1);
+		return call<R>("seek", forward<Args>(args)...);
+	}
+
+};
+
+#endif

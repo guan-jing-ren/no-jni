@@ -1,0 +1,50 @@
+#ifndef javax_lang_model_util_AbstractTypeVisitor6_HPP
+#define javax_lang_model_util_AbstractTypeVisitor6_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::lang::model::util::AbstractTypeVisitor6 : public jObject<::javax::lang::model::util::AbstractTypeVisitor6, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_lang_model_util / "AbstractTypeVisitor6";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object(::javax::lang::model::type::TypeMirror)>("visit"), //
+		jMethod<::java::lang::Object(::javax::lang::model::type::TypeMirror, ::java::lang::Object)>("visit"), //
+		jMethod<::java::lang::Object(::javax::lang::model::type::IntersectionType, ::java::lang::Object)>("visitIntersection"), //
+		jMethod<::java::lang::Object(::javax::lang::model::type::UnionType, ::java::lang::Object)>("visitUnion"), //
+		jMethod<::java::lang::Object(::javax::lang::model::type::TypeMirror, ::java::lang::Object)>("visitUnknown"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto visit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("visit")] != -1);
+		return call<R>("visit", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto visitIntersection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("visitIntersection")] != -1);
+		return call<R>("visitIntersection", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto visitUnion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("visitUnion")] != -1);
+		return call<R>("visitUnion", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto visitUnknown(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("visitUnknown")] != -1);
+		return call<R>("visitUnknown", forward<Args>(args)...);
+	}
+
+};
+
+#endif

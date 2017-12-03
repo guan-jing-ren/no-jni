@@ -1,0 +1,42 @@
+#ifndef javax_swing_event_MenuKeyListener_HPP
+#define javax_swing_event_MenuKeyListener_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::swing::event::MenuKeyListener : public jObject<::javax::swing::event::MenuKeyListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_swing_event / "MenuKeyListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::swing::event::MenuKeyEvent)>("menuKeyPressed"), //
+		jMethod<::jvoid(::javax::swing::event::MenuKeyEvent)>("menuKeyReleased"), //
+		jMethod<::jvoid(::javax::swing::event::MenuKeyEvent)>("menuKeyTyped"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto menuKeyPressed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("menuKeyPressed")] != -1);
+		return call<R>("menuKeyPressed", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto menuKeyReleased(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("menuKeyReleased")] != -1);
+		return call<R>("menuKeyReleased", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto menuKeyTyped(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("menuKeyTyped")] != -1);
+		return call<R>("menuKeyTyped", forward<Args>(args)...);
+	}
+
+};
+
+#endif

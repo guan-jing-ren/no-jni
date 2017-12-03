@@ -1,0 +1,75 @@
+#ifndef javax_activation_CommandMap_HPP
+#define javax_activation_CommandMap_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::javax::activation::CommandMap : public jObject<::javax::activation::CommandMap, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_activation / "CommandMap";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::activation::DataContentHandler(::java::lang::String)>("createDataContentHandler"), //
+		jMethod<::javax::activation::DataContentHandler(::java::lang::String, ::javax::activation::DataSource)>("createDataContentHandler"), //
+		jMethod<::javax::activation::CommandInfo *(::java::lang::String)>("getAllCommands"), //
+		jMethod<::javax::activation::CommandInfo *(::java::lang::String, ::javax::activation::DataSource)>("getAllCommands"), //
+		jMethod<::javax::activation::CommandInfo(::java::lang::String, ::java::lang::String)>("getCommand"), //
+		jMethod<::javax::activation::CommandInfo(::java::lang::String, ::java::lang::String, ::javax::activation::DataSource)>("getCommand"), //
+		jMethod<::javax::activation::CommandMap()>("getDefaultCommandMap"), //
+		jMethod<::java::lang::String *()>("getMimeTypes"), //
+		jMethod<::javax::activation::CommandInfo *(::java::lang::String)>("getPreferredCommands"), //
+		jMethod<::javax::activation::CommandInfo *(::java::lang::String, ::javax::activation::DataSource)>("getPreferredCommands"), //
+		jMethod<::jvoid(::javax::activation::CommandMap)>("setDefaultCommandMap"), //
+	};
+
+	template<typename R = ::javax::activation::DataContentHandler, typename... Args>
+	auto createDataContentHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createDataContentHandler")] != -1);
+		return call<R>("createDataContentHandler", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::activation::CommandInfo *, typename... Args>
+	auto getAllCommands(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAllCommands")] != -1);
+		return call<R>("getAllCommands", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::activation::CommandInfo, typename... Args>
+	auto getCommand(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCommand")] != -1);
+		return call<R>("getCommand", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::activation::CommandMap, typename... Args>
+	static auto getDefaultCommandMap(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaultCommandMap")] != -1);
+		return scall<R>("getDefaultCommandMap", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getMimeTypes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMimeTypes")] != -1);
+		return call<R>("getMimeTypes", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::activation::CommandInfo *, typename... Args>
+	auto getPreferredCommands(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPreferredCommands")] != -1);
+		return call<R>("getPreferredCommands", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setDefaultCommandMap(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDefaultCommandMap")] != -1);
+		return scall<R>("setDefaultCommandMap", forward<Args>(args)...);
+	}
+
+};
+
+#endif

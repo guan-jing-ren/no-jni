@@ -1,0 +1,41 @@
+#ifndef java_nio_file_FileVisitOption_HPP
+#define java_nio_file_FileVisitOption_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::nio::file::FileVisitOption : public jObject<::java::nio::file::FileVisitOption, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_nio_file / "FileVisitOption";
+
+	constexpr static Enume field_signatures{
+		jField<::java::nio::file::FileVisitOption>("FOLLOW_LINKS"), //
+	};
+
+	template<typename F = ::java::nio::file::FileVisitOption>
+	static auto FOLLOW_LINKS() {
+		static_assert(field_signatures[jField<F>("FOLLOW_LINKS")] != -1);
+		return sat<F>("FOLLOW_LINKS");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::nio::file::FileVisitOption(::java::lang::String)>("valueOf"), //
+		jMethod<::java::nio::file::FileVisitOption *()>("values"), //
+	};
+
+	template<typename R = ::java::nio::file::FileVisitOption, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::FileVisitOption *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", forward<Args>(args)...);
+	}
+
+};
+
+#endif

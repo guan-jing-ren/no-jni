@@ -1,0 +1,90 @@
+#ifndef javax_management_openmbean_OpenType_HPP
+#define javax_management_openmbean_OpenType_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::javax::management::openmbean::OpenType : public jObject<::javax::management::openmbean::OpenType, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_management_openmbean / "OpenType";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String *>("ALLOWED_CLASSNAMES"), //
+		jField<::java::util::List>("ALLOWED_CLASSNAMES_LIST"), //
+	};
+
+	template<typename F = ::java::lang::String *>
+	static auto ALLOWED_CLASSNAMES() {
+		static_assert(field_signatures[jField<F>("ALLOWED_CLASSNAMES")] != -1);
+		return sat<F>("ALLOWED_CLASSNAMES");
+	}
+
+	template<typename F = ::java::util::List>
+	static auto ALLOWED_CLASSNAMES_LIST() {
+		static_assert(field_signatures[jField<F>("ALLOWED_CLASSNAMES_LIST")] != -1);
+		return sat<F>("ALLOWED_CLASSNAMES_LIST");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::lang::String()>("getClassName"), //
+		jMethod<::java::lang::String()>("getDescription"), //
+		jMethod<::java::lang::String()>("getTypeName"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jboolean()>("isArray"), //
+		jMethod<::jboolean(::java::lang::Object)>("isValue"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getClassName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getClassName")] != -1);
+		return call<R>("getClassName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDescription(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDescription")] != -1);
+		return call<R>("getDescription", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getTypeName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTypeName")] != -1);
+		return call<R>("getTypeName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isArray(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isArray")] != -1);
+		return call<R>("isArray", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isValue")] != -1);
+		return call<R>("isValue", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

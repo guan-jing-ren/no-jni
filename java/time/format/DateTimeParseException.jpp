@@ -1,0 +1,37 @@
+#ifndef java_time_format_DateTimeParseException_HPP
+#define java_time_format_DateTimeParseException_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::java::time::format::DateTimeParseException : public jObject<::java::time::format::DateTimeParseException, ::java::time::DateTimeException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_time_format / "DateTimeParseException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::CharSequence, ::jint)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::CharSequence, ::jint, ::java::lang::Throwable)>(), //
+		jMethod<::jint()>("getErrorIndex"), //
+		jMethod<::java::lang::String()>("getParsedString"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getErrorIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getErrorIndex")] != -1);
+		return call<R>("getErrorIndex", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getParsedString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParsedString")] != -1);
+		return call<R>("getParsedString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,80 @@
+#ifndef java_util_Currency_HPP
+#define java_util_Currency_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::java::util::Currency : public jObject<::java::util::Currency, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::java_util / "Currency";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::Set()>("getAvailableCurrencies"), //
+		jMethod<::java::lang::String()>("getCurrencyCode"), //
+		jMethod<::jint()>("getDefaultFractionDigits"), //
+		jMethod<::java::lang::String()>("getDisplayName"), //
+		jMethod<::java::lang::String(::java::util::Locale)>("getDisplayName"), //
+		jMethod<::java::util::Currency(::java::lang::String)>("getInstance"), //
+		jMethod<::java::util::Currency(::java::util::Locale)>("getInstance"), //
+		jMethod<::jint()>("getNumericCode"), //
+		jMethod<::java::lang::String()>("getSymbol"), //
+		jMethod<::java::lang::String(::java::util::Locale)>("getSymbol"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::util::Set, typename... Args>
+	static auto getAvailableCurrencies(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAvailableCurrencies")] != -1);
+		return scall<R>("getAvailableCurrencies", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getCurrencyCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCurrencyCode")] != -1);
+		return call<R>("getCurrencyCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getDefaultFractionDigits(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaultFractionDigits")] != -1);
+		return call<R>("getDefaultFractionDigits", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDisplayName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDisplayName")] != -1);
+		return call<R>("getDisplayName", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Currency, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getNumericCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNumericCode")] != -1);
+		return call<R>("getNumericCode", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getSymbol(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSymbol")] != -1);
+		return call<R>("getSymbol", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", forward<Args>(args)...);
+	}
+
+};
+
+#endif

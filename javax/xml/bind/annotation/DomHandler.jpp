@@ -1,0 +1,42 @@
+#ifndef javax_xml_bind_annotation_DomHandler_HPP
+#define javax_xml_bind_annotation_DomHandler_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::javax::xml::bind::annotation::DomHandler : public jObject<::javax::xml::bind::annotation::DomHandler, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::javax_xml_bind_annotation / "DomHandler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::transform::Result(::javax::xml::bind::ValidationEventHandler)>("createUnmarshaller"), //
+		jMethod<::java::lang::Object(::javax::xml::transform::Result)>("getElement"), //
+		jMethod<::javax::xml::transform::Source(::java::lang::Object, ::javax::xml::bind::ValidationEventHandler)>("marshal"), //
+	};
+
+	template<typename R = ::javax::xml::transform::Result, typename... Args>
+	auto createUnmarshaller(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createUnmarshaller")] != -1);
+		return call<R>("createUnmarshaller", forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getElement")] != -1);
+		return call<R>("getElement", forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::transform::Source, typename... Args>
+	auto marshal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("marshal")] != -1);
+		return call<R>("marshal", forward<Args>(args)...);
+	}
+
+};
+
+#endif
