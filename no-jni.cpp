@@ -63,14 +63,12 @@ void basic_test(bool b) {
   auto num_icon_sizes = icon_sizes.size();
   icon_sizes[0] = point;
   std::cout << "Icon sizes size: " << num_icon_sizes << "\n";
-  for (Point icon_size : icon_sizes) {
+  for (Point icon_size : icon_sizes)
     std::cout << "Icon size: " << icon_size.x() << "," << icon_size.y() << "\n";
-  }
 
   std::vector<Point> icon_size_vector(begin(icon_sizes), end(icon_sizes));
-  for (Point icon_size : icon_size_vector) {
+  for (Point icon_size : icon_size_vector)
     std::cout << "Icon size: " << icon_size.x() << "," << icon_size.y() << "\n";
-  }
 
   Point pnew(84, point2.y());
   std::cout << "pnew: " << pnew.x() << "," << pnew.y() << "\n";
@@ -79,9 +77,8 @@ void basic_test(bool b) {
   std::copy(make_reverse_iterator(end(icon_sizes)),
             make_reverse_iterator(begin(icon_sizes)), begin(snew));
   snew[icon_sizes.size()] = pnew;
-  for (Point icon_size : snew) {
+  for (Point icon_size : snew)
     std::cout << "snew Icon size: " << icon_size << "\n";
-  }
 }
 
 int main(int c, char **v) {
