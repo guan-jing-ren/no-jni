@@ -533,11 +533,11 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
 
   regex classpath_rx{"-Djava.class.path=(.+)"};
   regex option_rx{","};
-  smatch classpath;
   auto classpath_arg =
       find_if(sregex_token_iterator{begin(agent_options), end(agent_options),
                                     option_rx, -1},
-              {}, [classpath_rx, &classpath](const ssub_match &sub) {
+              {}, [classpath_rx](const ssub_match &sub) {
+                smatch classpath;
                 auto arg = sub.str();
                 return regex_match(arg, classpath, classpath_rx);
               });
@@ -545,7 +545,8 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
   vector<string> packages;
   if (classpath_arg != sregex_token_iterator{}) {
     regex path_rx{":"};
-    auto paths = classpath[1].str();
+    auto paths = classpath_arg->str();
+    paths.erase(0, paths.find('=') + 1);
     unordered_set<string> pkgs;
     for_each(sregex_token_iterator{begin(paths), end(paths), path_rx, -1}, {},
              [&csignatures, &classes, &pkgs](const ssub_match &sub) {
