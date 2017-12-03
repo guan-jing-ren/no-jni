@@ -1,0 +1,77 @@
+#ifndef com_sun_media_sound_DLSSampleLoop_HPP
+#define com_sun_media_sound_DLSSampleLoop_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::media::sound::DLSSampleLoop : public jObject<::com::sun::media::sound::DLSSampleLoop, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_media_sound / "DLSSampleLoop";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("LOOP_TYPE_FORWARD"), //
+		jField<::jint>("LOOP_TYPE_RELEASE"), //
+	};
+
+	template<typename F = ::jint>
+	static auto LOOP_TYPE_FORWARD() {
+		static_assert(field_signatures[jField<F>("LOOP_TYPE_FORWARD")] != -1);
+		return sat<F>("LOOP_TYPE_FORWARD");
+	}
+
+	template<typename F = ::jint>
+	static auto LOOP_TYPE_RELEASE() {
+		static_assert(field_signatures[jField<F>("LOOP_TYPE_RELEASE")] != -1);
+		return sat<F>("LOOP_TYPE_RELEASE");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jlong()>("getLength"), //
+		jMethod<::jlong()>("getStart"), //
+		jMethod<::jlong()>("getType"), //
+		jMethod<::jvoid(::jlong)>("setLength"), //
+		jMethod<::jvoid(::jlong)>("setStart"), //
+		jMethod<::jvoid(::jlong)>("setType"), //
+	};
+
+	template<typename R = ::jlong, typename... Args>
+	auto getLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLength")] != -1);
+		return call<R>("getLength", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getStart(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStart")] != -1);
+		return call<R>("getStart", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setLength")] != -1);
+		return call<R>("setLength", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setStart(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setStart")] != -1);
+		return call<R>("setStart", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setType")] != -1);
+		return call<R>("setType", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

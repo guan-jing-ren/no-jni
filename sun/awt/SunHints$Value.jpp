@@ -1,0 +1,64 @@
+#ifndef sun_awt_SunHints$Value_HPP
+#define sun_awt_SunHints$Value_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::SunHints$Value : public jObject<::sun::awt::SunHints$Value, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "SunHints$Value";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::awt::SunHints$Key, ::jint, ::java::lang::String)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::sun::awt::SunHints$Value(::jint, ::jint)>("get"), //
+		jMethod<::jint()>("getIndex"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jboolean(::sun::awt::SunHints$Key)>("isCompatibleKey"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::awt::SunHints$Value, typename... Args>
+	static auto get(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get")] != -1);
+		return scall<R>("get", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIndex")] != -1);
+		return call<R>("getIndex", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isCompatibleKey(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isCompatibleKey")] != -1);
+		return call<R>("isCompatibleKey", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

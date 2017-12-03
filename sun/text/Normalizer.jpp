@@ -1,0 +1,48 @@
+#ifndef sun_text_Normalizer_HPP
+#define sun_text_Normalizer_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::text::Normalizer : public jObject<::sun::text::Normalizer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_text / "Normalizer";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("UNICODE_3_2"), //
+	};
+
+	template<typename F = ::jint>
+	static auto UNICODE_3_2() {
+		static_assert(field_signatures[jField<F>("UNICODE_3_2")] != -1);
+		return sat<F>("UNICODE_3_2");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint(::jint)>("getCombiningClass"), //
+		jMethod<::jboolean(::java::lang::CharSequence, ::java::text::Normalizer$Form, ::jint)>("isNormalized"), //
+		jMethod<::java::lang::String(::java::lang::CharSequence, ::java::text::Normalizer$Form, ::jint)>("normalize"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	static auto getCombiningClass(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCombiningClass")] != -1);
+		return scall<R>("getCombiningClass", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isNormalized(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isNormalized")] != -1);
+		return scall<R>("isNormalized", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto normalize(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("normalize")] != -1);
+		return scall<R>("normalize", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,104 @@
+#ifndef com_sun_media_sound_MidiUtils_HPP
+#define com_sun_media_sound_MidiUtils_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::media::sound::MidiUtils : public jObject<::com::sun::media::sound::MidiUtils, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_media_sound / "MidiUtils";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("DEFAULT_TEMPO_MPQ"), //
+		jField<::jint>("META_END_OF_TRACK_TYPE"), //
+		jField<::jint>("META_TEMPO_TYPE"), //
+	};
+
+	template<typename F = ::jint>
+	static auto DEFAULT_TEMPO_MPQ() {
+		static_assert(field_signatures[jField<F>("DEFAULT_TEMPO_MPQ")] != -1);
+		return sat<F>("DEFAULT_TEMPO_MPQ");
+	}
+
+	template<typename F = ::jint>
+	static auto META_END_OF_TRACK_TYPE() {
+		static_assert(field_signatures[jField<F>("META_END_OF_TRACK_TYPE")] != -1);
+		return sat<F>("META_END_OF_TRACK_TYPE");
+	}
+
+	template<typename F = ::jint>
+	static auto META_TEMPO_TYPE() {
+		static_assert(field_signatures[jField<F>("META_TEMPO_TYPE")] != -1);
+		return sat<F>("META_TEMPO_TYPE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jdouble(::jdouble)>("convertTempo"), //
+		jMethod<::jint(::javax::sound::midi::MidiMessage)>("getTempoMPQ"), //
+		jMethod<::jboolean(::javax::sound::midi::MidiMessage)>("isMetaEndOfTrack"), //
+		jMethod<::jboolean(::javax::sound::midi::MidiMessage)>("isMetaTempo"), //
+		jMethod<::jlong(::jlong, ::jdouble, ::jint)>("microsec2ticks"), //
+		jMethod<::jlong(::javax::sound::midi::Sequence, ::jlong, ::com::sun::media::sound::MidiUtils$TempoCache)>("microsecond2tick"), //
+		jMethod<::jint(::javax::sound::midi::Track, ::jlong)>("tick2index"), //
+		jMethod<::jlong(::javax::sound::midi::Sequence, ::jlong, ::com::sun::media::sound::MidiUtils$TempoCache)>("tick2microsecond"), //
+		jMethod<::jlong(::jlong, ::jdouble, ::jint)>("ticks2microsec"), //
+	};
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto convertTempo(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("convertTempo")] != -1);
+		return scall<R>("convertTempo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto getTempoMPQ(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTempoMPQ")] != -1);
+		return scall<R>("getTempoMPQ", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isMetaEndOfTrack(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isMetaEndOfTrack")] != -1);
+		return scall<R>("isMetaEndOfTrack", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isMetaTempo(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isMetaTempo")] != -1);
+		return scall<R>("isMetaTempo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	static auto microsec2ticks(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("microsec2ticks")] != -1);
+		return scall<R>("microsec2ticks", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	static auto microsecond2tick(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("microsecond2tick")] != -1);
+		return scall<R>("microsecond2tick", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto tick2index(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("tick2index")] != -1);
+		return scall<R>("tick2index", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	static auto tick2microsecond(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("tick2microsecond")] != -1);
+		return scall<R>("tick2microsecond", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	static auto ticks2microsec(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("ticks2microsec")] != -1);
+		return scall<R>("ticks2microsec", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

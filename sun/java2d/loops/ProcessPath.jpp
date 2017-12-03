@@ -1,0 +1,71 @@
+#ifndef sun_java2d_loops_ProcessPath_HPP
+#define sun_java2d_loops_ProcessPath_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::loops::ProcessPath : public jObject<::sun::java2d::loops::ProcessPath, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_loops / "ProcessPath";
+
+	constexpr static Enume field_signatures{
+		jField<::jfloat>("EPSF"), //
+		jField<::jint>("EPSFX"), //
+		jField<::jint>("PH_MODE_DRAW_CLIP"), //
+		jField<::jint>("PH_MODE_FILL_CLIP"), //
+		jField<::sun::java2d::loops::ProcessPath$EndSubPathHandler>("noopEndSubPathHandler"), //
+	};
+
+	template<typename F = ::jfloat>
+	static auto EPSF() {
+		static_assert(field_signatures[jField<F>("EPSF")] != -1);
+		return sat<F>("EPSF");
+	}
+
+	template<typename F = ::jint>
+	static auto EPSFX() {
+		static_assert(field_signatures[jField<F>("EPSFX")] != -1);
+		return sat<F>("EPSFX");
+	}
+
+	template<typename F = ::jint>
+	static auto PH_MODE_DRAW_CLIP() {
+		static_assert(field_signatures[jField<F>("PH_MODE_DRAW_CLIP")] != -1);
+		return sat<F>("PH_MODE_DRAW_CLIP");
+	}
+
+	template<typename F = ::jint>
+	static auto PH_MODE_FILL_CLIP() {
+		static_assert(field_signatures[jField<F>("PH_MODE_FILL_CLIP")] != -1);
+		return sat<F>("PH_MODE_FILL_CLIP");
+	}
+
+	template<typename F = ::sun::java2d::loops::ProcessPath$EndSubPathHandler>
+	static auto noopEndSubPathHandler() {
+		static_assert(field_signatures[jField<F>("noopEndSubPathHandler")] != -1);
+		return sat<F>("noopEndSubPathHandler");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jboolean(::sun::java2d::loops::ProcessPath$DrawHandler, ::java::awt::geom::Path2D$Float, ::jint, ::jint)>("drawPath"), //
+		jMethod<::jboolean(::sun::java2d::loops::ProcessPath$DrawHandler, ::sun::java2d::loops::ProcessPath$EndSubPathHandler, ::java::awt::geom::Path2D$Float, ::jint, ::jint)>("drawPath"), //
+		jMethod<::jboolean(::sun::java2d::loops::ProcessPath$DrawHandler, ::java::awt::geom::Path2D$Float, ::jint, ::jint)>("fillPath"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto drawPath(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("drawPath")] != -1);
+		return scall<R>("drawPath", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto fillPath(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("fillPath")] != -1);
+		return scall<R>("fillPath", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

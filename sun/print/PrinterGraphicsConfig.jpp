@@ -1,0 +1,58 @@
+#ifndef sun_print_PrinterGraphicsConfig_HPP
+#define sun_print_PrinterGraphicsConfig_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::print::PrinterGraphicsConfig : public jObject<::sun::print::PrinterGraphicsConfig, ::java::awt::GraphicsConfiguration> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_print / "PrinterGraphicsConfig";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::awt::geom::AffineTransform, ::jint, ::jint)>(), //
+		jMethod<::java::awt::Rectangle()>("getBounds"), //
+		jMethod<::java::awt::image::ColorModel()>("getColorModel"), //
+		jMethod<::java::awt::image::ColorModel(::jint)>("getColorModel"), //
+		jMethod<::java::awt::geom::AffineTransform()>("getDefaultTransform"), //
+		jMethod<::java::awt::GraphicsDevice()>("getDevice"), //
+		jMethod<::java::awt::geom::AffineTransform()>("getNormalizingTransform"), //
+	};
+
+	template<typename R = ::java::awt::Rectangle, typename... Args>
+	auto getBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBounds")] != -1);
+		return call<R>("getBounds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::image::ColorModel, typename... Args>
+	auto getColorModel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getColorModel")] != -1);
+		return call<R>("getColorModel", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::AffineTransform, typename... Args>
+	auto getDefaultTransform(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDefaultTransform")] != -1);
+		return call<R>("getDefaultTransform", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::GraphicsDevice, typename... Args>
+	auto getDevice(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDevice")] != -1);
+		return call<R>("getDevice", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::AffineTransform, typename... Args>
+	auto getNormalizingTransform(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNormalizingTransform")] != -1);
+		return call<R>("getNormalizingTransform", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

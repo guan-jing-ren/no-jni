@@ -1,0 +1,51 @@
+#ifndef com_sun_jndi_ldap_LdapReferralException_HPP
+#define com_sun_jndi_ldap_LdapReferralException_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::jndi::ldap::LdapReferralException : public jObject<::com::sun::jndi::ldap::LdapReferralException, ::javax::naming::ldap::LdapReferralException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_jndi_ldap / "LdapReferralException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::naming::Context()>("getReferralContext"), //
+		jMethod<::javax::naming::Context(::java::util::Hashtable)>("getReferralContext"), //
+		jMethod<::javax::naming::Context(::java::util::Hashtable, ::javax::naming::ldap::Control *)>("getReferralContext"), //
+		jMethod<::java::lang::Object()>("getReferralInfo"), //
+		jMethod<::jvoid()>("retryReferral"), //
+		jMethod<::jboolean()>("skipReferral"), //
+	};
+
+	template<typename R = ::javax::naming::Context, typename... Args>
+	auto getReferralContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getReferralContext")] != -1);
+		return call<R>("getReferralContext", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getReferralInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getReferralInfo")] != -1);
+		return call<R>("getReferralInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto retryReferral(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("retryReferral")] != -1);
+		return call<R>("retryReferral", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto skipReferral(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("skipReferral")] != -1);
+		return call<R>("skipReferral", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

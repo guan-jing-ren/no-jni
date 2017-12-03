@@ -1,0 +1,42 @@
+#ifndef sun_misc_CRC16_HPP
+#define sun_misc_CRC16_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::misc::CRC16 : public jObject<::sun::misc::CRC16, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_misc / "CRC16";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("value"), //
+	};
+
+	template<typename F = ::jint>
+	auto value() const {
+		static_assert(field_signatures[jField<F>("value")] != -1);
+		return at<F>("value");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid()>("reset"), //
+		jMethod<::jvoid(::jbyte)>("update"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto reset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("reset")] != -1);
+		return call<R>("reset", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto update(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("update")] != -1);
+		return call<R>("update", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

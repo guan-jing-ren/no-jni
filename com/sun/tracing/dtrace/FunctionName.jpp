@@ -1,0 +1,28 @@
+#ifndef com_sun_tracing_dtrace_FunctionName_HPP
+#define com_sun_tracing_dtrace_FunctionName_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::tracing::dtrace::FunctionName : public jObject<::com::sun::tracing::dtrace::FunctionName, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_tracing_dtrace / "FunctionName";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("value"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("value")] != -1);
+		return call<R>("value", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,29 @@
+#ifndef com_sun_corba_se_spi_encoding_CorbaOutputObject_HPP
+#define com_sun_corba_se_spi_encoding_CorbaOutputObject_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::spi::encoding::CorbaOutputObject : public jObject<::com::sun::corba::se::spi::encoding::CorbaOutputObject, ::com::sun::corba::se::impl::encoding::CDROutputStream> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_spi_encoding / "CorbaOutputObject";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::com::sun::corba::se::spi::orb::ORB, ::com::sun::corba::se::spi::ior::iiop::GIOPVersion, ::jbyte, ::jboolean, ::com::sun::corba::se::impl::encoding::BufferManagerWrite, ::jbyte, ::jboolean)>(), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::transport::CorbaConnection)>("writeTo"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeTo")] != -1);
+		return call<R>("writeTo", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

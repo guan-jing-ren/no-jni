@@ -1,0 +1,36 @@
+#ifndef com_sun_imageio_plugins_common_ReaderUtil_HPP
+#define com_sun_imageio_plugins_common_ReaderUtil_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::imageio::plugins::common::ReaderUtil : public jObject<::com::sun::imageio::plugins::common::ReaderUtil, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_imageio_plugins_common / "ReaderUtil";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jint *(::java::awt::Rectangle, ::java::awt::Point, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint)>("computeUpdatedPixels"), //
+		jMethod<::jint(::javax::imageio::stream::ImageInputStream)>("readMultiByteInteger"), //
+	};
+
+	template<typename R = ::jint *, typename... Args>
+	static auto computeUpdatedPixels(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("computeUpdatedPixels")] != -1);
+		return scall<R>("computeUpdatedPixels", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto readMultiByteInteger(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("readMultiByteInteger")] != -1);
+		return scall<R>("readMultiByteInteger", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

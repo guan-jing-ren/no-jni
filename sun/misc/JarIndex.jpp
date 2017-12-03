@@ -1,0 +1,80 @@
+#ifndef sun_misc_JarIndex_HPP
+#define sun_misc_JarIndex_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::misc::JarIndex : public jObject<::sun::misc::JarIndex, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_misc / "JarIndex";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("INDEX_NAME"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto INDEX_NAME() {
+		static_assert(field_signatures[jField<F>("INDEX_NAME")] != -1);
+		return sat<F>("INDEX_NAME");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::io::InputStream)>(), //
+		jConstructor<::jvoid(::java::lang::String *)>(), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String)>("add"), //
+		jMethod<::java::util::LinkedList(::java::lang::String)>("get"), //
+		jMethod<::java::lang::String *()>("getJarFiles"), //
+		jMethod<::sun::misc::JarIndex(::java::util::jar::JarFile)>("getJarIndex"), //
+		jMethod<::sun::misc::JarIndex(::java::util::jar::JarFile, ::sun::misc::MetaIndex)>("getJarIndex"), //
+		jMethod<::jvoid(::sun::misc::JarIndex, ::java::lang::String)>("merge"), //
+		jMethod<::jvoid(::java::io::InputStream)>("read"), //
+		jMethod<::jvoid(::java::io::OutputStream)>("write"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto add(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::LinkedList, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getJarFiles(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getJarFiles")] != -1);
+		return call<R>("getJarFiles", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::misc::JarIndex, typename... Args>
+	static auto getJarIndex(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getJarIndex")] != -1);
+		return scall<R>("getJarIndex", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto merge(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("merge")] != -1);
+		return call<R>("merge", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,35 @@
+#ifndef com_sun_management_UnixOperatingSystemMXBean_HPP
+#define com_sun_management_UnixOperatingSystemMXBean_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::com::sun::management::UnixOperatingSystemMXBean : public jObject<::com::sun::management::UnixOperatingSystemMXBean, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_management / "UnixOperatingSystemMXBean";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jlong()>("getMaxFileDescriptorCount"), //
+		jMethod<::jlong()>("getOpenFileDescriptorCount"), //
+	};
+
+	template<typename R = ::jlong, typename... Args>
+	auto getMaxFileDescriptorCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMaxFileDescriptorCount")] != -1);
+		return call<R>("getMaxFileDescriptorCount", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getOpenFileDescriptorCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOpenFileDescriptorCount")] != -1);
+		return call<R>("getOpenFileDescriptorCount", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

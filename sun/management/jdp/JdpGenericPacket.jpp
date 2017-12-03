@@ -1,0 +1,49 @@
+#ifndef sun_management_jdp_JdpGenericPacket_HPP
+#define sun_management_jdp_JdpGenericPacket_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::management::jdp::JdpGenericPacket : public jObject<::sun::management::jdp::JdpGenericPacket, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_management_jdp / "JdpGenericPacket";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::jint)>("checkMagic"), //
+		jMethod<::jvoid(::jshort)>("checkVersion"), //
+		jMethod<::jint()>("getMagic"), //
+		jMethod<::jshort()>("getVersion"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto checkMagic(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkMagic")] != -1);
+		return scall<R>("checkMagic", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto checkVersion(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkVersion")] != -1);
+		return scall<R>("checkVersion", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto getMagic(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMagic")] != -1);
+		return scall<R>("getMagic", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jshort, typename... Args>
+	static auto getVersion(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getVersion")] != -1);
+		return scall<R>("getVersion", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

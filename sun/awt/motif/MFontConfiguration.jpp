@@ -1,0 +1,37 @@
+#ifndef sun_awt_motif_MFontConfiguration_HPP
+#define sun_awt_motif_MFontConfiguration_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::motif::MFontConfiguration : public jObject<::sun::awt::motif::MFontConfiguration, ::sun::awt::FontConfiguration> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_motif / "MFontConfiguration";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::font::SunFontManager)>(), //
+		jConstructor<::jvoid(::sun::font::SunFontManager, ::jboolean, ::jboolean)>(), //
+		jMethod<::java::util::HashSet()>("getAWTFontPathSet"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::lang::String)>("getFallbackFamilyName"), //
+	};
+
+	template<typename R = ::java::util::HashSet, typename... Args>
+	auto getAWTFontPathSet(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAWTFontPathSet")] != -1);
+		return call<R>("getAWTFontPathSet", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getFallbackFamilyName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFallbackFamilyName")] != -1);
+		return call<R>("getFallbackFamilyName", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

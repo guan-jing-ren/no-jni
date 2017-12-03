@@ -1,0 +1,70 @@
+#ifndef com_sun_security_ntlm_NTLMException_HPP
+#define com_sun_security_ntlm_NTLMException_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::security::ntlm::NTLMException : public jObject<::com::sun::security::ntlm::NTLMException, ::java::security::GeneralSecurityException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_security_ntlm / "NTLMException";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("AUTH_FAILED"), //
+		jField<::jint>("BAD_VERSION"), //
+		jField<::jint>("NO_DOMAIN_INFO"), //
+		jField<::jint>("PACKET_READ_ERROR"), //
+		jField<::jint>("PROTOCOL"), //
+		jField<::jint>("USER_UNKNOWN"), //
+	};
+
+	template<typename F = ::jint>
+	static auto AUTH_FAILED() {
+		static_assert(field_signatures[jField<F>("AUTH_FAILED")] != -1);
+		return sat<F>("AUTH_FAILED");
+	}
+
+	template<typename F = ::jint>
+	static auto BAD_VERSION() {
+		static_assert(field_signatures[jField<F>("BAD_VERSION")] != -1);
+		return sat<F>("BAD_VERSION");
+	}
+
+	template<typename F = ::jint>
+	static auto NO_DOMAIN_INFO() {
+		static_assert(field_signatures[jField<F>("NO_DOMAIN_INFO")] != -1);
+		return sat<F>("NO_DOMAIN_INFO");
+	}
+
+	template<typename F = ::jint>
+	static auto PACKET_READ_ERROR() {
+		static_assert(field_signatures[jField<F>("PACKET_READ_ERROR")] != -1);
+		return sat<F>("PACKET_READ_ERROR");
+	}
+
+	template<typename F = ::jint>
+	static auto PROTOCOL() {
+		static_assert(field_signatures[jField<F>("PROTOCOL")] != -1);
+		return sat<F>("PROTOCOL");
+	}
+
+	template<typename F = ::jint>
+	static auto USER_UNKNOWN() {
+		static_assert(field_signatures[jField<F>("USER_UNKNOWN")] != -1);
+		return sat<F>("USER_UNKNOWN");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::java::lang::String)>(), //
+		jMethod<::jint()>("errorCode"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto errorCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("errorCode")] != -1);
+		return call<R>("errorCode", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

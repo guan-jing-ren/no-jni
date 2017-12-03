@@ -1,0 +1,141 @@
+#ifndef sun_security_x509_CertException_HPP
+#define sun_security_x509_CertException_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::x509::CertException : public jObject<::sun::security::x509::CertException, ::java::lang::SecurityException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_x509 / "CertException";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("err_CONSTRUCTION"), //
+		jField<::jint>("err_ENCODING"), //
+		jField<::jint>("err_INVALID_FORMAT"), //
+		jField<::jint>("err_INVALID_PUBLIC_KEY"), //
+		jField<::jint>("err_INVALID_VERSION"), //
+		jField<::jint>("verf_CA_UNTRUSTED"), //
+		jField<::jint>("verf_CHAIN_LENGTH"), //
+		jField<::jint>("verf_INVALID_EXPIRED"), //
+		jField<::jint>("verf_INVALID_NOTBEFORE"), //
+		jField<::jint>("verf_INVALID_REVOKED"), //
+		jField<::jint>("verf_INVALID_SIG"), //
+		jField<::jint>("verf_PARSE_ERROR"), //
+	};
+
+	template<typename F = ::jint>
+	static auto err_CONSTRUCTION() {
+		static_assert(field_signatures[jField<F>("err_CONSTRUCTION")] != -1);
+		return sat<F>("err_CONSTRUCTION");
+	}
+
+	template<typename F = ::jint>
+	static auto err_ENCODING() {
+		static_assert(field_signatures[jField<F>("err_ENCODING")] != -1);
+		return sat<F>("err_ENCODING");
+	}
+
+	template<typename F = ::jint>
+	static auto err_INVALID_FORMAT() {
+		static_assert(field_signatures[jField<F>("err_INVALID_FORMAT")] != -1);
+		return sat<F>("err_INVALID_FORMAT");
+	}
+
+	template<typename F = ::jint>
+	static auto err_INVALID_PUBLIC_KEY() {
+		static_assert(field_signatures[jField<F>("err_INVALID_PUBLIC_KEY")] != -1);
+		return sat<F>("err_INVALID_PUBLIC_KEY");
+	}
+
+	template<typename F = ::jint>
+	static auto err_INVALID_VERSION() {
+		static_assert(field_signatures[jField<F>("err_INVALID_VERSION")] != -1);
+		return sat<F>("err_INVALID_VERSION");
+	}
+
+	template<typename F = ::jint>
+	static auto verf_CA_UNTRUSTED() {
+		static_assert(field_signatures[jField<F>("verf_CA_UNTRUSTED")] != -1);
+		return sat<F>("verf_CA_UNTRUSTED");
+	}
+
+	template<typename F = ::jint>
+	static auto verf_CHAIN_LENGTH() {
+		static_assert(field_signatures[jField<F>("verf_CHAIN_LENGTH")] != -1);
+		return sat<F>("verf_CHAIN_LENGTH");
+	}
+
+	template<typename F = ::jint>
+	static auto verf_INVALID_EXPIRED() {
+		static_assert(field_signatures[jField<F>("verf_INVALID_EXPIRED")] != -1);
+		return sat<F>("verf_INVALID_EXPIRED");
+	}
+
+	template<typename F = ::jint>
+	static auto verf_INVALID_NOTBEFORE() {
+		static_assert(field_signatures[jField<F>("verf_INVALID_NOTBEFORE")] != -1);
+		return sat<F>("verf_INVALID_NOTBEFORE");
+	}
+
+	template<typename F = ::jint>
+	static auto verf_INVALID_REVOKED() {
+		static_assert(field_signatures[jField<F>("verf_INVALID_REVOKED")] != -1);
+		return sat<F>("verf_INVALID_REVOKED");
+	}
+
+	template<typename F = ::jint>
+	static auto verf_INVALID_SIG() {
+		static_assert(field_signatures[jField<F>("verf_INVALID_SIG")] != -1);
+		return sat<F>("verf_INVALID_SIG");
+	}
+
+	template<typename F = ::jint>
+	static auto verf_PARSE_ERROR() {
+		static_assert(field_signatures[jField<F>("verf_PARSE_ERROR")] != -1);
+		return sat<F>("verf_PARSE_ERROR");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint)>(), //
+		jConstructor<::jvoid(::jint, ::java::lang::String)>(), //
+		jMethod<::java::lang::String()>("getMessage"), //
+		jMethod<::java::lang::String()>("getMoreData"), //
+		jMethod<::jint()>("getVerfCode"), //
+		jMethod<::java::lang::String()>("getVerfDescription"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMessage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMessage")] != -1);
+		return call<R>("getMessage", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMoreData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMoreData")] != -1);
+		return call<R>("getMoreData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getVerfCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getVerfCode")] != -1);
+		return call<R>("getVerfCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getVerfDescription(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getVerfDescription")] != -1);
+		return call<R>("getVerfDescription", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

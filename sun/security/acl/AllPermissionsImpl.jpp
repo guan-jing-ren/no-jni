@@ -1,0 +1,29 @@
+#ifndef sun_security_acl_AllPermissionsImpl_HPP
+#define sun_security_acl_AllPermissionsImpl_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::acl::AllPermissionsImpl : public jObject<::sun::security::acl::AllPermissionsImpl, ::sun::security::acl::PermissionImpl> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_acl / "AllPermissionsImpl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jMethod<::jboolean(::java::security::acl::Permission)>("equals"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

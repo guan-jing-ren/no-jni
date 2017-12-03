@@ -1,0 +1,63 @@
+#ifndef sun_java2d_loops_DrawLine_HPP
+#define sun_java2d_loops_DrawLine_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::loops::DrawLine : public jObject<::sun::java2d::loops::DrawLine, ::sun::java2d::loops::GraphicsPrimitive> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_loops / "DrawLine";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("methodSignature"), //
+		jField<::jint>("primTypeID"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto methodSignature() {
+		static_assert(field_signatures[jField<F>("methodSignature")] != -1);
+		return sat<F>("methodSignature");
+	}
+
+	template<typename F = ::jint>
+	static auto primTypeID() {
+		static_assert(field_signatures[jField<F>("primTypeID")] != -1);
+		return sat<F>("primTypeID");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jlong, ::sun::java2d::loops::SurfaceType, ::sun::java2d::loops::CompositeType, ::sun::java2d::loops::SurfaceType)>(), //
+		jMethod<::jvoid(::sun::java2d::SunGraphics2D, ::sun::java2d::SurfaceData, ::jint, ::jint, ::jint, ::jint)>("DrawLine"), //
+		jMethod<::sun::java2d::loops::DrawLine(::sun::java2d::loops::SurfaceType, ::sun::java2d::loops::CompositeType, ::sun::java2d::loops::SurfaceType)>("locate"), //
+		jMethod<::sun::java2d::loops::GraphicsPrimitive(::sun::java2d::loops::SurfaceType, ::sun::java2d::loops::CompositeType, ::sun::java2d::loops::SurfaceType)>("makePrimitive"), //
+		jMethod<::sun::java2d::loops::GraphicsPrimitive()>("traceWrap"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto DrawLine(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("DrawLine")] != -1);
+		return call<R>("DrawLine", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::loops::DrawLine, typename... Args>
+	static auto locate(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("locate")] != -1);
+		return scall<R>("locate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::loops::GraphicsPrimitive, typename... Args>
+	auto makePrimitive(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("makePrimitive")] != -1);
+		return call<R>("makePrimitive", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::loops::GraphicsPrimitive, typename... Args>
+	auto traceWrap(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("traceWrap")] != -1);
+		return call<R>("traceWrap", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

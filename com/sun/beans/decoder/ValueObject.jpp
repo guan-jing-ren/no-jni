@@ -1,0 +1,35 @@
+#ifndef com_sun_beans_decoder_ValueObject_HPP
+#define com_sun_beans_decoder_ValueObject_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::beans::decoder::ValueObject : public jObject<::com::sun::beans::decoder::ValueObject, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_beans_decoder / "ValueObject";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object()>("getValue"), //
+		jMethod<::jboolean()>("isVoid"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getValue")] != -1);
+		return call<R>("getValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isVoid(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isVoid")] != -1);
+		return call<R>("isVoid", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,98 @@
+#ifndef sun_applet_AppletClassLoader_HPP
+#define sun_applet_AppletClassLoader_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::applet::AppletClassLoader : public jObject<::sun::applet::AppletClassLoader, ::java::net::URLClassLoader> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_applet / "AppletClassLoader";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("disableRecursiveDirectoryRead"), //
+		jMethod<::java::net::URL(::java::lang::String)>("findResource"), //
+		jMethod<::java::util::Enumeration(::java::lang::String)>("findResources"), //
+		jMethod<::sun::awt::AppContext()>("getAppContext"), //
+		jMethod<::jboolean()>("getExceptionStatus"), //
+		jMethod<::java::io::InputStream(::java::lang::String)>("getResourceAsStream"), //
+		jMethod<::java::io::InputStream(::java::lang::String)>("getResourceAsStreamFromJar"), //
+		jMethod<::java::lang::ThreadGroup()>("getThreadGroup"), //
+		jMethod<::java::net::URL *()>("getURLs"), //
+		jMethod<::jvoid()>("grab"), //
+		jMethod<::java::lang::Class(::java::lang::String, ::jboolean)>("loadClass"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto disableRecursiveDirectoryRead(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("disableRecursiveDirectoryRead")] != -1);
+		return call<R>("disableRecursiveDirectoryRead", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::URL, typename... Args>
+	auto findResource(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("findResource")] != -1);
+		return call<R>("findResource", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	auto findResources(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("findResources")] != -1);
+		return call<R>("findResources", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::awt::AppContext, typename... Args>
+	auto getAppContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAppContext")] != -1);
+		return call<R>("getAppContext", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getExceptionStatus(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getExceptionStatus")] != -1);
+		return call<R>("getExceptionStatus", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::InputStream, typename... Args>
+	auto getResourceAsStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getResourceAsStream")] != -1);
+		return call<R>("getResourceAsStream", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::InputStream, typename... Args>
+	auto getResourceAsStreamFromJar(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getResourceAsStreamFromJar")] != -1);
+		return call<R>("getResourceAsStreamFromJar", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::ThreadGroup, typename... Args>
+	auto getThreadGroup(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getThreadGroup")] != -1);
+		return call<R>("getThreadGroup", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::URL *, typename... Args>
+	auto getURLs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getURLs")] != -1);
+		return call<R>("getURLs", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto grab(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("grab")] != -1);
+		return call<R>("grab", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto loadClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("loadClass")] != -1);
+		return call<R>("loadClass", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,55 @@
+#ifndef sun_security_provider_certpath_OCSP$RevocationStatus$CertStatus_HPP
+#define sun_security_provider_certpath_OCSP$RevocationStatus$CertStatus_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::security::provider::certpath::OCSP$RevocationStatus$CertStatus : public jObject<::sun::security::provider::certpath::OCSP$RevocationStatus$CertStatus, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_provider_certpath / "OCSP$RevocationStatus$CertStatus";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::security::provider::certpath::OCSP$RevocationStatus$CertStatus>("GOOD"), //
+		jField<::sun::security::provider::certpath::OCSP$RevocationStatus$CertStatus>("REVOKED"), //
+		jField<::sun::security::provider::certpath::OCSP$RevocationStatus$CertStatus>("UNKNOWN"), //
+	};
+
+	template<typename F = ::sun::security::provider::certpath::OCSP$RevocationStatus$CertStatus>
+	static auto GOOD() {
+		static_assert(field_signatures[jField<F>("GOOD")] != -1);
+		return sat<F>("GOOD");
+	}
+
+	template<typename F = ::sun::security::provider::certpath::OCSP$RevocationStatus$CertStatus>
+	static auto REVOKED() {
+		static_assert(field_signatures[jField<F>("REVOKED")] != -1);
+		return sat<F>("REVOKED");
+	}
+
+	template<typename F = ::sun::security::provider::certpath::OCSP$RevocationStatus$CertStatus>
+	static auto UNKNOWN() {
+		static_assert(field_signatures[jField<F>("UNKNOWN")] != -1);
+		return sat<F>("UNKNOWN");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::security::provider::certpath::OCSP$RevocationStatus$CertStatus(::java::lang::String)>("valueOf"), //
+		jMethod<::sun::security::provider::certpath::OCSP$RevocationStatus$CertStatus *()>("values"), //
+	};
+
+	template<typename R = ::sun::security::provider::certpath::OCSP$RevocationStatus$CertStatus, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::provider::certpath::OCSP$RevocationStatus$CertStatus *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

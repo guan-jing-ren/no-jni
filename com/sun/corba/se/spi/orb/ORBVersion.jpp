@@ -1,0 +1,83 @@
+#ifndef com_sun_corba_se_spi_orb_ORBVersion_HPP
+#define com_sun_corba_se_spi_orb_ORBVersion_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::spi::orb::ORBVersion : public jObject<::com::sun::corba::se::spi::orb::ORBVersion, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_spi_orb / "ORBVersion";
+
+	constexpr static Enume field_signatures{
+		jField<::jbyte>("FOREIGN"), //
+		jField<::jbyte>("JDK1_3_1_01"), //
+		jField<::jbyte>("NEW"), //
+		jField<::jbyte>("NEWER"), //
+		jField<::jbyte>("OLD"), //
+		jField<::jbyte>("PEORB"), //
+	};
+
+	template<typename F = ::jbyte>
+	static auto FOREIGN() {
+		static_assert(field_signatures[jField<F>("FOREIGN")] != -1);
+		return sat<F>("FOREIGN");
+	}
+
+	template<typename F = ::jbyte>
+	static auto JDK1_3_1_01() {
+		static_assert(field_signatures[jField<F>("JDK1_3_1_01")] != -1);
+		return sat<F>("JDK1_3_1_01");
+	}
+
+	template<typename F = ::jbyte>
+	static auto NEW() {
+		static_assert(field_signatures[jField<F>("NEW")] != -1);
+		return sat<F>("NEW");
+	}
+
+	template<typename F = ::jbyte>
+	static auto NEWER() {
+		static_assert(field_signatures[jField<F>("NEWER")] != -1);
+		return sat<F>("NEWER");
+	}
+
+	template<typename F = ::jbyte>
+	static auto OLD() {
+		static_assert(field_signatures[jField<F>("OLD")] != -1);
+		return sat<F>("OLD");
+	}
+
+	template<typename F = ::jbyte>
+	static auto PEORB() {
+		static_assert(field_signatures[jField<F>("PEORB")] != -1);
+		return sat<F>("PEORB");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jbyte()>("getORBType"), //
+		jMethod<::jboolean(::com::sun::corba::se::spi::orb::ORBVersion)>("lessThan"), //
+		jMethod<::jvoid(::org::omg::CORBA::portable::OutputStream)>("write"), //
+	};
+
+	template<typename R = ::jbyte, typename... Args>
+	auto getORBType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getORBType")] != -1);
+		return call<R>("getORBType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto lessThan(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("lessThan")] != -1);
+		return call<R>("lessThan", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

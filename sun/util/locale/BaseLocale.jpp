@@ -1,0 +1,90 @@
+#ifndef sun_util_locale_BaseLocale_HPP
+#define sun_util_locale_BaseLocale_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::util::locale::BaseLocale : public jObject<::sun::util::locale::BaseLocale, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_util_locale / "BaseLocale";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("SEP"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto SEP() {
+		static_assert(field_signatures[jField<F>("SEP")] != -1);
+		return sat<F>("SEP");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::util::locale::BaseLocale(::java::lang::String, ::java::lang::String)>("createInstance"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::sun::util::locale::BaseLocale(::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::String)>("getInstance"), //
+		jMethod<::java::lang::String()>("getLanguage"), //
+		jMethod<::java::lang::String()>("getRegion"), //
+		jMethod<::java::lang::String()>("getScript"), //
+		jMethod<::java::lang::String()>("getVariant"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::sun::util::locale::BaseLocale, typename... Args>
+	static auto createInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createInstance")] != -1);
+		return scall<R>("createInstance", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::util::locale::BaseLocale, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getLanguage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLanguage")] != -1);
+		return call<R>("getLanguage", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getRegion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRegion")] != -1);
+		return call<R>("getRegion", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getScript(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getScript")] != -1);
+		return call<R>("getScript", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getVariant(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getVariant")] != -1);
+		return call<R>("getVariant", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

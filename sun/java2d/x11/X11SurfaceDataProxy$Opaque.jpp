@@ -1,0 +1,36 @@
+#ifndef sun_java2d_x11_X11SurfaceDataProxy$Opaque_HPP
+#define sun_java2d_x11_X11SurfaceDataProxy$Opaque_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::x11::X11SurfaceDataProxy$Opaque : public jObject<::sun::java2d::x11::X11SurfaceDataProxy$Opaque, ::sun::java2d::x11::X11SurfaceDataProxy> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_x11 / "X11SurfaceDataProxy$Opaque";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::awt::X11GraphicsConfig)>(), //
+		jMethod<::jint()>("getTransparency"), //
+		jMethod<::jboolean(::sun::java2d::SurfaceData, ::jint, ::sun::java2d::loops::CompositeType, ::java::awt::Color)>("isSupportedOperation"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getTransparency(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTransparency")] != -1);
+		return call<R>("getTransparency", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isSupportedOperation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSupportedOperation")] != -1);
+		return call<R>("isSupportedOperation", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

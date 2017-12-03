@@ -1,0 +1,117 @@
+#ifndef sun_rmi_transport_LiveRef_HPP
+#define sun_rmi_transport_LiveRef_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::rmi::transport::LiveRef : public jObject<::sun::rmi::transport::LiveRef, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_rmi_transport / "LiveRef";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint)>(), //
+		jConstructor<::jvoid(::jint, ::java::rmi::server::RMIClientSocketFactory, ::java::rmi::server::RMIServerSocketFactory)>(), //
+		jConstructor<::jvoid(::java::rmi::server::ObjID, ::jint)>(), //
+		jConstructor<::jvoid(::java::rmi::server::ObjID, ::jint, ::java::rmi::server::RMIClientSocketFactory, ::java::rmi::server::RMIServerSocketFactory)>(), //
+		jConstructor<::jvoid(::java::rmi::server::ObjID, ::sun::rmi::transport::Endpoint, ::jboolean)>(), //
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jvoid(::sun::rmi::transport::Target)>("exportObject"), //
+		jMethod<::sun::rmi::transport::Channel()>("getChannel"), //
+		jMethod<::java::rmi::server::RMIClientSocketFactory()>("getClientSocketFactory"), //
+		jMethod<::java::rmi::server::ObjID()>("getObjID"), //
+		jMethod<::jint()>("getPort"), //
+		jMethod<::java::rmi::server::RMIServerSocketFactory()>("getServerSocketFactory"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::sun::rmi::transport::LiveRef(::java::io::ObjectInput, ::jboolean)>("read"), //
+		jMethod<::jboolean(::java::lang::Object)>("remoteEquals"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::jvoid(::java::io::ObjectOutput, ::jboolean)>("write"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto exportObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("exportObject")] != -1);
+		return call<R>("exportObject", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::rmi::transport::Channel, typename... Args>
+	auto getChannel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getChannel")] != -1);
+		return call<R>("getChannel", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::server::RMIClientSocketFactory, typename... Args>
+	auto getClientSocketFactory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClientSocketFactory")] != -1);
+		return call<R>("getClientSocketFactory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::server::ObjID, typename... Args>
+	auto getObjID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getObjID")] != -1);
+		return call<R>("getObjID", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getPort(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPort")] != -1);
+		return call<R>("getPort", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::server::RMIServerSocketFactory, typename... Args>
+	auto getServerSocketFactory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getServerSocketFactory")] != -1);
+		return call<R>("getServerSocketFactory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::rmi::transport::LiveRef, typename... Args>
+	static auto read(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read")] != -1);
+		return scall<R>("read", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto remoteEquals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("remoteEquals")] != -1);
+		return call<R>("remoteEquals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

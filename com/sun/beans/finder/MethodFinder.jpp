@@ -1,0 +1,49 @@
+#ifndef com_sun_beans_finder_MethodFinder_HPP
+#define com_sun_beans_finder_MethodFinder_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::beans::finder::MethodFinder : public jObject<::com::sun::beans::finder::MethodFinder, ::com::sun::beans::finder::AbstractFinder> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_beans_finder / "MethodFinder";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::reflect::Method(::java::lang::reflect::Method)>("findAccessibleMethod"), //
+		jMethod<::java::lang::reflect::Method(::java::lang::Class, ::java::lang::String, ::java::lang::Class *)>("findInstanceMethod"), //
+		jMethod<::java::lang::reflect::Method(::java::lang::Class, ::java::lang::String, ::java::lang::Class *)>("findMethod"), //
+		jMethod<::java::lang::reflect::Method(::java::lang::Class, ::java::lang::String, ::java::lang::Class *)>("findStaticMethod"), //
+	};
+
+	template<typename R = ::java::lang::reflect::Method, typename... Args>
+	static auto findAccessibleMethod(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("findAccessibleMethod")] != -1);
+		return scall<R>("findAccessibleMethod", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Method, typename... Args>
+	static auto findInstanceMethod(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("findInstanceMethod")] != -1);
+		return scall<R>("findInstanceMethod", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Method, typename... Args>
+	static auto findMethod(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("findMethod")] != -1);
+		return scall<R>("findMethod", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Method, typename... Args>
+	static auto findStaticMethod(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("findStaticMethod")] != -1);
+		return scall<R>("findStaticMethod", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,92 @@
+#ifndef sun_nio_ch_sctp_SctpStdSocketOption_HPP
+#define sun_nio_ch_sctp_SctpStdSocketOption_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::nio::ch::sctp::SctpStdSocketOption : public jObject<::sun::nio::ch::sctp::SctpStdSocketOption, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_nio_ch_sctp / "SctpStdSocketOption";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("SCTP_DISABLE_FRAGMENTS"), //
+		jField<::jint>("SCTP_EXPLICIT_COMPLETE"), //
+		jField<::jint>("SCTP_FRAGMENT_INTERLEAVE"), //
+		jField<::jint>("SCTP_NODELAY"), //
+		jField<::jint>("SO_LINGER"), //
+		jField<::jint>("SO_RCVBUF"), //
+		jField<::jint>("SO_SNDBUF"), //
+	};
+
+	template<typename F = ::jint>
+	static auto SCTP_DISABLE_FRAGMENTS() {
+		static_assert(field_signatures[jField<F>("SCTP_DISABLE_FRAGMENTS")] != -1);
+		return sat<F>("SCTP_DISABLE_FRAGMENTS");
+	}
+
+	template<typename F = ::jint>
+	static auto SCTP_EXPLICIT_COMPLETE() {
+		static_assert(field_signatures[jField<F>("SCTP_EXPLICIT_COMPLETE")] != -1);
+		return sat<F>("SCTP_EXPLICIT_COMPLETE");
+	}
+
+	template<typename F = ::jint>
+	static auto SCTP_FRAGMENT_INTERLEAVE() {
+		static_assert(field_signatures[jField<F>("SCTP_FRAGMENT_INTERLEAVE")] != -1);
+		return sat<F>("SCTP_FRAGMENT_INTERLEAVE");
+	}
+
+	template<typename F = ::jint>
+	static auto SCTP_NODELAY() {
+		static_assert(field_signatures[jField<F>("SCTP_NODELAY")] != -1);
+		return sat<F>("SCTP_NODELAY");
+	}
+
+	template<typename F = ::jint>
+	static auto SO_LINGER() {
+		static_assert(field_signatures[jField<F>("SO_LINGER")] != -1);
+		return sat<F>("SO_LINGER");
+	}
+
+	template<typename F = ::jint>
+	static auto SO_RCVBUF() {
+		static_assert(field_signatures[jField<F>("SO_RCVBUF")] != -1);
+		return sat<F>("SO_RCVBUF");
+	}
+
+	template<typename F = ::jint>
+	static auto SO_SNDBUF() {
+		static_assert(field_signatures[jField<F>("SO_SNDBUF")] != -1);
+		return sat<F>("SO_SNDBUF");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Class)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Class, ::jint)>(), //
+		jMethod<::java::lang::String()>("name"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::java::lang::Class()>("type"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto name(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("name")] != -1);
+		return call<R>("name", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto type(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("type")] != -1);
+		return call<R>("type", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

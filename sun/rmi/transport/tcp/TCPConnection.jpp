@@ -1,0 +1,77 @@
+#ifndef sun_rmi_transport_tcp_TCPConnection_HPP
+#define sun_rmi_transport_tcp_TCPConnection_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::rmi::transport::tcp::TCPConnection : public jObject<::sun::rmi::transport::tcp::TCPConnection, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_rmi_transport_tcp / "TCPConnection";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("close"), //
+		jMethod<::sun::rmi::transport::Channel()>("getChannel"), //
+		jMethod<::java::io::InputStream()>("getInputStream"), //
+		jMethod<::java::io::OutputStream()>("getOutputStream"), //
+		jMethod<::jboolean()>("isDead"), //
+		jMethod<::jboolean()>("isReusable"), //
+		jMethod<::jvoid()>("releaseInputStream"), //
+		jMethod<::jvoid()>("releaseOutputStream"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::rmi::transport::Channel, typename... Args>
+	auto getChannel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getChannel")] != -1);
+		return call<R>("getChannel", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::InputStream, typename... Args>
+	auto getInputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInputStream")] != -1);
+		return call<R>("getInputStream", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::OutputStream, typename... Args>
+	auto getOutputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOutputStream")] != -1);
+		return call<R>("getOutputStream", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDead(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isDead")] != -1);
+		return call<R>("isDead", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isReusable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isReusable")] != -1);
+		return call<R>("isReusable", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto releaseInputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("releaseInputStream")] != -1);
+		return call<R>("releaseInputStream", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto releaseOutputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("releaseOutputStream")] != -1);
+		return call<R>("releaseOutputStream", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

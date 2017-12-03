@@ -1,0 +1,44 @@
+#ifndef sun_awt_image_SunWritableRaster$DataStealer_HPP
+#define sun_awt_image_SunWritableRaster$DataStealer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::image::SunWritableRaster$DataStealer : public jObject<::sun::awt::image::SunWritableRaster$DataStealer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_image / "SunWritableRaster$DataStealer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jbyte *(::java::awt::image::DataBufferByte, ::jint)>("getData"), //
+		jMethod<::jint *(::java::awt::image::DataBufferInt, ::jint)>("getData"), //
+		jMethod<::jshort *(::java::awt::image::DataBufferUShort, ::jint)>("getData"), //
+		jMethod<::sun::java2d::StateTrackableDelegate(::java::awt::image::DataBuffer)>("getTrackable"), //
+		jMethod<::jvoid(::java::awt::image::DataBuffer, ::sun::java2d::StateTrackableDelegate)>("setTrackable"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getData")] != -1);
+		return call<R>("getData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::StateTrackableDelegate, typename... Args>
+	auto getTrackable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTrackable")] != -1);
+		return call<R>("getTrackable", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setTrackable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setTrackable")] != -1);
+		return call<R>("setTrackable", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

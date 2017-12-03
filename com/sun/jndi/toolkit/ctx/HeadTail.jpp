@@ -1,0 +1,51 @@
+#ifndef com_sun_jndi_toolkit_ctx_HeadTail_HPP
+#define com_sun_jndi_toolkit_ctx_HeadTail_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::jndi::toolkit::ctx::HeadTail : public jObject<::com::sun::jndi::toolkit::ctx::HeadTail, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_jndi_toolkit_ctx / "HeadTail";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::naming::Name, ::javax::naming::Name)>(), //
+		jConstructor<::jvoid(::javax::naming::Name, ::javax::naming::Name, ::jint)>(), //
+		jMethod<::javax::naming::Name()>("getHead"), //
+		jMethod<::jint()>("getStatus"), //
+		jMethod<::javax::naming::Name()>("getTail"), //
+		jMethod<::jvoid(::jint)>("setStatus"), //
+	};
+
+	template<typename R = ::javax::naming::Name, typename... Args>
+	auto getHead(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHead")] != -1);
+		return call<R>("getHead", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getStatus(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStatus")] != -1);
+		return call<R>("getStatus", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::naming::Name, typename... Args>
+	auto getTail(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTail")] != -1);
+		return call<R>("getTail", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setStatus(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setStatus")] != -1);
+		return call<R>("setStatus", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

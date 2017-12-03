@@ -1,0 +1,57 @@
+#ifndef sun_awt_image_AbstractMultiResolutionImage_HPP
+#define sun_awt_image_AbstractMultiResolutionImage_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::image::AbstractMultiResolutionImage : public jObject<::sun::awt::image::AbstractMultiResolutionImage, ::java::awt::Image> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_image / "AbstractMultiResolutionImage";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::awt::Graphics()>("getGraphics"), //
+		jMethod<::jint(::java::awt::image::ImageObserver)>("getHeight"), //
+		jMethod<::java::lang::Object(::java::lang::String, ::java::awt::image::ImageObserver)>("getProperty"), //
+		jMethod<::java::awt::image::ImageProducer()>("getSource"), //
+		jMethod<::jint(::java::awt::image::ImageObserver)>("getWidth"), //
+	};
+
+	template<typename R = ::java::awt::Graphics, typename... Args>
+	auto getGraphics(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGraphics")] != -1);
+		return call<R>("getGraphics", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getHeight(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHeight")] != -1);
+		return call<R>("getHeight", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getProperty(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getProperty")] != -1);
+		return call<R>("getProperty", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::image::ImageProducer, typename... Args>
+	auto getSource(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSource")] != -1);
+		return call<R>("getSource", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getWidth(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getWidth")] != -1);
+		return call<R>("getWidth", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

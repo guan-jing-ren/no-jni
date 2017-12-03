@@ -1,0 +1,55 @@
+#ifndef sun_misc_ObjectInputFilter$Status_HPP
+#define sun_misc_ObjectInputFilter$Status_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::misc::ObjectInputFilter$Status : public jObject<::sun::misc::ObjectInputFilter$Status, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_misc / "ObjectInputFilter$Status";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::misc::ObjectInputFilter$Status>("ALLOWED"), //
+		jField<::sun::misc::ObjectInputFilter$Status>("REJECTED"), //
+		jField<::sun::misc::ObjectInputFilter$Status>("UNDECIDED"), //
+	};
+
+	template<typename F = ::sun::misc::ObjectInputFilter$Status>
+	static auto ALLOWED() {
+		static_assert(field_signatures[jField<F>("ALLOWED")] != -1);
+		return sat<F>("ALLOWED");
+	}
+
+	template<typename F = ::sun::misc::ObjectInputFilter$Status>
+	static auto REJECTED() {
+		static_assert(field_signatures[jField<F>("REJECTED")] != -1);
+		return sat<F>("REJECTED");
+	}
+
+	template<typename F = ::sun::misc::ObjectInputFilter$Status>
+	static auto UNDECIDED() {
+		static_assert(field_signatures[jField<F>("UNDECIDED")] != -1);
+		return sat<F>("UNDECIDED");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::misc::ObjectInputFilter$Status(::java::lang::String)>("valueOf"), //
+		jMethod<::sun::misc::ObjectInputFilter$Status *()>("values"), //
+	};
+
+	template<typename R = ::sun::misc::ObjectInputFilter$Status, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::misc::ObjectInputFilter$Status *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

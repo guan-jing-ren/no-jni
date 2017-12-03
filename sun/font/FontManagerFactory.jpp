@@ -1,0 +1,29 @@
+#ifndef sun_font_FontManagerFactory_HPP
+#define sun_font_FontManagerFactory_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::FontManagerFactory : public jObject<::sun::font::FontManagerFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "FontManagerFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::sun::font::FontManager()>("getInstance"), //
+	};
+
+	template<typename R = ::sun::font::FontManager, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

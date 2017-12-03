@@ -1,0 +1,49 @@
+#ifndef sun_rmi_transport_Endpoint_HPP
+#define sun_rmi_transport_Endpoint_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::rmi::transport::Endpoint : public jObject<::sun::rmi::transport::Endpoint, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_rmi_transport / "Endpoint";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::sun::rmi::transport::Target)>("exportObject"), //
+		jMethod<::sun::rmi::transport::Channel()>("getChannel"), //
+		jMethod<::sun::rmi::transport::Transport()>("getInboundTransport"), //
+		jMethod<::sun::rmi::transport::Transport()>("getOutboundTransport"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto exportObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("exportObject")] != -1);
+		return call<R>("exportObject", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::rmi::transport::Channel, typename... Args>
+	auto getChannel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getChannel")] != -1);
+		return call<R>("getChannel", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::rmi::transport::Transport, typename... Args>
+	auto getInboundTransport(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInboundTransport")] != -1);
+		return call<R>("getInboundTransport", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::rmi::transport::Transport, typename... Args>
+	auto getOutboundTransport(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOutboundTransport")] != -1);
+		return call<R>("getOutboundTransport", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

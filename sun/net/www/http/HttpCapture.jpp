@@ -1,0 +1,49 @@
+#ifndef sun_net_www_http_HttpCapture_HPP
+#define sun_net_www_http_HttpCapture_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::net::www::http::HttpCapture : public jObject<::sun::net::www::http::HttpCapture, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_net_www_http / "HttpCapture";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("flush"), //
+		jMethod<::sun::net::www::http::HttpCapture(::java::net::URL)>("getCapture"), //
+		jMethod<::jvoid(::jint)>("received"), //
+		jMethod<::jvoid(::jint)>("sent"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto flush(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("flush")] != -1);
+		return call<R>("flush", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::www::http::HttpCapture, typename... Args>
+	static auto getCapture(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCapture")] != -1);
+		return scall<R>("getCapture", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto received(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("received")] != -1);
+		return call<R>("received", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto sent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("sent")] != -1);
+		return call<R>("sent", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

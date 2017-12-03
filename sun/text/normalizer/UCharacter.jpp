@@ -1,0 +1,70 @@
+#ifndef sun_text_normalizer_UCharacter_HPP
+#define sun_text_normalizer_UCharacter_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::text::normalizer::UCharacter : public jObject<::sun::text::normalizer::UCharacter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_text_normalizer / "UCharacter";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("MAX_VALUE"), //
+		jField<::jint>("MIN_VALUE"), //
+		jField<::jint>("SUPPLEMENTARY_MIN_VALUE"), //
+	};
+
+	template<typename F = ::jint>
+	static auto MAX_VALUE() {
+		static_assert(field_signatures[jField<F>("MAX_VALUE")] != -1);
+		return sat<F>("MAX_VALUE");
+	}
+
+	template<typename F = ::jint>
+	static auto MIN_VALUE() {
+		static_assert(field_signatures[jField<F>("MIN_VALUE")] != -1);
+		return sat<F>("MIN_VALUE");
+	}
+
+	template<typename F = ::jint>
+	static auto SUPPLEMENTARY_MIN_VALUE() {
+		static_assert(field_signatures[jField<F>("SUPPLEMENTARY_MIN_VALUE")] != -1);
+		return sat<F>("SUPPLEMENTARY_MIN_VALUE");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jint(::jint, ::jint)>("digit"), //
+		jMethod<::sun::text::normalizer::VersionInfo(::jint)>("getAge"), //
+		jMethod<::jint(::jchar, ::jchar)>("getCodePoint"), //
+		jMethod<::jint(::jint)>("getDirection"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	static auto digit(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("digit")] != -1);
+		return scall<R>("digit", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::text::normalizer::VersionInfo, typename... Args>
+	static auto getAge(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAge")] != -1);
+		return scall<R>("getAge", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto getCodePoint(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCodePoint")] != -1);
+		return scall<R>("getCodePoint", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto getDirection(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDirection")] != -1);
+		return scall<R>("getDirection", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,29 @@
+#ifndef sun_security_jgss_LoginConfigImpl_HPP
+#define sun_security_jgss_LoginConfigImpl_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::jgss::LoginConfigImpl : public jObject<::sun::security::jgss::LoginConfigImpl, ::javax::security::auth::login::Configuration> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_jgss / "LoginConfigImpl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::security::jgss::GSSCaller, ::org::ietf::jgss::Oid)>(), //
+		jMethod<::javax::security::auth::login::AppConfigurationEntry *(::java::lang::String)>("getAppConfigurationEntry"), //
+	};
+
+	template<typename R = ::javax::security::auth::login::AppConfigurationEntry *, typename... Args>
+	auto getAppConfigurationEntry(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAppConfigurationEntry")] != -1);
+		return call<R>("getAppConfigurationEntry", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

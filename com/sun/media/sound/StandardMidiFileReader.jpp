@@ -1,0 +1,40 @@
+#ifndef com_sun_media_sound_StandardMidiFileReader_HPP
+#define com_sun_media_sound_StandardMidiFileReader_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::media::sound::StandardMidiFileReader : public jObject<::com::sun::media::sound::StandardMidiFileReader, ::javax::sound::midi::spi::MidiFileReader> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_media_sound / "StandardMidiFileReader";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::sound::midi::MidiFileFormat(::java::io::File)>("getMidiFileFormat"), //
+		jMethod<::javax::sound::midi::MidiFileFormat(::java::io::InputStream)>("getMidiFileFormat"), //
+		jMethod<::javax::sound::midi::MidiFileFormat(::java::net::URL)>("getMidiFileFormat"), //
+		jMethod<::javax::sound::midi::Sequence(::java::io::File)>("getSequence"), //
+		jMethod<::javax::sound::midi::Sequence(::java::io::InputStream)>("getSequence"), //
+		jMethod<::javax::sound::midi::Sequence(::java::net::URL)>("getSequence"), //
+	};
+
+	template<typename R = ::javax::sound::midi::MidiFileFormat, typename... Args>
+	auto getMidiFileFormat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMidiFileFormat")] != -1);
+		return call<R>("getMidiFileFormat", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::midi::Sequence, typename... Args>
+	auto getSequence(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSequence")] != -1);
+		return call<R>("getSequence", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

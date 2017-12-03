@@ -1,0 +1,44 @@
+#ifndef sun_rmi_server_UnicastRef2_HPP
+#define sun_rmi_server_UnicastRef2_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::rmi::server::UnicastRef2 : public jObject<::sun::rmi::server::UnicastRef2, ::sun::rmi::server::UnicastRef> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_rmi_server / "UnicastRef2";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::sun::rmi::transport::LiveRef)>(), //
+		jMethod<::java::lang::String(::java::io::ObjectOutput)>("getRefClass"), //
+		jMethod<::jvoid(::java::io::ObjectInput)>("readExternal"), //
+		jMethod<::jvoid(::java::io::ObjectOutput)>("writeExternal"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getRefClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRefClass")] != -1);
+		return call<R>("getRefClass", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto readExternal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("readExternal")] != -1);
+		return call<R>("readExternal", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeExternal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeExternal")] != -1);
+		return call<R>("writeExternal", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

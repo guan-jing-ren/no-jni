@@ -1,0 +1,64 @@
+#ifndef jdk_net_SocketFlow_HPP
+#define jdk_net_SocketFlow_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::jdk::net::SocketFlow : public jObject<::jdk::net::SocketFlow, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::jdk_net / "SocketFlow";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("HIGH_PRIORITY"), //
+		jField<::jint>("NORMAL_PRIORITY"), //
+	};
+
+	template<typename F = ::jint>
+	static auto HIGH_PRIORITY() {
+		static_assert(field_signatures[jField<F>("HIGH_PRIORITY")] != -1);
+		return sat<F>("HIGH_PRIORITY");
+	}
+
+	template<typename F = ::jint>
+	static auto NORMAL_PRIORITY() {
+		static_assert(field_signatures[jField<F>("NORMAL_PRIORITY")] != -1);
+		return sat<F>("NORMAL_PRIORITY");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jlong()>("bandwidth"), //
+		jMethod<::jdk::net::SocketFlow(::jlong)>("bandwidth"), //
+		jMethod<::jdk::net::SocketFlow()>("create"), //
+		jMethod<::jint()>("priority"), //
+		jMethod<::jdk::net::SocketFlow(::jint)>("priority"), //
+		jMethod<::jdk::net::SocketFlow$Status()>("status"), //
+	};
+
+	template<typename R = ::jlong, typename... Args>
+	auto bandwidth(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("bandwidth")] != -1);
+		return call<R>("bandwidth", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdk::net::SocketFlow, typename... Args>
+	static auto create(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create")] != -1);
+		return scall<R>("create", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto priority(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("priority")] != -1);
+		return call<R>("priority", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdk::net::SocketFlow$Status, typename... Args>
+	auto status(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("status")] != -1);
+		return call<R>("status", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

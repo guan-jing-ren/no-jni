@@ -1,0 +1,36 @@
+#ifndef com_sun_media_sound_SoftMixingMixerProvider_HPP
+#define com_sun_media_sound_SoftMixingMixerProvider_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::media::sound::SoftMixingMixerProvider : public jObject<::com::sun::media::sound::SoftMixingMixerProvider, ::javax::sound::sampled::spi::MixerProvider> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_media_sound / "SoftMixingMixerProvider";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::sound::sampled::Mixer(::javax::sound::sampled::Mixer$Info)>("getMixer"), //
+		jMethod<::javax::sound::sampled::Mixer$Info *()>("getMixerInfo"), //
+	};
+
+	template<typename R = ::javax::sound::sampled::Mixer, typename... Args>
+	auto getMixer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMixer")] != -1);
+		return call<R>("getMixer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::sampled::Mixer$Info *, typename... Args>
+	auto getMixerInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMixerInfo")] != -1);
+		return call<R>("getMixerInfo", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

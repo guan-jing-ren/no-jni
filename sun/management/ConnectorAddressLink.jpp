@@ -1,0 +1,50 @@
+#ifndef sun_management_ConnectorAddressLink_HPP
+#define sun_management_ConnectorAddressLink_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::management::ConnectorAddressLink : public jObject<::sun::management::ConnectorAddressLink, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_management / "ConnectorAddressLink";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::lang::String)>("export"), //
+		jMethod<::jvoid(::java::util::Map)>("exportRemote"), //
+		jMethod<::java::lang::String(::jint)>("importFrom"), //
+		jMethod<::java::util::Map(::jint)>("importRemoteFrom"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto export_(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("export")] != -1);
+		return scall<R>("export", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto exportRemote(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("exportRemote")] != -1);
+		return scall<R>("exportRemote", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto importFrom(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("importFrom")] != -1);
+		return scall<R>("importFrom", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	static auto importRemoteFrom(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("importRemoteFrom")] != -1);
+		return scall<R>("importRemoteFrom", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

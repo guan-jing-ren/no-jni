@@ -1,0 +1,72 @@
+#ifndef sun_misc_Perf_HPP
+#define sun_misc_Perf_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::misc::Perf : public jObject<::sun::misc::Perf, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_misc / "Perf";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::nio::ByteBuffer(::jint, ::java::lang::String)>("attach"), //
+		jMethod<::java::nio::ByteBuffer(::java::lang::String, ::jint, ::java::lang::String)>("attach"), //
+		jMethod<::java::nio::ByteBuffer(::java::lang::String, ::jint, ::jint, ::jbyte *, ::jint)>("createByteArray"), //
+		jMethod<::java::nio::ByteBuffer(::java::lang::String, ::jint, ::jint, ::jlong)>("createLong"), //
+		jMethod<::java::nio::ByteBuffer(::java::lang::String, ::jint, ::jint, ::java::lang::String)>("createString"), //
+		jMethod<::java::nio::ByteBuffer(::java::lang::String, ::jint, ::jint, ::java::lang::String, ::jint)>("createString"), //
+		jMethod<::sun::misc::Perf()>("getPerf"), //
+		jMethod<::jlong()>("highResCounter"), //
+		jMethod<::jlong()>("highResFrequency"), //
+	};
+
+	template<typename R = ::java::nio::ByteBuffer, typename... Args>
+	auto attach(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("attach")] != -1);
+		return call<R>("attach", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::ByteBuffer, typename... Args>
+	auto createByteArray(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createByteArray")] != -1);
+		return call<R>("createByteArray", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::ByteBuffer, typename... Args>
+	auto createLong(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createLong")] != -1);
+		return call<R>("createLong", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::ByteBuffer, typename... Args>
+	auto createString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createString")] != -1);
+		return call<R>("createString", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::misc::Perf, typename... Args>
+	static auto getPerf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPerf")] != -1);
+		return scall<R>("getPerf", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto highResCounter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("highResCounter")] != -1);
+		return call<R>("highResCounter", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto highResFrequency(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("highResFrequency")] != -1);
+		return call<R>("highResFrequency", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

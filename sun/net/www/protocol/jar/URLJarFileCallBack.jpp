@@ -1,0 +1,28 @@
+#ifndef sun_net_www_protocol_jar_URLJarFileCallBack_HPP
+#define sun_net_www_protocol_jar_URLJarFileCallBack_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::sun::net::www::protocol::jar::URLJarFileCallBack : public jObject<::sun::net::www::protocol::jar::URLJarFileCallBack, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_net_www_protocol_jar / "URLJarFileCallBack";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::jar::JarFile(::java::net::URL)>("retrieve"), //
+	};
+
+	template<typename R = ::java::util::jar::JarFile, typename... Args>
+	auto retrieve(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("retrieve")] != -1);
+		return call<R>("retrieve", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,36 @@
+#ifndef sun_awt_X11_XErrorHandler$IgnoreBadWindowHandler_HPP
+#define sun_awt_X11_XErrorHandler$IgnoreBadWindowHandler_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::X11::XErrorHandler$IgnoreBadWindowHandler : public jObject<::sun::awt::X11::XErrorHandler$IgnoreBadWindowHandler, ::sun::awt::X11::XErrorHandler$XBaseErrorHandler> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_X11 / "XErrorHandler$IgnoreBadWindowHandler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::sun::awt::X11::XErrorHandler$IgnoreBadWindowHandler()>("getInstance"), //
+		jMethod<::jint(::jlong, ::sun::awt::X11::XErrorEvent)>("handleError"), //
+	};
+
+	template<typename R = ::sun::awt::X11::XErrorHandler$IgnoreBadWindowHandler, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto handleError(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("handleError")] != -1);
+		return call<R>("handleError", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

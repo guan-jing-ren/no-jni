@@ -1,0 +1,35 @@
+#ifndef com_sun_tracing_Probe_HPP
+#define com_sun_tracing_Probe_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::com::sun::tracing::Probe : public jObject<::com::sun::tracing::Probe, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_tracing / "Probe";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean()>("isEnabled"), //
+		jMethod<::jvoid(::java::lang::Object *)>("trigger"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isEnabled(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isEnabled")] != -1);
+		return call<R>("isEnabled", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto trigger(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("trigger")] != -1);
+		return call<R>("trigger", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,42 @@
+#ifndef sun_awt_EventQueueDelegate$Delegate_HPP
+#define sun_awt_EventQueueDelegate$Delegate_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::EventQueueDelegate$Delegate : public jObject<::sun::awt::EventQueueDelegate$Delegate, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "EventQueueDelegate$Delegate";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::awt::AWTEvent, ::java::lang::Object)>("afterDispatch"), //
+		jMethod<::java::lang::Object(::java::awt::AWTEvent)>("beforeDispatch"), //
+		jMethod<::java::awt::AWTEvent(::java::awt::EventQueue)>("getNextEvent"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto afterDispatch(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("afterDispatch")] != -1);
+		return call<R>("afterDispatch", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto beforeDispatch(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("beforeDispatch")] != -1);
+		return call<R>("beforeDispatch", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::AWTEvent, typename... Args>
+	auto getNextEvent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNextEvent")] != -1);
+		return call<R>("getNextEvent", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

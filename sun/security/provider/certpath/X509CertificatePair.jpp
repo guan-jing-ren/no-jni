@@ -1,0 +1,79 @@
+#ifndef sun_security_provider_certpath_X509CertificatePair_HPP
+#define sun_security_provider_certpath_X509CertificatePair_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::security::provider::certpath::X509CertificatePair : public jObject<::sun::security::provider::certpath::X509CertificatePair, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_provider_certpath / "X509CertificatePair";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::security::cert::X509Certificate, ::java::security::cert::X509Certificate)>(), //
+		jMethod<::jvoid()>("clearCache"), //
+		jMethod<::sun::security::provider::certpath::X509CertificatePair(::jbyte *)>("generateCertificatePair"), //
+		jMethod<::jbyte *()>("getEncoded"), //
+		jMethod<::java::security::cert::X509Certificate()>("getForward"), //
+		jMethod<::java::security::cert::X509Certificate()>("getReverse"), //
+		jMethod<::jvoid(::java::security::cert::X509Certificate)>("setForward"), //
+		jMethod<::jvoid(::java::security::cert::X509Certificate)>("setReverse"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto clearCache(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clearCache")] != -1);
+		return scall<R>("clearCache", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::provider::certpath::X509CertificatePair, typename... Args>
+	static auto generateCertificatePair(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("generateCertificatePair")] != -1);
+		return scall<R>("generateCertificatePair", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getEncoded(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEncoded")] != -1);
+		return call<R>("getEncoded", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::X509Certificate, typename... Args>
+	auto getForward(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getForward")] != -1);
+		return call<R>("getForward", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::X509Certificate, typename... Args>
+	auto getReverse(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getReverse")] != -1);
+		return call<R>("getReverse", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setForward(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setForward")] != -1);
+		return call<R>("setForward", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setReverse(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setReverse")] != -1);
+		return call<R>("setReverse", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

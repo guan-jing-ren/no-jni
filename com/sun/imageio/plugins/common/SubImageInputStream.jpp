@@ -1,0 +1,44 @@
+#ifndef com_sun_imageio_plugins_common_SubImageInputStream_HPP
+#define com_sun_imageio_plugins_common_SubImageInputStream_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::imageio::plugins::common::SubImageInputStream : public jObject<::com::sun::imageio::plugins::common::SubImageInputStream, ::javax::imageio::stream::ImageInputStreamImpl> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_imageio_plugins_common / "SubImageInputStream";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::imageio::stream::ImageInputStream, ::jint)>(), //
+		jMethod<::jlong()>("length"), //
+		jMethod<::jint()>("read"), //
+		jMethod<::jint(::jbyte *, ::jint, ::jint)>("read"), //
+		jMethod<::jvoid(::jlong)>("seek"), //
+	};
+
+	template<typename R = ::jlong, typename... Args>
+	auto length(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("length")] != -1);
+		return call<R>("length", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto seek(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("seek")] != -1);
+		return call<R>("seek", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

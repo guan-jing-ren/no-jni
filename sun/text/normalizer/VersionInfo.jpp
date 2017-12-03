@@ -1,0 +1,36 @@
+#ifndef sun_text_normalizer_VersionInfo_HPP
+#define sun_text_normalizer_VersionInfo_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::text::normalizer::VersionInfo : public jObject<::sun::text::normalizer::VersionInfo, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_text_normalizer / "VersionInfo";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint(::sun::text::normalizer::VersionInfo)>("compareTo"), //
+		jMethod<::sun::text::normalizer::VersionInfo(::jint, ::jint, ::jint, ::jint)>("getInstance"), //
+		jMethod<::sun::text::normalizer::VersionInfo(::java::lang::String)>("getInstance"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto compareTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("compareTo")] != -1);
+		return call<R>("compareTo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::text::normalizer::VersionInfo, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

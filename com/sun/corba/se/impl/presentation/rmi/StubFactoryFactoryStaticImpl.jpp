@@ -1,0 +1,43 @@
+#ifndef com_sun_corba_se_impl_presentation_rmi_StubFactoryFactoryStaticImpl_HPP
+#define com_sun_corba_se_impl_presentation_rmi_StubFactoryFactoryStaticImpl_HPP
+
+#include "../../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::impl::presentation::rmi::StubFactoryFactoryStaticImpl : public jObject<::com::sun::corba::se::impl::presentation::rmi::StubFactoryFactoryStaticImpl, ::com::sun::corba::se::impl::presentation::rmi::StubFactoryFactoryBase> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_impl_presentation_rmi / "StubFactoryFactoryStaticImpl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::com::sun::corba::se::spi::presentation::rmi::PresentationManager$StubFactory(::java::lang::String, ::jboolean, ::java::lang::String, ::java::lang::Class, ::java::lang::ClassLoader)>("createStubFactory"), //
+		jMethod<::jboolean()>("createsDynamicStubs"), //
+		jMethod<::javax::rmi::CORBA::Tie(::java::lang::Class)>("getTie"), //
+	};
+
+	template<typename R = ::com::sun::corba::se::spi::presentation::rmi::PresentationManager$StubFactory, typename... Args>
+	auto createStubFactory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createStubFactory")] != -1);
+		return call<R>("createStubFactory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto createsDynamicStubs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createsDynamicStubs")] != -1);
+		return call<R>("createsDynamicStubs", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::rmi::CORBA::Tie, typename... Args>
+	auto getTie(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTie")] != -1);
+		return call<R>("getTie", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

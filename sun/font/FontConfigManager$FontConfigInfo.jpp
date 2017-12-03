@@ -1,0 +1,35 @@
+#ifndef sun_font_FontConfigManager$FontConfigInfo_HPP
+#define sun_font_FontConfigManager$FontConfigInfo_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::FontConfigManager$FontConfigInfo : public jObject<::sun::font::FontConfigManager$FontConfigInfo, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "FontConfigManager$FontConfigInfo";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String *>("cacheDirs"), //
+		jField<::jint>("fcVersion"), //
+	};
+
+	template<typename F = ::java::lang::String *>
+	auto cacheDirs() const {
+		static_assert(field_signatures[jField<F>("cacheDirs")] != -1);
+		return at<F>("cacheDirs");
+	}
+
+	template<typename F = ::jint>
+	auto fcVersion() const {
+		static_assert(field_signatures[jField<F>("fcVersion")] != -1);
+		return at<F>("fcVersion");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+	};
+
+};
+
+#endif

@@ -1,0 +1,29 @@
+#ifndef sun_misc_JarFilter_HPP
+#define sun_misc_JarFilter_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::misc::JarFilter : public jObject<::sun::misc::JarFilter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_misc / "JarFilter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jboolean(::java::io::File, ::java::lang::String)>("accept"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto accept(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("accept")] != -1);
+		return call<R>("accept", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,79 @@
+#ifndef sun_font_FcFontConfiguration_HPP
+#define sun_font_FcFontConfiguration_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::FcFontConfiguration : public jObject<::sun::font::FcFontConfiguration, ::sun::awt::FontConfiguration> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "FcFontConfiguration";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::font::SunFontManager)>(), //
+		jConstructor<::jvoid(::sun::font::SunFontManager, ::jboolean, ::jboolean)>(), //
+		jMethod<::sun::font::CompositeFontDescriptor *()>("get2DCompositeFontInfo"), //
+		jMethod<::java::lang::String()>("getExtraFontPath"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::lang::String)>("getFallbackFamilyName"), //
+		jMethod<::java::lang::String(::java::lang::String)>("getFileNameFromPlatformName"), //
+		jMethod<::jint()>("getNumberCoreFonts"), //
+		jMethod<::java::lang::String *()>("getPlatformFontNames"), //
+		jMethod<::jboolean()>("init"), //
+		jMethod<::jboolean(::java::lang::String)>("needToSearchForFile"), //
+	};
+
+	template<typename R = ::sun::font::CompositeFontDescriptor *, typename... Args>
+	auto get2DCompositeFontInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get2DCompositeFontInfo")] != -1);
+		return call<R>("get2DCompositeFontInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getExtraFontPath(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getExtraFontPath")] != -1);
+		return call<R>("getExtraFontPath", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getFallbackFamilyName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFallbackFamilyName")] != -1);
+		return call<R>("getFallbackFamilyName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getFileNameFromPlatformName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFileNameFromPlatformName")] != -1);
+		return call<R>("getFileNameFromPlatformName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getNumberCoreFonts(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNumberCoreFonts")] != -1);
+		return call<R>("getNumberCoreFonts", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getPlatformFontNames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPlatformFontNames")] != -1);
+		return call<R>("getPlatformFontNames", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto init(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("init")] != -1);
+		return call<R>("init", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto needToSearchForFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("needToSearchForFile")] != -1);
+		return call<R>("needToSearchForFile", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,64 @@
+#ifndef sun_text_normalizer_UnicodeSetIterator_HPP
+#define sun_text_normalizer_UnicodeSetIterator_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::text::normalizer::UnicodeSetIterator : public jObject<::sun::text::normalizer::UnicodeSetIterator, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_text_normalizer / "UnicodeSetIterator";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("IS_STRING"), //
+		jField<::jint>("codepoint"), //
+		jField<::jint>("codepointEnd"), //
+		jField<::java::lang::String>("string"), //
+	};
+
+	template<typename F = ::jint>
+	static auto IS_STRING() {
+		static_assert(field_signatures[jField<F>("IS_STRING")] != -1);
+		return sat<F>("IS_STRING");
+	}
+
+	template<typename F = ::jint>
+	auto codepoint() const {
+		static_assert(field_signatures[jField<F>("codepoint")] != -1);
+		return at<F>("codepoint");
+	}
+
+	template<typename F = ::jint>
+	auto codepointEnd() const {
+		static_assert(field_signatures[jField<F>("codepointEnd")] != -1);
+		return at<F>("codepointEnd");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto string() const {
+		static_assert(field_signatures[jField<F>("string")] != -1);
+		return at<F>("string");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::text::normalizer::UnicodeSet)>(), //
+		jMethod<::jboolean()>("nextRange"), //
+		jMethod<::jvoid()>("reset"), //
+		jMethod<::jvoid(::sun::text::normalizer::UnicodeSet)>("reset"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto nextRange(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("nextRange")] != -1);
+		return call<R>("nextRange", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto reset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("reset")] != -1);
+		return call<R>("reset", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

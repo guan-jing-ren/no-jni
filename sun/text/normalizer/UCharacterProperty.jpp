@@ -1,0 +1,132 @@
+#ifndef sun_text_normalizer_UCharacterProperty_HPP
+#define sun_text_normalizer_UCharacterProperty_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::text::normalizer::UCharacterProperty : public jObject<::sun::text::normalizer::UCharacterProperty, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_text_normalizer / "UCharacterProperty";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("SRC_COUNT"), //
+		jField<::jint>("SRC_PROPSVEC"), //
+		jField<::jchar *>("m_trieData_"), //
+		jField<::jchar *>("m_trieIndex_"), //
+		jField<::jint>("m_trieInitialValue_"), //
+		jField<::sun::text::normalizer::CharTrie>("m_trie_"), //
+		jField<::sun::text::normalizer::VersionInfo>("m_unicodeVersion_"), //
+	};
+
+	template<typename F = ::jint>
+	static auto SRC_COUNT() {
+		static_assert(field_signatures[jField<F>("SRC_COUNT")] != -1);
+		return sat<F>("SRC_COUNT");
+	}
+
+	template<typename F = ::jint>
+	static auto SRC_PROPSVEC() {
+		static_assert(field_signatures[jField<F>("SRC_PROPSVEC")] != -1);
+		return sat<F>("SRC_PROPSVEC");
+	}
+
+	template<typename F = ::jchar *>
+	auto m_trieData_() const {
+		static_assert(field_signatures[jField<F>("m_trieData_")] != -1);
+		return at<F>("m_trieData_");
+	}
+
+	template<typename F = ::jchar *>
+	auto m_trieIndex_() const {
+		static_assert(field_signatures[jField<F>("m_trieIndex_")] != -1);
+		return at<F>("m_trieIndex_");
+	}
+
+	template<typename F = ::jint>
+	auto m_trieInitialValue_() const {
+		static_assert(field_signatures[jField<F>("m_trieInitialValue_")] != -1);
+		return at<F>("m_trieInitialValue_");
+	}
+
+	template<typename F = ::sun::text::normalizer::CharTrie>
+	auto m_trie_() const {
+		static_assert(field_signatures[jField<F>("m_trie_")] != -1);
+		return at<F>("m_trie_");
+	}
+
+	template<typename F = ::sun::text::normalizer::VersionInfo>
+	auto m_unicodeVersion_() const {
+		static_assert(field_signatures[jField<F>("m_unicodeVersion_")] != -1);
+		return at<F>("m_unicodeVersion_");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint(::jint, ::jint)>("getAdditional"), //
+		jMethod<::sun::text::normalizer::VersionInfo(::jint)>("getAge"), //
+		jMethod<::sun::text::normalizer::UCharacterProperty()>("getInstance"), //
+		jMethod<::jint(::jint)>("getProperty"), //
+		jMethod<::jint(::jchar, ::jchar)>("getRawSupplementary"), //
+		jMethod<::jint(::jint)>("getUnsignedValue"), //
+		jMethod<::jboolean(::jint)>("isRuleWhiteSpace"), //
+		jMethod<::jvoid(::sun::text::normalizer::CharTrie$FriendAgent)>("setIndexData"), //
+		jMethod<::jvoid(::sun::text::normalizer::UnicodeSet)>("upropsvec_addPropertyStarts"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getAdditional(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAdditional")] != -1);
+		return call<R>("getAdditional", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::text::normalizer::VersionInfo, typename... Args>
+	auto getAge(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAge")] != -1);
+		return call<R>("getAge", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::text::normalizer::UCharacterProperty, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getProperty(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getProperty")] != -1);
+		return call<R>("getProperty", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto getRawSupplementary(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRawSupplementary")] != -1);
+		return scall<R>("getRawSupplementary", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto getUnsignedValue(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUnsignedValue")] != -1);
+		return scall<R>("getUnsignedValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isRuleWhiteSpace(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isRuleWhiteSpace")] != -1);
+		return scall<R>("isRuleWhiteSpace", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setIndexData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setIndexData")] != -1);
+		return call<R>("setIndexData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto upropsvec_addPropertyStarts(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("upropsvec_addPropertyStarts")] != -1);
+		return call<R>("upropsvec_addPropertyStarts", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

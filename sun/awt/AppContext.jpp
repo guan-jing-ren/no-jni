@@ -1,0 +1,161 @@
+#ifndef sun_awt_AppContext_HPP
+#define sun_awt_AppContext_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::AppContext : public jObject<::sun::awt::AppContext, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "AppContext";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("DISPOSED_PROPERTY_NAME"), //
+		jField<::java::lang::Object>("EVENT_QUEUE_COND_KEY"), //
+		jField<::java::lang::Object>("EVENT_QUEUE_KEY"), //
+		jField<::java::lang::Object>("EVENT_QUEUE_LOCK_KEY"), //
+		jField<::java::lang::String>("GUI_DISPOSED"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto DISPOSED_PROPERTY_NAME() {
+		static_assert(field_signatures[jField<F>("DISPOSED_PROPERTY_NAME")] != -1);
+		return sat<F>("DISPOSED_PROPERTY_NAME");
+	}
+
+	template<typename F = ::java::lang::Object>
+	static auto EVENT_QUEUE_COND_KEY() {
+		static_assert(field_signatures[jField<F>("EVENT_QUEUE_COND_KEY")] != -1);
+		return sat<F>("EVENT_QUEUE_COND_KEY");
+	}
+
+	template<typename F = ::java::lang::Object>
+	static auto EVENT_QUEUE_KEY() {
+		static_assert(field_signatures[jField<F>("EVENT_QUEUE_KEY")] != -1);
+		return sat<F>("EVENT_QUEUE_KEY");
+	}
+
+	template<typename F = ::java::lang::Object>
+	static auto EVENT_QUEUE_LOCK_KEY() {
+		static_assert(field_signatures[jField<F>("EVENT_QUEUE_LOCK_KEY")] != -1);
+		return sat<F>("EVENT_QUEUE_LOCK_KEY");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto GUI_DISPOSED() {
+		static_assert(field_signatures[jField<F>("GUI_DISPOSED")] != -1);
+		return sat<F>("GUI_DISPOSED");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::String, ::java::beans::PropertyChangeListener)>("addPropertyChangeListener"), //
+		jMethod<::jvoid()>("dispose"), //
+		jMethod<::java::lang::Object(::java::lang::Object)>("get"), //
+		jMethod<::sun::awt::AppContext()>("getAppContext"), //
+		jMethod<::java::util::Set()>("getAppContexts"), //
+		jMethod<::java::lang::ClassLoader()>("getContextClassLoader"), //
+		jMethod<::java::beans::PropertyChangeListener *()>("getPropertyChangeListeners"), //
+		jMethod<::java::beans::PropertyChangeListener *(::java::lang::String)>("getPropertyChangeListeners"), //
+		jMethod<::java::lang::Object(::java::lang::Object, ::java::util::function::Supplier)>("getSoftReferenceValue"), //
+		jMethod<::java::lang::ThreadGroup()>("getThreadGroup"), //
+		jMethod<::jboolean()>("isDisposed"), //
+		jMethod<::jboolean(::sun::awt::AppContext)>("isMainContext"), //
+		jMethod<::java::lang::Object(::java::lang::Object, ::java::lang::Object)>("put"), //
+		jMethod<::java::lang::Object(::java::lang::Object)>("remove"), //
+		jMethod<::jvoid(::java::lang::String, ::java::beans::PropertyChangeListener)>("removePropertyChangeListener"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addPropertyChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addPropertyChangeListener")] != -1);
+		return call<R>("addPropertyChangeListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispose(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dispose")] != -1);
+		return call<R>("dispose", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::awt::AppContext, typename... Args>
+	static auto getAppContext(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAppContext")] != -1);
+		return scall<R>("getAppContext", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	static auto getAppContexts(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAppContexts")] != -1);
+		return scall<R>("getAppContexts", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::ClassLoader, typename... Args>
+	auto getContextClassLoader(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getContextClassLoader")] != -1);
+		return call<R>("getContextClassLoader", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::beans::PropertyChangeListener *, typename... Args>
+	auto getPropertyChangeListeners(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPropertyChangeListeners")] != -1);
+		return call<R>("getPropertyChangeListeners", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto getSoftReferenceValue(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSoftReferenceValue")] != -1);
+		return scall<R>("getSoftReferenceValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::ThreadGroup, typename... Args>
+	auto getThreadGroup(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getThreadGroup")] != -1);
+		return call<R>("getThreadGroup", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDisposed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isDisposed")] != -1);
+		return call<R>("isDisposed", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isMainContext(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isMainContext")] != -1);
+		return scall<R>("isMainContext", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto put(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("put")] != -1);
+		return call<R>("put", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto remove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removePropertyChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removePropertyChangeListener")] != -1);
+		return call<R>("removePropertyChangeListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

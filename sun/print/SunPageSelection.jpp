@@ -1,0 +1,63 @@
+#ifndef sun_print_SunPageSelection_HPP
+#define sun_print_SunPageSelection_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::print::SunPageSelection : public jObject<::sun::print::SunPageSelection, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_print / "SunPageSelection";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::print::SunPageSelection>("ALL"), //
+		jField<::sun::print::SunPageSelection>("RANGE"), //
+		jField<::sun::print::SunPageSelection>("SELECTION"), //
+	};
+
+	template<typename F = ::sun::print::SunPageSelection>
+	static auto ALL() {
+		static_assert(field_signatures[jField<F>("ALL")] != -1);
+		return sat<F>("ALL");
+	}
+
+	template<typename F = ::sun::print::SunPageSelection>
+	static auto RANGE() {
+		static_assert(field_signatures[jField<F>("RANGE")] != -1);
+		return sat<F>("RANGE");
+	}
+
+	template<typename F = ::sun::print::SunPageSelection>
+	static auto SELECTION() {
+		static_assert(field_signatures[jField<F>("SELECTION")] != -1);
+		return sat<F>("SELECTION");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint)>(), //
+		jMethod<::java::lang::Class()>("getCategory"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getCategory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCategory")] != -1);
+		return call<R>("getCategory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

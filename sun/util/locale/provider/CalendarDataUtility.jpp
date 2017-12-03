@@ -1,0 +1,76 @@
+#ifndef sun_util_locale_provider_CalendarDataUtility_HPP
+#define sun_util_locale_provider_CalendarDataUtility_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::util::locale::provider::CalendarDataUtility : public jObject<::sun::util::locale::provider::CalendarDataUtility, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_util_locale_provider / "CalendarDataUtility";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("FIRST_DAY_OF_WEEK"), //
+		jField<::java::lang::String>("MINIMAL_DAYS_IN_FIRST_WEEK"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto FIRST_DAY_OF_WEEK() {
+		static_assert(field_signatures[jField<F>("FIRST_DAY_OF_WEEK")] != -1);
+		return sat<F>("FIRST_DAY_OF_WEEK");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto MINIMAL_DAYS_IN_FIRST_WEEK() {
+		static_assert(field_signatures[jField<F>("MINIMAL_DAYS_IN_FIRST_WEEK")] != -1);
+		return sat<F>("MINIMAL_DAYS_IN_FIRST_WEEK");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String(::java::lang::String, ::jint, ::jint, ::jint, ::java::util::Locale)>("retrieveFieldValueName"), //
+		jMethod<::java::util::Map(::java::lang::String, ::jint, ::jint, ::java::util::Locale)>("retrieveFieldValueNames"), //
+		jMethod<::jint(::java::util::Locale)>("retrieveFirstDayOfWeek"), //
+		jMethod<::java::lang::String(::java::lang::String, ::jint, ::jint, ::jint, ::java::util::Locale)>("retrieveJavaTimeFieldValueName"), //
+		jMethod<::java::util::Map(::java::lang::String, ::jint, ::jint, ::java::util::Locale)>("retrieveJavaTimeFieldValueNames"), //
+		jMethod<::jint(::java::util::Locale)>("retrieveMinimalDaysInFirstWeek"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto retrieveFieldValueName(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("retrieveFieldValueName")] != -1);
+		return scall<R>("retrieveFieldValueName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	static auto retrieveFieldValueNames(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("retrieveFieldValueNames")] != -1);
+		return scall<R>("retrieveFieldValueNames", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto retrieveFirstDayOfWeek(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("retrieveFirstDayOfWeek")] != -1);
+		return scall<R>("retrieveFirstDayOfWeek", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto retrieveJavaTimeFieldValueName(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("retrieveJavaTimeFieldValueName")] != -1);
+		return scall<R>("retrieveJavaTimeFieldValueName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	static auto retrieveJavaTimeFieldValueNames(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("retrieveJavaTimeFieldValueNames")] != -1);
+		return scall<R>("retrieveJavaTimeFieldValueNames", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto retrieveMinimalDaysInFirstWeek(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("retrieveMinimalDaysInFirstWeek")] != -1);
+		return scall<R>("retrieveMinimalDaysInFirstWeek", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,28 @@
+#ifndef com_sun_jndi_ldap_pool_PooledConnection_HPP
+#define com_sun_jndi_ldap_pool_PooledConnection_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::jndi::ldap::pool::PooledConnection : public jObject<::com::sun::jndi::ldap::pool::PooledConnection, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_jndi_ldap_pool / "PooledConnection";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("closeConnection"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto closeConnection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("closeConnection")] != -1);
+		return call<R>("closeConnection", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

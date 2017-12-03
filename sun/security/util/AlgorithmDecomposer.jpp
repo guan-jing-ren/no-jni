@@ -1,0 +1,43 @@
+#ifndef sun_security_util_AlgorithmDecomposer_HPP
+#define sun_security_util_AlgorithmDecomposer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::util::AlgorithmDecomposer : public jObject<::sun::security::util::AlgorithmDecomposer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_util / "AlgorithmDecomposer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::util::Set(::java::lang::String)>("decompose"), //
+		jMethod<::java::util::Set(::java::lang::String)>("decomposeOneHash"), //
+		jMethod<::java::lang::String(::java::lang::String)>("hashName"), //
+	};
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto decompose(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("decompose")] != -1);
+		return call<R>("decompose", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	static auto decomposeOneHash(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("decomposeOneHash")] != -1);
+		return scall<R>("decomposeOneHash", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto hashName(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashName")] != -1);
+		return scall<R>("hashName", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

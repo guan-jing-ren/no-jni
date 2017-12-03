@@ -1,0 +1,43 @@
+#ifndef sun_awt_SunHints$Key_HPP
+#define sun_awt_SunHints$Key_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::SunHints$Key : public jObject<::sun::awt::SunHints$Key, ::java::awt::RenderingHints$Key> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "SunHints$Key";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::java::lang::String)>(), //
+		jMethod<::jint()>("getIndex"), //
+		jMethod<::jboolean(::java::lang::Object)>("isCompatibleValue"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIndex")] != -1);
+		return call<R>("getIndex", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isCompatibleValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isCompatibleValue")] != -1);
+		return call<R>("isCompatibleValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

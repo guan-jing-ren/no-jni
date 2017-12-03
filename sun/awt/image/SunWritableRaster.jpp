@@ -1,0 +1,71 @@
+#ifndef sun_awt_image_SunWritableRaster_HPP
+#define sun_awt_image_SunWritableRaster_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::image::SunWritableRaster : public jObject<::sun::awt::image::SunWritableRaster, ::java::awt::image::WritableRaster> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_image / "SunWritableRaster";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::image::SampleModel, ::java::awt::Point)>(), //
+		jConstructor<::jvoid(::java::awt::image::SampleModel, ::java::awt::image::DataBuffer, ::java::awt::Point)>(), //
+		jConstructor<::jvoid(::java::awt::image::SampleModel, ::java::awt::image::DataBuffer, ::java::awt::Rectangle, ::java::awt::Point, ::java::awt::image::WritableRaster)>(), //
+		jMethod<::jvoid(::java::awt::image::DataBuffer)>("makeTrackable"), //
+		jMethod<::jvoid()>("markDirty"), //
+		jMethod<::jvoid(::java::awt::Image)>("markDirty"), //
+		jMethod<::jvoid(::java::awt::image::DataBuffer)>("markDirty"), //
+		jMethod<::jvoid(::java::awt::image::WritableRaster)>("markDirty"), //
+		jMethod<::jvoid(::sun::awt::image::SunWritableRaster$DataStealer)>("setDataStealer"), //
+		jMethod<::jvoid(::java::awt::image::DataBuffer, ::sun::java2d::StateTrackableDelegate)>("setTrackable"), //
+		jMethod<::jbyte *(::java::awt::image::DataBufferByte, ::jint)>("stealData"), //
+		jMethod<::jint *(::java::awt::image::DataBufferInt, ::jint)>("stealData"), //
+		jMethod<::jshort *(::java::awt::image::DataBufferUShort, ::jint)>("stealData"), //
+		jMethod<::sun::java2d::StateTrackableDelegate(::java::awt::image::DataBuffer)>("stealTrackable"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto makeTrackable(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("makeTrackable")] != -1);
+		return scall<R>("makeTrackable", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto markDirty(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("markDirty")] != -1);
+		return call<R>("markDirty", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setDataStealer(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setDataStealer")] != -1);
+		return scall<R>("setDataStealer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setTrackable(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setTrackable")] != -1);
+		return scall<R>("setTrackable", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	static auto stealData(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("stealData")] != -1);
+		return scall<R>("stealData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::StateTrackableDelegate, typename... Args>
+	static auto stealTrackable(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("stealTrackable")] != -1);
+		return scall<R>("stealTrackable", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

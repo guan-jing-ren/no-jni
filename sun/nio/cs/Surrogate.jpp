@@ -1,0 +1,125 @@
+#ifndef sun_nio_cs_Surrogate_HPP
+#define sun_nio_cs_Surrogate_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::nio::cs::Surrogate : public jObject<::sun::nio::cs::Surrogate, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_nio_cs / "Surrogate";
+
+	constexpr static Enume field_signatures{
+		jField<::jchar>("MAX"), //
+		jField<::jchar>("MAX_HIGH"), //
+		jField<::jchar>("MAX_LOW"), //
+		jField<::jchar>("MIN"), //
+		jField<::jchar>("MIN_HIGH"), //
+		jField<::jchar>("MIN_LOW"), //
+		jField<::jint>("UCS4_MAX"), //
+		jField<::jint>("UCS4_MIN"), //
+	};
+
+	template<typename F = ::jchar>
+	static auto MAX() {
+		static_assert(field_signatures[jField<F>("MAX")] != -1);
+		return sat<F>("MAX");
+	}
+
+	template<typename F = ::jchar>
+	static auto MAX_HIGH() {
+		static_assert(field_signatures[jField<F>("MAX_HIGH")] != -1);
+		return sat<F>("MAX_HIGH");
+	}
+
+	template<typename F = ::jchar>
+	static auto MAX_LOW() {
+		static_assert(field_signatures[jField<F>("MAX_LOW")] != -1);
+		return sat<F>("MAX_LOW");
+	}
+
+	template<typename F = ::jchar>
+	static auto MIN() {
+		static_assert(field_signatures[jField<F>("MIN")] != -1);
+		return sat<F>("MIN");
+	}
+
+	template<typename F = ::jchar>
+	static auto MIN_HIGH() {
+		static_assert(field_signatures[jField<F>("MIN_HIGH")] != -1);
+		return sat<F>("MIN_HIGH");
+	}
+
+	template<typename F = ::jchar>
+	static auto MIN_LOW() {
+		static_assert(field_signatures[jField<F>("MIN_LOW")] != -1);
+		return sat<F>("MIN_LOW");
+	}
+
+	template<typename F = ::jint>
+	static auto UCS4_MAX() {
+		static_assert(field_signatures[jField<F>("UCS4_MAX")] != -1);
+		return sat<F>("UCS4_MAX");
+	}
+
+	template<typename F = ::jint>
+	static auto UCS4_MIN() {
+		static_assert(field_signatures[jField<F>("UCS4_MIN")] != -1);
+		return sat<F>("UCS4_MIN");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jchar(::jint)>("high"), //
+		jMethod<::jboolean(::jint)>("is"), //
+		jMethod<::jboolean(::jint)>("isHigh"), //
+		jMethod<::jboolean(::jint)>("isLow"), //
+		jMethod<::jchar(::jint)>("low"), //
+		jMethod<::jboolean(::jint)>("neededFor"), //
+		jMethod<::jint(::jchar, ::jchar)>("toUCS4"), //
+	};
+
+	template<typename R = ::jchar, typename... Args>
+	static auto high(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("high")] != -1);
+		return scall<R>("high", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto is(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("is")] != -1);
+		return scall<R>("is", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isHigh(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isHigh")] != -1);
+		return scall<R>("isHigh", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isLow(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isLow")] != -1);
+		return scall<R>("isLow", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jchar, typename... Args>
+	static auto low(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("low")] != -1);
+		return scall<R>("low", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto neededFor(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("neededFor")] != -1);
+		return scall<R>("neededFor", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto toUCS4(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toUCS4")] != -1);
+		return scall<R>("toUCS4", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

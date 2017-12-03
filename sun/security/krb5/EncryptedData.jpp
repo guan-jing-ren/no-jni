@@ -1,0 +1,141 @@
+#ifndef sun_security_krb5_EncryptedData_HPP
+#define sun_security_krb5_EncryptedData_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::krb5::EncryptedData : public jObject<::sun::security::krb5::EncryptedData, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_krb5 / "EncryptedData";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("ETYPE_AES128_CTS_HMAC_SHA1_96"), //
+		jField<::jint>("ETYPE_AES256_CTS_HMAC_SHA1_96"), //
+		jField<::jint>("ETYPE_ARCFOUR_HMAC"), //
+		jField<::jint>("ETYPE_ARCFOUR_HMAC_EXP"), //
+		jField<::jint>("ETYPE_DES3_CBC_HMAC_SHA1_KD"), //
+		jField<::jint>("ETYPE_DES_CBC_CRC"), //
+		jField<::jint>("ETYPE_DES_CBC_MD4"), //
+		jField<::jint>("ETYPE_DES_CBC_MD5"), //
+		jField<::jint>("ETYPE_NULL"), //
+	};
+
+	template<typename F = ::jint>
+	static auto ETYPE_AES128_CTS_HMAC_SHA1_96() {
+		static_assert(field_signatures[jField<F>("ETYPE_AES128_CTS_HMAC_SHA1_96")] != -1);
+		return sat<F>("ETYPE_AES128_CTS_HMAC_SHA1_96");
+	}
+
+	template<typename F = ::jint>
+	static auto ETYPE_AES256_CTS_HMAC_SHA1_96() {
+		static_assert(field_signatures[jField<F>("ETYPE_AES256_CTS_HMAC_SHA1_96")] != -1);
+		return sat<F>("ETYPE_AES256_CTS_HMAC_SHA1_96");
+	}
+
+	template<typename F = ::jint>
+	static auto ETYPE_ARCFOUR_HMAC() {
+		static_assert(field_signatures[jField<F>("ETYPE_ARCFOUR_HMAC")] != -1);
+		return sat<F>("ETYPE_ARCFOUR_HMAC");
+	}
+
+	template<typename F = ::jint>
+	static auto ETYPE_ARCFOUR_HMAC_EXP() {
+		static_assert(field_signatures[jField<F>("ETYPE_ARCFOUR_HMAC_EXP")] != -1);
+		return sat<F>("ETYPE_ARCFOUR_HMAC_EXP");
+	}
+
+	template<typename F = ::jint>
+	static auto ETYPE_DES3_CBC_HMAC_SHA1_KD() {
+		static_assert(field_signatures[jField<F>("ETYPE_DES3_CBC_HMAC_SHA1_KD")] != -1);
+		return sat<F>("ETYPE_DES3_CBC_HMAC_SHA1_KD");
+	}
+
+	template<typename F = ::jint>
+	static auto ETYPE_DES_CBC_CRC() {
+		static_assert(field_signatures[jField<F>("ETYPE_DES_CBC_CRC")] != -1);
+		return sat<F>("ETYPE_DES_CBC_CRC");
+	}
+
+	template<typename F = ::jint>
+	static auto ETYPE_DES_CBC_MD4() {
+		static_assert(field_signatures[jField<F>("ETYPE_DES_CBC_MD4")] != -1);
+		return sat<F>("ETYPE_DES_CBC_MD4");
+	}
+
+	template<typename F = ::jint>
+	static auto ETYPE_DES_CBC_MD5() {
+		static_assert(field_signatures[jField<F>("ETYPE_DES_CBC_MD5")] != -1);
+		return sat<F>("ETYPE_DES_CBC_MD5");
+	}
+
+	template<typename F = ::jint>
+	static auto ETYPE_NULL() {
+		static_assert(field_signatures[jField<F>("ETYPE_NULL")] != -1);
+		return sat<F>("ETYPE_NULL");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::java::lang::Integer, ::jbyte *)>(), //
+		jConstructor<::jvoid(::sun::security::krb5::EncryptionKey, ::jbyte *, ::jint)>(), //
+		jMethod<::jbyte *()>("asn1Encode"), //
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::jbyte *(::sun::security::krb5::EncryptionKey, ::jint)>("decrypt"), //
+		jMethod<::jbyte *()>("getBytes"), //
+		jMethod<::jint()>("getEType"), //
+		jMethod<::java::lang::Integer()>("getKeyVersionNumber"), //
+		jMethod<::sun::security::krb5::EncryptedData(::sun::security::util::DerInputStream, ::jbyte, ::jboolean)>("parse"), //
+		jMethod<::jbyte *(::jbyte *)>("reset"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto asn1Encode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("asn1Encode")] != -1);
+		return call<R>("asn1Encode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto decrypt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("decrypt")] != -1);
+		return call<R>("decrypt", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getBytes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBytes")] != -1);
+		return call<R>("getBytes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getEType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEType")] != -1);
+		return call<R>("getEType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Integer, typename... Args>
+	auto getKeyVersionNumber(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getKeyVersionNumber")] != -1);
+		return call<R>("getKeyVersionNumber", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::krb5::EncryptedData, typename... Args>
+	static auto parse(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("parse")] != -1);
+		return scall<R>("parse", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto reset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("reset")] != -1);
+		return call<R>("reset", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

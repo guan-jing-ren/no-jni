@@ -1,0 +1,51 @@
+#ifndef com_sun_corba_se_impl_encoding_CodeSetConversion_HPP
+#define com_sun_corba_se_impl_encoding_CodeSetConversion_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::impl::encoding::CodeSetConversion : public jObject<::com::sun::corba::se::impl::encoding::CodeSetConversion, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_impl_encoding / "CodeSetConversion";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::com::sun::corba::se::impl::encoding::CodeSetConversion$BTCConverter(::com::sun::corba::se::impl::encoding::OSFCodeSetRegistry$Entry)>("getBTCConverter"), //
+		jMethod<::com::sun::corba::se::impl::encoding::CodeSetConversion$BTCConverter(::com::sun::corba::se::impl::encoding::OSFCodeSetRegistry$Entry, ::jboolean)>("getBTCConverter"), //
+		jMethod<::com::sun::corba::se::impl::encoding::CodeSetConversion$CTBConverter(::com::sun::corba::se::impl::encoding::OSFCodeSetRegistry$Entry)>("getCTBConverter"), //
+		jMethod<::com::sun::corba::se::impl::encoding::CodeSetConversion$CTBConverter(::com::sun::corba::se::impl::encoding::OSFCodeSetRegistry$Entry, ::jboolean, ::jboolean)>("getCTBConverter"), //
+		jMethod<::com::sun::corba::se::impl::encoding::CodeSetConversion()>("impl"), //
+		jMethod<::com::sun::corba::se::impl::encoding::CodeSetComponentInfo$CodeSetContext(::com::sun::corba::se::impl::encoding::CodeSetComponentInfo, ::com::sun::corba::se::impl::encoding::CodeSetComponentInfo)>("negotiate"), //
+	};
+
+	template<typename R = ::com::sun::corba::se::impl::encoding::CodeSetConversion$BTCConverter, typename... Args>
+	auto getBTCConverter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBTCConverter")] != -1);
+		return call<R>("getBTCConverter", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::encoding::CodeSetConversion$CTBConverter, typename... Args>
+	auto getCTBConverter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCTBConverter")] != -1);
+		return call<R>("getCTBConverter", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::encoding::CodeSetConversion, typename... Args>
+	static auto impl(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("impl")] != -1);
+		return scall<R>("impl", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::encoding::CodeSetComponentInfo$CodeSetContext, typename... Args>
+	auto negotiate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("negotiate")] != -1);
+		return call<R>("negotiate", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

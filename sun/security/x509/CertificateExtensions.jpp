@@ -1,0 +1,129 @@
+#ifndef sun_security_x509_CertificateExtensions_HPP
+#define sun_security_x509_CertificateExtensions_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::x509::CertificateExtensions : public jObject<::sun::security::x509::CertificateExtensions, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_x509 / "CertificateExtensions";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("IDENT"), //
+		jField<::java::lang::String>("NAME"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto IDENT() {
+		static_assert(field_signatures[jField<F>("IDENT")] != -1);
+		return sat<F>("IDENT");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto NAME() {
+		static_assert(field_signatures[jField<F>("NAME")] != -1);
+		return sat<F>("NAME");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::sun::security::util::DerInputStream)>(), //
+		jMethod<::jvoid(::java::lang::String)>("delete"), //
+		jMethod<::jvoid(::java::io::OutputStream)>("encode"), //
+		jMethod<::jvoid(::java::io::OutputStream, ::jboolean)>("encode"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::lang::Object(::java::lang::String)>("get"), //
+		jMethod<::sun::security::x509::Extension(::java::lang::String)>("get"), //
+		jMethod<::java::util::Collection()>("getAllExtensions"), //
+		jMethod<::java::util::Enumeration()>("getElements"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::java::lang::String(::sun::security::util::ObjectIdentifier)>("getNameByOid"), //
+		jMethod<::java::util::Map()>("getUnparseableExtensions"), //
+		jMethod<::jboolean()>("hasUnsupportedCriticalExtension"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::Object)>("set"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto delete_(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("delete")] != -1);
+		return call<R>("delete", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto encode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encode")] != -1);
+		return call<R>("encode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Collection, typename... Args>
+	auto getAllExtensions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAllExtensions")] != -1);
+		return call<R>("getAllExtensions", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	auto getElements(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getElements")] != -1);
+		return call<R>("getElements", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getNameByOid(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNameByOid")] != -1);
+		return call<R>("getNameByOid", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto getUnparseableExtensions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUnparseableExtensions")] != -1);
+		return call<R>("getUnparseableExtensions", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasUnsupportedCriticalExtension(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hasUnsupportedCriticalExtension")] != -1);
+		return call<R>("hasUnsupportedCriticalExtension", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set")] != -1);
+		return call<R>("set", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,58 @@
+#ifndef com_sun_media_sound_AudioFloatConverter_HPP
+#define com_sun_media_sound_AudioFloatConverter_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::media::sound::AudioFloatConverter : public jObject<::com::sun::media::sound::AudioFloatConverter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_media_sound / "AudioFloatConverter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::com::sun::media::sound::AudioFloatConverter(::javax::sound::sampled::AudioFormat)>("getConverter"), //
+		jMethod<::javax::sound::sampled::AudioFormat()>("getFormat"), //
+		jMethod<::jbyte *(::jfloat *, ::jint, ::jint, ::jbyte *)>("toByteArray"), //
+		jMethod<::jbyte *(::jfloat *, ::jint, ::jint, ::jbyte *, ::jint)>("toByteArray"), //
+		jMethod<::jbyte *(::jfloat *, ::jint, ::jbyte *)>("toByteArray"), //
+		jMethod<::jbyte *(::jfloat *, ::jint, ::jbyte *, ::jint)>("toByteArray"), //
+		jMethod<::jbyte *(::jfloat *, ::jbyte *)>("toByteArray"), //
+		jMethod<::jfloat *(::jbyte *, ::jint, ::jfloat *, ::jint)>("toFloatArray"), //
+		jMethod<::jfloat *(::jbyte *, ::jint, ::jfloat *, ::jint, ::jint)>("toFloatArray"), //
+		jMethod<::jfloat *(::jbyte *, ::jfloat *)>("toFloatArray"), //
+		jMethod<::jfloat *(::jbyte *, ::jfloat *, ::jint)>("toFloatArray"), //
+		jMethod<::jfloat *(::jbyte *, ::jfloat *, ::jint, ::jint)>("toFloatArray"), //
+	};
+
+	template<typename R = ::com::sun::media::sound::AudioFloatConverter, typename... Args>
+	static auto getConverter(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getConverter")] != -1);
+		return scall<R>("getConverter", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::sampled::AudioFormat, typename... Args>
+	auto getFormat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFormat")] != -1);
+		return call<R>("getFormat", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto toByteArray(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toByteArray")] != -1);
+		return call<R>("toByteArray", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat *, typename... Args>
+	auto toFloatArray(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toFloatArray")] != -1);
+		return call<R>("toFloatArray", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

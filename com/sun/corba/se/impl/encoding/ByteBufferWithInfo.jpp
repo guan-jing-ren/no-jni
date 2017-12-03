@@ -1,0 +1,96 @@
+#ifndef com_sun_corba_se_impl_encoding_ByteBufferWithInfo_HPP
+#define com_sun_corba_se_impl_encoding_ByteBufferWithInfo_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::impl::encoding::ByteBufferWithInfo : public jObject<::com::sun::corba::se::impl::encoding::ByteBufferWithInfo, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_impl_encoding / "ByteBufferWithInfo";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("buflen"), //
+		jField<::java::nio::ByteBuffer>("byteBuffer"), //
+		jField<::jboolean>("fragmented"), //
+		jField<::jint>("needed"), //
+	};
+
+	template<typename F = ::jint>
+	auto buflen() const {
+		static_assert(field_signatures[jField<F>("buflen")] != -1);
+		return at<F>("buflen");
+	}
+
+	template<typename F = ::java::nio::ByteBuffer>
+	auto byteBuffer() const {
+		static_assert(field_signatures[jField<F>("byteBuffer")] != -1);
+		return at<F>("byteBuffer");
+	}
+
+	template<typename F = ::jboolean>
+	auto fragmented() const {
+		static_assert(field_signatures[jField<F>("fragmented")] != -1);
+		return at<F>("fragmented");
+	}
+
+	template<typename F = ::jint>
+	auto needed() const {
+		static_assert(field_signatures[jField<F>("needed")] != -1);
+		return at<F>("needed");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::com::sun::corba::se::impl::encoding::ByteBufferWithInfo)>(), //
+		jConstructor<::jvoid(::org::omg::CORBA::ORB, ::com::sun::corba::se::impl::encoding::BufferManagerWrite)>(), //
+		jConstructor<::jvoid(::org::omg::CORBA::ORB, ::com::sun::corba::se::impl::encoding::BufferManagerWrite, ::jboolean)>(), //
+		jConstructor<::jvoid(::org::omg::CORBA::ORB, ::java::nio::ByteBuffer)>(), //
+		jConstructor<::jvoid(::org::omg::CORBA::ORB, ::java::nio::ByteBuffer, ::jint)>(), //
+		jMethod<::jint()>("getLength"), //
+		jMethod<::jint()>("getSize"), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::orb::ORB)>("growBuffer"), //
+		jMethod<::jint()>("position"), //
+		jMethod<::jvoid(::jint)>("position"), //
+		jMethod<::jvoid(::jint)>("setLength"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLength")] != -1);
+		return call<R>("getLength", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSize")] != -1);
+		return call<R>("getSize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto growBuffer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("growBuffer")] != -1);
+		return call<R>("growBuffer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto position(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("position")] != -1);
+		return call<R>("position", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setLength")] != -1);
+		return call<R>("setLength", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

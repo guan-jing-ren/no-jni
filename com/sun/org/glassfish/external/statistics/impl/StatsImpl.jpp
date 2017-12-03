@@ -1,0 +1,49 @@
+#ifndef com_sun_org_glassfish_external_statistics_impl_StatsImpl_HPP
+#define com_sun_org_glassfish_external_statistics_impl_StatsImpl_HPP
+
+#include "../../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::org::glassfish::external::statistics::impl::StatsImpl : public jObject<::com::sun::org::glassfish::external::statistics::impl::StatsImpl, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_org_glassfish_external_statistics_impl / "StatsImpl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::com::sun::org::glassfish::external::statistics::Statistic(::java::lang::String)>("getStatistic"), //
+		jMethod<::java::lang::String *()>("getStatisticNames"), //
+		jMethod<::com::sun::org::glassfish::external::statistics::Statistic *()>("getStatistics"), //
+		jMethod<::jvoid()>("reset"), //
+	};
+
+	template<typename R = ::com::sun::org::glassfish::external::statistics::Statistic, typename... Args>
+	auto getStatistic(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStatistic")] != -1);
+		return call<R>("getStatistic", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getStatisticNames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStatisticNames")] != -1);
+		return call<R>("getStatisticNames", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::org::glassfish::external::statistics::Statistic *, typename... Args>
+	auto getStatistics(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStatistics")] != -1);
+		return call<R>("getStatistics", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto reset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("reset")] != -1);
+		return call<R>("reset", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

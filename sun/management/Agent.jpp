@@ -1,0 +1,82 @@
+#ifndef sun_management_Agent_HPP
+#define sun_management_Agent_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::management::Agent : public jObject<::sun::management::Agent, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_management / "Agent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::lang::String)>("agentmain"), //
+		jMethod<::jvoid(::java::lang::Exception)>("error"), //
+		jMethod<::jvoid(::java::lang::String)>("error"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String)>("error"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String *)>("error"), //
+		jMethod<::java::util::Properties()>("getManagementProperties"), //
+		jMethod<::java::lang::String(::java::lang::String)>("getText"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::lang::String *)>("getText"), //
+		jMethod<::java::util::Properties()>("loadManagementProperties"), //
+		jMethod<::jvoid(::java::lang::String)>("premain"), //
+		jMethod<::jvoid()>("startAgent"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String)>("warning"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto agentmain(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("agentmain")] != -1);
+		return scall<R>("agentmain", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto error(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("error")] != -1);
+		return scall<R>("error", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Properties, typename... Args>
+	static auto getManagementProperties(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getManagementProperties")] != -1);
+		return scall<R>("getManagementProperties", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getText(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getText")] != -1);
+		return scall<R>("getText", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Properties, typename... Args>
+	static auto loadManagementProperties(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("loadManagementProperties")] != -1);
+		return scall<R>("loadManagementProperties", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto premain(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("premain")] != -1);
+		return scall<R>("premain", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto startAgent(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("startAgent")] != -1);
+		return scall<R>("startAgent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto warning(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("warning")] != -1);
+		return scall<R>("warning", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

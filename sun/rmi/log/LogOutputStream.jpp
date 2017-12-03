@@ -1,0 +1,38 @@
+#ifndef sun_rmi_log_LogOutputStream_HPP
+#define sun_rmi_log_LogOutputStream_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::rmi::log::LogOutputStream : public jObject<::sun::rmi::log::LogOutputStream, ::java::io::OutputStream> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_rmi_log / "LogOutputStream";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::RandomAccessFile)>(), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::jvoid(::jint)>("write"), //
+		jMethod<::jvoid(::jbyte *)>("write"), //
+		jMethod<::jvoid(::jbyte *, ::jint, ::jint)>("write"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

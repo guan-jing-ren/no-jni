@@ -1,0 +1,28 @@
+#ifndef sun_misc_JavaObjectInputStreamAccess_HPP
+#define sun_misc_JavaObjectInputStreamAccess_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::misc::JavaObjectInputStreamAccess : public jObject<::sun::misc::JavaObjectInputStreamAccess, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_misc / "JavaObjectInputStreamAccess";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::io::ObjectInputStream, ::sun::misc::ObjectStreamClassValidator)>("setValidator"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setValidator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setValidator")] != -1);
+		return call<R>("setValidator", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

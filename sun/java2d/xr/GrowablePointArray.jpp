@@ -1,0 +1,50 @@
+#ifndef sun_java2d_xr_GrowablePointArray_HPP
+#define sun_java2d_xr_GrowablePointArray_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::xr::GrowablePointArray : public jObject<::sun::java2d::xr::GrowablePointArray, ::sun::java2d::xr::GrowableIntArray> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_xr / "GrowablePointArray";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint)>(), //
+		jMethod<::jint(::jint)>("getX"), //
+		jMethod<::jint(::jint)>("getY"), //
+		jMethod<::jvoid(::jint, ::jint)>("setX"), //
+		jMethod<::jvoid(::jint, ::jint)>("setY"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getX(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getX")] != -1);
+		return call<R>("getX", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getY(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getY")] != -1);
+		return call<R>("getY", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setX(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setX")] != -1);
+		return call<R>("setX", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setY(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setY")] != -1);
+		return call<R>("setY", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

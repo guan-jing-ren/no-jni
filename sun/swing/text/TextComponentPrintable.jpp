@@ -1,0 +1,42 @@
+#ifndef sun_swing_text_TextComponentPrintable_HPP
+#define sun_swing_text_TextComponentPrintable_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::swing::text::TextComponentPrintable : public jObject<::sun::swing::text::TextComponentPrintable, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_swing_text / "TextComponentPrintable";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("getNumberOfPages"), //
+		jMethod<::java::awt::print::Printable(::javax::swing::text::JTextComponent, ::java::text::MessageFormat, ::java::text::MessageFormat)>("getPrintable"), //
+		jMethod<::jint(::java::awt::Graphics, ::java::awt::print::PageFormat, ::jint)>("print"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getNumberOfPages(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNumberOfPages")] != -1);
+		return call<R>("getNumberOfPages", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::print::Printable, typename... Args>
+	static auto getPrintable(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPrintable")] != -1);
+		return scall<R>("getPrintable", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto print(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("print")] != -1);
+		return call<R>("print", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

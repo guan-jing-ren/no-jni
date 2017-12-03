@@ -1,0 +1,35 @@
+#ifndef com_sun_media_sound_ModelChannelMixer_HPP
+#define com_sun_media_sound_ModelChannelMixer_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::media::sound::ModelChannelMixer : public jObject<::com::sun::media::sound::ModelChannelMixer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_media_sound / "ModelChannelMixer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::jfloat **, ::jint, ::jint)>("process"), //
+		jMethod<::jvoid()>("stop"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto process(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("process")] != -1);
+		return call<R>("process", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto stop(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("stop")] != -1);
+		return call<R>("stop", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

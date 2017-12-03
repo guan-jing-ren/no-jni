@@ -1,0 +1,41 @@
+#ifndef sun_awt_image_PixelConverter$ByteGray_HPP
+#define sun_awt_image_PixelConverter$ByteGray_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::image::PixelConverter$ByteGray : public jObject<::sun::awt::image::PixelConverter$ByteGray, ::sun::awt::image::PixelConverter> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_image / "PixelConverter$ByteGray";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::awt::image::PixelConverter>("instance"), //
+	};
+
+	template<typename F = ::sun::awt::image::PixelConverter>
+	static auto instance() {
+		static_assert(field_signatures[jField<F>("instance")] != -1);
+		return sat<F>("instance");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint(::jint, ::java::awt::image::ColorModel)>("pixelToRgb"), //
+		jMethod<::jint(::jint, ::java::awt::image::ColorModel)>("rgbToPixel"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto pixelToRgb(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("pixelToRgb")] != -1);
+		return call<R>("pixelToRgb", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto rgbToPixel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("rgbToPixel")] != -1);
+		return call<R>("rgbToPixel", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

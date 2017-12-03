@@ -1,0 +1,140 @@
+#ifndef sun_font_FontLineMetrics_HPP
+#define sun_font_FontLineMetrics_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::FontLineMetrics : public jObject<::sun::font::FontLineMetrics, ::java::awt::font::LineMetrics> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "FontLineMetrics";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::font::CoreMetrics>("cm"), //
+		jField<::java::awt::font::FontRenderContext>("frc"), //
+		jField<::jint>("numchars"), //
+	};
+
+	template<typename F = ::sun::font::CoreMetrics>
+	auto cm() const {
+		static_assert(field_signatures[jField<F>("cm")] != -1);
+		return at<F>("cm");
+	}
+
+	template<typename F = ::java::awt::font::FontRenderContext>
+	auto frc() const {
+		static_assert(field_signatures[jField<F>("frc")] != -1);
+		return at<F>("frc");
+	}
+
+	template<typename F = ::jint>
+	auto numchars() const {
+		static_assert(field_signatures[jField<F>("numchars")] != -1);
+		return at<F>("numchars");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::sun::font::CoreMetrics, ::java::awt::font::FontRenderContext)>(), //
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jfloat()>("getAscent"), //
+		jMethod<::jint()>("getBaselineIndex"), //
+		jMethod<::jfloat *()>("getBaselineOffsets"), //
+		jMethod<::jfloat()>("getDescent"), //
+		jMethod<::jfloat()>("getHeight"), //
+		jMethod<::jfloat()>("getLeading"), //
+		jMethod<::jint()>("getNumChars"), //
+		jMethod<::jfloat()>("getStrikethroughOffset"), //
+		jMethod<::jfloat()>("getStrikethroughThickness"), //
+		jMethod<::jfloat()>("getUnderlineOffset"), //
+		jMethod<::jfloat()>("getUnderlineThickness"), //
+		jMethod<::jint()>("hashCode"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getAscent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAscent")] != -1);
+		return call<R>("getAscent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getBaselineIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBaselineIndex")] != -1);
+		return call<R>("getBaselineIndex", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat *, typename... Args>
+	auto getBaselineOffsets(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBaselineOffsets")] != -1);
+		return call<R>("getBaselineOffsets", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getDescent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDescent")] != -1);
+		return call<R>("getDescent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getHeight(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHeight")] != -1);
+		return call<R>("getHeight", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getLeading(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLeading")] != -1);
+		return call<R>("getLeading", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getNumChars(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNumChars")] != -1);
+		return call<R>("getNumChars", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getStrikethroughOffset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStrikethroughOffset")] != -1);
+		return call<R>("getStrikethroughOffset", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getStrikethroughThickness(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStrikethroughThickness")] != -1);
+		return call<R>("getStrikethroughThickness", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getUnderlineOffset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUnderlineOffset")] != -1);
+		return call<R>("getUnderlineOffset", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getUnderlineThickness(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUnderlineThickness")] != -1);
+		return call<R>("getUnderlineThickness", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

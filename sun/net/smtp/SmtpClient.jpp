@@ -1,0 +1,59 @@
+#ifndef sun_net_smtp_SmtpClient_HPP
+#define sun_net_smtp_SmtpClient_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::net::smtp::SmtpClient : public jObject<::sun::net::smtp::SmtpClient, ::sun::net::TransferProtocolClient> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_net_smtp / "SmtpClient";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint)>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jMethod<::jvoid()>("closeServer"), //
+		jMethod<::jvoid(::java::lang::String)>("from"), //
+		jMethod<::java::lang::String()>("getMailHost"), //
+		jMethod<::java::io::PrintStream()>("startMessage"), //
+		jMethod<::jvoid(::java::lang::String)>("to"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto closeServer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("closeServer")] != -1);
+		return call<R>("closeServer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto from(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("from")] != -1);
+		return call<R>("from", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMailHost(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMailHost")] != -1);
+		return call<R>("getMailHost", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::PrintStream, typename... Args>
+	auto startMessage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("startMessage")] != -1);
+		return call<R>("startMessage", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto to(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("to")] != -1);
+		return call<R>("to", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

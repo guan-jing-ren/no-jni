@@ -1,0 +1,65 @@
+#ifndef sun_java2d_pipe_RenderingEngine_HPP
+#define sun_java2d_pipe_RenderingEngine_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::pipe::RenderingEngine : public jObject<::sun::java2d::pipe::RenderingEngine, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_pipe / "RenderingEngine";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::awt::Shape(::java::awt::Shape, ::jfloat, ::jint, ::jint, ::jfloat, ::jfloat *, ::jfloat)>("createStrokedShape"), //
+		jMethod<::jvoid(::java::awt::geom::PathIterator, ::sun::awt::geom::PathConsumer2D)>("feedConsumer"), //
+		jMethod<::sun::java2d::pipe::AATileGenerator(::jdouble, ::jdouble, ::jdouble, ::jdouble, ::jdouble, ::jdouble, ::jdouble, ::jdouble, ::sun::java2d::pipe::Region, ::jint *)>("getAATileGenerator"), //
+		jMethod<::sun::java2d::pipe::AATileGenerator(::java::awt::Shape, ::java::awt::geom::AffineTransform, ::sun::java2d::pipe::Region, ::java::awt::BasicStroke, ::jboolean, ::jboolean, ::jint *)>("getAATileGenerator"), //
+		jMethod<::sun::java2d::pipe::RenderingEngine()>("getInstance"), //
+		jMethod<::jfloat()>("getMinimumAAPenSize"), //
+		jMethod<::jvoid(::java::awt::Shape, ::java::awt::geom::AffineTransform, ::java::awt::BasicStroke, ::jboolean, ::jboolean, ::jboolean, ::sun::awt::geom::PathConsumer2D)>("strokeTo"), //
+	};
+
+	template<typename R = ::java::awt::Shape, typename... Args>
+	auto createStrokedShape(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createStrokedShape")] != -1);
+		return call<R>("createStrokedShape", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto feedConsumer(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("feedConsumer")] != -1);
+		return scall<R>("feedConsumer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::pipe::AATileGenerator, typename... Args>
+	auto getAATileGenerator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAATileGenerator")] != -1);
+		return call<R>("getAATileGenerator", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::pipe::RenderingEngine, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getMinimumAAPenSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMinimumAAPenSize")] != -1);
+		return call<R>("getMinimumAAPenSize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto strokeTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("strokeTo")] != -1);
+		return call<R>("strokeTo", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

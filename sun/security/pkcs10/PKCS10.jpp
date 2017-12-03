@@ -1,0 +1,94 @@
+#ifndef sun_security_pkcs10_PKCS10_HPP
+#define sun_security_pkcs10_PKCS10_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::pkcs10::PKCS10 : public jObject<::sun::security::pkcs10::PKCS10, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_pkcs10 / "PKCS10";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::security::PublicKey)>(), //
+		jConstructor<::jvoid(::java::security::PublicKey, ::sun::security::pkcs10::PKCS10Attributes)>(), //
+		jConstructor<::jvoid(::jbyte *)>(), //
+		jMethod<::jvoid(::sun::security::x509::X500Name, ::java::security::Signature)>("encodeAndSign"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::sun::security::pkcs10::PKCS10Attributes()>("getAttributes"), //
+		jMethod<::jbyte *()>("getEncoded"), //
+		jMethod<::java::lang::String()>("getSigAlg"), //
+		jMethod<::sun::security::x509::X500Name()>("getSubjectName"), //
+		jMethod<::java::security::PublicKey()>("getSubjectPublicKeyInfo"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jvoid(::java::io::PrintStream)>("print"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto encodeAndSign(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encodeAndSign")] != -1);
+		return call<R>("encodeAndSign", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::pkcs10::PKCS10Attributes, typename... Args>
+	auto getAttributes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAttributes")] != -1);
+		return call<R>("getAttributes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getEncoded(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEncoded")] != -1);
+		return call<R>("getEncoded", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getSigAlg(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSigAlg")] != -1);
+		return call<R>("getSigAlg", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::X500Name, typename... Args>
+	auto getSubjectName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSubjectName")] != -1);
+		return call<R>("getSubjectName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::PublicKey, typename... Args>
+	auto getSubjectPublicKeyInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSubjectPublicKeyInfo")] != -1);
+		return call<R>("getSubjectPublicKeyInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto print(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("print")] != -1);
+		return call<R>("print", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

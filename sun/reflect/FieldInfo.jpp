@@ -1,0 +1,56 @@
+#ifndef sun_reflect_FieldInfo_HPP
+#define sun_reflect_FieldInfo_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::reflect::FieldInfo : public jObject<::sun::reflect::FieldInfo, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_reflect / "FieldInfo";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean()>("isPublic"), //
+		jMethod<::jint()>("modifiers"), //
+		jMethod<::java::lang::String()>("name"), //
+		jMethod<::java::lang::String()>("signature"), //
+		jMethod<::jint()>("slot"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isPublic(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isPublic")] != -1);
+		return call<R>("isPublic", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto modifiers(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("modifiers")] != -1);
+		return call<R>("modifiers", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto name(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("name")] != -1);
+		return call<R>("name", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto signature_(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("signature")] != -1);
+		return call<R>("signature", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto slot(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("slot")] != -1);
+		return call<R>("slot", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

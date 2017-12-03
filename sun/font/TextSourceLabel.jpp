@@ -1,0 +1,86 @@
+#ifndef sun_font_TextSourceLabel_HPP
+#define sun_font_TextSourceLabel_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::TextSourceLabel : public jObject<::sun::font::TextSourceLabel, ::sun::font::TextLabel> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "TextSourceLabel";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::font::TextSource)>(), //
+		jConstructor<::jvoid(::sun::font::TextSource, ::java::awt::geom::Rectangle2D, ::java::awt::geom::Rectangle2D, ::java::awt::font::GlyphVector)>(), //
+		jMethod<::jvoid(::java::awt::Graphics2D, ::jfloat, ::jfloat)>("draw"), //
+		jMethod<::java::awt::geom::Rectangle2D(::jfloat, ::jfloat)>("getAlignBounds"), //
+		jMethod<::java::awt::geom::AffineTransform()>("getBaselineTransform"), //
+		jMethod<::java::awt::geom::Rectangle2D(::jfloat, ::jfloat)>("getItalicBounds"), //
+		jMethod<::java::awt::geom::Rectangle2D(::jfloat, ::jfloat)>("getLogicalBounds"), //
+		jMethod<::java::awt::Shape(::jfloat, ::jfloat)>("getOutline"), //
+		jMethod<::java::awt::Rectangle(::java::awt::font::FontRenderContext, ::jfloat, ::jfloat)>("getPixelBounds"), //
+		jMethod<::sun::font::TextSource()>("getSource"), //
+		jMethod<::java::awt::geom::Rectangle2D(::jfloat, ::jfloat)>("getVisualBounds"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto draw(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("draw")] != -1);
+		return call<R>("draw", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Rectangle2D, typename... Args>
+	auto getAlignBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAlignBounds")] != -1);
+		return call<R>("getAlignBounds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::AffineTransform, typename... Args>
+	auto getBaselineTransform(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBaselineTransform")] != -1);
+		return call<R>("getBaselineTransform", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Rectangle2D, typename... Args>
+	auto getItalicBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getItalicBounds")] != -1);
+		return call<R>("getItalicBounds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Rectangle2D, typename... Args>
+	auto getLogicalBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLogicalBounds")] != -1);
+		return call<R>("getLogicalBounds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Shape, typename... Args>
+	auto getOutline(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOutline")] != -1);
+		return call<R>("getOutline", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Rectangle, typename... Args>
+	auto getPixelBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPixelBounds")] != -1);
+		return call<R>("getPixelBounds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::TextSource, typename... Args>
+	auto getSource(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSource")] != -1);
+		return call<R>("getSource", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Rectangle2D, typename... Args>
+	auto getVisualBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getVisualBounds")] != -1);
+		return call<R>("getVisualBounds", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

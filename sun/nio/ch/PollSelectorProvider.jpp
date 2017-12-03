@@ -1,0 +1,36 @@
+#ifndef sun_nio_ch_PollSelectorProvider_HPP
+#define sun_nio_ch_PollSelectorProvider_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::nio::ch::PollSelectorProvider : public jObject<::sun::nio::ch::PollSelectorProvider, ::sun::nio::ch::SelectorProviderImpl> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_nio_ch / "PollSelectorProvider";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::nio::channels::Channel()>("inheritedChannel"), //
+		jMethod<::java::nio::channels::spi::AbstractSelector()>("openSelector"), //
+	};
+
+	template<typename R = ::java::nio::channels::Channel, typename... Args>
+	auto inheritedChannel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("inheritedChannel")] != -1);
+		return call<R>("inheritedChannel", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::spi::AbstractSelector, typename... Args>
+	auto openSelector(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("openSelector")] != -1);
+		return call<R>("openSelector", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

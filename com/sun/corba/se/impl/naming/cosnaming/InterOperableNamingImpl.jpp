@@ -1,0 +1,43 @@
+#ifndef com_sun_corba_se_impl_naming_cosnaming_InterOperableNamingImpl_HPP
+#define com_sun_corba_se_impl_naming_cosnaming_InterOperableNamingImpl_HPP
+
+#include "../../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::impl::naming::cosnaming::InterOperableNamingImpl : public jObject<::com::sun::corba::se::impl::naming::cosnaming::InterOperableNamingImpl, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_impl_naming_cosnaming / "InterOperableNamingImpl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::org::omg::CosNaming::NameComponent *(::java::lang::String)>("convertToNameComponent"), //
+		jMethod<::java::lang::String(::org::omg::CosNaming::NameComponent *)>("convertToString"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::lang::String)>("createURLBasedAddress"), //
+	};
+
+	template<typename R = ::org::omg::CosNaming::NameComponent *, typename... Args>
+	auto convertToNameComponent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("convertToNameComponent")] != -1);
+		return call<R>("convertToNameComponent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto convertToString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("convertToString")] != -1);
+		return call<R>("convertToString", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto createURLBasedAddress(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createURLBasedAddress")] != -1);
+		return call<R>("createURLBasedAddress", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

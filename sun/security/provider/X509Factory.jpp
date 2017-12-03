@@ -1,0 +1,87 @@
+#ifndef sun_security_provider_X509Factory_HPP
+#define sun_security_provider_X509Factory_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::provider::X509Factory : public jObject<::sun::security::provider::X509Factory, ::java::security::cert::CertificateFactorySpi> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_provider / "X509Factory";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("BEGIN_CERT"), //
+		jField<::java::lang::String>("END_CERT"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto BEGIN_CERT() {
+		static_assert(field_signatures[jField<F>("BEGIN_CERT")] != -1);
+		return sat<F>("BEGIN_CERT");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto END_CERT() {
+		static_assert(field_signatures[jField<F>("END_CERT")] != -1);
+		return sat<F>("END_CERT");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::security::cert::CRL(::java::io::InputStream)>("engineGenerateCRL"), //
+		jMethod<::java::util::Collection(::java::io::InputStream)>("engineGenerateCRLs"), //
+		jMethod<::java::security::cert::CertPath(::java::io::InputStream)>("engineGenerateCertPath"), //
+		jMethod<::java::security::cert::CertPath(::java::io::InputStream, ::java::lang::String)>("engineGenerateCertPath"), //
+		jMethod<::java::security::cert::CertPath(::java::util::List)>("engineGenerateCertPath"), //
+		jMethod<::java::security::cert::Certificate(::java::io::InputStream)>("engineGenerateCertificate"), //
+		jMethod<::java::util::Collection(::java::io::InputStream)>("engineGenerateCertificates"), //
+		jMethod<::java::util::Iterator()>("engineGetCertPathEncodings"), //
+		jMethod<::sun::security::x509::X509CRLImpl(::java::security::cert::X509CRL)>("intern"), //
+		jMethod<::sun::security::x509::X509CertImpl(::java::security::cert::X509Certificate)>("intern"), //
+	};
+
+	template<typename R = ::java::security::cert::CRL, typename... Args>
+	auto engineGenerateCRL(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("engineGenerateCRL")] != -1);
+		return call<R>("engineGenerateCRL", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Collection, typename... Args>
+	auto engineGenerateCRLs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("engineGenerateCRLs")] != -1);
+		return call<R>("engineGenerateCRLs", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::CertPath, typename... Args>
+	auto engineGenerateCertPath(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("engineGenerateCertPath")] != -1);
+		return call<R>("engineGenerateCertPath", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::Certificate, typename... Args>
+	auto engineGenerateCertificate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("engineGenerateCertificate")] != -1);
+		return call<R>("engineGenerateCertificate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Collection, typename... Args>
+	auto engineGenerateCertificates(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("engineGenerateCertificates")] != -1);
+		return call<R>("engineGenerateCertificates", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Iterator, typename... Args>
+	auto engineGetCertPathEncodings(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("engineGetCertPathEncodings")] != -1);
+		return call<R>("engineGetCertPathEncodings", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::X509CRLImpl, typename... Args>
+	static auto intern(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("intern")] != -1);
+		return scall<R>("intern", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

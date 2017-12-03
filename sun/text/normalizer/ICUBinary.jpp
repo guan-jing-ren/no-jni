@@ -1,0 +1,29 @@
+#ifndef sun_text_normalizer_ICUBinary_HPP
+#define sun_text_normalizer_ICUBinary_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::text::normalizer::ICUBinary : public jObject<::sun::text::normalizer::ICUBinary, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_text_normalizer / "ICUBinary";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jbyte *(::java::io::InputStream, ::jbyte *, ::sun::text::normalizer::ICUBinary$Authenticate)>("readHeader"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	static auto readHeader(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("readHeader")] != -1);
+		return scall<R>("readHeader", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

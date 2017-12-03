@@ -1,0 +1,111 @@
+#ifndef sun_nio_ch_Net_HPP
+#define sun_nio_ch_Net_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::nio::ch::Net : public jObject<::sun::nio::ch::Net, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_nio_ch / "Net";
+
+	constexpr static Enume field_signatures{
+		jField<::jshort>("POLLCONN"), //
+		jField<::jshort>("POLLERR"), //
+		jField<::jshort>("POLLHUP"), //
+		jField<::jshort>("POLLIN"), //
+		jField<::jshort>("POLLNVAL"), //
+		jField<::jshort>("POLLOUT"), //
+		jField<::jint>("SHUT_RD"), //
+		jField<::jint>("SHUT_RDWR"), //
+		jField<::jint>("SHUT_WR"), //
+	};
+
+	template<typename F = ::jshort>
+	static auto POLLCONN() {
+		static_assert(field_signatures[jField<F>("POLLCONN")] != -1);
+		return sat<F>("POLLCONN");
+	}
+
+	template<typename F = ::jshort>
+	static auto POLLERR() {
+		static_assert(field_signatures[jField<F>("POLLERR")] != -1);
+		return sat<F>("POLLERR");
+	}
+
+	template<typename F = ::jshort>
+	static auto POLLHUP() {
+		static_assert(field_signatures[jField<F>("POLLHUP")] != -1);
+		return sat<F>("POLLHUP");
+	}
+
+	template<typename F = ::jshort>
+	static auto POLLIN() {
+		static_assert(field_signatures[jField<F>("POLLIN")] != -1);
+		return sat<F>("POLLIN");
+	}
+
+	template<typename F = ::jshort>
+	static auto POLLNVAL() {
+		static_assert(field_signatures[jField<F>("POLLNVAL")] != -1);
+		return sat<F>("POLLNVAL");
+	}
+
+	template<typename F = ::jshort>
+	static auto POLLOUT() {
+		static_assert(field_signatures[jField<F>("POLLOUT")] != -1);
+		return sat<F>("POLLOUT");
+	}
+
+	template<typename F = ::jint>
+	static auto SHUT_RD() {
+		static_assert(field_signatures[jField<F>("SHUT_RD")] != -1);
+		return sat<F>("SHUT_RD");
+	}
+
+	template<typename F = ::jint>
+	static auto SHUT_RDWR() {
+		static_assert(field_signatures[jField<F>("SHUT_RDWR")] != -1);
+		return sat<F>("SHUT_RDWR");
+	}
+
+	template<typename F = ::jint>
+	static auto SHUT_WR() {
+		static_assert(field_signatures[jField<F>("SHUT_WR")] != -1);
+		return sat<F>("SHUT_WR");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::io::FileDescriptor, ::java::net::InetAddress, ::jint)>("bind"), //
+		jMethod<::java::net::InetSocketAddress(::java::net::SocketAddress)>("checkAddress"), //
+		jMethod<::jboolean()>("isFastTcpLoopbackRequested"), //
+		jMethod<::java::net::InetSocketAddress(::java::io::FileDescriptor)>("localAddress"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto bind(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("bind")] != -1);
+		return scall<R>("bind", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::InetSocketAddress, typename... Args>
+	static auto checkAddress(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkAddress")] != -1);
+		return scall<R>("checkAddress", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isFastTcpLoopbackRequested(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isFastTcpLoopbackRequested")] != -1);
+		return scall<R>("isFastTcpLoopbackRequested", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::InetSocketAddress, typename... Args>
+	static auto localAddress(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("localAddress")] != -1);
+		return scall<R>("localAddress", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

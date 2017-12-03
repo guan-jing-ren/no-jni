@@ -1,0 +1,29 @@
+#ifndef sun_security_jgss_spnego_NegTokenTarg_HPP
+#define sun_security_jgss_spnego_NegTokenTarg_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::security::jgss::spnego::NegTokenTarg : public jObject<::sun::security::jgss::spnego::NegTokenTarg, ::sun::security::jgss::spnego::SpNegoToken> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_jgss_spnego / "NegTokenTarg";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jbyte *)>(), //
+		jMethod<::org::ietf::jgss::Oid()>("getSupportedMech"), //
+	};
+
+	template<typename R = ::org::ietf::jgss::Oid, typename... Args>
+	auto getSupportedMech(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSupportedMech")] != -1);
+		return call<R>("getSupportedMech", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,36 @@
+#ifndef sun_net_dns_ResolverConfiguration$Options_HPP
+#define sun_net_dns_ResolverConfiguration$Options_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::net::dns::ResolverConfiguration$Options : public jObject<::sun::net::dns::ResolverConfiguration$Options, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_net_dns / "ResolverConfiguration$Options";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jint()>("attempts"), //
+		jMethod<::jint()>("retrans"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto attempts(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("attempts")] != -1);
+		return call<R>("attempts", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto retrans(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("retrans")] != -1);
+		return call<R>("retrans", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,36 @@
+#ifndef com_sun_corba_se_impl_protocol_InfoOnlyServantCacheLocalCRDImpl_HPP
+#define com_sun_corba_se_impl_protocol_InfoOnlyServantCacheLocalCRDImpl_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::impl::protocol::InfoOnlyServantCacheLocalCRDImpl : public jObject<::com::sun::corba::se::impl::protocol::InfoOnlyServantCacheLocalCRDImpl, ::com::sun::corba::se::impl::protocol::ServantCacheLocalCRDBase> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_impl_protocol / "InfoOnlyServantCacheLocalCRDImpl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::com::sun::corba::se::spi::orb::ORB, ::jint, ::com::sun::corba::se::spi::ior::IOR)>(), //
+		jMethod<::jvoid(::org::omg::CORBA::Object, ::org::omg::CORBA::portable::ServantObject)>("servant_postinvoke"), //
+		jMethod<::org::omg::CORBA::portable::ServantObject(::org::omg::CORBA::Object, ::java::lang::String, ::java::lang::Class)>("servant_preinvoke"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto servant_postinvoke(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("servant_postinvoke")] != -1);
+		return call<R>("servant_postinvoke", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::portable::ServantObject, typename... Args>
+	auto servant_preinvoke(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("servant_preinvoke")] != -1);
+		return call<R>("servant_preinvoke", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

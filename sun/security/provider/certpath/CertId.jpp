@@ -1,0 +1,80 @@
+#ifndef sun_security_provider_certpath_CertId_HPP
+#define sun_security_provider_certpath_CertId_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::security::provider::certpath::CertId : public jObject<::sun::security::provider::certpath::CertId, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_provider_certpath / "CertId";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::security::cert::X509Certificate, ::sun::security::x509::SerialNumber)>(), //
+		jConstructor<::jvoid(::javax::security::auth::x500::X500Principal, ::java::security::PublicKey, ::sun::security::x509::SerialNumber)>(), //
+		jConstructor<::jvoid(::sun::security::util::DerInputStream)>(), //
+		jMethod<::jvoid(::sun::security::util::DerOutputStream)>("encode"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::sun::security::x509::AlgorithmId()>("getHashAlgorithm"), //
+		jMethod<::jbyte *()>("getIssuerKeyHash"), //
+		jMethod<::jbyte *()>("getIssuerNameHash"), //
+		jMethod<::java::math::BigInteger()>("getSerialNumber"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto encode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encode")] != -1);
+		return call<R>("encode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::AlgorithmId, typename... Args>
+	auto getHashAlgorithm(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHashAlgorithm")] != -1);
+		return call<R>("getHashAlgorithm", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getIssuerKeyHash(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIssuerKeyHash")] != -1);
+		return call<R>("getIssuerKeyHash", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getIssuerNameHash(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIssuerNameHash")] != -1);
+		return call<R>("getIssuerNameHash", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getSerialNumber(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSerialNumber")] != -1);
+		return call<R>("getSerialNumber", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

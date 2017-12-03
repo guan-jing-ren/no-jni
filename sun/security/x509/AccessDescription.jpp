@@ -1,0 +1,92 @@
+#ifndef sun_security_x509_AccessDescription_HPP
+#define sun_security_x509_AccessDescription_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::x509::AccessDescription : public jObject<::sun::security::x509::AccessDescription, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_x509 / "AccessDescription";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::security::util::ObjectIdentifier>("Ad_CAISSUERS_Id"), //
+		jField<::sun::security::util::ObjectIdentifier>("Ad_CAREPOSITORY_Id"), //
+		jField<::sun::security::util::ObjectIdentifier>("Ad_OCSP_Id"), //
+		jField<::sun::security::util::ObjectIdentifier>("Ad_TIMESTAMPING_Id"), //
+	};
+
+	template<typename F = ::sun::security::util::ObjectIdentifier>
+	static auto Ad_CAISSUERS_Id() {
+		static_assert(field_signatures[jField<F>("Ad_CAISSUERS_Id")] != -1);
+		return sat<F>("Ad_CAISSUERS_Id");
+	}
+
+	template<typename F = ::sun::security::util::ObjectIdentifier>
+	static auto Ad_CAREPOSITORY_Id() {
+		static_assert(field_signatures[jField<F>("Ad_CAREPOSITORY_Id")] != -1);
+		return sat<F>("Ad_CAREPOSITORY_Id");
+	}
+
+	template<typename F = ::sun::security::util::ObjectIdentifier>
+	static auto Ad_OCSP_Id() {
+		static_assert(field_signatures[jField<F>("Ad_OCSP_Id")] != -1);
+		return sat<F>("Ad_OCSP_Id");
+	}
+
+	template<typename F = ::sun::security::util::ObjectIdentifier>
+	static auto Ad_TIMESTAMPING_Id() {
+		static_assert(field_signatures[jField<F>("Ad_TIMESTAMPING_Id")] != -1);
+		return sat<F>("Ad_TIMESTAMPING_Id");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::security::util::DerValue)>(), //
+		jConstructor<::jvoid(::sun::security::util::ObjectIdentifier, ::sun::security::x509::GeneralName)>(), //
+		jMethod<::jvoid(::sun::security::util::DerOutputStream)>("encode"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::sun::security::x509::GeneralName()>("getAccessLocation"), //
+		jMethod<::sun::security::util::ObjectIdentifier()>("getAccessMethod"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto encode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encode")] != -1);
+		return call<R>("encode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::GeneralName, typename... Args>
+	auto getAccessLocation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAccessLocation")] != -1);
+		return call<R>("getAccessLocation", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::util::ObjectIdentifier, typename... Args>
+	auto getAccessMethod(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAccessMethod")] != -1);
+		return call<R>("getAccessMethod", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

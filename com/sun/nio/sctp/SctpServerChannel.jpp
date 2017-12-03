@@ -1,0 +1,92 @@
+#ifndef com_sun_nio_sctp_SctpServerChannel_HPP
+#define com_sun_nio_sctp_SctpServerChannel_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::nio::sctp::SctpServerChannel : public jObject<::com::sun::nio::sctp::SctpServerChannel, ::java::nio::channels::spi::AbstractSelectableChannel> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_nio_sctp / "SctpServerChannel";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::com::sun::nio::sctp::SctpChannel()>("accept"), //
+		jMethod<::com::sun::nio::sctp::SctpServerChannel(::java::net::SocketAddress)>("bind"), //
+		jMethod<::com::sun::nio::sctp::SctpServerChannel(::java::net::SocketAddress, ::jint)>("bind"), //
+		jMethod<::com::sun::nio::sctp::SctpServerChannel(::java::net::InetAddress)>("bindAddress"), //
+		jMethod<::java::util::Set()>("getAllLocalAddresses"), //
+		jMethod<::java::lang::Object(::com::sun::nio::sctp::SctpSocketOption)>("getOption"), //
+		jMethod<::com::sun::nio::sctp::SctpServerChannel()>("open"), //
+		jMethod<::com::sun::nio::sctp::SctpServerChannel(::com::sun::nio::sctp::SctpSocketOption, ::java::lang::Object)>("setOption"), //
+		jMethod<::java::util::Set()>("supportedOptions"), //
+		jMethod<::com::sun::nio::sctp::SctpServerChannel(::java::net::InetAddress)>("unbindAddress"), //
+		jMethod<::jint()>("validOps"), //
+	};
+
+	template<typename R = ::com::sun::nio::sctp::SctpChannel, typename... Args>
+	auto accept(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("accept")] != -1);
+		return call<R>("accept", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::nio::sctp::SctpServerChannel, typename... Args>
+	auto bind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("bind")] != -1);
+		return call<R>("bind", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::nio::sctp::SctpServerChannel, typename... Args>
+	auto bindAddress(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("bindAddress")] != -1);
+		return call<R>("bindAddress", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto getAllLocalAddresses(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAllLocalAddresses")] != -1);
+		return call<R>("getAllLocalAddresses", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getOption(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOption")] != -1);
+		return call<R>("getOption", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::nio::sctp::SctpServerChannel, typename... Args>
+	static auto open(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("open")] != -1);
+		return scall<R>("open", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::nio::sctp::SctpServerChannel, typename... Args>
+	auto setOption(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setOption")] != -1);
+		return call<R>("setOption", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto supportedOptions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("supportedOptions")] != -1);
+		return call<R>("supportedOptions", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::nio::sctp::SctpServerChannel, typename... Args>
+	auto unbindAddress(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unbindAddress")] != -1);
+		return call<R>("unbindAddress", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto validOps(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("validOps")] != -1);
+		return call<R>("validOps", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,66 @@
+#ifndef sun_security_jgss_spi_MechanismFactory_HPP
+#define sun_security_jgss_spi_MechanismFactory_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::security::jgss::spi::MechanismFactory : public jObject<::sun::security::jgss::spi::MechanismFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_jgss_spi / "MechanismFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::security::jgss::spi::GSSCredentialSpi(::sun::security::jgss::spi::GSSNameSpi, ::jint, ::jint, ::jint)>("getCredentialElement"), //
+		jMethod<::sun::security::jgss::spi::GSSContextSpi(::sun::security::jgss::spi::GSSCredentialSpi)>("getMechanismContext"), //
+		jMethod<::sun::security::jgss::spi::GSSContextSpi(::sun::security::jgss::spi::GSSNameSpi, ::sun::security::jgss::spi::GSSCredentialSpi, ::jint)>("getMechanismContext"), //
+		jMethod<::sun::security::jgss::spi::GSSContextSpi(::jbyte *)>("getMechanismContext"), //
+		jMethod<::org::ietf::jgss::Oid()>("getMechanismOid"), //
+		jMethod<::sun::security::jgss::spi::GSSNameSpi(::java::lang::String, ::org::ietf::jgss::Oid)>("getNameElement"), //
+		jMethod<::sun::security::jgss::spi::GSSNameSpi(::jbyte *, ::org::ietf::jgss::Oid)>("getNameElement"), //
+		jMethod<::org::ietf::jgss::Oid *()>("getNameTypes"), //
+		jMethod<::java::security::Provider()>("getProvider"), //
+	};
+
+	template<typename R = ::sun::security::jgss::spi::GSSCredentialSpi, typename... Args>
+	auto getCredentialElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCredentialElement")] != -1);
+		return call<R>("getCredentialElement", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::jgss::spi::GSSContextSpi, typename... Args>
+	auto getMechanismContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMechanismContext")] != -1);
+		return call<R>("getMechanismContext", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::ietf::jgss::Oid, typename... Args>
+	auto getMechanismOid(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMechanismOid")] != -1);
+		return call<R>("getMechanismOid", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::jgss::spi::GSSNameSpi, typename... Args>
+	auto getNameElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNameElement")] != -1);
+		return call<R>("getNameElement", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::ietf::jgss::Oid *, typename... Args>
+	auto getNameTypes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNameTypes")] != -1);
+		return call<R>("getNameTypes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Provider, typename... Args>
+	auto getProvider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getProvider")] != -1);
+		return call<R>("getProvider", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

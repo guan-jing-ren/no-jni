@@ -1,0 +1,230 @@
+#ifndef sun_print_IPPPrintService_HPP
+#define sun_print_IPPPrintService_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::print::IPPPrintService : public jObject<::sun::print::IPPPrintService, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_print / "IPPPrintService";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("OP_CUPS_GET_DEFAULT"), //
+		jField<::java::lang::String>("OP_CUPS_GET_PRINTERS"), //
+		jField<::java::lang::String>("OP_GET_ATTRIBUTES"), //
+		jField<::jboolean>("debugPrint"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto OP_CUPS_GET_DEFAULT() {
+		static_assert(field_signatures[jField<F>("OP_CUPS_GET_DEFAULT")] != -1);
+		return sat<F>("OP_CUPS_GET_DEFAULT");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto OP_CUPS_GET_PRINTERS() {
+		static_assert(field_signatures[jField<F>("OP_CUPS_GET_PRINTERS")] != -1);
+		return sat<F>("OP_CUPS_GET_PRINTERS");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto OP_GET_ATTRIBUTES() {
+		static_assert(field_signatures[jField<F>("OP_GET_ATTRIBUTES")] != -1);
+		return sat<F>("OP_GET_ATTRIBUTES");
+	}
+
+	template<typename F = ::jboolean>
+	static auto debugPrint() {
+		static_assert(field_signatures[jField<F>("debugPrint")] != -1);
+		return sat<F>("debugPrint");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::print::event::PrintServiceAttributeListener)>("addPrintServiceAttributeListener"), //
+		jMethod<::javax::print::DocPrintJob()>("createPrintJob"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::sun::print::CustomMediaSizeName(::javax::print::attribute::standard::MediaSizeName)>("findCustomMedia"), //
+		jMethod<::javax::print::attribute::PrintServiceAttribute(::java::lang::Class)>("getAttribute"), //
+		jMethod<::javax::print::attribute::PrintServiceAttributeSet()>("getAttributes"), //
+		jMethod<::java::lang::Object(::java::lang::Class)>("getDefaultAttributeValue"), //
+		jMethod<::java::net::HttpURLConnection(::java::net::URL)>("getIPPConnection"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::javax::print::ServiceUIFactory()>("getServiceUIFactory"), //
+		jMethod<::java::lang::Class *()>("getSupportedAttributeCategories"), //
+		jMethod<::java::lang::Object(::java::lang::Class, ::javax::print::DocFlavor, ::javax::print::attribute::AttributeSet)>("getSupportedAttributeValues"), //
+		jMethod<::javax::print::DocFlavor *()>("getSupportedDocFlavors"), //
+		jMethod<::javax::print::attribute::AttributeSet(::javax::print::DocFlavor, ::javax::print::attribute::AttributeSet)>("getUnsupportedAttributes"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jboolean(::java::lang::Class)>("isAttributeCategorySupported"), //
+		jMethod<::jboolean(::javax::print::attribute::Attribute, ::javax::print::DocFlavor, ::javax::print::attribute::AttributeSet)>("isAttributeValueSupported"), //
+		jMethod<::jboolean(::javax::print::DocFlavor)>("isDocFlavorSupported"), //
+		jMethod<::jboolean(::java::lang::String)>("isIPPSupportedImages"), //
+		jMethod<::jboolean()>("isPostscript"), //
+		jMethod<::java::util::HashMap *(::java::io::InputStream)>("readIPPResponse"), //
+		jMethod<::jvoid(::javax::print::event::PrintServiceAttributeListener)>("removePrintServiceAttributeListener"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::jboolean(::java::lang::Class)>("usesClass"), //
+		jMethod<::jvoid()>("wakeNotifier"), //
+		jMethod<::jboolean(::java::io::OutputStream, ::java::lang::String, ::sun::print::AttributeClass *)>("writeIPPRequest"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addPrintServiceAttributeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addPrintServiceAttributeListener")] != -1);
+		return call<R>("addPrintServiceAttributeListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::print::DocPrintJob, typename... Args>
+	auto createPrintJob(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createPrintJob")] != -1);
+		return call<R>("createPrintJob", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::print::CustomMediaSizeName, typename... Args>
+	auto findCustomMedia(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("findCustomMedia")] != -1);
+		return call<R>("findCustomMedia", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::print::attribute::PrintServiceAttribute, typename... Args>
+	auto getAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAttribute")] != -1);
+		return call<R>("getAttribute", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::print::attribute::PrintServiceAttributeSet, typename... Args>
+	auto getAttributes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAttributes")] != -1);
+		return call<R>("getAttributes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getDefaultAttributeValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDefaultAttributeValue")] != -1);
+		return call<R>("getDefaultAttributeValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::HttpURLConnection, typename... Args>
+	static auto getIPPConnection(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIPPConnection")] != -1);
+		return scall<R>("getIPPConnection", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::print::ServiceUIFactory, typename... Args>
+	auto getServiceUIFactory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getServiceUIFactory")] != -1);
+		return call<R>("getServiceUIFactory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class *, typename... Args>
+	auto getSupportedAttributeCategories(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSupportedAttributeCategories")] != -1);
+		return call<R>("getSupportedAttributeCategories", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getSupportedAttributeValues(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSupportedAttributeValues")] != -1);
+		return call<R>("getSupportedAttributeValues", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::print::DocFlavor *, typename... Args>
+	auto getSupportedDocFlavors(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSupportedDocFlavors")] != -1);
+		return call<R>("getSupportedDocFlavors", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::print::attribute::AttributeSet, typename... Args>
+	auto getUnsupportedAttributes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUnsupportedAttributes")] != -1);
+		return call<R>("getUnsupportedAttributes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isAttributeCategorySupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isAttributeCategorySupported")] != -1);
+		return call<R>("isAttributeCategorySupported", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isAttributeValueSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isAttributeValueSupported")] != -1);
+		return call<R>("isAttributeValueSupported", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDocFlavorSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isDocFlavorSupported")] != -1);
+		return call<R>("isDocFlavorSupported", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isIPPSupportedImages(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isIPPSupportedImages")] != -1);
+		return call<R>("isIPPSupportedImages", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isPostscript(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isPostscript")] != -1);
+		return call<R>("isPostscript", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::HashMap *, typename... Args>
+	static auto readIPPResponse(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("readIPPResponse")] != -1);
+		return scall<R>("readIPPResponse", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removePrintServiceAttributeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removePrintServiceAttributeListener")] != -1);
+		return call<R>("removePrintServiceAttributeListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto usesClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("usesClass")] != -1);
+		return call<R>("usesClass", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto wakeNotifier(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("wakeNotifier")] != -1);
+		return call<R>("wakeNotifier", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto writeIPPRequest(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeIPPRequest")] != -1);
+		return scall<R>("writeIPPRequest", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

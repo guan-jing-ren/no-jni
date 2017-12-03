@@ -1,0 +1,78 @@
+#ifndef sun_text_normalizer_CharacterIteratorWrapper_HPP
+#define sun_text_normalizer_CharacterIteratorWrapper_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::text::normalizer::CharacterIteratorWrapper : public jObject<::sun::text::normalizer::CharacterIteratorWrapper, ::sun::text::normalizer::UCharacterIterator> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_text_normalizer / "CharacterIteratorWrapper";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::text::CharacterIterator)>(), //
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::jint()>("current"), //
+		jMethod<::jint()>("getIndex"), //
+		jMethod<::jint()>("getLength"), //
+		jMethod<::jint(::jchar *, ::jint)>("getText"), //
+		jMethod<::jint()>("next"), //
+		jMethod<::jint()>("previous"), //
+		jMethod<::jvoid(::jint)>("setIndex"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto current(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("current")] != -1);
+		return call<R>("current", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIndex")] != -1);
+		return call<R>("getIndex", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLength")] != -1);
+		return call<R>("getLength", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getText(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getText")] != -1);
+		return call<R>("getText", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto next(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("next")] != -1);
+		return call<R>("next", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto previous(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("previous")] != -1);
+		return call<R>("previous", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setIndex")] != -1);
+		return call<R>("setIndex", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,28 @@
+#ifndef sun_awt_AWTAccessor$ScrollPaneAdjustableAccessor_HPP
+#define sun_awt_AWTAccessor$ScrollPaneAdjustableAccessor_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::AWTAccessor$ScrollPaneAdjustableAccessor : public jObject<::sun::awt::AWTAccessor$ScrollPaneAdjustableAccessor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "AWTAccessor$ScrollPaneAdjustableAccessor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::awt::ScrollPaneAdjustable, ::jint, ::jint)>("setTypedValue"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setTypedValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setTypedValue")] != -1);
+		return call<R>("setTypedValue", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

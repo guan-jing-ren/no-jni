@@ -1,0 +1,112 @@
+#ifndef com_sun_media_sound_SoftEnvelopeGenerator_HPP
+#define com_sun_media_sound_SoftEnvelopeGenerator_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::media::sound::SoftEnvelopeGenerator : public jObject<::com::sun::media::sound::SoftEnvelopeGenerator, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_media_sound / "SoftEnvelopeGenerator";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("EG_ATTACK"), //
+		jField<::jint>("EG_DECAY"), //
+		jField<::jint>("EG_DELAY"), //
+		jField<::jint>("EG_END"), //
+		jField<::jint>("EG_HOLD"), //
+		jField<::jint>("EG_OFF"), //
+		jField<::jint>("EG_RELEASE"), //
+		jField<::jint>("EG_SHUTDOWN"), //
+		jField<::jint>("EG_SUSTAIN"), //
+	};
+
+	template<typename F = ::jint>
+	static auto EG_ATTACK() {
+		static_assert(field_signatures[jField<F>("EG_ATTACK")] != -1);
+		return sat<F>("EG_ATTACK");
+	}
+
+	template<typename F = ::jint>
+	static auto EG_DECAY() {
+		static_assert(field_signatures[jField<F>("EG_DECAY")] != -1);
+		return sat<F>("EG_DECAY");
+	}
+
+	template<typename F = ::jint>
+	static auto EG_DELAY() {
+		static_assert(field_signatures[jField<F>("EG_DELAY")] != -1);
+		return sat<F>("EG_DELAY");
+	}
+
+	template<typename F = ::jint>
+	static auto EG_END() {
+		static_assert(field_signatures[jField<F>("EG_END")] != -1);
+		return sat<F>("EG_END");
+	}
+
+	template<typename F = ::jint>
+	static auto EG_HOLD() {
+		static_assert(field_signatures[jField<F>("EG_HOLD")] != -1);
+		return sat<F>("EG_HOLD");
+	}
+
+	template<typename F = ::jint>
+	static auto EG_OFF() {
+		static_assert(field_signatures[jField<F>("EG_OFF")] != -1);
+		return sat<F>("EG_OFF");
+	}
+
+	template<typename F = ::jint>
+	static auto EG_RELEASE() {
+		static_assert(field_signatures[jField<F>("EG_RELEASE")] != -1);
+		return sat<F>("EG_RELEASE");
+	}
+
+	template<typename F = ::jint>
+	static auto EG_SHUTDOWN() {
+		static_assert(field_signatures[jField<F>("EG_SHUTDOWN")] != -1);
+		return sat<F>("EG_SHUTDOWN");
+	}
+
+	template<typename F = ::jint>
+	static auto EG_SUSTAIN() {
+		static_assert(field_signatures[jField<F>("EG_SUSTAIN")] != -1);
+		return sat<F>("EG_SUSTAIN");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jdouble *(::jint, ::java::lang::String)>("get"), //
+		jMethod<::jvoid(::com::sun::media::sound::SoftSynthesizer)>("init"), //
+		jMethod<::jvoid()>("processControlLogic"), //
+		jMethod<::jvoid()>("reset"), //
+	};
+
+	template<typename R = ::jdouble *, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto init(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("init")] != -1);
+		return call<R>("init", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto processControlLogic(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("processControlLogic")] != -1);
+		return call<R>("processControlLogic", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto reset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("reset")] != -1);
+		return call<R>("reset", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,62 @@
+#ifndef com_sun_nio_file_SensitivityWatchEventModifier_HPP
+#define com_sun_nio_file_SensitivityWatchEventModifier_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::nio::file::SensitivityWatchEventModifier : public jObject<::com::sun::nio::file::SensitivityWatchEventModifier, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_nio_file / "SensitivityWatchEventModifier";
+
+	constexpr static Enume field_signatures{
+		jField<::com::sun::nio::file::SensitivityWatchEventModifier>("HIGH"), //
+		jField<::com::sun::nio::file::SensitivityWatchEventModifier>("LOW"), //
+		jField<::com::sun::nio::file::SensitivityWatchEventModifier>("MEDIUM"), //
+	};
+
+	template<typename F = ::com::sun::nio::file::SensitivityWatchEventModifier>
+	static auto HIGH() {
+		static_assert(field_signatures[jField<F>("HIGH")] != -1);
+		return sat<F>("HIGH");
+	}
+
+	template<typename F = ::com::sun::nio::file::SensitivityWatchEventModifier>
+	static auto LOW() {
+		static_assert(field_signatures[jField<F>("LOW")] != -1);
+		return sat<F>("LOW");
+	}
+
+	template<typename F = ::com::sun::nio::file::SensitivityWatchEventModifier>
+	static auto MEDIUM() {
+		static_assert(field_signatures[jField<F>("MEDIUM")] != -1);
+		return sat<F>("MEDIUM");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("sensitivityValueInSeconds"), //
+		jMethod<::com::sun::nio::file::SensitivityWatchEventModifier(::java::lang::String)>("valueOf"), //
+		jMethod<::com::sun::nio::file::SensitivityWatchEventModifier *()>("values"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto sensitivityValueInSeconds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("sensitivityValueInSeconds")] != -1);
+		return call<R>("sensitivityValueInSeconds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::nio::file::SensitivityWatchEventModifier, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::nio::file::SensitivityWatchEventModifier *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

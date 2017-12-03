@@ -1,0 +1,60 @@
+#ifndef com_sun_jmx_remote_security_MBeanServerFileAccessController_HPP
+#define com_sun_jmx_remote_security_MBeanServerFileAccessController_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::jmx::remote::security::MBeanServerFileAccessController : public jObject<::com::sun::jmx::remote::security::MBeanServerFileAccessController, ::com::sun::jmx::remote::security::MBeanServerAccessController> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_jmx_remote_security / "MBeanServerFileAccessController";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::javax::management::MBeanServer)>(), //
+		jConstructor<::jvoid(::java::util::Properties)>(), //
+		jConstructor<::jvoid(::java::util::Properties, ::javax::management::MBeanServer)>(), //
+		jMethod<::jvoid(::java::lang::String)>("checkCreate"), //
+		jMethod<::jvoid()>("checkRead"), //
+		jMethod<::jvoid(::javax::management::ObjectName)>("checkUnregister"), //
+		jMethod<::jvoid()>("checkWrite"), //
+		jMethod<::jvoid()>("refresh"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto checkCreate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkCreate")] != -1);
+		return call<R>("checkCreate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto checkRead(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkRead")] != -1);
+		return call<R>("checkRead", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto checkUnregister(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkUnregister")] != -1);
+		return call<R>("checkUnregister", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto checkWrite(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkWrite")] != -1);
+		return call<R>("checkWrite", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto refresh(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("refresh")] != -1);
+		return call<R>("refresh", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,35 @@
+#ifndef sun_net_ftp_FtpClientProvider_HPP
+#define sun_net_ftp_FtpClientProvider_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::net::ftp::FtpClientProvider : public jObject<::sun::net::ftp::FtpClientProvider, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_net_ftp / "FtpClientProvider";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::net::ftp::FtpClient()>("createFtpClient"), //
+		jMethod<::sun::net::ftp::FtpClientProvider()>("provider"), //
+	};
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto createFtpClient(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createFtpClient")] != -1);
+		return call<R>("createFtpClient", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClientProvider, typename... Args>
+	static auto provider(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("provider")] != -1);
+		return scall<R>("provider", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

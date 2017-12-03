@@ -1,0 +1,43 @@
+#ifndef sun_awt_X11_XClipboard_HPP
+#define sun_awt_X11_XClipboard_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::X11::XClipboard : public jObject<::sun::awt::X11::XClipboard, ::sun::awt::datatransfer::SunClipboard> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_X11 / "XClipboard";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String)>(), //
+		jMethod<::java::awt::datatransfer::Transferable(::java::lang::Object)>("getContents"), //
+		jMethod<::jlong()>("getID"), //
+		jMethod<::jvoid(::jboolean)>("ownershipChanged"), //
+	};
+
+	template<typename R = ::java::awt::datatransfer::Transferable, typename... Args>
+	auto getContents(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getContents")] != -1);
+		return call<R>("getContents", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getID")] != -1);
+		return call<R>("getID", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto ownershipChanged(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("ownershipChanged")] != -1);
+		return call<R>("ownershipChanged", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,55 @@
+#ifndef sun_java2d_pipe_hw_AccelDeviceEventNotifier_HPP
+#define sun_java2d_pipe_hw_AccelDeviceEventNotifier_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::java2d::pipe::hw::AccelDeviceEventNotifier : public jObject<::sun::java2d::pipe::hw::AccelDeviceEventNotifier, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_pipe_hw / "AccelDeviceEventNotifier";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("DEVICE_DISPOSED"), //
+		jField<::jint>("DEVICE_RESET"), //
+	};
+
+	template<typename F = ::jint>
+	static auto DEVICE_DISPOSED() {
+		static_assert(field_signatures[jField<F>("DEVICE_DISPOSED")] != -1);
+		return sat<F>("DEVICE_DISPOSED");
+	}
+
+	template<typename F = ::jint>
+	static auto DEVICE_RESET() {
+		static_assert(field_signatures[jField<F>("DEVICE_RESET")] != -1);
+		return sat<F>("DEVICE_RESET");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::sun::java2d::pipe::hw::AccelDeviceEventListener, ::jint)>("addListener"), //
+		jMethod<::jvoid(::jint, ::jint)>("eventOccured"), //
+		jMethod<::jvoid(::sun::java2d::pipe::hw::AccelDeviceEventListener)>("removeListener"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto addListener(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addListener")] != -1);
+		return scall<R>("addListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto eventOccured(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("eventOccured")] != -1);
+		return scall<R>("eventOccured", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto removeListener(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeListener")] != -1);
+		return scall<R>("removeListener", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

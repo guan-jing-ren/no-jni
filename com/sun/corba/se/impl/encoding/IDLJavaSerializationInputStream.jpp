@@ -1,0 +1,469 @@
+#ifndef com_sun_corba_se_impl_encoding_IDLJavaSerializationInputStream_HPP
+#define com_sun_corba_se_impl_encoding_IDLJavaSerializationInputStream_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::impl::encoding::IDLJavaSerializationInputStream : public jObject<::com::sun::corba::se::impl::encoding::IDLJavaSerializationInputStream, ::com::sun::corba::se::impl::encoding::CDRInputStreamBase> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_impl_encoding / "IDLJavaSerializationInputStream";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jbyte)>(), //
+		jMethod<::java::lang::String *()>("_truncatable_ids"), //
+		jMethod<::jvoid()>("consumeEndian"), //
+		jMethod<::com::sun::corba::se::impl::encoding::CDRInputStreamBase()>("dup"), //
+		jMethod<::jvoid()>("end_value"), //
+		jMethod<::jint()>("getBufferLength"), //
+		jMethod<::com::sun::corba::se::impl::encoding::BufferManagerRead()>("getBufferManager"), //
+		jMethod<::java::nio::ByteBuffer()>("getByteBuffer"), //
+		jMethod<::com::sun::corba::se::spi::ior::iiop::GIOPVersion()>("getGIOPVersion"), //
+		jMethod<::jint()>("getIndex"), //
+		jMethod<::jint()>("getPosition"), //
+		jMethod<::jvoid(::org::omg::CORBA::ORB, ::java::nio::ByteBuffer, ::jint, ::jboolean, ::com::sun::corba::se::impl::encoding::BufferManagerRead)>("init"), //
+		jMethod<::jboolean()>("isLittleEndian"), //
+		jMethod<::jvoid(::jint)>("mark"), //
+		jMethod<::jboolean()>("markSupported"), //
+		jMethod<::org::omg::CORBA::ORB()>("orb"), //
+		jMethod<::jvoid(::org::omg::CORBA::ORB)>("orb"), //
+		jMethod<::jint()>("read"), //
+		jMethod<::java::lang::Object()>("read_Abstract"), //
+		jMethod<::org::omg::CORBA::Context()>("read_Context"), //
+		jMethod<::org::omg::CORBA::Object()>("read_Object"), //
+		jMethod<::org::omg::CORBA::Object(::java::lang::Class)>("read_Object"), //
+		jMethod<::org::omg::CORBA::Principal()>("read_Principal"), //
+		jMethod<::org::omg::CORBA::TypeCode()>("read_TypeCode"), //
+		jMethod<::java::io::Serializable()>("read_Value"), //
+		jMethod<::java::lang::Object()>("read_abstract_interface"), //
+		jMethod<::java::lang::Object(::java::lang::Class)>("read_abstract_interface"), //
+		jMethod<::org::omg::CORBA::Any()>("read_any"), //
+		jMethod<::jvoid(::org::omg::CORBA::AnySeqHolder, ::jint, ::jint)>("read_any_array"), //
+		jMethod<::jboolean()>("read_boolean"), //
+		jMethod<::jvoid(::org::omg::CORBA::BooleanSeqHolder, ::jint, ::jint)>("read_boolean_array"), //
+		jMethod<::jvoid(::jboolean *, ::jint, ::jint)>("read_boolean_array"), //
+		jMethod<::jchar()>("read_char"), //
+		jMethod<::jvoid(::org::omg::CORBA::CharSeqHolder, ::jint, ::jint)>("read_char_array"), //
+		jMethod<::jvoid(::jchar *, ::jint, ::jint)>("read_char_array"), //
+		jMethod<::jdouble()>("read_double"), //
+		jMethod<::jvoid(::org::omg::CORBA::DoubleSeqHolder, ::jint, ::jint)>("read_double_array"), //
+		jMethod<::jvoid(::jdouble *, ::jint, ::jint)>("read_double_array"), //
+		jMethod<::java::math::BigDecimal()>("read_fixed"), //
+		jMethod<::java::math::BigDecimal(::jshort, ::jshort)>("read_fixed"), //
+		jMethod<::jfloat()>("read_float"), //
+		jMethod<::jvoid(::org::omg::CORBA::FloatSeqHolder, ::jint, ::jint)>("read_float_array"), //
+		jMethod<::jvoid(::jfloat *, ::jint, ::jint)>("read_float_array"), //
+		jMethod<::jint()>("read_long"), //
+		jMethod<::jvoid(::org::omg::CORBA::LongSeqHolder, ::jint, ::jint)>("read_long_array"), //
+		jMethod<::jvoid(::jint *, ::jint, ::jint)>("read_long_array"), //
+		jMethod<::jlong()>("read_longlong"), //
+		jMethod<::jvoid(::org::omg::CORBA::LongLongSeqHolder, ::jint, ::jint)>("read_longlong_array"), //
+		jMethod<::jvoid(::jlong *, ::jint, ::jint)>("read_longlong_array"), //
+		jMethod<::jbyte()>("read_octet"), //
+		jMethod<::jvoid(::org::omg::CORBA::OctetSeqHolder, ::jint, ::jint)>("read_octet_array"), //
+		jMethod<::jvoid(::jbyte *, ::jint, ::jint)>("read_octet_array"), //
+		jMethod<::jshort()>("read_short"), //
+		jMethod<::jvoid(::org::omg::CORBA::ShortSeqHolder, ::jint, ::jint)>("read_short_array"), //
+		jMethod<::jvoid(::jshort *, ::jint, ::jint)>("read_short_array"), //
+		jMethod<::java::lang::String()>("read_string"), //
+		jMethod<::jint()>("read_ulong"), //
+		jMethod<::jvoid(::org::omg::CORBA::ULongSeqHolder, ::jint, ::jint)>("read_ulong_array"), //
+		jMethod<::jvoid(::jint *, ::jint, ::jint)>("read_ulong_array"), //
+		jMethod<::jlong()>("read_ulonglong"), //
+		jMethod<::jvoid(::org::omg::CORBA::ULongLongSeqHolder, ::jint, ::jint)>("read_ulonglong_array"), //
+		jMethod<::jvoid(::jlong *, ::jint, ::jint)>("read_ulonglong_array"), //
+		jMethod<::jshort()>("read_ushort"), //
+		jMethod<::jvoid(::org::omg::CORBA::UShortSeqHolder, ::jint, ::jint)>("read_ushort_array"), //
+		jMethod<::jvoid(::jshort *, ::jint, ::jint)>("read_ushort_array"), //
+		jMethod<::java::io::Serializable()>("read_value"), //
+		jMethod<::java::io::Serializable(::java::io::Serializable)>("read_value"), //
+		jMethod<::java::io::Serializable(::java::lang::Class)>("read_value"), //
+		jMethod<::java::io::Serializable(::java::lang::String)>("read_value"), //
+		jMethod<::java::io::Serializable(::org::omg::CORBA::portable::BoxedValueHelper)>("read_value"), //
+		jMethod<::jchar()>("read_wchar"), //
+		jMethod<::jvoid(::org::omg::CORBA::WCharSeqHolder, ::jint, ::jint)>("read_wchar_array"), //
+		jMethod<::jvoid(::jchar *, ::jint, ::jint)>("read_wchar_array"), //
+		jMethod<::java::lang::String()>("read_wstring"), //
+		jMethod<::jvoid()>("reset"), //
+		jMethod<::jvoid()>("resetCodeSetConverters"), //
+		jMethod<::jvoid(::jint)>("setBufferLength"), //
+		jMethod<::jvoid(::java::nio::ByteBuffer)>("setByteBuffer"), //
+		jMethod<::jvoid(::com::sun::corba::se::impl::encoding::ByteBufferWithInfo)>("setByteBufferWithInfo"), //
+		jMethod<::jvoid(::jint)>("setIndex"), //
+		jMethod<::jvoid(::com::sun::corba::se::impl::encoding::CDRInputStream)>("setParent"), //
+		jMethod<::jvoid()>("start_value"), //
+	};
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto _truncatable_ids(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("_truncatable_ids")] != -1);
+		return call<R>("_truncatable_ids", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto consumeEndian(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("consumeEndian")] != -1);
+		return call<R>("consumeEndian", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::encoding::CDRInputStreamBase, typename... Args>
+	auto dup(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dup")] != -1);
+		return call<R>("dup", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto end_value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("end_value")] != -1);
+		return call<R>("end_value", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getBufferLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBufferLength")] != -1);
+		return call<R>("getBufferLength", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::encoding::BufferManagerRead, typename... Args>
+	auto getBufferManager(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBufferManager")] != -1);
+		return call<R>("getBufferManager", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::ByteBuffer, typename... Args>
+	auto getByteBuffer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getByteBuffer")] != -1);
+		return call<R>("getByteBuffer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::ior::iiop::GIOPVersion, typename... Args>
+	auto getGIOPVersion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGIOPVersion")] != -1);
+		return call<R>("getGIOPVersion", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIndex")] != -1);
+		return call<R>("getIndex", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getPosition(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPosition")] != -1);
+		return call<R>("getPosition", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto init(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("init")] != -1);
+		return call<R>("init", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isLittleEndian(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isLittleEndian")] != -1);
+		return call<R>("isLittleEndian", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto mark(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("mark")] != -1);
+		return call<R>("mark", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto markSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("markSupported")] != -1);
+		return call<R>("markSupported", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::ORB, typename... Args>
+	auto orb(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("orb")] != -1);
+		return call<R>("orb", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto read_Abstract(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_Abstract")] != -1);
+		return call<R>("read_Abstract", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::Context, typename... Args>
+	auto read_Context(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_Context")] != -1);
+		return call<R>("read_Context", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::Object, typename... Args>
+	auto read_Object(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_Object")] != -1);
+		return call<R>("read_Object", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::Principal, typename... Args>
+	auto read_Principal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_Principal")] != -1);
+		return call<R>("read_Principal", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
+	auto read_TypeCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_TypeCode")] != -1);
+		return call<R>("read_TypeCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::Serializable, typename... Args>
+	auto read_Value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_Value")] != -1);
+		return call<R>("read_Value", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto read_abstract_interface(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_abstract_interface")] != -1);
+		return call<R>("read_abstract_interface", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::Any, typename... Args>
+	auto read_any(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_any")] != -1);
+		return call<R>("read_any", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto read_any_array(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_any_array")] != -1);
+		return call<R>("read_any_array", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto read_boolean(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_boolean")] != -1);
+		return call<R>("read_boolean", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto read_boolean_array(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_boolean_array")] != -1);
+		return call<R>("read_boolean_array", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jchar, typename... Args>
+	auto read_char(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_char")] != -1);
+		return call<R>("read_char", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto read_char_array(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_char_array")] != -1);
+		return call<R>("read_char_array", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	auto read_double(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_double")] != -1);
+		return call<R>("read_double", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto read_double_array(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_double_array")] != -1);
+		return call<R>("read_double_array", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigDecimal, typename... Args>
+	auto read_fixed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_fixed")] != -1);
+		return call<R>("read_fixed", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto read_float(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_float")] != -1);
+		return call<R>("read_float", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto read_float_array(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_float_array")] != -1);
+		return call<R>("read_float_array", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto read_long(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_long")] != -1);
+		return call<R>("read_long", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto read_long_array(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_long_array")] != -1);
+		return call<R>("read_long_array", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto read_longlong(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_longlong")] != -1);
+		return call<R>("read_longlong", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto read_longlong_array(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_longlong_array")] != -1);
+		return call<R>("read_longlong_array", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte, typename... Args>
+	auto read_octet(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_octet")] != -1);
+		return call<R>("read_octet", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto read_octet_array(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_octet_array")] != -1);
+		return call<R>("read_octet_array", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jshort, typename... Args>
+	auto read_short(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_short")] != -1);
+		return call<R>("read_short", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto read_short_array(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_short_array")] != -1);
+		return call<R>("read_short_array", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto read_string(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_string")] != -1);
+		return call<R>("read_string", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto read_ulong(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_ulong")] != -1);
+		return call<R>("read_ulong", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto read_ulong_array(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_ulong_array")] != -1);
+		return call<R>("read_ulong_array", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto read_ulonglong(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_ulonglong")] != -1);
+		return call<R>("read_ulonglong", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto read_ulonglong_array(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_ulonglong_array")] != -1);
+		return call<R>("read_ulonglong_array", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jshort, typename... Args>
+	auto read_ushort(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_ushort")] != -1);
+		return call<R>("read_ushort", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto read_ushort_array(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_ushort_array")] != -1);
+		return call<R>("read_ushort_array", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::Serializable, typename... Args>
+	auto read_value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_value")] != -1);
+		return call<R>("read_value", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jchar, typename... Args>
+	auto read_wchar(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_wchar")] != -1);
+		return call<R>("read_wchar", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto read_wchar_array(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_wchar_array")] != -1);
+		return call<R>("read_wchar_array", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto read_wstring(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_wstring")] != -1);
+		return call<R>("read_wstring", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto reset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("reset")] != -1);
+		return call<R>("reset", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto resetCodeSetConverters(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("resetCodeSetConverters")] != -1);
+		return call<R>("resetCodeSetConverters", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setBufferLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setBufferLength")] != -1);
+		return call<R>("setBufferLength", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setByteBuffer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setByteBuffer")] != -1);
+		return call<R>("setByteBuffer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setByteBufferWithInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setByteBufferWithInfo")] != -1);
+		return call<R>("setByteBufferWithInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setIndex")] != -1);
+		return call<R>("setIndex", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setParent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setParent")] != -1);
+		return call<R>("setParent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto start_value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("start_value")] != -1);
+		return call<R>("start_value", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

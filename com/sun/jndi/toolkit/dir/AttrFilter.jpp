@@ -1,0 +1,28 @@
+#ifndef com_sun_jndi_toolkit_dir_AttrFilter_HPP
+#define com_sun_jndi_toolkit_dir_AttrFilter_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::jndi::toolkit::dir::AttrFilter : public jObject<::com::sun::jndi::toolkit::dir::AttrFilter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_jndi_toolkit_dir / "AttrFilter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::javax::naming::directory::Attributes)>("check"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto check(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("check")] != -1);
+		return call<R>("check", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

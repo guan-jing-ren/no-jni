@@ -1,0 +1,76 @@
+#ifndef com_sun_org_omg_CORBA_ParameterMode_HPP
+#define com_sun_org_omg_CORBA_ParameterMode_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::org::omg::CORBA::ParameterMode : public jObject<::com::sun::org::omg::CORBA::ParameterMode, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_org_omg_CORBA / "ParameterMode";
+
+	constexpr static Enume field_signatures{
+		jField<::com::sun::org::omg::CORBA::ParameterMode>("PARAM_IN"), //
+		jField<::com::sun::org::omg::CORBA::ParameterMode>("PARAM_INOUT"), //
+		jField<::com::sun::org::omg::CORBA::ParameterMode>("PARAM_OUT"), //
+		jField<::jint>("_PARAM_IN"), //
+		jField<::jint>("_PARAM_INOUT"), //
+		jField<::jint>("_PARAM_OUT"), //
+	};
+
+	template<typename F = ::com::sun::org::omg::CORBA::ParameterMode>
+	static auto PARAM_IN() {
+		static_assert(field_signatures[jField<F>("PARAM_IN")] != -1);
+		return sat<F>("PARAM_IN");
+	}
+
+	template<typename F = ::com::sun::org::omg::CORBA::ParameterMode>
+	static auto PARAM_INOUT() {
+		static_assert(field_signatures[jField<F>("PARAM_INOUT")] != -1);
+		return sat<F>("PARAM_INOUT");
+	}
+
+	template<typename F = ::com::sun::org::omg::CORBA::ParameterMode>
+	static auto PARAM_OUT() {
+		static_assert(field_signatures[jField<F>("PARAM_OUT")] != -1);
+		return sat<F>("PARAM_OUT");
+	}
+
+	template<typename F = ::jint>
+	static auto _PARAM_IN() {
+		static_assert(field_signatures[jField<F>("_PARAM_IN")] != -1);
+		return sat<F>("_PARAM_IN");
+	}
+
+	template<typename F = ::jint>
+	static auto _PARAM_INOUT() {
+		static_assert(field_signatures[jField<F>("_PARAM_INOUT")] != -1);
+		return sat<F>("_PARAM_INOUT");
+	}
+
+	template<typename F = ::jint>
+	static auto _PARAM_OUT() {
+		static_assert(field_signatures[jField<F>("_PARAM_OUT")] != -1);
+		return sat<F>("_PARAM_OUT");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::com::sun::org::omg::CORBA::ParameterMode(::jint)>("from_int"), //
+		jMethod<::jint()>("value"), //
+	};
+
+	template<typename R = ::com::sun::org::omg::CORBA::ParameterMode, typename... Args>
+	static auto from_int(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("from_int")] != -1);
+		return scall<R>("from_int", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("value")] != -1);
+		return call<R>("value", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

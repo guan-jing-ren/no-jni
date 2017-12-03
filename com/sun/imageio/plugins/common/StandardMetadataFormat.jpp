@@ -1,0 +1,29 @@
+#ifndef com_sun_imageio_plugins_common_StandardMetadataFormat_HPP
+#define com_sun_imageio_plugins_common_StandardMetadataFormat_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::imageio::plugins::common::StandardMetadataFormat : public jObject<::com::sun::imageio::plugins::common::StandardMetadataFormat, ::javax::imageio::metadata::IIOMetadataFormatImpl> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_imageio_plugins_common / "StandardMetadataFormat";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jboolean(::java::lang::String, ::javax::imageio::ImageTypeSpecifier)>("canNodeAppear"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto canNodeAppear(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("canNodeAppear")] != -1);
+		return call<R>("canNodeAppear", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

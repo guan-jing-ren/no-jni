@@ -1,0 +1,68 @@
+#ifndef sun_awt_X11_XDragSourceContextPeer_HPP
+#define sun_awt_X11_XDragSourceContextPeer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::X11::XDragSourceContextPeer : public jObject<::sun::awt::X11::XDragSourceContextPeer, ::sun::awt::dnd::SunDragSourceContextPeer> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_X11 / "XDragSourceContextPeer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::jlong)>("cleanup"), //
+		jMethod<::jlong()>("getProxyModeSourceWindow"), //
+		jMethod<::jvoid()>("handleDragFinished"), //
+		jMethod<::jvoid(::jboolean)>("handleDragFinished"), //
+		jMethod<::jvoid(::jboolean, ::jint)>("handleDragFinished"), //
+		jMethod<::jvoid(::jboolean, ::jint, ::jint, ::jint)>("handleDragFinished"), //
+		jMethod<::jvoid(::jint)>("handleDragReply"), //
+		jMethod<::jvoid(::jint, ::jint, ::jint)>("handleDragReply"), //
+		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint)>("handleDragReply"), //
+		jMethod<::jvoid(::java::awt::Cursor)>("setCursor"), //
+		jMethod<::jvoid(::jlong)>("setProxyModeSourceWindow"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto cleanup(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("cleanup")] != -1);
+		return call<R>("cleanup", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getProxyModeSourceWindow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getProxyModeSourceWindow")] != -1);
+		return call<R>("getProxyModeSourceWindow", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto handleDragFinished(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("handleDragFinished")] != -1);
+		return call<R>("handleDragFinished", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto handleDragReply(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("handleDragReply")] != -1);
+		return call<R>("handleDragReply", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setCursor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setCursor")] != -1);
+		return call<R>("setCursor", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setProxyModeSourceWindow(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setProxyModeSourceWindow")] != -1);
+		return scall<R>("setProxyModeSourceWindow", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

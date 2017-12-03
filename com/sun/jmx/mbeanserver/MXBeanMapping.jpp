@@ -1,0 +1,63 @@
+#ifndef com_sun_jmx_mbeanserver_MXBeanMapping_HPP
+#define com_sun_jmx_mbeanserver_MXBeanMapping_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::jmx::mbeanserver::MXBeanMapping : public jObject<::com::sun::jmx::mbeanserver::MXBeanMapping, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_jmx_mbeanserver / "MXBeanMapping";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("checkReconstructible"), //
+		jMethod<::java::lang::Object(::java::lang::Object)>("fromOpenValue"), //
+		jMethod<::java::lang::reflect::Type()>("getJavaType"), //
+		jMethod<::java::lang::Class()>("getOpenClass"), //
+		jMethod<::javax::management::openmbean::OpenType()>("getOpenType"), //
+		jMethod<::java::lang::Object(::java::lang::Object)>("toOpenValue"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto checkReconstructible(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkReconstructible")] != -1);
+		return call<R>("checkReconstructible", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto fromOpenValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("fromOpenValue")] != -1);
+		return call<R>("fromOpenValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Type, typename... Args>
+	auto getJavaType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getJavaType")] != -1);
+		return call<R>("getJavaType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getOpenClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOpenClass")] != -1);
+		return call<R>("getOpenClass", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::openmbean::OpenType, typename... Args>
+	auto getOpenType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOpenType")] != -1);
+		return call<R>("getOpenType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto toOpenValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toOpenValue")] != -1);
+		return call<R>("toOpenValue", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

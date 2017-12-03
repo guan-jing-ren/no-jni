@@ -1,0 +1,127 @@
+#ifndef sun_security_x509_IssuingDistributionPointExtension_HPP
+#define sun_security_x509_IssuingDistributionPointExtension_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::x509::IssuingDistributionPointExtension : public jObject<::sun::security::x509::IssuingDistributionPointExtension, ::sun::security::x509::Extension> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_x509 / "IssuingDistributionPointExtension";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("IDENT"), //
+		jField<::java::lang::String>("INDIRECT_CRL"), //
+		jField<::java::lang::String>("NAME"), //
+		jField<::java::lang::String>("ONLY_ATTRIBUTE_CERTS"), //
+		jField<::java::lang::String>("ONLY_CA_CERTS"), //
+		jField<::java::lang::String>("ONLY_USER_CERTS"), //
+		jField<::java::lang::String>("POINT"), //
+		jField<::java::lang::String>("REASONS"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto IDENT() {
+		static_assert(field_signatures[jField<F>("IDENT")] != -1);
+		return sat<F>("IDENT");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto INDIRECT_CRL() {
+		static_assert(field_signatures[jField<F>("INDIRECT_CRL")] != -1);
+		return sat<F>("INDIRECT_CRL");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto NAME() {
+		static_assert(field_signatures[jField<F>("NAME")] != -1);
+		return sat<F>("NAME");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto ONLY_ATTRIBUTE_CERTS() {
+		static_assert(field_signatures[jField<F>("ONLY_ATTRIBUTE_CERTS")] != -1);
+		return sat<F>("ONLY_ATTRIBUTE_CERTS");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto ONLY_CA_CERTS() {
+		static_assert(field_signatures[jField<F>("ONLY_CA_CERTS")] != -1);
+		return sat<F>("ONLY_CA_CERTS");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto ONLY_USER_CERTS() {
+		static_assert(field_signatures[jField<F>("ONLY_USER_CERTS")] != -1);
+		return sat<F>("ONLY_USER_CERTS");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto POINT() {
+		static_assert(field_signatures[jField<F>("POINT")] != -1);
+		return sat<F>("POINT");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto REASONS() {
+		static_assert(field_signatures[jField<F>("REASONS")] != -1);
+		return sat<F>("REASONS");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Boolean, ::java::lang::Object)>(), //
+		jConstructor<::jvoid(::sun::security::x509::DistributionPointName, ::sun::security::x509::ReasonFlags, ::jboolean, ::jboolean, ::jboolean, ::jboolean)>(), //
+		jMethod<::jvoid(::java::lang::String)>("delete"), //
+		jMethod<::jvoid(::java::io::OutputStream)>("encode"), //
+		jMethod<::java::lang::Object(::java::lang::String)>("get"), //
+		jMethod<::java::util::Enumeration()>("getElements"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::Object)>("set"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto delete_(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("delete")] != -1);
+		return call<R>("delete", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto encode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encode")] != -1);
+		return call<R>("encode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	auto getElements(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getElements")] != -1);
+		return call<R>("getElements", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set")] != -1);
+		return call<R>("set", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

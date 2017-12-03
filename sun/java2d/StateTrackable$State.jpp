@@ -1,0 +1,62 @@
+#ifndef sun_java2d_StateTrackable$State_HPP
+#define sun_java2d_StateTrackable$State_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::java2d::StateTrackable$State : public jObject<::sun::java2d::StateTrackable$State, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d / "StateTrackable$State";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::java2d::StateTrackable$State>("DYNAMIC"), //
+		jField<::sun::java2d::StateTrackable$State>("IMMUTABLE"), //
+		jField<::sun::java2d::StateTrackable$State>("STABLE"), //
+		jField<::sun::java2d::StateTrackable$State>("UNTRACKABLE"), //
+	};
+
+	template<typename F = ::sun::java2d::StateTrackable$State>
+	static auto DYNAMIC() {
+		static_assert(field_signatures[jField<F>("DYNAMIC")] != -1);
+		return sat<F>("DYNAMIC");
+	}
+
+	template<typename F = ::sun::java2d::StateTrackable$State>
+	static auto IMMUTABLE() {
+		static_assert(field_signatures[jField<F>("IMMUTABLE")] != -1);
+		return sat<F>("IMMUTABLE");
+	}
+
+	template<typename F = ::sun::java2d::StateTrackable$State>
+	static auto STABLE() {
+		static_assert(field_signatures[jField<F>("STABLE")] != -1);
+		return sat<F>("STABLE");
+	}
+
+	template<typename F = ::sun::java2d::StateTrackable$State>
+	static auto UNTRACKABLE() {
+		static_assert(field_signatures[jField<F>("UNTRACKABLE")] != -1);
+		return sat<F>("UNTRACKABLE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::java2d::StateTrackable$State(::java::lang::String)>("valueOf"), //
+		jMethod<::sun::java2d::StateTrackable$State *()>("values"), //
+	};
+
+	template<typename R = ::sun::java2d::StateTrackable$State, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::StateTrackable$State *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

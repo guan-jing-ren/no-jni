@@ -1,0 +1,64 @@
+#ifndef com_sun_management_ThreadMXBean_HPP
+#define com_sun_management_ThreadMXBean_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::com::sun::management::ThreadMXBean : public jObject<::com::sun::management::ThreadMXBean, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_management / "ThreadMXBean";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jlong(::jlong)>("getThreadAllocatedBytes"), //
+		jMethod<::jlong *(::jlong *)>("getThreadAllocatedBytes"), //
+		jMethod<::jlong *(::jlong *)>("getThreadCpuTime"), //
+		jMethod<::jlong *(::jlong *)>("getThreadUserTime"), //
+		jMethod<::jboolean()>("isThreadAllocatedMemoryEnabled"), //
+		jMethod<::jboolean()>("isThreadAllocatedMemorySupported"), //
+		jMethod<::jvoid(::jboolean)>("setThreadAllocatedMemoryEnabled"), //
+	};
+
+	template<typename R = ::jlong, typename... Args>
+	auto getThreadAllocatedBytes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getThreadAllocatedBytes")] != -1);
+		return call<R>("getThreadAllocatedBytes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong *, typename... Args>
+	auto getThreadCpuTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getThreadCpuTime")] != -1);
+		return call<R>("getThreadCpuTime", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong *, typename... Args>
+	auto getThreadUserTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getThreadUserTime")] != -1);
+		return call<R>("getThreadUserTime", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isThreadAllocatedMemoryEnabled(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isThreadAllocatedMemoryEnabled")] != -1);
+		return call<R>("isThreadAllocatedMemoryEnabled", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isThreadAllocatedMemorySupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isThreadAllocatedMemorySupported")] != -1);
+		return call<R>("isThreadAllocatedMemorySupported", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setThreadAllocatedMemoryEnabled(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setThreadAllocatedMemoryEnabled")] != -1);
+		return call<R>("setThreadAllocatedMemoryEnabled", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

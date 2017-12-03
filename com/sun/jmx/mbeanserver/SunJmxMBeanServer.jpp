@@ -1,0 +1,56 @@
+#ifndef com_sun_jmx_mbeanserver_SunJmxMBeanServer_HPP
+#define com_sun_jmx_mbeanserver_SunJmxMBeanServer_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::jmx::mbeanserver::SunJmxMBeanServer : public jObject<::com::sun::jmx::mbeanserver::SunJmxMBeanServer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_jmx_mbeanserver / "SunJmxMBeanServer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::com::sun::jmx::mbeanserver::MBeanInstantiator()>("getMBeanInstantiator"), //
+		jMethod<::javax::management::MBeanServerDelegate()>("getMBeanServerDelegate"), //
+		jMethod<::javax::management::MBeanServer()>("getMBeanServerInterceptor"), //
+		jMethod<::jboolean()>("interceptorsEnabled"), //
+		jMethod<::jvoid(::javax::management::MBeanServer)>("setMBeanServerInterceptor"), //
+	};
+
+	template<typename R = ::com::sun::jmx::mbeanserver::MBeanInstantiator, typename... Args>
+	auto getMBeanInstantiator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMBeanInstantiator")] != -1);
+		return call<R>("getMBeanInstantiator", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::MBeanServerDelegate, typename... Args>
+	auto getMBeanServerDelegate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMBeanServerDelegate")] != -1);
+		return call<R>("getMBeanServerDelegate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::MBeanServer, typename... Args>
+	auto getMBeanServerInterceptor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMBeanServerInterceptor")] != -1);
+		return call<R>("getMBeanServerInterceptor", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto interceptorsEnabled(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("interceptorsEnabled")] != -1);
+		return call<R>("interceptorsEnabled", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setMBeanServerInterceptor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setMBeanServerInterceptor")] != -1);
+		return call<R>("setMBeanServerInterceptor", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

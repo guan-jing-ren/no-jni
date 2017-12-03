@@ -1,0 +1,118 @@
+#ifndef sun_awt_geom_AreaOp_HPP
+#define sun_awt_geom_AreaOp_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::geom::AreaOp : public jObject<::sun::awt::geom::AreaOp, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_geom / "AreaOp";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("CTAG_LEFT"), //
+		jField<::jint>("CTAG_RIGHT"), //
+		jField<::jint>("ETAG_ENTER"), //
+		jField<::jint>("ETAG_EXIT"), //
+		jField<::jint>("ETAG_IGNORE"), //
+		jField<::jint>("RSTAG_INSIDE"), //
+		jField<::jint>("RSTAG_OUTSIDE"), //
+	};
+
+	template<typename F = ::jint>
+	static auto CTAG_LEFT() {
+		static_assert(field_signatures[jField<F>("CTAG_LEFT")] != -1);
+		return sat<F>("CTAG_LEFT");
+	}
+
+	template<typename F = ::jint>
+	static auto CTAG_RIGHT() {
+		static_assert(field_signatures[jField<F>("CTAG_RIGHT")] != -1);
+		return sat<F>("CTAG_RIGHT");
+	}
+
+	template<typename F = ::jint>
+	static auto ETAG_ENTER() {
+		static_assert(field_signatures[jField<F>("ETAG_ENTER")] != -1);
+		return sat<F>("ETAG_ENTER");
+	}
+
+	template<typename F = ::jint>
+	static auto ETAG_EXIT() {
+		static_assert(field_signatures[jField<F>("ETAG_EXIT")] != -1);
+		return sat<F>("ETAG_EXIT");
+	}
+
+	template<typename F = ::jint>
+	static auto ETAG_IGNORE() {
+		static_assert(field_signatures[jField<F>("ETAG_IGNORE")] != -1);
+		return sat<F>("ETAG_IGNORE");
+	}
+
+	template<typename F = ::jint>
+	static auto RSTAG_INSIDE() {
+		static_assert(field_signatures[jField<F>("RSTAG_INSIDE")] != -1);
+		return sat<F>("RSTAG_INSIDE");
+	}
+
+	template<typename F = ::jint>
+	static auto RSTAG_OUTSIDE() {
+		static_assert(field_signatures[jField<F>("RSTAG_OUTSIDE")] != -1);
+		return sat<F>("RSTAG_OUTSIDE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::Vector(::java::util::Vector, ::java::util::Vector)>("calculate"), //
+		jMethod<::jint(::sun::awt::geom::Edge)>("classify"), //
+		jMethod<::jvoid(::java::util::Vector, ::java::util::Vector)>("finalizeSubCurves"), //
+		jMethod<::jint()>("getState"), //
+		jMethod<::jvoid()>("newRow"), //
+		jMethod<::jboolean(::jdouble, ::jdouble, ::jint)>("obstructs"), //
+		jMethod<::jvoid(::java::util::Vector, ::java::util::Vector, ::java::util::Vector)>("resolveLinks"), //
+	};
+
+	template<typename R = ::java::util::Vector, typename... Args>
+	auto calculate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("calculate")] != -1);
+		return call<R>("calculate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto classify(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("classify")] != -1);
+		return call<R>("classify", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto finalizeSubCurves(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("finalizeSubCurves")] != -1);
+		return scall<R>("finalizeSubCurves", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getState")] != -1);
+		return call<R>("getState", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto newRow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newRow")] != -1);
+		return call<R>("newRow", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto obstructs(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("obstructs")] != -1);
+		return scall<R>("obstructs", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto resolveLinks(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("resolveLinks")] != -1);
+		return scall<R>("resolveLinks", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

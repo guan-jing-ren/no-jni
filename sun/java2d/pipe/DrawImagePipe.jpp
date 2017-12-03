@@ -1,0 +1,45 @@
+#ifndef sun_java2d_pipe_DrawImagePipe_HPP
+#define sun_java2d_pipe_DrawImagePipe_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::pipe::DrawImagePipe : public jObject<::sun::java2d::pipe::DrawImagePipe, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_pipe / "DrawImagePipe";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::sun::java2d::SunGraphics2D, ::java::awt::Image, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::java::awt::Color, ::java::awt::image::ImageObserver)>("copyImage"), //
+		jMethod<::jboolean(::sun::java2d::SunGraphics2D, ::java::awt::Image, ::jint, ::jint, ::java::awt::Color, ::java::awt::image::ImageObserver)>("copyImage"), //
+		jMethod<::jboolean(::sun::java2d::SunGraphics2D, ::java::awt::Image, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint, ::java::awt::Color, ::java::awt::image::ImageObserver)>("scaleImage"), //
+		jMethod<::jboolean(::sun::java2d::SunGraphics2D, ::java::awt::Image, ::jint, ::jint, ::jint, ::jint, ::java::awt::Color, ::java::awt::image::ImageObserver)>("scaleImage"), //
+		jMethod<::jboolean(::sun::java2d::SunGraphics2D, ::java::awt::Image, ::java::awt::geom::AffineTransform, ::java::awt::image::ImageObserver)>("transformImage"), //
+		jMethod<::jvoid(::sun::java2d::SunGraphics2D, ::java::awt::image::BufferedImage, ::java::awt::image::BufferedImageOp, ::jint, ::jint)>("transformImage"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto copyImage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("copyImage")] != -1);
+		return call<R>("copyImage", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto scaleImage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("scaleImage")] != -1);
+		return call<R>("scaleImage", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto transformImage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("transformImage")] != -1);
+		return call<R>("transformImage", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

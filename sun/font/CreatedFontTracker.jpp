@@ -1,0 +1,97 @@
+#ifndef sun_font_CreatedFontTracker_HPP
+#define sun_font_CreatedFontTracker_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::CreatedFontTracker : public jObject<::sun::font::CreatedFontTracker, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "CreatedFontTracker";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("MAX_FILE_SIZE"), //
+		jField<::jint>("MAX_TOTAL_BYTES"), //
+	};
+
+	template<typename F = ::jint>
+	static auto MAX_FILE_SIZE() {
+		static_assert(field_signatures[jField<F>("MAX_FILE_SIZE")] != -1);
+		return sat<F>("MAX_FILE_SIZE");
+	}
+
+	template<typename F = ::jint>
+	static auto MAX_TOTAL_BYTES() {
+		static_assert(field_signatures[jField<F>("MAX_TOTAL_BYTES")] != -1);
+		return sat<F>("MAX_TOTAL_BYTES");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean()>("acquirePermit"), //
+		jMethod<::jvoid(::java::io::File)>("add"), //
+		jMethod<::jvoid(::jint)>("addBytes"), //
+		jMethod<::jint()>("getNumBytes"), //
+		jMethod<::sun::font::CreatedFontTracker()>("getTracker"), //
+		jMethod<::jvoid()>("releasePermit"), //
+		jMethod<::jvoid(::java::io::File)>("remove"), //
+		jMethod<::jvoid(::java::io::File, ::java::io::OutputStream)>("set"), //
+		jMethod<::jvoid(::jint)>("subBytes"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto acquirePermit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("acquirePermit")] != -1);
+		return call<R>("acquirePermit", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto add(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addBytes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addBytes")] != -1);
+		return call<R>("addBytes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getNumBytes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNumBytes")] != -1);
+		return call<R>("getNumBytes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::CreatedFontTracker, typename... Args>
+	static auto getTracker(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTracker")] != -1);
+		return scall<R>("getTracker", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto releasePermit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("releasePermit")] != -1);
+		return call<R>("releasePermit", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto remove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set")] != -1);
+		return call<R>("set", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto subBytes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("subBytes")] != -1);
+		return call<R>("subBytes", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,29 @@
+#ifndef com_sun_corba_se_impl_resolver_INSURLOperationImpl_HPP
+#define com_sun_corba_se_impl_resolver_INSURLOperationImpl_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::impl::resolver::INSURLOperationImpl : public jObject<::com::sun::corba::se::impl::resolver::INSURLOperationImpl, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_impl_resolver / "INSURLOperationImpl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::com::sun::corba::se::spi::orb::ORB, ::com::sun::corba::se::spi::resolver::Resolver)>(), //
+		jMethod<::java::lang::Object(::java::lang::Object)>("operate"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto operate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("operate")] != -1);
+		return call<R>("operate", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

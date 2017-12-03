@@ -1,0 +1,57 @@
+#ifndef sun_management_counter_perf_PerfInstrumentation_HPP
+#define sun_management_counter_perf_PerfInstrumentation_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::management::counter::perf::PerfInstrumentation : public jObject<::sun::management::counter::perf::PerfInstrumentation, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_management_counter_perf / "PerfInstrumentation";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::nio::ByteBuffer)>(), //
+		jMethod<::java::util::List(::java::lang::String)>("findByPattern"), //
+		jMethod<::java::util::List()>("getAllCounters"), //
+		jMethod<::jint()>("getMajorVersion"), //
+		jMethod<::jint()>("getMinorVersion"), //
+		jMethod<::jlong()>("getModificationTimeStamp"), //
+	};
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto findByPattern(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("findByPattern")] != -1);
+		return call<R>("findByPattern", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getAllCounters(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAllCounters")] != -1);
+		return call<R>("getAllCounters", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getMajorVersion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMajorVersion")] != -1);
+		return call<R>("getMajorVersion", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getMinorVersion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMinorVersion")] != -1);
+		return call<R>("getMinorVersion", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getModificationTimeStamp(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getModificationTimeStamp")] != -1);
+		return call<R>("getModificationTimeStamp", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

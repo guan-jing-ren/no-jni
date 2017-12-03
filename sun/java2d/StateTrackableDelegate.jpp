@@ -1,0 +1,83 @@
+#ifndef sun_java2d_StateTrackableDelegate_HPP
+#define sun_java2d_StateTrackableDelegate_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::java2d::StateTrackableDelegate : public jObject<::sun::java2d::StateTrackableDelegate, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d / "StateTrackableDelegate";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::java2d::StateTrackableDelegate>("IMMUTABLE_DELEGATE"), //
+		jField<::sun::java2d::StateTrackableDelegate>("UNTRACKABLE_DELEGATE"), //
+	};
+
+	template<typename F = ::sun::java2d::StateTrackableDelegate>
+	static auto IMMUTABLE_DELEGATE() {
+		static_assert(field_signatures[jField<F>("IMMUTABLE_DELEGATE")] != -1);
+		return sat<F>("IMMUTABLE_DELEGATE");
+	}
+
+	template<typename F = ::sun::java2d::StateTrackableDelegate>
+	static auto UNTRACKABLE_DELEGATE() {
+		static_assert(field_signatures[jField<F>("UNTRACKABLE_DELEGATE")] != -1);
+		return sat<F>("UNTRACKABLE_DELEGATE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("addDynamicAgent"), //
+		jMethod<::sun::java2d::StateTrackableDelegate(::sun::java2d::StateTrackable$State)>("createInstance"), //
+		jMethod<::sun::java2d::StateTrackable$State()>("getState"), //
+		jMethod<::sun::java2d::StateTracker()>("getStateTracker"), //
+		jMethod<::jvoid()>("markDirty"), //
+		jMethod<::jvoid()>("setImmutable"), //
+		jMethod<::jvoid()>("setUntrackable"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addDynamicAgent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addDynamicAgent")] != -1);
+		return call<R>("addDynamicAgent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::StateTrackableDelegate, typename... Args>
+	static auto createInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createInstance")] != -1);
+		return scall<R>("createInstance", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::StateTrackable$State, typename... Args>
+	auto getState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getState")] != -1);
+		return call<R>("getState", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::StateTracker, typename... Args>
+	auto getStateTracker(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStateTracker")] != -1);
+		return call<R>("getStateTracker", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto markDirty(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("markDirty")] != -1);
+		return call<R>("markDirty", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setImmutable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setImmutable")] != -1);
+		return call<R>("setImmutable", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setUntrackable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setUntrackable")] != -1);
+		return call<R>("setUntrackable", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,57 @@
+#ifndef sun_net_util_IPAddressUtil_HPP
+#define sun_net_util_IPAddressUtil_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::net::util::IPAddressUtil : public jObject<::sun::net::util::IPAddressUtil, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_net_util / "IPAddressUtil";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jbyte *(::jbyte *)>("convertFromIPv4MappedAddress"), //
+		jMethod<::jboolean(::java::lang::String)>("isIPv4LiteralAddress"), //
+		jMethod<::jboolean(::java::lang::String)>("isIPv6LiteralAddress"), //
+		jMethod<::jbyte *(::java::lang::String)>("textToNumericFormatV4"), //
+		jMethod<::jbyte *(::java::lang::String)>("textToNumericFormatV6"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	static auto convertFromIPv4MappedAddress(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("convertFromIPv4MappedAddress")] != -1);
+		return scall<R>("convertFromIPv4MappedAddress", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isIPv4LiteralAddress(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isIPv4LiteralAddress")] != -1);
+		return scall<R>("isIPv4LiteralAddress", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isIPv6LiteralAddress(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isIPv6LiteralAddress")] != -1);
+		return scall<R>("isIPv6LiteralAddress", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	static auto textToNumericFormatV4(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("textToNumericFormatV4")] != -1);
+		return scall<R>("textToNumericFormatV4", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	static auto textToNumericFormatV6(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("textToNumericFormatV6")] != -1);
+		return scall<R>("textToNumericFormatV6", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

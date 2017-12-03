@@ -1,0 +1,77 @@
+#ifndef sun_awt_AWTAccessor$EventQueueAccessor_HPP
+#define sun_awt_AWTAccessor$EventQueueAccessor_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::AWTAccessor$EventQueueAccessor : public jObject<::sun::awt::AWTAccessor$EventQueueAccessor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "AWTAccessor$EventQueueAccessor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Thread(::java::awt::EventQueue)>("getDispatchThread"), //
+		jMethod<::jlong(::java::awt::EventQueue)>("getMostRecentEventTime"), //
+		jMethod<::jvoid(::java::lang::Object, ::java::lang::Runnable)>("invokeAndWait"), //
+		jMethod<::jboolean(::java::awt::EventQueue)>("isDispatchThreadImpl"), //
+		jMethod<::jboolean(::java::awt::EventQueue)>("noEvents"), //
+		jMethod<::jvoid(::java::awt::EventQueue, ::java::lang::Object, ::jboolean)>("removeSourceEvents"), //
+		jMethod<::jvoid(::java::awt::EventQueue, ::sun::awt::FwDispatcher)>("setFwDispatcher"), //
+		jMethod<::jvoid(::java::awt::EventQueue, ::jboolean)>("wakeup"), //
+	};
+
+	template<typename R = ::java::lang::Thread, typename... Args>
+	auto getDispatchThread(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDispatchThread")] != -1);
+		return call<R>("getDispatchThread", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getMostRecentEventTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMostRecentEventTime")] != -1);
+		return call<R>("getMostRecentEventTime", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto invokeAndWait(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("invokeAndWait")] != -1);
+		return call<R>("invokeAndWait", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDispatchThreadImpl(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isDispatchThreadImpl")] != -1);
+		return call<R>("isDispatchThreadImpl", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto noEvents(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("noEvents")] != -1);
+		return call<R>("noEvents", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeSourceEvents(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeSourceEvents")] != -1);
+		return call<R>("removeSourceEvents", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setFwDispatcher(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setFwDispatcher")] != -1);
+		return call<R>("setFwDispatcher", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto wakeup(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("wakeup")] != -1);
+		return call<R>("wakeup", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

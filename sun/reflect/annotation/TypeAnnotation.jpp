@@ -1,0 +1,64 @@
+#ifndef sun_reflect_annotation_TypeAnnotation_HPP
+#define sun_reflect_annotation_TypeAnnotation_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::reflect::annotation::TypeAnnotation : public jObject<::sun::reflect::annotation::TypeAnnotation, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_reflect_annotation / "TypeAnnotation";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::reflect::annotation::TypeAnnotation$TypeAnnotationTargetInfo, ::sun::reflect::annotation::TypeAnnotation$LocationInfo, ::java::lang::annotation::Annotation, ::java::lang::reflect::AnnotatedElement)>(), //
+		jMethod<::java::util::List(::sun::reflect::annotation::TypeAnnotation *, ::sun::reflect::annotation::TypeAnnotation$TypeAnnotationTarget)>("filter"), //
+		jMethod<::java::lang::annotation::Annotation()>("getAnnotation"), //
+		jMethod<::java::lang::reflect::AnnotatedElement()>("getBaseDeclaration"), //
+		jMethod<::sun::reflect::annotation::TypeAnnotation$LocationInfo()>("getLocationInfo"), //
+		jMethod<::sun::reflect::annotation::TypeAnnotation$TypeAnnotationTargetInfo()>("getTargetInfo"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::util::List, typename... Args>
+	static auto filter(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("filter")] != -1);
+		return scall<R>("filter", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::annotation::Annotation, typename... Args>
+	auto getAnnotation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAnnotation")] != -1);
+		return call<R>("getAnnotation", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::AnnotatedElement, typename... Args>
+	auto getBaseDeclaration(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBaseDeclaration")] != -1);
+		return call<R>("getBaseDeclaration", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::reflect::annotation::TypeAnnotation$LocationInfo, typename... Args>
+	auto getLocationInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLocationInfo")] != -1);
+		return call<R>("getLocationInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::reflect::annotation::TypeAnnotation$TypeAnnotationTargetInfo, typename... Args>
+	auto getTargetInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTargetInfo")] != -1);
+		return call<R>("getTargetInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

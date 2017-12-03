@@ -1,0 +1,101 @@
+#ifndef sun_security_x509_X509Key_HPP
+#define sun_security_x509_X509Key_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::x509::X509Key : public jObject<::sun::security::x509::X509Key, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_x509 / "X509Key";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::io::InputStream)>("decode"), //
+		jMethod<::jvoid(::jbyte *)>("decode"), //
+		jMethod<::jbyte *()>("encode"), //
+		jMethod<::jvoid(::sun::security::util::DerOutputStream)>("encode"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::lang::String()>("getAlgorithm"), //
+		jMethod<::sun::security::x509::AlgorithmId()>("getAlgorithmId"), //
+		jMethod<::jbyte *()>("getEncoded"), //
+		jMethod<::jbyte *()>("getEncodedInternal"), //
+		jMethod<::java::lang::String()>("getFormat"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::security::PublicKey(::sun::security::util::DerValue)>("parse"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto decode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("decode")] != -1);
+		return call<R>("decode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto encode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encode")] != -1);
+		return call<R>("encode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAlgorithm(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAlgorithm")] != -1);
+		return call<R>("getAlgorithm", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::AlgorithmId, typename... Args>
+	auto getAlgorithmId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAlgorithmId")] != -1);
+		return call<R>("getAlgorithmId", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getEncoded(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEncoded")] != -1);
+		return call<R>("getEncoded", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getEncodedInternal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEncodedInternal")] != -1);
+		return call<R>("getEncodedInternal", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getFormat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFormat")] != -1);
+		return call<R>("getFormat", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::PublicKey, typename... Args>
+	static auto parse(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("parse")] != -1);
+		return scall<R>("parse", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

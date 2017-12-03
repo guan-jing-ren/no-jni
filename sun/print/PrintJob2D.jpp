@@ -1,0 +1,100 @@
+#ifndef sun_print_PrintJob2D_HPP
+#define sun_print_PrintJob2D_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::print::PrintJob2D : public jObject<::sun::print::PrintJob2D, ::java::awt::PrintJob> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_print / "PrintJob2D";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::Frame, ::java::lang::String, ::java::awt::JobAttributes, ::java::awt::PageAttributes)>(), //
+		jConstructor<::jvoid(::java::awt::Frame, ::java::lang::String, ::java::util::Properties)>(), //
+		jMethod<::jvoid()>("end"), //
+		jMethod<::jvoid()>("finalize"), //
+		jMethod<::java::awt::Graphics()>("getGraphics"), //
+		jMethod<::java::awt::Dimension()>("getPageDimension"), //
+		jMethod<::jint()>("getPageResolution"), //
+		jMethod<::jboolean()>("lastPageFirst"), //
+		jMethod<::javax::print::attribute::standard::MediaSizeName(::java::awt::PageAttributes$MediaType)>("mapMedia"), //
+		jMethod<::jint(::java::awt::Graphics, ::java::awt::print::PageFormat, ::jint)>("print"), //
+		jMethod<::jboolean()>("printDialog"), //
+		jMethod<::jvoid()>("run"), //
+		jMethod<::java::awt::PageAttributes$MediaType(::javax::print::attribute::standard::MediaSizeName)>("unMapMedia"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto end(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("end")] != -1);
+		return call<R>("end", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto finalize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("finalize")] != -1);
+		return call<R>("finalize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Graphics, typename... Args>
+	auto getGraphics(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGraphics")] != -1);
+		return call<R>("getGraphics", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Dimension, typename... Args>
+	auto getPageDimension(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPageDimension")] != -1);
+		return call<R>("getPageDimension", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getPageResolution(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPageResolution")] != -1);
+		return call<R>("getPageResolution", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto lastPageFirst(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("lastPageFirst")] != -1);
+		return call<R>("lastPageFirst", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::print::attribute::standard::MediaSizeName, typename... Args>
+	static auto mapMedia(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("mapMedia")] != -1);
+		return scall<R>("mapMedia", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto print(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("print")] != -1);
+		return call<R>("print", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto printDialog(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("printDialog")] != -1);
+		return call<R>("printDialog", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto run(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("run")] != -1);
+		return call<R>("run", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::PageAttributes$MediaType, typename... Args>
+	static auto unMapMedia(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unMapMedia")] != -1);
+		return scall<R>("unMapMedia", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

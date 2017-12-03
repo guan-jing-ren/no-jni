@@ -1,0 +1,51 @@
+#ifndef com_sun_corba_se_impl_orbutil_concurrent_CondVar_HPP
+#define com_sun_corba_se_impl_orbutil_concurrent_CondVar_HPP
+
+#include "../../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::impl::orbutil::concurrent::CondVar : public jObject<::com::sun::corba::se::impl::orbutil::concurrent::CondVar, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_impl_orbutil_concurrent / "CondVar";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::com::sun::corba::se::impl::orbutil::concurrent::Sync)>(), //
+		jConstructor<::jvoid(::com::sun::corba::se::impl::orbutil::concurrent::Sync, ::jboolean)>(), //
+		jMethod<::jvoid()>("await"), //
+		jMethod<::jvoid()>("broadcast"), //
+		jMethod<::jvoid()>("signal"), //
+		jMethod<::jboolean(::jlong)>("timedwait"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto await(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("await")] != -1);
+		return call<R>("await", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto broadcast(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("broadcast")] != -1);
+		return call<R>("broadcast", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto signal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("signal")] != -1);
+		return call<R>("signal", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto timedwait(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("timedwait")] != -1);
+		return call<R>("timedwait", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

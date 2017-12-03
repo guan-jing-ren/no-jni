@@ -1,0 +1,42 @@
+#ifndef sun_java2d_xr_XRGraphicsConfig_HPP
+#define sun_java2d_xr_XRGraphicsConfig_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::xr::XRGraphicsConfig : public jObject<::sun::java2d::xr::XRGraphicsConfig, ::sun::awt::X11GraphicsConfig> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_xr / "XRGraphicsConfig";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::java2d::SurfaceData(::sun::awt::X11ComponentPeer)>("createSurfaceData"), //
+		jMethod<::sun::java2d::xr::XRGraphicsConfig(::sun::awt::X11GraphicsDevice, ::jint, ::jint, ::jint, ::jboolean)>("getConfig"), //
+		jMethod<::java::lang::Object()>("getProxyKey"), //
+	};
+
+	template<typename R = ::sun::java2d::SurfaceData, typename... Args>
+	auto createSurfaceData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createSurfaceData")] != -1);
+		return call<R>("createSurfaceData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::xr::XRGraphicsConfig, typename... Args>
+	static auto getConfig(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getConfig")] != -1);
+		return scall<R>("getConfig", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getProxyKey(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getProxyKey")] != -1);
+		return call<R>("getProxyKey", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,161 @@
+#ifndef com_sun_corba_se_impl_naming_cosnaming_NamingContextImpl_HPP
+#define com_sun_corba_se_impl_naming_cosnaming_NamingContextImpl_HPP
+
+#include "../../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::impl::naming::cosnaming::NamingContextImpl : public jObject<::com::sun::corba::se::impl::naming::cosnaming::NamingContextImpl, ::org::omg::CosNaming::NamingContextExtPOA> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_impl_naming_cosnaming / "NamingContextImpl";
+
+	constexpr static Enume field_signatures{
+		jField<::jboolean>("debug"), //
+	};
+
+	template<typename F = ::jboolean>
+	static auto debug() {
+		static_assert(field_signatures[jField<F>("debug")] != -1);
+		return sat<F>("debug");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::com::sun::corba::se::spi::orb::ORB, ::org::omg::PortableServer::POA)>(), //
+		jMethod<::jvoid(::org::omg::CosNaming::NameComponent *, ::org::omg::CORBA::Object)>("bind"), //
+		jMethod<::jvoid(::org::omg::CosNaming::NameComponent *, ::org::omg::CosNaming::NamingContext)>("bind_context"), //
+		jMethod<::org::omg::CosNaming::NamingContext(::org::omg::CosNaming::NameComponent *)>("bind_new_context"), //
+		jMethod<::jvoid()>("destroy"), //
+		jMethod<::jvoid(::com::sun::corba::se::impl::naming::cosnaming::NamingContextDataStore, ::org::omg::CosNaming::NameComponent *, ::org::omg::CORBA::Object, ::jboolean, ::org::omg::CosNaming::BindingType)>("doBind"), //
+		jMethod<::org::omg::CORBA::Object(::com::sun::corba::se::impl::naming::cosnaming::NamingContextDataStore, ::org::omg::CosNaming::NameComponent *)>("doResolve"), //
+		jMethod<::jvoid(::com::sun::corba::se::impl::naming::cosnaming::NamingContextDataStore, ::org::omg::CosNaming::NameComponent *)>("doUnbind"), //
+		jMethod<::org::omg::PortableServer::POA()>("getNSPOA"), //
+		jMethod<::jvoid(::jint, ::org::omg::CosNaming::BindingListHolder, ::org::omg::CosNaming::BindingIteratorHolder)>("list"), //
+		jMethod<::java::lang::String(::org::omg::CosNaming::NameComponent *)>("nameToString"), //
+		jMethod<::org::omg::CosNaming::NamingContext()>("new_context"), //
+		jMethod<::jvoid(::org::omg::CosNaming::NameComponent *, ::org::omg::CORBA::Object)>("rebind"), //
+		jMethod<::jvoid(::org::omg::CosNaming::NameComponent *, ::org::omg::CosNaming::NamingContext)>("rebind_context"), //
+		jMethod<::org::omg::CORBA::Object(::org::omg::CosNaming::NameComponent *)>("resolve"), //
+		jMethod<::org::omg::CORBA::Object(::java::lang::String)>("resolve_str"), //
+		jMethod<::org::omg::CosNaming::NameComponent *(::java::lang::String)>("to_name"), //
+		jMethod<::java::lang::String(::org::omg::CosNaming::NameComponent *)>("to_string"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::lang::String)>("to_url"), //
+		jMethod<::jvoid(::org::omg::CosNaming::NameComponent *)>("unbind"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto bind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("bind")] != -1);
+		return call<R>("bind", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto bind_context(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("bind_context")] != -1);
+		return call<R>("bind_context", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CosNaming::NamingContext, typename... Args>
+	auto bind_new_context(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("bind_new_context")] != -1);
+		return call<R>("bind_new_context", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto destroy(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("destroy")] != -1);
+		return call<R>("destroy", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto doBind(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("doBind")] != -1);
+		return scall<R>("doBind", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::Object, typename... Args>
+	static auto doResolve(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("doResolve")] != -1);
+		return scall<R>("doResolve", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto doUnbind(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("doUnbind")] != -1);
+		return scall<R>("doUnbind", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::PortableServer::POA, typename... Args>
+	auto getNSPOA(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNSPOA")] != -1);
+		return call<R>("getNSPOA", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto list(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("list")] != -1);
+		return call<R>("list", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto nameToString(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("nameToString")] != -1);
+		return scall<R>("nameToString", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CosNaming::NamingContext, typename... Args>
+	auto new_context(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("new_context")] != -1);
+		return call<R>("new_context", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto rebind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("rebind")] != -1);
+		return call<R>("rebind", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto rebind_context(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("rebind_context")] != -1);
+		return call<R>("rebind_context", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::Object, typename... Args>
+	auto resolve(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("resolve")] != -1);
+		return call<R>("resolve", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::Object, typename... Args>
+	auto resolve_str(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("resolve_str")] != -1);
+		return call<R>("resolve_str", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CosNaming::NameComponent *, typename... Args>
+	auto to_name(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("to_name")] != -1);
+		return call<R>("to_name", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto to_string(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("to_string")] != -1);
+		return call<R>("to_string", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto to_url(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("to_url")] != -1);
+		return call<R>("to_url", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto unbind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unbind")] != -1);
+		return call<R>("unbind", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

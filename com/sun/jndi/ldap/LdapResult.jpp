@@ -1,0 +1,35 @@
+#ifndef com_sun_jndi_ldap_LdapResult_HPP
+#define com_sun_jndi_ldap_LdapResult_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::jndi::ldap::LdapResult : public jObject<::com::sun::jndi::ldap::LdapResult, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_jndi_ldap / "LdapResult";
+
+	constexpr static Enume field_signatures{
+		jField<::jbyte *>("serverCreds"), //
+		jField<::jint>("status"), //
+	};
+
+	template<typename F = ::jbyte *>
+	auto serverCreds() const {
+		static_assert(field_signatures[jField<F>("serverCreds")] != -1);
+		return at<F>("serverCreds");
+	}
+
+	template<typename F = ::jint>
+	auto status() const {
+		static_assert(field_signatures[jField<F>("status")] != -1);
+		return at<F>("status");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+	};
+
+};
+
+#endif

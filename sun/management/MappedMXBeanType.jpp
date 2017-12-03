@@ -1,0 +1,43 @@
+#ifndef sun_management_MappedMXBeanType_HPP
+#define sun_management_MappedMXBeanType_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::management::MappedMXBeanType : public jObject<::sun::management::MappedMXBeanType, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_management / "MappedMXBeanType";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::Object(::java::lang::Object, ::java::lang::reflect::Type)>("toJavaTypeData"), //
+		jMethod<::javax::management::openmbean::OpenType(::java::lang::reflect::Type)>("toOpenType"), //
+		jMethod<::java::lang::Object(::java::lang::Object, ::java::lang::reflect::Type)>("toOpenTypeData"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto toJavaTypeData(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toJavaTypeData")] != -1);
+		return scall<R>("toJavaTypeData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::openmbean::OpenType, typename... Args>
+	static auto toOpenType(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toOpenType")] != -1);
+		return scall<R>("toOpenType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto toOpenTypeData(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toOpenTypeData")] != -1);
+		return scall<R>("toOpenTypeData", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

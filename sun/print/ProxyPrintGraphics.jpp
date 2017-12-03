@@ -1,0 +1,51 @@
+#ifndef sun_print_ProxyPrintGraphics_HPP
+#define sun_print_ProxyPrintGraphics_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::print::ProxyPrintGraphics : public jObject<::sun::print::ProxyPrintGraphics, ::sun::print::ProxyGraphics> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_print / "ProxyPrintGraphics";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::Graphics, ::java::awt::PrintJob)>(), //
+		jMethod<::java::awt::Graphics()>("create"), //
+		jMethod<::java::awt::Graphics(::jint, ::jint, ::jint, ::jint)>("create"), //
+		jMethod<::jvoid()>("dispose"), //
+		jMethod<::java::awt::Graphics()>("getGraphics"), //
+		jMethod<::java::awt::PrintJob()>("getPrintJob"), //
+	};
+
+	template<typename R = ::java::awt::Graphics, typename... Args>
+	auto create(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create")] != -1);
+		return call<R>("create", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispose(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dispose")] != -1);
+		return call<R>("dispose", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Graphics, typename... Args>
+	auto getGraphics(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGraphics")] != -1);
+		return call<R>("getGraphics", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::PrintJob, typename... Args>
+	auto getPrintJob(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPrintJob")] != -1);
+		return call<R>("getPrintJob", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,64 @@
+#ifndef sun_security_jgss_krb5_ServiceCreds_HPP
+#define sun_security_jgss_krb5_ServiceCreds_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::security::jgss::krb5::ServiceCreds : public jObject<::sun::security::jgss::krb5::ServiceCreds, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_jgss_krb5 / "ServiceCreds";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("destroy"), //
+		jMethod<::sun::security::krb5::EncryptionKey *(::sun::security::krb5::PrincipalName)>("getEKeys"), //
+		jMethod<::sun::security::krb5::Credentials()>("getInitCred"), //
+		jMethod<::sun::security::jgss::krb5::ServiceCreds(::javax::security::auth::Subject, ::java::lang::String)>("getInstance"), //
+		jMethod<::javax::security::auth::kerberos::KerberosKey *()>("getKKeys"), //
+		jMethod<::javax::security::auth::kerberos::KerberosKey *(::javax::security::auth::kerberos::KerberosPrincipal)>("getKKeys"), //
+		jMethod<::java::lang::String()>("getName"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto destroy(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("destroy")] != -1);
+		return call<R>("destroy", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::krb5::EncryptionKey *, typename... Args>
+	auto getEKeys(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEKeys")] != -1);
+		return call<R>("getEKeys", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::krb5::Credentials, typename... Args>
+	auto getInitCred(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInitCred")] != -1);
+		return call<R>("getInitCred", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::jgss::krb5::ServiceCreds, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::security::auth::kerberos::KerberosKey *, typename... Args>
+	auto getKKeys(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getKKeys")] != -1);
+		return call<R>("getKKeys", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

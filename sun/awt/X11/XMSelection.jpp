@@ -1,0 +1,44 @@
+#ifndef sun_awt_X11_XMSelection_HPP
+#define sun_awt_X11_XMSelection_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::X11::XMSelection : public jObject<::sun::awt::X11::XMSelection, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_X11 / "XMSelection";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::jlong)>(), //
+		jMethod<::jvoid(::sun::awt::X11::XMSelectionListener)>("addSelectionListener"), //
+		jMethod<::jint()>("getNumberOfScreens"), //
+		jMethod<::jvoid(::sun::awt::X11::XMSelectionListener)>("removeSelectionListener"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addSelectionListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addSelectionListener")] != -1);
+		return call<R>("addSelectionListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getNumberOfScreens(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNumberOfScreens")] != -1);
+		return call<R>("getNumberOfScreens", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeSelectionListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeSelectionListener")] != -1);
+		return call<R>("removeSelectionListener", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

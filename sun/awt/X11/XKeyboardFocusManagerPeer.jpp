@@ -1,0 +1,63 @@
+#ifndef sun_awt_X11_XKeyboardFocusManagerPeer_HPP
+#define sun_awt_X11_XKeyboardFocusManagerPeer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::X11::XKeyboardFocusManagerPeer : public jObject<::sun::awt::X11::XKeyboardFocusManagerPeer, ::sun::awt::KeyboardFocusManagerPeerImpl> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_X11 / "XKeyboardFocusManagerPeer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::awt::Component, ::java::awt::Component, ::jboolean, ::jboolean, ::jlong, ::sun::awt::CausedFocusEvent$Cause)>("deliverFocus"), //
+		jMethod<::java::awt::Component()>("getCurrentFocusOwner"), //
+		jMethod<::java::awt::Window()>("getCurrentFocusedWindow"), //
+		jMethod<::sun::awt::X11::XKeyboardFocusManagerPeer()>("getInstance"), //
+		jMethod<::jvoid(::java::awt::Component)>("setCurrentFocusOwner"), //
+		jMethod<::jvoid(::java::awt::Window)>("setCurrentFocusedWindow"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto deliverFocus(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("deliverFocus")] != -1);
+		return scall<R>("deliverFocus", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Component, typename... Args>
+	auto getCurrentFocusOwner(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCurrentFocusOwner")] != -1);
+		return call<R>("getCurrentFocusOwner", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Window, typename... Args>
+	auto getCurrentFocusedWindow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCurrentFocusedWindow")] != -1);
+		return call<R>("getCurrentFocusedWindow", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::awt::X11::XKeyboardFocusManagerPeer, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setCurrentFocusOwner(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setCurrentFocusOwner")] != -1);
+		return call<R>("setCurrentFocusOwner", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setCurrentFocusedWindow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setCurrentFocusedWindow")] != -1);
+		return call<R>("setCurrentFocusedWindow", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

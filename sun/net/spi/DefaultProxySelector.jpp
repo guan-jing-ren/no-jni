@@ -1,0 +1,36 @@
+#ifndef sun_net_spi_DefaultProxySelector_HPP
+#define sun_net_spi_DefaultProxySelector_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::net::spi::DefaultProxySelector : public jObject<::sun::net::spi::DefaultProxySelector, ::java::net::ProxySelector> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_net_spi / "DefaultProxySelector";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::net::URI, ::java::net::SocketAddress, ::java::io::IOException)>("connectFailed"), //
+		jMethod<::java::util::List(::java::net::URI)>("select"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto connectFailed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("connectFailed")] != -1);
+		return call<R>("connectFailed", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto select(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("select")] != -1);
+		return call<R>("select", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

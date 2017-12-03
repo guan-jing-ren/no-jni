@@ -1,0 +1,64 @@
+#ifndef sun_security_jgss_GSSHeader_HPP
+#define sun_security_jgss_GSSHeader_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::jgss::GSSHeader : public jObject<::sun::security::jgss::GSSHeader, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_jgss / "GSSHeader";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("TOKEN_ID"), //
+	};
+
+	template<typename F = ::jint>
+	static auto TOKEN_ID() {
+		static_assert(field_signatures[jField<F>("TOKEN_ID")] != -1);
+		return sat<F>("TOKEN_ID");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::InputStream)>(), //
+		jConstructor<::jvoid(::sun::security::util::ObjectIdentifier, ::jint)>(), //
+		jMethod<::jint(::java::io::OutputStream)>("encode"), //
+		jMethod<::jint()>("getLength"), //
+		jMethod<::jint(::sun::security::util::ObjectIdentifier, ::jint)>("getMaxMechTokenSize"), //
+		jMethod<::jint()>("getMechTokenLength"), //
+		jMethod<::sun::security::util::ObjectIdentifier()>("getOid"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto encode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encode")] != -1);
+		return call<R>("encode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLength")] != -1);
+		return call<R>("getLength", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto getMaxMechTokenSize(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMaxMechTokenSize")] != -1);
+		return scall<R>("getMaxMechTokenSize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getMechTokenLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMechTokenLength")] != -1);
+		return call<R>("getMechTokenLength", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::util::ObjectIdentifier, typename... Args>
+	auto getOid(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOid")] != -1);
+		return call<R>("getOid", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

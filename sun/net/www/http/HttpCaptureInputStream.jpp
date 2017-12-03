@@ -1,0 +1,38 @@
+#ifndef sun_net_www_http_HttpCaptureInputStream_HPP
+#define sun_net_www_http_HttpCaptureInputStream_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::net::www::http::HttpCaptureInputStream : public jObject<::sun::net::www::http::HttpCaptureInputStream, ::java::io::FilterInputStream> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_net_www_http / "HttpCaptureInputStream";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::InputStream, ::sun::net::www::http::HttpCapture)>(), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::jint()>("read"), //
+		jMethod<::jint(::jbyte *)>("read"), //
+		jMethod<::jint(::jbyte *, ::jint, ::jint)>("read"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

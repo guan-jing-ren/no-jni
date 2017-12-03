@@ -1,0 +1,28 @@
+#ifndef sun_awt_AWTAccessor$CheckboxMenuItemAccessor_HPP
+#define sun_awt_AWTAccessor$CheckboxMenuItemAccessor_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::AWTAccessor$CheckboxMenuItemAccessor : public jObject<::sun::awt::AWTAccessor$CheckboxMenuItemAccessor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "AWTAccessor$CheckboxMenuItemAccessor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::awt::CheckboxMenuItem)>("getState"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getState")] != -1);
+		return call<R>("getState", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

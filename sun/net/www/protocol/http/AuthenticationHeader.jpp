@@ -1,0 +1,65 @@
+#ifndef sun_net_www_protocol_http_AuthenticationHeader_HPP
+#define sun_net_www_protocol_http_AuthenticationHeader_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::sun::net::www::protocol::http::AuthenticationHeader : public jObject<::sun::net::www::protocol::http::AuthenticationHeader, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_net_www_protocol_http / "AuthenticationHeader";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::sun::net::www::MessageHeader, ::sun::net::www::protocol::http::HttpCallerInfo, ::jboolean)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::sun::net::www::MessageHeader, ::sun::net::www::protocol::http::HttpCallerInfo, ::jboolean, ::java::util::Set)>(), //
+		jMethod<::sun::net::www::protocol::http::HttpCallerInfo()>("getHttpCallerInfo"), //
+		jMethod<::sun::net::www::HeaderParser()>("headerParser"), //
+		jMethod<::jboolean()>("isPresent"), //
+		jMethod<::java::lang::String()>("raw"), //
+		jMethod<::java::lang::String()>("scheme"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::sun::net::www::protocol::http::HttpCallerInfo, typename... Args>
+	auto getHttpCallerInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHttpCallerInfo")] != -1);
+		return call<R>("getHttpCallerInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::www::HeaderParser, typename... Args>
+	auto headerParser(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("headerParser")] != -1);
+		return call<R>("headerParser", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isPresent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isPresent")] != -1);
+		return call<R>("isPresent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto raw(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("raw")] != -1);
+		return call<R>("raw", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto scheme(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("scheme")] != -1);
+		return call<R>("scheme", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

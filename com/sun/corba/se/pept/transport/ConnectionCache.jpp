@@ -1,0 +1,70 @@
+#ifndef com_sun_corba_se_pept_transport_ConnectionCache_HPP
+#define com_sun_corba_se_pept_transport_ConnectionCache_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::pept::transport::ConnectionCache : public jObject<::com::sun::corba::se::pept::transport::ConnectionCache, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_pept_transport / "ConnectionCache";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("close"), //
+		jMethod<::java::lang::String()>("getCacheType"), //
+		jMethod<::jlong()>("numberOfBusyConnections"), //
+		jMethod<::jlong()>("numberOfConnections"), //
+		jMethod<::jlong()>("numberOfIdleConnections"), //
+		jMethod<::jboolean()>("reclaim"), //
+		jMethod<::jvoid(::com::sun::corba::se::pept::transport::Connection)>("stampTime"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getCacheType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCacheType")] != -1);
+		return call<R>("getCacheType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto numberOfBusyConnections(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("numberOfBusyConnections")] != -1);
+		return call<R>("numberOfBusyConnections", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto numberOfConnections(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("numberOfConnections")] != -1);
+		return call<R>("numberOfConnections", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto numberOfIdleConnections(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("numberOfIdleConnections")] != -1);
+		return call<R>("numberOfIdleConnections", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto reclaim(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("reclaim")] != -1);
+		return call<R>("reclaim", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto stampTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("stampTime")] != -1);
+		return call<R>("stampTime", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

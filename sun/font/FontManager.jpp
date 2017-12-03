@@ -1,0 +1,97 @@
+#ifndef sun_font_FontManager_HPP
+#define sun_font_FontManager_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::FontManager : public jObject<::sun::font::FontManager, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "FontManager";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("LOGICAL_FALLBACK"), //
+		jField<::jint>("NO_FALLBACK"), //
+		jField<::jint>("PHYSICAL_FALLBACK"), //
+	};
+
+	template<typename F = ::jint>
+	static auto LOGICAL_FALLBACK() {
+		static_assert(field_signatures[jField<F>("LOGICAL_FALLBACK")] != -1);
+		return sat<F>("LOGICAL_FALLBACK");
+	}
+
+	template<typename F = ::jint>
+	static auto NO_FALLBACK() {
+		static_assert(field_signatures[jField<F>("NO_FALLBACK")] != -1);
+		return sat<F>("NO_FALLBACK");
+	}
+
+	template<typename F = ::jint>
+	static auto PHYSICAL_FALLBACK() {
+		static_assert(field_signatures[jField<F>("PHYSICAL_FALLBACK")] != -1);
+		return sat<F>("PHYSICAL_FALLBACK");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::font::Font2D(::java::io::File, ::jint, ::jboolean, ::sun::font::CreatedFontTracker)>("createFont2D"), //
+		jMethod<::jvoid(::sun::font::Font2D)>("deRegisterBadFont"), //
+		jMethod<::sun::font::Font2D(::java::lang::String, ::jint, ::jint)>("findFont2D"), //
+		jMethod<::sun::font::Font2DHandle(::java::lang::String, ::jint, ::sun::font::Font2DHandle)>("getNewComposite"), //
+		jMethod<::jvoid()>("preferLocaleFonts"), //
+		jMethod<::jvoid()>("preferProportionalFonts"), //
+		jMethod<::jboolean(::java::awt::Font)>("registerFont"), //
+		jMethod<::jboolean()>("usingPerAppContextComposites"), //
+	};
+
+	template<typename R = ::sun::font::Font2D, typename... Args>
+	auto createFont2D(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createFont2D")] != -1);
+		return call<R>("createFont2D", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto deRegisterBadFont(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("deRegisterBadFont")] != -1);
+		return call<R>("deRegisterBadFont", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::Font2D, typename... Args>
+	auto findFont2D(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("findFont2D")] != -1);
+		return call<R>("findFont2D", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::Font2DHandle, typename... Args>
+	auto getNewComposite(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNewComposite")] != -1);
+		return call<R>("getNewComposite", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto preferLocaleFonts(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("preferLocaleFonts")] != -1);
+		return call<R>("preferLocaleFonts", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto preferProportionalFonts(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("preferProportionalFonts")] != -1);
+		return call<R>("preferProportionalFonts", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto registerFont(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("registerFont")] != -1);
+		return call<R>("registerFont", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto usingPerAppContextComposites(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("usingPerAppContextComposites")] != -1);
+		return call<R>("usingPerAppContextComposites", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

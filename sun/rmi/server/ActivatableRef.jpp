@@ -1,0 +1,94 @@
+#ifndef sun_rmi_server_ActivatableRef_HPP
+#define sun_rmi_server_ActivatableRef_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::rmi::server::ActivatableRef : public jObject<::sun::rmi::server::ActivatableRef, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_rmi_server / "ActivatableRef";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::rmi::activation::ActivationID, ::java::rmi::server::RemoteRef)>(), //
+		jMethod<::jvoid(::java::rmi::server::RemoteCall)>("done"), //
+		jMethod<::java::lang::String(::java::io::ObjectOutput)>("getRefClass"), //
+		jMethod<::java::rmi::Remote(::java::rmi::activation::ActivationDesc, ::java::rmi::activation::ActivationID)>("getStub"), //
+		jMethod<::java::lang::Object(::java::rmi::Remote, ::java::lang::reflect::Method, ::java::lang::Object *, ::jlong)>("invoke"), //
+		jMethod<::jvoid(::java::rmi::server::RemoteCall)>("invoke"), //
+		jMethod<::java::rmi::server::RemoteCall(::java::rmi::server::RemoteObject, ::java::rmi::server::Operation *, ::jint, ::jlong)>("newCall"), //
+		jMethod<::jvoid(::java::io::ObjectInput)>("readExternal"), //
+		jMethod<::jboolean(::java::rmi::server::RemoteRef)>("remoteEquals"), //
+		jMethod<::jint()>("remoteHashCode"), //
+		jMethod<::java::lang::String()>("remoteToString"), //
+		jMethod<::jvoid(::java::io::ObjectOutput)>("writeExternal"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto done(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("done")] != -1);
+		return call<R>("done", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getRefClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRefClass")] != -1);
+		return call<R>("getRefClass", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::Remote, typename... Args>
+	static auto getStub(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStub")] != -1);
+		return scall<R>("getStub", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto invoke(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("invoke")] != -1);
+		return call<R>("invoke", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::server::RemoteCall, typename... Args>
+	auto newCall(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newCall")] != -1);
+		return call<R>("newCall", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto readExternal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("readExternal")] != -1);
+		return call<R>("readExternal", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto remoteEquals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("remoteEquals")] != -1);
+		return call<R>("remoteEquals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto remoteHashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("remoteHashCode")] != -1);
+		return call<R>("remoteHashCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto remoteToString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("remoteToString")] != -1);
+		return call<R>("remoteToString", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeExternal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeExternal")] != -1);
+		return call<R>("writeExternal", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

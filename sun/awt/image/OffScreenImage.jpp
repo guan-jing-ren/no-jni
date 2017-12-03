@@ -1,0 +1,43 @@
+#ifndef sun_awt_image_OffScreenImage_HPP
+#define sun_awt_image_OffScreenImage_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::image::OffScreenImage : public jObject<::sun::awt::image::OffScreenImage, ::java::awt::image::BufferedImage> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_image / "OffScreenImage";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::Component, ::java::awt::image::ColorModel, ::java::awt::image::WritableRaster, ::jboolean)>(), //
+		jMethod<::java::awt::Graphics2D()>("createGraphics"), //
+		jMethod<::java::awt::Graphics()>("getGraphics"), //
+		jMethod<::java::awt::image::ImageProducer()>("getSource"), //
+	};
+
+	template<typename R = ::java::awt::Graphics2D, typename... Args>
+	auto createGraphics(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createGraphics")] != -1);
+		return call<R>("createGraphics", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Graphics, typename... Args>
+	auto getGraphics(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGraphics")] != -1);
+		return call<R>("getGraphics", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::image::ImageProducer, typename... Args>
+	auto getSource(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSource")] != -1);
+		return call<R>("getSource", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

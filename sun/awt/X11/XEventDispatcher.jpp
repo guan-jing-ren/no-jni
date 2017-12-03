@@ -1,0 +1,28 @@
+#ifndef sun_awt_X11_XEventDispatcher_HPP
+#define sun_awt_X11_XEventDispatcher_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::X11::XEventDispatcher : public jObject<::sun::awt::X11::XEventDispatcher, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_X11 / "XEventDispatcher";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::sun::awt::X11::XEvent)>("dispatchEvent"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispatchEvent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dispatchEvent")] != -1);
+		return call<R>("dispatchEvent", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,94 @@
+#ifndef sun_font_CompositeGlyphMapper_HPP
+#define sun_font_CompositeGlyphMapper_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::CompositeGlyphMapper : public jObject<::sun::font::CompositeGlyphMapper, ::sun::font::CharToGlyphMapper> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "CompositeGlyphMapper";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("BLOCKSZ"), //
+		jField<::jint>("GLYPHMASK"), //
+		jField<::jint>("MAXUNICODE"), //
+		jField<::jint>("NBLOCKS"), //
+		jField<::jint>("SLOTMASK"), //
+	};
+
+	template<typename F = ::jint>
+	static auto BLOCKSZ() {
+		static_assert(field_signatures[jField<F>("BLOCKSZ")] != -1);
+		return sat<F>("BLOCKSZ");
+	}
+
+	template<typename F = ::jint>
+	static auto GLYPHMASK() {
+		static_assert(field_signatures[jField<F>("GLYPHMASK")] != -1);
+		return sat<F>("GLYPHMASK");
+	}
+
+	template<typename F = ::jint>
+	static auto MAXUNICODE() {
+		static_assert(field_signatures[jField<F>("MAXUNICODE")] != -1);
+		return sat<F>("MAXUNICODE");
+	}
+
+	template<typename F = ::jint>
+	static auto NBLOCKS() {
+		static_assert(field_signatures[jField<F>("NBLOCKS")] != -1);
+		return sat<F>("NBLOCKS");
+	}
+
+	template<typename F = ::jint>
+	static auto SLOTMASK() {
+		static_assert(field_signatures[jField<F>("SLOTMASK")] != -1);
+		return sat<F>("SLOTMASK");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::font::CompositeFont)>(), //
+		jMethod<::jint(::jchar)>("charToGlyph"), //
+		jMethod<::jint(::jint)>("charToGlyph"), //
+		jMethod<::jint(::jint, ::jint)>("charToGlyph"), //
+		jMethod<::jvoid(::jint, ::jchar *, ::jint *)>("charsToGlyphs"), //
+		jMethod<::jvoid(::jint, ::jint *, ::jint *)>("charsToGlyphs"), //
+		jMethod<::jboolean(::jint, ::jchar *, ::jint *)>("charsToGlyphsNS"), //
+		jMethod<::jint(::jint, ::jint)>("compositeGlyphCode"), //
+		jMethod<::jint()>("getNumGlyphs"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto charToGlyph(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("charToGlyph")] != -1);
+		return call<R>("charToGlyph", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto charsToGlyphs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("charsToGlyphs")] != -1);
+		return call<R>("charsToGlyphs", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto charsToGlyphsNS(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("charsToGlyphsNS")] != -1);
+		return call<R>("charsToGlyphsNS", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto compositeGlyphCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("compositeGlyphCode")] != -1);
+		return call<R>("compositeGlyphCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getNumGlyphs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNumGlyphs")] != -1);
+		return call<R>("getNumGlyphs", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

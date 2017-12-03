@@ -1,0 +1,29 @@
+#ifndef com_sun_beans_infos_ComponentBeanInfo_HPP
+#define com_sun_beans_infos_ComponentBeanInfo_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::beans::infos::ComponentBeanInfo : public jObject<::com::sun::beans::infos::ComponentBeanInfo, ::java::beans::SimpleBeanInfo> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_beans_infos / "ComponentBeanInfo";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::beans::PropertyDescriptor *()>("getPropertyDescriptors"), //
+	};
+
+	template<typename R = ::java::beans::PropertyDescriptor *, typename... Args>
+	auto getPropertyDescriptors(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPropertyDescriptors")] != -1);
+		return call<R>("getPropertyDescriptors", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

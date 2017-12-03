@@ -1,0 +1,62 @@
+#ifndef sun_misc_FormattedFloatingDecimal$Form_HPP
+#define sun_misc_FormattedFloatingDecimal$Form_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::misc::FormattedFloatingDecimal$Form : public jObject<::sun::misc::FormattedFloatingDecimal$Form, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_misc / "FormattedFloatingDecimal$Form";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::misc::FormattedFloatingDecimal$Form>("COMPATIBLE"), //
+		jField<::sun::misc::FormattedFloatingDecimal$Form>("DECIMAL_FLOAT"), //
+		jField<::sun::misc::FormattedFloatingDecimal$Form>("GENERAL"), //
+		jField<::sun::misc::FormattedFloatingDecimal$Form>("SCIENTIFIC"), //
+	};
+
+	template<typename F = ::sun::misc::FormattedFloatingDecimal$Form>
+	static auto COMPATIBLE() {
+		static_assert(field_signatures[jField<F>("COMPATIBLE")] != -1);
+		return sat<F>("COMPATIBLE");
+	}
+
+	template<typename F = ::sun::misc::FormattedFloatingDecimal$Form>
+	static auto DECIMAL_FLOAT() {
+		static_assert(field_signatures[jField<F>("DECIMAL_FLOAT")] != -1);
+		return sat<F>("DECIMAL_FLOAT");
+	}
+
+	template<typename F = ::sun::misc::FormattedFloatingDecimal$Form>
+	static auto GENERAL() {
+		static_assert(field_signatures[jField<F>("GENERAL")] != -1);
+		return sat<F>("GENERAL");
+	}
+
+	template<typename F = ::sun::misc::FormattedFloatingDecimal$Form>
+	static auto SCIENTIFIC() {
+		static_assert(field_signatures[jField<F>("SCIENTIFIC")] != -1);
+		return sat<F>("SCIENTIFIC");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::misc::FormattedFloatingDecimal$Form(::java::lang::String)>("valueOf"), //
+		jMethod<::sun::misc::FormattedFloatingDecimal$Form *()>("values"), //
+	};
+
+	template<typename R = ::sun::misc::FormattedFloatingDecimal$Form, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::misc::FormattedFloatingDecimal$Form *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

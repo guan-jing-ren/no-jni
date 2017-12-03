@@ -1,0 +1,50 @@
+#ifndef sun_awt_geom_Crossings$NonZero_HPP
+#define sun_awt_geom_Crossings$NonZero_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::geom::Crossings$NonZero : public jObject<::sun::awt::geom::Crossings$NonZero, ::sun::awt::geom::Crossings> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_geom / "Crossings$NonZero";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jdouble, ::jdouble, ::jdouble, ::jdouble)>(), //
+		jMethod<::jboolean(::jdouble, ::jdouble)>("covers"), //
+		jMethod<::jvoid(::jint, ::jdouble, ::jdouble, ::jint)>("insert"), //
+		jMethod<::jvoid(::jdouble, ::jdouble, ::jint)>("record"), //
+		jMethod<::jvoid(::jint)>("remove"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto covers(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("covers")] != -1);
+		return call<R>("covers", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto insert(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("insert")] != -1);
+		return call<R>("insert", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto record(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("record")] != -1);
+		return call<R>("record", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto remove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

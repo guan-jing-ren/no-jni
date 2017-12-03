@@ -1,0 +1,46 @@
+#ifndef sun_java2d_pipe_hw_ExtendedBufferCapabilities_HPP
+#define sun_java2d_pipe_hw_ExtendedBufferCapabilities_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::java2d::pipe::hw::ExtendedBufferCapabilities : public jObject<::sun::java2d::pipe::hw::ExtendedBufferCapabilities, ::java::awt::BufferCapabilities> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_pipe_hw / "ExtendedBufferCapabilities";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::BufferCapabilities)>(), //
+		jConstructor<::jvoid(::java::awt::BufferCapabilities, ::sun::java2d::pipe::hw::ExtendedBufferCapabilities$VSyncType)>(), //
+		jConstructor<::jvoid(::java::awt::ImageCapabilities, ::java::awt::ImageCapabilities, ::java::awt::BufferCapabilities$FlipContents)>(), //
+		jConstructor<::jvoid(::java::awt::ImageCapabilities, ::java::awt::ImageCapabilities, ::java::awt::BufferCapabilities$FlipContents, ::sun::java2d::pipe::hw::ExtendedBufferCapabilities$VSyncType)>(), //
+		jMethod<::sun::java2d::pipe::hw::ExtendedBufferCapabilities(::sun::java2d::pipe::hw::ExtendedBufferCapabilities$VSyncType)>("derive"), //
+		jMethod<::sun::java2d::pipe::hw::ExtendedBufferCapabilities$VSyncType()>("getVSync"), //
+		jMethod<::jboolean()>("isPageFlipping"), //
+	};
+
+	template<typename R = ::sun::java2d::pipe::hw::ExtendedBufferCapabilities, typename... Args>
+	auto derive(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("derive")] != -1);
+		return call<R>("derive", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::pipe::hw::ExtendedBufferCapabilities$VSyncType, typename... Args>
+	auto getVSync(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getVSync")] != -1);
+		return call<R>("getVSync", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isPageFlipping(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isPageFlipping")] != -1);
+		return call<R>("isPageFlipping", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

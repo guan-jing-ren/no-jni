@@ -1,0 +1,80 @@
+#ifndef sun_rmi_registry_RegistryImpl_HPP
+#define sun_rmi_registry_RegistryImpl_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::rmi::registry::RegistryImpl : public jObject<::sun::rmi::registry::RegistryImpl, ::java::rmi::server::RemoteServer> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_rmi_registry / "RegistryImpl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint)>(), //
+		jConstructor<::jvoid(::jint, ::java::rmi::server::RMIClientSocketFactory, ::java::rmi::server::RMIServerSocketFactory)>(), //
+		jConstructor<::jvoid(::jint, ::java::rmi::server::RMIClientSocketFactory, ::java::rmi::server::RMIServerSocketFactory, ::sun::misc::ObjectInputFilter)>(), //
+		jMethod<::jvoid(::java::lang::String, ::java::rmi::Remote)>("bind"), //
+		jMethod<::jvoid(::java::lang::String)>("checkAccess"), //
+		jMethod<::java::rmi::server::ObjID()>("getID"), //
+		jMethod<::java::lang::String *()>("list"), //
+		jMethod<::java::rmi::Remote(::java::lang::String)>("lookup"), //
+		jMethod<::jvoid(::java::lang::String *)>("main"), //
+		jMethod<::jvoid(::java::lang::String, ::java::rmi::Remote)>("rebind"), //
+		jMethod<::jvoid(::java::lang::String)>("unbind"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto bind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("bind")] != -1);
+		return call<R>("bind", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto checkAccess(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkAccess")] != -1);
+		return scall<R>("checkAccess", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::server::ObjID, typename... Args>
+	static auto getID(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getID")] != -1);
+		return scall<R>("getID", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto list(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("list")] != -1);
+		return call<R>("list", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::Remote, typename... Args>
+	auto lookup(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("lookup")] != -1);
+		return call<R>("lookup", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto main(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("main")] != -1);
+		return scall<R>("main", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto rebind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("rebind")] != -1);
+		return call<R>("rebind", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto unbind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unbind")] != -1);
+		return call<R>("unbind", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

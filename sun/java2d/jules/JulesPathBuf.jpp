@@ -1,0 +1,50 @@
+#ifndef sun_java2d_jules_JulesPathBuf_HPP
+#define sun_java2d_jules_JulesPathBuf_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::jules::JulesPathBuf : public jObject<::sun::java2d::jules::JulesPathBuf, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_jules / "JulesPathBuf";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid()>("clear"), //
+		jMethod<::jboolean()>("isCairoAvailable"), //
+		jMethod<::sun::java2d::jules::TrapezoidList(::java::awt::Shape, ::java::awt::geom::AffineTransform, ::sun::java2d::pipe::Region)>("tesselateFill"), //
+		jMethod<::sun::java2d::jules::TrapezoidList(::java::awt::Shape, ::java::awt::BasicStroke, ::jboolean, ::jboolean, ::jboolean, ::java::awt::geom::AffineTransform, ::sun::java2d::pipe::Region)>("tesselateStroke"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto clear(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clear")] != -1);
+		return call<R>("clear", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isCairoAvailable(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isCairoAvailable")] != -1);
+		return scall<R>("isCairoAvailable", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::jules::TrapezoidList, typename... Args>
+	auto tesselateFill(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("tesselateFill")] != -1);
+		return call<R>("tesselateFill", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::jules::TrapezoidList, typename... Args>
+	auto tesselateStroke(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("tesselateStroke")] != -1);
+		return call<R>("tesselateStroke", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

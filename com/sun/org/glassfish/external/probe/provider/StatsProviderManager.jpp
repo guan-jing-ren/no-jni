@@ -1,0 +1,52 @@
+#ifndef com_sun_org_glassfish_external_probe_provider_StatsProviderManager_HPP
+#define com_sun_org_glassfish_external_probe_provider_StatsProviderManager_HPP
+
+#include "../../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::org::glassfish::external::probe::provider::StatsProviderManager : public jObject<::com::sun::org::glassfish::external::probe::provider::StatsProviderManager, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_org_glassfish_external_probe_provider / "StatsProviderManager";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::lang::String)>("hasListeners"), //
+		jMethod<::jboolean(::com::sun::org::glassfish::external::probe::provider::PluginPoint, ::java::lang::String, ::java::lang::String, ::java::lang::Object, ::java::lang::String)>("register"), //
+		jMethod<::jboolean(::java::lang::String, ::com::sun::org::glassfish::external::probe::provider::PluginPoint, ::java::lang::String, ::java::lang::Object)>("register"), //
+		jMethod<::jboolean(::java::lang::String, ::com::sun::org::glassfish::external::probe::provider::PluginPoint, ::java::lang::String, ::java::lang::Object, ::java::lang::String)>("register"), //
+		jMethod<::jboolean(::java::lang::String, ::com::sun::org::glassfish::external::probe::provider::PluginPoint, ::java::lang::String, ::java::lang::Object, ::java::lang::String, ::java::lang::String)>("register"), //
+		jMethod<::jvoid(::com::sun::org::glassfish::external::probe::provider::StatsProviderManagerDelegate)>("setStatsProviderManagerDelegate"), //
+		jMethod<::jboolean(::java::lang::Object)>("unregister"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto hasListeners(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hasListeners")] != -1);
+		return scall<R>("hasListeners", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto register_(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("register")] != -1);
+		return scall<R>("register", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setStatsProviderManagerDelegate(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setStatsProviderManagerDelegate")] != -1);
+		return scall<R>("setStatsProviderManagerDelegate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto unregister(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unregister")] != -1);
+		return scall<R>("unregister", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

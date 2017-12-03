@@ -1,0 +1,36 @@
+#ifndef com_sun_media_sound_SF2LayerRegion_HPP
+#define com_sun_media_sound_SF2LayerRegion_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::media::sound::SF2LayerRegion : public jObject<::com::sun::media::sound::SF2LayerRegion, ::com::sun::media::sound::SF2Region> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_media_sound / "SF2LayerRegion";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::com::sun::media::sound::SF2Sample()>("getSample"), //
+		jMethod<::jvoid(::com::sun::media::sound::SF2Sample)>("setSample"), //
+	};
+
+	template<typename R = ::com::sun::media::sound::SF2Sample, typename... Args>
+	auto getSample(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSample")] != -1);
+		return call<R>("getSample", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setSample(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setSample")] != -1);
+		return call<R>("setSample", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,56 @@
+#ifndef sun_misc_ObjectInputFilter$Config_HPP
+#define sun_misc_ObjectInputFilter$Config_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::misc::ObjectInputFilter$Config : public jObject<::sun::misc::ObjectInputFilter$Config, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_misc / "ObjectInputFilter$Config";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::misc::ObjectInputFilter(::java::lang::String)>("createFilter"), //
+		jMethod<::sun::misc::ObjectInputFilter(::java::io::ObjectInputStream)>("getObjectInputFilter"), //
+		jMethod<::sun::misc::ObjectInputFilter()>("getSerialFilter"), //
+		jMethod<::jvoid(::java::io::ObjectInputStream, ::sun::misc::ObjectInputFilter)>("setObjectInputFilter"), //
+		jMethod<::jvoid(::sun::misc::ObjectInputFilter)>("setSerialFilter"), //
+	};
+
+	template<typename R = ::sun::misc::ObjectInputFilter, typename... Args>
+	static auto createFilter(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createFilter")] != -1);
+		return scall<R>("createFilter", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::misc::ObjectInputFilter, typename... Args>
+	static auto getObjectInputFilter(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getObjectInputFilter")] != -1);
+		return scall<R>("getObjectInputFilter", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::misc::ObjectInputFilter, typename... Args>
+	static auto getSerialFilter(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSerialFilter")] != -1);
+		return scall<R>("getSerialFilter", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setObjectInputFilter(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setObjectInputFilter")] != -1);
+		return scall<R>("setObjectInputFilter", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setSerialFilter(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setSerialFilter")] != -1);
+		return scall<R>("setSerialFilter", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

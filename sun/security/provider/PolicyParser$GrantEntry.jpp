@@ -1,0 +1,94 @@
+#ifndef sun_security_provider_PolicyParser$GrantEntry_HPP
+#define sun_security_provider_PolicyParser$GrantEntry_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::provider::PolicyParser$GrantEntry : public jObject<::sun::security::provider::PolicyParser$GrantEntry, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_provider / "PolicyParser$GrantEntry";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("codeBase"), //
+		jField<::java::util::Vector>("permissionEntries"), //
+		jField<::java::util::LinkedList>("principals"), //
+		jField<::java::lang::String>("signedBy"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	auto codeBase() const {
+		static_assert(field_signatures[jField<F>("codeBase")] != -1);
+		return at<F>("codeBase");
+	}
+
+	template<typename F = ::java::util::Vector>
+	auto permissionEntries() const {
+		static_assert(field_signatures[jField<F>("permissionEntries")] != -1);
+		return at<F>("permissionEntries");
+	}
+
+	template<typename F = ::java::util::LinkedList>
+	auto principals() const {
+		static_assert(field_signatures[jField<F>("principals")] != -1);
+		return at<F>("principals");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto signedBy() const {
+		static_assert(field_signatures[jField<F>("signedBy")] != -1);
+		return at<F>("signedBy");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String)>(), //
+		jMethod<::jvoid(::sun::security::provider::PolicyParser$PermissionEntry)>("add"), //
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::jboolean(::sun::security::provider::PolicyParser$PermissionEntry)>("contains"), //
+		jMethod<::jboolean(::sun::security::provider::PolicyParser$PrincipalEntry)>("contains"), //
+		jMethod<::java::util::Enumeration()>("permissionElements"), //
+		jMethod<::jboolean(::sun::security::provider::PolicyParser$PermissionEntry)>("remove"), //
+		jMethod<::jboolean(::sun::security::provider::PolicyParser$PrincipalEntry)>("remove"), //
+		jMethod<::jvoid(::java::io::PrintWriter)>("write"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto add(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto contains(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("contains")] != -1);
+		return call<R>("contains", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	auto permissionElements(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("permissionElements")] != -1);
+		return call<R>("permissionElements", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto remove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

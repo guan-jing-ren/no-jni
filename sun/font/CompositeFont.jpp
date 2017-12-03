@@ -1,0 +1,106 @@
+#ifndef sun_font_CompositeFont_HPP
+#define sun_font_CompositeFont_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::CompositeFont : public jObject<::sun::font::CompositeFont, ::sun::font::Font2D> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "CompositeFont";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String *, ::java::lang::String *, ::jint, ::jint *, ::jint *, ::jboolean, ::sun::font::SunFontManager)>(), //
+		jMethod<::jboolean(::jchar)>("canDisplay"), //
+		jMethod<::sun::font::CharToGlyphMapper()>("getMapper"), //
+		jMethod<::jint()>("getMissingGlyphCode"), //
+		jMethod<::jint()>("getNumGlyphs"), //
+		jMethod<::jint()>("getNumSlots"), //
+		jMethod<::sun::font::PhysicalFont(::jint)>("getSlotFont"), //
+		jMethod<::jvoid(::jfloat, ::jfloat *, ::jint)>("getStyleMetrics"), //
+		jMethod<::jboolean()>("hasSupplementaryChars"), //
+		jMethod<::jboolean(::jint, ::jint)>("isExcludedChar"), //
+		jMethod<::jboolean()>("isStdComposite"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::jboolean(::jint)>("useAAForPtSize"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto canDisplay(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("canDisplay")] != -1);
+		return call<R>("canDisplay", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::CharToGlyphMapper, typename... Args>
+	auto getMapper(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMapper")] != -1);
+		return call<R>("getMapper", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getMissingGlyphCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMissingGlyphCode")] != -1);
+		return call<R>("getMissingGlyphCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getNumGlyphs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNumGlyphs")] != -1);
+		return call<R>("getNumGlyphs", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getNumSlots(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNumSlots")] != -1);
+		return call<R>("getNumSlots", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::PhysicalFont, typename... Args>
+	auto getSlotFont(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSlotFont")] != -1);
+		return call<R>("getSlotFont", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto getStyleMetrics(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStyleMetrics")] != -1);
+		return call<R>("getStyleMetrics", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasSupplementaryChars(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hasSupplementaryChars")] != -1);
+		return call<R>("hasSupplementaryChars", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isExcludedChar(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isExcludedChar")] != -1);
+		return call<R>("isExcludedChar", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isStdComposite(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isStdComposite")] != -1);
+		return call<R>("isStdComposite", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto useAAForPtSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("useAAForPtSize")] != -1);
+		return call<R>("useAAForPtSize", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

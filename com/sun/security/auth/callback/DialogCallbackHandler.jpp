@@ -1,0 +1,30 @@
+#ifndef com_sun_security_auth_callback_DialogCallbackHandler_HPP
+#define com_sun_security_auth_callback_DialogCallbackHandler_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::security::auth::callback::DialogCallbackHandler : public jObject<::com::sun::security::auth::callback::DialogCallbackHandler, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_security_auth_callback / "DialogCallbackHandler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::awt::Component)>(), //
+		jMethod<::jvoid(::javax::security::auth::callback::Callback *)>("handle"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto handle(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("handle")] != -1);
+		return call<R>("handle", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

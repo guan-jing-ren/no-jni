@@ -1,0 +1,35 @@
+#ifndef sun_swing_MenuItemCheckIconFactory_HPP
+#define sun_swing_MenuItemCheckIconFactory_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::swing::MenuItemCheckIconFactory : public jObject<::sun::swing::MenuItemCheckIconFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_swing / "MenuItemCheckIconFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::swing::Icon(::javax::swing::JMenuItem)>("getIcon"), //
+		jMethod<::jboolean(::java::lang::Object, ::java::lang::String)>("isCompatible"), //
+	};
+
+	template<typename R = ::javax::swing::Icon, typename... Args>
+	auto getIcon(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIcon")] != -1);
+		return call<R>("getIcon", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isCompatible(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isCompatible")] != -1);
+		return call<R>("isCompatible", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

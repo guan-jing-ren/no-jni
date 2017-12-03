@@ -1,0 +1,29 @@
+#ifndef com_sun_net_httpserver_Authenticator$Success_HPP
+#define com_sun_net_httpserver_Authenticator$Success_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::net::httpserver::Authenticator$Success : public jObject<::com::sun::net::httpserver::Authenticator$Success, ::com::sun::net::httpserver::Authenticator$Result> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_net_httpserver / "Authenticator$Success";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::com::sun::net::httpserver::HttpPrincipal)>(), //
+		jMethod<::com::sun::net::httpserver::HttpPrincipal()>("getPrincipal"), //
+	};
+
+	template<typename R = ::com::sun::net::httpserver::HttpPrincipal, typename... Args>
+	auto getPrincipal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPrincipal")] != -1);
+		return call<R>("getPrincipal", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

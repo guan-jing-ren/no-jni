@@ -1,0 +1,29 @@
+#ifndef com_sun_jndi_ldap_pool_PoolCleaner_HPP
+#define com_sun_jndi_ldap_pool_PoolCleaner_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::jndi::ldap::pool::PoolCleaner : public jObject<::com::sun::jndi::ldap::pool::PoolCleaner, ::java::lang::Thread> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_jndi_ldap_pool / "PoolCleaner";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jlong, ::com::sun::jndi::ldap::pool::Pool *)>(), //
+		jMethod<::jvoid()>("run"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto run(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("run")] != -1);
+		return call<R>("run", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

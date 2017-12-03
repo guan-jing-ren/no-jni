@@ -1,0 +1,71 @@
+#ifndef sun_security_timestamp_TSRequest_HPP
+#define sun_security_timestamp_TSRequest_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::timestamp::TSRequest : public jObject<::sun::security::timestamp::TSRequest, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_timestamp / "TSRequest";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::jbyte *, ::java::security::MessageDigest)>(), //
+		jMethod<::jbyte *()>("encode"), //
+		jMethod<::jbyte *()>("getHashedMessage"), //
+		jMethod<::jvoid(::jboolean)>("requestCertificate"), //
+		jMethod<::jvoid(::java::security::cert::X509Extension *)>("setExtensions"), //
+		jMethod<::jvoid(::java::math::BigInteger)>("setNonce"), //
+		jMethod<::jvoid(::java::lang::String)>("setPolicyId"), //
+		jMethod<::jvoid(::jint)>("setVersion"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto encode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encode")] != -1);
+		return call<R>("encode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getHashedMessage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHashedMessage")] != -1);
+		return call<R>("getHashedMessage", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto requestCertificate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("requestCertificate")] != -1);
+		return call<R>("requestCertificate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setExtensions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setExtensions")] != -1);
+		return call<R>("setExtensions", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setNonce(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setNonce")] != -1);
+		return call<R>("setNonce", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setPolicyId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setPolicyId")] != -1);
+		return call<R>("setPolicyId", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setVersion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setVersion")] != -1);
+		return call<R>("setVersion", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

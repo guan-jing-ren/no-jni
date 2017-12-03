@@ -1,0 +1,28 @@
+#ifndef sun_nio_cs_ArrayEncoder_HPP
+#define sun_nio_cs_ArrayEncoder_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::nio::cs::ArrayEncoder : public jObject<::sun::nio::cs::ArrayEncoder, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_nio_cs / "ArrayEncoder";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint(::jchar *, ::jint, ::jint, ::jbyte *)>("encode"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto encode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encode")] != -1);
+		return call<R>("encode", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

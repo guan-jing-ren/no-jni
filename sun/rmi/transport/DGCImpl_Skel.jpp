@@ -1,0 +1,36 @@
+#ifndef sun_rmi_transport_DGCImpl_Skel_HPP
+#define sun_rmi_transport_DGCImpl_Skel_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::rmi::transport::DGCImpl_Skel : public jObject<::sun::rmi::transport::DGCImpl_Skel, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_rmi_transport / "DGCImpl_Skel";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::rmi::Remote, ::java::rmi::server::RemoteCall, ::jint, ::jlong)>("dispatch"), //
+		jMethod<::java::rmi::server::Operation *()>("getOperations"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispatch(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dispatch")] != -1);
+		return call<R>("dispatch", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::server::Operation *, typename... Args>
+	auto getOperations(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOperations")] != -1);
+		return call<R>("getOperations", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

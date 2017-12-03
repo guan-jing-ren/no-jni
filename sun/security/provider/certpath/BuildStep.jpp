@@ -1,0 +1,128 @@
+#ifndef sun_security_provider_certpath_BuildStep_HPP
+#define sun_security_provider_certpath_BuildStep_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::security::provider::certpath::BuildStep : public jObject<::sun::security::provider::certpath::BuildStep, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_provider_certpath / "BuildStep";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("BACK"), //
+		jField<::jint>("FAIL"), //
+		jField<::jint>("FOLLOW"), //
+		jField<::jint>("POSSIBLE"), //
+		jField<::jint>("SUCCEED"), //
+	};
+
+	template<typename F = ::jint>
+	static auto BACK() {
+		static_assert(field_signatures[jField<F>("BACK")] != -1);
+		return sat<F>("BACK");
+	}
+
+	template<typename F = ::jint>
+	static auto FAIL() {
+		static_assert(field_signatures[jField<F>("FAIL")] != -1);
+		return sat<F>("FAIL");
+	}
+
+	template<typename F = ::jint>
+	static auto FOLLOW() {
+		static_assert(field_signatures[jField<F>("FOLLOW")] != -1);
+		return sat<F>("FOLLOW");
+	}
+
+	template<typename F = ::jint>
+	static auto POSSIBLE() {
+		static_assert(field_signatures[jField<F>("POSSIBLE")] != -1);
+		return sat<F>("POSSIBLE");
+	}
+
+	template<typename F = ::jint>
+	static auto SUCCEED() {
+		static_assert(field_signatures[jField<F>("SUCCEED")] != -1);
+		return sat<F>("SUCCEED");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::security::provider::certpath::Vertex, ::jint)>(), //
+		jMethod<::java::lang::String()>("fullToString"), //
+		jMethod<::java::security::cert::X509Certificate()>("getCertificate"), //
+		jMethod<::java::lang::String()>("getIssuerName"), //
+		jMethod<::java::lang::String(::java::lang::String)>("getIssuerName"), //
+		jMethod<::jint()>("getResult"), //
+		jMethod<::java::lang::String()>("getSubjectName"), //
+		jMethod<::java::lang::String(::java::lang::String)>("getSubjectName"), //
+		jMethod<::java::lang::Throwable()>("getThrowable"), //
+		jMethod<::sun::security::provider::certpath::Vertex()>("getVertex"), //
+		jMethod<::java::lang::String(::jint)>("resultToString"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::java::lang::String()>("verboseToString"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto fullToString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("fullToString")] != -1);
+		return call<R>("fullToString", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::X509Certificate, typename... Args>
+	auto getCertificate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCertificate")] != -1);
+		return call<R>("getCertificate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getIssuerName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIssuerName")] != -1);
+		return call<R>("getIssuerName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getResult(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getResult")] != -1);
+		return call<R>("getResult", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getSubjectName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSubjectName")] != -1);
+		return call<R>("getSubjectName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Throwable, typename... Args>
+	auto getThrowable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getThrowable")] != -1);
+		return call<R>("getThrowable", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::provider::certpath::Vertex, typename... Args>
+	auto getVertex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getVertex")] != -1);
+		return call<R>("getVertex", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto resultToString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("resultToString")] != -1);
+		return call<R>("resultToString", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto verboseToString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("verboseToString")] != -1);
+		return call<R>("verboseToString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

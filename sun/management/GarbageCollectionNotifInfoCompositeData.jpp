@@ -1,0 +1,71 @@
+#ifndef sun_management_GarbageCollectionNotifInfoCompositeData_HPP
+#define sun_management_GarbageCollectionNotifInfoCompositeData_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::management::GarbageCollectionNotifInfoCompositeData : public jObject<::sun::management::GarbageCollectionNotifInfoCompositeData, ::sun::management::LazyCompositeData> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_management / "GarbageCollectionNotifInfoCompositeData";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::com::sun::management::GarbageCollectionNotificationInfo)>(), //
+		jMethod<::com::sun::management::GarbageCollectionNotificationInfo()>("getGarbageCollectionNotifInfo"), //
+		jMethod<::java::lang::String(::javax::management::openmbean::CompositeData)>("getGcAction"), //
+		jMethod<::java::lang::String(::javax::management::openmbean::CompositeData)>("getGcCause"), //
+		jMethod<::com::sun::management::GcInfo(::javax::management::openmbean::CompositeData)>("getGcInfo"), //
+		jMethod<::java::lang::String(::javax::management::openmbean::CompositeData)>("getGcName"), //
+		jMethod<::javax::management::openmbean::CompositeData(::com::sun::management::GarbageCollectionNotificationInfo)>("toCompositeData"), //
+		jMethod<::jvoid(::javax::management::openmbean::CompositeData)>("validateCompositeData"), //
+	};
+
+	template<typename R = ::com::sun::management::GarbageCollectionNotificationInfo, typename... Args>
+	auto getGarbageCollectionNotifInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGarbageCollectionNotifInfo")] != -1);
+		return call<R>("getGarbageCollectionNotifInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getGcAction(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGcAction")] != -1);
+		return scall<R>("getGcAction", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getGcCause(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGcCause")] != -1);
+		return scall<R>("getGcCause", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::management::GcInfo, typename... Args>
+	static auto getGcInfo(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGcInfo")] != -1);
+		return scall<R>("getGcInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getGcName(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGcName")] != -1);
+		return scall<R>("getGcName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::openmbean::CompositeData, typename... Args>
+	static auto toCompositeData(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toCompositeData")] != -1);
+		return scall<R>("toCompositeData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto validateCompositeData(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("validateCompositeData")] != -1);
+		return scall<R>("validateCompositeData", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

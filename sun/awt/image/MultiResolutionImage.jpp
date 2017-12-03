@@ -1,0 +1,35 @@
+#ifndef sun_awt_image_MultiResolutionImage_HPP
+#define sun_awt_image_MultiResolutionImage_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::image::MultiResolutionImage : public jObject<::sun::awt::image::MultiResolutionImage, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_image / "MultiResolutionImage";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::Image(::jint, ::jint)>("getResolutionVariant"), //
+		jMethod<::java::util::List()>("getResolutionVariants"), //
+	};
+
+	template<typename R = ::java::awt::Image, typename... Args>
+	auto getResolutionVariant(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getResolutionVariant")] != -1);
+		return call<R>("getResolutionVariant", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getResolutionVariants(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getResolutionVariants")] != -1);
+		return call<R>("getResolutionVariants", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

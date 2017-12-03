@@ -1,0 +1,36 @@
+#ifndef sun_security_provider_certpath_IndexedCollectionCertStore_HPP
+#define sun_security_provider_certpath_IndexedCollectionCertStore_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::security::provider::certpath::IndexedCollectionCertStore : public jObject<::sun::security::provider::certpath::IndexedCollectionCertStore, ::java::security::cert::CertStoreSpi> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_provider_certpath / "IndexedCollectionCertStore";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::security::cert::CertStoreParameters)>(), //
+		jMethod<::java::util::Collection(::java::security::cert::CRLSelector)>("engineGetCRLs"), //
+		jMethod<::java::util::Collection(::java::security::cert::CertSelector)>("engineGetCertificates"), //
+	};
+
+	template<typename R = ::java::util::Collection, typename... Args>
+	auto engineGetCRLs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("engineGetCRLs")] != -1);
+		return call<R>("engineGetCRLs", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Collection, typename... Args>
+	auto engineGetCertificates(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("engineGetCertificates")] != -1);
+		return call<R>("engineGetCertificates", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

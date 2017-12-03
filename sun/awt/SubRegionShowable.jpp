@@ -1,0 +1,35 @@
+#ifndef sun_awt_SubRegionShowable_HPP
+#define sun_awt_SubRegionShowable_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::SubRegionShowable : public jObject<::sun::awt::SubRegionShowable, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "SubRegionShowable";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint)>("show"), //
+		jMethod<::jboolean(::jint, ::jint, ::jint, ::jint)>("showIfNotLost"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto show(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("show")] != -1);
+		return call<R>("show", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto showIfNotLost(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("showIfNotLost")] != -1);
+		return call<R>("showIfNotLost", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

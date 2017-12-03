@@ -1,0 +1,77 @@
+#ifndef sun_reflect_annotation_AnnotationType_HPP
+#define sun_reflect_annotation_AnnotationType_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::reflect::annotation::AnnotationType : public jObject<::sun::reflect::annotation::AnnotationType, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_reflect_annotation / "AnnotationType";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::reflect::annotation::AnnotationType(::java::lang::Class)>("getInstance"), //
+		jMethod<::java::lang::Class(::java::lang::Class)>("invocationHandlerReturnType"), //
+		jMethod<::jboolean()>("isInherited"), //
+		jMethod<::java::util::Map()>("memberDefaults"), //
+		jMethod<::java::util::Map()>("memberTypes"), //
+		jMethod<::java::util::Map()>("members"), //
+		jMethod<::java::lang::annotation::RetentionPolicy()>("retention"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::sun::reflect::annotation::AnnotationType, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	static auto invocationHandlerReturnType(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("invocationHandlerReturnType")] != -1);
+		return scall<R>("invocationHandlerReturnType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isInherited(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isInherited")] != -1);
+		return call<R>("isInherited", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto memberDefaults(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("memberDefaults")] != -1);
+		return call<R>("memberDefaults", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto memberTypes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("memberTypes")] != -1);
+		return call<R>("memberTypes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto members(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("members")] != -1);
+		return call<R>("members", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::annotation::RetentionPolicy, typename... Args>
+	auto retention(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("retention")] != -1);
+		return call<R>("retention", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

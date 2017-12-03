@@ -1,0 +1,63 @@
+#ifndef sun_reflect_generics_reflectiveObjects_WildcardTypeImpl_HPP
+#define sun_reflect_generics_reflectiveObjects_WildcardTypeImpl_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::reflect::generics::reflectiveObjects::WildcardTypeImpl : public jObject<::sun::reflect::generics::reflectiveObjects::WildcardTypeImpl, ::sun::reflect::generics::reflectiveObjects::LazyReflectiveObjectGenerator> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_reflect_generics_reflectiveObjects / "WildcardTypeImpl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::lang::reflect::Type *()>("getLowerBounds"), //
+		jMethod<::java::lang::reflect::Type *()>("getUpperBounds"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::sun::reflect::generics::reflectiveObjects::WildcardTypeImpl(::sun::reflect::generics::tree::FieldTypeSignature *, ::sun::reflect::generics::tree::FieldTypeSignature *, ::sun::reflect::generics::factory::GenericsFactory)>("make"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Type *, typename... Args>
+	auto getLowerBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLowerBounds")] != -1);
+		return call<R>("getLowerBounds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Type *, typename... Args>
+	auto getUpperBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUpperBounds")] != -1);
+		return call<R>("getUpperBounds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::reflect::generics::reflectiveObjects::WildcardTypeImpl, typename... Args>
+	static auto make(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("make")] != -1);
+		return scall<R>("make", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

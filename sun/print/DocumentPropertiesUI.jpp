@@ -1,0 +1,42 @@
+#ifndef sun_print_DocumentPropertiesUI_HPP
+#define sun_print_DocumentPropertiesUI_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::print::DocumentPropertiesUI : public jObject<::sun::print::DocumentPropertiesUI, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_print / "DocumentPropertiesUI";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("DOCPROPERTIESCLASSNAME"), //
+		jField<::jint>("DOCUMENTPROPERTIES_ROLE"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto DOCPROPERTIESCLASSNAME() {
+		static_assert(field_signatures[jField<F>("DOCPROPERTIESCLASSNAME")] != -1);
+		return sat<F>("DOCPROPERTIESCLASSNAME");
+	}
+
+	template<typename F = ::jint>
+	static auto DOCUMENTPROPERTIES_ROLE() {
+		static_assert(field_signatures[jField<F>("DOCUMENTPROPERTIES_ROLE")] != -1);
+		return sat<F>("DOCUMENTPROPERTIES_ROLE");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::print::attribute::PrintRequestAttributeSet(::java::awt::print::PrinterJob, ::java::awt::Window, ::javax::print::PrintService, ::javax::print::attribute::PrintRequestAttributeSet)>("showDocumentProperties"), //
+	};
+
+	template<typename R = ::javax::print::attribute::PrintRequestAttributeSet, typename... Args>
+	auto showDocumentProperties(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("showDocumentProperties")] != -1);
+		return call<R>("showDocumentProperties", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

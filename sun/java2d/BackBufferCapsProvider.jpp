@@ -1,0 +1,28 @@
+#ifndef sun_java2d_BackBufferCapsProvider_HPP
+#define sun_java2d_BackBufferCapsProvider_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::java2d::BackBufferCapsProvider : public jObject<::sun::java2d::BackBufferCapsProvider, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d / "BackBufferCapsProvider";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::BufferCapabilities()>("getBackBufferCaps"), //
+	};
+
+	template<typename R = ::java::awt::BufferCapabilities, typename... Args>
+	auto getBackBufferCaps(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBackBufferCaps")] != -1);
+		return call<R>("getBackBufferCaps", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

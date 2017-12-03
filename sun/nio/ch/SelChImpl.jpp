@@ -1,0 +1,70 @@
+#ifndef sun_nio_ch_SelChImpl_HPP
+#define sun_nio_ch_SelChImpl_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::nio::ch::SelChImpl : public jObject<::sun::nio::ch::SelChImpl, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_nio_ch / "SelChImpl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::io::FileDescriptor()>("getFD"), //
+		jMethod<::jint()>("getFDVal"), //
+		jMethod<::jvoid()>("kill"), //
+		jMethod<::jvoid(::jint, ::sun::nio::ch::SelectionKeyImpl)>("translateAndSetInterestOps"), //
+		jMethod<::jboolean(::jint, ::sun::nio::ch::SelectionKeyImpl)>("translateAndSetReadyOps"), //
+		jMethod<::jboolean(::jint, ::sun::nio::ch::SelectionKeyImpl)>("translateAndUpdateReadyOps"), //
+		jMethod<::jint()>("validOps"), //
+	};
+
+	template<typename R = ::java::io::FileDescriptor, typename... Args>
+	auto getFD(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFD")] != -1);
+		return call<R>("getFD", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getFDVal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFDVal")] != -1);
+		return call<R>("getFDVal", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto kill(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("kill")] != -1);
+		return call<R>("kill", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto translateAndSetInterestOps(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("translateAndSetInterestOps")] != -1);
+		return call<R>("translateAndSetInterestOps", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto translateAndSetReadyOps(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("translateAndSetReadyOps")] != -1);
+		return call<R>("translateAndSetReadyOps", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto translateAndUpdateReadyOps(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("translateAndUpdateReadyOps")] != -1);
+		return call<R>("translateAndUpdateReadyOps", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto validOps(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("validOps")] != -1);
+		return call<R>("validOps", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

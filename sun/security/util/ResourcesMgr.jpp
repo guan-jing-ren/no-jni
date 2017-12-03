@@ -1,0 +1,30 @@
+#ifndef sun_security_util_ResourcesMgr_HPP
+#define sun_security_util_ResourcesMgr_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::util::ResourcesMgr : public jObject<::sun::security::util::ResourcesMgr, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_util / "ResourcesMgr";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::String(::java::lang::String)>("getString"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::lang::String)>("getString"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getString(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getString")] != -1);
+		return scall<R>("getString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

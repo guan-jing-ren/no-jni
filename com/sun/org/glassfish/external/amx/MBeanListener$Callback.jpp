@@ -1,0 +1,35 @@
+#ifndef com_sun_org_glassfish_external_amx_MBeanListener$Callback_HPP
+#define com_sun_org_glassfish_external_amx_MBeanListener$Callback_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::org::glassfish::external::amx::MBeanListener$Callback : public jObject<::com::sun::org::glassfish::external::amx::MBeanListener$Callback, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_org_glassfish_external_amx / "MBeanListener$Callback";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::management::ObjectName, ::com::sun::org::glassfish::external::amx::MBeanListener)>("mbeanRegistered"), //
+		jMethod<::jvoid(::javax::management::ObjectName, ::com::sun::org::glassfish::external::amx::MBeanListener)>("mbeanUnregistered"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto mbeanRegistered(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("mbeanRegistered")] != -1);
+		return call<R>("mbeanRegistered", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto mbeanUnregistered(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("mbeanUnregistered")] != -1);
+		return call<R>("mbeanUnregistered", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

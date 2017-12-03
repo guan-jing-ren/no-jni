@@ -1,0 +1,28 @@
+#ifndef sun_audio_AudioSecurityAction_HPP
+#define sun_audio_AudioSecurityAction_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::audio::AudioSecurityAction : public jObject<::sun::audio::AudioSecurityAction, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_audio / "AudioSecurityAction";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object()>("run"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto run(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("run")] != -1);
+		return call<R>("run", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

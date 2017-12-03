@@ -1,0 +1,51 @@
+#ifndef sun_text_UCompactIntArray_HPP
+#define sun_text_UCompactIntArray_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::text::UCompactIntArray : public jObject<::sun::text::UCompactIntArray, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_text / "UCompactIntArray";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint)>(), //
+		jMethod<::jvoid()>("compact"), //
+		jMethod<::jint(::jint)>("elementAt"), //
+		jMethod<::jint()>("getKSize"), //
+		jMethod<::jvoid(::jint, ::jint)>("setElementAt"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto compact(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("compact")] != -1);
+		return call<R>("compact", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto elementAt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("elementAt")] != -1);
+		return call<R>("elementAt", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getKSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getKSize")] != -1);
+		return call<R>("getKSize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setElementAt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setElementAt")] != -1);
+		return call<R>("setElementAt", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

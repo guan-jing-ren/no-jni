@@ -1,0 +1,834 @@
+#ifndef com_sun_corba_se_impl_orb_ORBSingleton_HPP
+#define com_sun_corba_se_impl_orb_ORBSingleton_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::impl::orb::ORBSingleton : public jObject<::com::sun::corba::se::impl::orb::ORBSingleton, ::com::sun::corba::se::spi::orb::ORB> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_impl_orb / "ORBSingleton";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jboolean()>("alwaysSendCodeSetServiceContext"), //
+		jMethod<::jvoid()>("checkShutdownState"), //
+		jMethod<::jvoid(::org::omg::CORBA::Object)>("connect"), //
+		jMethod<::com::sun::corba::se::pept::protocol::ClientInvocationInfo()>("createOrIncrementInvocationInfo"), //
+		jMethod<::org::omg::CORBA::TypeCode(::java::lang::String, ::java::lang::String)>("create_abstract_interface_tc"), //
+		jMethod<::org::omg::CORBA::TypeCode(::java::lang::String, ::java::lang::String, ::org::omg::CORBA::TypeCode)>("create_alias_tc"), //
+		jMethod<::org::omg::CORBA::Any()>("create_any"), //
+		jMethod<::org::omg::CORBA::TypeCode(::jint, ::org::omg::CORBA::TypeCode)>("create_array_tc"), //
+		jMethod<::org::omg::CORBA::ContextList()>("create_context_list"), //
+		jMethod<::org::omg::CORBA::TypeCode(::java::lang::String, ::java::lang::String, ::java::lang::String *)>("create_enum_tc"), //
+		jMethod<::org::omg::CORBA::Environment()>("create_environment"), //
+		jMethod<::org::omg::CORBA::ExceptionList()>("create_exception_list"), //
+		jMethod<::org::omg::CORBA::TypeCode(::java::lang::String, ::java::lang::String, ::org::omg::CORBA::StructMember *)>("create_exception_tc"), //
+		jMethod<::org::omg::CORBA::TypeCode(::jshort, ::jshort)>("create_fixed_tc"), //
+		jMethod<::org::omg::CORBA::TypeCode(::java::lang::String, ::java::lang::String)>("create_interface_tc"), //
+		jMethod<::org::omg::CORBA::NVList(::jint)>("create_list"), //
+		jMethod<::org::omg::CORBA::NamedValue(::java::lang::String, ::org::omg::CORBA::Any, ::jint)>("create_named_value"), //
+		jMethod<::org::omg::CORBA::TypeCode(::java::lang::String, ::java::lang::String)>("create_native_tc"), //
+		jMethod<::org::omg::CORBA::NVList(::org::omg::CORBA::Object)>("create_operation_list"), //
+		jMethod<::org::omg::CORBA::portable::OutputStream()>("create_output_stream"), //
+		jMethod<::org::omg::CORBA::Policy(::jint, ::org::omg::CORBA::Any)>("create_policy"), //
+		jMethod<::org::omg::CORBA::TypeCode(::jint, ::jint)>("create_recursive_sequence_tc"), //
+		jMethod<::org::omg::CORBA::TypeCode(::java::lang::String)>("create_recursive_tc"), //
+		jMethod<::org::omg::CORBA::TypeCode(::jint, ::org::omg::CORBA::TypeCode)>("create_sequence_tc"), //
+		jMethod<::org::omg::CORBA::TypeCode(::jint)>("create_string_tc"), //
+		jMethod<::org::omg::CORBA::TypeCode(::java::lang::String, ::java::lang::String, ::org::omg::CORBA::StructMember *)>("create_struct_tc"), //
+		jMethod<::org::omg::CORBA::TypeCode(::java::lang::String, ::java::lang::String, ::org::omg::CORBA::TypeCode, ::org::omg::CORBA::UnionMember *)>("create_union_tc"), //
+		jMethod<::org::omg::CORBA::TypeCode(::java::lang::String, ::java::lang::String, ::org::omg::CORBA::TypeCode)>("create_value_box_tc"), //
+		jMethod<::org::omg::CORBA::TypeCode(::java::lang::String, ::java::lang::String, ::jshort, ::org::omg::CORBA::TypeCode, ::org::omg::CORBA::ValueMember *)>("create_value_tc"), //
+		jMethod<::org::omg::CORBA::TypeCode(::jint)>("create_wstring_tc"), //
+		jMethod<::jvoid()>("destroy"), //
+		jMethod<::jvoid(::org::omg::CORBA::Object)>("disconnect"), //
+		jMethod<::jvoid()>("finishedDispatch"), //
+		jMethod<::java::net::URL()>("getAppletCodeBase"), //
+		jMethod<::java::lang::String()>("getAppletHost"), //
+		jMethod<::com::sun::corba::se::spi::protocol::ClientDelegateFactory()>("getClientDelegateFactory"), //
+		jMethod<::com::sun::corba::se::impl::encoding::CodeSetComponentInfo()>("getCodeSetComponentInfo"), //
+		jMethod<::com::sun::corba::se::pept::transport::ConnectionCache(::com::sun::corba::se::pept::transport::ContactInfo)>("getConnectionCache"), //
+		jMethod<::com::sun::corba::se::spi::copyobject::CopierManager()>("getCopierManager"), //
+		jMethod<::com::sun::corba::se::spi::transport::CorbaContactInfoListFactory()>("getCorbaContactInfoListFactory"), //
+		jMethod<::com::sun::corba::se::spi::transport::CorbaTransportManager()>("getCorbaTransportManager"), //
+		jMethod<::com::sun::corba::se::spi::ior::IOR()>("getFVDCodeBaseIOR"), //
+		jMethod<::jint(::com::sun::corba::se::spi::ior::iiop::GIOPVersion)>("getGIOPBuffMgrStrategy"), //
+		jMethod<::jint()>("getGIOPFragmentSize"), //
+		jMethod<::jint()>("getHighWaterMark"), //
+		jMethod<::com::sun::corba::se::pept::protocol::ClientInvocationInfo()>("getInvocationInfo"), //
+		jMethod<::com::sun::corba::se::spi::legacy::connection::LegacyServerSocketManager()>("getLegacyServerSocketManager"), //
+		jMethod<::com::sun::corba::se::spi::resolver::LocalResolver()>("getLocalResolver"), //
+		jMethod<::jint()>("getLowWaterMark"), //
+		jMethod<::jint()>("getNumberToReclaim"), //
+		jMethod<::com::sun::corba::se::spi::orb::ORBData()>("getORBData"), //
+		jMethod<::java::lang::String()>("getORBInitialHost"), //
+		jMethod<::jint()>("getORBInitialPort"), //
+		jMethod<::java::lang::String()>("getORBServerHost"), //
+		jMethod<::jint()>("getORBServerPort"), //
+		jMethod<::com::sun::corba::se::spi::orb::ORBVersion()>("getORBVersion"), //
+		jMethod<::com::sun::corba::se::spi::ior::ObjectKeyFactory()>("getObjectKeyFactory"), //
+		jMethod<::com::sun::corba::se::spi::protocol::PIHandler()>("getPIHandler"), //
+		jMethod<::com::sun::corba::se::spi::protocol::RequestDispatcherRegistry()>("getRequestDispatcherRegistry"), //
+		jMethod<::com::sun::corba::se::spi::resolver::Resolver()>("getResolver"), //
+		jMethod<::com::sun::corba::se::pept::transport::Selector(::jint)>("getSelector"), //
+		jMethod<::com::sun::corba::se::spi::legacy::connection::LegacyServerSocketEndPointInfo()>("getServerEndpoint"), //
+		jMethod<::com::sun::corba::se::spi::servicecontext::ServiceContextRegistry()>("getServiceContextRegistry"), //
+		jMethod<::com::sun::corba::se::spi::ior::TaggedComponentFactoryFinder()>("getTaggedComponentFactoryFinder"), //
+		jMethod<::com::sun::corba::se::spi::ior::IdentifiableFactoryFinder()>("getTaggedProfileFactoryFinder"), //
+		jMethod<::com::sun::corba::se::spi::ior::IdentifiableFactoryFinder()>("getTaggedProfileTemplateFactoryFinder"), //
+		jMethod<::com::sun::corba::se::spi::orbutil::threadpool::ThreadPoolManager()>("getThreadPoolManager"), //
+		jMethod<::jint()>("getTransientServerId"), //
+		jMethod<::com::sun::corba::se::pept::transport::TransportManager()>("getTransportManager"), //
+		jMethod<::com::sun::corba::se::impl::corba::TypeCodeImpl(::java::lang::Class)>("getTypeCodeForClass"), //
+		jMethod<::com::sun::corba::se::spi::orb::Operation()>("getURLOperation"), //
+		jMethod<::org::omg::CORBA::Current()>("get_current"), //
+		jMethod<::org::omg::CORBA::Context()>("get_default_context"), //
+		jMethod<::org::omg::CORBA::Request()>("get_next_response"), //
+		jMethod<::org::omg::CORBA::TypeCode(::org::omg::CORBA::TCKind)>("get_primitive_tc"), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::ior::ObjectKey)>("handleBadServerId"), //
+		jMethod<::jvoid()>("initBadServerIdHandler"), //
+		jMethod<::jboolean()>("isDuringDispatch"), //
+		jMethod<::jboolean(::java::lang::String)>("isLocalHost"), //
+		jMethod<::jboolean(::jint, ::jint)>("isLocalServerId"), //
+		jMethod<::java::lang::String *()>("list_initial_services"), //
+		jMethod<::org::omg::CORBA::portable::ValueFactory(::java::lang::String)>("lookup_value_factory"), //
+		jMethod<::jvoid()>("notifyORB"), //
+		jMethod<::java::lang::String(::org::omg::CORBA::Object)>("object_to_string"), //
+		jMethod<::com::sun::corba::se::spi::oa::OAInvocationInfo()>("peekInvocationInfo"), //
+		jMethod<::jvoid()>("perform_work"), //
+		jMethod<::jboolean()>("poll_next_response"), //
+		jMethod<::com::sun::corba::se::spi::oa::OAInvocationInfo()>("popInvocationInfo"), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::oa::OAInvocationInfo)>("pushInvocationInfo"), //
+		jMethod<::jvoid(::java::lang::String, ::com::sun::corba::se::spi::orbutil::closure::Closure)>("registerInitialReference"), //
+		jMethod<::jvoid(::java::lang::String, ::org::omg::CORBA::Object)>("register_initial_reference"), //
+		jMethod<::org::omg::CORBA::portable::ValueFactory(::java::lang::String, ::org::omg::CORBA::portable::ValueFactory)>("register_value_factory"), //
+		jMethod<::jvoid()>("releaseOrDecrementInvocationInfo"), //
+		jMethod<::org::omg::CORBA::Object(::java::lang::String)>("resolve_initial_references"), //
+		jMethod<::jvoid()>("run"), //
+		jMethod<::jvoid(::org::omg::CORBA::Request *)>("send_multiple_requests_deferred"), //
+		jMethod<::jvoid(::org::omg::CORBA::Request *)>("send_multiple_requests_oneway"), //
+		jMethod<::jvoid(::com::sun::corba::se::impl::oa::poa::BadServerIdHandler)>("setBadServerIdHandler"), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::protocol::ClientDelegateFactory)>("setClientDelegateFactory"), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::transport::CorbaContactInfoListFactory)>("setCorbaContactInfoListFactory"), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::protocol::CorbaServerRequestDispatcher)>("setINSDelegate"), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::resolver::LocalResolver)>("setLocalResolver"), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::orb::ORBVersion)>("setORBVersion"), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::ior::ObjectKeyFactory)>("setObjectKeyFactory"), //
+		jMethod<::jvoid(::jint)>("setPersistentServerId"), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::resolver::Resolver)>("setResolver"), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::orbutil::threadpool::ThreadPoolManager)>("setThreadPoolManager"), //
+		jMethod<::jvoid(::java::lang::Class, ::com::sun::corba::se::impl::corba::TypeCodeImpl)>("setTypeCodeForClass"), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::orb::Operation)>("setURLOperation"), //
+		jMethod<::jvoid(::java::util::Properties)>("set_parameters"), //
+		jMethod<::jvoid(::jboolean)>("shutdown"), //
+		jMethod<::jvoid()>("startingDispatch"), //
+		jMethod<::org::omg::CORBA::Object(::java::lang::String)>("string_to_object"), //
+		jMethod<::java::rmi::Remote(::java::lang::String)>("string_to_remote"), //
+		jMethod<::jvoid(::java::lang::String)>("unregister_value_factory"), //
+		jMethod<::jboolean()>("work_pending"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto alwaysSendCodeSetServiceContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("alwaysSendCodeSetServiceContext")] != -1);
+		return call<R>("alwaysSendCodeSetServiceContext", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto checkShutdownState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkShutdownState")] != -1);
+		return call<R>("checkShutdownState", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto connect(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("connect")] != -1);
+		return call<R>("connect", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::pept::protocol::ClientInvocationInfo, typename... Args>
+	auto createOrIncrementInvocationInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createOrIncrementInvocationInfo")] != -1);
+		return call<R>("createOrIncrementInvocationInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
+	auto create_abstract_interface_tc(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_abstract_interface_tc")] != -1);
+		return call<R>("create_abstract_interface_tc", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
+	auto create_alias_tc(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_alias_tc")] != -1);
+		return call<R>("create_alias_tc", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::Any, typename... Args>
+	auto create_any(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_any")] != -1);
+		return call<R>("create_any", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
+	auto create_array_tc(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_array_tc")] != -1);
+		return call<R>("create_array_tc", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::ContextList, typename... Args>
+	auto create_context_list(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_context_list")] != -1);
+		return call<R>("create_context_list", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
+	auto create_enum_tc(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_enum_tc")] != -1);
+		return call<R>("create_enum_tc", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::Environment, typename... Args>
+	auto create_environment(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_environment")] != -1);
+		return call<R>("create_environment", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::ExceptionList, typename... Args>
+	auto create_exception_list(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_exception_list")] != -1);
+		return call<R>("create_exception_list", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
+	auto create_exception_tc(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_exception_tc")] != -1);
+		return call<R>("create_exception_tc", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
+	auto create_fixed_tc(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_fixed_tc")] != -1);
+		return call<R>("create_fixed_tc", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
+	auto create_interface_tc(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_interface_tc")] != -1);
+		return call<R>("create_interface_tc", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::NVList, typename... Args>
+	auto create_list(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_list")] != -1);
+		return call<R>("create_list", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::NamedValue, typename... Args>
+	auto create_named_value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_named_value")] != -1);
+		return call<R>("create_named_value", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
+	auto create_native_tc(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_native_tc")] != -1);
+		return call<R>("create_native_tc", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::NVList, typename... Args>
+	auto create_operation_list(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_operation_list")] != -1);
+		return call<R>("create_operation_list", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::portable::OutputStream, typename... Args>
+	auto create_output_stream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_output_stream")] != -1);
+		return call<R>("create_output_stream", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::Policy, typename... Args>
+	auto create_policy(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_policy")] != -1);
+		return call<R>("create_policy", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
+	auto create_recursive_sequence_tc(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_recursive_sequence_tc")] != -1);
+		return call<R>("create_recursive_sequence_tc", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
+	auto create_recursive_tc(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_recursive_tc")] != -1);
+		return call<R>("create_recursive_tc", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
+	auto create_sequence_tc(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_sequence_tc")] != -1);
+		return call<R>("create_sequence_tc", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
+	auto create_string_tc(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_string_tc")] != -1);
+		return call<R>("create_string_tc", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
+	auto create_struct_tc(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_struct_tc")] != -1);
+		return call<R>("create_struct_tc", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
+	auto create_union_tc(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_union_tc")] != -1);
+		return call<R>("create_union_tc", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
+	auto create_value_box_tc(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_value_box_tc")] != -1);
+		return call<R>("create_value_box_tc", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
+	auto create_value_tc(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_value_tc")] != -1);
+		return call<R>("create_value_tc", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
+	auto create_wstring_tc(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_wstring_tc")] != -1);
+		return call<R>("create_wstring_tc", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto destroy(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("destroy")] != -1);
+		return call<R>("destroy", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto disconnect(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("disconnect")] != -1);
+		return call<R>("disconnect", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto finishedDispatch(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("finishedDispatch")] != -1);
+		return call<R>("finishedDispatch", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::URL, typename... Args>
+	auto getAppletCodeBase(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAppletCodeBase")] != -1);
+		return call<R>("getAppletCodeBase", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAppletHost(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAppletHost")] != -1);
+		return call<R>("getAppletHost", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::protocol::ClientDelegateFactory, typename... Args>
+	auto getClientDelegateFactory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClientDelegateFactory")] != -1);
+		return call<R>("getClientDelegateFactory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::encoding::CodeSetComponentInfo, typename... Args>
+	auto getCodeSetComponentInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCodeSetComponentInfo")] != -1);
+		return call<R>("getCodeSetComponentInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::pept::transport::ConnectionCache, typename... Args>
+	auto getConnectionCache(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getConnectionCache")] != -1);
+		return call<R>("getConnectionCache", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::copyobject::CopierManager, typename... Args>
+	auto getCopierManager(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCopierManager")] != -1);
+		return call<R>("getCopierManager", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::transport::CorbaContactInfoListFactory, typename... Args>
+	auto getCorbaContactInfoListFactory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCorbaContactInfoListFactory")] != -1);
+		return call<R>("getCorbaContactInfoListFactory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::transport::CorbaTransportManager, typename... Args>
+	auto getCorbaTransportManager(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCorbaTransportManager")] != -1);
+		return call<R>("getCorbaTransportManager", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::ior::IOR, typename... Args>
+	auto getFVDCodeBaseIOR(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFVDCodeBaseIOR")] != -1);
+		return call<R>("getFVDCodeBaseIOR", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getGIOPBuffMgrStrategy(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGIOPBuffMgrStrategy")] != -1);
+		return call<R>("getGIOPBuffMgrStrategy", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getGIOPFragmentSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGIOPFragmentSize")] != -1);
+		return call<R>("getGIOPFragmentSize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getHighWaterMark(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHighWaterMark")] != -1);
+		return call<R>("getHighWaterMark", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::pept::protocol::ClientInvocationInfo, typename... Args>
+	auto getInvocationInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInvocationInfo")] != -1);
+		return call<R>("getInvocationInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::legacy::connection::LegacyServerSocketManager, typename... Args>
+	auto getLegacyServerSocketManager(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLegacyServerSocketManager")] != -1);
+		return call<R>("getLegacyServerSocketManager", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::resolver::LocalResolver, typename... Args>
+	auto getLocalResolver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLocalResolver")] != -1);
+		return call<R>("getLocalResolver", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getLowWaterMark(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLowWaterMark")] != -1);
+		return call<R>("getLowWaterMark", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getNumberToReclaim(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNumberToReclaim")] != -1);
+		return call<R>("getNumberToReclaim", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::orb::ORBData, typename... Args>
+	auto getORBData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getORBData")] != -1);
+		return call<R>("getORBData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getORBInitialHost(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getORBInitialHost")] != -1);
+		return call<R>("getORBInitialHost", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getORBInitialPort(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getORBInitialPort")] != -1);
+		return call<R>("getORBInitialPort", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getORBServerHost(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getORBServerHost")] != -1);
+		return call<R>("getORBServerHost", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getORBServerPort(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getORBServerPort")] != -1);
+		return call<R>("getORBServerPort", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::orb::ORBVersion, typename... Args>
+	auto getORBVersion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getORBVersion")] != -1);
+		return call<R>("getORBVersion", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::ior::ObjectKeyFactory, typename... Args>
+	auto getObjectKeyFactory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getObjectKeyFactory")] != -1);
+		return call<R>("getObjectKeyFactory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::protocol::PIHandler, typename... Args>
+	auto getPIHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPIHandler")] != -1);
+		return call<R>("getPIHandler", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::protocol::RequestDispatcherRegistry, typename... Args>
+	auto getRequestDispatcherRegistry(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRequestDispatcherRegistry")] != -1);
+		return call<R>("getRequestDispatcherRegistry", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::resolver::Resolver, typename... Args>
+	auto getResolver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getResolver")] != -1);
+		return call<R>("getResolver", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::pept::transport::Selector, typename... Args>
+	auto getSelector(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSelector")] != -1);
+		return call<R>("getSelector", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::legacy::connection::LegacyServerSocketEndPointInfo, typename... Args>
+	auto getServerEndpoint(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getServerEndpoint")] != -1);
+		return call<R>("getServerEndpoint", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::servicecontext::ServiceContextRegistry, typename... Args>
+	auto getServiceContextRegistry(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getServiceContextRegistry")] != -1);
+		return call<R>("getServiceContextRegistry", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::ior::TaggedComponentFactoryFinder, typename... Args>
+	auto getTaggedComponentFactoryFinder(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTaggedComponentFactoryFinder")] != -1);
+		return call<R>("getTaggedComponentFactoryFinder", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::ior::IdentifiableFactoryFinder, typename... Args>
+	auto getTaggedProfileFactoryFinder(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTaggedProfileFactoryFinder")] != -1);
+		return call<R>("getTaggedProfileFactoryFinder", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::ior::IdentifiableFactoryFinder, typename... Args>
+	auto getTaggedProfileTemplateFactoryFinder(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTaggedProfileTemplateFactoryFinder")] != -1);
+		return call<R>("getTaggedProfileTemplateFactoryFinder", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::orbutil::threadpool::ThreadPoolManager, typename... Args>
+	auto getThreadPoolManager(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getThreadPoolManager")] != -1);
+		return call<R>("getThreadPoolManager", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getTransientServerId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTransientServerId")] != -1);
+		return call<R>("getTransientServerId", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::pept::transport::TransportManager, typename... Args>
+	auto getTransportManager(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTransportManager")] != -1);
+		return call<R>("getTransportManager", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::corba::TypeCodeImpl, typename... Args>
+	auto getTypeCodeForClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTypeCodeForClass")] != -1);
+		return call<R>("getTypeCodeForClass", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::orb::Operation, typename... Args>
+	auto getURLOperation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getURLOperation")] != -1);
+		return call<R>("getURLOperation", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::Current, typename... Args>
+	auto get_current(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get_current")] != -1);
+		return call<R>("get_current", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::Context, typename... Args>
+	auto get_default_context(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get_default_context")] != -1);
+		return call<R>("get_default_context", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::Request, typename... Args>
+	auto get_next_response(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get_next_response")] != -1);
+		return call<R>("get_next_response", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
+	auto get_primitive_tc(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get_primitive_tc")] != -1);
+		return call<R>("get_primitive_tc", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto handleBadServerId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("handleBadServerId")] != -1);
+		return call<R>("handleBadServerId", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto initBadServerIdHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("initBadServerIdHandler")] != -1);
+		return call<R>("initBadServerIdHandler", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDuringDispatch(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isDuringDispatch")] != -1);
+		return call<R>("isDuringDispatch", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isLocalHost(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isLocalHost")] != -1);
+		return call<R>("isLocalHost", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isLocalServerId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isLocalServerId")] != -1);
+		return call<R>("isLocalServerId", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto list_initial_services(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("list_initial_services")] != -1);
+		return call<R>("list_initial_services", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::portable::ValueFactory, typename... Args>
+	auto lookup_value_factory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("lookup_value_factory")] != -1);
+		return call<R>("lookup_value_factory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto notifyORB(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("notifyORB")] != -1);
+		return call<R>("notifyORB", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto object_to_string(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("object_to_string")] != -1);
+		return call<R>("object_to_string", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::oa::OAInvocationInfo, typename... Args>
+	auto peekInvocationInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("peekInvocationInfo")] != -1);
+		return call<R>("peekInvocationInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto perform_work(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("perform_work")] != -1);
+		return call<R>("perform_work", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto poll_next_response(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("poll_next_response")] != -1);
+		return call<R>("poll_next_response", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::oa::OAInvocationInfo, typename... Args>
+	auto popInvocationInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("popInvocationInfo")] != -1);
+		return call<R>("popInvocationInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto pushInvocationInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("pushInvocationInfo")] != -1);
+		return call<R>("pushInvocationInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto registerInitialReference(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("registerInitialReference")] != -1);
+		return call<R>("registerInitialReference", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto register_initial_reference(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("register_initial_reference")] != -1);
+		return call<R>("register_initial_reference", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::portable::ValueFactory, typename... Args>
+	auto register_value_factory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("register_value_factory")] != -1);
+		return call<R>("register_value_factory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto releaseOrDecrementInvocationInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("releaseOrDecrementInvocationInfo")] != -1);
+		return call<R>("releaseOrDecrementInvocationInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::Object, typename... Args>
+	auto resolve_initial_references(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("resolve_initial_references")] != -1);
+		return call<R>("resolve_initial_references", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto run(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("run")] != -1);
+		return call<R>("run", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto send_multiple_requests_deferred(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("send_multiple_requests_deferred")] != -1);
+		return call<R>("send_multiple_requests_deferred", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto send_multiple_requests_oneway(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("send_multiple_requests_oneway")] != -1);
+		return call<R>("send_multiple_requests_oneway", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setBadServerIdHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setBadServerIdHandler")] != -1);
+		return call<R>("setBadServerIdHandler", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setClientDelegateFactory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setClientDelegateFactory")] != -1);
+		return call<R>("setClientDelegateFactory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setCorbaContactInfoListFactory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setCorbaContactInfoListFactory")] != -1);
+		return call<R>("setCorbaContactInfoListFactory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setINSDelegate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setINSDelegate")] != -1);
+		return call<R>("setINSDelegate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLocalResolver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setLocalResolver")] != -1);
+		return call<R>("setLocalResolver", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setORBVersion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setORBVersion")] != -1);
+		return call<R>("setORBVersion", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setObjectKeyFactory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setObjectKeyFactory")] != -1);
+		return call<R>("setObjectKeyFactory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setPersistentServerId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setPersistentServerId")] != -1);
+		return call<R>("setPersistentServerId", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setResolver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setResolver")] != -1);
+		return call<R>("setResolver", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setThreadPoolManager(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setThreadPoolManager")] != -1);
+		return call<R>("setThreadPoolManager", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setTypeCodeForClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setTypeCodeForClass")] != -1);
+		return call<R>("setTypeCodeForClass", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setURLOperation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setURLOperation")] != -1);
+		return call<R>("setURLOperation", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set_parameters(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set_parameters")] != -1);
+		return call<R>("set_parameters", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto shutdown(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("shutdown")] != -1);
+		return call<R>("shutdown", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto startingDispatch(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("startingDispatch")] != -1);
+		return call<R>("startingDispatch", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::Object, typename... Args>
+	auto string_to_object(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("string_to_object")] != -1);
+		return call<R>("string_to_object", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::Remote, typename... Args>
+	auto string_to_remote(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("string_to_remote")] != -1);
+		return call<R>("string_to_remote", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto unregister_value_factory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unregister_value_factory")] != -1);
+		return call<R>("unregister_value_factory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto work_pending(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("work_pending")] != -1);
+		return call<R>("work_pending", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

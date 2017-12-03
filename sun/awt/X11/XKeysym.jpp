@@ -1,0 +1,49 @@
+#ifndef sun_awt_X11_XKeysym_HPP
+#define sun_awt_X11_XKeysym_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::X11::XKeysym : public jObject<::sun::awt::X11::XKeysym, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_X11 / "XKeysym";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jchar(::jlong, ::jint)>("convertKeysym"), //
+		jMethod<::jlong(::jlong)>("getUppercaseAlphabetic"), //
+		jMethod<::jboolean(::sun::awt::X11::XKeyEvent)>("isKPEvent"), //
+		jMethod<::jvoid(::java::lang::String *)>("main"), //
+	};
+
+	template<typename R = ::jchar, typename... Args>
+	static auto convertKeysym(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("convertKeysym")] != -1);
+		return scall<R>("convertKeysym", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	static auto getUppercaseAlphabetic(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUppercaseAlphabetic")] != -1);
+		return scall<R>("getUppercaseAlphabetic", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isKPEvent(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isKPEvent")] != -1);
+		return scall<R>("isKPEvent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto main(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("main")] != -1);
+		return scall<R>("main", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

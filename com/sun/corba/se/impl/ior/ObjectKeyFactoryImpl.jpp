@@ -1,0 +1,77 @@
+#ifndef com_sun_corba_se_impl_ior_ObjectKeyFactoryImpl_HPP
+#define com_sun_corba_se_impl_ior_ObjectKeyFactoryImpl_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::impl::ior::ObjectKeyFactoryImpl : public jObject<::com::sun::corba::se::impl::ior::ObjectKeyFactoryImpl, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_impl_ior / "ObjectKeyFactoryImpl";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("JAVAMAGIC_NEW"), //
+		jField<::jint>("JAVAMAGIC_NEWER"), //
+		jField<::jint>("JAVAMAGIC_OLD"), //
+		jField<::jbyte>("JDK1_3_1_01_PATCH_LEVEL"), //
+		jField<::jint>("MAGIC_BASE"), //
+		jField<::jint>("MAX_MAGIC"), //
+	};
+
+	template<typename F = ::jint>
+	static auto JAVAMAGIC_NEW() {
+		static_assert(field_signatures[jField<F>("JAVAMAGIC_NEW")] != -1);
+		return sat<F>("JAVAMAGIC_NEW");
+	}
+
+	template<typename F = ::jint>
+	static auto JAVAMAGIC_NEWER() {
+		static_assert(field_signatures[jField<F>("JAVAMAGIC_NEWER")] != -1);
+		return sat<F>("JAVAMAGIC_NEWER");
+	}
+
+	template<typename F = ::jint>
+	static auto JAVAMAGIC_OLD() {
+		static_assert(field_signatures[jField<F>("JAVAMAGIC_OLD")] != -1);
+		return sat<F>("JAVAMAGIC_OLD");
+	}
+
+	template<typename F = ::jbyte>
+	static auto JDK1_3_1_01_PATCH_LEVEL() {
+		static_assert(field_signatures[jField<F>("JDK1_3_1_01_PATCH_LEVEL")] != -1);
+		return sat<F>("JDK1_3_1_01_PATCH_LEVEL");
+	}
+
+	template<typename F = ::jint>
+	static auto MAGIC_BASE() {
+		static_assert(field_signatures[jField<F>("MAGIC_BASE")] != -1);
+		return sat<F>("MAGIC_BASE");
+	}
+
+	template<typename F = ::jint>
+	static auto MAX_MAGIC() {
+		static_assert(field_signatures[jField<F>("MAX_MAGIC")] != -1);
+		return sat<F>("MAX_MAGIC");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::com::sun::corba::se::spi::orb::ORB)>(), //
+		jMethod<::com::sun::corba::se::spi::ior::ObjectKey(::jbyte *)>("create"), //
+		jMethod<::com::sun::corba::se::spi::ior::ObjectKeyTemplate(::org::omg::CORBA_2_3::portable::InputStream)>("createTemplate"), //
+	};
+
+	template<typename R = ::com::sun::corba::se::spi::ior::ObjectKey, typename... Args>
+	auto create(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create")] != -1);
+		return call<R>("create", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::ior::ObjectKeyTemplate, typename... Args>
+	auto createTemplate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createTemplate")] != -1);
+		return call<R>("createTemplate", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,43 @@
+#ifndef com_sun_activation_registries_MimeTypeEntry_HPP
+#define com_sun_activation_registries_MimeTypeEntry_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::activation::registries::MimeTypeEntry : public jObject<::com::sun::activation::registries::MimeTypeEntry, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_activation_registries / "MimeTypeEntry";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String)>(), //
+		jMethod<::java::lang::String()>("getFileExtension"), //
+		jMethod<::java::lang::String()>("getMIMEType"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getFileExtension(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFileExtension")] != -1);
+		return call<R>("getFileExtension", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMIMEType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMIMEType")] != -1);
+		return call<R>("getMIMEType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

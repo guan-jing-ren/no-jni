@@ -1,0 +1,70 @@
+#ifndef sun_net_InetAddressCachePolicy_HPP
+#define sun_net_InetAddressCachePolicy_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::net::InetAddressCachePolicy : public jObject<::sun::net::InetAddressCachePolicy, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_net / "InetAddressCachePolicy";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("DEFAULT_POSITIVE"), //
+		jField<::jint>("FOREVER"), //
+		jField<::jint>("NEVER"), //
+	};
+
+	template<typename F = ::jint>
+	static auto DEFAULT_POSITIVE() {
+		static_assert(field_signatures[jField<F>("DEFAULT_POSITIVE")] != -1);
+		return sat<F>("DEFAULT_POSITIVE");
+	}
+
+	template<typename F = ::jint>
+	static auto FOREVER() {
+		static_assert(field_signatures[jField<F>("FOREVER")] != -1);
+		return sat<F>("FOREVER");
+	}
+
+	template<typename F = ::jint>
+	static auto NEVER() {
+		static_assert(field_signatures[jField<F>("NEVER")] != -1);
+		return sat<F>("NEVER");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jint()>("get"), //
+		jMethod<::jint()>("getNegative"), //
+		jMethod<::jvoid(::jint)>("setIfNotSet"), //
+		jMethod<::jvoid(::jint)>("setNegativeIfNotSet"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	static auto get(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get")] != -1);
+		return scall<R>("get", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto getNegative(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNegative")] != -1);
+		return scall<R>("getNegative", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setIfNotSet(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setIfNotSet")] != -1);
+		return scall<R>("setIfNotSet", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setNegativeIfNotSet(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setNegativeIfNotSet")] != -1);
+		return scall<R>("setNegativeIfNotSet", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

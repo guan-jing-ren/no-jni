@@ -1,0 +1,63 @@
+#ifndef com_sun_java_swing_plaf_motif_MotifSplitPaneDivider_HPP
+#define com_sun_java_swing_plaf_motif_MotifSplitPaneDivider_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::java::swing::plaf::motif::MotifSplitPaneDivider : public jObject<::com::sun::java::swing::plaf::motif::MotifSplitPaneDivider, ::javax::swing::plaf::basic::BasicSplitPaneDivider> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_java_swing_plaf_motif / "MotifSplitPaneDivider";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("defaultDividerSize"), //
+		jField<::jint>("minimumThumbSize"), //
+	};
+
+	template<typename F = ::jint>
+	static auto defaultDividerSize() {
+		static_assert(field_signatures[jField<F>("defaultDividerSize")] != -1);
+		return sat<F>("defaultDividerSize");
+	}
+
+	template<typename F = ::jint>
+	static auto minimumThumbSize() {
+		static_assert(field_signatures[jField<F>("minimumThumbSize")] != -1);
+		return sat<F>("minimumThumbSize");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::swing::plaf::basic::BasicSplitPaneUI)>(), //
+		jMethod<::java::awt::Dimension()>("getMinimumSize"), //
+		jMethod<::jvoid(::java::awt::Graphics)>("paint"), //
+		jMethod<::jvoid(::javax::swing::plaf::basic::BasicSplitPaneUI)>("setBasicSplitPaneUI"), //
+		jMethod<::jvoid(::jint)>("setDividerSize"), //
+	};
+
+	template<typename R = ::java::awt::Dimension, typename... Args>
+	auto getMinimumSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMinimumSize")] != -1);
+		return call<R>("getMinimumSize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto paint(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("paint")] != -1);
+		return call<R>("paint", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setBasicSplitPaneUI(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setBasicSplitPaneUI")] != -1);
+		return call<R>("setBasicSplitPaneUI", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDividerSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setDividerSize")] != -1);
+		return call<R>("setDividerSize", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

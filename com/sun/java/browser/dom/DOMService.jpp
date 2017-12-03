@@ -1,0 +1,43 @@
+#ifndef com_sun_java_browser_dom_DOMService_HPP
+#define com_sun_java_browser_dom_DOMService_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::java::browser::dom::DOMService : public jObject<::com::sun::java::browser::dom::DOMService, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_java_browser_dom / "DOMService";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::com::sun::java::browser::dom::DOMService(::java::lang::Object)>("getService"), //
+		jMethod<::java::lang::Object(::com::sun::java::browser::dom::DOMAction)>("invokeAndWait"), //
+		jMethod<::jvoid(::com::sun::java::browser::dom::DOMAction)>("invokeLater"), //
+	};
+
+	template<typename R = ::com::sun::java::browser::dom::DOMService, typename... Args>
+	static auto getService(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getService")] != -1);
+		return scall<R>("getService", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto invokeAndWait(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("invokeAndWait")] != -1);
+		return call<R>("invokeAndWait", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto invokeLater(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("invokeLater")] != -1);
+		return call<R>("invokeLater", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

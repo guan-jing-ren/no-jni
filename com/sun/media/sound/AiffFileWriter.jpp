@@ -1,0 +1,37 @@
+#ifndef com_sun_media_sound_AiffFileWriter_HPP
+#define com_sun_media_sound_AiffFileWriter_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::media::sound::AiffFileWriter : public jObject<::com::sun::media::sound::AiffFileWriter, ::com::sun::media::sound::SunFileWriter> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_media_sound / "AiffFileWriter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::sound::sampled::AudioFileFormat$Type *(::javax::sound::sampled::AudioInputStream)>("getAudioFileTypes"), //
+		jMethod<::jint(::javax::sound::sampled::AudioInputStream, ::javax::sound::sampled::AudioFileFormat$Type, ::java::io::File)>("write"), //
+		jMethod<::jint(::javax::sound::sampled::AudioInputStream, ::javax::sound::sampled::AudioFileFormat$Type, ::java::io::OutputStream)>("write"), //
+	};
+
+	template<typename R = ::javax::sound::sampled::AudioFileFormat$Type *, typename... Args>
+	auto getAudioFileTypes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAudioFileTypes")] != -1);
+		return call<R>("getAudioFileTypes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

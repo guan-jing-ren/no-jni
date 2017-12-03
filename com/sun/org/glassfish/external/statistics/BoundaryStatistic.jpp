@@ -1,0 +1,35 @@
+#ifndef com_sun_org_glassfish_external_statistics_BoundaryStatistic_HPP
+#define com_sun_org_glassfish_external_statistics_BoundaryStatistic_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::org::glassfish::external::statistics::BoundaryStatistic : public jObject<::com::sun::org::glassfish::external::statistics::BoundaryStatistic, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_org_glassfish_external_statistics / "BoundaryStatistic";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jlong()>("getLowerBound"), //
+		jMethod<::jlong()>("getUpperBound"), //
+	};
+
+	template<typename R = ::jlong, typename... Args>
+	auto getLowerBound(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLowerBound")] != -1);
+		return call<R>("getLowerBound", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getUpperBound(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUpperBound")] != -1);
+		return call<R>("getUpperBound", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

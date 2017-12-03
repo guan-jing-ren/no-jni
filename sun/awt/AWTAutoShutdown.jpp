@@ -1,0 +1,63 @@
+#ifndef sun_awt_AWTAutoShutdown_HPP
+#define sun_awt_AWTAutoShutdown_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::AWTAutoShutdown : public jObject<::sun::awt::AWTAutoShutdown, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "AWTAutoShutdown";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::awt::AWTAutoShutdown()>("getInstance"), //
+		jMethod<::jvoid(::java::lang::Thread)>("notifyThreadBusy"), //
+		jMethod<::jvoid(::java::lang::Thread)>("notifyThreadFree"), //
+		jMethod<::jvoid()>("notifyToolkitThreadBusy"), //
+		jMethod<::jvoid()>("notifyToolkitThreadFree"), //
+		jMethod<::jvoid()>("run"), //
+	};
+
+	template<typename R = ::sun::awt::AWTAutoShutdown, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto notifyThreadBusy(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("notifyThreadBusy")] != -1);
+		return call<R>("notifyThreadBusy", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto notifyThreadFree(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("notifyThreadFree")] != -1);
+		return call<R>("notifyThreadFree", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto notifyToolkitThreadBusy(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("notifyToolkitThreadBusy")] != -1);
+		return scall<R>("notifyToolkitThreadBusy", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto notifyToolkitThreadFree(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("notifyToolkitThreadFree")] != -1);
+		return scall<R>("notifyToolkitThreadFree", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto run(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("run")] != -1);
+		return call<R>("run", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

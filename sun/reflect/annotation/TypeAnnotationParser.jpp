@@ -1,0 +1,64 @@
+#ifndef sun_reflect_annotation_TypeAnnotationParser_HPP
+#define sun_reflect_annotation_TypeAnnotationParser_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::reflect::annotation::TypeAnnotationParser : public jObject<::sun::reflect::annotation::TypeAnnotationParser, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_reflect_annotation / "TypeAnnotationParser";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::reflect::AnnotatedType *(::jbyte *, ::sun::reflect::ConstantPool, ::java::lang::Class)>("buildAnnotatedInterfaces"), //
+		jMethod<::java::lang::reflect::AnnotatedType(::jbyte *, ::sun::reflect::ConstantPool, ::java::lang::Class)>("buildAnnotatedSuperclass"), //
+		jMethod<::java::lang::reflect::AnnotatedType(::jbyte *, ::sun::reflect::ConstantPool, ::java::lang::reflect::AnnotatedElement, ::java::lang::Class, ::java::lang::reflect::Type, ::sun::reflect::annotation::TypeAnnotation$TypeAnnotationTarget)>("buildAnnotatedType"), //
+		jMethod<::java::lang::reflect::AnnotatedType *(::jbyte *, ::sun::reflect::ConstantPool, ::java::lang::reflect::AnnotatedElement, ::java::lang::Class, ::java::lang::reflect::Type *, ::sun::reflect::annotation::TypeAnnotation$TypeAnnotationTarget)>("buildAnnotatedTypes"), //
+		jMethod<::java::lang::reflect::AnnotatedType *(::java::lang::reflect::Type *, ::java::lang::reflect::GenericDeclaration, ::jint)>("parseAnnotatedBounds"), //
+		jMethod<::java::lang::annotation::Annotation *(::java::lang::reflect::GenericDeclaration, ::jint)>("parseTypeVariableAnnotations"), //
+	};
+
+	template<typename R = ::java::lang::reflect::AnnotatedType *, typename... Args>
+	static auto buildAnnotatedInterfaces(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("buildAnnotatedInterfaces")] != -1);
+		return scall<R>("buildAnnotatedInterfaces", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::AnnotatedType, typename... Args>
+	static auto buildAnnotatedSuperclass(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("buildAnnotatedSuperclass")] != -1);
+		return scall<R>("buildAnnotatedSuperclass", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::AnnotatedType, typename... Args>
+	static auto buildAnnotatedType(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("buildAnnotatedType")] != -1);
+		return scall<R>("buildAnnotatedType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::AnnotatedType *, typename... Args>
+	static auto buildAnnotatedTypes(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("buildAnnotatedTypes")] != -1);
+		return scall<R>("buildAnnotatedTypes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::AnnotatedType *, typename... Args>
+	static auto parseAnnotatedBounds(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("parseAnnotatedBounds")] != -1);
+		return scall<R>("parseAnnotatedBounds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::annotation::Annotation *, typename... Args>
+	static auto parseTypeVariableAnnotations(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("parseTypeVariableAnnotations")] != -1);
+		return scall<R>("parseTypeVariableAnnotations", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

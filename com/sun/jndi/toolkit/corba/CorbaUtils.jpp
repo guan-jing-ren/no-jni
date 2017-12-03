@@ -1,0 +1,43 @@
+#ifndef com_sun_jndi_toolkit_corba_CorbaUtils_HPP
+#define com_sun_jndi_toolkit_corba_CorbaUtils_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::jndi::toolkit::corba::CorbaUtils : public jObject<::com::sun::jndi::toolkit::corba::CorbaUtils, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_jndi_toolkit_corba / "CorbaUtils";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::org::omg::CORBA::ORB(::java::lang::String, ::jint, ::java::util::Hashtable)>("getOrb"), //
+		jMethod<::jboolean(::java::lang::Object)>("isObjectFactoryTrusted"), //
+		jMethod<::org::omg::CORBA::Object(::java::rmi::Remote, ::org::omg::CORBA::ORB)>("remoteToCorba"), //
+	};
+
+	template<typename R = ::org::omg::CORBA::ORB, typename... Args>
+	static auto getOrb(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOrb")] != -1);
+		return scall<R>("getOrb", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isObjectFactoryTrusted(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isObjectFactoryTrusted")] != -1);
+		return scall<R>("isObjectFactoryTrusted", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::Object, typename... Args>
+	static auto remoteToCorba(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("remoteToCorba")] != -1);
+		return scall<R>("remoteToCorba", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

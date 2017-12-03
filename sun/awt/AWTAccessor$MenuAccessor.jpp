@@ -1,0 +1,28 @@
+#ifndef sun_awt_AWTAccessor$MenuAccessor_HPP
+#define sun_awt_AWTAccessor$MenuAccessor_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::AWTAccessor$MenuAccessor : public jObject<::sun::awt::AWTAccessor$MenuAccessor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "AWTAccessor$MenuAccessor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::Vector(::java::awt::Menu)>("getItems"), //
+	};
+
+	template<typename R = ::java::util::Vector, typename... Args>
+	auto getItems(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getItems")] != -1);
+		return call<R>("getItems", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

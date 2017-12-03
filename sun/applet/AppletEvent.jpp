@@ -1,0 +1,43 @@
+#ifndef sun_applet_AppletEvent_HPP
+#define sun_applet_AppletEvent_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::applet::AppletEvent : public jObject<::sun::applet::AppletEvent, ::java::util::EventObject> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_applet / "AppletEvent";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Object, ::jint, ::java::lang::Object)>(), //
+		jMethod<::java::lang::Object()>("getArgument"), //
+		jMethod<::jint()>("getID"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getArgument(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getArgument")] != -1);
+		return call<R>("getArgument", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getID")] != -1);
+		return call<R>("getID", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,29 @@
+#ifndef sun_rmi_server_Activation$DefaultExecPolicy_HPP
+#define sun_rmi_server_Activation$DefaultExecPolicy_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::rmi::server::Activation$DefaultExecPolicy : public jObject<::sun::rmi::server::Activation$DefaultExecPolicy, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_rmi_server / "Activation$DefaultExecPolicy";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::rmi::activation::ActivationGroupDesc, ::java::lang::String *)>("checkExecCommand"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto checkExecCommand(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkExecCommand")] != -1);
+		return call<R>("checkExecCommand", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

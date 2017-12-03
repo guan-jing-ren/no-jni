@@ -1,0 +1,35 @@
+#ifndef sun_java2d_loops_FillRect$General_HPP
+#define sun_java2d_loops_FillRect$General_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::loops::FillRect$General : public jObject<::sun::java2d::loops::FillRect$General, ::sun::java2d::loops::FillRect> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_loops / "FillRect$General";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::java2d::loops::MaskFill>("fillop"), //
+	};
+
+	template<typename F = ::sun::java2d::loops::MaskFill>
+	auto fillop() const {
+		static_assert(field_signatures[jField<F>("fillop")] != -1);
+		return at<F>("fillop");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::java2d::loops::SurfaceType, ::sun::java2d::loops::CompositeType, ::sun::java2d::loops::SurfaceType)>(), //
+		jMethod<::jvoid(::sun::java2d::SunGraphics2D, ::sun::java2d::SurfaceData, ::jint, ::jint, ::jint, ::jint)>("FillRect"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto FillRect(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("FillRect")] != -1);
+		return call<R>("FillRect", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

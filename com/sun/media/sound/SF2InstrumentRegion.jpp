@@ -1,0 +1,36 @@
+#ifndef com_sun_media_sound_SF2InstrumentRegion_HPP
+#define com_sun_media_sound_SF2InstrumentRegion_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::media::sound::SF2InstrumentRegion : public jObject<::com::sun::media::sound::SF2InstrumentRegion, ::com::sun::media::sound::SF2Region> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_media_sound / "SF2InstrumentRegion";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::com::sun::media::sound::SF2Layer()>("getLayer"), //
+		jMethod<::jvoid(::com::sun::media::sound::SF2Layer)>("setLayer"), //
+	};
+
+	template<typename R = ::com::sun::media::sound::SF2Layer, typename... Args>
+	auto getLayer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLayer")] != -1);
+		return call<R>("getLayer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLayer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setLayer")] != -1);
+		return call<R>("setLayer", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

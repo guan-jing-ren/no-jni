@@ -1,0 +1,29 @@
+#ifndef sun_management_Util_HPP
+#define sun_management_Util_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::management::Util : public jObject<::sun::management::Util, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_management / "Util";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::management::ObjectName(::java::lang::String)>("newObjectName"), //
+		jMethod<::javax::management::ObjectName(::java::lang::String, ::java::lang::String)>("newObjectName"), //
+	};
+
+	template<typename R = ::javax::management::ObjectName, typename... Args>
+	static auto newObjectName(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newObjectName")] != -1);
+		return scall<R>("newObjectName", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

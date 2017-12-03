@@ -1,0 +1,36 @@
+#ifndef sun_java2d_x11_X11SurfaceDataProxy_HPP
+#define sun_java2d_x11_X11SurfaceDataProxy_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::x11::X11SurfaceDataProxy : public jObject<::sun::java2d::x11::X11SurfaceDataProxy, ::sun::java2d::SurfaceDataProxy> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_x11 / "X11SurfaceDataProxy";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::awt::X11GraphicsConfig)>(), //
+		jMethod<::sun::java2d::SurfaceDataProxy(::sun::java2d::SurfaceData, ::sun::awt::X11GraphicsConfig)>("createProxy"), //
+		jMethod<::sun::java2d::SurfaceData(::sun::java2d::SurfaceData, ::sun::java2d::SurfaceData, ::jint, ::jint)>("validateSurfaceData"), //
+	};
+
+	template<typename R = ::sun::java2d::SurfaceDataProxy, typename... Args>
+	static auto createProxy(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createProxy")] != -1);
+		return scall<R>("createProxy", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::SurfaceData, typename... Args>
+	auto validateSurfaceData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("validateSurfaceData")] != -1);
+		return call<R>("validateSurfaceData", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,70 @@
+#ifndef sun_invoke_util_BytecodeName_HPP
+#define sun_invoke_util_BytecodeName_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::invoke::util::BytecodeName : public jObject<::sun::invoke::util::BytecodeName, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_invoke_util / "BytecodeName";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::jchar)>("isSafeBytecodeChar"), //
+		jMethod<::jboolean(::java::lang::String)>("isSafeBytecodeName"), //
+		jMethod<::java::lang::Object *(::java::lang::String)>("parseBytecodeName"), //
+		jMethod<::java::lang::String(::java::lang::String)>("toBytecodeName"), //
+		jMethod<::java::lang::String(::java::lang::String)>("toDisplayName"), //
+		jMethod<::java::lang::String(::java::lang::String)>("toSourceName"), //
+		jMethod<::java::lang::String(::java::lang::Object *)>("unparseBytecodeName"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isSafeBytecodeChar(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSafeBytecodeChar")] != -1);
+		return scall<R>("isSafeBytecodeChar", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isSafeBytecodeName(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSafeBytecodeName")] != -1);
+		return scall<R>("isSafeBytecodeName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object *, typename... Args>
+	static auto parseBytecodeName(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("parseBytecodeName")] != -1);
+		return scall<R>("parseBytecodeName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto toBytecodeName(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toBytecodeName")] != -1);
+		return scall<R>("toBytecodeName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto toDisplayName(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toDisplayName")] != -1);
+		return scall<R>("toDisplayName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto toSourceName(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toSourceName")] != -1);
+		return scall<R>("toSourceName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto unparseBytecodeName(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unparseBytecodeName")] != -1);
+		return scall<R>("unparseBytecodeName", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

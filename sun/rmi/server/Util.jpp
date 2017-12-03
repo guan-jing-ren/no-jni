@@ -1,0 +1,48 @@
+#ifndef sun_rmi_server_Util_HPP
+#define sun_rmi_server_Util_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::rmi::server::Util : public jObject<::sun::rmi::server::Util, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_rmi_server / "Util";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::rmi::runtime::Log>("serverRefLog"), //
+	};
+
+	template<typename F = ::sun::rmi::runtime::Log>
+	static auto serverRefLog() {
+		static_assert(field_signatures[jField<F>("serverRefLog")] != -1);
+		return sat<F>("serverRefLog");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jlong(::java::lang::reflect::Method)>("computeMethodHash"), //
+		jMethod<::java::rmi::Remote(::java::lang::Class, ::java::rmi::server::RemoteRef, ::jboolean)>("createProxy"), //
+		jMethod<::java::lang::String(::java::lang::Class)>("getUnqualifiedName"), //
+	};
+
+	template<typename R = ::jlong, typename... Args>
+	static auto computeMethodHash(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("computeMethodHash")] != -1);
+		return scall<R>("computeMethodHash", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::Remote, typename... Args>
+	static auto createProxy(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createProxy")] != -1);
+		return scall<R>("createProxy", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getUnqualifiedName(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUnqualifiedName")] != -1);
+		return scall<R>("getUnqualifiedName", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

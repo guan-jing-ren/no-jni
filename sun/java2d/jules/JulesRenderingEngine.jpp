@@ -1,0 +1,36 @@
+#ifndef sun_java2d_jules_JulesRenderingEngine_HPP
+#define sun_java2d_jules_JulesRenderingEngine_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::jules::JulesRenderingEngine : public jObject<::sun::java2d::jules::JulesRenderingEngine, ::sun::java2d::pisces::PiscesRenderingEngine> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_jules / "JulesRenderingEngine";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::sun::java2d::pipe::AATileGenerator(::java::awt::Shape, ::java::awt::geom::AffineTransform, ::sun::java2d::pipe::Region, ::java::awt::BasicStroke, ::jboolean, ::jboolean, ::jint *)>("getAATileGenerator"), //
+		jMethod<::jfloat()>("getMinimumAAPenSize"), //
+	};
+
+	template<typename R = ::sun::java2d::pipe::AATileGenerator, typename... Args>
+	auto getAATileGenerator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAATileGenerator")] != -1);
+		return call<R>("getAATileGenerator", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getMinimumAAPenSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMinimumAAPenSize")] != -1);
+		return call<R>("getMinimumAAPenSize", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

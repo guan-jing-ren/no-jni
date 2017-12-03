@@ -1,0 +1,29 @@
+#ifndef com_sun_net_httpserver_Authenticator$Failure_HPP
+#define com_sun_net_httpserver_Authenticator$Failure_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::net::httpserver::Authenticator$Failure : public jObject<::com::sun::net::httpserver::Authenticator$Failure, ::com::sun::net::httpserver::Authenticator$Result> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_net_httpserver / "Authenticator$Failure";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint)>(), //
+		jMethod<::jint()>("getResponseCode"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getResponseCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getResponseCode")] != -1);
+		return call<R>("getResponseCode", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

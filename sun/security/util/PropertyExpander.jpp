@@ -1,0 +1,30 @@
+#ifndef sun_security_util_PropertyExpander_HPP
+#define sun_security_util_PropertyExpander_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::util::PropertyExpander : public jObject<::sun::security::util::PropertyExpander, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_util / "PropertyExpander";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::String(::java::lang::String)>("expand"), //
+		jMethod<::java::lang::String(::java::lang::String, ::jboolean)>("expand"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto expand(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("expand")] != -1);
+		return scall<R>("expand", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

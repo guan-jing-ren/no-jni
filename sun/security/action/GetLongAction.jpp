@@ -1,0 +1,31 @@
+#ifndef sun_security_action_GetLongAction_HPP
+#define sun_security_action_GetLongAction_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::action::GetLongAction : public jObject<::sun::security::action::GetLongAction, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_action / "GetLongAction";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::jlong)>(), //
+		jMethod<::java::lang::Long()>("run"), //
+		jMethod<::java::lang::Object()>("run"), //
+	};
+
+	template<typename R = ::java::lang::Long, typename... Args>
+	auto run(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("run")] != -1);
+		return call<R>("run", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

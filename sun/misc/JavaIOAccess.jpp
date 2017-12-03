@@ -1,0 +1,35 @@
+#ifndef sun_misc_JavaIOAccess_HPP
+#define sun_misc_JavaIOAccess_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::misc::JavaIOAccess : public jObject<::sun::misc::JavaIOAccess, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_misc / "JavaIOAccess";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::nio::charset::Charset()>("charset"), //
+		jMethod<::java::io::Console()>("console"), //
+	};
+
+	template<typename R = ::java::nio::charset::Charset, typename... Args>
+	auto charset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("charset")] != -1);
+		return call<R>("charset", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::Console, typename... Args>
+	auto console(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("console")] != -1);
+		return call<R>("console", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

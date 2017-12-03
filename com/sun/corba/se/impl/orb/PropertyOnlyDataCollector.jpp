@@ -1,0 +1,29 @@
+#ifndef com_sun_corba_se_impl_orb_PropertyOnlyDataCollector_HPP
+#define com_sun_corba_se_impl_orb_PropertyOnlyDataCollector_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::impl::orb::PropertyOnlyDataCollector : public jObject<::com::sun::corba::se::impl::orb::PropertyOnlyDataCollector, ::com::sun::corba::se::impl::orb::DataCollectorBase> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_impl_orb / "PropertyOnlyDataCollector";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::util::Properties, ::java::lang::String, ::java::lang::String)>(), //
+		jMethod<::jboolean()>("isApplet"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isApplet(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isApplet")] != -1);
+		return call<R>("isApplet", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

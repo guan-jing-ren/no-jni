@@ -1,0 +1,58 @@
+#ifndef sun_awt_X11_XPropertyCache_HPP
+#define sun_awt_X11_XPropertyCache_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::X11::XPropertyCache : public jObject<::sun::awt::X11::XPropertyCache, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_X11 / "XPropertyCache";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::jlong)>("clearCache"), //
+		jMethod<::jvoid(::jlong, ::sun::awt::X11::XAtom)>("clearCache"), //
+		jMethod<::sun::awt::X11::XPropertyCache$PropertyCacheEntry(::jlong, ::sun::awt::X11::XAtom)>("getCacheEntry"), //
+		jMethod<::jboolean(::jlong, ::sun::awt::X11::XAtom)>("isCached"), //
+		jMethod<::jboolean()>("isCachingSupported"), //
+		jMethod<::jvoid(::sun::awt::X11::XPropertyCache$PropertyCacheEntry, ::jlong, ::sun::awt::X11::XAtom)>("storeCache"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto clearCache(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clearCache")] != -1);
+		return scall<R>("clearCache", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::awt::X11::XPropertyCache$PropertyCacheEntry, typename... Args>
+	static auto getCacheEntry(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCacheEntry")] != -1);
+		return scall<R>("getCacheEntry", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isCached(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isCached")] != -1);
+		return scall<R>("isCached", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isCachingSupported(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isCachingSupported")] != -1);
+		return scall<R>("isCachingSupported", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto storeCache(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("storeCache")] != -1);
+		return scall<R>("storeCache", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

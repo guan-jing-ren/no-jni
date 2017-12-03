@@ -1,0 +1,35 @@
+#ifndef com_sun_media_sound_SoftVoice_HPP
+#define com_sun_media_sound_SoftVoice_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::media::sound::SoftVoice : public jObject<::com::sun::media::sound::SoftVoice, ::javax::sound::midi::VoiceStatus> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_media_sound / "SoftVoice";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("exclusiveClass"), //
+		jField<::jboolean>("releaseTriggered"), //
+	};
+
+	template<typename F = ::jint>
+	auto exclusiveClass() const {
+		static_assert(field_signatures[jField<F>("exclusiveClass")] != -1);
+		return at<F>("exclusiveClass");
+	}
+
+	template<typename F = ::jboolean>
+	auto releaseTriggered() const {
+		static_assert(field_signatures[jField<F>("releaseTriggered")] != -1);
+		return at<F>("releaseTriggered");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::com::sun::media::sound::SoftSynthesizer)>(), //
+	};
+
+};
+
+#endif

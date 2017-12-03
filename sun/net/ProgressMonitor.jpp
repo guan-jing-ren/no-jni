@@ -1,0 +1,99 @@
+#ifndef sun_net_ProgressMonitor_HPP
+#define sun_net_ProgressMonitor_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::net::ProgressMonitor : public jObject<::sun::net::ProgressMonitor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_net / "ProgressMonitor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::sun::net::ProgressListener)>("addProgressListener"), //
+		jMethod<::sun::net::ProgressMonitor()>("getDefault"), //
+		jMethod<::java::util::ArrayList()>("getProgressSources"), //
+		jMethod<::jint()>("getProgressUpdateThreshold"), //
+		jMethod<::jvoid(::sun::net::ProgressSource)>("registerSource"), //
+		jMethod<::jvoid(::sun::net::ProgressListener)>("removeProgressListener"), //
+		jMethod<::jvoid(::sun::net::ProgressMonitor)>("setDefault"), //
+		jMethod<::jvoid(::sun::net::ProgressMeteringPolicy)>("setMeteringPolicy"), //
+		jMethod<::jboolean(::java::net::URL, ::java::lang::String)>("shouldMeterInput"), //
+		jMethod<::jvoid(::sun::net::ProgressSource)>("unregisterSource"), //
+		jMethod<::jvoid(::sun::net::ProgressSource)>("updateProgress"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addProgressListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addProgressListener")] != -1);
+		return call<R>("addProgressListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ProgressMonitor, typename... Args>
+	static auto getDefault(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDefault")] != -1);
+		return scall<R>("getDefault", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::ArrayList, typename... Args>
+	auto getProgressSources(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getProgressSources")] != -1);
+		return call<R>("getProgressSources", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getProgressUpdateThreshold(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getProgressUpdateThreshold")] != -1);
+		return call<R>("getProgressUpdateThreshold", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto registerSource(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("registerSource")] != -1);
+		return call<R>("registerSource", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeProgressListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeProgressListener")] != -1);
+		return call<R>("removeProgressListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setDefault(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setDefault")] != -1);
+		return scall<R>("setDefault", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setMeteringPolicy(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setMeteringPolicy")] != -1);
+		return scall<R>("setMeteringPolicy", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto shouldMeterInput(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("shouldMeterInput")] != -1);
+		return call<R>("shouldMeterInput", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto unregisterSource(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unregisterSource")] != -1);
+		return call<R>("unregisterSource", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateProgress(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("updateProgress")] != -1);
+		return call<R>("updateProgress", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

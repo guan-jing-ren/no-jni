@@ -1,0 +1,36 @@
+#ifndef sun_java2d_opengl_GLXSurfaceData$GLXVSyncOffScreenSurfaceData_HPP
+#define sun_java2d_opengl_GLXSurfaceData$GLXVSyncOffScreenSurfaceData_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::opengl::GLXSurfaceData$GLXVSyncOffScreenSurfaceData : public jObject<::sun::java2d::opengl::GLXSurfaceData$GLXVSyncOffScreenSurfaceData, ::sun::java2d::opengl::GLXSurfaceData$GLXOffScreenSurfaceData> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_opengl / "GLXSurfaceData$GLXVSyncOffScreenSurfaceData";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::awt::X11ComponentPeer, ::sun::java2d::opengl::GLXGraphicsConfig, ::jint, ::jint, ::java::awt::Image, ::java::awt::image::ColorModel, ::jint)>(), //
+		jMethod<::jvoid()>("flush"), //
+		jMethod<::sun::java2d::SurfaceData()>("getFlipSurface"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto flush(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("flush")] != -1);
+		return call<R>("flush", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::SurfaceData, typename... Args>
+	auto getFlipSurface(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFlipSurface")] != -1);
+		return call<R>("getFlipSurface", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

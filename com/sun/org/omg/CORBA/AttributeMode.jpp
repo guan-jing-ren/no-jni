@@ -1,0 +1,62 @@
+#ifndef com_sun_org_omg_CORBA_AttributeMode_HPP
+#define com_sun_org_omg_CORBA_AttributeMode_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::org::omg::CORBA::AttributeMode : public jObject<::com::sun::org::omg::CORBA::AttributeMode, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_org_omg_CORBA / "AttributeMode";
+
+	constexpr static Enume field_signatures{
+		jField<::com::sun::org::omg::CORBA::AttributeMode>("ATTR_NORMAL"), //
+		jField<::com::sun::org::omg::CORBA::AttributeMode>("ATTR_READONLY"), //
+		jField<::jint>("_ATTR_NORMAL"), //
+		jField<::jint>("_ATTR_READONLY"), //
+	};
+
+	template<typename F = ::com::sun::org::omg::CORBA::AttributeMode>
+	static auto ATTR_NORMAL() {
+		static_assert(field_signatures[jField<F>("ATTR_NORMAL")] != -1);
+		return sat<F>("ATTR_NORMAL");
+	}
+
+	template<typename F = ::com::sun::org::omg::CORBA::AttributeMode>
+	static auto ATTR_READONLY() {
+		static_assert(field_signatures[jField<F>("ATTR_READONLY")] != -1);
+		return sat<F>("ATTR_READONLY");
+	}
+
+	template<typename F = ::jint>
+	static auto _ATTR_NORMAL() {
+		static_assert(field_signatures[jField<F>("_ATTR_NORMAL")] != -1);
+		return sat<F>("_ATTR_NORMAL");
+	}
+
+	template<typename F = ::jint>
+	static auto _ATTR_READONLY() {
+		static_assert(field_signatures[jField<F>("_ATTR_READONLY")] != -1);
+		return sat<F>("_ATTR_READONLY");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::com::sun::org::omg::CORBA::AttributeMode(::jint)>("from_int"), //
+		jMethod<::jint()>("value"), //
+	};
+
+	template<typename R = ::com::sun::org::omg::CORBA::AttributeMode, typename... Args>
+	static auto from_int(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("from_int")] != -1);
+		return scall<R>("from_int", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("value")] != -1);
+		return call<R>("value", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

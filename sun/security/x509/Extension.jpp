@@ -1,0 +1,96 @@
+#ifndef sun_security_x509_Extension_HPP
+#define sun_security_x509_Extension_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::x509::Extension : public jObject<::sun::security::x509::Extension, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_x509 / "Extension";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::sun::security::util::DerValue)>(), //
+		jConstructor<::jvoid(::sun::security::util::ObjectIdentifier, ::jboolean, ::jbyte *)>(), //
+		jConstructor<::jvoid(::sun::security::x509::Extension)>(), //
+		jMethod<::jvoid(::java::io::OutputStream)>("encode"), //
+		jMethod<::jvoid(::sun::security::util::DerOutputStream)>("encode"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::sun::security::util::ObjectIdentifier()>("getExtensionId"), //
+		jMethod<::jbyte *()>("getExtensionValue"), //
+		jMethod<::java::lang::String()>("getId"), //
+		jMethod<::jbyte *()>("getValue"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jboolean()>("isCritical"), //
+		jMethod<::sun::security::x509::Extension(::sun::security::util::ObjectIdentifier, ::jboolean, ::jbyte *)>("newExtension"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto encode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encode")] != -1);
+		return call<R>("encode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::util::ObjectIdentifier, typename... Args>
+	auto getExtensionId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getExtensionId")] != -1);
+		return call<R>("getExtensionId", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getExtensionValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getExtensionValue")] != -1);
+		return call<R>("getExtensionValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getId")] != -1);
+		return call<R>("getId", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getValue")] != -1);
+		return call<R>("getValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isCritical(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isCritical")] != -1);
+		return call<R>("isCritical", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::Extension, typename... Args>
+	static auto newExtension(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newExtension")] != -1);
+		return scall<R>("newExtension", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

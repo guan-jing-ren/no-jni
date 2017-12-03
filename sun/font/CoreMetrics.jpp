@@ -1,0 +1,134 @@
+#ifndef sun_font_CoreMetrics_HPP
+#define sun_font_CoreMetrics_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::CoreMetrics : public jObject<::sun::font::CoreMetrics, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "CoreMetrics";
+
+	constexpr static Enume field_signatures{
+		jField<::jfloat>("ascent"), //
+		jField<::jint>("baselineIndex"), //
+		jField<::jfloat *>("baselineOffsets"), //
+		jField<::jfloat>("descent"), //
+		jField<::jfloat>("height"), //
+		jField<::jfloat>("italicAngle"), //
+		jField<::jfloat>("leading"), //
+		jField<::jfloat>("ssOffset"), //
+		jField<::jfloat>("strikethroughOffset"), //
+		jField<::jfloat>("strikethroughThickness"), //
+		jField<::jfloat>("underlineOffset"), //
+		jField<::jfloat>("underlineThickness"), //
+	};
+
+	template<typename F = ::jfloat>
+	auto ascent() const {
+		static_assert(field_signatures[jField<F>("ascent")] != -1);
+		return at<F>("ascent");
+	}
+
+	template<typename F = ::jint>
+	auto baselineIndex() const {
+		static_assert(field_signatures[jField<F>("baselineIndex")] != -1);
+		return at<F>("baselineIndex");
+	}
+
+	template<typename F = ::jfloat *>
+	auto baselineOffsets() const {
+		static_assert(field_signatures[jField<F>("baselineOffsets")] != -1);
+		return at<F>("baselineOffsets");
+	}
+
+	template<typename F = ::jfloat>
+	auto descent() const {
+		static_assert(field_signatures[jField<F>("descent")] != -1);
+		return at<F>("descent");
+	}
+
+	template<typename F = ::jfloat>
+	auto height() const {
+		static_assert(field_signatures[jField<F>("height")] != -1);
+		return at<F>("height");
+	}
+
+	template<typename F = ::jfloat>
+	auto italicAngle() const {
+		static_assert(field_signatures[jField<F>("italicAngle")] != -1);
+		return at<F>("italicAngle");
+	}
+
+	template<typename F = ::jfloat>
+	auto leading() const {
+		static_assert(field_signatures[jField<F>("leading")] != -1);
+		return at<F>("leading");
+	}
+
+	template<typename F = ::jfloat>
+	auto ssOffset() const {
+		static_assert(field_signatures[jField<F>("ssOffset")] != -1);
+		return at<F>("ssOffset");
+	}
+
+	template<typename F = ::jfloat>
+	auto strikethroughOffset() const {
+		static_assert(field_signatures[jField<F>("strikethroughOffset")] != -1);
+		return at<F>("strikethroughOffset");
+	}
+
+	template<typename F = ::jfloat>
+	auto strikethroughThickness() const {
+		static_assert(field_signatures[jField<F>("strikethroughThickness")] != -1);
+		return at<F>("strikethroughThickness");
+	}
+
+	template<typename F = ::jfloat>
+	auto underlineOffset() const {
+		static_assert(field_signatures[jField<F>("underlineOffset")] != -1);
+		return at<F>("underlineOffset");
+	}
+
+	template<typename F = ::jfloat>
+	auto underlineThickness() const {
+		static_assert(field_signatures[jField<F>("underlineThickness")] != -1);
+		return at<F>("underlineThickness");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jfloat, ::jfloat, ::jfloat, ::jfloat, ::jint, ::jfloat *, ::jfloat, ::jfloat, ::jfloat, ::jfloat, ::jfloat, ::jfloat)>(), //
+		jMethod<::jfloat(::jfloat *)>("effectiveBaselineOffset"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jboolean(::sun::font::CoreMetrics)>("equals"), //
+		jMethod<::sun::font::CoreMetrics(::java::awt::font::LineMetrics)>("get"), //
+		jMethod<::jint()>("hashCode"), //
+	};
+
+	template<typename R = ::jfloat, typename... Args>
+	auto effectiveBaselineOffset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("effectiveBaselineOffset")] != -1);
+		return call<R>("effectiveBaselineOffset", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::CoreMetrics, typename... Args>
+	static auto get(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get")] != -1);
+		return scall<R>("get", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

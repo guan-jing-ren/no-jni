@@ -1,0 +1,29 @@
+#ifndef sun_java2d_xr_XRSolidSrcPict_HPP
+#define sun_java2d_xr_XRSolidSrcPict_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::xr::XRSolidSrcPict : public jObject<::sun::java2d::xr::XRSolidSrcPict, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_xr / "XRSolidSrcPict";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::java2d::xr::XRBackend, ::jint)>(), //
+		jMethod<::sun::java2d::xr::XRSurfaceData(::jint)>("prepareSrcPict"), //
+	};
+
+	template<typename R = ::sun::java2d::xr::XRSurfaceData, typename... Args>
+	auto prepareSrcPict(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("prepareSrcPict")] != -1);
+		return call<R>("prepareSrcPict", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

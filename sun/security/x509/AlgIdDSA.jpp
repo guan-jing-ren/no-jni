@@ -1,0 +1,60 @@
+#ifndef sun_security_x509_AlgIdDSA_HPP
+#define sun_security_x509_AlgIdDSA_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::x509::AlgIdDSA : public jObject<::sun::security::x509::AlgIdDSA, ::sun::security::x509::AlgorithmId> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_x509 / "AlgIdDSA";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::math::BigInteger, ::java::math::BigInteger, ::java::math::BigInteger)>(), //
+		jConstructor<::jvoid(::jbyte *)>(), //
+		jConstructor<::jvoid(::jbyte *, ::jbyte *, ::jbyte *)>(), //
+		jMethod<::java::math::BigInteger()>("getG"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::java::math::BigInteger()>("getP"), //
+		jMethod<::java::math::BigInteger()>("getQ"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getG(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getG")] != -1);
+		return call<R>("getG", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getP(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getP")] != -1);
+		return call<R>("getP", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getQ(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getQ")] != -1);
+		return call<R>("getQ", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

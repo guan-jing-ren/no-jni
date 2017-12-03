@@ -1,0 +1,63 @@
+#ifndef sun_rmi_server_LoaderHandler_HPP
+#define sun_rmi_server_LoaderHandler_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::rmi::server::LoaderHandler : public jObject<::sun::rmi::server::LoaderHandler, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_rmi_server / "LoaderHandler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String(::java::lang::Class)>("getClassAnnotation"), //
+		jMethod<::java::lang::ClassLoader(::java::lang::String)>("getClassLoader"), //
+		jMethod<::java::lang::Object(::java::lang::ClassLoader)>("getSecurityContext"), //
+		jMethod<::java::lang::Class(::java::lang::String, ::java::lang::String, ::java::lang::ClassLoader)>("loadClass"), //
+		jMethod<::java::lang::Class(::java::lang::String, ::java::lang::String *, ::java::lang::ClassLoader)>("loadProxyClass"), //
+		jMethod<::jvoid(::java::lang::ClassLoader)>("registerCodebaseLoader"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getClassAnnotation(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClassAnnotation")] != -1);
+		return scall<R>("getClassAnnotation", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::ClassLoader, typename... Args>
+	static auto getClassLoader(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClassLoader")] != -1);
+		return scall<R>("getClassLoader", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto getSecurityContext(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSecurityContext")] != -1);
+		return scall<R>("getSecurityContext", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	static auto loadClass(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("loadClass")] != -1);
+		return scall<R>("loadClass", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	static auto loadProxyClass(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("loadProxyClass")] != -1);
+		return scall<R>("loadProxyClass", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto registerCodebaseLoader(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("registerCodebaseLoader")] != -1);
+		return scall<R>("registerCodebaseLoader", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

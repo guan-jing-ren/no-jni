@@ -1,0 +1,65 @@
+#ifndef sun_java2d_loops_GraphicsPrimitiveMgr_HPP
+#define sun_java2d_loops_GraphicsPrimitiveMgr_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::loops::GraphicsPrimitiveMgr : public jObject<::sun::java2d::loops::GraphicsPrimitiveMgr, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_loops / "GraphicsPrimitiveMgr";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::java2d::loops::GraphicsPrimitive(::jint, ::sun::java2d::loops::SurfaceType)>("locate"), //
+		jMethod<::sun::java2d::loops::GraphicsPrimitive(::jint, ::sun::java2d::loops::SurfaceType, ::sun::java2d::loops::CompositeType, ::sun::java2d::loops::SurfaceType)>("locate"), //
+		jMethod<::sun::java2d::loops::GraphicsPrimitive(::jint, ::sun::java2d::loops::SurfaceType, ::sun::java2d::loops::CompositeType, ::sun::java2d::loops::SurfaceType)>("locatePrim"), //
+		jMethod<::jvoid(::java::lang::String *)>("main"), //
+		jMethod<::jvoid(::sun::java2d::loops::GraphicsPrimitive *)>("register"), //
+		jMethod<::jvoid(::sun::java2d::loops::GraphicsPrimitive)>("registerGeneral"), //
+		jMethod<::jvoid()>("testPrimitiveInstantiation"), //
+		jMethod<::jvoid(::jboolean)>("testPrimitiveInstantiation"), //
+	};
+
+	template<typename R = ::sun::java2d::loops::GraphicsPrimitive, typename... Args>
+	static auto locate(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("locate")] != -1);
+		return scall<R>("locate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::loops::GraphicsPrimitive, typename... Args>
+	static auto locatePrim(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("locatePrim")] != -1);
+		return scall<R>("locatePrim", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto main(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("main")] != -1);
+		return scall<R>("main", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto register_(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("register")] != -1);
+		return scall<R>("register", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto registerGeneral(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("registerGeneral")] != -1);
+		return scall<R>("registerGeneral", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto testPrimitiveInstantiation(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("testPrimitiveInstantiation")] != -1);
+		return scall<R>("testPrimitiveInstantiation", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

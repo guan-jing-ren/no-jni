@@ -1,0 +1,58 @@
+#ifndef sun_text_normalizer_CharTrie_HPP
+#define sun_text_normalizer_CharTrie_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::text::normalizer::CharTrie : public jObject<::sun::text::normalizer::CharTrie, ::sun::text::normalizer::Trie> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_text_normalizer / "CharTrie";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::jint, ::sun::text::normalizer::Trie$DataManipulate)>(), //
+		jConstructor<::jvoid(::java::io::InputStream, ::sun::text::normalizer::Trie$DataManipulate)>(), //
+		jMethod<::jchar(::jint)>("getCodePointValue"), //
+		jMethod<::jchar(::jchar)>("getLeadValue"), //
+		jMethod<::jchar(::jchar, ::jchar)>("getSurrogateValue"), //
+		jMethod<::jchar(::jint, ::jchar)>("getTrailValue"), //
+		jMethod<::jvoid(::sun::text::normalizer::UCharacterProperty)>("putIndexData"), //
+	};
+
+	template<typename R = ::jchar, typename... Args>
+	auto getCodePointValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCodePointValue")] != -1);
+		return call<R>("getCodePointValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jchar, typename... Args>
+	auto getLeadValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLeadValue")] != -1);
+		return call<R>("getLeadValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jchar, typename... Args>
+	auto getSurrogateValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSurrogateValue")] != -1);
+		return call<R>("getSurrogateValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jchar, typename... Args>
+	auto getTrailValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTrailValue")] != -1);
+		return call<R>("getTrailValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto putIndexData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("putIndexData")] != -1);
+		return call<R>("putIndexData", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

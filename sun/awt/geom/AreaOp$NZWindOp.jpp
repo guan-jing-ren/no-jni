@@ -1,0 +1,43 @@
+#ifndef sun_awt_geom_AreaOp$NZWindOp_HPP
+#define sun_awt_geom_AreaOp$NZWindOp_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::geom::AreaOp$NZWindOp : public jObject<::sun::awt::geom::AreaOp$NZWindOp, ::sun::awt::geom::AreaOp> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_geom / "AreaOp$NZWindOp";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jint(::sun::awt::geom::Edge)>("classify"), //
+		jMethod<::jint()>("getState"), //
+		jMethod<::jvoid()>("newRow"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto classify(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("classify")] != -1);
+		return call<R>("classify", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getState")] != -1);
+		return call<R>("getState", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto newRow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newRow")] != -1);
+		return call<R>("newRow", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

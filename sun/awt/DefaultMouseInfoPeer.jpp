@@ -1,0 +1,35 @@
+#ifndef sun_awt_DefaultMouseInfoPeer_HPP
+#define sun_awt_DefaultMouseInfoPeer_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::DefaultMouseInfoPeer : public jObject<::sun::awt::DefaultMouseInfoPeer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "DefaultMouseInfoPeer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint(::java::awt::Point)>("fillPointWithCoords"), //
+		jMethod<::jboolean(::java::awt::Window)>("isWindowUnderMouse"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto fillPointWithCoords(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("fillPointWithCoords")] != -1);
+		return call<R>("fillPointWithCoords", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isWindowUnderMouse(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isWindowUnderMouse")] != -1);
+		return call<R>("isWindowUnderMouse", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

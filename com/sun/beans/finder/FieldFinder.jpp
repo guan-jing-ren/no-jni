@@ -1,0 +1,42 @@
+#ifndef com_sun_beans_finder_FieldFinder_HPP
+#define com_sun_beans_finder_FieldFinder_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::beans::finder::FieldFinder : public jObject<::com::sun::beans::finder::FieldFinder, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_beans_finder / "FieldFinder";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::reflect::Field(::java::lang::Class, ::java::lang::String)>("findField"), //
+		jMethod<::java::lang::reflect::Field(::java::lang::Class, ::java::lang::String)>("findInstanceField"), //
+		jMethod<::java::lang::reflect::Field(::java::lang::Class, ::java::lang::String)>("findStaticField"), //
+	};
+
+	template<typename R = ::java::lang::reflect::Field, typename... Args>
+	static auto findField(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("findField")] != -1);
+		return scall<R>("findField", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Field, typename... Args>
+	static auto findInstanceField(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("findInstanceField")] != -1);
+		return scall<R>("findInstanceField", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Field, typename... Args>
+	static auto findStaticField(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("findStaticField")] != -1);
+		return scall<R>("findStaticField", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

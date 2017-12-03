@@ -1,0 +1,50 @@
+#ifndef com_sun_jmx_mbeanserver_Util_HPP
+#define com_sun_jmx_mbeanserver_Util_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::jmx::mbeanserver::Util : public jObject<::com::sun::jmx::mbeanserver::Util, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_jmx_mbeanserver / "Util";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::Object(::java::lang::Object)>("cast"), //
+		jMethod<::jint(::java::lang::String *, ::java::lang::Object *)>("hashCode"), //
+		jMethod<::javax::management::ObjectName(::java::lang::String)>("newObjectName"), //
+		jMethod<::jboolean(::java::lang::String, ::java::lang::String)>("wildmatch"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto cast(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("cast")] != -1);
+		return scall<R>("cast", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto hashCode(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return scall<R>("hashCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::ObjectName, typename... Args>
+	static auto newObjectName(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newObjectName")] != -1);
+		return scall<R>("newObjectName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto wildmatch(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("wildmatch")] != -1);
+		return scall<R>("wildmatch", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

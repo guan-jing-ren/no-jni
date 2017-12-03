@@ -1,0 +1,49 @@
+#ifndef com_sun_org_glassfish_external_statistics_TimeStatistic_HPP
+#define com_sun_org_glassfish_external_statistics_TimeStatistic_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::org::glassfish::external::statistics::TimeStatistic : public jObject<::com::sun::org::glassfish::external::statistics::TimeStatistic, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_org_glassfish_external_statistics / "TimeStatistic";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jlong()>("getCount"), //
+		jMethod<::jlong()>("getMaxTime"), //
+		jMethod<::jlong()>("getMinTime"), //
+		jMethod<::jlong()>("getTotalTime"), //
+	};
+
+	template<typename R = ::jlong, typename... Args>
+	auto getCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCount")] != -1);
+		return call<R>("getCount", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getMaxTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMaxTime")] != -1);
+		return call<R>("getMaxTime", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getMinTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMinTime")] != -1);
+		return call<R>("getMinTime", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getTotalTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTotalTime")] != -1);
+		return call<R>("getTotalTime", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,49 @@
+#ifndef sun_misc_JavaIOFileDescriptorAccess_HPP
+#define sun_misc_JavaIOFileDescriptorAccess_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::misc::JavaIOFileDescriptorAccess : public jObject<::sun::misc::JavaIOFileDescriptorAccess, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_misc / "JavaIOFileDescriptorAccess";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint(::java::io::FileDescriptor)>("get"), //
+		jMethod<::jlong(::java::io::FileDescriptor)>("getHandle"), //
+		jMethod<::jvoid(::java::io::FileDescriptor, ::jint)>("set"), //
+		jMethod<::jvoid(::java::io::FileDescriptor, ::jlong)>("setHandle"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getHandle(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHandle")] != -1);
+		return call<R>("getHandle", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set")] != -1);
+		return call<R>("set", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setHandle(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setHandle")] != -1);
+		return call<R>("setHandle", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

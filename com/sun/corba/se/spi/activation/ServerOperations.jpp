@@ -1,0 +1,42 @@
+#ifndef com_sun_corba_se_spi_activation_ServerOperations_HPP
+#define com_sun_corba_se_spi_activation_ServerOperations_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::spi::activation::ServerOperations : public jObject<::com::sun::corba::se::spi::activation::ServerOperations, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_spi_activation / "ServerOperations";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("install"), //
+		jMethod<::jvoid()>("shutdown"), //
+		jMethod<::jvoid()>("uninstall"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto install(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("install")] != -1);
+		return call<R>("install", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto shutdown(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("shutdown")] != -1);
+		return call<R>("shutdown", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto uninstall(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("uninstall")] != -1);
+		return call<R>("uninstall", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

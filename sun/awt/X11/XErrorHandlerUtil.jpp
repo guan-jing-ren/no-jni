@@ -1,0 +1,42 @@
+#ifndef sun_awt_X11_XErrorHandlerUtil_HPP
+#define sun_awt_X11_XErrorHandlerUtil_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::X11::XErrorHandlerUtil : public jObject<::sun::awt::X11::XErrorHandlerUtil, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_X11 / "XErrorHandlerUtil";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("RESTORE_XERROR_HANDLER"), //
+		jMethod<::jint(::jlong, ::sun::awt::X11::XErrorEvent)>("SAVED_XERROR_HANDLER"), //
+		jMethod<::jvoid(::sun::awt::X11::XErrorHandler)>("WITH_XERROR_HANDLER"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto RESTORE_XERROR_HANDLER(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("RESTORE_XERROR_HANDLER")] != -1);
+		return scall<R>("RESTORE_XERROR_HANDLER", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto SAVED_XERROR_HANDLER(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("SAVED_XERROR_HANDLER")] != -1);
+		return scall<R>("SAVED_XERROR_HANDLER", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto WITH_XERROR_HANDLER(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("WITH_XERROR_HANDLER")] != -1);
+		return scall<R>("WITH_XERROR_HANDLER", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

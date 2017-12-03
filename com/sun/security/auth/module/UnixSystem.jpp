@@ -1,0 +1,50 @@
+#ifndef com_sun_security_auth_module_UnixSystem_HPP
+#define com_sun_security_auth_module_UnixSystem_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::security::auth::module::UnixSystem : public jObject<::com::sun::security::auth::module::UnixSystem, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_security_auth_module / "UnixSystem";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jlong()>("getGid"), //
+		jMethod<::jlong *()>("getGroups"), //
+		jMethod<::jlong()>("getUid"), //
+		jMethod<::java::lang::String()>("getUsername"), //
+	};
+
+	template<typename R = ::jlong, typename... Args>
+	auto getGid(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGid")] != -1);
+		return call<R>("getGid", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong *, typename... Args>
+	auto getGroups(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGroups")] != -1);
+		return call<R>("getGroups", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getUid(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUid")] != -1);
+		return call<R>("getUid", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getUsername(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUsername")] != -1);
+		return call<R>("getUsername", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,71 @@
+#ifndef sun_misc_RegexpPool_HPP
+#define sun_misc_RegexpPool_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::misc::RegexpPool : public jObject<::sun::misc::RegexpPool, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_misc / "RegexpPool";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::Object)>("add"), //
+		jMethod<::java::lang::Object(::java::lang::String)>("delete"), //
+		jMethod<::java::lang::Object(::java::lang::String)>("match"), //
+		jMethod<::java::lang::Object(::java::lang::String)>("matchNext"), //
+		jMethod<::jvoid(::java::io::PrintStream)>("print"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::Object)>("replace"), //
+		jMethod<::jvoid()>("reset"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto add(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto delete_(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("delete")] != -1);
+		return call<R>("delete", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto match(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("match")] != -1);
+		return call<R>("match", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto matchNext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("matchNext")] != -1);
+		return call<R>("matchNext", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto print(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("print")] != -1);
+		return call<R>("print", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto replace(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("replace")] != -1);
+		return call<R>("replace", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto reset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("reset")] != -1);
+		return call<R>("reset", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,42 @@
+#ifndef sun_reflect_generics_repository_ConstructorRepository_HPP
+#define sun_reflect_generics_repository_ConstructorRepository_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::reflect::generics::repository::ConstructorRepository : public jObject<::sun::reflect::generics::repository::ConstructorRepository, ::sun::reflect::generics::repository::GenericDeclRepository> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_reflect_generics_repository / "ConstructorRepository";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::reflect::Type *()>("getExceptionTypes"), //
+		jMethod<::java::lang::reflect::Type *()>("getParameterTypes"), //
+		jMethod<::sun::reflect::generics::repository::ConstructorRepository(::java::lang::String, ::sun::reflect::generics::factory::GenericsFactory)>("make"), //
+	};
+
+	template<typename R = ::java::lang::reflect::Type *, typename... Args>
+	auto getExceptionTypes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getExceptionTypes")] != -1);
+		return call<R>("getExceptionTypes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Type *, typename... Args>
+	auto getParameterTypes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getParameterTypes")] != -1);
+		return call<R>("getParameterTypes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::reflect::generics::repository::ConstructorRepository, typename... Args>
+	static auto make(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("make")] != -1);
+		return scall<R>("make", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

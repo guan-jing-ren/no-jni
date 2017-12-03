@@ -1,0 +1,28 @@
+#ifndef sun_management_jdp_JdpPacket_HPP
+#define sun_management_jdp_JdpPacket_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::management::jdp::JdpPacket : public jObject<::sun::management::jdp::JdpPacket, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_management_jdp / "JdpPacket";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jbyte *()>("getPacketData"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getPacketData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPacketData")] != -1);
+		return call<R>("getPacketData", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

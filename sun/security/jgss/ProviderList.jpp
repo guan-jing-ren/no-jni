@@ -1,0 +1,57 @@
+#ifndef sun_security_jgss_ProviderList_HPP
+#define sun_security_jgss_ProviderList_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::jgss::ProviderList : public jObject<::sun::security::jgss::ProviderList, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_jgss / "ProviderList";
+
+	constexpr static Enume field_signatures{
+		jField<::org::ietf::jgss::Oid>("DEFAULT_MECH_OID"), //
+	};
+
+	template<typename F = ::org::ietf::jgss::Oid>
+	static auto DEFAULT_MECH_OID() {
+		static_assert(field_signatures[jField<F>("DEFAULT_MECH_OID")] != -1);
+		return sat<F>("DEFAULT_MECH_OID");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::security::jgss::GSSCaller, ::jboolean)>(), //
+		jMethod<::jvoid(::java::security::Provider, ::org::ietf::jgss::Oid)>("addProviderAtEnd"), //
+		jMethod<::jvoid(::java::security::Provider, ::org::ietf::jgss::Oid)>("addProviderAtFront"), //
+		jMethod<::sun::security::jgss::spi::MechanismFactory(::org::ietf::jgss::Oid)>("getMechFactory"), //
+		jMethod<::sun::security::jgss::spi::MechanismFactory(::org::ietf::jgss::Oid, ::java::security::Provider)>("getMechFactory"), //
+		jMethod<::org::ietf::jgss::Oid *()>("getMechs"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addProviderAtEnd(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addProviderAtEnd")] != -1);
+		return call<R>("addProviderAtEnd", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addProviderAtFront(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addProviderAtFront")] != -1);
+		return call<R>("addProviderAtFront", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::jgss::spi::MechanismFactory, typename... Args>
+	auto getMechFactory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMechFactory")] != -1);
+		return call<R>("getMechFactory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::ietf::jgss::Oid *, typename... Args>
+	auto getMechs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMechs")] != -1);
+		return call<R>("getMechs", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

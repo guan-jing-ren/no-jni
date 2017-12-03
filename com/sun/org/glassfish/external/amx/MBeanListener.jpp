@@ -1,0 +1,80 @@
+#ifndef com_sun_org_glassfish_external_amx_MBeanListener_HPP
+#define com_sun_org_glassfish_external_amx_MBeanListener_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::org::glassfish::external::amx::MBeanListener : public jObject<::com::sun::org::glassfish::external::amx::MBeanListener, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_org_glassfish_external_amx / "MBeanListener";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::management::MBeanServerConnection, ::java::lang::String, ::java::lang::String, ::com::sun::org::glassfish::external::amx::MBeanListener$Callback)>(), //
+		jConstructor<::jvoid(::javax::management::MBeanServerConnection, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::com::sun::org::glassfish::external::amx::MBeanListener$Callback)>(), //
+		jConstructor<::jvoid(::javax::management::MBeanServerConnection, ::javax::management::ObjectName, ::com::sun::org::glassfish::external::amx::MBeanListener$Callback)>(), //
+		jMethod<::com::sun::org::glassfish::external::amx::MBeanListener$Callback()>("getCallback"), //
+		jMethod<::javax::management::MBeanServerConnection()>("getMBeanServer"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::java::lang::String()>("getType"), //
+		jMethod<::jvoid(::javax::management::Notification, ::java::lang::Object)>("handleNotification"), //
+		jMethod<::jvoid()>("startListening"), //
+		jMethod<::jvoid()>("stopListening"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::com::sun::org::glassfish::external::amx::MBeanListener$Callback, typename... Args>
+	auto getCallback(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCallback")] != -1);
+		return call<R>("getCallback", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::MBeanServerConnection, typename... Args>
+	auto getMBeanServer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMBeanServer")] != -1);
+		return call<R>("getMBeanServer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto handleNotification(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("handleNotification")] != -1);
+		return call<R>("handleNotification", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto startListening(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("startListening")] != -1);
+		return call<R>("startListening", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto stopListening(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("stopListening")] != -1);
+		return call<R>("stopListening", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

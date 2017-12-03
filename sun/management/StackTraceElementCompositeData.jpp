@@ -1,0 +1,49 @@
+#ifndef sun_management_StackTraceElementCompositeData_HPP
+#define sun_management_StackTraceElementCompositeData_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::management::StackTraceElementCompositeData : public jObject<::sun::management::StackTraceElementCompositeData, ::sun::management::LazyCompositeData> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_management / "StackTraceElementCompositeData";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::StackTraceElement(::javax::management::openmbean::CompositeData)>("from"), //
+		jMethod<::java::lang::StackTraceElement()>("getStackTraceElement"), //
+		jMethod<::javax::management::openmbean::CompositeData(::java::lang::StackTraceElement)>("toCompositeData"), //
+		jMethod<::jvoid(::javax::management::openmbean::CompositeData)>("validateCompositeData"), //
+	};
+
+	template<typename R = ::java::lang::StackTraceElement, typename... Args>
+	static auto from(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("from")] != -1);
+		return scall<R>("from", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::StackTraceElement, typename... Args>
+	auto getStackTraceElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStackTraceElement")] != -1);
+		return call<R>("getStackTraceElement", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::openmbean::CompositeData, typename... Args>
+	static auto toCompositeData(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toCompositeData")] != -1);
+		return scall<R>("toCompositeData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto validateCompositeData(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("validateCompositeData")] != -1);
+		return scall<R>("validateCompositeData", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

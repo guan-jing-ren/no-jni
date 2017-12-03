@@ -1,0 +1,47 @@
+#ifndef sun_corba_OutputStreamFactory_HPP
+#define sun_corba_OutputStreamFactory_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::corba::OutputStreamFactory : public jObject<::sun::corba::OutputStreamFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_corba / "OutputStreamFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::com::sun::corba::se::impl::encoding::CDROutputObject(::com::sun::corba::se::spi::orb::ORB, ::com::sun::corba::se::pept::protocol::MessageMediator, ::com::sun::corba::se::impl::protocol::giopmsgheaders::Message, ::jbyte)>("newCDROutputObject"), //
+		jMethod<::com::sun::corba::se::impl::encoding::CDROutputObject(::com::sun::corba::se::spi::orb::ORB, ::com::sun::corba::se::pept::protocol::MessageMediator, ::com::sun::corba::se::impl::protocol::giopmsgheaders::Message, ::jbyte, ::jint)>("newCDROutputObject"), //
+		jMethod<::com::sun::corba::se::impl::encoding::CDROutputObject(::com::sun::corba::se::spi::orb::ORB, ::com::sun::corba::se::spi::protocol::CorbaMessageMediator, ::com::sun::corba::se::spi::ior::iiop::GIOPVersion, ::com::sun::corba::se::spi::transport::CorbaConnection, ::com::sun::corba::se::impl::protocol::giopmsgheaders::Message, ::jbyte)>("newCDROutputObject"), //
+		jMethod<::com::sun::corba::se::impl::encoding::EncapsOutputStream(::com::sun::corba::se::spi::orb::ORB)>("newEncapsOutputStream"), //
+		jMethod<::com::sun::corba::se::impl::encoding::EncapsOutputStream(::com::sun::corba::se::spi::orb::ORB, ::com::sun::corba::se::spi::ior::iiop::GIOPVersion)>("newEncapsOutputStream"), //
+		jMethod<::com::sun::corba::se::impl::encoding::EncapsOutputStream(::com::sun::corba::se::spi::orb::ORB, ::jboolean)>("newEncapsOutputStream"), //
+		jMethod<::com::sun::corba::se::impl::encoding::TypeCodeOutputStream(::com::sun::corba::se::spi::orb::ORB)>("newTypeCodeOutputStream"), //
+		jMethod<::com::sun::corba::se::impl::encoding::TypeCodeOutputStream(::com::sun::corba::se::spi::orb::ORB, ::jboolean)>("newTypeCodeOutputStream"), //
+	};
+
+	template<typename R = ::com::sun::corba::se::impl::encoding::CDROutputObject, typename... Args>
+	static auto newCDROutputObject(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newCDROutputObject")] != -1);
+		return scall<R>("newCDROutputObject", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::encoding::EncapsOutputStream, typename... Args>
+	static auto newEncapsOutputStream(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newEncapsOutputStream")] != -1);
+		return scall<R>("newEncapsOutputStream", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::encoding::TypeCodeOutputStream, typename... Args>
+	static auto newTypeCodeOutputStream(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newTypeCodeOutputStream")] != -1);
+		return scall<R>("newTypeCodeOutputStream", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,43 @@
+#ifndef sun_rmi_server_ActivationGroupImpl_HPP
+#define sun_rmi_server_ActivationGroupImpl_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::rmi::server::ActivationGroupImpl : public jObject<::sun::rmi::server::ActivationGroupImpl, ::java::rmi::activation::ActivationGroup> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_rmi_server / "ActivationGroupImpl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::rmi::activation::ActivationGroupID, ::java::rmi::MarshalledObject)>(), //
+		jMethod<::jvoid(::java::rmi::activation::ActivationID, ::java::rmi::Remote)>("activeObject"), //
+		jMethod<::jboolean(::java::rmi::activation::ActivationID)>("inactiveObject"), //
+		jMethod<::java::rmi::MarshalledObject(::java::rmi::activation::ActivationID, ::java::rmi::activation::ActivationDesc)>("newInstance"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto activeObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("activeObject")] != -1);
+		return call<R>("activeObject", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto inactiveObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("inactiveObject")] != -1);
+		return call<R>("inactiveObject", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::MarshalledObject, typename... Args>
+	auto newInstance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newInstance")] != -1);
+		return call<R>("newInstance", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,28 @@
+#ifndef sun_nio_cs_UnicodeEncoder_HPP
+#define sun_nio_cs_UnicodeEncoder_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::nio::cs::UnicodeEncoder : public jObject<::sun::nio::cs::UnicodeEncoder, ::java::nio::charset::CharsetEncoder> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_nio_cs / "UnicodeEncoder";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::jchar)>("canEncode"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto canEncode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("canEncode")] != -1);
+		return call<R>("canEncode", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

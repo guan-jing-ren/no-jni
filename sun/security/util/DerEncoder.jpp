@@ -1,0 +1,28 @@
+#ifndef sun_security_util_DerEncoder_HPP
+#define sun_security_util_DerEncoder_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::util::DerEncoder : public jObject<::sun::security::util::DerEncoder, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_util / "DerEncoder";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::io::OutputStream)>("derEncode"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto derEncode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("derEncode")] != -1);
+		return call<R>("derEncode", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,56 @@
+#ifndef sun_awt_dnd_SunDropTargetEvent_HPP
+#define sun_awt_dnd_SunDropTargetEvent_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::dnd::SunDropTargetEvent : public jObject<::sun::awt::dnd::SunDropTargetEvent, ::java::awt::event::MouseEvent> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_dnd / "SunDropTargetEvent";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("MOUSE_DROPPED"), //
+	};
+
+	template<typename F = ::jint>
+	static auto MOUSE_DROPPED() {
+		static_assert(field_signatures[jField<F>("MOUSE_DROPPED")] != -1);
+		return sat<F>("MOUSE_DROPPED");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::Component, ::jint, ::jint, ::jint, ::sun::awt::dnd::SunDropTargetContextPeer$EventDispatcher)>(), //
+		jMethod<::jvoid()>("consume"), //
+		jMethod<::jvoid()>("dispatch"), //
+		jMethod<::sun::awt::dnd::SunDropTargetContextPeer$EventDispatcher()>("getDispatcher"), //
+		jMethod<::java::lang::String()>("paramString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto consume(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("consume")] != -1);
+		return call<R>("consume", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispatch(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dispatch")] != -1);
+		return call<R>("dispatch", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::awt::dnd::SunDropTargetContextPeer$EventDispatcher, typename... Args>
+	auto getDispatcher(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDispatcher")] != -1);
+		return call<R>("getDispatcher", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto paramString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("paramString")] != -1);
+		return call<R>("paramString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

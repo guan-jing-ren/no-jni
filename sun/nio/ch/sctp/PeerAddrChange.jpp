@@ -1,0 +1,63 @@
+#ifndef sun_nio_ch_sctp_PeerAddrChange_HPP
+#define sun_nio_ch_sctp_PeerAddrChange_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::nio::ch::sctp::PeerAddrChange : public jObject<::sun::nio::ch::sctp::PeerAddrChange, ::com::sun::nio::sctp::PeerAddressChangeNotification> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_nio_ch_sctp / "PeerAddrChange";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::net::SocketAddress()>("address"), //
+		jMethod<::jint()>("assocId"), //
+		jMethod<::com::sun::nio::sctp::Association()>("association"), //
+		jMethod<::com::sun::nio::sctp::PeerAddressChangeNotification$AddressChangeEvent()>("event"), //
+		jMethod<::jvoid(::com::sun::nio::sctp::Association)>("setAssociation"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::net::SocketAddress, typename... Args>
+	auto address(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("address")] != -1);
+		return call<R>("address", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto assocId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("assocId")] != -1);
+		return call<R>("assocId", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::nio::sctp::Association, typename... Args>
+	auto association(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("association")] != -1);
+		return call<R>("association", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::nio::sctp::PeerAddressChangeNotification$AddressChangeEvent, typename... Args>
+	auto event(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("event")] != -1);
+		return call<R>("event", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setAssociation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setAssociation")] != -1);
+		return call<R>("setAssociation", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

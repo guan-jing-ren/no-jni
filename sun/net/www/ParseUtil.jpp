@@ -1,0 +1,58 @@
+#ifndef sun_net_www_ParseUtil_HPP
+#define sun_net_www_ParseUtil_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::net::www::ParseUtil : public jObject<::sun::net::www::ParseUtil, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_net_www / "ParseUtil";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::String(::java::lang::String)>("canonizeString"), //
+		jMethod<::java::lang::String(::java::lang::String)>("decode"), //
+		jMethod<::java::lang::String(::java::lang::String)>("encodePath"), //
+		jMethod<::java::lang::String(::java::lang::String, ::jboolean)>("encodePath"), //
+		jMethod<::java::net::URL(::java::io::File)>("fileToEncodedURL"), //
+		jMethod<::java::net::URI(::java::net::URL)>("toURI"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto canonizeString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("canonizeString")] != -1);
+		return call<R>("canonizeString", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto decode(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("decode")] != -1);
+		return scall<R>("decode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto encodePath(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encodePath")] != -1);
+		return scall<R>("encodePath", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::URL, typename... Args>
+	static auto fileToEncodedURL(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("fileToEncodedURL")] != -1);
+		return scall<R>("fileToEncodedURL", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::URI, typename... Args>
+	static auto toURI(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toURI")] != -1);
+		return scall<R>("toURI", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

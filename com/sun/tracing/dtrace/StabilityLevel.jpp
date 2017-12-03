@@ -1,0 +1,97 @@
+#ifndef com_sun_tracing_dtrace_StabilityLevel_HPP
+#define com_sun_tracing_dtrace_StabilityLevel_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::tracing::dtrace::StabilityLevel : public jObject<::com::sun::tracing::dtrace::StabilityLevel, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_tracing_dtrace / "StabilityLevel";
+
+	constexpr static Enume field_signatures{
+		jField<::com::sun::tracing::dtrace::StabilityLevel>("EVOLVING"), //
+		jField<::com::sun::tracing::dtrace::StabilityLevel>("EXTERNAL"), //
+		jField<::com::sun::tracing::dtrace::StabilityLevel>("INTERNAL"), //
+		jField<::com::sun::tracing::dtrace::StabilityLevel>("OBSOLETE"), //
+		jField<::com::sun::tracing::dtrace::StabilityLevel>("PRIVATE"), //
+		jField<::com::sun::tracing::dtrace::StabilityLevel>("STABLE"), //
+		jField<::com::sun::tracing::dtrace::StabilityLevel>("STANDARD"), //
+		jField<::com::sun::tracing::dtrace::StabilityLevel>("UNSTABLE"), //
+	};
+
+	template<typename F = ::com::sun::tracing::dtrace::StabilityLevel>
+	static auto EVOLVING() {
+		static_assert(field_signatures[jField<F>("EVOLVING")] != -1);
+		return sat<F>("EVOLVING");
+	}
+
+	template<typename F = ::com::sun::tracing::dtrace::StabilityLevel>
+	static auto EXTERNAL() {
+		static_assert(field_signatures[jField<F>("EXTERNAL")] != -1);
+		return sat<F>("EXTERNAL");
+	}
+
+	template<typename F = ::com::sun::tracing::dtrace::StabilityLevel>
+	static auto INTERNAL() {
+		static_assert(field_signatures[jField<F>("INTERNAL")] != -1);
+		return sat<F>("INTERNAL");
+	}
+
+	template<typename F = ::com::sun::tracing::dtrace::StabilityLevel>
+	static auto OBSOLETE() {
+		static_assert(field_signatures[jField<F>("OBSOLETE")] != -1);
+		return sat<F>("OBSOLETE");
+	}
+
+	template<typename F = ::com::sun::tracing::dtrace::StabilityLevel>
+	static auto PRIVATE() {
+		static_assert(field_signatures[jField<F>("PRIVATE")] != -1);
+		return sat<F>("PRIVATE");
+	}
+
+	template<typename F = ::com::sun::tracing::dtrace::StabilityLevel>
+	static auto STABLE() {
+		static_assert(field_signatures[jField<F>("STABLE")] != -1);
+		return sat<F>("STABLE");
+	}
+
+	template<typename F = ::com::sun::tracing::dtrace::StabilityLevel>
+	static auto STANDARD() {
+		static_assert(field_signatures[jField<F>("STANDARD")] != -1);
+		return sat<F>("STANDARD");
+	}
+
+	template<typename F = ::com::sun::tracing::dtrace::StabilityLevel>
+	static auto UNSTABLE() {
+		static_assert(field_signatures[jField<F>("UNSTABLE")] != -1);
+		return sat<F>("UNSTABLE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("getEncoding"), //
+		jMethod<::com::sun::tracing::dtrace::StabilityLevel(::java::lang::String)>("valueOf"), //
+		jMethod<::com::sun::tracing::dtrace::StabilityLevel *()>("values"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getEncoding(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEncoding")] != -1);
+		return call<R>("getEncoding", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::tracing::dtrace::StabilityLevel, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::tracing::dtrace::StabilityLevel *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

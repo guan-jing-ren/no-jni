@@ -1,0 +1,62 @@
+#ifndef sun_security_util_DisabledAlgorithmConstraints_HPP
+#define sun_security_util_DisabledAlgorithmConstraints_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::util::DisabledAlgorithmConstraints : public jObject<::sun::security::util::DisabledAlgorithmConstraints, ::sun::security::util::AbstractAlgorithmConstraints> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_util / "DisabledAlgorithmConstraints";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("PROPERTY_CERTPATH_DISABLED_ALGS"), //
+		jField<::java::lang::String>("PROPERTY_JAR_DISABLED_ALGS"), //
+		jField<::java::lang::String>("PROPERTY_TLS_DISABLED_ALGS"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto PROPERTY_CERTPATH_DISABLED_ALGS() {
+		static_assert(field_signatures[jField<F>("PROPERTY_CERTPATH_DISABLED_ALGS")] != -1);
+		return sat<F>("PROPERTY_CERTPATH_DISABLED_ALGS");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto PROPERTY_JAR_DISABLED_ALGS() {
+		static_assert(field_signatures[jField<F>("PROPERTY_JAR_DISABLED_ALGS")] != -1);
+		return sat<F>("PROPERTY_JAR_DISABLED_ALGS");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto PROPERTY_TLS_DISABLED_ALGS() {
+		static_assert(field_signatures[jField<F>("PROPERTY_TLS_DISABLED_ALGS")] != -1);
+		return sat<F>("PROPERTY_TLS_DISABLED_ALGS");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::sun::security::util::AlgorithmDecomposer)>(), //
+		jMethod<::jboolean(::java::lang::String)>("checkProperty"), //
+		jMethod<::jvoid(::java::lang::String, ::java::security::Key, ::java::security::AlgorithmParameters, ::java::lang::String)>("permits"), //
+		jMethod<::jvoid(::java::lang::String, ::sun::security::util::ConstraintsParameters)>("permits"), //
+		jMethod<::jboolean(::java::util::Set, ::java::lang::String, ::java::security::AlgorithmParameters)>("permits"), //
+		jMethod<::jboolean(::java::util::Set, ::java::lang::String, ::java::security::Key, ::java::security::AlgorithmParameters)>("permits"), //
+		jMethod<::jboolean(::java::util::Set, ::java::security::Key)>("permits"), //
+		jMethod<::jvoid(::sun::security::util::ConstraintsParameters)>("permits"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto checkProperty(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkProperty")] != -1);
+		return call<R>("checkProperty", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto permits(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("permits")] != -1);
+		return call<R>("permits", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,55 @@
+#ifndef com_sun_beans_util_Cache$Kind_HPP
+#define com_sun_beans_util_Cache$Kind_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::beans::util::Cache$Kind : public jObject<::com::sun::beans::util::Cache$Kind, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_beans_util / "Cache$Kind";
+
+	constexpr static Enume field_signatures{
+		jField<::com::sun::beans::util::Cache$Kind>("SOFT"), //
+		jField<::com::sun::beans::util::Cache$Kind>("STRONG"), //
+		jField<::com::sun::beans::util::Cache$Kind>("WEAK"), //
+	};
+
+	template<typename F = ::com::sun::beans::util::Cache$Kind>
+	static auto SOFT() {
+		static_assert(field_signatures[jField<F>("SOFT")] != -1);
+		return sat<F>("SOFT");
+	}
+
+	template<typename F = ::com::sun::beans::util::Cache$Kind>
+	static auto STRONG() {
+		static_assert(field_signatures[jField<F>("STRONG")] != -1);
+		return sat<F>("STRONG");
+	}
+
+	template<typename F = ::com::sun::beans::util::Cache$Kind>
+	static auto WEAK() {
+		static_assert(field_signatures[jField<F>("WEAK")] != -1);
+		return sat<F>("WEAK");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::com::sun::beans::util::Cache$Kind(::java::lang::String)>("valueOf"), //
+		jMethod<::com::sun::beans::util::Cache$Kind *()>("values"), //
+	};
+
+	template<typename R = ::com::sun::beans::util::Cache$Kind, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::beans::util::Cache$Kind *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

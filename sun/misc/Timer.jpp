@@ -1,0 +1,98 @@
+#ifndef sun_misc_Timer_HPP
+#define sun_misc_Timer_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::misc::Timer : public jObject<::sun::misc::Timer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_misc / "Timer";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::misc::Timeable>("owner"), //
+	};
+
+	template<typename F = ::sun::misc::Timeable>
+	auto owner() const {
+		static_assert(field_signatures[jField<F>("owner")] != -1);
+		return at<F>("owner");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::misc::Timeable, ::jlong)>(), //
+		jMethod<::jvoid()>("cont"), //
+		jMethod<::jlong()>("getInterval"), //
+		jMethod<::jlong()>("getRemainingTime"), //
+		jMethod<::jlong()>("getStopTime"), //
+		jMethod<::jboolean()>("isStopped"), //
+		jMethod<::jvoid()>("reset"), //
+		jMethod<::jvoid(::jlong)>("setInterval"), //
+		jMethod<::jvoid(::jboolean)>("setRegular"), //
+		jMethod<::jvoid(::jlong)>("setRemainingTime"), //
+		jMethod<::jvoid()>("stop"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto cont(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("cont")] != -1);
+		return call<R>("cont", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getInterval(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInterval")] != -1);
+		return call<R>("getInterval", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getRemainingTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRemainingTime")] != -1);
+		return call<R>("getRemainingTime", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getStopTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStopTime")] != -1);
+		return call<R>("getStopTime", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isStopped(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isStopped")] != -1);
+		return call<R>("isStopped", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto reset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("reset")] != -1);
+		return call<R>("reset", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setInterval(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setInterval")] != -1);
+		return call<R>("setInterval", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setRegular(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setRegular")] != -1);
+		return call<R>("setRegular", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setRemainingTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setRemainingTime")] != -1);
+		return call<R>("setRemainingTime", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto stop(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("stop")] != -1);
+		return call<R>("stop", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

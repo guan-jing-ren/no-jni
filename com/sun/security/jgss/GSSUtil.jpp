@@ -1,0 +1,29 @@
+#ifndef com_sun_security_jgss_GSSUtil_HPP
+#define com_sun_security_jgss_GSSUtil_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::security::jgss::GSSUtil : public jObject<::com::sun::security::jgss::GSSUtil, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_security_jgss / "GSSUtil";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::security::auth::Subject(::org::ietf::jgss::GSSName, ::org::ietf::jgss::GSSCredential)>("createSubject"), //
+	};
+
+	template<typename R = ::javax::security::auth::Subject, typename... Args>
+	static auto createSubject(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createSubject")] != -1);
+		return scall<R>("createSubject", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

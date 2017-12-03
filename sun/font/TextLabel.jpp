@@ -1,0 +1,70 @@
+#ifndef sun_font_TextLabel_HPP
+#define sun_font_TextLabel_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::TextLabel : public jObject<::sun::font::TextLabel, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "TextLabel";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::awt::Graphics2D)>("draw"), //
+		jMethod<::jvoid(::java::awt::Graphics2D, ::jfloat, ::jfloat)>("draw"), //
+		jMethod<::java::awt::geom::Rectangle2D()>("getAlignBounds"), //
+		jMethod<::java::awt::geom::Rectangle2D(::jfloat, ::jfloat)>("getAlignBounds"), //
+		jMethod<::java::awt::geom::Rectangle2D()>("getItalicBounds"), //
+		jMethod<::java::awt::geom::Rectangle2D(::jfloat, ::jfloat)>("getItalicBounds"), //
+		jMethod<::java::awt::geom::Rectangle2D()>("getLogicalBounds"), //
+		jMethod<::java::awt::geom::Rectangle2D(::jfloat, ::jfloat)>("getLogicalBounds"), //
+		jMethod<::java::awt::Shape()>("getOutline"), //
+		jMethod<::java::awt::Shape(::jfloat, ::jfloat)>("getOutline"), //
+		jMethod<::java::awt::geom::Rectangle2D()>("getVisualBounds"), //
+		jMethod<::java::awt::geom::Rectangle2D(::jfloat, ::jfloat)>("getVisualBounds"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto draw(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("draw")] != -1);
+		return call<R>("draw", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Rectangle2D, typename... Args>
+	auto getAlignBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAlignBounds")] != -1);
+		return call<R>("getAlignBounds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Rectangle2D, typename... Args>
+	auto getItalicBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getItalicBounds")] != -1);
+		return call<R>("getItalicBounds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Rectangle2D, typename... Args>
+	auto getLogicalBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLogicalBounds")] != -1);
+		return call<R>("getLogicalBounds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Shape, typename... Args>
+	auto getOutline(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOutline")] != -1);
+		return call<R>("getOutline", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Rectangle2D, typename... Args>
+	auto getVisualBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getVisualBounds")] != -1);
+		return call<R>("getVisualBounds", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

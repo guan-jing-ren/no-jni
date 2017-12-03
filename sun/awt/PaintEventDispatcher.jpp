@@ -1,0 +1,57 @@
+#ifndef sun_awt_PaintEventDispatcher_HPP
+#define sun_awt_PaintEventDispatcher_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::PaintEventDispatcher : public jObject<::sun::awt::PaintEventDispatcher, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "PaintEventDispatcher";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::awt::event::PaintEvent(::java::awt::Component, ::jint, ::jint, ::jint, ::jint)>("createPaintEvent"), //
+		jMethod<::sun::awt::PaintEventDispatcher()>("getPaintEventDispatcher"), //
+		jMethod<::jboolean(::java::awt::Component, ::java::lang::Runnable)>("queueSurfaceDataReplacing"), //
+		jMethod<::jvoid(::sun::awt::PaintEventDispatcher)>("setPaintEventDispatcher"), //
+		jMethod<::jboolean(::java::awt::Component)>("shouldDoNativeBackgroundErase"), //
+	};
+
+	template<typename R = ::java::awt::event::PaintEvent, typename... Args>
+	auto createPaintEvent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createPaintEvent")] != -1);
+		return call<R>("createPaintEvent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::awt::PaintEventDispatcher, typename... Args>
+	static auto getPaintEventDispatcher(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPaintEventDispatcher")] != -1);
+		return scall<R>("getPaintEventDispatcher", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto queueSurfaceDataReplacing(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("queueSurfaceDataReplacing")] != -1);
+		return call<R>("queueSurfaceDataReplacing", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setPaintEventDispatcher(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setPaintEventDispatcher")] != -1);
+		return scall<R>("setPaintEventDispatcher", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto shouldDoNativeBackgroundErase(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("shouldDoNativeBackgroundErase")] != -1);
+		return call<R>("shouldDoNativeBackgroundErase", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

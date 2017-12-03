@@ -1,0 +1,127 @@
+#ifndef sun_misc_ExtensionInfo_HPP
+#define sun_misc_ExtensionInfo_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::misc::ExtensionInfo : public jObject<::sun::misc::ExtensionInfo, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_misc / "ExtensionInfo";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("COMPATIBLE"), //
+		jField<::jint>("INCOMPATIBLE"), //
+		jField<::jint>("REQUIRE_IMPLEMENTATION_UPGRADE"), //
+		jField<::jint>("REQUIRE_SPECIFICATION_UPGRADE"), //
+		jField<::jint>("REQUIRE_VENDOR_SWITCH"), //
+		jField<::java::lang::String>("implementationVersion"), //
+		jField<::java::lang::String>("name"), //
+		jField<::java::lang::String>("specVendor"), //
+		jField<::java::lang::String>("specVersion"), //
+		jField<::java::lang::String>("title"), //
+		jField<::java::lang::String>("url"), //
+		jField<::java::lang::String>("vendor"), //
+		jField<::java::lang::String>("vendorId"), //
+	};
+
+	template<typename F = ::jint>
+	static auto COMPATIBLE() {
+		static_assert(field_signatures[jField<F>("COMPATIBLE")] != -1);
+		return sat<F>("COMPATIBLE");
+	}
+
+	template<typename F = ::jint>
+	static auto INCOMPATIBLE() {
+		static_assert(field_signatures[jField<F>("INCOMPATIBLE")] != -1);
+		return sat<F>("INCOMPATIBLE");
+	}
+
+	template<typename F = ::jint>
+	static auto REQUIRE_IMPLEMENTATION_UPGRADE() {
+		static_assert(field_signatures[jField<F>("REQUIRE_IMPLEMENTATION_UPGRADE")] != -1);
+		return sat<F>("REQUIRE_IMPLEMENTATION_UPGRADE");
+	}
+
+	template<typename F = ::jint>
+	static auto REQUIRE_SPECIFICATION_UPGRADE() {
+		static_assert(field_signatures[jField<F>("REQUIRE_SPECIFICATION_UPGRADE")] != -1);
+		return sat<F>("REQUIRE_SPECIFICATION_UPGRADE");
+	}
+
+	template<typename F = ::jint>
+	static auto REQUIRE_VENDOR_SWITCH() {
+		static_assert(field_signatures[jField<F>("REQUIRE_VENDOR_SWITCH")] != -1);
+		return sat<F>("REQUIRE_VENDOR_SWITCH");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto implementationVersion() const {
+		static_assert(field_signatures[jField<F>("implementationVersion")] != -1);
+		return at<F>("implementationVersion");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto name() const {
+		static_assert(field_signatures[jField<F>("name")] != -1);
+		return at<F>("name");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto specVendor() const {
+		static_assert(field_signatures[jField<F>("specVendor")] != -1);
+		return at<F>("specVendor");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto specVersion() const {
+		static_assert(field_signatures[jField<F>("specVersion")] != -1);
+		return at<F>("specVersion");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto title() const {
+		static_assert(field_signatures[jField<F>("title")] != -1);
+		return at<F>("title");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto url() const {
+		static_assert(field_signatures[jField<F>("url")] != -1);
+		return at<F>("url");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto vendor() const {
+		static_assert(field_signatures[jField<F>("vendor")] != -1);
+		return at<F>("vendor");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto vendorId() const {
+		static_assert(field_signatures[jField<F>("vendorId")] != -1);
+		return at<F>("vendorId");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::util::jar::Attributes)>(), //
+		jMethod<::jint(::sun::misc::ExtensionInfo)>("isCompatibleWith"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto isCompatibleWith(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isCompatibleWith")] != -1);
+		return call<R>("isCompatibleWith", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

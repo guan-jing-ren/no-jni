@@ -1,0 +1,120 @@
+#ifndef sun_reflect_ConstantPool_HPP
+#define sun_reflect_ConstantPool_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::reflect::ConstantPool : public jObject<::sun::reflect::ConstantPool, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_reflect / "ConstantPool";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::Class(::jint)>("getClassAt"), //
+		jMethod<::java::lang::Class(::jint)>("getClassAtIfLoaded"), //
+		jMethod<::jdouble(::jint)>("getDoubleAt"), //
+		jMethod<::java::lang::reflect::Field(::jint)>("getFieldAt"), //
+		jMethod<::java::lang::reflect::Field(::jint)>("getFieldAtIfLoaded"), //
+		jMethod<::jfloat(::jint)>("getFloatAt"), //
+		jMethod<::jint(::jint)>("getIntAt"), //
+		jMethod<::jlong(::jint)>("getLongAt"), //
+		jMethod<::java::lang::String *(::jint)>("getMemberRefInfoAt"), //
+		jMethod<::java::lang::reflect::Member(::jint)>("getMethodAt"), //
+		jMethod<::java::lang::reflect::Member(::jint)>("getMethodAtIfLoaded"), //
+		jMethod<::jint()>("getSize"), //
+		jMethod<::java::lang::String(::jint)>("getStringAt"), //
+		jMethod<::java::lang::String(::jint)>("getUTF8At"), //
+	};
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getClassAt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClassAt")] != -1);
+		return call<R>("getClassAt", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto getClassAtIfLoaded(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClassAtIfLoaded")] != -1);
+		return call<R>("getClassAtIfLoaded", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	auto getDoubleAt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDoubleAt")] != -1);
+		return call<R>("getDoubleAt", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Field, typename... Args>
+	auto getFieldAt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFieldAt")] != -1);
+		return call<R>("getFieldAt", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Field, typename... Args>
+	auto getFieldAtIfLoaded(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFieldAtIfLoaded")] != -1);
+		return call<R>("getFieldAtIfLoaded", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getFloatAt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFloatAt")] != -1);
+		return call<R>("getFloatAt", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getIntAt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIntAt")] != -1);
+		return call<R>("getIntAt", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getLongAt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLongAt")] != -1);
+		return call<R>("getLongAt", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getMemberRefInfoAt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMemberRefInfoAt")] != -1);
+		return call<R>("getMemberRefInfoAt", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Member, typename... Args>
+	auto getMethodAt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMethodAt")] != -1);
+		return call<R>("getMethodAt", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Member, typename... Args>
+	auto getMethodAtIfLoaded(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMethodAtIfLoaded")] != -1);
+		return call<R>("getMethodAtIfLoaded", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSize")] != -1);
+		return call<R>("getSize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getStringAt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStringAt")] != -1);
+		return call<R>("getStringAt", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getUTF8At(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUTF8At")] != -1);
+		return call<R>("getUTF8At", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

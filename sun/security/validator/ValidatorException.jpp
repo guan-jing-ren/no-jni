@@ -1,0 +1,97 @@
+#ifndef sun_security_validator_ValidatorException_HPP
+#define sun_security_validator_ValidatorException_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::validator::ValidatorException : public jObject<::sun::security::validator::ValidatorException, ::java::security::cert::CertificateException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_validator / "ValidatorException";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::Object>("T_ALGORITHM_DISABLED"), //
+		jField<::java::lang::Object>("T_CA_EXTENSIONS"), //
+		jField<::java::lang::Object>("T_CERT_EXPIRED"), //
+		jField<::java::lang::Object>("T_EE_EXTENSIONS"), //
+		jField<::java::lang::Object>("T_NAME_CHAINING"), //
+		jField<::java::lang::Object>("T_NO_TRUST_ANCHOR"), //
+		jField<::java::lang::Object>("T_SIGNATURE_ERROR"), //
+		jField<::java::lang::Object>("T_UNTRUSTED_CERT"), //
+	};
+
+	template<typename F = ::java::lang::Object>
+	static auto T_ALGORITHM_DISABLED() {
+		static_assert(field_signatures[jField<F>("T_ALGORITHM_DISABLED")] != -1);
+		return sat<F>("T_ALGORITHM_DISABLED");
+	}
+
+	template<typename F = ::java::lang::Object>
+	static auto T_CA_EXTENSIONS() {
+		static_assert(field_signatures[jField<F>("T_CA_EXTENSIONS")] != -1);
+		return sat<F>("T_CA_EXTENSIONS");
+	}
+
+	template<typename F = ::java::lang::Object>
+	static auto T_CERT_EXPIRED() {
+		static_assert(field_signatures[jField<F>("T_CERT_EXPIRED")] != -1);
+		return sat<F>("T_CERT_EXPIRED");
+	}
+
+	template<typename F = ::java::lang::Object>
+	static auto T_EE_EXTENSIONS() {
+		static_assert(field_signatures[jField<F>("T_EE_EXTENSIONS")] != -1);
+		return sat<F>("T_EE_EXTENSIONS");
+	}
+
+	template<typename F = ::java::lang::Object>
+	static auto T_NAME_CHAINING() {
+		static_assert(field_signatures[jField<F>("T_NAME_CHAINING")] != -1);
+		return sat<F>("T_NAME_CHAINING");
+	}
+
+	template<typename F = ::java::lang::Object>
+	static auto T_NO_TRUST_ANCHOR() {
+		static_assert(field_signatures[jField<F>("T_NO_TRUST_ANCHOR")] != -1);
+		return sat<F>("T_NO_TRUST_ANCHOR");
+	}
+
+	template<typename F = ::java::lang::Object>
+	static auto T_SIGNATURE_ERROR() {
+		static_assert(field_signatures[jField<F>("T_SIGNATURE_ERROR")] != -1);
+		return sat<F>("T_SIGNATURE_ERROR");
+	}
+
+	template<typename F = ::java::lang::Object>
+	static auto T_UNTRUSTED_CERT() {
+		static_assert(field_signatures[jField<F>("T_UNTRUSTED_CERT")] != -1);
+		return sat<F>("T_UNTRUSTED_CERT");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::Object)>(), //
+		jConstructor<::jvoid(::java::lang::Object, ::java::security::cert::X509Certificate)>(), //
+		jConstructor<::jvoid(::java::lang::Object, ::java::security::cert::X509Certificate, ::java::lang::Throwable)>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Object, ::java::security::cert::X509Certificate)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Object, ::java::security::cert::X509Certificate, ::java::lang::Throwable)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Throwable)>(), //
+		jMethod<::java::security::cert::X509Certificate()>("getErrorCertificate"), //
+		jMethod<::java::lang::Object()>("getErrorType"), //
+	};
+
+	template<typename R = ::java::security::cert::X509Certificate, typename... Args>
+	auto getErrorCertificate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getErrorCertificate")] != -1);
+		return call<R>("getErrorCertificate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getErrorType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getErrorType")] != -1);
+		return call<R>("getErrorType", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

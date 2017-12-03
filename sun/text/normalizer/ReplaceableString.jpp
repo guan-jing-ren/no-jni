@@ -1,0 +1,44 @@
+#ifndef sun_text_normalizer_ReplaceableString_HPP
+#define sun_text_normalizer_ReplaceableString_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::text::normalizer::ReplaceableString : public jObject<::sun::text::normalizer::ReplaceableString, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_text_normalizer / "ReplaceableString";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::StringBuffer)>(), //
+		jMethod<::jchar(::jint)>("charAt"), //
+		jMethod<::jvoid(::jint, ::jint, ::jchar *, ::jint)>("getChars"), //
+		jMethod<::jint()>("length"), //
+	};
+
+	template<typename R = ::jchar, typename... Args>
+	auto charAt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("charAt")] != -1);
+		return call<R>("charAt", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto getChars(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getChars")] != -1);
+		return call<R>("getChars", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto length(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("length")] != -1);
+		return call<R>("length", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

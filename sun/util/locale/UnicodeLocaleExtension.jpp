@@ -1,0 +1,118 @@
+#ifndef sun_util_locale_UnicodeLocaleExtension_HPP
+#define sun_util_locale_UnicodeLocaleExtension_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::util::locale::UnicodeLocaleExtension : public jObject<::sun::util::locale::UnicodeLocaleExtension, ::sun::util::locale::Extension> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_util_locale / "UnicodeLocaleExtension";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::util::locale::UnicodeLocaleExtension>("CA_JAPANESE"), //
+		jField<::sun::util::locale::UnicodeLocaleExtension>("NU_THAI"), //
+		jField<::jchar>("SINGLETON"), //
+	};
+
+	template<typename F = ::sun::util::locale::UnicodeLocaleExtension>
+	static auto CA_JAPANESE() {
+		static_assert(field_signatures[jField<F>("CA_JAPANESE")] != -1);
+		return sat<F>("CA_JAPANESE");
+	}
+
+	template<typename F = ::sun::util::locale::UnicodeLocaleExtension>
+	static auto NU_THAI() {
+		static_assert(field_signatures[jField<F>("NU_THAI")] != -1);
+		return sat<F>("NU_THAI");
+	}
+
+	template<typename F = ::jchar>
+	static auto SINGLETON() {
+		static_assert(field_signatures[jField<F>("SINGLETON")] != -1);
+		return sat<F>("SINGLETON");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getID"), //
+		jMethod<::jchar()>("getKey"), //
+		jMethod<::java::util::Set()>("getUnicodeLocaleAttributes"), //
+		jMethod<::java::util::Set()>("getUnicodeLocaleKeys"), //
+		jMethod<::java::lang::String(::java::lang::String)>("getUnicodeLocaleType"), //
+		jMethod<::java::lang::String()>("getValue"), //
+		jMethod<::jboolean(::java::lang::String)>("isAttribute"), //
+		jMethod<::jboolean(::java::lang::String)>("isKey"), //
+		jMethod<::jboolean(::jchar)>("isSingletonChar"), //
+		jMethod<::jboolean(::java::lang::String)>("isTypeSubtag"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getID")] != -1);
+		return call<R>("getID", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jchar, typename... Args>
+	auto getKey(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getKey")] != -1);
+		return call<R>("getKey", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto getUnicodeLocaleAttributes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUnicodeLocaleAttributes")] != -1);
+		return call<R>("getUnicodeLocaleAttributes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto getUnicodeLocaleKeys(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUnicodeLocaleKeys")] != -1);
+		return call<R>("getUnicodeLocaleKeys", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getUnicodeLocaleType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUnicodeLocaleType")] != -1);
+		return call<R>("getUnicodeLocaleType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getValue")] != -1);
+		return call<R>("getValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isAttribute(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isAttribute")] != -1);
+		return scall<R>("isAttribute", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isKey(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isKey")] != -1);
+		return scall<R>("isKey", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isSingletonChar(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSingletonChar")] != -1);
+		return scall<R>("isSingletonChar", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isTypeSubtag(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isTypeSubtag")] != -1);
+		return scall<R>("isTypeSubtag", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

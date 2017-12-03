@@ -1,0 +1,63 @@
+#ifndef sun_nio_ch_SimpleAsynchronousFileChannelImpl_HPP
+#define sun_nio_ch_SimpleAsynchronousFileChannelImpl_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::nio::ch::SimpleAsynchronousFileChannelImpl : public jObject<::sun::nio::ch::SimpleAsynchronousFileChannelImpl, ::sun::nio::ch::AsynchronousFileChannelImpl> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_nio_ch / "SimpleAsynchronousFileChannelImpl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("close"), //
+		jMethod<::jvoid(::jboolean)>("force"), //
+		jMethod<::java::nio::channels::AsynchronousFileChannel(::java::io::FileDescriptor, ::jboolean, ::jboolean, ::sun::nio::ch::ThreadPool)>("open"), //
+		jMethod<::jlong()>("size"), //
+		jMethod<::java::nio::channels::AsynchronousFileChannel(::jlong)>("truncate"), //
+		jMethod<::java::nio::channels::FileLock(::jlong, ::jlong, ::jboolean)>("tryLock"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto force(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("force")] != -1);
+		return call<R>("force", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::AsynchronousFileChannel, typename... Args>
+	static auto open(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("open")] != -1);
+		return scall<R>("open", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto size(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("size")] != -1);
+		return call<R>("size", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::AsynchronousFileChannel, typename... Args>
+	auto truncate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("truncate")] != -1);
+		return call<R>("truncate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::FileLock, typename... Args>
+	auto tryLock(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("tryLock")] != -1);
+		return call<R>("tryLock", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

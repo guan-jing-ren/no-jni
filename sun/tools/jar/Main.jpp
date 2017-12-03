@@ -1,0 +1,36 @@
+#ifndef sun_tools_jar_Main_HPP
+#define sun_tools_jar_Main_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::tools::jar::Main : public jObject<::sun::tools::jar::Main, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_tools_jar / "Main";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::PrintStream, ::java::io::PrintStream, ::java::lang::String)>(), //
+		jMethod<::jvoid(::java::lang::String *)>("main"), //
+		jMethod<::jboolean(::java::lang::String *)>("run"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto main(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("main")] != -1);
+		return scall<R>("main", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto run(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("run")] != -1);
+		return call<R>("run", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

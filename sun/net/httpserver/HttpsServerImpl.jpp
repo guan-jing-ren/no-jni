@@ -1,0 +1,95 @@
+#ifndef sun_net_httpserver_HttpsServerImpl_HPP
+#define sun_net_httpserver_HttpsServerImpl_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::net::httpserver::HttpsServerImpl : public jObject<::sun::net::httpserver::HttpsServerImpl, ::com::sun::net::httpserver::HttpsServer> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_net_httpserver / "HttpsServerImpl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::net::InetSocketAddress, ::jint)>("bind"), //
+		jMethod<::com::sun::net::httpserver::HttpContext(::java::lang::String)>("createContext"), //
+		jMethod<::sun::net::httpserver::HttpContextImpl(::java::lang::String)>("createContext"), //
+		jMethod<::com::sun::net::httpserver::HttpContext(::java::lang::String, ::com::sun::net::httpserver::HttpHandler)>("createContext"), //
+		jMethod<::sun::net::httpserver::HttpContextImpl(::java::lang::String, ::com::sun::net::httpserver::HttpHandler)>("createContext"), //
+		jMethod<::java::net::InetSocketAddress()>("getAddress"), //
+		jMethod<::java::util::concurrent::Executor()>("getExecutor"), //
+		jMethod<::com::sun::net::httpserver::HttpsConfigurator()>("getHttpsConfigurator"), //
+		jMethod<::jvoid(::com::sun::net::httpserver::HttpContext)>("removeContext"), //
+		jMethod<::jvoid(::java::lang::String)>("removeContext"), //
+		jMethod<::jvoid(::java::util::concurrent::Executor)>("setExecutor"), //
+		jMethod<::jvoid(::com::sun::net::httpserver::HttpsConfigurator)>("setHttpsConfigurator"), //
+		jMethod<::jvoid()>("start"), //
+		jMethod<::jvoid(::jint)>("stop"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto bind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("bind")] != -1);
+		return call<R>("bind", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::net::httpserver::HttpContext, typename... Args>
+	auto createContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createContext")] != -1);
+		return call<R>("createContext", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::InetSocketAddress, typename... Args>
+	auto getAddress(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAddress")] != -1);
+		return call<R>("getAddress", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::concurrent::Executor, typename... Args>
+	auto getExecutor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getExecutor")] != -1);
+		return call<R>("getExecutor", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::net::httpserver::HttpsConfigurator, typename... Args>
+	auto getHttpsConfigurator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHttpsConfigurator")] != -1);
+		return call<R>("getHttpsConfigurator", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeContext")] != -1);
+		return call<R>("removeContext", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setExecutor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setExecutor")] != -1);
+		return call<R>("setExecutor", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setHttpsConfigurator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setHttpsConfigurator")] != -1);
+		return call<R>("setHttpsConfigurator", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto start(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("start")] != -1);
+		return call<R>("start", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto stop(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("stop")] != -1);
+		return call<R>("stop", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

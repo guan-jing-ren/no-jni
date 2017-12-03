@@ -1,0 +1,93 @@
+#ifndef sun_rmi_transport_StreamRemoteCall_HPP
+#define sun_rmi_transport_StreamRemoteCall_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::rmi::transport::StreamRemoteCall : public jObject<::sun::rmi::transport::StreamRemoteCall, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_rmi_transport / "StreamRemoteCall";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::rmi::transport::Connection)>(), //
+		jConstructor<::jvoid(::sun::rmi::transport::Connection, ::java::rmi::server::ObjID, ::jint, ::jlong)>(), //
+		jMethod<::jvoid()>("discardPendingRefs"), //
+		jMethod<::jvoid()>("done"), //
+		jMethod<::jvoid()>("executeCall"), //
+		jMethod<::sun::rmi::transport::Connection()>("getConnection"), //
+		jMethod<::java::io::ObjectInput()>("getInputStream"), //
+		jMethod<::java::io::ObjectOutput()>("getOutputStream"), //
+		jMethod<::java::io::ObjectOutput(::jboolean)>("getResultStream"), //
+		jMethod<::java::lang::Exception()>("getServerException"), //
+		jMethod<::jvoid()>("releaseInputStream"), //
+		jMethod<::jvoid()>("releaseOutputStream"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto discardPendingRefs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("discardPendingRefs")] != -1);
+		return call<R>("discardPendingRefs", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto done(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("done")] != -1);
+		return call<R>("done", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto executeCall(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("executeCall")] != -1);
+		return call<R>("executeCall", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::rmi::transport::Connection, typename... Args>
+	auto getConnection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getConnection")] != -1);
+		return call<R>("getConnection", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::ObjectInput, typename... Args>
+	auto getInputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInputStream")] != -1);
+		return call<R>("getInputStream", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::ObjectOutput, typename... Args>
+	auto getOutputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOutputStream")] != -1);
+		return call<R>("getOutputStream", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::ObjectOutput, typename... Args>
+	auto getResultStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getResultStream")] != -1);
+		return call<R>("getResultStream", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Exception, typename... Args>
+	auto getServerException(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getServerException")] != -1);
+		return call<R>("getServerException", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto releaseInputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("releaseInputStream")] != -1);
+		return call<R>("releaseInputStream", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto releaseOutputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("releaseOutputStream")] != -1);
+		return call<R>("releaseOutputStream", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

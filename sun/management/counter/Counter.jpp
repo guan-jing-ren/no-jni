@@ -1,0 +1,77 @@
+#ifndef sun_management_counter_Counter_HPP
+#define sun_management_counter_Counter_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::management::counter::Counter : public jObject<::sun::management::counter::Counter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_management_counter / "Counter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("getFlags"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::sun::management::counter::Units()>("getUnits"), //
+		jMethod<::java::lang::Object()>("getValue"), //
+		jMethod<::sun::management::counter::Variability()>("getVariability"), //
+		jMethod<::jint()>("getVectorLength"), //
+		jMethod<::jboolean()>("isInternal"), //
+		jMethod<::jboolean()>("isVector"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getFlags(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFlags")] != -1);
+		return call<R>("getFlags", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::management::counter::Units, typename... Args>
+	auto getUnits(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUnits")] != -1);
+		return call<R>("getUnits", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getValue")] != -1);
+		return call<R>("getValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::management::counter::Variability, typename... Args>
+	auto getVariability(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getVariability")] != -1);
+		return call<R>("getVariability", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getVectorLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getVectorLength")] != -1);
+		return call<R>("getVectorLength", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isInternal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isInternal")] != -1);
+		return call<R>("isInternal", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isVector(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isVector")] != -1);
+		return call<R>("isVector", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,36 @@
+#ifndef com_sun_jndi_toolkit_url_UrlUtil_HPP
+#define com_sun_jndi_toolkit_url_UrlUtil_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::jndi::toolkit::url::UrlUtil : public jObject<::com::sun::jndi::toolkit::url::UrlUtil, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_jndi_toolkit_url / "UrlUtil";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String(::java::lang::String)>("decode"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::lang::String)>("decode"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::lang::String)>("encode"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto decode(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("decode")] != -1);
+		return scall<R>("decode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto encode(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encode")] != -1);
+		return scall<R>("encode", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,43 @@
+#ifndef sun_swing_ImageCache_HPP
+#define sun_swing_ImageCache_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::swing::ImageCache : public jObject<::sun::swing::ImageCache, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_swing / "ImageCache";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint)>(), //
+		jMethod<::jvoid()>("flush"), //
+		jMethod<::java::awt::Image(::java::lang::Object, ::java::awt::GraphicsConfiguration, ::jint, ::jint, ::java::lang::Object *)>("getImage"), //
+		jMethod<::jvoid(::java::lang::Object, ::java::awt::GraphicsConfiguration, ::jint, ::jint, ::java::lang::Object *, ::java::awt::Image)>("setImage"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto flush(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("flush")] != -1);
+		return call<R>("flush", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Image, typename... Args>
+	auto getImage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getImage")] != -1);
+		return call<R>("getImage", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setImage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setImage")] != -1);
+		return call<R>("setImage", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,60 @@
+#ifndef sun_awt_X11_XEmbeddedFrame_HPP
+#define sun_awt_X11_XEmbeddedFrame_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::X11::XEmbeddedFrame : public jObject<::sun::awt::X11::XEmbeddedFrame, ::sun::awt::EmbeddedFrame> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_X11 / "XEmbeddedFrame";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jlong)>(), //
+		jConstructor<::jvoid(::jlong, ::jboolean)>(), //
+		jConstructor<::jvoid(::jlong, ::jboolean, ::jboolean)>(), //
+		jMethod<::jvoid()>("addNotify"), //
+		jMethod<::jvoid(::java::awt::AWTKeyStroke)>("registerAccelerator"), //
+		jMethod<::jvoid(::jboolean)>("synthesizeWindowActivation"), //
+		jMethod<::jboolean(::jboolean)>("traverseIn"), //
+		jMethod<::jvoid(::java::awt::AWTKeyStroke)>("unregisterAccelerator"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addNotify(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addNotify")] != -1);
+		return call<R>("addNotify", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto registerAccelerator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("registerAccelerator")] != -1);
+		return call<R>("registerAccelerator", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto synthesizeWindowActivation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("synthesizeWindowActivation")] != -1);
+		return call<R>("synthesizeWindowActivation", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto traverseIn(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("traverseIn")] != -1);
+		return call<R>("traverseIn", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto unregisterAccelerator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unregisterAccelerator")] != -1);
+		return call<R>("unregisterAccelerator", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

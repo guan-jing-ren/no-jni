@@ -1,0 +1,80 @@
+#ifndef sun_util_calendar_JulianCalendar_HPP
+#define sun_util_calendar_JulianCalendar_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::util::calendar::JulianCalendar : public jObject<::sun::util::calendar::JulianCalendar, ::sun::util::calendar::BaseCalendar> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_util_calendar / "JulianCalendar";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::util::calendar::CalendarDate()>("getCalendarDate"), //
+		jMethod<::sun::util::calendar::JulianCalendar$Date()>("getCalendarDate"), //
+		jMethod<::sun::util::calendar::CalendarDate(::jlong)>("getCalendarDate"), //
+		jMethod<::sun::util::calendar::JulianCalendar$Date(::jlong)>("getCalendarDate"), //
+		jMethod<::sun::util::calendar::CalendarDate(::jlong, ::java::util::TimeZone)>("getCalendarDate"), //
+		jMethod<::sun::util::calendar::JulianCalendar$Date(::jlong, ::java::util::TimeZone)>("getCalendarDate"), //
+		jMethod<::sun::util::calendar::CalendarDate(::jlong, ::sun::util::calendar::CalendarDate)>("getCalendarDate"), //
+		jMethod<::sun::util::calendar::JulianCalendar$Date(::jlong, ::sun::util::calendar::CalendarDate)>("getCalendarDate"), //
+		jMethod<::jvoid(::sun::util::calendar::CalendarDate, ::jlong)>("getCalendarDateFromFixedDate"), //
+		jMethod<::jint(::sun::util::calendar::CalendarDate)>("getDayOfWeek"), //
+		jMethod<::jlong(::jint, ::jint, ::jint, ::sun::util::calendar::BaseCalendar$Date)>("getFixedDate"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::jint(::jlong)>("getYearFromFixedDate"), //
+		jMethod<::sun::util::calendar::CalendarDate()>("newCalendarDate"), //
+		jMethod<::sun::util::calendar::JulianCalendar$Date()>("newCalendarDate"), //
+		jMethod<::sun::util::calendar::CalendarDate(::java::util::TimeZone)>("newCalendarDate"), //
+		jMethod<::sun::util::calendar::JulianCalendar$Date(::java::util::TimeZone)>("newCalendarDate"), //
+	};
+
+	template<typename R = ::sun::util::calendar::CalendarDate, typename... Args>
+	auto getCalendarDate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCalendarDate")] != -1);
+		return call<R>("getCalendarDate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto getCalendarDateFromFixedDate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCalendarDateFromFixedDate")] != -1);
+		return call<R>("getCalendarDateFromFixedDate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getDayOfWeek(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDayOfWeek")] != -1);
+		return call<R>("getDayOfWeek", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getFixedDate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFixedDate")] != -1);
+		return call<R>("getFixedDate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getYearFromFixedDate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getYearFromFixedDate")] != -1);
+		return call<R>("getYearFromFixedDate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::util::calendar::CalendarDate, typename... Args>
+	auto newCalendarDate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newCalendarDate")] != -1);
+		return call<R>("newCalendarDate", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

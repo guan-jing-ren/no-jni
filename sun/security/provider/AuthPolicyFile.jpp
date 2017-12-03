@@ -1,0 +1,36 @@
+#ifndef sun_security_provider_AuthPolicyFile_HPP
+#define sun_security_provider_AuthPolicyFile_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::provider::AuthPolicyFile : public jObject<::sun::security::provider::AuthPolicyFile, ::javax::security::auth::Policy> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_provider / "AuthPolicyFile";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::security::PermissionCollection(::javax::security::auth::Subject, ::java::security::CodeSource)>("getPermissions"), //
+		jMethod<::jvoid()>("refresh"), //
+	};
+
+	template<typename R = ::java::security::PermissionCollection, typename... Args>
+	auto getPermissions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPermissions")] != -1);
+		return call<R>("getPermissions", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto refresh(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("refresh")] != -1);
+		return call<R>("refresh", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,72 @@
+#ifndef sun_awt_image_ImagingLib_HPP
+#define sun_awt_image_ImagingLib_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::image::ImagingLib : public jObject<::sun::awt::image::ImagingLib, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_image / "ImagingLib";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jint(::java::awt::image::BufferedImage, ::java::awt::image::BufferedImage, ::java::awt::image::Kernel, ::jint)>("convolveBI"), //
+		jMethod<::jint(::java::awt::image::Raster, ::java::awt::image::Raster, ::java::awt::image::Kernel, ::jint)>("convolveRaster"), //
+		jMethod<::java::awt::image::BufferedImage(::java::awt::image::BufferedImageOp, ::java::awt::image::BufferedImage, ::java::awt::image::BufferedImage)>("filter"), //
+		jMethod<::java::awt::image::WritableRaster(::java::awt::image::RasterOp, ::java::awt::image::Raster, ::java::awt::image::WritableRaster)>("filter"), //
+		jMethod<::jint(::java::awt::image::BufferedImage, ::java::awt::image::BufferedImage, ::jbyte **)>("lookupByteBI"), //
+		jMethod<::jint(::java::awt::image::Raster, ::java::awt::image::Raster, ::jbyte **)>("lookupByteRaster"), //
+		jMethod<::jint(::java::awt::image::BufferedImage, ::java::awt::image::BufferedImage, ::jdouble *, ::jint)>("transformBI"), //
+		jMethod<::jint(::java::awt::image::Raster, ::java::awt::image::Raster, ::jdouble *, ::jint)>("transformRaster"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	static auto convolveBI(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("convolveBI")] != -1);
+		return scall<R>("convolveBI", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto convolveRaster(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("convolveRaster")] != -1);
+		return scall<R>("convolveRaster", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::image::BufferedImage, typename... Args>
+	static auto filter(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("filter")] != -1);
+		return scall<R>("filter", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto lookupByteBI(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("lookupByteBI")] != -1);
+		return scall<R>("lookupByteBI", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto lookupByteRaster(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("lookupByteRaster")] != -1);
+		return scall<R>("lookupByteRaster", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto transformBI(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("transformBI")] != -1);
+		return scall<R>("transformBI", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto transformRaster(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("transformRaster")] != -1);
+		return scall<R>("transformRaster", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

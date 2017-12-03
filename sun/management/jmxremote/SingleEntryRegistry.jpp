@@ -1,0 +1,56 @@
+#ifndef sun_management_jmxremote_SingleEntryRegistry_HPP
+#define sun_management_jmxremote_SingleEntryRegistry_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::management::jmxremote::SingleEntryRegistry : public jObject<::sun::management::jmxremote::SingleEntryRegistry, ::sun::rmi::registry::RegistryImpl> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_management_jmxremote / "SingleEntryRegistry";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::String, ::java::rmi::Remote)>("bind"), //
+		jMethod<::java::lang::String *()>("list"), //
+		jMethod<::java::rmi::Remote(::java::lang::String)>("lookup"), //
+		jMethod<::jvoid(::java::lang::String, ::java::rmi::Remote)>("rebind"), //
+		jMethod<::jvoid(::java::lang::String)>("unbind"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto bind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("bind")] != -1);
+		return call<R>("bind", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto list(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("list")] != -1);
+		return call<R>("list", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::Remote, typename... Args>
+	auto lookup(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("lookup")] != -1);
+		return call<R>("lookup", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto rebind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("rebind")] != -1);
+		return call<R>("rebind", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto unbind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unbind")] != -1);
+		return call<R>("unbind", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

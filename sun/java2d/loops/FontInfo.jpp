@@ -1,0 +1,119 @@
+#ifndef sun_java2d_loops_FontInfo_HPP
+#define sun_java2d_loops_FontInfo_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::loops::FontInfo : public jObject<::sun::java2d::loops::FontInfo, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_loops / "FontInfo";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("aaHint"), //
+		jField<::jdouble *>("devTx"), //
+		jField<::java::awt::Font>("font"), //
+		jField<::sun::font::Font2D>("font2D"), //
+		jField<::sun::font::FontStrike>("fontStrike"), //
+		jField<::jdouble *>("glyphTx"), //
+		jField<::jboolean>("lcdRGBOrder"), //
+		jField<::jboolean>("lcdSubPixPos"), //
+		jField<::jfloat>("originX"), //
+		jField<::jfloat>("originY"), //
+		jField<::jint>("pixelHeight"), //
+	};
+
+	template<typename F = ::jint>
+	auto aaHint() const {
+		static_assert(field_signatures[jField<F>("aaHint")] != -1);
+		return at<F>("aaHint");
+	}
+
+	template<typename F = ::jdouble *>
+	auto devTx() const {
+		static_assert(field_signatures[jField<F>("devTx")] != -1);
+		return at<F>("devTx");
+	}
+
+	template<typename F = ::java::awt::Font>
+	auto font() const {
+		static_assert(field_signatures[jField<F>("font")] != -1);
+		return at<F>("font");
+	}
+
+	template<typename F = ::sun::font::Font2D>
+	auto font2D() const {
+		static_assert(field_signatures[jField<F>("font2D")] != -1);
+		return at<F>("font2D");
+	}
+
+	template<typename F = ::sun::font::FontStrike>
+	auto fontStrike() const {
+		static_assert(field_signatures[jField<F>("fontStrike")] != -1);
+		return at<F>("fontStrike");
+	}
+
+	template<typename F = ::jdouble *>
+	auto glyphTx() const {
+		static_assert(field_signatures[jField<F>("glyphTx")] != -1);
+		return at<F>("glyphTx");
+	}
+
+	template<typename F = ::jboolean>
+	auto lcdRGBOrder() const {
+		static_assert(field_signatures[jField<F>("lcdRGBOrder")] != -1);
+		return at<F>("lcdRGBOrder");
+	}
+
+	template<typename F = ::jboolean>
+	auto lcdSubPixPos() const {
+		static_assert(field_signatures[jField<F>("lcdSubPixPos")] != -1);
+		return at<F>("lcdSubPixPos");
+	}
+
+	template<typename F = ::jfloat>
+	auto originX() const {
+		static_assert(field_signatures[jField<F>("originX")] != -1);
+		return at<F>("originX");
+	}
+
+	template<typename F = ::jfloat>
+	auto originY() const {
+		static_assert(field_signatures[jField<F>("originY")] != -1);
+		return at<F>("originY");
+	}
+
+	template<typename F = ::jint>
+	auto pixelHeight() const {
+		static_assert(field_signatures[jField<F>("pixelHeight")] != -1);
+		return at<F>("pixelHeight");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::java::lang::String(::jdouble *)>("mtx"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto mtx(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("mtx")] != -1);
+		return call<R>("mtx", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

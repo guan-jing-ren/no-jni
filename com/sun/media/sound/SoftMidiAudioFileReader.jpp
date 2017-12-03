@@ -1,0 +1,48 @@
+#ifndef com_sun_media_sound_SoftMidiAudioFileReader_HPP
+#define com_sun_media_sound_SoftMidiAudioFileReader_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::media::sound::SoftMidiAudioFileReader : public jObject<::com::sun::media::sound::SoftMidiAudioFileReader, ::javax::sound::sampled::spi::AudioFileReader> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_media_sound / "SoftMidiAudioFileReader";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::sound::sampled::AudioFileFormat$Type>("MIDI"), //
+	};
+
+	template<typename F = ::javax::sound::sampled::AudioFileFormat$Type>
+	static auto MIDI() {
+		static_assert(field_signatures[jField<F>("MIDI")] != -1);
+		return sat<F>("MIDI");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::sound::sampled::AudioFileFormat(::java::io::File)>("getAudioFileFormat"), //
+		jMethod<::javax::sound::sampled::AudioFileFormat(::java::io::InputStream)>("getAudioFileFormat"), //
+		jMethod<::javax::sound::sampled::AudioFileFormat(::java::net::URL)>("getAudioFileFormat"), //
+		jMethod<::javax::sound::sampled::AudioFileFormat(::javax::sound::midi::Sequence)>("getAudioFileFormat"), //
+		jMethod<::javax::sound::sampled::AudioInputStream(::java::io::File)>("getAudioInputStream"), //
+		jMethod<::javax::sound::sampled::AudioInputStream(::java::io::InputStream)>("getAudioInputStream"), //
+		jMethod<::javax::sound::sampled::AudioInputStream(::java::net::URL)>("getAudioInputStream"), //
+		jMethod<::javax::sound::sampled::AudioInputStream(::javax::sound::midi::Sequence)>("getAudioInputStream"), //
+	};
+
+	template<typename R = ::javax::sound::sampled::AudioFileFormat, typename... Args>
+	auto getAudioFileFormat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAudioFileFormat")] != -1);
+		return call<R>("getAudioFileFormat", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::sampled::AudioInputStream, typename... Args>
+	auto getAudioInputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAudioInputStream")] != -1);
+		return call<R>("getAudioInputStream", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

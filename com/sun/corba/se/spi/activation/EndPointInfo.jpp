@@ -1,0 +1,36 @@
+#ifndef com_sun_corba_se_spi_activation_EndPointInfo_HPP
+#define com_sun_corba_se_spi_activation_EndPointInfo_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::spi::activation::EndPointInfo : public jObject<::com::sun::corba::se::spi::activation::EndPointInfo, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_spi_activation / "EndPointInfo";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("endpointType"), //
+		jField<::jint>("port"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	auto endpointType() const {
+		static_assert(field_signatures[jField<F>("endpointType")] != -1);
+		return at<F>("endpointType");
+	}
+
+	template<typename F = ::jint>
+	auto port() const {
+		static_assert(field_signatures[jField<F>("port")] != -1);
+		return at<F>("port");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String, ::jint)>(), //
+	};
+
+};
+
+#endif

@@ -1,0 +1,49 @@
+#ifndef sun_security_provider_certpath_OCSP$RevocationStatus_HPP
+#define sun_security_provider_certpath_OCSP$RevocationStatus_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::security::provider::certpath::OCSP$RevocationStatus : public jObject<::sun::security::provider::certpath::OCSP$RevocationStatus, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_provider_certpath / "OCSP$RevocationStatus";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::security::provider::certpath::OCSP$RevocationStatus$CertStatus()>("getCertStatus"), //
+		jMethod<::java::security::cert::CRLReason()>("getRevocationReason"), //
+		jMethod<::java::util::Date()>("getRevocationTime"), //
+		jMethod<::java::util::Map()>("getSingleExtensions"), //
+	};
+
+	template<typename R = ::sun::security::provider::certpath::OCSP$RevocationStatus$CertStatus, typename... Args>
+	auto getCertStatus(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCertStatus")] != -1);
+		return call<R>("getCertStatus", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::CRLReason, typename... Args>
+	auto getRevocationReason(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRevocationReason")] != -1);
+		return call<R>("getRevocationReason", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Date, typename... Args>
+	auto getRevocationTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRevocationTime")] != -1);
+		return call<R>("getRevocationTime", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto getSingleExtensions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSingleExtensions")] != -1);
+		return call<R>("getSingleExtensions", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

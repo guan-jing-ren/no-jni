@@ -1,0 +1,73 @@
+#ifndef com_sun_corba_se_impl_encoding_CDROutputObject_HPP
+#define com_sun_corba_se_impl_encoding_CDROutputObject_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::impl::encoding::CDROutputObject : public jObject<::com::sun::corba::se::impl::encoding::CDROutputObject, ::com::sun::corba::se::spi::encoding::CorbaOutputObject> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_impl_encoding / "CDROutputObject";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::com::sun::corba::se::spi::orb::ORB, ::com::sun::corba::se::pept::protocol::MessageMediator, ::com::sun::corba::se::impl::protocol::giopmsgheaders::Message, ::jbyte)>(), //
+		jConstructor<::jvoid(::com::sun::corba::se::spi::orb::ORB, ::com::sun::corba::se::pept::protocol::MessageMediator, ::com::sun::corba::se::impl::protocol::giopmsgheaders::Message, ::jbyte, ::jint)>(), //
+		jConstructor<::jvoid(::com::sun::corba::se::spi::orb::ORB, ::com::sun::corba::se::spi::protocol::CorbaMessageMediator, ::com::sun::corba::se::spi::ior::iiop::GIOPVersion, ::com::sun::corba::se::spi::transport::CorbaConnection, ::com::sun::corba::se::impl::protocol::giopmsgheaders::Message, ::jbyte)>(), //
+		jMethod<::org::omg::CORBA::portable::InputStream()>("create_input_stream"), //
+		jMethod<::jvoid()>("finishSendingMessage"), //
+		jMethod<::com::sun::corba::se::impl::encoding::ByteBufferWithInfo()>("getByteBufferWithInfo"), //
+		jMethod<::com::sun::corba::se::spi::transport::CorbaConnection()>("getConnection"), //
+		jMethod<::com::sun::corba::se::impl::protocol::giopmsgheaders::Message()>("getMessageHeader"), //
+		jMethod<::jvoid(::com::sun::corba::se::impl::encoding::ByteBufferWithInfo)>("setByteBufferWithInfo"), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::transport::CorbaConnection)>("writeTo"), //
+	};
+
+	template<typename R = ::org::omg::CORBA::portable::InputStream, typename... Args>
+	auto create_input_stream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_input_stream")] != -1);
+		return call<R>("create_input_stream", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto finishSendingMessage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("finishSendingMessage")] != -1);
+		return call<R>("finishSendingMessage", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::encoding::ByteBufferWithInfo, typename... Args>
+	auto getByteBufferWithInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getByteBufferWithInfo")] != -1);
+		return call<R>("getByteBufferWithInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::transport::CorbaConnection, typename... Args>
+	auto getConnection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getConnection")] != -1);
+		return call<R>("getConnection", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::protocol::giopmsgheaders::Message, typename... Args>
+	auto getMessageHeader(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMessageHeader")] != -1);
+		return call<R>("getMessageHeader", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setByteBufferWithInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setByteBufferWithInfo")] != -1);
+		return call<R>("setByteBufferWithInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeTo")] != -1);
+		return call<R>("writeTo", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

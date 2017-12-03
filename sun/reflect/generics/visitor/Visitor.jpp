@@ -1,0 +1,35 @@
+#ifndef sun_reflect_generics_visitor_Visitor_HPP
+#define sun_reflect_generics_visitor_Visitor_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::reflect::generics::visitor::Visitor : public jObject<::sun::reflect::generics::visitor::Visitor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_reflect_generics_visitor / "Visitor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::sun::reflect::generics::tree::ClassSignature)>("visitClassSignature"), //
+		jMethod<::jvoid(::sun::reflect::generics::tree::MethodTypeSignature)>("visitMethodTypeSignature"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto visitClassSignature(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("visitClassSignature")] != -1);
+		return call<R>("visitClassSignature", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto visitMethodTypeSignature(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("visitMethodTypeSignature")] != -1);
+		return call<R>("visitMethodTypeSignature", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

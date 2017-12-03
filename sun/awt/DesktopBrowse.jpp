@@ -1,0 +1,43 @@
+#ifndef sun_awt_DesktopBrowse_HPP
+#define sun_awt_DesktopBrowse_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::DesktopBrowse : public jObject<::sun::awt::DesktopBrowse, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "DesktopBrowse";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::net::URL)>("browse"), //
+		jMethod<::sun::awt::DesktopBrowse()>("getInstance"), //
+		jMethod<::jvoid(::sun::awt::DesktopBrowse)>("setInstance"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto browse(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("browse")] != -1);
+		return call<R>("browse", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::awt::DesktopBrowse, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setInstance")] != -1);
+		return scall<R>("setInstance", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

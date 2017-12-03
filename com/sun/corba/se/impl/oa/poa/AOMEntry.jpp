@@ -1,0 +1,112 @@
+#ifndef com_sun_corba_se_impl_oa_poa_AOMEntry_HPP
+#define com_sun_corba_se_impl_oa_poa_AOMEntry_HPP
+
+#include "../../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::impl::oa::poa::AOMEntry : public jObject<::com::sun::corba::se::impl::oa::poa::AOMEntry, ::com::sun::corba::se::spi::orbutil::fsm::FSMImpl> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_impl_oa_poa / "AOMEntry";
+
+	constexpr static Enume field_signatures{
+		jField<::com::sun::corba::se::spi::orbutil::fsm::State>("DESTROYED"), //
+		jField<::com::sun::corba::se::spi::orbutil::fsm::State>("ETH"), //
+		jField<::com::sun::corba::se::spi::orbutil::fsm::State>("ETHP"), //
+		jField<::com::sun::corba::se::spi::orbutil::fsm::State>("INCARN"), //
+		jField<::com::sun::corba::se::spi::orbutil::fsm::State>("INVALID"), //
+		jField<::com::sun::corba::se::spi::orbutil::fsm::State>("VALID"), //
+	};
+
+	template<typename F = ::com::sun::corba::se::spi::orbutil::fsm::State>
+	static auto DESTROYED() {
+		static_assert(field_signatures[jField<F>("DESTROYED")] != -1);
+		return sat<F>("DESTROYED");
+	}
+
+	template<typename F = ::com::sun::corba::se::spi::orbutil::fsm::State>
+	static auto ETH() {
+		static_assert(field_signatures[jField<F>("ETH")] != -1);
+		return sat<F>("ETH");
+	}
+
+	template<typename F = ::com::sun::corba::se::spi::orbutil::fsm::State>
+	static auto ETHP() {
+		static_assert(field_signatures[jField<F>("ETHP")] != -1);
+		return sat<F>("ETHP");
+	}
+
+	template<typename F = ::com::sun::corba::se::spi::orbutil::fsm::State>
+	static auto INCARN() {
+		static_assert(field_signatures[jField<F>("INCARN")] != -1);
+		return sat<F>("INCARN");
+	}
+
+	template<typename F = ::com::sun::corba::se::spi::orbutil::fsm::State>
+	static auto INVALID() {
+		static_assert(field_signatures[jField<F>("INVALID")] != -1);
+		return sat<F>("INVALID");
+	}
+
+	template<typename F = ::com::sun::corba::se::spi::orbutil::fsm::State>
+	static auto VALID() {
+		static_assert(field_signatures[jField<F>("VALID")] != -1);
+		return sat<F>("VALID");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::com::sun::corba::se::impl::oa::poa::POAImpl)>(), //
+		jMethod<::jvoid()>("activateObject"), //
+		jMethod<::jvoid()>("enter"), //
+		jMethod<::jvoid()>("etherealizeComplete"), //
+		jMethod<::jvoid()>("exit"), //
+		jMethod<::jvoid()>("incarnateComplete"), //
+		jMethod<::jvoid()>("incarnateFailure"), //
+		jMethod<::jvoid(::java::lang::Thread)>("startEtherealize"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto activateObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("activateObject")] != -1);
+		return call<R>("activateObject", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto enter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("enter")] != -1);
+		return call<R>("enter", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto etherealizeComplete(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("etherealizeComplete")] != -1);
+		return call<R>("etherealizeComplete", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto exit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("exit")] != -1);
+		return call<R>("exit", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto incarnateComplete(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("incarnateComplete")] != -1);
+		return call<R>("incarnateComplete", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto incarnateFailure(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("incarnateFailure")] != -1);
+		return call<R>("incarnateFailure", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto startEtherealize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("startEtherealize")] != -1);
+		return call<R>("startEtherealize", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,51 @@
+#ifndef sun_security_util_ManifestEntryVerifier_HPP
+#define sun_security_util_ManifestEntryVerifier_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::util::ManifestEntryVerifier : public jObject<::sun::security::util::ManifestEntryVerifier, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_util / "ManifestEntryVerifier";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::util::jar::Manifest)>(), //
+		jMethod<::java::util::jar::JarEntry()>("getEntry"), //
+		jMethod<::jvoid(::java::lang::String, ::java::util::jar::JarEntry)>("setEntry"), //
+		jMethod<::jvoid(::jbyte)>("update"), //
+		jMethod<::jvoid(::jbyte *, ::jint, ::jint)>("update"), //
+		jMethod<::java::security::CodeSigner *(::java::util::Hashtable, ::java::util::Hashtable)>("verify"), //
+	};
+
+	template<typename R = ::java::util::jar::JarEntry, typename... Args>
+	auto getEntry(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEntry")] != -1);
+		return call<R>("getEntry", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setEntry(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setEntry")] != -1);
+		return call<R>("setEntry", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto update(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("update")] != -1);
+		return call<R>("update", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::CodeSigner *, typename... Args>
+	auto verify(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("verify")] != -1);
+		return call<R>("verify", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,65 @@
+#ifndef sun_awt_image_MultiResolutionCachedImage_HPP
+#define sun_awt_image_MultiResolutionCachedImage_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::image::MultiResolutionCachedImage : public jObject<::sun::awt::image::MultiResolutionCachedImage, ::sun::awt::image::AbstractMultiResolutionImage> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_image / "MultiResolutionCachedImage";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::jint, ::java::util::function::BiFunction)>(), //
+		jConstructor<::jvoid(::jint, ::jint, ::java::awt::geom::Dimension2D *, ::java::util::function::BiFunction)>(), //
+		jMethod<::jint(::java::awt::image::ImageObserver)>("getHeight"), //
+		jMethod<::java::lang::Object(::java::lang::String, ::java::awt::image::ImageObserver)>("getProperty"), //
+		jMethod<::java::awt::Image(::jint, ::jint)>("getResolutionVariant"), //
+		jMethod<::java::util::List()>("getResolutionVariants"), //
+		jMethod<::jint(::java::awt::image::ImageObserver)>("getWidth"), //
+		jMethod<::sun::awt::image::MultiResolutionCachedImage(::java::util::function::Function)>("map"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getHeight(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHeight")] != -1);
+		return call<R>("getHeight", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getProperty(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getProperty")] != -1);
+		return call<R>("getProperty", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Image, typename... Args>
+	auto getResolutionVariant(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getResolutionVariant")] != -1);
+		return call<R>("getResolutionVariant", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getResolutionVariants(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getResolutionVariants")] != -1);
+		return call<R>("getResolutionVariants", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getWidth(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getWidth")] != -1);
+		return call<R>("getWidth", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::awt::image::MultiResolutionCachedImage, typename... Args>
+	auto map(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("map")] != -1);
+		return call<R>("map", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

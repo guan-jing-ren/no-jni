@@ -1,0 +1,28 @@
+#ifndef com_sun_nio_sctp_Notification_HPP
+#define com_sun_nio_sctp_Notification_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::nio::sctp::Notification : public jObject<::com::sun::nio::sctp::Notification, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_nio_sctp / "Notification";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::com::sun::nio::sctp::Association()>("association"), //
+	};
+
+	template<typename R = ::com::sun::nio::sctp::Association, typename... Args>
+	auto association(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("association")] != -1);
+		return call<R>("association", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

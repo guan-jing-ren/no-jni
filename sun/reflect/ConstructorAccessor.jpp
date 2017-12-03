@@ -1,0 +1,28 @@
+#ifndef sun_reflect_ConstructorAccessor_HPP
+#define sun_reflect_ConstructorAccessor_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::reflect::ConstructorAccessor : public jObject<::sun::reflect::ConstructorAccessor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_reflect / "ConstructorAccessor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object(::java::lang::Object *)>("newInstance"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto newInstance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newInstance")] != -1);
+		return call<R>("newInstance", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

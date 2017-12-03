@@ -1,0 +1,78 @@
+#ifndef com_sun_corba_se_impl_orbutil_ObjectWriter_HPP
+#define com_sun_corba_se_impl_orbutil_ObjectWriter_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::impl::orbutil::ObjectWriter : public jObject<::com::sun::corba::se::impl::orbutil::ObjectWriter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_impl_orbutil / "ObjectWriter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::jchar)>("append"), //
+		jMethod<::jvoid(::jdouble)>("append"), //
+		jMethod<::jvoid(::jfloat)>("append"), //
+		jMethod<::jvoid(::jint)>("append"), //
+		jMethod<::jvoid(::jlong)>("append"), //
+		jMethod<::jvoid(::java::lang::String)>("append"), //
+		jMethod<::jvoid(::jshort)>("append"), //
+		jMethod<::jvoid(::jboolean)>("append"), //
+		jMethod<::jvoid()>("endElement"), //
+		jMethod<::jvoid()>("endObject"), //
+		jMethod<::jvoid(::java::lang::String)>("endObject"), //
+		jMethod<::com::sun::corba::se::impl::orbutil::ObjectWriter(::jboolean, ::jint, ::jint)>("make"), //
+		jMethod<::jvoid()>("startElement"), //
+		jMethod<::jvoid(::java::lang::Object)>("startObject"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto append(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("append")] != -1);
+		return call<R>("append", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto endElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("endElement")] != -1);
+		return call<R>("endElement", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto endObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("endObject")] != -1);
+		return call<R>("endObject", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::orbutil::ObjectWriter, typename... Args>
+	static auto make(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("make")] != -1);
+		return scall<R>("make", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto startElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("startElement")] != -1);
+		return call<R>("startElement", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto startObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("startObject")] != -1);
+		return call<R>("startObject", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

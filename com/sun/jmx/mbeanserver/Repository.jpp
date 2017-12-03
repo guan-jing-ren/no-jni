@@ -1,0 +1,79 @@
+#ifndef com_sun_jmx_mbeanserver_Repository_HPP
+#define com_sun_jmx_mbeanserver_Repository_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::jmx::mbeanserver::Repository : public jObject<::com::sun::jmx::mbeanserver::Repository, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_jmx_mbeanserver / "Repository";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::jboolean)>(), //
+		jMethod<::jvoid(::javax::management::DynamicMBean, ::javax::management::ObjectName, ::com::sun::jmx::mbeanserver::Repository$RegistrationContext)>("addMBean"), //
+		jMethod<::jboolean(::javax::management::ObjectName)>("contains"), //
+		jMethod<::java::lang::Integer()>("getCount"), //
+		jMethod<::java::lang::String()>("getDefaultDomain"), //
+		jMethod<::java::lang::String *()>("getDomains"), //
+		jMethod<::java::util::Set(::javax::management::ObjectName, ::javax::management::QueryExp)>("query"), //
+		jMethod<::jvoid(::javax::management::ObjectName, ::com::sun::jmx::mbeanserver::Repository$RegistrationContext)>("remove"), //
+		jMethod<::javax::management::DynamicMBean(::javax::management::ObjectName)>("retrieve"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addMBean(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addMBean")] != -1);
+		return call<R>("addMBean", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto contains(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("contains")] != -1);
+		return call<R>("contains", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Integer, typename... Args>
+	auto getCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCount")] != -1);
+		return call<R>("getCount", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDefaultDomain(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDefaultDomain")] != -1);
+		return call<R>("getDefaultDomain", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getDomains(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDomains")] != -1);
+		return call<R>("getDomains", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto query(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("query")] != -1);
+		return call<R>("query", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto remove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::DynamicMBean, typename... Args>
+	auto retrieve(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("retrieve")] != -1);
+		return call<R>("retrieve", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

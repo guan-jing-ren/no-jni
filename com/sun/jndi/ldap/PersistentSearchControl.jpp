@@ -1,0 +1,64 @@
+#ifndef com_sun_jndi_ldap_PersistentSearchControl_HPP
+#define com_sun_jndi_ldap_PersistentSearchControl_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::jndi::ldap::PersistentSearchControl : public jObject<::com::sun::jndi::ldap::PersistentSearchControl, ::com::sun::jndi::ldap::BasicControl> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_jndi_ldap / "PersistentSearchControl";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("ADD"), //
+		jField<::jint>("ANY"), //
+		jField<::jint>("DELETE"), //
+		jField<::jint>("MODIFY"), //
+		jField<::java::lang::String>("OID"), //
+		jField<::jint>("RENAME"), //
+	};
+
+	template<typename F = ::jint>
+	static auto ADD() {
+		static_assert(field_signatures[jField<F>("ADD")] != -1);
+		return sat<F>("ADD");
+	}
+
+	template<typename F = ::jint>
+	static auto ANY() {
+		static_assert(field_signatures[jField<F>("ANY")] != -1);
+		return sat<F>("ANY");
+	}
+
+	template<typename F = ::jint>
+	static auto DELETE() {
+		static_assert(field_signatures[jField<F>("DELETE")] != -1);
+		return sat<F>("DELETE");
+	}
+
+	template<typename F = ::jint>
+	static auto MODIFY() {
+		static_assert(field_signatures[jField<F>("MODIFY")] != -1);
+		return sat<F>("MODIFY");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto OID() {
+		static_assert(field_signatures[jField<F>("OID")] != -1);
+		return sat<F>("OID");
+	}
+
+	template<typename F = ::jint>
+	static auto RENAME() {
+		static_assert(field_signatures[jField<F>("RENAME")] != -1);
+		return sat<F>("RENAME");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint, ::jboolean, ::jboolean, ::jboolean)>(), //
+	};
+
+};
+
+#endif

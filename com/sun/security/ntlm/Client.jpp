@@ -1,0 +1,58 @@
+#ifndef com_sun_security_ntlm_Client_HPP
+#define com_sun_security_ntlm_Client_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::security::ntlm::Client : public jObject<::com::sun::security::ntlm::Client, ::com::sun::security::ntlm::NTLM> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_security_ntlm / "Client";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::jchar *)>(), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::Object *)>("debug"), //
+		jMethod<::jvoid(::jbyte *)>("debug"), //
+		jMethod<::jvoid()>("dispose"), //
+		jMethod<::java::lang::String()>("getDomain"), //
+		jMethod<::jbyte *()>("type1"), //
+		jMethod<::jbyte *(::jbyte *, ::jbyte *)>("type3"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto debug(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("debug")] != -1);
+		return call<R>("debug", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispose(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dispose")] != -1);
+		return call<R>("dispose", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDomain(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDomain")] != -1);
+		return call<R>("getDomain", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto type1(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("type1")] != -1);
+		return call<R>("type1", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto type3(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("type3")] != -1);
+		return call<R>("type3", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,76 @@
+#ifndef com_sun_media_sound_ModelConnectionBlock_HPP
+#define com_sun_media_sound_ModelConnectionBlock_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::media::sound::ModelConnectionBlock : public jObject<::com::sun::media::sound::ModelConnectionBlock, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_media_sound / "ModelConnectionBlock";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jdouble, ::com::sun::media::sound::ModelDestination)>(), //
+		jConstructor<::jvoid(::com::sun::media::sound::ModelSource, ::jdouble, ::com::sun::media::sound::ModelDestination)>(), //
+		jConstructor<::jvoid(::com::sun::media::sound::ModelSource, ::com::sun::media::sound::ModelDestination)>(), //
+		jConstructor<::jvoid(::com::sun::media::sound::ModelSource, ::com::sun::media::sound::ModelSource, ::jdouble, ::com::sun::media::sound::ModelDestination)>(), //
+		jConstructor<::jvoid(::com::sun::media::sound::ModelSource, ::com::sun::media::sound::ModelSource, ::com::sun::media::sound::ModelDestination)>(), //
+		jMethod<::jvoid(::com::sun::media::sound::ModelSource)>("addSource"), //
+		jMethod<::com::sun::media::sound::ModelDestination()>("getDestination"), //
+		jMethod<::jdouble()>("getScale"), //
+		jMethod<::com::sun::media::sound::ModelSource *()>("getSources"), //
+		jMethod<::jvoid(::com::sun::media::sound::ModelDestination)>("setDestination"), //
+		jMethod<::jvoid(::jdouble)>("setScale"), //
+		jMethod<::jvoid(::com::sun::media::sound::ModelSource *)>("setSources"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addSource(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addSource")] != -1);
+		return call<R>("addSource", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::media::sound::ModelDestination, typename... Args>
+	auto getDestination(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDestination")] != -1);
+		return call<R>("getDestination", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	auto getScale(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getScale")] != -1);
+		return call<R>("getScale", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::media::sound::ModelSource *, typename... Args>
+	auto getSources(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSources")] != -1);
+		return call<R>("getSources", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDestination(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setDestination")] != -1);
+		return call<R>("setDestination", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setScale(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setScale")] != -1);
+		return call<R>("setScale", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setSources(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setSources")] != -1);
+		return call<R>("setSources", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

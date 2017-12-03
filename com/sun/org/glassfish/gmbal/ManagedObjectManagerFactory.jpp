@@ -1,0 +1,49 @@
+#ifndef com_sun_org_glassfish_gmbal_ManagedObjectManagerFactory_HPP
+#define com_sun_org_glassfish_gmbal_ManagedObjectManagerFactory_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::org::glassfish::gmbal::ManagedObjectManagerFactory : public jObject<::com::sun::org::glassfish::gmbal::ManagedObjectManagerFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_org_glassfish_gmbal / "ManagedObjectManagerFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::com::sun::org::glassfish::gmbal::ManagedObjectManager(::javax::management::ObjectName)>("createFederated"), //
+		jMethod<::com::sun::org::glassfish::gmbal::ManagedObjectManager()>("createNOOP"), //
+		jMethod<::com::sun::org::glassfish::gmbal::ManagedObjectManager(::java::lang::String)>("createStandalone"), //
+		jMethod<::java::lang::reflect::Method(::java::lang::Class, ::java::lang::String, ::java::lang::Class *)>("getMethod"), //
+	};
+
+	template<typename R = ::com::sun::org::glassfish::gmbal::ManagedObjectManager, typename... Args>
+	static auto createFederated(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createFederated")] != -1);
+		return scall<R>("createFederated", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::org::glassfish::gmbal::ManagedObjectManager, typename... Args>
+	static auto createNOOP(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createNOOP")] != -1);
+		return scall<R>("createNOOP", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::org::glassfish::gmbal::ManagedObjectManager, typename... Args>
+	static auto createStandalone(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createStandalone")] != -1);
+		return scall<R>("createStandalone", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Method, typename... Args>
+	static auto getMethod(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMethod")] != -1);
+		return scall<R>("getMethod", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

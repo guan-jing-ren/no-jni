@@ -1,0 +1,64 @@
+#ifndef sun_invoke_util_VerifyType_HPP
+#define sun_invoke_util_VerifyType_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::invoke::util::VerifyType : public jObject<::sun::invoke::util::VerifyType, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_invoke_util / "VerifyType";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint(::java::lang::Class, ::java::lang::Class)>("canPassUnchecked"), //
+		jMethod<::jboolean(::java::lang::Class, ::java::lang::Class, ::jboolean)>("isNullConversion"), //
+		jMethod<::jboolean(::java::lang::invoke::MethodType, ::java::lang::invoke::MethodType, ::jboolean)>("isNullConversion"), //
+		jMethod<::jboolean(::java::lang::Class, ::java::lang::Class)>("isNullReferenceConversion"), //
+		jMethod<::jboolean(::java::lang::Class)>("isNullType"), //
+		jMethod<::jboolean(::java::lang::Class)>("isSpreadArgType"), //
+		jMethod<::java::lang::Class(::java::lang::Class, ::jint)>("spreadArgElementType"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	static auto canPassUnchecked(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("canPassUnchecked")] != -1);
+		return scall<R>("canPassUnchecked", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isNullConversion(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isNullConversion")] != -1);
+		return scall<R>("isNullConversion", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isNullReferenceConversion(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isNullReferenceConversion")] != -1);
+		return scall<R>("isNullReferenceConversion", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isNullType(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isNullType")] != -1);
+		return scall<R>("isNullType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isSpreadArgType(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSpreadArgType")] != -1);
+		return scall<R>("isSpreadArgType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	static auto spreadArgElementType(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("spreadArgElementType")] != -1);
+		return scall<R>("spreadArgElementType", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

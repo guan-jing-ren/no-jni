@@ -1,0 +1,28 @@
+#ifndef sun_security_provider_certpath_CertPathHelper_HPP
+#define sun_security_provider_certpath_CertPathHelper_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::security::provider::certpath::CertPathHelper : public jObject<::sun::security::provider::certpath::CertPathHelper, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_provider_certpath / "CertPathHelper";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::security::cert::X509CRLSelector, ::java::util::Date, ::jlong)>("setDateAndTime"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setDateAndTime(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setDateAndTime")] != -1);
+		return scall<R>("setDateAndTime", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

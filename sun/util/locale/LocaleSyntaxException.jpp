@@ -1,0 +1,30 @@
+#ifndef sun_util_locale_LocaleSyntaxException_HPP
+#define sun_util_locale_LocaleSyntaxException_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::util::locale::LocaleSyntaxException : public jObject<::sun::util::locale::LocaleSyntaxException, ::java::lang::Exception> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_util_locale / "LocaleSyntaxException";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::jint)>(), //
+		jMethod<::jint()>("getErrorIndex"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getErrorIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getErrorIndex")] != -1);
+		return call<R>("getErrorIndex", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

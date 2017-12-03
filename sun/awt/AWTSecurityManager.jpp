@@ -1,0 +1,29 @@
+#ifndef sun_awt_AWTSecurityManager_HPP
+#define sun_awt_AWTSecurityManager_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::AWTSecurityManager : public jObject<::sun::awt::AWTSecurityManager, ::java::lang::SecurityManager> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "AWTSecurityManager";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::sun::awt::AppContext()>("getAppContext"), //
+	};
+
+	template<typename R = ::sun::awt::AppContext, typename... Args>
+	auto getAppContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAppContext")] != -1);
+		return call<R>("getAppContext", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

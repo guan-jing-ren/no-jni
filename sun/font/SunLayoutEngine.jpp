@@ -1,0 +1,43 @@
+#ifndef sun_font_SunLayoutEngine_HPP
+#define sun_font_SunLayoutEngine_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::SunLayoutEngine : public jObject<::sun::font::SunLayoutEngine, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "SunLayoutEngine";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::font::GlyphLayout$LayoutEngine(::sun::font::Font2D, ::jint, ::jint)>("getEngine"), //
+		jMethod<::sun::font::GlyphLayout$LayoutEngine(::sun::font::GlyphLayout$LayoutEngineKey)>("getEngine"), //
+		jMethod<::sun::font::GlyphLayout$LayoutEngineFactory()>("instance"), //
+		jMethod<::jvoid(::sun::font::FontStrikeDesc, ::jfloat *, ::jint, ::jint, ::sun::font::TextRecord, ::jint, ::java::awt::geom::Point2D$Float, ::sun::font::GlyphLayout$GVData)>("layout"), //
+	};
+
+	template<typename R = ::sun::font::GlyphLayout$LayoutEngine, typename... Args>
+	auto getEngine(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEngine")] != -1);
+		return call<R>("getEngine", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::GlyphLayout$LayoutEngineFactory, typename... Args>
+	static auto instance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("instance")] != -1);
+		return scall<R>("instance", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto layout(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("layout")] != -1);
+		return call<R>("layout", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

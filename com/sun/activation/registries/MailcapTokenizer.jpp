@@ -1,0 +1,105 @@
+#ifndef com_sun_activation_registries_MailcapTokenizer_HPP
+#define com_sun_activation_registries_MailcapTokenizer_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::activation::registries::MailcapTokenizer : public jObject<::com::sun::activation::registries::MailcapTokenizer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_activation_registries / "MailcapTokenizer";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("EOI_TOKEN"), //
+		jField<::jint>("EQUALS_TOKEN"), //
+		jField<::jint>("SEMICOLON_TOKEN"), //
+		jField<::jint>("SLASH_TOKEN"), //
+		jField<::jint>("START_TOKEN"), //
+		jField<::jint>("STRING_TOKEN"), //
+		jField<::jint>("UNKNOWN_TOKEN"), //
+	};
+
+	template<typename F = ::jint>
+	static auto EOI_TOKEN() {
+		static_assert(field_signatures[jField<F>("EOI_TOKEN")] != -1);
+		return sat<F>("EOI_TOKEN");
+	}
+
+	template<typename F = ::jint>
+	static auto EQUALS_TOKEN() {
+		static_assert(field_signatures[jField<F>("EQUALS_TOKEN")] != -1);
+		return sat<F>("EQUALS_TOKEN");
+	}
+
+	template<typename F = ::jint>
+	static auto SEMICOLON_TOKEN() {
+		static_assert(field_signatures[jField<F>("SEMICOLON_TOKEN")] != -1);
+		return sat<F>("SEMICOLON_TOKEN");
+	}
+
+	template<typename F = ::jint>
+	static auto SLASH_TOKEN() {
+		static_assert(field_signatures[jField<F>("SLASH_TOKEN")] != -1);
+		return sat<F>("SLASH_TOKEN");
+	}
+
+	template<typename F = ::jint>
+	static auto START_TOKEN() {
+		static_assert(field_signatures[jField<F>("START_TOKEN")] != -1);
+		return sat<F>("START_TOKEN");
+	}
+
+	template<typename F = ::jint>
+	static auto STRING_TOKEN() {
+		static_assert(field_signatures[jField<F>("STRING_TOKEN")] != -1);
+		return sat<F>("STRING_TOKEN");
+	}
+
+	template<typename F = ::jint>
+	static auto UNKNOWN_TOKEN() {
+		static_assert(field_signatures[jField<F>("UNKNOWN_TOKEN")] != -1);
+		return sat<F>("UNKNOWN_TOKEN");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jMethod<::jint()>("getCurrentToken"), //
+		jMethod<::java::lang::String()>("getCurrentTokenValue"), //
+		jMethod<::java::lang::String(::jint)>("nameForToken"), //
+		jMethod<::jint()>("nextToken"), //
+		jMethod<::jvoid(::jboolean)>("setIsAutoquoting"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getCurrentToken(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCurrentToken")] != -1);
+		return call<R>("getCurrentToken", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getCurrentTokenValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCurrentTokenValue")] != -1);
+		return call<R>("getCurrentTokenValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto nameForToken(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("nameForToken")] != -1);
+		return scall<R>("nameForToken", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto nextToken(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("nextToken")] != -1);
+		return call<R>("nextToken", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setIsAutoquoting(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setIsAutoquoting")] != -1);
+		return call<R>("setIsAutoquoting", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

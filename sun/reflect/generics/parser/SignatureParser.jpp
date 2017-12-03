@@ -1,0 +1,49 @@
+#ifndef sun_reflect_generics_parser_SignatureParser_HPP
+#define sun_reflect_generics_parser_SignatureParser_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::reflect::generics::parser::SignatureParser : public jObject<::sun::reflect::generics::parser::SignatureParser, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_reflect_generics_parser / "SignatureParser";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::reflect::generics::parser::SignatureParser()>("make"), //
+		jMethod<::sun::reflect::generics::tree::ClassSignature(::java::lang::String)>("parseClassSig"), //
+		jMethod<::sun::reflect::generics::tree::MethodTypeSignature(::java::lang::String)>("parseMethodSig"), //
+		jMethod<::sun::reflect::generics::tree::TypeSignature(::java::lang::String)>("parseTypeSig"), //
+	};
+
+	template<typename R = ::sun::reflect::generics::parser::SignatureParser, typename... Args>
+	static auto make(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("make")] != -1);
+		return scall<R>("make", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::reflect::generics::tree::ClassSignature, typename... Args>
+	auto parseClassSig(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("parseClassSig")] != -1);
+		return call<R>("parseClassSig", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::reflect::generics::tree::MethodTypeSignature, typename... Args>
+	auto parseMethodSig(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("parseMethodSig")] != -1);
+		return call<R>("parseMethodSig", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::reflect::generics::tree::TypeSignature, typename... Args>
+	auto parseTypeSig(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("parseTypeSig")] != -1);
+		return call<R>("parseTypeSig", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,57 @@
+#ifndef com_sun_corba_se_impl_javax_rmi_PortableRemoteObject_HPP
+#define com_sun_corba_se_impl_javax_rmi_PortableRemoteObject_HPP
+
+#include "../../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::impl::javax::rmi::PortableRemoteObject : public jObject<::com::sun::corba::se::impl::javax::rmi::PortableRemoteObject, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_impl_javax_rmi / "PortableRemoteObject";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::rmi::Remote, ::java::rmi::Remote)>("connect"), //
+		jMethod<::jvoid(::java::rmi::Remote)>("exportObject"), //
+		jMethod<::java::lang::Object(::java::lang::Object, ::java::lang::Class)>("narrow"), //
+		jMethod<::java::rmi::Remote(::java::rmi::Remote)>("toStub"), //
+		jMethod<::jvoid(::java::rmi::Remote)>("unexportObject"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto connect(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("connect")] != -1);
+		return call<R>("connect", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto exportObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("exportObject")] != -1);
+		return call<R>("exportObject", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto narrow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("narrow")] != -1);
+		return call<R>("narrow", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::Remote, typename... Args>
+	auto toStub(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toStub")] != -1);
+		return call<R>("toStub", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto unexportObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unexportObject")] != -1);
+		return call<R>("unexportObject", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

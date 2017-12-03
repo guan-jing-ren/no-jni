@@ -1,0 +1,49 @@
+#ifndef sun_management_HotspotRuntimeMBean_HPP
+#define sun_management_HotspotRuntimeMBean_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::management::HotspotRuntimeMBean : public jObject<::sun::management::HotspotRuntimeMBean, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_management / "HotspotRuntimeMBean";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::List()>("getInternalRuntimeCounters"), //
+		jMethod<::jlong()>("getSafepointCount"), //
+		jMethod<::jlong()>("getSafepointSyncTime"), //
+		jMethod<::jlong()>("getTotalSafepointTime"), //
+	};
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getInternalRuntimeCounters(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInternalRuntimeCounters")] != -1);
+		return call<R>("getInternalRuntimeCounters", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getSafepointCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSafepointCount")] != -1);
+		return call<R>("getSafepointCount", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getSafepointSyncTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSafepointSyncTime")] != -1);
+		return call<R>("getSafepointSyncTime", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getTotalSafepointTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTotalSafepointTime")] != -1);
+		return call<R>("getTotalSafepointTime", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

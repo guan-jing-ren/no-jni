@@ -1,0 +1,66 @@
+#ifndef sun_security_util_ECUtil_HPP
+#define sun_security_util_ECUtil_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::util::ECUtil : public jObject<::sun::security::util::ECUtil, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_util / "ECUtil";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::security::spec::ECPoint(::jbyte *, ::java::security::spec::EllipticCurve)>("decodePoint"), //
+		jMethod<::jbyte *(::java::security::Provider, ::java::security::spec::ECParameterSpec)>("encodeECParameterSpec"), //
+		jMethod<::jbyte *(::java::security::spec::ECPoint, ::java::security::spec::EllipticCurve)>("encodePoint"), //
+		jMethod<::java::lang::String(::java::security::Provider, ::java::security::spec::ECParameterSpec)>("getCurveName"), //
+		jMethod<::java::security::spec::ECParameterSpec(::java::security::Provider, ::jint)>("getECParameterSpec"), //
+		jMethod<::java::security::spec::ECParameterSpec(::java::security::Provider, ::java::lang::String)>("getECParameterSpec"), //
+		jMethod<::java::security::spec::ECParameterSpec(::java::security::Provider, ::java::security::spec::ECParameterSpec)>("getECParameterSpec"), //
+		jMethod<::java::security::spec::ECParameterSpec(::java::security::Provider, ::jbyte *)>("getECParameterSpec"), //
+		jMethod<::jbyte *(::jbyte *)>("trimZeroes"), //
+	};
+
+	template<typename R = ::java::security::spec::ECPoint, typename... Args>
+	static auto decodePoint(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("decodePoint")] != -1);
+		return scall<R>("decodePoint", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	static auto encodeECParameterSpec(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encodeECParameterSpec")] != -1);
+		return scall<R>("encodeECParameterSpec", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	static auto encodePoint(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encodePoint")] != -1);
+		return scall<R>("encodePoint", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getCurveName(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCurveName")] != -1);
+		return scall<R>("getCurveName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::spec::ECParameterSpec, typename... Args>
+	static auto getECParameterSpec(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getECParameterSpec")] != -1);
+		return scall<R>("getECParameterSpec", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	static auto trimZeroes(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("trimZeroes")] != -1);
+		return scall<R>("trimZeroes", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

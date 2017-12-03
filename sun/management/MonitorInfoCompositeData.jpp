@@ -1,0 +1,70 @@
+#ifndef sun_management_MonitorInfoCompositeData_HPP
+#define sun_management_MonitorInfoCompositeData_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::management::MonitorInfoCompositeData : public jObject<::sun::management::MonitorInfoCompositeData, ::sun::management::LazyCompositeData> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_management / "MonitorInfoCompositeData";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String(::javax::management::openmbean::CompositeData)>("getClassName"), //
+		jMethod<::jint(::javax::management::openmbean::CompositeData)>("getIdentityHashCode"), //
+		jMethod<::jint(::javax::management::openmbean::CompositeData)>("getLockedStackDepth"), //
+		jMethod<::java::lang::StackTraceElement(::javax::management::openmbean::CompositeData)>("getLockedStackFrame"), //
+		jMethod<::java::lang::management::MonitorInfo()>("getMonitorInfo"), //
+		jMethod<::javax::management::openmbean::CompositeData(::java::lang::management::MonitorInfo)>("toCompositeData"), //
+		jMethod<::jvoid(::javax::management::openmbean::CompositeData)>("validateCompositeData"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getClassName(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClassName")] != -1);
+		return scall<R>("getClassName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto getIdentityHashCode(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIdentityHashCode")] != -1);
+		return scall<R>("getIdentityHashCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto getLockedStackDepth(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLockedStackDepth")] != -1);
+		return scall<R>("getLockedStackDepth", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::StackTraceElement, typename... Args>
+	static auto getLockedStackFrame(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLockedStackFrame")] != -1);
+		return scall<R>("getLockedStackFrame", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::management::MonitorInfo, typename... Args>
+	auto getMonitorInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMonitorInfo")] != -1);
+		return call<R>("getMonitorInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::openmbean::CompositeData, typename... Args>
+	static auto toCompositeData(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toCompositeData")] != -1);
+		return scall<R>("toCompositeData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto validateCompositeData(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("validateCompositeData")] != -1);
+		return scall<R>("validateCompositeData", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

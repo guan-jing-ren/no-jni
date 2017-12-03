@@ -1,0 +1,29 @@
+#ifndef com_sun_imageio_plugins_common_I18N_HPP
+#define com_sun_imageio_plugins_common_I18N_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::imageio::plugins::common::I18N : public jObject<::com::sun::imageio::plugins::common::I18N, ::com::sun::imageio::plugins::common::I18NImpl> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_imageio_plugins_common / "I18N";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::String(::java::lang::String)>("getString"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getString(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getString")] != -1);
+		return scall<R>("getString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,84 @@
+#ifndef sun_awt_FontDescriptor_HPP
+#define sun_awt_FontDescriptor_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::FontDescriptor : public jObject<::sun::awt::FontDescriptor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "FontDescriptor";
+
+	constexpr static Enume field_signatures{
+		jField<::java::nio::charset::CharsetEncoder>("encoder"), //
+		jField<::java::nio::charset::CharsetEncoder>("unicodeEncoder"), //
+	};
+
+	template<typename F = ::java::nio::charset::CharsetEncoder>
+	auto encoder() const {
+		static_assert(field_signatures[jField<F>("encoder")] != -1);
+		return at<F>("encoder");
+	}
+
+	template<typename F = ::java::nio::charset::CharsetEncoder>
+	auto unicodeEncoder() const {
+		static_assert(field_signatures[jField<F>("unicodeEncoder")] != -1);
+		return at<F>("unicodeEncoder");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::nio::charset::CharsetEncoder, ::jint *)>(), //
+		jMethod<::jint *()>("getExclusionRanges"), //
+		jMethod<::java::nio::charset::CharsetEncoder()>("getFontCharsetEncoder"), //
+		jMethod<::java::lang::String()>("getFontCharsetName"), //
+		jMethod<::java::lang::String()>("getNativeName"), //
+		jMethod<::jboolean(::jchar)>("isExcluded"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::jboolean()>("useUnicode"), //
+	};
+
+	template<typename R = ::jint *, typename... Args>
+	auto getExclusionRanges(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getExclusionRanges")] != -1);
+		return call<R>("getExclusionRanges", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::charset::CharsetEncoder, typename... Args>
+	auto getFontCharsetEncoder(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFontCharsetEncoder")] != -1);
+		return call<R>("getFontCharsetEncoder", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getFontCharsetName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFontCharsetName")] != -1);
+		return call<R>("getFontCharsetName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getNativeName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNativeName")] != -1);
+		return call<R>("getNativeName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isExcluded(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isExcluded")] != -1);
+		return call<R>("isExcluded", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto useUnicode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("useUnicode")] != -1);
+		return call<R>("useUnicode", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

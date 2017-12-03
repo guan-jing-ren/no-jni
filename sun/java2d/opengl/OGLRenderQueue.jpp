@@ -1,0 +1,63 @@
+#ifndef sun_java2d_opengl_OGLRenderQueue_HPP
+#define sun_java2d_opengl_OGLRenderQueue_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::opengl::OGLRenderQueue : public jObject<::sun::java2d::opengl::OGLRenderQueue, ::sun::java2d::pipe::RenderQueue> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_opengl / "OGLRenderQueue";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::jlong)>("disposeGraphicsConfig"), //
+		jMethod<::jvoid(::java::lang::Runnable)>("flushAndInvokeNow"), //
+		jMethod<::jvoid()>("flushNow"), //
+		jMethod<::sun::java2d::opengl::OGLRenderQueue()>("getInstance"), //
+		jMethod<::jboolean()>("isQueueFlusherThread"), //
+		jMethod<::jvoid()>("sync"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto disposeGraphicsConfig(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("disposeGraphicsConfig")] != -1);
+		return scall<R>("disposeGraphicsConfig", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto flushAndInvokeNow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("flushAndInvokeNow")] != -1);
+		return call<R>("flushAndInvokeNow", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto flushNow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("flushNow")] != -1);
+		return call<R>("flushNow", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::opengl::OGLRenderQueue, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isQueueFlusherThread(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isQueueFlusherThread")] != -1);
+		return scall<R>("isQueueFlusherThread", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto sync(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("sync")] != -1);
+		return scall<R>("sync", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

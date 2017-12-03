@@ -1,0 +1,49 @@
+#ifndef sun_awt_CharsetString_HPP
+#define sun_awt_CharsetString_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::CharsetString : public jObject<::sun::awt::CharsetString, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "CharsetString";
+
+	constexpr static Enume field_signatures{
+		jField<::jchar *>("charsetChars"), //
+		jField<::sun::awt::FontDescriptor>("fontDescriptor"), //
+		jField<::jint>("length"), //
+		jField<::jint>("offset"), //
+	};
+
+	template<typename F = ::jchar *>
+	auto charsetChars() const {
+		static_assert(field_signatures[jField<F>("charsetChars")] != -1);
+		return at<F>("charsetChars");
+	}
+
+	template<typename F = ::sun::awt::FontDescriptor>
+	auto fontDescriptor() const {
+		static_assert(field_signatures[jField<F>("fontDescriptor")] != -1);
+		return at<F>("fontDescriptor");
+	}
+
+	template<typename F = ::jint>
+	auto length() const {
+		static_assert(field_signatures[jField<F>("length")] != -1);
+		return at<F>("length");
+	}
+
+	template<typename F = ::jint>
+	auto offset() const {
+		static_assert(field_signatures[jField<F>("offset")] != -1);
+		return at<F>("offset");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jchar *, ::jint, ::jint, ::sun::awt::FontDescriptor)>(), //
+	};
+
+};
+
+#endif

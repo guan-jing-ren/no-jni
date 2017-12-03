@@ -1,0 +1,105 @@
+#ifndef sun_swing_plaf_synth_Paint9Painter_HPP
+#define sun_swing_plaf_synth_Paint9Painter_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::swing::plaf::synth::Paint9Painter : public jObject<::sun::swing::plaf::synth::Paint9Painter, ::sun::swing::CachedPainter> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_swing_plaf_synth / "Paint9Painter";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("PAINT_ALL"), //
+		jField<::jint>("PAINT_BOTTOM"), //
+		jField<::jint>("PAINT_BOTTOM_LEFT"), //
+		jField<::jint>("PAINT_BOTTOM_RIGHT"), //
+		jField<::jint>("PAINT_CENTER"), //
+		jField<::jint>("PAINT_LEFT"), //
+		jField<::jint>("PAINT_RIGHT"), //
+		jField<::jint>("PAINT_TOP"), //
+		jField<::jint>("PAINT_TOP_LEFT"), //
+		jField<::jint>("PAINT_TOP_RIGHT"), //
+	};
+
+	template<typename F = ::jint>
+	static auto PAINT_ALL() {
+		static_assert(field_signatures[jField<F>("PAINT_ALL")] != -1);
+		return sat<F>("PAINT_ALL");
+	}
+
+	template<typename F = ::jint>
+	static auto PAINT_BOTTOM() {
+		static_assert(field_signatures[jField<F>("PAINT_BOTTOM")] != -1);
+		return sat<F>("PAINT_BOTTOM");
+	}
+
+	template<typename F = ::jint>
+	static auto PAINT_BOTTOM_LEFT() {
+		static_assert(field_signatures[jField<F>("PAINT_BOTTOM_LEFT")] != -1);
+		return sat<F>("PAINT_BOTTOM_LEFT");
+	}
+
+	template<typename F = ::jint>
+	static auto PAINT_BOTTOM_RIGHT() {
+		static_assert(field_signatures[jField<F>("PAINT_BOTTOM_RIGHT")] != -1);
+		return sat<F>("PAINT_BOTTOM_RIGHT");
+	}
+
+	template<typename F = ::jint>
+	static auto PAINT_CENTER() {
+		static_assert(field_signatures[jField<F>("PAINT_CENTER")] != -1);
+		return sat<F>("PAINT_CENTER");
+	}
+
+	template<typename F = ::jint>
+	static auto PAINT_LEFT() {
+		static_assert(field_signatures[jField<F>("PAINT_LEFT")] != -1);
+		return sat<F>("PAINT_LEFT");
+	}
+
+	template<typename F = ::jint>
+	static auto PAINT_RIGHT() {
+		static_assert(field_signatures[jField<F>("PAINT_RIGHT")] != -1);
+		return sat<F>("PAINT_RIGHT");
+	}
+
+	template<typename F = ::jint>
+	static auto PAINT_TOP() {
+		static_assert(field_signatures[jField<F>("PAINT_TOP")] != -1);
+		return sat<F>("PAINT_TOP");
+	}
+
+	template<typename F = ::jint>
+	static auto PAINT_TOP_LEFT() {
+		static_assert(field_signatures[jField<F>("PAINT_TOP_LEFT")] != -1);
+		return sat<F>("PAINT_TOP_LEFT");
+	}
+
+	template<typename F = ::jint>
+	static auto PAINT_TOP_RIGHT() {
+		static_assert(field_signatures[jField<F>("PAINT_TOP_RIGHT")] != -1);
+		return sat<F>("PAINT_TOP_RIGHT");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint)>(), //
+		jMethod<::jvoid(::java::awt::Component, ::java::awt::Graphics, ::jint, ::jint, ::jint, ::jint, ::java::awt::Image, ::java::awt::Insets, ::java::awt::Insets, ::sun::swing::plaf::synth::Paint9Painter$PaintType, ::jint)>("paint"), //
+		jMethod<::jboolean(::java::awt::Image)>("validImage"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto paint(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("paint")] != -1);
+		return call<R>("paint", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto validImage(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("validImage")] != -1);
+		return scall<R>("validImage", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

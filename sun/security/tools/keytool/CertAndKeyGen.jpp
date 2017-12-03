@@ -1,0 +1,74 @@
+#ifndef sun_security_tools_keytool_CertAndKeyGen_HPP
+#define sun_security_tools_keytool_CertAndKeyGen_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::security::tools::keytool::CertAndKeyGen : public jObject<::sun::security::tools::keytool::CertAndKeyGen, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_tools_keytool / "CertAndKeyGen";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::String)>(), //
+		jMethod<::jvoid(::jint)>("generate"), //
+		jMethod<::sun::security::pkcs10::PKCS10(::sun::security::x509::X500Name)>("getCertRequest"), //
+		jMethod<::java::security::PrivateKey()>("getPrivateKey"), //
+		jMethod<::sun::security::x509::X509Key()>("getPublicKey"), //
+		jMethod<::java::security::PublicKey()>("getPublicKeyAnyway"), //
+		jMethod<::java::security::cert::X509Certificate(::sun::security::x509::X500Name, ::jlong)>("getSelfCertificate"), //
+		jMethod<::java::security::cert::X509Certificate(::sun::security::x509::X500Name, ::java::util::Date, ::jlong)>("getSelfCertificate"), //
+		jMethod<::java::security::cert::X509Certificate(::sun::security::x509::X500Name, ::java::util::Date, ::jlong, ::sun::security::x509::CertificateExtensions)>("getSelfCertificate"), //
+		jMethod<::jvoid(::java::security::SecureRandom)>("setRandom"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto generate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("generate")] != -1);
+		return call<R>("generate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::pkcs10::PKCS10, typename... Args>
+	auto getCertRequest(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCertRequest")] != -1);
+		return call<R>("getCertRequest", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::PrivateKey, typename... Args>
+	auto getPrivateKey(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPrivateKey")] != -1);
+		return call<R>("getPrivateKey", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::X509Key, typename... Args>
+	auto getPublicKey(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPublicKey")] != -1);
+		return call<R>("getPublicKey", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::PublicKey, typename... Args>
+	auto getPublicKeyAnyway(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPublicKeyAnyway")] != -1);
+		return call<R>("getPublicKeyAnyway", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::X509Certificate, typename... Args>
+	auto getSelfCertificate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSelfCertificate")] != -1);
+		return call<R>("getSelfCertificate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setRandom(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setRandom")] != -1);
+		return call<R>("setRandom", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

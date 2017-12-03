@@ -1,0 +1,36 @@
+#ifndef sun_net_idn_Punycode_HPP
+#define sun_net_idn_Punycode_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::net::idn::Punycode : public jObject<::sun::net::idn::Punycode, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_net_idn / "Punycode";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::StringBuffer(::java::lang::StringBuffer, ::jboolean *)>("decode"), //
+		jMethod<::java::lang::StringBuffer(::java::lang::StringBuffer, ::jboolean *)>("encode"), //
+	};
+
+	template<typename R = ::java::lang::StringBuffer, typename... Args>
+	static auto decode(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("decode")] != -1);
+		return scall<R>("decode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::StringBuffer, typename... Args>
+	static auto encode(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encode")] != -1);
+		return scall<R>("encode", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

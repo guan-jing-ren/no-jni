@@ -1,0 +1,80 @@
+#ifndef sun_security_rsa_RSAPadding_HPP
+#define sun_security_rsa_RSAPadding_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::rsa::RSAPadding : public jObject<::sun::security::rsa::RSAPadding, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_rsa / "RSAPadding";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("PAD_BLOCKTYPE_1"), //
+		jField<::jint>("PAD_BLOCKTYPE_2"), //
+		jField<::jint>("PAD_NONE"), //
+		jField<::jint>("PAD_OAEP_MGF1"), //
+	};
+
+	template<typename F = ::jint>
+	static auto PAD_BLOCKTYPE_1() {
+		static_assert(field_signatures[jField<F>("PAD_BLOCKTYPE_1")] != -1);
+		return sat<F>("PAD_BLOCKTYPE_1");
+	}
+
+	template<typename F = ::jint>
+	static auto PAD_BLOCKTYPE_2() {
+		static_assert(field_signatures[jField<F>("PAD_BLOCKTYPE_2")] != -1);
+		return sat<F>("PAD_BLOCKTYPE_2");
+	}
+
+	template<typename F = ::jint>
+	static auto PAD_NONE() {
+		static_assert(field_signatures[jField<F>("PAD_NONE")] != -1);
+		return sat<F>("PAD_NONE");
+	}
+
+	template<typename F = ::jint>
+	static auto PAD_OAEP_MGF1() {
+		static_assert(field_signatures[jField<F>("PAD_OAEP_MGF1")] != -1);
+		return sat<F>("PAD_OAEP_MGF1");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::security::rsa::RSAPadding(::jint, ::jint)>("getInstance"), //
+		jMethod<::sun::security::rsa::RSAPadding(::jint, ::jint, ::java::security::SecureRandom)>("getInstance"), //
+		jMethod<::sun::security::rsa::RSAPadding(::jint, ::jint, ::java::security::SecureRandom, ::javax::crypto::spec::OAEPParameterSpec)>("getInstance"), //
+		jMethod<::jint()>("getMaxDataSize"), //
+		jMethod<::jbyte *(::jbyte *)>("pad"), //
+		jMethod<::jbyte *(::jbyte *, ::jint, ::jint)>("pad"), //
+		jMethod<::jbyte *(::jbyte *)>("unpad"), //
+		jMethod<::jbyte *(::jbyte *, ::jint, ::jint)>("unpad"), //
+	};
+
+	template<typename R = ::sun::security::rsa::RSAPadding, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getMaxDataSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMaxDataSize")] != -1);
+		return call<R>("getMaxDataSize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto pad(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("pad")] != -1);
+		return call<R>("pad", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto unpad(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unpad")] != -1);
+		return call<R>("unpad", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

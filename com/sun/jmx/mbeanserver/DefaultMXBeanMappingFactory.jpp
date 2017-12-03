@@ -1,0 +1,43 @@
+#ifndef com_sun_jmx_mbeanserver_DefaultMXBeanMappingFactory_HPP
+#define com_sun_jmx_mbeanserver_DefaultMXBeanMappingFactory_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::jmx::mbeanserver::DefaultMXBeanMappingFactory : public jObject<::com::sun::jmx::mbeanserver::DefaultMXBeanMappingFactory, ::com::sun::jmx::mbeanserver::MXBeanMappingFactory> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_jmx_mbeanserver / "DefaultMXBeanMappingFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::String(::java::lang::String)>("decapitalize"), //
+		jMethod<::com::sun::jmx::mbeanserver::MXBeanMapping(::java::lang::reflect::Type, ::com::sun::jmx::mbeanserver::MXBeanMappingFactory)>("mappingForType"), //
+		jMethod<::java::lang::String(::java::lang::reflect::Method)>("propertyName"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto decapitalize(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("decapitalize")] != -1);
+		return scall<R>("decapitalize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::jmx::mbeanserver::MXBeanMapping, typename... Args>
+	auto mappingForType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("mappingForType")] != -1);
+		return call<R>("mappingForType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto propertyName(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("propertyName")] != -1);
+		return scall<R>("propertyName", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

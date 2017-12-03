@@ -1,0 +1,197 @@
+#ifndef sun_net_www_http_HttpClient_HPP
+#define sun_net_www_http_HttpClient_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::net::www::http::HttpClient : public jObject<::sun::net::www::http::HttpClient, ::sun::net::NetworkClient> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_net_www_http / "HttpClient";
+
+	constexpr static Enume field_signatures{
+		jField<::jboolean>("reuse"), //
+		jField<::jboolean>("usingProxy"), //
+	};
+
+	template<typename F = ::jboolean>
+	auto reuse() const {
+		static_assert(field_signatures[jField<F>("reuse")] != -1);
+		return at<F>("reuse");
+	}
+
+	template<typename F = ::jboolean>
+	auto usingProxy() const {
+		static_assert(field_signatures[jField<F>("usingProxy")] != -1);
+		return at<F>("usingProxy");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::net::URL, ::java::lang::String, ::jint)>(), //
+		jConstructor<::jvoid(::java::net::URL, ::java::lang::String, ::jint, ::jboolean, ::jint)>(), //
+		jMethod<::sun::net::www::http::HttpClient(::java::net::URL)>("New"), //
+		jMethod<::sun::net::www::http::HttpClient(::java::net::URL, ::java::lang::String, ::jint, ::jboolean)>("New"), //
+		jMethod<::sun::net::www::http::HttpClient(::java::net::URL, ::java::lang::String, ::jint, ::jboolean, ::jint, ::sun::net::www::protocol::http::HttpURLConnection)>("New"), //
+		jMethod<::sun::net::www::http::HttpClient(::java::net::URL, ::java::net::Proxy, ::jint, ::sun::net::www::protocol::http::HttpURLConnection)>("New"), //
+		jMethod<::sun::net::www::http::HttpClient(::java::net::URL, ::java::net::Proxy, ::jint, ::jboolean, ::sun::net::www::protocol::http::HttpURLConnection)>("New"), //
+		jMethod<::sun::net::www::http::HttpClient(::java::net::URL, ::jboolean)>("New"), //
+		jMethod<::jvoid()>("afterConnect"), //
+		jMethod<::jvoid()>("closeIdleConnection"), //
+		jMethod<::jvoid()>("closeServer"), //
+		jMethod<::jvoid()>("finished"), //
+		jMethod<::jboolean()>("getHttpKeepAliveSet"), //
+		jMethod<::java::io::InputStream()>("getInputStream"), //
+		jMethod<::java::io::OutputStream()>("getOutputStream"), //
+		jMethod<::java::lang::String()>("getProxyHostUsed"), //
+		jMethod<::jint()>("getProxyPortUsed"), //
+		jMethod<::java::lang::String()>("getURLFile"), //
+		jMethod<::jboolean()>("isCachedConnection"), //
+		jMethod<::jboolean()>("isKeepingAlive"), //
+		jMethod<::jboolean()>("needsTunneling"), //
+		jMethod<::jvoid(::java::lang::String, ::jint)>("openServer"), //
+		jMethod<::jboolean(::sun::net::www::MessageHeader, ::sun::net::ProgressSource, ::sun::net::www::protocol::http::HttpURLConnection)>("parseHTTP"), //
+		jMethod<::jvoid()>("resetProperties"), //
+		jMethod<::jvoid(::java::net::CacheRequest)>("setCacheRequest"), //
+		jMethod<::jvoid(::jboolean)>("setDoNotRetry"), //
+		jMethod<::jvoid(::jboolean)>("setIgnoreContinue"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::jvoid(::sun::net::www::MessageHeader)>("writeRequests"), //
+		jMethod<::jvoid(::sun::net::www::MessageHeader, ::sun::net::www::http::PosterOutputStream)>("writeRequests"), //
+		jMethod<::jvoid(::sun::net::www::MessageHeader, ::sun::net::www::http::PosterOutputStream, ::jboolean)>("writeRequests"), //
+	};
+
+	template<typename R = ::sun::net::www::http::HttpClient, typename... Args>
+	static auto New(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("New")] != -1);
+		return scall<R>("New", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto afterConnect(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("afterConnect")] != -1);
+		return call<R>("afterConnect", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto closeIdleConnection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("closeIdleConnection")] != -1);
+		return call<R>("closeIdleConnection", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto closeServer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("closeServer")] != -1);
+		return call<R>("closeServer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto finished(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("finished")] != -1);
+		return call<R>("finished", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getHttpKeepAliveSet(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHttpKeepAliveSet")] != -1);
+		return call<R>("getHttpKeepAliveSet", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::InputStream, typename... Args>
+	auto getInputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInputStream")] != -1);
+		return call<R>("getInputStream", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::OutputStream, typename... Args>
+	auto getOutputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOutputStream")] != -1);
+		return call<R>("getOutputStream", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getProxyHostUsed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getProxyHostUsed")] != -1);
+		return call<R>("getProxyHostUsed", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getProxyPortUsed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getProxyPortUsed")] != -1);
+		return call<R>("getProxyPortUsed", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getURLFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getURLFile")] != -1);
+		return call<R>("getURLFile", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isCachedConnection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isCachedConnection")] != -1);
+		return call<R>("isCachedConnection", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isKeepingAlive(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isKeepingAlive")] != -1);
+		return call<R>("isKeepingAlive", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto needsTunneling(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("needsTunneling")] != -1);
+		return call<R>("needsTunneling", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto openServer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("openServer")] != -1);
+		return call<R>("openServer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto parseHTTP(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("parseHTTP")] != -1);
+		return call<R>("parseHTTP", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto resetProperties(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("resetProperties")] != -1);
+		return scall<R>("resetProperties", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setCacheRequest(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setCacheRequest")] != -1);
+		return call<R>("setCacheRequest", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDoNotRetry(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setDoNotRetry")] != -1);
+		return call<R>("setDoNotRetry", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setIgnoreContinue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setIgnoreContinue")] != -1);
+		return call<R>("setIgnoreContinue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeRequests(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeRequests")] != -1);
+		return call<R>("writeRequests", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

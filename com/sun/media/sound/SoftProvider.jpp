@@ -1,0 +1,36 @@
+#ifndef com_sun_media_sound_SoftProvider_HPP
+#define com_sun_media_sound_SoftProvider_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::media::sound::SoftProvider : public jObject<::com::sun::media::sound::SoftProvider, ::javax::sound::midi::spi::MidiDeviceProvider> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_media_sound / "SoftProvider";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::sound::midi::MidiDevice(::javax::sound::midi::MidiDevice$Info)>("getDevice"), //
+		jMethod<::javax::sound::midi::MidiDevice$Info *()>("getDeviceInfo"), //
+	};
+
+	template<typename R = ::javax::sound::midi::MidiDevice, typename... Args>
+	auto getDevice(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDevice")] != -1);
+		return call<R>("getDevice", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::midi::MidiDevice$Info *, typename... Args>
+	auto getDeviceInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDeviceInfo")] != -1);
+		return call<R>("getDeviceInfo", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

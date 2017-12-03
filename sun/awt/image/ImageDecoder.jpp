@@ -1,0 +1,57 @@
+#ifndef sun_awt_image_ImageDecoder_HPP
+#define sun_awt_image_ImageDecoder_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::image::ImageDecoder : public jObject<::sun::awt::image::ImageDecoder, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_image / "ImageDecoder";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::awt::image::InputStreamImageSource, ::java::io::InputStream)>(), //
+		jMethod<::jvoid()>("abort"), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::jboolean(::java::awt::image::ImageConsumer)>("isConsumer"), //
+		jMethod<::jvoid()>("produceImage"), //
+		jMethod<::jvoid(::java::awt::image::ImageConsumer)>("removeConsumer"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto abort(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("abort")] != -1);
+		return call<R>("abort", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isConsumer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isConsumer")] != -1);
+		return call<R>("isConsumer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto produceImage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("produceImage")] != -1);
+		return call<R>("produceImage", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeConsumer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeConsumer")] != -1);
+		return call<R>("removeConsumer", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

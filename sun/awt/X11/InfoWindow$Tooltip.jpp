@@ -1,0 +1,36 @@
+#ifndef sun_awt_X11_InfoWindow$Tooltip_HPP
+#define sun_awt_X11_InfoWindow$Tooltip_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::X11::InfoWindow$Tooltip : public jObject<::sun::awt::X11::InfoWindow$Tooltip, ::sun::awt::X11::InfoWindow> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_X11 / "InfoWindow$Tooltip";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::Frame, ::java::lang::Object, ::sun::awt::X11::InfoWindow$Tooltip$LiveArguments)>(), //
+		jMethod<::jvoid()>("enter"), //
+		jMethod<::jvoid()>("exit"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto enter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("enter")] != -1);
+		return call<R>("enter", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto exit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("exit")] != -1);
+		return call<R>("exit", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

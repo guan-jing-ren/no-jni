@@ -1,0 +1,35 @@
+#ifndef sun_management_jdp_JdpController_HPP
+#define sun_management_jdp_JdpController_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::management::jdp::JdpController : public jObject<::sun::management::jdp::JdpController, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_management_jdp / "JdpController";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::net::InetAddress, ::jint, ::java::lang::String, ::java::lang::String)>("startDiscoveryService"), //
+		jMethod<::jvoid()>("stopDiscoveryService"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto startDiscoveryService(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("startDiscoveryService")] != -1);
+		return scall<R>("startDiscoveryService", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto stopDiscoveryService(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("stopDiscoveryService")] != -1);
+		return scall<R>("stopDiscoveryService", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

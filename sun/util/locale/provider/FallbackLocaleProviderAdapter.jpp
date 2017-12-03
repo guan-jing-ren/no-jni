@@ -1,0 +1,36 @@
+#ifndef sun_util_locale_provider_FallbackLocaleProviderAdapter_HPP
+#define sun_util_locale_provider_FallbackLocaleProviderAdapter_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::util::locale::provider::FallbackLocaleProviderAdapter : public jObject<::sun::util::locale::provider::FallbackLocaleProviderAdapter, ::sun::util::locale::provider::JRELocaleProviderAdapter> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_util_locale_provider / "FallbackLocaleProviderAdapter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::sun::util::locale::provider::LocaleProviderAdapter$Type()>("getAdapterType"), //
+		jMethod<::sun::util::locale::provider::LocaleResources(::java::util::Locale)>("getLocaleResources"), //
+	};
+
+	template<typename R = ::sun::util::locale::provider::LocaleProviderAdapter$Type, typename... Args>
+	auto getAdapterType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAdapterType")] != -1);
+		return call<R>("getAdapterType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::util::locale::provider::LocaleResources, typename... Args>
+	auto getLocaleResources(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLocaleResources")] != -1);
+		return call<R>("getLocaleResources", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

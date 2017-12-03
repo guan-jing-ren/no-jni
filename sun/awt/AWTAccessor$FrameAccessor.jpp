@@ -1,0 +1,42 @@
+#ifndef sun_awt_AWTAccessor$FrameAccessor_HPP
+#define sun_awt_AWTAccessor$FrameAccessor_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::AWTAccessor$FrameAccessor : public jObject<::sun::awt::AWTAccessor$FrameAccessor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "AWTAccessor$FrameAccessor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint(::java::awt::Frame)>("getExtendedState"), //
+		jMethod<::java::awt::Rectangle(::java::awt::Frame)>("getMaximizedBounds"), //
+		jMethod<::jvoid(::java::awt::Frame, ::jint)>("setExtendedState"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getExtendedState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getExtendedState")] != -1);
+		return call<R>("getExtendedState", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Rectangle, typename... Args>
+	auto getMaximizedBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMaximizedBounds")] != -1);
+		return call<R>("getMaximizedBounds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setExtendedState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setExtendedState")] != -1);
+		return call<R>("setExtendedState", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

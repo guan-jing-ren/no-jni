@@ -1,0 +1,35 @@
+#ifndef sun_net_www_protocol_http_HttpAuthenticator_HPP
+#define sun_net_www_protocol_http_HttpAuthenticator_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::sun::net::www::protocol::http::HttpAuthenticator : public jObject<::sun::net::www::protocol::http::HttpAuthenticator, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_net_www_protocol_http / "HttpAuthenticator";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String(::java::net::URL, ::java::lang::String, ::java::lang::String)>("authString"), //
+		jMethod<::jboolean(::java::lang::String)>("schemeSupported"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto authString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("authString")] != -1);
+		return call<R>("authString", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto schemeSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("schemeSupported")] != -1);
+		return call<R>("schemeSupported", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

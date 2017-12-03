@@ -1,0 +1,77 @@
+#ifndef com_sun_jmx_mbeanserver_MBeanInstantiator_HPP
+#define com_sun_jmx_mbeanserver_MBeanInstantiator_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::jmx::mbeanserver::MBeanInstantiator : public jObject<::com::sun::jmx::mbeanserver::MBeanInstantiator, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_jmx_mbeanserver / "MBeanInstantiator";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::io::ObjectInputStream(::java::lang::ClassLoader, ::jbyte *)>("deserialize"), //
+		jMethod<::java::io::ObjectInputStream(::java::lang::String, ::javax::management::ObjectName, ::jbyte *, ::java::lang::ClassLoader)>("deserialize"), //
+		jMethod<::java::lang::Class(::java::lang::String, ::java::lang::ClassLoader)>("findClass"), //
+		jMethod<::java::lang::Class(::java::lang::String, ::javax::management::ObjectName)>("findClass"), //
+		jMethod<::java::lang::Class(::java::lang::String)>("findClassWithDefaultLoaderRepository"), //
+		jMethod<::java::lang::Class *(::java::lang::String *, ::java::lang::ClassLoader)>("findSignatureClasses"), //
+		jMethod<::com::sun::jmx::mbeanserver::ModifiableClassLoaderRepository()>("getClassLoaderRepository"), //
+		jMethod<::java::lang::Object(::java::lang::Class)>("instantiate"), //
+		jMethod<::java::lang::Object(::java::lang::Class, ::java::lang::Object *, ::java::lang::String *, ::java::lang::ClassLoader)>("instantiate"), //
+		jMethod<::java::lang::Object(::java::lang::String)>("instantiate"), //
+		jMethod<::java::lang::Object(::java::lang::String, ::javax::management::ObjectName, ::java::lang::ClassLoader)>("instantiate"), //
+		jMethod<::java::lang::Object(::java::lang::String, ::javax::management::ObjectName, ::java::lang::Object *, ::java::lang::String *, ::java::lang::ClassLoader)>("instantiate"), //
+		jMethod<::java::lang::Object(::java::lang::String, ::java::lang::Object *, ::java::lang::String *, ::java::lang::ClassLoader)>("instantiate"), //
+		jMethod<::jvoid(::java::lang::Class)>("testCreation"), //
+	};
+
+	template<typename R = ::java::io::ObjectInputStream, typename... Args>
+	auto deserialize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("deserialize")] != -1);
+		return call<R>("deserialize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto findClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("findClass")] != -1);
+		return call<R>("findClass", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto findClassWithDefaultLoaderRepository(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("findClassWithDefaultLoaderRepository")] != -1);
+		return call<R>("findClassWithDefaultLoaderRepository", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class *, typename... Args>
+	auto findSignatureClasses(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("findSignatureClasses")] != -1);
+		return call<R>("findSignatureClasses", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::jmx::mbeanserver::ModifiableClassLoaderRepository, typename... Args>
+	auto getClassLoaderRepository(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClassLoaderRepository")] != -1);
+		return call<R>("getClassLoaderRepository", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto instantiate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("instantiate")] != -1);
+		return call<R>("instantiate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto testCreation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("testCreation")] != -1);
+		return call<R>("testCreation", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

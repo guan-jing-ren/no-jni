@@ -1,0 +1,52 @@
+#ifndef sun_reflect_annotation_TypeAnnotation$TypeAnnotationTargetInfo_HPP
+#define sun_reflect_annotation_TypeAnnotation$TypeAnnotationTargetInfo_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::reflect::annotation::TypeAnnotation$TypeAnnotationTargetInfo : public jObject<::sun::reflect::annotation::TypeAnnotation$TypeAnnotationTargetInfo, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_reflect_annotation / "TypeAnnotation$TypeAnnotationTargetInfo";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::reflect::annotation::TypeAnnotation$TypeAnnotationTarget)>(), //
+		jConstructor<::jvoid(::sun::reflect::annotation::TypeAnnotation$TypeAnnotationTarget, ::jint)>(), //
+		jConstructor<::jvoid(::sun::reflect::annotation::TypeAnnotation$TypeAnnotationTarget, ::jint, ::jint)>(), //
+		jMethod<::jint()>("getCount"), //
+		jMethod<::jint()>("getSecondaryIndex"), //
+		jMethod<::sun::reflect::annotation::TypeAnnotation$TypeAnnotationTarget()>("getTarget"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCount")] != -1);
+		return call<R>("getCount", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getSecondaryIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSecondaryIndex")] != -1);
+		return call<R>("getSecondaryIndex", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::reflect::annotation::TypeAnnotation$TypeAnnotationTarget, typename... Args>
+	auto getTarget(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTarget")] != -1);
+		return call<R>("getTarget", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

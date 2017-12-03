@@ -1,0 +1,64 @@
+#ifndef sun_util_locale_provider_DateFormatProviderImpl_HPP
+#define sun_util_locale_provider_DateFormatProviderImpl_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::util::locale::provider::DateFormatProviderImpl : public jObject<::sun::util::locale::provider::DateFormatProviderImpl, ::java::text::spi::DateFormatProvider> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_util_locale_provider / "DateFormatProviderImpl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::util::locale::provider::LocaleProviderAdapter$Type, ::java::util::Set)>(), //
+		jMethod<::java::util::Set()>("getAvailableLanguageTags"), //
+		jMethod<::java::util::Locale *()>("getAvailableLocales"), //
+		jMethod<::java::text::DateFormat(::jint, ::java::util::Locale)>("getDateInstance"), //
+		jMethod<::java::text::DateFormat(::jint, ::jint, ::java::util::Locale)>("getDateTimeInstance"), //
+		jMethod<::java::text::DateFormat(::jint, ::java::util::Locale)>("getTimeInstance"), //
+		jMethod<::jboolean(::java::util::Locale)>("isSupportedLocale"), //
+	};
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto getAvailableLanguageTags(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAvailableLanguageTags")] != -1);
+		return call<R>("getAvailableLanguageTags", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Locale *, typename... Args>
+	auto getAvailableLocales(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAvailableLocales")] != -1);
+		return call<R>("getAvailableLocales", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::text::DateFormat, typename... Args>
+	auto getDateInstance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDateInstance")] != -1);
+		return call<R>("getDateInstance", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::text::DateFormat, typename... Args>
+	auto getDateTimeInstance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDateTimeInstance")] != -1);
+		return call<R>("getDateTimeInstance", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::text::DateFormat, typename... Args>
+	auto getTimeInstance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTimeInstance")] != -1);
+		return call<R>("getTimeInstance", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isSupportedLocale(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSupportedLocale")] != -1);
+		return call<R>("isSupportedLocale", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

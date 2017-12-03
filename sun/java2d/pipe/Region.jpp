@@ -1,0 +1,364 @@
+#ifndef sun_java2d_pipe_Region_HPP
+#define sun_java2d_pipe_Region_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::pipe::Region : public jObject<::sun::java2d::pipe::Region, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_pipe / "Region";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::java2d::pipe::Region>("EMPTY_REGION"), //
+		jField<::sun::java2d::pipe::Region>("WHOLE_REGION"), //
+	};
+
+	template<typename F = ::sun::java2d::pipe::Region>
+	static auto EMPTY_REGION() {
+		static_assert(field_signatures[jField<F>("EMPTY_REGION")] != -1);
+		return sat<F>("EMPTY_REGION");
+	}
+
+	template<typename F = ::sun::java2d::pipe::Region>
+	static auto WHOLE_REGION() {
+		static_assert(field_signatures[jField<F>("WHOLE_REGION")] != -1);
+		return sat<F>("WHOLE_REGION");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::sun::java2d::pipe::SpanIterator)>("appendSpans"), //
+		jMethod<::jint(::jint, ::jint)>("clipAdd"), //
+		jMethod<::jvoid(::jint *)>("clipBoxToBounds"), //
+		jMethod<::jint(::jint, ::jdouble)>("clipScale"), //
+		jMethod<::jboolean(::jint, ::jint)>("contains"), //
+		jMethod<::jint(::jint, ::jint)>("dimAdd"), //
+		jMethod<::jboolean(::sun::java2d::pipe::Region)>("encompasses"), //
+		jMethod<::jboolean(::jint, ::jint, ::jint, ::jint)>("encompassesXYWH"), //
+		jMethod<::jboolean(::jint, ::jint, ::jint, ::jint)>("encompassesXYXY"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::sun::java2d::pipe::SpanIterator(::sun::java2d::pipe::SpanIterator)>("filter"), //
+		jMethod<::jvoid(::jint *)>("getBounds"), //
+		jMethod<::sun::java2d::pipe::Region(::java::awt::Rectangle)>("getBoundsIntersection"), //
+		jMethod<::sun::java2d::pipe::Region(::sun::java2d::pipe::Region)>("getBoundsIntersection"), //
+		jMethod<::sun::java2d::pipe::Region(::jint, ::jint, ::jint, ::jint)>("getBoundsIntersectionXYWH"), //
+		jMethod<::sun::java2d::pipe::Region(::jint, ::jint, ::jint, ::jint)>("getBoundsIntersectionXYXY"), //
+		jMethod<::sun::java2d::pipe::Region(::sun::java2d::pipe::Region)>("getDifference"), //
+		jMethod<::sun::java2d::pipe::Region(::sun::java2d::pipe::Region)>("getExclusiveOr"), //
+		jMethod<::jint()>("getHeight"), //
+		jMethod<::jint()>("getHiX"), //
+		jMethod<::jint()>("getHiY"), //
+		jMethod<::sun::java2d::pipe::Region(::java::awt::Rectangle)>("getInstance"), //
+		jMethod<::sun::java2d::pipe::Region(::java::awt::Shape, ::java::awt::geom::AffineTransform)>("getInstance"), //
+		jMethod<::sun::java2d::pipe::Region(::sun::java2d::pipe::Region, ::java::awt::Shape, ::java::awt::geom::AffineTransform)>("getInstance"), //
+		jMethod<::sun::java2d::pipe::Region(::sun::java2d::pipe::Region, ::jboolean, ::java::awt::Shape, ::java::awt::geom::AffineTransform)>("getInstance"), //
+		jMethod<::sun::java2d::pipe::Region(::jint *)>("getInstance"), //
+		jMethod<::sun::java2d::pipe::Region(::jint, ::jint, ::jint, ::jint)>("getInstanceXYWH"), //
+		jMethod<::sun::java2d::pipe::Region(::jint, ::jint, ::jint, ::jint)>("getInstanceXYXY"), //
+		jMethod<::sun::java2d::pipe::Region(::java::awt::Rectangle)>("getIntersection"), //
+		jMethod<::sun::java2d::pipe::Region(::sun::java2d::pipe::Region)>("getIntersection"), //
+		jMethod<::sun::java2d::pipe::Region(::jint, ::jint, ::jint, ::jint)>("getIntersectionXYWH"), //
+		jMethod<::sun::java2d::pipe::Region(::jint, ::jint, ::jint, ::jint)>("getIntersectionXYXY"), //
+		jMethod<::sun::java2d::pipe::RegionIterator()>("getIterator"), //
+		jMethod<::jint()>("getLoX"), //
+		jMethod<::jint()>("getLoY"), //
+		jMethod<::sun::java2d::pipe::Region(::jdouble, ::jdouble)>("getScaledRegion"), //
+		jMethod<::sun::java2d::pipe::SpanIterator()>("getSpanIterator"), //
+		jMethod<::sun::java2d::pipe::SpanIterator(::jint *)>("getSpanIterator"), //
+		jMethod<::sun::java2d::pipe::Region(::jint, ::jint)>("getTranslatedRegion"), //
+		jMethod<::sun::java2d::pipe::Region(::sun::java2d::pipe::Region)>("getUnion"), //
+		jMethod<::jint()>("getWidth"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jboolean(::sun::java2d::pipe::Region)>("intersectsQuickCheck"), //
+		jMethod<::jboolean(::jint, ::jint, ::jint, ::jint)>("intersectsQuickCheckXYXY"), //
+		jMethod<::jboolean()>("isEmpty"), //
+		jMethod<::jboolean(::sun::java2d::pipe::Region)>("isInsideQuickCheck"), //
+		jMethod<::jboolean(::jint, ::jint, ::jint, ::jint)>("isInsideXYWH"), //
+		jMethod<::jboolean(::jint, ::jint, ::jint, ::jint)>("isInsideXYXY"), //
+		jMethod<::jboolean()>("isRectangular"), //
+		jMethod<::jvoid(::java::awt::Rectangle)>("setOutputArea"), //
+		jMethod<::jvoid(::jint *)>("setOutputArea"), //
+		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint)>("setOutputAreaXYWH"), //
+		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint)>("setOutputAreaXYXY"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto appendSpans(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("appendSpans")] != -1);
+		return call<R>("appendSpans", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto clipAdd(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clipAdd")] != -1);
+		return scall<R>("clipAdd", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto clipBoxToBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clipBoxToBounds")] != -1);
+		return call<R>("clipBoxToBounds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto clipScale(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clipScale")] != -1);
+		return scall<R>("clipScale", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto contains(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("contains")] != -1);
+		return call<R>("contains", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto dimAdd(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dimAdd")] != -1);
+		return scall<R>("dimAdd", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto encompasses(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encompasses")] != -1);
+		return call<R>("encompasses", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto encompassesXYWH(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encompassesXYWH")] != -1);
+		return call<R>("encompassesXYWH", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto encompassesXYXY(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encompassesXYXY")] != -1);
+		return call<R>("encompassesXYXY", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::pipe::SpanIterator, typename... Args>
+	auto filter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("filter")] != -1);
+		return call<R>("filter", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto getBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBounds")] != -1);
+		return call<R>("getBounds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::pipe::Region, typename... Args>
+	auto getBoundsIntersection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBoundsIntersection")] != -1);
+		return call<R>("getBoundsIntersection", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::pipe::Region, typename... Args>
+	auto getBoundsIntersectionXYWH(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBoundsIntersectionXYWH")] != -1);
+		return call<R>("getBoundsIntersectionXYWH", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::pipe::Region, typename... Args>
+	auto getBoundsIntersectionXYXY(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBoundsIntersectionXYXY")] != -1);
+		return call<R>("getBoundsIntersectionXYXY", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::pipe::Region, typename... Args>
+	auto getDifference(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDifference")] != -1);
+		return call<R>("getDifference", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::pipe::Region, typename... Args>
+	auto getExclusiveOr(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getExclusiveOr")] != -1);
+		return call<R>("getExclusiveOr", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getHeight(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHeight")] != -1);
+		return call<R>("getHeight", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getHiX(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHiX")] != -1);
+		return call<R>("getHiX", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getHiY(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHiY")] != -1);
+		return call<R>("getHiY", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::pipe::Region, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::pipe::Region, typename... Args>
+	static auto getInstanceXYWH(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstanceXYWH")] != -1);
+		return scall<R>("getInstanceXYWH", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::pipe::Region, typename... Args>
+	static auto getInstanceXYXY(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstanceXYXY")] != -1);
+		return scall<R>("getInstanceXYXY", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::pipe::Region, typename... Args>
+	auto getIntersection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIntersection")] != -1);
+		return call<R>("getIntersection", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::pipe::Region, typename... Args>
+	auto getIntersectionXYWH(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIntersectionXYWH")] != -1);
+		return call<R>("getIntersectionXYWH", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::pipe::Region, typename... Args>
+	auto getIntersectionXYXY(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIntersectionXYXY")] != -1);
+		return call<R>("getIntersectionXYXY", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::pipe::RegionIterator, typename... Args>
+	auto getIterator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIterator")] != -1);
+		return call<R>("getIterator", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getLoX(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLoX")] != -1);
+		return call<R>("getLoX", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getLoY(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLoY")] != -1);
+		return call<R>("getLoY", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::pipe::Region, typename... Args>
+	auto getScaledRegion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getScaledRegion")] != -1);
+		return call<R>("getScaledRegion", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::pipe::SpanIterator, typename... Args>
+	auto getSpanIterator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSpanIterator")] != -1);
+		return call<R>("getSpanIterator", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::pipe::Region, typename... Args>
+	auto getTranslatedRegion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTranslatedRegion")] != -1);
+		return call<R>("getTranslatedRegion", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::pipe::Region, typename... Args>
+	auto getUnion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUnion")] != -1);
+		return call<R>("getUnion", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getWidth(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getWidth")] != -1);
+		return call<R>("getWidth", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto intersectsQuickCheck(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("intersectsQuickCheck")] != -1);
+		return call<R>("intersectsQuickCheck", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto intersectsQuickCheckXYXY(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("intersectsQuickCheckXYXY")] != -1);
+		return call<R>("intersectsQuickCheckXYXY", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isEmpty(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isEmpty")] != -1);
+		return call<R>("isEmpty", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isInsideQuickCheck(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isInsideQuickCheck")] != -1);
+		return call<R>("isInsideQuickCheck", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isInsideXYWH(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isInsideXYWH")] != -1);
+		return call<R>("isInsideXYWH", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isInsideXYXY(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isInsideXYXY")] != -1);
+		return call<R>("isInsideXYXY", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isRectangular(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isRectangular")] != -1);
+		return call<R>("isRectangular", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setOutputArea(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setOutputArea")] != -1);
+		return call<R>("setOutputArea", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setOutputAreaXYWH(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setOutputAreaXYWH")] != -1);
+		return call<R>("setOutputAreaXYWH", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setOutputAreaXYXY(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setOutputAreaXYXY")] != -1);
+		return call<R>("setOutputAreaXYXY", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

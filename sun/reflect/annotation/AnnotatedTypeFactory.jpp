@@ -1,0 +1,29 @@
+#ifndef sun_reflect_annotation_AnnotatedTypeFactory_HPP
+#define sun_reflect_annotation_AnnotatedTypeFactory_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::reflect::annotation::AnnotatedTypeFactory : public jObject<::sun::reflect::annotation::AnnotatedTypeFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_reflect_annotation / "AnnotatedTypeFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::reflect::AnnotatedType(::java::lang::reflect::Type, ::sun::reflect::annotation::TypeAnnotation$LocationInfo, ::sun::reflect::annotation::TypeAnnotation *, ::sun::reflect::annotation::TypeAnnotation *, ::java::lang::reflect::AnnotatedElement)>("buildAnnotatedType"), //
+	};
+
+	template<typename R = ::java::lang::reflect::AnnotatedType, typename... Args>
+	static auto buildAnnotatedType(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("buildAnnotatedType")] != -1);
+		return scall<R>("buildAnnotatedType", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

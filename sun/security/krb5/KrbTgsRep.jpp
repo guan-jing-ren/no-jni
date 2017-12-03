@@ -1,0 +1,28 @@
+#ifndef sun_security_krb5_KrbTgsRep_HPP
+#define sun_security_krb5_KrbTgsRep_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::krb5::KrbTgsRep : public jObject<::sun::security::krb5::KrbTgsRep, ::sun::security::krb5::KrbKdcRep> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_krb5 / "KrbTgsRep";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::security::krb5::Credentials()>("getCreds"), //
+	};
+
+	template<typename R = ::sun::security::krb5::Credentials, typename... Args>
+	auto getCreds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCreds")] != -1);
+		return call<R>("getCreds", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

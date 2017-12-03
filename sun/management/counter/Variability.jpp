@@ -1,0 +1,69 @@
+#ifndef sun_management_counter_Variability_HPP
+#define sun_management_counter_Variability_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::management::counter::Variability : public jObject<::sun::management::counter::Variability, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_management_counter / "Variability";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::management::counter::Variability>("CONSTANT"), //
+		jField<::sun::management::counter::Variability>("INVALID"), //
+		jField<::sun::management::counter::Variability>("MONOTONIC"), //
+		jField<::sun::management::counter::Variability>("VARIABLE"), //
+	};
+
+	template<typename F = ::sun::management::counter::Variability>
+	static auto CONSTANT() {
+		static_assert(field_signatures[jField<F>("CONSTANT")] != -1);
+		return sat<F>("CONSTANT");
+	}
+
+	template<typename F = ::sun::management::counter::Variability>
+	static auto INVALID() {
+		static_assert(field_signatures[jField<F>("INVALID")] != -1);
+		return sat<F>("INVALID");
+	}
+
+	template<typename F = ::sun::management::counter::Variability>
+	static auto MONOTONIC() {
+		static_assert(field_signatures[jField<F>("MONOTONIC")] != -1);
+		return sat<F>("MONOTONIC");
+	}
+
+	template<typename F = ::sun::management::counter::Variability>
+	static auto VARIABLE() {
+		static_assert(field_signatures[jField<F>("VARIABLE")] != -1);
+		return sat<F>("VARIABLE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("intValue"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::sun::management::counter::Variability(::jint)>("toVariability"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto intValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("intValue")] != -1);
+		return call<R>("intValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::management::counter::Variability, typename... Args>
+	static auto toVariability(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toVariability")] != -1);
+		return scall<R>("toVariability", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

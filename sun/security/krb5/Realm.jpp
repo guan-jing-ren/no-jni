@@ -1,0 +1,99 @@
+#ifndef sun_security_krb5_Realm_HPP
+#define sun_security_krb5_Realm_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::krb5::Realm : public jObject<::sun::security::krb5::Realm, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_krb5 / "Realm";
+
+	constexpr static Enume field_signatures{
+		jField<::jboolean>("AUTODEDUCEREALM"), //
+	};
+
+	template<typename F = ::jboolean>
+	static auto AUTODEDUCEREALM() {
+		static_assert(field_signatures[jField<F>("AUTODEDUCEREALM")] != -1);
+		return sat<F>("AUTODEDUCEREALM");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::sun::security::util::DerValue)>(), //
+		jMethod<::jbyte *()>("asn1Encode"), //
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::sun::security::krb5::Realm()>("getDefault"), //
+		jMethod<::java::lang::String *(::java::lang::String, ::java::lang::String)>("getRealmsList"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::sun::security::krb5::Realm(::sun::security::util::DerInputStream, ::jbyte, ::jboolean)>("parse"), //
+		jMethod<::java::lang::String(::java::lang::String)>("parseRealmAtSeparator"), //
+		jMethod<::java::lang::String(::java::lang::String)>("parseRealmComponent"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto asn1Encode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("asn1Encode")] != -1);
+		return call<R>("asn1Encode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::krb5::Realm, typename... Args>
+	static auto getDefault(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDefault")] != -1);
+		return scall<R>("getDefault", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	static auto getRealmsList(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRealmsList")] != -1);
+		return scall<R>("getRealmsList", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::krb5::Realm, typename... Args>
+	static auto parse(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("parse")] != -1);
+		return scall<R>("parse", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto parseRealmAtSeparator(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("parseRealmAtSeparator")] != -1);
+		return scall<R>("parseRealmAtSeparator", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto parseRealmComponent(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("parseRealmComponent")] != -1);
+		return scall<R>("parseRealmComponent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

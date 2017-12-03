@@ -1,0 +1,43 @@
+#ifndef com_sun_jndi_cosnaming_CorbanameUrl_HPP
+#define com_sun_jndi_cosnaming_CorbanameUrl_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::jndi::cosnaming::CorbanameUrl : public jObject<::com::sun::jndi::cosnaming::CorbanameUrl, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_jndi_cosnaming / "CorbanameUrl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jMethod<::javax::naming::Name()>("getCosName"), //
+		jMethod<::java::lang::String()>("getLocation"), //
+		jMethod<::java::lang::String()>("getStringName"), //
+	};
+
+	template<typename R = ::javax::naming::Name, typename... Args>
+	auto getCosName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCosName")] != -1);
+		return call<R>("getCosName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getLocation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLocation")] != -1);
+		return call<R>("getLocation", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getStringName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStringName")] != -1);
+		return call<R>("getStringName", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

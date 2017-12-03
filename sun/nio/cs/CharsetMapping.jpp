@@ -1,0 +1,98 @@
+#ifndef sun_nio_cs_CharsetMapping_HPP
+#define sun_nio_cs_CharsetMapping_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::nio::cs::CharsetMapping : public jObject<::sun::nio::cs::CharsetMapping, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_nio_cs / "CharsetMapping";
+
+	constexpr static Enume field_signatures{
+		jField<::jchar>("UNMAPPABLE_DECODING"), //
+		jField<::jint>("UNMAPPABLE_ENCODING"), //
+	};
+
+	template<typename F = ::jchar>
+	static auto UNMAPPABLE_DECODING() {
+		static_assert(field_signatures[jField<F>("UNMAPPABLE_DECODING")] != -1);
+		return sat<F>("UNMAPPABLE_DECODING");
+	}
+
+	template<typename F = ::jint>
+	static auto UNMAPPABLE_ENCODING() {
+		static_assert(field_signatures[jField<F>("UNMAPPABLE_ENCODING")] != -1);
+		return sat<F>("UNMAPPABLE_ENCODING");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jchar *(::sun::nio::cs::CharsetMapping$Entry, ::jchar *)>("decodeComposite"), //
+		jMethod<::jchar(::jint, ::jint)>("decodeDouble"), //
+		jMethod<::jchar(::jint)>("decodeSingle"), //
+		jMethod<::jchar *(::jint, ::jchar *)>("decodeSurrogate"), //
+		jMethod<::jint(::jchar)>("encodeChar"), //
+		jMethod<::jint(::sun::nio::cs::CharsetMapping$Entry)>("encodeComposite"), //
+		jMethod<::jint(::jchar, ::jchar)>("encodeSurrogate"), //
+		jMethod<::sun::nio::cs::CharsetMapping(::java::io::InputStream)>("get"), //
+		jMethod<::jboolean(::sun::nio::cs::CharsetMapping$Entry)>("isCompositeBase"), //
+	};
+
+	template<typename R = ::jchar *, typename... Args>
+	auto decodeComposite(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("decodeComposite")] != -1);
+		return call<R>("decodeComposite", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jchar, typename... Args>
+	auto decodeDouble(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("decodeDouble")] != -1);
+		return call<R>("decodeDouble", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jchar, typename... Args>
+	auto decodeSingle(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("decodeSingle")] != -1);
+		return call<R>("decodeSingle", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jchar *, typename... Args>
+	auto decodeSurrogate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("decodeSurrogate")] != -1);
+		return call<R>("decodeSurrogate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto encodeChar(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encodeChar")] != -1);
+		return call<R>("encodeChar", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto encodeComposite(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encodeComposite")] != -1);
+		return call<R>("encodeComposite", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto encodeSurrogate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encodeSurrogate")] != -1);
+		return call<R>("encodeSurrogate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::nio::cs::CharsetMapping, typename... Args>
+	static auto get(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get")] != -1);
+		return scall<R>("get", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isCompositeBase(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isCompositeBase")] != -1);
+		return call<R>("isCompositeBase", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

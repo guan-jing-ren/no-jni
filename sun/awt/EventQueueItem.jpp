@@ -1,0 +1,35 @@
+#ifndef sun_awt_EventQueueItem_HPP
+#define sun_awt_EventQueueItem_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::EventQueueItem : public jObject<::sun::awt::EventQueueItem, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "EventQueueItem";
+
+	constexpr static Enume field_signatures{
+		jField<::java::awt::AWTEvent>("event"), //
+		jField<::sun::awt::EventQueueItem>("next"), //
+	};
+
+	template<typename F = ::java::awt::AWTEvent>
+	auto event() const {
+		static_assert(field_signatures[jField<F>("event")] != -1);
+		return at<F>("event");
+	}
+
+	template<typename F = ::sun::awt::EventQueueItem>
+	auto next() const {
+		static_assert(field_signatures[jField<F>("next")] != -1);
+		return at<F>("next");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::AWTEvent)>(), //
+	};
+
+};
+
+#endif

@@ -1,0 +1,73 @@
+#ifndef sun_net_www_HeaderParser_HPP
+#define sun_net_www_HeaderParser_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::net::www::HeaderParser : public jObject<::sun::net::www::HeaderParser, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_net_www / "HeaderParser";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jMethod<::jint(::java::lang::String, ::jint)>("findInt"), //
+		jMethod<::java::lang::String(::jint)>("findKey"), //
+		jMethod<::java::lang::String(::jint)>("findValue"), //
+		jMethod<::java::lang::String(::java::lang::String)>("findValue"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::lang::String)>("findValue"), //
+		jMethod<::java::util::Iterator()>("keys"), //
+		jMethod<::sun::net::www::HeaderParser(::jint, ::jint)>("subsequence"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::java::util::Iterator()>("values"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto findInt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("findInt")] != -1);
+		return call<R>("findInt", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto findKey(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("findKey")] != -1);
+		return call<R>("findKey", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto findValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("findValue")] != -1);
+		return call<R>("findValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Iterator, typename... Args>
+	auto keys(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("keys")] != -1);
+		return call<R>("keys", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::www::HeaderParser, typename... Args>
+	auto subsequence(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("subsequence")] != -1);
+		return call<R>("subsequence", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Iterator, typename... Args>
+	auto values(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("values")] != -1);
+		return call<R>("values", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

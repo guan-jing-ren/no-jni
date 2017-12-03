@@ -1,0 +1,71 @@
+#ifndef sun_java2d_jules_JulesTile_HPP
+#define sun_java2d_jules_JulesTile_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::jules::JulesTile : public jObject<::sun::java2d::jules::JulesTile, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_jules / "JulesTile";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jbyte *()>("getImgBuffer"), //
+		jMethod<::jlong()>("getPixmanImgPtr"), //
+		jMethod<::jint()>("getTilePos"), //
+		jMethod<::jboolean()>("hasBuffer"), //
+		jMethod<::jvoid(::jbyte *)>("setImgBuffer"), //
+		jMethod<::jvoid(::jlong)>("setPixmanImgPtr"), //
+		jMethod<::jvoid(::jint)>("setTilePos"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getImgBuffer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getImgBuffer")] != -1);
+		return call<R>("getImgBuffer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getPixmanImgPtr(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPixmanImgPtr")] != -1);
+		return call<R>("getPixmanImgPtr", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getTilePos(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTilePos")] != -1);
+		return call<R>("getTilePos", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasBuffer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hasBuffer")] != -1);
+		return call<R>("hasBuffer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setImgBuffer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setImgBuffer")] != -1);
+		return call<R>("setImgBuffer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setPixmanImgPtr(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setPixmanImgPtr")] != -1);
+		return call<R>("setPixmanImgPtr", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setTilePos(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setTilePos")] != -1);
+		return call<R>("setTilePos", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

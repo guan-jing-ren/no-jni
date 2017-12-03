@@ -1,0 +1,28 @@
+#ifndef sun_reflect_generics_scope_MethodScope_HPP
+#define sun_reflect_generics_scope_MethodScope_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::reflect::generics::scope::MethodScope : public jObject<::sun::reflect::generics::scope::MethodScope, ::sun::reflect::generics::scope::AbstractScope> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_reflect_generics_scope / "MethodScope";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::reflect::generics::scope::MethodScope(::java::lang::reflect::Method)>("make"), //
+	};
+
+	template<typename R = ::sun::reflect::generics::scope::MethodScope, typename... Args>
+	static auto make(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("make")] != -1);
+		return scall<R>("make", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

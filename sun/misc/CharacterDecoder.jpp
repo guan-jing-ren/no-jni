@@ -1,0 +1,39 @@
+#ifndef sun_misc_CharacterDecoder_HPP
+#define sun_misc_CharacterDecoder_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::misc::CharacterDecoder : public jObject<::sun::misc::CharacterDecoder, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_misc / "CharacterDecoder";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jbyte *(::java::io::InputStream)>("decodeBuffer"), //
+		jMethod<::jvoid(::java::io::InputStream, ::java::io::OutputStream)>("decodeBuffer"), //
+		jMethod<::jbyte *(::java::lang::String)>("decodeBuffer"), //
+		jMethod<::java::nio::ByteBuffer(::java::io::InputStream)>("decodeBufferToByteBuffer"), //
+		jMethod<::java::nio::ByteBuffer(::java::lang::String)>("decodeBufferToByteBuffer"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto decodeBuffer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("decodeBuffer")] != -1);
+		return call<R>("decodeBuffer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::ByteBuffer, typename... Args>
+	auto decodeBufferToByteBuffer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("decodeBufferToByteBuffer")] != -1);
+		return call<R>("decodeBufferToByteBuffer", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

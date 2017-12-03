@@ -1,0 +1,71 @@
+#ifndef sun_invoke_util_VerifyAccess_HPP
+#define sun_invoke_util_VerifyAccess_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::invoke::util::VerifyAccess : public jObject<::sun::invoke::util::VerifyAccess, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_invoke_util / "VerifyAccess";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::lang::Class, ::java::lang::Class)>("classLoaderIsAncestor"), //
+		jMethod<::java::lang::String(::java::lang::Class)>("getPackageName"), //
+		jMethod<::jboolean(::java::lang::Class, ::java::lang::Class, ::jint)>("isClassAccessible"), //
+		jMethod<::jboolean(::java::lang::Class, ::java::lang::Class, ::jint, ::java::lang::Class, ::jint)>("isMemberAccessible"), //
+		jMethod<::jboolean(::java::lang::Class, ::java::lang::Class)>("isSamePackage"), //
+		jMethod<::jboolean(::java::lang::Class, ::java::lang::Class)>("isSamePackageMember"), //
+		jMethod<::jboolean(::java::lang::Class, ::java::lang::Class)>("isTypeVisible"), //
+		jMethod<::jboolean(::java::lang::invoke::MethodType, ::java::lang::Class)>("isTypeVisible"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto classLoaderIsAncestor(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("classLoaderIsAncestor")] != -1);
+		return scall<R>("classLoaderIsAncestor", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getPackageName(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPackageName")] != -1);
+		return scall<R>("getPackageName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isClassAccessible(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isClassAccessible")] != -1);
+		return scall<R>("isClassAccessible", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isMemberAccessible(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isMemberAccessible")] != -1);
+		return scall<R>("isMemberAccessible", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isSamePackage(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSamePackage")] != -1);
+		return scall<R>("isSamePackage", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isSamePackageMember(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSamePackageMember")] != -1);
+		return scall<R>("isSamePackageMember", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isTypeVisible(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isTypeVisible")] != -1);
+		return scall<R>("isTypeVisible", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

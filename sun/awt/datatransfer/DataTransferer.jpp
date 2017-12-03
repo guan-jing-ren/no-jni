@@ -1,0 +1,295 @@
+#ifndef sun_awt_datatransfer_DataTransferer_HPP
+#define sun_awt_datatransfer_DataTransferer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::datatransfer::DataTransferer : public jObject<::sun::awt::datatransfer::DataTransferer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_datatransfer / "DataTransferer";
+
+	constexpr static Enume field_signatures{
+		jField<::java::awt::datatransfer::DataFlavor>("javaTextEncodingFlavor"), //
+		jField<::java::awt::datatransfer::DataFlavor>("plainTextStringFlavor"), //
+	};
+
+	template<typename F = ::java::awt::datatransfer::DataFlavor>
+	static auto javaTextEncodingFlavor() {
+		static_assert(field_signatures[jField<F>("javaTextEncodingFlavor")] != -1);
+		return sat<F>("javaTextEncodingFlavor");
+	}
+
+	template<typename F = ::java::awt::datatransfer::DataFlavor>
+	static auto plainTextStringFlavor() {
+		static_assert(field_signatures[jField<F>("plainTextStringFlavor")] != -1);
+		return sat<F>("plainTextStringFlavor");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::awt::datatransfer::FlavorTable(::java::awt::datatransfer::FlavorMap)>("adaptFlavorMap"), //
+		jMethod<::java::lang::String(::java::lang::String)>("canonicalName"), //
+		jMethod<::jbyte *(::java::lang::Object, ::java::awt::datatransfer::Transferable, ::jlong, ::java::util::Map, ::jboolean)>("convertData"), //
+		jMethod<::jboolean(::java::awt::datatransfer::DataFlavor)>("doesSubtypeSupportCharset"), //
+		jMethod<::jboolean(::java::lang::String, ::java::lang::String)>("doesSubtypeSupportCharset"), //
+		jMethod<::java::lang::String()>("getDefaultTextCharset"), //
+		jMethod<::java::lang::String()>("getDefaultUnicodeEncoding"), //
+		jMethod<::java::util::Map(::jlong, ::java::awt::datatransfer::FlavorTable)>("getFlavorsForFormat"), //
+		jMethod<::java::awt::datatransfer::DataFlavor *(::jlong, ::java::awt::datatransfer::FlavorTable)>("getFlavorsForFormatAsArray"), //
+		jMethod<::java::util::Map(::jlong *, ::java::awt::datatransfer::FlavorTable)>("getFlavorsForFormats"), //
+		jMethod<::java::awt::datatransfer::DataFlavor *(::jlong *, ::java::awt::datatransfer::FlavorTable)>("getFlavorsForFormatsAsArray"), //
+		jMethod<::java::util::Set(::jlong *, ::java::awt::datatransfer::FlavorTable)>("getFlavorsForFormatsAsSet"), //
+		jMethod<::java::util::SortedMap(::java::awt::datatransfer::DataFlavor, ::java::awt::datatransfer::FlavorTable)>("getFormatsForFlavor"), //
+		jMethod<::jlong *(::java::awt::datatransfer::DataFlavor, ::java::awt::datatransfer::FlavorTable)>("getFormatsForFlavorAsArray"), //
+		jMethod<::java::util::SortedMap(::java::awt::datatransfer::DataFlavor *, ::java::awt::datatransfer::FlavorTable)>("getFormatsForFlavors"), //
+		jMethod<::jlong *(::java::awt::datatransfer::DataFlavor *, ::java::awt::datatransfer::FlavorTable)>("getFormatsForFlavorsAsArray"), //
+		jMethod<::java::util::SortedMap(::java::awt::datatransfer::Transferable, ::java::awt::datatransfer::FlavorTable)>("getFormatsForTransferable"), //
+		jMethod<::jlong *(::java::awt::datatransfer::Transferable, ::java::awt::datatransfer::FlavorTable)>("getFormatsForTransferableAsArray"), //
+		jMethod<::sun::awt::datatransfer::DataTransferer()>("getInstance"), //
+		jMethod<::java::util::LinkedHashSet(::java::awt::datatransfer::DataFlavor)>("getPlatformMappingsForFlavor"), //
+		jMethod<::java::util::LinkedHashSet(::java::lang::String)>("getPlatformMappingsForNative"), //
+		jMethod<::java::lang::String(::java::awt::datatransfer::DataFlavor)>("getTextCharset"), //
+		jMethod<::sun::awt::datatransfer::ToolkitThreadBlockedHandler()>("getToolkitThreadBlockedHandler"), //
+		jMethod<::jboolean(::java::lang::String)>("isEncodingSupported"), //
+		jMethod<::jboolean(::jlong)>("isFileFormat"), //
+		jMethod<::jboolean(::java::awt::datatransfer::DataFlavor)>("isFlavorCharsetTextType"), //
+		jMethod<::jboolean(::java::awt::datatransfer::DataFlavor)>("isFlavorNoncharsetTextType"), //
+		jMethod<::jboolean(::jlong)>("isImageFormat"), //
+		jMethod<::jboolean(::jlong)>("isLocaleDependentTextFormat"), //
+		jMethod<::jboolean(::java::lang::Class)>("isRemote"), //
+		jMethod<::jlong *(::java::util::SortedMap)>("keysToLongArray"), //
+		jMethod<::jvoid()>("processDataConversionRequests"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::String)>("registerTextFlavorProperties"), //
+		jMethod<::java::awt::datatransfer::DataFlavor *(::java::util::Set)>("setToSortedDataFlavorArray"), //
+		jMethod<::java::util::Set()>("standardEncodings"), //
+		jMethod<::java::lang::Object(::jbyte *, ::java::awt::datatransfer::DataFlavor, ::jlong, ::java::awt::datatransfer::Transferable)>("translateBytes"), //
+		jMethod<::java::lang::Object(::java::io::InputStream, ::java::awt::datatransfer::DataFlavor, ::jlong, ::java::awt::datatransfer::Transferable)>("translateStream"), //
+		jMethod<::jbyte *(::java::awt::datatransfer::Transferable, ::java::awt::datatransfer::DataFlavor, ::jlong)>("translateTransferable"), //
+	};
+
+	template<typename R = ::java::awt::datatransfer::FlavorTable, typename... Args>
+	static auto adaptFlavorMap(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("adaptFlavorMap")] != -1);
+		return scall<R>("adaptFlavorMap", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto canonicalName(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("canonicalName")] != -1);
+		return scall<R>("canonicalName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto convertData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("convertData")] != -1);
+		return call<R>("convertData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto doesSubtypeSupportCharset(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("doesSubtypeSupportCharset")] != -1);
+		return scall<R>("doesSubtypeSupportCharset", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getDefaultTextCharset(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDefaultTextCharset")] != -1);
+		return scall<R>("getDefaultTextCharset", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDefaultUnicodeEncoding(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDefaultUnicodeEncoding")] != -1);
+		return call<R>("getDefaultUnicodeEncoding", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto getFlavorsForFormat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFlavorsForFormat")] != -1);
+		return call<R>("getFlavorsForFormat", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::datatransfer::DataFlavor *, typename... Args>
+	auto getFlavorsForFormatAsArray(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFlavorsForFormatAsArray")] != -1);
+		return call<R>("getFlavorsForFormatAsArray", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto getFlavorsForFormats(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFlavorsForFormats")] != -1);
+		return call<R>("getFlavorsForFormats", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::datatransfer::DataFlavor *, typename... Args>
+	auto getFlavorsForFormatsAsArray(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFlavorsForFormatsAsArray")] != -1);
+		return call<R>("getFlavorsForFormatsAsArray", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto getFlavorsForFormatsAsSet(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFlavorsForFormatsAsSet")] != -1);
+		return call<R>("getFlavorsForFormatsAsSet", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::SortedMap, typename... Args>
+	auto getFormatsForFlavor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFormatsForFlavor")] != -1);
+		return call<R>("getFormatsForFlavor", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong *, typename... Args>
+	auto getFormatsForFlavorAsArray(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFormatsForFlavorAsArray")] != -1);
+		return call<R>("getFormatsForFlavorAsArray", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::SortedMap, typename... Args>
+	auto getFormatsForFlavors(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFormatsForFlavors")] != -1);
+		return call<R>("getFormatsForFlavors", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong *, typename... Args>
+	auto getFormatsForFlavorsAsArray(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFormatsForFlavorsAsArray")] != -1);
+		return call<R>("getFormatsForFlavorsAsArray", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::SortedMap, typename... Args>
+	auto getFormatsForTransferable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFormatsForTransferable")] != -1);
+		return call<R>("getFormatsForTransferable", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong *, typename... Args>
+	auto getFormatsForTransferableAsArray(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFormatsForTransferableAsArray")] != -1);
+		return call<R>("getFormatsForTransferableAsArray", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::awt::datatransfer::DataTransferer, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::LinkedHashSet, typename... Args>
+	auto getPlatformMappingsForFlavor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPlatformMappingsForFlavor")] != -1);
+		return call<R>("getPlatformMappingsForFlavor", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::LinkedHashSet, typename... Args>
+	auto getPlatformMappingsForNative(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPlatformMappingsForNative")] != -1);
+		return call<R>("getPlatformMappingsForNative", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getTextCharset(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTextCharset")] != -1);
+		return scall<R>("getTextCharset", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::awt::datatransfer::ToolkitThreadBlockedHandler, typename... Args>
+	auto getToolkitThreadBlockedHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getToolkitThreadBlockedHandler")] != -1);
+		return call<R>("getToolkitThreadBlockedHandler", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isEncodingSupported(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isEncodingSupported")] != -1);
+		return scall<R>("isEncodingSupported", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isFileFormat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isFileFormat")] != -1);
+		return call<R>("isFileFormat", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isFlavorCharsetTextType(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isFlavorCharsetTextType")] != -1);
+		return scall<R>("isFlavorCharsetTextType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isFlavorNoncharsetTextType(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isFlavorNoncharsetTextType")] != -1);
+		return scall<R>("isFlavorNoncharsetTextType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isImageFormat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isImageFormat")] != -1);
+		return call<R>("isImageFormat", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isLocaleDependentTextFormat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isLocaleDependentTextFormat")] != -1);
+		return call<R>("isLocaleDependentTextFormat", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isRemote(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isRemote")] != -1);
+		return scall<R>("isRemote", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong *, typename... Args>
+	static auto keysToLongArray(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("keysToLongArray")] != -1);
+		return scall<R>("keysToLongArray", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto processDataConversionRequests(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("processDataConversionRequests")] != -1);
+		return call<R>("processDataConversionRequests", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto registerTextFlavorProperties(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("registerTextFlavorProperties")] != -1);
+		return call<R>("registerTextFlavorProperties", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::datatransfer::DataFlavor *, typename... Args>
+	static auto setToSortedDataFlavorArray(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setToSortedDataFlavorArray")] != -1);
+		return scall<R>("setToSortedDataFlavorArray", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	static auto standardEncodings(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("standardEncodings")] != -1);
+		return scall<R>("standardEncodings", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto translateBytes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("translateBytes")] != -1);
+		return call<R>("translateBytes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto translateStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("translateStream")] != -1);
+		return call<R>("translateStream", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto translateTransferable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("translateTransferable")] != -1);
+		return call<R>("translateTransferable", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

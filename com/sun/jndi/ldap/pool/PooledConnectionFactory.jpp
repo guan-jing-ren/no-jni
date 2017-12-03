@@ -1,0 +1,28 @@
+#ifndef com_sun_jndi_ldap_pool_PooledConnectionFactory_HPP
+#define com_sun_jndi_ldap_pool_PooledConnectionFactory_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::jndi::ldap::pool::PooledConnectionFactory : public jObject<::com::sun::jndi::ldap::pool::PooledConnectionFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_jndi_ldap_pool / "PooledConnectionFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::com::sun::jndi::ldap::pool::PooledConnection(::com::sun::jndi::ldap::pool::PoolCallback)>("createPooledConnection"), //
+	};
+
+	template<typename R = ::com::sun::jndi::ldap::pool::PooledConnection, typename... Args>
+	auto createPooledConnection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createPooledConnection")] != -1);
+		return call<R>("createPooledConnection", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,35 @@
+#ifndef sun_java2d_pipe_BufferedPaints_HPP
+#define sun_java2d_pipe_BufferedPaints_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::pipe::BufferedPaints : public jObject<::sun::java2d::pipe::BufferedPaints, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_pipe / "BufferedPaints";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("MULTI_MAX_FRACTIONS"), //
+	};
+
+	template<typename F = ::jint>
+	static auto MULTI_MAX_FRACTIONS() {
+		static_assert(field_signatures[jField<F>("MULTI_MAX_FRACTIONS")] != -1);
+		return sat<F>("MULTI_MAX_FRACTIONS");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jint(::jint)>("convertSRGBtoLinearRGB"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	static auto convertSRGBtoLinearRGB(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("convertSRGBtoLinearRGB")] != -1);
+		return scall<R>("convertSRGBtoLinearRGB", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

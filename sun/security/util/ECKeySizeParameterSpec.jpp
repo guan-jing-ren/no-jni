@@ -1,0 +1,29 @@
+#ifndef sun_security_util_ECKeySizeParameterSpec_HPP
+#define sun_security_util_ECKeySizeParameterSpec_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::util::ECKeySizeParameterSpec : public jObject<::sun::security::util::ECKeySizeParameterSpec, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_util / "ECKeySizeParameterSpec";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint)>(), //
+		jMethod<::jint()>("getKeySize"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getKeySize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getKeySize")] != -1);
+		return call<R>("getKeySize", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

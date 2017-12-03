@@ -1,0 +1,64 @@
+#ifndef sun_rmi_log_LogHandler_HPP
+#define sun_rmi_log_LogHandler_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::rmi::log::LogHandler : public jObject<::sun::rmi::log::LogHandler, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_rmi_log / "LogHandler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::Object(::java::lang::Object, ::java::lang::Object)>("applyUpdate"), //
+		jMethod<::java::lang::Object()>("initialSnapshot"), //
+		jMethod<::java::lang::Object(::sun::rmi::log::LogInputStream, ::java::lang::Object)>("readUpdate"), //
+		jMethod<::java::lang::Object(::java::io::InputStream)>("recover"), //
+		jMethod<::jvoid(::java::io::OutputStream, ::java::lang::Object)>("snapshot"), //
+		jMethod<::jvoid(::sun::rmi::log::LogOutputStream, ::java::lang::Object)>("writeUpdate"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto applyUpdate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("applyUpdate")] != -1);
+		return call<R>("applyUpdate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto initialSnapshot(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("initialSnapshot")] != -1);
+		return call<R>("initialSnapshot", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto readUpdate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("readUpdate")] != -1);
+		return call<R>("readUpdate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto recover(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("recover")] != -1);
+		return call<R>("recover", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto snapshot(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("snapshot")] != -1);
+		return call<R>("snapshot", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeUpdate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeUpdate")] != -1);
+		return call<R>("writeUpdate", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,37 @@
+#ifndef sun_security_util_LegacyAlgorithmConstraints_HPP
+#define sun_security_util_LegacyAlgorithmConstraints_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::util::LegacyAlgorithmConstraints : public jObject<::sun::security::util::LegacyAlgorithmConstraints, ::sun::security::util::AbstractAlgorithmConstraints> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_util / "LegacyAlgorithmConstraints";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("PROPERTY_TLS_LEGACY_ALGS"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto PROPERTY_TLS_LEGACY_ALGS() {
+		static_assert(field_signatures[jField<F>("PROPERTY_TLS_LEGACY_ALGS")] != -1);
+		return sat<F>("PROPERTY_TLS_LEGACY_ALGS");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::sun::security::util::AlgorithmDecomposer)>(), //
+		jMethod<::jboolean(::java::util::Set, ::java::lang::String, ::java::security::AlgorithmParameters)>("permits"), //
+		jMethod<::jboolean(::java::util::Set, ::java::lang::String, ::java::security::Key, ::java::security::AlgorithmParameters)>("permits"), //
+		jMethod<::jboolean(::java::util::Set, ::java::security::Key)>("permits"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto permits(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("permits")] != -1);
+		return call<R>("permits", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

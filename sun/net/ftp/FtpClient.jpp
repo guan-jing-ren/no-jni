@@ -1,0 +1,426 @@
+#ifndef sun_net_ftp_FtpClient_HPP
+#define sun_net_ftp_FtpClient_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::net::ftp::FtpClient : public jObject<::sun::net::ftp::FtpClient, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_net_ftp / "FtpClient";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::net::ftp::FtpClient()>("abort"), //
+		jMethod<::sun::net::ftp::FtpClient(::jlong)>("allocate"), //
+		jMethod<::sun::net::ftp::FtpClient(::java::lang::String, ::java::io::InputStream)>("appendFile"), //
+		jMethod<::sun::net::ftp::FtpClient(::java::lang::String)>("changeDirectory"), //
+		jMethod<::sun::net::ftp::FtpClient()>("changeToParentDirectory"), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::sun::net::ftp::FtpClient()>("completePending"), //
+		jMethod<::sun::net::ftp::FtpClient(::java::net::SocketAddress)>("connect"), //
+		jMethod<::sun::net::ftp::FtpClient(::java::net::SocketAddress, ::jint)>("connect"), //
+		jMethod<::sun::net::ftp::FtpClient()>("create"), //
+		jMethod<::sun::net::ftp::FtpClient(::java::lang::String)>("create"), //
+		jMethod<::sun::net::ftp::FtpClient(::java::net::InetSocketAddress)>("create"), //
+		jMethod<::jint()>("defaultPort"), //
+		jMethod<::sun::net::ftp::FtpClient(::java::lang::String)>("deleteFile"), //
+		jMethod<::sun::net::ftp::FtpClient(::jboolean)>("enablePassiveMode"), //
+		jMethod<::sun::net::ftp::FtpClient()>("endSecureSession"), //
+		jMethod<::jint()>("getConnectTimeout"), //
+		jMethod<::java::util::List()>("getFeatures"), //
+		jMethod<::sun::net::ftp::FtpClient(::java::lang::String, ::java::io::OutputStream)>("getFile"), //
+		jMethod<::java::io::InputStream(::java::lang::String)>("getFileStream"), //
+		jMethod<::java::lang::String(::java::lang::String)>("getHelp"), //
+		jMethod<::java::lang::String()>("getLastFileName"), //
+		jMethod<::java::util::Date(::java::lang::String)>("getLastModified"), //
+		jMethod<::sun::net::ftp::FtpReplyCode()>("getLastReplyCode"), //
+		jMethod<::java::lang::String()>("getLastResponseString"), //
+		jMethod<::jlong()>("getLastTransferSize"), //
+		jMethod<::java::net::Proxy()>("getProxy"), //
+		jMethod<::jint()>("getReadTimeout"), //
+		jMethod<::java::net::SocketAddress()>("getServerAddress"), //
+		jMethod<::jlong(::java::lang::String)>("getSize"), //
+		jMethod<::java::lang::String(::java::lang::String)>("getStatus"), //
+		jMethod<::java::lang::String()>("getSystem"), //
+		jMethod<::java::lang::String()>("getWelcomeMsg"), //
+		jMethod<::java::lang::String()>("getWorkingDirectory"), //
+		jMethod<::jboolean()>("isConnected"), //
+		jMethod<::jboolean()>("isLoggedIn"), //
+		jMethod<::jboolean()>("isPassiveModeEnabled"), //
+		jMethod<::java::io::InputStream(::java::lang::String)>("list"), //
+		jMethod<::java::util::Iterator(::java::lang::String)>("listFiles"), //
+		jMethod<::sun::net::ftp::FtpClient(::java::lang::String, ::jchar *)>("login"), //
+		jMethod<::sun::net::ftp::FtpClient(::java::lang::String, ::jchar *, ::java::lang::String)>("login"), //
+		jMethod<::sun::net::ftp::FtpClient(::java::lang::String)>("makeDirectory"), //
+		jMethod<::java::io::InputStream(::java::lang::String)>("nameList"), //
+		jMethod<::sun::net::ftp::FtpClient()>("noop"), //
+		jMethod<::sun::net::ftp::FtpClient(::java::lang::String, ::java::io::InputStream)>("putFile"), //
+		jMethod<::sun::net::ftp::FtpClient(::java::lang::String, ::java::io::InputStream, ::jboolean)>("putFile"), //
+		jMethod<::java::io::OutputStream(::java::lang::String)>("putFileStream"), //
+		jMethod<::java::io::OutputStream(::java::lang::String, ::jboolean)>("putFileStream"), //
+		jMethod<::sun::net::ftp::FtpClient()>("reInit"), //
+		jMethod<::sun::net::ftp::FtpClient(::java::lang::String)>("removeDirectory"), //
+		jMethod<::sun::net::ftp::FtpClient(::java::lang::String, ::java::lang::String)>("rename"), //
+		jMethod<::sun::net::ftp::FtpClient()>("setAsciiType"), //
+		jMethod<::sun::net::ftp::FtpClient()>("setBinaryType"), //
+		jMethod<::sun::net::ftp::FtpClient(::jint)>("setConnectTimeout"), //
+		jMethod<::sun::net::ftp::FtpClient(::sun::net::ftp::FtpDirParser)>("setDirParser"), //
+		jMethod<::sun::net::ftp::FtpClient(::java::net::Proxy)>("setProxy"), //
+		jMethod<::sun::net::ftp::FtpClient(::jint)>("setReadTimeout"), //
+		jMethod<::sun::net::ftp::FtpClient(::jlong)>("setRestartOffset"), //
+		jMethod<::sun::net::ftp::FtpClient(::sun::net::ftp::FtpClient$TransferType)>("setType"), //
+		jMethod<::sun::net::ftp::FtpClient(::java::lang::String)>("siteCmd"), //
+		jMethod<::sun::net::ftp::FtpClient()>("startSecureSession"), //
+		jMethod<::sun::net::ftp::FtpClient(::java::lang::String)>("structureMount"), //
+		jMethod<::sun::net::ftp::FtpClient()>("useKerberos"), //
+	};
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto abort(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("abort")] != -1);
+		return call<R>("abort", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto allocate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("allocate")] != -1);
+		return call<R>("allocate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto appendFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("appendFile")] != -1);
+		return call<R>("appendFile", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto changeDirectory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("changeDirectory")] != -1);
+		return call<R>("changeDirectory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto changeToParentDirectory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("changeToParentDirectory")] != -1);
+		return call<R>("changeToParentDirectory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto completePending(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("completePending")] != -1);
+		return call<R>("completePending", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto connect(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("connect")] != -1);
+		return call<R>("connect", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	static auto create(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create")] != -1);
+		return scall<R>("create", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto defaultPort(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("defaultPort")] != -1);
+		return scall<R>("defaultPort", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto deleteFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("deleteFile")] != -1);
+		return call<R>("deleteFile", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto enablePassiveMode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("enablePassiveMode")] != -1);
+		return call<R>("enablePassiveMode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto endSecureSession(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("endSecureSession")] != -1);
+		return call<R>("endSecureSession", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getConnectTimeout(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getConnectTimeout")] != -1);
+		return call<R>("getConnectTimeout", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getFeatures(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFeatures")] != -1);
+		return call<R>("getFeatures", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto getFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFile")] != -1);
+		return call<R>("getFile", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::InputStream, typename... Args>
+	auto getFileStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFileStream")] != -1);
+		return call<R>("getFileStream", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getHelp(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHelp")] != -1);
+		return call<R>("getHelp", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getLastFileName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLastFileName")] != -1);
+		return call<R>("getLastFileName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Date, typename... Args>
+	auto getLastModified(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLastModified")] != -1);
+		return call<R>("getLastModified", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpReplyCode, typename... Args>
+	auto getLastReplyCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLastReplyCode")] != -1);
+		return call<R>("getLastReplyCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getLastResponseString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLastResponseString")] != -1);
+		return call<R>("getLastResponseString", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getLastTransferSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLastTransferSize")] != -1);
+		return call<R>("getLastTransferSize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::Proxy, typename... Args>
+	auto getProxy(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getProxy")] != -1);
+		return call<R>("getProxy", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getReadTimeout(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getReadTimeout")] != -1);
+		return call<R>("getReadTimeout", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::SocketAddress, typename... Args>
+	auto getServerAddress(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getServerAddress")] != -1);
+		return call<R>("getServerAddress", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSize")] != -1);
+		return call<R>("getSize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getStatus(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStatus")] != -1);
+		return call<R>("getStatus", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getSystem(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSystem")] != -1);
+		return call<R>("getSystem", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getWelcomeMsg(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getWelcomeMsg")] != -1);
+		return call<R>("getWelcomeMsg", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getWorkingDirectory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getWorkingDirectory")] != -1);
+		return call<R>("getWorkingDirectory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isConnected(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isConnected")] != -1);
+		return call<R>("isConnected", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isLoggedIn(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isLoggedIn")] != -1);
+		return call<R>("isLoggedIn", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isPassiveModeEnabled(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isPassiveModeEnabled")] != -1);
+		return call<R>("isPassiveModeEnabled", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::InputStream, typename... Args>
+	auto list(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("list")] != -1);
+		return call<R>("list", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Iterator, typename... Args>
+	auto listFiles(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("listFiles")] != -1);
+		return call<R>("listFiles", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto login(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("login")] != -1);
+		return call<R>("login", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto makeDirectory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("makeDirectory")] != -1);
+		return call<R>("makeDirectory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::InputStream, typename... Args>
+	auto nameList(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("nameList")] != -1);
+		return call<R>("nameList", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto noop(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("noop")] != -1);
+		return call<R>("noop", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto putFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("putFile")] != -1);
+		return call<R>("putFile", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::OutputStream, typename... Args>
+	auto putFileStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("putFileStream")] != -1);
+		return call<R>("putFileStream", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto reInit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("reInit")] != -1);
+		return call<R>("reInit", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto removeDirectory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeDirectory")] != -1);
+		return call<R>("removeDirectory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto rename(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("rename")] != -1);
+		return call<R>("rename", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto setAsciiType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setAsciiType")] != -1);
+		return call<R>("setAsciiType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto setBinaryType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setBinaryType")] != -1);
+		return call<R>("setBinaryType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto setConnectTimeout(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setConnectTimeout")] != -1);
+		return call<R>("setConnectTimeout", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto setDirParser(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setDirParser")] != -1);
+		return call<R>("setDirParser", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto setProxy(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setProxy")] != -1);
+		return call<R>("setProxy", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto setReadTimeout(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setReadTimeout")] != -1);
+		return call<R>("setReadTimeout", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto setRestartOffset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setRestartOffset")] != -1);
+		return call<R>("setRestartOffset", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto setType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setType")] != -1);
+		return call<R>("setType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto siteCmd(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("siteCmd")] != -1);
+		return call<R>("siteCmd", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto startSecureSession(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("startSecureSession")] != -1);
+		return call<R>("startSecureSession", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto structureMount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("structureMount")] != -1);
+		return call<R>("structureMount", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::ftp::FtpClient, typename... Args>
+	auto useKerberos(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("useKerberos")] != -1);
+		return call<R>("useKerberos", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

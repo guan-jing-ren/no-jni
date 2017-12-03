@@ -1,0 +1,64 @@
+#ifndef sun_font_FontAccess_HPP
+#define sun_font_FontAccess_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::FontAccess : public jObject<::sun::font::FontAccess, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "FontAccess";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::sun::font::Font2D(::java::awt::Font)>("getFont2D"), //
+		jMethod<::sun::font::FontAccess()>("getFontAccess"), //
+		jMethod<::jboolean(::java::awt::Font)>("isCreatedFont"), //
+		jMethod<::jvoid(::java::awt::Font)>("setCreatedFont"), //
+		jMethod<::jvoid(::java::awt::Font, ::sun::font::Font2DHandle)>("setFont2D"), //
+		jMethod<::jvoid(::sun::font::FontAccess)>("setFontAccess"), //
+	};
+
+	template<typename R = ::sun::font::Font2D, typename... Args>
+	auto getFont2D(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFont2D")] != -1);
+		return call<R>("getFont2D", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::FontAccess, typename... Args>
+	static auto getFontAccess(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFontAccess")] != -1);
+		return scall<R>("getFontAccess", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isCreatedFont(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isCreatedFont")] != -1);
+		return call<R>("isCreatedFont", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setCreatedFont(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setCreatedFont")] != -1);
+		return call<R>("setCreatedFont", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setFont2D(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setFont2D")] != -1);
+		return call<R>("setFont2D", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setFontAccess(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setFontAccess")] != -1);
+		return scall<R>("setFontAccess", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

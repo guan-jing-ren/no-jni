@@ -1,0 +1,42 @@
+#ifndef sun_misc_GC_HPP
+#define sun_misc_GC_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::misc::GC : public jObject<::sun::misc::GC, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_misc / "GC";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jlong()>("currentLatencyTarget"), //
+		jMethod<::jlong()>("maxObjectInspectionAge"), //
+		jMethod<::sun::misc::GC$LatencyRequest(::jlong)>("requestLatency"), //
+	};
+
+	template<typename R = ::jlong, typename... Args>
+	static auto currentLatencyTarget(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("currentLatencyTarget")] != -1);
+		return scall<R>("currentLatencyTarget", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	static auto maxObjectInspectionAge(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("maxObjectInspectionAge")] != -1);
+		return scall<R>("maxObjectInspectionAge", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::misc::GC$LatencyRequest, typename... Args>
+	static auto requestLatency(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("requestLatency")] != -1);
+		return scall<R>("requestLatency", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

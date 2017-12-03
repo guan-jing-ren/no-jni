@@ -1,0 +1,29 @@
+#ifndef sun_swing_plaf_GTKKeybindings_HPP
+#define sun_swing_plaf_GTKKeybindings_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::swing::plaf::GTKKeybindings : public jObject<::sun::swing::plaf::GTKKeybindings, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_swing_plaf / "GTKKeybindings";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::javax::swing::UIDefaults)>("installKeybindings"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto installKeybindings(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("installKeybindings")] != -1);
+		return scall<R>("installKeybindings", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

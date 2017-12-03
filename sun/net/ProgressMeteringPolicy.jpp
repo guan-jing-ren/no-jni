@@ -1,0 +1,35 @@
+#ifndef sun_net_ProgressMeteringPolicy_HPP
+#define sun_net_ProgressMeteringPolicy_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::net::ProgressMeteringPolicy : public jObject<::sun::net::ProgressMeteringPolicy, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_net / "ProgressMeteringPolicy";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("getProgressUpdateThreshold"), //
+		jMethod<::jboolean(::java::net::URL, ::java::lang::String)>("shouldMeterInput"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getProgressUpdateThreshold(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getProgressUpdateThreshold")] != -1);
+		return call<R>("getProgressUpdateThreshold", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto shouldMeterInput(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("shouldMeterInput")] != -1);
+		return call<R>("shouldMeterInput", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

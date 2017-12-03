@@ -1,0 +1,63 @@
+#ifndef sun_awt_X11_XDesktopPeer_HPP
+#define sun_awt_X11_XDesktopPeer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::X11::XDesktopPeer : public jObject<::sun::awt::X11::XDesktopPeer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_X11 / "XDesktopPeer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::net::URI)>("browse"), //
+		jMethod<::jvoid(::java::io::File)>("edit"), //
+		jMethod<::jboolean(::java::awt::Desktop$Action)>("isSupported"), //
+		jMethod<::jvoid(::java::net::URI)>("mail"), //
+		jMethod<::jvoid(::java::io::File)>("open"), //
+		jMethod<::jvoid(::java::io::File)>("print"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto browse(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("browse")] != -1);
+		return call<R>("browse", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto edit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("edit")] != -1);
+		return call<R>("edit", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSupported")] != -1);
+		return call<R>("isSupported", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto mail(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("mail")] != -1);
+		return call<R>("mail", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto open(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("open")] != -1);
+		return call<R>("open", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto print(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("print")] != -1);
+		return call<R>("print", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

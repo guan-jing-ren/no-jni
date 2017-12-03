@@ -1,0 +1,42 @@
+#ifndef com_sun_org_glassfish_gmbal_InheritedAttribute_HPP
+#define com_sun_org_glassfish_gmbal_InheritedAttribute_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::org::glassfish::gmbal::InheritedAttribute : public jObject<::com::sun::org::glassfish::gmbal::InheritedAttribute, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_org_glassfish_gmbal / "InheritedAttribute";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("description"), //
+		jMethod<::java::lang::String()>("id"), //
+		jMethod<::java::lang::String()>("methodName"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto description(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("description")] != -1);
+		return call<R>("description", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto id(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("id")] != -1);
+		return call<R>("id", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto methodName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("methodName")] != -1);
+		return call<R>("methodName", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

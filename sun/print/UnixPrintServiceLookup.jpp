@@ -1,0 +1,65 @@
+#ifndef sun_print_UnixPrintServiceLookup_HPP
+#define sun_print_UnixPrintServiceLookup_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::print::UnixPrintServiceLookup : public jObject<::sun::print::UnixPrintServiceLookup, ::javax::print::PrintServiceLookup> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_print / "UnixPrintServiceLookup";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::print::PrintService()>("getDefaultPrintService"), //
+		jMethod<::javax::print::MultiDocPrintService *(::javax::print::DocFlavor *, ::javax::print::attribute::AttributeSet)>("getMultiDocPrintServices"), //
+		jMethod<::javax::print::PrintService *()>("getPrintServices"), //
+		jMethod<::javax::print::PrintService *(::javax::print::DocFlavor, ::javax::print::attribute::AttributeSet)>("getPrintServices"), //
+		jMethod<::jvoid(::sun::print::BackgroundLookupListener)>("getServicesInbackground"), //
+		jMethod<::jvoid()>("refreshServices"), //
+		jMethod<::jvoid()>("run"), //
+	};
+
+	template<typename R = ::javax::print::PrintService, typename... Args>
+	auto getDefaultPrintService(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDefaultPrintService")] != -1);
+		return call<R>("getDefaultPrintService", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::print::MultiDocPrintService *, typename... Args>
+	auto getMultiDocPrintServices(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMultiDocPrintServices")] != -1);
+		return call<R>("getMultiDocPrintServices", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::print::PrintService *, typename... Args>
+	auto getPrintServices(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPrintServices")] != -1);
+		return call<R>("getPrintServices", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto getServicesInbackground(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getServicesInbackground")] != -1);
+		return call<R>("getServicesInbackground", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto refreshServices(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("refreshServices")] != -1);
+		return call<R>("refreshServices", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto run(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("run")] != -1);
+		return call<R>("run", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

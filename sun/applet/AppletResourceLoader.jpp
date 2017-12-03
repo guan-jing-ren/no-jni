@@ -1,0 +1,43 @@
+#ifndef sun_applet_AppletResourceLoader_HPP
+#define sun_applet_AppletResourceLoader_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::applet::AppletResourceLoader : public jObject<::sun::applet::AppletResourceLoader, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_applet / "AppletResourceLoader";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid()>("flushImages"), //
+		jMethod<::java::awt::Image(::java::net::URL)>("getImage"), //
+		jMethod<::sun::misc::Ref(::java::net::URL)>("getImageRef"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto flushImages(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("flushImages")] != -1);
+		return scall<R>("flushImages", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Image, typename... Args>
+	static auto getImage(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getImage")] != -1);
+		return scall<R>("getImage", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::misc::Ref, typename... Args>
+	static auto getImageRef(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getImageRef")] != -1);
+		return scall<R>("getImageRef", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

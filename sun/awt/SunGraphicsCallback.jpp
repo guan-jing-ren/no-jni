@@ -1,0 +1,63 @@
+#ifndef sun_awt_SunGraphicsCallback_HPP
+#define sun_awt_SunGraphicsCallback_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::SunGraphicsCallback : public jObject<::sun::awt::SunGraphicsCallback, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "SunGraphicsCallback";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("HEAVYWEIGHTS"), //
+		jField<::jint>("LIGHTWEIGHTS"), //
+		jField<::jint>("TWO_PASSES"), //
+	};
+
+	template<typename F = ::jint>
+	static auto HEAVYWEIGHTS() {
+		static_assert(field_signatures[jField<F>("HEAVYWEIGHTS")] != -1);
+		return sat<F>("HEAVYWEIGHTS");
+	}
+
+	template<typename F = ::jint>
+	static auto LIGHTWEIGHTS() {
+		static_assert(field_signatures[jField<F>("LIGHTWEIGHTS")] != -1);
+		return sat<F>("LIGHTWEIGHTS");
+	}
+
+	template<typename F = ::jint>
+	static auto TWO_PASSES() {
+		static_assert(field_signatures[jField<F>("TWO_PASSES")] != -1);
+		return sat<F>("TWO_PASSES");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::awt::Component, ::java::awt::Graphics)>("run"), //
+		jMethod<::jvoid(::java::awt::Component *, ::java::awt::Graphics, ::jint)>("runComponents"), //
+		jMethod<::jvoid(::java::awt::Component, ::java::awt::Rectangle, ::java::awt::Graphics, ::java::awt::Shape, ::jint)>("runOneComponent"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto run(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("run")] != -1);
+		return call<R>("run", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto runComponents(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("runComponents")] != -1);
+		return call<R>("runComponents", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto runOneComponent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("runOneComponent")] != -1);
+		return call<R>("runOneComponent", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

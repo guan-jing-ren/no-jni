@@ -1,0 +1,81 @@
+#ifndef sun_security_util_ConstraintsParameters_HPP
+#define sun_security_util_ConstraintsParameters_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::util::ConstraintsParameters : public jObject<::sun::security::util::ConstraintsParameters, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_util / "ConstraintsParameters";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::security::AlgorithmParameters, ::java::security::Key, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::security::Timestamp)>(), //
+		jConstructor<::jvoid(::java::security::cert::X509Certificate)>(), //
+		jConstructor<::jvoid(::java::security::cert::X509Certificate, ::jboolean, ::java::util::Date, ::java::security::Timestamp, ::java::lang::String)>(), //
+		jMethod<::java::security::AlgorithmParameters()>("getAlgParams"), //
+		jMethod<::java::lang::String()>("getAlgorithm"), //
+		jMethod<::java::security::cert::X509Certificate()>("getCertificate"), //
+		jMethod<::java::security::Timestamp()>("getJARTimestamp"), //
+		jMethod<::java::util::Date()>("getPKIXParamDate"), //
+		jMethod<::java::security::Key()>("getPublicKey"), //
+		jMethod<::java::lang::String()>("getVariant"), //
+		jMethod<::jboolean()>("isTrustedMatch"), //
+	};
+
+	template<typename R = ::java::security::AlgorithmParameters, typename... Args>
+	auto getAlgParams(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAlgParams")] != -1);
+		return call<R>("getAlgParams", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAlgorithm(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAlgorithm")] != -1);
+		return call<R>("getAlgorithm", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::X509Certificate, typename... Args>
+	auto getCertificate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCertificate")] != -1);
+		return call<R>("getCertificate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Timestamp, typename... Args>
+	auto getJARTimestamp(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getJARTimestamp")] != -1);
+		return call<R>("getJARTimestamp", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Date, typename... Args>
+	auto getPKIXParamDate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPKIXParamDate")] != -1);
+		return call<R>("getPKIXParamDate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Key, typename... Args>
+	auto getPublicKey(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPublicKey")] != -1);
+		return call<R>("getPublicKey", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getVariant(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getVariant")] != -1);
+		return call<R>("getVariant", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isTrustedMatch(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isTrustedMatch")] != -1);
+		return call<R>("isTrustedMatch", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

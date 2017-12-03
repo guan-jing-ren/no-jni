@@ -1,0 +1,94 @@
+#ifndef sun_invoke_util_ValueConversions_HPP
+#define sun_invoke_util_ValueConversions_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::invoke::util::ValueConversions : public jObject<::sun::invoke::util::ValueConversions, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_invoke_util / "ValueConversions";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::invoke::MethodHandle(::sun::invoke::util::Wrapper)>("boxExact"), //
+		jMethod<::java::lang::invoke::MethodHandle()>("cast"), //
+		jMethod<::java::lang::invoke::MethodHandle(::java::lang::Class, ::java::lang::Class)>("convertPrimitive"), //
+		jMethod<::java::lang::invoke::MethodHandle(::sun::invoke::util::Wrapper, ::sun::invoke::util::Wrapper)>("convertPrimitive"), //
+		jMethod<::java::lang::invoke::MethodHandle()>("ignore"), //
+		jMethod<::java::lang::Number(::sun::invoke::util::Wrapper, ::java::lang::Object, ::jboolean)>("primitiveConversion"), //
+		jMethod<::java::lang::invoke::MethodHandle(::sun::invoke::util::Wrapper)>("unboxCast"), //
+		jMethod<::java::lang::invoke::MethodHandle(::sun::invoke::util::Wrapper)>("unboxExact"), //
+		jMethod<::java::lang::invoke::MethodHandle(::sun::invoke::util::Wrapper, ::jboolean)>("unboxExact"), //
+		jMethod<::java::lang::invoke::MethodHandle(::sun::invoke::util::Wrapper)>("unboxWiden"), //
+		jMethod<::jint(::java::lang::Object)>("widenSubword"), //
+		jMethod<::java::lang::invoke::MethodHandle(::sun::invoke::util::Wrapper)>("zeroConstantFunction"), //
+	};
+
+	template<typename R = ::java::lang::invoke::MethodHandle, typename... Args>
+	static auto boxExact(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("boxExact")] != -1);
+		return scall<R>("boxExact", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::invoke::MethodHandle, typename... Args>
+	static auto cast(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("cast")] != -1);
+		return scall<R>("cast", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::invoke::MethodHandle, typename... Args>
+	static auto convertPrimitive(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("convertPrimitive")] != -1);
+		return scall<R>("convertPrimitive", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::invoke::MethodHandle, typename... Args>
+	static auto ignore(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("ignore")] != -1);
+		return scall<R>("ignore", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Number, typename... Args>
+	static auto primitiveConversion(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("primitiveConversion")] != -1);
+		return scall<R>("primitiveConversion", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::invoke::MethodHandle, typename... Args>
+	static auto unboxCast(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unboxCast")] != -1);
+		return scall<R>("unboxCast", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::invoke::MethodHandle, typename... Args>
+	static auto unboxExact(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unboxExact")] != -1);
+		return scall<R>("unboxExact", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::invoke::MethodHandle, typename... Args>
+	static auto unboxWiden(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unboxWiden")] != -1);
+		return scall<R>("unboxWiden", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto widenSubword(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("widenSubword")] != -1);
+		return scall<R>("widenSubword", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::invoke::MethodHandle, typename... Args>
+	static auto zeroConstantFunction(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("zeroConstantFunction")] != -1);
+		return scall<R>("zeroConstantFunction", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

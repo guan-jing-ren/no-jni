@@ -1,0 +1,37 @@
+#ifndef sun_security_x509_DeltaCRLIndicatorExtension_HPP
+#define sun_security_x509_DeltaCRLIndicatorExtension_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::x509::DeltaCRLIndicatorExtension : public jObject<::sun::security::x509::DeltaCRLIndicatorExtension, ::sun::security::x509::CRLNumberExtension> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_x509 / "DeltaCRLIndicatorExtension";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("NAME"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto NAME() {
+		static_assert(field_signatures[jField<F>("NAME")] != -1);
+		return sat<F>("NAME");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint)>(), //
+		jConstructor<::jvoid(::java::lang::Boolean, ::java::lang::Object)>(), //
+		jConstructor<::jvoid(::java::math::BigInteger)>(), //
+		jMethod<::jvoid(::java::io::OutputStream)>("encode"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto encode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encode")] != -1);
+		return call<R>("encode", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

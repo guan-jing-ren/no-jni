@@ -1,0 +1,28 @@
+#ifndef sun_security_jgss_SunProvider_HPP
+#define sun_security_jgss_SunProvider_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::jgss::SunProvider : public jObject<::sun::security::jgss::SunProvider, ::java::security::Provider> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_jgss / "SunProvider";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::security::jgss::SunProvider>("INSTANCE"), //
+	};
+
+	template<typename F = ::sun::security::jgss::SunProvider>
+	static auto INSTANCE() {
+		static_assert(field_signatures[jField<F>("INSTANCE")] != -1);
+		return sat<F>("INSTANCE");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+	};
+
+};
+
+#endif

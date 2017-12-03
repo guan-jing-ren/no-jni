@@ -1,0 +1,36 @@
+#ifndef com_sun_corba_se_spi_activation_LocatorPackage_ServerLocation_HPP
+#define com_sun_corba_se_spi_activation_LocatorPackage_ServerLocation_HPP
+
+#include "../../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::spi::activation::LocatorPackage::ServerLocation : public jObject<::com::sun::corba::se::spi::activation::LocatorPackage::ServerLocation, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_spi_activation_LocatorPackage / "ServerLocation";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("hostname"), //
+		jField<::com::sun::corba::se::spi::activation::ORBPortInfo *>("ports"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	auto hostname() const {
+		static_assert(field_signatures[jField<F>("hostname")] != -1);
+		return at<F>("hostname");
+	}
+
+	template<typename F = ::com::sun::corba::se::spi::activation::ORBPortInfo *>
+	auto ports() const {
+		static_assert(field_signatures[jField<F>("ports")] != -1);
+		return at<F>("ports");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String, ::com::sun::corba::se::spi::activation::ORBPortInfo *)>(), //
+	};
+
+};
+
+#endif

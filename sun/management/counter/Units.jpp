@@ -1,0 +1,90 @@
+#ifndef sun_management_counter_Units_HPP
+#define sun_management_counter_Units_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::management::counter::Units : public jObject<::sun::management::counter::Units, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_management_counter / "Units";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::management::counter::Units>("BYTES"), //
+		jField<::sun::management::counter::Units>("EVENTS"), //
+		jField<::sun::management::counter::Units>("HERTZ"), //
+		jField<::sun::management::counter::Units>("INVALID"), //
+		jField<::sun::management::counter::Units>("NONE"), //
+		jField<::sun::management::counter::Units>("STRING"), //
+		jField<::sun::management::counter::Units>("TICKS"), //
+	};
+
+	template<typename F = ::sun::management::counter::Units>
+	static auto BYTES() {
+		static_assert(field_signatures[jField<F>("BYTES")] != -1);
+		return sat<F>("BYTES");
+	}
+
+	template<typename F = ::sun::management::counter::Units>
+	static auto EVENTS() {
+		static_assert(field_signatures[jField<F>("EVENTS")] != -1);
+		return sat<F>("EVENTS");
+	}
+
+	template<typename F = ::sun::management::counter::Units>
+	static auto HERTZ() {
+		static_assert(field_signatures[jField<F>("HERTZ")] != -1);
+		return sat<F>("HERTZ");
+	}
+
+	template<typename F = ::sun::management::counter::Units>
+	static auto INVALID() {
+		static_assert(field_signatures[jField<F>("INVALID")] != -1);
+		return sat<F>("INVALID");
+	}
+
+	template<typename F = ::sun::management::counter::Units>
+	static auto NONE() {
+		static_assert(field_signatures[jField<F>("NONE")] != -1);
+		return sat<F>("NONE");
+	}
+
+	template<typename F = ::sun::management::counter::Units>
+	static auto STRING() {
+		static_assert(field_signatures[jField<F>("STRING")] != -1);
+		return sat<F>("STRING");
+	}
+
+	template<typename F = ::sun::management::counter::Units>
+	static auto TICKS() {
+		static_assert(field_signatures[jField<F>("TICKS")] != -1);
+		return sat<F>("TICKS");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("intValue"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::sun::management::counter::Units(::jint)>("toUnits"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto intValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("intValue")] != -1);
+		return call<R>("intValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::management::counter::Units, typename... Args>
+	static auto toUnits(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toUnits")] != -1);
+		return scall<R>("toUnits", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

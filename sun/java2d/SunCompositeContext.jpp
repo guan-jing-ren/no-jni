@@ -1,0 +1,37 @@
+#ifndef sun_java2d_SunCompositeContext_HPP
+#define sun_java2d_SunCompositeContext_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::java2d::SunCompositeContext : public jObject<::sun::java2d::SunCompositeContext, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d / "SunCompositeContext";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::AlphaComposite, ::java::awt::image::ColorModel, ::java::awt::image::ColorModel)>(), //
+		jConstructor<::jvoid(::sun::java2d::loops::XORComposite, ::java::awt::image::ColorModel, ::java::awt::image::ColorModel)>(), //
+		jMethod<::jvoid(::java::awt::image::Raster, ::java::awt::image::Raster, ::java::awt::image::WritableRaster)>("compose"), //
+		jMethod<::jvoid()>("dispose"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto compose(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("compose")] != -1);
+		return call<R>("compose", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispose(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dispose")] != -1);
+		return call<R>("dispose", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

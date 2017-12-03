@@ -1,0 +1,49 @@
+#ifndef sun_awt_im_CompositionArea_HPP
+#define sun_awt_im_CompositionArea_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::im::CompositionArea : public jObject<::sun::awt::im::CompositionArea, ::javax::swing::JPanel> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_im / "CompositionArea";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::awt::event::InputMethodEvent)>("caretPositionChanged"), //
+		jMethod<::java::awt::im::InputMethodRequests()>("getInputMethodRequests"), //
+		jMethod<::jvoid(::java::awt::event::InputMethodEvent)>("inputMethodTextChanged"), //
+		jMethod<::jvoid(::java::awt::Graphics)>("paint"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto caretPositionChanged(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("caretPositionChanged")] != -1);
+		return call<R>("caretPositionChanged", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::im::InputMethodRequests, typename... Args>
+	auto getInputMethodRequests(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInputMethodRequests")] != -1);
+		return call<R>("getInputMethodRequests", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto inputMethodTextChanged(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("inputMethodTextChanged")] != -1);
+		return call<R>("inputMethodTextChanged", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto paint(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("paint")] != -1);
+		return call<R>("paint", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

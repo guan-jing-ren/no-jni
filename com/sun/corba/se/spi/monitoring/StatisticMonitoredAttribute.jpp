@@ -1,0 +1,43 @@
+#ifndef com_sun_corba_se_spi_monitoring_StatisticMonitoredAttribute_HPP
+#define com_sun_corba_se_spi_monitoring_StatisticMonitoredAttribute_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::spi::monitoring::StatisticMonitoredAttribute : public jObject<::com::sun::corba::se::spi::monitoring::StatisticMonitoredAttribute, ::com::sun::corba::se::spi::monitoring::MonitoredAttributeBase> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_spi_monitoring / "StatisticMonitoredAttribute";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::com::sun::corba::se::spi::monitoring::StatisticsAccumulator, ::java::lang::Object)>(), //
+		jMethod<::jvoid()>("clearState"), //
+		jMethod<::com::sun::corba::se::spi::monitoring::StatisticsAccumulator()>("getStatisticsAccumulator"), //
+		jMethod<::java::lang::Object()>("getValue"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto clearState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clearState")] != -1);
+		return call<R>("clearState", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::monitoring::StatisticsAccumulator, typename... Args>
+	auto getStatisticsAccumulator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStatisticsAccumulator")] != -1);
+		return call<R>("getStatisticsAccumulator", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getValue")] != -1);
+		return call<R>("getValue", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

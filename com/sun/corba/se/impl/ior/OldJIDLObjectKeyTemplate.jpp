@@ -1,0 +1,37 @@
+#ifndef com_sun_corba_se_impl_ior_OldJIDLObjectKeyTemplate_HPP
+#define com_sun_corba_se_impl_ior_OldJIDLObjectKeyTemplate_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::impl::ior::OldJIDLObjectKeyTemplate : public jObject<::com::sun::corba::se::impl::ior::OldJIDLObjectKeyTemplate, ::com::sun::corba::se::impl::ior::OldObjectKeyTemplateBase> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_impl_ior / "OldJIDLObjectKeyTemplate";
+
+	constexpr static Enume field_signatures{
+		jField<::jbyte>("NULL_PATCH_VERSION"), //
+	};
+
+	template<typename F = ::jbyte>
+	static auto NULL_PATCH_VERSION() {
+		static_assert(field_signatures[jField<F>("NULL_PATCH_VERSION")] != -1);
+		return sat<F>("NULL_PATCH_VERSION");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::com::sun::corba::se::spi::orb::ORB, ::jint, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::com::sun::corba::se::spi::orb::ORB, ::jint, ::jint, ::org::omg::CORBA_2_3::portable::InputStream)>(), //
+		jConstructor<::jvoid(::com::sun::corba::se::spi::orb::ORB, ::jint, ::jint, ::org::omg::CORBA_2_3::portable::InputStream, ::org::omg::CORBA::OctetSeqHolder)>(), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::ior::ObjectId, ::org::omg::CORBA_2_3::portable::OutputStream)>("write"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

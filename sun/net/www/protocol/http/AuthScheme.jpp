@@ -1,0 +1,76 @@
+#ifndef sun_net_www_protocol_http_AuthScheme_HPP
+#define sun_net_www_protocol_http_AuthScheme_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::sun::net::www::protocol::http::AuthScheme : public jObject<::sun::net::www::protocol::http::AuthScheme, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_net_www_protocol_http / "AuthScheme";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::net::www::protocol::http::AuthScheme>("BASIC"), //
+		jField<::sun::net::www::protocol::http::AuthScheme>("DIGEST"), //
+		jField<::sun::net::www::protocol::http::AuthScheme>("KERBEROS"), //
+		jField<::sun::net::www::protocol::http::AuthScheme>("NEGOTIATE"), //
+		jField<::sun::net::www::protocol::http::AuthScheme>("NTLM"), //
+		jField<::sun::net::www::protocol::http::AuthScheme>("UNKNOWN"), //
+	};
+
+	template<typename F = ::sun::net::www::protocol::http::AuthScheme>
+	static auto BASIC() {
+		static_assert(field_signatures[jField<F>("BASIC")] != -1);
+		return sat<F>("BASIC");
+	}
+
+	template<typename F = ::sun::net::www::protocol::http::AuthScheme>
+	static auto DIGEST() {
+		static_assert(field_signatures[jField<F>("DIGEST")] != -1);
+		return sat<F>("DIGEST");
+	}
+
+	template<typename F = ::sun::net::www::protocol::http::AuthScheme>
+	static auto KERBEROS() {
+		static_assert(field_signatures[jField<F>("KERBEROS")] != -1);
+		return sat<F>("KERBEROS");
+	}
+
+	template<typename F = ::sun::net::www::protocol::http::AuthScheme>
+	static auto NEGOTIATE() {
+		static_assert(field_signatures[jField<F>("NEGOTIATE")] != -1);
+		return sat<F>("NEGOTIATE");
+	}
+
+	template<typename F = ::sun::net::www::protocol::http::AuthScheme>
+	static auto NTLM() {
+		static_assert(field_signatures[jField<F>("NTLM")] != -1);
+		return sat<F>("NTLM");
+	}
+
+	template<typename F = ::sun::net::www::protocol::http::AuthScheme>
+	static auto UNKNOWN() {
+		static_assert(field_signatures[jField<F>("UNKNOWN")] != -1);
+		return sat<F>("UNKNOWN");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::net::www::protocol::http::AuthScheme(::java::lang::String)>("valueOf"), //
+		jMethod<::sun::net::www::protocol::http::AuthScheme *()>("values"), //
+	};
+
+	template<typename R = ::sun::net::www::protocol::http::AuthScheme, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::www::protocol::http::AuthScheme *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

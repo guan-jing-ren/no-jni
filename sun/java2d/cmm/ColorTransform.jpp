@@ -1,0 +1,80 @@
+#ifndef sun_java2d_cmm_ColorTransform_HPP
+#define sun_java2d_cmm_ColorTransform_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::cmm::ColorTransform : public jObject<::sun::java2d::cmm::ColorTransform, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_cmm / "ColorTransform";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("Any"), //
+		jField<::jint>("Gamut"), //
+		jField<::jint>("In"), //
+		jField<::jint>("Out"), //
+		jField<::jint>("Simulation"), //
+	};
+
+	template<typename F = ::jint>
+	static auto Any() {
+		static_assert(field_signatures[jField<F>("Any")] != -1);
+		return sat<F>("Any");
+	}
+
+	template<typename F = ::jint>
+	static auto Gamut() {
+		static_assert(field_signatures[jField<F>("Gamut")] != -1);
+		return sat<F>("Gamut");
+	}
+
+	template<typename F = ::jint>
+	static auto In() {
+		static_assert(field_signatures[jField<F>("In")] != -1);
+		return sat<F>("In");
+	}
+
+	template<typename F = ::jint>
+	static auto Out() {
+		static_assert(field_signatures[jField<F>("Out")] != -1);
+		return sat<F>("Out");
+	}
+
+	template<typename F = ::jint>
+	static auto Simulation() {
+		static_assert(field_signatures[jField<F>("Simulation")] != -1);
+		return sat<F>("Simulation");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::awt::image::BufferedImage, ::java::awt::image::BufferedImage)>("colorConvert"), //
+		jMethod<::jvoid(::java::awt::image::Raster, ::java::awt::image::WritableRaster)>("colorConvert"), //
+		jMethod<::jvoid(::java::awt::image::Raster, ::java::awt::image::WritableRaster, ::jfloat *, ::jfloat *, ::jfloat *, ::jfloat *)>("colorConvert"), //
+		jMethod<::jbyte *(::jbyte *, ::jbyte *)>("colorConvert"), //
+		jMethod<::jshort *(::jshort *, ::jshort *)>("colorConvert"), //
+		jMethod<::jint()>("getNumInComponents"), //
+		jMethod<::jint()>("getNumOutComponents"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto colorConvert(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("colorConvert")] != -1);
+		return call<R>("colorConvert", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getNumInComponents(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNumInComponents")] != -1);
+		return call<R>("getNumInComponents", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getNumOutComponents(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNumOutComponents")] != -1);
+		return call<R>("getNumOutComponents", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

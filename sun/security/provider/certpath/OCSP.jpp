@@ -1,0 +1,44 @@
+#ifndef sun_security_provider_certpath_OCSP_HPP
+#define sun_security_provider_certpath_OCSP_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::security::provider::certpath::OCSP : public jObject<::sun::security::provider::certpath::OCSP, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_provider_certpath / "OCSP";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::security::provider::certpath::OCSP$RevocationStatus(::java::security::cert::X509Certificate, ::java::net::URI, ::java::security::cert::TrustAnchor, ::java::security::cert::X509Certificate, ::java::security::cert::X509Certificate, ::java::util::Date, ::java::util::List, ::java::lang::String)>("check"), //
+		jMethod<::sun::security::provider::certpath::OCSP$RevocationStatus(::java::security::cert::X509Certificate, ::java::security::cert::X509Certificate, ::java::net::URI, ::java::security::cert::X509Certificate, ::java::util::Date)>("check"), //
+		jMethod<::sun::security::provider::certpath::OCSP$RevocationStatus(::java::security::cert::X509Certificate, ::java::security::cert::X509Certificate, ::java::net::URI, ::java::security::cert::X509Certificate, ::java::util::Date, ::java::util::List, ::java::lang::String)>("check"), //
+		jMethod<::jbyte *(::java::util::List, ::java::net::URI, ::java::util::List)>("getOCSPBytes"), //
+		jMethod<::java::net::URI(::java::security::cert::X509Certificate)>("getResponderURI"), //
+	};
+
+	template<typename R = ::sun::security::provider::certpath::OCSP$RevocationStatus, typename... Args>
+	static auto check(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("check")] != -1);
+		return scall<R>("check", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	static auto getOCSPBytes(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOCSPBytes")] != -1);
+		return scall<R>("getOCSPBytes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::URI, typename... Args>
+	static auto getResponderURI(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getResponderURI")] != -1);
+		return scall<R>("getResponderURI", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

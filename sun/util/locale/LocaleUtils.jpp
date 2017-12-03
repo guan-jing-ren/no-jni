@@ -1,0 +1,42 @@
+#ifndef sun_util_locale_LocaleUtils_HPP
+#define sun_util_locale_LocaleUtils_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::util::locale::LocaleUtils : public jObject<::sun::util::locale::LocaleUtils, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_util_locale / "LocaleUtils";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::java::lang::String, ::java::lang::String)>("caseIgnoreMatch"), //
+		jMethod<::jboolean(::java::lang::String)>("isAlphaNumericString"), //
+		jMethod<::java::lang::String(::java::lang::String)>("toLowerString"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto caseIgnoreMatch(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("caseIgnoreMatch")] != -1);
+		return scall<R>("caseIgnoreMatch", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isAlphaNumericString(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isAlphaNumericString")] != -1);
+		return scall<R>("isAlphaNumericString", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto toLowerString(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toLowerString")] != -1);
+		return scall<R>("toLowerString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,210 @@
+#ifndef sun_misc_VM_HPP
+#define sun_misc_VM_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::misc::VM : public jObject<::sun::misc::VM, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_misc / "VM";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("STATE_GREEN"), //
+		jField<::jint>("STATE_RED"), //
+		jField<::jint>("STATE_YELLOW"), //
+	};
+
+	template<typename F = ::jint>
+	static auto STATE_GREEN() {
+		static_assert(field_signatures[jField<F>("STATE_GREEN")] != -1);
+		return sat<F>("STATE_GREEN");
+	}
+
+	template<typename F = ::jint>
+	static auto STATE_RED() {
+		static_assert(field_signatures[jField<F>("STATE_RED")] != -1);
+		return sat<F>("STATE_RED");
+	}
+
+	template<typename F = ::jint>
+	static auto STATE_YELLOW() {
+		static_assert(field_signatures[jField<F>("STATE_YELLOW")] != -1);
+		return sat<F>("STATE_YELLOW");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::jint)>("addFinalRefCount"), //
+		jMethod<::jboolean()>("allowArraySyntax"), //
+		jMethod<::jboolean(::java::lang::ThreadGroup, ::jboolean)>("allowThreadSuspension"), //
+		jMethod<::jvoid(::jint, ::jint)>("asChange"), //
+		jMethod<::jvoid(::jint, ::jint)>("asChange_otherthread"), //
+		jMethod<::jvoid()>("awaitBooted"), //
+		jMethod<::jvoid()>("booted"), //
+		jMethod<::jint()>("getFinalRefCount"), //
+		jMethod<::jint()>("getPeakFinalRefCount"), //
+		jMethod<::java::lang::String(::java::lang::String)>("getSavedProperty"), //
+		jMethod<::jint()>("getState"), //
+		jMethod<::jvoid()>("initializeOSEnvironment"), //
+		jMethod<::jboolean()>("isBooted"), //
+		jMethod<::jboolean()>("isDirectMemoryPageAligned"), //
+		jMethod<::jboolean(::java::lang::ClassLoader)>("isSystemDomainLoader"), //
+		jMethod<::java::lang::ClassLoader()>("latestUserDefinedLoader"), //
+		jMethod<::jlong()>("maxDirectMemory"), //
+		jMethod<::jvoid(::sun::misc::VMNotification)>("registerVMNotification"), //
+		jMethod<::jvoid(::java::util::Properties)>("saveAndRemoveProperties"), //
+		jMethod<::jboolean()>("suspendThreads"), //
+		jMethod<::jboolean()>("threadsSuspended"), //
+		jMethod<::java::lang::Thread$State(::jint)>("toThreadState"), //
+		jMethod<::jvoid()>("unsuspendSomeThreads"), //
+		jMethod<::jvoid()>("unsuspendThreads"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto addFinalRefCount(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addFinalRefCount")] != -1);
+		return scall<R>("addFinalRefCount", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto allowArraySyntax(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("allowArraySyntax")] != -1);
+		return scall<R>("allowArraySyntax", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto allowThreadSuspension(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("allowThreadSuspension")] != -1);
+		return scall<R>("allowThreadSuspension", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto asChange(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("asChange")] != -1);
+		return scall<R>("asChange", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto asChange_otherthread(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("asChange_otherthread")] != -1);
+		return scall<R>("asChange_otherthread", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto awaitBooted(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("awaitBooted")] != -1);
+		return scall<R>("awaitBooted", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto booted(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("booted")] != -1);
+		return scall<R>("booted", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto getFinalRefCount(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFinalRefCount")] != -1);
+		return scall<R>("getFinalRefCount", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto getPeakFinalRefCount(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPeakFinalRefCount")] != -1);
+		return scall<R>("getPeakFinalRefCount", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getSavedProperty(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSavedProperty")] != -1);
+		return scall<R>("getSavedProperty", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto getState(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getState")] != -1);
+		return scall<R>("getState", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto initializeOSEnvironment(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("initializeOSEnvironment")] != -1);
+		return scall<R>("initializeOSEnvironment", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isBooted(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isBooted")] != -1);
+		return scall<R>("isBooted", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isDirectMemoryPageAligned(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isDirectMemoryPageAligned")] != -1);
+		return scall<R>("isDirectMemoryPageAligned", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isSystemDomainLoader(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSystemDomainLoader")] != -1);
+		return scall<R>("isSystemDomainLoader", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::ClassLoader, typename... Args>
+	static auto latestUserDefinedLoader(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("latestUserDefinedLoader")] != -1);
+		return scall<R>("latestUserDefinedLoader", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	static auto maxDirectMemory(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("maxDirectMemory")] != -1);
+		return scall<R>("maxDirectMemory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto registerVMNotification(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("registerVMNotification")] != -1);
+		return scall<R>("registerVMNotification", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto saveAndRemoveProperties(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("saveAndRemoveProperties")] != -1);
+		return scall<R>("saveAndRemoveProperties", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto suspendThreads(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("suspendThreads")] != -1);
+		return scall<R>("suspendThreads", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto threadsSuspended(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("threadsSuspended")] != -1);
+		return scall<R>("threadsSuspended", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Thread$State, typename... Args>
+	static auto toThreadState(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toThreadState")] != -1);
+		return scall<R>("toThreadState", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto unsuspendSomeThreads(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unsuspendSomeThreads")] != -1);
+		return scall<R>("unsuspendSomeThreads", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto unsuspendThreads(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unsuspendThreads")] != -1);
+		return scall<R>("unsuspendThreads", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

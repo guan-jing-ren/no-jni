@@ -1,0 +1,57 @@
+#ifndef sun_security_provider_certpath_OCSPResponse_HPP
+#define sun_security_provider_certpath_OCSPResponse_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::security::provider::certpath::OCSPResponse : public jObject<::sun::security::provider::certpath::OCSPResponse, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_provider_certpath / "OCSPResponse";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jbyte *)>(), //
+		jMethod<::java::util::Set()>("getCertIds"), //
+		jMethod<::sun::security::provider::certpath::ResponderId()>("getResponderId"), //
+		jMethod<::sun::security::provider::certpath::OCSPResponse$ResponseStatus()>("getResponseStatus"), //
+		jMethod<::sun::security::provider::certpath::OCSPResponse$SingleResponse(::sun::security::provider::certpath::CertId)>("getSingleResponse"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto getCertIds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCertIds")] != -1);
+		return call<R>("getCertIds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::provider::certpath::ResponderId, typename... Args>
+	auto getResponderId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getResponderId")] != -1);
+		return call<R>("getResponderId", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::provider::certpath::OCSPResponse$ResponseStatus, typename... Args>
+	auto getResponseStatus(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getResponseStatus")] != -1);
+		return call<R>("getResponseStatus", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::provider::certpath::OCSPResponse$SingleResponse, typename... Args>
+	auto getSingleResponse(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSingleResponse")] != -1);
+		return call<R>("getSingleResponse", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

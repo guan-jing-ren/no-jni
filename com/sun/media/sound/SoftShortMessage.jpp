@@ -1,0 +1,43 @@
+#ifndef com_sun_media_sound_SoftShortMessage_HPP
+#define com_sun_media_sound_SoftShortMessage_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::media::sound::SoftShortMessage : public jObject<::com::sun::media::sound::SoftShortMessage, ::javax::sound::midi::ShortMessage> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_media_sound / "SoftShortMessage";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::jint()>("getChannel"), //
+		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint)>("setMessage"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getChannel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getChannel")] != -1);
+		return call<R>("getChannel", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setMessage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setMessage")] != -1);
+		return call<R>("setMessage", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

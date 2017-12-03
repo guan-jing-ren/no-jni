@@ -1,0 +1,229 @@
+#ifndef sun_font_Font2D_HPP
+#define sun_font_Font2D_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::Font2D : public jObject<::sun::font::Font2D, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "Font2D";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("DEFAULT_RANK"), //
+		jField<::jint>("FONT_CONFIG_RANK"), //
+		jField<::jint>("FWEIGHT_BOLD"), //
+		jField<::jint>("FWEIGHT_NORMAL"), //
+		jField<::jint>("FWIDTH_NORMAL"), //
+		jField<::jint>("JRE_RANK"), //
+		jField<::jint>("NATIVE_RANK"), //
+		jField<::jint>("TTF_RANK"), //
+		jField<::jint>("TYPE1_RANK"), //
+		jField<::jint>("UNKNOWN_RANK"), //
+		jField<::sun::font::Font2DHandle>("handle"), //
+	};
+
+	template<typename F = ::jint>
+	static auto DEFAULT_RANK() {
+		static_assert(field_signatures[jField<F>("DEFAULT_RANK")] != -1);
+		return sat<F>("DEFAULT_RANK");
+	}
+
+	template<typename F = ::jint>
+	static auto FONT_CONFIG_RANK() {
+		static_assert(field_signatures[jField<F>("FONT_CONFIG_RANK")] != -1);
+		return sat<F>("FONT_CONFIG_RANK");
+	}
+
+	template<typename F = ::jint>
+	static auto FWEIGHT_BOLD() {
+		static_assert(field_signatures[jField<F>("FWEIGHT_BOLD")] != -1);
+		return sat<F>("FWEIGHT_BOLD");
+	}
+
+	template<typename F = ::jint>
+	static auto FWEIGHT_NORMAL() {
+		static_assert(field_signatures[jField<F>("FWEIGHT_NORMAL")] != -1);
+		return sat<F>("FWEIGHT_NORMAL");
+	}
+
+	template<typename F = ::jint>
+	static auto FWIDTH_NORMAL() {
+		static_assert(field_signatures[jField<F>("FWIDTH_NORMAL")] != -1);
+		return sat<F>("FWIDTH_NORMAL");
+	}
+
+	template<typename F = ::jint>
+	static auto JRE_RANK() {
+		static_assert(field_signatures[jField<F>("JRE_RANK")] != -1);
+		return sat<F>("JRE_RANK");
+	}
+
+	template<typename F = ::jint>
+	static auto NATIVE_RANK() {
+		static_assert(field_signatures[jField<F>("NATIVE_RANK")] != -1);
+		return sat<F>("NATIVE_RANK");
+	}
+
+	template<typename F = ::jint>
+	static auto TTF_RANK() {
+		static_assert(field_signatures[jField<F>("TTF_RANK")] != -1);
+		return sat<F>("TTF_RANK");
+	}
+
+	template<typename F = ::jint>
+	static auto TYPE1_RANK() {
+		static_assert(field_signatures[jField<F>("TYPE1_RANK")] != -1);
+		return sat<F>("TYPE1_RANK");
+	}
+
+	template<typename F = ::jint>
+	static auto UNKNOWN_RANK() {
+		static_assert(field_signatures[jField<F>("UNKNOWN_RANK")] != -1);
+		return sat<F>("UNKNOWN_RANK");
+	}
+
+	template<typename F = ::sun::font::Font2DHandle>
+	auto handle() const {
+		static_assert(field_signatures[jField<F>("handle")] != -1);
+		return at<F>("handle");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jboolean(::jchar)>("canDisplay"), //
+		jMethod<::jboolean(::jint)>("canDisplay"), //
+		jMethod<::jboolean(::jint)>("canDoStyle"), //
+		jMethod<::jint(::jint)>("charToGlyph"), //
+		jMethod<::jbyte(::jchar)>("getBaselineFor"), //
+		jMethod<::java::lang::String(::java::util::Locale)>("getFamilyName"), //
+		jMethod<::jvoid(::java::awt::Font, ::java::awt::font::FontRenderContext, ::jfloat *)>("getFontMetrics"), //
+		jMethod<::jvoid(::java::awt::Font, ::java::awt::geom::AffineTransform, ::java::lang::Object, ::java::lang::Object, ::jfloat *)>("getFontMetrics"), //
+		jMethod<::java::lang::String(::java::util::Locale)>("getFontName"), //
+		jMethod<::jfloat(::java::awt::Font, ::java::awt::geom::AffineTransform, ::java::lang::Object, ::java::lang::Object)>("getItalicAngle"), //
+		jMethod<::jint()>("getMissingGlyphCode"), //
+		jMethod<::jint()>("getNumGlyphs"), //
+		jMethod<::java::lang::String()>("getPostscriptName"), //
+		jMethod<::sun::font::FontStrike(::java::awt::Font)>("getStrike"), //
+		jMethod<::sun::font::FontStrike(::java::awt::Font, ::java::awt::font::FontRenderContext)>("getStrike"), //
+		jMethod<::sun::font::FontStrike(::java::awt::Font, ::java::awt::geom::AffineTransform, ::jint, ::jint)>("getStrike"), //
+		jMethod<::sun::font::FontStrike(::java::awt::Font, ::java::awt::geom::AffineTransform, ::java::awt::geom::AffineTransform, ::jint, ::jint)>("getStrike"), //
+		jMethod<::jint()>("getStyle"), //
+		jMethod<::jvoid(::jfloat, ::jfloat *, ::jint)>("getStyleMetrics"), //
+		jMethod<::jint()>("getWeight"), //
+		jMethod<::jint()>("getWidth"), //
+		jMethod<::jboolean()>("hasSupplementaryChars"), //
+		jMethod<::jboolean(::jint)>("useAAForPtSize"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto canDisplay(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("canDisplay")] != -1);
+		return call<R>("canDisplay", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto canDoStyle(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("canDoStyle")] != -1);
+		return call<R>("canDoStyle", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto charToGlyph(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("charToGlyph")] != -1);
+		return call<R>("charToGlyph", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte, typename... Args>
+	auto getBaselineFor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBaselineFor")] != -1);
+		return call<R>("getBaselineFor", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getFamilyName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFamilyName")] != -1);
+		return call<R>("getFamilyName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto getFontMetrics(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFontMetrics")] != -1);
+		return call<R>("getFontMetrics", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getFontName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFontName")] != -1);
+		return call<R>("getFontName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getItalicAngle(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getItalicAngle")] != -1);
+		return call<R>("getItalicAngle", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getMissingGlyphCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMissingGlyphCode")] != -1);
+		return call<R>("getMissingGlyphCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getNumGlyphs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNumGlyphs")] != -1);
+		return call<R>("getNumGlyphs", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getPostscriptName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPostscriptName")] != -1);
+		return call<R>("getPostscriptName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::FontStrike, typename... Args>
+	auto getStrike(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStrike")] != -1);
+		return call<R>("getStrike", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getStyle(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStyle")] != -1);
+		return call<R>("getStyle", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto getStyleMetrics(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStyleMetrics")] != -1);
+		return call<R>("getStyleMetrics", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getWeight(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getWeight")] != -1);
+		return call<R>("getWeight", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getWidth(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getWidth")] != -1);
+		return call<R>("getWidth", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasSupplementaryChars(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hasSupplementaryChars")] != -1);
+		return call<R>("hasSupplementaryChars", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto useAAForPtSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("useAAForPtSize")] != -1);
+		return call<R>("useAAForPtSize", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

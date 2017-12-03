@@ -1,0 +1,36 @@
+#ifndef com_sun_media_sound_SoftLinearResampler2_HPP
+#define com_sun_media_sound_SoftLinearResampler2_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::media::sound::SoftLinearResampler2 : public jObject<::com::sun::media::sound::SoftLinearResampler2, ::com::sun::media::sound::SoftAbstractResampler> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_media_sound / "SoftLinearResampler2";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jint()>("getPadding"), //
+		jMethod<::jvoid(::jfloat *, ::jfloat *, ::jfloat, ::jfloat *, ::jfloat, ::jfloat *, ::jint *, ::jint)>("interpolate"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getPadding(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPadding")] != -1);
+		return call<R>("getPadding", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto interpolate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("interpolate")] != -1);
+		return call<R>("interpolate", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

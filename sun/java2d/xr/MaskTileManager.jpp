@@ -1,0 +1,56 @@
+#ifndef sun_java2d_xr_MaskTileManager_HPP
+#define sun_java2d_xr_MaskTileManager_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::xr::MaskTileManager : public jObject<::sun::java2d::xr::MaskTileManager, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_xr / "MaskTileManager";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("MASK_SIZE"), //
+	};
+
+	template<typename F = ::jint>
+	static auto MASK_SIZE() {
+		static_assert(field_signatures[jField<F>("MASK_SIZE")] != -1);
+		return sat<F>("MASK_SIZE");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::java2d::xr::XRCompositeManager, ::jint)>(), //
+		jMethod<::jvoid(::jint, ::jint, ::jint)>("clearUploadMask"), //
+		jMethod<::jvoid(::sun::java2d::xr::XRSurfaceData)>("fillMask"), //
+		jMethod<::sun::java2d::xr::MaskTile()>("getMainTile"), //
+		jMethod<::jint(::jint, ::jint, ::jint, ::jint, ::jbyte *)>("uploadMask"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto clearUploadMask(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clearUploadMask")] != -1);
+		return call<R>("clearUploadMask", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto fillMask(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("fillMask")] != -1);
+		return call<R>("fillMask", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::xr::MaskTile, typename... Args>
+	auto getMainTile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMainTile")] != -1);
+		return call<R>("getMainTile", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto uploadMask(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("uploadMask")] != -1);
+		return call<R>("uploadMask", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

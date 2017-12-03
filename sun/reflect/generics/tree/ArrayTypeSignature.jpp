@@ -1,0 +1,42 @@
+#ifndef sun_reflect_generics_tree_ArrayTypeSignature_HPP
+#define sun_reflect_generics_tree_ArrayTypeSignature_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::reflect::generics::tree::ArrayTypeSignature : public jObject<::sun::reflect::generics::tree::ArrayTypeSignature, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_reflect_generics_tree / "ArrayTypeSignature";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::sun::reflect::generics::visitor::TypeTreeVisitor)>("accept"), //
+		jMethod<::sun::reflect::generics::tree::TypeSignature()>("getComponentType"), //
+		jMethod<::sun::reflect::generics::tree::ArrayTypeSignature(::sun::reflect::generics::tree::TypeSignature)>("make"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto accept(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("accept")] != -1);
+		return call<R>("accept", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::reflect::generics::tree::TypeSignature, typename... Args>
+	auto getComponentType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getComponentType")] != -1);
+		return call<R>("getComponentType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::reflect::generics::tree::ArrayTypeSignature, typename... Args>
+	static auto make(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("make")] != -1);
+		return scall<R>("make", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

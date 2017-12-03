@@ -1,0 +1,42 @@
+#ifndef sun_awt_AWTAccessor$CursorAccessor_HPP
+#define sun_awt_AWTAccessor$CursorAccessor_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::AWTAccessor$CursorAccessor : public jObject<::sun::awt::AWTAccessor$CursorAccessor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "AWTAccessor$CursorAccessor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jlong(::java::awt::Cursor)>("getPData"), //
+		jMethod<::jint(::java::awt::Cursor)>("getType"), //
+		jMethod<::jvoid(::java::awt::Cursor, ::jlong)>("setPData"), //
+	};
+
+	template<typename R = ::jlong, typename... Args>
+	auto getPData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPData")] != -1);
+		return call<R>("getPData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setPData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setPData")] != -1);
+		return call<R>("setPData", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

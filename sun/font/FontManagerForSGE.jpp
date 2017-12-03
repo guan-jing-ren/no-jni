@@ -1,0 +1,56 @@
+#ifndef sun_font_FontManagerForSGE_HPP
+#define sun_font_FontManagerForSGE_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::FontManagerForSGE : public jObject<::sun::font::FontManagerForSGE, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "FontManagerForSGE";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::Font *()>("getAllInstalledFonts"), //
+		jMethod<::java::util::TreeMap()>("getCreatedFontFamilyNames"), //
+		jMethod<::java::awt::Font *()>("getCreatedFonts"), //
+		jMethod<::java::lang::String *(::java::util::Locale)>("getInstalledFontFamilyNames"), //
+		jMethod<::jvoid()>("useAlternateFontforJALocales"), //
+	};
+
+	template<typename R = ::java::awt::Font *, typename... Args>
+	auto getAllInstalledFonts(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAllInstalledFonts")] != -1);
+		return call<R>("getAllInstalledFonts", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::TreeMap, typename... Args>
+	auto getCreatedFontFamilyNames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCreatedFontFamilyNames")] != -1);
+		return call<R>("getCreatedFontFamilyNames", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Font *, typename... Args>
+	auto getCreatedFonts(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCreatedFonts")] != -1);
+		return call<R>("getCreatedFonts", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getInstalledFontFamilyNames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstalledFontFamilyNames")] != -1);
+		return call<R>("getInstalledFontFamilyNames", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto useAlternateFontforJALocales(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("useAlternateFontforJALocales")] != -1);
+		return call<R>("useAlternateFontforJALocales", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

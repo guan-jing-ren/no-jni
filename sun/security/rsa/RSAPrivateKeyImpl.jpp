@@ -1,0 +1,42 @@
+#ifndef sun_security_rsa_RSAPrivateKeyImpl_HPP
+#define sun_security_rsa_RSAPrivateKeyImpl_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::rsa::RSAPrivateKeyImpl : public jObject<::sun::security::rsa::RSAPrivateKeyImpl, ::sun::security::pkcs::PKCS8Key> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_rsa / "RSAPrivateKeyImpl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getAlgorithm"), //
+		jMethod<::java::math::BigInteger()>("getModulus"), //
+		jMethod<::java::math::BigInteger()>("getPrivateExponent"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAlgorithm(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAlgorithm")] != -1);
+		return call<R>("getAlgorithm", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getModulus(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getModulus")] != -1);
+		return call<R>("getModulus", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getPrivateExponent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPrivateExponent")] != -1);
+		return call<R>("getPrivateExponent", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,50 @@
+#ifndef com_sun_corba_se_impl_naming_cosnaming_BindingIteratorImpl_HPP
+#define com_sun_corba_se_impl_naming_cosnaming_BindingIteratorImpl_HPP
+
+#include "../../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::impl::naming::cosnaming::BindingIteratorImpl : public jObject<::com::sun::corba::se::impl::naming::cosnaming::BindingIteratorImpl, ::org::omg::CosNaming::BindingIteratorPOA> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_impl_naming_cosnaming / "BindingIteratorImpl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::org::omg::CORBA::ORB)>(), //
+		jMethod<::jvoid()>("destroy"), //
+		jMethod<::jboolean(::jint, ::org::omg::CosNaming::BindingListHolder)>("list"), //
+		jMethod<::jboolean(::jint, ::org::omg::CosNaming::BindingListHolder)>("next_n"), //
+		jMethod<::jboolean(::org::omg::CosNaming::BindingHolder)>("next_one"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto destroy(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("destroy")] != -1);
+		return call<R>("destroy", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto list(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("list")] != -1);
+		return call<R>("list", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto next_n(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("next_n")] != -1);
+		return call<R>("next_n", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto next_one(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("next_one")] != -1);
+		return call<R>("next_one", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

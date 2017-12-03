@@ -1,0 +1,49 @@
+#ifndef sun_font_FontConfigManager$FontConfigFont_HPP
+#define sun_font_FontConfigManager$FontConfigFont_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::FontConfigManager$FontConfigFont : public jObject<::sun::font::FontConfigManager$FontConfigFont, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "FontConfigManager$FontConfigFont";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("familyName"), //
+		jField<::java::lang::String>("fontFile"), //
+		jField<::java::lang::String>("fullName"), //
+		jField<::java::lang::String>("styleStr"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	auto familyName() const {
+		static_assert(field_signatures[jField<F>("familyName")] != -1);
+		return at<F>("familyName");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto fontFile() const {
+		static_assert(field_signatures[jField<F>("fontFile")] != -1);
+		return at<F>("fontFile");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto fullName() const {
+		static_assert(field_signatures[jField<F>("fullName")] != -1);
+		return at<F>("fullName");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto styleStr() const {
+		static_assert(field_signatures[jField<F>("styleStr")] != -1);
+		return at<F>("styleStr");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+	};
+
+};
+
+#endif

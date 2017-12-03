@@ -1,0 +1,79 @@
+#ifndef sun_rmi_log_ReliableLog_HPP
+#define sun_rmi_log_ReliableLog_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::rmi::log::ReliableLog : public jObject<::sun::rmi::log::ReliableLog, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_rmi_log / "ReliableLog";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("PreferredMajorVersion"), //
+		jField<::jint>("PreferredMinorVersion"), //
+	};
+
+	template<typename F = ::jint>
+	static auto PreferredMajorVersion() {
+		static_assert(field_signatures[jField<F>("PreferredMajorVersion")] != -1);
+		return sat<F>("PreferredMajorVersion");
+	}
+
+	template<typename F = ::jint>
+	static auto PreferredMinorVersion() {
+		static_assert(field_signatures[jField<F>("PreferredMinorVersion")] != -1);
+		return sat<F>("PreferredMinorVersion");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::sun::rmi::log::LogHandler)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::sun::rmi::log::LogHandler, ::jboolean)>(), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::jlong()>("logSize"), //
+		jMethod<::java::lang::Object()>("recover"), //
+		jMethod<::jvoid(::java::lang::Object)>("snapshot"), //
+		jMethod<::jlong()>("snapshotSize"), //
+		jMethod<::jvoid(::java::lang::Object)>("update"), //
+		jMethod<::jvoid(::java::lang::Object, ::jboolean)>("update"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto logSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("logSize")] != -1);
+		return call<R>("logSize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto recover(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("recover")] != -1);
+		return call<R>("recover", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto snapshot(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("snapshot")] != -1);
+		return call<R>("snapshot", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto snapshotSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("snapshotSize")] != -1);
+		return call<R>("snapshotSize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto update(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("update")] != -1);
+		return call<R>("update", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

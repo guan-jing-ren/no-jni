@@ -1,0 +1,30 @@
+#ifndef sun_audio_ContinuousAudioDataStream_HPP
+#define sun_audio_ContinuousAudioDataStream_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::audio::ContinuousAudioDataStream : public jObject<::sun::audio::ContinuousAudioDataStream, ::sun::audio::AudioDataStream> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_audio / "ContinuousAudioDataStream";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::audio::AudioData)>(), //
+		jMethod<::jint()>("read"), //
+		jMethod<::jint(::jbyte *, ::jint, ::jint)>("read"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

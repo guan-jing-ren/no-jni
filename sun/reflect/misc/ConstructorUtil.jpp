@@ -1,0 +1,35 @@
+#ifndef sun_reflect_misc_ConstructorUtil_HPP
+#define sun_reflect_misc_ConstructorUtil_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::reflect::misc::ConstructorUtil : public jObject<::sun::reflect::misc::ConstructorUtil, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_reflect_misc / "ConstructorUtil";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::reflect::Constructor(::java::lang::Class, ::java::lang::Class *)>("getConstructor"), //
+		jMethod<::java::lang::reflect::Constructor *(::java::lang::Class)>("getConstructors"), //
+	};
+
+	template<typename R = ::java::lang::reflect::Constructor, typename... Args>
+	static auto getConstructor(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getConstructor")] != -1);
+		return scall<R>("getConstructor", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Constructor *, typename... Args>
+	static auto getConstructors(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getConstructors")] != -1);
+		return scall<R>("getConstructors", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

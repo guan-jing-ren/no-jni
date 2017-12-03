@@ -1,0 +1,49 @@
+#ifndef sun_reflect_generics_tree_FormalTypeParameter_HPP
+#define sun_reflect_generics_tree_FormalTypeParameter_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::reflect::generics::tree::FormalTypeParameter : public jObject<::sun::reflect::generics::tree::FormalTypeParameter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_reflect_generics_tree / "FormalTypeParameter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::sun::reflect::generics::visitor::TypeTreeVisitor)>("accept"), //
+		jMethod<::sun::reflect::generics::tree::FieldTypeSignature *()>("getBounds"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::sun::reflect::generics::tree::FormalTypeParameter(::java::lang::String, ::sun::reflect::generics::tree::FieldTypeSignature *)>("make"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto accept(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("accept")] != -1);
+		return call<R>("accept", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::reflect::generics::tree::FieldTypeSignature *, typename... Args>
+	auto getBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBounds")] != -1);
+		return call<R>("getBounds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::reflect::generics::tree::FormalTypeParameter, typename... Args>
+	static auto make(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("make")] != -1);
+		return scall<R>("make", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

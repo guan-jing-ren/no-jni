@@ -1,0 +1,63 @@
+#ifndef sun_security_rsa_RSAKeyFactory_HPP
+#define sun_security_rsa_RSAKeyFactory_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::rsa::RSAKeyFactory : public jObject<::sun::security::rsa::RSAKeyFactory, ::java::security::KeyFactorySpi> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_rsa / "RSAKeyFactory";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("MAX_MODLEN"), //
+		jField<::jint>("MAX_MODLEN_RESTRICT_EXP"), //
+		jField<::jint>("MAX_RESTRICTED_EXPLEN"), //
+		jField<::jint>("MIN_MODLEN"), //
+	};
+
+	template<typename F = ::jint>
+	static auto MAX_MODLEN() {
+		static_assert(field_signatures[jField<F>("MAX_MODLEN")] != -1);
+		return sat<F>("MAX_MODLEN");
+	}
+
+	template<typename F = ::jint>
+	static auto MAX_MODLEN_RESTRICT_EXP() {
+		static_assert(field_signatures[jField<F>("MAX_MODLEN_RESTRICT_EXP")] != -1);
+		return sat<F>("MAX_MODLEN_RESTRICT_EXP");
+	}
+
+	template<typename F = ::jint>
+	static auto MAX_RESTRICTED_EXPLEN() {
+		static_assert(field_signatures[jField<F>("MAX_RESTRICTED_EXPLEN")] != -1);
+		return sat<F>("MAX_RESTRICTED_EXPLEN");
+	}
+
+	template<typename F = ::jint>
+	static auto MIN_MODLEN() {
+		static_assert(field_signatures[jField<F>("MIN_MODLEN")] != -1);
+		return sat<F>("MIN_MODLEN");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::jint, ::java::math::BigInteger, ::jint, ::jint)>("checkKeyLengths"), //
+		jMethod<::java::security::interfaces::RSAKey(::java::security::Key)>("toRSAKey"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto checkKeyLengths(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkKeyLengths")] != -1);
+		return scall<R>("checkKeyLengths", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::interfaces::RSAKey, typename... Args>
+	static auto toRSAKey(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toRSAKey")] != -1);
+		return scall<R>("toRSAKey", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

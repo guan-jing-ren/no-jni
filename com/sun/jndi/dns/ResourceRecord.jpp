@@ -1,0 +1,86 @@
+#ifndef com_sun_jndi_dns_ResourceRecord_HPP
+#define com_sun_jndi_dns_ResourceRecord_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::jndi::dns::ResourceRecord : public jObject<::com::sun::jndi::dns::ResourceRecord, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_jndi_dns / "ResourceRecord";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint(::jlong, ::jlong)>("compareSerialNumbers"), //
+		jMethod<::com::sun::jndi::dns::DnsName()>("getName"), //
+		jMethod<::java::lang::Object()>("getRdata"), //
+		jMethod<::jint()>("getRrclass"), //
+		jMethod<::jint(::java::lang::String)>("getRrclass"), //
+		jMethod<::java::lang::String(::jint)>("getRrclassName"), //
+		jMethod<::jint()>("getType"), //
+		jMethod<::jint(::java::lang::String)>("getType"), //
+		jMethod<::java::lang::String(::jint)>("getTypeName"), //
+		jMethod<::jint()>("size"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	static auto compareSerialNumbers(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("compareSerialNumbers")] != -1);
+		return scall<R>("compareSerialNumbers", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::jndi::dns::DnsName, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getRdata(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRdata")] != -1);
+		return call<R>("getRdata", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getRrclass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRrclass")] != -1);
+		return call<R>("getRrclass", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getRrclassName(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRrclassName")] != -1);
+		return scall<R>("getRrclassName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getTypeName(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTypeName")] != -1);
+		return scall<R>("getTypeName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto size(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("size")] != -1);
+		return call<R>("size", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

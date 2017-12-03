@@ -1,0 +1,69 @@
+#ifndef com_sun_jndi_ldap_Connection_HPP
+#define com_sun_jndi_ldap_Connection_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::jndi::ldap::Connection : public jObject<::com::sun::jndi::ldap::Connection, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_jndi_ldap / "Connection";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("host"), //
+		jField<::java::io::InputStream>("inStream"), //
+		jField<::java::io::OutputStream>("outStream"), //
+		jField<::jint>("port"), //
+		jField<::java::net::Socket>("sock"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	auto host() const {
+		static_assert(field_signatures[jField<F>("host")] != -1);
+		return at<F>("host");
+	}
+
+	template<typename F = ::java::io::InputStream>
+	auto inStream() const {
+		static_assert(field_signatures[jField<F>("inStream")] != -1);
+		return at<F>("inStream");
+	}
+
+	template<typename F = ::java::io::OutputStream>
+	auto outStream() const {
+		static_assert(field_signatures[jField<F>("outStream")] != -1);
+		return at<F>("outStream");
+	}
+
+	template<typename F = ::jint>
+	auto port() const {
+		static_assert(field_signatures[jField<F>("port")] != -1);
+		return at<F>("port");
+	}
+
+	template<typename F = ::java::net::Socket>
+	auto sock() const {
+		static_assert(field_signatures[jField<F>("sock")] != -1);
+		return at<F>("sock");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::io::InputStream, ::java::io::OutputStream)>("replaceStreams"), //
+		jMethod<::jvoid()>("run"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto replaceStreams(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("replaceStreams")] != -1);
+		return call<R>("replaceStreams", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto run(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("run")] != -1);
+		return call<R>("run", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

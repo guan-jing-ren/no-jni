@@ -1,0 +1,43 @@
+#ifndef sun_font_FontScaler_HPP
+#define sun_font_FontScaler_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::FontScaler : public jObject<::sun::font::FontScaler, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "FontScaler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid()>("dispose"), //
+		jMethod<::sun::font::FontScaler()>("getNullScaler"), //
+		jMethod<::sun::font::FontScaler(::sun::font::Font2D, ::jint, ::jboolean, ::jint)>("getScaler"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispose(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dispose")] != -1);
+		return call<R>("dispose", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::FontScaler, typename... Args>
+	static auto getNullScaler(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNullScaler")] != -1);
+		return scall<R>("getNullScaler", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::FontScaler, typename... Args>
+	static auto getScaler(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getScaler")] != -1);
+		return scall<R>("getScaler", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

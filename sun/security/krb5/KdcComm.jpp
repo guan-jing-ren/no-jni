@@ -1,0 +1,36 @@
+#ifndef sun_security_krb5_KdcComm_HPP
+#define sun_security_krb5_KdcComm_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::krb5::KdcComm : public jObject<::sun::security::krb5::KdcComm, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_krb5 / "KdcComm";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jMethod<::jvoid()>("initStatic"), //
+		jMethod<::jbyte *(::jbyte *)>("send"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto initStatic(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("initStatic")] != -1);
+		return scall<R>("initStatic", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto send(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("send")] != -1);
+		return call<R>("send", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,72 @@
+#ifndef com_sun_media_sound_SF2Layer_HPP
+#define com_sun_media_sound_SF2Layer_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::media::sound::SF2Layer : public jObject<::com::sun::media::sound::SF2Layer, ::javax::sound::midi::SoundbankResource> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_media_sound / "SF2Layer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::com::sun::media::sound::SF2Soundbank)>(), //
+		jMethod<::java::lang::Object()>("getData"), //
+		jMethod<::com::sun::media::sound::SF2GlobalRegion()>("getGlobalRegion"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::java::util::List()>("getRegions"), //
+		jMethod<::jvoid(::com::sun::media::sound::SF2GlobalRegion)>("setGlobalZone"), //
+		jMethod<::jvoid(::java::lang::String)>("setName"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getData")] != -1);
+		return call<R>("getData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::media::sound::SF2GlobalRegion, typename... Args>
+	auto getGlobalRegion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGlobalRegion")] != -1);
+		return call<R>("getGlobalRegion", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getRegions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRegions")] != -1);
+		return call<R>("getRegions", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setGlobalZone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setGlobalZone")] != -1);
+		return call<R>("setGlobalZone", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setName")] != -1);
+		return call<R>("setName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

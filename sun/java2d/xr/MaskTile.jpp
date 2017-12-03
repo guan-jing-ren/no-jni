@@ -1,0 +1,57 @@
+#ifndef sun_java2d_xr_MaskTile_HPP
+#define sun_java2d_xr_MaskTile_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::xr::MaskTile : public jObject<::sun::java2d::xr::MaskTile, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_xr / "MaskTile";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid()>("calculateDirtyAreas"), //
+		jMethod<::sun::java2d::xr::DirtyRegion()>("getDirtyArea"), //
+		jMethod<::sun::java2d::xr::GrowableRectArray()>("getRects"), //
+		jMethod<::jvoid()>("reset"), //
+		jMethod<::jvoid(::jint, ::jint)>("translate"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto calculateDirtyAreas(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("calculateDirtyAreas")] != -1);
+		return call<R>("calculateDirtyAreas", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::xr::DirtyRegion, typename... Args>
+	auto getDirtyArea(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDirtyArea")] != -1);
+		return call<R>("getDirtyArea", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::xr::GrowableRectArray, typename... Args>
+	auto getRects(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRects")] != -1);
+		return call<R>("getRects", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto reset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("reset")] != -1);
+		return call<R>("reset", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto translate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("translate")] != -1);
+		return call<R>("translate", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

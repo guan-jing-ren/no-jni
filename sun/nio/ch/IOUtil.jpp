@@ -1,0 +1,49 @@
+#ifndef sun_nio_ch_IOUtil_HPP
+#define sun_nio_ch_IOUtil_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::nio::ch::IOUtil : public jObject<::sun::nio::ch::IOUtil, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_nio_ch / "IOUtil";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::io::FileDescriptor, ::jboolean)>("configureBlocking"), //
+		jMethod<::jint(::java::io::FileDescriptor)>("fdVal"), //
+		jMethod<::jvoid()>("load"), //
+		jMethod<::java::io::FileDescriptor(::jint)>("newFD"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto configureBlocking(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("configureBlocking")] != -1);
+		return scall<R>("configureBlocking", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto fdVal(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("fdVal")] != -1);
+		return scall<R>("fdVal", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto load(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("load")] != -1);
+		return scall<R>("load", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::FileDescriptor, typename... Args>
+	static auto newFD(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newFD")] != -1);
+		return scall<R>("newFD", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

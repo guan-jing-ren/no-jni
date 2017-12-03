@@ -1,0 +1,50 @@
+#ifndef sun_nio_cs_IBM850_HPP
+#define sun_nio_cs_IBM850_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::nio::cs::IBM850 : public jObject<::sun::nio::cs::IBM850, ::java::nio::charset::Charset> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_nio_cs / "IBM850";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jboolean(::java::nio::charset::Charset)>("contains"), //
+		jMethod<::java::lang::String()>("historicalName"), //
+		jMethod<::java::nio::charset::CharsetDecoder()>("newDecoder"), //
+		jMethod<::java::nio::charset::CharsetEncoder()>("newEncoder"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto contains(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("contains")] != -1);
+		return call<R>("contains", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto historicalName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("historicalName")] != -1);
+		return call<R>("historicalName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::charset::CharsetDecoder, typename... Args>
+	auto newDecoder(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newDecoder")] != -1);
+		return call<R>("newDecoder", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::charset::CharsetEncoder, typename... Args>
+	auto newEncoder(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newEncoder")] != -1);
+		return call<R>("newEncoder", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

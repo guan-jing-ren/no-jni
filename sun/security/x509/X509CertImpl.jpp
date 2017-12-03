@@ -1,0 +1,541 @@
+#ifndef sun_security_x509_X509CertImpl_HPP
+#define sun_security_x509_X509CertImpl_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::x509::X509CertImpl : public jObject<::sun::security::x509::X509CertImpl, ::java::security::cert::X509Certificate> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_x509 / "X509CertImpl";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("ALG_ID"), //
+		jField<::java::lang::String>("INFO"), //
+		jField<::java::lang::String>("ISSUER_DN"), //
+		jField<::java::lang::String>("NAME"), //
+		jField<::java::lang::String>("PUBLIC_KEY"), //
+		jField<::java::lang::String>("SERIAL_ID"), //
+		jField<::java::lang::String>("SIG"), //
+		jField<::java::lang::String>("SIGNATURE"), //
+		jField<::java::lang::String>("SIGNED_CERT"), //
+		jField<::java::lang::String>("SIG_ALG"), //
+		jField<::java::lang::String>("SUBJECT_DN"), //
+		jField<::java::lang::String>("VERSION"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto ALG_ID() {
+		static_assert(field_signatures[jField<F>("ALG_ID")] != -1);
+		return sat<F>("ALG_ID");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto INFO() {
+		static_assert(field_signatures[jField<F>("INFO")] != -1);
+		return sat<F>("INFO");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto ISSUER_DN() {
+		static_assert(field_signatures[jField<F>("ISSUER_DN")] != -1);
+		return sat<F>("ISSUER_DN");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto NAME() {
+		static_assert(field_signatures[jField<F>("NAME")] != -1);
+		return sat<F>("NAME");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto PUBLIC_KEY() {
+		static_assert(field_signatures[jField<F>("PUBLIC_KEY")] != -1);
+		return sat<F>("PUBLIC_KEY");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto SERIAL_ID() {
+		static_assert(field_signatures[jField<F>("SERIAL_ID")] != -1);
+		return sat<F>("SERIAL_ID");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto SIG() {
+		static_assert(field_signatures[jField<F>("SIG")] != -1);
+		return sat<F>("SIG");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto SIGNATURE() {
+		static_assert(field_signatures[jField<F>("SIGNATURE")] != -1);
+		return sat<F>("SIGNATURE");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto SIGNED_CERT() {
+		static_assert(field_signatures[jField<F>("SIGNED_CERT")] != -1);
+		return sat<F>("SIGNED_CERT");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto SIG_ALG() {
+		static_assert(field_signatures[jField<F>("SIG_ALG")] != -1);
+		return sat<F>("SIG_ALG");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto SUBJECT_DN() {
+		static_assert(field_signatures[jField<F>("SUBJECT_DN")] != -1);
+		return sat<F>("SUBJECT_DN");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto VERSION() {
+		static_assert(field_signatures[jField<F>("VERSION")] != -1);
+		return sat<F>("VERSION");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::io::InputStream)>(), //
+		jConstructor<::jvoid(::sun::security::util::DerValue)>(), //
+		jConstructor<::jvoid(::sun::security::x509::X509CertInfo)>(), //
+		jConstructor<::jvoid(::jbyte *)>(), //
+		jMethod<::jvoid()>("checkValidity"), //
+		jMethod<::jvoid(::java::util::Date)>("checkValidity"), //
+		jMethod<::jvoid(::java::lang::String)>("delete"), //
+		jMethod<::jvoid(::java::io::OutputStream)>("derEncode"), //
+		jMethod<::jvoid(::java::io::OutputStream)>("encode"), //
+		jMethod<::java::lang::Object(::java::lang::String)>("get"), //
+		jMethod<::sun::security::x509::KeyIdentifier()>("getAuthKeyId"), //
+		jMethod<::sun::security::x509::AuthorityInfoAccessExtension()>("getAuthorityInfoAccessExtension"), //
+		jMethod<::sun::security::x509::AuthorityKeyIdentifierExtension()>("getAuthorityKeyIdentifierExtension"), //
+		jMethod<::jint()>("getBasicConstraints"), //
+		jMethod<::sun::security::x509::BasicConstraintsExtension()>("getBasicConstraintsExtension"), //
+		jMethod<::sun::security::x509::CRLDistributionPointsExtension()>("getCRLDistributionPointsExtension"), //
+		jMethod<::sun::security::x509::CertificatePoliciesExtension()>("getCertificatePoliciesExtension"), //
+		jMethod<::java::util::Set()>("getCriticalExtensionOIDs"), //
+		jMethod<::java::util::Enumeration()>("getElements"), //
+		jMethod<::jbyte *()>("getEncoded"), //
+		jMethod<::jbyte *()>("getEncodedInternal"), //
+		jMethod<::jbyte *(::java::security::cert::Certificate)>("getEncodedInternal"), //
+		jMethod<::java::util::List()>("getExtendedKeyUsage"), //
+		jMethod<::java::util::List(::java::security::cert::X509Certificate)>("getExtendedKeyUsage"), //
+		jMethod<::sun::security::x509::ExtendedKeyUsageExtension()>("getExtendedKeyUsageExtension"), //
+		jMethod<::sun::security::x509::Extension(::sun::security::util::ObjectIdentifier)>("getExtension"), //
+		jMethod<::jbyte *(::java::lang::String)>("getExtensionValue"), //
+		jMethod<::java::lang::String(::java::lang::String)>("getFingerprint"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::security::cert::X509Certificate)>("getFingerprint"), //
+		jMethod<::sun::security::x509::IssuerAlternativeNameExtension()>("getIssuerAlternativeNameExtension"), //
+		jMethod<::java::util::Collection()>("getIssuerAlternativeNames"), //
+		jMethod<::java::util::Collection(::java::security::cert::X509Certificate)>("getIssuerAlternativeNames"), //
+		jMethod<::java::security::Principal()>("getIssuerDN"), //
+		jMethod<::jboolean *()>("getIssuerUniqueID"), //
+		jMethod<::javax::security::auth::x500::X500Principal()>("getIssuerX500Principal"), //
+		jMethod<::javax::security::auth::x500::X500Principal(::java::security::cert::X509Certificate)>("getIssuerX500Principal"), //
+		jMethod<::jboolean *()>("getKeyUsage"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::sun::security::x509::NameConstraintsExtension()>("getNameConstraintsExtension"), //
+		jMethod<::java::util::Set()>("getNonCriticalExtensionOIDs"), //
+		jMethod<::java::util::Date()>("getNotAfter"), //
+		jMethod<::java::util::Date()>("getNotBefore"), //
+		jMethod<::sun::security::x509::PolicyConstraintsExtension()>("getPolicyConstraintsExtension"), //
+		jMethod<::sun::security::x509::PolicyMappingsExtension()>("getPolicyMappingsExtension"), //
+		jMethod<::sun::security::x509::PrivateKeyUsageExtension()>("getPrivateKeyUsageExtension"), //
+		jMethod<::java::security::PublicKey()>("getPublicKey"), //
+		jMethod<::java::math::BigInteger()>("getSerialNumber"), //
+		jMethod<::sun::security::x509::SerialNumber()>("getSerialNumberObject"), //
+		jMethod<::java::lang::String()>("getSigAlgName"), //
+		jMethod<::java::lang::String()>("getSigAlgOID"), //
+		jMethod<::jbyte *()>("getSigAlgParams"), //
+		jMethod<::jbyte *()>("getSignature"), //
+		jMethod<::sun::security::x509::SubjectAlternativeNameExtension()>("getSubjectAlternativeNameExtension"), //
+		jMethod<::java::util::Collection()>("getSubjectAlternativeNames"), //
+		jMethod<::java::util::Collection(::java::security::cert::X509Certificate)>("getSubjectAlternativeNames"), //
+		jMethod<::java::security::Principal()>("getSubjectDN"), //
+		jMethod<::sun::security::x509::KeyIdentifier()>("getSubjectKeyId"), //
+		jMethod<::sun::security::x509::SubjectKeyIdentifierExtension()>("getSubjectKeyIdentifierExtension"), //
+		jMethod<::jboolean *()>("getSubjectUniqueID"), //
+		jMethod<::javax::security::auth::x500::X500Principal()>("getSubjectX500Principal"), //
+		jMethod<::javax::security::auth::x500::X500Principal(::java::security::cert::X509Certificate)>("getSubjectX500Principal"), //
+		jMethod<::jbyte *()>("getTBSCertificate"), //
+		jMethod<::sun::security::x509::Extension(::sun::security::util::ObjectIdentifier)>("getUnparseableExtension"), //
+		jMethod<::jint()>("getVersion"), //
+		jMethod<::jboolean()>("hasUnsupportedCriticalExtension"), //
+		jMethod<::jboolean(::java::security::cert::X509Certificate)>("isSelfIssued"), //
+		jMethod<::jboolean(::java::security::cert::X509Certificate, ::java::lang::String)>("isSelfSigned"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::Object)>("set"), //
+		jMethod<::jvoid(::java::security::PrivateKey, ::java::lang::String)>("sign"), //
+		jMethod<::jvoid(::java::security::PrivateKey, ::java::lang::String, ::java::lang::String)>("sign"), //
+		jMethod<::sun::security::x509::X509CertImpl(::java::security::cert::X509Certificate)>("toImpl"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::jvoid(::java::security::PublicKey)>("verify"), //
+		jMethod<::jvoid(::java::security::PublicKey, ::java::lang::String)>("verify"), //
+		jMethod<::jvoid(::java::security::PublicKey, ::java::security::Provider)>("verify"), //
+		jMethod<::jvoid(::java::security::cert::X509Certificate, ::java::security::PublicKey, ::java::security::Provider)>("verify"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto checkValidity(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkValidity")] != -1);
+		return call<R>("checkValidity", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto delete_(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("delete")] != -1);
+		return call<R>("delete", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto derEncode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("derEncode")] != -1);
+		return call<R>("derEncode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto encode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encode")] != -1);
+		return call<R>("encode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::KeyIdentifier, typename... Args>
+	auto getAuthKeyId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAuthKeyId")] != -1);
+		return call<R>("getAuthKeyId", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::AuthorityInfoAccessExtension, typename... Args>
+	auto getAuthorityInfoAccessExtension(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAuthorityInfoAccessExtension")] != -1);
+		return call<R>("getAuthorityInfoAccessExtension", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::AuthorityKeyIdentifierExtension, typename... Args>
+	auto getAuthorityKeyIdentifierExtension(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAuthorityKeyIdentifierExtension")] != -1);
+		return call<R>("getAuthorityKeyIdentifierExtension", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getBasicConstraints(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBasicConstraints")] != -1);
+		return call<R>("getBasicConstraints", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::BasicConstraintsExtension, typename... Args>
+	auto getBasicConstraintsExtension(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBasicConstraintsExtension")] != -1);
+		return call<R>("getBasicConstraintsExtension", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::CRLDistributionPointsExtension, typename... Args>
+	auto getCRLDistributionPointsExtension(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCRLDistributionPointsExtension")] != -1);
+		return call<R>("getCRLDistributionPointsExtension", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::CertificatePoliciesExtension, typename... Args>
+	auto getCertificatePoliciesExtension(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCertificatePoliciesExtension")] != -1);
+		return call<R>("getCertificatePoliciesExtension", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto getCriticalExtensionOIDs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCriticalExtensionOIDs")] != -1);
+		return call<R>("getCriticalExtensionOIDs", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	auto getElements(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getElements")] != -1);
+		return call<R>("getElements", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getEncoded(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEncoded")] != -1);
+		return call<R>("getEncoded", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getEncodedInternal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEncodedInternal")] != -1);
+		return call<R>("getEncodedInternal", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getExtendedKeyUsage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getExtendedKeyUsage")] != -1);
+		return call<R>("getExtendedKeyUsage", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::ExtendedKeyUsageExtension, typename... Args>
+	auto getExtendedKeyUsageExtension(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getExtendedKeyUsageExtension")] != -1);
+		return call<R>("getExtendedKeyUsageExtension", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::Extension, typename... Args>
+	auto getExtension(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getExtension")] != -1);
+		return call<R>("getExtension", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getExtensionValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getExtensionValue")] != -1);
+		return call<R>("getExtensionValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getFingerprint(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFingerprint")] != -1);
+		return call<R>("getFingerprint", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::IssuerAlternativeNameExtension, typename... Args>
+	auto getIssuerAlternativeNameExtension(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIssuerAlternativeNameExtension")] != -1);
+		return call<R>("getIssuerAlternativeNameExtension", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Collection, typename... Args>
+	auto getIssuerAlternativeNames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIssuerAlternativeNames")] != -1);
+		return call<R>("getIssuerAlternativeNames", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Principal, typename... Args>
+	auto getIssuerDN(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIssuerDN")] != -1);
+		return call<R>("getIssuerDN", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean *, typename... Args>
+	auto getIssuerUniqueID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIssuerUniqueID")] != -1);
+		return call<R>("getIssuerUniqueID", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::security::auth::x500::X500Principal, typename... Args>
+	auto getIssuerX500Principal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIssuerX500Principal")] != -1);
+		return call<R>("getIssuerX500Principal", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean *, typename... Args>
+	auto getKeyUsage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getKeyUsage")] != -1);
+		return call<R>("getKeyUsage", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::NameConstraintsExtension, typename... Args>
+	auto getNameConstraintsExtension(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNameConstraintsExtension")] != -1);
+		return call<R>("getNameConstraintsExtension", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto getNonCriticalExtensionOIDs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNonCriticalExtensionOIDs")] != -1);
+		return call<R>("getNonCriticalExtensionOIDs", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Date, typename... Args>
+	auto getNotAfter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNotAfter")] != -1);
+		return call<R>("getNotAfter", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Date, typename... Args>
+	auto getNotBefore(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNotBefore")] != -1);
+		return call<R>("getNotBefore", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::PolicyConstraintsExtension, typename... Args>
+	auto getPolicyConstraintsExtension(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPolicyConstraintsExtension")] != -1);
+		return call<R>("getPolicyConstraintsExtension", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::PolicyMappingsExtension, typename... Args>
+	auto getPolicyMappingsExtension(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPolicyMappingsExtension")] != -1);
+		return call<R>("getPolicyMappingsExtension", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::PrivateKeyUsageExtension, typename... Args>
+	auto getPrivateKeyUsageExtension(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPrivateKeyUsageExtension")] != -1);
+		return call<R>("getPrivateKeyUsageExtension", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::PublicKey, typename... Args>
+	auto getPublicKey(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPublicKey")] != -1);
+		return call<R>("getPublicKey", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getSerialNumber(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSerialNumber")] != -1);
+		return call<R>("getSerialNumber", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::SerialNumber, typename... Args>
+	auto getSerialNumberObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSerialNumberObject")] != -1);
+		return call<R>("getSerialNumberObject", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getSigAlgName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSigAlgName")] != -1);
+		return call<R>("getSigAlgName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getSigAlgOID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSigAlgOID")] != -1);
+		return call<R>("getSigAlgOID", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getSigAlgParams(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSigAlgParams")] != -1);
+		return call<R>("getSigAlgParams", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getSignature(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSignature")] != -1);
+		return call<R>("getSignature", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::SubjectAlternativeNameExtension, typename... Args>
+	auto getSubjectAlternativeNameExtension(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSubjectAlternativeNameExtension")] != -1);
+		return call<R>("getSubjectAlternativeNameExtension", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Collection, typename... Args>
+	auto getSubjectAlternativeNames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSubjectAlternativeNames")] != -1);
+		return call<R>("getSubjectAlternativeNames", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Principal, typename... Args>
+	auto getSubjectDN(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSubjectDN")] != -1);
+		return call<R>("getSubjectDN", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::KeyIdentifier, typename... Args>
+	auto getSubjectKeyId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSubjectKeyId")] != -1);
+		return call<R>("getSubjectKeyId", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::SubjectKeyIdentifierExtension, typename... Args>
+	auto getSubjectKeyIdentifierExtension(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSubjectKeyIdentifierExtension")] != -1);
+		return call<R>("getSubjectKeyIdentifierExtension", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean *, typename... Args>
+	auto getSubjectUniqueID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSubjectUniqueID")] != -1);
+		return call<R>("getSubjectUniqueID", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::security::auth::x500::X500Principal, typename... Args>
+	auto getSubjectX500Principal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSubjectX500Principal")] != -1);
+		return call<R>("getSubjectX500Principal", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getTBSCertificate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTBSCertificate")] != -1);
+		return call<R>("getTBSCertificate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::Extension, typename... Args>
+	auto getUnparseableExtension(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUnparseableExtension")] != -1);
+		return call<R>("getUnparseableExtension", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getVersion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getVersion")] != -1);
+		return call<R>("getVersion", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasUnsupportedCriticalExtension(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hasUnsupportedCriticalExtension")] != -1);
+		return call<R>("hasUnsupportedCriticalExtension", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isSelfIssued(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSelfIssued")] != -1);
+		return scall<R>("isSelfIssued", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isSelfSigned(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSelfSigned")] != -1);
+		return scall<R>("isSelfSigned", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set")] != -1);
+		return call<R>("set", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto sign(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("sign")] != -1);
+		return call<R>("sign", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::X509CertImpl, typename... Args>
+	static auto toImpl(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toImpl")] != -1);
+		return scall<R>("toImpl", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto verify(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("verify")] != -1);
+		return call<R>("verify", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,49 @@
+#ifndef sun_reflect_misc_MethodUtil_HPP
+#define sun_reflect_misc_MethodUtil_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::reflect::misc::MethodUtil : public jObject<::sun::reflect::misc::MethodUtil, ::java::security::SecureClassLoader> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_reflect_misc / "MethodUtil";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::reflect::Method(::java::lang::Class, ::java::lang::String, ::java::lang::Class *)>("getMethod"), //
+		jMethod<::java::lang::reflect::Method *(::java::lang::Class)>("getMethods"), //
+		jMethod<::java::lang::reflect::Method *(::java::lang::Class)>("getPublicMethods"), //
+		jMethod<::java::lang::Object(::java::lang::reflect::Method, ::java::lang::Object, ::java::lang::Object *)>("invoke"), //
+	};
+
+	template<typename R = ::java::lang::reflect::Method, typename... Args>
+	static auto getMethod(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMethod")] != -1);
+		return scall<R>("getMethod", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Method *, typename... Args>
+	static auto getMethods(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMethods")] != -1);
+		return scall<R>("getMethods", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Method *, typename... Args>
+	static auto getPublicMethods(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPublicMethods")] != -1);
+		return scall<R>("getPublicMethods", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto invoke(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("invoke")] != -1);
+		return scall<R>("invoke", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

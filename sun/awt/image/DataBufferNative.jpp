@@ -1,0 +1,36 @@
+#ifndef sun_awt_image_DataBufferNative_HPP
+#define sun_awt_image_DataBufferNative_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::image::DataBufferNative : public jObject<::sun::awt::image::DataBufferNative, ::java::awt::image::DataBuffer> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_image / "DataBufferNative";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::java2d::SurfaceData, ::jint, ::jint, ::jint)>(), //
+		jMethod<::jint(::jint, ::jint)>("getElem"), //
+		jMethod<::jvoid(::jint, ::jint, ::jint)>("setElem"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getElem(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getElem")] != -1);
+		return call<R>("getElem", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setElem(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setElem")] != -1);
+		return call<R>("setElem", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

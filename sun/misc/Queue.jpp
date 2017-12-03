@@ -1,0 +1,65 @@
+#ifndef sun_misc_Queue_HPP
+#define sun_misc_Queue_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::misc::Queue : public jObject<::sun::misc::Queue, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_misc / "Queue";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::Object()>("dequeue"), //
+		jMethod<::java::lang::Object(::jlong)>("dequeue"), //
+		jMethod<::jvoid(::java::lang::String)>("dump"), //
+		jMethod<::java::util::Enumeration()>("elements"), //
+		jMethod<::jvoid(::java::lang::Object)>("enqueue"), //
+		jMethod<::jboolean()>("isEmpty"), //
+		jMethod<::java::util::Enumeration()>("reverseElements"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto dequeue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dequeue")] != -1);
+		return call<R>("dequeue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dump(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dump")] != -1);
+		return call<R>("dump", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	auto elements(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("elements")] != -1);
+		return call<R>("elements", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto enqueue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("enqueue")] != -1);
+		return call<R>("enqueue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isEmpty(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isEmpty")] != -1);
+		return call<R>("isEmpty", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	auto reverseElements(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("reverseElements")] != -1);
+		return call<R>("reverseElements", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,56 @@
+#ifndef sun_management_CompilerThreadStat_HPP
+#define sun_management_CompilerThreadStat_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::management::CompilerThreadStat : public jObject<::sun::management::CompilerThreadStat, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_management / "CompilerThreadStat";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jlong()>("getCompileTaskCount"), //
+		jMethod<::jlong()>("getCompileTime"), //
+		jMethod<::sun::management::MethodInfo()>("getLastCompiledMethodInfo"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jlong, typename... Args>
+	auto getCompileTaskCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCompileTaskCount")] != -1);
+		return call<R>("getCompileTaskCount", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getCompileTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCompileTime")] != -1);
+		return call<R>("getCompileTime", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::management::MethodInfo, typename... Args>
+	auto getLastCompiledMethodInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLastCompiledMethodInfo")] != -1);
+		return call<R>("getLastCompiledMethodInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,57 @@
+#ifndef com_sun_media_sound_MidiDeviceTransmitterEnvelope_HPP
+#define com_sun_media_sound_MidiDeviceTransmitterEnvelope_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::media::sound::MidiDeviceTransmitterEnvelope : public jObject<::com::sun::media::sound::MidiDeviceTransmitterEnvelope, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_media_sound / "MidiDeviceTransmitterEnvelope";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::sound::midi::MidiDevice, ::javax::sound::midi::Transmitter)>(), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::javax::sound::midi::MidiDevice()>("getMidiDevice"), //
+		jMethod<::javax::sound::midi::Receiver()>("getReceiver"), //
+		jMethod<::javax::sound::midi::Transmitter()>("getTransmitter"), //
+		jMethod<::jvoid(::javax::sound::midi::Receiver)>("setReceiver"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::midi::MidiDevice, typename... Args>
+	auto getMidiDevice(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMidiDevice")] != -1);
+		return call<R>("getMidiDevice", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::midi::Receiver, typename... Args>
+	auto getReceiver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getReceiver")] != -1);
+		return call<R>("getReceiver", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::midi::Transmitter, typename... Args>
+	auto getTransmitter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTransmitter")] != -1);
+		return call<R>("getTransmitter", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setReceiver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setReceiver")] != -1);
+		return call<R>("setReceiver", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

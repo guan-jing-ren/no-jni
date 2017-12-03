@@ -1,0 +1,44 @@
+#ifndef sun_misc_CharacterEncoder_HPP
+#define sun_misc_CharacterEncoder_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::misc::CharacterEncoder : public jObject<::sun::misc::CharacterEncoder, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_misc / "CharacterEncoder";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::io::InputStream, ::java::io::OutputStream)>("encode"), //
+		jMethod<::java::lang::String(::java::nio::ByteBuffer)>("encode"), //
+		jMethod<::jvoid(::java::nio::ByteBuffer, ::java::io::OutputStream)>("encode"), //
+		jMethod<::java::lang::String(::jbyte *)>("encode"), //
+		jMethod<::jvoid(::jbyte *, ::java::io::OutputStream)>("encode"), //
+		jMethod<::jvoid(::java::io::InputStream, ::java::io::OutputStream)>("encodeBuffer"), //
+		jMethod<::java::lang::String(::java::nio::ByteBuffer)>("encodeBuffer"), //
+		jMethod<::jvoid(::java::nio::ByteBuffer, ::java::io::OutputStream)>("encodeBuffer"), //
+		jMethod<::java::lang::String(::jbyte *)>("encodeBuffer"), //
+		jMethod<::jvoid(::jbyte *, ::java::io::OutputStream)>("encodeBuffer"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto encode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encode")] != -1);
+		return call<R>("encode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto encodeBuffer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encodeBuffer")] != -1);
+		return call<R>("encodeBuffer", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

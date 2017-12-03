@@ -1,0 +1,35 @@
+#ifndef sun_net_SocksProxy_HPP
+#define sun_net_SocksProxy_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::net::SocksProxy : public jObject<::sun::net::SocksProxy, ::java::net::Proxy> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_net / "SocksProxy";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::net::SocksProxy(::java::net::SocketAddress, ::jint)>("create"), //
+		jMethod<::jint()>("protocolVersion"), //
+	};
+
+	template<typename R = ::sun::net::SocksProxy, typename... Args>
+	static auto create(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create")] != -1);
+		return scall<R>("create", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto protocolVersion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("protocolVersion")] != -1);
+		return call<R>("protocolVersion", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

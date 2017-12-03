@@ -1,0 +1,35 @@
+#ifndef sun_awt_AWTAccessor$ContainerAccessor_HPP
+#define sun_awt_AWTAccessor$ContainerAccessor_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::AWTAccessor$ContainerAccessor : public jObject<::sun::awt::AWTAccessor$ContainerAccessor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "AWTAccessor$ContainerAccessor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::Component(::java::awt::Container, ::jint, ::jint, ::jboolean)>("findComponentAt"), //
+		jMethod<::jvoid(::java::awt::Container)>("validateUnconditionally"), //
+	};
+
+	template<typename R = ::java::awt::Component, typename... Args>
+	auto findComponentAt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("findComponentAt")] != -1);
+		return call<R>("findComponentAt", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto validateUnconditionally(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("validateUnconditionally")] != -1);
+		return call<R>("validateUnconditionally", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

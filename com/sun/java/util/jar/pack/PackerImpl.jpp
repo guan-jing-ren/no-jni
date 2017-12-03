@@ -1,0 +1,51 @@
+#ifndef com_sun_java_util_jar_pack_PackerImpl_HPP
+#define com_sun_java_util_jar_pack_PackerImpl_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::java::util::jar::pack::PackerImpl : public jObject<::com::sun::java::util::jar::pack::PackerImpl, ::com::sun::java::util::jar::pack::TLGlobals> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_java_util_jar_pack / "PackerImpl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::beans::PropertyChangeListener)>("addPropertyChangeListener"), //
+		jMethod<::jvoid(::java::util::jar::JarFile, ::java::io::OutputStream)>("pack"), //
+		jMethod<::jvoid(::java::util::jar::JarInputStream, ::java::io::OutputStream)>("pack"), //
+		jMethod<::java::util::SortedMap()>("properties"), //
+		jMethod<::jvoid(::java::beans::PropertyChangeListener)>("removePropertyChangeListener"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addPropertyChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addPropertyChangeListener")] != -1);
+		return call<R>("addPropertyChangeListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto pack(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("pack")] != -1);
+		return call<R>("pack", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::SortedMap, typename... Args>
+	auto properties(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("properties")] != -1);
+		return call<R>("properties", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removePropertyChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removePropertyChangeListener")] != -1);
+		return call<R>("removePropertyChangeListener", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,42 @@
+#ifndef sun_nio_cs_AbstractCharsetProvider_HPP
+#define sun_nio_cs_AbstractCharsetProvider_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::nio::cs::AbstractCharsetProvider : public jObject<::sun::nio::cs::AbstractCharsetProvider, ::java::nio::charset::spi::CharsetProvider> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_nio_cs / "AbstractCharsetProvider";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String *(::java::lang::String)>("aliases"), //
+		jMethod<::java::nio::charset::Charset(::java::lang::String)>("charsetForName"), //
+		jMethod<::java::util::Iterator()>("charsets"), //
+	};
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto aliases(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("aliases")] != -1);
+		return call<R>("aliases", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::charset::Charset, typename... Args>
+	auto charsetForName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("charsetForName")] != -1);
+		return call<R>("charsetForName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Iterator, typename... Args>
+	auto charsets(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("charsets")] != -1);
+		return call<R>("charsets", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

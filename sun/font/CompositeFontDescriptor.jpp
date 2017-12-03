@@ -1,0 +1,64 @@
+#ifndef sun_font_CompositeFontDescriptor_HPP
+#define sun_font_CompositeFontDescriptor_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::CompositeFontDescriptor : public jObject<::sun::font::CompositeFontDescriptor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "CompositeFontDescriptor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::jint, ::java::lang::String *, ::java::lang::String *, ::jint *, ::jint *)>(), //
+		jMethod<::java::lang::String *()>("getComponentFaceNames"), //
+		jMethod<::java::lang::String *()>("getComponentFileNames"), //
+		jMethod<::jint()>("getCoreComponentCount"), //
+		jMethod<::jint *()>("getExclusionRangeLimits"), //
+		jMethod<::jint *()>("getExclusionRanges"), //
+		jMethod<::java::lang::String()>("getFaceName"), //
+	};
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getComponentFaceNames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getComponentFaceNames")] != -1);
+		return call<R>("getComponentFaceNames", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getComponentFileNames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getComponentFileNames")] != -1);
+		return call<R>("getComponentFileNames", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getCoreComponentCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCoreComponentCount")] != -1);
+		return call<R>("getCoreComponentCount", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint *, typename... Args>
+	auto getExclusionRangeLimits(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getExclusionRangeLimits")] != -1);
+		return call<R>("getExclusionRangeLimits", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint *, typename... Args>
+	auto getExclusionRanges(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getExclusionRanges")] != -1);
+		return call<R>("getExclusionRanges", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getFaceName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFaceName")] != -1);
+		return call<R>("getFaceName", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

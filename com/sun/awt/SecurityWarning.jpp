@@ -1,0 +1,35 @@
+#ifndef com_sun_awt_SecurityWarning_HPP
+#define com_sun_awt_SecurityWarning_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::com::sun::awt::SecurityWarning : public jObject<::com::sun::awt::SecurityWarning, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_awt / "SecurityWarning";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::Dimension(::java::awt::Window)>("getSize"), //
+		jMethod<::jvoid(::java::awt::Window, ::java::awt::geom::Point2D, ::jfloat, ::jfloat)>("setPosition"), //
+	};
+
+	template<typename R = ::java::awt::Dimension, typename... Args>
+	static auto getSize(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSize")] != -1);
+		return scall<R>("getSize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setPosition(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setPosition")] != -1);
+		return scall<R>("setPosition", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,71 @@
+#ifndef sun_misc_Signal_HPP
+#define sun_misc_Signal_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::misc::Signal : public jObject<::sun::misc::Signal, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_misc / "Signal";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::jint()>("getNumber"), //
+		jMethod<::sun::misc::SignalHandler(::sun::misc::Signal, ::sun::misc::SignalHandler)>("handle"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jvoid(::sun::misc::Signal)>("raise"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getNumber(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNumber")] != -1);
+		return call<R>("getNumber", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::misc::SignalHandler, typename... Args>
+	static auto handle(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("handle")] != -1);
+		return scall<R>("handle", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto raise(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("raise")] != -1);
+		return scall<R>("raise", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

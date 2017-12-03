@@ -1,0 +1,57 @@
+#ifndef com_sun_corba_se_impl_oa_toa_TransientObjectManager_HPP
+#define com_sun_corba_se_impl_oa_toa_TransientObjectManager_HPP
+
+#include "../../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::impl::oa::toa::TransientObjectManager : public jObject<::com::sun::corba::se::impl::oa::toa::TransientObjectManager, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_impl_oa_toa / "TransientObjectManager";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::com::sun::corba::se::spi::orb::ORB)>(), //
+		jMethod<::jvoid(::jbyte *)>("deleteServant"), //
+		jMethod<::jbyte *(::java::lang::Object)>("getKey"), //
+		jMethod<::java::lang::Object(::jbyte *)>("lookupServant"), //
+		jMethod<::java::lang::Object(::jbyte *)>("lookupServantData"), //
+		jMethod<::jbyte *(::java::lang::Object, ::java::lang::Object)>("storeServant"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto deleteServant(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("deleteServant")] != -1);
+		return call<R>("deleteServant", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getKey(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getKey")] != -1);
+		return call<R>("getKey", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto lookupServant(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("lookupServant")] != -1);
+		return call<R>("lookupServant", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto lookupServantData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("lookupServantData")] != -1);
+		return call<R>("lookupServantData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto storeServant(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("storeServant")] != -1);
+		return call<R>("storeServant", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

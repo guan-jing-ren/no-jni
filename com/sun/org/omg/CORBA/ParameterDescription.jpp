@@ -1,0 +1,50 @@
+#ifndef com_sun_org_omg_CORBA_ParameterDescription_HPP
+#define com_sun_org_omg_CORBA_ParameterDescription_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::org::omg::CORBA::ParameterDescription : public jObject<::com::sun::org::omg::CORBA::ParameterDescription, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_org_omg_CORBA / "ParameterDescription";
+
+	constexpr static Enume field_signatures{
+		jField<::com::sun::org::omg::CORBA::ParameterMode>("mode"), //
+		jField<::java::lang::String>("name"), //
+		jField<::org::omg::CORBA::TypeCode>("type"), //
+		jField<::org::omg::CORBA::IDLType>("type_def"), //
+	};
+
+	template<typename F = ::com::sun::org::omg::CORBA::ParameterMode>
+	auto mode() const {
+		static_assert(field_signatures[jField<F>("mode")] != -1);
+		return at<F>("mode");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto name() const {
+		static_assert(field_signatures[jField<F>("name")] != -1);
+		return at<F>("name");
+	}
+
+	template<typename F = ::org::omg::CORBA::TypeCode>
+	auto type() const {
+		static_assert(field_signatures[jField<F>("type")] != -1);
+		return at<F>("type");
+	}
+
+	template<typename F = ::org::omg::CORBA::IDLType>
+	auto type_def() const {
+		static_assert(field_signatures[jField<F>("type_def")] != -1);
+		return at<F>("type_def");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String, ::org::omg::CORBA::TypeCode, ::org::omg::CORBA::IDLType, ::com::sun::org::omg::CORBA::ParameterMode)>(), //
+	};
+
+};
+
+#endif

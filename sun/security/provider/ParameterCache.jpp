@@ -1,0 +1,57 @@
+#ifndef sun_security_provider_ParameterCache_HPP
+#define sun_security_provider_ParameterCache_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::provider::ParameterCache : public jObject<::sun::security::provider::ParameterCache, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_provider / "ParameterCache";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::crypto::spec::DHParameterSpec(::jint)>("getCachedDHParameterSpec"), //
+		jMethod<::java::security::spec::DSAParameterSpec(::jint, ::jint)>("getCachedDSAParameterSpec"), //
+		jMethod<::javax::crypto::spec::DHParameterSpec(::jint, ::java::security::SecureRandom)>("getDHParameterSpec"), //
+		jMethod<::java::security::spec::DSAParameterSpec(::jint, ::jint, ::java::security::SecureRandom)>("getDSAParameterSpec"), //
+		jMethod<::java::security::spec::DSAParameterSpec(::jint, ::java::security::SecureRandom)>("getDSAParameterSpec"), //
+		jMethod<::java::security::spec::DSAParameterSpec(::jint, ::jint, ::java::security::SecureRandom)>("getNewDSAParameterSpec"), //
+	};
+
+	template<typename R = ::javax::crypto::spec::DHParameterSpec, typename... Args>
+	static auto getCachedDHParameterSpec(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCachedDHParameterSpec")] != -1);
+		return scall<R>("getCachedDHParameterSpec", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::spec::DSAParameterSpec, typename... Args>
+	static auto getCachedDSAParameterSpec(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCachedDSAParameterSpec")] != -1);
+		return scall<R>("getCachedDSAParameterSpec", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::crypto::spec::DHParameterSpec, typename... Args>
+	static auto getDHParameterSpec(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDHParameterSpec")] != -1);
+		return scall<R>("getDHParameterSpec", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::spec::DSAParameterSpec, typename... Args>
+	static auto getDSAParameterSpec(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDSAParameterSpec")] != -1);
+		return scall<R>("getDSAParameterSpec", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::spec::DSAParameterSpec, typename... Args>
+	static auto getNewDSAParameterSpec(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNewDSAParameterSpec")] != -1);
+		return scall<R>("getNewDSAParameterSpec", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

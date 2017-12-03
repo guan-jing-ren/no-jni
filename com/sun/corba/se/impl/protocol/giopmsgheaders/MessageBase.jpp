@@ -1,0 +1,176 @@
+#ifndef com_sun_corba_se_impl_protocol_giopmsgheaders_MessageBase_HPP
+#define com_sun_corba_se_impl_protocol_giopmsgheaders_MessageBase_HPP
+
+#include "../../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::impl::protocol::giopmsgheaders::MessageBase : public jObject<::com::sun::corba::se::impl::protocol::giopmsgheaders::MessageBase, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_impl_protocol_giopmsgheaders / "MessageBase";
+
+	constexpr static Enume field_signatures{
+		jField<::jbyte *>("giopHeader"), //
+	};
+
+	template<typename F = ::jbyte *>
+	auto giopHeader() const {
+		static_assert(field_signatures[jField<F>("giopHeader")] != -1);
+		return at<F>("giopHeader");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::com::sun::corba::se::impl::protocol::giopmsgheaders::MessageHandler)>("callback"), //
+		jMethod<::jvoid(::jbyte *, ::jint)>("clearFlag"), //
+		jMethod<::com::sun::corba::se::impl::protocol::giopmsgheaders::CancelRequestMessage(::com::sun::corba::se::spi::ior::iiop::GIOPVersion, ::jint)>("createCancelRequest"), //
+		jMethod<::com::sun::corba::se::impl::protocol::giopmsgheaders::Message(::com::sun::corba::se::spi::ior::iiop::GIOPVersion)>("createCloseConnection"), //
+		jMethod<::com::sun::corba::se::impl::protocol::giopmsgheaders::FragmentMessage(::com::sun::corba::se::spi::ior::iiop::GIOPVersion)>("createFragmentMessage"), //
+		jMethod<::com::sun::corba::se::impl::protocol::giopmsgheaders::LocateReplyMessage(::com::sun::corba::se::spi::orb::ORB, ::com::sun::corba::se::spi::ior::iiop::GIOPVersion, ::jbyte, ::jint, ::jint, ::com::sun::corba::se::spi::ior::IOR)>("createLocateReply"), //
+		jMethod<::com::sun::corba::se::impl::protocol::giopmsgheaders::LocateRequestMessage(::com::sun::corba::se::spi::orb::ORB, ::com::sun::corba::se::spi::ior::iiop::GIOPVersion, ::jbyte, ::jint, ::jbyte *)>("createLocateRequest"), //
+		jMethod<::com::sun::corba::se::impl::protocol::giopmsgheaders::Message(::com::sun::corba::se::spi::ior::iiop::GIOPVersion)>("createMessageError"), //
+		jMethod<::com::sun::corba::se::impl::protocol::giopmsgheaders::ReplyMessage(::com::sun::corba::se::spi::orb::ORB, ::com::sun::corba::se::spi::ior::iiop::GIOPVersion, ::jbyte, ::jint, ::jint, ::com::sun::corba::se::spi::servicecontext::ServiceContexts, ::com::sun::corba::se::spi::ior::IOR)>("createReply"), //
+		jMethod<::com::sun::corba::se::impl::protocol::giopmsgheaders::RequestMessage(::com::sun::corba::se::spi::orb::ORB, ::com::sun::corba::se::spi::ior::iiop::GIOPVersion, ::jbyte, ::jint, ::jboolean, ::com::sun::corba::se::spi::ior::IOR, ::jshort, ::java::lang::String, ::com::sun::corba::se::spi::servicecontext::ServiceContexts, ::org::omg::CORBA::Principal)>("createRequest"), //
+		jMethod<::java::nio::ByteBuffer()>("getByteBuffer"), //
+		jMethod<::jbyte()>("getEncodingVersion"), //
+		jMethod<::jint(::com::sun::corba::se::impl::protocol::giopmsgheaders::Message)>("getRequestId"), //
+		jMethod<::jint()>("getThreadPoolToUse"), //
+		jMethod<::com::sun::corba::se::impl::protocol::giopmsgheaders::Message(::com::sun::corba::se::spi::orb::ORB, ::com::sun::corba::se::spi::transport::CorbaConnection, ::com::sun::corba::se::impl::protocol::giopmsgheaders::Message)>("readGIOPBody"), //
+		jMethod<::com::sun::corba::se::impl::protocol::giopmsgheaders::MessageBase(::com::sun::corba::se::spi::orb::ORB, ::com::sun::corba::se::spi::transport::CorbaConnection)>("readGIOPHeader"), //
+		jMethod<::com::sun::corba::se::impl::protocol::giopmsgheaders::MessageBase(::com::sun::corba::se::spi::orb::ORB, ::com::sun::corba::se::spi::transport::CorbaConnection)>("readGIOPMessage"), //
+		jMethod<::jvoid(::java::nio::ByteBuffer)>("setByteBuffer"), //
+		jMethod<::jvoid(::jbyte)>("setEncodingVersion"), //
+		jMethod<::jvoid(::java::nio::ByteBuffer, ::jint)>("setFlag"), //
+		jMethod<::java::lang::String(::jbyte)>("typeToString"), //
+		jMethod<::java::lang::String(::jint)>("typeToString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto callback(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("callback")] != -1);
+		return call<R>("callback", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto clearFlag(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clearFlag")] != -1);
+		return scall<R>("clearFlag", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::protocol::giopmsgheaders::CancelRequestMessage, typename... Args>
+	static auto createCancelRequest(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createCancelRequest")] != -1);
+		return scall<R>("createCancelRequest", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::protocol::giopmsgheaders::Message, typename... Args>
+	static auto createCloseConnection(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createCloseConnection")] != -1);
+		return scall<R>("createCloseConnection", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::protocol::giopmsgheaders::FragmentMessage, typename... Args>
+	static auto createFragmentMessage(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createFragmentMessage")] != -1);
+		return scall<R>("createFragmentMessage", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::protocol::giopmsgheaders::LocateReplyMessage, typename... Args>
+	static auto createLocateReply(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createLocateReply")] != -1);
+		return scall<R>("createLocateReply", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::protocol::giopmsgheaders::LocateRequestMessage, typename... Args>
+	static auto createLocateRequest(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createLocateRequest")] != -1);
+		return scall<R>("createLocateRequest", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::protocol::giopmsgheaders::Message, typename... Args>
+	static auto createMessageError(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createMessageError")] != -1);
+		return scall<R>("createMessageError", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::protocol::giopmsgheaders::ReplyMessage, typename... Args>
+	static auto createReply(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createReply")] != -1);
+		return scall<R>("createReply", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::protocol::giopmsgheaders::RequestMessage, typename... Args>
+	static auto createRequest(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createRequest")] != -1);
+		return scall<R>("createRequest", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::ByteBuffer, typename... Args>
+	auto getByteBuffer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getByteBuffer")] != -1);
+		return call<R>("getByteBuffer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte, typename... Args>
+	auto getEncodingVersion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEncodingVersion")] != -1);
+		return call<R>("getEncodingVersion", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto getRequestId(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRequestId")] != -1);
+		return scall<R>("getRequestId", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getThreadPoolToUse(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getThreadPoolToUse")] != -1);
+		return call<R>("getThreadPoolToUse", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::protocol::giopmsgheaders::Message, typename... Args>
+	static auto readGIOPBody(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("readGIOPBody")] != -1);
+		return scall<R>("readGIOPBody", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::protocol::giopmsgheaders::MessageBase, typename... Args>
+	static auto readGIOPHeader(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("readGIOPHeader")] != -1);
+		return scall<R>("readGIOPHeader", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::protocol::giopmsgheaders::MessageBase, typename... Args>
+	static auto readGIOPMessage(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("readGIOPMessage")] != -1);
+		return scall<R>("readGIOPMessage", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setByteBuffer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setByteBuffer")] != -1);
+		return call<R>("setByteBuffer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setEncodingVersion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setEncodingVersion")] != -1);
+		return call<R>("setEncodingVersion", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setFlag(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setFlag")] != -1);
+		return scall<R>("setFlag", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto typeToString(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("typeToString")] != -1);
+		return scall<R>("typeToString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

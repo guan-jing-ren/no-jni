@@ -1,0 +1,64 @@
+#ifndef sun_awt_X11_XFocusProxyWindow_HPP
+#define sun_awt_X11_XFocusProxyWindow_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::X11::XFocusProxyWindow : public jObject<::sun::awt::X11::XFocusProxyWindow, ::sun::awt::X11::XBaseWindow> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_X11 / "XFocusProxyWindow";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::awt::X11::XWindowPeer)>(), //
+		jMethod<::jvoid(::sun::awt::X11::XEvent)>("dispatchEvent"), //
+		jMethod<::sun::awt::X11::XWindowPeer()>("getOwner"), //
+		jMethod<::jvoid(::sun::awt::X11::XEvent)>("handleFocusEvent"), //
+		jMethod<::jvoid(::sun::awt::X11::XEvent)>("handleKeyPress"), //
+		jMethod<::jvoid(::sun::awt::X11::XEvent)>("handleKeyRelease"), //
+		jMethod<::jvoid(::sun::awt::X11::XCreateWindowParams)>("postInit"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispatchEvent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dispatchEvent")] != -1);
+		return call<R>("dispatchEvent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::awt::X11::XWindowPeer, typename... Args>
+	auto getOwner(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOwner")] != -1);
+		return call<R>("getOwner", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto handleFocusEvent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("handleFocusEvent")] != -1);
+		return call<R>("handleFocusEvent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto handleKeyPress(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("handleKeyPress")] != -1);
+		return call<R>("handleKeyPress", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto handleKeyRelease(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("handleKeyRelease")] != -1);
+		return call<R>("handleKeyRelease", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto postInit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("postInit")] != -1);
+		return call<R>("postInit", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

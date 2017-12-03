@@ -1,0 +1,42 @@
+#ifndef sun_net_spi_nameservice_NameServiceDescriptor_HPP
+#define sun_net_spi_nameservice_NameServiceDescriptor_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::net::spi::nameservice::NameServiceDescriptor : public jObject<::sun::net::spi::nameservice::NameServiceDescriptor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_net_spi_nameservice / "NameServiceDescriptor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::net::spi::nameservice::NameService()>("createNameService"), //
+		jMethod<::java::lang::String()>("getProviderName"), //
+		jMethod<::java::lang::String()>("getType"), //
+	};
+
+	template<typename R = ::sun::net::spi::nameservice::NameService, typename... Args>
+	auto createNameService(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createNameService")] != -1);
+		return call<R>("createNameService", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getProviderName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getProviderName")] != -1);
+		return call<R>("getProviderName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

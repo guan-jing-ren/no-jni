@@ -1,0 +1,72 @@
+#ifndef sun_security_krb5_KrbApReq_HPP
+#define sun_security_krb5_KrbApReq_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::krb5::KrbApReq : public jObject<::sun::security::krb5::KrbApReq, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_krb5 / "KrbApReq";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::security::krb5::Credentials, ::jboolean, ::jboolean, ::jboolean, ::sun::security::krb5::Checksum)>(), //
+		jConstructor<::jvoid(::jbyte *, ::sun::security::jgss::krb5::Krb5AcceptCredential, ::java::net::InetAddress)>(), //
+		jMethod<::sun::security::krb5::Checksum()>("getChecksum"), //
+		jMethod<::sun::security::krb5::PrincipalName()>("getClient"), //
+		jMethod<::sun::security::krb5::Credentials()>("getCreds"), //
+		jMethod<::jbyte *()>("getMessage"), //
+		jMethod<::jboolean()>("getMutualAuthRequired"), //
+		jMethod<::java::lang::Integer()>("getSeqNumber"), //
+		jMethod<::sun::security::krb5::EncryptionKey()>("getSubKey"), //
+	};
+
+	template<typename R = ::sun::security::krb5::Checksum, typename... Args>
+	auto getChecksum(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getChecksum")] != -1);
+		return call<R>("getChecksum", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::krb5::PrincipalName, typename... Args>
+	auto getClient(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClient")] != -1);
+		return call<R>("getClient", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::krb5::Credentials, typename... Args>
+	auto getCreds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCreds")] != -1);
+		return call<R>("getCreds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getMessage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMessage")] != -1);
+		return call<R>("getMessage", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getMutualAuthRequired(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMutualAuthRequired")] != -1);
+		return call<R>("getMutualAuthRequired", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Integer, typename... Args>
+	auto getSeqNumber(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSeqNumber")] != -1);
+		return call<R>("getSeqNumber", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::krb5::EncryptionKey, typename... Args>
+	auto getSubKey(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSubKey")] != -1);
+		return call<R>("getSubKey", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

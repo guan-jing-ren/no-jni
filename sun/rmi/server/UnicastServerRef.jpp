@@ -1,0 +1,96 @@
+#ifndef sun_rmi_server_UnicastServerRef_HPP
+#define sun_rmi_server_UnicastServerRef_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::rmi::server::UnicastServerRef : public jObject<::sun::rmi::server::UnicastServerRef, ::sun::rmi::server::UnicastRef> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_rmi_server / "UnicastServerRef";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::rmi::runtime::Log>("callLog"), //
+		jField<::jboolean>("logCalls"), //
+	};
+
+	template<typename F = ::sun::rmi::runtime::Log>
+	static auto callLog() {
+		static_assert(field_signatures[jField<F>("callLog")] != -1);
+		return sat<F>("callLog");
+	}
+
+	template<typename F = ::jboolean>
+	static auto logCalls() {
+		static_assert(field_signatures[jField<F>("logCalls")] != -1);
+		return sat<F>("logCalls");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint)>(), //
+		jConstructor<::jvoid(::sun::rmi::transport::LiveRef)>(), //
+		jConstructor<::jvoid(::sun::rmi::transport::LiveRef, ::sun::misc::ObjectInputFilter)>(), //
+		jConstructor<::jvoid(::jboolean)>(), //
+		jMethod<::jvoid(::java::lang::Throwable)>("clearStackTraces"), //
+		jMethod<::jvoid(::java::rmi::Remote, ::java::rmi::server::RemoteCall)>("dispatch"), //
+		jMethod<::java::rmi::server::RemoteStub(::java::rmi::Remote, ::java::lang::Object)>("exportObject"), //
+		jMethod<::java::rmi::Remote(::java::rmi::Remote, ::java::lang::Object, ::jboolean)>("exportObject"), //
+		jMethod<::java::lang::String()>("getClientHost"), //
+		jMethod<::java::lang::String(::java::io::ObjectOutput)>("getRefClass"), //
+		jMethod<::jvoid(::java::io::ObjectInput)>("readExternal"), //
+		jMethod<::jvoid(::java::rmi::Remote)>("setSkeleton"), //
+		jMethod<::jvoid(::java::io::ObjectOutput)>("writeExternal"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto clearStackTraces(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clearStackTraces")] != -1);
+		return scall<R>("clearStackTraces", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispatch(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dispatch")] != -1);
+		return call<R>("dispatch", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::rmi::server::RemoteStub, typename... Args>
+	auto exportObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("exportObject")] != -1);
+		return call<R>("exportObject", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getClientHost(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClientHost")] != -1);
+		return call<R>("getClientHost", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getRefClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRefClass")] != -1);
+		return call<R>("getRefClass", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto readExternal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("readExternal")] != -1);
+		return call<R>("readExternal", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setSkeleton(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setSkeleton")] != -1);
+		return call<R>("setSkeleton", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeExternal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeExternal")] != -1);
+		return call<R>("writeExternal", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

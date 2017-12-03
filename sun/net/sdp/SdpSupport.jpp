@@ -1,0 +1,35 @@
+#ifndef sun_net_sdp_SdpSupport_HPP
+#define sun_net_sdp_SdpSupport_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::net::sdp::SdpSupport : public jObject<::sun::net::sdp::SdpSupport, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_net_sdp / "SdpSupport";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::io::FileDescriptor)>("convertSocket"), //
+		jMethod<::java::io::FileDescriptor()>("createSocket"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto convertSocket(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("convertSocket")] != -1);
+		return scall<R>("convertSocket", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::FileDescriptor, typename... Args>
+	static auto createSocket(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createSocket")] != -1);
+		return scall<R>("createSocket", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

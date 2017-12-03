@@ -1,0 +1,72 @@
+#ifndef sun_nio_ch_SelectionKeyImpl_HPP
+#define sun_nio_ch_SelectionKeyImpl_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::nio::ch::SelectionKeyImpl : public jObject<::sun::nio::ch::SelectionKeyImpl, ::java::nio::channels::spi::AbstractSelectionKey> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_nio_ch / "SelectionKeyImpl";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::nio::ch::SelectorImpl>("selector"), //
+	};
+
+	template<typename F = ::sun::nio::ch::SelectorImpl>
+	auto selector() const {
+		static_assert(field_signatures[jField<F>("selector")] != -1);
+		return at<F>("selector");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::nio::channels::SelectableChannel()>("channel"), //
+		jMethod<::jint()>("interestOps"), //
+		jMethod<::java::nio::channels::SelectionKey(::jint)>("interestOps"), //
+		jMethod<::jint()>("nioInterestOps"), //
+		jMethod<::java::nio::channels::SelectionKey(::jint)>("nioInterestOps"), //
+		jMethod<::jint()>("nioReadyOps"), //
+		jMethod<::jvoid(::jint)>("nioReadyOps"), //
+		jMethod<::jint()>("readyOps"), //
+		jMethod<::java::nio::channels::Selector()>("selector"), //
+	};
+
+	template<typename R = ::java::nio::channels::SelectableChannel, typename... Args>
+	auto channel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("channel")] != -1);
+		return call<R>("channel", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto interestOps(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("interestOps")] != -1);
+		return call<R>("interestOps", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto nioInterestOps(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("nioInterestOps")] != -1);
+		return call<R>("nioInterestOps", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto nioReadyOps(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("nioReadyOps")] != -1);
+		return call<R>("nioReadyOps", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto readyOps(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("readyOps")] != -1);
+		return call<R>("readyOps", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::Selector, typename... Args>
+	auto selector(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("selector")] != -1);
+		return call<R>("selector", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

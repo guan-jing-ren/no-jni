@@ -1,0 +1,119 @@
+#ifndef sun_security_jgss_GSSUtil_HPP
+#define sun_security_jgss_GSSUtil_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::jgss::GSSUtil : public jObject<::sun::security::jgss::GSSUtil, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_jgss / "GSSUtil";
+
+	constexpr static Enume field_signatures{
+		jField<::org::ietf::jgss::Oid>("GSS_KRB5_MECH_OID"), //
+		jField<::org::ietf::jgss::Oid>("GSS_KRB5_MECH_OID2"), //
+		jField<::org::ietf::jgss::Oid>("GSS_KRB5_MECH_OID_MS"), //
+		jField<::org::ietf::jgss::Oid>("GSS_SPNEGO_MECH_OID"), //
+		jField<::org::ietf::jgss::Oid>("NT_GSS_KRB5_PRINCIPAL"), //
+	};
+
+	template<typename F = ::org::ietf::jgss::Oid>
+	static auto GSS_KRB5_MECH_OID() {
+		static_assert(field_signatures[jField<F>("GSS_KRB5_MECH_OID")] != -1);
+		return sat<F>("GSS_KRB5_MECH_OID");
+	}
+
+	template<typename F = ::org::ietf::jgss::Oid>
+	static auto GSS_KRB5_MECH_OID2() {
+		static_assert(field_signatures[jField<F>("GSS_KRB5_MECH_OID2")] != -1);
+		return sat<F>("GSS_KRB5_MECH_OID2");
+	}
+
+	template<typename F = ::org::ietf::jgss::Oid>
+	static auto GSS_KRB5_MECH_OID_MS() {
+		static_assert(field_signatures[jField<F>("GSS_KRB5_MECH_OID_MS")] != -1);
+		return sat<F>("GSS_KRB5_MECH_OID_MS");
+	}
+
+	template<typename F = ::org::ietf::jgss::Oid>
+	static auto GSS_SPNEGO_MECH_OID() {
+		static_assert(field_signatures[jField<F>("GSS_SPNEGO_MECH_OID")] != -1);
+		return sat<F>("GSS_SPNEGO_MECH_OID");
+	}
+
+	template<typename F = ::org::ietf::jgss::Oid>
+	static auto NT_GSS_KRB5_PRINCIPAL() {
+		static_assert(field_signatures[jField<F>("NT_GSS_KRB5_PRINCIPAL")] != -1);
+		return sat<F>("NT_GSS_KRB5_PRINCIPAL");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::org::ietf::jgss::Oid(::java::lang::String)>("createOid"), //
+		jMethod<::java::lang::String(::org::ietf::jgss::Oid)>("getMechStr"), //
+		jMethod<::javax::security::auth::Subject(::org::ietf::jgss::GSSName, ::org::ietf::jgss::GSSCredential)>("getSubject"), //
+		jMethod<::jboolean(::org::ietf::jgss::Oid)>("isKerberosMech"), //
+		jMethod<::jboolean(::org::ietf::jgss::Oid)>("isSpNegoMech"), //
+		jMethod<::javax::security::auth::Subject(::sun::security::jgss::GSSCaller, ::org::ietf::jgss::Oid)>("login"), //
+		jMethod<::java::util::Vector(::sun::security::jgss::spi::GSSNameSpi, ::org::ietf::jgss::Oid, ::jboolean, ::java::lang::Class)>("searchSubject"), //
+		jMethod<::jboolean()>("useMSInterop"), //
+		jMethod<::jboolean(::sun::security::jgss::GSSCaller)>("useSubjectCredsOnly"), //
+	};
+
+	template<typename R = ::org::ietf::jgss::Oid, typename... Args>
+	static auto createOid(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createOid")] != -1);
+		return scall<R>("createOid", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getMechStr(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMechStr")] != -1);
+		return scall<R>("getMechStr", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::security::auth::Subject, typename... Args>
+	static auto getSubject(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSubject")] != -1);
+		return scall<R>("getSubject", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isKerberosMech(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isKerberosMech")] != -1);
+		return scall<R>("isKerberosMech", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isSpNegoMech(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSpNegoMech")] != -1);
+		return scall<R>("isSpNegoMech", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::security::auth::Subject, typename... Args>
+	static auto login(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("login")] != -1);
+		return scall<R>("login", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Vector, typename... Args>
+	static auto searchSubject(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("searchSubject")] != -1);
+		return scall<R>("searchSubject", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto useMSInterop(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("useMSInterop")] != -1);
+		return scall<R>("useMSInterop", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto useSubjectCredsOnly(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("useSubjectCredsOnly")] != -1);
+		return scall<R>("useSubjectCredsOnly", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

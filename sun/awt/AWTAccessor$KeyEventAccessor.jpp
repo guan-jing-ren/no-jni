@@ -1,0 +1,49 @@
+#ifndef sun_awt_AWTAccessor$KeyEventAccessor_HPP
+#define sun_awt_AWTAccessor$KeyEventAccessor_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::AWTAccessor$KeyEventAccessor : public jObject<::sun::awt::AWTAccessor$KeyEventAccessor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "AWTAccessor$KeyEventAccessor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::Component(::java::awt::event::KeyEvent)>("getOriginalSource"), //
+		jMethod<::jvoid(::java::awt::event::KeyEvent, ::jlong)>("setExtendedKeyCode"), //
+		jMethod<::jvoid(::java::awt::event::KeyEvent, ::jlong)>("setPrimaryLevelUnicode"), //
+		jMethod<::jvoid(::java::awt::event::KeyEvent, ::jlong)>("setRawCode"), //
+	};
+
+	template<typename R = ::java::awt::Component, typename... Args>
+	auto getOriginalSource(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOriginalSource")] != -1);
+		return call<R>("getOriginalSource", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setExtendedKeyCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setExtendedKeyCode")] != -1);
+		return call<R>("setExtendedKeyCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setPrimaryLevelUnicode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setPrimaryLevelUnicode")] != -1);
+		return call<R>("setPrimaryLevelUnicode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setRawCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setRawCode")] != -1);
+		return call<R>("setRawCode", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

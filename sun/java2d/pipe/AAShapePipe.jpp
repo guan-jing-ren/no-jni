@@ -1,0 +1,64 @@
+#ifndef sun_java2d_pipe_AAShapePipe_HPP
+#define sun_java2d_pipe_AAShapePipe_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::pipe::AAShapePipe : public jObject<::sun::java2d::pipe::AAShapePipe, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_pipe / "AAShapePipe";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::java2d::pipe::CompositePipe)>(), //
+		jMethod<::jvoid(::sun::java2d::SunGraphics2D, ::java::awt::Shape)>("draw"), //
+		jMethod<::jvoid(::sun::java2d::SunGraphics2D, ::jdouble, ::jdouble, ::jdouble, ::jdouble, ::jdouble, ::jdouble, ::jdouble, ::jdouble, ::jdouble, ::jdouble, ::jdouble, ::jdouble)>("drawParallelogram"), //
+		jMethod<::jvoid(::sun::java2d::SunGraphics2D, ::java::awt::Shape)>("fill"), //
+		jMethod<::jvoid(::sun::java2d::SunGraphics2D, ::jdouble, ::jdouble, ::jdouble, ::jdouble, ::jdouble, ::jdouble, ::jdouble, ::jdouble, ::jdouble, ::jdouble)>("fillParallelogram"), //
+		jMethod<::jvoid(::sun::java2d::SunGraphics2D, ::java::awt::Shape, ::java::awt::BasicStroke)>("renderPath"), //
+		jMethod<::jvoid(::sun::java2d::SunGraphics2D, ::java::awt::Shape, ::sun::java2d::pipe::AATileGenerator, ::jint *)>("renderTiles"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto draw(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("draw")] != -1);
+		return call<R>("draw", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto drawParallelogram(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("drawParallelogram")] != -1);
+		return call<R>("drawParallelogram", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto fill(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("fill")] != -1);
+		return call<R>("fill", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto fillParallelogram(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("fillParallelogram")] != -1);
+		return call<R>("fillParallelogram", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto renderPath(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("renderPath")] != -1);
+		return call<R>("renderPath", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto renderTiles(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("renderTiles")] != -1);
+		return call<R>("renderTiles", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,65 @@
+#ifndef com_sun_net_ssl_SSLContext_HPP
+#define com_sun_net_ssl_SSLContext_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::net::ssl::SSLContext : public jObject<::com::sun::net::ssl::SSLContext, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_net_ssl / "SSLContext";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::com::sun::net::ssl::SSLContext(::java::lang::String)>("getInstance"), //
+		jMethod<::com::sun::net::ssl::SSLContext(::java::lang::String, ::java::lang::String)>("getInstance"), //
+		jMethod<::com::sun::net::ssl::SSLContext(::java::lang::String, ::java::security::Provider)>("getInstance"), //
+		jMethod<::java::lang::String()>("getProtocol"), //
+		jMethod<::java::security::Provider()>("getProvider"), //
+		jMethod<::javax::net::ssl::SSLServerSocketFactory()>("getServerSocketFactory"), //
+		jMethod<::javax::net::ssl::SSLSocketFactory()>("getSocketFactory"), //
+		jMethod<::jvoid(::com::sun::net::ssl::KeyManager *, ::com::sun::net::ssl::TrustManager *, ::java::security::SecureRandom)>("init"), //
+	};
+
+	template<typename R = ::com::sun::net::ssl::SSLContext, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getProtocol(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getProtocol")] != -1);
+		return call<R>("getProtocol", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Provider, typename... Args>
+	auto getProvider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getProvider")] != -1);
+		return call<R>("getProvider", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::net::ssl::SSLServerSocketFactory, typename... Args>
+	auto getServerSocketFactory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getServerSocketFactory")] != -1);
+		return call<R>("getServerSocketFactory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::net::ssl::SSLSocketFactory, typename... Args>
+	auto getSocketFactory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSocketFactory")] != -1);
+		return call<R>("getSocketFactory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto init(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("init")] != -1);
+		return call<R>("init", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,92 @@
+#ifndef sun_java2d_pipe_RenderQueue_HPP
+#define sun_java2d_pipe_RenderQueue_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::pipe::RenderQueue : public jObject<::sun::java2d::pipe::RenderQueue, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_pipe / "RenderQueue";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::Object)>("addReference"), //
+		jMethod<::jvoid(::jint)>("ensureAlignment"), //
+		jMethod<::jvoid(::jint)>("ensureCapacity"), //
+		jMethod<::jvoid(::jint, ::jint)>("ensureCapacityAndAlignment"), //
+		jMethod<::jvoid(::java::lang::Runnable)>("flushAndInvokeNow"), //
+		jMethod<::jvoid()>("flushNow"), //
+		jMethod<::jvoid(::jint)>("flushNow"), //
+		jMethod<::sun::java2d::pipe::RenderBuffer()>("getBuffer"), //
+		jMethod<::jvoid()>("lock"), //
+		jMethod<::jboolean()>("tryLock"), //
+		jMethod<::jvoid()>("unlock"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addReference(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addReference")] != -1);
+		return call<R>("addReference", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto ensureAlignment(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("ensureAlignment")] != -1);
+		return call<R>("ensureAlignment", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto ensureCapacity(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("ensureCapacity")] != -1);
+		return call<R>("ensureCapacity", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto ensureCapacityAndAlignment(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("ensureCapacityAndAlignment")] != -1);
+		return call<R>("ensureCapacityAndAlignment", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto flushAndInvokeNow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("flushAndInvokeNow")] != -1);
+		return call<R>("flushAndInvokeNow", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto flushNow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("flushNow")] != -1);
+		return call<R>("flushNow", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::pipe::RenderBuffer, typename... Args>
+	auto getBuffer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBuffer")] != -1);
+		return call<R>("getBuffer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto lock(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("lock")] != -1);
+		return call<R>("lock", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto tryLock(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("tryLock")] != -1);
+		return call<R>("tryLock", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto unlock(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unlock")] != -1);
+		return call<R>("unlock", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

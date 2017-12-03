@@ -1,0 +1,32 @@
+#ifndef sun_swing_SwingLazyValue_HPP
+#define sun_swing_SwingLazyValue_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::swing::SwingLazyValue : public jObject<::sun::swing::SwingLazyValue, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_swing / "SwingLazyValue";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::Object *)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::Object *)>(), //
+		jMethod<::java::lang::Object(::javax::swing::UIDefaults)>("createValue"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto createValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createValue")] != -1);
+		return call<R>("createValue", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

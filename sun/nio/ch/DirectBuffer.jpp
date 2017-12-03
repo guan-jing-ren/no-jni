@@ -1,0 +1,42 @@
+#ifndef sun_nio_ch_DirectBuffer_HPP
+#define sun_nio_ch_DirectBuffer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::nio::ch::DirectBuffer : public jObject<::sun::nio::ch::DirectBuffer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_nio_ch / "DirectBuffer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jlong()>("address"), //
+		jMethod<::java::lang::Object()>("attachment"), //
+		jMethod<::sun::misc::Cleaner()>("cleaner"), //
+	};
+
+	template<typename R = ::jlong, typename... Args>
+	auto address(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("address")] != -1);
+		return call<R>("address", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto attachment(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("attachment")] != -1);
+		return call<R>("attachment", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::misc::Cleaner, typename... Args>
+	auto cleaner(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("cleaner")] != -1);
+		return call<R>("cleaner", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

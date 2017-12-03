@@ -1,0 +1,29 @@
+#ifndef com_sun_jndi_url_rmi_rmiURLContextFactory_HPP
+#define com_sun_jndi_url_rmi_rmiURLContextFactory_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::jndi::url::rmi::rmiURLContextFactory : public jObject<::com::sun::jndi::url::rmi::rmiURLContextFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_jndi_url_rmi / "rmiURLContextFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::Object(::java::lang::Object, ::javax::naming::Name, ::javax::naming::Context, ::java::util::Hashtable)>("getObjectInstance"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getObjectInstance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getObjectInstance")] != -1);
+		return call<R>("getObjectInstance", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

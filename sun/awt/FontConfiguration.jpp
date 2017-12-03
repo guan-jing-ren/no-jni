@@ -1,0 +1,197 @@
+#ifndef sun_awt_FontConfiguration_HPP
+#define sun_awt_FontConfiguration_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::FontConfiguration : public jObject<::sun::awt::FontConfiguration, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "FontConfiguration";
+
+	constexpr static Enume field_signatures{
+		jField<::jboolean>("verbose"), //
+	};
+
+	template<typename F = ::jboolean>
+	static auto verbose() {
+		static_assert(field_signatures[jField<F>("verbose")] != -1);
+		return sat<F>("verbose");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::font::SunFontManager)>(), //
+		jConstructor<::jvoid(::sun::font::SunFontManager, ::jboolean, ::jboolean)>(), //
+		jMethod<::jboolean()>("fontFilesArePresent"), //
+		jMethod<::jboolean()>("foundOsSpecificFile"), //
+		jMethod<::sun::font::CompositeFontDescriptor *()>("get2DCompositeFontInfo"), //
+		jMethod<::java::util::HashSet()>("getAWTFontPathSet"), //
+		jMethod<::java::lang::String()>("getExtraFontPath"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::lang::String)>("getFallbackFamilyName"), //
+		jMethod<::java::lang::String(::java::lang::String)>("getFileNameFromPlatformName"), //
+		jMethod<::sun::awt::FontDescriptor *(::java::lang::String, ::jint)>("getFontDescriptors"), //
+		jMethod<::java::lang::String(::java::lang::String, ::jint)>("getLogicalFontFaceName"), //
+		jMethod<::jint()>("getNumberCoreFonts"), //
+		jMethod<::java::lang::String *()>("getPlatformFontNames"), //
+		jMethod<::java::lang::String(::jint)>("getStyleString"), //
+		jMethod<::java::lang::String()>("getVersion"), //
+		jMethod<::jboolean()>("hasMonoToPropMap"), //
+		jMethod<::jboolean()>("init"), //
+		jMethod<::jboolean(::java::lang::String)>("isLogicalFontFaceName"), //
+		jMethod<::jboolean(::java::lang::String)>("isLogicalFontFaceNameLC"), //
+		jMethod<::jboolean(::java::lang::String)>("isLogicalFontFamilyName"), //
+		jMethod<::jboolean(::java::lang::String)>("isLogicalFontFamilyNameLC"), //
+		jMethod<::jvoid(::java::io::InputStream)>("loadBinary"), //
+		jMethod<::jvoid(::java::io::InputStream)>("loadProperties"), //
+		jMethod<::jboolean(::java::lang::String)>("needToSearchForFile"), //
+		jMethod<::jvoid(::java::io::OutputStream)>("saveBinary"), //
+		jMethod<::jboolean()>("willReorderForStartupLocale"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto fontFilesArePresent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("fontFilesArePresent")] != -1);
+		return call<R>("fontFilesArePresent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto foundOsSpecificFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("foundOsSpecificFile")] != -1);
+		return call<R>("foundOsSpecificFile", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::CompositeFontDescriptor *, typename... Args>
+	auto get2DCompositeFontInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get2DCompositeFontInfo")] != -1);
+		return call<R>("get2DCompositeFontInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::HashSet, typename... Args>
+	auto getAWTFontPathSet(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAWTFontPathSet")] != -1);
+		return call<R>("getAWTFontPathSet", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getExtraFontPath(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getExtraFontPath")] != -1);
+		return call<R>("getExtraFontPath", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getFallbackFamilyName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFallbackFamilyName")] != -1);
+		return call<R>("getFallbackFamilyName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getFileNameFromPlatformName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFileNameFromPlatformName")] != -1);
+		return call<R>("getFileNameFromPlatformName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::awt::FontDescriptor *, typename... Args>
+	auto getFontDescriptors(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFontDescriptors")] != -1);
+		return call<R>("getFontDescriptors", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getLogicalFontFaceName(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLogicalFontFaceName")] != -1);
+		return scall<R>("getLogicalFontFaceName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getNumberCoreFonts(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNumberCoreFonts")] != -1);
+		return call<R>("getNumberCoreFonts", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getPlatformFontNames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPlatformFontNames")] != -1);
+		return call<R>("getPlatformFontNames", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getStyleString(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStyleString")] != -1);
+		return scall<R>("getStyleString", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getVersion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getVersion")] != -1);
+		return call<R>("getVersion", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto hasMonoToPropMap(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hasMonoToPropMap")] != -1);
+		return scall<R>("hasMonoToPropMap", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto init(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("init")] != -1);
+		return call<R>("init", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isLogicalFontFaceName(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isLogicalFontFaceName")] != -1);
+		return scall<R>("isLogicalFontFaceName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isLogicalFontFaceNameLC(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isLogicalFontFaceNameLC")] != -1);
+		return scall<R>("isLogicalFontFaceNameLC", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isLogicalFontFamilyName(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isLogicalFontFamilyName")] != -1);
+		return scall<R>("isLogicalFontFamilyName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isLogicalFontFamilyNameLC(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isLogicalFontFamilyNameLC")] != -1);
+		return scall<R>("isLogicalFontFamilyNameLC", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto loadBinary(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("loadBinary")] != -1);
+		return scall<R>("loadBinary", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto loadProperties(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("loadProperties")] != -1);
+		return scall<R>("loadProperties", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto needToSearchForFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("needToSearchForFile")] != -1);
+		return call<R>("needToSearchForFile", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto saveBinary(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("saveBinary")] != -1);
+		return scall<R>("saveBinary", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto willReorderForStartupLocale(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("willReorderForStartupLocale")] != -1);
+		return scall<R>("willReorderForStartupLocale", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

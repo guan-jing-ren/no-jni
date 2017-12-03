@@ -1,0 +1,36 @@
+#ifndef com_sun_beans_finder_BeanInfoFinder_HPP
+#define com_sun_beans_finder_BeanInfoFinder_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::beans::finder::BeanInfoFinder : public jObject<::com::sun::beans::finder::BeanInfoFinder, ::com::sun::beans::finder::InstanceFinder> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_beans_finder / "BeanInfoFinder";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::String *()>("getPackages"), //
+		jMethod<::jvoid(::java::lang::String *)>("setPackages"), //
+	};
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getPackages(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPackages")] != -1);
+		return call<R>("getPackages", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setPackages(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setPackages")] != -1);
+		return call<R>("setPackages", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

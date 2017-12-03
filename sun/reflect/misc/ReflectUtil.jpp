@@ -1,0 +1,106 @@
+#ifndef sun_reflect_misc_ReflectUtil_HPP
+#define sun_reflect_misc_ReflectUtil_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::reflect::misc::ReflectUtil : public jObject<::sun::reflect::misc::ReflectUtil, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_reflect_misc / "ReflectUtil";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("PROXY_PACKAGE"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto PROXY_PACKAGE() {
+		static_assert(field_signatures[jField<F>("PROXY_PACKAGE")] != -1);
+		return sat<F>("PROXY_PACKAGE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::Class)>("checkPackageAccess"), //
+		jMethod<::jvoid(::java::lang::String)>("checkPackageAccess"), //
+		jMethod<::jvoid(::java::lang::Object, ::java::lang::reflect::Method)>("checkProxyMethod"), //
+		jMethod<::jvoid(::java::lang::Class)>("checkProxyPackageAccess"), //
+		jMethod<::jvoid(::java::lang::ClassLoader, ::java::lang::Class *)>("checkProxyPackageAccess"), //
+		jMethod<::jvoid(::java::lang::reflect::Member)>("conservativeCheckMemberAccess"), //
+		jMethod<::jvoid(::java::lang::Class, ::java::lang::Class, ::java::lang::Object, ::jint)>("ensureMemberAccess"), //
+		jMethod<::java::lang::Class(::java::lang::String)>("forName"), //
+		jMethod<::jboolean(::java::lang::Class)>("isNonPublicProxyClass"), //
+		jMethod<::jboolean(::java::lang::Class)>("isPackageAccessible"), //
+		jMethod<::jboolean(::java::lang::Class)>("isVMAnonymousClass"), //
+		jMethod<::jboolean(::java::lang::ClassLoader, ::java::lang::ClassLoader)>("needsPackageAccessCheck"), //
+		jMethod<::java::lang::Object(::java::lang::Class)>("newInstance"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto checkPackageAccess(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkPackageAccess")] != -1);
+		return scall<R>("checkPackageAccess", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto checkProxyMethod(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkProxyMethod")] != -1);
+		return scall<R>("checkProxyMethod", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto checkProxyPackageAccess(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkProxyPackageAccess")] != -1);
+		return scall<R>("checkProxyPackageAccess", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto conservativeCheckMemberAccess(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("conservativeCheckMemberAccess")] != -1);
+		return scall<R>("conservativeCheckMemberAccess", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto ensureMemberAccess(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("ensureMemberAccess")] != -1);
+		return scall<R>("ensureMemberAccess", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	static auto forName(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("forName")] != -1);
+		return scall<R>("forName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isNonPublicProxyClass(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isNonPublicProxyClass")] != -1);
+		return scall<R>("isNonPublicProxyClass", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isPackageAccessible(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isPackageAccessible")] != -1);
+		return scall<R>("isPackageAccessible", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isVMAnonymousClass(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isVMAnonymousClass")] != -1);
+		return scall<R>("isVMAnonymousClass", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto needsPackageAccessCheck(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("needsPackageAccessCheck")] != -1);
+		return scall<R>("needsPackageAccessCheck", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto newInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newInstance")] != -1);
+		return scall<R>("newInstance", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

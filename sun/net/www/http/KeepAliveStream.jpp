@@ -1,0 +1,57 @@
+#ifndef sun_net_www_http_KeepAliveStream_HPP
+#define sun_net_www_http_KeepAliveStream_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::net::www::http::KeepAliveStream : public jObject<::sun::net::www::http::KeepAliveStream, ::sun::net::www::MeteredStream> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_net_www_http / "KeepAliveStream";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::InputStream, ::sun::net::ProgressSource, ::jlong, ::sun::net::www::http::HttpClient)>(), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::jboolean()>("hurry"), //
+		jMethod<::jvoid(::jint)>("mark"), //
+		jMethod<::jboolean()>("markSupported"), //
+		jMethod<::jvoid()>("reset"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hurry(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hurry")] != -1);
+		return call<R>("hurry", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto mark(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("mark")] != -1);
+		return call<R>("mark", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto markSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("markSupported")] != -1);
+		return call<R>("markSupported", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto reset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("reset")] != -1);
+		return call<R>("reset", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

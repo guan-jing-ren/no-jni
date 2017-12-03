@@ -1,0 +1,59 @@
+#ifndef com_sun_activation_registries_MailcapFile_HPP
+#define com_sun_activation_registries_MailcapFile_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::activation::registries::MailcapFile : public jObject<::com::sun::activation::registries::MailcapFile, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_activation_registries / "MailcapFile";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::io::InputStream)>(), //
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jMethod<::jvoid(::java::lang::String)>("appendToMailcap"), //
+		jMethod<::java::util::Map(::java::lang::String)>("getMailcapFallbackList"), //
+		jMethod<::java::util::Map(::java::lang::String)>("getMailcapList"), //
+		jMethod<::java::lang::String *()>("getMimeTypes"), //
+		jMethod<::java::lang::String *(::java::lang::String)>("getNativeCommands"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto appendToMailcap(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("appendToMailcap")] != -1);
+		return call<R>("appendToMailcap", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto getMailcapFallbackList(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMailcapFallbackList")] != -1);
+		return call<R>("getMailcapFallbackList", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto getMailcapList(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMailcapList")] != -1);
+		return call<R>("getMailcapList", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getMimeTypes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMimeTypes")] != -1);
+		return call<R>("getMimeTypes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getNativeCommands(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNativeCommands")] != -1);
+		return call<R>("getNativeCommands", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

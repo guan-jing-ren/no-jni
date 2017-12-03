@@ -1,0 +1,62 @@
+#ifndef sun_security_jgss_GSSCaller_HPP
+#define sun_security_jgss_GSSCaller_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::jgss::GSSCaller : public jObject<::sun::security::jgss::GSSCaller, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_jgss / "GSSCaller";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::security::jgss::GSSCaller>("CALLER_ACCEPT"), //
+		jField<::sun::security::jgss::GSSCaller>("CALLER_INITIATE"), //
+		jField<::sun::security::jgss::GSSCaller>("CALLER_SSL_CLIENT"), //
+		jField<::sun::security::jgss::GSSCaller>("CALLER_SSL_SERVER"), //
+		jField<::sun::security::jgss::GSSCaller>("CALLER_UNKNOWN"), //
+	};
+
+	template<typename F = ::sun::security::jgss::GSSCaller>
+	static auto CALLER_ACCEPT() {
+		static_assert(field_signatures[jField<F>("CALLER_ACCEPT")] != -1);
+		return sat<F>("CALLER_ACCEPT");
+	}
+
+	template<typename F = ::sun::security::jgss::GSSCaller>
+	static auto CALLER_INITIATE() {
+		static_assert(field_signatures[jField<F>("CALLER_INITIATE")] != -1);
+		return sat<F>("CALLER_INITIATE");
+	}
+
+	template<typename F = ::sun::security::jgss::GSSCaller>
+	static auto CALLER_SSL_CLIENT() {
+		static_assert(field_signatures[jField<F>("CALLER_SSL_CLIENT")] != -1);
+		return sat<F>("CALLER_SSL_CLIENT");
+	}
+
+	template<typename F = ::sun::security::jgss::GSSCaller>
+	static auto CALLER_SSL_SERVER() {
+		static_assert(field_signatures[jField<F>("CALLER_SSL_SERVER")] != -1);
+		return sat<F>("CALLER_SSL_SERVER");
+	}
+
+	template<typename F = ::sun::security::jgss::GSSCaller>
+	static auto CALLER_UNKNOWN() {
+		static_assert(field_signatures[jField<F>("CALLER_UNKNOWN")] != -1);
+		return sat<F>("CALLER_UNKNOWN");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

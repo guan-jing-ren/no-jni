@@ -1,0 +1,28 @@
+#ifndef sun_security_util_PermissionFactory_HPP
+#define sun_security_util_PermissionFactory_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::util::PermissionFactory : public jObject<::sun::security::util::PermissionFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_util / "PermissionFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::security::Permission(::java::lang::String)>("newPermission"), //
+	};
+
+	template<typename R = ::java::security::Permission, typename... Args>
+	auto newPermission(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newPermission")] != -1);
+		return call<R>("newPermission", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

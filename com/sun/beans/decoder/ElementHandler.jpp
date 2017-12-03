@@ -1,0 +1,64 @@
+#ifndef com_sun_beans_decoder_ElementHandler_HPP
+#define com_sun_beans_decoder_ElementHandler_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::beans::decoder::ElementHandler : public jObject<::com::sun::beans::decoder::ElementHandler, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_beans_decoder / "ElementHandler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String)>("addAttribute"), //
+		jMethod<::jvoid(::jchar)>("addCharacter"), //
+		jMethod<::jvoid()>("endElement"), //
+		jMethod<::com::sun::beans::decoder::DocumentHandler()>("getOwner"), //
+		jMethod<::com::sun::beans::decoder::ElementHandler()>("getParent"), //
+		jMethod<::jvoid()>("startElement"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addAttribute")] != -1);
+		return call<R>("addAttribute", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addCharacter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addCharacter")] != -1);
+		return call<R>("addCharacter", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto endElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("endElement")] != -1);
+		return call<R>("endElement", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::beans::decoder::DocumentHandler, typename... Args>
+	auto getOwner(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOwner")] != -1);
+		return call<R>("getOwner", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::beans::decoder::ElementHandler, typename... Args>
+	auto getParent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getParent")] != -1);
+		return call<R>("getParent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto startElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("startElement")] != -1);
+		return call<R>("startElement", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

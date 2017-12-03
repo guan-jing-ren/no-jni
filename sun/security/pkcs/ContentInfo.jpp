@@ -1,0 +1,143 @@
+#ifndef sun_security_pkcs_ContentInfo_HPP
+#define sun_security_pkcs_ContentInfo_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::pkcs::ContentInfo : public jObject<::sun::security::pkcs::ContentInfo, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_pkcs / "ContentInfo";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::security::util::ObjectIdentifier>("DATA_OID"), //
+		jField<::sun::security::util::ObjectIdentifier>("DIGESTED_DATA_OID"), //
+		jField<::sun::security::util::ObjectIdentifier>("ENCRYPTED_DATA_OID"), //
+		jField<::sun::security::util::ObjectIdentifier>("ENVELOPED_DATA_OID"), //
+		jField<::sun::security::util::ObjectIdentifier>("NETSCAPE_CERT_SEQUENCE_OID"), //
+		jField<::sun::security::util::ObjectIdentifier>("OLD_DATA_OID"), //
+		jField<::sun::security::util::ObjectIdentifier>("OLD_SIGNED_DATA_OID"), //
+		jField<::sun::security::util::ObjectIdentifier>("PKCS7_OID"), //
+		jField<::sun::security::util::ObjectIdentifier>("SIGNED_AND_ENVELOPED_DATA_OID"), //
+		jField<::sun::security::util::ObjectIdentifier>("SIGNED_DATA_OID"), //
+		jField<::sun::security::util::ObjectIdentifier>("TIMESTAMP_TOKEN_INFO_OID"), //
+	};
+
+	template<typename F = ::sun::security::util::ObjectIdentifier>
+	static auto DATA_OID() {
+		static_assert(field_signatures[jField<F>("DATA_OID")] != -1);
+		return sat<F>("DATA_OID");
+	}
+
+	template<typename F = ::sun::security::util::ObjectIdentifier>
+	static auto DIGESTED_DATA_OID() {
+		static_assert(field_signatures[jField<F>("DIGESTED_DATA_OID")] != -1);
+		return sat<F>("DIGESTED_DATA_OID");
+	}
+
+	template<typename F = ::sun::security::util::ObjectIdentifier>
+	static auto ENCRYPTED_DATA_OID() {
+		static_assert(field_signatures[jField<F>("ENCRYPTED_DATA_OID")] != -1);
+		return sat<F>("ENCRYPTED_DATA_OID");
+	}
+
+	template<typename F = ::sun::security::util::ObjectIdentifier>
+	static auto ENVELOPED_DATA_OID() {
+		static_assert(field_signatures[jField<F>("ENVELOPED_DATA_OID")] != -1);
+		return sat<F>("ENVELOPED_DATA_OID");
+	}
+
+	template<typename F = ::sun::security::util::ObjectIdentifier>
+	static auto NETSCAPE_CERT_SEQUENCE_OID() {
+		static_assert(field_signatures[jField<F>("NETSCAPE_CERT_SEQUENCE_OID")] != -1);
+		return sat<F>("NETSCAPE_CERT_SEQUENCE_OID");
+	}
+
+	template<typename F = ::sun::security::util::ObjectIdentifier>
+	static auto OLD_DATA_OID() {
+		static_assert(field_signatures[jField<F>("OLD_DATA_OID")] != -1);
+		return sat<F>("OLD_DATA_OID");
+	}
+
+	template<typename F = ::sun::security::util::ObjectIdentifier>
+	static auto OLD_SIGNED_DATA_OID() {
+		static_assert(field_signatures[jField<F>("OLD_SIGNED_DATA_OID")] != -1);
+		return sat<F>("OLD_SIGNED_DATA_OID");
+	}
+
+	template<typename F = ::sun::security::util::ObjectIdentifier>
+	static auto PKCS7_OID() {
+		static_assert(field_signatures[jField<F>("PKCS7_OID")] != -1);
+		return sat<F>("PKCS7_OID");
+	}
+
+	template<typename F = ::sun::security::util::ObjectIdentifier>
+	static auto SIGNED_AND_ENVELOPED_DATA_OID() {
+		static_assert(field_signatures[jField<F>("SIGNED_AND_ENVELOPED_DATA_OID")] != -1);
+		return sat<F>("SIGNED_AND_ENVELOPED_DATA_OID");
+	}
+
+	template<typename F = ::sun::security::util::ObjectIdentifier>
+	static auto SIGNED_DATA_OID() {
+		static_assert(field_signatures[jField<F>("SIGNED_DATA_OID")] != -1);
+		return sat<F>("SIGNED_DATA_OID");
+	}
+
+	template<typename F = ::sun::security::util::ObjectIdentifier>
+	static auto TIMESTAMP_TOKEN_INFO_OID() {
+		static_assert(field_signatures[jField<F>("TIMESTAMP_TOKEN_INFO_OID")] != -1);
+		return sat<F>("TIMESTAMP_TOKEN_INFO_OID");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::security::util::DerInputStream)>(), //
+		jConstructor<::jvoid(::sun::security::util::DerInputStream, ::jboolean)>(), //
+		jConstructor<::jvoid(::sun::security::util::ObjectIdentifier, ::sun::security::util::DerValue)>(), //
+		jConstructor<::jvoid(::jbyte *)>(), //
+		jMethod<::jvoid(::sun::security::util::DerOutputStream)>("encode"), //
+		jMethod<::sun::security::util::DerValue()>("getContent"), //
+		jMethod<::jbyte *()>("getContentBytes"), //
+		jMethod<::sun::security::util::ObjectIdentifier()>("getContentType"), //
+		jMethod<::jbyte *()>("getData"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto encode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encode")] != -1);
+		return call<R>("encode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::util::DerValue, typename... Args>
+	auto getContent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getContent")] != -1);
+		return call<R>("getContent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getContentBytes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getContentBytes")] != -1);
+		return call<R>("getContentBytes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::util::ObjectIdentifier, typename... Args>
+	auto getContentType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getContentType")] != -1);
+		return call<R>("getContentType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getData")] != -1);
+		return call<R>("getData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

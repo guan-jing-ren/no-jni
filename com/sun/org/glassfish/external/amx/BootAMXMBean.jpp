@@ -1,0 +1,41 @@
+#ifndef com_sun_org_glassfish_external_amx_BootAMXMBean_HPP
+#define com_sun_org_glassfish_external_amx_BootAMXMBean_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::org::glassfish::external::amx::BootAMXMBean : public jObject<::com::sun::org::glassfish::external::amx::BootAMXMBean, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_org_glassfish_external_amx / "BootAMXMBean";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("BOOT_AMX_OPERATION_NAME"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto BOOT_AMX_OPERATION_NAME() {
+		static_assert(field_signatures[jField<F>("BOOT_AMX_OPERATION_NAME")] != -1);
+		return sat<F>("BOOT_AMX_OPERATION_NAME");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::management::ObjectName()>("bootAMX"), //
+		jMethod<::javax::management::remote::JMXServiceURL *()>("getJMXServiceURLs"), //
+	};
+
+	template<typename R = ::javax::management::ObjectName, typename... Args>
+	auto bootAMX(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("bootAMX")] != -1);
+		return call<R>("bootAMX", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::remote::JMXServiceURL *, typename... Args>
+	auto getJMXServiceURLs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getJMXServiceURLs")] != -1);
+		return call<R>("getJMXServiceURLs", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

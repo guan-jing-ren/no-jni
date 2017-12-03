@@ -1,0 +1,43 @@
+#ifndef sun_corba_EncapsInputStreamFactory_HPP
+#define sun_corba_EncapsInputStreamFactory_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::corba::EncapsInputStreamFactory : public jObject<::sun::corba::EncapsInputStreamFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_corba / "EncapsInputStreamFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::com::sun::corba::se::impl::encoding::EncapsInputStream(::com::sun::corba::se::impl::encoding::EncapsInputStream)>("newEncapsInputStream"), //
+		jMethod<::com::sun::corba::se::impl::encoding::EncapsInputStream(::org::omg::CORBA::ORB, ::java::nio::ByteBuffer, ::jint, ::jboolean, ::com::sun::corba::se::spi::ior::iiop::GIOPVersion)>("newEncapsInputStream"), //
+		jMethod<::com::sun::corba::se::impl::encoding::EncapsInputStream(::org::omg::CORBA::ORB, ::jbyte *, ::jint)>("newEncapsInputStream"), //
+		jMethod<::com::sun::corba::se::impl::encoding::EncapsInputStream(::org::omg::CORBA::ORB, ::jbyte *, ::jint, ::com::sun::corba::se::spi::ior::iiop::GIOPVersion)>("newEncapsInputStream"), //
+		jMethod<::com::sun::corba::se::impl::encoding::EncapsInputStream(::org::omg::CORBA::ORB, ::jbyte *, ::jint, ::com::sun::corba::se::spi::ior::iiop::GIOPVersion, ::com::sun::org::omg::SendingContext::CodeBase)>("newEncapsInputStream"), //
+		jMethod<::com::sun::corba::se::impl::encoding::EncapsInputStream(::org::omg::CORBA::ORB, ::jbyte *, ::jint, ::jboolean, ::com::sun::corba::se::spi::ior::iiop::GIOPVersion)>("newEncapsInputStream"), //
+		jMethod<::com::sun::corba::se::impl::encoding::TypeCodeInputStream(::org::omg::CORBA::ORB, ::java::nio::ByteBuffer, ::jint, ::jboolean, ::com::sun::corba::se::spi::ior::iiop::GIOPVersion)>("newTypeCodeInputStream"), //
+		jMethod<::com::sun::corba::se::impl::encoding::TypeCodeInputStream(::org::omg::CORBA::ORB, ::jbyte *, ::jint)>("newTypeCodeInputStream"), //
+		jMethod<::com::sun::corba::se::impl::encoding::TypeCodeInputStream(::org::omg::CORBA::ORB, ::jbyte *, ::jint, ::jboolean, ::com::sun::corba::se::spi::ior::iiop::GIOPVersion)>("newTypeCodeInputStream"), //
+	};
+
+	template<typename R = ::com::sun::corba::se::impl::encoding::EncapsInputStream, typename... Args>
+	static auto newEncapsInputStream(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newEncapsInputStream")] != -1);
+		return scall<R>("newEncapsInputStream", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::encoding::TypeCodeInputStream, typename... Args>
+	static auto newTypeCodeInputStream(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newTypeCodeInputStream")] != -1);
+		return scall<R>("newTypeCodeInputStream", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,58 @@
+#ifndef sun_font_LayoutPathImpl$SegmentPathBuilder_HPP
+#define sun_font_LayoutPathImpl$SegmentPathBuilder_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::LayoutPathImpl$SegmentPathBuilder : public jObject<::sun::font::LayoutPathImpl$SegmentPathBuilder, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "LayoutPathImpl$SegmentPathBuilder";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::sun::font::LayoutPathImpl$SegmentPath(::sun::font::LayoutPathImpl$EndType, ::jdouble *)>("build"), //
+		jMethod<::sun::font::LayoutPathImpl$SegmentPath()>("complete"), //
+		jMethod<::sun::font::LayoutPathImpl$SegmentPath(::sun::font::LayoutPathImpl$EndType)>("complete"), //
+		jMethod<::jvoid(::jdouble, ::jdouble)>("lineTo"), //
+		jMethod<::jvoid(::jdouble, ::jdouble)>("moveTo"), //
+		jMethod<::jvoid(::jint)>("reset"), //
+	};
+
+	template<typename R = ::sun::font::LayoutPathImpl$SegmentPath, typename... Args>
+	auto build(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("build")] != -1);
+		return call<R>("build", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::LayoutPathImpl$SegmentPath, typename... Args>
+	auto complete(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("complete")] != -1);
+		return call<R>("complete", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto lineTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("lineTo")] != -1);
+		return call<R>("lineTo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto moveTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("moveTo")] != -1);
+		return call<R>("moveTo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto reset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("reset")] != -1);
+		return call<R>("reset", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

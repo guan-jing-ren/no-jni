@@ -1,0 +1,73 @@
+#ifndef com_sun_corba_se_impl_encoding_TypeCodeInputStream_HPP
+#define com_sun_corba_se_impl_encoding_TypeCodeInputStream_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::impl::encoding::TypeCodeInputStream : public jObject<::com::sun::corba::se::impl::encoding::TypeCodeInputStream, ::com::sun::corba::se::impl::encoding::EncapsInputStream> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_impl_encoding / "TypeCodeInputStream";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::org::omg::CORBA::ORB, ::java::nio::ByteBuffer, ::jint, ::jboolean, ::com::sun::corba::se::spi::ior::iiop::GIOPVersion)>(), //
+		jConstructor<::jvoid(::org::omg::CORBA::ORB, ::jbyte *, ::jint)>(), //
+		jConstructor<::jvoid(::org::omg::CORBA::ORB, ::jbyte *, ::jint, ::jboolean, ::com::sun::corba::se::spi::ior::iiop::GIOPVersion)>(), //
+		jMethod<::jvoid(::com::sun::corba::se::impl::corba::TypeCodeImpl, ::jint)>("addTypeCodeAtPosition"), //
+		jMethod<::jint()>("getTopLevelPosition"), //
+		jMethod<::com::sun::corba::se::impl::encoding::TypeCodeReader()>("getTopLevelStream"), //
+		jMethod<::com::sun::corba::se::impl::corba::TypeCodeImpl(::jint)>("getTypeCodeAtPosition"), //
+		jMethod<::jvoid()>("printTypeMap"), //
+		jMethod<::com::sun::corba::se::impl::encoding::TypeCodeInputStream(::org::omg::CORBA_2_3::portable::InputStream, ::org::omg::CORBA::ORB)>("readEncapsulation"), //
+		jMethod<::jvoid(::org::omg::CORBA_2_3::portable::InputStream)>("setEnclosingInputStream"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addTypeCodeAtPosition(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addTypeCodeAtPosition")] != -1);
+		return call<R>("addTypeCodeAtPosition", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getTopLevelPosition(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTopLevelPosition")] != -1);
+		return call<R>("getTopLevelPosition", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::encoding::TypeCodeReader, typename... Args>
+	auto getTopLevelStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTopLevelStream")] != -1);
+		return call<R>("getTopLevelStream", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::corba::TypeCodeImpl, typename... Args>
+	auto getTypeCodeAtPosition(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTypeCodeAtPosition")] != -1);
+		return call<R>("getTypeCodeAtPosition", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto printTypeMap(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("printTypeMap")] != -1);
+		return call<R>("printTypeMap", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::encoding::TypeCodeInputStream, typename... Args>
+	static auto readEncapsulation(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("readEncapsulation")] != -1);
+		return scall<R>("readEncapsulation", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setEnclosingInputStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setEnclosingInputStream")] != -1);
+		return call<R>("setEnclosingInputStream", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,41 @@
+#ifndef com_sun_rowset_WebRowSetImpl_HPP
+#define com_sun_rowset_WebRowSetImpl_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::com::sun::rowset::WebRowSetImpl : public jObject<::com::sun::rowset::WebRowSetImpl, ::com::sun::rowset::CachedRowSetImpl> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_rowset / "WebRowSetImpl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::util::Hashtable)>(), //
+		jMethod<::jvoid(::java::io::InputStream)>("readXml"), //
+		jMethod<::jvoid(::java::io::Reader)>("readXml"), //
+		jMethod<::jvoid(::java::io::OutputStream)>("writeXml"), //
+		jMethod<::jvoid(::java::io::Writer)>("writeXml"), //
+		jMethod<::jvoid(::java::sql::ResultSet, ::java::io::OutputStream)>("writeXml"), //
+		jMethod<::jvoid(::java::sql::ResultSet, ::java::io::Writer)>("writeXml"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto readXml(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("readXml")] != -1);
+		return call<R>("readXml", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeXml(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeXml")] != -1);
+		return call<R>("writeXml", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

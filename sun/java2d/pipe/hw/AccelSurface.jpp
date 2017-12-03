@@ -1,0 +1,118 @@
+#ifndef sun_java2d_pipe_hw_AccelSurface_HPP
+#define sun_java2d_pipe_hw_AccelSurface_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::java2d::pipe::hw::AccelSurface : public jObject<::sun::java2d::pipe::hw::AccelSurface, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_pipe_hw / "AccelSurface";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("FLIP_BACKBUFFER"), //
+		jField<::jint>("RT_PLAIN"), //
+		jField<::jint>("RT_TEXTURE"), //
+		jField<::jint>("TEXTURE"), //
+		jField<::jint>("UNDEFINED"), //
+		jField<::jint>("WINDOW"), //
+	};
+
+	template<typename F = ::jint>
+	static auto FLIP_BACKBUFFER() {
+		static_assert(field_signatures[jField<F>("FLIP_BACKBUFFER")] != -1);
+		return sat<F>("FLIP_BACKBUFFER");
+	}
+
+	template<typename F = ::jint>
+	static auto RT_PLAIN() {
+		static_assert(field_signatures[jField<F>("RT_PLAIN")] != -1);
+		return sat<F>("RT_PLAIN");
+	}
+
+	template<typename F = ::jint>
+	static auto RT_TEXTURE() {
+		static_assert(field_signatures[jField<F>("RT_TEXTURE")] != -1);
+		return sat<F>("RT_TEXTURE");
+	}
+
+	template<typename F = ::jint>
+	static auto TEXTURE() {
+		static_assert(field_signatures[jField<F>("TEXTURE")] != -1);
+		return sat<F>("TEXTURE");
+	}
+
+	template<typename F = ::jint>
+	static auto UNDEFINED() {
+		static_assert(field_signatures[jField<F>("UNDEFINED")] != -1);
+		return sat<F>("UNDEFINED");
+	}
+
+	template<typename F = ::jint>
+	static auto WINDOW() {
+		static_assert(field_signatures[jField<F>("WINDOW")] != -1);
+		return sat<F>("WINDOW");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::Rectangle()>("getBounds"), //
+		jMethod<::java::awt::Rectangle()>("getNativeBounds"), //
+		jMethod<::jlong()>("getNativeOps"), //
+		jMethod<::jlong(::jint)>("getNativeResource"), //
+		jMethod<::jint()>("getType"), //
+		jMethod<::jboolean()>("isSurfaceLost"), //
+		jMethod<::jboolean()>("isValid"), //
+		jMethod<::jvoid()>("markDirty"), //
+	};
+
+	template<typename R = ::java::awt::Rectangle, typename... Args>
+	auto getBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBounds")] != -1);
+		return call<R>("getBounds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Rectangle, typename... Args>
+	auto getNativeBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNativeBounds")] != -1);
+		return call<R>("getNativeBounds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getNativeOps(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNativeOps")] != -1);
+		return call<R>("getNativeOps", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getNativeResource(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNativeResource")] != -1);
+		return call<R>("getNativeResource", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isSurfaceLost(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSurfaceLost")] != -1);
+		return call<R>("isSurfaceLost", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isValid(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isValid")] != -1);
+		return call<R>("isValid", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto markDirty(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("markDirty")] != -1);
+		return call<R>("markDirty", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

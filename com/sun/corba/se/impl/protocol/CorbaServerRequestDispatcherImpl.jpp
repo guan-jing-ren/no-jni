@@ -1,0 +1,36 @@
+#ifndef com_sun_corba_se_impl_protocol_CorbaServerRequestDispatcherImpl_HPP
+#define com_sun_corba_se_impl_protocol_CorbaServerRequestDispatcherImpl_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::impl::protocol::CorbaServerRequestDispatcherImpl : public jObject<::com::sun::corba::se::impl::protocol::CorbaServerRequestDispatcherImpl, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_impl_protocol / "CorbaServerRequestDispatcherImpl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::com::sun::corba::se::spi::orb::ORB)>(), //
+		jMethod<::jvoid(::com::sun::corba::se::pept::protocol::MessageMediator)>("dispatch"), //
+		jMethod<::com::sun::corba::se::spi::ior::IOR(::com::sun::corba::se::spi::ior::ObjectKey)>("locate"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispatch(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dispatch")] != -1);
+		return call<R>("dispatch", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::ior::IOR, typename... Args>
+	auto locate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("locate")] != -1);
+		return call<R>("locate", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

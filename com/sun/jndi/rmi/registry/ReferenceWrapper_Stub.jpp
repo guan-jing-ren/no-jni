@@ -1,0 +1,29 @@
+#ifndef com_sun_jndi_rmi_registry_ReferenceWrapper_Stub_HPP
+#define com_sun_jndi_rmi_registry_ReferenceWrapper_Stub_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::jndi::rmi::registry::ReferenceWrapper_Stub : public jObject<::com::sun::jndi::rmi::registry::ReferenceWrapper_Stub, ::java::rmi::server::RemoteStub> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_jndi_rmi_registry / "ReferenceWrapper_Stub";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::rmi::server::RemoteRef)>(), //
+		jMethod<::javax::naming::Reference()>("getReference"), //
+	};
+
+	template<typename R = ::javax::naming::Reference, typename... Args>
+	auto getReference(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getReference")] != -1);
+		return call<R>("getReference", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,62 @@
+#ifndef sun_security_provider_certpath_ResponderId$Type_HPP
+#define sun_security_provider_certpath_ResponderId$Type_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::security::provider::certpath::ResponderId$Type : public jObject<::sun::security::provider::certpath::ResponderId$Type, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_provider_certpath / "ResponderId$Type";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::security::provider::certpath::ResponderId$Type>("BY_KEY"), //
+		jField<::sun::security::provider::certpath::ResponderId$Type>("BY_NAME"), //
+	};
+
+	template<typename F = ::sun::security::provider::certpath::ResponderId$Type>
+	static auto BY_KEY() {
+		static_assert(field_signatures[jField<F>("BY_KEY")] != -1);
+		return sat<F>("BY_KEY");
+	}
+
+	template<typename F = ::sun::security::provider::certpath::ResponderId$Type>
+	static auto BY_NAME() {
+		static_assert(field_signatures[jField<F>("BY_NAME")] != -1);
+		return sat<F>("BY_NAME");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::jint()>("value"), //
+		jMethod<::sun::security::provider::certpath::ResponderId$Type(::java::lang::String)>("valueOf"), //
+		jMethod<::sun::security::provider::certpath::ResponderId$Type *()>("values"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("value")] != -1);
+		return call<R>("value", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::provider::certpath::ResponderId$Type, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::provider::certpath::ResponderId$Type *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,31 @@
+#ifndef sun_security_jgss_GSSExceptionImpl_HPP
+#define sun_security_jgss_GSSExceptionImpl_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::jgss::GSSExceptionImpl : public jObject<::sun::security::jgss::GSSExceptionImpl, ::org::ietf::jgss::GSSException> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_jgss / "GSSExceptionImpl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::java::lang::Exception)>(), //
+		jConstructor<::jvoid(::jint, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::jint, ::java::lang::String, ::java::lang::Exception)>(), //
+		jMethod<::java::lang::String()>("getMessage"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getMessage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMessage")] != -1);
+		return call<R>("getMessage", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

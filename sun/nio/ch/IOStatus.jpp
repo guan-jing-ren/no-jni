@@ -1,0 +1,85 @@
+#ifndef sun_nio_ch_IOStatus_HPP
+#define sun_nio_ch_IOStatus_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::nio::ch::IOStatus : public jObject<::sun::nio::ch::IOStatus, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_nio_ch / "IOStatus";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("EOF"), //
+		jField<::jint>("INTERRUPTED"), //
+		jField<::jint>("THROWN"), //
+		jField<::jint>("UNAVAILABLE"), //
+		jField<::jint>("UNSUPPORTED"), //
+		jField<::jint>("UNSUPPORTED_CASE"), //
+	};
+
+	template<typename F = ::jint>
+	static auto EOF() {
+		static_assert(field_signatures[jField<F>("EOF")] != -1);
+		return sat<F>("EOF");
+	}
+
+	template<typename F = ::jint>
+	static auto INTERRUPTED() {
+		static_assert(field_signatures[jField<F>("INTERRUPTED")] != -1);
+		return sat<F>("INTERRUPTED");
+	}
+
+	template<typename F = ::jint>
+	static auto THROWN() {
+		static_assert(field_signatures[jField<F>("THROWN")] != -1);
+		return sat<F>("THROWN");
+	}
+
+	template<typename F = ::jint>
+	static auto UNAVAILABLE() {
+		static_assert(field_signatures[jField<F>("UNAVAILABLE")] != -1);
+		return sat<F>("UNAVAILABLE");
+	}
+
+	template<typename F = ::jint>
+	static auto UNSUPPORTED() {
+		static_assert(field_signatures[jField<F>("UNSUPPORTED")] != -1);
+		return sat<F>("UNSUPPORTED");
+	}
+
+	template<typename F = ::jint>
+	static auto UNSUPPORTED_CASE() {
+		static_assert(field_signatures[jField<F>("UNSUPPORTED_CASE")] != -1);
+		return sat<F>("UNSUPPORTED_CASE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::jint)>("check"), //
+		jMethod<::jboolean(::jlong)>("check"), //
+		jMethod<::jboolean(::jlong)>("checkAll"), //
+		jMethod<::jint(::jint)>("normalize"), //
+		jMethod<::jlong(::jlong)>("normalize"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto check(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("check")] != -1);
+		return scall<R>("check", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto checkAll(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkAll")] != -1);
+		return scall<R>("checkAll", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto normalize(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("normalize")] != -1);
+		return scall<R>("normalize", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

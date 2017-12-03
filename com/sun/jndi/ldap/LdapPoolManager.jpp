@@ -1,0 +1,48 @@
+#ifndef com_sun_jndi_ldap_LdapPoolManager_HPP
+#define com_sun_jndi_ldap_LdapPoolManager_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::jndi::ldap::LdapPoolManager : public jObject<::com::sun::jndi::ldap::LdapPoolManager, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_jndi_ldap / "LdapPoolManager";
+
+	constexpr static Enume field_signatures{
+		jField<::jboolean>("debug"), //
+		jField<::jboolean>("trace"), //
+	};
+
+	template<typename F = ::jboolean>
+	static auto debug() {
+		static_assert(field_signatures[jField<F>("debug")] != -1);
+		return sat<F>("debug");
+	}
+
+	template<typename F = ::jboolean>
+	static auto trace() {
+		static_assert(field_signatures[jField<F>("trace")] != -1);
+		return sat<F>("trace");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::jlong)>("expire"), //
+		jMethod<::jvoid(::java::io::PrintStream)>("showStats"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto expire(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("expire")] != -1);
+		return scall<R>("expire", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto showStats(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("showStats")] != -1);
+		return scall<R>("showStats", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

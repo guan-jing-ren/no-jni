@@ -1,0 +1,57 @@
+#ifndef sun_font_TextLabelFactory_HPP
+#define sun_font_TextLabelFactory_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::TextLabelFactory : public jObject<::sun::font::TextLabelFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "TextLabelFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::font::FontRenderContext, ::jchar *, ::java::text::Bidi, ::jint)>(), //
+		jMethod<::sun::font::ExtendedTextLabel(::java::awt::Font, ::sun::font::CoreMetrics, ::sun::font::Decoration, ::jint, ::jint)>("createExtended"), //
+		jMethod<::sun::font::TextLabel(::java::awt::Font, ::sun::font::CoreMetrics, ::jint, ::jint)>("createSimple"), //
+		jMethod<::java::awt::font::FontRenderContext()>("getFontRenderContext"), //
+		jMethod<::java::text::Bidi()>("getLineBidi"), //
+		jMethod<::jvoid(::jint, ::jint)>("setLineContext"), //
+	};
+
+	template<typename R = ::sun::font::ExtendedTextLabel, typename... Args>
+	auto createExtended(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createExtended")] != -1);
+		return call<R>("createExtended", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::TextLabel, typename... Args>
+	auto createSimple(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createSimple")] != -1);
+		return call<R>("createSimple", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::font::FontRenderContext, typename... Args>
+	auto getFontRenderContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFontRenderContext")] != -1);
+		return call<R>("getFontRenderContext", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::text::Bidi, typename... Args>
+	auto getLineBidi(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLineBidi")] != -1);
+		return call<R>("getLineBidi", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLineContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setLineContext")] != -1);
+		return call<R>("setLineContext", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,55 @@
+#ifndef com_sun_nio_file_ExtendedOpenOption_HPP
+#define com_sun_nio_file_ExtendedOpenOption_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::nio::file::ExtendedOpenOption : public jObject<::com::sun::nio::file::ExtendedOpenOption, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_nio_file / "ExtendedOpenOption";
+
+	constexpr static Enume field_signatures{
+		jField<::com::sun::nio::file::ExtendedOpenOption>("NOSHARE_DELETE"), //
+		jField<::com::sun::nio::file::ExtendedOpenOption>("NOSHARE_READ"), //
+		jField<::com::sun::nio::file::ExtendedOpenOption>("NOSHARE_WRITE"), //
+	};
+
+	template<typename F = ::com::sun::nio::file::ExtendedOpenOption>
+	static auto NOSHARE_DELETE() {
+		static_assert(field_signatures[jField<F>("NOSHARE_DELETE")] != -1);
+		return sat<F>("NOSHARE_DELETE");
+	}
+
+	template<typename F = ::com::sun::nio::file::ExtendedOpenOption>
+	static auto NOSHARE_READ() {
+		static_assert(field_signatures[jField<F>("NOSHARE_READ")] != -1);
+		return sat<F>("NOSHARE_READ");
+	}
+
+	template<typename F = ::com::sun::nio::file::ExtendedOpenOption>
+	static auto NOSHARE_WRITE() {
+		static_assert(field_signatures[jField<F>("NOSHARE_WRITE")] != -1);
+		return sat<F>("NOSHARE_WRITE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::com::sun::nio::file::ExtendedOpenOption(::java::lang::String)>("valueOf"), //
+		jMethod<::com::sun::nio::file::ExtendedOpenOption *()>("values"), //
+	};
+
+	template<typename R = ::com::sun::nio::file::ExtendedOpenOption, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::nio::file::ExtendedOpenOption *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

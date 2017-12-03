@@ -1,0 +1,42 @@
+#ifndef sun_security_krb5_Confounder_HPP
+#define sun_security_krb5_Confounder_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::krb5::Confounder : public jObject<::sun::security::krb5::Confounder, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_krb5 / "Confounder";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jbyte *(::jint)>("bytes"), //
+		jMethod<::jint()>("intValue"), //
+		jMethod<::jlong()>("longValue"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	static auto bytes(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("bytes")] != -1);
+		return scall<R>("bytes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto intValue(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("intValue")] != -1);
+		return scall<R>("intValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	static auto longValue(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("longValue")] != -1);
+		return scall<R>("longValue", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

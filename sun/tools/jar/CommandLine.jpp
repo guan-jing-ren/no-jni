@@ -1,0 +1,29 @@
+#ifndef sun_tools_jar_CommandLine_HPP
+#define sun_tools_jar_CommandLine_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::tools::jar::CommandLine : public jObject<::sun::tools::jar::CommandLine, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_tools_jar / "CommandLine";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::String *(::java::lang::String *)>("parse"), //
+	};
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	static auto parse(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("parse")] != -1);
+		return scall<R>("parse", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

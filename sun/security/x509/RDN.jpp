@@ -1,0 +1,77 @@
+#ifndef sun_security_x509_RDN_HPP
+#define sun_security_x509_RDN_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::x509::RDN : public jObject<::sun::security::x509::RDN, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_x509 / "RDN";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::lang::String, ::java::util::Map)>(), //
+		jConstructor<::jvoid(::sun::security::x509::AVA)>(), //
+		jConstructor<::jvoid(::sun::security::x509::AVA *)>(), //
+		jMethod<::java::util::List()>("avas"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jint()>("size"), //
+		jMethod<::java::lang::String()>("toRFC1779String"), //
+		jMethod<::java::lang::String(::java::util::Map)>("toRFC1779String"), //
+		jMethod<::java::lang::String()>("toRFC2253String"), //
+		jMethod<::java::lang::String(::java::util::Map)>("toRFC2253String"), //
+		jMethod<::java::lang::String(::jboolean)>("toRFC2253String"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto avas(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("avas")] != -1);
+		return call<R>("avas", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto size(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("size")] != -1);
+		return call<R>("size", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toRFC1779String(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toRFC1779String")] != -1);
+		return call<R>("toRFC1779String", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toRFC2253String(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toRFC2253String")] != -1);
+		return call<R>("toRFC2253String", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

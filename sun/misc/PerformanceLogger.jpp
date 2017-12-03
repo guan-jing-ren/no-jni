@@ -1,0 +1,81 @@
+#ifndef sun_misc_PerformanceLogger_HPP
+#define sun_misc_PerformanceLogger_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::misc::PerformanceLogger : public jObject<::sun::misc::PerformanceLogger, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_misc / "PerformanceLogger";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::String(::jint)>("getMessageAtIndex"), //
+		jMethod<::jlong()>("getStartTime"), //
+		jMethod<::jlong(::jint)>("getTimeAtIndex"), //
+		jMethod<::jboolean()>("loggingEnabled"), //
+		jMethod<::jvoid()>("outputLog"), //
+		jMethod<::jvoid(::java::io::Writer)>("outputLog"), //
+		jMethod<::jvoid(::jlong)>("setBaseTime"), //
+		jMethod<::jvoid(::java::lang::String)>("setStartTime"), //
+		jMethod<::jvoid(::java::lang::String, ::jlong)>("setStartTime"), //
+		jMethod<::jint(::java::lang::String)>("setTime"), //
+		jMethod<::jint(::java::lang::String, ::jlong)>("setTime"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getMessageAtIndex(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMessageAtIndex")] != -1);
+		return scall<R>("getMessageAtIndex", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	static auto getStartTime(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStartTime")] != -1);
+		return scall<R>("getStartTime", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	static auto getTimeAtIndex(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTimeAtIndex")] != -1);
+		return scall<R>("getTimeAtIndex", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto loggingEnabled(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("loggingEnabled")] != -1);
+		return scall<R>("loggingEnabled", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto outputLog(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("outputLog")] != -1);
+		return scall<R>("outputLog", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setBaseTime(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setBaseTime")] != -1);
+		return scall<R>("setBaseTime", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setStartTime(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setStartTime")] != -1);
+		return scall<R>("setStartTime", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto setTime(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setTime")] != -1);
+		return scall<R>("setTime", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

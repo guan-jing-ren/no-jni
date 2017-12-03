@@ -1,0 +1,91 @@
+#ifndef sun_awt_UNIXToolkit_HPP
+#define sun_awt_UNIXToolkit_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::UNIXToolkit : public jObject<::sun::awt::UNIXToolkit, ::sun::awt::SunToolkit> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "UNIXToolkit";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("FONTCONFIGAAHINT"), //
+		jField<::java::lang::Object>("GTK_LOCK"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto FONTCONFIGAAHINT() {
+		static_assert(field_signatures[jField<F>("FONTCONFIGAAHINT")] != -1);
+		return sat<F>("FONTCONFIGAAHINT");
+	}
+
+	template<typename F = ::java::lang::Object>
+	static auto GTK_LOCK() {
+		static_assert(field_signatures[jField<F>("GTK_LOCK")] != -1);
+		return sat<F>("GTK_LOCK");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jboolean(::jint, ::jint, ::jint)>("checkGtkVersion"), //
+		jMethod<::jint()>("getDatatransferTimeout"), //
+		jMethod<::java::awt::image::BufferedImage(::java::lang::String)>("getGTKIcon"), //
+		jMethod<::java::awt::image::BufferedImage(::jint, ::java::lang::String, ::jint, ::jint, ::java::lang::String)>("getStockIcon"), //
+		jMethod<::jboolean()>("isNativeGTKAvailable"), //
+		jMethod<::jboolean()>("loadGTK"), //
+		jMethod<::jvoid(::jbyte *, ::jint, ::jint, ::jint, ::jint, ::jint, ::jboolean)>("loadIconCallback"), //
+		jMethod<::jvoid()>("sync"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto checkGtkVersion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkGtkVersion")] != -1);
+		return call<R>("checkGtkVersion", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto getDatatransferTimeout(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDatatransferTimeout")] != -1);
+		return scall<R>("getDatatransferTimeout", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::image::BufferedImage, typename... Args>
+	auto getGTKIcon(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGTKIcon")] != -1);
+		return call<R>("getGTKIcon", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::image::BufferedImage, typename... Args>
+	auto getStockIcon(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStockIcon")] != -1);
+		return call<R>("getStockIcon", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isNativeGTKAvailable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isNativeGTKAvailable")] != -1);
+		return call<R>("isNativeGTKAvailable", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto loadGTK(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("loadGTK")] != -1);
+		return call<R>("loadGTK", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto loadIconCallback(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("loadIconCallback")] != -1);
+		return call<R>("loadIconCallback", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto sync(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("sync")] != -1);
+		return call<R>("sync", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

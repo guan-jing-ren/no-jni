@@ -1,0 +1,50 @@
+#ifndef sun_awt_SunDisplayChanger_HPP
+#define sun_awt_SunDisplayChanger_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::SunDisplayChanger : public jObject<::sun::awt::SunDisplayChanger, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "SunDisplayChanger";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::sun::awt::DisplayChangedListener)>("add"), //
+		jMethod<::jvoid()>("notifyListeners"), //
+		jMethod<::jvoid()>("notifyPaletteChanged"), //
+		jMethod<::jvoid(::sun::awt::DisplayChangedListener)>("remove"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto add(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto notifyListeners(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("notifyListeners")] != -1);
+		return call<R>("notifyListeners", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto notifyPaletteChanged(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("notifyPaletteChanged")] != -1);
+		return call<R>("notifyPaletteChanged", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto remove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

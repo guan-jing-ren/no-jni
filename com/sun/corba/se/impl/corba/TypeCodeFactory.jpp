@@ -1,0 +1,49 @@
+#ifndef com_sun_corba_se_impl_corba_TypeCodeFactory_HPP
+#define com_sun_corba_se_impl_corba_TypeCodeFactory_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::impl::corba::TypeCodeFactory : public jObject<::com::sun::corba::se::impl::corba::TypeCodeFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_impl_corba / "TypeCodeFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::com::sun::corba::se::impl::corba::TypeCodeImpl(::java::lang::String)>("getTypeCode"), //
+		jMethod<::com::sun::corba::se::impl::corba::TypeCodeImpl(::java::lang::Class)>("getTypeCodeForClass"), //
+		jMethod<::jvoid(::java::lang::String, ::com::sun::corba::se::impl::corba::TypeCodeImpl)>("setTypeCode"), //
+		jMethod<::jvoid(::java::lang::Class, ::com::sun::corba::se::impl::corba::TypeCodeImpl)>("setTypeCodeForClass"), //
+	};
+
+	template<typename R = ::com::sun::corba::se::impl::corba::TypeCodeImpl, typename... Args>
+	auto getTypeCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTypeCode")] != -1);
+		return call<R>("getTypeCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::corba::TypeCodeImpl, typename... Args>
+	auto getTypeCodeForClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTypeCodeForClass")] != -1);
+		return call<R>("getTypeCodeForClass", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setTypeCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setTypeCode")] != -1);
+		return call<R>("setTypeCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setTypeCodeForClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setTypeCodeForClass")] != -1);
+		return call<R>("setTypeCodeForClass", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

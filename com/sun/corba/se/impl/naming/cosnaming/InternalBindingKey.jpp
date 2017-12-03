@@ -1,0 +1,43 @@
+#ifndef com_sun_corba_se_impl_naming_cosnaming_InternalBindingKey_HPP
+#define com_sun_corba_se_impl_naming_cosnaming_InternalBindingKey_HPP
+
+#include "../../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::impl::naming::cosnaming::InternalBindingKey : public jObject<::com::sun::corba::se::impl::naming::cosnaming::InternalBindingKey, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_impl_naming_cosnaming / "InternalBindingKey";
+
+	constexpr static Enume field_signatures{
+		jField<::org::omg::CosNaming::NameComponent>("name"), //
+	};
+
+	template<typename F = ::org::omg::CosNaming::NameComponent>
+	auto name() const {
+		static_assert(field_signatures[jField<F>("name")] != -1);
+		return at<F>("name");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::org::omg::CosNaming::NameComponent)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jint()>("hashCode"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

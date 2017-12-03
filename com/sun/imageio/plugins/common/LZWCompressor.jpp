@@ -1,0 +1,43 @@
+#ifndef com_sun_imageio_plugins_common_LZWCompressor_HPP
+#define com_sun_imageio_plugins_common_LZWCompressor_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::imageio::plugins::common::LZWCompressor : public jObject<::com::sun::imageio::plugins::common::LZWCompressor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_imageio_plugins_common / "LZWCompressor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::imageio::stream::ImageOutputStream, ::jint, ::jboolean)>(), //
+		jMethod<::jvoid(::jbyte *, ::jint, ::jint)>("compress"), //
+		jMethod<::jvoid(::java::io::PrintStream)>("dump"), //
+		jMethod<::jvoid()>("flush"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto compress(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("compress")] != -1);
+		return call<R>("compress", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dump(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dump")] != -1);
+		return call<R>("dump", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto flush(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("flush")] != -1);
+		return call<R>("flush", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

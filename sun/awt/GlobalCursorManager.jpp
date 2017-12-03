@@ -1,0 +1,36 @@
+#ifndef sun_awt_GlobalCursorManager_HPP
+#define sun_awt_GlobalCursorManager_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::GlobalCursorManager : public jObject<::sun::awt::GlobalCursorManager, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "GlobalCursorManager";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("updateCursorImmediately"), //
+		jMethod<::jvoid(::java::awt::event::InputEvent)>("updateCursorImmediately"), //
+		jMethod<::jvoid(::java::awt::Component)>("updateCursorLater"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateCursorImmediately(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("updateCursorImmediately")] != -1);
+		return call<R>("updateCursorImmediately", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateCursorLater(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("updateCursorLater")] != -1);
+		return call<R>("updateCursorLater", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

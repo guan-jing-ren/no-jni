@@ -1,0 +1,65 @@
+#ifndef sun_applet_AppletSecurity_HPP
+#define sun_applet_AppletSecurity_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::applet::AppletSecurity : public jObject<::sun::applet::AppletSecurity, ::sun::awt::AWTSecurityManager> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_applet / "AppletSecurity";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::lang::Thread)>("checkAccess"), //
+		jMethod<::jvoid(::java::lang::ThreadGroup)>("checkAccess"), //
+		jMethod<::jvoid()>("checkAwtEventQueueAccess"), //
+		jMethod<::jvoid(::java::lang::String)>("checkPackageAccess"), //
+		jMethod<::sun::awt::AppContext()>("getAppContext"), //
+		jMethod<::java::lang::ThreadGroup()>("getThreadGroup"), //
+		jMethod<::jvoid()>("reset"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto checkAccess(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkAccess")] != -1);
+		return call<R>("checkAccess", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto checkAwtEventQueueAccess(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkAwtEventQueueAccess")] != -1);
+		return call<R>("checkAwtEventQueueAccess", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto checkPackageAccess(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkPackageAccess")] != -1);
+		return call<R>("checkPackageAccess", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::awt::AppContext, typename... Args>
+	auto getAppContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAppContext")] != -1);
+		return call<R>("getAppContext", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::ThreadGroup, typename... Args>
+	auto getThreadGroup(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getThreadGroup")] != -1);
+		return call<R>("getThreadGroup", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto reset(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("reset")] != -1);
+		return call<R>("reset", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

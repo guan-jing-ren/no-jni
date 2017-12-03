@@ -1,0 +1,42 @@
+#ifndef sun_rmi_transport_Channel_HPP
+#define sun_rmi_transport_Channel_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::rmi::transport::Channel : public jObject<::sun::rmi::transport::Channel, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_rmi_transport / "Channel";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::sun::rmi::transport::Connection, ::jboolean)>("free"), //
+		jMethod<::sun::rmi::transport::Endpoint()>("getEndpoint"), //
+		jMethod<::sun::rmi::transport::Connection()>("newConnection"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto free(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("free")] != -1);
+		return call<R>("free", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::rmi::transport::Endpoint, typename... Args>
+	auto getEndpoint(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEndpoint")] != -1);
+		return call<R>("getEndpoint", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::rmi::transport::Connection, typename... Args>
+	auto newConnection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newConnection")] != -1);
+		return call<R>("newConnection", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

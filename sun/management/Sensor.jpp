@@ -1,0 +1,67 @@
+#ifndef sun_management_Sensor_HPP
+#define sun_management_Sensor_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::management::Sensor : public jObject<::sun::management::Sensor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_management / "Sensor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jMethod<::jvoid()>("clear"), //
+		jMethod<::jvoid(::jint)>("clear"), //
+		jMethod<::jlong()>("getCount"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::jboolean()>("isOn"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::jvoid()>("trigger"), //
+		jMethod<::jvoid(::jint)>("trigger"), //
+		jMethod<::jvoid(::jint, ::java::lang::management::MemoryUsage)>("trigger"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto clear(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clear")] != -1);
+		return call<R>("clear", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCount")] != -1);
+		return call<R>("getCount", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isOn(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isOn")] != -1);
+		return call<R>("isOn", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto trigger(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("trigger")] != -1);
+		return call<R>("trigger", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

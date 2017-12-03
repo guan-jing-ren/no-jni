@@ -1,0 +1,28 @@
+#ifndef sun_font_Font2DHandle_HPP
+#define sun_font_Font2DHandle_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::Font2DHandle : public jObject<::sun::font::Font2DHandle, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "Font2DHandle";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::font::Font2D>("font2D"), //
+	};
+
+	template<typename F = ::sun::font::Font2D>
+	auto font2D() const {
+		static_assert(field_signatures[jField<F>("font2D")] != -1);
+		return at<F>("font2D");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::font::Font2D)>(), //
+	};
+
+};
+
+#endif

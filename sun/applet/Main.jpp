@@ -1,0 +1,35 @@
+#ifndef sun_applet_Main_HPP
+#define sun_applet_Main_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::applet::Main : public jObject<::sun::applet::Main, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_applet / "Main";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("theVersion"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto theVersion() {
+		static_assert(field_signatures[jField<F>("theVersion")] != -1);
+		return sat<F>("theVersion");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::lang::String *)>("main"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto main(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("main")] != -1);
+		return scall<R>("main", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,52 @@
+#ifndef sun_security_pkcs10_PKCS10Attribute_HPP
+#define sun_security_pkcs10_PKCS10Attribute_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::pkcs10::PKCS10Attribute : public jObject<::sun::security::pkcs10::PKCS10Attribute, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_pkcs10 / "PKCS10Attribute";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::security::pkcs::PKCS9Attribute)>(), //
+		jConstructor<::jvoid(::sun::security::util::DerValue)>(), //
+		jConstructor<::jvoid(::sun::security::util::ObjectIdentifier, ::java::lang::Object)>(), //
+		jMethod<::jvoid(::java::io::OutputStream)>("derEncode"), //
+		jMethod<::sun::security::util::ObjectIdentifier()>("getAttributeId"), //
+		jMethod<::java::lang::Object()>("getAttributeValue"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto derEncode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("derEncode")] != -1);
+		return call<R>("derEncode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::util::ObjectIdentifier, typename... Args>
+	auto getAttributeId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAttributeId")] != -1);
+		return call<R>("getAttributeId", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getAttributeValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAttributeValue")] != -1);
+		return call<R>("getAttributeValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

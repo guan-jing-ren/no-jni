@@ -1,0 +1,836 @@
+#ifndef sun_awt_SunToolkit_HPP
+#define sun_awt_SunToolkit_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::SunToolkit : public jObject<::sun::awt::SunToolkit, ::java::awt::Toolkit> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "SunToolkit";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("DEFAULT_WAIT_TIME"), //
+		jField<::java::lang::String>("DESKTOPFONTHINTS"), //
+		jField<::jint>("GRAB_EVENT_MASK"), //
+		jField<::jint>("MAX_BUTTONS_SUPPORTED"), //
+	};
+
+	template<typename F = ::jint>
+	static auto DEFAULT_WAIT_TIME() {
+		static_assert(field_signatures[jField<F>("DEFAULT_WAIT_TIME")] != -1);
+		return sat<F>("DEFAULT_WAIT_TIME");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto DESKTOPFONTHINTS() {
+		static_assert(field_signatures[jField<F>("DESKTOPFONTHINTS")] != -1);
+		return sat<F>("DESKTOPFONTHINTS");
+	}
+
+	template<typename F = ::jint>
+	static auto GRAB_EVENT_MASK() {
+		static_assert(field_signatures[jField<F>("GRAB_EVENT_MASK")] != -1);
+		return sat<F>("GRAB_EVENT_MASK");
+	}
+
+	template<typename F = ::jint>
+	static auto MAX_BUTTONS_SUPPORTED() {
+		static_assert(field_signatures[jField<F>("MAX_BUTTONS_SUPPORTED")] != -1);
+		return sat<F>("MAX_BUTTONS_SUPPORTED");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::sun::awt::ModalityListener)>("addModalityListener"), //
+		jMethod<::jvoid()>("awtLock"), //
+		jMethod<::jvoid()>("awtLockNotify"), //
+		jMethod<::jvoid()>("awtLockNotifyAll"), //
+		jMethod<::jvoid()>("awtLockWait"), //
+		jMethod<::jvoid(::jlong)>("awtLockWait"), //
+		jMethod<::jboolean()>("awtTryLock"), //
+		jMethod<::jvoid()>("awtUnlock"), //
+		jMethod<::jboolean()>("canPopupOverlapTaskBar"), //
+		jMethod<::jvoid(::java::awt::Container)>("checkAndSetPolicy"), //
+		jMethod<::jint(::java::awt::Image, ::jint, ::jint, ::java::awt::image::ImageObserver)>("checkImage"), //
+		jMethod<::jvoid()>("closeSplashScreen"), //
+		jMethod<::jvoid(::java::awt::event::KeyEvent)>("consumeNextKeyTyped"), //
+		jMethod<::java::awt::peer::ButtonPeer(::java::awt::Button)>("createButton"), //
+		jMethod<::java::awt::peer::CanvasPeer(::java::awt::Canvas)>("createCanvas"), //
+		jMethod<::java::awt::peer::CheckboxPeer(::java::awt::Checkbox)>("createCheckbox"), //
+		jMethod<::java::awt::peer::CheckboxMenuItemPeer(::java::awt::CheckboxMenuItem)>("createCheckboxMenuItem"), //
+		jMethod<::java::awt::peer::ChoicePeer(::java::awt::Choice)>("createChoice"), //
+		jMethod<::java::awt::peer::DialogPeer(::java::awt::Dialog)>("createDialog"), //
+		jMethod<::java::awt::dnd::peer::DragSourceContextPeer(::java::awt::dnd::DragGestureEvent)>("createDragSourceContextPeer"), //
+		jMethod<::java::awt::peer::FileDialogPeer(::java::awt::FileDialog)>("createFileDialog"), //
+		jMethod<::java::awt::peer::FramePeer(::java::awt::Frame)>("createFrame"), //
+		jMethod<::java::awt::Image(::java::awt::image::ImageProducer)>("createImage"), //
+		jMethod<::java::awt::Image(::java::lang::String)>("createImage"), //
+		jMethod<::java::awt::Image(::java::net::URL)>("createImage"), //
+		jMethod<::java::awt::Image(::jbyte *, ::jint, ::jint)>("createImage"), //
+		jMethod<::java::awt::Image(::java::awt::Image, ::java::awt::Image)>("createImageWithResolutionVariant"), //
+		jMethod<::java::awt::Window(::java::lang::String, ::sun::awt::im::InputContext)>("createInputMethodWindow"), //
+		jMethod<::java::awt::peer::LabelPeer(::java::awt::Label)>("createLabel"), //
+		jMethod<::java::awt::peer::FramePeer(::sun::awt::LightweightFrame)>("createLightweightFrame"), //
+		jMethod<::java::awt::peer::ListPeer(::java::awt::List)>("createList"), //
+		jMethod<::java::awt::peer::MenuPeer(::java::awt::Menu)>("createMenu"), //
+		jMethod<::java::awt::peer::MenuBarPeer(::java::awt::MenuBar)>("createMenuBar"), //
+		jMethod<::java::awt::peer::MenuItemPeer(::java::awt::MenuItem)>("createMenuItem"), //
+		jMethod<::sun::awt::AppContext()>("createNewAppContext"), //
+		jMethod<::java::awt::peer::PanelPeer(::java::awt::Panel)>("createPanel"), //
+		jMethod<::java::awt::peer::PopupMenuPeer(::java::awt::PopupMenu)>("createPopupMenu"), //
+		jMethod<::java::awt::peer::RobotPeer(::java::awt::Robot, ::java::awt::GraphicsDevice)>("createRobot"), //
+		jMethod<::java::awt::peer::ScrollPanePeer(::java::awt::ScrollPane)>("createScrollPane"), //
+		jMethod<::java::awt::peer::ScrollbarPeer(::java::awt::Scrollbar)>("createScrollbar"), //
+		jMethod<::java::awt::peer::SystemTrayPeer(::java::awt::SystemTray)>("createSystemTray"), //
+		jMethod<::java::awt::peer::TextAreaPeer(::java::awt::TextArea)>("createTextArea"), //
+		jMethod<::java::awt::peer::TextFieldPeer(::java::awt::TextField)>("createTextField"), //
+		jMethod<::java::awt::peer::TrayIconPeer(::java::awt::TrayIcon)>("createTrayIcon"), //
+		jMethod<::java::awt::peer::WindowPeer(::java::awt::Window)>("createWindow"), //
+		jMethod<::jvoid(::java::awt::Canvas)>("disableBackgroundErase"), //
+		jMethod<::jvoid(::java::awt::Component)>("disableBackgroundErase"), //
+		jMethod<::jboolean()>("enableInputMethodsForTextComponent"), //
+		jMethod<::jvoid(::java::lang::Object, ::java::lang::Runnable)>("executeOnEDTAndWait"), //
+		jMethod<::jvoid(::java::lang::Object, ::java::lang::Runnable)>("executeOnEventHandlerThread"), //
+		jMethod<::jvoid(::java::lang::Object, ::java::lang::Runnable, ::jlong)>("executeOnEventHandlerThread"), //
+		jMethod<::jvoid(::sun::awt::PeerEvent)>("executeOnEventHandlerThread"), //
+		jMethod<::jvoid()>("flushPendingEvents"), //
+		jMethod<::jvoid(::sun::awt::AppContext)>("flushPendingEvents"), //
+		jMethod<::java::awt::Window(::java::awt::Component)>("getContainingWindow"), //
+		jMethod<::java::util::Locale()>("getDefaultKeyboardLocale"), //
+		jMethod<::java::awt::RenderingHints()>("getDesktopFontHints"), //
+		jMethod<::jint()>("getFocusAcceleratorKeyMask"), //
+		jMethod<::java::lang::String *()>("getFontList"), //
+		jMethod<::java::awt::FontMetrics(::java::awt::Font)>("getFontMetrics"), //
+		jMethod<::java::awt::peer::FontPeer(::java::lang::String, ::jint)>("getFontPeer"), //
+		jMethod<::java::awt::Component(::java::awt::Component)>("getHeavyweightComponent"), //
+		jMethod<::java::awt::Image(::java::lang::String)>("getImage"), //
+		jMethod<::java::awt::Image(::java::net::URL)>("getImage"), //
+		jMethod<::java::awt::peer::KeyboardFocusManagerPeer()>("getKeyboardFocusManagerPeer"), //
+		jMethod<::java::awt::Container(::java::awt::Component)>("getNativeContainer"), //
+		jMethod<::jint()>("getNumberOfButtons"), //
+		jMethod<::java::awt::image::DataBufferInt(::java::util::List, ::jint, ::jint)>("getScaledIconData"), //
+		jMethod<::java::awt::image::BufferedImage(::java::util::List, ::jint, ::jint)>("getScaledIconImage"), //
+		jMethod<::java::awt::Dimension()>("getScreenSize"), //
+		jMethod<::java::util::Locale()>("getStartupLocale"), //
+		jMethod<::jboolean()>("getSunAwtDisableMixing"), //
+		jMethod<::jboolean()>("getSunAwtErasebackgroundonresize"), //
+		jMethod<::jboolean()>("getSunAwtNoerasebackground"), //
+		jMethod<::java::awt::EventQueue(::sun::awt::AppContext)>("getSystemEventQueueImplPP"), //
+		jMethod<::sun::awt::WindowClosingListener()>("getWindowClosingListener"), //
+		jMethod<::jlong(::java::awt::Window)>("getWindowDeactivationTime"), //
+		jMethod<::jvoid(::java::awt::Window)>("grab"), //
+		jMethod<::jvoid(::java::lang::Object, ::sun::awt::AppContext)>("insertTargetMapping"), //
+		jMethod<::jvoid(::sun::awt::AppContext, ::java::lang::Runnable)>("invokeLaterOnAppContext"), //
+		jMethod<::jboolean()>("isAWTLockHeldByCurrentThread"), //
+		jMethod<::jboolean(::java::awt::Component)>("isContainingTopLevelOpaque"), //
+		jMethod<::jboolean(::java::awt::Component)>("isContainingTopLevelTranslucent"), //
+		jMethod<::jboolean()>("isDesktopSupported"), //
+		jMethod<::jboolean(::java::lang::Object)>("isDispatchThreadForAppContext"), //
+		jMethod<::jboolean(::java::lang::Object, ::java::lang::String)>("isInstanceOf"), //
+		jMethod<::jboolean(::java::awt::Component)>("isLightweightOrUnknown"), //
+		jMethod<::jboolean(::java::awt::Window)>("isModalExcluded"), //
+		jMethod<::jboolean()>("isModalExcludedSupported"), //
+		jMethod<::jboolean(::java::awt::Dialog$ModalExclusionType)>("isModalExclusionTypeSupported"), //
+		jMethod<::jboolean(::java::awt::Dialog$ModalityType)>("isModalityTypeSupported"), //
+		jMethod<::jboolean()>("isNativeGTKAvailable"), //
+		jMethod<::jboolean(::jint)>("isPrintableCharacterModifiersMask"), //
+		jMethod<::jboolean()>("isSwingBackbufferTranslucencySupported"), //
+		jMethod<::jboolean(::java::awt::AWTEvent)>("isSystemGenerated"), //
+		jMethod<::jboolean(::java::awt::GraphicsConfiguration)>("isTranslucencyCapable"), //
+		jMethod<::jboolean()>("isTraySupported"), //
+		jMethod<::jboolean()>("isWindowOpacitySupported"), //
+		jMethod<::jboolean()>("isWindowShapingSupported"), //
+		jMethod<::jboolean()>("isWindowTranslucencySupported"), //
+		jMethod<::jboolean()>("needUpdateWindow"), //
+		jMethod<::jboolean()>("needsXEmbed"), //
+		jMethod<::jvoid(::java::awt::Dialog)>("notifyModalityPopped"), //
+		jMethod<::jvoid(::java::awt::Dialog)>("notifyModalityPushed"), //
+		jMethod<::jvoid(::sun::awt::AppContext, ::java::awt::AWTEvent)>("postEvent"), //
+		jMethod<::jvoid(::java::awt::AWTEvent)>("postPriorityEvent"), //
+		jMethod<::jboolean(::java::awt::Image, ::jint, ::jint, ::java::awt::image::ImageObserver)>("prepareImage"), //
+		jMethod<::jvoid()>("realSync"), //
+		jMethod<::jvoid(::jlong)>("realSync"), //
+		jMethod<::jvoid(::sun::awt::ModalityListener)>("removeModalityListener"), //
+		jMethod<::jvoid(::jboolean)>("setAAFontSettingsCondition"), //
+		jMethod<::jvoid(::java::awt::Window, ::jboolean)>("setLWRequestStatus"), //
+		jMethod<::jvoid(::java::awt::Window)>("setModalExcluded"), //
+		jMethod<::jvoid(::java::awt::AWTEvent)>("setSystemGenerated"), //
+		jMethod<::jvoid(::sun::awt::WindowClosingListener)>("setWindowClosingListener"), //
+		jMethod<::jvoid(::java::awt::Window, ::jlong)>("setWindowDeactivationTime"), //
+		jMethod<::sun::awt::AppContext(::java::lang::Object)>("targetToAppContext"), //
+		jMethod<::jvoid(::java::awt::Window)>("ungrab"), //
+		jMethod<::jboolean()>("useBufferPerWindow"), //
+		jMethod<::java::lang::RuntimeException(::java::awt::event::WindowEvent)>("windowClosingDelivered"), //
+		jMethod<::java::lang::RuntimeException(::java::awt::event::WindowEvent)>("windowClosingNotify"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addModalityListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addModalityListener")] != -1);
+		return call<R>("addModalityListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto awtLock(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("awtLock")] != -1);
+		return scall<R>("awtLock", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto awtLockNotify(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("awtLockNotify")] != -1);
+		return scall<R>("awtLockNotify", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto awtLockNotifyAll(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("awtLockNotifyAll")] != -1);
+		return scall<R>("awtLockNotifyAll", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto awtLockWait(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("awtLockWait")] != -1);
+		return scall<R>("awtLockWait", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto awtTryLock(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("awtTryLock")] != -1);
+		return scall<R>("awtTryLock", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto awtUnlock(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("awtUnlock")] != -1);
+		return scall<R>("awtUnlock", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto canPopupOverlapTaskBar(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("canPopupOverlapTaskBar")] != -1);
+		return call<R>("canPopupOverlapTaskBar", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto checkAndSetPolicy(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkAndSetPolicy")] != -1);
+		return scall<R>("checkAndSetPolicy", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto checkImage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkImage")] != -1);
+		return call<R>("checkImage", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto closeSplashScreen(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("closeSplashScreen")] != -1);
+		return scall<R>("closeSplashScreen", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto consumeNextKeyTyped(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("consumeNextKeyTyped")] != -1);
+		return scall<R>("consumeNextKeyTyped", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::peer::ButtonPeer, typename... Args>
+	auto createButton(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createButton")] != -1);
+		return call<R>("createButton", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::peer::CanvasPeer, typename... Args>
+	auto createCanvas(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createCanvas")] != -1);
+		return call<R>("createCanvas", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::peer::CheckboxPeer, typename... Args>
+	auto createCheckbox(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createCheckbox")] != -1);
+		return call<R>("createCheckbox", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::peer::CheckboxMenuItemPeer, typename... Args>
+	auto createCheckboxMenuItem(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createCheckboxMenuItem")] != -1);
+		return call<R>("createCheckboxMenuItem", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::peer::ChoicePeer, typename... Args>
+	auto createChoice(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createChoice")] != -1);
+		return call<R>("createChoice", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::peer::DialogPeer, typename... Args>
+	auto createDialog(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createDialog")] != -1);
+		return call<R>("createDialog", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::dnd::peer::DragSourceContextPeer, typename... Args>
+	auto createDragSourceContextPeer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createDragSourceContextPeer")] != -1);
+		return call<R>("createDragSourceContextPeer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::peer::FileDialogPeer, typename... Args>
+	auto createFileDialog(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createFileDialog")] != -1);
+		return call<R>("createFileDialog", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::peer::FramePeer, typename... Args>
+	auto createFrame(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createFrame")] != -1);
+		return call<R>("createFrame", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Image, typename... Args>
+	auto createImage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createImage")] != -1);
+		return call<R>("createImage", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Image, typename... Args>
+	static auto createImageWithResolutionVariant(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createImageWithResolutionVariant")] != -1);
+		return scall<R>("createImageWithResolutionVariant", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Window, typename... Args>
+	auto createInputMethodWindow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createInputMethodWindow")] != -1);
+		return call<R>("createInputMethodWindow", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::peer::LabelPeer, typename... Args>
+	auto createLabel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createLabel")] != -1);
+		return call<R>("createLabel", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::peer::FramePeer, typename... Args>
+	auto createLightweightFrame(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createLightweightFrame")] != -1);
+		return call<R>("createLightweightFrame", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::peer::ListPeer, typename... Args>
+	auto createList(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createList")] != -1);
+		return call<R>("createList", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::peer::MenuPeer, typename... Args>
+	auto createMenu(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createMenu")] != -1);
+		return call<R>("createMenu", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::peer::MenuBarPeer, typename... Args>
+	auto createMenuBar(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createMenuBar")] != -1);
+		return call<R>("createMenuBar", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::peer::MenuItemPeer, typename... Args>
+	auto createMenuItem(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createMenuItem")] != -1);
+		return call<R>("createMenuItem", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::awt::AppContext, typename... Args>
+	static auto createNewAppContext(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createNewAppContext")] != -1);
+		return scall<R>("createNewAppContext", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::peer::PanelPeer, typename... Args>
+	auto createPanel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createPanel")] != -1);
+		return call<R>("createPanel", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::peer::PopupMenuPeer, typename... Args>
+	auto createPopupMenu(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createPopupMenu")] != -1);
+		return call<R>("createPopupMenu", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::peer::RobotPeer, typename... Args>
+	auto createRobot(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createRobot")] != -1);
+		return call<R>("createRobot", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::peer::ScrollPanePeer, typename... Args>
+	auto createScrollPane(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createScrollPane")] != -1);
+		return call<R>("createScrollPane", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::peer::ScrollbarPeer, typename... Args>
+	auto createScrollbar(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createScrollbar")] != -1);
+		return call<R>("createScrollbar", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::peer::SystemTrayPeer, typename... Args>
+	auto createSystemTray(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createSystemTray")] != -1);
+		return call<R>("createSystemTray", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::peer::TextAreaPeer, typename... Args>
+	auto createTextArea(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createTextArea")] != -1);
+		return call<R>("createTextArea", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::peer::TextFieldPeer, typename... Args>
+	auto createTextField(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createTextField")] != -1);
+		return call<R>("createTextField", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::peer::TrayIconPeer, typename... Args>
+	auto createTrayIcon(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createTrayIcon")] != -1);
+		return call<R>("createTrayIcon", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::peer::WindowPeer, typename... Args>
+	auto createWindow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createWindow")] != -1);
+		return call<R>("createWindow", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto disableBackgroundErase(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("disableBackgroundErase")] != -1);
+		return call<R>("disableBackgroundErase", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto enableInputMethodsForTextComponent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("enableInputMethodsForTextComponent")] != -1);
+		return call<R>("enableInputMethodsForTextComponent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto executeOnEDTAndWait(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("executeOnEDTAndWait")] != -1);
+		return scall<R>("executeOnEDTAndWait", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto executeOnEventHandlerThread(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("executeOnEventHandlerThread")] != -1);
+		return scall<R>("executeOnEventHandlerThread", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto flushPendingEvents(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("flushPendingEvents")] != -1);
+		return scall<R>("flushPendingEvents", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Window, typename... Args>
+	static auto getContainingWindow(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getContainingWindow")] != -1);
+		return scall<R>("getContainingWindow", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Locale, typename... Args>
+	auto getDefaultKeyboardLocale(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDefaultKeyboardLocale")] != -1);
+		return call<R>("getDefaultKeyboardLocale", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::RenderingHints, typename... Args>
+	static auto getDesktopFontHints(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDesktopFontHints")] != -1);
+		return scall<R>("getDesktopFontHints", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getFocusAcceleratorKeyMask(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFocusAcceleratorKeyMask")] != -1);
+		return call<R>("getFocusAcceleratorKeyMask", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getFontList(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFontList")] != -1);
+		return call<R>("getFontList", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::FontMetrics, typename... Args>
+	auto getFontMetrics(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFontMetrics")] != -1);
+		return call<R>("getFontMetrics", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::peer::FontPeer, typename... Args>
+	auto getFontPeer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFontPeer")] != -1);
+		return call<R>("getFontPeer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Component, typename... Args>
+	static auto getHeavyweightComponent(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHeavyweightComponent")] != -1);
+		return scall<R>("getHeavyweightComponent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Image, typename... Args>
+	auto getImage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getImage")] != -1);
+		return call<R>("getImage", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::peer::KeyboardFocusManagerPeer, typename... Args>
+	auto getKeyboardFocusManagerPeer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getKeyboardFocusManagerPeer")] != -1);
+		return call<R>("getKeyboardFocusManagerPeer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Container, typename... Args>
+	static auto getNativeContainer(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNativeContainer")] != -1);
+		return scall<R>("getNativeContainer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getNumberOfButtons(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNumberOfButtons")] != -1);
+		return call<R>("getNumberOfButtons", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::image::DataBufferInt, typename... Args>
+	static auto getScaledIconData(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getScaledIconData")] != -1);
+		return scall<R>("getScaledIconData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::image::BufferedImage, typename... Args>
+	static auto getScaledIconImage(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getScaledIconImage")] != -1);
+		return scall<R>("getScaledIconImage", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Dimension, typename... Args>
+	auto getScreenSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getScreenSize")] != -1);
+		return call<R>("getScreenSize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Locale, typename... Args>
+	static auto getStartupLocale(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStartupLocale")] != -1);
+		return scall<R>("getStartupLocale", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto getSunAwtDisableMixing(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSunAwtDisableMixing")] != -1);
+		return scall<R>("getSunAwtDisableMixing", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto getSunAwtErasebackgroundonresize(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSunAwtErasebackgroundonresize")] != -1);
+		return scall<R>("getSunAwtErasebackgroundonresize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto getSunAwtNoerasebackground(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSunAwtNoerasebackground")] != -1);
+		return scall<R>("getSunAwtNoerasebackground", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::EventQueue, typename... Args>
+	static auto getSystemEventQueueImplPP(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSystemEventQueueImplPP")] != -1);
+		return scall<R>("getSystemEventQueueImplPP", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::awt::WindowClosingListener, typename... Args>
+	auto getWindowClosingListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getWindowClosingListener")] != -1);
+		return call<R>("getWindowClosingListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getWindowDeactivationTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getWindowDeactivationTime")] != -1);
+		return call<R>("getWindowDeactivationTime", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto grab(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("grab")] != -1);
+		return call<R>("grab", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto insertTargetMapping(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("insertTargetMapping")] != -1);
+		return scall<R>("insertTargetMapping", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto invokeLaterOnAppContext(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("invokeLaterOnAppContext")] != -1);
+		return scall<R>("invokeLaterOnAppContext", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isAWTLockHeldByCurrentThread(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isAWTLockHeldByCurrentThread")] != -1);
+		return scall<R>("isAWTLockHeldByCurrentThread", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isContainingTopLevelOpaque(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isContainingTopLevelOpaque")] != -1);
+		return scall<R>("isContainingTopLevelOpaque", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isContainingTopLevelTranslucent(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isContainingTopLevelTranslucent")] != -1);
+		return scall<R>("isContainingTopLevelTranslucent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDesktopSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isDesktopSupported")] != -1);
+		return call<R>("isDesktopSupported", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isDispatchThreadForAppContext(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isDispatchThreadForAppContext")] != -1);
+		return scall<R>("isDispatchThreadForAppContext", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isInstanceOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isInstanceOf")] != -1);
+		return scall<R>("isInstanceOf", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isLightweightOrUnknown(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isLightweightOrUnknown")] != -1);
+		return scall<R>("isLightweightOrUnknown", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isModalExcluded(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isModalExcluded")] != -1);
+		return scall<R>("isModalExcluded", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isModalExcludedSupported(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isModalExcludedSupported")] != -1);
+		return scall<R>("isModalExcludedSupported", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isModalExclusionTypeSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isModalExclusionTypeSupported")] != -1);
+		return call<R>("isModalExclusionTypeSupported", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isModalityTypeSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isModalityTypeSupported")] != -1);
+		return call<R>("isModalityTypeSupported", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isNativeGTKAvailable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isNativeGTKAvailable")] != -1);
+		return call<R>("isNativeGTKAvailable", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isPrintableCharacterModifiersMask(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isPrintableCharacterModifiersMask")] != -1);
+		return call<R>("isPrintableCharacterModifiersMask", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isSwingBackbufferTranslucencySupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSwingBackbufferTranslucencySupported")] != -1);
+		return call<R>("isSwingBackbufferTranslucencySupported", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isSystemGenerated(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSystemGenerated")] != -1);
+		return scall<R>("isSystemGenerated", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isTranslucencyCapable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isTranslucencyCapable")] != -1);
+		return call<R>("isTranslucencyCapable", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isTraySupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isTraySupported")] != -1);
+		return call<R>("isTraySupported", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isWindowOpacitySupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isWindowOpacitySupported")] != -1);
+		return call<R>("isWindowOpacitySupported", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isWindowShapingSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isWindowShapingSupported")] != -1);
+		return call<R>("isWindowShapingSupported", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isWindowTranslucencySupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isWindowTranslucencySupported")] != -1);
+		return call<R>("isWindowTranslucencySupported", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto needUpdateWindow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("needUpdateWindow")] != -1);
+		return call<R>("needUpdateWindow", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto needsXEmbed(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("needsXEmbed")] != -1);
+		return scall<R>("needsXEmbed", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto notifyModalityPopped(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("notifyModalityPopped")] != -1);
+		return call<R>("notifyModalityPopped", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto notifyModalityPushed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("notifyModalityPushed")] != -1);
+		return call<R>("notifyModalityPushed", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto postEvent(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("postEvent")] != -1);
+		return scall<R>("postEvent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto postPriorityEvent(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("postPriorityEvent")] != -1);
+		return scall<R>("postPriorityEvent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto prepareImage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("prepareImage")] != -1);
+		return call<R>("prepareImage", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto realSync(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("realSync")] != -1);
+		return call<R>("realSync", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeModalityListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeModalityListener")] != -1);
+		return call<R>("removeModalityListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setAAFontSettingsCondition(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setAAFontSettingsCondition")] != -1);
+		return scall<R>("setAAFontSettingsCondition", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setLWRequestStatus(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setLWRequestStatus")] != -1);
+		return scall<R>("setLWRequestStatus", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setModalExcluded(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setModalExcluded")] != -1);
+		return scall<R>("setModalExcluded", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setSystemGenerated(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setSystemGenerated")] != -1);
+		return scall<R>("setSystemGenerated", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setWindowClosingListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setWindowClosingListener")] != -1);
+		return call<R>("setWindowClosingListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setWindowDeactivationTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setWindowDeactivationTime")] != -1);
+		return call<R>("setWindowDeactivationTime", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::awt::AppContext, typename... Args>
+	static auto targetToAppContext(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("targetToAppContext")] != -1);
+		return scall<R>("targetToAppContext", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto ungrab(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("ungrab")] != -1);
+		return call<R>("ungrab", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto useBufferPerWindow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("useBufferPerWindow")] != -1);
+		return call<R>("useBufferPerWindow", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::RuntimeException, typename... Args>
+	auto windowClosingDelivered(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("windowClosingDelivered")] != -1);
+		return call<R>("windowClosingDelivered", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::RuntimeException, typename... Args>
+	auto windowClosingNotify(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("windowClosingNotify")] != -1);
+		return call<R>("windowClosingNotify", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

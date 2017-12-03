@@ -1,0 +1,84 @@
+#ifndef sun_java2d_pipe_BufferedContext_HPP
+#define sun_java2d_pipe_BufferedContext_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::pipe::BufferedContext : public jObject<::sun::java2d::pipe::BufferedContext, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_pipe / "BufferedContext";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("NO_CONTEXT_FLAGS"), //
+		jField<::jint>("SRC_IS_OPAQUE"), //
+		jField<::jint>("USE_MASK"), //
+	};
+
+	template<typename F = ::jint>
+	static auto NO_CONTEXT_FLAGS() {
+		static_assert(field_signatures[jField<F>("NO_CONTEXT_FLAGS")] != -1);
+		return sat<F>("NO_CONTEXT_FLAGS");
+	}
+
+	template<typename F = ::jint>
+	static auto SRC_IS_OPAQUE() {
+		static_assert(field_signatures[jField<F>("SRC_IS_OPAQUE")] != -1);
+		return sat<F>("SRC_IS_OPAQUE");
+	}
+
+	template<typename F = ::jint>
+	static auto USE_MASK() {
+		static_assert(field_signatures[jField<F>("USE_MASK")] != -1);
+		return sat<F>("USE_MASK");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::java2d::pipe::RenderQueue()>("getRenderQueue"), //
+		jMethod<::jvoid()>("invalidateContext"), //
+		jMethod<::jvoid()>("restoreState"), //
+		jMethod<::jvoid()>("saveState"), //
+		jMethod<::jvoid(::sun::java2d::pipe::hw::AccelSurface, ::sun::java2d::pipe::hw::AccelSurface, ::sun::java2d::pipe::Region, ::java::awt::Composite, ::java::awt::geom::AffineTransform, ::java::awt::Paint, ::sun::java2d::SunGraphics2D, ::jint)>("validate"), //
+		jMethod<::jvoid(::sun::java2d::pipe::hw::AccelSurface)>("validateContext"), //
+		jMethod<::jvoid(::sun::java2d::pipe::hw::AccelSurface, ::sun::java2d::pipe::hw::AccelSurface, ::sun::java2d::pipe::Region, ::java::awt::Composite, ::java::awt::geom::AffineTransform, ::java::awt::Paint, ::sun::java2d::SunGraphics2D, ::jint)>("validateContext"), //
+	};
+
+	template<typename R = ::sun::java2d::pipe::RenderQueue, typename... Args>
+	auto getRenderQueue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRenderQueue")] != -1);
+		return call<R>("getRenderQueue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto invalidateContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("invalidateContext")] != -1);
+		return call<R>("invalidateContext", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto restoreState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("restoreState")] != -1);
+		return call<R>("restoreState", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto saveState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("saveState")] != -1);
+		return call<R>("saveState", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto validate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("validate")] != -1);
+		return call<R>("validate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto validateContext(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("validateContext")] != -1);
+		return scall<R>("validateContext", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

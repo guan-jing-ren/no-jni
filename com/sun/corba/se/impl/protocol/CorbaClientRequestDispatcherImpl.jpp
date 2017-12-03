@@ -1,0 +1,50 @@
+#ifndef com_sun_corba_se_impl_protocol_CorbaClientRequestDispatcherImpl_HPP
+#define com_sun_corba_se_impl_protocol_CorbaClientRequestDispatcherImpl_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::impl::protocol::CorbaClientRequestDispatcherImpl : public jObject<::com::sun::corba::se::impl::protocol::CorbaClientRequestDispatcherImpl, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_impl_protocol / "CorbaClientRequestDispatcherImpl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::com::sun::corba::se::pept::encoding::OutputObject(::java::lang::Object, ::java::lang::String, ::jboolean, ::com::sun::corba::se::pept::transport::ContactInfo)>("beginRequest"), //
+		jMethod<::jvoid(::com::sun::corba::se::pept::broker::Broker, ::java::lang::Object, ::com::sun::corba::se::pept::encoding::InputObject)>("endRequest"), //
+		jMethod<::com::sun::corba::se::pept::encoding::InputObject(::java::lang::Object, ::com::sun::corba::se::pept::encoding::OutputObject)>("marshalingComplete"), //
+		jMethod<::com::sun::corba::se::pept::encoding::InputObject(::com::sun::corba::se::spi::orb::ORB, ::com::sun::corba::se::spi::protocol::CorbaMessageMediator)>("marshalingComplete1"), //
+	};
+
+	template<typename R = ::com::sun::corba::se::pept::encoding::OutputObject, typename... Args>
+	auto beginRequest(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("beginRequest")] != -1);
+		return call<R>("beginRequest", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto endRequest(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("endRequest")] != -1);
+		return call<R>("endRequest", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::pept::encoding::InputObject, typename... Args>
+	auto marshalingComplete(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("marshalingComplete")] != -1);
+		return call<R>("marshalingComplete", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::pept::encoding::InputObject, typename... Args>
+	auto marshalingComplete1(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("marshalingComplete1")] != -1);
+		return call<R>("marshalingComplete1", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

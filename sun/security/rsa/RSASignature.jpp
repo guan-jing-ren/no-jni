@@ -1,0 +1,35 @@
+#ifndef sun_security_rsa_RSASignature_HPP
+#define sun_security_rsa_RSASignature_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::rsa::RSASignature : public jObject<::sun::security::rsa::RSASignature, ::java::security::SignatureSpi> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_rsa / "RSASignature";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jbyte *(::sun::security::util::ObjectIdentifier, ::jbyte *)>("decodeSignature"), //
+		jMethod<::jbyte *(::sun::security::util::ObjectIdentifier, ::jbyte *)>("encodeSignature"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	static auto decodeSignature(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("decodeSignature")] != -1);
+		return scall<R>("decodeSignature", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	static auto encodeSignature(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encodeSignature")] != -1);
+		return scall<R>("encodeSignature", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

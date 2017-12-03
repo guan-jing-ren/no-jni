@@ -1,0 +1,28 @@
+#ifndef sun_rmi_transport_proxy_CGIHandler_HPP
+#define sun_rmi_transport_proxy_CGIHandler_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::rmi::transport::proxy::CGIHandler : public jObject<::sun::rmi::transport::proxy::CGIHandler, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_rmi_transport_proxy / "CGIHandler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::String *)>("main"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto main(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("main")] != -1);
+		return scall<R>("main", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

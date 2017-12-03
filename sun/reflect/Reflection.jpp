@@ -1,0 +1,93 @@
+#ifndef sun_reflect_Reflection_HPP
+#define sun_reflect_Reflection_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::reflect::Reflection : public jObject<::sun::reflect::Reflection, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_reflect / "Reflection";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::lang::Class, ::java::lang::Class, ::java::lang::Object, ::jint)>("ensureMemberAccess"), //
+		jMethod<::java::lang::reflect::Field *(::java::lang::Class, ::java::lang::reflect::Field *)>("filterFields"), //
+		jMethod<::java::lang::reflect::Method *(::java::lang::Class, ::java::lang::reflect::Method *)>("filterMethods"), //
+		jMethod<::java::lang::Class()>("getCallerClass"), //
+		jMethod<::java::lang::Class(::jint)>("getCallerClass"), //
+		jMethod<::jint(::java::lang::Class)>("getClassAccessFlags"), //
+		jMethod<::jboolean(::java::lang::reflect::Method)>("isCallerSensitive"), //
+		jMethod<::jboolean(::java::lang::Class, ::jint)>("quickCheckMemberAccess"), //
+		jMethod<::jvoid(::java::lang::Class, ::java::lang::String *)>("registerFieldsToFilter"), //
+		jMethod<::jvoid(::java::lang::Class, ::java::lang::String *)>("registerMethodsToFilter"), //
+		jMethod<::jboolean(::java::lang::Class, ::java::lang::Class, ::java::lang::Object, ::jint)>("verifyMemberAccess"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto ensureMemberAccess(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("ensureMemberAccess")] != -1);
+		return scall<R>("ensureMemberAccess", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Field *, typename... Args>
+	static auto filterFields(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("filterFields")] != -1);
+		return scall<R>("filterFields", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Method *, typename... Args>
+	static auto filterMethods(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("filterMethods")] != -1);
+		return scall<R>("filterMethods", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	static auto getCallerClass(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCallerClass")] != -1);
+		return scall<R>("getCallerClass", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto getClassAccessFlags(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClassAccessFlags")] != -1);
+		return scall<R>("getClassAccessFlags", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isCallerSensitive(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isCallerSensitive")] != -1);
+		return scall<R>("isCallerSensitive", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto quickCheckMemberAccess(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("quickCheckMemberAccess")] != -1);
+		return scall<R>("quickCheckMemberAccess", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto registerFieldsToFilter(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("registerFieldsToFilter")] != -1);
+		return scall<R>("registerFieldsToFilter", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto registerMethodsToFilter(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("registerMethodsToFilter")] != -1);
+		return scall<R>("registerMethodsToFilter", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto verifyMemberAccess(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("verifyMemberAccess")] != -1);
+		return scall<R>("verifyMemberAccess", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

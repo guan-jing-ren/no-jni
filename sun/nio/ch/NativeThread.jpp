@@ -1,0 +1,36 @@
+#ifndef sun_nio_ch_NativeThread_HPP
+#define sun_nio_ch_NativeThread_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::nio::ch::NativeThread : public jObject<::sun::nio::ch::NativeThread, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_nio_ch / "NativeThread";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jlong()>("current"), //
+		jMethod<::jvoid(::jlong)>("signal"), //
+	};
+
+	template<typename R = ::jlong, typename... Args>
+	static auto current(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("current")] != -1);
+		return scall<R>("current", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto signal(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("signal")] != -1);
+		return scall<R>("signal", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

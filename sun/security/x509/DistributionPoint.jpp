@@ -1,0 +1,135 @@
+#ifndef sun_security_x509_DistributionPoint_HPP
+#define sun_security_x509_DistributionPoint_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::x509::DistributionPoint : public jObject<::sun::security::x509::DistributionPoint, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_x509 / "DistributionPoint";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("AA_COMPROMISE"), //
+		jField<::jint>("AFFILIATION_CHANGED"), //
+		jField<::jint>("CA_COMPROMISE"), //
+		jField<::jint>("CERTIFICATE_HOLD"), //
+		jField<::jint>("CESSATION_OF_OPERATION"), //
+		jField<::jint>("KEY_COMPROMISE"), //
+		jField<::jint>("PRIVILEGE_WITHDRAWN"), //
+		jField<::jint>("SUPERSEDED"), //
+	};
+
+	template<typename F = ::jint>
+	static auto AA_COMPROMISE() {
+		static_assert(field_signatures[jField<F>("AA_COMPROMISE")] != -1);
+		return sat<F>("AA_COMPROMISE");
+	}
+
+	template<typename F = ::jint>
+	static auto AFFILIATION_CHANGED() {
+		static_assert(field_signatures[jField<F>("AFFILIATION_CHANGED")] != -1);
+		return sat<F>("AFFILIATION_CHANGED");
+	}
+
+	template<typename F = ::jint>
+	static auto CA_COMPROMISE() {
+		static_assert(field_signatures[jField<F>("CA_COMPROMISE")] != -1);
+		return sat<F>("CA_COMPROMISE");
+	}
+
+	template<typename F = ::jint>
+	static auto CERTIFICATE_HOLD() {
+		static_assert(field_signatures[jField<F>("CERTIFICATE_HOLD")] != -1);
+		return sat<F>("CERTIFICATE_HOLD");
+	}
+
+	template<typename F = ::jint>
+	static auto CESSATION_OF_OPERATION() {
+		static_assert(field_signatures[jField<F>("CESSATION_OF_OPERATION")] != -1);
+		return sat<F>("CESSATION_OF_OPERATION");
+	}
+
+	template<typename F = ::jint>
+	static auto KEY_COMPROMISE() {
+		static_assert(field_signatures[jField<F>("KEY_COMPROMISE")] != -1);
+		return sat<F>("KEY_COMPROMISE");
+	}
+
+	template<typename F = ::jint>
+	static auto PRIVILEGE_WITHDRAWN() {
+		static_assert(field_signatures[jField<F>("PRIVILEGE_WITHDRAWN")] != -1);
+		return sat<F>("PRIVILEGE_WITHDRAWN");
+	}
+
+	template<typename F = ::jint>
+	static auto SUPERSEDED() {
+		static_assert(field_signatures[jField<F>("SUPERSEDED")] != -1);
+		return sat<F>("SUPERSEDED");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::security::util::DerValue)>(), //
+		jConstructor<::jvoid(::sun::security::x509::GeneralNames, ::jboolean *, ::sun::security::x509::GeneralNames)>(), //
+		jConstructor<::jvoid(::sun::security::x509::RDN, ::jboolean *, ::sun::security::x509::GeneralNames)>(), //
+		jMethod<::jvoid(::sun::security::util::DerOutputStream)>("encode"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::sun::security::x509::GeneralNames()>("getCRLIssuer"), //
+		jMethod<::sun::security::x509::GeneralNames()>("getFullName"), //
+		jMethod<::jboolean *()>("getReasonFlags"), //
+		jMethod<::sun::security::x509::RDN()>("getRelativeName"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto encode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encode")] != -1);
+		return call<R>("encode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::GeneralNames, typename... Args>
+	auto getCRLIssuer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCRLIssuer")] != -1);
+		return call<R>("getCRLIssuer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::GeneralNames, typename... Args>
+	auto getFullName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFullName")] != -1);
+		return call<R>("getFullName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean *, typename... Args>
+	auto getReasonFlags(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getReasonFlags")] != -1);
+		return call<R>("getReasonFlags", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::RDN, typename... Args>
+	auto getRelativeName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRelativeName")] != -1);
+		return call<R>("getRelativeName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

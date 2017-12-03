@@ -1,0 +1,35 @@
+#ifndef sun_reflect_generics_repository_FieldRepository_HPP
+#define sun_reflect_generics_repository_FieldRepository_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::reflect::generics::repository::FieldRepository : public jObject<::sun::reflect::generics::repository::FieldRepository, ::sun::reflect::generics::repository::AbstractRepository> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_reflect_generics_repository / "FieldRepository";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::reflect::Type()>("getGenericType"), //
+		jMethod<::sun::reflect::generics::repository::FieldRepository(::java::lang::String, ::sun::reflect::generics::factory::GenericsFactory)>("make"), //
+	};
+
+	template<typename R = ::java::lang::reflect::Type, typename... Args>
+	auto getGenericType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGenericType")] != -1);
+		return call<R>("getGenericType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::reflect::generics::repository::FieldRepository, typename... Args>
+	static auto make(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("make")] != -1);
+		return scall<R>("make", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

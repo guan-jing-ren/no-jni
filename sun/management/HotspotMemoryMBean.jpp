@@ -1,0 +1,28 @@
+#ifndef sun_management_HotspotMemoryMBean_HPP
+#define sun_management_HotspotMemoryMBean_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::management::HotspotMemoryMBean : public jObject<::sun::management::HotspotMemoryMBean, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_management / "HotspotMemoryMBean";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::List()>("getInternalMemoryCounters"), //
+	};
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getInternalMemoryCounters(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInternalMemoryCounters")] != -1);
+		return call<R>("getInternalMemoryCounters", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

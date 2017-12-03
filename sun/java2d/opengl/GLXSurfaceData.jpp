@@ -1,0 +1,44 @@
+#ifndef sun_java2d_opengl_GLXSurfaceData_HPP
+#define sun_java2d_opengl_GLXSurfaceData_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::opengl::GLXSurfaceData : public jObject<::sun::java2d::opengl::GLXSurfaceData, ::sun::java2d::opengl::OGLSurfaceData> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_opengl / "GLXSurfaceData";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::java2d::opengl::GLXSurfaceData$GLXWindowSurfaceData(::sun::awt::X11ComponentPeer)>("createData"), //
+		jMethod<::sun::java2d::opengl::GLXSurfaceData$GLXOffScreenSurfaceData(::sun::awt::X11ComponentPeer, ::java::awt::Image, ::jint)>("createData"), //
+		jMethod<::sun::java2d::opengl::GLXSurfaceData$GLXOffScreenSurfaceData(::sun::java2d::opengl::GLXGraphicsConfig, ::jint, ::jint, ::java::awt::image::ColorModel, ::java::awt::Image, ::jint)>("createData"), //
+		jMethod<::java::awt::GraphicsConfiguration()>("getDeviceConfiguration"), //
+		jMethod<::sun::java2d::opengl::GLXGraphicsConfig(::sun::awt::X11ComponentPeer)>("getGC"), //
+	};
+
+	template<typename R = ::sun::java2d::opengl::GLXSurfaceData$GLXWindowSurfaceData, typename... Args>
+	static auto createData(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createData")] != -1);
+		return scall<R>("createData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::GraphicsConfiguration, typename... Args>
+	auto getDeviceConfiguration(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDeviceConfiguration")] != -1);
+		return call<R>("getDeviceConfiguration", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::opengl::GLXGraphicsConfig, typename... Args>
+	static auto getGC(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGC")] != -1);
+		return scall<R>("getGC", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

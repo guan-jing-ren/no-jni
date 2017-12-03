@@ -1,0 +1,35 @@
+#ifndef sun_management_counter_perf_PerfLongCounter_HPP
+#define sun_management_counter_perf_PerfLongCounter_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::management::counter::perf::PerfLongCounter : public jObject<::sun::management::counter::perf::PerfLongCounter, ::sun::management::counter::AbstractCounter> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_management_counter_perf / "PerfLongCounter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object()>("getValue"), //
+		jMethod<::jlong()>("longValue"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getValue")] != -1);
+		return call<R>("getValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto longValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("longValue")] != -1);
+		return call<R>("longValue", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

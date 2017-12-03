@@ -1,0 +1,46 @@
+#ifndef com_sun_beans_TypeResolver_HPP
+#define com_sun_beans_TypeResolver_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::com::sun::beans::TypeResolver : public jObject<::com::sun::beans::TypeResolver, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_beans / "TypeResolver";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::Class(::java::lang::reflect::Type)>("erase"), //
+		jMethod<::java::lang::Class *(::java::lang::reflect::Type *)>("erase"), //
+		jMethod<::java::lang::reflect::Type(::java::lang::reflect::Type, ::java::lang::reflect::Type)>("resolve"), //
+		jMethod<::java::lang::reflect::Type *(::java::lang::reflect::Type, ::java::lang::reflect::Type *)>("resolve"), //
+		jMethod<::java::lang::reflect::Type(::java::lang::Class, ::java::lang::reflect::Type)>("resolveInClass"), //
+		jMethod<::java::lang::reflect::Type *(::java::lang::Class, ::java::lang::reflect::Type *)>("resolveInClass"), //
+	};
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	static auto erase(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("erase")] != -1);
+		return scall<R>("erase", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Type, typename... Args>
+	static auto resolve(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("resolve")] != -1);
+		return scall<R>("resolve", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::reflect::Type, typename... Args>
+	static auto resolveInClass(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("resolveInClass")] != -1);
+		return scall<R>("resolveInClass", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

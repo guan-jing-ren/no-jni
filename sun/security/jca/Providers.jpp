@@ -1,0 +1,84 @@
+#ifndef sun_security_jca_Providers_HPP
+#define sun_security_jca_Providers_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::jca::Providers : public jObject<::sun::security::jca::Providers, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_jca / "Providers";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::security::jca::ProviderList(::sun::security::jca::ProviderList)>("beginThreadProviderList"), //
+		jMethod<::jvoid(::sun::security::jca::ProviderList)>("endThreadProviderList"), //
+		jMethod<::sun::security::jca::ProviderList()>("getFullProviderList"), //
+		jMethod<::sun::security::jca::ProviderList()>("getProviderList"), //
+		jMethod<::java::security::Provider()>("getSunProvider"), //
+		jMethod<::sun::security::jca::ProviderList()>("getThreadProviderList"), //
+		jMethod<::jvoid(::sun::security::jca::ProviderList)>("setProviderList"), //
+		jMethod<::java::lang::Object()>("startJarVerification"), //
+		jMethod<::jvoid(::java::lang::Object)>("stopJarVerification"), //
+	};
+
+	template<typename R = ::sun::security::jca::ProviderList, typename... Args>
+	static auto beginThreadProviderList(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("beginThreadProviderList")] != -1);
+		return scall<R>("beginThreadProviderList", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto endThreadProviderList(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("endThreadProviderList")] != -1);
+		return scall<R>("endThreadProviderList", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::jca::ProviderList, typename... Args>
+	static auto getFullProviderList(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFullProviderList")] != -1);
+		return scall<R>("getFullProviderList", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::jca::ProviderList, typename... Args>
+	static auto getProviderList(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getProviderList")] != -1);
+		return scall<R>("getProviderList", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Provider, typename... Args>
+	static auto getSunProvider(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSunProvider")] != -1);
+		return scall<R>("getSunProvider", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::jca::ProviderList, typename... Args>
+	static auto getThreadProviderList(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getThreadProviderList")] != -1);
+		return scall<R>("getThreadProviderList", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto setProviderList(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setProviderList")] != -1);
+		return scall<R>("setProviderList", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto startJarVerification(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("startJarVerification")] != -1);
+		return scall<R>("startJarVerification", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto stopJarVerification(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("stopJarVerification")] != -1);
+		return scall<R>("stopJarVerification", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

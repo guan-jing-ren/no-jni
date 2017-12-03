@@ -1,0 +1,49 @@
+#ifndef com_oracle_net_Sdp_HPP
+#define com_oracle_net_Sdp_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::com::oracle::net::Sdp : public jObject<::com::oracle::net::Sdp, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_oracle_net / "Sdp";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::net::ServerSocket()>("openServerSocket"), //
+		jMethod<::java::nio::channels::ServerSocketChannel()>("openServerSocketChannel"), //
+		jMethod<::java::net::Socket()>("openSocket"), //
+		jMethod<::java::nio::channels::SocketChannel()>("openSocketChannel"), //
+	};
+
+	template<typename R = ::java::net::ServerSocket, typename... Args>
+	static auto openServerSocket(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("openServerSocket")] != -1);
+		return scall<R>("openServerSocket", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::ServerSocketChannel, typename... Args>
+	static auto openServerSocketChannel(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("openServerSocketChannel")] != -1);
+		return scall<R>("openServerSocketChannel", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::Socket, typename... Args>
+	static auto openSocket(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("openSocket")] != -1);
+		return scall<R>("openSocket", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::SocketChannel, typename... Args>
+	static auto openSocketChannel(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("openSocketChannel")] != -1);
+		return scall<R>("openSocketChannel", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

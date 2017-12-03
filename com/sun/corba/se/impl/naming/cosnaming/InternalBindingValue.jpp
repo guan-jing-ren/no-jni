@@ -1,0 +1,43 @@
+#ifndef com_sun_corba_se_impl_naming_cosnaming_InternalBindingValue_HPP
+#define com_sun_corba_se_impl_naming_cosnaming_InternalBindingValue_HPP
+
+#include "../../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::impl::naming::cosnaming::InternalBindingValue : public jObject<::com::sun::corba::se::impl::naming::cosnaming::InternalBindingValue, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_impl_naming_cosnaming / "InternalBindingValue";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("strObjectRef"), //
+		jField<::org::omg::CosNaming::Binding>("theBinding"), //
+		jField<::org::omg::CORBA::Object>("theObjectRef"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	auto strObjectRef() const {
+		static_assert(field_signatures[jField<F>("strObjectRef")] != -1);
+		return at<F>("strObjectRef");
+	}
+
+	template<typename F = ::org::omg::CosNaming::Binding>
+	auto theBinding() const {
+		static_assert(field_signatures[jField<F>("theBinding")] != -1);
+		return at<F>("theBinding");
+	}
+
+	template<typename F = ::org::omg::CORBA::Object>
+	auto theObjectRef() const {
+		static_assert(field_signatures[jField<F>("theObjectRef")] != -1);
+		return at<F>("theObjectRef");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::org::omg::CosNaming::Binding, ::java::lang::String)>(), //
+	};
+
+};
+
+#endif

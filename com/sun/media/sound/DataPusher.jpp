@@ -1,0 +1,45 @@
+#ifndef com_sun_media_sound_DataPusher_HPP
+#define com_sun_media_sound_DataPusher_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::media::sound::DataPusher : public jObject<::com::sun::media::sound::DataPusher, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_media_sound / "DataPusher";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::sound::sampled::SourceDataLine, ::javax::sound::sampled::AudioFormat, ::jbyte *, ::jint)>(), //
+		jConstructor<::jvoid(::javax::sound::sampled::SourceDataLine, ::javax::sound::sampled::AudioInputStream)>(), //
+		jMethod<::jvoid()>("run"), //
+		jMethod<::jvoid()>("start"), //
+		jMethod<::jvoid(::jboolean)>("start"), //
+		jMethod<::jvoid()>("stop"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto run(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("run")] != -1);
+		return call<R>("run", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto start(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("start")] != -1);
+		return call<R>("start", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto stop(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("stop")] != -1);
+		return call<R>("stop", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

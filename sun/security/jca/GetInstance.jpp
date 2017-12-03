@@ -1,0 +1,60 @@
+#ifndef sun_security_jca_GetInstance_HPP
+#define sun_security_jca_GetInstance_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::jca::GetInstance : public jObject<::sun::security::jca::GetInstance, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_jca / "GetInstance";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::security::Provider$Service, ::java::lang::Class, ::java::lang::Class)>("checkSuperClass"), //
+		jMethod<::sun::security::jca::GetInstance$Instance(::java::lang::String, ::java::lang::Class, ::java::lang::String)>("getInstance"), //
+		jMethod<::sun::security::jca::GetInstance$Instance(::java::lang::String, ::java::lang::Class, ::java::lang::String, ::java::lang::Object)>("getInstance"), //
+		jMethod<::sun::security::jca::GetInstance$Instance(::java::lang::String, ::java::lang::Class, ::java::lang::String, ::java::lang::Object, ::java::lang::String)>("getInstance"), //
+		jMethod<::sun::security::jca::GetInstance$Instance(::java::lang::String, ::java::lang::Class, ::java::lang::String, ::java::lang::Object, ::java::security::Provider)>("getInstance"), //
+		jMethod<::sun::security::jca::GetInstance$Instance(::java::lang::String, ::java::lang::Class, ::java::lang::String, ::java::lang::String)>("getInstance"), //
+		jMethod<::sun::security::jca::GetInstance$Instance(::java::lang::String, ::java::lang::Class, ::java::lang::String, ::java::security::Provider)>("getInstance"), //
+		jMethod<::sun::security::jca::GetInstance$Instance(::java::security::Provider$Service, ::java::lang::Class)>("getInstance"), //
+		jMethod<::sun::security::jca::GetInstance$Instance(::java::security::Provider$Service, ::java::lang::Class, ::java::lang::Object)>("getInstance"), //
+		jMethod<::java::security::Provider$Service(::java::lang::String, ::java::lang::String)>("getService"), //
+		jMethod<::java::security::Provider$Service(::java::lang::String, ::java::lang::String, ::java::lang::String)>("getService"), //
+		jMethod<::java::security::Provider$Service(::java::lang::String, ::java::lang::String, ::java::security::Provider)>("getService"), //
+		jMethod<::java::util::List(::java::lang::String, ::java::lang::String)>("getServices"), //
+		jMethod<::java::util::List(::java::lang::String, ::java::util::List)>("getServices"), //
+		jMethod<::java::util::List(::java::util::List)>("getServices"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto checkSuperClass(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkSuperClass")] != -1);
+		return scall<R>("checkSuperClass", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::jca::GetInstance$Instance, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Provider$Service, typename... Args>
+	static auto getService(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getService")] != -1);
+		return scall<R>("getService", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	static auto getServices(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getServices")] != -1);
+		return scall<R>("getServices", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

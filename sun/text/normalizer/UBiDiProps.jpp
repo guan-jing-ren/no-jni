@@ -1,0 +1,43 @@
+#ifndef sun_text_normalizer_UBiDiProps_HPP
+#define sun_text_normalizer_UBiDiProps_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::text::normalizer::UBiDiProps : public jObject<::sun::text::normalizer::UBiDiProps, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_text_normalizer / "UBiDiProps";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jint(::jint)>("getClass"), //
+		jMethod<::sun::text::normalizer::UBiDiProps()>("getDummy"), //
+		jMethod<::sun::text::normalizer::UBiDiProps()>("getSingleton"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClass")] != -1);
+		return call<R>("getClass", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::text::normalizer::UBiDiProps, typename... Args>
+	static auto getDummy(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDummy")] != -1);
+		return scall<R>("getDummy", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::text::normalizer::UBiDiProps, typename... Args>
+	static auto getSingleton(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSingleton")] != -1);
+		return scall<R>("getSingleton", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,91 @@
+#ifndef sun_awt_KeyboardFocusManagerPeerImpl_HPP
+#define sun_awt_KeyboardFocusManagerPeerImpl_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::KeyboardFocusManagerPeerImpl : public jObject<::sun::awt::KeyboardFocusManagerPeerImpl, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "KeyboardFocusManagerPeerImpl";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("SNFH_FAILURE"), //
+		jField<::jint>("SNFH_SUCCESS_HANDLED"), //
+		jField<::jint>("SNFH_SUCCESS_PROCEED"), //
+	};
+
+	template<typename F = ::jint>
+	static auto SNFH_FAILURE() {
+		static_assert(field_signatures[jField<F>("SNFH_FAILURE")] != -1);
+		return sat<F>("SNFH_FAILURE");
+	}
+
+	template<typename F = ::jint>
+	static auto SNFH_SUCCESS_HANDLED() {
+		static_assert(field_signatures[jField<F>("SNFH_SUCCESS_HANDLED")] != -1);
+		return sat<F>("SNFH_SUCCESS_HANDLED");
+	}
+
+	template<typename F = ::jint>
+	static auto SNFH_SUCCESS_PROCEED() {
+		static_assert(field_signatures[jField<F>("SNFH_SUCCESS_PROCEED")] != -1);
+		return sat<F>("SNFH_SUCCESS_PROCEED");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::awt::Window)>("clearGlobalFocusOwner"), //
+		jMethod<::jboolean(::java::awt::Component, ::java::awt::Component, ::jboolean, ::jboolean, ::jlong, ::sun::awt::CausedFocusEvent$Cause, ::java::awt::Component)>("deliverFocus"), //
+		jMethod<::jboolean(::java::awt::Component, ::java::awt::Component, ::jboolean, ::jboolean, ::jlong)>("processSynchronousLightweightTransfer"), //
+		jMethod<::jvoid(::java::awt::Component)>("removeLastFocusRequest"), //
+		jMethod<::jboolean(::java::awt::Component, ::sun::awt::CausedFocusEvent$Cause)>("requestFocusFor"), //
+		jMethod<::jboolean(::java::awt::Component)>("shouldFocusOnClick"), //
+		jMethod<::jint(::java::awt::Component, ::java::awt::Component, ::jboolean, ::jboolean, ::jlong, ::sun::awt::CausedFocusEvent$Cause)>("shouldNativelyFocusHeavyweight"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto clearGlobalFocusOwner(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clearGlobalFocusOwner")] != -1);
+		return call<R>("clearGlobalFocusOwner", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto deliverFocus(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("deliverFocus")] != -1);
+		return scall<R>("deliverFocus", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto processSynchronousLightweightTransfer(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("processSynchronousLightweightTransfer")] != -1);
+		return scall<R>("processSynchronousLightweightTransfer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto removeLastFocusRequest(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeLastFocusRequest")] != -1);
+		return scall<R>("removeLastFocusRequest", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto requestFocusFor(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("requestFocusFor")] != -1);
+		return scall<R>("requestFocusFor", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto shouldFocusOnClick(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("shouldFocusOnClick")] != -1);
+		return scall<R>("shouldFocusOnClick", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto shouldNativelyFocusHeavyweight(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("shouldNativelyFocusHeavyweight")] != -1);
+		return scall<R>("shouldNativelyFocusHeavyweight", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

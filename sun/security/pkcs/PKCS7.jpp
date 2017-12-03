@@ -1,0 +1,113 @@
+#ifndef sun_security_pkcs_PKCS7_HPP
+#define sun_security_pkcs_PKCS7_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::pkcs::PKCS7 : public jObject<::sun::security::pkcs::PKCS7, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_pkcs / "PKCS7";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::InputStream)>(), //
+		jConstructor<::jvoid(::sun::security::util::DerInputStream)>(), //
+		jConstructor<::jvoid(::jbyte *)>(), //
+		jConstructor<::jvoid(::sun::security::x509::AlgorithmId *, ::sun::security::pkcs::ContentInfo, ::java::security::cert::X509Certificate *, ::java::security::cert::X509CRL *, ::sun::security::pkcs::SignerInfo *)>(), //
+		jConstructor<::jvoid(::sun::security::x509::AlgorithmId *, ::sun::security::pkcs::ContentInfo, ::java::security::cert::X509Certificate *, ::sun::security::pkcs::SignerInfo *)>(), //
+		jMethod<::jvoid(::java::io::OutputStream)>("encodeSignedData"), //
+		jMethod<::jvoid(::sun::security::util::DerOutputStream)>("encodeSignedData"), //
+		jMethod<::jbyte *(::jbyte *, ::java::security::cert::X509Certificate *, ::jbyte *, ::java::lang::String, ::java::net::URI, ::java::lang::String, ::java::lang::String)>("generateSignedData"), //
+		jMethod<::java::security::cert::X509CRL *()>("getCRLs"), //
+		jMethod<::java::security::cert::X509Certificate(::java::math::BigInteger, ::sun::security::x509::X500Name)>("getCertificate"), //
+		jMethod<::java::security::cert::X509Certificate *()>("getCertificates"), //
+		jMethod<::sun::security::pkcs::ContentInfo()>("getContentInfo"), //
+		jMethod<::sun::security::x509::AlgorithmId *()>("getDigestAlgorithmIds"), //
+		jMethod<::sun::security::pkcs::SignerInfo *()>("getSignerInfos"), //
+		jMethod<::java::math::BigInteger()>("getVersion"), //
+		jMethod<::jboolean()>("isOldStyle"), //
+		jMethod<::java::lang::String()>("toString"), //
+		jMethod<::sun::security::pkcs::SignerInfo *()>("verify"), //
+		jMethod<::sun::security::pkcs::SignerInfo(::sun::security::pkcs::SignerInfo, ::jbyte *)>("verify"), //
+		jMethod<::sun::security::pkcs::SignerInfo *(::jbyte *)>("verify"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto encodeSignedData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encodeSignedData")] != -1);
+		return call<R>("encodeSignedData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	static auto generateSignedData(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("generateSignedData")] != -1);
+		return scall<R>("generateSignedData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::X509CRL *, typename... Args>
+	auto getCRLs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCRLs")] != -1);
+		return call<R>("getCRLs", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::X509Certificate, typename... Args>
+	auto getCertificate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCertificate")] != -1);
+		return call<R>("getCertificate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::X509Certificate *, typename... Args>
+	auto getCertificates(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCertificates")] != -1);
+		return call<R>("getCertificates", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::pkcs::ContentInfo, typename... Args>
+	auto getContentInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getContentInfo")] != -1);
+		return call<R>("getContentInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::AlgorithmId *, typename... Args>
+	auto getDigestAlgorithmIds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDigestAlgorithmIds")] != -1);
+		return call<R>("getDigestAlgorithmIds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::pkcs::SignerInfo *, typename... Args>
+	auto getSignerInfos(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSignerInfos")] != -1);
+		return call<R>("getSignerInfos", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getVersion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getVersion")] != -1);
+		return call<R>("getVersion", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isOldStyle(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isOldStyle")] != -1);
+		return call<R>("isOldStyle", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::pkcs::SignerInfo *, typename... Args>
+	auto verify(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("verify")] != -1);
+		return call<R>("verify", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

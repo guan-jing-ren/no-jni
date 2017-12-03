@@ -1,0 +1,294 @@
+#ifndef com_sun_corba_se_spi_transport_CorbaConnection_HPP
+#define com_sun_corba_se_spi_transport_CorbaConnection_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::spi::transport::CorbaConnection : public jObject<::com::sun::corba::se::spi::transport::CorbaConnection, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_spi_transport / "CorbaConnection";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("ABORT"), //
+		jField<::jint>("CLOSE_RECVD"), //
+		jField<::jint>("CLOSE_SENT"), //
+		jField<::jint>("ESTABLISHED"), //
+		jField<::jint>("OPENING"), //
+	};
+
+	template<typename F = ::jint>
+	static auto ABORT() {
+		static_assert(field_signatures[jField<F>("ABORT")] != -1);
+		return sat<F>("ABORT");
+	}
+
+	template<typename F = ::jint>
+	static auto CLOSE_RECVD() {
+		static_assert(field_signatures[jField<F>("CLOSE_RECVD")] != -1);
+		return sat<F>("CLOSE_RECVD");
+	}
+
+	template<typename F = ::jint>
+	static auto CLOSE_SENT() {
+		static_assert(field_signatures[jField<F>("CLOSE_SENT")] != -1);
+		return sat<F>("CLOSE_SENT");
+	}
+
+	template<typename F = ::jint>
+	static auto ESTABLISHED() {
+		static_assert(field_signatures[jField<F>("ESTABLISHED")] != -1);
+		return sat<F>("ESTABLISHED");
+	}
+
+	template<typename F = ::jint>
+	static auto OPENING() {
+		static_assert(field_signatures[jField<F>("OPENING")] != -1);
+		return sat<F>("OPENING");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::com::sun::corba::se::pept::protocol::MessageMediator()>("clientReply_1_1_Get"), //
+		jMethod<::jvoid(::com::sun::corba::se::pept::protocol::MessageMediator)>("clientReply_1_1_Put"), //
+		jMethod<::jvoid()>("clientReply_1_1_Remove"), //
+		jMethod<::com::sun::corba::se::pept::protocol::MessageMediator(::jint)>("clientRequestMapGet"), //
+		jMethod<::jvoid()>("closeConnectionResources"), //
+		jMethod<::jvoid(::java::lang::String)>("dprint"), //
+		jMethod<::com::sun::corba::se::spi::orb::ORB()>("getBroker"), //
+		jMethod<::com::sun::org::omg::SendingContext::CodeBase()>("getCodeBase"), //
+		jMethod<::com::sun::corba::se::spi::ior::IOR()>("getCodeBaseIOR"), //
+		jMethod<::com::sun::corba::se::impl::encoding::CodeSetComponentInfo$CodeSetContext()>("getCodeSetContext"), //
+		jMethod<::jint()>("getNextRequestId"), //
+		jMethod<::com::sun::corba::se::pept::transport::ResponseWaitingRoom()>("getResponseWaitingRoom"), //
+		jMethod<::java::nio::channels::SocketChannel()>("getSocketChannel"), //
+		jMethod<::jboolean()>("isPostInitialContexts"), //
+		jMethod<::jvoid(::org::omg::CORBA::SystemException, ::jboolean, ::jboolean)>("purgeCalls"), //
+		jMethod<::java::nio::ByteBuffer(::jint, ::jint, ::jint, ::jlong)>("read"), //
+		jMethod<::java::nio::ByteBuffer(::java::nio::ByteBuffer, ::jint, ::jint, ::jlong)>("read"), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::ior::iiop::GIOPVersion, ::jint)>("sendCancelRequest"), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::ior::iiop::GIOPVersion, ::jint)>("sendCancelRequestWithLock"), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::ior::iiop::GIOPVersion)>("sendCloseConnection"), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::ior::iiop::GIOPVersion)>("sendMessageError"), //
+		jMethod<::com::sun::corba::se::spi::protocol::CorbaMessageMediator(::jint)>("serverRequestMapGet"), //
+		jMethod<::jvoid(::jint, ::com::sun::corba::se::spi::protocol::CorbaMessageMediator)>("serverRequestMapPut"), //
+		jMethod<::jvoid(::jint)>("serverRequestMapRemove"), //
+		jMethod<::jvoid()>("serverRequestProcessingBegins"), //
+		jMethod<::jvoid()>("serverRequestProcessingEnds"), //
+		jMethod<::com::sun::corba::se::pept::protocol::MessageMediator()>("serverRequest_1_1_Get"), //
+		jMethod<::jvoid(::com::sun::corba::se::pept::protocol::MessageMediator)>("serverRequest_1_1_Put"), //
+		jMethod<::jvoid()>("serverRequest_1_1_Remove"), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::ior::IOR)>("setCodeBaseIOR"), //
+		jMethod<::jvoid(::com::sun::corba::se::impl::encoding::CodeSetComponentInfo$CodeSetContext)>("setCodeSetContext"), //
+		jMethod<::jvoid()>("setPostInitialContexts"), //
+		jMethod<::jboolean()>("shouldReadGiopHeaderOnly"), //
+		jMethod<::jboolean()>("shouldUseDirectByteBuffers"), //
+		jMethod<::jvoid(::java::nio::ByteBuffer)>("write"), //
+	};
+
+	template<typename R = ::com::sun::corba::se::pept::protocol::MessageMediator, typename... Args>
+	auto clientReply_1_1_Get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clientReply_1_1_Get")] != -1);
+		return call<R>("clientReply_1_1_Get", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto clientReply_1_1_Put(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clientReply_1_1_Put")] != -1);
+		return call<R>("clientReply_1_1_Put", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto clientReply_1_1_Remove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clientReply_1_1_Remove")] != -1);
+		return call<R>("clientReply_1_1_Remove", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::pept::protocol::MessageMediator, typename... Args>
+	auto clientRequestMapGet(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clientRequestMapGet")] != -1);
+		return call<R>("clientRequestMapGet", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto closeConnectionResources(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("closeConnectionResources")] != -1);
+		return call<R>("closeConnectionResources", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dprint(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dprint")] != -1);
+		return call<R>("dprint", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::orb::ORB, typename... Args>
+	auto getBroker(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBroker")] != -1);
+		return call<R>("getBroker", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::org::omg::SendingContext::CodeBase, typename... Args>
+	auto getCodeBase(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCodeBase")] != -1);
+		return call<R>("getCodeBase", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::ior::IOR, typename... Args>
+	auto getCodeBaseIOR(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCodeBaseIOR")] != -1);
+		return call<R>("getCodeBaseIOR", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::encoding::CodeSetComponentInfo$CodeSetContext, typename... Args>
+	auto getCodeSetContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCodeSetContext")] != -1);
+		return call<R>("getCodeSetContext", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getNextRequestId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNextRequestId")] != -1);
+		return call<R>("getNextRequestId", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::pept::transport::ResponseWaitingRoom, typename... Args>
+	auto getResponseWaitingRoom(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getResponseWaitingRoom")] != -1);
+		return call<R>("getResponseWaitingRoom", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::channels::SocketChannel, typename... Args>
+	auto getSocketChannel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSocketChannel")] != -1);
+		return call<R>("getSocketChannel", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isPostInitialContexts(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isPostInitialContexts")] != -1);
+		return call<R>("isPostInitialContexts", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto purgeCalls(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("purgeCalls")] != -1);
+		return call<R>("purgeCalls", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::ByteBuffer, typename... Args>
+	auto read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto sendCancelRequest(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("sendCancelRequest")] != -1);
+		return call<R>("sendCancelRequest", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto sendCancelRequestWithLock(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("sendCancelRequestWithLock")] != -1);
+		return call<R>("sendCancelRequestWithLock", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto sendCloseConnection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("sendCloseConnection")] != -1);
+		return call<R>("sendCloseConnection", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto sendMessageError(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("sendMessageError")] != -1);
+		return call<R>("sendMessageError", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::protocol::CorbaMessageMediator, typename... Args>
+	auto serverRequestMapGet(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("serverRequestMapGet")] != -1);
+		return call<R>("serverRequestMapGet", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto serverRequestMapPut(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("serverRequestMapPut")] != -1);
+		return call<R>("serverRequestMapPut", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto serverRequestMapRemove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("serverRequestMapRemove")] != -1);
+		return call<R>("serverRequestMapRemove", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto serverRequestProcessingBegins(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("serverRequestProcessingBegins")] != -1);
+		return call<R>("serverRequestProcessingBegins", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto serverRequestProcessingEnds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("serverRequestProcessingEnds")] != -1);
+		return call<R>("serverRequestProcessingEnds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::pept::protocol::MessageMediator, typename... Args>
+	auto serverRequest_1_1_Get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("serverRequest_1_1_Get")] != -1);
+		return call<R>("serverRequest_1_1_Get", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto serverRequest_1_1_Put(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("serverRequest_1_1_Put")] != -1);
+		return call<R>("serverRequest_1_1_Put", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto serverRequest_1_1_Remove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("serverRequest_1_1_Remove")] != -1);
+		return call<R>("serverRequest_1_1_Remove", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setCodeBaseIOR(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setCodeBaseIOR")] != -1);
+		return call<R>("setCodeBaseIOR", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setCodeSetContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setCodeSetContext")] != -1);
+		return call<R>("setCodeSetContext", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setPostInitialContexts(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setPostInitialContexts")] != -1);
+		return call<R>("setPostInitialContexts", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto shouldReadGiopHeaderOnly(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("shouldReadGiopHeaderOnly")] != -1);
+		return call<R>("shouldReadGiopHeaderOnly", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto shouldUseDirectByteBuffers(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("shouldUseDirectByteBuffers")] != -1);
+		return call<R>("shouldUseDirectByteBuffers", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

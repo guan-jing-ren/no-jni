@@ -1,0 +1,42 @@
+#ifndef sun_misc_MetaIndex_HPP
+#define sun_misc_MetaIndex_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::misc::MetaIndex : public jObject<::sun::misc::MetaIndex, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_misc / "MetaIndex";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::misc::MetaIndex(::java::io::File)>("forJar"), //
+		jMethod<::jboolean(::java::lang::String)>("mayContain"), //
+		jMethod<::jvoid(::java::io::File)>("registerDirectory"), //
+	};
+
+	template<typename R = ::sun::misc::MetaIndex, typename... Args>
+	static auto forJar(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("forJar")] != -1);
+		return scall<R>("forJar", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto mayContain(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("mayContain")] != -1);
+		return call<R>("mayContain", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto registerDirectory(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("registerDirectory")] != -1);
+		return scall<R>("registerDirectory", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

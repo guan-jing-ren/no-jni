@@ -1,0 +1,252 @@
+#ifndef sun_applet_AppletPanel_HPP
+#define sun_applet_AppletPanel_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::applet::AppletPanel : public jObject<::sun::applet::AppletPanel, ::java::awt::Panel> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_applet / "AppletPanel";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("APPLET_DESTROY"), //
+		jField<::jint>("APPLET_DISPOSE"), //
+		jField<::jint>("APPLET_ERROR"), //
+		jField<::jint>("APPLET_INIT"), //
+		jField<::jint>("APPLET_LOAD"), //
+		jField<::jint>("APPLET_LOADING"), //
+		jField<::jint>("APPLET_LOADING_COMPLETED"), //
+		jField<::jint>("APPLET_QUIT"), //
+		jField<::jint>("APPLET_RESIZE"), //
+		jField<::jint>("APPLET_START"), //
+		jField<::jint>("APPLET_STOP"), //
+	};
+
+	template<typename F = ::jint>
+	static auto APPLET_DESTROY() {
+		static_assert(field_signatures[jField<F>("APPLET_DESTROY")] != -1);
+		return sat<F>("APPLET_DESTROY");
+	}
+
+	template<typename F = ::jint>
+	static auto APPLET_DISPOSE() {
+		static_assert(field_signatures[jField<F>("APPLET_DISPOSE")] != -1);
+		return sat<F>("APPLET_DISPOSE");
+	}
+
+	template<typename F = ::jint>
+	static auto APPLET_ERROR() {
+		static_assert(field_signatures[jField<F>("APPLET_ERROR")] != -1);
+		return sat<F>("APPLET_ERROR");
+	}
+
+	template<typename F = ::jint>
+	static auto APPLET_INIT() {
+		static_assert(field_signatures[jField<F>("APPLET_INIT")] != -1);
+		return sat<F>("APPLET_INIT");
+	}
+
+	template<typename F = ::jint>
+	static auto APPLET_LOAD() {
+		static_assert(field_signatures[jField<F>("APPLET_LOAD")] != -1);
+		return sat<F>("APPLET_LOAD");
+	}
+
+	template<typename F = ::jint>
+	static auto APPLET_LOADING() {
+		static_assert(field_signatures[jField<F>("APPLET_LOADING")] != -1);
+		return sat<F>("APPLET_LOADING");
+	}
+
+	template<typename F = ::jint>
+	static auto APPLET_LOADING_COMPLETED() {
+		static_assert(field_signatures[jField<F>("APPLET_LOADING_COMPLETED")] != -1);
+		return sat<F>("APPLET_LOADING_COMPLETED");
+	}
+
+	template<typename F = ::jint>
+	static auto APPLET_QUIT() {
+		static_assert(field_signatures[jField<F>("APPLET_QUIT")] != -1);
+		return sat<F>("APPLET_QUIT");
+	}
+
+	template<typename F = ::jint>
+	static auto APPLET_RESIZE() {
+		static_assert(field_signatures[jField<F>("APPLET_RESIZE")] != -1);
+		return sat<F>("APPLET_RESIZE");
+	}
+
+	template<typename F = ::jint>
+	static auto APPLET_START() {
+		static_assert(field_signatures[jField<F>("APPLET_START")] != -1);
+		return sat<F>("APPLET_START");
+	}
+
+	template<typename F = ::jint>
+	static auto APPLET_STOP() {
+		static_assert(field_signatures[jField<F>("APPLET_STOP")] != -1);
+		return sat<F>("APPLET_STOP");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::sun::applet::AppletListener)>("addAppletListener"), //
+		jMethod<::jvoid(::jint, ::jint)>("appletResize"), //
+		jMethod<::jvoid(::java::awt::Frame, ::sun::awt::AppContext)>("changeFrameAppContext"), //
+		jMethod<::jvoid(::jint, ::java::lang::Object)>("dispatchAppletEvent"), //
+		jMethod<::jvoid(::java::lang::String)>("flushClassLoader"), //
+		jMethod<::jvoid()>("flushClassLoaders"), //
+		jMethod<::java::applet::Applet()>("getApplet"), //
+		jMethod<::java::lang::Thread()>("getAppletHandlerThread"), //
+		jMethod<::jint()>("getAppletHeight"), //
+		jMethod<::jint()>("getAppletWidth"), //
+		jMethod<::java::lang::String()>("getClassLoaderCacheKey"), //
+		jMethod<::jint()>("getHeight"), //
+		jMethod<::jint()>("getWidth"), //
+		jMethod<::jboolean()>("hasInitialFocus"), //
+		jMethod<::jvoid()>("init"), //
+		jMethod<::jboolean()>("isActive"), //
+		jMethod<::java::awt::Dimension()>("minimumSize"), //
+		jMethod<::java::awt::Dimension()>("preferredSize"), //
+		jMethod<::jvoid(::sun::applet::AppletListener)>("removeAppletListener"), //
+		jMethod<::jvoid()>("run"), //
+		jMethod<::jvoid(::jint)>("sendEvent"), //
+		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint)>("setBounds"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addAppletListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addAppletListener")] != -1);
+		return call<R>("addAppletListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto appletResize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("appletResize")] != -1);
+		return call<R>("appletResize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto changeFrameAppContext(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("changeFrameAppContext")] != -1);
+		return scall<R>("changeFrameAppContext", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispatchAppletEvent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dispatchAppletEvent")] != -1);
+		return call<R>("dispatchAppletEvent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto flushClassLoader(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("flushClassLoader")] != -1);
+		return scall<R>("flushClassLoader", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto flushClassLoaders(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("flushClassLoaders")] != -1);
+		return scall<R>("flushClassLoaders", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::applet::Applet, typename... Args>
+	auto getApplet(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getApplet")] != -1);
+		return call<R>("getApplet", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Thread, typename... Args>
+	auto getAppletHandlerThread(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAppletHandlerThread")] != -1);
+		return call<R>("getAppletHandlerThread", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getAppletHeight(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAppletHeight")] != -1);
+		return call<R>("getAppletHeight", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getAppletWidth(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAppletWidth")] != -1);
+		return call<R>("getAppletWidth", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getClassLoaderCacheKey(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClassLoaderCacheKey")] != -1);
+		return call<R>("getClassLoaderCacheKey", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getHeight(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHeight")] != -1);
+		return call<R>("getHeight", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getWidth(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getWidth")] != -1);
+		return call<R>("getWidth", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasInitialFocus(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hasInitialFocus")] != -1);
+		return call<R>("hasInitialFocus", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto init(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("init")] != -1);
+		return call<R>("init", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isActive(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isActive")] != -1);
+		return call<R>("isActive", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Dimension, typename... Args>
+	auto minimumSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("minimumSize")] != -1);
+		return call<R>("minimumSize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Dimension, typename... Args>
+	auto preferredSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("preferredSize")] != -1);
+		return call<R>("preferredSize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeAppletListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeAppletListener")] != -1);
+		return call<R>("removeAppletListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto run(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("run")] != -1);
+		return call<R>("run", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto sendEvent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("sendEvent")] != -1);
+		return call<R>("sendEvent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setBounds")] != -1);
+		return call<R>("setBounds", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

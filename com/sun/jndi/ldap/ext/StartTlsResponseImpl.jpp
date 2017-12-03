@@ -1,0 +1,58 @@
+#ifndef com_sun_jndi_ldap_ext_StartTlsResponseImpl_HPP
+#define com_sun_jndi_ldap_ext_StartTlsResponseImpl_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::jndi::ldap::ext::StartTlsResponseImpl : public jObject<::com::sun::jndi::ldap::ext::StartTlsResponseImpl, ::javax::naming::ldap::StartTlsResponse> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_jndi_ldap_ext / "StartTlsResponseImpl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::javax::net::ssl::SSLSession()>("negotiate"), //
+		jMethod<::javax::net::ssl::SSLSession(::javax::net::ssl::SSLSocketFactory)>("negotiate"), //
+		jMethod<::jvoid(::com::sun::jndi::ldap::Connection, ::java::lang::String)>("setConnection"), //
+		jMethod<::jvoid(::java::lang::String *)>("setEnabledCipherSuites"), //
+		jMethod<::jvoid(::javax::net::ssl::HostnameVerifier)>("setHostnameVerifier"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::net::ssl::SSLSession, typename... Args>
+	auto negotiate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("negotiate")] != -1);
+		return call<R>("negotiate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setConnection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setConnection")] != -1);
+		return call<R>("setConnection", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setEnabledCipherSuites(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setEnabledCipherSuites")] != -1);
+		return call<R>("setEnabledCipherSuites", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setHostnameVerifier(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setHostnameVerifier")] != -1);
+		return call<R>("setHostnameVerifier", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

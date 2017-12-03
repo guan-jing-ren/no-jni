@@ -1,0 +1,28 @@
+#ifndef sun_awt_WindowIDProvider_HPP
+#define sun_awt_WindowIDProvider_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::WindowIDProvider : public jObject<::sun::awt::WindowIDProvider, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "WindowIDProvider";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jlong()>("getWindow"), //
+	};
+
+	template<typename R = ::jlong, typename... Args>
+	auto getWindow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getWindow")] != -1);
+		return call<R>("getWindow", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

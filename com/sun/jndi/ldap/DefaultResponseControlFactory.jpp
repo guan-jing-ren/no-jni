@@ -1,0 +1,29 @@
+#ifndef com_sun_jndi_ldap_DefaultResponseControlFactory_HPP
+#define com_sun_jndi_ldap_DefaultResponseControlFactory_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::jndi::ldap::DefaultResponseControlFactory : public jObject<::com::sun::jndi::ldap::DefaultResponseControlFactory, ::javax::naming::ldap::ControlFactory> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_jndi_ldap / "DefaultResponseControlFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::naming::ldap::Control(::javax::naming::ldap::Control)>("getControlInstance"), //
+	};
+
+	template<typename R = ::javax::naming::ldap::Control, typename... Args>
+	auto getControlInstance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getControlInstance")] != -1);
+		return call<R>("getControlInstance", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

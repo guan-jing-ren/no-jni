@@ -1,0 +1,77 @@
+#ifndef sun_nio_ch_sctp_SendFailed_HPP
+#define sun_nio_ch_sctp_SendFailed_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::nio::ch::sctp::SendFailed : public jObject<::sun::nio::ch::sctp::SendFailed, ::com::sun::nio::sctp::SendFailedNotification> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_nio_ch_sctp / "SendFailed";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::net::SocketAddress()>("address"), //
+		jMethod<::jint()>("assocId"), //
+		jMethod<::com::sun::nio::sctp::Association()>("association"), //
+		jMethod<::java::nio::ByteBuffer()>("buffer"), //
+		jMethod<::jint()>("errorCode"), //
+		jMethod<::jvoid(::com::sun::nio::sctp::Association)>("setAssociation"), //
+		jMethod<::jint()>("streamNumber"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::net::SocketAddress, typename... Args>
+	auto address(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("address")] != -1);
+		return call<R>("address", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto assocId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("assocId")] != -1);
+		return call<R>("assocId", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::nio::sctp::Association, typename... Args>
+	auto association(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("association")] != -1);
+		return call<R>("association", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::ByteBuffer, typename... Args>
+	auto buffer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("buffer")] != -1);
+		return call<R>("buffer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto errorCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("errorCode")] != -1);
+		return call<R>("errorCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setAssociation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setAssociation")] != -1);
+		return call<R>("setAssociation", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto streamNumber(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("streamNumber")] != -1);
+		return call<R>("streamNumber", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

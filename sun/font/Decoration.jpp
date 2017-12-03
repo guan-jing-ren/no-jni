@@ -1,0 +1,57 @@
+#ifndef sun_font_Decoration_HPP
+#define sun_font_Decoration_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::Decoration : public jObject<::sun::font::Decoration, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "Decoration";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::sun::font::Decoration$Label, ::java::awt::Graphics2D, ::jfloat, ::jfloat)>("drawTextAndDecorations"), //
+		jMethod<::java::awt::geom::Rectangle2D(::sun::font::Decoration$Label, ::jint)>("getCharVisualBounds"), //
+		jMethod<::sun::font::Decoration(::java::util::Map)>("getDecoration"), //
+		jMethod<::sun::font::Decoration(::sun::font::AttributeValues)>("getDecoration"), //
+		jMethod<::sun::font::Decoration()>("getPlainDecoration"), //
+		jMethod<::java::awt::geom::Rectangle2D(::sun::font::Decoration$Label)>("getVisualBounds"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto drawTextAndDecorations(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("drawTextAndDecorations")] != -1);
+		return call<R>("drawTextAndDecorations", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Rectangle2D, typename... Args>
+	auto getCharVisualBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCharVisualBounds")] != -1);
+		return call<R>("getCharVisualBounds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::Decoration, typename... Args>
+	static auto getDecoration(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDecoration")] != -1);
+		return scall<R>("getDecoration", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::Decoration, typename... Args>
+	static auto getPlainDecoration(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPlainDecoration")] != -1);
+		return scall<R>("getPlainDecoration", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Rectangle2D, typename... Args>
+	auto getVisualBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getVisualBounds")] != -1);
+		return call<R>("getVisualBounds", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

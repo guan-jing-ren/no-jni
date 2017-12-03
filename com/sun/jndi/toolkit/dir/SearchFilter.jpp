@@ -1,0 +1,51 @@
+#ifndef com_sun_jndi_toolkit_dir_SearchFilter_HPP
+#define com_sun_jndi_toolkit_dir_SearchFilter_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::jndi::toolkit::dir::SearchFilter : public jObject<::com::sun::jndi::toolkit::dir::SearchFilter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_jndi_toolkit_dir / "SearchFilter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String)>(), //
+		jMethod<::jboolean(::javax::naming::directory::Attributes)>("check"), //
+		jMethod<::jint(::jchar, ::java::lang::String, ::jint)>("findUnescaped"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::lang::Object *)>("format"), //
+		jMethod<::java::lang::String(::javax::naming::directory::Attributes)>("format"), //
+		jMethod<::javax::naming::directory::Attributes(::javax::naming::directory::Attributes, ::java::lang::String *)>("selectAttributes"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto check(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("check")] != -1);
+		return call<R>("check", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto findUnescaped(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("findUnescaped")] != -1);
+		return scall<R>("findUnescaped", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto format(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("format")] != -1);
+		return scall<R>("format", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::naming::directory::Attributes, typename... Args>
+	static auto selectAttributes(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("selectAttributes")] != -1);
+		return scall<R>("selectAttributes", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

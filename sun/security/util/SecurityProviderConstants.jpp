@@ -1,0 +1,55 @@
+#ifndef sun_security_util_SecurityProviderConstants_HPP
+#define sun_security_util_SecurityProviderConstants_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::util::SecurityProviderConstants : public jObject<::sun::security::util::SecurityProviderConstants, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_util / "SecurityProviderConstants";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("DEF_DH_KEY_SIZE"), //
+		jField<::jint>("DEF_DSA_KEY_SIZE"), //
+		jField<::jint>("DEF_EC_KEY_SIZE"), //
+		jField<::jint>("DEF_RSA_KEY_SIZE"), //
+	};
+
+	template<typename F = ::jint>
+	static auto DEF_DH_KEY_SIZE() {
+		static_assert(field_signatures[jField<F>("DEF_DH_KEY_SIZE")] != -1);
+		return sat<F>("DEF_DH_KEY_SIZE");
+	}
+
+	template<typename F = ::jint>
+	static auto DEF_DSA_KEY_SIZE() {
+		static_assert(field_signatures[jField<F>("DEF_DSA_KEY_SIZE")] != -1);
+		return sat<F>("DEF_DSA_KEY_SIZE");
+	}
+
+	template<typename F = ::jint>
+	static auto DEF_EC_KEY_SIZE() {
+		static_assert(field_signatures[jField<F>("DEF_EC_KEY_SIZE")] != -1);
+		return sat<F>("DEF_EC_KEY_SIZE");
+	}
+
+	template<typename F = ::jint>
+	static auto DEF_RSA_KEY_SIZE() {
+		static_assert(field_signatures[jField<F>("DEF_RSA_KEY_SIZE")] != -1);
+		return sat<F>("DEF_RSA_KEY_SIZE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint(::jint)>("getDefDSASubprimeSize"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	static auto getDefDSASubprimeSize(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDefDSASubprimeSize")] != -1);
+		return scall<R>("getDefDSASubprimeSize", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

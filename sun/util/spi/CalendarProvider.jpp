@@ -1,0 +1,28 @@
+#ifndef sun_util_spi_CalendarProvider_HPP
+#define sun_util_spi_CalendarProvider_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::util::spi::CalendarProvider : public jObject<::sun::util::spi::CalendarProvider, ::java::util::spi::LocaleServiceProvider> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_util_spi / "CalendarProvider";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::Calendar(::java::util::TimeZone, ::java::util::Locale)>("getInstance"), //
+	};
+
+	template<typename R = ::java::util::Calendar, typename... Args>
+	auto getInstance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstance")] != -1);
+		return call<R>("getInstance", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

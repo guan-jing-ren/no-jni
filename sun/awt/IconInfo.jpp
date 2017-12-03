@@ -1,0 +1,87 @@
+#ifndef sun_awt_IconInfo_HPP
+#define sun_awt_IconInfo_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::IconInfo : public jObject<::sun::awt::IconInfo, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "IconInfo";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::Image)>(), //
+		jConstructor<::jvoid(::jint *)>(), //
+		jConstructor<::jvoid(::jlong *)>(), //
+		jMethod<::jint()>("getHeight"), //
+		jMethod<::java::awt::Image()>("getImage"), //
+		jMethod<::jint *()>("getIntData"), //
+		jMethod<::jlong *()>("getLongData"), //
+		jMethod<::jint()>("getRawLength"), //
+		jMethod<::jint()>("getWidth"), //
+		jMethod<::jboolean()>("isValid"), //
+		jMethod<::jvoid(::jint, ::jint)>("setScaledSize"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getHeight(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHeight")] != -1);
+		return call<R>("getHeight", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Image, typename... Args>
+	auto getImage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getImage")] != -1);
+		return call<R>("getImage", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint *, typename... Args>
+	auto getIntData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIntData")] != -1);
+		return call<R>("getIntData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong *, typename... Args>
+	auto getLongData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLongData")] != -1);
+		return call<R>("getLongData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getRawLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRawLength")] != -1);
+		return call<R>("getRawLength", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getWidth(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getWidth")] != -1);
+		return call<R>("getWidth", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isValid(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isValid")] != -1);
+		return call<R>("isValid", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setScaledSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setScaledSize")] != -1);
+		return call<R>("setScaledSize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

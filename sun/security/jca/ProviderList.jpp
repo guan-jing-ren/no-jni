@@ -1,0 +1,107 @@
+#ifndef sun_security_jca_ProviderList_HPP
+#define sun_security_jca_ProviderList_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::jca::ProviderList : public jObject<::sun::security::jca::ProviderList, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_jca / "ProviderList";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::security::jca::ProviderList(::sun::security::jca::ProviderList, ::java::security::Provider)>("add"), //
+		jMethod<::jint(::java::lang::String)>("getIndex"), //
+		jMethod<::java::security::Provider(::java::lang::String)>("getProvider"), //
+		jMethod<::java::security::Provider$Service(::java::lang::String, ::java::lang::String)>("getService"), //
+		jMethod<::java::util::List(::java::lang::String, ::java::lang::String)>("getServices"), //
+		jMethod<::java::util::List(::java::lang::String, ::java::util::List)>("getServices"), //
+		jMethod<::java::util::List(::java::util::List)>("getServices"), //
+		jMethod<::sun::security::jca::ProviderList(::sun::security::jca::ProviderList, ::java::security::Provider, ::jint)>("insertAt"), //
+		jMethod<::sun::security::jca::ProviderList(::java::security::Provider *)>("newList"), //
+		jMethod<::java::util::List()>("providers"), //
+		jMethod<::sun::security::jca::ProviderList(::sun::security::jca::ProviderList, ::java::lang::String)>("remove"), //
+		jMethod<::jint()>("size"), //
+		jMethod<::java::security::Provider *()>("toArray"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::sun::security::jca::ProviderList, typename... Args>
+	static auto add(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("add")] != -1);
+		return scall<R>("add", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIndex")] != -1);
+		return call<R>("getIndex", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Provider, typename... Args>
+	auto getProvider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getProvider")] != -1);
+		return call<R>("getProvider", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Provider$Service, typename... Args>
+	auto getService(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getService")] != -1);
+		return call<R>("getService", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getServices(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getServices")] != -1);
+		return call<R>("getServices", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::jca::ProviderList, typename... Args>
+	static auto insertAt(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("insertAt")] != -1);
+		return scall<R>("insertAt", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::jca::ProviderList, typename... Args>
+	static auto newList(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newList")] != -1);
+		return scall<R>("newList", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto providers(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("providers")] != -1);
+		return call<R>("providers", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::jca::ProviderList, typename... Args>
+	static auto remove(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("remove")] != -1);
+		return scall<R>("remove", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto size(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("size")] != -1);
+		return call<R>("size", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::Provider *, typename... Args>
+	auto toArray(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toArray")] != -1);
+		return call<R>("toArray", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

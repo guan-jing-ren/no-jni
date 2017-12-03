@@ -1,0 +1,32 @@
+#ifndef com_sun_media_sound_AudioFileSoundbankReader_HPP
+#define com_sun_media_sound_AudioFileSoundbankReader_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::media::sound::AudioFileSoundbankReader : public jObject<::com::sun::media::sound::AudioFileSoundbankReader, ::javax::sound::midi::spi::SoundbankReader> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_media_sound / "AudioFileSoundbankReader";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::javax::sound::midi::Soundbank(::java::io::File)>("getSoundbank"), //
+		jMethod<::javax::sound::midi::Soundbank(::java::io::InputStream)>("getSoundbank"), //
+		jMethod<::javax::sound::midi::Soundbank(::java::net::URL)>("getSoundbank"), //
+		jMethod<::javax::sound::midi::Soundbank(::javax::sound::sampled::AudioInputStream)>("getSoundbank"), //
+	};
+
+	template<typename R = ::javax::sound::midi::Soundbank, typename... Args>
+	auto getSoundbank(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSoundbank")] != -1);
+		return call<R>("getSoundbank", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

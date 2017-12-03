@@ -1,0 +1,43 @@
+#ifndef com_sun_imageio_plugins_gif_GIFImageReaderSpi_HPP
+#define com_sun_imageio_plugins_gif_GIFImageReaderSpi_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::imageio::plugins::gif::GIFImageReaderSpi : public jObject<::com::sun::imageio::plugins::gif::GIFImageReaderSpi, ::javax::imageio::spi::ImageReaderSpi> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_imageio_plugins_gif / "GIFImageReaderSpi";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jboolean(::java::lang::Object)>("canDecodeInput"), //
+		jMethod<::javax::imageio::ImageReader(::java::lang::Object)>("createReaderInstance"), //
+		jMethod<::java::lang::String(::java::util::Locale)>("getDescription"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto canDecodeInput(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("canDecodeInput")] != -1);
+		return call<R>("canDecodeInput", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::imageio::ImageReader, typename... Args>
+	auto createReaderInstance(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createReaderInstance")] != -1);
+		return call<R>("createReaderInstance", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDescription(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDescription")] != -1);
+		return call<R>("getDescription", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

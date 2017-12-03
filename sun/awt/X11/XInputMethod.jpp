@@ -1,0 +1,43 @@
+#ifndef sun_awt_X11_XInputMethod_HPP
+#define sun_awt_X11_XInputMethod_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::X11::XInputMethod : public jObject<::sun::awt::X11::XInputMethod, ::sun::awt::X11InputMethod> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_X11 / "XInputMethod";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jlong()>("getXICFocus"), //
+		jMethod<::jvoid(::java::awt::Rectangle)>("notifyClientWindowChange"), //
+		jMethod<::jvoid(::java::awt::im::spi::InputMethodContext)>("setInputMethodContext"), //
+	};
+
+	template<typename R = ::jlong, typename... Args>
+	static auto getXICFocus(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getXICFocus")] != -1);
+		return scall<R>("getXICFocus", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto notifyClientWindowChange(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("notifyClientWindowChange")] != -1);
+		return call<R>("notifyClientWindowChange", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setInputMethodContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setInputMethodContext")] != -1);
+		return call<R>("setInputMethodContext", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

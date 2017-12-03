@@ -1,0 +1,57 @@
+#ifndef sun_reflect_annotation_AnnotationParser_HPP
+#define sun_reflect_annotation_AnnotationParser_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::reflect::annotation::AnnotationParser : public jObject<::sun::reflect::annotation::AnnotationParser, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_reflect_annotation / "AnnotationParser";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::annotation::Annotation(::java::lang::Class, ::java::util::Map)>("annotationForMap"), //
+		jMethod<::java::util::Map(::jbyte *, ::sun::reflect::ConstantPool, ::java::lang::Class)>("parseAnnotations"), //
+		jMethod<::java::lang::Object(::java::lang::Class, ::java::nio::ByteBuffer, ::sun::reflect::ConstantPool, ::java::lang::Class)>("parseMemberValue"), //
+		jMethod<::java::lang::annotation::Annotation **(::jbyte *, ::sun::reflect::ConstantPool, ::java::lang::Class)>("parseParameterAnnotations"), //
+		jMethod<::java::lang::annotation::Annotation *(::java::util::Map)>("toArray"), //
+	};
+
+	template<typename R = ::java::lang::annotation::Annotation, typename... Args>
+	static auto annotationForMap(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("annotationForMap")] != -1);
+		return scall<R>("annotationForMap", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	static auto parseAnnotations(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("parseAnnotations")] != -1);
+		return scall<R>("parseAnnotations", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto parseMemberValue(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("parseMemberValue")] != -1);
+		return scall<R>("parseMemberValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::annotation::Annotation **, typename... Args>
+	static auto parseParameterAnnotations(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("parseParameterAnnotations")] != -1);
+		return scall<R>("parseParameterAnnotations", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::annotation::Annotation *, typename... Args>
+	static auto toArray(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toArray")] != -1);
+		return scall<R>("toArray", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

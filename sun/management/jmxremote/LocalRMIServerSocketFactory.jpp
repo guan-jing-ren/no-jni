@@ -1,0 +1,43 @@
+#ifndef sun_management_jmxremote_LocalRMIServerSocketFactory_HPP
+#define sun_management_jmxremote_LocalRMIServerSocketFactory_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::management::jmxremote::LocalRMIServerSocketFactory : public jObject<::sun::management::jmxremote::LocalRMIServerSocketFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_management_jmxremote / "LocalRMIServerSocketFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::net::ServerSocket(::jint)>("createServerSocket"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jint()>("hashCode"), //
+	};
+
+	template<typename R = ::java::net::ServerSocket, typename... Args>
+	auto createServerSocket(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createServerSocket")] != -1);
+		return call<R>("createServerSocket", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

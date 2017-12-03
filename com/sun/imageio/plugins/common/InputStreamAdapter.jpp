@@ -1,0 +1,30 @@
+#ifndef com_sun_imageio_plugins_common_InputStreamAdapter_HPP
+#define com_sun_imageio_plugins_common_InputStreamAdapter_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::imageio::plugins::common::InputStreamAdapter : public jObject<::com::sun::imageio::plugins::common::InputStreamAdapter, ::java::io::InputStream> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_imageio_plugins_common / "InputStreamAdapter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::javax::imageio::stream::ImageInputStream)>(), //
+		jMethod<::jint()>("read"), //
+		jMethod<::jint(::jbyte *, ::jint, ::jint)>("read"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

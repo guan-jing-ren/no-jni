@@ -1,0 +1,29 @@
+#ifndef sun_security_util_Pem_HPP
+#define sun_security_util_Pem_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::util::Pem : public jObject<::sun::security::util::Pem, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_util / "Pem";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jbyte *(::java::lang::String)>("decode"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	static auto decode(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("decode")] != -1);
+		return scall<R>("decode", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,49 @@
+#ifndef sun_java2d_cmm_ProfileDeferralMgr_HPP
+#define sun_java2d_cmm_ProfileDeferralMgr_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::cmm::ProfileDeferralMgr : public jObject<::sun::java2d::cmm::ProfileDeferralMgr, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_cmm / "ProfileDeferralMgr";
+
+	constexpr static Enume field_signatures{
+		jField<::jboolean>("deferring"), //
+	};
+
+	template<typename F = ::jboolean>
+	static auto deferring() {
+		static_assert(field_signatures[jField<F>("deferring")] != -1);
+		return sat<F>("deferring");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid()>("activateProfiles"), //
+		jMethod<::jvoid(::sun::java2d::cmm::ProfileActivator)>("registerDeferral"), //
+		jMethod<::jvoid(::sun::java2d::cmm::ProfileActivator)>("unregisterDeferral"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto activateProfiles(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("activateProfiles")] != -1);
+		return scall<R>("activateProfiles", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto registerDeferral(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("registerDeferral")] != -1);
+		return scall<R>("registerDeferral", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto unregisterDeferral(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unregisterDeferral")] != -1);
+		return scall<R>("unregisterDeferral", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

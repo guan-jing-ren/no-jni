@@ -1,0 +1,65 @@
+#ifndef sun_font_FontConfigManager_HPP
+#define sun_font_FontConfigManager_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::FontConfigManager : public jObject<::sun::font::FontConfigManager, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "FontConfigManager";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::Object()>("getFontConfigAAHint"), //
+		jMethod<::java::lang::Object(::java::lang::String)>("getFontConfigAAHint"), //
+		jMethod<::sun::font::CompositeFont(::java::lang::String, ::jint)>("getFontConfigFont"), //
+		jMethod<::sun::font::FontConfigManager$FcCompFont *()>("getFontConfigFonts"), //
+		jMethod<::jint()>("getFontConfigVersion"), //
+		jMethod<::jvoid(::jboolean)>("initFontConfigFonts"), //
+		jMethod<::sun::font::PhysicalFont(::sun::font::FontConfigManager$FcCompFont)>("registerFromFcInfo"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	static auto getFontConfigAAHint(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFontConfigAAHint")] != -1);
+		return scall<R>("getFontConfigAAHint", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::CompositeFont, typename... Args>
+	auto getFontConfigFont(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFontConfigFont")] != -1);
+		return call<R>("getFontConfigFont", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::FontConfigManager$FcCompFont *, typename... Args>
+	auto getFontConfigFonts(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFontConfigFonts")] != -1);
+		return call<R>("getFontConfigFonts", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto getFontConfigVersion(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFontConfigVersion")] != -1);
+		return scall<R>("getFontConfigVersion", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto initFontConfigFonts(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("initFontConfigFonts")] != -1);
+		return call<R>("initFontConfigFonts", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::PhysicalFont, typename... Args>
+	auto registerFromFcInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("registerFromFcInfo")] != -1);
+		return call<R>("registerFromFcInfo", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,43 @@
+#ifndef sun_awt_datatransfer_DataTransferer$IndexedComparator_HPP
+#define sun_awt_datatransfer_DataTransferer$IndexedComparator_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::datatransfer::DataTransferer$IndexedComparator : public jObject<::sun::awt::datatransfer::DataTransferer$IndexedComparator, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_datatransfer / "DataTransferer$IndexedComparator";
+
+	constexpr static Enume field_signatures{
+		jField<::jboolean>("SELECT_BEST"), //
+		jField<::jboolean>("SELECT_WORST"), //
+	};
+
+	template<typename F = ::jboolean>
+	static auto SELECT_BEST() {
+		static_assert(field_signatures[jField<F>("SELECT_BEST")] != -1);
+		return sat<F>("SELECT_BEST");
+	}
+
+	template<typename F = ::jboolean>
+	static auto SELECT_WORST() {
+		static_assert(field_signatures[jField<F>("SELECT_WORST")] != -1);
+		return sat<F>("SELECT_WORST");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jboolean)>(), //
+		jMethod<::jint(::java::lang::Object, ::java::lang::Object)>("compare"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto compare(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("compare")] != -1);
+		return call<R>("compare", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

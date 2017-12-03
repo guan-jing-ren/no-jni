@@ -1,0 +1,57 @@
+#ifndef sun_java2d_jules_IdleTileCache_HPP
+#define sun_java2d_jules_IdleTileCache_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::jules::IdleTileCache : public jObject<::sun::java2d::jules::IdleTileCache, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_jules / "IdleTileCache";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid()>("disposeConsumerResources"), //
+		jMethod<::jvoid()>("disposeRasterizerResources"), //
+		jMethod<::sun::java2d::jules::JulesTile(::jint)>("getIdleTileWorker"), //
+		jMethod<::jvoid(::sun::java2d::jules::JulesTile)>("releaseTile"), //
+		jMethod<::jvoid(::java::util::List)>("releaseTiles"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto disposeConsumerResources(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("disposeConsumerResources")] != -1);
+		return call<R>("disposeConsumerResources", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto disposeRasterizerResources(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("disposeRasterizerResources")] != -1);
+		return call<R>("disposeRasterizerResources", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::jules::JulesTile, typename... Args>
+	auto getIdleTileWorker(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIdleTileWorker")] != -1);
+		return call<R>("getIdleTileWorker", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto releaseTile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("releaseTile")] != -1);
+		return call<R>("releaseTile", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto releaseTiles(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("releaseTiles")] != -1);
+		return call<R>("releaseTiles", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

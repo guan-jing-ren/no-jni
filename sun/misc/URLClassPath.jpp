@@ -1,0 +1,89 @@
+#ifndef sun_misc_URLClassPath_HPP
+#define sun_misc_URLClassPath_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::misc::URLClassPath : public jObject<::sun::misc::URLClassPath, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_misc / "URLClassPath";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::net::URL *)>(), //
+		jConstructor<::jvoid(::java::net::URL *, ::java::net::URLStreamHandlerFactory, ::java::security::AccessControlContext)>(), //
+		jConstructor<::jvoid(::java::net::URL *, ::java::security::AccessControlContext)>(), //
+		jMethod<::jvoid(::java::net::URL)>("addURL"), //
+		jMethod<::java::net::URL(::java::net::URL)>("checkURL"), //
+		jMethod<::java::util::List()>("closeLoaders"), //
+		jMethod<::java::net::URL(::java::lang::String, ::jboolean)>("findResource"), //
+		jMethod<::java::util::Enumeration(::java::lang::String, ::jboolean)>("findResources"), //
+		jMethod<::sun::misc::Resource(::java::lang::String)>("getResource"), //
+		jMethod<::sun::misc::Resource(::java::lang::String, ::jboolean)>("getResource"), //
+		jMethod<::java::util::Enumeration(::java::lang::String)>("getResources"), //
+		jMethod<::java::util::Enumeration(::java::lang::String, ::jboolean)>("getResources"), //
+		jMethod<::java::net::URL *()>("getURLs"), //
+		jMethod<::java::net::URL *(::java::lang::String)>("pathToURLs"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addURL(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addURL")] != -1);
+		return call<R>("addURL", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::URL, typename... Args>
+	auto checkURL(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkURL")] != -1);
+		return call<R>("checkURL", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto closeLoaders(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("closeLoaders")] != -1);
+		return call<R>("closeLoaders", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::URL, typename... Args>
+	auto findResource(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("findResource")] != -1);
+		return call<R>("findResource", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	auto findResources(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("findResources")] != -1);
+		return call<R>("findResources", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::misc::Resource, typename... Args>
+	auto getResource(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getResource")] != -1);
+		return call<R>("getResource", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	auto getResources(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getResources")] != -1);
+		return call<R>("getResources", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::URL *, typename... Args>
+	auto getURLs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getURLs")] != -1);
+		return call<R>("getURLs", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::URL *, typename... Args>
+	static auto pathToURLs(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("pathToURLs")] != -1);
+		return scall<R>("pathToURLs", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

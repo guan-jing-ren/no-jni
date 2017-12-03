@@ -1,0 +1,41 @@
+#ifndef com_sun_nio_file_ExtendedWatchEventModifier_HPP
+#define com_sun_nio_file_ExtendedWatchEventModifier_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::nio::file::ExtendedWatchEventModifier : public jObject<::com::sun::nio::file::ExtendedWatchEventModifier, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_nio_file / "ExtendedWatchEventModifier";
+
+	constexpr static Enume field_signatures{
+		jField<::com::sun::nio::file::ExtendedWatchEventModifier>("FILE_TREE"), //
+	};
+
+	template<typename F = ::com::sun::nio::file::ExtendedWatchEventModifier>
+	static auto FILE_TREE() {
+		static_assert(field_signatures[jField<F>("FILE_TREE")] != -1);
+		return sat<F>("FILE_TREE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::com::sun::nio::file::ExtendedWatchEventModifier(::java::lang::String)>("valueOf"), //
+		jMethod<::com::sun::nio::file::ExtendedWatchEventModifier *()>("values"), //
+	};
+
+	template<typename R = ::com::sun::nio::file::ExtendedWatchEventModifier, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::nio::file::ExtendedWatchEventModifier *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

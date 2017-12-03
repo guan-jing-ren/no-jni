@@ -1,0 +1,85 @@
+#ifndef sun_font_GlyphLayout$GVData_HPP
+#define sun_font_GlyphLayout$GVData_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::GlyphLayout$GVData : public jObject<::sun::font::GlyphLayout$GVData, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "GlyphLayout$GVData";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("_count"), //
+		jField<::jint>("_flags"), //
+		jField<::jint *>("_glyphs"), //
+		jField<::jint *>("_indices"), //
+		jField<::jfloat *>("_positions"), //
+	};
+
+	template<typename F = ::jint>
+	auto _count() const {
+		static_assert(field_signatures[jField<F>("_count")] != -1);
+		return at<F>("_count");
+	}
+
+	template<typename F = ::jint>
+	auto _flags() const {
+		static_assert(field_signatures[jField<F>("_flags")] != -1);
+		return at<F>("_flags");
+	}
+
+	template<typename F = ::jint *>
+	auto _glyphs() const {
+		static_assert(field_signatures[jField<F>("_glyphs")] != -1);
+		return at<F>("_glyphs");
+	}
+
+	template<typename F = ::jint *>
+	auto _indices() const {
+		static_assert(field_signatures[jField<F>("_indices")] != -1);
+		return at<F>("_indices");
+	}
+
+	template<typename F = ::jfloat *>
+	auto _positions() const {
+		static_assert(field_signatures[jField<F>("_positions")] != -1);
+		return at<F>("_positions");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::awt::geom::AffineTransform)>("adjustPositions"), //
+		jMethod<::sun::font::StandardGlyphVector(::java::awt::Font, ::java::awt::font::FontRenderContext, ::sun::font::StandardGlyphVector)>("createGlyphVector"), //
+		jMethod<::jvoid()>("grow"), //
+		jMethod<::jvoid(::jint)>("grow"), //
+		jMethod<::jvoid(::jint)>("init"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto adjustPositions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("adjustPositions")] != -1);
+		return call<R>("adjustPositions", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::StandardGlyphVector, typename... Args>
+	auto createGlyphVector(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createGlyphVector")] != -1);
+		return call<R>("createGlyphVector", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto grow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("grow")] != -1);
+		return call<R>("grow", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto init(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("init")] != -1);
+		return call<R>("init", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,63 @@
+#ifndef com_sun_org_omg_SendingContext_CodeBaseOperations_HPP
+#define com_sun_org_omg_SendingContext_CodeBaseOperations_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::org::omg::SendingContext::CodeBaseOperations : public jObject<::com::sun::org::omg::SendingContext::CodeBaseOperations, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_org_omg_SendingContext / "CodeBaseOperations";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String *(::java::lang::String)>("bases"), //
+		jMethod<::com::sun::org::omg::CORBA::Repository()>("get_ir"), //
+		jMethod<::java::lang::String(::java::lang::String)>("implementation"), //
+		jMethod<::java::lang::String *(::java::lang::String *)>("implementations"), //
+		jMethod<::com::sun::org::omg::CORBA::ValueDefPackage::FullValueDescription(::java::lang::String)>("meta"), //
+		jMethod<::com::sun::org::omg::CORBA::ValueDefPackage::FullValueDescription *(::java::lang::String *)>("metas"), //
+	};
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto bases(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("bases")] != -1);
+		return call<R>("bases", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::org::omg::CORBA::Repository, typename... Args>
+	auto get_ir(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get_ir")] != -1);
+		return call<R>("get_ir", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto implementation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("implementation")] != -1);
+		return call<R>("implementation", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto implementations(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("implementations")] != -1);
+		return call<R>("implementations", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::org::omg::CORBA::ValueDefPackage::FullValueDescription, typename... Args>
+	auto meta(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("meta")] != -1);
+		return call<R>("meta", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::org::omg::CORBA::ValueDefPackage::FullValueDescription *, typename... Args>
+	auto metas(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("metas")] != -1);
+		return call<R>("metas", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

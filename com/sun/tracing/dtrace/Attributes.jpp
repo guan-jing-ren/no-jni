@@ -1,0 +1,42 @@
+#ifndef com_sun_tracing_dtrace_Attributes_HPP
+#define com_sun_tracing_dtrace_Attributes_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::tracing::dtrace::Attributes : public jObject<::com::sun::tracing::dtrace::Attributes, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_tracing_dtrace / "Attributes";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::com::sun::tracing::dtrace::StabilityLevel()>("data"), //
+		jMethod<::com::sun::tracing::dtrace::DependencyClass()>("dependency"), //
+		jMethod<::com::sun::tracing::dtrace::StabilityLevel()>("name"), //
+	};
+
+	template<typename R = ::com::sun::tracing::dtrace::StabilityLevel, typename... Args>
+	auto data(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("data")] != -1);
+		return call<R>("data", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::tracing::dtrace::DependencyClass, typename... Args>
+	auto dependency(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dependency")] != -1);
+		return call<R>("dependency", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::tracing::dtrace::StabilityLevel, typename... Args>
+	auto name(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("name")] != -1);
+		return call<R>("name", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

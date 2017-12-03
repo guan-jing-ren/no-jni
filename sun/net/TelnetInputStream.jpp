@@ -1,0 +1,44 @@
+#ifndef sun_net_TelnetInputStream_HPP
+#define sun_net_TelnetInputStream_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::net::TelnetInputStream : public jObject<::sun::net::TelnetInputStream, ::java::io::FilterInputStream> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_net / "TelnetInputStream";
+
+	constexpr static Enume field_signatures{
+		jField<::jboolean>("binaryMode"), //
+	};
+
+	template<typename F = ::jboolean>
+	auto binaryMode() const {
+		static_assert(field_signatures[jField<F>("binaryMode")] != -1);
+		return at<F>("binaryMode");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::InputStream, ::jboolean)>(), //
+		jMethod<::jint()>("read"), //
+		jMethod<::jint(::jbyte *)>("read"), //
+		jMethod<::jint(::jbyte *, ::jint, ::jint)>("read"), //
+		jMethod<::jvoid(::jboolean)>("setStickyCRLF"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setStickyCRLF(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setStickyCRLF")] != -1);
+		return call<R>("setStickyCRLF", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

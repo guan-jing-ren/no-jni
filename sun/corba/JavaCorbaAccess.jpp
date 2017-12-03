@@ -1,0 +1,35 @@
+#ifndef sun_corba_JavaCorbaAccess_HPP
+#define sun_corba_JavaCorbaAccess_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::corba::JavaCorbaAccess : public jObject<::sun::corba::JavaCorbaAccess, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_corba / "JavaCorbaAccess";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Class(::java::lang::String)>("loadClass"), //
+		jMethod<::com::sun::corba::se::impl::io::ValueHandlerImpl()>("newValueHandlerImpl"), //
+	};
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto loadClass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("loadClass")] != -1);
+		return call<R>("loadClass", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::io::ValueHandlerImpl, typename... Args>
+	auto newValueHandlerImpl(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newValueHandlerImpl")] != -1);
+		return call<R>("newValueHandlerImpl", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

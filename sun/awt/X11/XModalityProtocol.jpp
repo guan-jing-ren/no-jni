@@ -1,0 +1,35 @@
+#ifndef sun_awt_X11_XModalityProtocol_HPP
+#define sun_awt_X11_XModalityProtocol_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::X11::XModalityProtocol : public jObject<::sun::awt::X11::XModalityProtocol, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_X11 / "XModalityProtocol";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::sun::awt::X11::XDialogPeer, ::sun::awt::X11::XWindowPeer)>("isBlocked"), //
+		jMethod<::jboolean(::sun::awt::X11::XDialogPeer, ::jboolean)>("setModal"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isBlocked(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isBlocked")] != -1);
+		return call<R>("isBlocked", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto setModal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setModal")] != -1);
+		return call<R>("setModal", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

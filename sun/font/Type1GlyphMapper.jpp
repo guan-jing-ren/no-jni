@@ -1,0 +1,66 @@
+#ifndef sun_font_Type1GlyphMapper_HPP
+#define sun_font_Type1GlyphMapper_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::Type1GlyphMapper : public jObject<::sun::font::Type1GlyphMapper, ::sun::font::CharToGlyphMapper> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "Type1GlyphMapper";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::font::Type1Font)>(), //
+		jMethod<::jboolean(::jchar)>("canDisplay"), //
+		jMethod<::jint(::jchar)>("charToGlyph"), //
+		jMethod<::jint(::jint)>("charToGlyph"), //
+		jMethod<::jvoid(::jint, ::jchar *, ::jint *)>("charsToGlyphs"), //
+		jMethod<::jvoid(::jint, ::jint *, ::jint *)>("charsToGlyphs"), //
+		jMethod<::jboolean(::jint, ::jchar *, ::jint *)>("charsToGlyphsNS"), //
+		jMethod<::jint()>("getMissingGlyphCode"), //
+		jMethod<::jint()>("getNumGlyphs"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto canDisplay(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("canDisplay")] != -1);
+		return call<R>("canDisplay", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto charToGlyph(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("charToGlyph")] != -1);
+		return call<R>("charToGlyph", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto charsToGlyphs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("charsToGlyphs")] != -1);
+		return call<R>("charsToGlyphs", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto charsToGlyphsNS(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("charsToGlyphsNS")] != -1);
+		return call<R>("charsToGlyphsNS", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getMissingGlyphCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMissingGlyphCode")] != -1);
+		return call<R>("getMissingGlyphCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getNumGlyphs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNumGlyphs")] != -1);
+		return call<R>("getNumGlyphs", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

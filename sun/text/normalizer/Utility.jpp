@@ -1,0 +1,86 @@
+#ifndef sun_text_normalizer_Utility_HPP
+#define sun_text_normalizer_Utility_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::text::normalizer::Utility : public jObject<::sun::text::normalizer::Utility, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_text_normalizer / "Utility";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::StringBuffer(::java::lang::StringBuffer, ::jint, ::jint, ::jint)>("appendNumber"), //
+		jMethod<::jboolean(::jchar *, ::jint, ::jchar *, ::jint, ::jint)>("arrayRegionMatches"), //
+		jMethod<::java::lang::String(::java::lang::String)>("escape"), //
+		jMethod<::jboolean(::java::lang::StringBuffer, ::jint)>("escapeUnprintable"), //
+		jMethod<::jvoid(::java::lang::StringBuffer, ::jint, ::jint, ::jchar *, ::jint)>("getChars"), //
+		jMethod<::java::lang::String(::jint, ::jint)>("hex"), //
+		jMethod<::java::lang::StringBuffer(::jint, ::jint, ::java::lang::StringBuffer)>("hex"), //
+		jMethod<::jboolean(::jint)>("isUnprintable"), //
+		jMethod<::jint(::java::lang::String, ::jint)>("skipWhitespace"), //
+		jMethod<::jint(::java::lang::String, ::jint *)>("unescapeAt"), //
+	};
+
+	template<typename R = ::java::lang::StringBuffer, typename... Args>
+	static auto appendNumber(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("appendNumber")] != -1);
+		return scall<R>("appendNumber", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto arrayRegionMatches(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("arrayRegionMatches")] != -1);
+		return scall<R>("arrayRegionMatches", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto escape(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("escape")] != -1);
+		return scall<R>("escape", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto escapeUnprintable(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("escapeUnprintable")] != -1);
+		return scall<R>("escapeUnprintable", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto getChars(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getChars")] != -1);
+		return scall<R>("getChars", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto hex(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hex")] != -1);
+		return scall<R>("hex", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isUnprintable(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isUnprintable")] != -1);
+		return scall<R>("isUnprintable", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto skipWhitespace(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("skipWhitespace")] != -1);
+		return scall<R>("skipWhitespace", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto unescapeAt(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unescapeAt")] != -1);
+		return scall<R>("unescapeAt", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

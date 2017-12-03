@@ -1,0 +1,58 @@
+#ifndef sun_font_FontRunIterator_HPP
+#define sun_font_FontRunIterator_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::FontRunIterator : public jObject<::sun::font::FontRunIterator, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "FontRunIterator";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::sun::font::PhysicalFont()>("getFont"), //
+		jMethod<::jint()>("getGlyphMask"), //
+		jMethod<::jint()>("getPos"), //
+		jMethod<::jvoid(::sun::font::CompositeFont, ::jchar *, ::jint, ::jint)>("init"), //
+		jMethod<::jboolean()>("next"), //
+		jMethod<::jboolean(::jint, ::jint)>("next"), //
+	};
+
+	template<typename R = ::sun::font::PhysicalFont, typename... Args>
+	auto getFont(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFont")] != -1);
+		return call<R>("getFont", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getGlyphMask(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGlyphMask")] != -1);
+		return call<R>("getGlyphMask", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getPos(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPos")] != -1);
+		return call<R>("getPos", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto init(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("init")] != -1);
+		return call<R>("init", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto next(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("next")] != -1);
+		return call<R>("next", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

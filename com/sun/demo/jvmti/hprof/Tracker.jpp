@@ -1,0 +1,50 @@
+#ifndef com_sun_demo_jvmti_hprof_Tracker_HPP
+#define com_sun_demo_jvmti_hprof_Tracker_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::demo::jvmti::hprof::Tracker : public jObject<::com::sun::demo::jvmti::hprof::Tracker, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_demo_jvmti_hprof / "Tracker";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::jint, ::jint)>("CallSite"), //
+		jMethod<::jvoid(::java::lang::Object)>("NewArray"), //
+		jMethod<::jvoid(::java::lang::Object)>("ObjectInit"), //
+		jMethod<::jvoid(::jint, ::jint)>("ReturnSite"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto CallSite(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("CallSite")] != -1);
+		return scall<R>("CallSite", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto NewArray(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("NewArray")] != -1);
+		return scall<R>("NewArray", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto ObjectInit(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("ObjectInit")] != -1);
+		return scall<R>("ObjectInit", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto ReturnSite(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("ReturnSite")] != -1);
+		return scall<R>("ReturnSite", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

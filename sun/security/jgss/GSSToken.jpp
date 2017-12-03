@@ -1,0 +1,92 @@
+#ifndef sun_security_jgss_GSSToken_HPP
+#define sun_security_jgss_GSSToken_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::jgss::GSSToken : public jObject<::sun::security::jgss::GSSToken, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_jgss / "GSSToken";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::lang::String)>("debug"), //
+		jMethod<::java::lang::String(::jbyte *)>("getHexBytes"), //
+		jMethod<::java::lang::String(::jbyte *, ::jint)>("getHexBytes"), //
+		jMethod<::java::lang::String(::jbyte *, ::jint, ::jint)>("getHexBytes"), //
+		jMethod<::jint(::jbyte *, ::jint, ::jint)>("readBigEndian"), //
+		jMethod<::jvoid(::java::io::InputStream, ::jbyte *)>("readFully"), //
+		jMethod<::jvoid(::java::io::InputStream, ::jbyte *, ::jint, ::jint)>("readFully"), //
+		jMethod<::jint(::java::io::InputStream)>("readInt"), //
+		jMethod<::jint(::jbyte *, ::jint)>("readInt"), //
+		jMethod<::jint(::jbyte *, ::jint, ::jint)>("readLittleEndian"), //
+		jMethod<::jvoid(::jint, ::jbyte *)>("writeBigEndian"), //
+		jMethod<::jvoid(::jint, ::jbyte *, ::jint)>("writeBigEndian"), //
+		jMethod<::jvoid(::jint, ::java::io::OutputStream)>("writeInt"), //
+		jMethod<::jint(::jint, ::jbyte *, ::jint)>("writeInt"), //
+		jMethod<::jvoid(::jint, ::jbyte *)>("writeLittleEndian"), //
+		jMethod<::jvoid(::jint, ::jbyte *, ::jint)>("writeLittleEndian"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto debug(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("debug")] != -1);
+		return scall<R>("debug", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getHexBytes(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHexBytes")] != -1);
+		return scall<R>("getHexBytes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto readBigEndian(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("readBigEndian")] != -1);
+		return scall<R>("readBigEndian", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto readFully(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("readFully")] != -1);
+		return scall<R>("readFully", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto readInt(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("readInt")] != -1);
+		return scall<R>("readInt", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto readLittleEndian(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("readLittleEndian")] != -1);
+		return scall<R>("readLittleEndian", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto writeBigEndian(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeBigEndian")] != -1);
+		return scall<R>("writeBigEndian", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto writeInt(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeInt")] != -1);
+		return scall<R>("writeInt", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto writeLittleEndian(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeLittleEndian")] != -1);
+		return scall<R>("writeLittleEndian", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

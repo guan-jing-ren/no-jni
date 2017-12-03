@@ -1,0 +1,91 @@
+#ifndef sun_security_rsa_RSAPrivateCrtKeyImpl_HPP
+#define sun_security_rsa_RSAPrivateCrtKeyImpl_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::rsa::RSAPrivateCrtKeyImpl : public jObject<::sun::security::rsa::RSAPrivateCrtKeyImpl, ::sun::security::pkcs::PKCS8Key> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_rsa / "RSAPrivateCrtKeyImpl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getAlgorithm"), //
+		jMethod<::java::math::BigInteger()>("getCrtCoefficient"), //
+		jMethod<::java::math::BigInteger()>("getModulus"), //
+		jMethod<::java::math::BigInteger()>("getPrimeExponentP"), //
+		jMethod<::java::math::BigInteger()>("getPrimeExponentQ"), //
+		jMethod<::java::math::BigInteger()>("getPrimeP"), //
+		jMethod<::java::math::BigInteger()>("getPrimeQ"), //
+		jMethod<::java::math::BigInteger()>("getPrivateExponent"), //
+		jMethod<::java::math::BigInteger()>("getPublicExponent"), //
+		jMethod<::java::security::interfaces::RSAPrivateKey(::jbyte *)>("newKey"), //
+	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAlgorithm(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAlgorithm")] != -1);
+		return call<R>("getAlgorithm", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getCrtCoefficient(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCrtCoefficient")] != -1);
+		return call<R>("getCrtCoefficient", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getModulus(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getModulus")] != -1);
+		return call<R>("getModulus", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getPrimeExponentP(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPrimeExponentP")] != -1);
+		return call<R>("getPrimeExponentP", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getPrimeExponentQ(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPrimeExponentQ")] != -1);
+		return call<R>("getPrimeExponentQ", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getPrimeP(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPrimeP")] != -1);
+		return call<R>("getPrimeP", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getPrimeQ(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPrimeQ")] != -1);
+		return call<R>("getPrimeQ", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getPrivateExponent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPrivateExponent")] != -1);
+		return call<R>("getPrivateExponent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::math::BigInteger, typename... Args>
+	auto getPublicExponent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPublicExponent")] != -1);
+		return call<R>("getPublicExponent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::interfaces::RSAPrivateKey, typename... Args>
+	static auto newKey(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newKey")] != -1);
+		return scall<R>("newKey", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

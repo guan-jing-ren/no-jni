@@ -1,0 +1,57 @@
+#ifndef com_sun_media_sound_SoftSincResampler_HPP
+#define com_sun_media_sound_SoftSincResampler_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::media::sound::SoftSincResampler : public jObject<::com::sun::media::sound::SoftSincResampler, ::com::sun::media::sound::SoftAbstractResampler> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_media_sound / "SoftSincResampler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jint()>("getPadding"), //
+		jMethod<::jvoid(::jfloat *, ::jfloat *, ::jfloat, ::jfloat *, ::jfloat, ::jfloat *, ::jint *, ::jint)>("interpolate"), //
+		jMethod<::jdouble(::jdouble)>("sinc"), //
+		jMethod<::jfloat *(::jint, ::jfloat, ::jfloat)>("sincTable"), //
+		jMethod<::jfloat *(::jint, ::jfloat)>("wHanning"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getPadding(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPadding")] != -1);
+		return call<R>("getPadding", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto interpolate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("interpolate")] != -1);
+		return call<R>("interpolate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	static auto sinc(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("sinc")] != -1);
+		return scall<R>("sinc", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat *, typename... Args>
+	static auto sincTable(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("sincTable")] != -1);
+		return scall<R>("sincTable", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat *, typename... Args>
+	static auto wHanning(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("wHanning")] != -1);
+		return scall<R>("wHanning", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

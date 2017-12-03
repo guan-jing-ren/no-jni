@@ -1,0 +1,35 @@
+#ifndef sun_misc_UUDecoder_HPP
+#define sun_misc_UUDecoder_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::misc::UUDecoder : public jObject<::sun::misc::UUDecoder, ::sun::misc::CharacterDecoder> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_misc / "UUDecoder";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("bufferName"), //
+		jField<::jint>("mode"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	auto bufferName() const {
+		static_assert(field_signatures[jField<F>("bufferName")] != -1);
+		return at<F>("bufferName");
+	}
+
+	template<typename F = ::jint>
+	auto mode() const {
+		static_assert(field_signatures[jField<F>("mode")] != -1);
+		return at<F>("mode");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+	};
+
+};
+
+#endif

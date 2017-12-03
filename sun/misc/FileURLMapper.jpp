@@ -1,0 +1,36 @@
+#ifndef sun_misc_FileURLMapper_HPP
+#define sun_misc_FileURLMapper_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::misc::FileURLMapper : public jObject<::sun::misc::FileURLMapper, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_misc / "FileURLMapper";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::net::URL)>(), //
+		jMethod<::jboolean()>("exists"), //
+		jMethod<::java::lang::String()>("getPath"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto exists(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("exists")] != -1);
+		return call<R>("exists", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getPath(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPath")] != -1);
+		return call<R>("getPath", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

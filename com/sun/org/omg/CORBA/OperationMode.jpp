@@ -1,0 +1,62 @@
+#ifndef com_sun_org_omg_CORBA_OperationMode_HPP
+#define com_sun_org_omg_CORBA_OperationMode_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::org::omg::CORBA::OperationMode : public jObject<::com::sun::org::omg::CORBA::OperationMode, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_org_omg_CORBA / "OperationMode";
+
+	constexpr static Enume field_signatures{
+		jField<::com::sun::org::omg::CORBA::OperationMode>("OP_NORMAL"), //
+		jField<::com::sun::org::omg::CORBA::OperationMode>("OP_ONEWAY"), //
+		jField<::jint>("_OP_NORMAL"), //
+		jField<::jint>("_OP_ONEWAY"), //
+	};
+
+	template<typename F = ::com::sun::org::omg::CORBA::OperationMode>
+	static auto OP_NORMAL() {
+		static_assert(field_signatures[jField<F>("OP_NORMAL")] != -1);
+		return sat<F>("OP_NORMAL");
+	}
+
+	template<typename F = ::com::sun::org::omg::CORBA::OperationMode>
+	static auto OP_ONEWAY() {
+		static_assert(field_signatures[jField<F>("OP_ONEWAY")] != -1);
+		return sat<F>("OP_ONEWAY");
+	}
+
+	template<typename F = ::jint>
+	static auto _OP_NORMAL() {
+		static_assert(field_signatures[jField<F>("_OP_NORMAL")] != -1);
+		return sat<F>("_OP_NORMAL");
+	}
+
+	template<typename F = ::jint>
+	static auto _OP_ONEWAY() {
+		static_assert(field_signatures[jField<F>("_OP_ONEWAY")] != -1);
+		return sat<F>("_OP_ONEWAY");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::com::sun::org::omg::CORBA::OperationMode(::jint)>("from_int"), //
+		jMethod<::jint()>("value"), //
+	};
+
+	template<typename R = ::com::sun::org::omg::CORBA::OperationMode, typename... Args>
+	static auto from_int(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("from_int")] != -1);
+		return scall<R>("from_int", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("value")] != -1);
+		return call<R>("value", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

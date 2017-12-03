@@ -1,0 +1,49 @@
+#ifndef sun_util_locale_provider_TimeZoneNameUtility_HPP
+#define sun_util_locale_provider_TimeZoneNameUtility_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::util::locale::provider::TimeZoneNameUtility : public jObject<::sun::util::locale::provider::TimeZoneNameUtility, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_util_locale_provider / "TimeZoneNameUtility";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String **(::java::util::Locale)>("getZoneStrings"), //
+		jMethod<::java::lang::String(::java::lang::String, ::jboolean, ::jint, ::java::util::Locale)>("retrieveDisplayName"), //
+		jMethod<::java::lang::String *(::java::lang::String, ::java::util::Locale)>("retrieveDisplayNames"), //
+		jMethod<::java::lang::String(::java::lang::String, ::jint, ::java::util::Locale)>("retrieveGenericDisplayName"), //
+	};
+
+	template<typename R = ::java::lang::String **, typename... Args>
+	static auto getZoneStrings(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getZoneStrings")] != -1);
+		return scall<R>("getZoneStrings", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto retrieveDisplayName(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("retrieveDisplayName")] != -1);
+		return scall<R>("retrieveDisplayName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	static auto retrieveDisplayNames(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("retrieveDisplayNames")] != -1);
+		return scall<R>("retrieveDisplayNames", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto retrieveGenericDisplayName(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("retrieveGenericDisplayName")] != -1);
+		return scall<R>("retrieveGenericDisplayName", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

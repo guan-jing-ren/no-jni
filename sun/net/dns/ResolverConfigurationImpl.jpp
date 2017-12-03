@@ -1,0 +1,42 @@
+#ifndef sun_net_dns_ResolverConfigurationImpl_HPP
+#define sun_net_dns_ResolverConfigurationImpl_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::net::dns::ResolverConfigurationImpl : public jObject<::sun::net::dns::ResolverConfigurationImpl, ::sun::net::dns::ResolverConfiguration> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_net_dns / "ResolverConfigurationImpl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::util::List()>("nameservers"), //
+		jMethod<::sun::net::dns::ResolverConfiguration$Options()>("options"), //
+		jMethod<::java::util::List()>("searchlist"), //
+	};
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto nameservers(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("nameservers")] != -1);
+		return call<R>("nameservers", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::dns::ResolverConfiguration$Options, typename... Args>
+	auto options(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("options")] != -1);
+		return call<R>("options", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto searchlist(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("searchlist")] != -1);
+		return call<R>("searchlist", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

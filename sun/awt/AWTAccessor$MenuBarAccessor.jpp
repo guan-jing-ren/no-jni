@@ -1,0 +1,35 @@
+#ifndef sun_awt_AWTAccessor$MenuBarAccessor_HPP
+#define sun_awt_AWTAccessor$MenuBarAccessor_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::AWTAccessor$MenuBarAccessor : public jObject<::sun::awt::AWTAccessor$MenuBarAccessor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "AWTAccessor$MenuBarAccessor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::Menu(::java::awt::MenuBar)>("getHelpMenu"), //
+		jMethod<::java::util::Vector(::java::awt::MenuBar)>("getMenus"), //
+	};
+
+	template<typename R = ::java::awt::Menu, typename... Args>
+	auto getHelpMenu(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHelpMenu")] != -1);
+		return call<R>("getHelpMenu", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Vector, typename... Args>
+	auto getMenus(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMenus")] != -1);
+		return call<R>("getMenus", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

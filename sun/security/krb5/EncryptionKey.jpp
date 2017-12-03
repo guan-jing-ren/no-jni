@@ -1,0 +1,111 @@
+#ifndef sun_security_krb5_EncryptionKey_HPP
+#define sun_security_krb5_EncryptionKey_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::krb5::EncryptionKey : public jObject<::sun::security::krb5::EncryptionKey, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_krb5 / "EncryptionKey";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::security::krb5::EncryptionKey>("NULL_KEY"), //
+	};
+
+	template<typename F = ::sun::security::krb5::EncryptionKey>
+	static auto NULL_KEY() {
+		static_assert(field_signatures[jField<F>("NULL_KEY")] != -1);
+		return sat<F>("NULL_KEY");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::jbyte *)>(), //
+		jConstructor<::jvoid(::sun::security::krb5::EncryptionKey)>(), //
+		jConstructor<::jvoid(::sun::security::util::DerValue)>(), //
+		jConstructor<::jvoid(::jbyte *, ::jint, ::java::lang::Integer)>(), //
+		jConstructor<::jvoid(::jchar *, ::java::lang::String, ::java::lang::String)>(), //
+		jMethod<::sun::security::krb5::EncryptionKey(::jchar *, ::java::lang::String, ::jint, ::jbyte *)>("acquireSecretKey"), //
+		jMethod<::sun::security::krb5::EncryptionKey *(::sun::security::krb5::PrincipalName, ::java::lang::String)>("acquireSecretKeys"), //
+		jMethod<::sun::security::krb5::EncryptionKey *(::jchar *, ::java::lang::String)>("acquireSecretKeys"), //
+		jMethod<::jbyte *()>("asn1Encode"), //
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::jvoid()>("destroy"), //
+		jMethod<::sun::security::krb5::EncryptionKey(::jint, ::java::lang::Integer, ::sun::security::krb5::EncryptionKey *)>("findKey"), //
+		jMethod<::sun::security::krb5::EncryptionKey(::jint, ::sun::security::krb5::EncryptionKey *)>("findKey"), //
+		jMethod<::jbyte *()>("getBytes"), //
+		jMethod<::jint()>("getEType"), //
+		jMethod<::java::lang::Integer()>("getKeyVersionNumber"), //
+		jMethod<::sun::security::krb5::EncryptionKey(::sun::security::util::DerInputStream, ::jbyte, ::jboolean)>("parse"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::sun::security::krb5::EncryptionKey, typename... Args>
+	static auto acquireSecretKey(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("acquireSecretKey")] != -1);
+		return scall<R>("acquireSecretKey", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::krb5::EncryptionKey *, typename... Args>
+	static auto acquireSecretKeys(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("acquireSecretKeys")] != -1);
+		return scall<R>("acquireSecretKeys", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto asn1Encode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("asn1Encode")] != -1);
+		return call<R>("asn1Encode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto destroy(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("destroy")] != -1);
+		return call<R>("destroy", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::krb5::EncryptionKey, typename... Args>
+	static auto findKey(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("findKey")] != -1);
+		return scall<R>("findKey", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getBytes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBytes")] != -1);
+		return call<R>("getBytes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getEType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEType")] != -1);
+		return call<R>("getEType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Integer, typename... Args>
+	auto getKeyVersionNumber(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getKeyVersionNumber")] != -1);
+		return call<R>("getKeyVersionNumber", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::krb5::EncryptionKey, typename... Args>
+	static auto parse(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("parse")] != -1);
+		return scall<R>("parse", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

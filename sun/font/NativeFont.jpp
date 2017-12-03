@@ -1,0 +1,71 @@
+#ifndef sun_font_NativeFont_HPP
+#define sun_font_NativeFont_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::NativeFont : public jObject<::sun::font::NativeFont, ::sun::font::PhysicalFont> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "NativeFont";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::jboolean)>(), //
+		jMethod<::jboolean(::java::lang::String)>("fontExists"), //
+		jMethod<::java::awt::geom::GeneralPath(::jlong, ::jint, ::jfloat, ::jfloat)>("getGlyphOutline"), //
+		jMethod<::java::awt::geom::GeneralPath(::jlong, ::jint *, ::jint, ::jfloat, ::jfloat)>("getGlyphVectorOutline"), //
+		jMethod<::sun::font::CharToGlyphMapper()>("getMapper"), //
+		jMethod<::java::awt::geom::Rectangle2D(::java::awt::font::FontRenderContext)>("getMaxCharBounds"), //
+		jMethod<::jint()>("getNumGlyphs"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto fontExists(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("fontExists")] != -1);
+		return scall<R>("fontExists", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::GeneralPath, typename... Args>
+	auto getGlyphOutline(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGlyphOutline")] != -1);
+		return call<R>("getGlyphOutline", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::GeneralPath, typename... Args>
+	auto getGlyphVectorOutline(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGlyphVectorOutline")] != -1);
+		return call<R>("getGlyphVectorOutline", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::CharToGlyphMapper, typename... Args>
+	auto getMapper(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMapper")] != -1);
+		return call<R>("getMapper", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Rectangle2D, typename... Args>
+	auto getMaxCharBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMaxCharBounds")] != -1);
+		return call<R>("getMaxCharBounds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getNumGlyphs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNumGlyphs")] != -1);
+		return call<R>("getNumGlyphs", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,73 @@
+#ifndef sun_font_LayoutPathImpl_HPP
+#define sun_font_LayoutPathImpl_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::LayoutPathImpl : public jObject<::sun::font::LayoutPathImpl, ::java::awt::font::LayoutPath> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "LayoutPathImpl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jdouble()>("end"), //
+		jMethod<::sun::font::LayoutPathImpl(::sun::font::LayoutPathImpl$EndType, ::jdouble *)>("getPath"), //
+		jMethod<::jdouble()>("length"), //
+		jMethod<::java::awt::Shape(::java::awt::Shape)>("mapShape"), //
+		jMethod<::java::awt::geom::Point2D(::jdouble, ::jdouble, ::jboolean)>("pathToPoint"), //
+		jMethod<::jvoid(::jdouble, ::jdouble, ::jboolean, ::java::awt::geom::Point2D)>("pathToPoint"), //
+		jMethod<::java::awt::geom::Point2D(::jdouble, ::jdouble)>("pointToPath"), //
+		jMethod<::jvoid(::jdouble, ::jdouble, ::java::awt::geom::Point2D)>("pointToPath"), //
+		jMethod<::jdouble()>("start"), //
+	};
+
+	template<typename R = ::jdouble, typename... Args>
+	auto end(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("end")] != -1);
+		return call<R>("end", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::LayoutPathImpl, typename... Args>
+	static auto getPath(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPath")] != -1);
+		return scall<R>("getPath", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	auto length(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("length")] != -1);
+		return call<R>("length", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Shape, typename... Args>
+	auto mapShape(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("mapShape")] != -1);
+		return call<R>("mapShape", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Point2D, typename... Args>
+	auto pathToPoint(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("pathToPoint")] != -1);
+		return call<R>("pathToPoint", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Point2D, typename... Args>
+	auto pointToPath(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("pointToPath")] != -1);
+		return call<R>("pointToPath", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	auto start(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("start")] != -1);
+		return call<R>("start", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

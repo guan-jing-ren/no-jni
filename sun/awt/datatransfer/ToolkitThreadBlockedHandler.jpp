@@ -1,0 +1,49 @@
+#ifndef sun_awt_datatransfer_ToolkitThreadBlockedHandler_HPP
+#define sun_awt_datatransfer_ToolkitThreadBlockedHandler_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::datatransfer::ToolkitThreadBlockedHandler : public jObject<::sun::awt::datatransfer::ToolkitThreadBlockedHandler, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_datatransfer / "ToolkitThreadBlockedHandler";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("enter"), //
+		jMethod<::jvoid()>("exit"), //
+		jMethod<::jvoid()>("lock"), //
+		jMethod<::jvoid()>("unlock"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto enter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("enter")] != -1);
+		return call<R>("enter", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto exit(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("exit")] != -1);
+		return call<R>("exit", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto lock(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("lock")] != -1);
+		return call<R>("lock", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto unlock(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unlock")] != -1);
+		return call<R>("unlock", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

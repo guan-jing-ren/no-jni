@@ -1,0 +1,170 @@
+#ifndef sun_security_krb5_Checksum_HPP
+#define sun_security_krb5_Checksum_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::krb5::Checksum : public jObject<::sun::security::krb5::Checksum, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_krb5 / "Checksum";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("CKSUMTYPE_CRC32"), //
+		jField<::jint>("CKSUMTYPE_DES_MAC"), //
+		jField<::jint>("CKSUMTYPE_DES_MAC_K"), //
+		jField<::jint>("CKSUMTYPE_HMAC_MD5_ARCFOUR"), //
+		jField<::jint>("CKSUMTYPE_HMAC_SHA1_96_AES128"), //
+		jField<::jint>("CKSUMTYPE_HMAC_SHA1_96_AES256"), //
+		jField<::jint>("CKSUMTYPE_HMAC_SHA1_DES3_KD"), //
+		jField<::jint>("CKSUMTYPE_NULL"), //
+		jField<::jint>("CKSUMTYPE_RSA_MD4"), //
+		jField<::jint>("CKSUMTYPE_RSA_MD4_DES"), //
+		jField<::jint>("CKSUMTYPE_RSA_MD4_DES_K"), //
+		jField<::jint>("CKSUMTYPE_RSA_MD5"), //
+		jField<::jint>("CKSUMTYPE_RSA_MD5_DES"), //
+	};
+
+	template<typename F = ::jint>
+	static auto CKSUMTYPE_CRC32() {
+		static_assert(field_signatures[jField<F>("CKSUMTYPE_CRC32")] != -1);
+		return sat<F>("CKSUMTYPE_CRC32");
+	}
+
+	template<typename F = ::jint>
+	static auto CKSUMTYPE_DES_MAC() {
+		static_assert(field_signatures[jField<F>("CKSUMTYPE_DES_MAC")] != -1);
+		return sat<F>("CKSUMTYPE_DES_MAC");
+	}
+
+	template<typename F = ::jint>
+	static auto CKSUMTYPE_DES_MAC_K() {
+		static_assert(field_signatures[jField<F>("CKSUMTYPE_DES_MAC_K")] != -1);
+		return sat<F>("CKSUMTYPE_DES_MAC_K");
+	}
+
+	template<typename F = ::jint>
+	static auto CKSUMTYPE_HMAC_MD5_ARCFOUR() {
+		static_assert(field_signatures[jField<F>("CKSUMTYPE_HMAC_MD5_ARCFOUR")] != -1);
+		return sat<F>("CKSUMTYPE_HMAC_MD5_ARCFOUR");
+	}
+
+	template<typename F = ::jint>
+	static auto CKSUMTYPE_HMAC_SHA1_96_AES128() {
+		static_assert(field_signatures[jField<F>("CKSUMTYPE_HMAC_SHA1_96_AES128")] != -1);
+		return sat<F>("CKSUMTYPE_HMAC_SHA1_96_AES128");
+	}
+
+	template<typename F = ::jint>
+	static auto CKSUMTYPE_HMAC_SHA1_96_AES256() {
+		static_assert(field_signatures[jField<F>("CKSUMTYPE_HMAC_SHA1_96_AES256")] != -1);
+		return sat<F>("CKSUMTYPE_HMAC_SHA1_96_AES256");
+	}
+
+	template<typename F = ::jint>
+	static auto CKSUMTYPE_HMAC_SHA1_DES3_KD() {
+		static_assert(field_signatures[jField<F>("CKSUMTYPE_HMAC_SHA1_DES3_KD")] != -1);
+		return sat<F>("CKSUMTYPE_HMAC_SHA1_DES3_KD");
+	}
+
+	template<typename F = ::jint>
+	static auto CKSUMTYPE_NULL() {
+		static_assert(field_signatures[jField<F>("CKSUMTYPE_NULL")] != -1);
+		return sat<F>("CKSUMTYPE_NULL");
+	}
+
+	template<typename F = ::jint>
+	static auto CKSUMTYPE_RSA_MD4() {
+		static_assert(field_signatures[jField<F>("CKSUMTYPE_RSA_MD4")] != -1);
+		return sat<F>("CKSUMTYPE_RSA_MD4");
+	}
+
+	template<typename F = ::jint>
+	static auto CKSUMTYPE_RSA_MD4_DES() {
+		static_assert(field_signatures[jField<F>("CKSUMTYPE_RSA_MD4_DES")] != -1);
+		return sat<F>("CKSUMTYPE_RSA_MD4_DES");
+	}
+
+	template<typename F = ::jint>
+	static auto CKSUMTYPE_RSA_MD4_DES_K() {
+		static_assert(field_signatures[jField<F>("CKSUMTYPE_RSA_MD4_DES_K")] != -1);
+		return sat<F>("CKSUMTYPE_RSA_MD4_DES_K");
+	}
+
+	template<typename F = ::jint>
+	static auto CKSUMTYPE_RSA_MD5() {
+		static_assert(field_signatures[jField<F>("CKSUMTYPE_RSA_MD5")] != -1);
+		return sat<F>("CKSUMTYPE_RSA_MD5");
+	}
+
+	template<typename F = ::jint>
+	static auto CKSUMTYPE_RSA_MD5_DES() {
+		static_assert(field_signatures[jField<F>("CKSUMTYPE_RSA_MD5_DES")] != -1);
+		return sat<F>("CKSUMTYPE_RSA_MD5_DES");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::jint, ::jbyte *)>(), //
+		jConstructor<::jvoid(::jint, ::jbyte *, ::sun::security::krb5::EncryptionKey, ::jint)>(), //
+		jConstructor<::jvoid(::jbyte *, ::jint)>(), //
+		jMethod<::jbyte *()>("asn1Encode"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jbyte *()>("getBytes"), //
+		jMethod<::jint()>("getType"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jvoid()>("initStatic"), //
+		jMethod<::sun::security::krb5::Checksum(::sun::security::util::DerInputStream, ::jbyte, ::jboolean)>("parse"), //
+		jMethod<::jboolean(::jbyte *, ::sun::security::krb5::EncryptionKey, ::jint)>("verifyKeyedChecksum"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto asn1Encode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("asn1Encode")] != -1);
+		return call<R>("asn1Encode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getBytes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBytes")] != -1);
+		return call<R>("getBytes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto initStatic(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("initStatic")] != -1);
+		return scall<R>("initStatic", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::krb5::Checksum, typename... Args>
+	static auto parse(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("parse")] != -1);
+		return scall<R>("parse", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto verifyKeyedChecksum(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("verifyKeyedChecksum")] != -1);
+		return call<R>("verifyKeyedChecksum", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

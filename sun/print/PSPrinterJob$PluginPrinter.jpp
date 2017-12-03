@@ -1,0 +1,57 @@
+#ifndef sun_print_PSPrinterJob$PluginPrinter_HPP
+#define sun_print_PSPrinterJob$PluginPrinter_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::print::PSPrinterJob$PluginPrinter : public jObject<::sun::print::PSPrinterJob$PluginPrinter, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_print / "PSPrinterJob$PluginPrinter";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::Component, ::java::io::PrintStream, ::jint, ::jint, ::jint, ::jint)>(), //
+		jMethod<::jint(::java::awt::Graphics, ::java::awt::print::PageFormat, ::jint)>("print"), //
+		jMethod<::jvoid()>("printAll"), //
+		jMethod<::jvoid()>("printPluginApplet"), //
+		jMethod<::jvoid()>("printPluginPSHeader"), //
+		jMethod<::jvoid()>("printPluginPSTrailer"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto print(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("print")] != -1);
+		return call<R>("print", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto printAll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("printAll")] != -1);
+		return call<R>("printAll", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto printPluginApplet(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("printPluginApplet")] != -1);
+		return call<R>("printPluginApplet", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto printPluginPSHeader(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("printPluginPSHeader")] != -1);
+		return call<R>("printPluginPSHeader", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto printPluginPSTrailer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("printPluginPSTrailer")] != -1);
+		return call<R>("printPluginPSTrailer", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

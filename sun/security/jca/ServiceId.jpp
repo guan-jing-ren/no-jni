@@ -1,0 +1,35 @@
+#ifndef sun_security_jca_ServiceId_HPP
+#define sun_security_jca_ServiceId_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::jca::ServiceId : public jObject<::sun::security::jca::ServiceId, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_jca / "ServiceId";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("algorithm"), //
+		jField<::java::lang::String>("type"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	auto algorithm() const {
+		static_assert(field_signatures[jField<F>("algorithm")] != -1);
+		return at<F>("algorithm");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto type() const {
+		static_assert(field_signatures[jField<F>("type")] != -1);
+		return at<F>("type");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::java::lang::String)>(), //
+	};
+
+};
+
+#endif

@@ -1,0 +1,42 @@
+#ifndef sun_instrument_TransformerManager_HPP
+#define sun_instrument_TransformerManager_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::instrument::TransformerManager : public jObject<::sun::instrument::TransformerManager, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_instrument / "TransformerManager";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::instrument::ClassFileTransformer)>("addTransformer"), //
+		jMethod<::jboolean(::java::lang::instrument::ClassFileTransformer)>("removeTransformer"), //
+		jMethod<::jbyte *(::java::lang::ClassLoader, ::java::lang::String, ::java::lang::Class, ::java::security::ProtectionDomain, ::jbyte *)>("transform"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addTransformer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addTransformer")] != -1);
+		return call<R>("addTransformer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto removeTransformer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeTransformer")] != -1);
+		return call<R>("removeTransformer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto transform(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("transform")] != -1);
+		return call<R>("transform", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

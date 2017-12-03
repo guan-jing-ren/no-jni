@@ -1,0 +1,56 @@
+#ifndef sun_reflect_generics_tree_ClassSignature_HPP
+#define sun_reflect_generics_tree_ClassSignature_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::reflect::generics::tree::ClassSignature : public jObject<::sun::reflect::generics::tree::ClassSignature, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_reflect_generics_tree / "ClassSignature";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::sun::reflect::generics::visitor::Visitor)>("accept"), //
+		jMethod<::sun::reflect::generics::tree::FormalTypeParameter *()>("getFormalTypeParameters"), //
+		jMethod<::sun::reflect::generics::tree::ClassTypeSignature *()>("getSuperInterfaces"), //
+		jMethod<::sun::reflect::generics::tree::ClassTypeSignature()>("getSuperclass"), //
+		jMethod<::sun::reflect::generics::tree::ClassSignature(::sun::reflect::generics::tree::FormalTypeParameter *, ::sun::reflect::generics::tree::ClassTypeSignature, ::sun::reflect::generics::tree::ClassTypeSignature *)>("make"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto accept(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("accept")] != -1);
+		return call<R>("accept", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::reflect::generics::tree::FormalTypeParameter *, typename... Args>
+	auto getFormalTypeParameters(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFormalTypeParameters")] != -1);
+		return call<R>("getFormalTypeParameters", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::reflect::generics::tree::ClassTypeSignature *, typename... Args>
+	auto getSuperInterfaces(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSuperInterfaces")] != -1);
+		return call<R>("getSuperInterfaces", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::reflect::generics::tree::ClassTypeSignature, typename... Args>
+	auto getSuperclass(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSuperclass")] != -1);
+		return call<R>("getSuperclass", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::reflect::generics::tree::ClassSignature, typename... Args>
+	static auto make(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("make")] != -1);
+		return scall<R>("make", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

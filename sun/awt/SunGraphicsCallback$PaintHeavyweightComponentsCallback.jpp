@@ -1,0 +1,35 @@
+#ifndef sun_awt_SunGraphicsCallback$PaintHeavyweightComponentsCallback_HPP
+#define sun_awt_SunGraphicsCallback$PaintHeavyweightComponentsCallback_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::SunGraphicsCallback$PaintHeavyweightComponentsCallback : public jObject<::sun::awt::SunGraphicsCallback$PaintHeavyweightComponentsCallback, ::sun::awt::SunGraphicsCallback> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "SunGraphicsCallback$PaintHeavyweightComponentsCallback";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::awt::SunGraphicsCallback$PaintHeavyweightComponentsCallback()>("getInstance"), //
+		jMethod<::jvoid(::java::awt::Component, ::java::awt::Graphics)>("run"), //
+	};
+
+	template<typename R = ::sun::awt::SunGraphicsCallback$PaintHeavyweightComponentsCallback, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto run(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("run")] != -1);
+		return call<R>("run", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

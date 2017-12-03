@@ -1,0 +1,35 @@
+#ifndef com_sun_tracing_ProviderFactory_HPP
+#define com_sun_tracing_ProviderFactory_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::com::sun::tracing::ProviderFactory : public jObject<::com::sun::tracing::ProviderFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_tracing / "ProviderFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::com::sun::tracing::Provider(::java::lang::Class)>("createProvider"), //
+		jMethod<::com::sun::tracing::ProviderFactory()>("getDefaultFactory"), //
+	};
+
+	template<typename R = ::com::sun::tracing::Provider, typename... Args>
+	auto createProvider(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createProvider")] != -1);
+		return call<R>("createProvider", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::tracing::ProviderFactory, typename... Args>
+	static auto getDefaultFactory(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDefaultFactory")] != -1);
+		return scall<R>("getDefaultFactory", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

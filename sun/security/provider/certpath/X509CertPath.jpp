@@ -1,0 +1,53 @@
+#ifndef sun_security_provider_certpath_X509CertPath_HPP
+#define sun_security_provider_certpath_X509CertPath_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::security::provider::certpath::X509CertPath : public jObject<::sun::security::provider::certpath::X509CertPath, ::java::security::cert::CertPath> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_provider_certpath / "X509CertPath";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::io::InputStream)>(), //
+		jConstructor<::jvoid(::java::io::InputStream, ::java::lang::String)>(), //
+		jConstructor<::jvoid(::java::util::List)>(), //
+		jMethod<::java::util::List()>("getCertificates"), //
+		jMethod<::jbyte *()>("getEncoded"), //
+		jMethod<::jbyte *(::java::lang::String)>("getEncoded"), //
+		jMethod<::java::util::Iterator()>("getEncodings"), //
+		jMethod<::java::util::Iterator()>("getEncodingsStatic"), //
+	};
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getCertificates(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCertificates")] != -1);
+		return call<R>("getCertificates", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getEncoded(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEncoded")] != -1);
+		return call<R>("getEncoded", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Iterator, typename... Args>
+	auto getEncodings(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEncodings")] != -1);
+		return call<R>("getEncodings", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Iterator, typename... Args>
+	static auto getEncodingsStatic(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEncodingsStatic")] != -1);
+		return scall<R>("getEncodingsStatic", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

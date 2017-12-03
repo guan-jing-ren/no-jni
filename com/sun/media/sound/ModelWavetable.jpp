@@ -1,0 +1,90 @@
+#ifndef com_sun_media_sound_ModelWavetable_HPP
+#define com_sun_media_sound_ModelWavetable_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::media::sound::ModelWavetable : public jObject<::com::sun::media::sound::ModelWavetable, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_media_sound / "ModelWavetable";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("LOOP_TYPE_FORWARD"), //
+		jField<::jint>("LOOP_TYPE_OFF"), //
+		jField<::jint>("LOOP_TYPE_PINGPONG"), //
+		jField<::jint>("LOOP_TYPE_RELEASE"), //
+		jField<::jint>("LOOP_TYPE_REVERSE"), //
+	};
+
+	template<typename F = ::jint>
+	static auto LOOP_TYPE_FORWARD() {
+		static_assert(field_signatures[jField<F>("LOOP_TYPE_FORWARD")] != -1);
+		return sat<F>("LOOP_TYPE_FORWARD");
+	}
+
+	template<typename F = ::jint>
+	static auto LOOP_TYPE_OFF() {
+		static_assert(field_signatures[jField<F>("LOOP_TYPE_OFF")] != -1);
+		return sat<F>("LOOP_TYPE_OFF");
+	}
+
+	template<typename F = ::jint>
+	static auto LOOP_TYPE_PINGPONG() {
+		static_assert(field_signatures[jField<F>("LOOP_TYPE_PINGPONG")] != -1);
+		return sat<F>("LOOP_TYPE_PINGPONG");
+	}
+
+	template<typename F = ::jint>
+	static auto LOOP_TYPE_RELEASE() {
+		static_assert(field_signatures[jField<F>("LOOP_TYPE_RELEASE")] != -1);
+		return sat<F>("LOOP_TYPE_RELEASE");
+	}
+
+	template<typename F = ::jint>
+	static auto LOOP_TYPE_REVERSE() {
+		static_assert(field_signatures[jField<F>("LOOP_TYPE_REVERSE")] != -1);
+		return sat<F>("LOOP_TYPE_REVERSE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jfloat()>("getLoopLength"), //
+		jMethod<::jfloat()>("getLoopStart"), //
+		jMethod<::jint()>("getLoopType"), //
+		jMethod<::jfloat()>("getPitchcorrection"), //
+		jMethod<::com::sun::media::sound::AudioFloatInputStream()>("openStream"), //
+	};
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getLoopLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLoopLength")] != -1);
+		return call<R>("getLoopLength", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getLoopStart(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLoopStart")] != -1);
+		return call<R>("getLoopStart", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getLoopType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLoopType")] != -1);
+		return call<R>("getLoopType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getPitchcorrection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPitchcorrection")] != -1);
+		return call<R>("getPitchcorrection", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::media::sound::AudioFloatInputStream, typename... Args>
+	auto openStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("openStream")] != -1);
+		return call<R>("openStream", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

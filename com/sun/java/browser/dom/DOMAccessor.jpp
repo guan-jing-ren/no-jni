@@ -1,0 +1,35 @@
+#ifndef com_sun_java_browser_dom_DOMAccessor_HPP
+#define com_sun_java_browser_dom_DOMAccessor_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::java::browser::dom::DOMAccessor : public jObject<::com::sun::java::browser::dom::DOMAccessor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_java_browser_dom / "DOMAccessor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::org::w3c::dom::DOMImplementation()>("getDOMImplementation"), //
+		jMethod<::org::w3c::dom::Document(::java::lang::Object)>("getDocument"), //
+	};
+
+	template<typename R = ::org::w3c::dom::DOMImplementation, typename... Args>
+	auto getDOMImplementation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDOMImplementation")] != -1);
+		return call<R>("getDOMImplementation", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Document, typename... Args>
+	auto getDocument(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDocument")] != -1);
+		return call<R>("getDocument", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

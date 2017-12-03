@@ -1,0 +1,36 @@
+#ifndef com_sun_corba_se_impl_protocol_giopmsgheaders_IORAddressingInfo_HPP
+#define com_sun_corba_se_impl_protocol_giopmsgheaders_IORAddressingInfo_HPP
+
+#include "../../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::impl::protocol::giopmsgheaders::IORAddressingInfo : public jObject<::com::sun::corba::se::impl::protocol::giopmsgheaders::IORAddressingInfo, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_impl_protocol_giopmsgheaders / "IORAddressingInfo";
+
+	constexpr static Enume field_signatures{
+		jField<::org::omg::IOP::IOR>("ior"), //
+		jField<::jint>("selected_profile_index"), //
+	};
+
+	template<typename F = ::org::omg::IOP::IOR>
+	auto ior() const {
+		static_assert(field_signatures[jField<F>("ior")] != -1);
+		return at<F>("ior");
+	}
+
+	template<typename F = ::jint>
+	auto selected_profile_index() const {
+		static_assert(field_signatures[jField<F>("selected_profile_index")] != -1);
+		return at<F>("selected_profile_index");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint, ::org::omg::IOP::IOR)>(), //
+	};
+
+};
+
+#endif

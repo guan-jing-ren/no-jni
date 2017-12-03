@@ -1,0 +1,36 @@
+#ifndef sun_rmi_transport_proxy_RMIMasterSocketFactory_HPP
+#define sun_rmi_transport_proxy_RMIMasterSocketFactory_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::rmi::transport::proxy::RMIMasterSocketFactory : public jObject<::sun::rmi::transport::proxy::RMIMasterSocketFactory, ::java::rmi::server::RMISocketFactory> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_rmi_transport_proxy / "RMIMasterSocketFactory";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::net::ServerSocket(::jint)>("createServerSocket"), //
+		jMethod<::java::net::Socket(::java::lang::String, ::jint)>("createSocket"), //
+	};
+
+	template<typename R = ::java::net::ServerSocket, typename... Args>
+	auto createServerSocket(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createServerSocket")] != -1);
+		return call<R>("createServerSocket", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::Socket, typename... Args>
+	auto createSocket(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createSocket")] != -1);
+		return call<R>("createSocket", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

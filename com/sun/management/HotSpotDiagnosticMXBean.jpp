@@ -1,0 +1,49 @@
+#ifndef com_sun_management_HotSpotDiagnosticMXBean_HPP
+#define com_sun_management_HotSpotDiagnosticMXBean_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::com::sun::management::HotSpotDiagnosticMXBean : public jObject<::com::sun::management::HotSpotDiagnosticMXBean, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_management / "HotSpotDiagnosticMXBean";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::String, ::jboolean)>("dumpHeap"), //
+		jMethod<::java::util::List()>("getDiagnosticOptions"), //
+		jMethod<::com::sun::management::VMOption(::java::lang::String)>("getVMOption"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String)>("setVMOption"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dumpHeap(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dumpHeap")] != -1);
+		return call<R>("dumpHeap", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getDiagnosticOptions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDiagnosticOptions")] != -1);
+		return call<R>("getDiagnosticOptions", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::management::VMOption, typename... Args>
+	auto getVMOption(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getVMOption")] != -1);
+		return call<R>("getVMOption", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setVMOption(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setVMOption")] != -1);
+		return call<R>("setVMOption", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

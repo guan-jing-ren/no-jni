@@ -1,0 +1,56 @@
+#ifndef sun_swing_PrintingStatus_HPP
+#define sun_swing_PrintingStatus_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::swing::PrintingStatus : public jObject<::sun::swing::PrintingStatus, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_swing / "PrintingStatus";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::print::Printable(::java::awt::print::Printable)>("createNotificationPrintable"), //
+		jMethod<::sun::swing::PrintingStatus(::java::awt::Component, ::java::awt::print::PrinterJob)>("createPrintingStatus"), //
+		jMethod<::jvoid()>("dispose"), //
+		jMethod<::jboolean()>("isAborted"), //
+		jMethod<::jvoid(::jboolean)>("showModal"), //
+	};
+
+	template<typename R = ::java::awt::print::Printable, typename... Args>
+	auto createNotificationPrintable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createNotificationPrintable")] != -1);
+		return call<R>("createNotificationPrintable", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::swing::PrintingStatus, typename... Args>
+	static auto createPrintingStatus(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createPrintingStatus")] != -1);
+		return scall<R>("createPrintingStatus", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispose(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dispose")] != -1);
+		return call<R>("dispose", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isAborted(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isAborted")] != -1);
+		return call<R>("isAborted", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto showModal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("showModal")] != -1);
+		return call<R>("showModal", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

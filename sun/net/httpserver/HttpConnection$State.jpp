@@ -1,0 +1,55 @@
+#ifndef sun_net_httpserver_HttpConnection$State_HPP
+#define sun_net_httpserver_HttpConnection$State_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::net::httpserver::HttpConnection$State : public jObject<::sun::net::httpserver::HttpConnection$State, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_net_httpserver / "HttpConnection$State";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::net::httpserver::HttpConnection$State>("IDLE"), //
+		jField<::sun::net::httpserver::HttpConnection$State>("REQUEST"), //
+		jField<::sun::net::httpserver::HttpConnection$State>("RESPONSE"), //
+	};
+
+	template<typename F = ::sun::net::httpserver::HttpConnection$State>
+	static auto IDLE() {
+		static_assert(field_signatures[jField<F>("IDLE")] != -1);
+		return sat<F>("IDLE");
+	}
+
+	template<typename F = ::sun::net::httpserver::HttpConnection$State>
+	static auto REQUEST() {
+		static_assert(field_signatures[jField<F>("REQUEST")] != -1);
+		return sat<F>("REQUEST");
+	}
+
+	template<typename F = ::sun::net::httpserver::HttpConnection$State>
+	static auto RESPONSE() {
+		static_assert(field_signatures[jField<F>("RESPONSE")] != -1);
+		return sat<F>("RESPONSE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::net::httpserver::HttpConnection$State(::java::lang::String)>("valueOf"), //
+		jMethod<::sun::net::httpserver::HttpConnection$State *()>("values"), //
+	};
+
+	template<typename R = ::sun::net::httpserver::HttpConnection$State, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::net::httpserver::HttpConnection$State *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

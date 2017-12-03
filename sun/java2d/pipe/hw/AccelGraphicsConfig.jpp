@@ -1,0 +1,49 @@
+#ifndef sun_java2d_pipe_hw_AccelGraphicsConfig_HPP
+#define sun_java2d_pipe_hw_AccelGraphicsConfig_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::java2d::pipe::hw::AccelGraphicsConfig : public jObject<::sun::java2d::pipe::hw::AccelGraphicsConfig, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_pipe_hw / "AccelGraphicsConfig";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::sun::java2d::pipe::hw::AccelDeviceEventListener)>("addDeviceEventListener"), //
+		jMethod<::java::awt::image::VolatileImage(::jint, ::jint, ::jint, ::jint)>("createCompatibleVolatileImage"), //
+		jMethod<::sun::java2d::pipe::hw::ContextCapabilities()>("getContextCapabilities"), //
+		jMethod<::jvoid(::sun::java2d::pipe::hw::AccelDeviceEventListener)>("removeDeviceEventListener"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addDeviceEventListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addDeviceEventListener")] != -1);
+		return call<R>("addDeviceEventListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::image::VolatileImage, typename... Args>
+	auto createCompatibleVolatileImage(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createCompatibleVolatileImage")] != -1);
+		return call<R>("createCompatibleVolatileImage", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::pipe::hw::ContextCapabilities, typename... Args>
+	auto getContextCapabilities(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getContextCapabilities")] != -1);
+		return call<R>("getContextCapabilities", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeDeviceEventListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeDeviceEventListener")] != -1);
+		return call<R>("removeDeviceEventListener", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,28 @@
+#ifndef sun_misc_JavaLangRefAccess_HPP
+#define sun_misc_JavaLangRefAccess_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::misc::JavaLangRefAccess : public jObject<::sun::misc::JavaLangRefAccess, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_misc / "JavaLangRefAccess";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean()>("tryHandlePendingReference"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto tryHandlePendingReference(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("tryHandlePendingReference")] != -1);
+		return call<R>("tryHandlePendingReference", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

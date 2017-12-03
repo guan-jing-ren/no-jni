@@ -1,0 +1,63 @@
+#ifndef sun_print_PrinterGraphicsDevice_HPP
+#define sun_print_PrinterGraphicsDevice_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::print::PrinterGraphicsDevice : public jObject<::sun::print::PrinterGraphicsDevice, ::java::awt::GraphicsDevice> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_print / "PrinterGraphicsDevice";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::GraphicsConfiguration *()>("getConfigurations"), //
+		jMethod<::java::awt::GraphicsConfiguration()>("getDefaultConfiguration"), //
+		jMethod<::java::awt::Window()>("getFullScreenWindow"), //
+		jMethod<::java::lang::String()>("getIDstring"), //
+		jMethod<::jint()>("getType"), //
+		jMethod<::jvoid(::java::awt::Window)>("setFullScreenWindow"), //
+	};
+
+	template<typename R = ::java::awt::GraphicsConfiguration *, typename... Args>
+	auto getConfigurations(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getConfigurations")] != -1);
+		return call<R>("getConfigurations", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::GraphicsConfiguration, typename... Args>
+	auto getDefaultConfiguration(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDefaultConfiguration")] != -1);
+		return call<R>("getDefaultConfiguration", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Window, typename... Args>
+	auto getFullScreenWindow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFullScreenWindow")] != -1);
+		return call<R>("getFullScreenWindow", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getIDstring(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIDstring")] != -1);
+		return call<R>("getIDstring", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setFullScreenWindow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setFullScreenWindow")] != -1);
+		return call<R>("setFullScreenWindow", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

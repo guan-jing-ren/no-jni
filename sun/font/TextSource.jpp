@@ -1,0 +1,119 @@
+#ifndef sun_font_TextSource_HPP
+#define sun_font_TextSource_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::TextSource : public jObject<::sun::font::TextSource, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "TextSource";
+
+	constexpr static Enume field_signatures{
+		jField<::jboolean>("WITHOUT_CONTEXT"), //
+		jField<::jboolean>("WITH_CONTEXT"), //
+	};
+
+	template<typename F = ::jboolean>
+	static auto WITHOUT_CONTEXT() {
+		static_assert(field_signatures[jField<F>("WITHOUT_CONTEXT")] != -1);
+		return sat<F>("WITHOUT_CONTEXT");
+	}
+
+	template<typename F = ::jboolean>
+	static auto WITH_CONTEXT() {
+		static_assert(field_signatures[jField<F>("WITH_CONTEXT")] != -1);
+		return sat<F>("WITH_CONTEXT");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jint()>("getBidiLevel"), //
+		jMethod<::jchar *()>("getChars"), //
+		jMethod<::jint()>("getContextLength"), //
+		jMethod<::jint()>("getContextStart"), //
+		jMethod<::sun::font::CoreMetrics()>("getCoreMetrics"), //
+		jMethod<::java::awt::font::FontRenderContext()>("getFRC"), //
+		jMethod<::java::awt::Font()>("getFont"), //
+		jMethod<::jint()>("getLayoutFlags"), //
+		jMethod<::jint()>("getLength"), //
+		jMethod<::jint()>("getStart"), //
+		jMethod<::sun::font::TextSource(::jint, ::jint, ::jint)>("getSubSource"), //
+		jMethod<::java::lang::String(::jboolean)>("toString"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getBidiLevel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBidiLevel")] != -1);
+		return call<R>("getBidiLevel", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jchar *, typename... Args>
+	auto getChars(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getChars")] != -1);
+		return call<R>("getChars", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getContextLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getContextLength")] != -1);
+		return call<R>("getContextLength", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getContextStart(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getContextStart")] != -1);
+		return call<R>("getContextStart", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::CoreMetrics, typename... Args>
+	auto getCoreMetrics(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCoreMetrics")] != -1);
+		return call<R>("getCoreMetrics", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::font::FontRenderContext, typename... Args>
+	auto getFRC(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFRC")] != -1);
+		return call<R>("getFRC", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Font, typename... Args>
+	auto getFont(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFont")] != -1);
+		return call<R>("getFont", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getLayoutFlags(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLayoutFlags")] != -1);
+		return call<R>("getLayoutFlags", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLength")] != -1);
+		return call<R>("getLength", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getStart(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStart")] != -1);
+		return call<R>("getStart", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::TextSource, typename... Args>
+	auto getSubSource(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSubSource")] != -1);
+		return call<R>("getSubSource", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

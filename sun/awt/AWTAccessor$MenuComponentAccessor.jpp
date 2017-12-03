@@ -1,0 +1,56 @@
+#ifndef sun_awt_AWTAccessor$MenuComponentAccessor_HPP
+#define sun_awt_AWTAccessor$MenuComponentAccessor_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::AWTAccessor$MenuComponentAccessor : public jObject<::sun::awt::AWTAccessor$MenuComponentAccessor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "AWTAccessor$MenuComponentAccessor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::awt::AppContext(::java::awt::MenuComponent)>("getAppContext"), //
+		jMethod<::java::awt::Font(::java::awt::MenuComponent)>("getFont_NoClientCode"), //
+		jMethod<::java::awt::MenuContainer(::java::awt::MenuComponent)>("getParent"), //
+		jMethod<::java::awt::peer::MenuComponentPeer(::java::awt::MenuComponent)>("getPeer"), //
+		jMethod<::jvoid(::java::awt::MenuComponent, ::sun::awt::AppContext)>("setAppContext"), //
+	};
+
+	template<typename R = ::sun::awt::AppContext, typename... Args>
+	auto getAppContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAppContext")] != -1);
+		return call<R>("getAppContext", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Font, typename... Args>
+	auto getFont_NoClientCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFont_NoClientCode")] != -1);
+		return call<R>("getFont_NoClientCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::MenuContainer, typename... Args>
+	auto getParent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getParent")] != -1);
+		return call<R>("getParent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::peer::MenuComponentPeer, typename... Args>
+	auto getPeer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPeer")] != -1);
+		return call<R>("getPeer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setAppContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setAppContext")] != -1);
+		return call<R>("setAppContext", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,42 @@
+#ifndef com_sun_jmx_mbeanserver_DescriptorCache_HPP
+#define com_sun_jmx_mbeanserver_DescriptorCache_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::jmx::mbeanserver::DescriptorCache : public jObject<::com::sun::jmx::mbeanserver::DescriptorCache, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_jmx_mbeanserver / "DescriptorCache";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::management::ImmutableDescriptor(::javax::management::ImmutableDescriptor)>("get"), //
+		jMethod<::com::sun::jmx::mbeanserver::DescriptorCache(::javax::management::JMX)>("getInstance"), //
+		jMethod<::javax::management::ImmutableDescriptor(::javax::management::Descriptor *)>("union"), //
+	};
+
+	template<typename R = ::javax::management::ImmutableDescriptor, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::jmx::mbeanserver::DescriptorCache, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::ImmutableDescriptor, typename... Args>
+	auto union_(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("union")] != -1);
+		return call<R>("union", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

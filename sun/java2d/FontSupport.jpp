@@ -1,0 +1,28 @@
+#ifndef sun_java2d_FontSupport_HPP
+#define sun_java2d_FontSupport_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::java2d::FontSupport : public jObject<::sun::java2d::FontSupport, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d / "FontSupport";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::awt::FontConfiguration()>("getFontConfiguration"), //
+	};
+
+	template<typename R = ::sun::awt::FontConfiguration, typename... Args>
+	auto getFontConfiguration(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFontConfiguration")] != -1);
+		return call<R>("getFontConfiguration", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

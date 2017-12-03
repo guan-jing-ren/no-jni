@@ -1,0 +1,104 @@
+#ifndef sun_java2d_NullSurfaceData_HPP
+#define sun_java2d_NullSurfaceData_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::java2d::NullSurfaceData : public jObject<::sun::java2d::NullSurfaceData, ::sun::java2d::SurfaceData> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d / "NullSurfaceData";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::java2d::SurfaceData>("theInstance"), //
+	};
+
+	template<typename F = ::sun::java2d::SurfaceData>
+	static auto theInstance() {
+		static_assert(field_signatures[jField<F>("theInstance")] != -1);
+		return sat<F>("theInstance");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::sun::java2d::SunGraphics2D, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint)>("copyArea"), //
+		jMethod<::java::awt::Rectangle()>("getBounds"), //
+		jMethod<::java::lang::Object()>("getDestination"), //
+		jMethod<::java::awt::GraphicsConfiguration()>("getDeviceConfiguration"), //
+		jMethod<::java::awt::image::Raster(::jint, ::jint, ::jint, ::jint)>("getRaster"), //
+		jMethod<::sun::java2d::SurfaceData()>("getReplacement"), //
+		jMethod<::jvoid()>("invalidate"), //
+		jMethod<::jint(::jint)>("pixelFor"), //
+		jMethod<::jint(::jint)>("rgbFor"), //
+		jMethod<::jboolean()>("useTightBBoxes"), //
+		jMethod<::jvoid(::sun::java2d::SunGraphics2D)>("validatePipe"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto copyArea(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("copyArea")] != -1);
+		return call<R>("copyArea", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Rectangle, typename... Args>
+	auto getBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBounds")] != -1);
+		return call<R>("getBounds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getDestination(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDestination")] != -1);
+		return call<R>("getDestination", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::GraphicsConfiguration, typename... Args>
+	auto getDeviceConfiguration(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDeviceConfiguration")] != -1);
+		return call<R>("getDeviceConfiguration", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::image::Raster, typename... Args>
+	auto getRaster(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRaster")] != -1);
+		return call<R>("getRaster", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::SurfaceData, typename... Args>
+	auto getReplacement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getReplacement")] != -1);
+		return call<R>("getReplacement", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto invalidate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("invalidate")] != -1);
+		return call<R>("invalidate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto pixelFor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("pixelFor")] != -1);
+		return call<R>("pixelFor", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto rgbFor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("rgbFor")] != -1);
+		return call<R>("rgbFor", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto useTightBBoxes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("useTightBBoxes")] != -1);
+		return call<R>("useTightBBoxes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto validatePipe(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("validatePipe")] != -1);
+		return call<R>("validatePipe", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

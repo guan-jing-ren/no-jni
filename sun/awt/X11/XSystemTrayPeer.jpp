@@ -1,0 +1,49 @@
+#ifndef sun_awt_X11_XSystemTrayPeer_HPP
+#define sun_awt_X11_XSystemTrayPeer_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::awt::X11::XSystemTrayPeer : public jObject<::sun::awt::X11::XSystemTrayPeer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt_X11 / "XSystemTrayPeer";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::Dimension()>("getTrayIconSize"), //
+		jMethod<::jvoid(::jint, ::sun::awt::X11::XMSelection, ::jlong, ::jlong, ::jlong)>("ownerChanged"), //
+		jMethod<::jvoid(::jint, ::sun::awt::X11::XMSelection, ::jlong)>("ownerDeath"), //
+		jMethod<::jvoid(::jint, ::sun::awt::X11::XMSelection, ::jlong, ::sun::awt::X11::XPropertyEvent)>("selectionChanged"), //
+	};
+
+	template<typename R = ::java::awt::Dimension, typename... Args>
+	auto getTrayIconSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTrayIconSize")] != -1);
+		return call<R>("getTrayIconSize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto ownerChanged(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("ownerChanged")] != -1);
+		return call<R>("ownerChanged", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto ownerDeath(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("ownerDeath")] != -1);
+		return call<R>("ownerDeath", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto selectionChanged(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("selectionChanged")] != -1);
+		return call<R>("selectionChanged", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

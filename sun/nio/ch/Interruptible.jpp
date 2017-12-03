@@ -1,0 +1,28 @@
+#ifndef sun_nio_ch_Interruptible_HPP
+#define sun_nio_ch_Interruptible_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::nio::ch::Interruptible : public jObject<::sun::nio::ch::Interruptible, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_nio_ch / "Interruptible";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::Thread)>("interrupt"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto interrupt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("interrupt")] != -1);
+		return call<R>("interrupt", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

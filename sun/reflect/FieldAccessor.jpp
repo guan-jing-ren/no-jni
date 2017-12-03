@@ -1,0 +1,147 @@
+#ifndef sun_reflect_FieldAccessor_HPP
+#define sun_reflect_FieldAccessor_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::reflect::FieldAccessor : public jObject<::sun::reflect::FieldAccessor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_reflect / "FieldAccessor";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object(::java::lang::Object)>("get"), //
+		jMethod<::jboolean(::java::lang::Object)>("getBoolean"), //
+		jMethod<::jbyte(::java::lang::Object)>("getByte"), //
+		jMethod<::jchar(::java::lang::Object)>("getChar"), //
+		jMethod<::jdouble(::java::lang::Object)>("getDouble"), //
+		jMethod<::jfloat(::java::lang::Object)>("getFloat"), //
+		jMethod<::jint(::java::lang::Object)>("getInt"), //
+		jMethod<::jlong(::java::lang::Object)>("getLong"), //
+		jMethod<::jshort(::java::lang::Object)>("getShort"), //
+		jMethod<::jvoid(::java::lang::Object, ::java::lang::Object)>("set"), //
+		jMethod<::jvoid(::java::lang::Object, ::jboolean)>("setBoolean"), //
+		jMethod<::jvoid(::java::lang::Object, ::jbyte)>("setByte"), //
+		jMethod<::jvoid(::java::lang::Object, ::jchar)>("setChar"), //
+		jMethod<::jvoid(::java::lang::Object, ::jdouble)>("setDouble"), //
+		jMethod<::jvoid(::java::lang::Object, ::jfloat)>("setFloat"), //
+		jMethod<::jvoid(::java::lang::Object, ::jint)>("setInt"), //
+		jMethod<::jvoid(::java::lang::Object, ::jlong)>("setLong"), //
+		jMethod<::jvoid(::java::lang::Object, ::jshort)>("setShort"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getBoolean(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBoolean")] != -1);
+		return call<R>("getBoolean", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte, typename... Args>
+	auto getByte(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getByte")] != -1);
+		return call<R>("getByte", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jchar, typename... Args>
+	auto getChar(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getChar")] != -1);
+		return call<R>("getChar", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jdouble, typename... Args>
+	auto getDouble(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDouble")] != -1);
+		return call<R>("getDouble", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getFloat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFloat")] != -1);
+		return call<R>("getFloat", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getInt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInt")] != -1);
+		return call<R>("getInt", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getLong(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLong")] != -1);
+		return call<R>("getLong", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jshort, typename... Args>
+	auto getShort(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getShort")] != -1);
+		return call<R>("getShort", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set")] != -1);
+		return call<R>("set", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setBoolean(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setBoolean")] != -1);
+		return call<R>("setBoolean", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setByte(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setByte")] != -1);
+		return call<R>("setByte", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setChar(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setChar")] != -1);
+		return call<R>("setChar", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDouble(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setDouble")] != -1);
+		return call<R>("setDouble", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setFloat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setFloat")] != -1);
+		return call<R>("setFloat", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setInt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setInt")] != -1);
+		return call<R>("setInt", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLong(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setLong")] != -1);
+		return call<R>("setLong", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setShort(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setShort")] != -1);
+		return call<R>("setShort", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

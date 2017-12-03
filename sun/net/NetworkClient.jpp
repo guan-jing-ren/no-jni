@@ -1,0 +1,99 @@
+#ifndef sun_net_NetworkClient_HPP
+#define sun_net_NetworkClient_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::net::NetworkClient : public jObject<::sun::net::NetworkClient, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_net / "NetworkClient";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("DEFAULT_CONNECT_TIMEOUT"), //
+		jField<::jint>("DEFAULT_READ_TIMEOUT"), //
+		jField<::java::io::InputStream>("serverInput"), //
+		jField<::java::io::PrintStream>("serverOutput"), //
+	};
+
+	template<typename F = ::jint>
+	static auto DEFAULT_CONNECT_TIMEOUT() {
+		static_assert(field_signatures[jField<F>("DEFAULT_CONNECT_TIMEOUT")] != -1);
+		return sat<F>("DEFAULT_CONNECT_TIMEOUT");
+	}
+
+	template<typename F = ::jint>
+	static auto DEFAULT_READ_TIMEOUT() {
+		static_assert(field_signatures[jField<F>("DEFAULT_READ_TIMEOUT")] != -1);
+		return sat<F>("DEFAULT_READ_TIMEOUT");
+	}
+
+	template<typename F = ::java::io::InputStream>
+	auto serverInput() const {
+		static_assert(field_signatures[jField<F>("serverInput")] != -1);
+		return at<F>("serverInput");
+	}
+
+	template<typename F = ::java::io::PrintStream>
+	auto serverOutput() const {
+		static_assert(field_signatures[jField<F>("serverOutput")] != -1);
+		return at<F>("serverOutput");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::java::lang::String, ::jint)>(), //
+		jMethod<::jvoid()>("closeServer"), //
+		jMethod<::jint()>("getConnectTimeout"), //
+		jMethod<::jint()>("getReadTimeout"), //
+		jMethod<::jvoid(::java::lang::String, ::jint)>("openServer"), //
+		jMethod<::jboolean()>("serverIsOpen"), //
+		jMethod<::jvoid(::jint)>("setConnectTimeout"), //
+		jMethod<::jvoid(::jint)>("setReadTimeout"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto closeServer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("closeServer")] != -1);
+		return call<R>("closeServer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getConnectTimeout(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getConnectTimeout")] != -1);
+		return call<R>("getConnectTimeout", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getReadTimeout(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getReadTimeout")] != -1);
+		return call<R>("getReadTimeout", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto openServer(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("openServer")] != -1);
+		return call<R>("openServer", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto serverIsOpen(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("serverIsOpen")] != -1);
+		return call<R>("serverIsOpen", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setConnectTimeout(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setConnectTimeout")] != -1);
+		return call<R>("setConnectTimeout", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setReadTimeout(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setReadTimeout")] != -1);
+		return call<R>("setReadTimeout", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,503 @@
+#ifndef com_sun_corba_se_spi_orb_ORB_HPP
+#define com_sun_corba_se_spi_orb_ORB_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::spi::orb::ORB : public jObject<::com::sun::corba::se::spi::orb::ORB, ::com::sun::corba::se::org::omg::CORBA::ORB> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_spi_orb / "ORB";
+
+	constexpr static Enume field_signatures{
+		jField<::jboolean>("ORBInitDebug"), //
+		jField<::jboolean>("giopDebugFlag"), //
+		jField<::jboolean>("giopVersionDebugFlag"), //
+		jField<::jboolean>("invocationTimingDebugFlag"), //
+		jField<::jboolean>("namingDebugFlag"), //
+		jField<::jboolean>("orbdDebugFlag"), //
+		jField<::jboolean>("poaConcurrencyDebugFlag"), //
+		jField<::jboolean>("poaDebugFlag"), //
+		jField<::jboolean>("poaFSMDebugFlag"), //
+		jField<::jboolean>("serviceContextDebugFlag"), //
+		jField<::jboolean>("shutdownDebugFlag"), //
+		jField<::jboolean>("subcontractDebugFlag"), //
+		jField<::jboolean>("transientObjectManagerDebugFlag"), //
+		jField<::jboolean>("transportDebugFlag"), //
+	};
+
+	template<typename F = ::jboolean>
+	static auto ORBInitDebug() {
+		static_assert(field_signatures[jField<F>("ORBInitDebug")] != -1);
+		return sat<F>("ORBInitDebug");
+	}
+
+	template<typename F = ::jboolean>
+	auto giopDebugFlag() const {
+		static_assert(field_signatures[jField<F>("giopDebugFlag")] != -1);
+		return at<F>("giopDebugFlag");
+	}
+
+	template<typename F = ::jboolean>
+	auto giopVersionDebugFlag() const {
+		static_assert(field_signatures[jField<F>("giopVersionDebugFlag")] != -1);
+		return at<F>("giopVersionDebugFlag");
+	}
+
+	template<typename F = ::jboolean>
+	auto invocationTimingDebugFlag() const {
+		static_assert(field_signatures[jField<F>("invocationTimingDebugFlag")] != -1);
+		return at<F>("invocationTimingDebugFlag");
+	}
+
+	template<typename F = ::jboolean>
+	auto namingDebugFlag() const {
+		static_assert(field_signatures[jField<F>("namingDebugFlag")] != -1);
+		return at<F>("namingDebugFlag");
+	}
+
+	template<typename F = ::jboolean>
+	auto orbdDebugFlag() const {
+		static_assert(field_signatures[jField<F>("orbdDebugFlag")] != -1);
+		return at<F>("orbdDebugFlag");
+	}
+
+	template<typename F = ::jboolean>
+	auto poaConcurrencyDebugFlag() const {
+		static_assert(field_signatures[jField<F>("poaConcurrencyDebugFlag")] != -1);
+		return at<F>("poaConcurrencyDebugFlag");
+	}
+
+	template<typename F = ::jboolean>
+	auto poaDebugFlag() const {
+		static_assert(field_signatures[jField<F>("poaDebugFlag")] != -1);
+		return at<F>("poaDebugFlag");
+	}
+
+	template<typename F = ::jboolean>
+	auto poaFSMDebugFlag() const {
+		static_assert(field_signatures[jField<F>("poaFSMDebugFlag")] != -1);
+		return at<F>("poaFSMDebugFlag");
+	}
+
+	template<typename F = ::jboolean>
+	auto serviceContextDebugFlag() const {
+		static_assert(field_signatures[jField<F>("serviceContextDebugFlag")] != -1);
+		return at<F>("serviceContextDebugFlag");
+	}
+
+	template<typename F = ::jboolean>
+	auto shutdownDebugFlag() const {
+		static_assert(field_signatures[jField<F>("shutdownDebugFlag")] != -1);
+		return at<F>("shutdownDebugFlag");
+	}
+
+	template<typename F = ::jboolean>
+	auto subcontractDebugFlag() const {
+		static_assert(field_signatures[jField<F>("subcontractDebugFlag")] != -1);
+		return at<F>("subcontractDebugFlag");
+	}
+
+	template<typename F = ::jboolean>
+	auto transientObjectManagerDebugFlag() const {
+		static_assert(field_signatures[jField<F>("transientObjectManagerDebugFlag")] != -1);
+		return at<F>("transientObjectManagerDebugFlag");
+	}
+
+	template<typename F = ::jboolean>
+	auto transportDebugFlag() const {
+		static_assert(field_signatures[jField<F>("transportDebugFlag")] != -1);
+		return at<F>("transportDebugFlag");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("checkShutdownState"), //
+		jMethod<::jvoid()>("destroy"), //
+		jMethod<::jvoid()>("finishedDispatch"), //
+		jMethod<::com::sun::corba::se::pept::transport::ByteBufferPool()>("getByteBufferPool"), //
+		jMethod<::com::sun::corba::se::spi::protocol::ClientDelegateFactory()>("getClientDelegateFactory"), //
+		jMethod<::com::sun::corba::se::spi::copyobject::CopierManager()>("getCopierManager"), //
+		jMethod<::com::sun::corba::se::spi::transport::CorbaContactInfoListFactory()>("getCorbaContactInfoListFactory"), //
+		jMethod<::com::sun::corba::se::spi::transport::CorbaTransportManager()>("getCorbaTransportManager"), //
+		jMethod<::com::sun::corba::se::spi::ior::IOR()>("getFVDCodeBaseIOR"), //
+		jMethod<::com::sun::corba::se::spi::legacy::connection::LegacyServerSocketManager()>("getLegacyServerSocketManager"), //
+		jMethod<::com::sun::corba::se::spi::resolver::LocalResolver()>("getLocalResolver"), //
+		jMethod<::com::sun::corba::se::spi::logging::LogWrapperBase(::java::lang::String, ::java::lang::String, ::com::sun::corba::se::spi::logging::LogWrapperFactory)>("getLogWrapper"), //
+		jMethod<::java::util::logging::Logger(::java::lang::String)>("getLogger"), //
+		jMethod<::com::sun::corba::se::spi::monitoring::MonitoringManager()>("getMonitoringManager"), //
+		jMethod<::com::sun::corba::se::spi::orb::ORBData()>("getORBData"), //
+		jMethod<::com::sun::corba::se::spi::orb::ORBVersion()>("getORBVersion"), //
+		jMethod<::com::sun::corba::se::spi::ior::ObjectKeyFactory()>("getObjectKeyFactory"), //
+		jMethod<::com::sun::corba::se::spi::protocol::PIHandler()>("getPIHandler"), //
+		jMethod<::com::sun::corba::se::spi::presentation::rmi::PresentationManager()>("getPresentationManager"), //
+		jMethod<::com::sun::corba::se::spi::protocol::RequestDispatcherRegistry()>("getRequestDispatcherRegistry"), //
+		jMethod<::com::sun::corba::se::spi::resolver::Resolver()>("getResolver"), //
+		jMethod<::com::sun::corba::se::spi::servicecontext::ServiceContextRegistry()>("getServiceContextRegistry"), //
+		jMethod<::com::sun::corba::se::spi::presentation::rmi::PresentationManager$StubFactoryFactory()>("getStubFactoryFactory"), //
+		jMethod<::com::sun::corba::se::spi::ior::TaggedComponentFactoryFinder()>("getTaggedComponentFactoryFinder"), //
+		jMethod<::com::sun::corba::se::spi::ior::IdentifiableFactoryFinder()>("getTaggedProfileFactoryFinder"), //
+		jMethod<::com::sun::corba::se::spi::ior::IdentifiableFactoryFinder()>("getTaggedProfileTemplateFactoryFinder"), //
+		jMethod<::com::sun::corba::se::spi::orbutil::threadpool::ThreadPoolManager()>("getThreadPoolManager"), //
+		jMethod<::jint()>("getTransientServerId"), //
+		jMethod<::com::sun::corba::se::impl::corba::TypeCodeImpl(::java::lang::String)>("getTypeCode"), //
+		jMethod<::com::sun::corba::se::spi::orb::Operation()>("getURLOperation"), //
+		jMethod<::com::sun::corba::se::impl::corba::TypeCodeImpl(::jint)>("get_primitive_tc"), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::ior::ObjectKey)>("handleBadServerId"), //
+		jMethod<::jvoid()>("initBadServerIdHandler"), //
+		jMethod<::jboolean()>("isDuringDispatch"), //
+		jMethod<::jboolean(::java::lang::String)>("isLocalHost"), //
+		jMethod<::jboolean(::jint, ::jint)>("isLocalServerId"), //
+		jMethod<::jvoid()>("notifyORB"), //
+		jMethod<::com::sun::corba::se::spi::oa::OAInvocationInfo()>("peekInvocationInfo"), //
+		jMethod<::com::sun::corba::se::spi::oa::OAInvocationInfo()>("popInvocationInfo"), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::oa::OAInvocationInfo)>("pushInvocationInfo"), //
+		jMethod<::jvoid(::com::sun::corba::se::impl::oa::poa::BadServerIdHandler)>("setBadServerIdHandler"), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::protocol::ClientDelegateFactory)>("setClientDelegateFactory"), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::transport::CorbaContactInfoListFactory)>("setCorbaContactInfoListFactory"), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::protocol::CorbaServerRequestDispatcher)>("setINSDelegate"), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::resolver::LocalResolver)>("setLocalResolver"), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::orb::ORBVersion)>("setORBVersion"), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::ior::ObjectKeyFactory)>("setObjectKeyFactory"), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::resolver::Resolver)>("setResolver"), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::orbutil::threadpool::ThreadPoolManager)>("setThreadPoolManager"), //
+		jMethod<::jvoid(::java::lang::String, ::com::sun::corba::se::impl::corba::TypeCodeImpl)>("setTypeCode"), //
+		jMethod<::jvoid(::com::sun::corba::se::spi::orb::Operation)>("setURLOperation"), //
+		jMethod<::jvoid(::java::util::Properties)>("set_parameters"), //
+		jMethod<::jvoid()>("startingDispatch"), //
+		jMethod<::com::sun::corba::se::spi::logging::LogWrapperBase(::java::lang::String, ::java::lang::String, ::com::sun::corba::se::spi::logging::LogWrapperFactory)>("staticGetLogWrapper"), //
+		jMethod<::java::util::logging::Logger(::java::lang::String)>("staticGetLogger"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto checkShutdownState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkShutdownState")] != -1);
+		return call<R>("checkShutdownState", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto destroy(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("destroy")] != -1);
+		return call<R>("destroy", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto finishedDispatch(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("finishedDispatch")] != -1);
+		return call<R>("finishedDispatch", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::pept::transport::ByteBufferPool, typename... Args>
+	auto getByteBufferPool(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getByteBufferPool")] != -1);
+		return call<R>("getByteBufferPool", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::protocol::ClientDelegateFactory, typename... Args>
+	auto getClientDelegateFactory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClientDelegateFactory")] != -1);
+		return call<R>("getClientDelegateFactory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::copyobject::CopierManager, typename... Args>
+	auto getCopierManager(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCopierManager")] != -1);
+		return call<R>("getCopierManager", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::transport::CorbaContactInfoListFactory, typename... Args>
+	auto getCorbaContactInfoListFactory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCorbaContactInfoListFactory")] != -1);
+		return call<R>("getCorbaContactInfoListFactory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::transport::CorbaTransportManager, typename... Args>
+	auto getCorbaTransportManager(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCorbaTransportManager")] != -1);
+		return call<R>("getCorbaTransportManager", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::ior::IOR, typename... Args>
+	auto getFVDCodeBaseIOR(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFVDCodeBaseIOR")] != -1);
+		return call<R>("getFVDCodeBaseIOR", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::legacy::connection::LegacyServerSocketManager, typename... Args>
+	auto getLegacyServerSocketManager(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLegacyServerSocketManager")] != -1);
+		return call<R>("getLegacyServerSocketManager", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::resolver::LocalResolver, typename... Args>
+	auto getLocalResolver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLocalResolver")] != -1);
+		return call<R>("getLocalResolver", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::logging::LogWrapperBase, typename... Args>
+	auto getLogWrapper(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLogWrapper")] != -1);
+		return call<R>("getLogWrapper", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::logging::Logger, typename... Args>
+	auto getLogger(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLogger")] != -1);
+		return call<R>("getLogger", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::monitoring::MonitoringManager, typename... Args>
+	auto getMonitoringManager(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMonitoringManager")] != -1);
+		return call<R>("getMonitoringManager", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::orb::ORBData, typename... Args>
+	auto getORBData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getORBData")] != -1);
+		return call<R>("getORBData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::orb::ORBVersion, typename... Args>
+	auto getORBVersion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getORBVersion")] != -1);
+		return call<R>("getORBVersion", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::ior::ObjectKeyFactory, typename... Args>
+	auto getObjectKeyFactory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getObjectKeyFactory")] != -1);
+		return call<R>("getObjectKeyFactory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::protocol::PIHandler, typename... Args>
+	auto getPIHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPIHandler")] != -1);
+		return call<R>("getPIHandler", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::presentation::rmi::PresentationManager, typename... Args>
+	static auto getPresentationManager(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPresentationManager")] != -1);
+		return scall<R>("getPresentationManager", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::protocol::RequestDispatcherRegistry, typename... Args>
+	auto getRequestDispatcherRegistry(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRequestDispatcherRegistry")] != -1);
+		return call<R>("getRequestDispatcherRegistry", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::resolver::Resolver, typename... Args>
+	auto getResolver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getResolver")] != -1);
+		return call<R>("getResolver", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::servicecontext::ServiceContextRegistry, typename... Args>
+	auto getServiceContextRegistry(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getServiceContextRegistry")] != -1);
+		return call<R>("getServiceContextRegistry", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::presentation::rmi::PresentationManager$StubFactoryFactory, typename... Args>
+	static auto getStubFactoryFactory(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStubFactoryFactory")] != -1);
+		return scall<R>("getStubFactoryFactory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::ior::TaggedComponentFactoryFinder, typename... Args>
+	auto getTaggedComponentFactoryFinder(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTaggedComponentFactoryFinder")] != -1);
+		return call<R>("getTaggedComponentFactoryFinder", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::ior::IdentifiableFactoryFinder, typename... Args>
+	auto getTaggedProfileFactoryFinder(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTaggedProfileFactoryFinder")] != -1);
+		return call<R>("getTaggedProfileFactoryFinder", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::ior::IdentifiableFactoryFinder, typename... Args>
+	auto getTaggedProfileTemplateFactoryFinder(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTaggedProfileTemplateFactoryFinder")] != -1);
+		return call<R>("getTaggedProfileTemplateFactoryFinder", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::orbutil::threadpool::ThreadPoolManager, typename... Args>
+	auto getThreadPoolManager(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getThreadPoolManager")] != -1);
+		return call<R>("getThreadPoolManager", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getTransientServerId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTransientServerId")] != -1);
+		return call<R>("getTransientServerId", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::corba::TypeCodeImpl, typename... Args>
+	auto getTypeCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTypeCode")] != -1);
+		return call<R>("getTypeCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::orb::Operation, typename... Args>
+	auto getURLOperation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getURLOperation")] != -1);
+		return call<R>("getURLOperation", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::impl::corba::TypeCodeImpl, typename... Args>
+	auto get_primitive_tc(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get_primitive_tc")] != -1);
+		return call<R>("get_primitive_tc", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto handleBadServerId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("handleBadServerId")] != -1);
+		return call<R>("handleBadServerId", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto initBadServerIdHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("initBadServerIdHandler")] != -1);
+		return call<R>("initBadServerIdHandler", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDuringDispatch(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isDuringDispatch")] != -1);
+		return call<R>("isDuringDispatch", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isLocalHost(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isLocalHost")] != -1);
+		return call<R>("isLocalHost", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isLocalServerId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isLocalServerId")] != -1);
+		return call<R>("isLocalServerId", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto notifyORB(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("notifyORB")] != -1);
+		return call<R>("notifyORB", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::oa::OAInvocationInfo, typename... Args>
+	auto peekInvocationInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("peekInvocationInfo")] != -1);
+		return call<R>("peekInvocationInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::oa::OAInvocationInfo, typename... Args>
+	auto popInvocationInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("popInvocationInfo")] != -1);
+		return call<R>("popInvocationInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto pushInvocationInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("pushInvocationInfo")] != -1);
+		return call<R>("pushInvocationInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setBadServerIdHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setBadServerIdHandler")] != -1);
+		return call<R>("setBadServerIdHandler", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setClientDelegateFactory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setClientDelegateFactory")] != -1);
+		return call<R>("setClientDelegateFactory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setCorbaContactInfoListFactory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setCorbaContactInfoListFactory")] != -1);
+		return call<R>("setCorbaContactInfoListFactory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setINSDelegate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setINSDelegate")] != -1);
+		return call<R>("setINSDelegate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLocalResolver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setLocalResolver")] != -1);
+		return call<R>("setLocalResolver", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setORBVersion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setORBVersion")] != -1);
+		return call<R>("setORBVersion", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setObjectKeyFactory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setObjectKeyFactory")] != -1);
+		return call<R>("setObjectKeyFactory", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setResolver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setResolver")] != -1);
+		return call<R>("setResolver", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setThreadPoolManager(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setThreadPoolManager")] != -1);
+		return call<R>("setThreadPoolManager", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setTypeCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setTypeCode")] != -1);
+		return call<R>("setTypeCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setURLOperation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setURLOperation")] != -1);
+		return call<R>("setURLOperation", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set_parameters(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set_parameters")] != -1);
+		return call<R>("set_parameters", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto startingDispatch(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("startingDispatch")] != -1);
+		return call<R>("startingDispatch", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::corba::se::spi::logging::LogWrapperBase, typename... Args>
+	static auto staticGetLogWrapper(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("staticGetLogWrapper")] != -1);
+		return scall<R>("staticGetLogWrapper", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::logging::Logger, typename... Args>
+	static auto staticGetLogger(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("staticGetLogger")] != -1);
+		return scall<R>("staticGetLogger", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

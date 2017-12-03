@@ -1,0 +1,76 @@
+#ifndef com_sun_security_sasl_util_PolicyUtils_HPP
+#define com_sun_security_sasl_util_PolicyUtils_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::security::sasl::util::PolicyUtils : public jObject<::com::sun::security::sasl::util::PolicyUtils, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_security_sasl_util / "PolicyUtils";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("FORWARD_SECRECY"), //
+		jField<::jint>("NOACTIVE"), //
+		jField<::jint>("NOANONYMOUS"), //
+		jField<::jint>("NODICTIONARY"), //
+		jField<::jint>("NOPLAINTEXT"), //
+		jField<::jint>("PASS_CREDENTIALS"), //
+	};
+
+	template<typename F = ::jint>
+	static auto FORWARD_SECRECY() {
+		static_assert(field_signatures[jField<F>("FORWARD_SECRECY")] != -1);
+		return sat<F>("FORWARD_SECRECY");
+	}
+
+	template<typename F = ::jint>
+	static auto NOACTIVE() {
+		static_assert(field_signatures[jField<F>("NOACTIVE")] != -1);
+		return sat<F>("NOACTIVE");
+	}
+
+	template<typename F = ::jint>
+	static auto NOANONYMOUS() {
+		static_assert(field_signatures[jField<F>("NOANONYMOUS")] != -1);
+		return sat<F>("NOANONYMOUS");
+	}
+
+	template<typename F = ::jint>
+	static auto NODICTIONARY() {
+		static_assert(field_signatures[jField<F>("NODICTIONARY")] != -1);
+		return sat<F>("NODICTIONARY");
+	}
+
+	template<typename F = ::jint>
+	static auto NOPLAINTEXT() {
+		static_assert(field_signatures[jField<F>("NOPLAINTEXT")] != -1);
+		return sat<F>("NOPLAINTEXT");
+	}
+
+	template<typename F = ::jint>
+	static auto PASS_CREDENTIALS() {
+		static_assert(field_signatures[jField<F>("PASS_CREDENTIALS")] != -1);
+		return sat<F>("PASS_CREDENTIALS");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::jint, ::java::util::Map)>("checkPolicy"), //
+		jMethod<::java::lang::String *(::java::lang::String *, ::jint *, ::java::util::Map)>("filterMechs"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto checkPolicy(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkPolicy")] != -1);
+		return scall<R>("checkPolicy", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	static auto filterMechs(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("filterMechs")] != -1);
+		return scall<R>("filterMechs", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,36 @@
+#ifndef com_sun_org_omg_CORBA_Initializer_HPP
+#define com_sun_org_omg_CORBA_Initializer_HPP
+
+#include "../../../../../jfwd_decl.hpp"
+
+class ::com::sun::org::omg::CORBA::Initializer : public jObject<::com::sun::org::omg::CORBA::Initializer, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_org_omg_CORBA / "Initializer";
+
+	constexpr static Enume field_signatures{
+		jField<::org::omg::CORBA::StructMember *>("members"), //
+		jField<::java::lang::String>("name"), //
+	};
+
+	template<typename F = ::org::omg::CORBA::StructMember *>
+	auto members() const {
+		static_assert(field_signatures[jField<F>("members")] != -1);
+		return at<F>("members");
+	}
+
+	template<typename F = ::java::lang::String>
+	auto name() const {
+		static_assert(field_signatures[jField<F>("name")] != -1);
+		return at<F>("name");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::org::omg::CORBA::StructMember *, ::java::lang::String)>(), //
+	};
+
+};
+
+#endif

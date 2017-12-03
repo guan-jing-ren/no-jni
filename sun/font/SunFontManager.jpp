@@ -1,0 +1,440 @@
+#ifndef sun_font_SunFontManager_HPP
+#define sun_font_SunFontManager_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::SunFontManager : public jObject<::sun::font::SunFontManager, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "SunFontManager";
+
+	constexpr static Enume field_signatures{
+		jField<::jint>("FONTFORMAT_COMPOSITE"), //
+		jField<::jint>("FONTFORMAT_NATIVE"), //
+		jField<::jint>("FONTFORMAT_NONE"), //
+		jField<::jint>("FONTFORMAT_T2K"), //
+		jField<::jint>("FONTFORMAT_TRUETYPE"), //
+		jField<::jint>("FONTFORMAT_TTC"), //
+		jField<::jint>("FONTFORMAT_TYPE1"), //
+		jField<::java::lang::String>("jreFontDirName"), //
+		jField<::java::lang::String>("jreLibDirName"), //
+		jField<::java::lang::String>("lucidaFontName"), //
+		jField<::jboolean>("noType1Font"), //
+	};
+
+	template<typename F = ::jint>
+	static auto FONTFORMAT_COMPOSITE() {
+		static_assert(field_signatures[jField<F>("FONTFORMAT_COMPOSITE")] != -1);
+		return sat<F>("FONTFORMAT_COMPOSITE");
+	}
+
+	template<typename F = ::jint>
+	static auto FONTFORMAT_NATIVE() {
+		static_assert(field_signatures[jField<F>("FONTFORMAT_NATIVE")] != -1);
+		return sat<F>("FONTFORMAT_NATIVE");
+	}
+
+	template<typename F = ::jint>
+	static auto FONTFORMAT_NONE() {
+		static_assert(field_signatures[jField<F>("FONTFORMAT_NONE")] != -1);
+		return sat<F>("FONTFORMAT_NONE");
+	}
+
+	template<typename F = ::jint>
+	static auto FONTFORMAT_T2K() {
+		static_assert(field_signatures[jField<F>("FONTFORMAT_T2K")] != -1);
+		return sat<F>("FONTFORMAT_T2K");
+	}
+
+	template<typename F = ::jint>
+	static auto FONTFORMAT_TRUETYPE() {
+		static_assert(field_signatures[jField<F>("FONTFORMAT_TRUETYPE")] != -1);
+		return sat<F>("FONTFORMAT_TRUETYPE");
+	}
+
+	template<typename F = ::jint>
+	static auto FONTFORMAT_TTC() {
+		static_assert(field_signatures[jField<F>("FONTFORMAT_TTC")] != -1);
+		return sat<F>("FONTFORMAT_TTC");
+	}
+
+	template<typename F = ::jint>
+	static auto FONTFORMAT_TYPE1() {
+		static_assert(field_signatures[jField<F>("FONTFORMAT_TYPE1")] != -1);
+		return sat<F>("FONTFORMAT_TYPE1");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto jreFontDirName() {
+		static_assert(field_signatures[jField<F>("jreFontDirName")] != -1);
+		return sat<F>("jreFontDirName");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto jreLibDirName() {
+		static_assert(field_signatures[jField<F>("jreLibDirName")] != -1);
+		return sat<F>("jreLibDirName");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto lucidaFontName() {
+		static_assert(field_signatures[jField<F>("lucidaFontName")] != -1);
+		return sat<F>("lucidaFontName");
+	}
+
+	template<typename F = ::jboolean>
+	static auto noType1Font() {
+		static_assert(field_signatures[jField<F>("noType1Font")] != -1);
+		return sat<F>("noType1Font");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::util::concurrent::ConcurrentHashMap, ::jboolean, ::jboolean)>("createCompositeFonts"), //
+		jMethod<::sun::font::Font2D(::java::io::File, ::jint, ::jboolean, ::sun::font::CreatedFontTracker)>("createFont2D"), //
+		jMethod<::sun::awt::FontConfiguration(::jboolean, ::jboolean)>("createFontConfiguration"), //
+		jMethod<::jvoid(::sun::font::Font2D)>("deRegisterBadFont"), //
+		jMethod<::sun::font::Font2D(::java::lang::String, ::jint, ::jint)>("findFont2D"), //
+		jMethod<::sun::font::PhysicalFont(::java::lang::String, ::jint)>("findJREDeferredFont"), //
+		jMethod<::java::awt::Font *()>("getAllInstalledFonts"), //
+		jMethod<::java::util::TreeMap()>("getCreatedFontFamilyNames"), //
+		jMethod<::java::awt::Font *()>("getCreatedFonts"), //
+		jMethod<::java::lang::String()>("getDefaultFontFaceName"), //
+		jMethod<::java::lang::String()>("getDefaultFontFile"), //
+		jMethod<::sun::font::Font2D(::jint)>("getDefaultLogicalFont"), //
+		jMethod<::sun::font::PhysicalFont()>("getDefaultPhysicalFont"), //
+		jMethod<::sun::font::TrueTypeFont()>("getEUDCFont"), //
+		jMethod<::jboolean(::java::util::TreeMap, ::java::util::Locale)>("getFamilyNamesFromPlatform"), //
+		jMethod<::java::lang::String(::java::lang::String)>("getFileNameForFontName"), //
+		jMethod<::sun::awt::FontConfiguration()>("getFontConfiguration"), //
+		jMethod<::java::lang::String(::java::lang::String)>("getFullNameByFileName"), //
+		jMethod<::java::lang::String *(::java::util::Locale)>("getInstalledFontFamilyNames"), //
+		jMethod<::sun::font::SunFontManager()>("getInstance"), //
+		jMethod<::sun::font::Font2DHandle(::java::lang::String, ::jint, ::sun::font::Font2DHandle)>("getNewComposite"), //
+		jMethod<::jint()>("getNumFonts"), //
+		jMethod<::java::lang::String(::jboolean)>("getPlatformFontPath"), //
+		jMethod<::sun::font::PhysicalFont(::java::lang::String)>("getRegisteredFontFile"), //
+		jMethod<::sun::font::Font2D *()>("getRegisteredFonts"), //
+		jMethod<::java::io::FilenameFilter()>("getTrueTypeFilter"), //
+		jMethod<::java::io::FilenameFilter()>("getType1Filter"), //
+		jMethod<::jboolean()>("gotFontsFromPlatform"), //
+		jMethod<::sun::font::PhysicalFont(::java::lang::String)>("initialiseDeferredFont"), //
+		jMethod<::jboolean(::java::lang::String)>("isDeferredFont"), //
+		jMethod<::jboolean()>("isOpenJDK"), //
+		jMethod<::jboolean(::java::lang::String)>("isRegisteredFontFile"), //
+		jMethod<::jvoid()>("loadFontFiles"), //
+		jMethod<::jboolean()>("maybeUsingAlternateCompositeFonts"), //
+		jMethod<::java::util::HashMap()>("populateHardcodedFileNameMap"), //
+		jMethod<::jvoid()>("preferLocaleFonts"), //
+		jMethod<::jvoid()>("preferProportionalFonts"), //
+		jMethod<::jvoid()>("register1dot0Fonts"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::String *, ::jint, ::jboolean, ::jint)>("registerDeferredFont"), //
+		jMethod<::jboolean(::java::awt::Font)>("registerFont"), //
+		jMethod<::sun::font::PhysicalFont(::java::lang::String, ::java::lang::String *, ::jint, ::jboolean, ::jint)>("registerFontFile"), //
+		jMethod<::jvoid(::java::lang::String *, ::java::lang::String **, ::jint, ::jint, ::jboolean, ::jint, ::jboolean)>("registerFonts"), //
+		jMethod<::jvoid(::java::lang::String)>("registerFontsInDir"), //
+		jMethod<::jvoid(::sun::font::PhysicalFont, ::sun::font::PhysicalFont)>("replaceFont"), //
+		jMethod<::jvoid()>("useAlternateFontforJALocales"), //
+		jMethod<::jboolean()>("usePlatformFontMetrics"), //
+		jMethod<::jboolean()>("usingAlternateCompositeFonts"), //
+		jMethod<::jboolean()>("usingAlternateFontforJALocales"), //
+		jMethod<::jboolean()>("usingPerAppContextComposites"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto createCompositeFonts(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createCompositeFonts")] != -1);
+		return call<R>("createCompositeFonts", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::Font2D, typename... Args>
+	auto createFont2D(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createFont2D")] != -1);
+		return call<R>("createFont2D", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::awt::FontConfiguration, typename... Args>
+	auto createFontConfiguration(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createFontConfiguration")] != -1);
+		return call<R>("createFontConfiguration", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto deRegisterBadFont(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("deRegisterBadFont")] != -1);
+		return call<R>("deRegisterBadFont", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::Font2D, typename... Args>
+	auto findFont2D(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("findFont2D")] != -1);
+		return call<R>("findFont2D", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::PhysicalFont, typename... Args>
+	auto findJREDeferredFont(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("findJREDeferredFont")] != -1);
+		return call<R>("findJREDeferredFont", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Font *, typename... Args>
+	auto getAllInstalledFonts(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAllInstalledFonts")] != -1);
+		return call<R>("getAllInstalledFonts", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::TreeMap, typename... Args>
+	auto getCreatedFontFamilyNames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCreatedFontFamilyNames")] != -1);
+		return call<R>("getCreatedFontFamilyNames", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Font *, typename... Args>
+	auto getCreatedFonts(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCreatedFonts")] != -1);
+		return call<R>("getCreatedFonts", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDefaultFontFaceName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDefaultFontFaceName")] != -1);
+		return call<R>("getDefaultFontFaceName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDefaultFontFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDefaultFontFile")] != -1);
+		return call<R>("getDefaultFontFile", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::Font2D, typename... Args>
+	auto getDefaultLogicalFont(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDefaultLogicalFont")] != -1);
+		return call<R>("getDefaultLogicalFont", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::PhysicalFont, typename... Args>
+	auto getDefaultPhysicalFont(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDefaultPhysicalFont")] != -1);
+		return call<R>("getDefaultPhysicalFont", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::TrueTypeFont, typename... Args>
+	auto getEUDCFont(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEUDCFont")] != -1);
+		return call<R>("getEUDCFont", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getFamilyNamesFromPlatform(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFamilyNamesFromPlatform")] != -1);
+		return call<R>("getFamilyNamesFromPlatform", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getFileNameForFontName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFileNameForFontName")] != -1);
+		return call<R>("getFileNameForFontName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::awt::FontConfiguration, typename... Args>
+	auto getFontConfiguration(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFontConfiguration")] != -1);
+		return call<R>("getFontConfiguration", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getFullNameByFileName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFullNameByFileName")] != -1);
+		return call<R>("getFullNameByFileName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getInstalledFontFamilyNames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstalledFontFamilyNames")] != -1);
+		return call<R>("getInstalledFontFamilyNames", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::SunFontManager, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::Font2DHandle, typename... Args>
+	auto getNewComposite(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNewComposite")] != -1);
+		return call<R>("getNewComposite", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getNumFonts(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNumFonts")] != -1);
+		return call<R>("getNumFonts", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getPlatformFontPath(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPlatformFontPath")] != -1);
+		return call<R>("getPlatformFontPath", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::PhysicalFont, typename... Args>
+	auto getRegisteredFontFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRegisteredFontFile")] != -1);
+		return call<R>("getRegisteredFontFile", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::Font2D *, typename... Args>
+	auto getRegisteredFonts(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRegisteredFonts")] != -1);
+		return call<R>("getRegisteredFonts", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::FilenameFilter, typename... Args>
+	auto getTrueTypeFilter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTrueTypeFilter")] != -1);
+		return call<R>("getTrueTypeFilter", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::FilenameFilter, typename... Args>
+	auto getType1Filter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getType1Filter")] != -1);
+		return call<R>("getType1Filter", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto gotFontsFromPlatform(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("gotFontsFromPlatform")] != -1);
+		return call<R>("gotFontsFromPlatform", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::PhysicalFont, typename... Args>
+	auto initialiseDeferredFont(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("initialiseDeferredFont")] != -1);
+		return call<R>("initialiseDeferredFont", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDeferredFont(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isDeferredFont")] != -1);
+		return call<R>("isDeferredFont", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto isOpenJDK(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isOpenJDK")] != -1);
+		return scall<R>("isOpenJDK", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isRegisteredFontFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isRegisteredFontFile")] != -1);
+		return call<R>("isRegisteredFontFile", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto loadFontFiles(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("loadFontFiles")] != -1);
+		return call<R>("loadFontFiles", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto maybeUsingAlternateCompositeFonts(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("maybeUsingAlternateCompositeFonts")] != -1);
+		return call<R>("maybeUsingAlternateCompositeFonts", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::HashMap, typename... Args>
+	auto populateHardcodedFileNameMap(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("populateHardcodedFileNameMap")] != -1);
+		return call<R>("populateHardcodedFileNameMap", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto preferLocaleFonts(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("preferLocaleFonts")] != -1);
+		return call<R>("preferLocaleFonts", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto preferProportionalFonts(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("preferProportionalFonts")] != -1);
+		return call<R>("preferProportionalFonts", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto register1dot0Fonts(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("register1dot0Fonts")] != -1);
+		return call<R>("register1dot0Fonts", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto registerDeferredFont(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("registerDeferredFont")] != -1);
+		return call<R>("registerDeferredFont", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto registerFont(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("registerFont")] != -1);
+		return call<R>("registerFont", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::PhysicalFont, typename... Args>
+	auto registerFontFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("registerFontFile")] != -1);
+		return call<R>("registerFontFile", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto registerFonts(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("registerFonts")] != -1);
+		return call<R>("registerFonts", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto registerFontsInDir(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("registerFontsInDir")] != -1);
+		return call<R>("registerFontsInDir", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto replaceFont(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("replaceFont")] != -1);
+		return call<R>("replaceFont", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto useAlternateFontforJALocales(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("useAlternateFontforJALocales")] != -1);
+		return call<R>("useAlternateFontforJALocales", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto usePlatformFontMetrics(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("usePlatformFontMetrics")] != -1);
+		return call<R>("usePlatformFontMetrics", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto usingAlternateCompositeFonts(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("usingAlternateCompositeFonts")] != -1);
+		return call<R>("usingAlternateCompositeFonts", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto usingAlternateFontforJALocales(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("usingAlternateFontforJALocales")] != -1);
+		return call<R>("usingAlternateFontforJALocales", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto usingPerAppContextComposites(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("usingPerAppContextComposites")] != -1);
+		return call<R>("usingPerAppContextComposites", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

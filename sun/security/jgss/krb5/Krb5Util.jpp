@@ -1,0 +1,63 @@
+#ifndef sun_security_jgss_krb5_Krb5Util_HPP
+#define sun_security_jgss_krb5_Krb5Util_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::security::jgss::krb5::Krb5Util : public jObject<::sun::security::jgss::krb5::Krb5Util, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_jgss_krb5 / "Krb5Util";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::javax::security::auth::kerberos::KerberosTicket(::sun::security::krb5::Credentials)>("credsToTicket"), //
+		jMethod<::sun::security::jgss::krb5::ServiceCreds(::sun::security::jgss::GSSCaller, ::java::lang::String, ::java::security::AccessControlContext)>("getServiceCreds"), //
+		jMethod<::javax::security::auth::Subject(::sun::security::jgss::GSSCaller, ::java::security::AccessControlContext)>("getSubject"), //
+		jMethod<::javax::security::auth::kerberos::KerberosTicket(::sun::security::jgss::GSSCaller, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::security::AccessControlContext)>("getTicketFromSubjectAndTgs"), //
+		jMethod<::sun::security::krb5::EncryptionKey *(::javax::security::auth::kerberos::KeyTab, ::sun::security::krb5::PrincipalName)>("keysFromJavaxKeyTab"), //
+		jMethod<::sun::security::krb5::Credentials(::javax::security::auth::kerberos::KerberosTicket)>("ticketToCreds"), //
+	};
+
+	template<typename R = ::javax::security::auth::kerberos::KerberosTicket, typename... Args>
+	static auto credsToTicket(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("credsToTicket")] != -1);
+		return scall<R>("credsToTicket", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::jgss::krb5::ServiceCreds, typename... Args>
+	static auto getServiceCreds(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getServiceCreds")] != -1);
+		return scall<R>("getServiceCreds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::security::auth::Subject, typename... Args>
+	static auto getSubject(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSubject")] != -1);
+		return scall<R>("getSubject", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::security::auth::kerberos::KerberosTicket, typename... Args>
+	static auto getTicketFromSubjectAndTgs(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTicketFromSubjectAndTgs")] != -1);
+		return scall<R>("getTicketFromSubjectAndTgs", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::krb5::EncryptionKey *, typename... Args>
+	static auto keysFromJavaxKeyTab(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("keysFromJavaxKeyTab")] != -1);
+		return scall<R>("keysFromJavaxKeyTab", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::krb5::Credentials, typename... Args>
+	static auto ticketToCreds(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("ticketToCreds")] != -1);
+		return scall<R>("ticketToCreds", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,50 @@
+#ifndef sun_font_FontResolver_HPP
+#define sun_font_FontResolver_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::FontResolver : public jObject<::sun::font::FontResolver, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "FontResolver";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::Font(::jint, ::java::util::Map)>("getFont"), //
+		jMethod<::jint(::jchar)>("getFontIndex"), //
+		jMethod<::jint(::jint)>("getFontIndex"), //
+		jMethod<::sun::font::FontResolver()>("getInstance"), //
+		jMethod<::jint(::sun::text::CodePointIterator)>("nextFontRunIndex"), //
+	};
+
+	template<typename R = ::java::awt::Font, typename... Args>
+	auto getFont(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFont")] != -1);
+		return call<R>("getFont", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getFontIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFontIndex")] != -1);
+		return call<R>("getFontIndex", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::FontResolver, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto nextFontRunIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("nextFontRunIndex")] != -1);
+		return call<R>("nextFontRunIndex", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

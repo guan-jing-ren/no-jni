@@ -1,0 +1,101 @@
+#ifndef sun_java2d_xr_XRColor_HPP
+#define sun_java2d_xr_XRColor_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::xr::XRColor : public jObject<::sun::java2d::xr::XRColor, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_xr / "XRColor";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::java2d::xr::XRColor>("FULL_ALPHA"), //
+		jField<::sun::java2d::xr::XRColor>("NO_ALPHA"), //
+	};
+
+	template<typename F = ::sun::java2d::xr::XRColor>
+	static auto FULL_ALPHA() {
+		static_assert(field_signatures[jField<F>("FULL_ALPHA")] != -1);
+		return sat<F>("FULL_ALPHA");
+	}
+
+	template<typename F = ::sun::java2d::xr::XRColor>
+	static auto NO_ALPHA() {
+		static_assert(field_signatures[jField<F>("NO_ALPHA")] != -1);
+		return sat<F>("NO_ALPHA");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jConstructor<::jvoid(::jint, ::jint, ::jint, ::jint)>(), //
+		jConstructor<::jvoid(::java::awt::Color)>(), //
+		jMethod<::jint *(::jint *)>("ARGBPrePixelToXRColors"), //
+		jMethod<::jint(::jint)>("byteToXRColorValue"), //
+		jMethod<::jint()>("getAlpha"), //
+		jMethod<::jint()>("getBlue"), //
+		jMethod<::jint()>("getGreen"), //
+		jMethod<::jint()>("getRed"), //
+		jMethod<::jvoid(::jint)>("setAlpha"), //
+		jMethod<::jvoid(::jint, ::jboolean)>("setColorValues"), //
+		jMethod<::jvoid(::java::awt::Color)>("setColorValues"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jint *, typename... Args>
+	static auto ARGBPrePixelToXRColors(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("ARGBPrePixelToXRColors")] != -1);
+		return scall<R>("ARGBPrePixelToXRColors", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto byteToXRColorValue(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("byteToXRColorValue")] != -1);
+		return scall<R>("byteToXRColorValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getAlpha(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAlpha")] != -1);
+		return call<R>("getAlpha", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getBlue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBlue")] != -1);
+		return call<R>("getBlue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getGreen(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGreen")] != -1);
+		return call<R>("getGreen", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getRed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRed")] != -1);
+		return call<R>("getRed", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setAlpha(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setAlpha")] != -1);
+		return call<R>("setAlpha", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setColorValues(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setColorValues")] != -1);
+		return call<R>("setColorValues", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

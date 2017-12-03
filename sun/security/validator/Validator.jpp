@@ -1,0 +1,116 @@
+#ifndef sun_security_validator_Validator_HPP
+#define sun_security_validator_Validator_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::validator::Validator : public jObject<::sun::security::validator::Validator, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_validator / "Validator";
+
+	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("TYPE_PKIX"), //
+		jField<::java::lang::String>("TYPE_SIMPLE"), //
+		jField<::java::lang::String>("VAR_CODE_SIGNING"), //
+		jField<::java::lang::String>("VAR_GENERIC"), //
+		jField<::java::lang::String>("VAR_JCE_SIGNING"), //
+		jField<::java::lang::String>("VAR_PLUGIN_CODE_SIGNING"), //
+		jField<::java::lang::String>("VAR_TLS_CLIENT"), //
+		jField<::java::lang::String>("VAR_TLS_SERVER"), //
+		jField<::java::lang::String>("VAR_TSA_SERVER"), //
+	};
+
+	template<typename F = ::java::lang::String>
+	static auto TYPE_PKIX() {
+		static_assert(field_signatures[jField<F>("TYPE_PKIX")] != -1);
+		return sat<F>("TYPE_PKIX");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto TYPE_SIMPLE() {
+		static_assert(field_signatures[jField<F>("TYPE_SIMPLE")] != -1);
+		return sat<F>("TYPE_SIMPLE");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto VAR_CODE_SIGNING() {
+		static_assert(field_signatures[jField<F>("VAR_CODE_SIGNING")] != -1);
+		return sat<F>("VAR_CODE_SIGNING");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto VAR_GENERIC() {
+		static_assert(field_signatures[jField<F>("VAR_GENERIC")] != -1);
+		return sat<F>("VAR_GENERIC");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto VAR_JCE_SIGNING() {
+		static_assert(field_signatures[jField<F>("VAR_JCE_SIGNING")] != -1);
+		return sat<F>("VAR_JCE_SIGNING");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto VAR_PLUGIN_CODE_SIGNING() {
+		static_assert(field_signatures[jField<F>("VAR_PLUGIN_CODE_SIGNING")] != -1);
+		return sat<F>("VAR_PLUGIN_CODE_SIGNING");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto VAR_TLS_CLIENT() {
+		static_assert(field_signatures[jField<F>("VAR_TLS_CLIENT")] != -1);
+		return sat<F>("VAR_TLS_CLIENT");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto VAR_TLS_SERVER() {
+		static_assert(field_signatures[jField<F>("VAR_TLS_SERVER")] != -1);
+		return sat<F>("VAR_TLS_SERVER");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto VAR_TSA_SERVER() {
+		static_assert(field_signatures[jField<F>("VAR_TSA_SERVER")] != -1);
+		return sat<F>("VAR_TSA_SERVER");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::security::validator::Validator(::java::lang::String, ::java::lang::String, ::java::security::KeyStore)>("getInstance"), //
+		jMethod<::sun::security::validator::Validator(::java::lang::String, ::java::lang::String, ::java::security::cert::PKIXBuilderParameters)>("getInstance"), //
+		jMethod<::sun::security::validator::Validator(::java::lang::String, ::java::lang::String, ::java::util::Collection)>("getInstance"), //
+		jMethod<::java::util::Collection()>("getTrustedCertificates"), //
+		jMethod<::jvoid(::java::util::Date)>("setValidationDate"), //
+		jMethod<::java::security::cert::X509Certificate *(::java::security::cert::X509Certificate *)>("validate"), //
+		jMethod<::java::security::cert::X509Certificate *(::java::security::cert::X509Certificate *, ::java::util::Collection)>("validate"), //
+		jMethod<::java::security::cert::X509Certificate *(::java::security::cert::X509Certificate *, ::java::util::Collection, ::java::lang::Object)>("validate"), //
+		jMethod<::java::security::cert::X509Certificate *(::java::security::cert::X509Certificate *, ::java::util::Collection, ::java::security::AlgorithmConstraints, ::java::lang::Object)>("validate"), //
+	};
+
+	template<typename R = ::sun::security::validator::Validator, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Collection, typename... Args>
+	auto getTrustedCertificates(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTrustedCertificates")] != -1);
+		return call<R>("getTrustedCertificates", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setValidationDate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setValidationDate")] != -1);
+		return call<R>("setValidationDate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::X509Certificate *, typename... Args>
+	auto validate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("validate")] != -1);
+		return call<R>("validate", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

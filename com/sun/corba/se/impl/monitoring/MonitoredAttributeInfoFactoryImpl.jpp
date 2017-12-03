@@ -1,0 +1,29 @@
+#ifndef com_sun_corba_se_impl_monitoring_MonitoredAttributeInfoFactoryImpl_HPP
+#define com_sun_corba_se_impl_monitoring_MonitoredAttributeInfoFactoryImpl_HPP
+
+#include "../../../../../../jfwd_decl.hpp"
+
+class ::com::sun::corba::se::impl::monitoring::MonitoredAttributeInfoFactoryImpl : public jObject<::com::sun::corba::se::impl::monitoring::MonitoredAttributeInfoFactoryImpl, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_corba_se_impl_monitoring / "MonitoredAttributeInfoFactoryImpl";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::com::sun::corba::se::spi::monitoring::MonitoredAttributeInfo(::java::lang::String, ::java::lang::Class, ::jboolean, ::jboolean)>("createMonitoredAttributeInfo"), //
+	};
+
+	template<typename R = ::com::sun::corba::se::spi::monitoring::MonitoredAttributeInfo, typename... Args>
+	auto createMonitoredAttributeInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createMonitoredAttributeInfo")] != -1);
+		return call<R>("createMonitoredAttributeInfo", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

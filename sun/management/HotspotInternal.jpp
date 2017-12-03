@@ -1,0 +1,50 @@
+#ifndef sun_management_HotspotInternal_HPP
+#define sun_management_HotspotInternal_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::management::HotspotInternal : public jObject<::sun::management::HotspotInternal, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_management / "HotspotInternal";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid()>("postDeregister"), //
+		jMethod<::jvoid(::java::lang::Boolean)>("postRegister"), //
+		jMethod<::jvoid()>("preDeregister"), //
+		jMethod<::javax::management::ObjectName(::javax::management::MBeanServer, ::javax::management::ObjectName)>("preRegister"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto postDeregister(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("postDeregister")] != -1);
+		return call<R>("postDeregister", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto postRegister(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("postRegister")] != -1);
+		return call<R>("postRegister", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto preDeregister(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("preDeregister")] != -1);
+		return call<R>("preDeregister", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::ObjectName, typename... Args>
+	auto preRegister(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("preRegister")] != -1);
+		return call<R>("preRegister", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

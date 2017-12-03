@@ -1,0 +1,35 @@
+#ifndef sun_nio_fs_BasicFileAttributesHolder_HPP
+#define sun_nio_fs_BasicFileAttributesHolder_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::nio::fs::BasicFileAttributesHolder : public jObject<::sun::nio::fs::BasicFileAttributesHolder, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_nio_fs / "BasicFileAttributesHolder";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::nio::file::attribute::BasicFileAttributes()>("get"), //
+		jMethod<::jvoid()>("invalidate"), //
+	};
+
+	template<typename R = ::java::nio::file::attribute::BasicFileAttributes, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto invalidate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("invalidate")] != -1);
+		return call<R>("invalidate", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

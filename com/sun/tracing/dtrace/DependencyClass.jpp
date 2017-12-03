@@ -1,0 +1,90 @@
+#ifndef com_sun_tracing_dtrace_DependencyClass_HPP
+#define com_sun_tracing_dtrace_DependencyClass_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::tracing::dtrace::DependencyClass : public jObject<::com::sun::tracing::dtrace::DependencyClass, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_tracing_dtrace / "DependencyClass";
+
+	constexpr static Enume field_signatures{
+		jField<::com::sun::tracing::dtrace::DependencyClass>("COMMON"), //
+		jField<::com::sun::tracing::dtrace::DependencyClass>("CPU"), //
+		jField<::com::sun::tracing::dtrace::DependencyClass>("GROUP"), //
+		jField<::com::sun::tracing::dtrace::DependencyClass>("ISA"), //
+		jField<::com::sun::tracing::dtrace::DependencyClass>("PLATFORM"), //
+		jField<::com::sun::tracing::dtrace::DependencyClass>("UNKNOWN"), //
+	};
+
+	template<typename F = ::com::sun::tracing::dtrace::DependencyClass>
+	static auto COMMON() {
+		static_assert(field_signatures[jField<F>("COMMON")] != -1);
+		return sat<F>("COMMON");
+	}
+
+	template<typename F = ::com::sun::tracing::dtrace::DependencyClass>
+	static auto CPU() {
+		static_assert(field_signatures[jField<F>("CPU")] != -1);
+		return sat<F>("CPU");
+	}
+
+	template<typename F = ::com::sun::tracing::dtrace::DependencyClass>
+	static auto GROUP() {
+		static_assert(field_signatures[jField<F>("GROUP")] != -1);
+		return sat<F>("GROUP");
+	}
+
+	template<typename F = ::com::sun::tracing::dtrace::DependencyClass>
+	static auto ISA() {
+		static_assert(field_signatures[jField<F>("ISA")] != -1);
+		return sat<F>("ISA");
+	}
+
+	template<typename F = ::com::sun::tracing::dtrace::DependencyClass>
+	static auto PLATFORM() {
+		static_assert(field_signatures[jField<F>("PLATFORM")] != -1);
+		return sat<F>("PLATFORM");
+	}
+
+	template<typename F = ::com::sun::tracing::dtrace::DependencyClass>
+	static auto UNKNOWN() {
+		static_assert(field_signatures[jField<F>("UNKNOWN")] != -1);
+		return sat<F>("UNKNOWN");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jint()>("getEncoding"), //
+		jMethod<::java::lang::String()>("toDisplayString"), //
+		jMethod<::com::sun::tracing::dtrace::DependencyClass(::java::lang::String)>("valueOf"), //
+		jMethod<::com::sun::tracing::dtrace::DependencyClass *()>("values"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getEncoding(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEncoding")] != -1);
+		return call<R>("getEncoding", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toDisplayString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toDisplayString")] != -1);
+		return call<R>("toDisplayString", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::tracing::dtrace::DependencyClass, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::com::sun::tracing::dtrace::DependencyClass *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,77 @@
+#ifndef sun_management_HotspotClassLoadingMBean_HPP
+#define sun_management_HotspotClassLoadingMBean_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::management::HotspotClassLoadingMBean : public jObject<::sun::management::HotspotClassLoadingMBean, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_management / "HotspotClassLoadingMBean";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jlong()>("getClassInitializationTime"), //
+		jMethod<::jlong()>("getClassLoadingTime"), //
+		jMethod<::jlong()>("getClassVerificationTime"), //
+		jMethod<::jlong()>("getInitializedClassCount"), //
+		jMethod<::java::util::List()>("getInternalClassLoadingCounters"), //
+		jMethod<::jlong()>("getLoadedClassSize"), //
+		jMethod<::jlong()>("getMethodDataSize"), //
+		jMethod<::jlong()>("getUnloadedClassSize"), //
+	};
+
+	template<typename R = ::jlong, typename... Args>
+	auto getClassInitializationTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClassInitializationTime")] != -1);
+		return call<R>("getClassInitializationTime", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getClassLoadingTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClassLoadingTime")] != -1);
+		return call<R>("getClassLoadingTime", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getClassVerificationTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClassVerificationTime")] != -1);
+		return call<R>("getClassVerificationTime", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getInitializedClassCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInitializedClassCount")] != -1);
+		return call<R>("getInitializedClassCount", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getInternalClassLoadingCounters(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInternalClassLoadingCounters")] != -1);
+		return call<R>("getInternalClassLoadingCounters", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getLoadedClassSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLoadedClassSize")] != -1);
+		return call<R>("getLoadedClassSize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getMethodDataSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMethodDataSize")] != -1);
+		return call<R>("getMethodDataSize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getUnloadedClassSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUnloadedClassSize")] != -1);
+		return call<R>("getUnloadedClassSize", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

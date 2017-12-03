@@ -1,0 +1,34 @@
+#ifndef com_sun_jmx_mbeanserver_MXBeanMappingFactory_HPP
+#define com_sun_jmx_mbeanserver_MXBeanMappingFactory_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::jmx::mbeanserver::MXBeanMappingFactory : public jObject<::com::sun::jmx::mbeanserver::MXBeanMappingFactory, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_jmx_mbeanserver / "MXBeanMappingFactory";
+
+	constexpr static Enume field_signatures{
+		jField<::com::sun::jmx::mbeanserver::MXBeanMappingFactory>("DEFAULT"), //
+	};
+
+	template<typename F = ::com::sun::jmx::mbeanserver::MXBeanMappingFactory>
+	static auto DEFAULT() {
+		static_assert(field_signatures[jField<F>("DEFAULT")] != -1);
+		return sat<F>("DEFAULT");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::com::sun::jmx::mbeanserver::MXBeanMapping(::java::lang::reflect::Type, ::com::sun::jmx::mbeanserver::MXBeanMappingFactory)>("mappingForType"), //
+	};
+
+	template<typename R = ::com::sun::jmx::mbeanserver::MXBeanMapping, typename... Args>
+	auto mappingForType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("mappingForType")] != -1);
+		return call<R>("mappingForType", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

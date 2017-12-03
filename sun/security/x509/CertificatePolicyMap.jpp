@@ -1,0 +1,51 @@
+#ifndef sun_security_x509_CertificatePolicyMap_HPP
+#define sun_security_x509_CertificatePolicyMap_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::x509::CertificatePolicyMap : public jObject<::sun::security::x509::CertificatePolicyMap, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_x509 / "CertificatePolicyMap";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::sun::security::util::DerValue)>(), //
+		jConstructor<::jvoid(::sun::security::x509::CertificatePolicyId, ::sun::security::x509::CertificatePolicyId)>(), //
+		jMethod<::jvoid(::sun::security::util::DerOutputStream)>("encode"), //
+		jMethod<::sun::security::x509::CertificatePolicyId()>("getIssuerIdentifier"), //
+		jMethod<::sun::security::x509::CertificatePolicyId()>("getSubjectIdentifier"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto encode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encode")] != -1);
+		return call<R>("encode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::CertificatePolicyId, typename... Args>
+	auto getIssuerIdentifier(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIssuerIdentifier")] != -1);
+		return call<R>("getIssuerIdentifier", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::CertificatePolicyId, typename... Args>
+	auto getSubjectIdentifier(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSubjectIdentifier")] != -1);
+		return call<R>("getSubjectIdentifier", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

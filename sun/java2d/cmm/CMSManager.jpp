@@ -1,0 +1,42 @@
+#ifndef sun_java2d_cmm_CMSManager_HPP
+#define sun_java2d_cmm_CMSManager_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::cmm::CMSManager : public jObject<::sun::java2d::cmm::CMSManager, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_cmm / "CMSManager";
+
+	constexpr static Enume field_signatures{
+		jField<::java::awt::color::ColorSpace>("GRAYspace"), //
+		jField<::java::awt::color::ColorSpace>("LINEAR_RGBspace"), //
+	};
+
+	template<typename F = ::java::awt::color::ColorSpace>
+	static auto GRAYspace() {
+		static_assert(field_signatures[jField<F>("GRAYspace")] != -1);
+		return sat<F>("GRAYspace");
+	}
+
+	template<typename F = ::java::awt::color::ColorSpace>
+	static auto LINEAR_RGBspace() {
+		static_assert(field_signatures[jField<F>("LINEAR_RGBspace")] != -1);
+		return sat<F>("LINEAR_RGBspace");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::sun::java2d::cmm::PCMM()>("getModule"), //
+	};
+
+	template<typename R = ::sun::java2d::cmm::PCMM, typename... Args>
+	static auto getModule(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getModule")] != -1);
+		return scall<R>("getModule", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

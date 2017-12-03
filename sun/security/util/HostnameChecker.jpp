@@ -1,0 +1,63 @@
+#ifndef sun_security_util_HostnameChecker_HPP
+#define sun_security_util_HostnameChecker_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::security::util::HostnameChecker : public jObject<::sun::security::util::HostnameChecker, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_security_util / "HostnameChecker";
+
+	constexpr static Enume field_signatures{
+		jField<::jbyte>("TYPE_LDAP"), //
+		jField<::jbyte>("TYPE_TLS"), //
+	};
+
+	template<typename F = ::jbyte>
+	static auto TYPE_LDAP() {
+		static_assert(field_signatures[jField<F>("TYPE_LDAP")] != -1);
+		return sat<F>("TYPE_LDAP");
+	}
+
+	template<typename F = ::jbyte>
+	static auto TYPE_TLS() {
+		static_assert(field_signatures[jField<F>("TYPE_TLS")] != -1);
+		return sat<F>("TYPE_TLS");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::sun::security::util::HostnameChecker(::jbyte)>("getInstance"), //
+		jMethod<::java::lang::String(::java::security::Principal)>("getServerName"), //
+		jMethod<::sun::security::x509::X500Name(::java::security::cert::X509Certificate)>("getSubjectX500Name"), //
+		jMethod<::jboolean(::java::lang::String, ::java::security::Principal)>("match"), //
+		jMethod<::jvoid(::java::lang::String, ::java::security::cert::X509Certificate)>("match"), //
+	};
+
+	template<typename R = ::sun::security::util::HostnameChecker, typename... Args>
+	static auto getInstance(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getServerName(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getServerName")] != -1);
+		return scall<R>("getServerName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::security::x509::X500Name, typename... Args>
+	static auto getSubjectX500Name(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSubjectX500Name")] != -1);
+		return scall<R>("getSubjectX500Name", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	static auto match(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("match")] != -1);
+		return scall<R>("match", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

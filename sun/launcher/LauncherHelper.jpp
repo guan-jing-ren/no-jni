@@ -1,0 +1,55 @@
+#ifndef sun_launcher_LauncherHelper_HPP
+#define sun_launcher_LauncherHelper_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::launcher::LauncherHelper : public jObject<::sun::launcher::LauncherHelper, ::java::lang::Enum> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_launcher / "LauncherHelper";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::launcher::LauncherHelper>("INSTANCE"), //
+	};
+
+	template<typename F = ::sun::launcher::LauncherHelper>
+	static auto INSTANCE() {
+		static_assert(field_signatures[jField<F>("INSTANCE")] != -1);
+		return sat<F>("INSTANCE");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Class(::jboolean, ::jint, ::java::lang::String)>("checkAndLoadMain"), //
+		jMethod<::java::lang::Class()>("getApplicationClass"), //
+		jMethod<::sun::launcher::LauncherHelper(::java::lang::String)>("valueOf"), //
+		jMethod<::sun::launcher::LauncherHelper *()>("values"), //
+	};
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	static auto checkAndLoadMain(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkAndLoadMain")] != -1);
+		return scall<R>("checkAndLoadMain", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	static auto getApplicationClass(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getApplicationClass")] != -1);
+		return scall<R>("getApplicationClass", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::launcher::LauncherHelper, typename... Args>
+	static auto valueOf(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::launcher::LauncherHelper *, typename... Args>
+	static auto values(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,58 @@
+#ifndef sun_font_FontStrikeDesc_HPP
+#define sun_font_FontStrikeDesc_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::FontStrikeDesc : public jObject<::sun::font::FontStrikeDesc, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "FontStrikeDesc";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::awt::geom::AffineTransform, ::java::awt::geom::AffineTransform, ::jint, ::jint, ::jint)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jint(::java::lang::Object, ::sun::font::Font2D, ::jint)>("getAAHintIntVal"), //
+		jMethod<::jint(::sun::font::Font2D, ::java::awt::Font, ::java::awt::font::FontRenderContext)>("getAAHintIntVal"), //
+		jMethod<::jint(::java::lang::Object)>("getFMHintIntVal"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto getAAHintIntVal(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAAHintIntVal")] != -1);
+		return scall<R>("getAAHintIntVal", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto getFMHintIntVal(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFMHintIntVal")] != -1);
+		return scall<R>("getFMHintIntVal", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

@@ -1,0 +1,218 @@
+#ifndef sun_java2d_xr_XRSurfaceData_HPP
+#define sun_java2d_xr_XRSurfaceData_HPP
+
+#include "../../../jfwd_decl.hpp"
+
+class ::sun::java2d::xr::XRSurfaceData : public jObject<::sun::java2d::xr::XRSurfaceData, ::sun::java2d::x11::XSurfaceData> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_java2d_xr / "XRSurfaceData";
+
+	constexpr static Enume field_signatures{
+		jField<::sun::java2d::loops::SurfaceType>("ByteA8X11"), //
+		jField<::java::lang::String>("DESC_BYTE_A8_X11"), //
+		jField<::java::lang::String>("DESC_INT_ARGB_X11"), //
+		jField<::java::lang::String>("DESC_INT_RGB_X11"), //
+		jField<::sun::java2d::loops::SurfaceType>("IntArgbPreX11"), //
+		jField<::sun::java2d::loops::SurfaceType>("IntRgbX11"), //
+		jField<::sun::java2d::xr::XRCompositeManager>("maskBuffer"), //
+		jField<::jint>("picture"), //
+	};
+
+	template<typename F = ::sun::java2d::loops::SurfaceType>
+	static auto ByteA8X11() {
+		static_assert(field_signatures[jField<F>("ByteA8X11")] != -1);
+		return sat<F>("ByteA8X11");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto DESC_BYTE_A8_X11() {
+		static_assert(field_signatures[jField<F>("DESC_BYTE_A8_X11")] != -1);
+		return sat<F>("DESC_BYTE_A8_X11");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto DESC_INT_ARGB_X11() {
+		static_assert(field_signatures[jField<F>("DESC_INT_ARGB_X11")] != -1);
+		return sat<F>("DESC_INT_ARGB_X11");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto DESC_INT_RGB_X11() {
+		static_assert(field_signatures[jField<F>("DESC_INT_RGB_X11")] != -1);
+		return sat<F>("DESC_INT_RGB_X11");
+	}
+
+	template<typename F = ::sun::java2d::loops::SurfaceType>
+	static auto IntArgbPreX11() {
+		static_assert(field_signatures[jField<F>("IntArgbPreX11")] != -1);
+		return sat<F>("IntArgbPreX11");
+	}
+
+	template<typename F = ::sun::java2d::loops::SurfaceType>
+	static auto IntRgbX11() {
+		static_assert(field_signatures[jField<F>("IntRgbX11")] != -1);
+		return sat<F>("IntRgbX11");
+	}
+
+	template<typename F = ::sun::java2d::xr::XRCompositeManager>
+	auto maskBuffer() const {
+		static_assert(field_signatures[jField<F>("maskBuffer")] != -1);
+		return at<F>("maskBuffer");
+	}
+
+	template<typename F = ::jint>
+	auto picture() const {
+		static_assert(field_signatures[jField<F>("picture")] != -1);
+		return at<F>("picture");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::jint, ::jint, ::jint, ::jint)>("canSourceSendExposures"), //
+		jMethod<::jboolean(::sun::java2d::SunGraphics2D, ::jint, ::jint, ::jint, ::jint, ::jint, ::jint)>("copyArea"), //
+		jMethod<::sun::java2d::xr::XRSurfaceData$XRWindowSurfaceData(::sun::awt::X11ComponentPeer)>("createData"), //
+		jMethod<::sun::java2d::xr::XRSurfaceData$XRPixmapSurfaceData(::sun::java2d::xr::XRGraphicsConfig, ::jint, ::jint, ::java::awt::image::ColorModel, ::java::awt::Image, ::jlong, ::jint)>("createData"), //
+		jMethod<::java::awt::GraphicsConfiguration()>("getDeviceConfiguration"), //
+		jMethod<::jlong()>("getGC"), //
+		jMethod<::sun::java2d::xr::XRGraphicsConfig(::sun::awt::X11ComponentPeer)>("getGC"), //
+		jMethod<::sun::java2d::xr::XRGraphicsConfig()>("getGraphicsConfig"), //
+		jMethod<::jint()>("getPicture"), //
+		jMethod<::java::awt::image::Raster(::jint, ::jint, ::jint, ::jint)>("getRaster"), //
+		jMethod<::sun::java2d::loops::RenderLoops(::sun::java2d::SunGraphics2D)>("getRenderLoops"), //
+		jMethod<::sun::java2d::loops::SurfaceType(::sun::java2d::xr::XRGraphicsConfig, ::jint)>("getSurfaceType"), //
+		jMethod<::jint()>("getXid"), //
+		jMethod<::jvoid()>("initXRSurfaceData"), //
+		jMethod<::jvoid(::jint)>("initXRender"), //
+		jMethod<::jvoid()>("invalidate"), //
+		jMethod<::jvoid()>("makePipes"), //
+		jMethod<::sun::java2d::SurfaceDataProxy(::sun::java2d::SurfaceData)>("makeProxyFor"), //
+		jMethod<::jvoid(::java::awt::geom::AffineTransform)>("setStaticSrcTx"), //
+		jMethod<::jvoid(::sun::java2d::SunGraphics2D, ::sun::java2d::pipe::Region)>("validateAsDestination"), //
+		jMethod<::jvoid(::sun::java2d::pipe::Region, ::jboolean)>("validateCopyAreaGC"), //
+		jMethod<::jvoid(::sun::java2d::SunGraphics2D)>("validatePipe"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto canSourceSendExposures(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("canSourceSendExposures")] != -1);
+		return call<R>("canSourceSendExposures", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto copyArea(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("copyArea")] != -1);
+		return call<R>("copyArea", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::xr::XRSurfaceData$XRWindowSurfaceData, typename... Args>
+	static auto createData(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createData")] != -1);
+		return scall<R>("createData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::GraphicsConfiguration, typename... Args>
+	auto getDeviceConfiguration(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDeviceConfiguration")] != -1);
+		return call<R>("getDeviceConfiguration", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getGC(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGC")] != -1);
+		return call<R>("getGC", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::xr::XRGraphicsConfig, typename... Args>
+	auto getGraphicsConfig(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGraphicsConfig")] != -1);
+		return call<R>("getGraphicsConfig", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getPicture(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPicture")] != -1);
+		return call<R>("getPicture", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::image::Raster, typename... Args>
+	auto getRaster(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRaster")] != -1);
+		return call<R>("getRaster", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::loops::RenderLoops, typename... Args>
+	auto getRenderLoops(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRenderLoops")] != -1);
+		return call<R>("getRenderLoops", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::loops::SurfaceType, typename... Args>
+	static auto getSurfaceType(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSurfaceType")] != -1);
+		return scall<R>("getSurfaceType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getXid(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getXid")] != -1);
+		return call<R>("getXid", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto initXRSurfaceData(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("initXRSurfaceData")] != -1);
+		return scall<R>("initXRSurfaceData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto initXRender(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("initXRender")] != -1);
+		return call<R>("initXRender", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto invalidate(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("invalidate")] != -1);
+		return call<R>("invalidate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto makePipes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("makePipes")] != -1);
+		return call<R>("makePipes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::java2d::SurfaceDataProxy, typename... Args>
+	auto makeProxyFor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("makeProxyFor")] != -1);
+		return call<R>("makeProxyFor", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setStaticSrcTx(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setStaticSrcTx")] != -1);
+		return call<R>("setStaticSrcTx", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto validateAsDestination(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("validateAsDestination")] != -1);
+		return call<R>("validateAsDestination", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto validateCopyAreaGC(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("validateCopyAreaGC")] != -1);
+		return call<R>("validateCopyAreaGC", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto validatePipe(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("validatePipe")] != -1);
+		return call<R>("validatePipe", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

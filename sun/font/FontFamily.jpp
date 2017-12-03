@@ -1,0 +1,92 @@
+#ifndef sun_font_FontFamily_HPP
+#define sun_font_FontFamily_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::font::FontFamily : public jObject<::sun::font::FontFamily, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_font / "FontFamily";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::lang::String, ::jboolean, ::jint)>(), //
+		jMethod<::java::lang::String *()>("getAllFamilyNames"), //
+		jMethod<::sun::font::FontFamily *()>("getAllFontFamilies"), //
+		jMethod<::sun::font::FontFamily(::java::lang::String)>("getFamily"), //
+		jMethod<::java::lang::String()>("getFamilyName"), //
+		jMethod<::sun::font::Font2D(::jint)>("getFont"), //
+		jMethod<::sun::font::Font2D(::jint)>("getFontWithExactStyleMatch"), //
+		jMethod<::sun::font::FontFamily(::java::lang::String)>("getLocaleFamily"), //
+		jMethod<::jint()>("getRank"), //
+		jMethod<::jvoid(::sun::font::Font2D, ::jint)>("setFont"), //
+		jMethod<::java::lang::String()>("toString"), //
+	};
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	static auto getAllFamilyNames(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAllFamilyNames")] != -1);
+		return scall<R>("getAllFamilyNames", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::FontFamily *, typename... Args>
+	static auto getAllFontFamilies(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAllFontFamilies")] != -1);
+		return scall<R>("getAllFontFamilies", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::FontFamily, typename... Args>
+	static auto getFamily(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFamily")] != -1);
+		return scall<R>("getFamily", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getFamilyName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFamilyName")] != -1);
+		return call<R>("getFamilyName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::Font2D, typename... Args>
+	auto getFont(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFont")] != -1);
+		return call<R>("getFont", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::Font2D, typename... Args>
+	auto getFontWithExactStyleMatch(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFontWithExactStyleMatch")] != -1);
+		return call<R>("getFontWithExactStyleMatch", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::font::FontFamily, typename... Args>
+	static auto getLocaleFamily(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLocaleFamily")] != -1);
+		return scall<R>("getLocaleFamily", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getRank(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRank")] != -1);
+		return call<R>("getRank", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setFont(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setFont")] != -1);
+		return call<R>("setFont", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

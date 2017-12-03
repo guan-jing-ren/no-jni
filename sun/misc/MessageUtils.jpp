@@ -1,0 +1,76 @@
+#ifndef sun_misc_MessageUtils_HPP
+#define sun_misc_MessageUtils_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::misc::MessageUtils : public jObject<::sun::misc::MessageUtils, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_misc / "MessageUtils";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::lang::String)>("err"), //
+		jMethod<::jvoid(::java::lang::String)>("out"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::lang::String)>("subst"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::lang::String, ::java::lang::String)>("subst"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::String)>("subst"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::lang::String *)>("subst"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::lang::String)>("substProp"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::lang::String, ::java::lang::String)>("substProp"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::String)>("substProp"), //
+		jMethod<::jvoid(::java::lang::String)>("toStderr"), //
+		jMethod<::jvoid(::java::lang::String)>("toStdout"), //
+		jMethod<::jvoid()>("where"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto err(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("err")] != -1);
+		return scall<R>("err", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto out(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("out")] != -1);
+		return scall<R>("out", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto subst(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("subst")] != -1);
+		return scall<R>("subst", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto substProp(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("substProp")] != -1);
+		return scall<R>("substProp", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto toStderr(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toStderr")] != -1);
+		return scall<R>("toStderr", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto toStdout(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toStdout")] != -1);
+		return scall<R>("toStdout", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	static auto where(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("where")] != -1);
+		return scall<R>("where", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

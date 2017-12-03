@@ -1,0 +1,69 @@
+#ifndef com_sun_media_sound_SoftMixingDataLine_HPP
+#define com_sun_media_sound_SoftMixingDataLine_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::com::sun::media::sound::SoftMixingDataLine : public jObject<::com::sun::media::sound::SoftMixingDataLine, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::com_sun_media_sound / "SoftMixingDataLine";
+
+	constexpr static Enume field_signatures{
+		jField<::javax::sound::sampled::FloatControl$Type>("CHORUS_SEND"), //
+	};
+
+	template<typename F = ::javax::sound::sampled::FloatControl$Type>
+	static auto CHORUS_SEND() {
+		static_assert(field_signatures[jField<F>("CHORUS_SEND")] != -1);
+		return sat<F>("CHORUS_SEND");
+	}
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::sound::sampled::LineListener)>("addLineListener"), //
+		jMethod<::javax::sound::sampled::Control(::javax::sound::sampled::Control$Type)>("getControl"), //
+		jMethod<::javax::sound::sampled::Control *()>("getControls"), //
+		jMethod<::javax::sound::sampled::Line$Info()>("getLineInfo"), //
+		jMethod<::jboolean(::javax::sound::sampled::Control$Type)>("isControlSupported"), //
+		jMethod<::jvoid(::javax::sound::sampled::LineListener)>("removeLineListener"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addLineListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addLineListener")] != -1);
+		return call<R>("addLineListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::sampled::Control, typename... Args>
+	auto getControl(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getControl")] != -1);
+		return call<R>("getControl", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::sampled::Control *, typename... Args>
+	auto getControls(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getControls")] != -1);
+		return call<R>("getControls", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::sampled::Line$Info, typename... Args>
+	auto getLineInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLineInfo")] != -1);
+		return call<R>("getLineInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isControlSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isControlSupported")] != -1);
+		return call<R>("isControlSupported", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeLineListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeLineListener")] != -1);
+		return call<R>("removeLineListener", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

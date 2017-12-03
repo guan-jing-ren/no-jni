@@ -1,0 +1,57 @@
+#ifndef sun_rmi_transport_tcp_TCPTransport_HPP
+#define sun_rmi_transport_tcp_TCPTransport_HPP
+
+#include "../../../../jfwd_decl.hpp"
+
+class ::sun::rmi::transport::tcp::TCPTransport : public jObject<::sun::rmi::transport::tcp::TCPTransport, ::sun::rmi::transport::Transport> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_rmi_transport_tcp / "TCPTransport";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::sun::rmi::transport::Target)>("exportObject"), //
+		jMethod<::jvoid(::sun::rmi::transport::Endpoint)>("free"), //
+		jMethod<::sun::rmi::transport::Channel(::sun::rmi::transport::Endpoint)>("getChannel"), //
+		jMethod<::sun::rmi::transport::tcp::TCPChannel(::sun::rmi::transport::Endpoint)>("getChannel"), //
+		jMethod<::java::lang::String()>("getClientHost"), //
+		jMethod<::jvoid()>("shedConnectionCaches"), //
+	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto exportObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("exportObject")] != -1);
+		return call<R>("exportObject", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto free(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("free")] != -1);
+		return call<R>("free", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::sun::rmi::transport::Channel, typename... Args>
+	auto getChannel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getChannel")] != -1);
+		return call<R>("getChannel", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	static auto getClientHost(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClientHost")] != -1);
+		return scall<R>("getClientHost", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto shedConnectionCaches(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("shedConnectionCaches")] != -1);
+		return call<R>("shedConnectionCaches", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

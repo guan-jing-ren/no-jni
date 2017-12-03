@@ -1,0 +1,30 @@
+#ifndef sun_reflect_ReflectionFactory$GetReflectionFactoryAction_HPP
+#define sun_reflect_ReflectionFactory$GetReflectionFactoryAction_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::reflect::ReflectionFactory$GetReflectionFactoryAction : public jObject<::sun::reflect::ReflectionFactory$GetReflectionFactoryAction, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_reflect / "ReflectionFactory$GetReflectionFactoryAction";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::java::lang::Object()>("run"), //
+		jMethod<::sun::reflect::ReflectionFactory()>("run"), //
+	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto run(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("run")] != -1);
+		return call<R>("run", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

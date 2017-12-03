@@ -1,0 +1,43 @@
+#ifndef sun_misc_ASCIICaseInsensitiveComparator_HPP
+#define sun_misc_ASCIICaseInsensitiveComparator_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::misc::ASCIICaseInsensitiveComparator : public jObject<::sun::misc::ASCIICaseInsensitiveComparator, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_misc / "ASCIICaseInsensitiveComparator";
+
+	constexpr static Enume field_signatures{
+		jField<::java::util::Comparator>("CASE_INSENSITIVE_ORDER"), //
+	};
+
+	template<typename F = ::java::util::Comparator>
+	static auto CASE_INSENSITIVE_ORDER() {
+		static_assert(field_signatures[jField<F>("CASE_INSENSITIVE_ORDER")] != -1);
+		return sat<F>("CASE_INSENSITIVE_ORDER");
+	}
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid()>(), //
+		jMethod<::jint(::java::lang::Object, ::java::lang::Object)>("compare"), //
+		jMethod<::jint(::java::lang::String, ::java::lang::String)>("compare"), //
+		jMethod<::jint(::java::lang::String)>("lowerCaseHashCode"), //
+	};
+
+	template<typename R = ::jint, typename... Args>
+	auto compare(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("compare")] != -1);
+		return call<R>("compare", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	static auto lowerCaseHashCode(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("lowerCaseHashCode")] != -1);
+		return scall<R>("lowerCaseHashCode", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

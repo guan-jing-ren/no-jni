@@ -1,0 +1,42 @@
+#ifndef sun_awt_FwDispatcher_HPP
+#define sun_awt_FwDispatcher_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::awt::FwDispatcher : public jObject<::sun::awt::FwDispatcher, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_awt / "FwDispatcher";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::java::awt::SecondaryLoop()>("createSecondaryLoop"), //
+		jMethod<::jboolean()>("isDispatchThread"), //
+		jMethod<::jvoid(::java::lang::Runnable)>("scheduleDispatch"), //
+	};
+
+	template<typename R = ::java::awt::SecondaryLoop, typename... Args>
+	auto createSecondaryLoop(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createSecondaryLoop")] != -1);
+		return call<R>("createSecondaryLoop", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDispatchThread(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isDispatchThread")] != -1);
+		return call<R>("isDispatchThread", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto scheduleDispatch(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("scheduleDispatch")] != -1);
+		return call<R>("scheduleDispatch", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

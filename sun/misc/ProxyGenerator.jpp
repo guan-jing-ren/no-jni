@@ -1,0 +1,29 @@
+#ifndef sun_misc_ProxyGenerator_HPP
+#define sun_misc_ProxyGenerator_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::misc::ProxyGenerator : public jObject<::sun::misc::ProxyGenerator, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_misc / "ProxyGenerator";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jMethod<::jbyte *(::java::lang::String, ::java::lang::Class *)>("generateProxyClass"), //
+		jMethod<::jbyte *(::java::lang::String, ::java::lang::Class *, ::jint)>("generateProxyClass"), //
+	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	static auto generateProxyClass(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("generateProxyClass")] != -1);
+		return scall<R>("generateProxyClass", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif

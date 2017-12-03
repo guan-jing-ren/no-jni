@@ -1,0 +1,37 @@
+#ifndef sun_util_ResourceBundleEnumeration_HPP
+#define sun_util_ResourceBundleEnumeration_HPP
+
+#include "../../jfwd_decl.hpp"
+
+class ::sun::util::ResourceBundleEnumeration : public jObject<::sun::util::ResourceBundleEnumeration, ::java::lang::Object> {
+public:
+	using jObject::jObject;
+
+	static constexpr auto signature = ::sun_util / "ResourceBundleEnumeration";
+
+	constexpr static Enume field_signatures{
+		cexprstr{"\0"}, //
+	};
+
+	constexpr static Enume method_signatures{
+		jConstructor<::jvoid(::java::util::Set, ::java::util::Enumeration)>(), //
+		jMethod<::jboolean()>("hasMoreElements"), //
+		jMethod<::java::lang::Object()>("nextElement"), //
+		jMethod<::java::lang::String()>("nextElement"), //
+	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasMoreElements(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hasMoreElements")] != -1);
+		return call<R>("hasMoreElements", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto nextElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("nextElement")] != -1);
+		return call<R>("nextElement", std::forward<Args>(args)...);
+	}
+
+};
+
+#endif
