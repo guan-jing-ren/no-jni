@@ -517,80 +517,13 @@ string demangle(string sig) {
                     });
 }
 
-namespace java::lang {}
-using namespace java::lang;
-
-#ifdef JAVA
-#include "java.hpp"
-
-using java::lang::Enumeration;
+#include "java/lang/Object.jpp"
+#include "java/util/Enumeration.jpp"
+#include "java/util/zip/ZipEntry.jpp"
+#include "java/util/zip/ZipFile.jpp"
+using java::util::Enumeration;
 using java::util::zip::ZipEntry;
 using java::util::zip::ZipFile;
-
-#else
-
-constexpr jPackage java_util = java_ / "util";
-constexpr jPackage java_util_jar = java_util / "jar";
-constexpr jPackage java_util_zip = java_util / "zip";
-
-class ZipEntry : public jObject<ZipEntry> {
-public:
-  static constexpr auto signature = java_util_zip / "ZipEntry";
-
-  constexpr static Enum method_signatures{
-      jConstructor<ZipEntry>(),
-      jConstructor<String>(),
-      jMethod<Object()>("clone"),
-      jMethod<String()>("getComment"),
-      jMethod<jlong()>("getCompressedSize"),
-      jMethod<jlong()>("getCrc"),
-      jMethod<jbyte *()>("getExtra"),
-      jMethod<jint()>("getMethod"),
-      jMethod<String()>("getName"),
-      jMethod<jlong()>("getSize"),
-      jMethod<jlong()>("getTime"),
-      jMethod<jint()>("hashCode"),
-      jMethod<jboolean()>("isDirectory"),
-      jMethod<jvoid(String)>("setComment"),
-      jMethod<jvoid(long)>("setCompressedSize"),
-      jMethod<jvoid(long)>("setCrc"),
-      jMethod<jvoid(jbyte[])>("setExtra"),
-      jMethod<jvoid(int)>("setMethod"),
-      jMethod<jvoid(long)>("setSize"),
-      jMethod<jvoid(long)>("setTime"),
-      jMethod<String()>("toString"),
-  };
-};
-
-template <typename E> class Enumeration : public jObject<Enumeration<E>> {
-public:
-  static constexpr auto signature = java_util / "Enumeration";
-
-  constexpr static Enum method_signatures{
-      jMethod<jboolean()>("hasMoreElements"),
-      jMethod<Object()>("nextElement"),
-  };
-};
-
-class ZipFile : public jObject<ZipFile> {
-public:
-  using jObject::jObject;
-
-  static constexpr auto signature = java_util_zip / "ZipFile";
-
-  constexpr static Enum method_signatures{
-      jConstructor<String>(),
-      jMethod<jvoid()>("close"),
-      jMethod<Enumeration<ZipEntry>()>("entries"),
-      jMethod<jvoid()>("finalize"),
-      jMethod<String()>("getComment"),
-      jMethod<ZipEntry(String)>("getEntry"),
-      jMethod<String()>("getName"),
-      jMethod<jint()>("size"),
-  };
-};
-
-#endif
 
 void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
   JavaVirtualMachine::env = jni_env;
@@ -616,13 +549,14 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
     unordered_set<string> pkgs;
     for_each(sregex_token_iterator{begin(paths), end(paths), path_rx, -1}, {},
              [&csignatures, &classes, &pkgs](const ssub_match &sub) {
-               ZipFile zip{String{sub.str().c_str()}};
-               auto entries = zip.call<Enumeration<ZipEntry>>("entries");
+               ZipFile zip{::String{sub.str().c_str()}};
+               auto entries = zip.call<Enumeration>("entries");
 
                regex sig_rx{R"((.+)/(.+?)\.class)"};
                smatch signature;
                while (entries.call<jboolean>("hasMoreElements")) {
-                 Object entry{entries.call<Object>("nextElement")};
+                 java::lang::Object entry{
+                     entries.call<java::lang::Object>("nextElement")};
                  string name = entry;
                  regex_match(name, signature, sig_rx);
                  auto package = signature[1].str();

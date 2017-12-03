@@ -858,10 +858,7 @@ public:
   }
 };
 
-[[maybe_unused]] constexpr jPackage java{"java"};
-[[maybe_unused]] constexpr jPackage javax{"javax"};
-
-constexpr auto java_lang = java / "lang";
+#include "jfwd_decl.hpp"
 
 class String : public jObject<String> {
   template <typename, typename> friend class jObject;
