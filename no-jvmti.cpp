@@ -6,13 +6,11 @@ env LD_LIBRARY_PATH=/usr/lib/jvm/default-java/jre/lib/amd64/server/ ./nojni -Dru
 // clang-format on
 
 #include "no-jni.hpp"
-#include "no-swt.hpp"
 
 #include <jvmti.h>
 
 #include <algorithm>
 #include <cstdio>
-#include <iosfwd>
 #include <numeric>
 #include <fstream>
 #include <regex>
