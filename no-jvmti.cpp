@@ -582,8 +582,7 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
       pkg = regex_replace(pkg, regex{"namespace"}, "namespace_");
   }
 
-  std::ofstream dout{"jfwd_decl.hpp"};
-
+  ofstream dout{"jfwd_decl.hpp"};
   dout << "#ifndef JFWD_DECL_HPP\n"
        << "#define JFWD_DECL_HPP\n\n"
        << "#include \"no-jni.hpp\"\n\n";
@@ -658,9 +657,9 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
     system(("touch " + sig + ".jpp").c_str());
     ofstream fout{sig + ".jpp"};
 
-    fout << "#ifndef " << regex_replace(sig, std::regex{"/"}, "_") << "_HPP\n"
-         << "#define " << regex_replace(sig, std::regex{"/"}, "_") << "_HPP\n\n"
-         << "#include \"" << regex_replace(pkg + "/", std::regex{".*?/"}, "../")
+    fout << "#ifndef " << regex_replace(sig, regex{"/"}, "_") << "_HPP\n"
+         << "#define " << regex_replace(sig, regex{"/"}, "_") << "_HPP\n\n"
+         << "#include \"" << regex_replace(pkg + "/", regex{".*?/"}, "../")
          << "jfwd_decl.hpp\"\n\n";
 
     auto cls = sig.substr(pkg.size() + (pkg != sig));
