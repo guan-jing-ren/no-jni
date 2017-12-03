@@ -23,26 +23,26 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto cancel(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("cancel")] != -1);
-		return call<R>("cancel", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("cancel")] != -1);
+		return call<R>("cancel", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto get(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get")] != -1);
-		return call<R>("get", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isCancelled(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isCancelled")] != -1);
-		return call<R>("isCancelled", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isCancelled")] != -1);
+		return call<R>("isCancelled", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isDone(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isDone")] != -1);
-		return call<R>("isDone", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isDone")] != -1);
+		return call<R>("isDone", std::forward<Args>(args)...);
 	}
 
 };

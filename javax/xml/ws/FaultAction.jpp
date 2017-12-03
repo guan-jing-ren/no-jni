@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::java::lang::Class, typename... Args>
 	auto className(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("className")] != -1);
-		return call<R>("className", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("className")] != -1);
+		return call<R>("className", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto value(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("value")] != -1);
-		return call<R>("value", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("value")] != -1);
+		return call<R>("value", std::forward<Args>(args)...);
 	}
 
 };

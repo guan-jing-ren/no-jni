@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto eventDispatched(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("eventDispatched")] != -1);
-		return call<R>("eventDispatched", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("eventDispatched")] != -1);
+		return call<R>("eventDispatched", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jlong, typename... Args>
 	auto getEventMask(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEventMask")] != -1);
-		return call<R>("getEventMask", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEventMask")] != -1);
+		return call<R>("getEventMask", std::forward<Args>(args)...);
 	}
 
 };

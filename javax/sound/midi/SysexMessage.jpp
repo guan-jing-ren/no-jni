@@ -38,20 +38,20 @@ public:
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto clone(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
-		return call<R>("clone", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jbyte *, typename... Args>
 	auto getData(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getData")] != -1);
-		return call<R>("getData", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getData")] != -1);
+		return call<R>("getData", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setMessage(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMessage")] != -1);
-		return call<R>("setMessage", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setMessage")] != -1);
+		return call<R>("setMessage", std::forward<Args>(args)...);
 	}
 
 };

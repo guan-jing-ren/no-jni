@@ -40,44 +40,44 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto close(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
-		return call<R>("close", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto flush(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("flush")] != -1);
-		return call<R>("flush", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("flush")] != -1);
+		return call<R>("flush", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Formatter, typename... Args>
 	auto format(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("format")] != -1);
-		return call<R>("format", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("format")] != -1);
+		return call<R>("format", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::io::IOException, typename... Args>
 	auto ioException(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("ioException")] != -1);
-		return call<R>("ioException", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("ioException")] != -1);
+		return call<R>("ioException", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Locale, typename... Args>
 	auto locale(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("locale")] != -1);
-		return call<R>("locale", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("locale")] != -1);
+		return call<R>("locale", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Appendable, typename... Args>
 	auto out(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("out")] != -1);
-		return call<R>("out", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("out")] != -1);
+		return call<R>("out", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto toString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
-		return call<R>("toString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
 	}
 
 };

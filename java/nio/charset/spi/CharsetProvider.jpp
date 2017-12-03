@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::java::nio::charset::Charset, typename... Args>
 	auto charsetForName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("charsetForName")] != -1);
-		return call<R>("charsetForName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("charsetForName")] != -1);
+		return call<R>("charsetForName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Iterator, typename... Args>
 	auto charsets(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("charsets")] != -1);
-		return call<R>("charsets", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("charsets")] != -1);
+		return call<R>("charsets", std::forward<Args>(args)...);
 	}
 
 };

@@ -24,26 +24,26 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto equals(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
-		return call<R>("equals", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto hashCode(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
-		return call<R>("hashCode", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto implies(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("implies")] != -1);
-		return call<R>("implies", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("implies")] != -1);
+		return call<R>("implies", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::security::PermissionCollection, typename... Args>
 	auto newPermissionCollection(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newPermissionCollection")] != -1);
-		return call<R>("newPermissionCollection", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newPermissionCollection")] != -1);
+		return call<R>("newPermissionCollection", std::forward<Args>(args)...);
 	}
 
 };

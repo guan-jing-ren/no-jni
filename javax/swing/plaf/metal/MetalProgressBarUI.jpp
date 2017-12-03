@@ -22,20 +22,20 @@ public:
 
 	template<typename R = ::javax::swing::plaf::ComponentUI, typename... Args>
 	static auto createUI(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createUI")] != -1);
-		return scall<R>("createUI", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createUI")] != -1);
+		return scall<R>("createUI", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto paintDeterminate(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paintDeterminate")] != -1);
-		return call<R>("paintDeterminate", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("paintDeterminate")] != -1);
+		return call<R>("paintDeterminate", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto paintIndeterminate(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paintIndeterminate")] != -1);
-		return call<R>("paintIndeterminate", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("paintIndeterminate")] != -1);
+		return call<R>("paintIndeterminate", std::forward<Args>(args)...);
 	}
 
 };

@@ -25,44 +25,44 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto acceptsURL(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("acceptsURL")] != -1);
-		return call<R>("acceptsURL", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("acceptsURL")] != -1);
+		return call<R>("acceptsURL", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::sql::Connection, typename... Args>
 	auto connect(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("connect")] != -1);
-		return call<R>("connect", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("connect")] != -1);
+		return call<R>("connect", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getMajorVersion(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMajorVersion")] != -1);
-		return call<R>("getMajorVersion", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMajorVersion")] != -1);
+		return call<R>("getMajorVersion", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getMinorVersion(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMinorVersion")] != -1);
-		return call<R>("getMinorVersion", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMinorVersion")] != -1);
+		return call<R>("getMinorVersion", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::logging::Logger, typename... Args>
 	auto getParentLogger(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParentLogger")] != -1);
-		return call<R>("getParentLogger", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getParentLogger")] != -1);
+		return call<R>("getParentLogger", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::sql::DriverPropertyInfo *, typename... Args>
 	auto getPropertyInfo(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPropertyInfo")] != -1);
-		return call<R>("getPropertyInfo", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPropertyInfo")] != -1);
+		return call<R>("getPropertyInfo", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto jdbcCompliant(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("jdbcCompliant")] != -1);
-		return call<R>("jdbcCompliant", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("jdbcCompliant")] != -1);
+		return call<R>("jdbcCompliant", std::forward<Args>(args)...);
 	}
 
 };

@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::javax::naming::NamingException, typename... Args>
 	auto getException(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getException")] != -1);
-		return call<R>("getException", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getException")] != -1);
+		return call<R>("getException", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String *, typename... Args>
 	auto getReferrals(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getReferrals")] != -1);
-		return call<R>("getReferrals", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getReferrals")] != -1);
+		return call<R>("getReferrals", std::forward<Args>(args)...);
 	}
 
 };

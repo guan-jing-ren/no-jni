@@ -23,26 +23,26 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto EditorContainer(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("EditorContainer")] != -1);
-		return call<R>("EditorContainer", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("EditorContainer")] != -1);
+		return call<R>("EditorContainer", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto doLayout(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("doLayout")] != -1);
-		return call<R>("doLayout", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("doLayout")] != -1);
+		return call<R>("doLayout", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::Dimension, typename... Args>
 	auto getPreferredSize(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPreferredSize")] != -1);
-		return call<R>("getPreferredSize", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPreferredSize")] != -1);
+		return call<R>("getPreferredSize", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto paint(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paint")] != -1);
-		return call<R>("paint", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("paint")] != -1);
+		return call<R>("paint", std::forward<Args>(args)...);
 	}
 
 };

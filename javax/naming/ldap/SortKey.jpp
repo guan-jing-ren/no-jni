@@ -23,20 +23,20 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getAttributeID(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttributeID")] != -1);
-		return call<R>("getAttributeID", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAttributeID")] != -1);
+		return call<R>("getAttributeID", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getMatchingRuleID(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMatchingRuleID")] != -1);
-		return call<R>("getMatchingRuleID", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMatchingRuleID")] != -1);
+		return call<R>("getMatchingRuleID", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isAscending(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isAscending")] != -1);
-		return call<R>("isAscending", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isAscending")] != -1);
+		return call<R>("isAscending", std::forward<Args>(args)...);
 	}
 
 };

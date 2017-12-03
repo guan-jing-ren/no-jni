@@ -23,20 +23,20 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto actionPerformed(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("actionPerformed")] != -1);
-		return call<R>("actionPerformed", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("actionPerformed")] != -1);
+		return call<R>("actionPerformed", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setDirection(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDirection")] != -1);
-		return call<R>("setDirection", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setDirection")] != -1);
+		return call<R>("setDirection", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setScrollByBlock(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setScrollByBlock")] != -1);
-		return call<R>("setScrollByBlock", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setScrollByBlock")] != -1);
+		return call<R>("setScrollByBlock", std::forward<Args>(args)...);
 	}
 
 };

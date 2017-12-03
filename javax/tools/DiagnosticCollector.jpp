@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::java::util::List, typename... Args>
 	auto getDiagnostics(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDiagnostics")] != -1);
-		return call<R>("getDiagnostics", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDiagnostics")] != -1);
+		return call<R>("getDiagnostics", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto report(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("report")] != -1);
-		return call<R>("report", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("report")] != -1);
+		return call<R>("report", std::forward<Args>(args)...);
 	}
 
 };

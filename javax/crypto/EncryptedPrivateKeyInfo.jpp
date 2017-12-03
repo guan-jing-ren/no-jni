@@ -29,32 +29,32 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getAlgName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlgName")] != -1);
-		return call<R>("getAlgName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAlgName")] != -1);
+		return call<R>("getAlgName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::security::AlgorithmParameters, typename... Args>
 	auto getAlgParameters(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlgParameters")] != -1);
-		return call<R>("getAlgParameters", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAlgParameters")] != -1);
+		return call<R>("getAlgParameters", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jbyte *, typename... Args>
 	auto getEncoded(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEncoded")] != -1);
-		return call<R>("getEncoded", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEncoded")] != -1);
+		return call<R>("getEncoded", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jbyte *, typename... Args>
 	auto getEncryptedData(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEncryptedData")] != -1);
-		return call<R>("getEncryptedData", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEncryptedData")] != -1);
+		return call<R>("getEncryptedData", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::security::spec::PKCS8EncodedKeySpec, typename... Args>
 	auto getKeySpec(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getKeySpec")] != -1);
-		return call<R>("getKeySpec", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getKeySpec")] != -1);
+		return call<R>("getKeySpec", std::forward<Args>(args)...);
 	}
 
 };

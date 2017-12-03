@@ -23,32 +23,32 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto getLoadedClassCount(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLoadedClassCount")] != -1);
-		return call<R>("getLoadedClassCount", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLoadedClassCount")] != -1);
+		return call<R>("getLoadedClassCount", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jlong, typename... Args>
 	auto getTotalLoadedClassCount(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTotalLoadedClassCount")] != -1);
-		return call<R>("getTotalLoadedClassCount", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTotalLoadedClassCount")] != -1);
+		return call<R>("getTotalLoadedClassCount", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jlong, typename... Args>
 	auto getUnloadedClassCount(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUnloadedClassCount")] != -1);
-		return call<R>("getUnloadedClassCount", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUnloadedClassCount")] != -1);
+		return call<R>("getUnloadedClassCount", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isVerbose(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isVerbose")] != -1);
-		return call<R>("isVerbose", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isVerbose")] != -1);
+		return call<R>("isVerbose", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setVerbose(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setVerbose")] != -1);
-		return call<R>("setVerbose", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setVerbose")] != -1);
+		return call<R>("setVerbose", std::forward<Args>(args)...);
 	}
 
 };

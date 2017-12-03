@@ -27,44 +27,44 @@ public:
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto clone(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
-		return call<R>("clone", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto compare(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compare")] != -1);
-		return call<R>("compare", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("compare")] != -1);
+		return call<R>("compare", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto equals(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
-		return call<R>("equals", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::text::CollationElementIterator, typename... Args>
 	auto getCollationElementIterator(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCollationElementIterator")] != -1);
-		return call<R>("getCollationElementIterator", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCollationElementIterator")] != -1);
+		return call<R>("getCollationElementIterator", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::text::CollationKey, typename... Args>
 	auto getCollationKey(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCollationKey")] != -1);
-		return call<R>("getCollationKey", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCollationKey")] != -1);
+		return call<R>("getCollationKey", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getRules(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRules")] != -1);
-		return call<R>("getRules", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRules")] != -1);
+		return call<R>("getRules", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto hashCode(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
-		return call<R>("hashCode", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
 	}
 
 };

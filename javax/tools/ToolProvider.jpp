@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::javax::tools::DocumentationTool, typename... Args>
 	static auto getSystemDocumentationTool(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSystemDocumentationTool")] != -1);
-		return scall<R>("getSystemDocumentationTool", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSystemDocumentationTool")] != -1);
+		return scall<R>("getSystemDocumentationTool", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::tools::JavaCompiler, typename... Args>
 	static auto getSystemJavaCompiler(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSystemJavaCompiler")] != -1);
-		return scall<R>("getSystemJavaCompiler", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSystemJavaCompiler")] != -1);
+		return scall<R>("getSystemJavaCompiler", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::ClassLoader, typename... Args>
 	static auto getSystemToolClassLoader(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSystemToolClassLoader")] != -1);
-		return scall<R>("getSystemToolClassLoader", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSystemToolClassLoader")] != -1);
+		return scall<R>("getSystemToolClassLoader", std::forward<Args>(args)...);
 	}
 
 };

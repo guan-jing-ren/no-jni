@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getEncoding(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEncoding")] != -1);
-		return call<R>("getEncoding", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEncoding")] != -1);
+		return call<R>("getEncoding", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setEncoding(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setEncoding")] != -1);
-		return call<R>("setEncoding", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setEncoding")] != -1);
+		return call<R>("setEncoding", std::forward<Args>(args)...);
 	}
 
 };

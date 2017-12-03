@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::jfloat, typename... Args>
 	auto getInset(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInset")] != -1);
-		return call<R>("getInset", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInset")] != -1);
+		return call<R>("getInset", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto paint(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paint")] != -1);
-		return call<R>("paint", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("paint")] != -1);
+		return call<R>("paint", std::forward<Args>(args)...);
 	}
 
 };

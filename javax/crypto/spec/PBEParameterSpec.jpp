@@ -23,20 +23,20 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto getIterationCount(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIterationCount")] != -1);
-		return call<R>("getIterationCount", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIterationCount")] != -1);
+		return call<R>("getIterationCount", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::security::spec::AlgorithmParameterSpec, typename... Args>
 	auto getParameterSpec(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParameterSpec")] != -1);
-		return call<R>("getParameterSpec", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getParameterSpec")] != -1);
+		return call<R>("getParameterSpec", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jbyte *, typename... Args>
 	auto getSalt(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSalt")] != -1);
-		return call<R>("getSalt", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSalt")] != -1);
+		return call<R>("getSalt", std::forward<Args>(args)...);
 	}
 
 };

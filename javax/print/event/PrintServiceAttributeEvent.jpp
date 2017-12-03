@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::javax::print::attribute::PrintServiceAttributeSet, typename... Args>
 	auto getAttributes(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttributes")] != -1);
-		return call<R>("getAttributes", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAttributes")] != -1);
+		return call<R>("getAttributes", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::print::PrintService, typename... Args>
 	auto getPrintService(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrintService")] != -1);
-		return call<R>("getPrintService", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPrintService")] != -1);
+		return call<R>("getPrintService", std::forward<Args>(args)...);
 	}
 
 };

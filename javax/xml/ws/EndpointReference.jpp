@@ -22,26 +22,26 @@ public:
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto getPort(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPort")] != -1);
-		return call<R>("getPort", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPort")] != -1);
+		return call<R>("getPort", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::xml::ws::EndpointReference, typename... Args>
 	static auto readFrom(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("readFrom")] != -1);
-		return scall<R>("readFrom", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("readFrom")] != -1);
+		return scall<R>("readFrom", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto toString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
-		return call<R>("toString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto writeTo(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("writeTo")] != -1);
-		return call<R>("writeTo", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeTo")] != -1);
+		return call<R>("writeTo", std::forward<Args>(args)...);
 	}
 
 };

@@ -22,26 +22,26 @@ public:
 
 	template<typename R = ::java::awt::Cursor, typename... Args>
 	auto getCursor(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCursor")] != -1);
-		return call<R>("getCursor", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCursor")] != -1);
+		return call<R>("getCursor", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setCursor(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setCursor")] != -1);
-		return call<R>("setCursor", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setCursor")] != -1);
+		return call<R>("setCursor", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto startDrag(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("startDrag")] != -1);
-		return call<R>("startDrag", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("startDrag")] != -1);
+		return call<R>("startDrag", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto transferablesFlavorsChanged(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("transferablesFlavorsChanged")] != -1);
-		return call<R>("transferablesFlavorsChanged", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("transferablesFlavorsChanged")] != -1);
+		return call<R>("transferablesFlavorsChanged", std::forward<Args>(args)...);
 	}
 
 };

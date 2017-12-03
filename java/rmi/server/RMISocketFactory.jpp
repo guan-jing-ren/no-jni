@@ -26,44 +26,44 @@ public:
 
 	template<typename R = ::java::net::ServerSocket, typename... Args>
 	auto createServerSocket(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createServerSocket")] != -1);
-		return call<R>("createServerSocket", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createServerSocket")] != -1);
+		return call<R>("createServerSocket", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::net::Socket, typename... Args>
 	auto createSocket(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createSocket")] != -1);
-		return call<R>("createSocket", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createSocket")] != -1);
+		return call<R>("createSocket", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::rmi::server::RMISocketFactory, typename... Args>
 	static auto getDefaultSocketFactory(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaultSocketFactory")] != -1);
-		return scall<R>("getDefaultSocketFactory", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDefaultSocketFactory")] != -1);
+		return scall<R>("getDefaultSocketFactory", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::rmi::server::RMIFailureHandler, typename... Args>
 	static auto getFailureHandler(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFailureHandler")] != -1);
-		return scall<R>("getFailureHandler", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFailureHandler")] != -1);
+		return scall<R>("getFailureHandler", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::rmi::server::RMISocketFactory, typename... Args>
 	static auto getSocketFactory(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSocketFactory")] != -1);
-		return scall<R>("getSocketFactory", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSocketFactory")] != -1);
+		return scall<R>("getSocketFactory", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	static auto setFailureHandler(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setFailureHandler")] != -1);
-		return scall<R>("setFailureHandler", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setFailureHandler")] != -1);
+		return scall<R>("setFailureHandler", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	static auto setSocketFactory(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSocketFactory")] != -1);
-		return scall<R>("setSocketFactory", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setSocketFactory")] != -1);
+		return scall<R>("setSocketFactory", std::forward<Args>(args)...);
 	}
 
 };

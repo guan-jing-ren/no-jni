@@ -21,8 +21,8 @@ public:
 
 	template<typename R = ::java::lang::Appendable, typename... Args>
 	auto append(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("append")] != -1);
-		return call<R>("append", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("append")] != -1);
+		return call<R>("append", std::forward<Args>(args)...);
 	}
 
 };

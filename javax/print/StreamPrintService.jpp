@@ -22,26 +22,26 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto dispose(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dispose")] != -1);
-		return call<R>("dispose", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dispose")] != -1);
+		return call<R>("dispose", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getOutputFormat(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOutputFormat")] != -1);
-		return call<R>("getOutputFormat", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOutputFormat")] != -1);
+		return call<R>("getOutputFormat", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::io::OutputStream, typename... Args>
 	auto getOutputStream(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOutputStream")] != -1);
-		return call<R>("getOutputStream", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOutputStream")] != -1);
+		return call<R>("getOutputStream", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isDisposed(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isDisposed")] != -1);
-		return call<R>("isDisposed", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isDisposed")] != -1);
+		return call<R>("isDisposed", std::forward<Args>(args)...);
 	}
 
 };

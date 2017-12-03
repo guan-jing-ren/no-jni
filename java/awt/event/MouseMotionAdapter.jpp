@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto mouseDragged(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("mouseDragged")] != -1);
-		return call<R>("mouseDragged", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("mouseDragged")] != -1);
+		return call<R>("mouseDragged", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto mouseMoved(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("mouseMoved")] != -1);
-		return call<R>("mouseMoved", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("mouseMoved")] != -1);
+		return call<R>("mouseMoved", std::forward<Args>(args)...);
 	}
 
 };

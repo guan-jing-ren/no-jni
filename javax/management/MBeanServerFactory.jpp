@@ -25,32 +25,32 @@ public:
 
 	template<typename R = ::javax::management::MBeanServer, typename... Args>
 	static auto createMBeanServer(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createMBeanServer")] != -1);
-		return scall<R>("createMBeanServer", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createMBeanServer")] != -1);
+		return scall<R>("createMBeanServer", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::ArrayList, typename... Args>
 	static auto findMBeanServer(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("findMBeanServer")] != -1);
-		return scall<R>("findMBeanServer", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("findMBeanServer")] != -1);
+		return scall<R>("findMBeanServer", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::management::loading::ClassLoaderRepository, typename... Args>
 	static auto getClassLoaderRepository(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getClassLoaderRepository")] != -1);
-		return scall<R>("getClassLoaderRepository", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClassLoaderRepository")] != -1);
+		return scall<R>("getClassLoaderRepository", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::management::MBeanServer, typename... Args>
 	static auto newMBeanServer(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newMBeanServer")] != -1);
-		return scall<R>("newMBeanServer", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newMBeanServer")] != -1);
+		return scall<R>("newMBeanServer", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	static auto releaseMBeanServer(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("releaseMBeanServer")] != -1);
-		return scall<R>("releaseMBeanServer", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("releaseMBeanServer")] != -1);
+		return scall<R>("releaseMBeanServer", std::forward<Args>(args)...);
 	}
 
 };

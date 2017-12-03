@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto autoscroll(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("autoscroll")] != -1);
-		return call<R>("autoscroll", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("autoscroll")] != -1);
+		return call<R>("autoscroll", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::Insets, typename... Args>
 	auto getAutoscrollInsets(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAutoscrollInsets")] != -1);
-		return call<R>("getAutoscrollInsets", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAutoscrollInsets")] != -1);
+		return call<R>("getAutoscrollInsets", std::forward<Args>(args)...);
 	}
 
 };

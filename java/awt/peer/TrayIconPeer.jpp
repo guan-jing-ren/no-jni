@@ -23,32 +23,32 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto displayMessage(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("displayMessage")] != -1);
-		return call<R>("displayMessage", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("displayMessage")] != -1);
+		return call<R>("displayMessage", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto dispose(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dispose")] != -1);
-		return call<R>("dispose", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dispose")] != -1);
+		return call<R>("dispose", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setToolTip(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setToolTip")] != -1);
-		return call<R>("setToolTip", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setToolTip")] != -1);
+		return call<R>("setToolTip", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto showPopupMenu(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("showPopupMenu")] != -1);
-		return call<R>("showPopupMenu", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("showPopupMenu")] != -1);
+		return call<R>("showPopupMenu", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto updateImage(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateImage")] != -1);
-		return call<R>("updateImage", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("updateImage")] != -1);
+		return call<R>("updateImage", std::forward<Args>(args)...);
 	}
 
 };

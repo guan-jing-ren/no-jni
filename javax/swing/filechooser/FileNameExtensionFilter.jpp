@@ -23,26 +23,26 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto accept(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("accept")] != -1);
-		return call<R>("accept", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("accept")] != -1);
+		return call<R>("accept", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getDescription(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDescription")] != -1);
-		return call<R>("getDescription", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDescription")] != -1);
+		return call<R>("getDescription", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String *, typename... Args>
 	auto getExtensions(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getExtensions")] != -1);
-		return call<R>("getExtensions", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getExtensions")] != -1);
+		return call<R>("getExtensions", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto toString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
-		return call<R>("toString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
 	}
 
 };

@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto clean(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clean")] != -1);
-		return call<R>("clean", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clean")] != -1);
+		return call<R>("clean", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::rmi::dgc::Lease, typename... Args>
 	auto dirty(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dirty")] != -1);
-		return call<R>("dirty", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dirty")] != -1);
+		return call<R>("dirty", std::forward<Args>(args)...);
 	}
 
 };

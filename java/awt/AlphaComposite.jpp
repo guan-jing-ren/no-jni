@@ -194,44 +194,44 @@ public:
 
 	template<typename R = ::java::awt::CompositeContext, typename... Args>
 	auto createContext(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createContext")] != -1);
-		return call<R>("createContext", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createContext")] != -1);
+		return call<R>("createContext", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::AlphaComposite, typename... Args>
 	auto derive(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("derive")] != -1);
-		return call<R>("derive", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("derive")] != -1);
+		return call<R>("derive", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto equals(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
-		return call<R>("equals", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jfloat, typename... Args>
 	auto getAlpha(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlpha")] != -1);
-		return call<R>("getAlpha", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAlpha")] != -1);
+		return call<R>("getAlpha", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::AlphaComposite, typename... Args>
 	static auto getInstance(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
-		return scall<R>("getInstance", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getRule(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRule")] != -1);
-		return call<R>("getRule", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRule")] != -1);
+		return call<R>("getRule", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto hashCode(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
-		return call<R>("hashCode", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
 	}
 
 };

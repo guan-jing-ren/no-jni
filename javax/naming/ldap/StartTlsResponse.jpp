@@ -31,38 +31,38 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto close(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
-		return call<R>("close", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jbyte *, typename... Args>
 	auto getEncodedValue(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEncodedValue")] != -1);
-		return call<R>("getEncodedValue", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEncodedValue")] != -1);
+		return call<R>("getEncodedValue", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getID(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getID")] != -1);
-		return call<R>("getID", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getID")] != -1);
+		return call<R>("getID", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::net::ssl::SSLSession, typename... Args>
 	auto negotiate(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("negotiate")] != -1);
-		return call<R>("negotiate", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("negotiate")] != -1);
+		return call<R>("negotiate", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setEnabledCipherSuites(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setEnabledCipherSuites")] != -1);
-		return call<R>("setEnabledCipherSuites", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setEnabledCipherSuites")] != -1);
+		return call<R>("setEnabledCipherSuites", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setHostnameVerifier(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setHostnameVerifier")] != -1);
-		return call<R>("setHostnameVerifier", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setHostnameVerifier")] != -1);
+		return call<R>("setHostnameVerifier", std::forward<Args>(args)...);
 	}
 
 };

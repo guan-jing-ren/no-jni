@@ -24,32 +24,32 @@ public:
 
 	template<typename R = ::javax::xml::soap::SOAPBody, typename... Args>
 	auto addBody(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addBody")] != -1);
-		return call<R>("addBody", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addBody")] != -1);
+		return call<R>("addBody", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::xml::soap::SOAPHeader, typename... Args>
 	auto addHeader(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addHeader")] != -1);
-		return call<R>("addHeader", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addHeader")] != -1);
+		return call<R>("addHeader", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::xml::soap::Name, typename... Args>
 	auto createName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createName")] != -1);
-		return call<R>("createName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createName")] != -1);
+		return call<R>("createName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::xml::soap::SOAPBody, typename... Args>
 	auto getBody(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBody")] != -1);
-		return call<R>("getBody", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBody")] != -1);
+		return call<R>("getBody", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::xml::soap::SOAPHeader, typename... Args>
 	auto getHeader(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHeader")] != -1);
-		return call<R>("getHeader", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHeader")] != -1);
+		return call<R>("getHeader", std::forward<Args>(args)...);
 	}
 
 };

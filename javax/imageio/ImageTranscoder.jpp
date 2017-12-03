@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::javax::imageio::metadata::IIOMetadata, typename... Args>
 	auto convertImageMetadata(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("convertImageMetadata")] != -1);
-		return call<R>("convertImageMetadata", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("convertImageMetadata")] != -1);
+		return call<R>("convertImageMetadata", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::imageio::metadata::IIOMetadata, typename... Args>
 	auto convertStreamMetadata(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("convertStreamMetadata")] != -1);
-		return call<R>("convertStreamMetadata", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("convertStreamMetadata")] != -1);
+		return call<R>("convertStreamMetadata", std::forward<Args>(args)...);
 	}
 
 };

@@ -19,8 +19,8 @@ public:
 
 	template<typename R = ::javax::print::DocFlavor *, typename... Args>
 	auto getUnsupportedFlavors(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUnsupportedFlavors")] != -1);
-		return call<R>("getUnsupportedFlavors", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUnsupportedFlavors")] != -1);
+		return call<R>("getUnsupportedFlavors", std::forward<Args>(args)...);
 	}
 
 };

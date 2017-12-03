@@ -22,26 +22,26 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getSystemId(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSystemId")] != -1);
-		return call<R>("getSystemId", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSystemId")] != -1);
+		return call<R>("getSystemId", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::xml::transform::Transformer, typename... Args>
 	auto getTransformer(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTransformer")] != -1);
-		return call<R>("getTransformer", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTransformer")] != -1);
+		return call<R>("getTransformer", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setResult(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setResult")] != -1);
-		return call<R>("setResult", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setResult")] != -1);
+		return call<R>("setResult", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setSystemId(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSystemId")] != -1);
-		return call<R>("setSystemId", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setSystemId")] != -1);
+		return call<R>("setSystemId", std::forward<Args>(args)...);
 	}
 
 };

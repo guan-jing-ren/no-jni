@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto dispose(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dispose")] != -1);
-		return call<R>("dispose", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dispose")] != -1);
+		return call<R>("dispose", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::image::ColorModel, typename... Args>
 	auto getColorModel(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getColorModel")] != -1);
-		return call<R>("getColorModel", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getColorModel")] != -1);
+		return call<R>("getColorModel", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::image::Raster, typename... Args>
 	auto getRaster(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRaster")] != -1);
-		return call<R>("getRaster", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRaster")] != -1);
+		return call<R>("getRaster", std::forward<Args>(args)...);
 	}
 
 };

@@ -31,32 +31,32 @@ public:
 
 	template<typename R = ::javax::print::attribute::AttributeSet, typename... Args>
 	static auto synchronizedView(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("synchronizedView")] != -1);
-		return scall<R>("synchronizedView", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("synchronizedView")] != -1);
+		return scall<R>("synchronizedView", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::print::attribute::AttributeSet, typename... Args>
 	static auto unmodifiableView(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unmodifiableView")] != -1);
-		return scall<R>("unmodifiableView", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unmodifiableView")] != -1);
+		return scall<R>("unmodifiableView", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Class, typename... Args>
 	static auto verifyAttributeCategory(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("verifyAttributeCategory")] != -1);
-		return scall<R>("verifyAttributeCategory", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("verifyAttributeCategory")] != -1);
+		return scall<R>("verifyAttributeCategory", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::print::attribute::Attribute, typename... Args>
 	static auto verifyAttributeValue(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("verifyAttributeValue")] != -1);
-		return scall<R>("verifyAttributeValue", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("verifyAttributeValue")] != -1);
+		return scall<R>("verifyAttributeValue", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	static auto verifyCategoryForValue(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("verifyCategoryForValue")] != -1);
-		return scall<R>("verifyCategoryForValue", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("verifyCategoryForValue")] != -1);
+		return scall<R>("verifyCategoryForValue", std::forward<Args>(args)...);
 	}
 
 };

@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	static auto getClientHost(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getClientHost")] != -1);
-		return scall<R>("getClientHost", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClientHost")] != -1);
+		return scall<R>("getClientHost", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::io::PrintStream, typename... Args>
 	static auto getLog(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLog")] != -1);
-		return scall<R>("getLog", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLog")] != -1);
+		return scall<R>("getLog", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	static auto setLog(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLog")] != -1);
-		return scall<R>("setLog", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setLog")] != -1);
+		return scall<R>("setLog", std::forward<Args>(args)...);
 	}
 
 };

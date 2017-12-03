@@ -22,20 +22,20 @@ public:
 
 	template<typename R = ::java::lang::invoke::MethodHandle, typename... Args>
 	auto guardWithTest(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("guardWithTest")] != -1);
-		return call<R>("guardWithTest", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("guardWithTest")] != -1);
+		return call<R>("guardWithTest", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto hasBeenInvalidated(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hasBeenInvalidated")] != -1);
-		return call<R>("hasBeenInvalidated", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hasBeenInvalidated")] != -1);
+		return call<R>("hasBeenInvalidated", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	static auto invalidateAll(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("invalidateAll")] != -1);
-		return scall<R>("invalidateAll", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("invalidateAll")] != -1);
+		return scall<R>("invalidateAll", std::forward<Args>(args)...);
 	}
 
 };

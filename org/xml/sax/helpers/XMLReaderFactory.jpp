@@ -20,8 +20,8 @@ public:
 
 	template<typename R = ::org::xml::sax::XMLReader, typename... Args>
 	static auto createXMLReader(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createXMLReader")] != -1);
-		return scall<R>("createXMLReader", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createXMLReader")] != -1);
+		return scall<R>("createXMLReader", std::forward<Args>(args)...);
 	}
 
 };

@@ -23,32 +23,32 @@ public:
 
 	template<typename R = ::java::nio::channels::NetworkChannel, typename... Args>
 	auto bind(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("bind")] != -1);
-		return call<R>("bind", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("bind")] != -1);
+		return call<R>("bind", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::net::SocketAddress, typename... Args>
 	auto getLocalAddress(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLocalAddress")] != -1);
-		return call<R>("getLocalAddress", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLocalAddress")] != -1);
+		return call<R>("getLocalAddress", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto getOption(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOption")] != -1);
-		return call<R>("getOption", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOption")] != -1);
+		return call<R>("getOption", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::nio::channels::NetworkChannel, typename... Args>
 	auto setOption(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setOption")] != -1);
-		return call<R>("setOption", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setOption")] != -1);
+		return call<R>("setOption", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Set, typename... Args>
 	auto supportedOptions(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("supportedOptions")] != -1);
-		return call<R>("supportedOptions", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("supportedOptions")] != -1);
+		return call<R>("supportedOptions", std::forward<Args>(args)...);
 	}
 
 };

@@ -27,38 +27,38 @@ public:
 
 	template<typename R = ::java::util::List, typename... Args>
 	auto getList(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getList")] != -1);
-		return call<R>("getList", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getList")] != -1);
+		return call<R>("getList", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto getNextValue(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNextValue")] != -1);
-		return call<R>("getNextValue", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNextValue")] != -1);
+		return call<R>("getNextValue", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto getPreviousValue(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPreviousValue")] != -1);
-		return call<R>("getPreviousValue", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPreviousValue")] != -1);
+		return call<R>("getPreviousValue", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto getValue(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getValue")] != -1);
-		return call<R>("getValue", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getValue")] != -1);
+		return call<R>("getValue", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setList(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setList")] != -1);
-		return call<R>("setList", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setList")] != -1);
+		return call<R>("setList", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setValue(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setValue")] != -1);
-		return call<R>("setValue", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setValue")] != -1);
+		return call<R>("setValue", std::forward<Args>(args)...);
 	}
 
 };

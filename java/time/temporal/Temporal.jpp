@@ -28,38 +28,38 @@ public:
 
 	template<typename R = ::jlong, typename... Args>
 	auto getLong(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLong")] != -1);
-		return call<R>("getLong", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLong")] != -1);
+		return call<R>("getLong", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isSupported(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSupported")] != -1);
-		return call<R>("isSupported", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSupported")] != -1);
+		return call<R>("isSupported", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::time::temporal::Temporal, typename... Args>
 	auto minus(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("minus")] != -1);
-		return call<R>("minus", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("minus")] != -1);
+		return call<R>("minus", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::time::temporal::Temporal, typename... Args>
 	auto plus(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("plus")] != -1);
-		return call<R>("plus", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("plus")] != -1);
+		return call<R>("plus", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jlong, typename... Args>
 	auto until(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("until")] != -1);
-		return call<R>("until", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("until")] != -1);
+		return call<R>("until", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::time::temporal::Temporal, typename... Args>
 	auto with(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("with")] != -1);
-		return call<R>("with", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("with")] != -1);
+		return call<R>("with", std::forward<Args>(args)...);
 	}
 
 };

@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::javax::xml::namespace_::QName, typename... Args>
 	auto getName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
-		return call<R>("getName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Iterator, typename... Args>
 	auto getNamespaces(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNamespaces")] != -1);
-		return call<R>("getNamespaces", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNamespaces")] != -1);
+		return call<R>("getNamespaces", std::forward<Args>(args)...);
 	}
 
 };

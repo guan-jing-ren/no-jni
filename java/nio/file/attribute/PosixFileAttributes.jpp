@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::java::nio::file::attribute::GroupPrincipal, typename... Args>
 	auto group(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("group")] != -1);
-		return call<R>("group", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("group")] != -1);
+		return call<R>("group", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::nio::file::attribute::UserPrincipal, typename... Args>
 	auto owner(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("owner")] != -1);
-		return call<R>("owner", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("owner")] != -1);
+		return call<R>("owner", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Set, typename... Args>
 	auto permissions(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("permissions")] != -1);
-		return call<R>("permissions", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("permissions")] != -1);
+		return call<R>("permissions", std::forward<Args>(args)...);
 	}
 
 };

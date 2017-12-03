@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::javax::xml::soap::SOAPConnection, typename... Args>
 	auto createConnection(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createConnection")] != -1);
-		return call<R>("createConnection", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createConnection")] != -1);
+		return call<R>("createConnection", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::xml::soap::SOAPConnectionFactory, typename... Args>
 	static auto newInstance(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newInstance")] != -1);
-		return scall<R>("newInstance", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newInstance")] != -1);
+		return scall<R>("newInstance", std::forward<Args>(args)...);
 	}
 
 };

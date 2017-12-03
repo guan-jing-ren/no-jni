@@ -27,32 +27,32 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto countTokens(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("countTokens")] != -1);
-		return call<R>("countTokens", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("countTokens")] != -1);
+		return call<R>("countTokens", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto hasMoreElements(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hasMoreElements")] != -1);
-		return call<R>("hasMoreElements", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hasMoreElements")] != -1);
+		return call<R>("hasMoreElements", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto hasMoreTokens(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hasMoreTokens")] != -1);
-		return call<R>("hasMoreTokens", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hasMoreTokens")] != -1);
+		return call<R>("hasMoreTokens", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto nextElement(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nextElement")] != -1);
-		return call<R>("nextElement", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("nextElement")] != -1);
+		return call<R>("nextElement", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto nextToken(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nextToken")] != -1);
-		return call<R>("nextToken", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("nextToken")] != -1);
+		return call<R>("nextToken", std::forward<Args>(args)...);
 	}
 
 };

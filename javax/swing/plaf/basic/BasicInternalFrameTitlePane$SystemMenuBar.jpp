@@ -23,26 +23,26 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isFocusTraversable(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isFocusTraversable")] != -1);
-		return call<R>("isFocusTraversable", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isFocusTraversable")] != -1);
+		return call<R>("isFocusTraversable", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isOpaque(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isOpaque")] != -1);
-		return call<R>("isOpaque", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isOpaque")] != -1);
+		return call<R>("isOpaque", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto paint(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paint")] != -1);
-		return call<R>("paint", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("paint")] != -1);
+		return call<R>("paint", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto requestFocus(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("requestFocus")] != -1);
-		return call<R>("requestFocus", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("requestFocus")] != -1);
+		return call<R>("requestFocus", std::forward<Args>(args)...);
 	}
 
 };

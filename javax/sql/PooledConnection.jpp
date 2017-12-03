@@ -24,38 +24,38 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto addConnectionEventListener(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addConnectionEventListener")] != -1);
-		return call<R>("addConnectionEventListener", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addConnectionEventListener")] != -1);
+		return call<R>("addConnectionEventListener", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto addStatementEventListener(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addStatementEventListener")] != -1);
-		return call<R>("addStatementEventListener", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addStatementEventListener")] != -1);
+		return call<R>("addStatementEventListener", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto close(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
-		return call<R>("close", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::sql::Connection, typename... Args>
 	auto getConnection(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getConnection")] != -1);
-		return call<R>("getConnection", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getConnection")] != -1);
+		return call<R>("getConnection", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto removeConnectionEventListener(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeConnectionEventListener")] != -1);
-		return call<R>("removeConnectionEventListener", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeConnectionEventListener")] != -1);
+		return call<R>("removeConnectionEventListener", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto removeStatementEventListener(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeStatementEventListener")] != -1);
-		return call<R>("removeStatementEventListener", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeStatementEventListener")] != -1);
+		return call<R>("removeStatementEventListener", std::forward<Args>(args)...);
 	}
 
 };

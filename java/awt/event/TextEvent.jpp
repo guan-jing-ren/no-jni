@@ -40,8 +40,8 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto paramString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paramString")] != -1);
-		return call<R>("paramString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("paramString")] != -1);
+		return call<R>("paramString", std::forward<Args>(args)...);
 	}
 
 };

@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto parse(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("parse")] != -1);
-		return call<R>("parse", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("parse")] != -1);
+		return call<R>("parse", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto parseDTDMarkup(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("parseDTDMarkup")] != -1);
-		return call<R>("parseDTDMarkup", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("parseDTDMarkup")] != -1);
+		return call<R>("parseDTDMarkup", std::forward<Args>(args)...);
 	}
 
 };

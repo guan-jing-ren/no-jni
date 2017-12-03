@@ -29,32 +29,32 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto characteristics(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("characteristics")] != -1);
-		return call<R>("characteristics", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("characteristics")] != -1);
+		return call<R>("characteristics", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jlong, typename... Args>
 	auto estimateSize(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("estimateSize")] != -1);
-		return call<R>("estimateSize", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("estimateSize")] != -1);
+		return call<R>("estimateSize", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto forEachRemaining(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("forEachRemaining")] != -1);
-		return call<R>("forEachRemaining", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("forEachRemaining")] != -1);
+		return call<R>("forEachRemaining", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto tryAdvance(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("tryAdvance")] != -1);
-		return call<R>("tryAdvance", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("tryAdvance")] != -1);
+		return call<R>("tryAdvance", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Spliterator$OfLong, typename... Args>
 	auto trySplit(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("trySplit")] != -1);
-		return call<R>("trySplit", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("trySplit")] != -1);
+		return call<R>("trySplit", std::forward<Args>(args)...);
 	}
 
 };

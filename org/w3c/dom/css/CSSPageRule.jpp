@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getSelectorText(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSelectorText")] != -1);
-		return call<R>("getSelectorText", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSelectorText")] != -1);
+		return call<R>("getSelectorText", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::w3c::dom::css::CSSStyleDeclaration, typename... Args>
 	auto getStyle(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStyle")] != -1);
-		return call<R>("getStyle", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStyle")] != -1);
+		return call<R>("getStyle", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setSelectorText(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSelectorText")] != -1);
-		return call<R>("setSelectorText", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setSelectorText")] != -1);
+		return call<R>("setSelectorText", std::forward<Args>(args)...);
 	}
 
 };

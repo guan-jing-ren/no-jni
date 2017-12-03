@@ -23,20 +23,20 @@ public:
 
 	template<typename R = ::jbyte *, typename... Args>
 	auto getEncodedValue(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEncodedValue")] != -1);
-		return call<R>("getEncodedValue", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEncodedValue")] != -1);
+		return call<R>("getEncodedValue", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getID(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getID")] != -1);
-		return call<R>("getID", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getID")] != -1);
+		return call<R>("getID", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isCritical(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isCritical")] != -1);
-		return call<R>("isCritical", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isCritical")] != -1);
+		return call<R>("isCritical", std::forward<Args>(args)...);
 	}
 
 };

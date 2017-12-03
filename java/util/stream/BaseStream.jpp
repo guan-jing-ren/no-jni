@@ -26,50 +26,50 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto close(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
-		return call<R>("close", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isParallel(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isParallel")] != -1);
-		return call<R>("isParallel", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isParallel")] != -1);
+		return call<R>("isParallel", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Iterator, typename... Args>
 	auto iterator(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("iterator")] != -1);
-		return call<R>("iterator", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("iterator")] != -1);
+		return call<R>("iterator", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::stream::BaseStream, typename... Args>
 	auto onClose(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("onClose")] != -1);
-		return call<R>("onClose", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("onClose")] != -1);
+		return call<R>("onClose", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::stream::BaseStream, typename... Args>
 	auto parallel(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("parallel")] != -1);
-		return call<R>("parallel", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("parallel")] != -1);
+		return call<R>("parallel", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::stream::BaseStream, typename... Args>
 	auto sequential(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("sequential")] != -1);
-		return call<R>("sequential", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("sequential")] != -1);
+		return call<R>("sequential", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Spliterator, typename... Args>
 	auto spliterator(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("spliterator")] != -1);
-		return call<R>("spliterator", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("spliterator")] != -1);
+		return call<R>("spliterator", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::stream::BaseStream, typename... Args>
 	auto unordered(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unordered")] != -1);
-		return call<R>("unordered", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unordered")] != -1);
+		return call<R>("unordered", std::forward<Args>(args)...);
 	}
 
 };

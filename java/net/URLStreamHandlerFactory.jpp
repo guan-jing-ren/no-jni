@@ -19,8 +19,8 @@ public:
 
 	template<typename R = ::java::net::URLStreamHandler, typename... Args>
 	auto createURLStreamHandler(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createURLStreamHandler")] != -1);
-		return call<R>("createURLStreamHandler", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createURLStreamHandler")] != -1);
+		return call<R>("createURLStreamHandler", std::forward<Args>(args)...);
 	}
 
 };

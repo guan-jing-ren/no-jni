@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::java::text::DateFormat, typename... Args>
 	auto getDateInstance(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDateInstance")] != -1);
-		return call<R>("getDateInstance", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDateInstance")] != -1);
+		return call<R>("getDateInstance", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::text::DateFormat, typename... Args>
 	auto getDateTimeInstance(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDateTimeInstance")] != -1);
-		return call<R>("getDateTimeInstance", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDateTimeInstance")] != -1);
+		return call<R>("getDateTimeInstance", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::text::DateFormat, typename... Args>
 	auto getTimeInstance(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTimeInstance")] != -1);
-		return call<R>("getTimeInstance", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTimeInstance")] != -1);
+		return call<R>("getTimeInstance", std::forward<Args>(args)...);
 	}
 
 };

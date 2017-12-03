@@ -24,32 +24,32 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto addAttribute(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addAttribute")] != -1);
-		return call<R>("addAttribute", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addAttribute")] != -1);
+		return call<R>("addAttribute", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto addAttributes(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addAttributes")] != -1);
-		return call<R>("addAttributes", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addAttributes")] != -1);
+		return call<R>("addAttributes", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto removeAttribute(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeAttribute")] != -1);
-		return call<R>("removeAttribute", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeAttribute")] != -1);
+		return call<R>("removeAttribute", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto removeAttributes(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeAttributes")] != -1);
-		return call<R>("removeAttributes", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeAttributes")] != -1);
+		return call<R>("removeAttributes", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setResolveParent(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setResolveParent")] != -1);
-		return call<R>("setResolveParent", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setResolveParent")] != -1);
+		return call<R>("setResolveParent", std::forward<Args>(args)...);
 	}
 
 };

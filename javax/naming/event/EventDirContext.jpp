@@ -22,8 +22,8 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto addNamingListener(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addNamingListener")] != -1);
-		return call<R>("addNamingListener", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addNamingListener")] != -1);
+		return call<R>("addNamingListener", std::forward<Args>(args)...);
 	}
 
 };

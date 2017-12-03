@@ -24,32 +24,32 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto lock(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lock")] != -1);
-		return call<R>("lock", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("lock")] != -1);
+		return call<R>("lock", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto lockInterruptibly(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lockInterruptibly")] != -1);
-		return call<R>("lockInterruptibly", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("lockInterruptibly")] != -1);
+		return call<R>("lockInterruptibly", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::concurrent::locks::Condition, typename... Args>
 	auto newCondition(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newCondition")] != -1);
-		return call<R>("newCondition", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newCondition")] != -1);
+		return call<R>("newCondition", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto tryLock(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("tryLock")] != -1);
-		return call<R>("tryLock", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("tryLock")] != -1);
+		return call<R>("tryLock", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto unlock(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unlock")] != -1);
-		return call<R>("unlock", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unlock")] != -1);
+		return call<R>("unlock", std::forward<Args>(args)...);
 	}
 
 };

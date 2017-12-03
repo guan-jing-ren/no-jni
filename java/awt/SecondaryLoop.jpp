@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto enter(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("enter")] != -1);
-		return call<R>("enter", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("enter")] != -1);
+		return call<R>("enter", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto exit(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("exit")] != -1);
-		return call<R>("exit", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("exit")] != -1);
+		return call<R>("exit", std::forward<Args>(args)...);
 	}
 
 };

@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::java::io::InputStream, typename... Args>
 	auto getBody(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBody")] != -1);
-		return call<R>("getBody", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBody")] != -1);
+		return call<R>("getBody", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Map, typename... Args>
 	auto getHeaders(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHeaders")] != -1);
-		return call<R>("getHeaders", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHeaders")] != -1);
+		return call<R>("getHeaders", std::forward<Args>(args)...);
 	}
 
 };

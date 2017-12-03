@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto getLength(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLength")] != -1);
-		return call<R>("getLength", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLength")] != -1);
+		return call<R>("getLength", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::w3c::dom::stylesheets::StyleSheet, typename... Args>
 	auto item(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("item")] != -1);
-		return call<R>("item", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("item")] != -1);
+		return call<R>("item", std::forward<Args>(args)...);
 	}
 
 };

@@ -22,20 +22,20 @@ public:
 
 	template<typename R = ::java::lang::Class, typename... Args>
 	auto getArgumentClass(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getArgumentClass")] != -1);
-		return call<R>("getArgumentClass", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getArgumentClass")] != -1);
+		return call<R>("getArgumentClass", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jchar, typename... Args>
 	auto getConversion(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getConversion")] != -1);
-		return call<R>("getConversion", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getConversion")] != -1);
+		return call<R>("getConversion", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getMessage(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMessage")] != -1);
-		return call<R>("getMessage", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMessage")] != -1);
+		return call<R>("getMessage", std::forward<Args>(args)...);
 	}
 
 };

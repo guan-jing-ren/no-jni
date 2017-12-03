@@ -28,50 +28,50 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto destroy(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("destroy")] != -1);
-		return call<R>("destroy", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("destroy")] != -1);
+		return call<R>("destroy", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Process, typename... Args>
 	auto destroyForcibly(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("destroyForcibly")] != -1);
-		return call<R>("destroyForcibly", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("destroyForcibly")] != -1);
+		return call<R>("destroyForcibly", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto exitValue(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("exitValue")] != -1);
-		return call<R>("exitValue", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("exitValue")] != -1);
+		return call<R>("exitValue", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::io::InputStream, typename... Args>
 	auto getErrorStream(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getErrorStream")] != -1);
-		return call<R>("getErrorStream", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getErrorStream")] != -1);
+		return call<R>("getErrorStream", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::io::InputStream, typename... Args>
 	auto getInputStream(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInputStream")] != -1);
-		return call<R>("getInputStream", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInputStream")] != -1);
+		return call<R>("getInputStream", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::io::OutputStream, typename... Args>
 	auto getOutputStream(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOutputStream")] != -1);
-		return call<R>("getOutputStream", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOutputStream")] != -1);
+		return call<R>("getOutputStream", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isAlive(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isAlive")] != -1);
-		return call<R>("isAlive", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isAlive")] != -1);
+		return call<R>("isAlive", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto waitFor(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("waitFor")] != -1);
-		return call<R>("waitFor", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("waitFor")] != -1);
+		return call<R>("waitFor", std::forward<Args>(args)...);
 	}
 
 };

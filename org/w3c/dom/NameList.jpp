@@ -23,32 +23,32 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto contains(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("contains")] != -1);
-		return call<R>("contains", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("contains")] != -1);
+		return call<R>("contains", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto containsNS(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("containsNS")] != -1);
-		return call<R>("containsNS", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("containsNS")] != -1);
+		return call<R>("containsNS", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getLength(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLength")] != -1);
-		return call<R>("getLength", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLength")] != -1);
+		return call<R>("getLength", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
-		return call<R>("getName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getNamespaceURI(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNamespaceURI")] != -1);
-		return call<R>("getNamespaceURI", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNamespaceURI")] != -1);
+		return call<R>("getNamespaceURI", std::forward<Args>(args)...);
 	}
 
 };

@@ -39,50 +39,50 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto equals(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
-		return call<R>("equals", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getClassName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getClassName")] != -1);
-		return call<R>("getClassName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClassName")] != -1);
+		return call<R>("getClassName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getDescription(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDescription")] != -1);
-		return call<R>("getDescription", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDescription")] != -1);
+		return call<R>("getDescription", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getTypeName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTypeName")] != -1);
-		return call<R>("getTypeName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTypeName")] != -1);
+		return call<R>("getTypeName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto hashCode(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
-		return call<R>("hashCode", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isArray(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isArray")] != -1);
-		return call<R>("isArray", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isArray")] != -1);
+		return call<R>("isArray", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isValue(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isValue")] != -1);
-		return call<R>("isValue", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isValue")] != -1);
+		return call<R>("isValue", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto toString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
-		return call<R>("toString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
 	}
 
 };

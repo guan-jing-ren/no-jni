@@ -47,26 +47,26 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto empty(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("empty")] != -1);
-		return call<R>("empty", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("empty")] != -1);
+		return call<R>("empty", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::swing::text::html::parser::Element, typename... Args>
 	auto first(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("first")] != -1);
-		return call<R>("first", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("first")] != -1);
+		return call<R>("first", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto getElements(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getElements")] != -1);
-		return call<R>("getElements", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getElements")] != -1);
+		return call<R>("getElements", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto toString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
-		return call<R>("toString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
 	}
 
 };

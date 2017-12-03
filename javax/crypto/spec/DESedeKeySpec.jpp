@@ -28,14 +28,14 @@ public:
 
 	template<typename R = ::jbyte *, typename... Args>
 	auto getKey(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getKey")] != -1);
-		return call<R>("getKey", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getKey")] != -1);
+		return call<R>("getKey", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	static auto isParityAdjusted(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isParityAdjusted")] != -1);
-		return scall<R>("isParityAdjusted", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isParityAdjusted")] != -1);
+		return scall<R>("isParityAdjusted", std::forward<Args>(args)...);
 	}
 
 };

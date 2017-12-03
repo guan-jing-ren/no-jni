@@ -20,8 +20,8 @@ public:
 
 	template<typename R = ::java::sql::Connection, typename... Args>
 	auto getConnection(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getConnection")] != -1);
-		return call<R>("getConnection", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getConnection")] != -1);
+		return call<R>("getConnection", std::forward<Args>(args)...);
 	}
 
 };

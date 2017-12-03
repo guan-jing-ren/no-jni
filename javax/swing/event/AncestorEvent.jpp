@@ -42,20 +42,20 @@ public:
 
 	template<typename R = ::java::awt::Container, typename... Args>
 	auto getAncestor(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAncestor")] != -1);
-		return call<R>("getAncestor", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAncestor")] != -1);
+		return call<R>("getAncestor", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::Container, typename... Args>
 	auto getAncestorParent(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAncestorParent")] != -1);
-		return call<R>("getAncestorParent", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAncestorParent")] != -1);
+		return call<R>("getAncestorParent", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::swing::JComponent, typename... Args>
 	auto getComponent(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getComponent")] != -1);
-		return call<R>("getComponent", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getComponent")] != -1);
+		return call<R>("getComponent", std::forward<Args>(args)...);
 	}
 
 };

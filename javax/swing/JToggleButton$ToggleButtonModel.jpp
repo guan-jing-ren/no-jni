@@ -22,20 +22,20 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isSelected(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSelected")] != -1);
-		return call<R>("isSelected", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSelected")] != -1);
+		return call<R>("isSelected", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setPressed(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPressed")] != -1);
-		return call<R>("setPressed", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setPressed")] != -1);
+		return call<R>("setPressed", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setSelected(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSelected")] != -1);
-		return call<R>("setSelected", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setSelected")] != -1);
+		return call<R>("setSelected", std::forward<Args>(args)...);
 	}
 
 };

@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto checkClientTrusted(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("checkClientTrusted")] != -1);
-		return call<R>("checkClientTrusted", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkClientTrusted")] != -1);
+		return call<R>("checkClientTrusted", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto checkServerTrusted(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("checkServerTrusted")] != -1);
-		return call<R>("checkServerTrusted", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkServerTrusted")] != -1);
+		return call<R>("checkServerTrusted", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::security::cert::X509Certificate *, typename... Args>
 	auto getAcceptedIssuers(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAcceptedIssuers")] != -1);
-		return call<R>("getAcceptedIssuers", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAcceptedIssuers")] != -1);
+		return call<R>("getAcceptedIssuers", std::forward<Args>(args)...);
 	}
 
 };

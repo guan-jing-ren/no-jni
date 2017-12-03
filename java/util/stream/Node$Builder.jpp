@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto accept(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("accept")] != -1);
-		return call<R>("accept", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("accept")] != -1);
+		return call<R>("accept", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::stream::Node, typename... Args>
 	auto build(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("build")] != -1);
-		return call<R>("build", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("build")] != -1);
+		return call<R>("build", std::forward<Args>(args)...);
 	}
 
 };

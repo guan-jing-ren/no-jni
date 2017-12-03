@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto addItemListener(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addItemListener")] != -1);
-		return call<R>("addItemListener", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addItemListener")] != -1);
+		return call<R>("addItemListener", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object *, typename... Args>
 	auto getSelectedObjects(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSelectedObjects")] != -1);
-		return call<R>("getSelectedObjects", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSelectedObjects")] != -1);
+		return call<R>("getSelectedObjects", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto removeItemListener(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeItemListener")] != -1);
-		return call<R>("removeItemListener", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeItemListener")] != -1);
+		return call<R>("removeItemListener", std::forward<Args>(args)...);
 	}
 
 };

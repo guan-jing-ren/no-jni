@@ -24,32 +24,32 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto empty(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("empty")] != -1);
-		return call<R>("empty", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("empty")] != -1);
+		return call<R>("empty", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto peek(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("peek")] != -1);
-		return call<R>("peek", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("peek")] != -1);
+		return call<R>("peek", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto pop(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("pop")] != -1);
-		return call<R>("pop", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("pop")] != -1);
+		return call<R>("pop", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto push(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("push")] != -1);
-		return call<R>("push", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("push")] != -1);
+		return call<R>("push", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto search(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("search")] != -1);
-		return call<R>("search", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("search")] != -1);
+		return call<R>("search", std::forward<Args>(args)...);
 	}
 
 };

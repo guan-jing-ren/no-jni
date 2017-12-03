@@ -22,20 +22,20 @@ public:
 
 	template<typename R = ::javax::security::auth::login::AppConfigurationEntry$LoginModuleControlFlag, typename... Args>
 	auto getControlFlag(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getControlFlag")] != -1);
-		return call<R>("getControlFlag", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getControlFlag")] != -1);
+		return call<R>("getControlFlag", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getLoginModuleName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLoginModuleName")] != -1);
-		return call<R>("getLoginModuleName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLoginModuleName")] != -1);
+		return call<R>("getLoginModuleName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Map, typename... Args>
 	auto getOptions(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOptions")] != -1);
-		return call<R>("getOptions", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOptions")] != -1);
+		return call<R>("getOptions", std::forward<Args>(args)...);
 	}
 
 };

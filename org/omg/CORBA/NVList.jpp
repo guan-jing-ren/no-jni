@@ -25,38 +25,38 @@ public:
 
 	template<typename R = ::org::omg::CORBA::NamedValue, typename... Args>
 	auto add(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("add")] != -1);
-		return call<R>("add", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::omg::CORBA::NamedValue, typename... Args>
 	auto add_item(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("add_item")] != -1);
-		return call<R>("add_item", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("add_item")] != -1);
+		return call<R>("add_item", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::omg::CORBA::NamedValue, typename... Args>
 	auto add_value(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("add_value")] != -1);
-		return call<R>("add_value", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("add_value")] != -1);
+		return call<R>("add_value", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto count(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("count")] != -1);
-		return call<R>("count", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("count")] != -1);
+		return call<R>("count", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::omg::CORBA::NamedValue, typename... Args>
 	auto item(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("item")] != -1);
-		return call<R>("item", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("item")] != -1);
+		return call<R>("item", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto remove(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("remove")] != -1);
-		return call<R>("remove", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", std::forward<Args>(args)...);
 	}
 
 };

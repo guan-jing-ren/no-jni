@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto getNumComponents(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNumComponents")] != -1);
-		return call<R>("getNumComponents", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNumComponents")] != -1);
+		return call<R>("getNumComponents", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getOffset(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOffset")] != -1);
-		return call<R>("getOffset", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOffset")] != -1);
+		return call<R>("getOffset", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint *, typename... Args>
 	auto lookupPixel(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lookupPixel")] != -1);
-		return call<R>("lookupPixel", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("lookupPixel")] != -1);
+		return call<R>("lookupPixel", std::forward<Args>(args)...);
 	}
 
 };

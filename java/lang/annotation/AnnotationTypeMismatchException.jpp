@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::java::lang::reflect::Method, typename... Args>
 	auto element(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("element")] != -1);
-		return call<R>("element", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("element")] != -1);
+		return call<R>("element", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto foundType(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("foundType")] != -1);
-		return call<R>("foundType", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("foundType")] != -1);
+		return call<R>("foundType", std::forward<Args>(args)...);
 	}
 
 };

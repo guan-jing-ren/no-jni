@@ -110,32 +110,32 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto getNewState(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNewState")] != -1);
-		return call<R>("getNewState", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNewState")] != -1);
+		return call<R>("getNewState", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getOldState(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOldState")] != -1);
-		return call<R>("getOldState", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOldState")] != -1);
+		return call<R>("getOldState", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::Window, typename... Args>
 	auto getOppositeWindow(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOppositeWindow")] != -1);
-		return call<R>("getOppositeWindow", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOppositeWindow")] != -1);
+		return call<R>("getOppositeWindow", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::Window, typename... Args>
 	auto getWindow(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWindow")] != -1);
-		return call<R>("getWindow", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getWindow")] != -1);
+		return call<R>("getWindow", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto paramString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paramString")] != -1);
-		return call<R>("paramString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("paramString")] != -1);
+		return call<R>("paramString", std::forward<Args>(args)...);
 	}
 
 };

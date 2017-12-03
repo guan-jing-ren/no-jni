@@ -20,8 +20,8 @@ public:
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto getObject(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getObject")] != -1);
-		return call<R>("getObject", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getObject")] != -1);
+		return call<R>("getObject", std::forward<Args>(args)...);
 	}
 
 };

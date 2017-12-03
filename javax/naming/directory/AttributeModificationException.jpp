@@ -23,20 +23,20 @@ public:
 
 	template<typename R = ::javax::naming::directory::ModificationItem *, typename... Args>
 	auto getUnexecutedModifications(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUnexecutedModifications")] != -1);
-		return call<R>("getUnexecutedModifications", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUnexecutedModifications")] != -1);
+		return call<R>("getUnexecutedModifications", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setUnexecutedModifications(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setUnexecutedModifications")] != -1);
-		return call<R>("setUnexecutedModifications", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setUnexecutedModifications")] != -1);
+		return call<R>("setUnexecutedModifications", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto toString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
-		return call<R>("toString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
 	}
 
 };

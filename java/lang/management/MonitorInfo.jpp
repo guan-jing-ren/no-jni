@@ -22,20 +22,20 @@ public:
 
 	template<typename R = ::java::lang::management::MonitorInfo, typename... Args>
 	static auto from(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("from")] != -1);
-		return scall<R>("from", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("from")] != -1);
+		return scall<R>("from", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getLockedStackDepth(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLockedStackDepth")] != -1);
-		return call<R>("getLockedStackDepth", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLockedStackDepth")] != -1);
+		return call<R>("getLockedStackDepth", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::StackTraceElement, typename... Args>
 	auto getLockedStackFrame(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLockedStackFrame")] != -1);
-		return call<R>("getLockedStackFrame", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLockedStackFrame")] != -1);
+		return call<R>("getLockedStackFrame", std::forward<Args>(args)...);
 	}
 
 };

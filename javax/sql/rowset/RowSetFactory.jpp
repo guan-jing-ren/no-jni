@@ -23,32 +23,32 @@ public:
 
 	template<typename R = ::javax::sql::rowset::CachedRowSet, typename... Args>
 	auto createCachedRowSet(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createCachedRowSet")] != -1);
-		return call<R>("createCachedRowSet", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createCachedRowSet")] != -1);
+		return call<R>("createCachedRowSet", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::sql::rowset::FilteredRowSet, typename... Args>
 	auto createFilteredRowSet(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createFilteredRowSet")] != -1);
-		return call<R>("createFilteredRowSet", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createFilteredRowSet")] != -1);
+		return call<R>("createFilteredRowSet", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::sql::rowset::JdbcRowSet, typename... Args>
 	auto createJdbcRowSet(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createJdbcRowSet")] != -1);
-		return call<R>("createJdbcRowSet", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createJdbcRowSet")] != -1);
+		return call<R>("createJdbcRowSet", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::sql::rowset::JoinRowSet, typename... Args>
 	auto createJoinRowSet(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createJoinRowSet")] != -1);
-		return call<R>("createJoinRowSet", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createJoinRowSet")] != -1);
+		return call<R>("createJoinRowSet", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::sql::rowset::WebRowSet, typename... Args>
 	auto createWebRowSet(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createWebRowSet")] != -1);
-		return call<R>("createWebRowSet", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createWebRowSet")] != -1);
+		return call<R>("createWebRowSet", std::forward<Args>(args)...);
 	}
 
 };

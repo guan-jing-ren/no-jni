@@ -22,20 +22,20 @@ public:
 
 	template<typename R = ::java::math::BigInteger, typename... Args>
 	auto getCrtCoefficient(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCrtCoefficient")] != -1);
-		return call<R>("getCrtCoefficient", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCrtCoefficient")] != -1);
+		return call<R>("getCrtCoefficient", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::math::BigInteger, typename... Args>
 	auto getExponent(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getExponent")] != -1);
-		return call<R>("getExponent", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getExponent")] != -1);
+		return call<R>("getExponent", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::math::BigInteger, typename... Args>
 	auto getPrime(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrime")] != -1);
-		return call<R>("getPrime", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPrime")] != -1);
+		return call<R>("getPrime", std::forward<Args>(args)...);
 	}
 
 };

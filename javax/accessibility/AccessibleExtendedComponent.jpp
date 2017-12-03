@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::javax::accessibility::AccessibleKeyBinding, typename... Args>
 	auto getAccessibleKeyBinding(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAccessibleKeyBinding")] != -1);
-		return call<R>("getAccessibleKeyBinding", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAccessibleKeyBinding")] != -1);
+		return call<R>("getAccessibleKeyBinding", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getTitledBorderText(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTitledBorderText")] != -1);
-		return call<R>("getTitledBorderText", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTitledBorderText")] != -1);
+		return call<R>("getTitledBorderText", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getToolTipText(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getToolTipText")] != -1);
-		return call<R>("getToolTipText", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getToolTipText")] != -1);
+		return call<R>("getToolTipText", std::forward<Args>(args)...);
 	}
 
 };

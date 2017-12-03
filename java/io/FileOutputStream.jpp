@@ -29,26 +29,26 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto close(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
-		return call<R>("close", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::nio::channels::FileChannel, typename... Args>
 	auto getChannel(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getChannel")] != -1);
-		return call<R>("getChannel", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getChannel")] != -1);
+		return call<R>("getChannel", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::io::FileDescriptor, typename... Args>
 	auto getFD(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFD")] != -1);
-		return call<R>("getFD", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFD")] != -1);
+		return call<R>("getFD", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto write(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write")] != -1);
-		return call<R>("write", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", std::forward<Args>(args)...);
 	}
 
 };

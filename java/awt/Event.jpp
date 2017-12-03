@@ -543,32 +543,32 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto controlDown(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("controlDown")] != -1);
-		return call<R>("controlDown", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("controlDown")] != -1);
+		return call<R>("controlDown", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto metaDown(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("metaDown")] != -1);
-		return call<R>("metaDown", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("metaDown")] != -1);
+		return call<R>("metaDown", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto shiftDown(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("shiftDown")] != -1);
-		return call<R>("shiftDown", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("shiftDown")] != -1);
+		return call<R>("shiftDown", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto toString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
-		return call<R>("toString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto translate(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("translate")] != -1);
-		return call<R>("translate", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("translate")] != -1);
+		return call<R>("translate", std::forward<Args>(args)...);
 	}
 
 };

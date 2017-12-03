@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setLineIncrement(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLineIncrement")] != -1);
-		return call<R>("setLineIncrement", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setLineIncrement")] != -1);
+		return call<R>("setLineIncrement", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setPageIncrement(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPageIncrement")] != -1);
-		return call<R>("setPageIncrement", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setPageIncrement")] != -1);
+		return call<R>("setPageIncrement", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setValues(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setValues")] != -1);
-		return call<R>("setValues", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setValues")] != -1);
+		return call<R>("setValues", std::forward<Args>(args)...);
 	}
 
 };

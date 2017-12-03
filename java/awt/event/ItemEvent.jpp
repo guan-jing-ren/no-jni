@@ -57,26 +57,26 @@ public:
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto getItem(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getItem")] != -1);
-		return call<R>("getItem", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getItem")] != -1);
+		return call<R>("getItem", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::ItemSelectable, typename... Args>
 	auto getItemSelectable(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getItemSelectable")] != -1);
-		return call<R>("getItemSelectable", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getItemSelectable")] != -1);
+		return call<R>("getItemSelectable", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getStateChange(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStateChange")] != -1);
-		return call<R>("getStateChange", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStateChange")] != -1);
+		return call<R>("getStateChange", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto paramString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paramString")] != -1);
-		return call<R>("paramString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("paramString")] != -1);
+		return call<R>("paramString", std::forward<Args>(args)...);
 	}
 
 };

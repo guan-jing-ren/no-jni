@@ -23,14 +23,14 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto getDropAction(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDropAction")] != -1);
-		return call<R>("getDropAction", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDropAction")] != -1);
+		return call<R>("getDropAction", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto getDropSuccess(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDropSuccess")] != -1);
-		return call<R>("getDropSuccess", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDropSuccess")] != -1);
+		return call<R>("getDropSuccess", std::forward<Args>(args)...);
 	}
 
 };

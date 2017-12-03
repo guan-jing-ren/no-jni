@@ -22,20 +22,20 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto equals(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
-		return call<R>("equals", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::rmi::activation::ActivationSystem, typename... Args>
 	auto getSystem(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSystem")] != -1);
-		return call<R>("getSystem", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSystem")] != -1);
+		return call<R>("getSystem", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto hashCode(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
-		return call<R>("hashCode", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
 	}
 
 };

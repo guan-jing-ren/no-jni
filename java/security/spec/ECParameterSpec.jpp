@@ -23,26 +23,26 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto getCofactor(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCofactor")] != -1);
-		return call<R>("getCofactor", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCofactor")] != -1);
+		return call<R>("getCofactor", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::security::spec::EllipticCurve, typename... Args>
 	auto getCurve(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCurve")] != -1);
-		return call<R>("getCurve", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCurve")] != -1);
+		return call<R>("getCurve", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::security::spec::ECPoint, typename... Args>
 	auto getGenerator(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getGenerator")] != -1);
-		return call<R>("getGenerator", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGenerator")] != -1);
+		return call<R>("getGenerator", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::math::BigInteger, typename... Args>
 	auto getOrder(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOrder")] != -1);
-		return call<R>("getOrder", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOrder")] != -1);
+		return call<R>("getOrder", std::forward<Args>(args)...);
 	}
 
 };

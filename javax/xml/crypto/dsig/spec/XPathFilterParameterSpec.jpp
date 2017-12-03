@@ -22,14 +22,14 @@ public:
 
 	template<typename R = ::java::util::Map, typename... Args>
 	auto getNamespaceMap(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNamespaceMap")] != -1);
-		return call<R>("getNamespaceMap", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNamespaceMap")] != -1);
+		return call<R>("getNamespaceMap", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getXPath(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getXPath")] != -1);
-		return call<R>("getXPath", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getXPath")] != -1);
+		return call<R>("getXPath", std::forward<Args>(args)...);
 	}
 
 };

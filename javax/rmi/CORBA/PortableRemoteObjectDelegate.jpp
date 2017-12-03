@@ -23,32 +23,32 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto connect(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("connect")] != -1);
-		return call<R>("connect", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("connect")] != -1);
+		return call<R>("connect", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto exportObject(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("exportObject")] != -1);
-		return call<R>("exportObject", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("exportObject")] != -1);
+		return call<R>("exportObject", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto narrow(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("narrow")] != -1);
-		return call<R>("narrow", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("narrow")] != -1);
+		return call<R>("narrow", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::rmi::Remote, typename... Args>
 	auto toStub(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toStub")] != -1);
-		return call<R>("toStub", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toStub")] != -1);
+		return call<R>("toStub", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto unexportObject(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unexportObject")] != -1);
-		return call<R>("unexportObject", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unexportObject")] != -1);
+		return call<R>("unexportObject", std::forward<Args>(args)...);
 	}
 
 };

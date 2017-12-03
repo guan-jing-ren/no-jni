@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto getAccessibleColumn(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAccessibleColumn")] != -1);
-		return call<R>("getAccessibleColumn", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAccessibleColumn")] != -1);
+		return call<R>("getAccessibleColumn", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getAccessibleIndex(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAccessibleIndex")] != -1);
-		return call<R>("getAccessibleIndex", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAccessibleIndex")] != -1);
+		return call<R>("getAccessibleIndex", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getAccessibleRow(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAccessibleRow")] != -1);
-		return call<R>("getAccessibleRow", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAccessibleRow")] != -1);
+		return call<R>("getAccessibleRow", std::forward<Args>(args)...);
 	}
 
 };

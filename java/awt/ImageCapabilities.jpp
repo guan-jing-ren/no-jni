@@ -22,20 +22,20 @@ public:
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto clone(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
-		return call<R>("clone", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isAccelerated(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isAccelerated")] != -1);
-		return call<R>("isAccelerated", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isAccelerated")] != -1);
+		return call<R>("isAccelerated", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isTrueVolatile(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isTrueVolatile")] != -1);
-		return call<R>("isTrueVolatile", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isTrueVolatile")] != -1);
+		return call<R>("isTrueVolatile", std::forward<Args>(args)...);
 	}
 
 };

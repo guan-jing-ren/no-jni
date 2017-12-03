@@ -29,32 +29,32 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto free(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("free")] != -1);
-		return call<R>("free", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("free")] != -1);
+		return call<R>("free", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto getArray(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getArray")] != -1);
-		return call<R>("getArray", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getArray")] != -1);
+		return call<R>("getArray", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getBaseType(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBaseType")] != -1);
-		return call<R>("getBaseType", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBaseType")] != -1);
+		return call<R>("getBaseType", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getBaseTypeName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBaseTypeName")] != -1);
-		return call<R>("getBaseTypeName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBaseTypeName")] != -1);
+		return call<R>("getBaseTypeName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::sql::ResultSet, typename... Args>
 	auto getResultSet(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getResultSet")] != -1);
-		return call<R>("getResultSet", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getResultSet")] != -1);
+		return call<R>("getResultSet", std::forward<Args>(args)...);
 	}
 
 };

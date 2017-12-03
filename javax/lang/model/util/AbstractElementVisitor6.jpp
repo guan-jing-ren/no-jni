@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto visit(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("visit")] != -1);
-		return call<R>("visit", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("visit")] != -1);
+		return call<R>("visit", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto visitUnknown(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("visitUnknown")] != -1);
-		return call<R>("visitUnknown", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("visitUnknown")] != -1);
+		return call<R>("visitUnknown", std::forward<Args>(args)...);
 	}
 
 };

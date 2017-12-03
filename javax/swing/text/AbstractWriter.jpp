@@ -22,26 +22,26 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto getEndOffset(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEndOffset")] != -1);
-		return call<R>("getEndOffset", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEndOffset")] != -1);
+		return call<R>("getEndOffset", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getLineSeparator(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLineSeparator")] != -1);
-		return call<R>("getLineSeparator", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLineSeparator")] != -1);
+		return call<R>("getLineSeparator", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getStartOffset(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStartOffset")] != -1);
-		return call<R>("getStartOffset", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStartOffset")] != -1);
+		return call<R>("getStartOffset", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setLineSeparator(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLineSeparator")] != -1);
-		return call<R>("setLineSeparator", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setLineSeparator")] != -1);
+		return call<R>("setLineSeparator", std::forward<Args>(args)...);
 	}
 
 };

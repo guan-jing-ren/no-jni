@@ -80,32 +80,32 @@ public:
 
 	template<typename R = ::java::awt::Adjustable, typename... Args>
 	auto getAdjustable(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAdjustable")] != -1);
-		return call<R>("getAdjustable", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAdjustable")] != -1);
+		return call<R>("getAdjustable", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getAdjustmentType(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAdjustmentType")] != -1);
-		return call<R>("getAdjustmentType", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAdjustmentType")] != -1);
+		return call<R>("getAdjustmentType", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getValue(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getValue")] != -1);
-		return call<R>("getValue", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getValue")] != -1);
+		return call<R>("getValue", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto getValueIsAdjusting(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getValueIsAdjusting")] != -1);
-		return call<R>("getValueIsAdjusting", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getValueIsAdjusting")] != -1);
+		return call<R>("getValueIsAdjusting", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto paramString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paramString")] != -1);
-		return call<R>("paramString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("paramString")] != -1);
+		return call<R>("paramString", std::forward<Args>(args)...);
 	}
 
 };

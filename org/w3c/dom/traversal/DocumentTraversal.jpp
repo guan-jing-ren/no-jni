@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::org::w3c::dom::traversal::NodeIterator, typename... Args>
 	auto createNodeIterator(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createNodeIterator")] != -1);
-		return call<R>("createNodeIterator", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createNodeIterator")] != -1);
+		return call<R>("createNodeIterator", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::w3c::dom::traversal::TreeWalker, typename... Args>
 	auto createTreeWalker(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createTreeWalker")] != -1);
-		return call<R>("createTreeWalker", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createTreeWalker")] != -1);
+		return call<R>("createTreeWalker", std::forward<Args>(args)...);
 	}
 
 };

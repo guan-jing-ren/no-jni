@@ -26,20 +26,20 @@ public:
 
 	template<typename R = ::java::util::List, typename... Args>
 	auto invokeAll(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("invokeAll")] != -1);
-		return call<R>("invokeAll", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("invokeAll")] != -1);
+		return call<R>("invokeAll", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto invokeAny(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("invokeAny")] != -1);
-		return call<R>("invokeAny", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("invokeAny")] != -1);
+		return call<R>("invokeAny", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::concurrent::Future, typename... Args>
 	auto submit(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("submit")] != -1);
-		return call<R>("submit", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("submit")] != -1);
+		return call<R>("submit", std::forward<Args>(args)...);
 	}
 
 };

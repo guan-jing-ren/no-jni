@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::org::omg::DynamicAny::DynAny, typename... Args>
 	auto create_dyn_any(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("create_dyn_any")] != -1);
-		return call<R>("create_dyn_any", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_dyn_any")] != -1);
+		return call<R>("create_dyn_any", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::omg::DynamicAny::DynAny, typename... Args>
 	auto create_dyn_any_from_type_code(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("create_dyn_any_from_type_code")] != -1);
-		return call<R>("create_dyn_any_from_type_code", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_dyn_any_from_type_code")] != -1);
+		return call<R>("create_dyn_any_from_type_code", std::forward<Args>(args)...);
 	}
 
 };

@@ -27,26 +27,26 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto available(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("available")] != -1);
-		return call<R>("available", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("available")] != -1);
+		return call<R>("available", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto close(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
-		return call<R>("close", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto connect(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("connect")] != -1);
-		return call<R>("connect", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("connect")] != -1);
+		return call<R>("connect", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto read(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read")] != -1);
-		return call<R>("read", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", std::forward<Args>(args)...);
 	}
 
 };

@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto getEndOffset(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEndOffset")] != -1);
-		return call<R>("getEndOffset", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEndOffset")] != -1);
+		return call<R>("getEndOffset", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::swing::text::Highlighter$HighlightPainter, typename... Args>
 	auto getPainter(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPainter")] != -1);
-		return call<R>("getPainter", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPainter")] != -1);
+		return call<R>("getPainter", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getStartOffset(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStartOffset")] != -1);
-		return call<R>("getStartOffset", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStartOffset")] != -1);
+		return call<R>("getStartOffset", std::forward<Args>(args)...);
 	}
 
 };

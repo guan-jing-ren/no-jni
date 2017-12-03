@@ -89,56 +89,56 @@ public:
 
 	template<typename R = ::java::lang::Class, typename... Args>
 	auto getDeclaringClass(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDeclaringClass")] != -1);
-		return call<R>("getDeclaringClass", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDeclaringClass")] != -1);
+		return call<R>("getDeclaringClass", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::invoke::MethodType, typename... Args>
 	auto getMethodType(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMethodType")] != -1);
-		return call<R>("getMethodType", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMethodType")] != -1);
+		return call<R>("getMethodType", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getModifiers(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getModifiers")] != -1);
-		return call<R>("getModifiers", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getModifiers")] != -1);
+		return call<R>("getModifiers", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
-		return call<R>("getName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getReferenceKind(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getReferenceKind")] != -1);
-		return call<R>("getReferenceKind", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getReferenceKind")] != -1);
+		return call<R>("getReferenceKind", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isVarArgs(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isVarArgs")] != -1);
-		return call<R>("isVarArgs", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isVarArgs")] != -1);
+		return call<R>("isVarArgs", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	static auto referenceKindToString(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("referenceKindToString")] != -1);
-		return scall<R>("referenceKindToString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("referenceKindToString")] != -1);
+		return scall<R>("referenceKindToString", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::reflect::Member, typename... Args>
 	auto reflectAs(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("reflectAs")] != -1);
-		return call<R>("reflectAs", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("reflectAs")] != -1);
+		return call<R>("reflectAs", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	static auto toString(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
-		return scall<R>("toString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return scall<R>("toString", std::forward<Args>(args)...);
 	}
 
 };

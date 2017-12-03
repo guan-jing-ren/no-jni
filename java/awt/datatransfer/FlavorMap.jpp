@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::java::util::Map, typename... Args>
 	auto getFlavorsForNatives(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFlavorsForNatives")] != -1);
-		return call<R>("getFlavorsForNatives", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFlavorsForNatives")] != -1);
+		return call<R>("getFlavorsForNatives", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Map, typename... Args>
 	auto getNativesForFlavors(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNativesForFlavors")] != -1);
-		return call<R>("getNativesForFlavors", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNativesForFlavors")] != -1);
+		return call<R>("getNativesForFlavors", std::forward<Args>(args)...);
 	}
 
 };

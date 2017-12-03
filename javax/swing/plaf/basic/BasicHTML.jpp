@@ -36,26 +36,26 @@ public:
 
 	template<typename R = ::javax::swing::text::View, typename... Args>
 	static auto createHTMLView(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createHTMLView")] != -1);
-		return scall<R>("createHTMLView", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createHTMLView")] != -1);
+		return scall<R>("createHTMLView", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	static auto getHTMLBaseline(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHTMLBaseline")] != -1);
-		return scall<R>("getHTMLBaseline", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHTMLBaseline")] != -1);
+		return scall<R>("getHTMLBaseline", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	static auto isHTMLString(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isHTMLString")] != -1);
-		return scall<R>("isHTMLString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isHTMLString")] != -1);
+		return scall<R>("isHTMLString", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	static auto updateRenderer(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("updateRenderer")] != -1);
-		return scall<R>("updateRenderer", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("updateRenderer")] != -1);
+		return scall<R>("updateRenderer", std::forward<Args>(args)...);
 	}
 
 };

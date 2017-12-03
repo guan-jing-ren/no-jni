@@ -26,38 +26,38 @@ public:
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto scan(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("scan")] != -1);
-		return call<R>("scan", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("scan")] != -1);
+		return call<R>("scan", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto visitExecutable(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("visitExecutable")] != -1);
-		return call<R>("visitExecutable", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("visitExecutable")] != -1);
+		return call<R>("visitExecutable", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto visitPackage(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("visitPackage")] != -1);
-		return call<R>("visitPackage", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("visitPackage")] != -1);
+		return call<R>("visitPackage", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto visitType(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("visitType")] != -1);
-		return call<R>("visitType", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("visitType")] != -1);
+		return call<R>("visitType", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto visitTypeParameter(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("visitTypeParameter")] != -1);
-		return call<R>("visitTypeParameter", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("visitTypeParameter")] != -1);
+		return call<R>("visitTypeParameter", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto visitVariable(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("visitVariable")] != -1);
-		return call<R>("visitVariable", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("visitVariable")] != -1);
+		return call<R>("visitVariable", std::forward<Args>(args)...);
 	}
 
 };

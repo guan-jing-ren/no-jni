@@ -20,8 +20,8 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto delegateFocus(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("delegateFocus")] != -1);
-		return call<R>("delegateFocus", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("delegateFocus")] != -1);
+		return call<R>("delegateFocus", std::forward<Args>(args)...);
 	}
 
 };

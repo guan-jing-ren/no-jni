@@ -23,26 +23,26 @@ public:
 
 	template<typename R = ::javax::swing::plaf::ComponentUI, typename... Args>
 	static auto createUI(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createUI")] != -1);
-		return scall<R>("createUI", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createUI")] != -1);
+		return scall<R>("createUI", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto installUI(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("installUI")] != -1);
-		return call<R>("installUI", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("installUI")] != -1);
+		return call<R>("installUI", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setPalette(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPalette")] != -1);
-		return call<R>("setPalette", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setPalette")] != -1);
+		return call<R>("setPalette", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto uninstallUI(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("uninstallUI")] != -1);
-		return call<R>("uninstallUI", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("uninstallUI")] != -1);
+		return call<R>("uninstallUI", std::forward<Args>(args)...);
 	}
 
 };

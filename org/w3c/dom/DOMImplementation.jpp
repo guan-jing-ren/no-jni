@@ -22,26 +22,26 @@ public:
 
 	template<typename R = ::org::w3c::dom::Document, typename... Args>
 	auto createDocument(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createDocument")] != -1);
-		return call<R>("createDocument", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createDocument")] != -1);
+		return call<R>("createDocument", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::w3c::dom::DocumentType, typename... Args>
 	auto createDocumentType(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createDocumentType")] != -1);
-		return call<R>("createDocumentType", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createDocumentType")] != -1);
+		return call<R>("createDocumentType", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto getFeature(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFeature")] != -1);
-		return call<R>("getFeature", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFeature")] != -1);
+		return call<R>("getFeature", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto hasFeature(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hasFeature")] != -1);
-		return call<R>("hasFeature", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hasFeature")] != -1);
+		return call<R>("hasFeature", std::forward<Args>(args)...);
 	}
 
 };

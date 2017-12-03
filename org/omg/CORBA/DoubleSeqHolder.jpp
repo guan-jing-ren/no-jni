@@ -29,20 +29,20 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto _read(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("_read")] != -1);
-		return call<R>("_read", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("_read")] != -1);
+		return call<R>("_read", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
 	auto _type(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("_type")] != -1);
-		return call<R>("_type", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("_type")] != -1);
+		return call<R>("_type", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto _write(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("_write")] != -1);
-		return call<R>("_write", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("_write")] != -1);
+		return call<R>("_write", std::forward<Args>(args)...);
 	}
 
 };

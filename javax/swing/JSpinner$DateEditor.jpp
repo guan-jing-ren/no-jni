@@ -22,14 +22,14 @@ public:
 
 	template<typename R = ::java::text::SimpleDateFormat, typename... Args>
 	auto getFormat(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFormat")] != -1);
-		return call<R>("getFormat", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFormat")] != -1);
+		return call<R>("getFormat", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::swing::SpinnerDateModel, typename... Args>
 	auto getModel(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getModel")] != -1);
-		return call<R>("getModel", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getModel")] != -1);
+		return call<R>("getModel", std::forward<Args>(args)...);
 	}
 
 };

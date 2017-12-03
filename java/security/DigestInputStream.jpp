@@ -25,32 +25,32 @@ public:
 
 	template<typename R = ::java::security::MessageDigest, typename... Args>
 	auto getMessageDigest(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMessageDigest")] != -1);
-		return call<R>("getMessageDigest", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMessageDigest")] != -1);
+		return call<R>("getMessageDigest", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto on(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("on")] != -1);
-		return call<R>("on", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("on")] != -1);
+		return call<R>("on", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto read(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read")] != -1);
-		return call<R>("read", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setMessageDigest(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMessageDigest")] != -1);
-		return call<R>("setMessageDigest", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setMessageDigest")] != -1);
+		return call<R>("setMessageDigest", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto toString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
-		return call<R>("toString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
 	}
 
 };

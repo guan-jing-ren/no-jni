@@ -41,14 +41,14 @@ public:
 
 	template<typename R = ::java::awt::GraphicsConfiguration, typename... Args>
 	auto getBestConfiguration(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBestConfiguration")] != -1);
-		return call<R>("getBestConfiguration", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBestConfiguration")] != -1);
+		return call<R>("getBestConfiguration", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isGraphicsConfigSupported(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isGraphicsConfigSupported")] != -1);
-		return call<R>("isGraphicsConfigSupported", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isGraphicsConfigSupported")] != -1);
+		return call<R>("isGraphicsConfigSupported", std::forward<Args>(args)...);
 	}
 
 };

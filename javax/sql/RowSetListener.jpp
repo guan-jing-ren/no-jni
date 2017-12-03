@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto cursorMoved(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("cursorMoved")] != -1);
-		return call<R>("cursorMoved", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("cursorMoved")] != -1);
+		return call<R>("cursorMoved", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto rowChanged(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("rowChanged")] != -1);
-		return call<R>("rowChanged", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("rowChanged")] != -1);
+		return call<R>("rowChanged", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto rowSetChanged(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("rowSetChanged")] != -1);
-		return call<R>("rowSetChanged", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("rowSetChanged")] != -1);
+		return call<R>("rowSetChanged", std::forward<Args>(args)...);
 	}
 
 };

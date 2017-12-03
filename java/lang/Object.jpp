@@ -28,44 +28,44 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto equals(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
-		return call<R>("equals", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Class, typename... Args>
 	auto getClass(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getClass")] != -1);
-		return call<R>("getClass", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClass")] != -1);
+		return call<R>("getClass", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto hashCode(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
-		return call<R>("hashCode", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto notify(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("notify")] != -1);
-		return call<R>("notify", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("notify")] != -1);
+		return call<R>("notify", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto notifyAll(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("notifyAll")] != -1);
-		return call<R>("notifyAll", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("notifyAll")] != -1);
+		return call<R>("notifyAll", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto toString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
-		return call<R>("toString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto wait(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("wait")] != -1);
-		return call<R>("wait", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("wait")] != -1);
+		return call<R>("wait", std::forward<Args>(args)...);
 	}
 
 };

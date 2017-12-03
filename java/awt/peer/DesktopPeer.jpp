@@ -24,38 +24,38 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto browse(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("browse")] != -1);
-		return call<R>("browse", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("browse")] != -1);
+		return call<R>("browse", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto edit(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("edit")] != -1);
-		return call<R>("edit", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("edit")] != -1);
+		return call<R>("edit", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isSupported(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSupported")] != -1);
-		return call<R>("isSupported", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSupported")] != -1);
+		return call<R>("isSupported", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto mail(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("mail")] != -1);
-		return call<R>("mail", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("mail")] != -1);
+		return call<R>("mail", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto open(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("open")] != -1);
-		return call<R>("open", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("open")] != -1);
+		return call<R>("open", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto print(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("print")] != -1);
-		return call<R>("print", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("print")] != -1);
+		return call<R>("print", std::forward<Args>(args)...);
 	}
 
 };

@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::jfloat, typename... Args>
 	auto getPartialSpan(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPartialSpan")] != -1);
-		return call<R>("getPartialSpan", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPartialSpan")] != -1);
+		return call<R>("getPartialSpan", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jfloat, typename... Args>
 	auto getTabbedSpan(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTabbedSpan")] != -1);
-		return call<R>("getTabbedSpan", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTabbedSpan")] != -1);
+		return call<R>("getTabbedSpan", std::forward<Args>(args)...);
 	}
 
 };

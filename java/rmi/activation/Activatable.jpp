@@ -26,32 +26,32 @@ public:
 
 	template<typename R = ::java::rmi::activation::ActivationID, typename... Args>
 	static auto exportObject(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("exportObject")] != -1);
-		return scall<R>("exportObject", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("exportObject")] != -1);
+		return scall<R>("exportObject", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	static auto inactive(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("inactive")] != -1);
-		return scall<R>("inactive", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("inactive")] != -1);
+		return scall<R>("inactive", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::rmi::Remote, typename... Args>
 	static auto register_(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("register")] != -1);
-		return scall<R>("register", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("register")] != -1);
+		return scall<R>("register", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	static auto unexportObject(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unexportObject")] != -1);
-		return scall<R>("unexportObject", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unexportObject")] != -1);
+		return scall<R>("unexportObject", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	static auto unregister(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unregister")] != -1);
-		return scall<R>("unregister", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unregister")] != -1);
+		return scall<R>("unregister", std::forward<Args>(args)...);
 	}
 
 };

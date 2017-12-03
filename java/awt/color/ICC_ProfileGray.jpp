@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::jfloat, typename... Args>
 	auto getGamma(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getGamma")] != -1);
-		return call<R>("getGamma", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGamma")] != -1);
+		return call<R>("getGamma", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jfloat *, typename... Args>
 	auto getMediaWhitePoint(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMediaWhitePoint")] != -1);
-		return call<R>("getMediaWhitePoint", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMediaWhitePoint")] != -1);
+		return call<R>("getMediaWhitePoint", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jshort *, typename... Args>
 	auto getTRC(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTRC")] != -1);
-		return call<R>("getTRC", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTRC")] != -1);
+		return call<R>("getTRC", std::forward<Args>(args)...);
 	}
 
 };

@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto connectionClosed(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("connectionClosed")] != -1);
-		return call<R>("connectionClosed", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("connectionClosed")] != -1);
+		return call<R>("connectionClosed", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto connectionErrorOccurred(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("connectionErrorOccurred")] != -1);
-		return call<R>("connectionErrorOccurred", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("connectionErrorOccurred")] != -1);
+		return call<R>("connectionErrorOccurred", std::forward<Args>(args)...);
 	}
 
 };

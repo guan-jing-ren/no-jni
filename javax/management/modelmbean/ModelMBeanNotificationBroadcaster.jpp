@@ -24,26 +24,26 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto addAttributeChangeNotificationListener(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addAttributeChangeNotificationListener")] != -1);
-		return call<R>("addAttributeChangeNotificationListener", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addAttributeChangeNotificationListener")] != -1);
+		return call<R>("addAttributeChangeNotificationListener", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto removeAttributeChangeNotificationListener(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeAttributeChangeNotificationListener")] != -1);
-		return call<R>("removeAttributeChangeNotificationListener", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeAttributeChangeNotificationListener")] != -1);
+		return call<R>("removeAttributeChangeNotificationListener", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto sendAttributeChangeNotification(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("sendAttributeChangeNotification")] != -1);
-		return call<R>("sendAttributeChangeNotification", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("sendAttributeChangeNotification")] != -1);
+		return call<R>("sendAttributeChangeNotification", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto sendNotification(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("sendNotification")] != -1);
-		return call<R>("sendNotification", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("sendNotification")] != -1);
+		return call<R>("sendNotification", std::forward<Args>(args)...);
 	}
 
 };

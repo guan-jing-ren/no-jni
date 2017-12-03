@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::javax::swing::plaf::synth::SynthContext, typename... Args>
 	auto getContext(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getContext")] != -1);
-		return call<R>("getContext", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getContext")] != -1);
+		return call<R>("getContext", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto paintBorder(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paintBorder")] != -1);
-		return call<R>("paintBorder", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("paintBorder")] != -1);
+		return call<R>("paintBorder", std::forward<Args>(args)...);
 	}
 
 };

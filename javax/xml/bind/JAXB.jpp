@@ -32,14 +32,14 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	static auto marshal(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("marshal")] != -1);
-		return scall<R>("marshal", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("marshal")] != -1);
+		return scall<R>("marshal", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	static auto unmarshal(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unmarshal")] != -1);
-		return scall<R>("unmarshal", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unmarshal")] != -1);
+		return scall<R>("unmarshal", std::forward<Args>(args)...);
 	}
 
 };

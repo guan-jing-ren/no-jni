@@ -29,50 +29,50 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto free(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("free")] != -1);
-		return call<R>("free", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("free")] != -1);
+		return call<R>("free", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::io::InputStream, typename... Args>
 	auto getBinaryStream(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBinaryStream")] != -1);
-		return call<R>("getBinaryStream", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBinaryStream")] != -1);
+		return call<R>("getBinaryStream", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jbyte *, typename... Args>
 	auto getBytes(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBytes")] != -1);
-		return call<R>("getBytes", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBytes")] != -1);
+		return call<R>("getBytes", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jlong, typename... Args>
 	auto length(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("length")] != -1);
-		return call<R>("length", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("length")] != -1);
+		return call<R>("length", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jlong, typename... Args>
 	auto position(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("position")] != -1);
-		return call<R>("position", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("position")] != -1);
+		return call<R>("position", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::io::OutputStream, typename... Args>
 	auto setBinaryStream(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setBinaryStream")] != -1);
-		return call<R>("setBinaryStream", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setBinaryStream")] != -1);
+		return call<R>("setBinaryStream", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto setBytes(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setBytes")] != -1);
-		return call<R>("setBytes", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setBytes")] != -1);
+		return call<R>("setBytes", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto truncate(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("truncate")] != -1);
-		return call<R>("truncate", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("truncate")] != -1);
+		return call<R>("truncate", std::forward<Args>(args)...);
 	}
 
 };

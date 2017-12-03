@@ -22,20 +22,20 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isFocusTraversable(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isFocusTraversable")] != -1);
-		return call<R>("isFocusTraversable", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isFocusTraversable")] != -1);
+		return call<R>("isFocusTraversable", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isPopupVisible(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isPopupVisible")] != -1);
-		return call<R>("isPopupVisible", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isPopupVisible")] != -1);
+		return call<R>("isPopupVisible", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setPopupVisible(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPopupVisible")] != -1);
-		return call<R>("setPopupVisible", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setPopupVisible")] != -1);
+		return call<R>("setPopupVisible", std::forward<Args>(args)...);
 	}
 
 };

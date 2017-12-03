@@ -36,32 +36,32 @@ public:
 
 	template<typename R = ::java::awt::Rectangle, typename... Args>
 	auto getTextBounds(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTextBounds")] != -1);
-		return call<R>("getTextBounds", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTextBounds")] != -1);
+		return call<R>("getTextBounds", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getTextRange(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTextRange")] != -1);
-		return call<R>("getTextRange", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTextRange")] != -1);
+		return call<R>("getTextRange", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::accessibility::AccessibleTextSequence, typename... Args>
 	auto getTextSequenceAfter(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTextSequenceAfter")] != -1);
-		return call<R>("getTextSequenceAfter", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTextSequenceAfter")] != -1);
+		return call<R>("getTextSequenceAfter", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::accessibility::AccessibleTextSequence, typename... Args>
 	auto getTextSequenceAt(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTextSequenceAt")] != -1);
-		return call<R>("getTextSequenceAt", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTextSequenceAt")] != -1);
+		return call<R>("getTextSequenceAt", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::accessibility::AccessibleTextSequence, typename... Args>
 	auto getTextSequenceBefore(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTextSequenceBefore")] != -1);
-		return call<R>("getTextSequenceBefore", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTextSequenceBefore")] != -1);
+		return call<R>("getTextSequenceBefore", std::forward<Args>(args)...);
 	}
 
 };

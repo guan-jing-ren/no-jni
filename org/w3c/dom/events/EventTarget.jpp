@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto addEventListener(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addEventListener")] != -1);
-		return call<R>("addEventListener", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addEventListener")] != -1);
+		return call<R>("addEventListener", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto dispatchEvent(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dispatchEvent")] != -1);
-		return call<R>("dispatchEvent", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dispatchEvent")] != -1);
+		return call<R>("dispatchEvent", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto removeEventListener(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeEventListener")] != -1);
-		return call<R>("removeEventListener", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeEventListener")] != -1);
+		return call<R>("removeEventListener", std::forward<Args>(args)...);
 	}
 
 };

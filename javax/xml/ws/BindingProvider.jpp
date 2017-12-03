@@ -64,26 +64,26 @@ public:
 
 	template<typename R = ::javax::xml::ws::Binding, typename... Args>
 	auto getBinding(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBinding")] != -1);
-		return call<R>("getBinding", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBinding")] != -1);
+		return call<R>("getBinding", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::xml::ws::EndpointReference, typename... Args>
 	auto getEndpointReference(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEndpointReference")] != -1);
-		return call<R>("getEndpointReference", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEndpointReference")] != -1);
+		return call<R>("getEndpointReference", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Map, typename... Args>
 	auto getRequestContext(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRequestContext")] != -1);
-		return call<R>("getRequestContext", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRequestContext")] != -1);
+		return call<R>("getRequestContext", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Map, typename... Args>
 	auto getResponseContext(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getResponseContext")] != -1);
-		return call<R>("getResponseContext", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getResponseContext")] != -1);
+		return call<R>("getResponseContext", std::forward<Args>(args)...);
 	}
 
 };

@@ -25,38 +25,38 @@ public:
 
 	template<typename R = ::jbyte, typename... Args>
 	auto byteValue(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("byteValue")] != -1);
-		return call<R>("byteValue", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("byteValue")] != -1);
+		return call<R>("byteValue", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jdouble, typename... Args>
 	auto doubleValue(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("doubleValue")] != -1);
-		return call<R>("doubleValue", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("doubleValue")] != -1);
+		return call<R>("doubleValue", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jfloat, typename... Args>
 	auto floatValue(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("floatValue")] != -1);
-		return call<R>("floatValue", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("floatValue")] != -1);
+		return call<R>("floatValue", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto intValue(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("intValue")] != -1);
-		return call<R>("intValue", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("intValue")] != -1);
+		return call<R>("intValue", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jlong, typename... Args>
 	auto longValue(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("longValue")] != -1);
-		return call<R>("longValue", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("longValue")] != -1);
+		return call<R>("longValue", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jshort, typename... Args>
 	auto shortValue(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("shortValue")] != -1);
-		return call<R>("shortValue", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("shortValue")] != -1);
+		return call<R>("shortValue", std::forward<Args>(args)...);
 	}
 
 };

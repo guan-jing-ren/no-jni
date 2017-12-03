@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::java::lang::Class, typename... Args>
 	auto loadClass(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("loadClass")] != -1);
-		return call<R>("loadClass", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("loadClass")] != -1);
+		return call<R>("loadClass", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Class, typename... Args>
 	auto loadClassBefore(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("loadClassBefore")] != -1);
-		return call<R>("loadClassBefore", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("loadClassBefore")] != -1);
+		return call<R>("loadClassBefore", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Class, typename... Args>
 	auto loadClassWithout(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("loadClassWithout")] != -1);
-		return call<R>("loadClassWithout", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("loadClassWithout")] != -1);
+		return call<R>("loadClassWithout", std::forward<Args>(args)...);
 	}
 
 };

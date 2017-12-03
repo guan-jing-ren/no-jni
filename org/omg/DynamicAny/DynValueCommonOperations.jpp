@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto is_null(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("is_null")] != -1);
-		return call<R>("is_null", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("is_null")] != -1);
+		return call<R>("is_null", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto set_to_null(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set_to_null")] != -1);
-		return call<R>("set_to_null", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set_to_null")] != -1);
+		return call<R>("set_to_null", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto set_to_value(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set_to_value")] != -1);
-		return call<R>("set_to_value", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set_to_value")] != -1);
+		return call<R>("set_to_value", std::forward<Args>(args)...);
 	}
 
 };

@@ -23,32 +23,32 @@ public:
 
 	template<typename R = ::java::io::PrintWriter, typename... Args>
 	auto getLogWriter(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLogWriter")] != -1);
-		return call<R>("getLogWriter", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLogWriter")] != -1);
+		return call<R>("getLogWriter", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getLoginTimeout(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLoginTimeout")] != -1);
-		return call<R>("getLoginTimeout", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLoginTimeout")] != -1);
+		return call<R>("getLoginTimeout", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::logging::Logger, typename... Args>
 	auto getParentLogger(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParentLogger")] != -1);
-		return call<R>("getParentLogger", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getParentLogger")] != -1);
+		return call<R>("getParentLogger", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setLogWriter(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLogWriter")] != -1);
-		return call<R>("setLogWriter", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setLogWriter")] != -1);
+		return call<R>("setLogWriter", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setLoginTimeout(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLoginTimeout")] != -1);
-		return call<R>("setLoginTimeout", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setLoginTimeout")] != -1);
+		return call<R>("setLoginTimeout", std::forward<Args>(args)...);
 	}
 
 };

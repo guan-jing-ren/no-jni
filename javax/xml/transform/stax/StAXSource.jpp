@@ -30,26 +30,26 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getSystemId(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSystemId")] != -1);
-		return call<R>("getSystemId", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSystemId")] != -1);
+		return call<R>("getSystemId", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::xml::stream::XMLEventReader, typename... Args>
 	auto getXMLEventReader(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getXMLEventReader")] != -1);
-		return call<R>("getXMLEventReader", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getXMLEventReader")] != -1);
+		return call<R>("getXMLEventReader", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::xml::stream::XMLStreamReader, typename... Args>
 	auto getXMLStreamReader(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getXMLStreamReader")] != -1);
-		return call<R>("getXMLStreamReader", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getXMLStreamReader")] != -1);
+		return call<R>("getXMLStreamReader", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setSystemId(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSystemId")] != -1);
-		return call<R>("setSystemId", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setSystemId")] != -1);
+		return call<R>("setSystemId", std::forward<Args>(args)...);
 	}
 
 };

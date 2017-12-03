@@ -22,26 +22,26 @@ public:
 
 	template<typename R = ::java::lang::invoke::MethodHandle, typename... Args>
 	auto dynamicInvoker(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dynamicInvoker")] != -1);
-		return call<R>("dynamicInvoker", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dynamicInvoker")] != -1);
+		return call<R>("dynamicInvoker", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::invoke::MethodHandle, typename... Args>
 	auto getTarget(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTarget")] != -1);
-		return call<R>("getTarget", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTarget")] != -1);
+		return call<R>("getTarget", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setTarget(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setTarget")] != -1);
-		return call<R>("setTarget", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setTarget")] != -1);
+		return call<R>("setTarget", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::invoke::MethodType, typename... Args>
 	auto type(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("type")] != -1);
-		return call<R>("type", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("type")] != -1);
+		return call<R>("type", std::forward<Args>(args)...);
 	}
 
 };

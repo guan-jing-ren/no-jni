@@ -23,32 +23,32 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	static auto bind(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("bind")] != -1);
-		return scall<R>("bind", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("bind")] != -1);
+		return scall<R>("bind", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String *, typename... Args>
 	static auto list(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("list")] != -1);
-		return scall<R>("list", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("list")] != -1);
+		return scall<R>("list", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::rmi::Remote, typename... Args>
 	static auto lookup(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lookup")] != -1);
-		return scall<R>("lookup", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("lookup")] != -1);
+		return scall<R>("lookup", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	static auto rebind(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("rebind")] != -1);
-		return scall<R>("rebind", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("rebind")] != -1);
+		return scall<R>("rebind", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	static auto unbind(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unbind")] != -1);
-		return scall<R>("unbind", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unbind")] != -1);
+		return scall<R>("unbind", std::forward<Args>(args)...);
 	}
 
 };

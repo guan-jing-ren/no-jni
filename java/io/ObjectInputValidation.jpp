@@ -19,8 +19,8 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto validateObject(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("validateObject")] != -1);
-		return call<R>("validateObject", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("validateObject")] != -1);
+		return call<R>("validateObject", std::forward<Args>(args)...);
 	}
 
 };

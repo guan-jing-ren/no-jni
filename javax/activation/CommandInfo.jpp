@@ -22,20 +22,20 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getCommandClass(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCommandClass")] != -1);
-		return call<R>("getCommandClass", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCommandClass")] != -1);
+		return call<R>("getCommandClass", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getCommandName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCommandName")] != -1);
-		return call<R>("getCommandName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCommandName")] != -1);
+		return call<R>("getCommandName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto getCommandObject(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCommandObject")] != -1);
-		return call<R>("getCommandObject", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCommandObject")] != -1);
+		return call<R>("getCommandObject", std::forward<Args>(args)...);
 	}
 
 };

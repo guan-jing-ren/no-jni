@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto get_id(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get_id")] != -1);
-		return call<R>("get_id", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get_id")] != -1);
+		return call<R>("get_id", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::io::Serializable, typename... Args>
 	auto read_value(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read_value")] != -1);
-		return call<R>("read_value", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_value")] != -1);
+		return call<R>("read_value", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto write_value(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write_value")] != -1);
-		return call<R>("write_value", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("write_value")] != -1);
+		return call<R>("write_value", std::forward<Args>(args)...);
 	}
 
 };

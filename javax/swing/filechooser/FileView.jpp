@@ -24,32 +24,32 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getDescription(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDescription")] != -1);
-		return call<R>("getDescription", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDescription")] != -1);
+		return call<R>("getDescription", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::swing::Icon, typename... Args>
 	auto getIcon(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIcon")] != -1);
-		return call<R>("getIcon", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIcon")] != -1);
+		return call<R>("getIcon", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
-		return call<R>("getName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getTypeDescription(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTypeDescription")] != -1);
-		return call<R>("getTypeDescription", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTypeDescription")] != -1);
+		return call<R>("getTypeDescription", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Boolean, typename... Args>
 	auto isTraversable(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isTraversable")] != -1);
-		return call<R>("isTraversable", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isTraversable")] != -1);
+		return call<R>("isTraversable", std::forward<Args>(args)...);
 	}
 
 };

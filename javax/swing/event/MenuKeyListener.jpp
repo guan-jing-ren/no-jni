@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto menuKeyPressed(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("menuKeyPressed")] != -1);
-		return call<R>("menuKeyPressed", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("menuKeyPressed")] != -1);
+		return call<R>("menuKeyPressed", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto menuKeyReleased(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("menuKeyReleased")] != -1);
-		return call<R>("menuKeyReleased", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("menuKeyReleased")] != -1);
+		return call<R>("menuKeyReleased", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto menuKeyTyped(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("menuKeyTyped")] != -1);
-		return call<R>("menuKeyTyped", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("menuKeyTyped")] != -1);
+		return call<R>("menuKeyTyped", std::forward<Args>(args)...);
 	}
 
 };

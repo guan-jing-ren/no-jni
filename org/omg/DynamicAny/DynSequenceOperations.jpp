@@ -24,38 +24,38 @@ public:
 
 	template<typename R = ::org::omg::CORBA::Any *, typename... Args>
 	auto get_elements(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get_elements")] != -1);
-		return call<R>("get_elements", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get_elements")] != -1);
+		return call<R>("get_elements", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::omg::DynamicAny::DynAny *, typename... Args>
 	auto get_elements_as_dyn_any(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get_elements_as_dyn_any")] != -1);
-		return call<R>("get_elements_as_dyn_any", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get_elements_as_dyn_any")] != -1);
+		return call<R>("get_elements_as_dyn_any", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto get_length(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get_length")] != -1);
-		return call<R>("get_length", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get_length")] != -1);
+		return call<R>("get_length", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto set_elements(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set_elements")] != -1);
-		return call<R>("set_elements", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set_elements")] != -1);
+		return call<R>("set_elements", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto set_elements_as_dyn_any(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set_elements_as_dyn_any")] != -1);
-		return call<R>("set_elements_as_dyn_any", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set_elements_as_dyn_any")] != -1);
+		return call<R>("set_elements_as_dyn_any", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto set_length(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set_length")] != -1);
-		return call<R>("set_length", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set_length")] != -1);
+		return call<R>("set_length", std::forward<Args>(args)...);
 	}
 
 };

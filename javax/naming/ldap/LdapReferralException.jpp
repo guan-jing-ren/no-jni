@@ -21,8 +21,8 @@ public:
 
 	template<typename R = ::javax::naming::Context, typename... Args>
 	auto getReferralContext(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getReferralContext")] != -1);
-		return call<R>("getReferralContext", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getReferralContext")] != -1);
+		return call<R>("getReferralContext", std::forward<Args>(args)...);
 	}
 
 };

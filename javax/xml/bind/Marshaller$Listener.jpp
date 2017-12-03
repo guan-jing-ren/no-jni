@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto afterMarshal(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("afterMarshal")] != -1);
-		return call<R>("afterMarshal", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("afterMarshal")] != -1);
+		return call<R>("afterMarshal", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto beforeMarshal(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("beforeMarshal")] != -1);
-		return call<R>("beforeMarshal", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("beforeMarshal")] != -1);
+		return call<R>("beforeMarshal", std::forward<Args>(args)...);
 	}
 
 };

@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::java::security::cert::CertPathChecker, typename... Args>
 	auto engineGetRevocationChecker(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("engineGetRevocationChecker")] != -1);
-		return call<R>("engineGetRevocationChecker", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("engineGetRevocationChecker")] != -1);
+		return call<R>("engineGetRevocationChecker", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::security::cert::CertPathValidatorResult, typename... Args>
 	auto engineValidate(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("engineValidate")] != -1);
-		return call<R>("engineValidate", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("engineValidate")] != -1);
+		return call<R>("engineValidate", std::forward<Args>(args)...);
 	}
 
 };

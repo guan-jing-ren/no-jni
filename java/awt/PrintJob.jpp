@@ -25,38 +25,38 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto end(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("end")] != -1);
-		return call<R>("end", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("end")] != -1);
+		return call<R>("end", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto finalize(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("finalize")] != -1);
-		return call<R>("finalize", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("finalize")] != -1);
+		return call<R>("finalize", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::Graphics, typename... Args>
 	auto getGraphics(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getGraphics")] != -1);
-		return call<R>("getGraphics", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGraphics")] != -1);
+		return call<R>("getGraphics", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::Dimension, typename... Args>
 	auto getPageDimension(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPageDimension")] != -1);
-		return call<R>("getPageDimension", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPageDimension")] != -1);
+		return call<R>("getPageDimension", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getPageResolution(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPageResolution")] != -1);
-		return call<R>("getPageResolution", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPageResolution")] != -1);
+		return call<R>("getPageResolution", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto lastPageFirst(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lastPageFirst")] != -1);
-		return call<R>("lastPageFirst", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("lastPageFirst")] != -1);
+		return call<R>("lastPageFirst", std::forward<Args>(args)...);
 	}
 
 };

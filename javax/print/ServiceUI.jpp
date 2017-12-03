@@ -20,8 +20,8 @@ public:
 
 	template<typename R = ::javax::print::PrintService, typename... Args>
 	static auto printDialog(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("printDialog")] != -1);
-		return scall<R>("printDialog", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("printDialog")] != -1);
+		return scall<R>("printDialog", std::forward<Args>(args)...);
 	}
 
 };

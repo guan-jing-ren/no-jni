@@ -23,26 +23,26 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto errorRaised(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("errorRaised")] != -1);
-		return call<R>("errorRaised", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("errorRaised")] != -1);
+		return call<R>("errorRaised", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Set, typename... Args>
 	auto getElementsAnnotatedWith(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getElementsAnnotatedWith")] != -1);
-		return call<R>("getElementsAnnotatedWith", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getElementsAnnotatedWith")] != -1);
+		return call<R>("getElementsAnnotatedWith", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Set, typename... Args>
 	auto getRootElements(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRootElements")] != -1);
-		return call<R>("getRootElements", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRootElements")] != -1);
+		return call<R>("getRootElements", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto processingOver(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("processingOver")] != -1);
-		return call<R>("processingOver", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("processingOver")] != -1);
+		return call<R>("processingOver", std::forward<Args>(args)...);
 	}
 
 };

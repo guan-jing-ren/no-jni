@@ -22,26 +22,26 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto header(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("header")] != -1);
-		return call<R>("header", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("header")] != -1);
+		return call<R>("header", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto name(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("name")] != -1);
-		return call<R>("name", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("name")] != -1);
+		return call<R>("name", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto partName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("partName")] != -1);
-		return call<R>("partName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("partName")] != -1);
+		return call<R>("partName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto targetNamespace(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("targetNamespace")] != -1);
-		return call<R>("targetNamespace", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("targetNamespace")] != -1);
+		return call<R>("targetNamespace", std::forward<Args>(args)...);
 	}
 
 };

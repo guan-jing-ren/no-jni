@@ -24,14 +24,14 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto addMimeTypes(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addMimeTypes")] != -1);
-		return call<R>("addMimeTypes", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addMimeTypes")] != -1);
+		return call<R>("addMimeTypes", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getContentType(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getContentType")] != -1);
-		return call<R>("getContentType", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getContentType")] != -1);
+		return call<R>("getContentType", std::forward<Args>(args)...);
 	}
 
 };

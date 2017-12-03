@@ -34,20 +34,20 @@ public:
 
 	template<typename R = ::jbyte *, typename... Args>
 	auto getBranchQualifier(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBranchQualifier")] != -1);
-		return call<R>("getBranchQualifier", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBranchQualifier")] != -1);
+		return call<R>("getBranchQualifier", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getFormatId(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFormatId")] != -1);
-		return call<R>("getFormatId", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFormatId")] != -1);
+		return call<R>("getFormatId", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jbyte *, typename... Args>
 	auto getGlobalTransactionId(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getGlobalTransactionId")] != -1);
-		return call<R>("getGlobalTransactionId", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGlobalTransactionId")] != -1);
+		return call<R>("getGlobalTransactionId", std::forward<Args>(args)...);
 	}
 
 };

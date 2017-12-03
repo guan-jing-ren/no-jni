@@ -43,50 +43,50 @@ public:
 
 	template<typename R = ::java::util::stream::DoubleStream, typename... Args>
 	auto doubles(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("doubles")] != -1);
-		return call<R>("doubles", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("doubles")] != -1);
+		return call<R>("doubles", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::stream::IntStream, typename... Args>
 	auto ints(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("ints")] != -1);
-		return call<R>("ints", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("ints")] != -1);
+		return call<R>("ints", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::stream::LongStream, typename... Args>
 	auto longs(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("longs")] != -1);
-		return call<R>("longs", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("longs")] != -1);
+		return call<R>("longs", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto nextBoolean(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nextBoolean")] != -1);
-		return call<R>("nextBoolean", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("nextBoolean")] != -1);
+		return call<R>("nextBoolean", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jdouble, typename... Args>
 	auto nextDouble(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nextDouble")] != -1);
-		return call<R>("nextDouble", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("nextDouble")] != -1);
+		return call<R>("nextDouble", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto nextInt(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nextInt")] != -1);
-		return call<R>("nextInt", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("nextInt")] != -1);
+		return call<R>("nextInt", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jlong, typename... Args>
 	auto nextLong(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nextLong")] != -1);
-		return call<R>("nextLong", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("nextLong")] != -1);
+		return call<R>("nextLong", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::SplittableRandom, typename... Args>
 	auto split(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("split")] != -1);
-		return call<R>("split", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("split")] != -1);
+		return call<R>("split", std::forward<Args>(args)...);
 	}
 
 };

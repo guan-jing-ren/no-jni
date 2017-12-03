@@ -23,26 +23,26 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto childChanged(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("childChanged")] != -1);
-		return call<R>("childChanged", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("childChanged")] != -1);
+		return call<R>("childChanged", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::Shape, typename... Args>
 	auto getChildAllocation(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getChildAllocation")] != -1);
-		return call<R>("getChildAllocation", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getChildAllocation")] != -1);
+		return call<R>("getChildAllocation", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getViewIndexAtPoint(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getViewIndexAtPoint")] != -1);
-		return call<R>("getViewIndexAtPoint", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getViewIndexAtPoint")] != -1);
+		return call<R>("getViewIndexAtPoint", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto paintChildren(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paintChildren")] != -1);
-		return call<R>("paintChildren", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("paintChildren")] != -1);
+		return call<R>("paintChildren", std::forward<Args>(args)...);
 	}
 
 };

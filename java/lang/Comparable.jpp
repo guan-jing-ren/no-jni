@@ -19,8 +19,8 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto compareTo(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compareTo")] != -1);
-		return call<R>("compareTo", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("compareTo")] != -1);
+		return call<R>("compareTo", std::forward<Args>(args)...);
 	}
 
 };

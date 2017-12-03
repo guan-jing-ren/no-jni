@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto adapter_manager_state_changed(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("adapter_manager_state_changed")] != -1);
-		return call<R>("adapter_manager_state_changed", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("adapter_manager_state_changed")] != -1);
+		return call<R>("adapter_manager_state_changed", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto adapter_state_changed(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("adapter_state_changed")] != -1);
-		return call<R>("adapter_state_changed", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("adapter_state_changed")] != -1);
+		return call<R>("adapter_state_changed", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto components_established(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("components_established")] != -1);
-		return call<R>("components_established", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("components_established")] != -1);
+		return call<R>("components_established", std::forward<Args>(args)...);
 	}
 
 };

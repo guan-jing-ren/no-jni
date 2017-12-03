@@ -47,14 +47,14 @@ public:
 
 	template<typename R = ::org::omg::PortableServer::LifespanPolicyValue, typename... Args>
 	static auto from_int(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("from_int")] != -1);
-		return scall<R>("from_int", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("from_int")] != -1);
+		return scall<R>("from_int", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto value(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("value")] != -1);
-		return call<R>("value", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("value")] != -1);
+		return call<R>("value", std::forward<Args>(args)...);
 	}
 
 };

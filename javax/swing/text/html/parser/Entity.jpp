@@ -46,44 +46,44 @@ public:
 
 	template<typename R = ::jchar *, typename... Args>
 	auto getData(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getData")] != -1);
-		return call<R>("getData", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getData")] != -1);
+		return call<R>("getData", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
-		return call<R>("getName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getString")] != -1);
-		return call<R>("getString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getString")] != -1);
+		return call<R>("getString", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getType(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getType")] != -1);
-		return call<R>("getType", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isGeneral(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isGeneral")] != -1);
-		return call<R>("isGeneral", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isGeneral")] != -1);
+		return call<R>("isGeneral", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isParameter(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isParameter")] != -1);
-		return call<R>("isParameter", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isParameter")] != -1);
+		return call<R>("isParameter", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	static auto name2type(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("name2type")] != -1);
-		return scall<R>("name2type", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("name2type")] != -1);
+		return scall<R>("name2type", std::forward<Args>(args)...);
 	}
 
 };

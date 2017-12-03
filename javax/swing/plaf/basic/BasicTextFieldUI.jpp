@@ -23,26 +23,26 @@ public:
 
 	template<typename R = ::javax::swing::text::View, typename... Args>
 	auto create(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("create")] != -1);
-		return call<R>("create", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create")] != -1);
+		return call<R>("create", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::swing::plaf::ComponentUI, typename... Args>
 	static auto createUI(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createUI")] != -1);
-		return scall<R>("createUI", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createUI")] != -1);
+		return scall<R>("createUI", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getBaseline(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBaseline")] != -1);
-		return call<R>("getBaseline", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBaseline")] != -1);
+		return call<R>("getBaseline", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::Component$BaselineResizeBehavior, typename... Args>
 	auto getBaselineResizeBehavior(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBaselineResizeBehavior")] != -1);
-		return call<R>("getBaselineResizeBehavior", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBaselineResizeBehavior")] != -1);
+		return call<R>("getBaselineResizeBehavior", std::forward<Args>(args)...);
 	}
 
 };

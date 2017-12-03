@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::java::util::concurrent::ForkJoinPool, typename... Args>
 	auto getPool(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPool")] != -1);
-		return call<R>("getPool", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPool")] != -1);
+		return call<R>("getPool", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getPoolIndex(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPoolIndex")] != -1);
-		return call<R>("getPoolIndex", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPoolIndex")] != -1);
+		return call<R>("getPoolIndex", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto run(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("run")] != -1);
-		return call<R>("run", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("run")] != -1);
+		return call<R>("run", std::forward<Args>(args)...);
 	}
 
 };

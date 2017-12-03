@@ -33,38 +33,38 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto addConnectionNotificationListener(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addConnectionNotificationListener")] != -1);
-		return call<R>("addConnectionNotificationListener", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addConnectionNotificationListener")] != -1);
+		return call<R>("addConnectionNotificationListener", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto close(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
-		return call<R>("close", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto connect(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("connect")] != -1);
-		return call<R>("connect", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("connect")] != -1);
+		return call<R>("connect", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getConnectionId(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getConnectionId")] != -1);
-		return call<R>("getConnectionId", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getConnectionId")] != -1);
+		return call<R>("getConnectionId", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::management::MBeanServerConnection, typename... Args>
 	auto getMBeanServerConnection(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMBeanServerConnection")] != -1);
-		return call<R>("getMBeanServerConnection", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMBeanServerConnection")] != -1);
+		return call<R>("getMBeanServerConnection", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto removeConnectionNotificationListener(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeConnectionNotificationListener")] != -1);
-		return call<R>("removeConnectionNotificationListener", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeConnectionNotificationListener")] != -1);
+		return call<R>("removeConnectionNotificationListener", std::forward<Args>(args)...);
 	}
 
 };

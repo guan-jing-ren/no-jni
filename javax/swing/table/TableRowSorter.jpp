@@ -24,26 +24,26 @@ public:
 
 	template<typename R = ::java::util::Comparator, typename... Args>
 	auto getComparator(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getComparator")] != -1);
-		return call<R>("getComparator", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getComparator")] != -1);
+		return call<R>("getComparator", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::swing::table::TableStringConverter, typename... Args>
 	auto getStringConverter(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStringConverter")] != -1);
-		return call<R>("getStringConverter", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStringConverter")] != -1);
+		return call<R>("getStringConverter", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setModel(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setModel")] != -1);
-		return call<R>("setModel", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setModel")] != -1);
+		return call<R>("setModel", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setStringConverter(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setStringConverter")] != -1);
-		return call<R>("setStringConverter", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setStringConverter")] != -1);
+		return call<R>("setStringConverter", std::forward<Args>(args)...);
 	}
 
 };

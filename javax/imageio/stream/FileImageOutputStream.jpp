@@ -27,32 +27,32 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto close(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
-		return call<R>("close", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jlong, typename... Args>
 	auto length(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("length")] != -1);
-		return call<R>("length", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("length")] != -1);
+		return call<R>("length", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto read(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read")] != -1);
-		return call<R>("read", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto seek(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("seek")] != -1);
-		return call<R>("seek", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("seek")] != -1);
+		return call<R>("seek", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto write(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write")] != -1);
-		return call<R>("write", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", std::forward<Args>(args)...);
 	}
 
 };

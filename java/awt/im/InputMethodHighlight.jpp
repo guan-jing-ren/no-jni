@@ -66,26 +66,26 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto getState(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getState")] != -1);
-		return call<R>("getState", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getState")] != -1);
+		return call<R>("getState", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Map, typename... Args>
 	auto getStyle(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStyle")] != -1);
-		return call<R>("getStyle", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStyle")] != -1);
+		return call<R>("getStyle", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getVariation(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getVariation")] != -1);
-		return call<R>("getVariation", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getVariation")] != -1);
+		return call<R>("getVariation", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isSelected(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSelected")] != -1);
-		return call<R>("isSelected", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSelected")] != -1);
+		return call<R>("isSelected", std::forward<Args>(args)...);
 	}
 
 };

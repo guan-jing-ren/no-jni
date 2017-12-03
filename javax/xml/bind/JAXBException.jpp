@@ -31,38 +31,38 @@ public:
 
 	template<typename R = ::java::lang::Throwable, typename... Args>
 	auto getCause(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCause")] != -1);
-		return call<R>("getCause", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCause")] != -1);
+		return call<R>("getCause", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getErrorCode(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getErrorCode")] != -1);
-		return call<R>("getErrorCode", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getErrorCode")] != -1);
+		return call<R>("getErrorCode", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Throwable, typename... Args>
 	auto getLinkedException(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLinkedException")] != -1);
-		return call<R>("getLinkedException", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLinkedException")] != -1);
+		return call<R>("getLinkedException", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto printStackTrace(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("printStackTrace")] != -1);
-		return call<R>("printStackTrace", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("printStackTrace")] != -1);
+		return call<R>("printStackTrace", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setLinkedException(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLinkedException")] != -1);
-		return call<R>("setLinkedException", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setLinkedException")] != -1);
+		return call<R>("setLinkedException", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto toString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
-		return call<R>("toString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
 	}
 
 };

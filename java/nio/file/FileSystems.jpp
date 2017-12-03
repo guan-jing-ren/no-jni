@@ -23,20 +23,20 @@ public:
 
 	template<typename R = ::java::nio::file::FileSystem, typename... Args>
 	static auto getDefault(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefault")] != -1);
-		return scall<R>("getDefault", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDefault")] != -1);
+		return scall<R>("getDefault", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::nio::file::FileSystem, typename... Args>
 	static auto getFileSystem(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFileSystem")] != -1);
-		return scall<R>("getFileSystem", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFileSystem")] != -1);
+		return scall<R>("getFileSystem", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::nio::file::FileSystem, typename... Args>
 	static auto newFileSystem(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newFileSystem")] != -1);
-		return scall<R>("newFileSystem", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newFileSystem")] != -1);
+		return scall<R>("newFileSystem", std::forward<Args>(args)...);
 	}
 
 };

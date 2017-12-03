@@ -23,32 +23,32 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto className(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("className")] != -1);
-		return call<R>("className", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("className")] != -1);
+		return call<R>("className", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String *, typename... Args>
 	auto headers(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("headers")] != -1);
-		return call<R>("headers", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("headers")] != -1);
+		return call<R>("headers", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::jws::soap::InitParam *, typename... Args>
 	auto initParams(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("initParams")] != -1);
-		return call<R>("initParams", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("initParams")] != -1);
+		return call<R>("initParams", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto name(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("name")] != -1);
-		return call<R>("name", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("name")] != -1);
+		return call<R>("name", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String *, typename... Args>
 	auto roles(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("roles")] != -1);
-		return call<R>("roles", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("roles")] != -1);
+		return call<R>("roles", std::forward<Args>(args)...);
 	}
 
 };

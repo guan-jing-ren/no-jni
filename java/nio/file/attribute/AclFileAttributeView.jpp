@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::java::util::List, typename... Args>
 	auto getAcl(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAcl")] != -1);
-		return call<R>("getAcl", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAcl")] != -1);
+		return call<R>("getAcl", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto name(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("name")] != -1);
-		return call<R>("name", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("name")] != -1);
+		return call<R>("name", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setAcl(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setAcl")] != -1);
-		return call<R>("setAcl", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setAcl")] != -1);
+		return call<R>("setAcl", std::forward<Args>(args)...);
 	}
 
 };

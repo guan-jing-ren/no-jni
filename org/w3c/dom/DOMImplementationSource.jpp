@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::org::w3c::dom::DOMImplementation, typename... Args>
 	auto getDOMImplementation(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDOMImplementation")] != -1);
-		return call<R>("getDOMImplementation", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDOMImplementation")] != -1);
+		return call<R>("getDOMImplementation", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::w3c::dom::DOMImplementationList, typename... Args>
 	auto getDOMImplementationList(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDOMImplementationList")] != -1);
-		return call<R>("getDOMImplementationList", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDOMImplementationList")] != -1);
+		return call<R>("getDOMImplementationList", std::forward<Args>(args)...);
 	}
 
 };

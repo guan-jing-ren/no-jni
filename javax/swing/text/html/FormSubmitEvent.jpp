@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getData(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getData")] != -1);
-		return call<R>("getData", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getData")] != -1);
+		return call<R>("getData", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::swing::text::html::FormSubmitEvent$MethodType, typename... Args>
 	auto getMethod(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMethod")] != -1);
-		return call<R>("getMethod", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMethod")] != -1);
+		return call<R>("getMethod", std::forward<Args>(args)...);
 	}
 
 };

@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::java::security::PrivateKey, typename... Args>
 	auto getPrivate(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrivate")] != -1);
-		return call<R>("getPrivate", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPrivate")] != -1);
+		return call<R>("getPrivate", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::security::PublicKey, typename... Args>
 	auto getPublic(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPublic")] != -1);
-		return call<R>("getPublic", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPublic")] != -1);
+		return call<R>("getPublic", std::forward<Args>(args)...);
 	}
 
 };

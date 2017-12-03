@@ -22,26 +22,26 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto addChangeListener(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addChangeListener")] != -1);
-		return call<R>("addChangeListener", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addChangeListener")] != -1);
+		return call<R>("addChangeListener", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::Color, typename... Args>
 	auto getSelectedColor(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSelectedColor")] != -1);
-		return call<R>("getSelectedColor", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSelectedColor")] != -1);
+		return call<R>("getSelectedColor", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto removeChangeListener(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeChangeListener")] != -1);
-		return call<R>("removeChangeListener", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeChangeListener")] != -1);
+		return call<R>("removeChangeListener", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setSelectedColor(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSelectedColor")] != -1);
-		return call<R>("setSelectedColor", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setSelectedColor")] != -1);
+		return call<R>("setSelectedColor", std::forward<Args>(args)...);
 	}
 
 };

@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto enabled(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("enabled")] != -1);
-		return call<R>("enabled", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("enabled")] != -1);
+		return call<R>("enabled", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto threshold(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("threshold")] != -1);
-		return call<R>("threshold", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("threshold")] != -1);
+		return call<R>("threshold", std::forward<Args>(args)...);
 	}
 
 };

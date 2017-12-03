@@ -25,20 +25,20 @@ public:
 
 	template<typename R = ::javax::naming::directory::Attributes, typename... Args>
 	auto getAttributes(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttributes")] != -1);
-		return call<R>("getAttributes", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAttributes")] != -1);
+		return call<R>("getAttributes", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setAttributes(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setAttributes")] != -1);
-		return call<R>("setAttributes", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setAttributes")] != -1);
+		return call<R>("setAttributes", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto toString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
-		return call<R>("toString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
 	}
 
 };

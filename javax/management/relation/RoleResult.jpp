@@ -23,26 +23,26 @@ public:
 
 	template<typename R = ::javax::management::relation::RoleList, typename... Args>
 	auto getRoles(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRoles")] != -1);
-		return call<R>("getRoles", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRoles")] != -1);
+		return call<R>("getRoles", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::management::relation::RoleUnresolvedList, typename... Args>
 	auto getRolesUnresolved(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRolesUnresolved")] != -1);
-		return call<R>("getRolesUnresolved", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRolesUnresolved")] != -1);
+		return call<R>("getRolesUnresolved", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setRoles(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setRoles")] != -1);
-		return call<R>("setRoles", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setRoles")] != -1);
+		return call<R>("setRoles", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setRolesUnresolved(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setRolesUnresolved")] != -1);
-		return call<R>("setRolesUnresolved", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setRolesUnresolved")] != -1);
+		return call<R>("setRolesUnresolved", std::forward<Args>(args)...);
 	}
 
 };

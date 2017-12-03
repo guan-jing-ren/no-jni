@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getIdentifier(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIdentifier")] != -1);
-		return call<R>("getIdentifier", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIdentifier")] != -1);
+		return call<R>("getIdentifier", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getListStyle(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getListStyle")] != -1);
-		return call<R>("getListStyle", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getListStyle")] != -1);
+		return call<R>("getListStyle", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getSeparator(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSeparator")] != -1);
-		return call<R>("getSeparator", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSeparator")] != -1);
+		return call<R>("getSeparator", std::forward<Args>(args)...);
 	}
 
 };

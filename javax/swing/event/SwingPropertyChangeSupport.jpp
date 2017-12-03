@@ -22,14 +22,14 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto firePropertyChange(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("firePropertyChange")] != -1);
-		return call<R>("firePropertyChange", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("firePropertyChange")] != -1);
+		return call<R>("firePropertyChange", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isNotifyOnEDT(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isNotifyOnEDT")] != -1);
-		return call<R>("isNotifyOnEDT", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isNotifyOnEDT")] != -1);
+		return call<R>("isNotifyOnEDT", std::forward<Args>(args)...);
 	}
 
 };

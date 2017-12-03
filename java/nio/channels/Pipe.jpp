@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::java::nio::channels::Pipe, typename... Args>
 	static auto open(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("open")] != -1);
-		return scall<R>("open", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("open")] != -1);
+		return scall<R>("open", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::nio::channels::Pipe$SinkChannel, typename... Args>
 	auto sink(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("sink")] != -1);
-		return call<R>("sink", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("sink")] != -1);
+		return call<R>("sink", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::nio::channels::Pipe$SourceChannel, typename... Args>
 	auto source(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("source")] != -1);
-		return call<R>("source", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("source")] != -1);
+		return call<R>("source", std::forward<Args>(args)...);
 	}
 
 };

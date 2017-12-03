@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::javax::naming::directory::DirContext, typename... Args>
 	static auto getContinuationDirContext(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getContinuationDirContext")] != -1);
-		return scall<R>("getContinuationDirContext", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getContinuationDirContext")] != -1);
+		return scall<R>("getContinuationDirContext", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	static auto getObjectInstance(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getObjectInstance")] != -1);
-		return scall<R>("getObjectInstance", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getObjectInstance")] != -1);
+		return scall<R>("getObjectInstance", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::naming::spi::DirStateFactory$Result, typename... Args>
 	static auto getStateToBind(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStateToBind")] != -1);
-		return scall<R>("getStateToBind", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStateToBind")] != -1);
+		return scall<R>("getStateToBind", std::forward<Args>(args)...);
 	}
 
 };

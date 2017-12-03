@@ -24,14 +24,14 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isDeclared(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isDeclared")] != -1);
-		return call<R>("isDeclared", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isDeclared")] != -1);
+		return call<R>("isDeclared", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isSpecified(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSpecified")] != -1);
-		return call<R>("isSpecified", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSpecified")] != -1);
+		return call<R>("isSpecified", std::forward<Args>(args)...);
 	}
 
 };

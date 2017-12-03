@@ -19,8 +19,8 @@ public:
 
 	template<typename R = ::java::net::SocketImpl, typename... Args>
 	auto createSocketImpl(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createSocketImpl")] != -1);
-		return call<R>("createSocketImpl", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createSocketImpl")] != -1);
+		return call<R>("createSocketImpl", std::forward<Args>(args)...);
 	}
 
 };

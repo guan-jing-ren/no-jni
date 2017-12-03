@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::javax::accessibility::AccessibleHyperlink, typename... Args>
 	auto getLink(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLink")] != -1);
-		return call<R>("getLink", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLink")] != -1);
+		return call<R>("getLink", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getLinkCount(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLinkCount")] != -1);
-		return call<R>("getLinkCount", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLinkCount")] != -1);
+		return call<R>("getLinkCount", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getLinkIndex(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLinkIndex")] != -1);
-		return call<R>("getLinkIndex", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLinkIndex")] != -1);
+		return call<R>("getLinkIndex", std::forward<Args>(args)...);
 	}
 
 };

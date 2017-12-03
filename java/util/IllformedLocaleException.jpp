@@ -22,8 +22,8 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto getErrorIndex(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getErrorIndex")] != -1);
-		return call<R>("getErrorIndex", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getErrorIndex")] != -1);
+		return call<R>("getErrorIndex", std::forward<Args>(args)...);
 	}
 
 };

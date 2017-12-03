@@ -26,14 +26,14 @@ public:
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto read_abstract_interface(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read_abstract_interface")] != -1);
-		return call<R>("read_abstract_interface", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_abstract_interface")] != -1);
+		return call<R>("read_abstract_interface", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::io::Serializable, typename... Args>
 	auto read_value(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read_value")] != -1);
-		return call<R>("read_value", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_value")] != -1);
+		return call<R>("read_value", std::forward<Args>(args)...);
 	}
 
 };

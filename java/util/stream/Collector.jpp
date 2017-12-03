@@ -25,38 +25,38 @@ public:
 
 	template<typename R = ::java::util::function::BiConsumer, typename... Args>
 	auto accumulator(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("accumulator")] != -1);
-		return call<R>("accumulator", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("accumulator")] != -1);
+		return call<R>("accumulator", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Set, typename... Args>
 	auto characteristics(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("characteristics")] != -1);
-		return call<R>("characteristics", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("characteristics")] != -1);
+		return call<R>("characteristics", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::function::BinaryOperator, typename... Args>
 	auto combiner(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("combiner")] != -1);
-		return call<R>("combiner", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("combiner")] != -1);
+		return call<R>("combiner", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::function::Function, typename... Args>
 	auto finisher(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("finisher")] != -1);
-		return call<R>("finisher", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("finisher")] != -1);
+		return call<R>("finisher", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::stream::Collector, typename... Args>
 	static auto of(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("of")] != -1);
-		return scall<R>("of", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("of")] != -1);
+		return scall<R>("of", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::function::Supplier, typename... Args>
 	auto supplier(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("supplier")] != -1);
-		return call<R>("supplier", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("supplier")] != -1);
+		return call<R>("supplier", std::forward<Args>(args)...);
 	}
 
 };

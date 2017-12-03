@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::javax::xml::stream::events::XMLEvent, typename... Args>
 	auto allocate(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("allocate")] != -1);
-		return call<R>("allocate", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("allocate")] != -1);
+		return call<R>("allocate", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::xml::stream::util::XMLEventAllocator, typename... Args>
 	auto newInstance(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newInstance")] != -1);
-		return call<R>("newInstance", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newInstance")] != -1);
+		return call<R>("newInstance", std::forward<Args>(args)...);
 	}
 
 };

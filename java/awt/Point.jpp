@@ -44,50 +44,50 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto equals(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
-		return call<R>("equals", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::Point, typename... Args>
 	auto getLocation(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLocation")] != -1);
-		return call<R>("getLocation", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLocation")] != -1);
+		return call<R>("getLocation", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jdouble, typename... Args>
 	auto getX(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getX")] != -1);
-		return call<R>("getX", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getX")] != -1);
+		return call<R>("getX", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jdouble, typename... Args>
 	auto getY(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getY")] != -1);
-		return call<R>("getY", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getY")] != -1);
+		return call<R>("getY", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto move(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("move")] != -1);
-		return call<R>("move", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("move")] != -1);
+		return call<R>("move", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setLocation(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLocation")] != -1);
-		return call<R>("setLocation", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setLocation")] != -1);
+		return call<R>("setLocation", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto toString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
-		return call<R>("toString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto translate(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("translate")] != -1);
-		return call<R>("translate", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("translate")] != -1);
+		return call<R>("translate", std::forward<Args>(args)...);
 	}
 
 };

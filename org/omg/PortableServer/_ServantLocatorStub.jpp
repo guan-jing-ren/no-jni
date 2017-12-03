@@ -28,20 +28,20 @@ public:
 
 	template<typename R = ::java::lang::String *, typename... Args>
 	auto _ids(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("_ids")] != -1);
-		return call<R>("_ids", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("_ids")] != -1);
+		return call<R>("_ids", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto postinvoke(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("postinvoke")] != -1);
-		return call<R>("postinvoke", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("postinvoke")] != -1);
+		return call<R>("postinvoke", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::omg::PortableServer::Servant, typename... Args>
 	auto preinvoke(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("preinvoke")] != -1);
-		return call<R>("preinvoke", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("preinvoke")] != -1);
+		return call<R>("preinvoke", std::forward<Args>(args)...);
 	}
 
 };

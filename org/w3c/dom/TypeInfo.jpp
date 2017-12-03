@@ -48,20 +48,20 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getTypeName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTypeName")] != -1);
-		return call<R>("getTypeName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTypeName")] != -1);
+		return call<R>("getTypeName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getTypeNamespace(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTypeNamespace")] != -1);
-		return call<R>("getTypeNamespace", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTypeNamespace")] != -1);
+		return call<R>("getTypeNamespace", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isDerivedFrom(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isDerivedFrom")] != -1);
-		return call<R>("isDerivedFrom", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isDerivedFrom")] != -1);
+		return call<R>("isDerivedFrom", std::forward<Args>(args)...);
 	}
 
 };

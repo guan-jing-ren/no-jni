@@ -22,26 +22,26 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getCols(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCols")] != -1);
-		return call<R>("getCols", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCols")] != -1);
+		return call<R>("getCols", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getRows(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRows")] != -1);
-		return call<R>("getRows", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRows")] != -1);
+		return call<R>("getRows", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setCols(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setCols")] != -1);
-		return call<R>("setCols", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setCols")] != -1);
+		return call<R>("setCols", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setRows(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setRows")] != -1);
-		return call<R>("setRows", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setRows")] != -1);
+		return call<R>("setRows", std::forward<Args>(args)...);
 	}
 
 };

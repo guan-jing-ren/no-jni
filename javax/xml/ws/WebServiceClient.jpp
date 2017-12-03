@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto name(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("name")] != -1);
-		return call<R>("name", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("name")] != -1);
+		return call<R>("name", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto targetNamespace(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("targetNamespace")] != -1);
-		return call<R>("targetNamespace", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("targetNamespace")] != -1);
+		return call<R>("targetNamespace", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto wsdlLocation(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("wsdlLocation")] != -1);
-		return call<R>("wsdlLocation", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("wsdlLocation")] != -1);
+		return call<R>("wsdlLocation", std::forward<Args>(args)...);
 	}
 
 };

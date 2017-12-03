@@ -28,44 +28,44 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto available(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("available")] != -1);
-		return call<R>("available", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("available")] != -1);
+		return call<R>("available", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto close(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
-		return call<R>("close", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto mark(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("mark")] != -1);
-		return call<R>("mark", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("mark")] != -1);
+		return call<R>("mark", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto markSupported(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("markSupported")] != -1);
-		return call<R>("markSupported", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("markSupported")] != -1);
+		return call<R>("markSupported", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto read(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read")] != -1);
-		return call<R>("read", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto reset(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("reset")] != -1);
-		return call<R>("reset", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("reset")] != -1);
+		return call<R>("reset", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jlong, typename... Args>
 	auto skip(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("skip")] != -1);
-		return call<R>("skip", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("skip")] != -1);
+		return call<R>("skip", std::forward<Args>(args)...);
 	}
 
 };

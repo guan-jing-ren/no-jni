@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto keyPressed(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("keyPressed")] != -1);
-		return call<R>("keyPressed", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("keyPressed")] != -1);
+		return call<R>("keyPressed", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto keyReleased(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("keyReleased")] != -1);
-		return call<R>("keyReleased", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("keyReleased")] != -1);
+		return call<R>("keyReleased", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto keyTyped(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("keyTyped")] != -1);
-		return call<R>("keyTyped", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("keyTyped")] != -1);
+		return call<R>("keyTyped", std::forward<Args>(args)...);
 	}
 
 };

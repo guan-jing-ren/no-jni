@@ -23,32 +23,32 @@ public:
 
 	template<typename R = ::java::awt::Component, typename... Args>
 	auto getComponent(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getComponent")] != -1);
-		return call<R>("getComponent", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getComponent")] != -1);
+		return call<R>("getComponent", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::swing::MenuElement *, typename... Args>
 	auto getSubElements(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSubElements")] != -1);
-		return call<R>("getSubElements", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSubElements")] != -1);
+		return call<R>("getSubElements", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto menuSelectionChanged(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("menuSelectionChanged")] != -1);
-		return call<R>("menuSelectionChanged", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("menuSelectionChanged")] != -1);
+		return call<R>("menuSelectionChanged", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto processKeyEvent(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("processKeyEvent")] != -1);
-		return call<R>("processKeyEvent", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("processKeyEvent")] != -1);
+		return call<R>("processKeyEvent", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto processMouseEvent(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("processMouseEvent")] != -1);
-		return call<R>("processMouseEvent", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("processMouseEvent")] != -1);
+		return call<R>("processMouseEvent", std::forward<Args>(args)...);
 	}
 
 };

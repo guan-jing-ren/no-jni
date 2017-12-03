@@ -24,26 +24,26 @@ public:
 
 	template<typename R = ::java::lang::String *, typename... Args>
 	auto _ids(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("_ids")] != -1);
-		return call<R>("_ids", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("_ids")] != -1);
+		return call<R>("_ids", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::omg::CORBA::DefinitionKind, typename... Args>
 	auto def_kind(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("def_kind")] != -1);
-		return call<R>("def_kind", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("def_kind")] != -1);
+		return call<R>("def_kind", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto destroy(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("destroy")] != -1);
-		return call<R>("destroy", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("destroy")] != -1);
+		return call<R>("destroy", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
 	auto type(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("type")] != -1);
-		return call<R>("type", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("type")] != -1);
+		return call<R>("type", std::forward<Args>(args)...);
 	}
 
 };

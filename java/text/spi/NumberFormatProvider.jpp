@@ -22,26 +22,26 @@ public:
 
 	template<typename R = ::java::text::NumberFormat, typename... Args>
 	auto getCurrencyInstance(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCurrencyInstance")] != -1);
-		return call<R>("getCurrencyInstance", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCurrencyInstance")] != -1);
+		return call<R>("getCurrencyInstance", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::text::NumberFormat, typename... Args>
 	auto getIntegerInstance(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIntegerInstance")] != -1);
-		return call<R>("getIntegerInstance", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIntegerInstance")] != -1);
+		return call<R>("getIntegerInstance", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::text::NumberFormat, typename... Args>
 	auto getNumberInstance(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNumberInstance")] != -1);
-		return call<R>("getNumberInstance", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNumberInstance")] != -1);
+		return call<R>("getNumberInstance", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::text::NumberFormat, typename... Args>
 	auto getPercentInstance(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPercentInstance")] != -1);
-		return call<R>("getPercentInstance", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPercentInstance")] != -1);
+		return call<R>("getPercentInstance", std::forward<Args>(args)...);
 	}
 
 };

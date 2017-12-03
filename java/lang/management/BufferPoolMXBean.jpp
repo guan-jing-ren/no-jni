@@ -22,26 +22,26 @@ public:
 
 	template<typename R = ::jlong, typename... Args>
 	auto getCount(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCount")] != -1);
-		return call<R>("getCount", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCount")] != -1);
+		return call<R>("getCount", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jlong, typename... Args>
 	auto getMemoryUsed(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMemoryUsed")] != -1);
-		return call<R>("getMemoryUsed", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMemoryUsed")] != -1);
+		return call<R>("getMemoryUsed", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
-		return call<R>("getName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jlong, typename... Args>
 	auto getTotalCapacity(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTotalCapacity")] != -1);
-		return call<R>("getTotalCapacity", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTotalCapacity")] != -1);
+		return call<R>("getTotalCapacity", std::forward<Args>(args)...);
 	}
 
 };

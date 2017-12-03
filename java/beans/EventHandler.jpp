@@ -27,38 +27,38 @@ public:
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	static auto create(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("create")] != -1);
-		return scall<R>("create", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create")] != -1);
+		return scall<R>("create", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getAction(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAction")] != -1);
-		return call<R>("getAction", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAction")] != -1);
+		return call<R>("getAction", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getEventPropertyName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEventPropertyName")] != -1);
-		return call<R>("getEventPropertyName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEventPropertyName")] != -1);
+		return call<R>("getEventPropertyName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getListenerMethodName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getListenerMethodName")] != -1);
-		return call<R>("getListenerMethodName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getListenerMethodName")] != -1);
+		return call<R>("getListenerMethodName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto getTarget(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTarget")] != -1);
-		return call<R>("getTarget", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTarget")] != -1);
+		return call<R>("getTarget", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto invoke(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("invoke")] != -1);
-		return call<R>("invoke", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("invoke")] != -1);
+		return call<R>("invoke", std::forward<Args>(args)...);
 	}
 
 };

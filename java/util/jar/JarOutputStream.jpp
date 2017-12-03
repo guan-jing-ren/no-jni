@@ -21,8 +21,8 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto putNextEntry(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("putNextEntry")] != -1);
-		return call<R>("putNextEntry", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("putNextEntry")] != -1);
+		return call<R>("putNextEntry", std::forward<Args>(args)...);
 	}
 
 };

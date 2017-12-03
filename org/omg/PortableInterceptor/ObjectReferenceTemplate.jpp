@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::java::lang::String *, typename... Args>
 	auto adapter_name(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("adapter_name")] != -1);
-		return call<R>("adapter_name", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("adapter_name")] != -1);
+		return call<R>("adapter_name", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto orb_id(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("orb_id")] != -1);
-		return call<R>("orb_id", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("orb_id")] != -1);
+		return call<R>("orb_id", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto server_id(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("server_id")] != -1);
-		return call<R>("server_id", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("server_id")] != -1);
+		return call<R>("server_id", std::forward<Args>(args)...);
 	}
 
 };

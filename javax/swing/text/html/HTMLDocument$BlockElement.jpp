@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
-		return call<R>("getName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::swing::text::AttributeSet, typename... Args>
 	auto getResolveParent(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getResolveParent")] != -1);
-		return call<R>("getResolveParent", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getResolveParent")] != -1);
+		return call<R>("getResolveParent", std::forward<Args>(args)...);
 	}
 
 };

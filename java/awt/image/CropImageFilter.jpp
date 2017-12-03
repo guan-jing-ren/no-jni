@@ -23,20 +23,20 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setDimensions(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDimensions")] != -1);
-		return call<R>("setDimensions", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setDimensions")] != -1);
+		return call<R>("setDimensions", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setPixels(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPixels")] != -1);
-		return call<R>("setPixels", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setPixels")] != -1);
+		return call<R>("setPixels", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setProperties(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setProperties")] != -1);
-		return call<R>("setProperties", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setProperties")] != -1);
+		return call<R>("setProperties", std::forward<Args>(args)...);
 	}
 
 };

@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto addHelpMenu(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addHelpMenu")] != -1);
-		return call<R>("addHelpMenu", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addHelpMenu")] != -1);
+		return call<R>("addHelpMenu", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto addMenu(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addMenu")] != -1);
-		return call<R>("addMenu", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addMenu")] != -1);
+		return call<R>("addMenu", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto delMenu(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("delMenu")] != -1);
-		return call<R>("delMenu", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("delMenu")] != -1);
+		return call<R>("delMenu", std::forward<Args>(args)...);
 	}
 
 };

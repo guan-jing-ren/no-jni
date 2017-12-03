@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto containsCustomComponents(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("containsCustomComponents")] != -1);
-		return call<R>("containsCustomComponents", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("containsCustomComponents")] != -1);
+		return call<R>("containsCustomComponents", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto selectInitialValue(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("selectInitialValue")] != -1);
-		return call<R>("selectInitialValue", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("selectInitialValue")] != -1);
+		return call<R>("selectInitialValue", std::forward<Args>(args)...);
 	}
 
 };

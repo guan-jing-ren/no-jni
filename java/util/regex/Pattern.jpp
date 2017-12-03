@@ -92,62 +92,62 @@ public:
 
 	template<typename R = ::java::util::function::Predicate, typename... Args>
 	auto asPredicate(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("asPredicate")] != -1);
-		return call<R>("asPredicate", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("asPredicate")] != -1);
+		return call<R>("asPredicate", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::regex::Pattern, typename... Args>
 	static auto compile(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compile")] != -1);
-		return scall<R>("compile", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("compile")] != -1);
+		return scall<R>("compile", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto flags(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("flags")] != -1);
-		return call<R>("flags", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("flags")] != -1);
+		return call<R>("flags", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::regex::Matcher, typename... Args>
 	auto matcher(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("matcher")] != -1);
-		return call<R>("matcher", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("matcher")] != -1);
+		return call<R>("matcher", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	static auto matches(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("matches")] != -1);
-		return scall<R>("matches", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("matches")] != -1);
+		return scall<R>("matches", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto pattern(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("pattern")] != -1);
-		return call<R>("pattern", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("pattern")] != -1);
+		return call<R>("pattern", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	static auto quote(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("quote")] != -1);
-		return scall<R>("quote", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("quote")] != -1);
+		return scall<R>("quote", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String *, typename... Args>
 	auto split(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("split")] != -1);
-		return call<R>("split", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("split")] != -1);
+		return call<R>("split", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::stream::Stream, typename... Args>
 	auto splitAsStream(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("splitAsStream")] != -1);
-		return call<R>("splitAsStream", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("splitAsStream")] != -1);
+		return call<R>("splitAsStream", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto toString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
-		return call<R>("toString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
 	}
 
 };

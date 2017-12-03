@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto ancestorAdded(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("ancestorAdded")] != -1);
-		return call<R>("ancestorAdded", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("ancestorAdded")] != -1);
+		return call<R>("ancestorAdded", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto ancestorMoved(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("ancestorMoved")] != -1);
-		return call<R>("ancestorMoved", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("ancestorMoved")] != -1);
+		return call<R>("ancestorMoved", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto ancestorRemoved(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("ancestorRemoved")] != -1);
-		return call<R>("ancestorRemoved", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("ancestorRemoved")] != -1);
+		return call<R>("ancestorRemoved", std::forward<Args>(args)...);
 	}
 
 };

@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto editingCanceled(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("editingCanceled")] != -1);
-		return call<R>("editingCanceled", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("editingCanceled")] != -1);
+		return call<R>("editingCanceled", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto editingStopped(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("editingStopped")] != -1);
-		return call<R>("editingStopped", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("editingStopped")] != -1);
+		return call<R>("editingStopped", std::forward<Args>(args)...);
 	}
 
 };

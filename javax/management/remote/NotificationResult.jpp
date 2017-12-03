@@ -23,26 +23,26 @@ public:
 
 	template<typename R = ::jlong, typename... Args>
 	auto getEarliestSequenceNumber(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEarliestSequenceNumber")] != -1);
-		return call<R>("getEarliestSequenceNumber", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEarliestSequenceNumber")] != -1);
+		return call<R>("getEarliestSequenceNumber", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jlong, typename... Args>
 	auto getNextSequenceNumber(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNextSequenceNumber")] != -1);
-		return call<R>("getNextSequenceNumber", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNextSequenceNumber")] != -1);
+		return call<R>("getNextSequenceNumber", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::management::remote::TargetedNotification *, typename... Args>
 	auto getTargetedNotifications(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTargetedNotifications")] != -1);
-		return call<R>("getTargetedNotifications", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTargetedNotifications")] != -1);
+		return call<R>("getTargetedNotifications", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto toString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
-		return call<R>("toString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
 	}
 
 };

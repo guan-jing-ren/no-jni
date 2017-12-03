@@ -19,8 +19,8 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto hyperlinkUpdate(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hyperlinkUpdate")] != -1);
-		return call<R>("hyperlinkUpdate", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hyperlinkUpdate")] != -1);
+		return call<R>("hyperlinkUpdate", std::forward<Args>(args)...);
 	}
 
 };

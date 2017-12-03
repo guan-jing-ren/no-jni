@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto getSavepointId(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSavepointId")] != -1);
-		return call<R>("getSavepointId", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSavepointId")] != -1);
+		return call<R>("getSavepointId", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getSavepointName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSavepointName")] != -1);
-		return call<R>("getSavepointName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSavepointName")] != -1);
+		return call<R>("getSavepointName", std::forward<Args>(args)...);
 	}
 
 };

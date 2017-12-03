@@ -31,14 +31,14 @@ public:
 
 	template<typename R = ::jlong *, typename... Args>
 	auto getLargeUpdateCounts(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLargeUpdateCounts")] != -1);
-		return call<R>("getLargeUpdateCounts", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLargeUpdateCounts")] != -1);
+		return call<R>("getLargeUpdateCounts", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint *, typename... Args>
 	auto getUpdateCounts(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUpdateCounts")] != -1);
-		return call<R>("getUpdateCounts", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUpdateCounts")] != -1);
+		return call<R>("getUpdateCounts", std::forward<Args>(args)...);
 	}
 
 };

@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getPropertyName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPropertyName")] != -1);
-		return call<R>("getPropertyName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPropertyName")] != -1);
+		return call<R>("getPropertyName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto vetoableChange(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("vetoableChange")] != -1);
-		return call<R>("vetoableChange", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("vetoableChange")] != -1);
+		return call<R>("vetoableChange", std::forward<Args>(args)...);
 	}
 
 };

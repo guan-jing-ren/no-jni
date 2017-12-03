@@ -26,38 +26,38 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto close(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
-		return call<R>("close", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto flushBefore(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("flushBefore")] != -1);
-		return call<R>("flushBefore", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("flushBefore")] != -1);
+		return call<R>("flushBefore", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isCached(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isCached")] != -1);
-		return call<R>("isCached", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isCached")] != -1);
+		return call<R>("isCached", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isCachedFile(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isCachedFile")] != -1);
-		return call<R>("isCachedFile", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isCachedFile")] != -1);
+		return call<R>("isCachedFile", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isCachedMemory(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isCachedMemory")] != -1);
-		return call<R>("isCachedMemory", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isCachedMemory")] != -1);
+		return call<R>("isCachedMemory", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto read(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read")] != -1);
-		return call<R>("read", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", std::forward<Args>(args)...);
 	}
 
 };

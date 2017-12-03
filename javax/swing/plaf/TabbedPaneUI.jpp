@@ -22,20 +22,20 @@ public:
 
 	template<typename R = ::java::awt::Rectangle, typename... Args>
 	auto getTabBounds(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTabBounds")] != -1);
-		return call<R>("getTabBounds", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTabBounds")] != -1);
+		return call<R>("getTabBounds", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getTabRunCount(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTabRunCount")] != -1);
-		return call<R>("getTabRunCount", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTabRunCount")] != -1);
+		return call<R>("getTabRunCount", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto tabForCoordinate(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("tabForCoordinate")] != -1);
-		return call<R>("tabForCoordinate", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("tabForCoordinate")] != -1);
+		return call<R>("tabForCoordinate", std::forward<Args>(args)...);
 	}
 
 };

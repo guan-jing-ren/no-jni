@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto getArgument(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getArgument")] != -1);
-		return call<R>("getArgument", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getArgument")] != -1);
+		return call<R>("getArgument", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::lang::model::element::Element, typename... Args>
 	auto getUnknownElement(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUnknownElement")] != -1);
-		return call<R>("getUnknownElement", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUnknownElement")] != -1);
+		return call<R>("getUnknownElement", std::forward<Args>(args)...);
 	}
 
 };

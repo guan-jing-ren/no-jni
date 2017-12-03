@@ -30,32 +30,32 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto addVetoableChangeListener(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addVetoableChangeListener")] != -1);
-		return call<R>("addVetoableChangeListener", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addVetoableChangeListener")] != -1);
+		return call<R>("addVetoableChangeListener", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto fireVetoableChange(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("fireVetoableChange")] != -1);
-		return call<R>("fireVetoableChange", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("fireVetoableChange")] != -1);
+		return call<R>("fireVetoableChange", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::beans::VetoableChangeListener *, typename... Args>
 	auto getVetoableChangeListeners(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getVetoableChangeListeners")] != -1);
-		return call<R>("getVetoableChangeListeners", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getVetoableChangeListeners")] != -1);
+		return call<R>("getVetoableChangeListeners", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto hasListeners(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hasListeners")] != -1);
-		return call<R>("hasListeners", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hasListeners")] != -1);
+		return call<R>("hasListeners", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto removeVetoableChangeListener(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeVetoableChangeListener")] != -1);
-		return call<R>("removeVetoableChangeListener", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeVetoableChangeListener")] != -1);
+		return call<R>("removeVetoableChangeListener", std::forward<Args>(args)...);
 	}
 
 };

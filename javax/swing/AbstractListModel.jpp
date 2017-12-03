@@ -23,26 +23,26 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto addListDataListener(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addListDataListener")] != -1);
-		return call<R>("addListDataListener", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addListDataListener")] != -1);
+		return call<R>("addListDataListener", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::swing::event::ListDataListener *, typename... Args>
 	auto getListDataListeners(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getListDataListeners")] != -1);
-		return call<R>("getListDataListeners", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getListDataListeners")] != -1);
+		return call<R>("getListDataListeners", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::EventListener *, typename... Args>
 	auto getListeners(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getListeners")] != -1);
-		return call<R>("getListeners", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getListeners")] != -1);
+		return call<R>("getListeners", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto removeListDataListener(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("removeListDataListener")] != -1);
-		return call<R>("removeListDataListener", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeListDataListener")] != -1);
+		return call<R>("removeListDataListener", std::forward<Args>(args)...);
 	}
 
 };

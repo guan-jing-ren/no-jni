@@ -26,38 +26,38 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto equals(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
-		return call<R>("equals", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::math::BigInteger, typename... Args>
 	auto getA(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getA")] != -1);
-		return call<R>("getA", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getA")] != -1);
+		return call<R>("getA", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::math::BigInteger, typename... Args>
 	auto getB(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getB")] != -1);
-		return call<R>("getB", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getB")] != -1);
+		return call<R>("getB", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::security::spec::ECField, typename... Args>
 	auto getField(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getField")] != -1);
-		return call<R>("getField", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getField")] != -1);
+		return call<R>("getField", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jbyte *, typename... Args>
 	auto getSeed(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSeed")] != -1);
-		return call<R>("getSeed", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSeed")] != -1);
+		return call<R>("getSeed", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto hashCode(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
-		return call<R>("hashCode", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
 	}
 
 };

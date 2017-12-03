@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::org::omg::CORBA::portable::OutputStream, typename... Args>
 	auto createExceptionReply(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createExceptionReply")] != -1);
-		return call<R>("createExceptionReply", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createExceptionReply")] != -1);
+		return call<R>("createExceptionReply", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::omg::CORBA::portable::OutputStream, typename... Args>
 	auto createReply(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createReply")] != -1);
-		return call<R>("createReply", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createReply")] != -1);
+		return call<R>("createReply", std::forward<Args>(args)...);
 	}
 
 };

@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::java::lang::Class, typename... Args>
 	static auto loadClass(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("loadClass")] != -1);
-		return scall<R>("loadClass", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("loadClass")] != -1);
+		return scall<R>("loadClass", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Class, typename... Args>
 	static auto loadClassWithout(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("loadClassWithout")] != -1);
-		return scall<R>("loadClassWithout", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("loadClassWithout")] != -1);
+		return scall<R>("loadClassWithout", std::forward<Args>(args)...);
 	}
 
 };

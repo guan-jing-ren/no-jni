@@ -23,20 +23,20 @@ public:
 
 	template<typename R = ::java::security::PrivateKey, typename... Args>
 	auto getPrivateKey(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrivateKey")] != -1);
-		return call<R>("getPrivateKey", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPrivateKey")] != -1);
+		return call<R>("getPrivateKey", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setKeyPair(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setKeyPair")] != -1);
-		return call<R>("setKeyPair", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setKeyPair")] != -1);
+		return call<R>("setKeyPair", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto toString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
-		return call<R>("toString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
 	}
 
 };

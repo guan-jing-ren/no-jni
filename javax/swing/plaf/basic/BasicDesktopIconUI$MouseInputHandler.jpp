@@ -24,32 +24,32 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto mouseDragged(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("mouseDragged")] != -1);
-		return call<R>("mouseDragged", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("mouseDragged")] != -1);
+		return call<R>("mouseDragged", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto mouseMoved(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("mouseMoved")] != -1);
-		return call<R>("mouseMoved", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("mouseMoved")] != -1);
+		return call<R>("mouseMoved", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto mousePressed(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("mousePressed")] != -1);
-		return call<R>("mousePressed", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("mousePressed")] != -1);
+		return call<R>("mousePressed", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto mouseReleased(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("mouseReleased")] != -1);
-		return call<R>("mouseReleased", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("mouseReleased")] != -1);
+		return call<R>("mouseReleased", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto moveAndRepaint(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("moveAndRepaint")] != -1);
-		return call<R>("moveAndRepaint", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("moveAndRepaint")] != -1);
+		return call<R>("moveAndRepaint", std::forward<Args>(args)...);
 	}
 
 };

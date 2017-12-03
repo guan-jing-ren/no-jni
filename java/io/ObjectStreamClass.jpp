@@ -32,50 +32,50 @@ public:
 
 	template<typename R = ::java::lang::Class, typename... Args>
 	auto forClass(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("forClass")] != -1);
-		return call<R>("forClass", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("forClass")] != -1);
+		return call<R>("forClass", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::io::ObjectStreamField, typename... Args>
 	auto getField(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getField")] != -1);
-		return call<R>("getField", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getField")] != -1);
+		return call<R>("getField", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::io::ObjectStreamField *, typename... Args>
 	auto getFields(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFields")] != -1);
-		return call<R>("getFields", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFields")] != -1);
+		return call<R>("getFields", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
-		return call<R>("getName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jlong, typename... Args>
 	auto getSerialVersionUID(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSerialVersionUID")] != -1);
-		return call<R>("getSerialVersionUID", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSerialVersionUID")] != -1);
+		return call<R>("getSerialVersionUID", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::io::ObjectStreamClass, typename... Args>
 	static auto lookup(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lookup")] != -1);
-		return scall<R>("lookup", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("lookup")] != -1);
+		return scall<R>("lookup", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::io::ObjectStreamClass, typename... Args>
 	static auto lookupAny(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lookupAny")] != -1);
-		return scall<R>("lookupAny", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("lookupAny")] != -1);
+		return scall<R>("lookupAny", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto toString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
-		return call<R>("toString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
 	}
 
 };

@@ -20,8 +20,8 @@ public:
 
 	template<typename R = ::java::rmi::Remote, typename... Args>
 	auto toStub(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toStub")] != -1);
-		return call<R>("toStub", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toStub")] != -1);
+		return call<R>("toStub", std::forward<Args>(args)...);
 	}
 
 };

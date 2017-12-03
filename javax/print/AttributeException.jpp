@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::java::lang::Class *, typename... Args>
 	auto getUnsupportedAttributes(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUnsupportedAttributes")] != -1);
-		return call<R>("getUnsupportedAttributes", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUnsupportedAttributes")] != -1);
+		return call<R>("getUnsupportedAttributes", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::print::attribute::Attribute *, typename... Args>
 	auto getUnsupportedValues(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUnsupportedValues")] != -1);
-		return call<R>("getUnsupportedValues", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUnsupportedValues")] != -1);
+		return call<R>("getUnsupportedValues", std::forward<Args>(args)...);
 	}
 
 };

@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto windowGainedFocus(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("windowGainedFocus")] != -1);
-		return call<R>("windowGainedFocus", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("windowGainedFocus")] != -1);
+		return call<R>("windowGainedFocus", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto windowLostFocus(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("windowLostFocus")] != -1);
-		return call<R>("windowLostFocus", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("windowLostFocus")] != -1);
+		return call<R>("windowLostFocus", std::forward<Args>(args)...);
 	}
 
 };

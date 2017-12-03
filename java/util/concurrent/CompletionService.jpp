@@ -23,20 +23,20 @@ public:
 
 	template<typename R = ::java::util::concurrent::Future, typename... Args>
 	auto poll(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("poll")] != -1);
-		return call<R>("poll", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("poll")] != -1);
+		return call<R>("poll", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::concurrent::Future, typename... Args>
 	auto submit(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("submit")] != -1);
-		return call<R>("submit", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("submit")] != -1);
+		return call<R>("submit", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::concurrent::Future, typename... Args>
 	auto take(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("take")] != -1);
-		return call<R>("take", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("take")] != -1);
+		return call<R>("take", std::forward<Args>(args)...);
 	}
 
 };

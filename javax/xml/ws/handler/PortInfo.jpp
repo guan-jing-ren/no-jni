@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getBindingID(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBindingID")] != -1);
-		return call<R>("getBindingID", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBindingID")] != -1);
+		return call<R>("getBindingID", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::xml::namespace_::QName, typename... Args>
 	auto getPortName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPortName")] != -1);
-		return call<R>("getPortName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPortName")] != -1);
+		return call<R>("getPortName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::xml::namespace_::QName, typename... Args>
 	auto getServiceName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getServiceName")] != -1);
-		return call<R>("getServiceName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getServiceName")] != -1);
+		return call<R>("getServiceName", std::forward<Args>(args)...);
 	}
 
 };

@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::javax::xml::validation::Validator, typename... Args>
 	auto newValidator(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newValidator")] != -1);
-		return call<R>("newValidator", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newValidator")] != -1);
+		return call<R>("newValidator", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::xml::validation::ValidatorHandler, typename... Args>
 	auto newValidatorHandler(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newValidatorHandler")] != -1);
-		return call<R>("newValidatorHandler", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newValidatorHandler")] != -1);
+		return call<R>("newValidatorHandler", std::forward<Args>(args)...);
 	}
 
 };

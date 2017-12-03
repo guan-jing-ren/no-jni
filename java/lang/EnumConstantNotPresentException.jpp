@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto constantName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("constantName")] != -1);
-		return call<R>("constantName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("constantName")] != -1);
+		return call<R>("constantName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Class, typename... Args>
 	auto enumType(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("enumType")] != -1);
-		return call<R>("enumType", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("enumType")] != -1);
+		return call<R>("enumType", std::forward<Args>(args)...);
 	}
 
 };

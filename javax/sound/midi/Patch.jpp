@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto getBank(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBank")] != -1);
-		return call<R>("getBank", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBank")] != -1);
+		return call<R>("getBank", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getProgram(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProgram")] != -1);
-		return call<R>("getProgram", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getProgram")] != -1);
+		return call<R>("getProgram", std::forward<Args>(args)...);
 	}
 
 };

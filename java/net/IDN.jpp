@@ -35,14 +35,14 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	static auto toASCII(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toASCII")] != -1);
-		return scall<R>("toASCII", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toASCII")] != -1);
+		return scall<R>("toASCII", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	static auto toUnicode(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toUnicode")] != -1);
-		return scall<R>("toUnicode", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toUnicode")] != -1);
+		return scall<R>("toUnicode", std::forward<Args>(args)...);
 	}
 
 };

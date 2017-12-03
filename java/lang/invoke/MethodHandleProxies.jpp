@@ -22,26 +22,26 @@ public:
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	static auto asInterfaceInstance(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("asInterfaceInstance")] != -1);
-		return scall<R>("asInterfaceInstance", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("asInterfaceInstance")] != -1);
+		return scall<R>("asInterfaceInstance", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	static auto isWrapperInstance(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isWrapperInstance")] != -1);
-		return scall<R>("isWrapperInstance", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isWrapperInstance")] != -1);
+		return scall<R>("isWrapperInstance", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::invoke::MethodHandle, typename... Args>
 	static auto wrapperInstanceTarget(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("wrapperInstanceTarget")] != -1);
-		return scall<R>("wrapperInstanceTarget", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("wrapperInstanceTarget")] != -1);
+		return scall<R>("wrapperInstanceTarget", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Class, typename... Args>
 	static auto wrapperInstanceType(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("wrapperInstanceType")] != -1);
-		return scall<R>("wrapperInstanceType", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("wrapperInstanceType")] != -1);
+		return scall<R>("wrapperInstanceType", std::forward<Args>(args)...);
 	}
 
 };

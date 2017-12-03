@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto end_value(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("end_value")] != -1);
-		return call<R>("end_value", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("end_value")] != -1);
+		return call<R>("end_value", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto start_value(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("start_value")] != -1);
-		return call<R>("start_value", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("start_value")] != -1);
+		return call<R>("start_value", std::forward<Args>(args)...);
 	}
 
 };

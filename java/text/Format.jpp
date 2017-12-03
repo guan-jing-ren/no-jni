@@ -24,26 +24,26 @@ public:
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto clone(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
-		return call<R>("clone", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto format(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("format")] != -1);
-		return call<R>("format", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("format")] != -1);
+		return call<R>("format", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::text::AttributedCharacterIterator, typename... Args>
 	auto formatToCharacterIterator(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("formatToCharacterIterator")] != -1);
-		return call<R>("formatToCharacterIterator", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("formatToCharacterIterator")] != -1);
+		return call<R>("formatToCharacterIterator", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto parseObject(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("parseObject")] != -1);
-		return call<R>("parseObject", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("parseObject")] != -1);
+		return call<R>("parseObject", std::forward<Args>(args)...);
 	}
 
 };

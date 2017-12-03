@@ -24,26 +24,26 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto canUseCacheFile(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("canUseCacheFile")] != -1);
-		return call<R>("canUseCacheFile", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("canUseCacheFile")] != -1);
+		return call<R>("canUseCacheFile", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::imageio::stream::ImageOutputStream, typename... Args>
 	auto createOutputStreamInstance(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createOutputStreamInstance")] != -1);
-		return call<R>("createOutputStreamInstance", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createOutputStreamInstance")] != -1);
+		return call<R>("createOutputStreamInstance", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Class, typename... Args>
 	auto getOutputClass(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOutputClass")] != -1);
-		return call<R>("getOutputClass", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOutputClass")] != -1);
+		return call<R>("getOutputClass", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto needsCacheFile(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("needsCacheFile")] != -1);
-		return call<R>("needsCacheFile", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("needsCacheFile")] != -1);
+		return call<R>("needsCacheFile", std::forward<Args>(args)...);
 	}
 
 };

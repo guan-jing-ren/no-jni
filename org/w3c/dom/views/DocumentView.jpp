@@ -19,8 +19,8 @@ public:
 
 	template<typename R = ::org::w3c::dom::views::AbstractView, typename... Args>
 	auto getDefaultView(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaultView")] != -1);
-		return call<R>("getDefaultView", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDefaultView")] != -1);
+		return call<R>("getDefaultView", std::forward<Args>(args)...);
 	}
 
 };

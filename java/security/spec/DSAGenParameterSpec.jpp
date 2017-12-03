@@ -23,20 +23,20 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto getPrimePLength(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrimePLength")] != -1);
-		return call<R>("getPrimePLength", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPrimePLength")] != -1);
+		return call<R>("getPrimePLength", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getSeedLength(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSeedLength")] != -1);
-		return call<R>("getSeedLength", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSeedLength")] != -1);
+		return call<R>("getSeedLength", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getSubprimeQLength(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSubprimeQLength")] != -1);
-		return call<R>("getSubprimeQLength", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSubprimeQLength")] != -1);
+		return call<R>("getSubprimeQLength", std::forward<Args>(args)...);
 	}
 
 };

@@ -22,26 +22,26 @@ public:
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto getData(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getData")] != -1);
-		return call<R>("getData", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getData")] != -1);
+		return call<R>("getData", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Class, typename... Args>
 	auto getDataClass(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDataClass")] != -1);
-		return call<R>("getDataClass", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDataClass")] != -1);
+		return call<R>("getDataClass", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
-		return call<R>("getName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::sound::midi::Soundbank, typename... Args>
 	auto getSoundbank(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSoundbank")] != -1);
-		return call<R>("getSoundbank", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSoundbank")] != -1);
+		return call<R>("getSoundbank", std::forward<Args>(args)...);
 	}
 
 };

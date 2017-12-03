@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto notationDecl(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("notationDecl")] != -1);
-		return call<R>("notationDecl", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("notationDecl")] != -1);
+		return call<R>("notationDecl", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto unparsedEntityDecl(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unparsedEntityDecl")] != -1);
-		return call<R>("unparsedEntityDecl", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unparsedEntityDecl")] != -1);
+		return call<R>("unparsedEntityDecl", std::forward<Args>(args)...);
 	}
 
 };

@@ -23,26 +23,26 @@ public:
 
 	template<typename R = ::java::awt::PaintContext, typename... Args>
 	auto createContext(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createContext")] != -1);
-		return call<R>("createContext", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createContext")] != -1);
+		return call<R>("createContext", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::geom::Rectangle2D, typename... Args>
 	auto getAnchorRect(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAnchorRect")] != -1);
-		return call<R>("getAnchorRect", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAnchorRect")] != -1);
+		return call<R>("getAnchorRect", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::image::BufferedImage, typename... Args>
 	auto getImage(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getImage")] != -1);
-		return call<R>("getImage", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getImage")] != -1);
+		return call<R>("getImage", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getTransparency(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTransparency")] != -1);
-		return call<R>("getTransparency", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTransparency")] != -1);
+		return call<R>("getTransparency", std::forward<Args>(args)...);
 	}
 
 };

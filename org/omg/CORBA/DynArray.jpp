@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::org::omg::CORBA::Any *, typename... Args>
 	auto get_elements(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get_elements")] != -1);
-		return call<R>("get_elements", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get_elements")] != -1);
+		return call<R>("get_elements", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto set_elements(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set_elements")] != -1);
-		return call<R>("set_elements", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set_elements")] != -1);
+		return call<R>("set_elements", std::forward<Args>(args)...);
 	}
 
 };

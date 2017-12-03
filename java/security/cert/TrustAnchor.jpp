@@ -27,38 +27,38 @@ public:
 
 	template<typename R = ::javax::security::auth::x500::X500Principal, typename... Args>
 	auto getCA(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCA")] != -1);
-		return call<R>("getCA", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCA")] != -1);
+		return call<R>("getCA", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getCAName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCAName")] != -1);
-		return call<R>("getCAName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCAName")] != -1);
+		return call<R>("getCAName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::security::PublicKey, typename... Args>
 	auto getCAPublicKey(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCAPublicKey")] != -1);
-		return call<R>("getCAPublicKey", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCAPublicKey")] != -1);
+		return call<R>("getCAPublicKey", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jbyte *, typename... Args>
 	auto getNameConstraints(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNameConstraints")] != -1);
-		return call<R>("getNameConstraints", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNameConstraints")] != -1);
+		return call<R>("getNameConstraints", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::security::cert::X509Certificate, typename... Args>
 	auto getTrustedCert(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTrustedCert")] != -1);
-		return call<R>("getTrustedCert", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTrustedCert")] != -1);
+		return call<R>("getTrustedCert", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto toString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
-		return call<R>("toString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
 	}
 
 };

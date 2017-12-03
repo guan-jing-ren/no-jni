@@ -24,32 +24,32 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto disableAllAttributes(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("disableAllAttributes")] != -1);
-		return call<R>("disableAllAttributes", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("disableAllAttributes")] != -1);
+		return call<R>("disableAllAttributes", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto disableAttribute(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("disableAttribute")] != -1);
-		return call<R>("disableAttribute", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("disableAttribute")] != -1);
+		return call<R>("disableAttribute", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto enableAttribute(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("enableAttribute")] != -1);
-		return call<R>("enableAttribute", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("enableAttribute")] != -1);
+		return call<R>("enableAttribute", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Vector, typename... Args>
 	auto getEnabledAttributes(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEnabledAttributes")] != -1);
-		return call<R>("getEnabledAttributes", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEnabledAttributes")] != -1);
+		return call<R>("getEnabledAttributes", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isNotificationEnabled(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isNotificationEnabled")] != -1);
-		return call<R>("isNotificationEnabled", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isNotificationEnabled")] != -1);
+		return call<R>("isNotificationEnabled", std::forward<Args>(args)...);
 	}
 
 };

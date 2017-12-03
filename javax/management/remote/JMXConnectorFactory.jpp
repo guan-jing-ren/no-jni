@@ -41,14 +41,14 @@ public:
 
 	template<typename R = ::javax::management::remote::JMXConnector, typename... Args>
 	static auto connect(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("connect")] != -1);
-		return scall<R>("connect", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("connect")] != -1);
+		return scall<R>("connect", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::management::remote::JMXConnector, typename... Args>
 	static auto newJMXConnector(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newJMXConnector")] != -1);
-		return scall<R>("newJMXConnector", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newJMXConnector")] != -1);
+		return scall<R>("newJMXConnector", std::forward<Args>(args)...);
 	}
 
 };

@@ -19,8 +19,8 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto windowStateChanged(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("windowStateChanged")] != -1);
-		return call<R>("windowStateChanged", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("windowStateChanged")] != -1);
+		return call<R>("windowStateChanged", std::forward<Args>(args)...);
 	}
 
 };

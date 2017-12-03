@@ -27,38 +27,38 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto equals(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
-		return call<R>("equals", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getHumanPresentableName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHumanPresentableName")] != -1);
-		return call<R>("getHumanPresentableName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHumanPresentableName")] != -1);
+		return call<R>("getHumanPresentableName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getMimeType(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMimeType")] != -1);
-		return call<R>("getMimeType", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMimeType")] != -1);
+		return call<R>("getMimeType", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Class, typename... Args>
 	auto getRepresentationClass(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRepresentationClass")] != -1);
-		return call<R>("getRepresentationClass", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRepresentationClass")] != -1);
+		return call<R>("getRepresentationClass", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isMimeTypeEqual(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isMimeTypeEqual")] != -1);
-		return call<R>("isMimeTypeEqual", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isMimeTypeEqual")] != -1);
+		return call<R>("isMimeTypeEqual", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setHumanPresentableName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setHumanPresentableName")] != -1);
-		return call<R>("setHumanPresentableName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setHumanPresentableName")] != -1);
+		return call<R>("setHumanPresentableName", std::forward<Args>(args)...);
 	}
 
 };

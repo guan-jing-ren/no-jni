@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto menuCanceled(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("menuCanceled")] != -1);
-		return call<R>("menuCanceled", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("menuCanceled")] != -1);
+		return call<R>("menuCanceled", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto menuDeselected(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("menuDeselected")] != -1);
-		return call<R>("menuDeselected", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("menuDeselected")] != -1);
+		return call<R>("menuDeselected", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto menuSelected(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("menuSelected")] != -1);
-		return call<R>("menuSelected", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("menuSelected")] != -1);
+		return call<R>("menuSelected", std::forward<Args>(args)...);
 	}
 
 };

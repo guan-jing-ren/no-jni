@@ -19,8 +19,8 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto isSupportedOption(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSupportedOption")] != -1);
-		return call<R>("isSupportedOption", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSupportedOption")] != -1);
+		return call<R>("isSupportedOption", std::forward<Args>(args)...);
 	}
 
 };

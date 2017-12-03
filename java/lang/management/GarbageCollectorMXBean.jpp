@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::jlong, typename... Args>
 	auto getCollectionCount(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCollectionCount")] != -1);
-		return call<R>("getCollectionCount", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCollectionCount")] != -1);
+		return call<R>("getCollectionCount", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jlong, typename... Args>
 	auto getCollectionTime(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCollectionTime")] != -1);
-		return call<R>("getCollectionTime", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCollectionTime")] != -1);
+		return call<R>("getCollectionTime", std::forward<Args>(args)...);
 	}
 
 };

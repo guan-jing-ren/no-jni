@@ -24,26 +24,26 @@ public:
 
 	template<typename R = ::java::awt::dnd::DragSourceContext, typename... Args>
 	auto getDragSourceContext(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDragSourceContext")] != -1);
-		return call<R>("getDragSourceContext", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDragSourceContext")] != -1);
+		return call<R>("getDragSourceContext", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::Point, typename... Args>
 	auto getLocation(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLocation")] != -1);
-		return call<R>("getLocation", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLocation")] != -1);
+		return call<R>("getLocation", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getX(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getX")] != -1);
-		return call<R>("getX", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getX")] != -1);
+		return call<R>("getX", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getY(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getY")] != -1);
-		return call<R>("getY", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getY")] != -1);
+		return call<R>("getY", std::forward<Args>(args)...);
 	}
 
 };

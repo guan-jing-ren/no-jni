@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto ancestorMoved(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("ancestorMoved")] != -1);
-		return call<R>("ancestorMoved", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("ancestorMoved")] != -1);
+		return call<R>("ancestorMoved", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto ancestorResized(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("ancestorResized")] != -1);
-		return call<R>("ancestorResized", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("ancestorResized")] != -1);
+		return call<R>("ancestorResized", std::forward<Args>(args)...);
 	}
 
 };

@@ -23,26 +23,26 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto componentHidden(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("componentHidden")] != -1);
-		return call<R>("componentHidden", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("componentHidden")] != -1);
+		return call<R>("componentHidden", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto componentMoved(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("componentMoved")] != -1);
-		return call<R>("componentMoved", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("componentMoved")] != -1);
+		return call<R>("componentMoved", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto componentResized(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("componentResized")] != -1);
-		return call<R>("componentResized", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("componentResized")] != -1);
+		return call<R>("componentResized", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto componentShown(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("componentShown")] != -1);
-		return call<R>("componentShown", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("componentShown")] != -1);
+		return call<R>("componentShown", std::forward<Args>(args)...);
 	}
 
 };

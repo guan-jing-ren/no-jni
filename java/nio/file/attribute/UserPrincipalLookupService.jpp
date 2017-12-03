@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::java::nio::file::attribute::GroupPrincipal, typename... Args>
 	auto lookupPrincipalByGroupName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lookupPrincipalByGroupName")] != -1);
-		return call<R>("lookupPrincipalByGroupName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("lookupPrincipalByGroupName")] != -1);
+		return call<R>("lookupPrincipalByGroupName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::nio::file::attribute::UserPrincipal, typename... Args>
 	auto lookupPrincipalByName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lookupPrincipalByName")] != -1);
-		return call<R>("lookupPrincipalByName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("lookupPrincipalByName")] != -1);
+		return call<R>("lookupPrincipalByName", std::forward<Args>(args)...);
 	}
 
 };

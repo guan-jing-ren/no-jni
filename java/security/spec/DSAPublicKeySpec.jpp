@@ -23,26 +23,26 @@ public:
 
 	template<typename R = ::java::math::BigInteger, typename... Args>
 	auto getG(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getG")] != -1);
-		return call<R>("getG", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getG")] != -1);
+		return call<R>("getG", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::math::BigInteger, typename... Args>
 	auto getP(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getP")] != -1);
-		return call<R>("getP", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getP")] != -1);
+		return call<R>("getP", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::math::BigInteger, typename... Args>
 	auto getQ(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getQ")] != -1);
-		return call<R>("getQ", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getQ")] != -1);
+		return call<R>("getQ", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::math::BigInteger, typename... Args>
 	auto getY(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getY")] != -1);
-		return call<R>("getY", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getY")] != -1);
+		return call<R>("getY", std::forward<Args>(args)...);
 	}
 
 };

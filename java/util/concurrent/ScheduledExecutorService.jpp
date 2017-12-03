@@ -22,20 +22,20 @@ public:
 
 	template<typename R = ::java::util::concurrent::ScheduledFuture, typename... Args>
 	auto schedule(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("schedule")] != -1);
-		return call<R>("schedule", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("schedule")] != -1);
+		return call<R>("schedule", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::concurrent::ScheduledFuture, typename... Args>
 	auto scheduleAtFixedRate(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("scheduleAtFixedRate")] != -1);
-		return call<R>("scheduleAtFixedRate", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("scheduleAtFixedRate")] != -1);
+		return call<R>("scheduleAtFixedRate", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::concurrent::ScheduledFuture, typename... Args>
 	auto scheduleWithFixedDelay(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("scheduleWithFixedDelay")] != -1);
-		return call<R>("scheduleWithFixedDelay", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("scheduleWithFixedDelay")] != -1);
+		return call<R>("scheduleWithFixedDelay", std::forward<Args>(args)...);
 	}
 
 };

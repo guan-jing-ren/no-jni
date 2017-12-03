@@ -25,38 +25,38 @@ public:
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto clone(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
-		return call<R>("clone", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getHeight(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHeight")] != -1);
-		return call<R>("getHeight", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHeight")] != -1);
+		return call<R>("getHeight", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jfloat *, typename... Args>
 	auto getKernelData(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getKernelData")] != -1);
-		return call<R>("getKernelData", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getKernelData")] != -1);
+		return call<R>("getKernelData", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getWidth(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWidth")] != -1);
-		return call<R>("getWidth", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getWidth")] != -1);
+		return call<R>("getWidth", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getXOrigin(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getXOrigin")] != -1);
-		return call<R>("getXOrigin", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getXOrigin")] != -1);
+		return call<R>("getXOrigin", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getYOrigin(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getYOrigin")] != -1);
-		return call<R>("getYOrigin", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getYOrigin")] != -1);
+		return call<R>("getYOrigin", std::forward<Args>(args)...);
 	}
 
 };

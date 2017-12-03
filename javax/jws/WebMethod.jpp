@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto action(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("action")] != -1);
-		return call<R>("action", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("action")] != -1);
+		return call<R>("action", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto exclude(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("exclude")] != -1);
-		return call<R>("exclude", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("exclude")] != -1);
+		return call<R>("exclude", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto operationName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("operationName")] != -1);
-		return call<R>("operationName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("operationName")] != -1);
+		return call<R>("operationName", std::forward<Args>(args)...);
 	}
 
 };

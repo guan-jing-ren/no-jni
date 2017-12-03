@@ -22,20 +22,20 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getKey(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getKey")] != -1);
-		return call<R>("getKey", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getKey")] != -1);
+		return call<R>("getKey", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getNewValue(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNewValue")] != -1);
-		return call<R>("getNewValue", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNewValue")] != -1);
+		return call<R>("getNewValue", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::prefs::Preferences, typename... Args>
 	auto getNode(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNode")] != -1);
-		return call<R>("getNode", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNode")] != -1);
+		return call<R>("getNode", std::forward<Args>(args)...);
 	}
 
 };

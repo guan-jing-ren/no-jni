@@ -27,56 +27,56 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto awaitTermination(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("awaitTermination")] != -1);
-		return call<R>("awaitTermination", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("awaitTermination")] != -1);
+		return call<R>("awaitTermination", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isShutdown(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isShutdown")] != -1);
-		return call<R>("isShutdown", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isShutdown")] != -1);
+		return call<R>("isShutdown", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isTerminated(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isTerminated")] != -1);
-		return call<R>("isTerminated", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isTerminated")] != -1);
+		return call<R>("isTerminated", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::nio::channels::spi::AsynchronousChannelProvider, typename... Args>
 	auto provider(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("provider")] != -1);
-		return call<R>("provider", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("provider")] != -1);
+		return call<R>("provider", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto shutdown(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("shutdown")] != -1);
-		return call<R>("shutdown", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("shutdown")] != -1);
+		return call<R>("shutdown", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto shutdownNow(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("shutdownNow")] != -1);
-		return call<R>("shutdownNow", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("shutdownNow")] != -1);
+		return call<R>("shutdownNow", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::nio::channels::AsynchronousChannelGroup, typename... Args>
 	static auto withCachedThreadPool(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("withCachedThreadPool")] != -1);
-		return scall<R>("withCachedThreadPool", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("withCachedThreadPool")] != -1);
+		return scall<R>("withCachedThreadPool", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::nio::channels::AsynchronousChannelGroup, typename... Args>
 	static auto withFixedThreadPool(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("withFixedThreadPool")] != -1);
-		return scall<R>("withFixedThreadPool", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("withFixedThreadPool")] != -1);
+		return scall<R>("withFixedThreadPool", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::nio::channels::AsynchronousChannelGroup, typename... Args>
 	static auto withThreadPool(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("withThreadPool")] != -1);
-		return scall<R>("withThreadPool", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("withThreadPool")] != -1);
+		return scall<R>("withThreadPool", std::forward<Args>(args)...);
 	}
 
 };

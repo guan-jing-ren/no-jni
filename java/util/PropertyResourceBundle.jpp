@@ -22,14 +22,14 @@ public:
 
 	template<typename R = ::java::util::Enumeration, typename... Args>
 	auto getKeys(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getKeys")] != -1);
-		return call<R>("getKeys", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getKeys")] != -1);
+		return call<R>("getKeys", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto handleGetObject(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("handleGetObject")] != -1);
-		return call<R>("handleGetObject", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("handleGetObject")] != -1);
+		return call<R>("handleGetObject", std::forward<Args>(args)...);
 	}
 
 };

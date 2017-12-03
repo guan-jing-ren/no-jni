@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::org::w3c::dom::html::HTMLFormElement, typename... Args>
 	auto getForm(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getForm")] != -1);
-		return call<R>("getForm", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getForm")] != -1);
+		return call<R>("getForm", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getPrompt(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrompt")] != -1);
-		return call<R>("getPrompt", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPrompt")] != -1);
+		return call<R>("getPrompt", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setPrompt(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPrompt")] != -1);
-		return call<R>("setPrompt", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setPrompt")] != -1);
+		return call<R>("setPrompt", std::forward<Args>(args)...);
 	}
 
 };

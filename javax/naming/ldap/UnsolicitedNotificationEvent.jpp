@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto dispatch(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dispatch")] != -1);
-		return call<R>("dispatch", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dispatch")] != -1);
+		return call<R>("dispatch", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::naming::ldap::UnsolicitedNotification, typename... Args>
 	auto getNotification(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNotification")] != -1);
-		return call<R>("getNotification", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNotification")] != -1);
+		return call<R>("getNotification", std::forward<Args>(args)...);
 	}
 
 };

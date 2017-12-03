@@ -24,32 +24,32 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto clear(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clear")] != -1);
-		return call<R>("clear", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clear")] != -1);
+		return call<R>("clear", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::swing::JComponent, typename... Args>
 	auto getComponent(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getComponent")] != -1);
-		return call<R>("getComponent", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getComponent")] != -1);
+		return call<R>("getComponent", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto put(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("put")] != -1);
-		return call<R>("put", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("put")] != -1);
+		return call<R>("put", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto remove(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("remove")] != -1);
-		return call<R>("remove", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setParent(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setParent")] != -1);
-		return call<R>("setParent", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setParent")] != -1);
+		return call<R>("setParent", std::forward<Args>(args)...);
 	}
 
 };

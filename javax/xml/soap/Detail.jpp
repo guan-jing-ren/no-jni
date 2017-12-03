@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::javax::xml::soap::DetailEntry, typename... Args>
 	auto addDetailEntry(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addDetailEntry")] != -1);
-		return call<R>("addDetailEntry", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addDetailEntry")] != -1);
+		return call<R>("addDetailEntry", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Iterator, typename... Args>
 	auto getDetailEntries(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDetailEntries")] != -1);
-		return call<R>("getDetailEntries", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDetailEntries")] != -1);
+		return call<R>("getDetailEntries", std::forward<Args>(args)...);
 	}
 
 };

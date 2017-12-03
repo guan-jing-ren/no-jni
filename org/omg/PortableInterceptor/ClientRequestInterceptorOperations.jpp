@@ -23,32 +23,32 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto receive_exception(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("receive_exception")] != -1);
-		return call<R>("receive_exception", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("receive_exception")] != -1);
+		return call<R>("receive_exception", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto receive_other(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("receive_other")] != -1);
-		return call<R>("receive_other", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("receive_other")] != -1);
+		return call<R>("receive_other", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto receive_reply(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("receive_reply")] != -1);
-		return call<R>("receive_reply", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("receive_reply")] != -1);
+		return call<R>("receive_reply", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto send_poll(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("send_poll")] != -1);
-		return call<R>("send_poll", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("send_poll")] != -1);
+		return call<R>("send_poll", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto send_request(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("send_request")] != -1);
-		return call<R>("send_request", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("send_request")] != -1);
+		return call<R>("send_request", std::forward<Args>(args)...);
 	}
 
 };

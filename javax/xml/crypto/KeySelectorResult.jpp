@@ -19,8 +19,8 @@ public:
 
 	template<typename R = ::java::security::Key, typename... Args>
 	auto getKey(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getKey")] != -1);
-		return call<R>("getKey", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getKey")] != -1);
+		return call<R>("getKey", std::forward<Args>(args)...);
 	}
 
 };

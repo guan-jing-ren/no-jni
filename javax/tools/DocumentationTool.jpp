@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::javax::tools::StandardJavaFileManager, typename... Args>
 	auto getStandardFileManager(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStandardFileManager")] != -1);
-		return call<R>("getStandardFileManager", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStandardFileManager")] != -1);
+		return call<R>("getStandardFileManager", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::tools::DocumentationTool$DocumentationTask, typename... Args>
 	auto getTask(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTask")] != -1);
-		return call<R>("getTask", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTask")] != -1);
+		return call<R>("getTask", std::forward<Args>(args)...);
 	}
 
 };

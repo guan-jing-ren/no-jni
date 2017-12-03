@@ -33,26 +33,26 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto add(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("add")] != -1);
-		return call<R>("add", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto addAll(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addAll")] != -1);
-		return call<R>("addAll", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addAll")] != -1);
+		return call<R>("addAll", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::List, typename... Args>
 	auto asList(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("asList")] != -1);
-		return call<R>("asList", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("asList")] != -1);
+		return call<R>("asList", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto set(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set")] != -1);
-		return call<R>("set", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set")] != -1);
+		return call<R>("set", std::forward<Args>(args)...);
 	}
 
 };

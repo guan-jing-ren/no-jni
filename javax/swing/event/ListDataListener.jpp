@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto contentsChanged(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("contentsChanged")] != -1);
-		return call<R>("contentsChanged", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("contentsChanged")] != -1);
+		return call<R>("contentsChanged", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto intervalAdded(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("intervalAdded")] != -1);
-		return call<R>("intervalAdded", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("intervalAdded")] != -1);
+		return call<R>("intervalAdded", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto intervalRemoved(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("intervalRemoved")] != -1);
-		return call<R>("intervalRemoved", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("intervalRemoved")] != -1);
+		return call<R>("intervalRemoved", std::forward<Args>(args)...);
 	}
 
 };

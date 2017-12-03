@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto hide(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hide")] != -1);
-		return call<R>("hide", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hide")] != -1);
+		return call<R>("hide", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto show(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("show")] != -1);
-		return call<R>("show", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("show")] != -1);
+		return call<R>("show", std::forward<Args>(args)...);
 	}
 
 };

@@ -71,32 +71,32 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
-		return call<R>("getName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isOutputLocation(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isOutputLocation")] != -1);
-		return call<R>("isOutputLocation", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isOutputLocation")] != -1);
+		return call<R>("isOutputLocation", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::tools::JavaFileManager$Location, typename... Args>
 	static auto locationFor(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("locationFor")] != -1);
-		return scall<R>("locationFor", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("locationFor")] != -1);
+		return scall<R>("locationFor", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::tools::StandardLocation, typename... Args>
 	static auto valueOf(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
-		return scall<R>("valueOf", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::tools::StandardLocation *, typename... Args>
 	static auto values(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
-		return scall<R>("values", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", std::forward<Args>(args)...);
 	}
 
 };

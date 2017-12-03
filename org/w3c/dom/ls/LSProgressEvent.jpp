@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::org::w3c::dom::ls::LSInput, typename... Args>
 	auto getInput(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInput")] != -1);
-		return call<R>("getInput", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInput")] != -1);
+		return call<R>("getInput", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getPosition(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPosition")] != -1);
-		return call<R>("getPosition", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPosition")] != -1);
+		return call<R>("getPosition", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getTotalSize(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTotalSize")] != -1);
-		return call<R>("getTotalSize", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTotalSize")] != -1);
+		return call<R>("getTotalSize", std::forward<Args>(args)...);
 	}
 
 };

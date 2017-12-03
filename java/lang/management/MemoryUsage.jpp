@@ -25,38 +25,38 @@ public:
 
 	template<typename R = ::java::lang::management::MemoryUsage, typename... Args>
 	static auto from(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("from")] != -1);
-		return scall<R>("from", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("from")] != -1);
+		return scall<R>("from", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jlong, typename... Args>
 	auto getCommitted(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCommitted")] != -1);
-		return call<R>("getCommitted", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCommitted")] != -1);
+		return call<R>("getCommitted", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jlong, typename... Args>
 	auto getInit(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInit")] != -1);
-		return call<R>("getInit", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInit")] != -1);
+		return call<R>("getInit", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jlong, typename... Args>
 	auto getMax(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMax")] != -1);
-		return call<R>("getMax", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMax")] != -1);
+		return call<R>("getMax", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jlong, typename... Args>
 	auto getUsed(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUsed")] != -1);
-		return call<R>("getUsed", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUsed")] != -1);
+		return call<R>("getUsed", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto toString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
-		return call<R>("toString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
 	}
 
 };

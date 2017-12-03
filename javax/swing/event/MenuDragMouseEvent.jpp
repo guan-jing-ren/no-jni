@@ -22,14 +22,14 @@ public:
 
 	template<typename R = ::javax::swing::MenuSelectionManager, typename... Args>
 	auto getMenuSelectionManager(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMenuSelectionManager")] != -1);
-		return call<R>("getMenuSelectionManager", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMenuSelectionManager")] != -1);
+		return call<R>("getMenuSelectionManager", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::swing::MenuElement *, typename... Args>
 	auto getPath(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPath")] != -1);
-		return call<R>("getPath", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPath")] != -1);
+		return call<R>("getPath", std::forward<Args>(args)...);
 	}
 
 };

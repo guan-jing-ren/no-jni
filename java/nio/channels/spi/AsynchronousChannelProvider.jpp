@@ -23,26 +23,26 @@ public:
 
 	template<typename R = ::java::nio::channels::AsynchronousChannelGroup, typename... Args>
 	auto openAsynchronousChannelGroup(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("openAsynchronousChannelGroup")] != -1);
-		return call<R>("openAsynchronousChannelGroup", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("openAsynchronousChannelGroup")] != -1);
+		return call<R>("openAsynchronousChannelGroup", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::nio::channels::AsynchronousServerSocketChannel, typename... Args>
 	auto openAsynchronousServerSocketChannel(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("openAsynchronousServerSocketChannel")] != -1);
-		return call<R>("openAsynchronousServerSocketChannel", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("openAsynchronousServerSocketChannel")] != -1);
+		return call<R>("openAsynchronousServerSocketChannel", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::nio::channels::AsynchronousSocketChannel, typename... Args>
 	auto openAsynchronousSocketChannel(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("openAsynchronousSocketChannel")] != -1);
-		return call<R>("openAsynchronousSocketChannel", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("openAsynchronousSocketChannel")] != -1);
+		return call<R>("openAsynchronousSocketChannel", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::nio::channels::spi::AsynchronousChannelProvider, typename... Args>
 	static auto provider(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("provider")] != -1);
-		return scall<R>("provider", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("provider")] != -1);
+		return scall<R>("provider", std::forward<Args>(args)...);
 	}
 
 };

@@ -37,20 +37,20 @@ public:
 
 	template<typename R = ::javax::xml::transform::sax::TemplatesHandler, typename... Args>
 	auto newTemplatesHandler(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newTemplatesHandler")] != -1);
-		return call<R>("newTemplatesHandler", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newTemplatesHandler")] != -1);
+		return call<R>("newTemplatesHandler", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::xml::transform::sax::TransformerHandler, typename... Args>
 	auto newTransformerHandler(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newTransformerHandler")] != -1);
-		return call<R>("newTransformerHandler", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newTransformerHandler")] != -1);
+		return call<R>("newTransformerHandler", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::xml::sax::XMLFilter, typename... Args>
 	auto newXMLFilter(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newXMLFilter")] != -1);
-		return call<R>("newXMLFilter", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newXMLFilter")] != -1);
+		return call<R>("newXMLFilter", std::forward<Args>(args)...);
 	}
 
 };

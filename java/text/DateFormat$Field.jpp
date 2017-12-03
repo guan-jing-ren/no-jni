@@ -145,14 +145,14 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto getCalendarField(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCalendarField")] != -1);
-		return call<R>("getCalendarField", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCalendarField")] != -1);
+		return call<R>("getCalendarField", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::text::DateFormat$Field, typename... Args>
 	static auto ofCalendarField(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("ofCalendarField")] != -1);
-		return scall<R>("ofCalendarField", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("ofCalendarField")] != -1);
+		return scall<R>("ofCalendarField", std::forward<Args>(args)...);
 	}
 
 };

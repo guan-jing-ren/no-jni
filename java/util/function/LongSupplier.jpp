@@ -19,8 +19,8 @@ public:
 
 	template<typename R = ::jlong, typename... Args>
 	auto getAsLong(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAsLong")] != -1);
-		return call<R>("getAsLong", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAsLong")] != -1);
+		return call<R>("getAsLong", std::forward<Args>(args)...);
 	}
 
 };

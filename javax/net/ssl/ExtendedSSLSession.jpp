@@ -22,20 +22,20 @@ public:
 
 	template<typename R = ::java::lang::String *, typename... Args>
 	auto getLocalSupportedSignatureAlgorithms(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLocalSupportedSignatureAlgorithms")] != -1);
-		return call<R>("getLocalSupportedSignatureAlgorithms", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLocalSupportedSignatureAlgorithms")] != -1);
+		return call<R>("getLocalSupportedSignatureAlgorithms", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String *, typename... Args>
 	auto getPeerSupportedSignatureAlgorithms(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPeerSupportedSignatureAlgorithms")] != -1);
-		return call<R>("getPeerSupportedSignatureAlgorithms", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPeerSupportedSignatureAlgorithms")] != -1);
+		return call<R>("getPeerSupportedSignatureAlgorithms", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::List, typename... Args>
 	auto getRequestedServerNames(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRequestedServerNames")] != -1);
-		return call<R>("getRequestedServerNames", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRequestedServerNames")] != -1);
+		return call<R>("getRequestedServerNames", std::forward<Args>(args)...);
 	}
 
 };

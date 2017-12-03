@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::java::util::List, typename... Args>
 	auto getContent(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getContent")] != -1);
-		return call<R>("getContent", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getContent")] != -1);
+		return call<R>("getContent", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getId(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getId")] != -1);
-		return call<R>("getId", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getId")] != -1);
+		return call<R>("getId", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto marshal(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("marshal")] != -1);
-		return call<R>("marshal", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("marshal")] != -1);
+		return call<R>("marshal", std::forward<Args>(args)...);
 	}
 
 };

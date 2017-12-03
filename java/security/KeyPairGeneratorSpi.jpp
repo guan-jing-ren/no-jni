@@ -22,14 +22,14 @@ public:
 
 	template<typename R = ::java::security::KeyPair, typename... Args>
 	auto generateKeyPair(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("generateKeyPair")] != -1);
-		return call<R>("generateKeyPair", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("generateKeyPair")] != -1);
+		return call<R>("generateKeyPair", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto initialize(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("initialize")] != -1);
-		return call<R>("initialize", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("initialize")] != -1);
+		return call<R>("initialize", std::forward<Args>(args)...);
 	}
 
 };

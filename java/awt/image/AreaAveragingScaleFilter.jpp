@@ -22,14 +22,14 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setHints(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setHints")] != -1);
-		return call<R>("setHints", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setHints")] != -1);
+		return call<R>("setHints", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setPixels(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPixels")] != -1);
-		return call<R>("setPixels", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setPixels")] != -1);
+		return call<R>("setPixels", std::forward<Args>(args)...);
 	}
 
 };

@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto apply(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("apply")] != -1);
-		return call<R>("apply", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("apply")] != -1);
+		return call<R>("apply", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::function::BinaryOperator, typename... Args>
 	static auto maxBy(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("maxBy")] != -1);
-		return scall<R>("maxBy", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("maxBy")] != -1);
+		return scall<R>("maxBy", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::function::BinaryOperator, typename... Args>
 	static auto minBy(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("minBy")] != -1);
-		return scall<R>("minBy", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("minBy")] != -1);
+		return scall<R>("minBy", std::forward<Args>(args)...);
 	}
 
 };

@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto fillPointWithCoords(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("fillPointWithCoords")] != -1);
-		return call<R>("fillPointWithCoords", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("fillPointWithCoords")] != -1);
+		return call<R>("fillPointWithCoords", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isWindowUnderMouse(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isWindowUnderMouse")] != -1);
-		return call<R>("isWindowUnderMouse", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isWindowUnderMouse")] != -1);
+		return call<R>("isWindowUnderMouse", std::forward<Args>(args)...);
 	}
 
 };

@@ -22,26 +22,26 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto deleteRule(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("deleteRule")] != -1);
-		return call<R>("deleteRule", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("deleteRule")] != -1);
+		return call<R>("deleteRule", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::w3c::dom::css::CSSRuleList, typename... Args>
 	auto getCssRules(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCssRules")] != -1);
-		return call<R>("getCssRules", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCssRules")] != -1);
+		return call<R>("getCssRules", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::w3c::dom::css::CSSRule, typename... Args>
 	auto getOwnerRule(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOwnerRule")] != -1);
-		return call<R>("getOwnerRule", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOwnerRule")] != -1);
+		return call<R>("getOwnerRule", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto insertRule(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("insertRule")] != -1);
-		return call<R>("insertRule", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("insertRule")] != -1);
+		return call<R>("insertRule", std::forward<Args>(args)...);
 	}
 
 };

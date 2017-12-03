@@ -22,26 +22,26 @@ public:
 
 	template<typename R = ::java::util::function::DoublePredicate, typename... Args>
 	auto and_(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("and")] != -1);
-		return call<R>("and", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("and")] != -1);
+		return call<R>("and", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::function::DoublePredicate, typename... Args>
 	auto negate(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("negate")] != -1);
-		return call<R>("negate", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("negate")] != -1);
+		return call<R>("negate", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::function::DoublePredicate, typename... Args>
 	auto or_(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("or")] != -1);
-		return call<R>("or", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("or")] != -1);
+		return call<R>("or", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto test(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("test")] != -1);
-		return call<R>("test", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("test")] != -1);
+		return call<R>("test", std::forward<Args>(args)...);
 	}
 
 };

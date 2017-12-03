@@ -24,32 +24,32 @@ public:
 
 	template<typename R = ::javax::swing::plaf::ComponentUI, typename... Args>
 	static auto createUI(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createUI")] != -1);
-		return scall<R>("createUI", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createUI")] != -1);
+		return scall<R>("createUI", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::swing::plaf::synth::SynthContext, typename... Args>
 	auto getContext(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getContext")] != -1);
-		return call<R>("getContext", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getContext")] != -1);
+		return call<R>("getContext", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto paintBorder(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paintBorder")] != -1);
-		return call<R>("paintBorder", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("paintBorder")] != -1);
+		return call<R>("paintBorder", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto propertyChange(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("propertyChange")] != -1);
-		return call<R>("propertyChange", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("propertyChange")] != -1);
+		return call<R>("propertyChange", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto update(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("update")] != -1);
-		return call<R>("update", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("update")] != -1);
+		return call<R>("update", std::forward<Args>(args)...);
 	}
 
 };

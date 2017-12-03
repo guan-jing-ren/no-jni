@@ -19,8 +19,8 @@ public:
 
 	template<typename R = ::org::w3c::dom::css::CSSStyleDeclaration, typename... Args>
 	auto getStyle(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getStyle")] != -1);
-		return call<R>("getStyle", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStyle")] != -1);
+		return call<R>("getStyle", std::forward<Args>(args)...);
 	}
 
 };

@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto popupMenuCanceled(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("popupMenuCanceled")] != -1);
-		return call<R>("popupMenuCanceled", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("popupMenuCanceled")] != -1);
+		return call<R>("popupMenuCanceled", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto popupMenuWillBecomeInvisible(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("popupMenuWillBecomeInvisible")] != -1);
-		return call<R>("popupMenuWillBecomeInvisible", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("popupMenuWillBecomeInvisible")] != -1);
+		return call<R>("popupMenuWillBecomeInvisible", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto popupMenuWillBecomeVisible(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("popupMenuWillBecomeVisible")] != -1);
-		return call<R>("popupMenuWillBecomeVisible", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("popupMenuWillBecomeVisible")] != -1);
+		return call<R>("popupMenuWillBecomeVisible", std::forward<Args>(args)...);
 	}
 
 };

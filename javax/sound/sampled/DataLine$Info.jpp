@@ -27,38 +27,38 @@ public:
 
 	template<typename R = ::javax::sound::sampled::AudioFormat *, typename... Args>
 	auto getFormats(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFormats")] != -1);
-		return call<R>("getFormats", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFormats")] != -1);
+		return call<R>("getFormats", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getMaxBufferSize(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMaxBufferSize")] != -1);
-		return call<R>("getMaxBufferSize", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMaxBufferSize")] != -1);
+		return call<R>("getMaxBufferSize", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getMinBufferSize(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMinBufferSize")] != -1);
-		return call<R>("getMinBufferSize", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMinBufferSize")] != -1);
+		return call<R>("getMinBufferSize", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isFormatSupported(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isFormatSupported")] != -1);
-		return call<R>("isFormatSupported", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isFormatSupported")] != -1);
+		return call<R>("isFormatSupported", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto matches(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("matches")] != -1);
-		return call<R>("matches", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("matches")] != -1);
+		return call<R>("matches", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto toString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
-		return call<R>("toString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
 	}
 
 };

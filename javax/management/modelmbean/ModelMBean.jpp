@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setManagedResource(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setManagedResource")] != -1);
-		return call<R>("setManagedResource", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setManagedResource")] != -1);
+		return call<R>("setManagedResource", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setModelMBeanInfo(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setModelMBeanInfo")] != -1);
-		return call<R>("setModelMBeanInfo", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setModelMBeanInfo")] != -1);
+		return call<R>("setModelMBeanInfo", std::forward<Args>(args)...);
 	}
 
 };

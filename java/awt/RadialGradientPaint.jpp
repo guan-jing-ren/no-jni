@@ -30,26 +30,26 @@ public:
 
 	template<typename R = ::java::awt::PaintContext, typename... Args>
 	auto createContext(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createContext")] != -1);
-		return call<R>("createContext", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createContext")] != -1);
+		return call<R>("createContext", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::geom::Point2D, typename... Args>
 	auto getCenterPoint(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCenterPoint")] != -1);
-		return call<R>("getCenterPoint", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCenterPoint")] != -1);
+		return call<R>("getCenterPoint", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::geom::Point2D, typename... Args>
 	auto getFocusPoint(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFocusPoint")] != -1);
-		return call<R>("getFocusPoint", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFocusPoint")] != -1);
+		return call<R>("getFocusPoint", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jfloat, typename... Args>
 	auto getRadius(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRadius")] != -1);
-		return call<R>("getRadius", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRadius")] != -1);
+		return call<R>("getRadius", std::forward<Args>(args)...);
 	}
 
 };

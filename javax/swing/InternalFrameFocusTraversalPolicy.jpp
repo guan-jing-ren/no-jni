@@ -20,8 +20,8 @@ public:
 
 	template<typename R = ::java::awt::Component, typename... Args>
 	auto getInitialComponent(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInitialComponent")] != -1);
-		return call<R>("getInitialComponent", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInitialComponent")] != -1);
+		return call<R>("getInitialComponent", std::forward<Args>(args)...);
 	}
 
 };

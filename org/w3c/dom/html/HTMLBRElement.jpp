@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getClear(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getClear")] != -1);
-		return call<R>("getClear", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClear")] != -1);
+		return call<R>("getClear", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setClear(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setClear")] != -1);
-		return call<R>("setClear", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setClear")] != -1);
+		return call<R>("setClear", std::forward<Args>(args)...);
 	}
 
 };

@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::java::security::spec::ECParameterSpec, typename... Args>
 	auto getParams(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParams")] != -1);
-		return call<R>("getParams", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getParams")] != -1);
+		return call<R>("getParams", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::math::BigInteger, typename... Args>
 	auto getS(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getS")] != -1);
-		return call<R>("getS", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getS")] != -1);
+		return call<R>("getS", std::forward<Args>(args)...);
 	}
 
 };

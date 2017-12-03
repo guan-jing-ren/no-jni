@@ -64,32 +64,32 @@ public:
 
 	template<typename R = ::java::time::format::TextStyle, typename... Args>
 	auto asNormal(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("asNormal")] != -1);
-		return call<R>("asNormal", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("asNormal")] != -1);
+		return call<R>("asNormal", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::time::format::TextStyle, typename... Args>
 	auto asStandalone(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("asStandalone")] != -1);
-		return call<R>("asStandalone", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("asStandalone")] != -1);
+		return call<R>("asStandalone", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isStandalone(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isStandalone")] != -1);
-		return call<R>("isStandalone", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isStandalone")] != -1);
+		return call<R>("isStandalone", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::time::format::TextStyle, typename... Args>
 	static auto valueOf(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueOf")] != -1);
-		return scall<R>("valueOf", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("valueOf")] != -1);
+		return scall<R>("valueOf", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::time::format::TextStyle *, typename... Args>
 	static auto values(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("values")] != -1);
-		return scall<R>("values", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("values")] != -1);
+		return scall<R>("values", std::forward<Args>(args)...);
 	}
 
 };

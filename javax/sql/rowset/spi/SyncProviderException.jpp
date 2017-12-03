@@ -23,14 +23,14 @@ public:
 
 	template<typename R = ::javax::sql::rowset::spi::SyncResolver, typename... Args>
 	auto getSyncResolver(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSyncResolver")] != -1);
-		return call<R>("getSyncResolver", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSyncResolver")] != -1);
+		return call<R>("getSyncResolver", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setSyncResolver(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSyncResolver")] != -1);
-		return call<R>("setSyncResolver", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setSyncResolver")] != -1);
+		return call<R>("setSyncResolver", std::forward<Args>(args)...);
 	}
 
 };

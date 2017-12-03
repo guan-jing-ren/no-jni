@@ -29,20 +29,20 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto addAttribute(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addAttribute")] != -1);
-		return call<R>("addAttribute", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addAttribute")] != -1);
+		return call<R>("addAttribute", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto addAttributes(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addAttributes")] != -1);
-		return call<R>("addAttributes", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addAttributes")] != -1);
+		return call<R>("addAttributes", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::text::AttributedCharacterIterator, typename... Args>
 	auto getIterator(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIterator")] != -1);
-		return call<R>("getIterator", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIterator")] != -1);
+		return call<R>("getIterator", std::forward<Args>(args)...);
 	}
 
 };

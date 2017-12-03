@@ -19,8 +19,8 @@ public:
 
 	template<typename R = ::java::beans::beancontext::BeanContextChild, typename... Args>
 	auto getBeanContextProxy(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBeanContextProxy")] != -1);
-		return call<R>("getBeanContextProxy", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBeanContextProxy")] != -1);
+		return call<R>("getBeanContextProxy", std::forward<Args>(args)...);
 	}
 
 };

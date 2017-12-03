@@ -22,20 +22,20 @@ public:
 
 	template<typename R = ::javax::xml::namespace_::QName, typename... Args>
 	auto getElementName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getElementName")] != -1);
-		return call<R>("getElementName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getElementName")] != -1);
+		return call<R>("getElementName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	static auto getValue(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getValue")] != -1);
-		return scall<R>("getValue", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getValue")] != -1);
+		return scall<R>("getValue", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isElement(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isElement")] != -1);
-		return call<R>("isElement", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isElement")] != -1);
+		return call<R>("isElement", std::forward<Args>(args)...);
 	}
 
 };

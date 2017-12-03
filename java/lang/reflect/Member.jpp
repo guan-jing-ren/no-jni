@@ -35,26 +35,26 @@ public:
 
 	template<typename R = ::java::lang::Class, typename... Args>
 	auto getDeclaringClass(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDeclaringClass")] != -1);
-		return call<R>("getDeclaringClass", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDeclaringClass")] != -1);
+		return call<R>("getDeclaringClass", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getModifiers(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getModifiers")] != -1);
-		return call<R>("getModifiers", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getModifiers")] != -1);
+		return call<R>("getModifiers", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getName")] != -1);
-		return call<R>("getName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isSynthetic(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSynthetic")] != -1);
-		return call<R>("isSynthetic", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSynthetic")] != -1);
+		return call<R>("isSynthetic", std::forward<Args>(args)...);
 	}
 
 };

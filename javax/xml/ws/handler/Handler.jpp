@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto close(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
-		return call<R>("close", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto handleFault(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("handleFault")] != -1);
-		return call<R>("handleFault", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("handleFault")] != -1);
+		return call<R>("handleFault", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto handleMessage(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("handleMessage")] != -1);
-		return call<R>("handleMessage", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("handleMessage")] != -1);
+		return call<R>("handleMessage", std::forward<Args>(args)...);
 	}
 
 };

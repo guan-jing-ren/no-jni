@@ -24,32 +24,32 @@ public:
 
 	template<typename R = ::jfloat, typename... Args>
 	auto getAlignment(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlignment")] != -1);
-		return call<R>("getAlignment", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAlignment")] != -1);
+		return call<R>("getAlignment", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jfloat, typename... Args>
 	auto getPreferredSpan(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPreferredSpan")] != -1);
-		return call<R>("getPreferredSpan", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPreferredSpan")] != -1);
+		return call<R>("getPreferredSpan", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::Shape, typename... Args>
 	auto modelToView(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("modelToView")] != -1);
-		return call<R>("modelToView", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("modelToView")] != -1);
+		return call<R>("modelToView", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto paint(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paint")] != -1);
-		return call<R>("paint", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("paint")] != -1);
+		return call<R>("paint", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto viewToModel(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("viewToModel")] != -1);
-		return call<R>("viewToModel", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("viewToModel")] != -1);
+		return call<R>("viewToModel", std::forward<Args>(args)...);
 	}
 
 };

@@ -24,20 +24,20 @@ public:
 
 	template<typename R = ::java::util::jar::Attributes, typename... Args>
 	auto getAttributes(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttributes")] != -1);
-		return call<R>("getAttributes", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAttributes")] != -1);
+		return call<R>("getAttributes", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::security::cert::Certificate *, typename... Args>
 	auto getCertificates(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCertificates")] != -1);
-		return call<R>("getCertificates", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCertificates")] != -1);
+		return call<R>("getCertificates", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::security::CodeSigner *, typename... Args>
 	auto getCodeSigners(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCodeSigners")] != -1);
-		return call<R>("getCodeSigners", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCodeSigners")] != -1);
+		return call<R>("getCodeSigners", std::forward<Args>(args)...);
 	}
 
 };

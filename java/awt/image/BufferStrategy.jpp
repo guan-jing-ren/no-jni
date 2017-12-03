@@ -25,38 +25,38 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto contentsLost(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("contentsLost")] != -1);
-		return call<R>("contentsLost", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("contentsLost")] != -1);
+		return call<R>("contentsLost", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto contentsRestored(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("contentsRestored")] != -1);
-		return call<R>("contentsRestored", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("contentsRestored")] != -1);
+		return call<R>("contentsRestored", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto dispose(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dispose")] != -1);
-		return call<R>("dispose", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dispose")] != -1);
+		return call<R>("dispose", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::BufferCapabilities, typename... Args>
 	auto getCapabilities(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCapabilities")] != -1);
-		return call<R>("getCapabilities", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCapabilities")] != -1);
+		return call<R>("getCapabilities", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::Graphics, typename... Args>
 	auto getDrawGraphics(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDrawGraphics")] != -1);
-		return call<R>("getDrawGraphics", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDrawGraphics")] != -1);
+		return call<R>("getDrawGraphics", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto show(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("show")] != -1);
-		return call<R>("show", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("show")] != -1);
+		return call<R>("show", std::forward<Args>(args)...);
 	}
 
 };

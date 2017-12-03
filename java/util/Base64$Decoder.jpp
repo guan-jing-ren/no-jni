@@ -23,14 +23,14 @@ public:
 
 	template<typename R = ::jbyte *, typename... Args>
 	auto decode(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("decode")] != -1);
-		return call<R>("decode", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("decode")] != -1);
+		return call<R>("decode", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::io::InputStream, typename... Args>
 	auto wrap(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("wrap")] != -1);
-		return call<R>("wrap", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("wrap")] != -1);
+		return call<R>("wrap", std::forward<Args>(args)...);
 	}
 
 };

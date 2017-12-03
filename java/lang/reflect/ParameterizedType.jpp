@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::java::lang::reflect::Type *, typename... Args>
 	auto getActualTypeArguments(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getActualTypeArguments")] != -1);
-		return call<R>("getActualTypeArguments", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getActualTypeArguments")] != -1);
+		return call<R>("getActualTypeArguments", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::reflect::Type, typename... Args>
 	auto getOwnerType(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOwnerType")] != -1);
-		return call<R>("getOwnerType", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOwnerType")] != -1);
+		return call<R>("getOwnerType", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::reflect::Type, typename... Args>
 	auto getRawType(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRawType")] != -1);
-		return call<R>("getRawType", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRawType")] != -1);
+		return call<R>("getRawType", std::forward<Args>(args)...);
 	}
 
 };

@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto clone(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
-		return call<R>("clone", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto match(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("match")] != -1);
-		return call<R>("match", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("match")] != -1);
+		return call<R>("match", std::forward<Args>(args)...);
 	}
 
 };

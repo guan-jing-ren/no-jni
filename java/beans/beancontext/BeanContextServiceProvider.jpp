@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::java::util::Iterator, typename... Args>
 	auto getCurrentServiceSelectors(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCurrentServiceSelectors")] != -1);
-		return call<R>("getCurrentServiceSelectors", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCurrentServiceSelectors")] != -1);
+		return call<R>("getCurrentServiceSelectors", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto getService(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getService")] != -1);
-		return call<R>("getService", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getService")] != -1);
+		return call<R>("getService", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto releaseService(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("releaseService")] != -1);
-		return call<R>("releaseService", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("releaseService")] != -1);
+		return call<R>("releaseService", std::forward<Args>(args)...);
 	}
 
 };

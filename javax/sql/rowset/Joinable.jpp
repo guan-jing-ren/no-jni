@@ -28,26 +28,26 @@ public:
 
 	template<typename R = ::jint *, typename... Args>
 	auto getMatchColumnIndexes(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMatchColumnIndexes")] != -1);
-		return call<R>("getMatchColumnIndexes", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMatchColumnIndexes")] != -1);
+		return call<R>("getMatchColumnIndexes", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String *, typename... Args>
 	auto getMatchColumnNames(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMatchColumnNames")] != -1);
-		return call<R>("getMatchColumnNames", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMatchColumnNames")] != -1);
+		return call<R>("getMatchColumnNames", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setMatchColumn(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMatchColumn")] != -1);
-		return call<R>("setMatchColumn", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setMatchColumn")] != -1);
+		return call<R>("setMatchColumn", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto unsetMatchColumn(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unsetMatchColumn")] != -1);
-		return call<R>("unsetMatchColumn", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unsetMatchColumn")] != -1);
+		return call<R>("unsetMatchColumn", std::forward<Args>(args)...);
 	}
 
 };

@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto changeShape(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("changeShape")] != -1);
-		return call<R>("changeShape", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("changeShape")] != -1);
+		return call<R>("changeShape", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::accessibility::AccessibleContext, typename... Args>
 	auto getAccessibleContext(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAccessibleContext")] != -1);
-		return call<R>("getAccessibleContext", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAccessibleContext")] != -1);
+		return call<R>("getAccessibleContext", std::forward<Args>(args)...);
 	}
 
 };

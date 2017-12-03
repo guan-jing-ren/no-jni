@@ -46,8 +46,8 @@ public:
 
 	template<typename R = ::java::security::spec::AlgorithmParameterSpec, typename... Args>
 	auto getParameterSpec(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParameterSpec")] != -1);
-		return call<R>("getParameterSpec", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getParameterSpec")] != -1);
+		return call<R>("getParameterSpec", std::forward<Args>(args)...);
 	}
 
 };

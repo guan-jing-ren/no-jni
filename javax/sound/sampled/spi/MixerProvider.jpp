@@ -22,20 +22,20 @@ public:
 
 	template<typename R = ::javax::sound::sampled::Mixer, typename... Args>
 	auto getMixer(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMixer")] != -1);
-		return call<R>("getMixer", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMixer")] != -1);
+		return call<R>("getMixer", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::sound::sampled::Mixer$Info *, typename... Args>
 	auto getMixerInfo(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMixerInfo")] != -1);
-		return call<R>("getMixerInfo", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMixerInfo")] != -1);
+		return call<R>("getMixerInfo", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isMixerSupported(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isMixerSupported")] != -1);
-		return call<R>("isMixerSupported", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isMixerSupported")] != -1);
+		return call<R>("isMixerSupported", std::forward<Args>(args)...);
 	}
 
 };

@@ -22,20 +22,20 @@ public:
 
 	template<typename R = ::java::lang::Boolean, typename... Args>
 	auto call(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("call")] != -1);
-		return call<R>("call", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("call")] != -1);
+		return call<R>("call", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setLocale(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLocale")] != -1);
-		return call<R>("setLocale", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setLocale")] != -1);
+		return call<R>("setLocale", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setProcessors(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setProcessors")] != -1);
-		return call<R>("setProcessors", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setProcessors")] != -1);
+		return call<R>("setProcessors", std::forward<Args>(args)...);
 	}
 
 };

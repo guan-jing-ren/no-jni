@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto shouldYieldFocus(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("shouldYieldFocus")] != -1);
-		return call<R>("shouldYieldFocus", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("shouldYieldFocus")] != -1);
+		return call<R>("shouldYieldFocus", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto verify(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("verify")] != -1);
-		return call<R>("verify", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("verify")] != -1);
+		return call<R>("verify", std::forward<Args>(args)...);
 	}
 
 };

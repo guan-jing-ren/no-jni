@@ -22,14 +22,14 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isTopDown(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isTopDown")] != -1);
-		return call<R>("isTopDown", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isTopDown")] != -1);
+		return call<R>("isTopDown", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setTopDown(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setTopDown")] != -1);
-		return call<R>("setTopDown", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setTopDown")] != -1);
+		return call<R>("setTopDown", std::forward<Args>(args)...);
 	}
 
 };

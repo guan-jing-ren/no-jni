@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getSQLTypeName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSQLTypeName")] != -1);
-		return call<R>("getSQLTypeName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSQLTypeName")] != -1);
+		return call<R>("getSQLTypeName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto readSQL(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("readSQL")] != -1);
-		return call<R>("readSQL", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("readSQL")] != -1);
+		return call<R>("readSQL", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto writeSQL(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("writeSQL")] != -1);
-		return call<R>("writeSQL", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeSQL")] != -1);
+		return call<R>("writeSQL", std::forward<Args>(args)...);
 	}
 
 };

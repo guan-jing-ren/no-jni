@@ -26,32 +26,32 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto await(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("await")] != -1);
-		return call<R>("await", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("await")] != -1);
+		return call<R>("await", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getNumberWaiting(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNumberWaiting")] != -1);
-		return call<R>("getNumberWaiting", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNumberWaiting")] != -1);
+		return call<R>("getNumberWaiting", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getParties(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParties")] != -1);
-		return call<R>("getParties", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getParties")] != -1);
+		return call<R>("getParties", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isBroken(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isBroken")] != -1);
-		return call<R>("isBroken", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isBroken")] != -1);
+		return call<R>("isBroken", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto reset(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("reset")] != -1);
-		return call<R>("reset", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("reset")] != -1);
+		return call<R>("reset", std::forward<Args>(args)...);
 	}
 
 };

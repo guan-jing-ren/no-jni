@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::java::util::Properties, typename... Args>
 	auto getOutputProperties(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOutputProperties")] != -1);
-		return call<R>("getOutputProperties", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOutputProperties")] != -1);
+		return call<R>("getOutputProperties", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::xml::transform::Transformer, typename... Args>
 	auto newTransformer(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newTransformer")] != -1);
-		return call<R>("newTransformer", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newTransformer")] != -1);
+		return call<R>("newTransformer", std::forward<Args>(args)...);
 	}
 
 };

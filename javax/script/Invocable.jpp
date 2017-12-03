@@ -22,20 +22,20 @@ public:
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto getInterface(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInterface")] != -1);
-		return call<R>("getInterface", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInterface")] != -1);
+		return call<R>("getInterface", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto invokeFunction(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("invokeFunction")] != -1);
-		return call<R>("invokeFunction", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("invokeFunction")] != -1);
+		return call<R>("invokeFunction", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto invokeMethod(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("invokeMethod")] != -1);
-		return call<R>("invokeMethod", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("invokeMethod")] != -1);
+		return call<R>("invokeMethod", std::forward<Args>(args)...);
 	}
 
 };

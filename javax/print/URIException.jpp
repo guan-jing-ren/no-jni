@@ -40,14 +40,14 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto getReason(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getReason")] != -1);
-		return call<R>("getReason", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getReason")] != -1);
+		return call<R>("getReason", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::net::URI, typename... Args>
 	auto getUnsupportedURI(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUnsupportedURI")] != -1);
-		return call<R>("getUnsupportedURI", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUnsupportedURI")] != -1);
+		return call<R>("getUnsupportedURI", std::forward<Args>(args)...);
 	}
 
 };

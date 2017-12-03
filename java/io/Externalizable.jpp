@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto readExternal(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("readExternal")] != -1);
-		return call<R>("readExternal", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("readExternal")] != -1);
+		return call<R>("readExternal", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto writeExternal(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("writeExternal")] != -1);
-		return call<R>("writeExternal", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeExternal")] != -1);
+		return call<R>("writeExternal", std::forward<Args>(args)...);
 	}
 
 };

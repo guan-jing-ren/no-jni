@@ -28,38 +28,38 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto close(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
-		return call<R>("close", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::net::URL, typename... Args>
 	auto findResource(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("findResource")] != -1);
-		return call<R>("findResource", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("findResource")] != -1);
+		return call<R>("findResource", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Enumeration, typename... Args>
 	auto findResources(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("findResources")] != -1);
-		return call<R>("findResources", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("findResources")] != -1);
+		return call<R>("findResources", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::io::InputStream, typename... Args>
 	auto getResourceAsStream(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getResourceAsStream")] != -1);
-		return call<R>("getResourceAsStream", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getResourceAsStream")] != -1);
+		return call<R>("getResourceAsStream", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::net::URL *, typename... Args>
 	auto getURLs(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getURLs")] != -1);
-		return call<R>("getURLs", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getURLs")] != -1);
+		return call<R>("getURLs", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::net::URLClassLoader, typename... Args>
 	static auto newInstance(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newInstance")] != -1);
-		return scall<R>("newInstance", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newInstance")] != -1);
+		return scall<R>("newInstance", std::forward<Args>(args)...);
 	}
 
 };

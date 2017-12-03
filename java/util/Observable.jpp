@@ -26,38 +26,38 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto addObserver(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addObserver")] != -1);
-		return call<R>("addObserver", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addObserver")] != -1);
+		return call<R>("addObserver", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto countObservers(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("countObservers")] != -1);
-		return call<R>("countObservers", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("countObservers")] != -1);
+		return call<R>("countObservers", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto deleteObserver(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("deleteObserver")] != -1);
-		return call<R>("deleteObserver", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("deleteObserver")] != -1);
+		return call<R>("deleteObserver", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto deleteObservers(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("deleteObservers")] != -1);
-		return call<R>("deleteObservers", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("deleteObservers")] != -1);
+		return call<R>("deleteObservers", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto hasChanged(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hasChanged")] != -1);
-		return call<R>("hasChanged", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hasChanged")] != -1);
+		return call<R>("hasChanged", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto notifyObservers(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("notifyObservers")] != -1);
-		return call<R>("notifyObservers", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("notifyObservers")] != -1);
+		return call<R>("notifyObservers", std::forward<Args>(args)...);
 	}
 
 };

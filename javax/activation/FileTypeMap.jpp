@@ -23,20 +23,20 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getContentType(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getContentType")] != -1);
-		return call<R>("getContentType", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getContentType")] != -1);
+		return call<R>("getContentType", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::activation::FileTypeMap, typename... Args>
 	static auto getDefaultFileTypeMap(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaultFileTypeMap")] != -1);
-		return scall<R>("getDefaultFileTypeMap", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDefaultFileTypeMap")] != -1);
+		return scall<R>("getDefaultFileTypeMap", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	static auto setDefaultFileTypeMap(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDefaultFileTypeMap")] != -1);
-		return scall<R>("setDefaultFileTypeMap", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setDefaultFileTypeMap")] != -1);
+		return scall<R>("setDefaultFileTypeMap", std::forward<Args>(args)...);
 	}
 
 };

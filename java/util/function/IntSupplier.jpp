@@ -19,8 +19,8 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto getAsInt(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAsInt")] != -1);
-		return call<R>("getAsInt", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAsInt")] != -1);
+		return call<R>("getAsInt", std::forward<Args>(args)...);
 	}
 
 };

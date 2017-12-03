@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto objectAdded(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("objectAdded")] != -1);
-		return call<R>("objectAdded", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("objectAdded")] != -1);
+		return call<R>("objectAdded", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto objectRemoved(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("objectRemoved")] != -1);
-		return call<R>("objectRemoved", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("objectRemoved")] != -1);
+		return call<R>("objectRemoved", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto objectRenamed(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("objectRenamed")] != -1);
-		return call<R>("objectRenamed", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("objectRenamed")] != -1);
+		return call<R>("objectRenamed", std::forward<Args>(args)...);
 	}
 
 };

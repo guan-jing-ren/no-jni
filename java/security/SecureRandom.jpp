@@ -31,50 +31,50 @@ public:
 
 	template<typename R = ::jbyte *, typename... Args>
 	auto generateSeed(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("generateSeed")] != -1);
-		return call<R>("generateSeed", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("generateSeed")] != -1);
+		return call<R>("generateSeed", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getAlgorithm(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlgorithm")] != -1);
-		return call<R>("getAlgorithm", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAlgorithm")] != -1);
+		return call<R>("getAlgorithm", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::security::SecureRandom, typename... Args>
 	static auto getInstance(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
-		return scall<R>("getInstance", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::security::SecureRandom, typename... Args>
 	static auto getInstanceStrong(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstanceStrong")] != -1);
-		return scall<R>("getInstanceStrong", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstanceStrong")] != -1);
+		return scall<R>("getInstanceStrong", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::security::Provider, typename... Args>
 	auto getProvider(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProvider")] != -1);
-		return call<R>("getProvider", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getProvider")] != -1);
+		return call<R>("getProvider", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jbyte *, typename... Args>
 	static auto getSeed(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSeed")] != -1);
-		return scall<R>("getSeed", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSeed")] != -1);
+		return scall<R>("getSeed", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto nextBytes(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nextBytes")] != -1);
-		return call<R>("nextBytes", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("nextBytes")] != -1);
+		return call<R>("nextBytes", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setSeed(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSeed")] != -1);
-		return call<R>("setSeed", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setSeed")] != -1);
+		return call<R>("setSeed", std::forward<Args>(args)...);
 	}
 
 };

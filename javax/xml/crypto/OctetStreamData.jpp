@@ -23,20 +23,20 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getMimeType(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMimeType")] != -1);
-		return call<R>("getMimeType", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMimeType")] != -1);
+		return call<R>("getMimeType", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::io::InputStream, typename... Args>
 	auto getOctetStream(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOctetStream")] != -1);
-		return call<R>("getOctetStream", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOctetStream")] != -1);
+		return call<R>("getOctetStream", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getURI(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getURI")] != -1);
-		return call<R>("getURI", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getURI")] != -1);
+		return call<R>("getURI", std::forward<Args>(args)...);
 	}
 
 };

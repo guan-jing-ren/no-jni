@@ -22,26 +22,26 @@ public:
 
 	template<typename R = ::javax::tools::JavaFileObject, typename... Args>
 	auto createClassFile(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createClassFile")] != -1);
-		return call<R>("createClassFile", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createClassFile")] != -1);
+		return call<R>("createClassFile", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::tools::FileObject, typename... Args>
 	auto createResource(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createResource")] != -1);
-		return call<R>("createResource", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createResource")] != -1);
+		return call<R>("createResource", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::tools::JavaFileObject, typename... Args>
 	auto createSourceFile(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createSourceFile")] != -1);
-		return call<R>("createSourceFile", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createSourceFile")] != -1);
+		return call<R>("createSourceFile", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::tools::FileObject, typename... Args>
 	auto getResource(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getResource")] != -1);
-		return call<R>("getResource", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getResource")] != -1);
+		return call<R>("getResource", std::forward<Args>(args)...);
 	}
 
 };

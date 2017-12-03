@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto login(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("login")] != -1);
-		return call<R>("login", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("login")] != -1);
+		return call<R>("login", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto logout(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("logout")] != -1);
-		return call<R>("logout", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("logout")] != -1);
+		return call<R>("logout", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setCallbackHandler(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setCallbackHandler")] != -1);
-		return call<R>("setCallbackHandler", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setCallbackHandler")] != -1);
+		return call<R>("setCallbackHandler", std::forward<Args>(args)...);
 	}
 
 };

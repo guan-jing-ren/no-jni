@@ -28,32 +28,32 @@ public:
 
 	template<typename R = ::java::nio::channels::ReadableByteChannel, typename... Args>
 	static auto newChannel(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newChannel")] != -1);
-		return scall<R>("newChannel", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newChannel")] != -1);
+		return scall<R>("newChannel", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::io::InputStream, typename... Args>
 	static auto newInputStream(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newInputStream")] != -1);
-		return scall<R>("newInputStream", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newInputStream")] != -1);
+		return scall<R>("newInputStream", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::io::OutputStream, typename... Args>
 	static auto newOutputStream(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newOutputStream")] != -1);
-		return scall<R>("newOutputStream", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newOutputStream")] != -1);
+		return scall<R>("newOutputStream", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::io::Reader, typename... Args>
 	static auto newReader(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newReader")] != -1);
-		return scall<R>("newReader", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newReader")] != -1);
+		return scall<R>("newReader", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::io::Writer, typename... Args>
 	static auto newWriter(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newWriter")] != -1);
-		return scall<R>("newWriter", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newWriter")] != -1);
+		return scall<R>("newWriter", std::forward<Args>(args)...);
 	}
 
 };

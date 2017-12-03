@@ -22,20 +22,20 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getRelationTypeName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRelationTypeName")] != -1);
-		return call<R>("getRelationTypeName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRelationTypeName")] != -1);
+		return call<R>("getRelationTypeName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::management::relation::RoleInfo, typename... Args>
 	auto getRoleInfo(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRoleInfo")] != -1);
-		return call<R>("getRoleInfo", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRoleInfo")] != -1);
+		return call<R>("getRoleInfo", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::List, typename... Args>
 	auto getRoleInfos(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRoleInfos")] != -1);
-		return call<R>("getRoleInfos", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRoleInfos")] != -1);
+		return call<R>("getRoleInfos", std::forward<Args>(args)...);
 	}
 
 };

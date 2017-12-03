@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto valueBound(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueBound")] != -1);
-		return call<R>("valueBound", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("valueBound")] != -1);
+		return call<R>("valueBound", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto valueUnbound(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("valueUnbound")] != -1);
-		return call<R>("valueUnbound", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("valueUnbound")] != -1);
+		return call<R>("valueUnbound", std::forward<Args>(args)...);
 	}
 
 };

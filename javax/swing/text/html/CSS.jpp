@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::javax::swing::text::html::CSS$Attribute *, typename... Args>
 	static auto getAllAttributeKeys(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAllAttributeKeys")] != -1);
-		return scall<R>("getAllAttributeKeys", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAllAttributeKeys")] != -1);
+		return scall<R>("getAllAttributeKeys", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::swing::text::html::CSS$Attribute, typename... Args>
 	static auto getAttribute(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttribute")] != -1);
-		return scall<R>("getAttribute", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAttribute")] != -1);
+		return scall<R>("getAttribute", std::forward<Args>(args)...);
 	}
 
 };

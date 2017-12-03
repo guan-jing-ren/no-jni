@@ -23,20 +23,20 @@ public:
 
 	template<typename R = ::java::lang::String *, typename... Args>
 	auto _all_interfaces(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("_all_interfaces")] != -1);
-		return call<R>("_all_interfaces", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("_all_interfaces")] != -1);
+		return call<R>("_all_interfaces", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::omg::CORBA::portable::OutputStream, typename... Args>
 	auto _invoke(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("_invoke")] != -1);
-		return call<R>("_invoke", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("_invoke")] != -1);
+		return call<R>("_invoke", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::omg::PortableServer::ServantLocator, typename... Args>
 	auto _this(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("_this")] != -1);
-		return call<R>("_this", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("_this")] != -1);
+		return call<R>("_this", std::forward<Args>(args)...);
 	}
 
 };

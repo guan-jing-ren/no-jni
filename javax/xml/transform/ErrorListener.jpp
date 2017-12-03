@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto error(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("error")] != -1);
-		return call<R>("error", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("error")] != -1);
+		return call<R>("error", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto fatalError(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("fatalError")] != -1);
-		return call<R>("fatalError", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("fatalError")] != -1);
+		return call<R>("fatalError", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto warning(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("warning")] != -1);
-		return call<R>("warning", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("warning")] != -1);
+		return call<R>("warning", std::forward<Args>(args)...);
 	}
 
 };

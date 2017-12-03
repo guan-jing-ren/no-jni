@@ -29,26 +29,26 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	static auto disableSwingFocusManager(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("disableSwingFocusManager")] != -1);
-		return scall<R>("disableSwingFocusManager", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("disableSwingFocusManager")] != -1);
+		return scall<R>("disableSwingFocusManager", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::swing::FocusManager, typename... Args>
 	static auto getCurrentManager(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCurrentManager")] != -1);
-		return scall<R>("getCurrentManager", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCurrentManager")] != -1);
+		return scall<R>("getCurrentManager", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	static auto isFocusManagerEnabled(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isFocusManagerEnabled")] != -1);
-		return scall<R>("isFocusManagerEnabled", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isFocusManagerEnabled")] != -1);
+		return scall<R>("isFocusManagerEnabled", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	static auto setCurrentManager(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setCurrentManager")] != -1);
-		return scall<R>("setCurrentManager", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setCurrentManager")] != -1);
+		return scall<R>("setCurrentManager", std::forward<Args>(args)...);
 	}
 
 };

@@ -30,26 +30,26 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	static auto checkPermission(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("checkPermission")] != -1);
-		return scall<R>("checkPermission", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkPermission")] != -1);
+		return scall<R>("checkPermission", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	static auto doPrivileged(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("doPrivileged")] != -1);
-		return scall<R>("doPrivileged", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("doPrivileged")] != -1);
+		return scall<R>("doPrivileged", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	static auto doPrivilegedWithCombiner(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("doPrivilegedWithCombiner")] != -1);
-		return scall<R>("doPrivilegedWithCombiner", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("doPrivilegedWithCombiner")] != -1);
+		return scall<R>("doPrivilegedWithCombiner", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::security::AccessControlContext, typename... Args>
 	static auto getContext(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getContext")] != -1);
-		return scall<R>("getContext", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getContext")] != -1);
+		return scall<R>("getContext", std::forward<Args>(args)...);
 	}
 
 };

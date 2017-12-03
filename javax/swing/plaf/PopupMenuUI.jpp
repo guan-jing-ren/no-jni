@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::javax::swing::Popup, typename... Args>
 	auto getPopup(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPopup")] != -1);
-		return call<R>("getPopup", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPopup")] != -1);
+		return call<R>("getPopup", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isPopupTrigger(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isPopupTrigger")] != -1);
-		return call<R>("isPopupTrigger", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isPopupTrigger")] != -1);
+		return call<R>("isPopupTrigger", std::forward<Args>(args)...);
 	}
 
 };

@@ -34,14 +34,14 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto getKeysize(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getKeysize")] != -1);
-		return call<R>("getKeysize", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getKeysize")] != -1);
+		return call<R>("getKeysize", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::math::BigInteger, typename... Args>
 	auto getPublicExponent(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPublicExponent")] != -1);
-		return call<R>("getPublicExponent", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPublicExponent")] != -1);
+		return call<R>("getPublicExponent", std::forward<Args>(args)...);
 	}
 
 };

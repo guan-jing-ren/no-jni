@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto post_init(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("post_init")] != -1);
-		return call<R>("post_init", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("post_init")] != -1);
+		return call<R>("post_init", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto pre_init(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("pre_init")] != -1);
-		return call<R>("pre_init", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("pre_init")] != -1);
+		return call<R>("pre_init", std::forward<Args>(args)...);
 	}
 
 };

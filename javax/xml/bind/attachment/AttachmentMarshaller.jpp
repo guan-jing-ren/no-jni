@@ -23,20 +23,20 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto addMtomAttachment(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addMtomAttachment")] != -1);
-		return call<R>("addMtomAttachment", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addMtomAttachment")] != -1);
+		return call<R>("addMtomAttachment", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto addSwaRefAttachment(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addSwaRefAttachment")] != -1);
-		return call<R>("addSwaRefAttachment", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addSwaRefAttachment")] != -1);
+		return call<R>("addSwaRefAttachment", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isXOPPackage(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isXOPPackage")] != -1);
-		return call<R>("isXOPPackage", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isXOPPackage")] != -1);
+		return call<R>("isXOPPackage", std::forward<Args>(args)...);
 	}
 
 };

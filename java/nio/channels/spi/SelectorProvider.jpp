@@ -26,44 +26,44 @@ public:
 
 	template<typename R = ::java::nio::channels::Channel, typename... Args>
 	auto inheritedChannel(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("inheritedChannel")] != -1);
-		return call<R>("inheritedChannel", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("inheritedChannel")] != -1);
+		return call<R>("inheritedChannel", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::nio::channels::DatagramChannel, typename... Args>
 	auto openDatagramChannel(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("openDatagramChannel")] != -1);
-		return call<R>("openDatagramChannel", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("openDatagramChannel")] != -1);
+		return call<R>("openDatagramChannel", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::nio::channels::Pipe, typename... Args>
 	auto openPipe(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("openPipe")] != -1);
-		return call<R>("openPipe", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("openPipe")] != -1);
+		return call<R>("openPipe", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::nio::channels::spi::AbstractSelector, typename... Args>
 	auto openSelector(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("openSelector")] != -1);
-		return call<R>("openSelector", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("openSelector")] != -1);
+		return call<R>("openSelector", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::nio::channels::ServerSocketChannel, typename... Args>
 	auto openServerSocketChannel(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("openServerSocketChannel")] != -1);
-		return call<R>("openServerSocketChannel", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("openServerSocketChannel")] != -1);
+		return call<R>("openServerSocketChannel", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::nio::channels::SocketChannel, typename... Args>
 	auto openSocketChannel(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("openSocketChannel")] != -1);
-		return call<R>("openSocketChannel", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("openSocketChannel")] != -1);
+		return call<R>("openSocketChannel", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::nio::channels::spi::SelectorProvider, typename... Args>
 	static auto provider(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("provider")] != -1);
-		return scall<R>("provider", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("provider")] != -1);
+		return scall<R>("provider", std::forward<Args>(args)...);
 	}
 
 };

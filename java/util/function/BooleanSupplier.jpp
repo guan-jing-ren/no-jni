@@ -19,8 +19,8 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto getAsBoolean(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAsBoolean")] != -1);
-		return call<R>("getAsBoolean", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAsBoolean")] != -1);
+		return call<R>("getAsBoolean", std::forward<Args>(args)...);
 	}
 
 };

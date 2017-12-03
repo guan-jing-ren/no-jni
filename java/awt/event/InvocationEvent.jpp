@@ -47,38 +47,38 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto dispatch(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dispatch")] != -1);
-		return call<R>("dispatch", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dispatch")] != -1);
+		return call<R>("dispatch", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Exception, typename... Args>
 	auto getException(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getException")] != -1);
-		return call<R>("getException", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getException")] != -1);
+		return call<R>("getException", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Throwable, typename... Args>
 	auto getThrowable(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getThrowable")] != -1);
-		return call<R>("getThrowable", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getThrowable")] != -1);
+		return call<R>("getThrowable", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jlong, typename... Args>
 	auto getWhen(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWhen")] != -1);
-		return call<R>("getWhen", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getWhen")] != -1);
+		return call<R>("getWhen", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isDispatched(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isDispatched")] != -1);
-		return call<R>("isDispatched", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isDispatched")] != -1);
+		return call<R>("isDispatched", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto paramString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paramString")] != -1);
-		return call<R>("paramString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("paramString")] != -1);
+		return call<R>("paramString", std::forward<Args>(args)...);
 	}
 
 };

@@ -24,38 +24,38 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto lookup(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lookup")] != -1);
-		return call<R>("lookup", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("lookup")] != -1);
+		return call<R>("lookup", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto mappedName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("mappedName")] != -1);
-		return call<R>("mappedName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("mappedName")] != -1);
+		return call<R>("mappedName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto name(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("name")] != -1);
-		return call<R>("name", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("name")] != -1);
+		return call<R>("name", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Class, typename... Args>
 	auto type(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("type")] != -1);
-		return call<R>("type", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("type")] != -1);
+		return call<R>("type", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Class, typename... Args>
 	auto value(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("value")] != -1);
-		return call<R>("value", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("value")] != -1);
+		return call<R>("value", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto wsdlLocation(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("wsdlLocation")] != -1);
-		return call<R>("wsdlLocation", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("wsdlLocation")] != -1);
+		return call<R>("wsdlLocation", std::forward<Args>(args)...);
 	}
 
 };

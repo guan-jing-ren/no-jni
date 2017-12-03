@@ -22,26 +22,26 @@ public:
 
 	template<typename R = ::java::beans::beancontext::BeanContext, typename... Args>
 	auto getBeanContext(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBeanContext")] != -1);
-		return call<R>("getBeanContext", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBeanContext")] != -1);
+		return call<R>("getBeanContext", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::beans::beancontext::BeanContext, typename... Args>
 	auto getPropagatedFrom(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPropagatedFrom")] != -1);
-		return call<R>("getPropagatedFrom", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPropagatedFrom")] != -1);
+		return call<R>("getPropagatedFrom", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isPropagated(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isPropagated")] != -1);
-		return call<R>("isPropagated", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isPropagated")] != -1);
+		return call<R>("isPropagated", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setPropagatedFrom(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPropagatedFrom")] != -1);
-		return call<R>("setPropagatedFrom", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setPropagatedFrom")] != -1);
+		return call<R>("setPropagatedFrom", std::forward<Args>(args)...);
 	}
 
 };

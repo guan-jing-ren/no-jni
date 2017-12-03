@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto statementClosed(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("statementClosed")] != -1);
-		return call<R>("statementClosed", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("statementClosed")] != -1);
+		return call<R>("statementClosed", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto statementErrorOccurred(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("statementErrorOccurred")] != -1);
-		return call<R>("statementErrorOccurred", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("statementErrorOccurred")] != -1);
+		return call<R>("statementErrorOccurred", std::forward<Args>(args)...);
 	}
 
 };

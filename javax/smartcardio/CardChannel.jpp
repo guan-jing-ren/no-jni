@@ -23,26 +23,26 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto close(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
-		return call<R>("close", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::smartcardio::Card, typename... Args>
 	auto getCard(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCard")] != -1);
-		return call<R>("getCard", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCard")] != -1);
+		return call<R>("getCard", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getChannelNumber(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getChannelNumber")] != -1);
-		return call<R>("getChannelNumber", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getChannelNumber")] != -1);
+		return call<R>("getChannelNumber", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto transmit(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("transmit")] != -1);
-		return call<R>("transmit", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("transmit")] != -1);
+		return call<R>("transmit", std::forward<Args>(args)...);
 	}
 
 };

@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::javax::xml::ws::FaultAction *, typename... Args>
 	auto fault(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("fault")] != -1);
-		return call<R>("fault", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("fault")] != -1);
+		return call<R>("fault", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto input(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("input")] != -1);
-		return call<R>("input", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("input")] != -1);
+		return call<R>("input", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto output(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("output")] != -1);
-		return call<R>("output", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("output")] != -1);
+		return call<R>("output", std::forward<Args>(args)...);
 	}
 
 };

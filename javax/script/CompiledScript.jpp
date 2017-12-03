@@ -23,14 +23,14 @@ public:
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto eval(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("eval")] != -1);
-		return call<R>("eval", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("eval")] != -1);
+		return call<R>("eval", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::script::ScriptEngine, typename... Args>
 	auto getEngine(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getEngine")] != -1);
-		return call<R>("getEngine", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEngine")] != -1);
+		return call<R>("getEngine", std::forward<Args>(args)...);
 	}
 
 };

@@ -23,26 +23,26 @@ public:
 
 	template<typename R = ::javax::swing::border::Border, typename... Args>
 	auto getBorder(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBorder")] != -1);
-		return call<R>("getBorder", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBorder")] != -1);
+		return call<R>("getBorder", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::Font, typename... Args>
 	auto getFont(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFont")] != -1);
-		return call<R>("getFont", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFont")] != -1);
+		return call<R>("getFont", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::Dimension, typename... Args>
 	auto getPreferredSize(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPreferredSize")] != -1);
-		return call<R>("getPreferredSize", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPreferredSize")] != -1);
+		return call<R>("getPreferredSize", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setBorder(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setBorder")] != -1);
-		return call<R>("setBorder", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setBorder")] != -1);
+		return call<R>("setBorder", std::forward<Args>(args)...);
 	}
 
 };

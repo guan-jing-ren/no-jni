@@ -24,38 +24,38 @@ public:
 
 	template<typename R = ::java::util::Enumeration, typename... Args>
 	auto getIds(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIds")] != -1);
-		return call<R>("getIds", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIds")] != -1);
+		return call<R>("getIds", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::net::ssl::SSLSession, typename... Args>
 	auto getSession(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSession")] != -1);
-		return call<R>("getSession", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSession")] != -1);
+		return call<R>("getSession", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getSessionCacheSize(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSessionCacheSize")] != -1);
-		return call<R>("getSessionCacheSize", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSessionCacheSize")] != -1);
+		return call<R>("getSessionCacheSize", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getSessionTimeout(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSessionTimeout")] != -1);
-		return call<R>("getSessionTimeout", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSessionTimeout")] != -1);
+		return call<R>("getSessionTimeout", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setSessionCacheSize(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSessionCacheSize")] != -1);
-		return call<R>("setSessionCacheSize", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setSessionCacheSize")] != -1);
+		return call<R>("setSessionCacheSize", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setSessionTimeout(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSessionTimeout")] != -1);
-		return call<R>("setSessionTimeout", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setSessionTimeout")] != -1);
+		return call<R>("setSessionTimeout", std::forward<Args>(args)...);
 	}
 
 };

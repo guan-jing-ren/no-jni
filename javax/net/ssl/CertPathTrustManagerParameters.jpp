@@ -20,8 +20,8 @@ public:
 
 	template<typename R = ::java::security::cert::CertPathParameters, typename... Args>
 	auto getParameters(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParameters")] != -1);
-		return call<R>("getParameters", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getParameters")] != -1);
+		return call<R>("getParameters", std::forward<Args>(args)...);
 	}
 
 };

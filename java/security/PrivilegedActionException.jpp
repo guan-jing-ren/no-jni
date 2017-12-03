@@ -22,20 +22,20 @@ public:
 
 	template<typename R = ::java::lang::Throwable, typename... Args>
 	auto getCause(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCause")] != -1);
-		return call<R>("getCause", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCause")] != -1);
+		return call<R>("getCause", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Exception, typename... Args>
 	auto getException(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getException")] != -1);
-		return call<R>("getException", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getException")] != -1);
+		return call<R>("getException", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto toString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
-		return call<R>("toString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
 	}
 
 };

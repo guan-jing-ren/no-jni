@@ -47,50 +47,50 @@ public:
 
 	template<typename R = ::java::io::PrintStream, typename... Args>
 	static auto getDefaultStream(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaultStream")] != -1);
-		return scall<R>("getDefaultStream", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDefaultStream")] != -1);
+		return scall<R>("getDefaultStream", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::io::OutputStream, typename... Args>
 	auto getOutputStream(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getOutputStream")] != -1);
-		return call<R>("getOutputStream", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOutputStream")] != -1);
+		return call<R>("getOutputStream", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::rmi::server::LogStream, typename... Args>
 	static auto log(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("log")] != -1);
-		return scall<R>("log", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("log")] != -1);
+		return scall<R>("log", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	static auto parseLevel(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("parseLevel")] != -1);
-		return scall<R>("parseLevel", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("parseLevel")] != -1);
+		return scall<R>("parseLevel", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	static auto setDefaultStream(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDefaultStream")] != -1);
-		return scall<R>("setDefaultStream", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setDefaultStream")] != -1);
+		return scall<R>("setDefaultStream", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setOutputStream(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setOutputStream")] != -1);
-		return call<R>("setOutputStream", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setOutputStream")] != -1);
+		return call<R>("setOutputStream", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto toString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
-		return call<R>("toString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto write(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write")] != -1);
-		return call<R>("write", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", std::forward<Args>(args)...);
 	}
 
 };

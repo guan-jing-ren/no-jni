@@ -24,32 +24,32 @@ public:
 
 	template<typename R = ::java::util::Enumeration, typename... Args>
 	auto children(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("children")] != -1);
-		return call<R>("children", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("children")] != -1);
+		return call<R>("children", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	static auto createChildren(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createChildren")] != -1);
-		return scall<R>("createChildren", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createChildren")] != -1);
+		return scall<R>("createChildren", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::swing::tree::TreeNode, typename... Args>
 	auto getChildAt(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getChildAt")] != -1);
-		return call<R>("getChildAt", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getChildAt")] != -1);
+		return call<R>("getChildAt", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getChildCount(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getChildCount")] != -1);
-		return call<R>("getChildCount", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getChildCount")] != -1);
+		return call<R>("getChildCount", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isLeaf(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isLeaf")] != -1);
-		return call<R>("isLeaf", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isLeaf")] != -1);
+		return call<R>("isLeaf", std::forward<Args>(args)...);
 	}
 
 };

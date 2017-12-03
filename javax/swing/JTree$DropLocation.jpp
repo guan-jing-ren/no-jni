@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto getChildIndex(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getChildIndex")] != -1);
-		return call<R>("getChildIndex", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getChildIndex")] != -1);
+		return call<R>("getChildIndex", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::swing::tree::TreePath, typename... Args>
 	auto getPath(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPath")] != -1);
-		return call<R>("getPath", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPath")] != -1);
+		return call<R>("getPath", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto toString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
-		return call<R>("toString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
 	}
 
 };

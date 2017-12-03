@@ -26,26 +26,26 @@ public:
 
 	template<typename R = ::java::util::stream::DoubleStream, typename... Args>
 	static auto doubleStream(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("doubleStream")] != -1);
-		return scall<R>("doubleStream", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("doubleStream")] != -1);
+		return scall<R>("doubleStream", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::stream::IntStream, typename... Args>
 	static auto intStream(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("intStream")] != -1);
-		return scall<R>("intStream", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("intStream")] != -1);
+		return scall<R>("intStream", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::stream::LongStream, typename... Args>
 	static auto longStream(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("longStream")] != -1);
-		return scall<R>("longStream", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("longStream")] != -1);
+		return scall<R>("longStream", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::stream::Stream, typename... Args>
 	static auto stream(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("stream")] != -1);
-		return scall<R>("stream", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("stream")] != -1);
+		return scall<R>("stream", std::forward<Args>(args)...);
 	}
 
 };

@@ -39,56 +39,56 @@ public:
 
 	template<typename R = ::java::io::CharArrayWriter, typename... Args>
 	auto append(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("append")] != -1);
-		return call<R>("append", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("append")] != -1);
+		return call<R>("append", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto close(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
-		return call<R>("close", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto flush(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("flush")] != -1);
-		return call<R>("flush", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("flush")] != -1);
+		return call<R>("flush", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto reset(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("reset")] != -1);
-		return call<R>("reset", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("reset")] != -1);
+		return call<R>("reset", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto size(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("size")] != -1);
-		return call<R>("size", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("size")] != -1);
+		return call<R>("size", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jchar *, typename... Args>
 	auto toCharArray(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toCharArray")] != -1);
-		return call<R>("toCharArray", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toCharArray")] != -1);
+		return call<R>("toCharArray", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto toString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
-		return call<R>("toString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto write(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write")] != -1);
-		return call<R>("write", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto writeTo(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("writeTo")] != -1);
-		return call<R>("writeTo", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeTo")] != -1);
+		return call<R>("writeTo", std::forward<Args>(args)...);
 	}
 
 };

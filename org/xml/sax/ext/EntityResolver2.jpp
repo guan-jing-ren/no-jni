@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::org::xml::sax::InputSource, typename... Args>
 	auto getExternalSubset(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getExternalSubset")] != -1);
-		return call<R>("getExternalSubset", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getExternalSubset")] != -1);
+		return call<R>("getExternalSubset", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::xml::sax::InputSource, typename... Args>
 	auto resolveEntity(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("resolveEntity")] != -1);
-		return call<R>("resolveEntity", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("resolveEntity")] != -1);
+		return call<R>("resolveEntity", std::forward<Args>(args)...);
 	}
 
 };

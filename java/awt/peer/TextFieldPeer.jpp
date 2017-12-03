@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::java::awt::Dimension, typename... Args>
 	auto getMinimumSize(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMinimumSize")] != -1);
-		return call<R>("getMinimumSize", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMinimumSize")] != -1);
+		return call<R>("getMinimumSize", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::Dimension, typename... Args>
 	auto getPreferredSize(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPreferredSize")] != -1);
-		return call<R>("getPreferredSize", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPreferredSize")] != -1);
+		return call<R>("getPreferredSize", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setEchoChar(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setEchoChar")] != -1);
-		return call<R>("setEchoChar", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setEchoChar")] != -1);
+		return call<R>("setEchoChar", std::forward<Args>(args)...);
 	}
 
 };

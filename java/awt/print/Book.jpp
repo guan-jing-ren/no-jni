@@ -25,32 +25,32 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto append(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("append")] != -1);
-		return call<R>("append", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("append")] != -1);
+		return call<R>("append", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getNumberOfPages(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNumberOfPages")] != -1);
-		return call<R>("getNumberOfPages", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNumberOfPages")] != -1);
+		return call<R>("getNumberOfPages", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::print::PageFormat, typename... Args>
 	auto getPageFormat(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPageFormat")] != -1);
-		return call<R>("getPageFormat", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPageFormat")] != -1);
+		return call<R>("getPageFormat", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::print::Printable, typename... Args>
 	auto getPrintable(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrintable")] != -1);
-		return call<R>("getPrintable", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPrintable")] != -1);
+		return call<R>("getPrintable", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setPage(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPage")] != -1);
-		return call<R>("setPage", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setPage")] != -1);
+		return call<R>("setPage", std::forward<Args>(args)...);
 	}
 
 };

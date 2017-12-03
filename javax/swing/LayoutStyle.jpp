@@ -23,26 +23,26 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto getContainerGap(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getContainerGap")] != -1);
-		return call<R>("getContainerGap", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getContainerGap")] != -1);
+		return call<R>("getContainerGap", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::swing::LayoutStyle, typename... Args>
 	static auto getInstance(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
-		return scall<R>("getInstance", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getPreferredGap(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPreferredGap")] != -1);
-		return call<R>("getPreferredGap", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPreferredGap")] != -1);
+		return call<R>("getPreferredGap", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	static auto setInstance(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setInstance")] != -1);
-		return scall<R>("setInstance", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setInstance")] != -1);
+		return scall<R>("setInstance", std::forward<Args>(args)...);
 	}
 
 };

@@ -23,20 +23,20 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getLocation(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLocation")] != -1);
-		return call<R>("getLocation", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLocation")] != -1);
+		return call<R>("getLocation", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getReason(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getReason")] != -1);
-		return call<R>("getReason", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getReason")] != -1);
+		return call<R>("getReason", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto responseCode(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("responseCode")] != -1);
-		return call<R>("responseCode", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("responseCode")] != -1);
+		return call<R>("responseCode", std::forward<Args>(args)...);
 	}
 
 };

@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::java::lang::reflect::Type *, typename... Args>
 	auto getLowerBounds(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLowerBounds")] != -1);
-		return call<R>("getLowerBounds", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLowerBounds")] != -1);
+		return call<R>("getLowerBounds", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::reflect::Type *, typename... Args>
 	auto getUpperBounds(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUpperBounds")] != -1);
-		return call<R>("getUpperBounds", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUpperBounds")] != -1);
+		return call<R>("getUpperBounds", std::forward<Args>(args)...);
 	}
 
 };

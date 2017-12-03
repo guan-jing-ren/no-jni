@@ -24,14 +24,14 @@ public:
 
 	template<typename R = ::java::net::Socket, typename... Args>
 	auto createSocket(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createSocket")] != -1);
-		return call<R>("createSocket", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createSocket")] != -1);
+		return call<R>("createSocket", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::net::SocketFactory, typename... Args>
 	static auto getDefault(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefault")] != -1);
-		return scall<R>("getDefault", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDefault")] != -1);
+		return scall<R>("getDefault", std::forward<Args>(args)...);
 	}
 
 };

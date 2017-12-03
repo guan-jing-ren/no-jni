@@ -22,26 +22,26 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto get_as_string(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get_as_string")] != -1);
-		return call<R>("get_as_string", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get_as_string")] != -1);
+		return call<R>("get_as_string", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto get_as_ulong(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get_as_ulong")] != -1);
-		return call<R>("get_as_ulong", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get_as_ulong")] != -1);
+		return call<R>("get_as_ulong", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto set_as_string(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set_as_string")] != -1);
-		return call<R>("set_as_string", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set_as_string")] != -1);
+		return call<R>("set_as_string", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto set_as_ulong(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set_as_ulong")] != -1);
-		return call<R>("set_as_ulong", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set_as_ulong")] != -1);
+		return call<R>("set_as_ulong", std::forward<Args>(args)...);
 	}
 
 };

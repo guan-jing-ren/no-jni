@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::javax::lang::model::type::TypeMirror, typename... Args>
 	auto getExtendsBound(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getExtendsBound")] != -1);
-		return call<R>("getExtendsBound", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getExtendsBound")] != -1);
+		return call<R>("getExtendsBound", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::lang::model::type::TypeMirror, typename... Args>
 	auto getSuperBound(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSuperBound")] != -1);
-		return call<R>("getSuperBound", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSuperBound")] != -1);
+		return call<R>("getSuperBound", std::forward<Args>(args)...);
 	}
 
 };

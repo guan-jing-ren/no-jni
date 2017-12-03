@@ -48,44 +48,44 @@ public:
 
 	template<typename R = ::javax::management::remote::JMXServiceURL, typename... Args>
 	auto getAddress(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAddress")] != -1);
-		return call<R>("getAddress", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAddress")] != -1);
+		return call<R>("getAddress", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Map, typename... Args>
 	auto getAttributes(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttributes")] != -1);
-		return call<R>("getAttributes", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAttributes")] != -1);
+		return call<R>("getAttributes", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isActive(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isActive")] != -1);
-		return call<R>("isActive", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isActive")] != -1);
+		return call<R>("isActive", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setMBeanServerForwarder(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMBeanServerForwarder")] != -1);
-		return call<R>("setMBeanServerForwarder", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setMBeanServerForwarder")] != -1);
+		return call<R>("setMBeanServerForwarder", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto start(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("start")] != -1);
-		return call<R>("start", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("start")] != -1);
+		return call<R>("start", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto stop(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("stop")] != -1);
-		return call<R>("stop", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("stop")] != -1);
+		return call<R>("stop", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::management::remote::JMXConnector, typename... Args>
 	auto toJMXConnector(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toJMXConnector")] != -1);
-		return call<R>("toJMXConnector", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toJMXConnector")] != -1);
+		return call<R>("toJMXConnector", std::forward<Args>(args)...);
 	}
 
 };

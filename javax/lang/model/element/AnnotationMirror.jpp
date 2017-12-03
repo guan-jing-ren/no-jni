@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::javax::lang::model::type::DeclaredType, typename... Args>
 	auto getAnnotationType(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAnnotationType")] != -1);
-		return call<R>("getAnnotationType", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAnnotationType")] != -1);
+		return call<R>("getAnnotationType", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Map, typename... Args>
 	auto getElementValues(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getElementValues")] != -1);
-		return call<R>("getElementValues", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getElementValues")] != -1);
+		return call<R>("getElementValues", std::forward<Args>(args)...);
 	}
 
 };

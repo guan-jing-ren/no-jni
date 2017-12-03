@@ -41,14 +41,14 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getMessage(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMessage")] != -1);
-		return call<R>("getMessage", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMessage")] != -1);
+		return call<R>("getMessage", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getMessageType(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMessageType")] != -1);
-		return call<R>("getMessageType", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMessageType")] != -1);
+		return call<R>("getMessageType", std::forward<Args>(args)...);
 	}
 
 };

@@ -22,26 +22,26 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getData(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getData")] != -1);
-		return call<R>("getData", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getData")] != -1);
+		return call<R>("getData", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isCData(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isCData")] != -1);
-		return call<R>("isCData", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isCData")] != -1);
+		return call<R>("isCData", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isIgnorableWhiteSpace(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isIgnorableWhiteSpace")] != -1);
-		return call<R>("isIgnorableWhiteSpace", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isIgnorableWhiteSpace")] != -1);
+		return call<R>("isIgnorableWhiteSpace", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isWhiteSpace(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isWhiteSpace")] != -1);
-		return call<R>("isWhiteSpace", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isWhiteSpace")] != -1);
+		return call<R>("isWhiteSpace", std::forward<Args>(args)...);
 	}
 
 };

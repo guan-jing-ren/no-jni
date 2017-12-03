@@ -24,26 +24,26 @@ public:
 
 	template<typename R = ::java::nio::ByteBuffer, typename... Args>
 	auto encode(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("encode")] != -1);
-		return call<R>("encode", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encode")] != -1);
+		return call<R>("encode", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto encodeToString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("encodeToString")] != -1);
-		return call<R>("encodeToString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("encodeToString")] != -1);
+		return call<R>("encodeToString", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Base64$Encoder, typename... Args>
 	auto withoutPadding(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("withoutPadding")] != -1);
-		return call<R>("withoutPadding", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("withoutPadding")] != -1);
+		return call<R>("withoutPadding", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::io::OutputStream, typename... Args>
 	auto wrap(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("wrap")] != -1);
-		return call<R>("wrap", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("wrap")] != -1);
+		return call<R>("wrap", std::forward<Args>(args)...);
 	}
 
 };

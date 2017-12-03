@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getAlign(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlign")] != -1);
-		return call<R>("getAlign", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAlign")] != -1);
+		return call<R>("getAlign", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setAlign(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setAlign")] != -1);
-		return call<R>("setAlign", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setAlign")] != -1);
+		return call<R>("setAlign", std::forward<Args>(args)...);
 	}
 
 };

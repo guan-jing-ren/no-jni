@@ -29,68 +29,68 @@ public:
 
 	template<typename R = ::java::util::OptionalDouble, typename... Args>
 	static auto empty(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("empty")] != -1);
-		return scall<R>("empty", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("empty")] != -1);
+		return scall<R>("empty", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto equals(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
-		return call<R>("equals", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jdouble, typename... Args>
 	auto getAsDouble(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAsDouble")] != -1);
-		return call<R>("getAsDouble", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAsDouble")] != -1);
+		return call<R>("getAsDouble", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto hashCode(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
-		return call<R>("hashCode", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto ifPresent(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("ifPresent")] != -1);
-		return call<R>("ifPresent", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("ifPresent")] != -1);
+		return call<R>("ifPresent", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isPresent(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isPresent")] != -1);
-		return call<R>("isPresent", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isPresent")] != -1);
+		return call<R>("isPresent", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::OptionalDouble, typename... Args>
 	static auto of(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("of")] != -1);
-		return scall<R>("of", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("of")] != -1);
+		return scall<R>("of", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jdouble, typename... Args>
 	auto orElse(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("orElse")] != -1);
-		return call<R>("orElse", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("orElse")] != -1);
+		return call<R>("orElse", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jdouble, typename... Args>
 	auto orElseGet(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("orElseGet")] != -1);
-		return call<R>("orElseGet", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("orElseGet")] != -1);
+		return call<R>("orElseGet", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jdouble, typename... Args>
 	auto orElseThrow(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("orElseThrow")] != -1);
-		return call<R>("orElseThrow", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("orElseThrow")] != -1);
+		return call<R>("orElseThrow", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto toString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
-		return call<R>("toString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
 	}
 
 };

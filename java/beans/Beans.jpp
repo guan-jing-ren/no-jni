@@ -28,44 +28,44 @@ public:
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	static auto getInstanceOf(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstanceOf")] != -1);
-		return scall<R>("getInstanceOf", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstanceOf")] != -1);
+		return scall<R>("getInstanceOf", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	static auto instantiate(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("instantiate")] != -1);
-		return scall<R>("instantiate", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("instantiate")] != -1);
+		return scall<R>("instantiate", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	static auto isDesignTime(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isDesignTime")] != -1);
-		return scall<R>("isDesignTime", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isDesignTime")] != -1);
+		return scall<R>("isDesignTime", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	static auto isGuiAvailable(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isGuiAvailable")] != -1);
-		return scall<R>("isGuiAvailable", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isGuiAvailable")] != -1);
+		return scall<R>("isGuiAvailable", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	static auto isInstanceOf(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isInstanceOf")] != -1);
-		return scall<R>("isInstanceOf", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isInstanceOf")] != -1);
+		return scall<R>("isInstanceOf", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	static auto setDesignTime(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDesignTime")] != -1);
-		return scall<R>("setDesignTime", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setDesignTime")] != -1);
+		return scall<R>("setDesignTime", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	static auto setGuiAvailable(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setGuiAvailable")] != -1);
-		return scall<R>("setGuiAvailable", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setGuiAvailable")] != -1);
+		return scall<R>("setGuiAvailable", std::forward<Args>(args)...);
 	}
 
 };

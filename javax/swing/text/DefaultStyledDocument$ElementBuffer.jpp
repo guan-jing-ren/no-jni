@@ -24,32 +24,32 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto change(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("change")] != -1);
-		return call<R>("change", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("change")] != -1);
+		return call<R>("change", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::swing::text::Element, typename... Args>
 	auto clone(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("clone")] != -1);
-		return call<R>("clone", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::swing::text::Element, typename... Args>
 	auto getRootElement(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRootElement")] != -1);
-		return call<R>("getRootElement", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRootElement")] != -1);
+		return call<R>("getRootElement", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto insert(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("insert")] != -1);
-		return call<R>("insert", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("insert")] != -1);
+		return call<R>("insert", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto remove(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("remove")] != -1);
-		return call<R>("remove", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", std::forward<Args>(args)...);
 	}
 
 };

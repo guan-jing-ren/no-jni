@@ -41,14 +41,14 @@ public:
 
 	template<typename R = ::java::lang::invoke::CallSite, typename... Args>
 	static auto altMetafactory(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("altMetafactory")] != -1);
-		return scall<R>("altMetafactory", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("altMetafactory")] != -1);
+		return scall<R>("altMetafactory", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::invoke::CallSite, typename... Args>
 	static auto metafactory(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("metafactory")] != -1);
-		return scall<R>("metafactory", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("metafactory")] != -1);
+		return scall<R>("metafactory", std::forward<Args>(args)...);
 	}
 
 };

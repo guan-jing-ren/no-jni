@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto treeCollapsed(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("treeCollapsed")] != -1);
-		return call<R>("treeCollapsed", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("treeCollapsed")] != -1);
+		return call<R>("treeCollapsed", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto treeExpanded(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("treeExpanded")] != -1);
-		return call<R>("treeExpanded", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("treeExpanded")] != -1);
+		return call<R>("treeExpanded", std::forward<Args>(args)...);
 	}
 
 };

@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::org::omg::PortableServer::POA, typename... Args>
 	auto get_POA(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get_POA")] != -1);
-		return call<R>("get_POA", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get_POA")] != -1);
+		return call<R>("get_POA", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jbyte *, typename... Args>
 	auto get_object_id(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get_object_id")] != -1);
-		return call<R>("get_object_id", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get_object_id")] != -1);
+		return call<R>("get_object_id", std::forward<Args>(args)...);
 	}
 
 };

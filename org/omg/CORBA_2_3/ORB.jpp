@@ -24,32 +24,32 @@ public:
 
 	template<typename R = ::org::omg::CORBA::Object, typename... Args>
 	auto get_value_def(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get_value_def")] != -1);
-		return call<R>("get_value_def", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get_value_def")] != -1);
+		return call<R>("get_value_def", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::omg::CORBA::portable::ValueFactory, typename... Args>
 	auto lookup_value_factory(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("lookup_value_factory")] != -1);
-		return call<R>("lookup_value_factory", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("lookup_value_factory")] != -1);
+		return call<R>("lookup_value_factory", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::omg::CORBA::portable::ValueFactory, typename... Args>
 	auto register_value_factory(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("register_value_factory")] != -1);
-		return call<R>("register_value_factory", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("register_value_factory")] != -1);
+		return call<R>("register_value_factory", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto set_delegate(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set_delegate")] != -1);
-		return call<R>("set_delegate", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set_delegate")] != -1);
+		return call<R>("set_delegate", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto unregister_value_factory(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("unregister_value_factory")] != -1);
-		return call<R>("unregister_value_factory", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unregister_value_factory")] != -1);
+		return call<R>("unregister_value_factory", std::forward<Args>(args)...);
 	}
 
 };

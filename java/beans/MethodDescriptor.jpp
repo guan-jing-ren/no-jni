@@ -22,14 +22,14 @@ public:
 
 	template<typename R = ::java::lang::reflect::Method, typename... Args>
 	auto getMethod(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMethod")] != -1);
-		return call<R>("getMethod", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMethod")] != -1);
+		return call<R>("getMethod", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::beans::ParameterDescriptor *, typename... Args>
 	auto getParameterDescriptors(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParameterDescriptors")] != -1);
-		return call<R>("getParameterDescriptors", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getParameterDescriptors")] != -1);
+		return call<R>("getParameterDescriptors", std::forward<Args>(args)...);
 	}
 
 };

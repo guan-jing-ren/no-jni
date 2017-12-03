@@ -23,20 +23,20 @@ public:
 
 	template<typename R = ::java::util::zip::Checksum, typename... Args>
 	auto getChecksum(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getChecksum")] != -1);
-		return call<R>("getChecksum", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getChecksum")] != -1);
+		return call<R>("getChecksum", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto read(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read")] != -1);
-		return call<R>("read", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jlong, typename... Args>
 	auto skip(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("skip")] != -1);
-		return call<R>("skip", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("skip")] != -1);
+		return call<R>("skip", std::forward<Args>(args)...);
 	}
 
 };

@@ -23,26 +23,26 @@ public:
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto get(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get")] != -1);
-		return call<R>("get", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto remove(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("remove")] != -1);
-		return call<R>("remove", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto set(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("set")] != -1);
-		return call<R>("set", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set")] != -1);
+		return call<R>("set", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::ThreadLocal, typename... Args>
 	static auto withInitial(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("withInitial")] != -1);
-		return scall<R>("withInitial", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("withInitial")] != -1);
+		return scall<R>("withInitial", std::forward<Args>(args)...);
 	}
 
 };

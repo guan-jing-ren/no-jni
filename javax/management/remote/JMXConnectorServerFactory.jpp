@@ -46,8 +46,8 @@ public:
 
 	template<typename R = ::javax::management::remote::JMXConnectorServer, typename... Args>
 	static auto newJMXConnectorServer(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newJMXConnectorServer")] != -1);
-		return scall<R>("newJMXConnectorServer", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newJMXConnectorServer")] != -1);
+		return scall<R>("newJMXConnectorServer", std::forward<Args>(args)...);
 	}
 
 };

@@ -22,26 +22,26 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto avoidingGui(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("avoidingGui")] != -1);
-		return call<R>("avoidingGui", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("avoidingGui")] != -1);
+		return call<R>("avoidingGui", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto dontUseGui(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dontUseGui")] != -1);
-		return call<R>("dontUseGui", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dontUseGui")] != -1);
+		return call<R>("dontUseGui", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto needsGui(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("needsGui")] != -1);
-		return call<R>("needsGui", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("needsGui")] != -1);
+		return call<R>("needsGui", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto okToUseGui(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("okToUseGui")] != -1);
-		return call<R>("okToUseGui", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("okToUseGui")] != -1);
+		return call<R>("okToUseGui", std::forward<Args>(args)...);
 	}
 
 };

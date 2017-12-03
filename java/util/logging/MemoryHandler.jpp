@@ -27,44 +27,44 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto close(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
-		return call<R>("close", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto flush(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("flush")] != -1);
-		return call<R>("flush", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("flush")] != -1);
+		return call<R>("flush", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::logging::Level, typename... Args>
 	auto getPushLevel(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPushLevel")] != -1);
-		return call<R>("getPushLevel", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPushLevel")] != -1);
+		return call<R>("getPushLevel", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isLoggable(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isLoggable")] != -1);
-		return call<R>("isLoggable", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isLoggable")] != -1);
+		return call<R>("isLoggable", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto publish(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("publish")] != -1);
-		return call<R>("publish", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("publish")] != -1);
+		return call<R>("publish", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto push(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("push")] != -1);
-		return call<R>("push", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("push")] != -1);
+		return call<R>("push", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setPushLevel(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPushLevel")] != -1);
-		return call<R>("setPushLevel", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setPushLevel")] != -1);
+		return call<R>("setPushLevel", std::forward<Args>(args)...);
 	}
 
 };

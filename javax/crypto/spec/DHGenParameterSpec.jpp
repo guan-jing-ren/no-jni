@@ -21,14 +21,14 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto getExponentSize(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getExponentSize")] != -1);
-		return call<R>("getExponentSize", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getExponentSize")] != -1);
+		return call<R>("getExponentSize", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getPrimeSize(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPrimeSize")] != -1);
-		return call<R>("getPrimeSize", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPrimeSize")] != -1);
+		return call<R>("getPrimeSize", std::forward<Args>(args)...);
 	}
 
 };

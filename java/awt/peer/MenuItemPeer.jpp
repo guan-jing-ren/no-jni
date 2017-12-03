@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setEnabled(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setEnabled")] != -1);
-		return call<R>("setEnabled", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setEnabled")] != -1);
+		return call<R>("setEnabled", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setLabel(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLabel")] != -1);
-		return call<R>("setLabel", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setLabel")] != -1);
+		return call<R>("setLabel", std::forward<Args>(args)...);
 	}
 
 };

@@ -22,26 +22,26 @@ public:
 
 	template<typename R = ::javax::swing::JFrame, typename... Args>
 	auto createInputMethodJFrame(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createInputMethodJFrame")] != -1);
-		return call<R>("createInputMethodJFrame", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createInputMethodJFrame")] != -1);
+		return call<R>("createInputMethodJFrame", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::Window, typename... Args>
 	auto createInputMethodWindow(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createInputMethodWindow")] != -1);
-		return call<R>("createInputMethodWindow", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createInputMethodWindow")] != -1);
+		return call<R>("createInputMethodWindow", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto dispatchInputMethodEvent(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dispatchInputMethodEvent")] != -1);
-		return call<R>("dispatchInputMethodEvent", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dispatchInputMethodEvent")] != -1);
+		return call<R>("dispatchInputMethodEvent", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto enableClientWindowNotification(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("enableClientWindowNotification")] != -1);
-		return call<R>("enableClientWindowNotification", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("enableClientWindowNotification")] != -1);
+		return call<R>("enableClientWindowNotification", std::forward<Args>(args)...);
 	}
 
 };

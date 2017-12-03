@@ -30,56 +30,56 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	static auto compare(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("compare")] != -1);
-		return scall<R>("compare", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("compare")] != -1);
+		return scall<R>("compare", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	static auto deepEquals(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("deepEquals")] != -1);
-		return scall<R>("deepEquals", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("deepEquals")] != -1);
+		return scall<R>("deepEquals", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	static auto equals(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
-		return scall<R>("equals", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return scall<R>("equals", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	static auto hash(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hash")] != -1);
-		return scall<R>("hash", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hash")] != -1);
+		return scall<R>("hash", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	static auto hashCode(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
-		return scall<R>("hashCode", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return scall<R>("hashCode", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	static auto isNull(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isNull")] != -1);
-		return scall<R>("isNull", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isNull")] != -1);
+		return scall<R>("isNull", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	static auto nonNull(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nonNull")] != -1);
-		return scall<R>("nonNull", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("nonNull")] != -1);
+		return scall<R>("nonNull", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	static auto requireNonNull(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("requireNonNull")] != -1);
-		return scall<R>("requireNonNull", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("requireNonNull")] != -1);
+		return scall<R>("requireNonNull", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	static auto toString(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
-		return scall<R>("toString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return scall<R>("toString", std::forward<Args>(args)...);
 	}
 
 };

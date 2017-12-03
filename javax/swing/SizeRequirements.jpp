@@ -55,38 +55,38 @@ public:
 
 	template<typename R = ::jint *, typename... Args>
 	static auto adjustSizes(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("adjustSizes")] != -1);
-		return scall<R>("adjustSizes", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("adjustSizes")] != -1);
+		return scall<R>("adjustSizes", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	static auto calculateAlignedPositions(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("calculateAlignedPositions")] != -1);
-		return scall<R>("calculateAlignedPositions", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("calculateAlignedPositions")] != -1);
+		return scall<R>("calculateAlignedPositions", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	static auto calculateTiledPositions(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("calculateTiledPositions")] != -1);
-		return scall<R>("calculateTiledPositions", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("calculateTiledPositions")] != -1);
+		return scall<R>("calculateTiledPositions", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::swing::SizeRequirements, typename... Args>
 	static auto getAlignedSizeRequirements(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlignedSizeRequirements")] != -1);
-		return scall<R>("getAlignedSizeRequirements", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAlignedSizeRequirements")] != -1);
+		return scall<R>("getAlignedSizeRequirements", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::swing::SizeRequirements, typename... Args>
 	static auto getTiledSizeRequirements(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTiledSizeRequirements")] != -1);
-		return scall<R>("getTiledSizeRequirements", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTiledSizeRequirements")] != -1);
+		return scall<R>("getTiledSizeRequirements", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto toString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("toString")] != -1);
-		return call<R>("toString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
 	}
 
 };

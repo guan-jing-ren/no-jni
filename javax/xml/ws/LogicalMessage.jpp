@@ -22,14 +22,14 @@ public:
 
 	template<typename R = ::javax::xml::transform::Source, typename... Args>
 	auto getPayload(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPayload")] != -1);
-		return call<R>("getPayload", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPayload")] != -1);
+		return call<R>("getPayload", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setPayload(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setPayload")] != -1);
-		return call<R>("setPayload", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setPayload")] != -1);
+		return call<R>("setPayload", std::forward<Args>(args)...);
 	}
 
 };

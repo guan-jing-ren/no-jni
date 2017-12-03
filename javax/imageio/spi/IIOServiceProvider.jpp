@@ -25,32 +25,32 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getDescription(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDescription")] != -1);
-		return call<R>("getDescription", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDescription")] != -1);
+		return call<R>("getDescription", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getVendorName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getVendorName")] != -1);
-		return call<R>("getVendorName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getVendorName")] != -1);
+		return call<R>("getVendorName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getVersion(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getVersion")] != -1);
-		return call<R>("getVersion", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getVersion")] != -1);
+		return call<R>("getVersion", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto onDeregistration(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("onDeregistration")] != -1);
-		return call<R>("onDeregistration", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("onDeregistration")] != -1);
+		return call<R>("onDeregistration", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto onRegistration(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("onRegistration")] != -1);
-		return call<R>("onRegistration", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("onRegistration")] != -1);
+		return call<R>("onRegistration", std::forward<Args>(args)...);
 	}
 
 };

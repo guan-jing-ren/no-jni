@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto apply(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("apply")] != -1);
-		return call<R>("apply", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("apply")] != -1);
+		return call<R>("apply", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setMBeanServer(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setMBeanServer")] != -1);
-		return call<R>("setMBeanServer", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setMBeanServer")] != -1);
+		return call<R>("setMBeanServer", std::forward<Args>(args)...);
 	}
 
 };

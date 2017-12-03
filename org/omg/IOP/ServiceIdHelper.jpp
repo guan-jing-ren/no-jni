@@ -25,38 +25,38 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	static auto extract(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("extract")] != -1);
-		return scall<R>("extract", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("extract")] != -1);
+		return scall<R>("extract", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	static auto id(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("id")] != -1);
-		return scall<R>("id", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("id")] != -1);
+		return scall<R>("id", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	static auto insert(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("insert")] != -1);
-		return scall<R>("insert", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("insert")] != -1);
+		return scall<R>("insert", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	static auto read(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("read")] != -1);
-		return scall<R>("read", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read")] != -1);
+		return scall<R>("read", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
 	static auto type(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("type")] != -1);
-		return scall<R>("type", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("type")] != -1);
+		return scall<R>("type", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	static auto write(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write")] != -1);
-		return scall<R>("write", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("write")] != -1);
+		return scall<R>("write", std::forward<Args>(args)...);
 	}
 
 };

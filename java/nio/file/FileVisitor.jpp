@@ -22,26 +22,26 @@ public:
 
 	template<typename R = ::java::nio::file::FileVisitResult, typename... Args>
 	auto postVisitDirectory(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("postVisitDirectory")] != -1);
-		return call<R>("postVisitDirectory", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("postVisitDirectory")] != -1);
+		return call<R>("postVisitDirectory", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::nio::file::FileVisitResult, typename... Args>
 	auto preVisitDirectory(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("preVisitDirectory")] != -1);
-		return call<R>("preVisitDirectory", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("preVisitDirectory")] != -1);
+		return call<R>("preVisitDirectory", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::nio::file::FileVisitResult, typename... Args>
 	auto visitFile(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("visitFile")] != -1);
-		return call<R>("visitFile", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("visitFile")] != -1);
+		return call<R>("visitFile", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::nio::file::FileVisitResult, typename... Args>
 	auto visitFileFailed(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("visitFileFailed")] != -1);
-		return call<R>("visitFileFailed", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("visitFileFailed")] != -1);
+		return call<R>("visitFileFailed", std::forward<Args>(args)...);
 	}
 
 };

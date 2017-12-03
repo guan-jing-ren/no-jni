@@ -23,20 +23,20 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getExpression(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getExpression")] != -1);
-		return call<R>("getExpression", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getExpression")] != -1);
+		return call<R>("getExpression", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::xml::crypto::dsig::spec::XPathType$Filter, typename... Args>
 	auto getFilter(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFilter")] != -1);
-		return call<R>("getFilter", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFilter")] != -1);
+		return call<R>("getFilter", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Map, typename... Args>
 	auto getNamespaceMap(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getNamespaceMap")] != -1);
-		return call<R>("getNamespaceMap", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNamespaceMap")] != -1);
+		return call<R>("getNamespaceMap", std::forward<Args>(args)...);
 	}
 
 };

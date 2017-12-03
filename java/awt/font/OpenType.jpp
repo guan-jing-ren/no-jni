@@ -381,20 +381,20 @@ public:
 
 	template<typename R = ::jbyte *, typename... Args>
 	auto getFontTable(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFontTable")] != -1);
-		return call<R>("getFontTable", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFontTable")] != -1);
+		return call<R>("getFontTable", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getFontTableSize(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFontTableSize")] != -1);
-		return call<R>("getFontTableSize", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFontTableSize")] != -1);
+		return call<R>("getFontTableSize", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getVersion(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getVersion")] != -1);
-		return call<R>("getVersion", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getVersion")] != -1);
+		return call<R>("getVersion", std::forward<Args>(args)...);
 	}
 
 };

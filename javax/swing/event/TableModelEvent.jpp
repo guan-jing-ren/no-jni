@@ -61,26 +61,26 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto getColumn(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getColumn")] != -1);
-		return call<R>("getColumn", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getColumn")] != -1);
+		return call<R>("getColumn", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getFirstRow(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getFirstRow")] != -1);
-		return call<R>("getFirstRow", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFirstRow")] != -1);
+		return call<R>("getFirstRow", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getLastRow(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLastRow")] != -1);
-		return call<R>("getLastRow", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLastRow")] != -1);
+		return call<R>("getLastRow", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getType(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getType")] != -1);
-		return call<R>("getType", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", std::forward<Args>(args)...);
 	}
 
 };

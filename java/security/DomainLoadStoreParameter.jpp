@@ -22,20 +22,20 @@ public:
 
 	template<typename R = ::java::net::URI, typename... Args>
 	auto getConfiguration(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getConfiguration")] != -1);
-		return call<R>("getConfiguration", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getConfiguration")] != -1);
+		return call<R>("getConfiguration", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::security::KeyStore$ProtectionParameter, typename... Args>
 	auto getProtectionParameter(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProtectionParameter")] != -1);
-		return call<R>("getProtectionParameter", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getProtectionParameter")] != -1);
+		return call<R>("getProtectionParameter", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Map, typename... Args>
 	auto getProtectionParams(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProtectionParams")] != -1);
-		return call<R>("getProtectionParams", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getProtectionParams")] != -1);
+		return call<R>("getProtectionParams", std::forward<Args>(args)...);
 	}
 
 };

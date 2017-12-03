@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto cancel(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("cancel")] != -1);
-		return call<R>("cancel", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("cancel")] != -1);
+		return call<R>("cancel", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isValid(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isValid")] != -1);
-		return call<R>("isValid", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isValid")] != -1);
+		return call<R>("isValid", std::forward<Args>(args)...);
 	}
 
 };

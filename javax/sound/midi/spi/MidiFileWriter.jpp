@@ -25,20 +25,20 @@ public:
 
 	template<typename R = ::jint *, typename... Args>
 	auto getMidiFileTypes(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMidiFileTypes")] != -1);
-		return call<R>("getMidiFileTypes", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMidiFileTypes")] != -1);
+		return call<R>("getMidiFileTypes", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isFileTypeSupported(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isFileTypeSupported")] != -1);
-		return call<R>("isFileTypeSupported", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isFileTypeSupported")] != -1);
+		return call<R>("isFileTypeSupported", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto write(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("write")] != -1);
-		return call<R>("write", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", std::forward<Args>(args)...);
 	}
 
 };

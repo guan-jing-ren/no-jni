@@ -29,38 +29,38 @@ public:
 
 	template<typename R = ::java::security::KeyPair, typename... Args>
 	auto genKeyPair(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("genKeyPair")] != -1);
-		return call<R>("genKeyPair", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("genKeyPair")] != -1);
+		return call<R>("genKeyPair", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::security::KeyPair, typename... Args>
 	auto generateKeyPair(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("generateKeyPair")] != -1);
-		return call<R>("generateKeyPair", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("generateKeyPair")] != -1);
+		return call<R>("generateKeyPair", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getAlgorithm(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAlgorithm")] != -1);
-		return call<R>("getAlgorithm", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAlgorithm")] != -1);
+		return call<R>("getAlgorithm", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::security::KeyPairGenerator, typename... Args>
 	static auto getInstance(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInstance")] != -1);
-		return scall<R>("getInstance", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstance")] != -1);
+		return scall<R>("getInstance", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::security::Provider, typename... Args>
 	auto getProvider(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProvider")] != -1);
-		return call<R>("getProvider", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getProvider")] != -1);
+		return call<R>("getProvider", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto initialize(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("initialize")] != -1);
-		return call<R>("initialize", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("initialize")] != -1);
+		return call<R>("initialize", std::forward<Args>(args)...);
 	}
 
 };

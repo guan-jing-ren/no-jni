@@ -25,26 +25,26 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto end(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("end")] != -1);
-		return call<R>("end", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("end")] != -1);
+		return call<R>("end", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto group(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("group")] != -1);
-		return call<R>("group", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("group")] != -1);
+		return call<R>("group", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto groupCount(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("groupCount")] != -1);
-		return call<R>("groupCount", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("groupCount")] != -1);
+		return call<R>("groupCount", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto start(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("start")] != -1);
-		return call<R>("start", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("start")] != -1);
+		return call<R>("start", std::forward<Args>(args)...);
 	}
 
 };

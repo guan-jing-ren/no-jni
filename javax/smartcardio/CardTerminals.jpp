@@ -23,20 +23,20 @@ public:
 
 	template<typename R = ::javax::smartcardio::CardTerminal, typename... Args>
 	auto getTerminal(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTerminal")] != -1);
-		return call<R>("getTerminal", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTerminal")] != -1);
+		return call<R>("getTerminal", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::List, typename... Args>
 	auto list(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("list")] != -1);
-		return call<R>("list", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("list")] != -1);
+		return call<R>("list", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto waitForChange(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("waitForChange")] != -1);
-		return call<R>("waitForChange", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("waitForChange")] != -1);
+		return call<R>("waitForChange", std::forward<Args>(args)...);
 	}
 
 };

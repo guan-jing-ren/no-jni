@@ -22,8 +22,8 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto printMessage(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("printMessage")] != -1);
-		return call<R>("printMessage", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("printMessage")] != -1);
+		return call<R>("printMessage", std::forward<Args>(args)...);
 	}
 
 };

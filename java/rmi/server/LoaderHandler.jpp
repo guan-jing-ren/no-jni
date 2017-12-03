@@ -27,14 +27,14 @@ public:
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto getSecurityContext(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSecurityContext")] != -1);
-		return call<R>("getSecurityContext", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSecurityContext")] != -1);
+		return call<R>("getSecurityContext", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Class, typename... Args>
 	auto loadClass(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("loadClass")] != -1);
-		return call<R>("loadClass", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("loadClass")] != -1);
+		return call<R>("loadClass", std::forward<Args>(args)...);
 	}
 
 };

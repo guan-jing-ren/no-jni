@@ -23,26 +23,26 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getClassAnnotation(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getClassAnnotation")] != -1);
-		return call<R>("getClassAnnotation", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClassAnnotation")] != -1);
+		return call<R>("getClassAnnotation", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::ClassLoader, typename... Args>
 	auto getClassLoader(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getClassLoader")] != -1);
-		return call<R>("getClassLoader", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClassLoader")] != -1);
+		return call<R>("getClassLoader", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Class, typename... Args>
 	auto loadClass(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("loadClass")] != -1);
-		return call<R>("loadClass", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("loadClass")] != -1);
+		return call<R>("loadClass", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Class, typename... Args>
 	auto loadProxyClass(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("loadProxyClass")] != -1);
-		return call<R>("loadProxyClass", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("loadProxyClass")] != -1);
+		return call<R>("loadProxyClass", std::forward<Args>(args)...);
 	}
 
 };

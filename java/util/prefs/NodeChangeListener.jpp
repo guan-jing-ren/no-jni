@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto childAdded(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("childAdded")] != -1);
-		return call<R>("childAdded", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("childAdded")] != -1);
+		return call<R>("childAdded", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto childRemoved(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("childRemoved")] != -1);
-		return call<R>("childRemoved", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("childRemoved")] != -1);
+		return call<R>("childRemoved", std::forward<Args>(args)...);
 	}
 
 };

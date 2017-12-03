@@ -25,26 +25,26 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto convertPreviousRowIndexToModel(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("convertPreviousRowIndexToModel")] != -1);
-		return call<R>("convertPreviousRowIndexToModel", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("convertPreviousRowIndexToModel")] != -1);
+		return call<R>("convertPreviousRowIndexToModel", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getPreviousRowCount(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getPreviousRowCount")] != -1);
-		return call<R>("getPreviousRowCount", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPreviousRowCount")] != -1);
+		return call<R>("getPreviousRowCount", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto getSource(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSource")] != -1);
-		return call<R>("getSource", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSource")] != -1);
+		return call<R>("getSource", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::swing::event::RowSorterEvent$Type, typename... Args>
 	auto getType(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getType")] != -1);
-		return call<R>("getType", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", std::forward<Args>(args)...);
 	}
 
 };

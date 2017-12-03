@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto close(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
-		return call<R>("close", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::sound::midi::Receiver, typename... Args>
 	auto getReceiver(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getReceiver")] != -1);
-		return call<R>("getReceiver", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getReceiver")] != -1);
+		return call<R>("getReceiver", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setReceiver(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setReceiver")] != -1);
-		return call<R>("setReceiver", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setReceiver")] != -1);
+		return call<R>("setReceiver", std::forward<Args>(args)...);
 	}
 
 };

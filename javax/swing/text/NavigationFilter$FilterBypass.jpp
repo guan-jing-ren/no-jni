@@ -22,20 +22,20 @@ public:
 
 	template<typename R = ::javax::swing::text::Caret, typename... Args>
 	auto getCaret(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCaret")] != -1);
-		return call<R>("getCaret", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCaret")] != -1);
+		return call<R>("getCaret", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto moveDot(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("moveDot")] != -1);
-		return call<R>("moveDot", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("moveDot")] != -1);
+		return call<R>("moveDot", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setDot(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setDot")] != -1);
-		return call<R>("setDot", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setDot")] != -1);
+		return call<R>("setDot", std::forward<Args>(args)...);
 	}
 
 };

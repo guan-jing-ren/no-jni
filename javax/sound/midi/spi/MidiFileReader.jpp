@@ -25,14 +25,14 @@ public:
 
 	template<typename R = ::javax::sound::midi::MidiFileFormat, typename... Args>
 	auto getMidiFileFormat(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getMidiFileFormat")] != -1);
-		return call<R>("getMidiFileFormat", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMidiFileFormat")] != -1);
+		return call<R>("getMidiFileFormat", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::sound::midi::Sequence, typename... Args>
 	auto getSequence(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSequence")] != -1);
-		return call<R>("getSequence", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSequence")] != -1);
+		return call<R>("getSequence", std::forward<Args>(args)...);
 	}
 
 };

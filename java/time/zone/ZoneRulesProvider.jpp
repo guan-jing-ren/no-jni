@@ -23,32 +23,32 @@ public:
 
 	template<typename R = ::java::util::Set, typename... Args>
 	static auto getAvailableZoneIds(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAvailableZoneIds")] != -1);
-		return scall<R>("getAvailableZoneIds", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAvailableZoneIds")] != -1);
+		return scall<R>("getAvailableZoneIds", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::time::zone::ZoneRules, typename... Args>
 	static auto getRules(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getRules")] != -1);
-		return scall<R>("getRules", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRules")] != -1);
+		return scall<R>("getRules", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::NavigableMap, typename... Args>
 	static auto getVersions(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getVersions")] != -1);
-		return scall<R>("getVersions", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getVersions")] != -1);
+		return scall<R>("getVersions", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	static auto refresh(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("refresh")] != -1);
-		return scall<R>("refresh", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("refresh")] != -1);
+		return scall<R>("refresh", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	static auto registerProvider(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("registerProvider")] != -1);
-		return scall<R>("registerProvider", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("registerProvider")] != -1);
+		return scall<R>("registerProvider", std::forward<Args>(args)...);
 	}
 
 };

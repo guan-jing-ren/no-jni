@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::javax::xml::crypto::Data, typename... Args>
 	auto dereference(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("dereference")] != -1);
-		return call<R>("dereference", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dereference")] != -1);
+		return call<R>("dereference", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::List, typename... Args>
 	auto getTransforms(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTransforms")] != -1);
-		return call<R>("getTransforms", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTransforms")] != -1);
+		return call<R>("getTransforms", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getURI(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getURI")] != -1);
-		return call<R>("getURI", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getURI")] != -1);
+		return call<R>("getURI", std::forward<Args>(args)...);
 	}
 
 };

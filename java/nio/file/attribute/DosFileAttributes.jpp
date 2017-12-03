@@ -22,26 +22,26 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isArchive(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isArchive")] != -1);
-		return call<R>("isArchive", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isArchive")] != -1);
+		return call<R>("isArchive", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isHidden(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isHidden")] != -1);
-		return call<R>("isHidden", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isHidden")] != -1);
+		return call<R>("isHidden", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isReadOnly(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isReadOnly")] != -1);
-		return call<R>("isReadOnly", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isReadOnly")] != -1);
+		return call<R>("isReadOnly", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isSystem(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSystem")] != -1);
-		return call<R>("isSystem", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSystem")] != -1);
+		return call<R>("isSystem", std::forward<Args>(args)...);
 	}
 
 };

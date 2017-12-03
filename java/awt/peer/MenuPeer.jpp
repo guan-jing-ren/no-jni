@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto addItem(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addItem")] != -1);
-		return call<R>("addItem", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addItem")] != -1);
+		return call<R>("addItem", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto addSeparator(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addSeparator")] != -1);
-		return call<R>("addSeparator", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addSeparator")] != -1);
+		return call<R>("addSeparator", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto delItem(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("delItem")] != -1);
-		return call<R>("delItem", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("delItem")] != -1);
+		return call<R>("delItem", std::forward<Args>(args)...);
 	}
 
 };

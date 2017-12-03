@@ -23,26 +23,26 @@ public:
 
 	template<typename R = ::jint, typename... Args>
 	auto getIconHeight(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIconHeight")] != -1);
-		return call<R>("getIconHeight", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIconHeight")] != -1);
+		return call<R>("getIconHeight", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getIconWidth(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIconWidth")] != -1);
-		return call<R>("getIconWidth", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIconWidth")] != -1);
+		return call<R>("getIconWidth", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto paintIcon(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paintIcon")] != -1);
-		return call<R>("paintIcon", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("paintIcon")] != -1);
+		return call<R>("paintIcon", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto paintMe(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paintMe")] != -1);
-		return call<R>("paintMe", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("paintMe")] != -1);
+		return call<R>("paintMe", std::forward<Args>(args)...);
 	}
 
 };

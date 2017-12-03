@@ -22,26 +22,26 @@ public:
 
 	template<typename R = ::java::time::temporal::Temporal, typename... Args>
 	auto addTo(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addTo")] != -1);
-		return call<R>("addTo", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addTo")] != -1);
+		return call<R>("addTo", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jlong, typename... Args>
 	auto get(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("get")] != -1);
-		return call<R>("get", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::List, typename... Args>
 	auto getUnits(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getUnits")] != -1);
-		return call<R>("getUnits", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUnits")] != -1);
+		return call<R>("getUnits", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::time::temporal::Temporal, typename... Args>
 	auto subtractFrom(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("subtractFrom")] != -1);
-		return call<R>("subtractFrom", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("subtractFrom")] != -1);
+		return call<R>("subtractFrom", std::forward<Args>(args)...);
 	}
 
 };

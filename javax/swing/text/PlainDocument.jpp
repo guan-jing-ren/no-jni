@@ -36,20 +36,20 @@ public:
 
 	template<typename R = ::javax::swing::text::Element, typename... Args>
 	auto getDefaultRootElement(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getDefaultRootElement")] != -1);
-		return call<R>("getDefaultRootElement", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDefaultRootElement")] != -1);
+		return call<R>("getDefaultRootElement", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::swing::text::Element, typename... Args>
 	auto getParagraphElement(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getParagraphElement")] != -1);
-		return call<R>("getParagraphElement", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getParagraphElement")] != -1);
+		return call<R>("getParagraphElement", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto insertString(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("insertString")] != -1);
-		return call<R>("insertString", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("insertString")] != -1);
+		return call<R>("insertString", std::forward<Args>(args)...);
 	}
 
 };

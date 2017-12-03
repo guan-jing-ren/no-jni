@@ -22,20 +22,20 @@ public:
 
 	template<typename R = ::javax::imageio::ImageTranscoder, typename... Args>
 	auto createTranscoderInstance(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createTranscoderInstance")] != -1);
-		return call<R>("createTranscoderInstance", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createTranscoderInstance")] != -1);
+		return call<R>("createTranscoderInstance", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getReaderServiceProviderName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getReaderServiceProviderName")] != -1);
-		return call<R>("getReaderServiceProviderName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getReaderServiceProviderName")] != -1);
+		return call<R>("getReaderServiceProviderName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getWriterServiceProviderName(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getWriterServiceProviderName")] != -1);
-		return call<R>("getWriterServiceProviderName", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getWriterServiceProviderName")] != -1);
+		return call<R>("getWriterServiceProviderName", std::forward<Args>(args)...);
 	}
 
 };

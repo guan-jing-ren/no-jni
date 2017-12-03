@@ -28,56 +28,56 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto close(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("close")] != -1);
-		return call<R>("close", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isOpen(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isOpen")] != -1);
-		return call<R>("isOpen", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isOpen")] != -1);
+		return call<R>("isOpen", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Set, typename... Args>
 	auto keys(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("keys")] != -1);
-		return call<R>("keys", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("keys")] != -1);
+		return call<R>("keys", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::nio::channels::Selector, typename... Args>
 	static auto open(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("open")] != -1);
-		return scall<R>("open", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("open")] != -1);
+		return scall<R>("open", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::nio::channels::spi::SelectorProvider, typename... Args>
 	auto provider(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("provider")] != -1);
-		return call<R>("provider", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("provider")] != -1);
+		return call<R>("provider", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto select(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("select")] != -1);
-		return call<R>("select", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("select")] != -1);
+		return call<R>("select", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto selectNow(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("selectNow")] != -1);
-		return call<R>("selectNow", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("selectNow")] != -1);
+		return call<R>("selectNow", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Set, typename... Args>
 	auto selectedKeys(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("selectedKeys")] != -1);
-		return call<R>("selectedKeys", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("selectedKeys")] != -1);
+		return call<R>("selectedKeys", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::nio::channels::Selector, typename... Args>
 	auto wakeup(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("wakeup")] != -1);
-		return call<R>("wakeup", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("wakeup")] != -1);
+		return call<R>("wakeup", std::forward<Args>(args)...);
 	}
 
 };

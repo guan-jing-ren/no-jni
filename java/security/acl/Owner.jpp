@@ -21,20 +21,20 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto addOwner(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("addOwner")] != -1);
-		return call<R>("addOwner", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addOwner")] != -1);
+		return call<R>("addOwner", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto deleteOwner(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("deleteOwner")] != -1);
-		return call<R>("deleteOwner", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("deleteOwner")] != -1);
+		return call<R>("deleteOwner", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isOwner(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isOwner")] != -1);
-		return call<R>("isOwner", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isOwner")] != -1);
+		return call<R>("isOwner", std::forward<Args>(args)...);
 	}
 
 };

@@ -25,38 +25,38 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto await(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("await")] != -1);
-		return call<R>("await", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("await")] != -1);
+		return call<R>("await", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jlong, typename... Args>
 	auto awaitNanos(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("awaitNanos")] != -1);
-		return call<R>("awaitNanos", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("awaitNanos")] != -1);
+		return call<R>("awaitNanos", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto awaitUninterruptibly(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("awaitUninterruptibly")] != -1);
-		return call<R>("awaitUninterruptibly", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("awaitUninterruptibly")] != -1);
+		return call<R>("awaitUninterruptibly", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto awaitUntil(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("awaitUntil")] != -1);
-		return call<R>("awaitUntil", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("awaitUntil")] != -1);
+		return call<R>("awaitUntil", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto signal(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("signal")] != -1);
-		return call<R>("signal", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("signal")] != -1);
+		return call<R>("signal", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto signalAll(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("signalAll")] != -1);
-		return call<R>("signalAll", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("signalAll")] != -1);
+		return call<R>("signalAll", std::forward<Args>(args)...);
 	}
 
 };

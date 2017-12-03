@@ -768,11 +768,11 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
            << ", typename... Args>\n"
            << "\t" << &"\0static "[get<2>(sig)] << "auto " << name
            << "(Args &&...args) " << &"\0const "[!get<2>(sig)] << "{\n"
-           << "\t\tstatic_assert(method_signatures[jMethod<R(decay_t<"
+           << "\t\tstatic_assert(method_signatures[jMethod<R(std::decay_t<"
               "Args>...)>(\""
            << get<0>(sig) << "\")] != -1);\n"
            << "\t\treturn " << &"\0s"[get<2>(sig)] << "call<R>(\""
-           << get<0>(sig) << "\", forward<Args>(args)...);\n"
+           << get<0>(sig) << "\", std::forward<Args>(args)...);\n"
            << "\t}\n\n";
     }
 

@@ -22,26 +22,26 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto name(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("name")] != -1);
-		return call<R>("name", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("name")] != -1);
+		return call<R>("name", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto namespace_(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("namespace")] != -1);
-		return call<R>("namespace", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("namespace")] != -1);
+		return call<R>("namespace", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto nillable(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("nillable")] != -1);
-		return call<R>("nillable", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("nillable")] != -1);
+		return call<R>("nillable", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto required(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("required")] != -1);
-		return call<R>("required", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("required")] != -1);
+		return call<R>("required", std::forward<Args>(args)...);
 	}
 
 };

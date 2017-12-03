@@ -24,38 +24,38 @@ public:
 
 	template<typename R = ::jvoid, typename... Args>
 	auto activeObject(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("activeObject")] != -1);
-		return call<R>("activeObject", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("activeObject")] != -1);
+		return call<R>("activeObject", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::rmi::activation::ActivationGroup, typename... Args>
 	static auto createGroup(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("createGroup")] != -1);
-		return scall<R>("createGroup", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createGroup")] != -1);
+		return scall<R>("createGroup", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::rmi::activation::ActivationGroupID, typename... Args>
 	static auto currentGroupID(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("currentGroupID")] != -1);
-		return scall<R>("currentGroupID", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("currentGroupID")] != -1);
+		return scall<R>("currentGroupID", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::rmi::activation::ActivationSystem, typename... Args>
 	static auto getSystem(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSystem")] != -1);
-		return scall<R>("getSystem", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSystem")] != -1);
+		return scall<R>("getSystem", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto inactiveObject(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("inactiveObject")] != -1);
-		return call<R>("inactiveObject", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("inactiveObject")] != -1);
+		return call<R>("inactiveObject", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	static auto setSystem(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSystem")] != -1);
-		return scall<R>("setSystem", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setSystem")] != -1);
+		return scall<R>("setSystem", std::forward<Args>(args)...);
 	}
 
 };

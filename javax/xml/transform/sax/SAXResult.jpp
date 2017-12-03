@@ -32,38 +32,38 @@ public:
 
 	template<typename R = ::org::xml::sax::ContentHandler, typename... Args>
 	auto getHandler(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHandler")] != -1);
-		return call<R>("getHandler", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHandler")] != -1);
+		return call<R>("getHandler", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::xml::sax::ext::LexicalHandler, typename... Args>
 	auto getLexicalHandler(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getLexicalHandler")] != -1);
-		return call<R>("getLexicalHandler", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLexicalHandler")] != -1);
+		return call<R>("getLexicalHandler", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getSystemId(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getSystemId")] != -1);
-		return call<R>("getSystemId", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSystemId")] != -1);
+		return call<R>("getSystemId", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setHandler(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setHandler")] != -1);
-		return call<R>("setHandler", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setHandler")] != -1);
+		return call<R>("setHandler", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setLexicalHandler(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setLexicalHandler")] != -1);
-		return call<R>("setLexicalHandler", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setLexicalHandler")] != -1);
+		return call<R>("setLexicalHandler", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setSystemId(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setSystemId")] != -1);
-		return call<R>("setSystemId", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setSystemId")] != -1);
+		return call<R>("setSystemId", std::forward<Args>(args)...);
 	}
 
 };

@@ -22,26 +22,26 @@ public:
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto format(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("format")] != -1);
-		return call<R>("format", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("format")] != -1);
+		return call<R>("format", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto formatMessage(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("formatMessage")] != -1);
-		return call<R>("formatMessage", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("formatMessage")] != -1);
+		return call<R>("formatMessage", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getHead(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getHead")] != -1);
-		return call<R>("getHead", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHead")] != -1);
+		return call<R>("getHead", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getTail(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getTail")] != -1);
-		return call<R>("getTail", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTail")] != -1);
+		return call<R>("getTail", std::forward<Args>(args)...);
 	}
 
 };

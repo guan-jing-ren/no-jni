@@ -20,14 +20,14 @@ public:
 
 	template<typename R = ::java::lang::Boolean, typename... Args>
 	auto isInRelationService(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isInRelationService")] != -1);
-		return call<R>("isInRelationService", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isInRelationService")] != -1);
+		return call<R>("isInRelationService", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setRelationServiceManagementFlag(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setRelationServiceManagementFlag")] != -1);
-		return call<R>("setRelationServiceManagementFlag", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setRelationServiceManagementFlag")] != -1);
+		return call<R>("setRelationServiceManagementFlag", std::forward<Args>(args)...);
 	}
 
 };

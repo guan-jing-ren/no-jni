@@ -22,26 +22,26 @@ public:
 
 	template<typename R = ::java::lang::reflect::InvocationHandler, typename... Args>
 	static auto getInvocationHandler(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getInvocationHandler")] != -1);
-		return scall<R>("getInvocationHandler", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInvocationHandler")] != -1);
+		return scall<R>("getInvocationHandler", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Class, typename... Args>
 	static auto getProxyClass(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getProxyClass")] != -1);
-		return scall<R>("getProxyClass", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getProxyClass")] != -1);
+		return scall<R>("getProxyClass", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	static auto isProxyClass(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isProxyClass")] != -1);
-		return scall<R>("isProxyClass", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isProxyClass")] != -1);
+		return scall<R>("isProxyClass", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	static auto newProxyInstance(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("newProxyInstance")] != -1);
-		return scall<R>("newProxyInstance", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newProxyInstance")] != -1);
+		return scall<R>("newProxyInstance", std::forward<Args>(args)...);
 	}
 
 };

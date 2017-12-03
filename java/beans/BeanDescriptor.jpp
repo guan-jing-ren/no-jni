@@ -22,14 +22,14 @@ public:
 
 	template<typename R = ::java::lang::Class, typename... Args>
 	auto getBeanClass(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getBeanClass")] != -1);
-		return call<R>("getBeanClass", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBeanClass")] != -1);
+		return call<R>("getBeanClass", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Class, typename... Args>
 	auto getCustomizerClass(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getCustomizerClass")] != -1);
-		return call<R>("getCustomizerClass", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCustomizerClass")] != -1);
+		return call<R>("getCustomizerClass", std::forward<Args>(args)...);
 	}
 
 };

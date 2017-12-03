@@ -22,20 +22,20 @@ public:
 
 	template<typename R = ::java::awt::Color, typename... Args>
 	auto getColor(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getColor")] != -1);
-		return call<R>("getColor", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getColor")] != -1);
+		return call<R>("getColor", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto paint(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paint")] != -1);
-		return call<R>("paint", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("paint")] != -1);
+		return call<R>("paint", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::Shape, typename... Args>
 	auto paintLayer(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("paintLayer")] != -1);
-		return call<R>("paintLayer", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("paintLayer")] != -1);
+		return call<R>("paintLayer", std::forward<Args>(args)...);
 	}
 
 };

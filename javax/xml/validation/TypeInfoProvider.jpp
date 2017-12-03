@@ -22,26 +22,26 @@ public:
 
 	template<typename R = ::org::w3c::dom::TypeInfo, typename... Args>
 	auto getAttributeTypeInfo(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getAttributeTypeInfo")] != -1);
-		return call<R>("getAttributeTypeInfo", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAttributeTypeInfo")] != -1);
+		return call<R>("getAttributeTypeInfo", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::w3c::dom::TypeInfo, typename... Args>
 	auto getElementTypeInfo(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getElementTypeInfo")] != -1);
-		return call<R>("getElementTypeInfo", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getElementTypeInfo")] != -1);
+		return call<R>("getElementTypeInfo", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isIdAttribute(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isIdAttribute")] != -1);
-		return call<R>("isIdAttribute", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isIdAttribute")] != -1);
+		return call<R>("isIdAttribute", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isSpecified(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("isSpecified")] != -1);
-		return call<R>("isSpecified", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSpecified")] != -1);
+		return call<R>("isSpecified", std::forward<Args>(args)...);
 	}
 
 };

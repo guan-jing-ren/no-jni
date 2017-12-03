@@ -28,44 +28,44 @@ public:
 
 	template<typename R = ::jboolean, typename... Args>
 	auto equals(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("equals")] != -1);
-		return call<R>("equals", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Class, typename... Args>
 	auto getIndexedPropertyType(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIndexedPropertyType")] != -1);
-		return call<R>("getIndexedPropertyType", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIndexedPropertyType")] != -1);
+		return call<R>("getIndexedPropertyType", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::reflect::Method, typename... Args>
 	auto getIndexedReadMethod(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIndexedReadMethod")] != -1);
-		return call<R>("getIndexedReadMethod", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIndexedReadMethod")] != -1);
+		return call<R>("getIndexedReadMethod", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::reflect::Method, typename... Args>
 	auto getIndexedWriteMethod(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("getIndexedWriteMethod")] != -1);
-		return call<R>("getIndexedWriteMethod", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIndexedWriteMethod")] != -1);
+		return call<R>("getIndexedWriteMethod", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
 	auto hashCode(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("hashCode")] != -1);
-		return call<R>("hashCode", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setIndexedReadMethod(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setIndexedReadMethod")] != -1);
-		return call<R>("setIndexedReadMethod", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setIndexedReadMethod")] != -1);
+		return call<R>("setIndexedReadMethod", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setIndexedWriteMethod(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("setIndexedWriteMethod")] != -1);
-		return call<R>("setIndexedWriteMethod", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setIndexedWriteMethod")] != -1);
+		return call<R>("setIndexedWriteMethod", std::forward<Args>(args)...);
 	}
 
 };

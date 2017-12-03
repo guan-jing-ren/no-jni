@@ -19,8 +19,8 @@ public:
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto resolveVariable(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(decay_t<Args>...)>("resolveVariable")] != -1);
-		return call<R>("resolveVariable", forward<Args>(args)...);
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("resolveVariable")] != -1);
+		return call<R>("resolveVariable", std::forward<Args>(args)...);
 	}
 
 };
