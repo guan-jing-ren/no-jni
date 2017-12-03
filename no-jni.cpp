@@ -35,23 +35,9 @@ using namespace std;
 
 [[maybe_unused]] constexpr jPackage com{"com"};
 
-  cout << "SWT package name: " << swt_widgets << ";\n";
-  cout << jSignature<jboolean> << ";\n";
-  cout << jSignature<jbyte> << ";\n";
-  cout << jSignature<jchar> << ";\n";
-  cout << jSignature<jshort> << ";\n";
-  cout << jSignature<jint> << ";\n";
-  cout << jSignature<jlong> << ";\n";
-  cout << jSignature<jfloat> << ";\n";
-  cout << jSignature<jdouble> << ";\n";
-  cout << jSignature<jvoid> << ";\n";
-  cout << jSignature<Display> << "\n";
-  cout << jSignature<jObject<Display>> << "\n";
-  cout << jSignature<DisplayArray> << "\n";
-  cout << jSignature<IntArrayArray> << "\n";
-  cout << Display::method_signatures << "\n";
-
 void basic_test(bool b) {
+  if (!b)
+    return;
   std::cout << "Display getCurrent: " << Display::getCurrent() << "\n";
   std::cout << "Display getDefault: " << Display::getDefault() << "\n";
   std::cout << "Display getDefault hashCode: "
@@ -111,13 +97,7 @@ void basic_test(bool b) {
 int main(int c, char **v) {
   JavaVirtualMachine jvm(c, v);
 
-    auto shells =
-        Display::scall<Display>("getDefault").call<ShellArray>("getShells");
-    std::cout << "Shells: " << shells << "\n";
-    auto num_shells = shells.size();
-    std::cout << "Shells size: " << num_shells << "\n";
-    for (auto i = 0; i < num_shells; ++i)
-      std::cout << "Shell " << i << ": " << shells[i] << "\n";
+  basic_test(false);
 
   Shell shell{Display::getDefault()};
   shell.setText(String{"NoJNI shell test!"});
