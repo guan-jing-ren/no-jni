@@ -894,6 +894,6 @@ public:
   }
 };
 
-#include "java/lang/Object.jpp"
+#include "java/lang/*"
 
 #endif

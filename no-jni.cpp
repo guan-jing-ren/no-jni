@@ -14,14 +14,7 @@ env LD_LIBRARY_PATH=/usr/lib/jvm/default-java/jre/lib/amd64/server/ ./nojni -Dru
 #include "org/eclipse/swt/SWT.jpp"
 #include "org/eclipse/swt/graphics/Device.jpp"
 #include "org/eclipse/swt/graphics/Point.jpp"
-#include "org/eclipse/swt/widgets/Canvas.jpp"
-#include "org/eclipse/swt/widgets/Composite.jpp"
-#include "org/eclipse/swt/widgets/Control.jpp"
-#include "org/eclipse/swt/widgets/Decorations.jpp"
-#include "org/eclipse/swt/widgets/Display.jpp"
-#include "org/eclipse/swt/widgets/Scrollable.jpp"
-#include "org/eclipse/swt/widgets/Shell.jpp"
-#include "org/eclipse/swt/widgets/Widget.jpp"
+#include "org/eclipse/swt/widgets/*"
 
 using org::eclipse::swt::SWT;
 using namespace org::eclipse::swt::widgets;

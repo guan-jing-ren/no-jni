@@ -654,6 +654,7 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
     auto pkg = sig.substr(0, sig.rfind("/"));
 
     system(("mkdir -p " + pkg).c_str());
+    system(("touch " + pkg + "/*").c_str());
     system(("touch " + sig + ".jpp").c_str());
     ofstream fout{sig + ".jpp"};
 
@@ -663,6 +664,9 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
          << "jfwd_decl.hpp\"\n\n";
 
     auto cls = sig.substr(pkg.size() + (pkg != sig));
+    ofstream aout{pkg + "/*", ofstream::app};
+    aout << "#include \"" << cls << ".jpp\"\n";
+
     auto clazz = classes[sig];
     auto ssig = clazz.superclass().signature();
     if (ssig.find("/internal") != string::npos)
