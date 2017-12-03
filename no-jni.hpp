@@ -227,9 +227,12 @@ template <typename T, size_t N> constexpr auto jField(const char (&name)[N]) {
   return jMember<false, T>(name);
 }
 
+namespace java::lang {
 class Object;
+}
 class String;
-template <typename Class, typename SuperClass = Object> class jClass {
+template <typename Class, typename SuperClass = java::lang::Object>
+class jClass {
   static JNIEnv *env() { return JavaVirtualMachine::env; }
   jReference ref;
 
@@ -611,7 +614,8 @@ template <typename E, bool A> struct std::iterator_traits<Iterator<E, A>> {
 template <typename T> constexpr auto method_signatures = T::method_signatures;
 template <typename T> constexpr auto field_signatures = T::field_signatures;
 
-template <typename Class, typename SuperClass = Object> class jObject {
+template <typename Class, typename SuperClass = java::lang::Object>
+class jObject {
   jReference ref;
 
   template <typename> friend struct make_signature;
@@ -890,25 +894,6 @@ public:
   }
 };
 
-class Object : public jObject<Object> {
-public:
-  static constexpr auto signature = java_lang / "Object";
-
-  constexpr static Enum field_signatures{cexprstr{"\0"}};
-
-  constexpr static Enum method_signatures{
-      jMethod<Object()>("clone"),
-      jMethod<jboolean(Object)>("equals"),
-      jMethod<jvoid()>("finalize"),
-      jMethod<jClass<Object>()>("getClass"),
-      jMethod<jint()>("hashCode"),
-      jMethod<jvoid()>("notify"),
-      jMethod<jvoid()>("notifyAll"),
-      jMethod<String()>("toString"),
-      jMethod<jvoid()>("wait"),
-      jMethod<jvoid(jlong)>("wait"),
-      jMethod<jvoid(jlong, jint)>("wait"),
-  };
-};
+#include "java/lang/Object.jpp"
 
 #endif
