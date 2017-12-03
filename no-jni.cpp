@@ -20,10 +20,6 @@ using org::eclipse::swt::SWT;
 using namespace org::eclipse::swt::widgets;
 using org::eclipse::swt::graphics::Point;
 
-struct PointArray : public jObject<Point[]> {
-  static constexpr auto signature = make_signature<Point[]>{}();
-};
-
 using namespace std;
 
 [[maybe_unused]] constexpr jPackage com{"com"};
@@ -62,7 +58,7 @@ void basic_test(bool b) {
 
   std::cout << "Display getClass: " << Display::getClass() << "\n";
 
-  auto icon_sizes = Display::getDefault().call<PointArray>("getIconSizes");
+  auto icon_sizes = Display::getDefault().getIconSizes();
   std::cout << "Icon sizes: " << icon_sizes << "\n";
   auto num_icon_sizes = icon_sizes.size();
   icon_sizes[0] = point;
@@ -79,7 +75,7 @@ void basic_test(bool b) {
   Point pnew(84, point2.y());
   std::cout << "pnew: " << pnew.x() << "," << pnew.y() << "\n";
 
-  PointArray snew{icon_sizes.size() + 1};
+  jObject<Point *> snew{icon_sizes.size() + 1};
   std::copy(make_reverse_iterator(end(icon_sizes)),
             make_reverse_iterator(begin(icon_sizes)), begin(snew));
   snew[icon_sizes.size()] = pnew;

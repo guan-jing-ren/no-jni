@@ -173,13 +173,11 @@ template <typename T> struct make_signature {
       return jSignature_t{"D"};
     else if constexpr (std::is_same<T, jvoid>::value)
       return jSignature_t{"V"};
-    else if constexpr (std::is_array<T>::value)
-      return "[" + make_signature<std::remove_extent_t<T>>{}();
     else if constexpr (std::is_pointer<T>::value)
       return "[" + make_signature<std::remove_pointer_t<T>>{}();
     else if constexpr (std::is_same<decltype(has_ref<T>()),
                                     jReference>::value) {
-      if constexpr (std::is_array<typename T::class_type>::value ||
+      if constexpr (std::is_pointer<typename T::class_type>::value ||
                     std::is_pointer<typename T::class_type>::value)
         return make_signature<typename T::class_type>{}();
       else
@@ -241,7 +239,7 @@ class jClass {
   template <typename, typename> friend class jObject;
 
   static constexpr auto deduce_signature() {
-    if constexpr (std::is_array<class_type>::value)
+    if constexpr (std::is_pointer<class_type>::value)
       return make_signature<superclass_type>{}();
     else
       return ::signature<class_type>;
@@ -687,16 +685,19 @@ class jObject {
   template <bool S,
             jfieldID (JNIEnv::*getter)(jclass, const char *, const char *),
             typename F, size_t N, typename C>
-  static Field<S, F> at_(const char (&s)[N], C &&context) {
-    static_assert(!std::is_array<class_type>::value);
+  static auto at_(const char (&s)[N], C &&context) {
+    static_assert(!std::is_pointer<class_type>::value);
     auto f = get_member<jfieldID, getter, F>(s, getClass());
-    return Field<S, F>{context, f};
+    return Field<S,
+                 std::conditional_t<std::is_pointer<F>::value, jObject<F>, F>>{
+        context, f};
   }
 
   template <typename G,
             G (JNIEnv ::*getter)(jclass, const char *, const char *),
             typename R, size_t N, typename F, typename C, typename... Args>
-  static R call_(const char (&s)[N], F f, C &&context, Args &&... args) {
+  static std::conditional_t<std::is_pointer<R>::value, jObject<R>, R>
+  call_(const char (&s)[N], F f, C &&context, Args &&... args) {
     auto m = get_member<G, getter, R(std::decay_t<Args>...)>(s, getClass());
     if (!m)
       return {};
@@ -739,14 +740,10 @@ public:
   }
 
   template <typename... Args> jObject(Args &&... args) {
-    if constexpr (std::is_array<class_type>::value) {
+    if constexpr (std::is_pointer<class_type>::value) {
       static_assert(sizeof...(Args) == 1);
       static_assert(std::is_same<Args..., jsize>::value);
-      using raw_elem_type = std::remove_extent_t<class_type>;
-      using elem_type =
-          std::conditional_t<std::is_pointer<raw_elem_type>::value,
-                             std::remove_pointer_t<raw_elem_type>[],
-                             raw_elem_type>;
+      using elem_type = std::remove_pointer_t<class_type>;
 
       if constexpr (std::is_arithmetic<elem_type>::value)
         ref = jReference{(env()->*alloc<elem_type>())(args...)};
@@ -769,7 +766,7 @@ public:
           c = '.';
       return std::string{dotted.s, dotted.s + dotted.size()} + "@0";
     };
-    if constexpr (std::is_array<class_type>::value) {
+    if constexpr (std::is_pointer<class_type>::value) {
       if (!ref.obj)
         return print_null("L" + make_signature<class_type>{}() + ";");
       auto m =
@@ -783,40 +780,36 @@ public:
     }
   }
 
-  template <typename F, size_t N>
-  static Field<true, F> sat(const char (&s)[N]) {
+  template <typename F, size_t N> static auto sat(const char (&s)[N]) {
     return at_<true, &JNIEnv::GetStaticFieldID, F>(s, getClass());
   }
 
-  template <typename F, size_t N> Field<false, F> at(const char (&s)[N]) const {
+  template <typename F, size_t N> auto at(const char (&s)[N]) const {
     return at_<false, &JNIEnv::GetFieldID, F>(s, ref.obj);
   }
 
   template <typename R, size_t N, typename... Args>
-  static R scall(const char (&s)[N], Args &&... args) {
-    static_assert(!std::is_array<class_type>::value);
+  static auto scall(const char (&s)[N], Args &&... args) {
+    static_assert(!std::is_pointer<class_type>::value);
     return call_<jmethodID, &JNIEnv::GetStaticMethodID, R>(
         s, static_caller<R>(), getClass(), std::forward<Args>(args)...);
   }
 
   template <typename R, size_t N, typename... Args>
-  R call(const char (&s)[N], Args &&... args) const {
+  auto call(const char (&s)[N], Args &&... args) const {
     return call_<jmethodID, &JNIEnv::GetMethodID, R>(
         s, caller<R>(), ref.obj, std::forward<Args>(args)...);
   }
 
-  template <bool A = std::is_array<class_type>::value>
+  template <bool A = std::is_pointer<class_type>::value>
   auto size() const -> std::enable_if_t<A, jsize> {
-    static_assert(std::is_array<class_type>::value);
+    static_assert(std::is_pointer<class_type>::value);
     return env()->GetArrayLength(static_cast<jarray>(ref.obj));
   }
 
   auto operator[](jsize i) const {
-    static_assert(std::is_array<class_type>::value);
-    using raw_elem_type = std::remove_extent_t<class_type>;
-    using elem_type = std::conditional_t<std::is_pointer<raw_elem_type>::value,
-                                         std::remove_pointer_t<raw_elem_type>[],
-                                         raw_elem_type>;
+    static_assert(std::is_pointer<class_type>::value);
+    using elem_type = std::remove_pointer_t<class_type>;
     return Element<elem_type>{ref.obj, i};
   }
 
