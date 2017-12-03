@@ -14,6 +14,7 @@ env LD_LIBRARY_PATH=/usr/lib/jvm/default-java/jre/lib/amd64/server/ ./nojni -Dru
 #include <cstdio>
 #include <iosfwd>
 #include <numeric>
+#include <fstream>
 #include <regex>
 #include <unordered_map>
 #include <unordered_set>
@@ -648,7 +649,11 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
       pkg = regex_replace(pkg, regex{"namespace"}, "namespace_");
   }
 
-  cout << "#include \"no-jni.hpp\"\n\n";
+  std::ofstream dout{"jfwd_decl.hpp"};
+
+  dout << "#ifndef JFWD_DECL_HPP\n"
+       << "#define JFWD_DECL_HPP\n\n"
+       << "#include \"no-jni.hpp\"\n\n";
 
   unordered_map<string, pair<string, string>> pkg_to_nspace_pkg_var;
 
@@ -680,9 +685,9 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
                            : (" = " + pkg_parent +
                               &"_ / \""[pkg_parent.find('_') != string::npos] +
                               pkg_child + "\";"));
-    cout << "namespace " << nspace << " {}\n" << pkg_sig << "\n";
+    dout << "namespace " << nspace << " {}\n" << pkg_sig << "\n";
   }
-  cout << "\n";
+  dout << "\n";
 
   sort(begin(csignatures), end(csignatures));
   for (auto &csig : csignatures)
@@ -703,17 +708,28 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
     auto pkg = sig.substr(0, sig.rfind("/"));
     auto cls = sig.substr(pkg.size() + (pkg != sig));
 
-    cout << "namespace " << regex_replace(pkg, regex{"/"}, "::") << " { class "
+    dout << "namespace " << regex_replace(pkg, regex{"/"}, "::") << " { class "
          << cls << "; }\n";
-    cout << "template<> constexpr auto signature<::"
+    dout << "template<> constexpr auto signature<::"
          << regex_replace(sig, regex{"/"}, "::")
          << "> = ::" << regex_replace(pkg, regex{"/"}, "_") << " / \"" << cls
          << "\";\n";
   }
-  cout << "\n";
+  dout << "\n\n"
+       << "#endif\n";
 
   for (const auto &sig : csignatures) {
     auto pkg = sig.substr(0, sig.rfind("/"));
+
+    system(("mkdir -p " + pkg).c_str());
+    system(("touch " + sig + ".jpp").c_str());
+    ofstream fout{sig + ".jpp"};
+
+    fout << "#ifndef " << regex_replace(sig, std::regex{"/"}, "_") << "_HPP\n"
+         << "#define " << regex_replace(sig, std::regex{"/"}, "_") << "_HPP\n\n"
+         << "#include \"" << regex_replace(pkg + "/", std::regex{".*?/"}, "../")
+         << "jfwd_decl.hpp\"\n\n";
+
     auto cls = sig.substr(pkg.size() + (pkg != sig));
     auto clazz = classes[sig];
     auto ssig = clazz.superclass().signature();
@@ -723,13 +739,12 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
     if (scls.empty())
       scls = "::java::lang::Object";
 
-    cout << "class ::" << pkg_to_nspace_pkg_var[pkg].first << "::" << cls
+    fout << "class ::" << pkg_to_nspace_pkg_var[pkg].first << "::" << cls
          << " : public jObject<::" << pkg_to_nspace_pkg_var[pkg].first
-         << "::" << cls << ", " << scls << "> {\n";
-
-    cout << "public:\n";
-    cout << "\tusing jObject::jObject;\n\n";
-    cout << "\tstatic constexpr auto signature = ::"
+         << "::" << cls << ", " << scls << "> {\n"
+         << "public:\n"
+         << "\tusing jObject::jObject;\n\n"
+         << "\tstatic constexpr auto signature = ::"
          << pkg_to_nspace_pkg_var[pkg].second << " / \"" << cls << "\";\n\n";
 
     auto fields = clazz.get_fields();
@@ -748,15 +763,15 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
                                 }),
                       end(fsignatures));
     sort(begin(fsignatures), end(fsignatures));
-    cout << "\tconstexpr static Enume field_signatures{\n";
+    fout << "\tconstexpr static Enume field_signatures{\n";
     if (fsignatures.empty())
-      cout << "\t\tcexprstr{\"\\0\"}, //\n";
+      fout << "\t\tcexprstr{\"\\0\"}, //\n";
     else
       for (const auto &sig : fsignatures)
-        cout << "\t\tjField<" << demangle(get<1>(sig)) << ">(\"" << get<0>(sig)
+        fout << "\t\tjField<" << demangle(get<1>(sig)) << ">(\"" << get<0>(sig)
              << "\"), //\n";
 
-    cout << "\t};\n\n";
+    fout << "\t};\n\n";
 
     regex keywords{
         "\\b(virtual|and|not|xor|or|export|namespace|signed|delete|union|"
@@ -764,7 +779,7 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
         "OVERFLOW|EACCESS|EAGAIN|ASCII|UNDERFLOW)\\b"};
     for (const auto &sig : fsignatures) {
       auto name = regex_replace(get<0>(sig), keywords, "$1_");
-      cout << "\ttemplate<typename F = " << demangle(get<1>(sig)) << ">\n"
+      fout << "\ttemplate<typename F = " << demangle(get<1>(sig)) << ">\n"
            << "\t" << &"\0static "[get<2>(sig)] << "auto " << name << "() "
            << &"\0const "[!get<2>(sig)] << "{\n"
            << "\t\tstatic_assert(field_signatures[jField<F>(\"" << get<0>(sig)
@@ -789,21 +804,21 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
                                 }),
                       end(msignatures));
     sort(begin(msignatures), end(msignatures));
-    cout << "\tconstexpr static Enume method_signatures{\n";
+    fout << "\tconstexpr static Enume method_signatures{\n";
     if (msignatures.empty())
-      cout << "\t\tcexprstr{\"\\0\"}, //\n";
+      fout << "\t\tcexprstr{\"\\0\"}, //\n";
     else
       for (auto &sig : msignatures) {
         rotate(begin(get<1>(sig)),
                ++find(begin(get<1>(sig)), end(get<1>(sig)), ')'),
                end(get<1>(sig)));
         if (get<0>(sig) == "<init>")
-          cout << "\t\tjConstructor<" + demangle(get<1>(sig)) + ">(), //\n";
+          fout << "\t\tjConstructor<" + demangle(get<1>(sig)) + ">(), //\n";
         else
-          cout << "\t\tjMethod<" + demangle(get<1>(sig)) + ">(\"" +
+          fout << "\t\tjMethod<" + demangle(get<1>(sig)) + ">(\"" +
                       get<0>(sig) + "\"), //\n";
       }
-    cout << "\t};\n\n";
+    fout << "\t};\n\n";
 
     unordered_set<string> overloaded;
 
@@ -815,7 +830,7 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
         continue;
       overloaded.insert(get<0>(sig));
       auto return_type = demangle(get<1>(sig).substr(0, get<1>(sig).find('(')));
-      cout << "\ttemplate<typename R = " << return_type
+      fout << "\ttemplate<typename R = " << return_type
            << ", typename... Args>\n"
            << "\t" << &"\0static "[get<2>(sig)] << "auto " << name
            << "(Args &&...args) " << &"\0const "[!get<2>(sig)] << "{\n"
@@ -827,7 +842,8 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
            << "\t}\n\n";
     }
 
-    cout << "};\n\n";
+    fout << "};\n\n"
+         << "#endif\n";
   }
 
   JavaVirtualMachine::env->ExceptionClear();
