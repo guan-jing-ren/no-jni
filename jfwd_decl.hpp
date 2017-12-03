@@ -383,6 +383,36 @@ namespace javax::xml::xpath {}
 [[maybe_unused]] inline constexpr jPackage javax_xml_xpath = javax_xml / "xpath";
 namespace org {}
 [[maybe_unused]] inline constexpr jPackage org_{"org"};
+namespace org::eclipse {}
+[[maybe_unused]] inline constexpr jPackage org_eclipse = org_ / "eclipse";
+namespace org::eclipse::swt {}
+[[maybe_unused]] inline constexpr jPackage org_eclipse_swt = org_eclipse / "swt";
+namespace org::eclipse::swt::accessibility {}
+[[maybe_unused]] inline constexpr jPackage org_eclipse_swt_accessibility = org_eclipse_swt / "accessibility";
+namespace org::eclipse::swt::awt {}
+[[maybe_unused]] inline constexpr jPackage org_eclipse_swt_awt = org_eclipse_swt / "awt";
+namespace org::eclipse::swt::browser {}
+[[maybe_unused]] inline constexpr jPackage org_eclipse_swt_browser = org_eclipse_swt / "browser";
+namespace org::eclipse::swt::custom {}
+[[maybe_unused]] inline constexpr jPackage org_eclipse_swt_custom = org_eclipse_swt / "custom";
+namespace org::eclipse::swt::dnd {}
+[[maybe_unused]] inline constexpr jPackage org_eclipse_swt_dnd = org_eclipse_swt / "dnd";
+namespace org::eclipse::swt::events {}
+[[maybe_unused]] inline constexpr jPackage org_eclipse_swt_events = org_eclipse_swt / "events";
+namespace org::eclipse::swt::graphics {}
+[[maybe_unused]] inline constexpr jPackage org_eclipse_swt_graphics = org_eclipse_swt / "graphics";
+namespace org::eclipse::swt::internal {}
+[[maybe_unused]] inline constexpr jPackage org_eclipse_swt_internal = org_eclipse_swt / "internal";
+namespace org::eclipse::swt::layout {}
+[[maybe_unused]] inline constexpr jPackage org_eclipse_swt_layout = org_eclipse_swt / "layout";
+namespace org::eclipse::swt::opengl {}
+[[maybe_unused]] inline constexpr jPackage org_eclipse_swt_opengl = org_eclipse_swt / "opengl";
+namespace org::eclipse::swt::printing {}
+[[maybe_unused]] inline constexpr jPackage org_eclipse_swt_printing = org_eclipse_swt / "printing";
+namespace org::eclipse::swt::program {}
+[[maybe_unused]] inline constexpr jPackage org_eclipse_swt_program = org_eclipse_swt / "program";
+namespace org::eclipse::swt::widgets {}
+[[maybe_unused]] inline constexpr jPackage org_eclipse_swt_widgets = org_eclipse_swt / "widgets";
 namespace org::ietf {}
 [[maybe_unused]] inline constexpr jPackage org_ietf = org_ / "ietf";
 namespace org::ietf::jgss {}
@@ -15114,6 +15144,1198 @@ namespace javax::xml::xpath { class XPathFunctionResolver; }
 template<> constexpr auto signature<::javax::xml::xpath::XPathFunctionResolver> = ::javax_xml_xpath / "XPathFunctionResolver";
 namespace javax::xml::xpath { class XPathVariableResolver; }
 template<> constexpr auto signature<::javax::xml::xpath::XPathVariableResolver> = ::javax_xml_xpath / "XPathVariableResolver";
+namespace org::eclipse::swt { class SWT; }
+template<> constexpr auto signature<::org::eclipse::swt::SWT> = ::org_eclipse_swt / "SWT";
+namespace org::eclipse::swt { class SWTError; }
+template<> constexpr auto signature<::org::eclipse::swt::SWTError> = ::org_eclipse_swt / "SWTError";
+namespace org::eclipse::swt { class SWTException; }
+template<> constexpr auto signature<::org::eclipse::swt::SWTException> = ::org_eclipse_swt / "SWTException";
+namespace org::eclipse::swt::accessibility { class ACC; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::ACC> = ::org_eclipse_swt_accessibility / "ACC";
+namespace org::eclipse::swt::accessibility { class Accessible; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::Accessible> = ::org_eclipse_swt_accessibility / "Accessible";
+namespace org::eclipse::swt::accessibility { class Accessible$Relation; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::Accessible$Relation> = ::org_eclipse_swt_accessibility / "Accessible$Relation";
+namespace org::eclipse::swt::accessibility { class AccessibleActionAdapter; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleActionAdapter> = ::org_eclipse_swt_accessibility / "AccessibleActionAdapter";
+namespace org::eclipse::swt::accessibility { class AccessibleActionEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleActionEvent> = ::org_eclipse_swt_accessibility / "AccessibleActionEvent";
+namespace org::eclipse::swt::accessibility { class AccessibleActionListener; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleActionListener> = ::org_eclipse_swt_accessibility / "AccessibleActionListener";
+namespace org::eclipse::swt::accessibility { class AccessibleAdapter; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleAdapter> = ::org_eclipse_swt_accessibility / "AccessibleAdapter";
+namespace org::eclipse::swt::accessibility { class AccessibleAttributeAdapter; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleAttributeAdapter> = ::org_eclipse_swt_accessibility / "AccessibleAttributeAdapter";
+namespace org::eclipse::swt::accessibility { class AccessibleAttributeEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleAttributeEvent> = ::org_eclipse_swt_accessibility / "AccessibleAttributeEvent";
+namespace org::eclipse::swt::accessibility { class AccessibleAttributeListener; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleAttributeListener> = ::org_eclipse_swt_accessibility / "AccessibleAttributeListener";
+namespace org::eclipse::swt::accessibility { class AccessibleControlAdapter; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleControlAdapter> = ::org_eclipse_swt_accessibility / "AccessibleControlAdapter";
+namespace org::eclipse::swt::accessibility { class AccessibleControlEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleControlEvent> = ::org_eclipse_swt_accessibility / "AccessibleControlEvent";
+namespace org::eclipse::swt::accessibility { class AccessibleControlListener; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleControlListener> = ::org_eclipse_swt_accessibility / "AccessibleControlListener";
+namespace org::eclipse::swt::accessibility { class AccessibleEditableTextAdapter; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleEditableTextAdapter> = ::org_eclipse_swt_accessibility / "AccessibleEditableTextAdapter";
+namespace org::eclipse::swt::accessibility { class AccessibleEditableTextEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleEditableTextEvent> = ::org_eclipse_swt_accessibility / "AccessibleEditableTextEvent";
+namespace org::eclipse::swt::accessibility { class AccessibleEditableTextListener; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleEditableTextListener> = ::org_eclipse_swt_accessibility / "AccessibleEditableTextListener";
+namespace org::eclipse::swt::accessibility { class AccessibleEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleEvent> = ::org_eclipse_swt_accessibility / "AccessibleEvent";
+namespace org::eclipse::swt::accessibility { class AccessibleFactory; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleFactory> = ::org_eclipse_swt_accessibility / "AccessibleFactory";
+namespace org::eclipse::swt::accessibility { class AccessibleHyperlinkAdapter; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleHyperlinkAdapter> = ::org_eclipse_swt_accessibility / "AccessibleHyperlinkAdapter";
+namespace org::eclipse::swt::accessibility { class AccessibleHyperlinkEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleHyperlinkEvent> = ::org_eclipse_swt_accessibility / "AccessibleHyperlinkEvent";
+namespace org::eclipse::swt::accessibility { class AccessibleHyperlinkListener; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleHyperlinkListener> = ::org_eclipse_swt_accessibility / "AccessibleHyperlinkListener";
+namespace org::eclipse::swt::accessibility { class AccessibleListener; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleListener> = ::org_eclipse_swt_accessibility / "AccessibleListener";
+namespace org::eclipse::swt::accessibility { class AccessibleObject; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleObject> = ::org_eclipse_swt_accessibility / "AccessibleObject";
+namespace org::eclipse::swt::accessibility { class AccessibleTableAdapter; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleTableAdapter> = ::org_eclipse_swt_accessibility / "AccessibleTableAdapter";
+namespace org::eclipse::swt::accessibility { class AccessibleTableCellAdapter; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleTableCellAdapter> = ::org_eclipse_swt_accessibility / "AccessibleTableCellAdapter";
+namespace org::eclipse::swt::accessibility { class AccessibleTableCellEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleTableCellEvent> = ::org_eclipse_swt_accessibility / "AccessibleTableCellEvent";
+namespace org::eclipse::swt::accessibility { class AccessibleTableCellListener; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleTableCellListener> = ::org_eclipse_swt_accessibility / "AccessibleTableCellListener";
+namespace org::eclipse::swt::accessibility { class AccessibleTableEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleTableEvent> = ::org_eclipse_swt_accessibility / "AccessibleTableEvent";
+namespace org::eclipse::swt::accessibility { class AccessibleTableListener; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleTableListener> = ::org_eclipse_swt_accessibility / "AccessibleTableListener";
+namespace org::eclipse::swt::accessibility { class AccessibleTextAdapter; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleTextAdapter> = ::org_eclipse_swt_accessibility / "AccessibleTextAdapter";
+namespace org::eclipse::swt::accessibility { class AccessibleTextAttributeEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleTextAttributeEvent> = ::org_eclipse_swt_accessibility / "AccessibleTextAttributeEvent";
+namespace org::eclipse::swt::accessibility { class AccessibleTextEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleTextEvent> = ::org_eclipse_swt_accessibility / "AccessibleTextEvent";
+namespace org::eclipse::swt::accessibility { class AccessibleTextExtendedAdapter; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleTextExtendedAdapter> = ::org_eclipse_swt_accessibility / "AccessibleTextExtendedAdapter";
+namespace org::eclipse::swt::accessibility { class AccessibleTextExtendedListener; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleTextExtendedListener> = ::org_eclipse_swt_accessibility / "AccessibleTextExtendedListener";
+namespace org::eclipse::swt::accessibility { class AccessibleTextListener; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleTextListener> = ::org_eclipse_swt_accessibility / "AccessibleTextListener";
+namespace org::eclipse::swt::accessibility { class AccessibleValueAdapter; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleValueAdapter> = ::org_eclipse_swt_accessibility / "AccessibleValueAdapter";
+namespace org::eclipse::swt::accessibility { class AccessibleValueEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleValueEvent> = ::org_eclipse_swt_accessibility / "AccessibleValueEvent";
+namespace org::eclipse::swt::accessibility { class AccessibleValueListener; }
+template<> constexpr auto signature<::org::eclipse::swt::accessibility::AccessibleValueListener> = ::org_eclipse_swt_accessibility / "AccessibleValueListener";
+namespace org::eclipse::swt::awt { class SWT_AWT; }
+template<> constexpr auto signature<::org::eclipse::swt::awt::SWT_AWT> = ::org_eclipse_swt_awt / "SWT_AWT";
+namespace org::eclipse::swt::awt { class SWT_AWT$1; }
+template<> constexpr auto signature<::org::eclipse::swt::awt::SWT_AWT$1> = ::org_eclipse_swt_awt / "SWT_AWT$1";
+namespace org::eclipse::swt::awt { class SWT_AWT$1$1; }
+template<> constexpr auto signature<::org::eclipse::swt::awt::SWT_AWT$1$1> = ::org_eclipse_swt_awt / "SWT_AWT$1$1";
+namespace org::eclipse::swt::awt { class SWT_AWT$2; }
+template<> constexpr auto signature<::org::eclipse::swt::awt::SWT_AWT$2> = ::org_eclipse_swt_awt / "SWT_AWT$2";
+namespace org::eclipse::swt::awt { class SWT_AWT$2$1; }
+template<> constexpr auto signature<::org::eclipse::swt::awt::SWT_AWT$2$1> = ::org_eclipse_swt_awt / "SWT_AWT$2$1";
+namespace org::eclipse::swt::awt { class SWT_AWT$2$2; }
+template<> constexpr auto signature<::org::eclipse::swt::awt::SWT_AWT$2$2> = ::org_eclipse_swt_awt / "SWT_AWT$2$2";
+namespace org::eclipse::swt::awt { class SWT_AWT$3; }
+template<> constexpr auto signature<::org::eclipse::swt::awt::SWT_AWT$3> = ::org_eclipse_swt_awt / "SWT_AWT$3";
+namespace org::eclipse::swt::awt { class SWT_AWT$3$1; }
+template<> constexpr auto signature<::org::eclipse::swt::awt::SWT_AWT$3$1> = ::org_eclipse_swt_awt / "SWT_AWT$3$1";
+namespace org::eclipse::swt::awt { class SWT_AWT$3$2; }
+template<> constexpr auto signature<::org::eclipse::swt::awt::SWT_AWT$3$2> = ::org_eclipse_swt_awt / "SWT_AWT$3$2";
+namespace org::eclipse::swt::awt { class SWT_AWT$4; }
+template<> constexpr auto signature<::org::eclipse::swt::awt::SWT_AWT$4> = ::org_eclipse_swt_awt / "SWT_AWT$4";
+namespace org::eclipse::swt::awt { class SWT_AWT$4$1; }
+template<> constexpr auto signature<::org::eclipse::swt::awt::SWT_AWT$4$1> = ::org_eclipse_swt_awt / "SWT_AWT$4$1";
+namespace org::eclipse::swt::awt { class SWT_AWT$5; }
+template<> constexpr auto signature<::org::eclipse::swt::awt::SWT_AWT$5> = ::org_eclipse_swt_awt / "SWT_AWT$5";
+namespace org::eclipse::swt::awt { class SWT_AWT$5$1; }
+template<> constexpr auto signature<::org::eclipse::swt::awt::SWT_AWT$5$1> = ::org_eclipse_swt_awt / "SWT_AWT$5$1";
+namespace org::eclipse::swt::awt { class SWT_AWT$6; }
+template<> constexpr auto signature<::org::eclipse::swt::awt::SWT_AWT$6> = ::org_eclipse_swt_awt / "SWT_AWT$6";
+namespace org::eclipse::swt::browser { class AppFileLocProvider; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::AppFileLocProvider> = ::org_eclipse_swt_browser / "AppFileLocProvider";
+namespace org::eclipse::swt::browser { class AppFileLocProvider$1; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::AppFileLocProvider$1> = ::org_eclipse_swt_browser / "AppFileLocProvider$1";
+namespace org::eclipse::swt::browser { class AppFileLocProvider$2; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::AppFileLocProvider$2> = ::org_eclipse_swt_browser / "AppFileLocProvider$2";
+namespace org::eclipse::swt::browser { class AppFileLocProvider$3; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::AppFileLocProvider$3> = ::org_eclipse_swt_browser / "AppFileLocProvider$3";
+namespace org::eclipse::swt::browser { class AuthenticationEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::AuthenticationEvent> = ::org_eclipse_swt_browser / "AuthenticationEvent";
+namespace org::eclipse::swt::browser { class AuthenticationListener; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::AuthenticationListener> = ::org_eclipse_swt_browser / "AuthenticationListener";
+namespace org::eclipse::swt::browser { class Browser; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Browser> = ::org_eclipse_swt_browser / "Browser";
+namespace org::eclipse::swt::browser { class BrowserFactory; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::BrowserFactory> = ::org_eclipse_swt_browser / "BrowserFactory";
+namespace org::eclipse::swt::browser { class BrowserFunction; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::BrowserFunction> = ::org_eclipse_swt_browser / "BrowserFunction";
+namespace org::eclipse::swt::browser { class CloseWindowListener; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::CloseWindowListener> = ::org_eclipse_swt_browser / "CloseWindowListener";
+namespace org::eclipse::swt::browser { class Download; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Download> = ::org_eclipse_swt_browser / "Download";
+namespace org::eclipse::swt::browser { class Download$1; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Download$1> = ::org_eclipse_swt_browser / "Download$1";
+namespace org::eclipse::swt::browser { class Download$2; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Download$2> = ::org_eclipse_swt_browser / "Download$2";
+namespace org::eclipse::swt::browser { class Download$3; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Download$3> = ::org_eclipse_swt_browser / "Download$3";
+namespace org::eclipse::swt::browser { class Download$4; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Download$4> = ::org_eclipse_swt_browser / "Download$4";
+namespace org::eclipse::swt::browser { class Download$5; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Download$5> = ::org_eclipse_swt_browser / "Download$5";
+namespace org::eclipse::swt::browser { class DownloadFactory; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::DownloadFactory> = ::org_eclipse_swt_browser / "DownloadFactory";
+namespace org::eclipse::swt::browser { class DownloadFactory$1; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::DownloadFactory$1> = ::org_eclipse_swt_browser / "DownloadFactory$1";
+namespace org::eclipse::swt::browser { class DownloadFactory$2; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::DownloadFactory$2> = ::org_eclipse_swt_browser / "DownloadFactory$2";
+namespace org::eclipse::swt::browser { class DownloadFactory_1_8; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::DownloadFactory_1_8> = ::org_eclipse_swt_browser / "DownloadFactory_1_8";
+namespace org::eclipse::swt::browser { class DownloadFactory_1_8$1; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::DownloadFactory_1_8$1> = ::org_eclipse_swt_browser / "DownloadFactory_1_8$1";
+namespace org::eclipse::swt::browser { class DownloadFactory_1_8$2; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::DownloadFactory_1_8$2> = ::org_eclipse_swt_browser / "DownloadFactory_1_8$2";
+namespace org::eclipse::swt::browser { class Download_1_8; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Download_1_8> = ::org_eclipse_swt_browser / "Download_1_8";
+namespace org::eclipse::swt::browser { class Download_1_8$1; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Download_1_8$1> = ::org_eclipse_swt_browser / "Download_1_8$1";
+namespace org::eclipse::swt::browser { class Download_1_8$2; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Download_1_8$2> = ::org_eclipse_swt_browser / "Download_1_8$2";
+namespace org::eclipse::swt::browser { class Download_1_8$3; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Download_1_8$3> = ::org_eclipse_swt_browser / "Download_1_8$3";
+namespace org::eclipse::swt::browser { class Download_1_8$4; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Download_1_8$4> = ::org_eclipse_swt_browser / "Download_1_8$4";
+namespace org::eclipse::swt::browser { class Download_1_8$5; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Download_1_8$5> = ::org_eclipse_swt_browser / "Download_1_8$5";
+namespace org::eclipse::swt::browser { class External; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::External> = ::org_eclipse_swt_browser / "External";
+namespace org::eclipse::swt::browser { class External$1; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::External$1> = ::org_eclipse_swt_browser / "External$1";
+namespace org::eclipse::swt::browser { class External$2; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::External$2> = ::org_eclipse_swt_browser / "External$2";
+namespace org::eclipse::swt::browser { class External$3; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::External$3> = ::org_eclipse_swt_browser / "External$3";
+namespace org::eclipse::swt::browser { class External$4; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::External$4> = ::org_eclipse_swt_browser / "External$4";
+namespace org::eclipse::swt::browser { class External$5; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::External$5> = ::org_eclipse_swt_browser / "External$5";
+namespace org::eclipse::swt::browser { class ExternalFactory; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::ExternalFactory> = ::org_eclipse_swt_browser / "ExternalFactory";
+namespace org::eclipse::swt::browser { class ExternalFactory$1; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::ExternalFactory$1> = ::org_eclipse_swt_browser / "ExternalFactory$1";
+namespace org::eclipse::swt::browser { class ExternalFactory$2; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::ExternalFactory$2> = ::org_eclipse_swt_browser / "ExternalFactory$2";
+namespace org::eclipse::swt::browser { class FilePicker; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::FilePicker> = ::org_eclipse_swt_browser / "FilePicker";
+namespace org::eclipse::swt::browser { class FilePicker$1; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::FilePicker$1> = ::org_eclipse_swt_browser / "FilePicker$1";
+namespace org::eclipse::swt::browser { class FilePicker$2; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::FilePicker$2> = ::org_eclipse_swt_browser / "FilePicker$2";
+namespace org::eclipse::swt::browser { class FilePickerFactory; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::FilePickerFactory> = ::org_eclipse_swt_browser / "FilePickerFactory";
+namespace org::eclipse::swt::browser { class FilePickerFactory$1; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::FilePickerFactory$1> = ::org_eclipse_swt_browser / "FilePickerFactory$1";
+namespace org::eclipse::swt::browser { class FilePickerFactory$2; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::FilePickerFactory$2> = ::org_eclipse_swt_browser / "FilePickerFactory$2";
+namespace org::eclipse::swt::browser { class FilePicker_10; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::FilePicker_10> = ::org_eclipse_swt_browser / "FilePicker_10";
+namespace org::eclipse::swt::browser { class FilePicker_10$1; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::FilePicker_10$1> = ::org_eclipse_swt_browser / "FilePicker_10$1";
+namespace org::eclipse::swt::browser { class FilePicker_10$2; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::FilePicker_10$2> = ::org_eclipse_swt_browser / "FilePicker_10$2";
+namespace org::eclipse::swt::browser { class FilePicker_1_8; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::FilePicker_1_8> = ::org_eclipse_swt_browser / "FilePicker_1_8";
+namespace org::eclipse::swt::browser { class FilePicker_1_8$1; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::FilePicker_1_8$1> = ::org_eclipse_swt_browser / "FilePicker_1_8$1";
+namespace org::eclipse::swt::browser { class FilePicker_1_8$2; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::FilePicker_1_8$2> = ::org_eclipse_swt_browser / "FilePicker_1_8$2";
+namespace org::eclipse::swt::browser { class HelperAppLauncherDialog; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::HelperAppLauncherDialog> = ::org_eclipse_swt_browser / "HelperAppLauncherDialog";
+namespace org::eclipse::swt::browser { class HelperAppLauncherDialog$1; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::HelperAppLauncherDialog$1> = ::org_eclipse_swt_browser / "HelperAppLauncherDialog$1";
+namespace org::eclipse::swt::browser { class HelperAppLauncherDialog$2; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::HelperAppLauncherDialog$2> = ::org_eclipse_swt_browser / "HelperAppLauncherDialog$2";
+namespace org::eclipse::swt::browser { class HelperAppLauncherDialogFactory; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::HelperAppLauncherDialogFactory> = ::org_eclipse_swt_browser / "HelperAppLauncherDialogFactory";
+namespace org::eclipse::swt::browser { class HelperAppLauncherDialogFactory$1; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::HelperAppLauncherDialogFactory$1> = ::org_eclipse_swt_browser / "HelperAppLauncherDialogFactory$1";
+namespace org::eclipse::swt::browser { class HelperAppLauncherDialogFactory$2; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::HelperAppLauncherDialogFactory$2> = ::org_eclipse_swt_browser / "HelperAppLauncherDialogFactory$2";
+namespace org::eclipse::swt::browser { class HelperAppLauncherDialog_10; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::HelperAppLauncherDialog_10> = ::org_eclipse_swt_browser / "HelperAppLauncherDialog_10";
+namespace org::eclipse::swt::browser { class HelperAppLauncherDialog_1_9; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::HelperAppLauncherDialog_1_9> = ::org_eclipse_swt_browser / "HelperAppLauncherDialog_1_9";
+namespace org::eclipse::swt::browser { class HelperAppLauncherDialog_1_9$1; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::HelperAppLauncherDialog_1_9$1> = ::org_eclipse_swt_browser / "HelperAppLauncherDialog_1_9$1";
+namespace org::eclipse::swt::browser { class HelperAppLauncherDialog_1_9$2; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::HelperAppLauncherDialog_1_9$2> = ::org_eclipse_swt_browser / "HelperAppLauncherDialog_1_9$2";
+namespace org::eclipse::swt::browser { class InputStream; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::InputStream> = ::org_eclipse_swt_browser / "InputStream";
+namespace org::eclipse::swt::browser { class InputStream$1; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::InputStream$1> = ::org_eclipse_swt_browser / "InputStream$1";
+namespace org::eclipse::swt::browser { class LocationAdapter; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::LocationAdapter> = ::org_eclipse_swt_browser / "LocationAdapter";
+namespace org::eclipse::swt::browser { class LocationEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::LocationEvent> = ::org_eclipse_swt_browser / "LocationEvent";
+namespace org::eclipse::swt::browser { class LocationListener; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::LocationListener> = ::org_eclipse_swt_browser / "LocationListener";
+namespace org::eclipse::swt::browser { class Mozilla; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Mozilla> = ::org_eclipse_swt_browser / "Mozilla";
+namespace org::eclipse::swt::browser { class Mozilla$1; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Mozilla$1> = ::org_eclipse_swt_browser / "Mozilla$1";
+namespace org::eclipse::swt::browser { class Mozilla$10; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Mozilla$10> = ::org_eclipse_swt_browser / "Mozilla$10";
+namespace org::eclipse::swt::browser { class Mozilla$11; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Mozilla$11> = ::org_eclipse_swt_browser / "Mozilla$11";
+namespace org::eclipse::swt::browser { class Mozilla$12; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Mozilla$12> = ::org_eclipse_swt_browser / "Mozilla$12";
+namespace org::eclipse::swt::browser { class Mozilla$13; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Mozilla$13> = ::org_eclipse_swt_browser / "Mozilla$13";
+namespace org::eclipse::swt::browser { class Mozilla$14; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Mozilla$14> = ::org_eclipse_swt_browser / "Mozilla$14";
+namespace org::eclipse::swt::browser { class Mozilla$15; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Mozilla$15> = ::org_eclipse_swt_browser / "Mozilla$15";
+namespace org::eclipse::swt::browser { class Mozilla$16; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Mozilla$16> = ::org_eclipse_swt_browser / "Mozilla$16";
+namespace org::eclipse::swt::browser { class Mozilla$17; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Mozilla$17> = ::org_eclipse_swt_browser / "Mozilla$17";
+namespace org::eclipse::swt::browser { class Mozilla$18; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Mozilla$18> = ::org_eclipse_swt_browser / "Mozilla$18";
+namespace org::eclipse::swt::browser { class Mozilla$19; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Mozilla$19> = ::org_eclipse_swt_browser / "Mozilla$19";
+namespace org::eclipse::swt::browser { class Mozilla$2; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Mozilla$2> = ::org_eclipse_swt_browser / "Mozilla$2";
+namespace org::eclipse::swt::browser { class Mozilla$20; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Mozilla$20> = ::org_eclipse_swt_browser / "Mozilla$20";
+namespace org::eclipse::swt::browser { class Mozilla$21; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Mozilla$21> = ::org_eclipse_swt_browser / "Mozilla$21";
+namespace org::eclipse::swt::browser { class Mozilla$22; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Mozilla$22> = ::org_eclipse_swt_browser / "Mozilla$22";
+namespace org::eclipse::swt::browser { class Mozilla$23; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Mozilla$23> = ::org_eclipse_swt_browser / "Mozilla$23";
+namespace org::eclipse::swt::browser { class Mozilla$24; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Mozilla$24> = ::org_eclipse_swt_browser / "Mozilla$24";
+namespace org::eclipse::swt::browser { class Mozilla$25; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Mozilla$25> = ::org_eclipse_swt_browser / "Mozilla$25";
+namespace org::eclipse::swt::browser { class Mozilla$26; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Mozilla$26> = ::org_eclipse_swt_browser / "Mozilla$26";
+namespace org::eclipse::swt::browser { class Mozilla$3; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Mozilla$3> = ::org_eclipse_swt_browser / "Mozilla$3";
+namespace org::eclipse::swt::browser { class Mozilla$4; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Mozilla$4> = ::org_eclipse_swt_browser / "Mozilla$4";
+namespace org::eclipse::swt::browser { class Mozilla$5; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Mozilla$5> = ::org_eclipse_swt_browser / "Mozilla$5";
+namespace org::eclipse::swt::browser { class Mozilla$5$1; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Mozilla$5$1> = ::org_eclipse_swt_browser / "Mozilla$5$1";
+namespace org::eclipse::swt::browser { class Mozilla$6; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Mozilla$6> = ::org_eclipse_swt_browser / "Mozilla$6";
+namespace org::eclipse::swt::browser { class Mozilla$7; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Mozilla$7> = ::org_eclipse_swt_browser / "Mozilla$7";
+namespace org::eclipse::swt::browser { class Mozilla$8; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Mozilla$8> = ::org_eclipse_swt_browser / "Mozilla$8";
+namespace org::eclipse::swt::browser { class Mozilla$9; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Mozilla$9> = ::org_eclipse_swt_browser / "Mozilla$9";
+namespace org::eclipse::swt::browser { class MozillaDelegate; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::MozillaDelegate> = ::org_eclipse_swt_browser / "MozillaDelegate";
+namespace org::eclipse::swt::browser { class MozillaDelegate$1; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::MozillaDelegate$1> = ::org_eclipse_swt_browser / "MozillaDelegate$1";
+namespace org::eclipse::swt::browser { class MozillaDelegate$2; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::MozillaDelegate$2> = ::org_eclipse_swt_browser / "MozillaDelegate$2";
+namespace org::eclipse::swt::browser { class OpenWindowListener; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::OpenWindowListener> = ::org_eclipse_swt_browser / "OpenWindowListener";
+namespace org::eclipse::swt::browser { class ProgressAdapter; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::ProgressAdapter> = ::org_eclipse_swt_browser / "ProgressAdapter";
+namespace org::eclipse::swt::browser { class ProgressEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::ProgressEvent> = ::org_eclipse_swt_browser / "ProgressEvent";
+namespace org::eclipse::swt::browser { class ProgressListener; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::ProgressListener> = ::org_eclipse_swt_browser / "ProgressListener";
+namespace org::eclipse::swt::browser { class PromptAuth2; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::PromptAuth2> = ::org_eclipse_swt_browser / "PromptAuth2";
+namespace org::eclipse::swt::browser { class PromptAuth2$1; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::PromptAuth2$1> = ::org_eclipse_swt_browser / "PromptAuth2$1";
+namespace org::eclipse::swt::browser { class PromptAuth2$2; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::PromptAuth2$2> = ::org_eclipse_swt_browser / "PromptAuth2$2";
+namespace org::eclipse::swt::browser { class PromptDialog; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::PromptDialog> = ::org_eclipse_swt_browser / "PromptDialog";
+namespace org::eclipse::swt::browser { class PromptDialog$1; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::PromptDialog$1> = ::org_eclipse_swt_browser / "PromptDialog$1";
+namespace org::eclipse::swt::browser { class PromptDialog$2; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::PromptDialog$2> = ::org_eclipse_swt_browser / "PromptDialog$2";
+namespace org::eclipse::swt::browser { class PromptDialog$2$1; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::PromptDialog$2$1> = ::org_eclipse_swt_browser / "PromptDialog$2$1";
+namespace org::eclipse::swt::browser { class PromptDialog$3; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::PromptDialog$3> = ::org_eclipse_swt_browser / "PromptDialog$3";
+namespace org::eclipse::swt::browser { class PromptDialog$4; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::PromptDialog$4> = ::org_eclipse_swt_browser / "PromptDialog$4";
+namespace org::eclipse::swt::browser { class PromptDialog$5; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::PromptDialog$5> = ::org_eclipse_swt_browser / "PromptDialog$5";
+namespace org::eclipse::swt::browser { class PromptDialog$6; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::PromptDialog$6> = ::org_eclipse_swt_browser / "PromptDialog$6";
+namespace org::eclipse::swt::browser { class PromptFactory; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::PromptFactory> = ::org_eclipse_swt_browser / "PromptFactory";
+namespace org::eclipse::swt::browser { class PromptFactory$1; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::PromptFactory$1> = ::org_eclipse_swt_browser / "PromptFactory$1";
+namespace org::eclipse::swt::browser { class PromptFactory$2; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::PromptFactory$2> = ::org_eclipse_swt_browser / "PromptFactory$2";
+namespace org::eclipse::swt::browser { class PromptService2; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::PromptService2> = ::org_eclipse_swt_browser / "PromptService2";
+namespace org::eclipse::swt::browser { class PromptService2$1; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::PromptService2$1> = ::org_eclipse_swt_browser / "PromptService2$1";
+namespace org::eclipse::swt::browser { class PromptService2$2; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::PromptService2$2> = ::org_eclipse_swt_browser / "PromptService2$2";
+namespace org::eclipse::swt::browser { class PromptService2$3; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::PromptService2$3> = ::org_eclipse_swt_browser / "PromptService2$3";
+namespace org::eclipse::swt::browser { class PromptService2Factory; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::PromptService2Factory> = ::org_eclipse_swt_browser / "PromptService2Factory";
+namespace org::eclipse::swt::browser { class PromptService2Factory$1; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::PromptService2Factory$1> = ::org_eclipse_swt_browser / "PromptService2Factory$1";
+namespace org::eclipse::swt::browser { class PromptService2Factory$2; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::PromptService2Factory$2> = ::org_eclipse_swt_browser / "PromptService2Factory$2";
+namespace org::eclipse::swt::browser { class Prompter; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Prompter> = ::org_eclipse_swt_browser / "Prompter";
+namespace org::eclipse::swt::browser { class Prompter$1; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Prompter$1> = ::org_eclipse_swt_browser / "Prompter$1";
+namespace org::eclipse::swt::browser { class Prompter$2; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::Prompter$2> = ::org_eclipse_swt_browser / "Prompter$2";
+namespace org::eclipse::swt::browser { class SimpleEnumerator; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::SimpleEnumerator> = ::org_eclipse_swt_browser / "SimpleEnumerator";
+namespace org::eclipse::swt::browser { class SimpleEnumerator$1; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::SimpleEnumerator$1> = ::org_eclipse_swt_browser / "SimpleEnumerator$1";
+namespace org::eclipse::swt::browser { class SimpleEnumerator$2; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::SimpleEnumerator$2> = ::org_eclipse_swt_browser / "SimpleEnumerator$2";
+namespace org::eclipse::swt::browser { class StatusTextEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::StatusTextEvent> = ::org_eclipse_swt_browser / "StatusTextEvent";
+namespace org::eclipse::swt::browser { class StatusTextListener; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::StatusTextListener> = ::org_eclipse_swt_browser / "StatusTextListener";
+namespace org::eclipse::swt::browser { class TitleEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::TitleEvent> = ::org_eclipse_swt_browser / "TitleEvent";
+namespace org::eclipse::swt::browser { class TitleListener; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::TitleListener> = ::org_eclipse_swt_browser / "TitleListener";
+namespace org::eclipse::swt::browser { class VisibilityWindowAdapter; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::VisibilityWindowAdapter> = ::org_eclipse_swt_browser / "VisibilityWindowAdapter";
+namespace org::eclipse::swt::browser { class VisibilityWindowListener; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::VisibilityWindowListener> = ::org_eclipse_swt_browser / "VisibilityWindowListener";
+namespace org::eclipse::swt::browser { class WebBrowser; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::WebBrowser> = ::org_eclipse_swt_browser / "WebBrowser";
+namespace org::eclipse::swt::browser { class WebBrowser$EvaluateFunction; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::WebBrowser$EvaluateFunction> = ::org_eclipse_swt_browser / "WebBrowser$EvaluateFunction";
+namespace org::eclipse::swt::browser { class WebKit; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::WebKit> = ::org_eclipse_swt_browser / "WebKit";
+namespace org::eclipse::swt::browser { class WebKit$1; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::WebKit$1> = ::org_eclipse_swt_browser / "WebKit$1";
+namespace org::eclipse::swt::browser { class WebKit$10; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::WebKit$10> = ::org_eclipse_swt_browser / "WebKit$10";
+namespace org::eclipse::swt::browser { class WebKit$2; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::WebKit$2> = ::org_eclipse_swt_browser / "WebKit$2";
+namespace org::eclipse::swt::browser { class WebKit$3; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::WebKit$3> = ::org_eclipse_swt_browser / "WebKit$3";
+namespace org::eclipse::swt::browser { class WebKit$4; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::WebKit$4> = ::org_eclipse_swt_browser / "WebKit$4";
+namespace org::eclipse::swt::browser { class WebKit$5; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::WebKit$5> = ::org_eclipse_swt_browser / "WebKit$5";
+namespace org::eclipse::swt::browser { class WebKit$6; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::WebKit$6> = ::org_eclipse_swt_browser / "WebKit$6";
+namespace org::eclipse::swt::browser { class WebKit$7; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::WebKit$7> = ::org_eclipse_swt_browser / "WebKit$7";
+namespace org::eclipse::swt::browser { class WebKit$8; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::WebKit$8> = ::org_eclipse_swt_browser / "WebKit$8";
+namespace org::eclipse::swt::browser { class WebKit$9; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::WebKit$9> = ::org_eclipse_swt_browser / "WebKit$9";
+namespace org::eclipse::swt::browser { class WebKit$9$1; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::WebKit$9$1> = ::org_eclipse_swt_browser / "WebKit$9$1";
+namespace org::eclipse::swt::browser { class WindowCreator2; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::WindowCreator2> = ::org_eclipse_swt_browser / "WindowCreator2";
+namespace org::eclipse::swt::browser { class WindowCreator2$1; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::WindowCreator2$1> = ::org_eclipse_swt_browser / "WindowCreator2$1";
+namespace org::eclipse::swt::browser { class WindowCreator2$2; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::WindowCreator2$2> = ::org_eclipse_swt_browser / "WindowCreator2$2";
+namespace org::eclipse::swt::browser { class WindowCreator2$3; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::WindowCreator2$3> = ::org_eclipse_swt_browser / "WindowCreator2$3";
+namespace org::eclipse::swt::browser { class WindowCreator2$4; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::WindowCreator2$4> = ::org_eclipse_swt_browser / "WindowCreator2$4";
+namespace org::eclipse::swt::browser { class WindowCreator2$5; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::WindowCreator2$5> = ::org_eclipse_swt_browser / "WindowCreator2$5";
+namespace org::eclipse::swt::browser { class WindowEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::browser::WindowEvent> = ::org_eclipse_swt_browser / "WindowEvent";
+namespace org::eclipse::swt::custom { class AnimatedProgress; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::AnimatedProgress> = ::org_eclipse_swt_custom / "AnimatedProgress";
+namespace org::eclipse::swt::custom { class AnimatedProgress$1; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::AnimatedProgress$1> = ::org_eclipse_swt_custom / "AnimatedProgress$1";
+namespace org::eclipse::swt::custom { class AnimatedProgress$2; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::AnimatedProgress$2> = ::org_eclipse_swt_custom / "AnimatedProgress$2";
+namespace org::eclipse::swt::custom { class AnimatedProgress$3; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::AnimatedProgress$3> = ::org_eclipse_swt_custom / "AnimatedProgress$3";
+namespace org::eclipse::swt::custom { class AnimatedProgress$4; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::AnimatedProgress$4> = ::org_eclipse_swt_custom / "AnimatedProgress$4";
+namespace org::eclipse::swt::custom { class BidiSegmentEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::BidiSegmentEvent> = ::org_eclipse_swt_custom / "BidiSegmentEvent";
+namespace org::eclipse::swt::custom { class BidiSegmentListener; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::BidiSegmentListener> = ::org_eclipse_swt_custom / "BidiSegmentListener";
+namespace org::eclipse::swt::custom { class Bullet; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::Bullet> = ::org_eclipse_swt_custom / "Bullet";
+namespace org::eclipse::swt::custom { class BusyIndicator; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::BusyIndicator> = ::org_eclipse_swt_custom / "BusyIndicator";
+namespace org::eclipse::swt::custom { class CBanner; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CBanner> = ::org_eclipse_swt_custom / "CBanner";
+namespace org::eclipse::swt::custom { class CBanner$1; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CBanner$1> = ::org_eclipse_swt_custom / "CBanner$1";
+namespace org::eclipse::swt::custom { class CBannerLayout; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CBannerLayout> = ::org_eclipse_swt_custom / "CBannerLayout";
+namespace org::eclipse::swt::custom { class CCombo; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CCombo> = ::org_eclipse_swt_custom / "CCombo";
+namespace org::eclipse::swt::custom { class CCombo$1; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CCombo$1> = ::org_eclipse_swt_custom / "CCombo$1";
+namespace org::eclipse::swt::custom { class CCombo$1$1; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CCombo$1$1> = ::org_eclipse_swt_custom / "CCombo$1$1";
+namespace org::eclipse::swt::custom { class CCombo$2; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CCombo$2> = ::org_eclipse_swt_custom / "CCombo$2";
+namespace org::eclipse::swt::custom { class CCombo$3; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CCombo$3> = ::org_eclipse_swt_custom / "CCombo$3";
+namespace org::eclipse::swt::custom { class CCombo$4; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CCombo$4> = ::org_eclipse_swt_custom / "CCombo$4";
+namespace org::eclipse::swt::custom { class CCombo$5; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CCombo$5> = ::org_eclipse_swt_custom / "CCombo$5";
+namespace org::eclipse::swt::custom { class CCombo$6; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CCombo$6> = ::org_eclipse_swt_custom / "CCombo$6";
+namespace org::eclipse::swt::custom { class CCombo$7; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CCombo$7> = ::org_eclipse_swt_custom / "CCombo$7";
+namespace org::eclipse::swt::custom { class CCombo$8; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CCombo$8> = ::org_eclipse_swt_custom / "CCombo$8";
+namespace org::eclipse::swt::custom { class CLabel; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CLabel> = ::org_eclipse_swt_custom / "CLabel";
+namespace org::eclipse::swt::custom { class CLabel$1; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CLabel$1> = ::org_eclipse_swt_custom / "CLabel$1";
+namespace org::eclipse::swt::custom { class CLabel$2; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CLabel$2> = ::org_eclipse_swt_custom / "CLabel$2";
+namespace org::eclipse::swt::custom { class CLabel$3; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CLabel$3> = ::org_eclipse_swt_custom / "CLabel$3";
+namespace org::eclipse::swt::custom { class CLabel$4; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CLabel$4> = ::org_eclipse_swt_custom / "CLabel$4";
+namespace org::eclipse::swt::custom { class CLabel$5; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CLabel$5> = ::org_eclipse_swt_custom / "CLabel$5";
+namespace org::eclipse::swt::custom { class CLayoutData; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CLayoutData> = ::org_eclipse_swt_custom / "CLayoutData";
+namespace org::eclipse::swt::custom { class CTabFolder; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CTabFolder> = ::org_eclipse_swt_custom / "CTabFolder";
+namespace org::eclipse::swt::custom { class CTabFolder$1; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CTabFolder$1> = ::org_eclipse_swt_custom / "CTabFolder$1";
+namespace org::eclipse::swt::custom { class CTabFolder$10; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CTabFolder$10> = ::org_eclipse_swt_custom / "CTabFolder$10";
+namespace org::eclipse::swt::custom { class CTabFolder$2; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CTabFolder$2> = ::org_eclipse_swt_custom / "CTabFolder$2";
+namespace org::eclipse::swt::custom { class CTabFolder$3; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CTabFolder$3> = ::org_eclipse_swt_custom / "CTabFolder$3";
+namespace org::eclipse::swt::custom { class CTabFolder$4; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CTabFolder$4> = ::org_eclipse_swt_custom / "CTabFolder$4";
+namespace org::eclipse::swt::custom { class CTabFolder$5; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CTabFolder$5> = ::org_eclipse_swt_custom / "CTabFolder$5";
+namespace org::eclipse::swt::custom { class CTabFolder$6; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CTabFolder$6> = ::org_eclipse_swt_custom / "CTabFolder$6";
+namespace org::eclipse::swt::custom { class CTabFolder$7; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CTabFolder$7> = ::org_eclipse_swt_custom / "CTabFolder$7";
+namespace org::eclipse::swt::custom { class CTabFolder$8; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CTabFolder$8> = ::org_eclipse_swt_custom / "CTabFolder$8";
+namespace org::eclipse::swt::custom { class CTabFolder$9; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CTabFolder$9> = ::org_eclipse_swt_custom / "CTabFolder$9";
+namespace org::eclipse::swt::custom { class CTabFolder2Adapter; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CTabFolder2Adapter> = ::org_eclipse_swt_custom / "CTabFolder2Adapter";
+namespace org::eclipse::swt::custom { class CTabFolder2Listener; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CTabFolder2Listener> = ::org_eclipse_swt_custom / "CTabFolder2Listener";
+namespace org::eclipse::swt::custom { class CTabFolderAdapter; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CTabFolderAdapter> = ::org_eclipse_swt_custom / "CTabFolderAdapter";
+namespace org::eclipse::swt::custom { class CTabFolderEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CTabFolderEvent> = ::org_eclipse_swt_custom / "CTabFolderEvent";
+namespace org::eclipse::swt::custom { class CTabFolderLayout; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CTabFolderLayout> = ::org_eclipse_swt_custom / "CTabFolderLayout";
+namespace org::eclipse::swt::custom { class CTabFolderListener; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CTabFolderListener> = ::org_eclipse_swt_custom / "CTabFolderListener";
+namespace org::eclipse::swt::custom { class CTabFolderRenderer; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CTabFolderRenderer> = ::org_eclipse_swt_custom / "CTabFolderRenderer";
+namespace org::eclipse::swt::custom { class CTabItem; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CTabItem> = ::org_eclipse_swt_custom / "CTabItem";
+namespace org::eclipse::swt::custom { class CaretEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CaretEvent> = ::org_eclipse_swt_custom / "CaretEvent";
+namespace org::eclipse::swt::custom { class CaretListener; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::CaretListener> = ::org_eclipse_swt_custom / "CaretListener";
+namespace org::eclipse::swt::custom { class ControlEditor; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::ControlEditor> = ::org_eclipse_swt_custom / "ControlEditor";
+namespace org::eclipse::swt::custom { class ControlEditor$1; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::ControlEditor$1> = ::org_eclipse_swt_custom / "ControlEditor$1";
+namespace org::eclipse::swt::custom { class ControlEditor$2; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::ControlEditor$2> = ::org_eclipse_swt_custom / "ControlEditor$2";
+namespace org::eclipse::swt::custom { class DefaultContent; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::DefaultContent> = ::org_eclipse_swt_custom / "DefaultContent";
+namespace org::eclipse::swt::custom { class ExtendedModifyEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::ExtendedModifyEvent> = ::org_eclipse_swt_custom / "ExtendedModifyEvent";
+namespace org::eclipse::swt::custom { class ExtendedModifyListener; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::ExtendedModifyListener> = ::org_eclipse_swt_custom / "ExtendedModifyListener";
+namespace org::eclipse::swt::custom { class LineBackgroundEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::LineBackgroundEvent> = ::org_eclipse_swt_custom / "LineBackgroundEvent";
+namespace org::eclipse::swt::custom { class LineBackgroundListener; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::LineBackgroundListener> = ::org_eclipse_swt_custom / "LineBackgroundListener";
+namespace org::eclipse::swt::custom { class LineStyleEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::LineStyleEvent> = ::org_eclipse_swt_custom / "LineStyleEvent";
+namespace org::eclipse::swt::custom { class LineStyleListener; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::LineStyleListener> = ::org_eclipse_swt_custom / "LineStyleListener";
+namespace org::eclipse::swt::custom { class MovementEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::MovementEvent> = ::org_eclipse_swt_custom / "MovementEvent";
+namespace org::eclipse::swt::custom { class MovementListener; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::MovementListener> = ::org_eclipse_swt_custom / "MovementListener";
+namespace org::eclipse::swt::custom { class PaintObjectEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::PaintObjectEvent> = ::org_eclipse_swt_custom / "PaintObjectEvent";
+namespace org::eclipse::swt::custom { class PaintObjectListener; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::PaintObjectListener> = ::org_eclipse_swt_custom / "PaintObjectListener";
+namespace org::eclipse::swt::custom { class PopupList; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::PopupList> = ::org_eclipse_swt_custom / "PopupList";
+namespace org::eclipse::swt::custom { class PopupList$1; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::PopupList$1> = ::org_eclipse_swt_custom / "PopupList$1";
+namespace org::eclipse::swt::custom { class PopupList$2; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::PopupList$2> = ::org_eclipse_swt_custom / "PopupList$2";
+namespace org::eclipse::swt::custom { class PopupList$3; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::PopupList$3> = ::org_eclipse_swt_custom / "PopupList$3";
+namespace org::eclipse::swt::custom { class PopupList$4; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::PopupList$4> = ::org_eclipse_swt_custom / "PopupList$4";
+namespace org::eclipse::swt::custom { class ST; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::ST> = ::org_eclipse_swt_custom / "ST";
+namespace org::eclipse::swt::custom { class SashForm; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::SashForm> = ::org_eclipse_swt_custom / "SashForm";
+namespace org::eclipse::swt::custom { class SashForm$1; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::SashForm$1> = ::org_eclipse_swt_custom / "SashForm$1";
+namespace org::eclipse::swt::custom { class SashFormData; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::SashFormData> = ::org_eclipse_swt_custom / "SashFormData";
+namespace org::eclipse::swt::custom { class SashFormLayout; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::SashFormLayout> = ::org_eclipse_swt_custom / "SashFormLayout";
+namespace org::eclipse::swt::custom { class ScrolledComposite; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::ScrolledComposite> = ::org_eclipse_swt_custom / "ScrolledComposite";
+namespace org::eclipse::swt::custom { class ScrolledComposite$1; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::ScrolledComposite$1> = ::org_eclipse_swt_custom / "ScrolledComposite$1";
+namespace org::eclipse::swt::custom { class ScrolledComposite$2; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::ScrolledComposite$2> = ::org_eclipse_swt_custom / "ScrolledComposite$2";
+namespace org::eclipse::swt::custom { class ScrolledComposite$3; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::ScrolledComposite$3> = ::org_eclipse_swt_custom / "ScrolledComposite$3";
+namespace org::eclipse::swt::custom { class ScrolledComposite$4; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::ScrolledComposite$4> = ::org_eclipse_swt_custom / "ScrolledComposite$4";
+namespace org::eclipse::swt::custom { class ScrolledComposite$5; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::ScrolledComposite$5> = ::org_eclipse_swt_custom / "ScrolledComposite$5";
+namespace org::eclipse::swt::custom { class ScrolledCompositeLayout; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::ScrolledCompositeLayout> = ::org_eclipse_swt_custom / "ScrolledCompositeLayout";
+namespace org::eclipse::swt::custom { class StackLayout; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StackLayout> = ::org_eclipse_swt_custom / "StackLayout";
+namespace org::eclipse::swt::custom { class StyleRange; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyleRange> = ::org_eclipse_swt_custom / "StyleRange";
+namespace org::eclipse::swt::custom { class StyledText; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyledText> = ::org_eclipse_swt_custom / "StyledText";
+namespace org::eclipse::swt::custom { class StyledText$1; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyledText$1> = ::org_eclipse_swt_custom / "StyledText$1";
+namespace org::eclipse::swt::custom { class StyledText$10; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyledText$10> = ::org_eclipse_swt_custom / "StyledText$10";
+namespace org::eclipse::swt::custom { class StyledText$11; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyledText$11> = ::org_eclipse_swt_custom / "StyledText$11";
+namespace org::eclipse::swt::custom { class StyledText$12; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyledText$12> = ::org_eclipse_swt_custom / "StyledText$12";
+namespace org::eclipse::swt::custom { class StyledText$13; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyledText$13> = ::org_eclipse_swt_custom / "StyledText$13";
+namespace org::eclipse::swt::custom { class StyledText$14; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyledText$14> = ::org_eclipse_swt_custom / "StyledText$14";
+namespace org::eclipse::swt::custom { class StyledText$15; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyledText$15> = ::org_eclipse_swt_custom / "StyledText$15";
+namespace org::eclipse::swt::custom { class StyledText$16; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyledText$16> = ::org_eclipse_swt_custom / "StyledText$16";
+namespace org::eclipse::swt::custom { class StyledText$2; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyledText$2> = ::org_eclipse_swt_custom / "StyledText$2";
+namespace org::eclipse::swt::custom { class StyledText$3; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyledText$3> = ::org_eclipse_swt_custom / "StyledText$3";
+namespace org::eclipse::swt::custom { class StyledText$4; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyledText$4> = ::org_eclipse_swt_custom / "StyledText$4";
+namespace org::eclipse::swt::custom { class StyledText$5; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyledText$5> = ::org_eclipse_swt_custom / "StyledText$5";
+namespace org::eclipse::swt::custom { class StyledText$6; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyledText$6> = ::org_eclipse_swt_custom / "StyledText$6";
+namespace org::eclipse::swt::custom { class StyledText$7; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyledText$7> = ::org_eclipse_swt_custom / "StyledText$7";
+namespace org::eclipse::swt::custom { class StyledText$8; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyledText$8> = ::org_eclipse_swt_custom / "StyledText$8";
+namespace org::eclipse::swt::custom { class StyledText$9; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyledText$9> = ::org_eclipse_swt_custom / "StyledText$9";
+namespace org::eclipse::swt::custom { class StyledText$Printing; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyledText$Printing> = ::org_eclipse_swt_custom / "StyledText$Printing";
+namespace org::eclipse::swt::custom { class StyledText$RTFWriter; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyledText$RTFWriter> = ::org_eclipse_swt_custom / "StyledText$RTFWriter";
+namespace org::eclipse::swt::custom { class StyledText$TextWriter; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyledText$TextWriter> = ::org_eclipse_swt_custom / "StyledText$TextWriter";
+namespace org::eclipse::swt::custom { class StyledTextContent; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyledTextContent> = ::org_eclipse_swt_custom / "StyledTextContent";
+namespace org::eclipse::swt::custom { class StyledTextDropTargetEffect; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyledTextDropTargetEffect> = ::org_eclipse_swt_custom / "StyledTextDropTargetEffect";
+namespace org::eclipse::swt::custom { class StyledTextDropTargetEffect$1; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyledTextDropTargetEffect$1> = ::org_eclipse_swt_custom / "StyledTextDropTargetEffect$1";
+namespace org::eclipse::swt::custom { class StyledTextEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyledTextEvent> = ::org_eclipse_swt_custom / "StyledTextEvent";
+namespace org::eclipse::swt::custom { class StyledTextListener; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyledTextListener> = ::org_eclipse_swt_custom / "StyledTextListener";
+namespace org::eclipse::swt::custom { class StyledTextPrintOptions; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyledTextPrintOptions> = ::org_eclipse_swt_custom / "StyledTextPrintOptions";
+namespace org::eclipse::swt::custom { class StyledTextRenderer; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyledTextRenderer> = ::org_eclipse_swt_custom / "StyledTextRenderer";
+namespace org::eclipse::swt::custom { class StyledTextRenderer$1; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyledTextRenderer$1> = ::org_eclipse_swt_custom / "StyledTextRenderer$1";
+namespace org::eclipse::swt::custom { class StyledTextRenderer$LineInfo; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::StyledTextRenderer$LineInfo> = ::org_eclipse_swt_custom / "StyledTextRenderer$LineInfo";
+namespace org::eclipse::swt::custom { class TableCursor; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TableCursor> = ::org_eclipse_swt_custom / "TableCursor";
+namespace org::eclipse::swt::custom { class TableCursor$1; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TableCursor$1> = ::org_eclipse_swt_custom / "TableCursor$1";
+namespace org::eclipse::swt::custom { class TableCursor$2; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TableCursor$2> = ::org_eclipse_swt_custom / "TableCursor$2";
+namespace org::eclipse::swt::custom { class TableCursor$3; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TableCursor$3> = ::org_eclipse_swt_custom / "TableCursor$3";
+namespace org::eclipse::swt::custom { class TableCursor$4; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TableCursor$4> = ::org_eclipse_swt_custom / "TableCursor$4";
+namespace org::eclipse::swt::custom { class TableCursor$5; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TableCursor$5> = ::org_eclipse_swt_custom / "TableCursor$5";
+namespace org::eclipse::swt::custom { class TableCursor$6; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TableCursor$6> = ::org_eclipse_swt_custom / "TableCursor$6";
+namespace org::eclipse::swt::custom { class TableCursor$7; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TableCursor$7> = ::org_eclipse_swt_custom / "TableCursor$7";
+namespace org::eclipse::swt::custom { class TableEditor; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TableEditor> = ::org_eclipse_swt_custom / "TableEditor";
+namespace org::eclipse::swt::custom { class TableEditor$1; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TableEditor$1> = ::org_eclipse_swt_custom / "TableEditor$1";
+namespace org::eclipse::swt::custom { class TableEditor$2; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TableEditor$2> = ::org_eclipse_swt_custom / "TableEditor$2";
+namespace org::eclipse::swt::custom { class TableTree; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TableTree> = ::org_eclipse_swt_custom / "TableTree";
+namespace org::eclipse::swt::custom { class TableTree$1; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TableTree$1> = ::org_eclipse_swt_custom / "TableTree$1";
+namespace org::eclipse::swt::custom { class TableTree$2; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TableTree$2> = ::org_eclipse_swt_custom / "TableTree$2";
+namespace org::eclipse::swt::custom { class TableTreeEditor; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TableTreeEditor> = ::org_eclipse_swt_custom / "TableTreeEditor";
+namespace org::eclipse::swt::custom { class TableTreeEditor$1; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TableTreeEditor$1> = ::org_eclipse_swt_custom / "TableTreeEditor$1";
+namespace org::eclipse::swt::custom { class TableTreeEditor$1$1; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TableTreeEditor$1$1> = ::org_eclipse_swt_custom / "TableTreeEditor$1$1";
+namespace org::eclipse::swt::custom { class TableTreeEditor$2; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TableTreeEditor$2> = ::org_eclipse_swt_custom / "TableTreeEditor$2";
+namespace org::eclipse::swt::custom { class TableTreeItem; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TableTreeItem> = ::org_eclipse_swt_custom / "TableTreeItem";
+namespace org::eclipse::swt::custom { class TextChangeListener; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TextChangeListener> = ::org_eclipse_swt_custom / "TextChangeListener";
+namespace org::eclipse::swt::custom { class TextChangedEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TextChangedEvent> = ::org_eclipse_swt_custom / "TextChangedEvent";
+namespace org::eclipse::swt::custom { class TextChangingEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TextChangingEvent> = ::org_eclipse_swt_custom / "TextChangingEvent";
+namespace org::eclipse::swt::custom { class TreeCursor; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TreeCursor> = ::org_eclipse_swt_custom / "TreeCursor";
+namespace org::eclipse::swt::custom { class TreeCursor$1; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TreeCursor$1> = ::org_eclipse_swt_custom / "TreeCursor$1";
+namespace org::eclipse::swt::custom { class TreeCursor$2; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TreeCursor$2> = ::org_eclipse_swt_custom / "TreeCursor$2";
+namespace org::eclipse::swt::custom { class TreeCursor$3; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TreeCursor$3> = ::org_eclipse_swt_custom / "TreeCursor$3";
+namespace org::eclipse::swt::custom { class TreeCursor$4; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TreeCursor$4> = ::org_eclipse_swt_custom / "TreeCursor$4";
+namespace org::eclipse::swt::custom { class TreeCursor$5; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TreeCursor$5> = ::org_eclipse_swt_custom / "TreeCursor$5";
+namespace org::eclipse::swt::custom { class TreeCursor$6; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TreeCursor$6> = ::org_eclipse_swt_custom / "TreeCursor$6";
+namespace org::eclipse::swt::custom { class TreeCursor$7; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TreeCursor$7> = ::org_eclipse_swt_custom / "TreeCursor$7";
+namespace org::eclipse::swt::custom { class TreeCursor$8; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TreeCursor$8> = ::org_eclipse_swt_custom / "TreeCursor$8";
+namespace org::eclipse::swt::custom { class TreeCursor$9; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TreeCursor$9> = ::org_eclipse_swt_custom / "TreeCursor$9";
+namespace org::eclipse::swt::custom { class TreeEditor; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TreeEditor> = ::org_eclipse_swt_custom / "TreeEditor";
+namespace org::eclipse::swt::custom { class TreeEditor$1; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TreeEditor$1> = ::org_eclipse_swt_custom / "TreeEditor$1";
+namespace org::eclipse::swt::custom { class TreeEditor$2; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TreeEditor$2> = ::org_eclipse_swt_custom / "TreeEditor$2";
+namespace org::eclipse::swt::custom { class TreeEditor$3; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TreeEditor$3> = ::org_eclipse_swt_custom / "TreeEditor$3";
+namespace org::eclipse::swt::custom { class TreeEditor$3$1; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::TreeEditor$3$1> = ::org_eclipse_swt_custom / "TreeEditor$3$1";
+namespace org::eclipse::swt::custom { class VerifyKeyListener; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::VerifyKeyListener> = ::org_eclipse_swt_custom / "VerifyKeyListener";
+namespace org::eclipse::swt::custom { class ViewForm; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::ViewForm> = ::org_eclipse_swt_custom / "ViewForm";
+namespace org::eclipse::swt::custom { class ViewForm$1; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::ViewForm$1> = ::org_eclipse_swt_custom / "ViewForm$1";
+namespace org::eclipse::swt::custom { class ViewFormLayout; }
+template<> constexpr auto signature<::org::eclipse::swt::custom::ViewFormLayout> = ::org_eclipse_swt_custom / "ViewFormLayout";
+namespace org::eclipse::swt::dnd { class ByteArrayTransfer; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::ByteArrayTransfer> = ::org_eclipse_swt_dnd / "ByteArrayTransfer";
+namespace org::eclipse::swt::dnd { class Clipboard; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::Clipboard> = ::org_eclipse_swt_dnd / "Clipboard";
+namespace org::eclipse::swt::dnd { class ClipboardProxy; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::ClipboardProxy> = ::org_eclipse_swt_dnd / "ClipboardProxy";
+namespace org::eclipse::swt::dnd { class ClipboardProxy$1; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::ClipboardProxy$1> = ::org_eclipse_swt_dnd / "ClipboardProxy$1";
+namespace org::eclipse::swt::dnd { class DND; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::DND> = ::org_eclipse_swt_dnd / "DND";
+namespace org::eclipse::swt::dnd { class DNDEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::DNDEvent> = ::org_eclipse_swt_dnd / "DNDEvent";
+namespace org::eclipse::swt::dnd { class DNDListener; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::DNDListener> = ::org_eclipse_swt_dnd / "DNDListener";
+namespace org::eclipse::swt::dnd { class DragSource; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::DragSource> = ::org_eclipse_swt_dnd / "DragSource";
+namespace org::eclipse::swt::dnd { class DragSource$1; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::DragSource$1> = ::org_eclipse_swt_dnd / "DragSource$1";
+namespace org::eclipse::swt::dnd { class DragSource$2; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::DragSource$2> = ::org_eclipse_swt_dnd / "DragSource$2";
+namespace org::eclipse::swt::dnd { class DragSourceAdapter; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::DragSourceAdapter> = ::org_eclipse_swt_dnd / "DragSourceAdapter";
+namespace org::eclipse::swt::dnd { class DragSourceEffect; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::DragSourceEffect> = ::org_eclipse_swt_dnd / "DragSourceEffect";
+namespace org::eclipse::swt::dnd { class DragSourceEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::DragSourceEvent> = ::org_eclipse_swt_dnd / "DragSourceEvent";
+namespace org::eclipse::swt::dnd { class DragSourceListener; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::DragSourceListener> = ::org_eclipse_swt_dnd / "DragSourceListener";
+namespace org::eclipse::swt::dnd { class DropTarget; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::DropTarget> = ::org_eclipse_swt_dnd / "DropTarget";
+namespace org::eclipse::swt::dnd { class DropTarget$1; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::DropTarget$1> = ::org_eclipse_swt_dnd / "DropTarget$1";
+namespace org::eclipse::swt::dnd { class DropTarget$2; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::DropTarget$2> = ::org_eclipse_swt_dnd / "DropTarget$2";
+namespace org::eclipse::swt::dnd { class DropTarget$3; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::DropTarget$3> = ::org_eclipse_swt_dnd / "DropTarget$3";
+namespace org::eclipse::swt::dnd { class DropTargetAdapter; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::DropTargetAdapter> = ::org_eclipse_swt_dnd / "DropTargetAdapter";
+namespace org::eclipse::swt::dnd { class DropTargetEffect; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::DropTargetEffect> = ::org_eclipse_swt_dnd / "DropTargetEffect";
+namespace org::eclipse::swt::dnd { class DropTargetEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::DropTargetEvent> = ::org_eclipse_swt_dnd / "DropTargetEvent";
+namespace org::eclipse::swt::dnd { class DropTargetListener; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::DropTargetListener> = ::org_eclipse_swt_dnd / "DropTargetListener";
+namespace org::eclipse::swt::dnd { class FileTransfer; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::FileTransfer> = ::org_eclipse_swt_dnd / "FileTransfer";
+namespace org::eclipse::swt::dnd { class HTMLTransfer; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::HTMLTransfer> = ::org_eclipse_swt_dnd / "HTMLTransfer";
+namespace org::eclipse::swt::dnd { class ImageTransfer; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::ImageTransfer> = ::org_eclipse_swt_dnd / "ImageTransfer";
+namespace org::eclipse::swt::dnd { class RTFTransfer; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::RTFTransfer> = ::org_eclipse_swt_dnd / "RTFTransfer";
+namespace org::eclipse::swt::dnd { class TableDragSourceEffect; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::TableDragSourceEffect> = ::org_eclipse_swt_dnd / "TableDragSourceEffect";
+namespace org::eclipse::swt::dnd { class TableDropTargetEffect; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::TableDropTargetEffect> = ::org_eclipse_swt_dnd / "TableDropTargetEffect";
+namespace org::eclipse::swt::dnd { class TextTransfer; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::TextTransfer> = ::org_eclipse_swt_dnd / "TextTransfer";
+namespace org::eclipse::swt::dnd { class Transfer; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::Transfer> = ::org_eclipse_swt_dnd / "Transfer";
+namespace org::eclipse::swt::dnd { class TransferData; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::TransferData> = ::org_eclipse_swt_dnd / "TransferData";
+namespace org::eclipse::swt::dnd { class TreeDragSourceEffect; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::TreeDragSourceEffect> = ::org_eclipse_swt_dnd / "TreeDragSourceEffect";
+namespace org::eclipse::swt::dnd { class TreeDropTargetEffect; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::TreeDropTargetEffect> = ::org_eclipse_swt_dnd / "TreeDropTargetEffect";
+namespace org::eclipse::swt::dnd { class URLTransfer; }
+template<> constexpr auto signature<::org::eclipse::swt::dnd::URLTransfer> = ::org_eclipse_swt_dnd / "URLTransfer";
+namespace org::eclipse::swt::events { class ArmEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::events::ArmEvent> = ::org_eclipse_swt_events / "ArmEvent";
+namespace org::eclipse::swt::events { class ArmListener; }
+template<> constexpr auto signature<::org::eclipse::swt::events::ArmListener> = ::org_eclipse_swt_events / "ArmListener";
+namespace org::eclipse::swt::events { class ControlAdapter; }
+template<> constexpr auto signature<::org::eclipse::swt::events::ControlAdapter> = ::org_eclipse_swt_events / "ControlAdapter";
+namespace org::eclipse::swt::events { class ControlEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::events::ControlEvent> = ::org_eclipse_swt_events / "ControlEvent";
+namespace org::eclipse::swt::events { class ControlListener; }
+template<> constexpr auto signature<::org::eclipse::swt::events::ControlListener> = ::org_eclipse_swt_events / "ControlListener";
+namespace org::eclipse::swt::events { class DisposeEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::events::DisposeEvent> = ::org_eclipse_swt_events / "DisposeEvent";
+namespace org::eclipse::swt::events { class DisposeListener; }
+template<> constexpr auto signature<::org::eclipse::swt::events::DisposeListener> = ::org_eclipse_swt_events / "DisposeListener";
+namespace org::eclipse::swt::events { class DragDetectEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::events::DragDetectEvent> = ::org_eclipse_swt_events / "DragDetectEvent";
+namespace org::eclipse::swt::events { class DragDetectListener; }
+template<> constexpr auto signature<::org::eclipse::swt::events::DragDetectListener> = ::org_eclipse_swt_events / "DragDetectListener";
+namespace org::eclipse::swt::events { class ExpandAdapter; }
+template<> constexpr auto signature<::org::eclipse::swt::events::ExpandAdapter> = ::org_eclipse_swt_events / "ExpandAdapter";
+namespace org::eclipse::swt::events { class ExpandEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::events::ExpandEvent> = ::org_eclipse_swt_events / "ExpandEvent";
+namespace org::eclipse::swt::events { class ExpandListener; }
+template<> constexpr auto signature<::org::eclipse::swt::events::ExpandListener> = ::org_eclipse_swt_events / "ExpandListener";
+namespace org::eclipse::swt::events { class FocusAdapter; }
+template<> constexpr auto signature<::org::eclipse::swt::events::FocusAdapter> = ::org_eclipse_swt_events / "FocusAdapter";
+namespace org::eclipse::swt::events { class FocusEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::events::FocusEvent> = ::org_eclipse_swt_events / "FocusEvent";
+namespace org::eclipse::swt::events { class FocusListener; }
+template<> constexpr auto signature<::org::eclipse::swt::events::FocusListener> = ::org_eclipse_swt_events / "FocusListener";
+namespace org::eclipse::swt::events { class GestureEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::events::GestureEvent> = ::org_eclipse_swt_events / "GestureEvent";
+namespace org::eclipse::swt::events { class GestureListener; }
+template<> constexpr auto signature<::org::eclipse::swt::events::GestureListener> = ::org_eclipse_swt_events / "GestureListener";
+namespace org::eclipse::swt::events { class HelpEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::events::HelpEvent> = ::org_eclipse_swt_events / "HelpEvent";
+namespace org::eclipse::swt::events { class HelpListener; }
+template<> constexpr auto signature<::org::eclipse::swt::events::HelpListener> = ::org_eclipse_swt_events / "HelpListener";
+namespace org::eclipse::swt::events { class KeyAdapter; }
+template<> constexpr auto signature<::org::eclipse::swt::events::KeyAdapter> = ::org_eclipse_swt_events / "KeyAdapter";
+namespace org::eclipse::swt::events { class KeyEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::events::KeyEvent> = ::org_eclipse_swt_events / "KeyEvent";
+namespace org::eclipse::swt::events { class KeyListener; }
+template<> constexpr auto signature<::org::eclipse::swt::events::KeyListener> = ::org_eclipse_swt_events / "KeyListener";
+namespace org::eclipse::swt::events { class MenuAdapter; }
+template<> constexpr auto signature<::org::eclipse::swt::events::MenuAdapter> = ::org_eclipse_swt_events / "MenuAdapter";
+namespace org::eclipse::swt::events { class MenuDetectEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::events::MenuDetectEvent> = ::org_eclipse_swt_events / "MenuDetectEvent";
+namespace org::eclipse::swt::events { class MenuDetectListener; }
+template<> constexpr auto signature<::org::eclipse::swt::events::MenuDetectListener> = ::org_eclipse_swt_events / "MenuDetectListener";
+namespace org::eclipse::swt::events { class MenuEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::events::MenuEvent> = ::org_eclipse_swt_events / "MenuEvent";
+namespace org::eclipse::swt::events { class MenuListener; }
+template<> constexpr auto signature<::org::eclipse::swt::events::MenuListener> = ::org_eclipse_swt_events / "MenuListener";
+namespace org::eclipse::swt::events { class ModifyEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::events::ModifyEvent> = ::org_eclipse_swt_events / "ModifyEvent";
+namespace org::eclipse::swt::events { class ModifyListener; }
+template<> constexpr auto signature<::org::eclipse::swt::events::ModifyListener> = ::org_eclipse_swt_events / "ModifyListener";
+namespace org::eclipse::swt::events { class MouseAdapter; }
+template<> constexpr auto signature<::org::eclipse::swt::events::MouseAdapter> = ::org_eclipse_swt_events / "MouseAdapter";
+namespace org::eclipse::swt::events { class MouseEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::events::MouseEvent> = ::org_eclipse_swt_events / "MouseEvent";
+namespace org::eclipse::swt::events { class MouseListener; }
+template<> constexpr auto signature<::org::eclipse::swt::events::MouseListener> = ::org_eclipse_swt_events / "MouseListener";
+namespace org::eclipse::swt::events { class MouseMoveListener; }
+template<> constexpr auto signature<::org::eclipse::swt::events::MouseMoveListener> = ::org_eclipse_swt_events / "MouseMoveListener";
+namespace org::eclipse::swt::events { class MouseTrackAdapter; }
+template<> constexpr auto signature<::org::eclipse::swt::events::MouseTrackAdapter> = ::org_eclipse_swt_events / "MouseTrackAdapter";
+namespace org::eclipse::swt::events { class MouseTrackListener; }
+template<> constexpr auto signature<::org::eclipse::swt::events::MouseTrackListener> = ::org_eclipse_swt_events / "MouseTrackListener";
+namespace org::eclipse::swt::events { class MouseWheelListener; }
+template<> constexpr auto signature<::org::eclipse::swt::events::MouseWheelListener> = ::org_eclipse_swt_events / "MouseWheelListener";
+namespace org::eclipse::swt::events { class PaintEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::events::PaintEvent> = ::org_eclipse_swt_events / "PaintEvent";
+namespace org::eclipse::swt::events { class PaintListener; }
+template<> constexpr auto signature<::org::eclipse::swt::events::PaintListener> = ::org_eclipse_swt_events / "PaintListener";
+namespace org::eclipse::swt::events { class SegmentEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::events::SegmentEvent> = ::org_eclipse_swt_events / "SegmentEvent";
+namespace org::eclipse::swt::events { class SegmentListener; }
+template<> constexpr auto signature<::org::eclipse::swt::events::SegmentListener> = ::org_eclipse_swt_events / "SegmentListener";
+namespace org::eclipse::swt::events { class SelectionAdapter; }
+template<> constexpr auto signature<::org::eclipse::swt::events::SelectionAdapter> = ::org_eclipse_swt_events / "SelectionAdapter";
+namespace org::eclipse::swt::events { class SelectionEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::events::SelectionEvent> = ::org_eclipse_swt_events / "SelectionEvent";
+namespace org::eclipse::swt::events { class SelectionListener; }
+template<> constexpr auto signature<::org::eclipse::swt::events::SelectionListener> = ::org_eclipse_swt_events / "SelectionListener";
+namespace org::eclipse::swt::events { class ShellAdapter; }
+template<> constexpr auto signature<::org::eclipse::swt::events::ShellAdapter> = ::org_eclipse_swt_events / "ShellAdapter";
+namespace org::eclipse::swt::events { class ShellEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::events::ShellEvent> = ::org_eclipse_swt_events / "ShellEvent";
+namespace org::eclipse::swt::events { class ShellListener; }
+template<> constexpr auto signature<::org::eclipse::swt::events::ShellListener> = ::org_eclipse_swt_events / "ShellListener";
+namespace org::eclipse::swt::events { class TouchEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::events::TouchEvent> = ::org_eclipse_swt_events / "TouchEvent";
+namespace org::eclipse::swt::events { class TouchListener; }
+template<> constexpr auto signature<::org::eclipse::swt::events::TouchListener> = ::org_eclipse_swt_events / "TouchListener";
+namespace org::eclipse::swt::events { class TraverseEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::events::TraverseEvent> = ::org_eclipse_swt_events / "TraverseEvent";
+namespace org::eclipse::swt::events { class TraverseListener; }
+template<> constexpr auto signature<::org::eclipse::swt::events::TraverseListener> = ::org_eclipse_swt_events / "TraverseListener";
+namespace org::eclipse::swt::events { class TreeAdapter; }
+template<> constexpr auto signature<::org::eclipse::swt::events::TreeAdapter> = ::org_eclipse_swt_events / "TreeAdapter";
+namespace org::eclipse::swt::events { class TreeEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::events::TreeEvent> = ::org_eclipse_swt_events / "TreeEvent";
+namespace org::eclipse::swt::events { class TreeListener; }
+template<> constexpr auto signature<::org::eclipse::swt::events::TreeListener> = ::org_eclipse_swt_events / "TreeListener";
+namespace org::eclipse::swt::events { class TypedEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::events::TypedEvent> = ::org_eclipse_swt_events / "TypedEvent";
+namespace org::eclipse::swt::events { class VerifyEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::events::VerifyEvent> = ::org_eclipse_swt_events / "VerifyEvent";
+namespace org::eclipse::swt::events { class VerifyListener; }
+template<> constexpr auto signature<::org::eclipse::swt::events::VerifyListener> = ::org_eclipse_swt_events / "VerifyListener";
+namespace org::eclipse::swt::graphics { class Color; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::Color> = ::org_eclipse_swt_graphics / "Color";
+namespace org::eclipse::swt::graphics { class Cursor; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::Cursor> = ::org_eclipse_swt_graphics / "Cursor";
+namespace org::eclipse::swt::graphics { class DPIUtil; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::DPIUtil> = ::org_eclipse_swt_graphics / "DPIUtil";
+namespace org::eclipse::swt::graphics { class Device; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::Device> = ::org_eclipse_swt_graphics / "Device";
+namespace org::eclipse::swt::graphics { class DeviceData; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::DeviceData> = ::org_eclipse_swt_graphics / "DeviceData";
+namespace org::eclipse::swt::graphics { class Drawable; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::Drawable> = ::org_eclipse_swt_graphics / "Drawable";
+namespace org::eclipse::swt::graphics { class Font; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::Font> = ::org_eclipse_swt_graphics / "Font";
+namespace org::eclipse::swt::graphics { class FontData; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::FontData> = ::org_eclipse_swt_graphics / "FontData";
+namespace org::eclipse::swt::graphics { class FontMetrics; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::FontMetrics> = ::org_eclipse_swt_graphics / "FontMetrics";
+namespace org::eclipse::swt::graphics { class GC; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::GC> = ::org_eclipse_swt_graphics / "GC";
+namespace org::eclipse::swt::graphics { class GCData; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::GCData> = ::org_eclipse_swt_graphics / "GCData";
+namespace org::eclipse::swt::graphics { class GlyphMetrics; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::GlyphMetrics> = ::org_eclipse_swt_graphics / "GlyphMetrics";
+namespace org::eclipse::swt::graphics { class Image; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::Image> = ::org_eclipse_swt_graphics / "Image";
+namespace org::eclipse::swt::graphics { class ImageData; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::ImageData> = ::org_eclipse_swt_graphics / "ImageData";
+namespace org::eclipse::swt::graphics { class ImageDataLoader; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::ImageDataLoader> = ::org_eclipse_swt_graphics / "ImageDataLoader";
+namespace org::eclipse::swt::graphics { class ImageDataProvider; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::ImageDataProvider> = ::org_eclipse_swt_graphics / "ImageDataProvider";
+namespace org::eclipse::swt::graphics { class ImageFileNameProvider; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::ImageFileNameProvider> = ::org_eclipse_swt_graphics / "ImageFileNameProvider";
+namespace org::eclipse::swt::graphics { class ImageLoader; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::ImageLoader> = ::org_eclipse_swt_graphics / "ImageLoader";
+namespace org::eclipse::swt::graphics { class ImageLoaderEvent; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::ImageLoaderEvent> = ::org_eclipse_swt_graphics / "ImageLoaderEvent";
+namespace org::eclipse::swt::graphics { class ImageLoaderListener; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::ImageLoaderListener> = ::org_eclipse_swt_graphics / "ImageLoaderListener";
+namespace org::eclipse::swt::graphics { class LineAttributes; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::LineAttributes> = ::org_eclipse_swt_graphics / "LineAttributes";
+namespace org::eclipse::swt::graphics { class PaletteData; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::PaletteData> = ::org_eclipse_swt_graphics / "PaletteData";
+namespace org::eclipse::swt::graphics { class Path; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::Path> = ::org_eclipse_swt_graphics / "Path";
+namespace org::eclipse::swt::graphics { class PathData; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::PathData> = ::org_eclipse_swt_graphics / "PathData";
+namespace org::eclipse::swt::graphics { class Pattern; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::Pattern> = ::org_eclipse_swt_graphics / "Pattern";
+namespace org::eclipse::swt::graphics { class Point; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::Point> = ::org_eclipse_swt_graphics / "Point";
+namespace org::eclipse::swt::graphics { class RGB; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::RGB> = ::org_eclipse_swt_graphics / "RGB";
+namespace org::eclipse::swt::graphics { class RGBA; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::RGBA> = ::org_eclipse_swt_graphics / "RGBA";
+namespace org::eclipse::swt::graphics { class Rectangle; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::Rectangle> = ::org_eclipse_swt_graphics / "Rectangle";
+namespace org::eclipse::swt::graphics { class Region; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::Region> = ::org_eclipse_swt_graphics / "Region";
+namespace org::eclipse::swt::graphics { class Resource; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::Resource> = ::org_eclipse_swt_graphics / "Resource";
+namespace org::eclipse::swt::graphics { class TextLayout; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::TextLayout> = ::org_eclipse_swt_graphics / "TextLayout";
+namespace org::eclipse::swt::graphics { class TextLayout$StyleItem; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::TextLayout$StyleItem> = ::org_eclipse_swt_graphics / "TextLayout$StyleItem";
+namespace org::eclipse::swt::graphics { class TextStyle; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::TextStyle> = ::org_eclipse_swt_graphics / "TextStyle";
+namespace org::eclipse::swt::graphics { class Transform; }
+template<> constexpr auto signature<::org::eclipse::swt::graphics::Transform> = ::org_eclipse_swt_graphics / "Transform";
+namespace org::eclipse::swt::internal { class BidiUtil; }
+template<> constexpr auto signature<::org::eclipse::swt::internal::BidiUtil> = ::org_eclipse_swt_internal / "BidiUtil";
+namespace org::eclipse::swt::internal { class C; }
+template<> constexpr auto signature<::org::eclipse::swt::internal::C> = ::org_eclipse_swt_internal / "C";
+namespace org::eclipse::swt::internal { class Callback; }
+template<> constexpr auto signature<::org::eclipse::swt::internal::Callback> = ::org_eclipse_swt_internal / "Callback";
+namespace org::eclipse::swt::internal { class CloneableCompatibility; }
+template<> constexpr auto signature<::org::eclipse::swt::internal::CloneableCompatibility> = ::org_eclipse_swt_internal / "CloneableCompatibility";
+namespace org::eclipse::swt::internal { class Compatibility; }
+template<> constexpr auto signature<::org::eclipse::swt::internal::Compatibility> = ::org_eclipse_swt_internal / "Compatibility";
+namespace org::eclipse::swt::internal { class Converter; }
+template<> constexpr auto signature<::org::eclipse::swt::internal::Converter> = ::org_eclipse_swt_internal / "Converter";
+namespace org::eclipse::swt::internal { class ImageList; }
+template<> constexpr auto signature<::org::eclipse::swt::internal::ImageList> = ::org_eclipse_swt_internal / "ImageList";
+namespace org::eclipse::swt::internal { class LONG; }
+template<> constexpr auto signature<::org::eclipse::swt::internal::LONG> = ::org_eclipse_swt_internal / "LONG";
+namespace org::eclipse::swt::internal { class Library; }
+template<> constexpr auto signature<::org::eclipse::swt::internal::Library> = ::org_eclipse_swt_internal / "Library";
+namespace org::eclipse::swt::internal { class Lock; }
+template<> constexpr auto signature<::org::eclipse::swt::internal::Lock> = ::org_eclipse_swt_internal / "Lock";
+namespace org::eclipse::swt::internal { class Platform; }
+template<> constexpr auto signature<::org::eclipse::swt::internal::Platform> = ::org_eclipse_swt_internal / "Platform";
+namespace org::eclipse::swt::internal { class SWTEventListener; }
+template<> constexpr auto signature<::org::eclipse::swt::internal::SWTEventListener> = ::org_eclipse_swt_internal / "SWTEventListener";
+namespace org::eclipse::swt::internal { class SWTEventObject; }
+template<> constexpr auto signature<::org::eclipse::swt::internal::SWTEventObject> = ::org_eclipse_swt_internal / "SWTEventObject";
+namespace org::eclipse::swt::internal { class SerializableCompatibility; }
+template<> constexpr auto signature<::org::eclipse::swt::internal::SerializableCompatibility> = ::org_eclipse_swt_internal / "SerializableCompatibility";
+namespace org::eclipse::swt::layout { class FillData; }
+template<> constexpr auto signature<::org::eclipse::swt::layout::FillData> = ::org_eclipse_swt_layout / "FillData";
+namespace org::eclipse::swt::layout { class FillLayout; }
+template<> constexpr auto signature<::org::eclipse::swt::layout::FillLayout> = ::org_eclipse_swt_layout / "FillLayout";
+namespace org::eclipse::swt::layout { class FormAttachment; }
+template<> constexpr auto signature<::org::eclipse::swt::layout::FormAttachment> = ::org_eclipse_swt_layout / "FormAttachment";
+namespace org::eclipse::swt::layout { class FormData; }
+template<> constexpr auto signature<::org::eclipse::swt::layout::FormData> = ::org_eclipse_swt_layout / "FormData";
+namespace org::eclipse::swt::layout { class FormLayout; }
+template<> constexpr auto signature<::org::eclipse::swt::layout::FormLayout> = ::org_eclipse_swt_layout / "FormLayout";
+namespace org::eclipse::swt::layout { class GridData; }
+template<> constexpr auto signature<::org::eclipse::swt::layout::GridData> = ::org_eclipse_swt_layout / "GridData";
+namespace org::eclipse::swt::layout { class GridLayout; }
+template<> constexpr auto signature<::org::eclipse::swt::layout::GridLayout> = ::org_eclipse_swt_layout / "GridLayout";
+namespace org::eclipse::swt::layout { class RowData; }
+template<> constexpr auto signature<::org::eclipse::swt::layout::RowData> = ::org_eclipse_swt_layout / "RowData";
+namespace org::eclipse::swt::layout { class RowLayout; }
+template<> constexpr auto signature<::org::eclipse::swt::layout::RowLayout> = ::org_eclipse_swt_layout / "RowLayout";
+namespace org::eclipse::swt::opengl { class GLCanvas; }
+template<> constexpr auto signature<::org::eclipse::swt::opengl::GLCanvas> = ::org_eclipse_swt_opengl / "GLCanvas";
+namespace org::eclipse::swt::opengl { class GLCanvas$1; }
+template<> constexpr auto signature<::org::eclipse::swt::opengl::GLCanvas$1> = ::org_eclipse_swt_opengl / "GLCanvas$1";
+namespace org::eclipse::swt::opengl { class GLData; }
+template<> constexpr auto signature<::org::eclipse::swt::opengl::GLData> = ::org_eclipse_swt_opengl / "GLData";
+namespace org::eclipse::swt::printing { class PrintDialog; }
+template<> constexpr auto signature<::org::eclipse::swt::printing::PrintDialog> = ::org_eclipse_swt_printing / "PrintDialog";
+namespace org::eclipse::swt::printing { class Printer; }
+template<> constexpr auto signature<::org::eclipse::swt::printing::Printer> = ::org_eclipse_swt_printing / "Printer";
+namespace org::eclipse::swt::printing { class PrinterData; }
+template<> constexpr auto signature<::org::eclipse::swt::printing::PrinterData> = ::org_eclipse_swt_printing / "PrinterData";
+namespace org::eclipse::swt::program { class Program; }
+template<> constexpr auto signature<::org::eclipse::swt::program::Program> = ::org_eclipse_swt_program / "Program";
+namespace org::eclipse::swt::program { class Program$1; }
+template<> constexpr auto signature<::org::eclipse::swt::program::Program$1> = ::org_eclipse_swt_program / "Program$1";
+namespace org::eclipse::swt::widgets { class Button; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Button> = ::org_eclipse_swt_widgets / "Button";
+namespace org::eclipse::swt::widgets { class Canvas; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Canvas> = ::org_eclipse_swt_widgets / "Canvas";
+namespace org::eclipse::swt::widgets { class Caret; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Caret> = ::org_eclipse_swt_widgets / "Caret";
+namespace org::eclipse::swt::widgets { class ColorDialog; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::ColorDialog> = ::org_eclipse_swt_widgets / "ColorDialog";
+namespace org::eclipse::swt::widgets { class Combo; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Combo> = ::org_eclipse_swt_widgets / "Combo";
+namespace org::eclipse::swt::widgets { class Composite; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Composite> = ::org_eclipse_swt_widgets / "Composite";
+namespace org::eclipse::swt::widgets { class Control; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Control> = ::org_eclipse_swt_widgets / "Control";
+namespace org::eclipse::swt::widgets { class CoolBar; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::CoolBar> = ::org_eclipse_swt_widgets / "CoolBar";
+namespace org::eclipse::swt::widgets { class CoolBar$1; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::CoolBar$1> = ::org_eclipse_swt_widgets / "CoolBar$1";
+namespace org::eclipse::swt::widgets { class CoolItem; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::CoolItem> = ::org_eclipse_swt_widgets / "CoolItem";
+namespace org::eclipse::swt::widgets { class CoolItem$1; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::CoolItem$1> = ::org_eclipse_swt_widgets / "CoolItem$1";
+namespace org::eclipse::swt::widgets { class DateTime; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::DateTime> = ::org_eclipse_swt_widgets / "DateTime";
+namespace org::eclipse::swt::widgets { class DateTime$1; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::DateTime$1> = ::org_eclipse_swt_widgets / "DateTime$1";
+namespace org::eclipse::swt::widgets { class DateTime$2; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::DateTime$2> = ::org_eclipse_swt_widgets / "DateTime$2";
+namespace org::eclipse::swt::widgets { class DateTime$3; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::DateTime$3> = ::org_eclipse_swt_widgets / "DateTime$3";
+namespace org::eclipse::swt::widgets { class DateTime$3$1; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::DateTime$3$1> = ::org_eclipse_swt_widgets / "DateTime$3$1";
+namespace org::eclipse::swt::widgets { class DateTime$4; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::DateTime$4> = ::org_eclipse_swt_widgets / "DateTime$4";
+namespace org::eclipse::swt::widgets { class DateTime$5; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::DateTime$5> = ::org_eclipse_swt_widgets / "DateTime$5";
+namespace org::eclipse::swt::widgets { class DateTime$6; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::DateTime$6> = ::org_eclipse_swt_widgets / "DateTime$6";
+namespace org::eclipse::swt::widgets { class DateTime$7; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::DateTime$7> = ::org_eclipse_swt_widgets / "DateTime$7";
+namespace org::eclipse::swt::widgets { class DateTime$8; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::DateTime$8> = ::org_eclipse_swt_widgets / "DateTime$8";
+namespace org::eclipse::swt::widgets { class Decorations; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Decorations> = ::org_eclipse_swt_widgets / "Decorations";
+namespace org::eclipse::swt::widgets { class Dialog; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Dialog> = ::org_eclipse_swt_widgets / "Dialog";
+namespace org::eclipse::swt::widgets { class DirectoryDialog; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::DirectoryDialog> = ::org_eclipse_swt_widgets / "DirectoryDialog";
+namespace org::eclipse::swt::widgets { class Display; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Display> = ::org_eclipse_swt_widgets / "Display";
+namespace org::eclipse::swt::widgets { class Display$1; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Display$1> = ::org_eclipse_swt_widgets / "Display$1";
+namespace org::eclipse::swt::widgets { class Event; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Event> = ::org_eclipse_swt_widgets / "Event";
+namespace org::eclipse::swt::widgets { class EventTable; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::EventTable> = ::org_eclipse_swt_widgets / "EventTable";
+namespace org::eclipse::swt::widgets { class ExpandBar; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::ExpandBar> = ::org_eclipse_swt_widgets / "ExpandBar";
+namespace org::eclipse::swt::widgets { class ExpandItem; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::ExpandItem> = ::org_eclipse_swt_widgets / "ExpandItem";
+namespace org::eclipse::swt::widgets { class FileDialog; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::FileDialog> = ::org_eclipse_swt_widgets / "FileDialog";
+namespace org::eclipse::swt::widgets { class FontDialog; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::FontDialog> = ::org_eclipse_swt_widgets / "FontDialog";
+namespace org::eclipse::swt::widgets { class Group; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Group> = ::org_eclipse_swt_widgets / "Group";
+namespace org::eclipse::swt::widgets { class IME; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::IME> = ::org_eclipse_swt_widgets / "IME";
+namespace org::eclipse::swt::widgets { class Item; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Item> = ::org_eclipse_swt_widgets / "Item";
+namespace org::eclipse::swt::widgets { class Label; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Label> = ::org_eclipse_swt_widgets / "Label";
+namespace org::eclipse::swt::widgets { class Layout; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Layout> = ::org_eclipse_swt_widgets / "Layout";
+namespace org::eclipse::swt::widgets { class Link; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Link> = ::org_eclipse_swt_widgets / "Link";
+namespace org::eclipse::swt::widgets { class Link$1; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Link$1> = ::org_eclipse_swt_widgets / "Link$1";
+namespace org::eclipse::swt::widgets { class Link$2; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Link$2> = ::org_eclipse_swt_widgets / "Link$2";
+namespace org::eclipse::swt::widgets { class List; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::List> = ::org_eclipse_swt_widgets / "List";
+namespace org::eclipse::swt::widgets { class Listener; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Listener> = ::org_eclipse_swt_widgets / "Listener";
+namespace org::eclipse::swt::widgets { class Menu; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Menu> = ::org_eclipse_swt_widgets / "Menu";
+namespace org::eclipse::swt::widgets { class MenuItem; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::MenuItem> = ::org_eclipse_swt_widgets / "MenuItem";
+namespace org::eclipse::swt::widgets { class MenuItem$1; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::MenuItem$1> = ::org_eclipse_swt_widgets / "MenuItem$1";
+namespace org::eclipse::swt::widgets { class MenuItem$MaskKeysym; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::MenuItem$MaskKeysym> = ::org_eclipse_swt_widgets / "MenuItem$MaskKeysym";
+namespace org::eclipse::swt::widgets { class MessageBox; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::MessageBox> = ::org_eclipse_swt_widgets / "MessageBox";
+namespace org::eclipse::swt::widgets { class Monitor; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Monitor> = ::org_eclipse_swt_widgets / "Monitor";
+namespace org::eclipse::swt::widgets { class ProgressBar; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::ProgressBar> = ::org_eclipse_swt_widgets / "ProgressBar";
+namespace org::eclipse::swt::widgets { class RunnableLock; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::RunnableLock> = ::org_eclipse_swt_widgets / "RunnableLock";
+namespace org::eclipse::swt::widgets { class Sash; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Sash> = ::org_eclipse_swt_widgets / "Sash";
+namespace org::eclipse::swt::widgets { class Scale; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Scale> = ::org_eclipse_swt_widgets / "Scale";
+namespace org::eclipse::swt::widgets { class ScrollBar; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::ScrollBar> = ::org_eclipse_swt_widgets / "ScrollBar";
+namespace org::eclipse::swt::widgets { class Scrollable; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Scrollable> = ::org_eclipse_swt_widgets / "Scrollable";
+namespace org::eclipse::swt::widgets { class Shell; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Shell> = ::org_eclipse_swt_widgets / "Shell";
+namespace org::eclipse::swt::widgets { class Slider; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Slider> = ::org_eclipse_swt_widgets / "Slider";
+namespace org::eclipse::swt::widgets { class Spinner; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Spinner> = ::org_eclipse_swt_widgets / "Spinner";
+namespace org::eclipse::swt::widgets { class Synchronizer; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Synchronizer> = ::org_eclipse_swt_widgets / "Synchronizer";
+namespace org::eclipse::swt::widgets { class TabFolder; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::TabFolder> = ::org_eclipse_swt_widgets / "TabFolder";
+namespace org::eclipse::swt::widgets { class TabItem; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::TabItem> = ::org_eclipse_swt_widgets / "TabItem";
+namespace org::eclipse::swt::widgets { class Table; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Table> = ::org_eclipse_swt_widgets / "Table";
+namespace org::eclipse::swt::widgets { class TableColumn; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::TableColumn> = ::org_eclipse_swt_widgets / "TableColumn";
+namespace org::eclipse::swt::widgets { class TableItem; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::TableItem> = ::org_eclipse_swt_widgets / "TableItem";
+namespace org::eclipse::swt::widgets { class TaskBar; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::TaskBar> = ::org_eclipse_swt_widgets / "TaskBar";
+namespace org::eclipse::swt::widgets { class TaskItem; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::TaskItem> = ::org_eclipse_swt_widgets / "TaskItem";
+namespace org::eclipse::swt::widgets { class Text; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Text> = ::org_eclipse_swt_widgets / "Text";
+namespace org::eclipse::swt::widgets { class ToolBar; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::ToolBar> = ::org_eclipse_swt_widgets / "ToolBar";
+namespace org::eclipse::swt::widgets { class ToolItem; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::ToolItem> = ::org_eclipse_swt_widgets / "ToolItem";
+namespace org::eclipse::swt::widgets { class ToolTip; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::ToolTip> = ::org_eclipse_swt_widgets / "ToolTip";
+namespace org::eclipse::swt::widgets { class Touch; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Touch> = ::org_eclipse_swt_widgets / "Touch";
+namespace org::eclipse::swt::widgets { class TouchSource; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::TouchSource> = ::org_eclipse_swt_widgets / "TouchSource";
+namespace org::eclipse::swt::widgets { class Tracker; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Tracker> = ::org_eclipse_swt_widgets / "Tracker";
+namespace org::eclipse::swt::widgets { class Tray; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Tray> = ::org_eclipse_swt_widgets / "Tray";
+namespace org::eclipse::swt::widgets { class TrayItem; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::TrayItem> = ::org_eclipse_swt_widgets / "TrayItem";
+namespace org::eclipse::swt::widgets { class Tree; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Tree> = ::org_eclipse_swt_widgets / "Tree";
+namespace org::eclipse::swt::widgets { class TreeColumn; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::TreeColumn> = ::org_eclipse_swt_widgets / "TreeColumn";
+namespace org::eclipse::swt::widgets { class TreeItem; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::TreeItem> = ::org_eclipse_swt_widgets / "TreeItem";
+namespace org::eclipse::swt::widgets { class TypedListener; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::TypedListener> = ::org_eclipse_swt_widgets / "TypedListener";
+namespace org::eclipse::swt::widgets { class Widget; }
+template<> constexpr auto signature<::org::eclipse::swt::widgets::Widget> = ::org_eclipse_swt_widgets / "Widget";
 namespace org::ietf::jgss { class ChannelBinding; }
 template<> constexpr auto signature<::org::ietf::jgss::ChannelBinding> = ::org_ietf_jgss / "ChannelBinding";
 namespace org::ietf::jgss { class GSSContext; }
