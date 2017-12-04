@@ -10,8 +10,28 @@ public:
 	static constexpr auto signature = ::javax_accessibility / "AccessibleHypertext";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::jint>("CHARACTER"), //
+		jField<::jint>("SENTENCE"), //
+		jField<::jint>("WORD"), //
 	};
+
+	template<typename F = ::jint>
+	static auto CHARACTER() {
+		static_assert(field_signatures[jField<F>("CHARACTER")] != -1);
+		return sat<F>("CHARACTER");
+	}
+
+	template<typename F = ::jint>
+	static auto SENTENCE() {
+		static_assert(field_signatures[jField<F>("SENTENCE")] != -1);
+		return sat<F>("SENTENCE");
+	}
+
+	template<typename F = ::jint>
+	static auto WORD() {
+		static_assert(field_signatures[jField<F>("WORD")] != -1);
+		return sat<F>("WORD");
+	}
 
 	constexpr static Enume method_signatures{
 		jMethod<::java::lang::String(::jint, ::jint)>("getAfterIndex"), //

@@ -11,8 +11,12 @@ public:
 
 	constexpr static Enume field_signatures{
 		jField<::java::lang::String>("CONTENT_PANE_PROPERTY"), //
+		jField<::jint>("DISPOSE_ON_CLOSE"), //
+		jField<::jint>("DO_NOTHING_ON_CLOSE"), //
+		jField<::jint>("EXIT_ON_CLOSE"), //
 		jField<::java::lang::String>("FRAME_ICON_PROPERTY"), //
 		jField<::java::lang::String>("GLASS_PANE_PROPERTY"), //
+		jField<::jint>("HIDE_ON_CLOSE"), //
 		jField<::java::lang::String>("IS_CLOSED_PROPERTY"), //
 		jField<::java::lang::String>("IS_ICON_PROPERTY"), //
 		jField<::java::lang::String>("IS_MAXIMUM_PROPERTY"), //
@@ -29,6 +33,24 @@ public:
 		return sat<F>("CONTENT_PANE_PROPERTY");
 	}
 
+	template<typename F = ::jint>
+	static auto DISPOSE_ON_CLOSE() {
+		static_assert(field_signatures[jField<F>("DISPOSE_ON_CLOSE")] != -1);
+		return sat<F>("DISPOSE_ON_CLOSE");
+	}
+
+	template<typename F = ::jint>
+	static auto DO_NOTHING_ON_CLOSE() {
+		static_assert(field_signatures[jField<F>("DO_NOTHING_ON_CLOSE")] != -1);
+		return sat<F>("DO_NOTHING_ON_CLOSE");
+	}
+
+	template<typename F = ::jint>
+	static auto EXIT_ON_CLOSE() {
+		static_assert(field_signatures[jField<F>("EXIT_ON_CLOSE")] != -1);
+		return sat<F>("EXIT_ON_CLOSE");
+	}
+
 	template<typename F = ::java::lang::String>
 	static auto FRAME_ICON_PROPERTY() {
 		static_assert(field_signatures[jField<F>("FRAME_ICON_PROPERTY")] != -1);
@@ -39,6 +61,12 @@ public:
 	static auto GLASS_PANE_PROPERTY() {
 		static_assert(field_signatures[jField<F>("GLASS_PANE_PROPERTY")] != -1);
 		return sat<F>("GLASS_PANE_PROPERTY");
+	}
+
+	template<typename F = ::jint>
+	static auto HIDE_ON_CLOSE() {
+		static_assert(field_signatures[jField<F>("HIDE_ON_CLOSE")] != -1);
+		return sat<F>("HIDE_ON_CLOSE");
 	}
 
 	template<typename F = ::java::lang::String>

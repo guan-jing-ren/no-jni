@@ -10,8 +10,28 @@ public:
 	static constexpr auto signature = ::java_awt / "Paint";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::jint>("BITMASK"), //
+		jField<::jint>("OPAQUE"), //
+		jField<::jint>("TRANSLUCENT"), //
 	};
+
+	template<typename F = ::jint>
+	static auto BITMASK() {
+		static_assert(field_signatures[jField<F>("BITMASK")] != -1);
+		return sat<F>("BITMASK");
+	}
+
+	template<typename F = ::jint>
+	static auto OPAQUE() {
+		static_assert(field_signatures[jField<F>("OPAQUE")] != -1);
+		return sat<F>("OPAQUE");
+	}
+
+	template<typename F = ::jint>
+	static auto TRANSLUCENT() {
+		static_assert(field_signatures[jField<F>("TRANSLUCENT")] != -1);
+		return sat<F>("TRANSLUCENT");
+	}
 
 	constexpr static Enume method_signatures{
 		jMethod<::java::awt::PaintContext(::java::awt::image::ColorModel, ::java::awt::Rectangle, ::java::awt::geom::Rectangle2D, ::java::awt::geom::AffineTransform, ::java::awt::RenderingHints)>("createContext"), //

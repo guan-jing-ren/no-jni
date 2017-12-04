@@ -10,8 +10,28 @@ public:
 	static constexpr auto signature = ::java_awt / "ScrollPaneAdjustable";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::jint>("HORIZONTAL"), //
+		jField<::jint>("NO_ORIENTATION"), //
+		jField<::jint>("VERTICAL"), //
 	};
+
+	template<typename F = ::jint>
+	static auto HORIZONTAL() {
+		static_assert(field_signatures[jField<F>("HORIZONTAL")] != -1);
+		return sat<F>("HORIZONTAL");
+	}
+
+	template<typename F = ::jint>
+	static auto NO_ORIENTATION() {
+		static_assert(field_signatures[jField<F>("NO_ORIENTATION")] != -1);
+		return sat<F>("NO_ORIENTATION");
+	}
+
+	template<typename F = ::jint>
+	static auto VERTICAL() {
+		static_assert(field_signatures[jField<F>("VERTICAL")] != -1);
+		return sat<F>("VERTICAL");
+	}
 
 	constexpr static Enume method_signatures{
 		jMethod<::jvoid(::java::awt::event::AdjustmentListener)>("addAdjustmentListener"), //

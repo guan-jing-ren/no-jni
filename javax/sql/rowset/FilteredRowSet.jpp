@@ -10,8 +10,21 @@ public:
 	static constexpr auto signature = ::javax_sql_rowset / "FilteredRowSet";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::java::lang::String>("PUBLIC_XML_SCHEMA"), //
+		jField<::java::lang::String>("SCHEMA_SYSTEM_ID"), //
 	};
+
+	template<typename F = ::java::lang::String>
+	static auto PUBLIC_XML_SCHEMA() {
+		static_assert(field_signatures[jField<F>("PUBLIC_XML_SCHEMA")] != -1);
+		return sat<F>("PUBLIC_XML_SCHEMA");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto SCHEMA_SYSTEM_ID() {
+		static_assert(field_signatures[jField<F>("SCHEMA_SYSTEM_ID")] != -1);
+		return sat<F>("SCHEMA_SYSTEM_ID");
+	}
 
 	constexpr static Enume method_signatures{
 		jMethod<::jboolean(::jint)>("absolute"), //

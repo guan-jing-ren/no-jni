@@ -10,8 +10,35 @@ public:
 	static constexpr auto signature = ::javax_swing / "JDialog";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::jint>("DISPOSE_ON_CLOSE"), //
+		jField<::jint>("DO_NOTHING_ON_CLOSE"), //
+		jField<::jint>("EXIT_ON_CLOSE"), //
+		jField<::jint>("HIDE_ON_CLOSE"), //
 	};
+
+	template<typename F = ::jint>
+	static auto DISPOSE_ON_CLOSE() {
+		static_assert(field_signatures[jField<F>("DISPOSE_ON_CLOSE")] != -1);
+		return sat<F>("DISPOSE_ON_CLOSE");
+	}
+
+	template<typename F = ::jint>
+	static auto DO_NOTHING_ON_CLOSE() {
+		static_assert(field_signatures[jField<F>("DO_NOTHING_ON_CLOSE")] != -1);
+		return sat<F>("DO_NOTHING_ON_CLOSE");
+	}
+
+	template<typename F = ::jint>
+	static auto EXIT_ON_CLOSE() {
+		static_assert(field_signatures[jField<F>("EXIT_ON_CLOSE")] != -1);
+		return sat<F>("EXIT_ON_CLOSE");
+	}
+
+	template<typename F = ::jint>
+	static auto HIDE_ON_CLOSE() {
+		static_assert(field_signatures[jField<F>("HIDE_ON_CLOSE")] != -1);
+		return sat<F>("HIDE_ON_CLOSE");
+	}
 
 	constexpr static Enume method_signatures{
 		jConstructor<::jvoid()>(), //

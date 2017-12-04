@@ -10,8 +10,14 @@ public:
 	static constexpr auto signature = ::javax_management_remote_rmi / "RMIConnector";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::java::lang::String>("CREDENTIALS"), //
 	};
+
+	template<typename F = ::java::lang::String>
+	static auto CREDENTIALS() {
+		static_assert(field_signatures[jField<F>("CREDENTIALS")] != -1);
+		return sat<F>("CREDENTIALS");
+	}
 
 	constexpr static Enume method_signatures{
 		jConstructor<::jvoid(::javax::management::remote::JMXServiceURL, ::java::util::Map)>(), //

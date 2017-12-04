@@ -10,8 +10,14 @@ public:
 	static constexpr auto signature = ::java_awt_print / "Book";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::jint>("UNKNOWN_NUMBER_OF_PAGES"), //
 	};
+
+	template<typename F = ::jint>
+	static auto UNKNOWN_NUMBER_OF_PAGES() {
+		static_assert(field_signatures[jField<F>("UNKNOWN_NUMBER_OF_PAGES")] != -1);
+		return sat<F>("UNKNOWN_NUMBER_OF_PAGES");
+	}
 
 	constexpr static Enume method_signatures{
 		jConstructor<::jvoid()>(), //

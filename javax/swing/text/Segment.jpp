@@ -10,10 +10,17 @@ public:
 	static constexpr auto signature = ::javax_swing_text / "Segment";
 
 	constexpr static Enume field_signatures{
+		jField<::jchar>("DONE"), //
 		jField<::jchar *>("array"), //
 		jField<::jint>("count"), //
 		jField<::jint>("offset"), //
 	};
+
+	template<typename F = ::jchar>
+	static auto DONE() {
+		static_assert(field_signatures[jField<F>("DONE")] != -1);
+		return sat<F>("DONE");
+	}
 
 	template<typename F = ::jchar *>
 	auto array() const {

@@ -10,8 +10,21 @@ public:
 	static constexpr auto signature = ::javax_script / "SimpleScriptContext";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::jint>("ENGINE_SCOPE"), //
+		jField<::jint>("GLOBAL_SCOPE"), //
 	};
+
+	template<typename F = ::jint>
+	static auto ENGINE_SCOPE() {
+		static_assert(field_signatures[jField<F>("ENGINE_SCOPE")] != -1);
+		return sat<F>("ENGINE_SCOPE");
+	}
+
+	template<typename F = ::jint>
+	static auto GLOBAL_SCOPE() {
+		static_assert(field_signatures[jField<F>("GLOBAL_SCOPE")] != -1);
+		return sat<F>("GLOBAL_SCOPE");
+	}
 
 	constexpr static Enume method_signatures{
 		jConstructor<::jvoid()>(), //

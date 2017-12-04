@@ -10,8 +10,21 @@ public:
 	static constexpr auto signature = ::javax_naming_ldap / "BasicControl";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::jboolean>("CRITICAL"), //
+		jField<::jboolean>("NONCRITICAL"), //
 	};
+
+	template<typename F = ::jboolean>
+	static auto CRITICAL() {
+		static_assert(field_signatures[jField<F>("CRITICAL")] != -1);
+		return sat<F>("CRITICAL");
+	}
+
+	template<typename F = ::jboolean>
+	static auto NONCRITICAL() {
+		static_assert(field_signatures[jField<F>("NONCRITICAL")] != -1);
+		return sat<F>("NONCRITICAL");
+	}
 
 	constexpr static Enume method_signatures{
 		jConstructor<::jvoid(::java::lang::String)>(), //

@@ -10,8 +10,56 @@ public:
 	static constexpr auto signature = ::javax_script / "AbstractScriptEngine";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::java::lang::String>("ARGV"), //
+		jField<::java::lang::String>("ENGINE"), //
+		jField<::java::lang::String>("ENGINE_VERSION"), //
+		jField<::java::lang::String>("FILENAME"), //
+		jField<::java::lang::String>("LANGUAGE"), //
+		jField<::java::lang::String>("LANGUAGE_VERSION"), //
+		jField<::java::lang::String>("NAME"), //
 	};
+
+	template<typename F = ::java::lang::String>
+	static auto ARGV() {
+		static_assert(field_signatures[jField<F>("ARGV")] != -1);
+		return sat<F>("ARGV");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto ENGINE() {
+		static_assert(field_signatures[jField<F>("ENGINE")] != -1);
+		return sat<F>("ENGINE");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto ENGINE_VERSION() {
+		static_assert(field_signatures[jField<F>("ENGINE_VERSION")] != -1);
+		return sat<F>("ENGINE_VERSION");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto FILENAME() {
+		static_assert(field_signatures[jField<F>("FILENAME")] != -1);
+		return sat<F>("FILENAME");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto LANGUAGE() {
+		static_assert(field_signatures[jField<F>("LANGUAGE")] != -1);
+		return sat<F>("LANGUAGE");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto LANGUAGE_VERSION() {
+		static_assert(field_signatures[jField<F>("LANGUAGE_VERSION")] != -1);
+		return sat<F>("LANGUAGE_VERSION");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto NAME() {
+		static_assert(field_signatures[jField<F>("NAME")] != -1);
+		return sat<F>("NAME");
+	}
 
 	constexpr static Enume method_signatures{
 		jConstructor<::jvoid()>(), //

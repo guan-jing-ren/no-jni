@@ -11,12 +11,26 @@ public:
 
 	constexpr static Enume field_signatures{
 		jField<::java::lang::String>("FEATURE"), //
+		jField<::java::lang::String>("PI_DISABLE_OUTPUT_ESCAPING"), //
+		jField<::java::lang::String>("PI_ENABLE_OUTPUT_ESCAPING"), //
 	};
 
 	template<typename F = ::java::lang::String>
 	static auto FEATURE() {
 		static_assert(field_signatures[jField<F>("FEATURE")] != -1);
 		return sat<F>("FEATURE");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto PI_DISABLE_OUTPUT_ESCAPING() {
+		static_assert(field_signatures[jField<F>("PI_DISABLE_OUTPUT_ESCAPING")] != -1);
+		return sat<F>("PI_DISABLE_OUTPUT_ESCAPING");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto PI_ENABLE_OUTPUT_ESCAPING() {
+		static_assert(field_signatures[jField<F>("PI_ENABLE_OUTPUT_ESCAPING")] != -1);
+		return sat<F>("PI_ENABLE_OUTPUT_ESCAPING");
 	}
 
 	constexpr static Enume method_signatures{

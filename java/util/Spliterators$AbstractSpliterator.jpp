@@ -10,8 +10,63 @@ public:
 	static constexpr auto signature = ::java_util / "Spliterators$AbstractSpliterator";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::jint>("CONCURRENT"), //
+		jField<::jint>("DISTINCT"), //
+		jField<::jint>("IMMUTABLE"), //
+		jField<::jint>("NONNULL"), //
+		jField<::jint>("ORDERED"), //
+		jField<::jint>("SIZED"), //
+		jField<::jint>("SORTED"), //
+		jField<::jint>("SUBSIZED"), //
 	};
+
+	template<typename F = ::jint>
+	static auto CONCURRENT() {
+		static_assert(field_signatures[jField<F>("CONCURRENT")] != -1);
+		return sat<F>("CONCURRENT");
+	}
+
+	template<typename F = ::jint>
+	static auto DISTINCT() {
+		static_assert(field_signatures[jField<F>("DISTINCT")] != -1);
+		return sat<F>("DISTINCT");
+	}
+
+	template<typename F = ::jint>
+	static auto IMMUTABLE() {
+		static_assert(field_signatures[jField<F>("IMMUTABLE")] != -1);
+		return sat<F>("IMMUTABLE");
+	}
+
+	template<typename F = ::jint>
+	static auto NONNULL() {
+		static_assert(field_signatures[jField<F>("NONNULL")] != -1);
+		return sat<F>("NONNULL");
+	}
+
+	template<typename F = ::jint>
+	static auto ORDERED() {
+		static_assert(field_signatures[jField<F>("ORDERED")] != -1);
+		return sat<F>("ORDERED");
+	}
+
+	template<typename F = ::jint>
+	static auto SIZED() {
+		static_assert(field_signatures[jField<F>("SIZED")] != -1);
+		return sat<F>("SIZED");
+	}
+
+	template<typename F = ::jint>
+	static auto SORTED() {
+		static_assert(field_signatures[jField<F>("SORTED")] != -1);
+		return sat<F>("SORTED");
+	}
+
+	template<typename F = ::jint>
+	static auto SUBSIZED() {
+		static_assert(field_signatures[jField<F>("SUBSIZED")] != -1);
+		return sat<F>("SUBSIZED");
+	}
 
 	constexpr static Enume method_signatures{
 		jMethod<::jint()>("characteristics"), //

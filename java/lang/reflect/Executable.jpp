@@ -10,8 +10,21 @@ public:
 	static constexpr auto signature = ::java_lang_reflect / "Executable";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::jint>("DECLARED"), //
+		jField<::jint>("PUBLIC"), //
 	};
+
+	template<typename F = ::jint>
+	static auto DECLARED() {
+		static_assert(field_signatures[jField<F>("DECLARED")] != -1);
+		return sat<F>("DECLARED");
+	}
+
+	template<typename F = ::jint>
+	static auto PUBLIC() {
+		static_assert(field_signatures[jField<F>("PUBLIC")] != -1);
+		return sat<F>("PUBLIC");
+	}
 
 	constexpr static Enume method_signatures{
 		jMethod<::java::lang::reflect::AnnotatedType *()>("getAnnotatedExceptionTypes"), //

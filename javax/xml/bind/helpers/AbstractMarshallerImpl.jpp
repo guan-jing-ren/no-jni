@@ -10,8 +10,42 @@ public:
 	static constexpr auto signature = ::javax_xml_bind_helpers / "AbstractMarshallerImpl";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::java::lang::String>("JAXB_ENCODING"), //
+		jField<::java::lang::String>("JAXB_FORMATTED_OUTPUT"), //
+		jField<::java::lang::String>("JAXB_FRAGMENT"), //
+		jField<::java::lang::String>("JAXB_NO_NAMESPACE_SCHEMA_LOCATION"), //
+		jField<::java::lang::String>("JAXB_SCHEMA_LOCATION"), //
 	};
+
+	template<typename F = ::java::lang::String>
+	static auto JAXB_ENCODING() {
+		static_assert(field_signatures[jField<F>("JAXB_ENCODING")] != -1);
+		return sat<F>("JAXB_ENCODING");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto JAXB_FORMATTED_OUTPUT() {
+		static_assert(field_signatures[jField<F>("JAXB_FORMATTED_OUTPUT")] != -1);
+		return sat<F>("JAXB_FORMATTED_OUTPUT");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto JAXB_FRAGMENT() {
+		static_assert(field_signatures[jField<F>("JAXB_FRAGMENT")] != -1);
+		return sat<F>("JAXB_FRAGMENT");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto JAXB_NO_NAMESPACE_SCHEMA_LOCATION() {
+		static_assert(field_signatures[jField<F>("JAXB_NO_NAMESPACE_SCHEMA_LOCATION")] != -1);
+		return sat<F>("JAXB_NO_NAMESPACE_SCHEMA_LOCATION");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto JAXB_SCHEMA_LOCATION() {
+		static_assert(field_signatures[jField<F>("JAXB_SCHEMA_LOCATION")] != -1);
+		return sat<F>("JAXB_SCHEMA_LOCATION");
+	}
 
 	constexpr static Enume method_signatures{
 		jConstructor<::jvoid()>(), //

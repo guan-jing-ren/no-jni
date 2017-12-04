@@ -10,8 +10,15 @@ public:
 	static constexpr auto signature = ::java_rmi_server / "ServerRef";
 
 	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("packagePrefix"), //
 		jField<::jlong>("serialVersionUID"), //
 	};
+
+	template<typename F = ::java::lang::String>
+	static auto packagePrefix() {
+		static_assert(field_signatures[jField<F>("packagePrefix")] != -1);
+		return sat<F>("packagePrefix");
+	}
 
 	template<typename F = ::jlong>
 	static auto serialVersionUID() {

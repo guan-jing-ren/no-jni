@@ -10,8 +10,49 @@ public:
 	static constexpr auto signature = ::javax_naming_event / "EventDirContext";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::jint>("ADD_ATTRIBUTE"), //
+		jField<::jint>("OBJECT_SCOPE"), //
+		jField<::jint>("ONELEVEL_SCOPE"), //
+		jField<::jint>("REMOVE_ATTRIBUTE"), //
+		jField<::jint>("REPLACE_ATTRIBUTE"), //
+		jField<::jint>("SUBTREE_SCOPE"), //
 	};
+
+	template<typename F = ::jint>
+	static auto ADD_ATTRIBUTE() {
+		static_assert(field_signatures[jField<F>("ADD_ATTRIBUTE")] != -1);
+		return sat<F>("ADD_ATTRIBUTE");
+	}
+
+	template<typename F = ::jint>
+	static auto OBJECT_SCOPE() {
+		static_assert(field_signatures[jField<F>("OBJECT_SCOPE")] != -1);
+		return sat<F>("OBJECT_SCOPE");
+	}
+
+	template<typename F = ::jint>
+	static auto ONELEVEL_SCOPE() {
+		static_assert(field_signatures[jField<F>("ONELEVEL_SCOPE")] != -1);
+		return sat<F>("ONELEVEL_SCOPE");
+	}
+
+	template<typename F = ::jint>
+	static auto REMOVE_ATTRIBUTE() {
+		static_assert(field_signatures[jField<F>("REMOVE_ATTRIBUTE")] != -1);
+		return sat<F>("REMOVE_ATTRIBUTE");
+	}
+
+	template<typename F = ::jint>
+	static auto REPLACE_ATTRIBUTE() {
+		static_assert(field_signatures[jField<F>("REPLACE_ATTRIBUTE")] != -1);
+		return sat<F>("REPLACE_ATTRIBUTE");
+	}
+
+	template<typename F = ::jint>
+	static auto SUBTREE_SCOPE() {
+		static_assert(field_signatures[jField<F>("SUBTREE_SCOPE")] != -1);
+		return sat<F>("SUBTREE_SCOPE");
+	}
 
 	constexpr static Enume method_signatures{
 		jMethod<::jvoid(::java::lang::String, ::jint, ::javax::naming::event::NamingListener)>("addNamingListener"), //

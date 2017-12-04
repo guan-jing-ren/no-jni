@@ -13,6 +13,7 @@ public:
 		jField<::jshort>("CSS_ATTR"), //
 		jField<::jshort>("CSS_CM"), //
 		jField<::jshort>("CSS_COUNTER"), //
+		jField<::jshort>("CSS_CUSTOM"), //
 		jField<::jshort>("CSS_DEG"), //
 		jField<::jshort>("CSS_DIMENSION"), //
 		jField<::jshort>("CSS_EMS"), //
@@ -21,12 +22,14 @@ public:
 		jField<::jshort>("CSS_HZ"), //
 		jField<::jshort>("CSS_IDENT"), //
 		jField<::jshort>("CSS_IN"), //
+		jField<::jshort>("CSS_INHERIT"), //
 		jField<::jshort>("CSS_KHZ"), //
 		jField<::jshort>("CSS_MM"), //
 		jField<::jshort>("CSS_MS"), //
 		jField<::jshort>("CSS_NUMBER"), //
 		jField<::jshort>("CSS_PC"), //
 		jField<::jshort>("CSS_PERCENTAGE"), //
+		jField<::jshort>("CSS_PRIMITIVE_VALUE"), //
 		jField<::jshort>("CSS_PT"), //
 		jField<::jshort>("CSS_PX"), //
 		jField<::jshort>("CSS_RAD"), //
@@ -36,6 +39,7 @@ public:
 		jField<::jshort>("CSS_STRING"), //
 		jField<::jshort>("CSS_UNKNOWN"), //
 		jField<::jshort>("CSS_URI"), //
+		jField<::jshort>("CSS_VALUE_LIST"), //
 	};
 
 	template<typename F = ::jshort>
@@ -54,6 +58,12 @@ public:
 	static auto CSS_COUNTER() {
 		static_assert(field_signatures[jField<F>("CSS_COUNTER")] != -1);
 		return sat<F>("CSS_COUNTER");
+	}
+
+	template<typename F = ::jshort>
+	static auto CSS_CUSTOM() {
+		static_assert(field_signatures[jField<F>("CSS_CUSTOM")] != -1);
+		return sat<F>("CSS_CUSTOM");
 	}
 
 	template<typename F = ::jshort>
@@ -105,6 +115,12 @@ public:
 	}
 
 	template<typename F = ::jshort>
+	static auto CSS_INHERIT() {
+		static_assert(field_signatures[jField<F>("CSS_INHERIT")] != -1);
+		return sat<F>("CSS_INHERIT");
+	}
+
+	template<typename F = ::jshort>
 	static auto CSS_KHZ() {
 		static_assert(field_signatures[jField<F>("CSS_KHZ")] != -1);
 		return sat<F>("CSS_KHZ");
@@ -138,6 +154,12 @@ public:
 	static auto CSS_PERCENTAGE() {
 		static_assert(field_signatures[jField<F>("CSS_PERCENTAGE")] != -1);
 		return sat<F>("CSS_PERCENTAGE");
+	}
+
+	template<typename F = ::jshort>
+	static auto CSS_PRIMITIVE_VALUE() {
+		static_assert(field_signatures[jField<F>("CSS_PRIMITIVE_VALUE")] != -1);
+		return sat<F>("CSS_PRIMITIVE_VALUE");
 	}
 
 	template<typename F = ::jshort>
@@ -192,6 +214,12 @@ public:
 	static auto CSS_URI() {
 		static_assert(field_signatures[jField<F>("CSS_URI")] != -1);
 		return sat<F>("CSS_URI");
+	}
+
+	template<typename F = ::jshort>
+	static auto CSS_VALUE_LIST() {
+		static_assert(field_signatures[jField<F>("CSS_VALUE_LIST")] != -1);
+		return sat<F>("CSS_VALUE_LIST");
 	}
 
 	constexpr static Enume method_signatures{

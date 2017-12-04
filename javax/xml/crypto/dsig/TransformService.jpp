@@ -10,8 +10,42 @@ public:
 	static constexpr auto signature = ::javax_xml_crypto_dsig / "TransformService";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::java::lang::String>("BASE64"), //
+		jField<::java::lang::String>("ENVELOPED"), //
+		jField<::java::lang::String>("XPATH"), //
+		jField<::java::lang::String>("XPATH2"), //
+		jField<::java::lang::String>("XSLT"), //
 	};
+
+	template<typename F = ::java::lang::String>
+	static auto BASE64() {
+		static_assert(field_signatures[jField<F>("BASE64")] != -1);
+		return sat<F>("BASE64");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto ENVELOPED() {
+		static_assert(field_signatures[jField<F>("ENVELOPED")] != -1);
+		return sat<F>("ENVELOPED");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto XPATH() {
+		static_assert(field_signatures[jField<F>("XPATH")] != -1);
+		return sat<F>("XPATH");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto XPATH2() {
+		static_assert(field_signatures[jField<F>("XPATH2")] != -1);
+		return sat<F>("XPATH2");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto XSLT() {
+		static_assert(field_signatures[jField<F>("XSLT")] != -1);
+		return sat<F>("XSLT");
+	}
 
 	constexpr static Enume method_signatures{
 		jMethod<::java::lang::String()>("getAlgorithm"), //

@@ -10,8 +10,14 @@ public:
 	static constexpr auto signature = ::javax_naming_ldap / "InitialLdapContext";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::java::lang::String>("CONTROL_FACTORIES"), //
 	};
+
+	template<typename F = ::java::lang::String>
+	static auto CONTROL_FACTORIES() {
+		static_assert(field_signatures[jField<F>("CONTROL_FACTORIES")] != -1);
+		return sat<F>("CONTROL_FACTORIES");
+	}
 
 	constexpr static Enume method_signatures{
 		jConstructor<::jvoid()>(), //

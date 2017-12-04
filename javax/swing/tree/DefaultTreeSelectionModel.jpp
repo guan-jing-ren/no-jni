@@ -10,13 +10,34 @@ public:
 	static constexpr auto signature = ::javax_swing_tree / "DefaultTreeSelectionModel";
 
 	constexpr static Enume field_signatures{
+		jField<::jint>("CONTIGUOUS_TREE_SELECTION"), //
+		jField<::jint>("DISCONTIGUOUS_TREE_SELECTION"), //
 		jField<::java::lang::String>("SELECTION_MODE_PROPERTY"), //
+		jField<::jint>("SINGLE_TREE_SELECTION"), //
 	};
+
+	template<typename F = ::jint>
+	static auto CONTIGUOUS_TREE_SELECTION() {
+		static_assert(field_signatures[jField<F>("CONTIGUOUS_TREE_SELECTION")] != -1);
+		return sat<F>("CONTIGUOUS_TREE_SELECTION");
+	}
+
+	template<typename F = ::jint>
+	static auto DISCONTIGUOUS_TREE_SELECTION() {
+		static_assert(field_signatures[jField<F>("DISCONTIGUOUS_TREE_SELECTION")] != -1);
+		return sat<F>("DISCONTIGUOUS_TREE_SELECTION");
+	}
 
 	template<typename F = ::java::lang::String>
 	static auto SELECTION_MODE_PROPERTY() {
 		static_assert(field_signatures[jField<F>("SELECTION_MODE_PROPERTY")] != -1);
 		return sat<F>("SELECTION_MODE_PROPERTY");
+	}
+
+	template<typename F = ::jint>
+	static auto SINGLE_TREE_SELECTION() {
+		static_assert(field_signatures[jField<F>("SINGLE_TREE_SELECTION")] != -1);
+		return sat<F>("SINGLE_TREE_SELECTION");
 	}
 
 	constexpr static Enume method_signatures{

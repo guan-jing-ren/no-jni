@@ -10,8 +10,56 @@ public:
 	static constexpr auto signature = ::java_awt_geom / "FlatteningPathIterator";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::jint>("SEG_CLOSE"), //
+		jField<::jint>("SEG_CUBICTO"), //
+		jField<::jint>("SEG_LINETO"), //
+		jField<::jint>("SEG_MOVETO"), //
+		jField<::jint>("SEG_QUADTO"), //
+		jField<::jint>("WIND_EVEN_ODD"), //
+		jField<::jint>("WIND_NON_ZERO"), //
 	};
+
+	template<typename F = ::jint>
+	static auto SEG_CLOSE() {
+		static_assert(field_signatures[jField<F>("SEG_CLOSE")] != -1);
+		return sat<F>("SEG_CLOSE");
+	}
+
+	template<typename F = ::jint>
+	static auto SEG_CUBICTO() {
+		static_assert(field_signatures[jField<F>("SEG_CUBICTO")] != -1);
+		return sat<F>("SEG_CUBICTO");
+	}
+
+	template<typename F = ::jint>
+	static auto SEG_LINETO() {
+		static_assert(field_signatures[jField<F>("SEG_LINETO")] != -1);
+		return sat<F>("SEG_LINETO");
+	}
+
+	template<typename F = ::jint>
+	static auto SEG_MOVETO() {
+		static_assert(field_signatures[jField<F>("SEG_MOVETO")] != -1);
+		return sat<F>("SEG_MOVETO");
+	}
+
+	template<typename F = ::jint>
+	static auto SEG_QUADTO() {
+		static_assert(field_signatures[jField<F>("SEG_QUADTO")] != -1);
+		return sat<F>("SEG_QUADTO");
+	}
+
+	template<typename F = ::jint>
+	static auto WIND_EVEN_ODD() {
+		static_assert(field_signatures[jField<F>("WIND_EVEN_ODD")] != -1);
+		return sat<F>("WIND_EVEN_ODD");
+	}
+
+	template<typename F = ::jint>
+	static auto WIND_NON_ZERO() {
+		static_assert(field_signatures[jField<F>("WIND_NON_ZERO")] != -1);
+		return sat<F>("WIND_NON_ZERO");
+	}
 
 	constexpr static Enume method_signatures{
 		jConstructor<::jvoid(::java::awt::geom::PathIterator, ::jdouble)>(), //

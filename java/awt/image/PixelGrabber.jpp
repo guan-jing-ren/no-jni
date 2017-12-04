@@ -10,8 +10,70 @@ public:
 	static constexpr auto signature = ::java_awt_image / "PixelGrabber";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::jint>("COMPLETESCANLINES"), //
+		jField<::jint>("IMAGEABORTED"), //
+		jField<::jint>("IMAGEERROR"), //
+		jField<::jint>("RANDOMPIXELORDER"), //
+		jField<::jint>("SINGLEFRAME"), //
+		jField<::jint>("SINGLEFRAMEDONE"), //
+		jField<::jint>("SINGLEPASS"), //
+		jField<::jint>("STATICIMAGEDONE"), //
+		jField<::jint>("TOPDOWNLEFTRIGHT"), //
 	};
+
+	template<typename F = ::jint>
+	static auto COMPLETESCANLINES() {
+		static_assert(field_signatures[jField<F>("COMPLETESCANLINES")] != -1);
+		return sat<F>("COMPLETESCANLINES");
+	}
+
+	template<typename F = ::jint>
+	static auto IMAGEABORTED() {
+		static_assert(field_signatures[jField<F>("IMAGEABORTED")] != -1);
+		return sat<F>("IMAGEABORTED");
+	}
+
+	template<typename F = ::jint>
+	static auto IMAGEERROR() {
+		static_assert(field_signatures[jField<F>("IMAGEERROR")] != -1);
+		return sat<F>("IMAGEERROR");
+	}
+
+	template<typename F = ::jint>
+	static auto RANDOMPIXELORDER() {
+		static_assert(field_signatures[jField<F>("RANDOMPIXELORDER")] != -1);
+		return sat<F>("RANDOMPIXELORDER");
+	}
+
+	template<typename F = ::jint>
+	static auto SINGLEFRAME() {
+		static_assert(field_signatures[jField<F>("SINGLEFRAME")] != -1);
+		return sat<F>("SINGLEFRAME");
+	}
+
+	template<typename F = ::jint>
+	static auto SINGLEFRAMEDONE() {
+		static_assert(field_signatures[jField<F>("SINGLEFRAMEDONE")] != -1);
+		return sat<F>("SINGLEFRAMEDONE");
+	}
+
+	template<typename F = ::jint>
+	static auto SINGLEPASS() {
+		static_assert(field_signatures[jField<F>("SINGLEPASS")] != -1);
+		return sat<F>("SINGLEPASS");
+	}
+
+	template<typename F = ::jint>
+	static auto STATICIMAGEDONE() {
+		static_assert(field_signatures[jField<F>("STATICIMAGEDONE")] != -1);
+		return sat<F>("STATICIMAGEDONE");
+	}
+
+	template<typename F = ::jint>
+	static auto TOPDOWNLEFTRIGHT() {
+		static_assert(field_signatures[jField<F>("TOPDOWNLEFTRIGHT")] != -1);
+		return sat<F>("TOPDOWNLEFTRIGHT");
+	}
 
 	constexpr static Enume method_signatures{
 		jConstructor<::jvoid(::java::awt::Image, ::jint, ::jint, ::jint, ::jint, ::jboolean)>(), //

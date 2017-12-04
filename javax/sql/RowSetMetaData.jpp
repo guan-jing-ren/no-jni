@@ -10,8 +10,28 @@ public:
 	static constexpr auto signature = ::javax_sql / "RowSetMetaData";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::jint>("columnNoNulls"), //
+		jField<::jint>("columnNullable"), //
+		jField<::jint>("columnNullableUnknown"), //
 	};
+
+	template<typename F = ::jint>
+	static auto columnNoNulls() {
+		static_assert(field_signatures[jField<F>("columnNoNulls")] != -1);
+		return sat<F>("columnNoNulls");
+	}
+
+	template<typename F = ::jint>
+	static auto columnNullable() {
+		static_assert(field_signatures[jField<F>("columnNullable")] != -1);
+		return sat<F>("columnNullable");
+	}
+
+	template<typename F = ::jint>
+	static auto columnNullableUnknown() {
+		static_assert(field_signatures[jField<F>("columnNullableUnknown")] != -1);
+		return sat<F>("columnNullableUnknown");
+	}
 
 	constexpr static Enume method_signatures{
 		jMethod<::java::lang::String(::jint)>("getCatalogName"), //

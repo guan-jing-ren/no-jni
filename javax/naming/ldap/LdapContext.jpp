@@ -10,13 +10,34 @@ public:
 	static constexpr auto signature = ::javax_naming_ldap / "LdapContext";
 
 	constexpr static Enume field_signatures{
+		jField<::jint>("ADD_ATTRIBUTE"), //
 		jField<::java::lang::String>("CONTROL_FACTORIES"), //
+		jField<::jint>("REMOVE_ATTRIBUTE"), //
+		jField<::jint>("REPLACE_ATTRIBUTE"), //
 	};
+
+	template<typename F = ::jint>
+	static auto ADD_ATTRIBUTE() {
+		static_assert(field_signatures[jField<F>("ADD_ATTRIBUTE")] != -1);
+		return sat<F>("ADD_ATTRIBUTE");
+	}
 
 	template<typename F = ::java::lang::String>
 	static auto CONTROL_FACTORIES() {
 		static_assert(field_signatures[jField<F>("CONTROL_FACTORIES")] != -1);
 		return sat<F>("CONTROL_FACTORIES");
+	}
+
+	template<typename F = ::jint>
+	static auto REMOVE_ATTRIBUTE() {
+		static_assert(field_signatures[jField<F>("REMOVE_ATTRIBUTE")] != -1);
+		return sat<F>("REMOVE_ATTRIBUTE");
+	}
+
+	template<typename F = ::jint>
+	static auto REPLACE_ATTRIBUTE() {
+		static_assert(field_signatures[jField<F>("REPLACE_ATTRIBUTE")] != -1);
+		return sat<F>("REPLACE_ATTRIBUTE");
 	}
 
 	constexpr static Enume method_signatures{

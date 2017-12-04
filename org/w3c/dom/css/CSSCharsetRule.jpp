@@ -10,8 +10,56 @@ public:
 	static constexpr auto signature = ::org_w3c_dom_css / "CSSCharsetRule";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::jshort>("CHARSET_RULE"), //
+		jField<::jshort>("FONT_FACE_RULE"), //
+		jField<::jshort>("IMPORT_RULE"), //
+		jField<::jshort>("MEDIA_RULE"), //
+		jField<::jshort>("PAGE_RULE"), //
+		jField<::jshort>("STYLE_RULE"), //
+		jField<::jshort>("UNKNOWN_RULE"), //
 	};
+
+	template<typename F = ::jshort>
+	static auto CHARSET_RULE() {
+		static_assert(field_signatures[jField<F>("CHARSET_RULE")] != -1);
+		return sat<F>("CHARSET_RULE");
+	}
+
+	template<typename F = ::jshort>
+	static auto FONT_FACE_RULE() {
+		static_assert(field_signatures[jField<F>("FONT_FACE_RULE")] != -1);
+		return sat<F>("FONT_FACE_RULE");
+	}
+
+	template<typename F = ::jshort>
+	static auto IMPORT_RULE() {
+		static_assert(field_signatures[jField<F>("IMPORT_RULE")] != -1);
+		return sat<F>("IMPORT_RULE");
+	}
+
+	template<typename F = ::jshort>
+	static auto MEDIA_RULE() {
+		static_assert(field_signatures[jField<F>("MEDIA_RULE")] != -1);
+		return sat<F>("MEDIA_RULE");
+	}
+
+	template<typename F = ::jshort>
+	static auto PAGE_RULE() {
+		static_assert(field_signatures[jField<F>("PAGE_RULE")] != -1);
+		return sat<F>("PAGE_RULE");
+	}
+
+	template<typename F = ::jshort>
+	static auto STYLE_RULE() {
+		static_assert(field_signatures[jField<F>("STYLE_RULE")] != -1);
+		return sat<F>("STYLE_RULE");
+	}
+
+	template<typename F = ::jshort>
+	static auto UNKNOWN_RULE() {
+		static_assert(field_signatures[jField<F>("UNKNOWN_RULE")] != -1);
+		return sat<F>("UNKNOWN_RULE");
+	}
 
 	constexpr static Enume method_signatures{
 		jMethod<::java::lang::String()>("getCssText"), //

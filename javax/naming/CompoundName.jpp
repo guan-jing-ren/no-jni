@@ -10,8 +10,14 @@ public:
 	static constexpr auto signature = ::javax_naming / "CompoundName";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::jlong>("serialVersionUID"), //
 	};
+
+	template<typename F = ::jlong>
+	static auto serialVersionUID() {
+		static_assert(field_signatures[jField<F>("serialVersionUID")] != -1);
+		return sat<F>("serialVersionUID");
+	}
 
 	constexpr static Enume method_signatures{
 		jConstructor<::jvoid(::java::lang::String, ::java::util::Properties)>(), //

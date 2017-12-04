@@ -10,8 +10,77 @@ public:
 	static constexpr auto signature = ::javax_sql / "RowSet";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::jint>("CLOSE_CURSORS_AT_COMMIT"), //
+		jField<::jint>("CONCUR_READ_ONLY"), //
+		jField<::jint>("CONCUR_UPDATABLE"), //
+		jField<::jint>("FETCH_FORWARD"), //
+		jField<::jint>("FETCH_REVERSE"), //
+		jField<::jint>("FETCH_UNKNOWN"), //
+		jField<::jint>("HOLD_CURSORS_OVER_COMMIT"), //
+		jField<::jint>("TYPE_FORWARD_ONLY"), //
+		jField<::jint>("TYPE_SCROLL_INSENSITIVE"), //
+		jField<::jint>("TYPE_SCROLL_SENSITIVE"), //
 	};
+
+	template<typename F = ::jint>
+	static auto CLOSE_CURSORS_AT_COMMIT() {
+		static_assert(field_signatures[jField<F>("CLOSE_CURSORS_AT_COMMIT")] != -1);
+		return sat<F>("CLOSE_CURSORS_AT_COMMIT");
+	}
+
+	template<typename F = ::jint>
+	static auto CONCUR_READ_ONLY() {
+		static_assert(field_signatures[jField<F>("CONCUR_READ_ONLY")] != -1);
+		return sat<F>("CONCUR_READ_ONLY");
+	}
+
+	template<typename F = ::jint>
+	static auto CONCUR_UPDATABLE() {
+		static_assert(field_signatures[jField<F>("CONCUR_UPDATABLE")] != -1);
+		return sat<F>("CONCUR_UPDATABLE");
+	}
+
+	template<typename F = ::jint>
+	static auto FETCH_FORWARD() {
+		static_assert(field_signatures[jField<F>("FETCH_FORWARD")] != -1);
+		return sat<F>("FETCH_FORWARD");
+	}
+
+	template<typename F = ::jint>
+	static auto FETCH_REVERSE() {
+		static_assert(field_signatures[jField<F>("FETCH_REVERSE")] != -1);
+		return sat<F>("FETCH_REVERSE");
+	}
+
+	template<typename F = ::jint>
+	static auto FETCH_UNKNOWN() {
+		static_assert(field_signatures[jField<F>("FETCH_UNKNOWN")] != -1);
+		return sat<F>("FETCH_UNKNOWN");
+	}
+
+	template<typename F = ::jint>
+	static auto HOLD_CURSORS_OVER_COMMIT() {
+		static_assert(field_signatures[jField<F>("HOLD_CURSORS_OVER_COMMIT")] != -1);
+		return sat<F>("HOLD_CURSORS_OVER_COMMIT");
+	}
+
+	template<typename F = ::jint>
+	static auto TYPE_FORWARD_ONLY() {
+		static_assert(field_signatures[jField<F>("TYPE_FORWARD_ONLY")] != -1);
+		return sat<F>("TYPE_FORWARD_ONLY");
+	}
+
+	template<typename F = ::jint>
+	static auto TYPE_SCROLL_INSENSITIVE() {
+		static_assert(field_signatures[jField<F>("TYPE_SCROLL_INSENSITIVE")] != -1);
+		return sat<F>("TYPE_SCROLL_INSENSITIVE");
+	}
+
+	template<typename F = ::jint>
+	static auto TYPE_SCROLL_SENSITIVE() {
+		static_assert(field_signatures[jField<F>("TYPE_SCROLL_SENSITIVE")] != -1);
+		return sat<F>("TYPE_SCROLL_SENSITIVE");
+	}
 
 	constexpr static Enume method_signatures{
 		jMethod<::jboolean(::jint)>("absolute"), //

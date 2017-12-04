@@ -10,8 +10,14 @@ public:
 	static constexpr auto signature = ::java_awt_image_renderable / "RenderableImageOp";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::java::lang::String>("HINTS_OBSERVED"), //
 	};
+
+	template<typename F = ::java::lang::String>
+	static auto HINTS_OBSERVED() {
+		static_assert(field_signatures[jField<F>("HINTS_OBSERVED")] != -1);
+		return sat<F>("HINTS_OBSERVED");
+	}
 
 	constexpr static Enume method_signatures{
 		jConstructor<::jvoid(::java::awt::image::renderable::ContextualRenderedImageFactory, ::java::awt::image::renderable::ParameterBlock)>(), //

@@ -10,8 +10,15 @@ public:
 	static constexpr auto signature = ::java_beans_beancontext / "BeanContext";
 
 	constexpr static Enume field_signatures{
+		jField<::java::lang::String>("PROPERTYNAME"), //
 		jField<::java::lang::Object>("globalHierarchyLock"), //
 	};
+
+	template<typename F = ::java::lang::String>
+	static auto PROPERTYNAME() {
+		static_assert(field_signatures[jField<F>("PROPERTYNAME")] != -1);
+		return sat<F>("PROPERTYNAME");
+	}
 
 	template<typename F = ::java::lang::Object>
 	static auto globalHierarchyLock() {

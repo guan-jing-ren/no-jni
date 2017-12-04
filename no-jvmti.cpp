@@ -235,6 +235,12 @@ public:
     return get_members<jfieldID, &jvmtiEnv::GetClassFields>();
   }
 
+  auto implemented_interfaces() const {
+    tAlloc<jclass> interfaces;
+    env()->GetImplementedInterfaces(*this, interfaces, interfaces);
+    return interfaces;
+  }
+
   auto superclass() const {
     if (!cast(*this))
       return tClass{};
@@ -683,14 +689,22 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
          << "\tstatic constexpr auto signature = ::"
          << pkg_to_nspace_pkg_var[pkg].second << " / \"" << cls << "\";\n\n";
 
+    auto process_members = [](const auto &members, auto &signatures,
+                              auto &&factory) {
+      transform(begin(members), end(members), back_inserter(signatures),
+                [factory](const auto &m) mutable {
+                  auto members = factory(m);
+                  return make_tuple(members.name(), members.signature(),
+                                    members.is_static(), members.is_public());
+                });
+    };
+
     auto fields = clazz.get_fields();
     vector<tuple<string, string, bool, bool>> fsignatures;
-    transform(begin(fields), end(fields), back_inserter(fsignatures),
-              [clazz](jfieldID id) {
-                tField field{clazz, id};
-                return make_tuple(field.name(), field.signature(),
-                                  field.is_static(), field.is_public());
-              });
+    auto field_from_id = [clazz](jfieldID id) { return tField{clazz, id}; };
+    process_members(fields, fsignatures, field_from_id);
+    for (tClass iface : clazz.implemented_interfaces())
+      process_members(iface.get_fields(), fsignatures, field_from_id);
     fsignatures.erase(remove_if(begin(fsignatures), end(fsignatures),
                                 [](const auto &sig) {
                                   return !get<3>(sig) ||
@@ -699,6 +713,8 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
                                 }),
                       end(fsignatures));
     sort(begin(fsignatures), end(fsignatures));
+    fsignatures.erase(unique(begin(fsignatures), end(fsignatures)),
+                      end(fsignatures));
     fout << "\tconstexpr static Enume field_signatures{\n";
     if (fsignatures.empty())
       fout << "\t\tcexprstr{\"\\0\"}, //\n";
@@ -727,11 +743,10 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
 
     auto methods = clazz.get_methods();
     vector<tuple<string, string, bool, bool>> msignatures;
-    transform(begin(methods), end(methods), back_inserter(msignatures),
-              [](const tMethod &method) mutable {
-                return make_tuple(method.name(), method.signature(),
-                                  method.is_static(), method.is_public());
-              });
+    auto method_from_id = [](jmethodID id) { return tMethod{id}; };
+    process_members(methods, msignatures, method_from_id);
+    for (tClass iface : clazz.implemented_interfaces())
+      process_members(iface.get_methods(), msignatures, method_from_id);
     msignatures.erase(remove_if(begin(msignatures), end(msignatures),
                                 [](const auto &sig) {
                                   return !get<3>(sig) ||
@@ -740,6 +755,8 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
                                 }),
                       end(msignatures));
     sort(begin(msignatures), end(msignatures));
+    msignatures.erase(unique(begin(msignatures), end(msignatures)),
+                      end(msignatures));
     fout << "\tconstexpr static Enume method_signatures{\n";
     if (msignatures.empty())
       fout << "\t\tcexprstr{\"\\0\"}, //\n";

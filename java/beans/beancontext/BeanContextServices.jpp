@@ -10,8 +10,14 @@ public:
 	static constexpr auto signature = ::java_beans_beancontext / "BeanContextServices";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::java::lang::Object>("globalHierarchyLock"), //
 	};
+
+	template<typename F = ::java::lang::Object>
+	static auto globalHierarchyLock() {
+		static_assert(field_signatures[jField<F>("globalHierarchyLock")] != -1);
+		return sat<F>("globalHierarchyLock");
+	}
 
 	constexpr static Enume method_signatures{
 		jMethod<::jboolean(::java::lang::Object)>("add"), //

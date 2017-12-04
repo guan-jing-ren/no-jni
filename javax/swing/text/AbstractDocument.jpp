@@ -15,6 +15,8 @@ public:
 		jField<::java::lang::String>("ElementNameAttribute"), //
 		jField<::java::lang::String>("ParagraphElementName"), //
 		jField<::java::lang::String>("SectionElementName"), //
+		jField<::java::lang::String>("StreamDescriptionProperty"), //
+		jField<::java::lang::String>("TitleProperty"), //
 	};
 
 	template<typename F = ::java::lang::String>
@@ -45,6 +47,18 @@ public:
 	static auto SectionElementName() {
 		static_assert(field_signatures[jField<F>("SectionElementName")] != -1);
 		return sat<F>("SectionElementName");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto StreamDescriptionProperty() {
+		static_assert(field_signatures[jField<F>("StreamDescriptionProperty")] != -1);
+		return sat<F>("StreamDescriptionProperty");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto TitleProperty() {
+		static_assert(field_signatures[jField<F>("TitleProperty")] != -1);
+		return sat<F>("TitleProperty");
 	}
 
 	constexpr static Enume method_signatures{

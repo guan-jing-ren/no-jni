@@ -10,8 +10,56 @@ public:
 	static constexpr auto signature = ::java_sql / "PreparedStatement";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::jint>("CLOSE_ALL_RESULTS"), //
+		jField<::jint>("CLOSE_CURRENT_RESULT"), //
+		jField<::jint>("EXECUTE_FAILED"), //
+		jField<::jint>("KEEP_CURRENT_RESULT"), //
+		jField<::jint>("NO_GENERATED_KEYS"), //
+		jField<::jint>("RETURN_GENERATED_KEYS"), //
+		jField<::jint>("SUCCESS_NO_INFO"), //
 	};
+
+	template<typename F = ::jint>
+	static auto CLOSE_ALL_RESULTS() {
+		static_assert(field_signatures[jField<F>("CLOSE_ALL_RESULTS")] != -1);
+		return sat<F>("CLOSE_ALL_RESULTS");
+	}
+
+	template<typename F = ::jint>
+	static auto CLOSE_CURRENT_RESULT() {
+		static_assert(field_signatures[jField<F>("CLOSE_CURRENT_RESULT")] != -1);
+		return sat<F>("CLOSE_CURRENT_RESULT");
+	}
+
+	template<typename F = ::jint>
+	static auto EXECUTE_FAILED() {
+		static_assert(field_signatures[jField<F>("EXECUTE_FAILED")] != -1);
+		return sat<F>("EXECUTE_FAILED");
+	}
+
+	template<typename F = ::jint>
+	static auto KEEP_CURRENT_RESULT() {
+		static_assert(field_signatures[jField<F>("KEEP_CURRENT_RESULT")] != -1);
+		return sat<F>("KEEP_CURRENT_RESULT");
+	}
+
+	template<typename F = ::jint>
+	static auto NO_GENERATED_KEYS() {
+		static_assert(field_signatures[jField<F>("NO_GENERATED_KEYS")] != -1);
+		return sat<F>("NO_GENERATED_KEYS");
+	}
+
+	template<typename F = ::jint>
+	static auto RETURN_GENERATED_KEYS() {
+		static_assert(field_signatures[jField<F>("RETURN_GENERATED_KEYS")] != -1);
+		return sat<F>("RETURN_GENERATED_KEYS");
+	}
+
+	template<typename F = ::jint>
+	static auto SUCCESS_NO_INFO() {
+		static_assert(field_signatures[jField<F>("SUCCESS_NO_INFO")] != -1);
+		return sat<F>("SUCCESS_NO_INFO");
+	}
 
 	constexpr static Enume method_signatures{
 		jMethod<::jvoid()>("addBatch"), //

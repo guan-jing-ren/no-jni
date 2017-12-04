@@ -11,6 +11,7 @@ public:
 
 	constexpr static Enume field_signatures{
 		jField<::jint>("HORIZONTAL"), //
+		jField<::jint>("NO_ORIENTATION"), //
 		jField<::jint>("VERTICAL"), //
 	};
 
@@ -18,6 +19,12 @@ public:
 	static auto HORIZONTAL() {
 		static_assert(field_signatures[jField<F>("HORIZONTAL")] != -1);
 		return sat<F>("HORIZONTAL");
+	}
+
+	template<typename F = ::jint>
+	static auto NO_ORIENTATION() {
+		static_assert(field_signatures[jField<F>("NO_ORIENTATION")] != -1);
+		return sat<F>("NO_ORIENTATION");
 	}
 
 	template<typename F = ::jint>

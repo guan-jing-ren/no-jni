@@ -10,8 +10,21 @@ public:
 	static constexpr auto signature = ::javax_swing_text / "MutableAttributeSet";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::java::lang::Object>("NameAttribute"), //
+		jField<::java::lang::Object>("ResolveAttribute"), //
 	};
+
+	template<typename F = ::java::lang::Object>
+	static auto NameAttribute() {
+		static_assert(field_signatures[jField<F>("NameAttribute")] != -1);
+		return sat<F>("NameAttribute");
+	}
+
+	template<typename F = ::java::lang::Object>
+	static auto ResolveAttribute() {
+		static_assert(field_signatures[jField<F>("ResolveAttribute")] != -1);
+		return sat<F>("ResolveAttribute");
+	}
 
 	constexpr static Enume method_signatures{
 		jMethod<::jvoid(::java::lang::Object, ::java::lang::Object)>("addAttribute"), //

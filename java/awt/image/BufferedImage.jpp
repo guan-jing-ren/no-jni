@@ -10,6 +10,9 @@ public:
 	static constexpr auto signature = ::java_awt_image / "BufferedImage";
 
 	constexpr static Enume field_signatures{
+		jField<::jint>("BITMASK"), //
+		jField<::jint>("OPAQUE"), //
+		jField<::jint>("TRANSLUCENT"), //
 		jField<::jint>("TYPE_3BYTE_BGR"), //
 		jField<::jint>("TYPE_4BYTE_ABGR"), //
 		jField<::jint>("TYPE_4BYTE_ABGR_PRE"), //
@@ -25,6 +28,24 @@ public:
 		jField<::jint>("TYPE_USHORT_565_RGB"), //
 		jField<::jint>("TYPE_USHORT_GRAY"), //
 	};
+
+	template<typename F = ::jint>
+	static auto BITMASK() {
+		static_assert(field_signatures[jField<F>("BITMASK")] != -1);
+		return sat<F>("BITMASK");
+	}
+
+	template<typename F = ::jint>
+	static auto OPAQUE() {
+		static_assert(field_signatures[jField<F>("OPAQUE")] != -1);
+		return sat<F>("OPAQUE");
+	}
+
+	template<typename F = ::jint>
+	static auto TRANSLUCENT() {
+		static_assert(field_signatures[jField<F>("TRANSLUCENT")] != -1);
+		return sat<F>("TRANSLUCENT");
+	}
 
 	template<typename F = ::jint>
 	static auto TYPE_3BYTE_BGR() {

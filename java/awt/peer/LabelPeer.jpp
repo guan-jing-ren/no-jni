@@ -10,8 +10,56 @@ public:
 	static constexpr auto signature = ::java_awt_peer / "LabelPeer";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::jint>("DEFAULT_OPERATION"), //
+		jField<::jint>("NO_EMBEDDED_CHECK"), //
+		jField<::jint>("RESET_OPERATION"), //
+		jField<::jint>("SET_BOUNDS"), //
+		jField<::jint>("SET_CLIENT_SIZE"), //
+		jField<::jint>("SET_LOCATION"), //
+		jField<::jint>("SET_SIZE"), //
 	};
+
+	template<typename F = ::jint>
+	static auto DEFAULT_OPERATION() {
+		static_assert(field_signatures[jField<F>("DEFAULT_OPERATION")] != -1);
+		return sat<F>("DEFAULT_OPERATION");
+	}
+
+	template<typename F = ::jint>
+	static auto NO_EMBEDDED_CHECK() {
+		static_assert(field_signatures[jField<F>("NO_EMBEDDED_CHECK")] != -1);
+		return sat<F>("NO_EMBEDDED_CHECK");
+	}
+
+	template<typename F = ::jint>
+	static auto RESET_OPERATION() {
+		static_assert(field_signatures[jField<F>("RESET_OPERATION")] != -1);
+		return sat<F>("RESET_OPERATION");
+	}
+
+	template<typename F = ::jint>
+	static auto SET_BOUNDS() {
+		static_assert(field_signatures[jField<F>("SET_BOUNDS")] != -1);
+		return sat<F>("SET_BOUNDS");
+	}
+
+	template<typename F = ::jint>
+	static auto SET_CLIENT_SIZE() {
+		static_assert(field_signatures[jField<F>("SET_CLIENT_SIZE")] != -1);
+		return sat<F>("SET_CLIENT_SIZE");
+	}
+
+	template<typename F = ::jint>
+	static auto SET_LOCATION() {
+		static_assert(field_signatures[jField<F>("SET_LOCATION")] != -1);
+		return sat<F>("SET_LOCATION");
+	}
+
+	template<typename F = ::jint>
+	static auto SET_SIZE() {
+		static_assert(field_signatures[jField<F>("SET_SIZE")] != -1);
+		return sat<F>("SET_SIZE");
+	}
 
 	constexpr static Enume method_signatures{
 		jMethod<::jvoid(::sun::java2d::pipe::Region)>("applyShape"), //

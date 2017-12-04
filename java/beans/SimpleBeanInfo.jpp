@@ -10,8 +10,35 @@ public:
 	static constexpr auto signature = ::java_beans / "SimpleBeanInfo";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::jint>("ICON_COLOR_16x16"), //
+		jField<::jint>("ICON_COLOR_32x32"), //
+		jField<::jint>("ICON_MONO_16x16"), //
+		jField<::jint>("ICON_MONO_32x32"), //
 	};
+
+	template<typename F = ::jint>
+	static auto ICON_COLOR_16x16() {
+		static_assert(field_signatures[jField<F>("ICON_COLOR_16x16")] != -1);
+		return sat<F>("ICON_COLOR_16x16");
+	}
+
+	template<typename F = ::jint>
+	static auto ICON_COLOR_32x32() {
+		static_assert(field_signatures[jField<F>("ICON_COLOR_32x32")] != -1);
+		return sat<F>("ICON_COLOR_32x32");
+	}
+
+	template<typename F = ::jint>
+	static auto ICON_MONO_16x16() {
+		static_assert(field_signatures[jField<F>("ICON_MONO_16x16")] != -1);
+		return sat<F>("ICON_MONO_16x16");
+	}
+
+	template<typename F = ::jint>
+	static auto ICON_MONO_32x32() {
+		static_assert(field_signatures[jField<F>("ICON_MONO_32x32")] != -1);
+		return sat<F>("ICON_MONO_32x32");
+	}
 
 	constexpr static Enume method_signatures{
 		jConstructor<::jvoid()>(), //

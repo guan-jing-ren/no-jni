@@ -10,8 +10,28 @@ public:
 	static constexpr auto signature = ::org_w3c_dom_events / "UIEvent";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::jshort>("AT_TARGET"), //
+		jField<::jshort>("BUBBLING_PHASE"), //
+		jField<::jshort>("CAPTURING_PHASE"), //
 	};
+
+	template<typename F = ::jshort>
+	static auto AT_TARGET() {
+		static_assert(field_signatures[jField<F>("AT_TARGET")] != -1);
+		return sat<F>("AT_TARGET");
+	}
+
+	template<typename F = ::jshort>
+	static auto BUBBLING_PHASE() {
+		static_assert(field_signatures[jField<F>("BUBBLING_PHASE")] != -1);
+		return sat<F>("BUBBLING_PHASE");
+	}
+
+	template<typename F = ::jshort>
+	static auto CAPTURING_PHASE() {
+		static_assert(field_signatures[jField<F>("CAPTURING_PHASE")] != -1);
+		return sat<F>("CAPTURING_PHASE");
+	}
 
 	constexpr static Enume method_signatures{
 		jMethod<::jboolean()>("getBubbles"), //

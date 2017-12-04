@@ -10,12 +10,32 @@ public:
 	static constexpr auto signature = ::java_awt / "Component";
 
 	constexpr static Enume field_signatures{
+		jField<::jint>("ABORT"), //
+		jField<::jint>("ALLBITS"), //
 		jField<::jfloat>("BOTTOM_ALIGNMENT"), //
 		jField<::jfloat>("CENTER_ALIGNMENT"), //
+		jField<::jint>("ERROR"), //
+		jField<::jint>("FRAMEBITS"), //
+		jField<::jint>("HEIGHT"), //
 		jField<::jfloat>("LEFT_ALIGNMENT"), //
+		jField<::jint>("PROPERTIES"), //
 		jField<::jfloat>("RIGHT_ALIGNMENT"), //
+		jField<::jint>("SOMEBITS"), //
 		jField<::jfloat>("TOP_ALIGNMENT"), //
+		jField<::jint>("WIDTH"), //
 	};
+
+	template<typename F = ::jint>
+	static auto ABORT() {
+		static_assert(field_signatures[jField<F>("ABORT")] != -1);
+		return sat<F>("ABORT");
+	}
+
+	template<typename F = ::jint>
+	static auto ALLBITS() {
+		static_assert(field_signatures[jField<F>("ALLBITS")] != -1);
+		return sat<F>("ALLBITS");
+	}
 
 	template<typename F = ::jfloat>
 	static auto BOTTOM_ALIGNMENT() {
@@ -29,10 +49,34 @@ public:
 		return sat<F>("CENTER_ALIGNMENT");
 	}
 
+	template<typename F = ::jint>
+	static auto ERROR() {
+		static_assert(field_signatures[jField<F>("ERROR")] != -1);
+		return sat<F>("ERROR");
+	}
+
+	template<typename F = ::jint>
+	static auto FRAMEBITS() {
+		static_assert(field_signatures[jField<F>("FRAMEBITS")] != -1);
+		return sat<F>("FRAMEBITS");
+	}
+
+	template<typename F = ::jint>
+	static auto HEIGHT() {
+		static_assert(field_signatures[jField<F>("HEIGHT")] != -1);
+		return sat<F>("HEIGHT");
+	}
+
 	template<typename F = ::jfloat>
 	static auto LEFT_ALIGNMENT() {
 		static_assert(field_signatures[jField<F>("LEFT_ALIGNMENT")] != -1);
 		return sat<F>("LEFT_ALIGNMENT");
+	}
+
+	template<typename F = ::jint>
+	static auto PROPERTIES() {
+		static_assert(field_signatures[jField<F>("PROPERTIES")] != -1);
+		return sat<F>("PROPERTIES");
 	}
 
 	template<typename F = ::jfloat>
@@ -41,10 +85,22 @@ public:
 		return sat<F>("RIGHT_ALIGNMENT");
 	}
 
+	template<typename F = ::jint>
+	static auto SOMEBITS() {
+		static_assert(field_signatures[jField<F>("SOMEBITS")] != -1);
+		return sat<F>("SOMEBITS");
+	}
+
 	template<typename F = ::jfloat>
 	static auto TOP_ALIGNMENT() {
 		static_assert(field_signatures[jField<F>("TOP_ALIGNMENT")] != -1);
 		return sat<F>("TOP_ALIGNMENT");
+	}
+
+	template<typename F = ::jint>
+	static auto WIDTH() {
+		static_assert(field_signatures[jField<F>("WIDTH")] != -1);
+		return sat<F>("WIDTH");
 	}
 
 	constexpr static Enume method_signatures{

@@ -10,8 +10,49 @@ public:
 	static constexpr auto signature = ::javax_xml_ws / "Dispatch";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::java::lang::String>("ENDPOINT_ADDRESS_PROPERTY"), //
+		jField<::java::lang::String>("PASSWORD_PROPERTY"), //
+		jField<::java::lang::String>("SESSION_MAINTAIN_PROPERTY"), //
+		jField<::java::lang::String>("SOAPACTION_URI_PROPERTY"), //
+		jField<::java::lang::String>("SOAPACTION_USE_PROPERTY"), //
+		jField<::java::lang::String>("USERNAME_PROPERTY"), //
 	};
+
+	template<typename F = ::java::lang::String>
+	static auto ENDPOINT_ADDRESS_PROPERTY() {
+		static_assert(field_signatures[jField<F>("ENDPOINT_ADDRESS_PROPERTY")] != -1);
+		return sat<F>("ENDPOINT_ADDRESS_PROPERTY");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto PASSWORD_PROPERTY() {
+		static_assert(field_signatures[jField<F>("PASSWORD_PROPERTY")] != -1);
+		return sat<F>("PASSWORD_PROPERTY");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto SESSION_MAINTAIN_PROPERTY() {
+		static_assert(field_signatures[jField<F>("SESSION_MAINTAIN_PROPERTY")] != -1);
+		return sat<F>("SESSION_MAINTAIN_PROPERTY");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto SOAPACTION_URI_PROPERTY() {
+		static_assert(field_signatures[jField<F>("SOAPACTION_URI_PROPERTY")] != -1);
+		return sat<F>("SOAPACTION_URI_PROPERTY");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto SOAPACTION_USE_PROPERTY() {
+		static_assert(field_signatures[jField<F>("SOAPACTION_USE_PROPERTY")] != -1);
+		return sat<F>("SOAPACTION_USE_PROPERTY");
+	}
+
+	template<typename F = ::java::lang::String>
+	static auto USERNAME_PROPERTY() {
+		static_assert(field_signatures[jField<F>("USERNAME_PROPERTY")] != -1);
+		return sat<F>("USERNAME_PROPERTY");
+	}
 
 	constexpr static Enume method_signatures{
 		jMethod<::javax::xml::ws::Binding()>("getBinding"), //

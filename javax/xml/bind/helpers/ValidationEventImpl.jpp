@@ -10,8 +10,28 @@ public:
 	static constexpr auto signature = ::javax_xml_bind_helpers / "ValidationEventImpl";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::jint>("ERROR"), //
+		jField<::jint>("FATAL_ERROR"), //
+		jField<::jint>("WARNING"), //
 	};
+
+	template<typename F = ::jint>
+	static auto ERROR() {
+		static_assert(field_signatures[jField<F>("ERROR")] != -1);
+		return sat<F>("ERROR");
+	}
+
+	template<typename F = ::jint>
+	static auto FATAL_ERROR() {
+		static_assert(field_signatures[jField<F>("FATAL_ERROR")] != -1);
+		return sat<F>("FATAL_ERROR");
+	}
+
+	template<typename F = ::jint>
+	static auto WARNING() {
+		static_assert(field_signatures[jField<F>("WARNING")] != -1);
+		return sat<F>("WARNING");
+	}
 
 	constexpr static Enume method_signatures{
 		jConstructor<::jvoid(::jint, ::java::lang::String, ::javax::xml::bind::ValidationEventLocator)>(), //

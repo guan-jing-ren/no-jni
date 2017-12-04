@@ -10,8 +10,28 @@ public:
 	static constexpr auto signature = ::javax_swing / "DefaultListSelectionModel";
 
 	constexpr static Enume field_signatures{
-		cexprstr{"\0"}, //
+		jField<::jint>("MULTIPLE_INTERVAL_SELECTION"), //
+		jField<::jint>("SINGLE_INTERVAL_SELECTION"), //
+		jField<::jint>("SINGLE_SELECTION"), //
 	};
+
+	template<typename F = ::jint>
+	static auto MULTIPLE_INTERVAL_SELECTION() {
+		static_assert(field_signatures[jField<F>("MULTIPLE_INTERVAL_SELECTION")] != -1);
+		return sat<F>("MULTIPLE_INTERVAL_SELECTION");
+	}
+
+	template<typename F = ::jint>
+	static auto SINGLE_INTERVAL_SELECTION() {
+		static_assert(field_signatures[jField<F>("SINGLE_INTERVAL_SELECTION")] != -1);
+		return sat<F>("SINGLE_INTERVAL_SELECTION");
+	}
+
+	template<typename F = ::jint>
+	static auto SINGLE_SELECTION() {
+		static_assert(field_signatures[jField<F>("SINGLE_SELECTION")] != -1);
+		return sat<F>("SINGLE_SELECTION");
+	}
 
 	constexpr static Enume method_signatures{
 		jConstructor<::jvoid()>(), //
