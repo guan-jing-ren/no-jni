@@ -17,12 +17,23 @@ public:
 		jMethod<::jvoid(::jboolean)>("emulateActivation"), //
 		jMethod<::java::awt::Rectangle()>("getBoundsPrivate"), //
 		jMethod<::jint()>("getState"), //
+		jMethod<::jvoid()>("repositionSecurityWarning"), //
 		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint)>("setBoundsPrivate"), //
 		jMethod<::jvoid(::java::awt::Rectangle)>("setMaximizedBounds"), //
 		jMethod<::jvoid(::java::awt::MenuBar)>("setMenuBar"), //
+		jMethod<::jvoid(::java::awt::Dialog, ::jboolean)>("setModalBlocked"), //
+		jMethod<::jvoid(::jfloat)>("setOpacity"), //
+		jMethod<::jvoid(::jboolean)>("setOpaque"), //
 		jMethod<::jvoid(::jboolean)>("setResizable"), //
 		jMethod<::jvoid(::jint)>("setState"), //
 		jMethod<::jvoid(::java::lang::String)>("setTitle"), //
+		jMethod<::jvoid()>("toBack"), //
+		jMethod<::jvoid()>("toFront"), //
+		jMethod<::jvoid()>("updateAlwaysOnTopState"), //
+		jMethod<::jvoid()>("updateFocusableWindowState"), //
+		jMethod<::jvoid()>("updateIconImages"), //
+		jMethod<::jvoid()>("updateMinimumSize"), //
+		jMethod<::jvoid()>("updateWindow"), //
 	};
 
 	template<typename R = ::jvoid, typename... Args>
@@ -44,6 +55,12 @@ public:
 	}
 
 	template<typename R = ::jvoid, typename... Args>
+	auto repositionSecurityWarning(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("repositionSecurityWarning")] != -1);
+		return call<R>("repositionSecurityWarning", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
 	auto setBoundsPrivate(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setBoundsPrivate")] != -1);
 		return call<R>("setBoundsPrivate", std::forward<Args>(args)...);
@@ -62,6 +79,24 @@ public:
 	}
 
 	template<typename R = ::jvoid, typename... Args>
+	auto setModalBlocked(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setModalBlocked")] != -1);
+		return call<R>("setModalBlocked", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setOpacity(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setOpacity")] != -1);
+		return call<R>("setOpacity", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setOpaque(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setOpaque")] != -1);
+		return call<R>("setOpaque", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
 	auto setResizable(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setResizable")] != -1);
 		return call<R>("setResizable", std::forward<Args>(args)...);
@@ -77,6 +112,48 @@ public:
 	auto setTitle(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setTitle")] != -1);
 		return call<R>("setTitle", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto toBack(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toBack")] != -1);
+		return call<R>("toBack", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto toFront(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toFront")] != -1);
+		return call<R>("toFront", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateAlwaysOnTopState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("updateAlwaysOnTopState")] != -1);
+		return call<R>("updateAlwaysOnTopState", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateFocusableWindowState(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("updateFocusableWindowState")] != -1);
+		return call<R>("updateFocusableWindowState", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateIconImages(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("updateIconImages")] != -1);
+		return call<R>("updateIconImages", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateMinimumSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("updateMinimumSize")] != -1);
+		return call<R>("updateMinimumSize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto updateWindow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("updateWindow")] != -1);
+		return call<R>("updateWindow", std::forward<Args>(args)...);
 	}
 
 };

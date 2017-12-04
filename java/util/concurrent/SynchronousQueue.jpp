@@ -16,11 +16,14 @@ public:
 	constexpr static Enume method_signatures{
 		jConstructor<::jvoid()>(), //
 		jConstructor<::jvoid(::jboolean)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("add"), //
+		jMethod<::jboolean(::java::util::Collection)>("addAll"), //
 		jMethod<::jvoid()>("clear"), //
 		jMethod<::jboolean(::java::lang::Object)>("contains"), //
 		jMethod<::jboolean(::java::util::Collection)>("containsAll"), //
 		jMethod<::jint(::java::util::Collection)>("drainTo"), //
 		jMethod<::jint(::java::util::Collection, ::jint)>("drainTo"), //
+		jMethod<::java::lang::Object()>("element"), //
 		jMethod<::jboolean()>("isEmpty"), //
 		jMethod<::java::util::Iterator()>("iterator"), //
 		jMethod<::jboolean(::java::lang::Object)>("offer"), //
@@ -30,6 +33,7 @@ public:
 		jMethod<::java::lang::Object(::jlong, ::java::util::concurrent::TimeUnit)>("poll"), //
 		jMethod<::jvoid(::java::lang::Object)>("put"), //
 		jMethod<::jint()>("remainingCapacity"), //
+		jMethod<::java::lang::Object()>("remove"), //
 		jMethod<::jboolean(::java::lang::Object)>("remove"), //
 		jMethod<::jboolean(::java::util::Collection)>("removeAll"), //
 		jMethod<::jboolean(::java::util::Collection)>("retainAll"), //
@@ -39,6 +43,18 @@ public:
 		jMethod<::java::lang::Object *()>("toArray"), //
 		jMethod<::java::lang::Object *(::java::lang::Object *)>("toArray"), //
 	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto add(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto addAll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addAll")] != -1);
+		return call<R>("addAll", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto clear(Args &&...args) const {
@@ -62,6 +78,12 @@ public:
 	auto drainTo(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("drainTo")] != -1);
 		return call<R>("drainTo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto element(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("element")] != -1);
+		return call<R>("element", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
@@ -106,7 +128,7 @@ public:
 		return call<R>("remainingCapacity", std::forward<Args>(args)...);
 	}
 
-	template<typename R = ::jboolean, typename... Args>
+	template<typename R = ::java::lang::Object, typename... Args>
 	auto remove(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("remove")] != -1);
 		return call<R>("remove", std::forward<Args>(args)...);

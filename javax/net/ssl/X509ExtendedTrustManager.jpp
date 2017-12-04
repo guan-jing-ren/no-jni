@@ -15,10 +15,13 @@ public:
 
 	constexpr static Enume method_signatures{
 		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::java::security::cert::X509Certificate *, ::java::lang::String)>("checkClientTrusted"), //
 		jMethod<::jvoid(::java::security::cert::X509Certificate *, ::java::lang::String, ::java::net::Socket)>("checkClientTrusted"), //
 		jMethod<::jvoid(::java::security::cert::X509Certificate *, ::java::lang::String, ::javax::net::ssl::SSLEngine)>("checkClientTrusted"), //
+		jMethod<::jvoid(::java::security::cert::X509Certificate *, ::java::lang::String)>("checkServerTrusted"), //
 		jMethod<::jvoid(::java::security::cert::X509Certificate *, ::java::lang::String, ::java::net::Socket)>("checkServerTrusted"), //
 		jMethod<::jvoid(::java::security::cert::X509Certificate *, ::java::lang::String, ::javax::net::ssl::SSLEngine)>("checkServerTrusted"), //
+		jMethod<::java::security::cert::X509Certificate *()>("getAcceptedIssuers"), //
 	};
 
 	template<typename R = ::jvoid, typename... Args>
@@ -31,6 +34,12 @@ public:
 	auto checkServerTrusted(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkServerTrusted")] != -1);
 		return call<R>("checkServerTrusted", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::security::cert::X509Certificate *, typename... Args>
+	auto getAcceptedIssuers(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAcceptedIssuers")] != -1);
+		return call<R>("getAcceptedIssuers", std::forward<Args>(args)...);
 	}
 
 };

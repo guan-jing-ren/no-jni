@@ -154,6 +154,7 @@ public:
 		jMethod<::javax::accessibility::AccessibleContext()>("getAccessibleContext"), //
 		jMethod<::jint()>("getCursorType"), //
 		jMethod<::jint()>("getExtendedState"), //
+		jMethod<::java::awt::Font()>("getFont"), //
 		jMethod<::java::awt::Frame *()>("getFrames"), //
 		jMethod<::java::awt::Image()>("getIconImage"), //
 		jMethod<::java::awt::Rectangle()>("getMaximizedBounds"), //
@@ -162,6 +163,7 @@ public:
 		jMethod<::java::lang::String()>("getTitle"), //
 		jMethod<::jboolean()>("isResizable"), //
 		jMethod<::jboolean()>("isUndecorated"), //
+		jMethod<::jboolean(::java::awt::Event)>("postEvent"), //
 		jMethod<::jvoid(::java::awt::MenuComponent)>("remove"), //
 		jMethod<::jvoid()>("removeNotify"), //
 		jMethod<::jvoid(::java::awt::Color)>("setBackground"), //
@@ -200,6 +202,12 @@ public:
 	auto getExtendedState(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getExtendedState")] != -1);
 		return call<R>("getExtendedState", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Font, typename... Args>
+	auto getFont(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFont")] != -1);
+		return call<R>("getFont", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::Frame *, typename... Args>
@@ -248,6 +256,12 @@ public:
 	auto isUndecorated(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isUndecorated")] != -1);
 		return call<R>("isUndecorated", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto postEvent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("postEvent")] != -1);
+		return call<R>("postEvent", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

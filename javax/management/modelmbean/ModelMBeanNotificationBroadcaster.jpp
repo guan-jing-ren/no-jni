@@ -15,7 +15,10 @@ public:
 
 	constexpr static Enume method_signatures{
 		jMethod<::jvoid(::javax::management::NotificationListener, ::java::lang::String, ::java::lang::Object)>("addAttributeChangeNotificationListener"), //
+		jMethod<::jvoid(::javax::management::NotificationListener, ::javax::management::NotificationFilter, ::java::lang::Object)>("addNotificationListener"), //
+		jMethod<::javax::management::MBeanNotificationInfo *()>("getNotificationInfo"), //
 		jMethod<::jvoid(::javax::management::NotificationListener, ::java::lang::String)>("removeAttributeChangeNotificationListener"), //
+		jMethod<::jvoid(::javax::management::NotificationListener)>("removeNotificationListener"), //
 		jMethod<::jvoid(::javax::management::Attribute, ::javax::management::Attribute)>("sendAttributeChangeNotification"), //
 		jMethod<::jvoid(::javax::management::AttributeChangeNotification)>("sendAttributeChangeNotification"), //
 		jMethod<::jvoid(::java::lang::String)>("sendNotification"), //
@@ -29,9 +32,27 @@ public:
 	}
 
 	template<typename R = ::jvoid, typename... Args>
+	auto addNotificationListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addNotificationListener")] != -1);
+		return call<R>("addNotificationListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::MBeanNotificationInfo *, typename... Args>
+	auto getNotificationInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNotificationInfo")] != -1);
+		return call<R>("getNotificationInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
 	auto removeAttributeChangeNotificationListener(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeAttributeChangeNotificationListener")] != -1);
 		return call<R>("removeAttributeChangeNotificationListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeNotificationListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeNotificationListener")] != -1);
+		return call<R>("removeNotificationListener", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

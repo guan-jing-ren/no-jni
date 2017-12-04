@@ -14,13 +14,41 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::org::w3c::dom::Document(::java::lang::String, ::java::lang::String, ::org::w3c::dom::DocumentType)>("createDocument"), //
+		jMethod<::org::w3c::dom::DocumentType(::java::lang::String, ::java::lang::String, ::java::lang::String)>("createDocumentType"), //
 		jMethod<::org::w3c::dom::html::HTMLDocument(::java::lang::String)>("createHTMLDocument"), //
+		jMethod<::java::lang::Object(::java::lang::String, ::java::lang::String)>("getFeature"), //
+		jMethod<::jboolean(::java::lang::String, ::java::lang::String)>("hasFeature"), //
 	};
+
+	template<typename R = ::org::w3c::dom::Document, typename... Args>
+	auto createDocument(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createDocument")] != -1);
+		return call<R>("createDocument", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::DocumentType, typename... Args>
+	auto createDocumentType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createDocumentType")] != -1);
+		return call<R>("createDocumentType", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::org::w3c::dom::html::HTMLDocument, typename... Args>
 	auto createHTMLDocument(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createHTMLDocument")] != -1);
 		return call<R>("createHTMLDocument", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getFeature(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFeature")] != -1);
+		return call<R>("getFeature", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasFeature(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hasFeature")] != -1);
+		return call<R>("hasFeature", std::forward<Args>(args)...);
 	}
 
 };

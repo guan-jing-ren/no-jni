@@ -32,9 +32,11 @@ public:
 		jMethod<::java::lang::Object(::java::rmi::Remote, ::java::lang::reflect::Method, ::java::lang::Object *, ::jlong)>("invoke"), //
 		jMethod<::jvoid(::java::rmi::server::RemoteCall)>("invoke"), //
 		jMethod<::java::rmi::server::RemoteCall(::java::rmi::server::RemoteObject, ::java::rmi::server::Operation *, ::jint, ::jlong)>("newCall"), //
+		jMethod<::jvoid(::java::io::ObjectInput)>("readExternal"), //
 		jMethod<::jboolean(::java::rmi::server::RemoteRef)>("remoteEquals"), //
 		jMethod<::jint()>("remoteHashCode"), //
 		jMethod<::java::lang::String()>("remoteToString"), //
+		jMethod<::jvoid(::java::io::ObjectOutput)>("writeExternal"), //
 	};
 
 	template<typename R = ::jvoid, typename... Args>
@@ -61,6 +63,12 @@ public:
 		return call<R>("newCall", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::jvoid, typename... Args>
+	auto readExternal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("readExternal")] != -1);
+		return call<R>("readExternal", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::jboolean, typename... Args>
 	auto remoteEquals(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("remoteEquals")] != -1);
@@ -77,6 +85,12 @@ public:
 	auto remoteToString(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("remoteToString")] != -1);
 		return call<R>("remoteToString", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeExternal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeExternal")] != -1);
+		return call<R>("writeExternal", std::forward<Args>(args)...);
 	}
 
 };

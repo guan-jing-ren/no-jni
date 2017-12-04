@@ -25,8 +25,13 @@ public:
 		jMethod<::javax::xml::soap::SOAPElement(::java::lang::String, ::java::lang::String)>("addNamespaceDeclaration"), //
 		jMethod<::javax::xml::soap::SOAPElement(::java::lang::String)>("addTextNode"), //
 		jMethod<::javax::xml::namespace_::QName(::java::lang::String, ::java::lang::String)>("createQName"), //
+		jMethod<::jvoid()>("detachNode"), //
 		jMethod<::java::util::Iterator()>("getAllAttributes"), //
 		jMethod<::java::util::Iterator()>("getAllAttributesAsQNames"), //
+		jMethod<::java::lang::String(::java::lang::String)>("getAttribute"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::lang::String)>("getAttributeNS"), //
+		jMethod<::org::w3c::dom::Attr(::java::lang::String)>("getAttributeNode"), //
+		jMethod<::org::w3c::dom::Attr(::java::lang::String, ::java::lang::String)>("getAttributeNodeNS"), //
 		jMethod<::java::lang::String(::javax::xml::namespace_::QName)>("getAttributeValue"), //
 		jMethod<::java::lang::String(::javax::xml::soap::Name)>("getAttributeValue"), //
 		jMethod<::java::util::Iterator()>("getChildElements"), //
@@ -34,16 +39,37 @@ public:
 		jMethod<::java::util::Iterator(::javax::xml::soap::Name)>("getChildElements"), //
 		jMethod<::javax::xml::soap::Name()>("getElementName"), //
 		jMethod<::javax::xml::namespace_::QName()>("getElementQName"), //
+		jMethod<::org::w3c::dom::NodeList(::java::lang::String)>("getElementsByTagName"), //
+		jMethod<::org::w3c::dom::NodeList(::java::lang::String, ::java::lang::String)>("getElementsByTagNameNS"), //
 		jMethod<::java::lang::String()>("getEncodingStyle"), //
 		jMethod<::java::util::Iterator()>("getNamespacePrefixes"), //
 		jMethod<::java::lang::String(::java::lang::String)>("getNamespaceURI"), //
+		jMethod<::javax::xml::soap::SOAPElement()>("getParentElement"), //
+		jMethod<::org::w3c::dom::TypeInfo()>("getSchemaTypeInfo"), //
+		jMethod<::java::lang::String()>("getTagName"), //
+		jMethod<::java::lang::String()>("getValue"), //
 		jMethod<::java::util::Iterator()>("getVisibleNamespacePrefixes"), //
+		jMethod<::jboolean(::java::lang::String)>("hasAttribute"), //
+		jMethod<::jboolean(::java::lang::String, ::java::lang::String)>("hasAttributeNS"), //
+		jMethod<::jvoid()>("recycleNode"), //
+		jMethod<::jvoid(::java::lang::String)>("removeAttribute"), //
 		jMethod<::jboolean(::javax::xml::namespace_::QName)>("removeAttribute"), //
 		jMethod<::jboolean(::javax::xml::soap::Name)>("removeAttribute"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String)>("removeAttributeNS"), //
+		jMethod<::org::w3c::dom::Attr(::org::w3c::dom::Attr)>("removeAttributeNode"), //
 		jMethod<::jvoid()>("removeContents"), //
 		jMethod<::jboolean(::java::lang::String)>("removeNamespaceDeclaration"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String)>("setAttribute"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::String)>("setAttributeNS"), //
+		jMethod<::org::w3c::dom::Attr(::org::w3c::dom::Attr)>("setAttributeNode"), //
+		jMethod<::org::w3c::dom::Attr(::org::w3c::dom::Attr)>("setAttributeNodeNS"), //
 		jMethod<::javax::xml::soap::SOAPElement(::javax::xml::namespace_::QName)>("setElementQName"), //
 		jMethod<::jvoid(::java::lang::String)>("setEncodingStyle"), //
+		jMethod<::jvoid(::java::lang::String, ::jboolean)>("setIdAttribute"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String, ::jboolean)>("setIdAttributeNS"), //
+		jMethod<::jvoid(::org::w3c::dom::Attr, ::jboolean)>("setIdAttributeNode"), //
+		jMethod<::jvoid(::javax::xml::soap::SOAPElement)>("setParentElement"), //
+		jMethod<::jvoid(::java::lang::String)>("setValue"), //
 	};
 
 	template<typename R = ::javax::xml::soap::SOAPElement, typename... Args>
@@ -76,6 +102,12 @@ public:
 		return call<R>("createQName", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::jvoid, typename... Args>
+	auto detachNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("detachNode")] != -1);
+		return call<R>("detachNode", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::java::util::Iterator, typename... Args>
 	auto getAllAttributes(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAllAttributes")] != -1);
@@ -86,6 +118,30 @@ public:
 	auto getAllAttributesAsQNames(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAllAttributesAsQNames")] != -1);
 		return call<R>("getAllAttributesAsQNames", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAttribute")] != -1);
+		return call<R>("getAttribute", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAttributeNS(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAttributeNS")] != -1);
+		return call<R>("getAttributeNS", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Attr, typename... Args>
+	auto getAttributeNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAttributeNode")] != -1);
+		return call<R>("getAttributeNode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Attr, typename... Args>
+	auto getAttributeNodeNS(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAttributeNodeNS")] != -1);
+		return call<R>("getAttributeNodeNS", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
@@ -112,6 +168,18 @@ public:
 		return call<R>("getElementQName", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::org::w3c::dom::NodeList, typename... Args>
+	auto getElementsByTagName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getElementsByTagName")] != -1);
+		return call<R>("getElementsByTagName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::NodeList, typename... Args>
+	auto getElementsByTagNameNS(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getElementsByTagNameNS")] != -1);
+		return call<R>("getElementsByTagNameNS", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getEncodingStyle(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEncodingStyle")] != -1);
@@ -130,6 +198,30 @@ public:
 		return call<R>("getNamespaceURI", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::javax::xml::soap::SOAPElement, typename... Args>
+	auto getParentElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getParentElement")] != -1);
+		return call<R>("getParentElement", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::TypeInfo, typename... Args>
+	auto getSchemaTypeInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSchemaTypeInfo")] != -1);
+		return call<R>("getSchemaTypeInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getTagName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTagName")] != -1);
+		return call<R>("getTagName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getValue")] != -1);
+		return call<R>("getValue", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::java::util::Iterator, typename... Args>
 	auto getVisibleNamespacePrefixes(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getVisibleNamespacePrefixes")] != -1);
@@ -137,9 +229,39 @@ public:
 	}
 
 	template<typename R = ::jboolean, typename... Args>
+	auto hasAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hasAttribute")] != -1);
+		return call<R>("hasAttribute", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasAttributeNS(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hasAttributeNS")] != -1);
+		return call<R>("hasAttributeNS", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto recycleNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("recycleNode")] != -1);
+		return call<R>("recycleNode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
 	auto removeAttribute(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeAttribute")] != -1);
 		return call<R>("removeAttribute", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeAttributeNS(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeAttributeNS")] != -1);
+		return call<R>("removeAttributeNS", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Attr, typename... Args>
+	auto removeAttributeNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeAttributeNode")] != -1);
+		return call<R>("removeAttributeNode", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
@@ -154,6 +276,30 @@ public:
 		return call<R>("removeNamespaceDeclaration", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::jvoid, typename... Args>
+	auto setAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setAttribute")] != -1);
+		return call<R>("setAttribute", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setAttributeNS(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setAttributeNS")] != -1);
+		return call<R>("setAttributeNS", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Attr, typename... Args>
+	auto setAttributeNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setAttributeNode")] != -1);
+		return call<R>("setAttributeNode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Attr, typename... Args>
+	auto setAttributeNodeNS(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setAttributeNodeNS")] != -1);
+		return call<R>("setAttributeNodeNS", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::javax::xml::soap::SOAPElement, typename... Args>
 	auto setElementQName(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setElementQName")] != -1);
@@ -164,6 +310,36 @@ public:
 	auto setEncodingStyle(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setEncodingStyle")] != -1);
 		return call<R>("setEncodingStyle", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setIdAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setIdAttribute")] != -1);
+		return call<R>("setIdAttribute", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setIdAttributeNS(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setIdAttributeNS")] != -1);
+		return call<R>("setIdAttributeNS", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setIdAttributeNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setIdAttributeNode")] != -1);
+		return call<R>("setIdAttributeNode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setParentElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setParentElement")] != -1);
+		return call<R>("setParentElement", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setValue")] != -1);
+		return call<R>("setValue", std::forward<Args>(args)...);
 	}
 
 };

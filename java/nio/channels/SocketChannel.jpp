@@ -19,6 +19,7 @@ public:
 		jMethod<::jboolean(::java::net::SocketAddress)>("connect"), //
 		jMethod<::jboolean()>("finishConnect"), //
 		jMethod<::java::net::SocketAddress()>("getLocalAddress"), //
+		jMethod<::java::lang::Object(::java::net::SocketOption)>("getOption"), //
 		jMethod<::java::net::SocketAddress()>("getRemoteAddress"), //
 		jMethod<::jboolean()>("isConnected"), //
 		jMethod<::jboolean()>("isConnectionPending"), //
@@ -32,6 +33,7 @@ public:
 		jMethod<::java::nio::channels::SocketChannel()>("shutdownInput"), //
 		jMethod<::java::nio::channels::SocketChannel()>("shutdownOutput"), //
 		jMethod<::java::net::Socket()>("socket"), //
+		jMethod<::java::util::Set()>("supportedOptions"), //
 		jMethod<::jint()>("validOps"), //
 		jMethod<::jint(::java::nio::ByteBuffer)>("write"), //
 		jMethod<::jlong(::java::nio::ByteBuffer *)>("write"), //
@@ -60,6 +62,12 @@ public:
 	auto getLocalAddress(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLocalAddress")] != -1);
 		return call<R>("getLocalAddress", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getOption(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOption")] != -1);
+		return call<R>("getOption", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::net::SocketAddress, typename... Args>
@@ -114,6 +122,12 @@ public:
 	auto socket(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("socket")] != -1);
 		return call<R>("socket", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto supportedOptions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("supportedOptions")] != -1);
+		return call<R>("supportedOptions", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>

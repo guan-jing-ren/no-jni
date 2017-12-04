@@ -15,12 +15,19 @@ public:
 
 	constexpr static Enume method_signatures{
 		jMethod<::java::awt::PaintContext(::java::awt::image::ColorModel, ::java::awt::Rectangle, ::java::awt::geom::Rectangle2D, ::java::awt::geom::AffineTransform, ::java::awt::RenderingHints)>("createContext"), //
+		jMethod<::jint()>("getTransparency"), //
 	};
 
 	template<typename R = ::java::awt::PaintContext, typename... Args>
 	auto createContext(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createContext")] != -1);
 		return call<R>("createContext", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getTransparency(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTransparency")] != -1);
+		return call<R>("getTransparency", std::forward<Args>(args)...);
 	}
 
 };

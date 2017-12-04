@@ -14,8 +14,22 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::org::omg::CORBA::DefinitionKind()>("def_kind"), //
+		jMethod<::jvoid()>("destroy"), //
 		jMethod<::org::omg::CORBA::TypeCode()>("type"), //
 	};
+
+	template<typename R = ::org::omg::CORBA::DefinitionKind, typename... Args>
+	auto def_kind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("def_kind")] != -1);
+		return call<R>("def_kind", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto destroy(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("destroy")] != -1);
+		return call<R>("destroy", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
 	auto type(Args &&...args) const {

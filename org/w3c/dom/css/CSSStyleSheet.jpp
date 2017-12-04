@@ -16,8 +16,16 @@ public:
 	constexpr static Enume method_signatures{
 		jMethod<::jvoid(::jint)>("deleteRule"), //
 		jMethod<::org::w3c::dom::css::CSSRuleList()>("getCssRules"), //
+		jMethod<::jboolean()>("getDisabled"), //
+		jMethod<::java::lang::String()>("getHref"), //
+		jMethod<::org::w3c::dom::stylesheets::MediaList()>("getMedia"), //
+		jMethod<::org::w3c::dom::Node()>("getOwnerNode"), //
 		jMethod<::org::w3c::dom::css::CSSRule()>("getOwnerRule"), //
+		jMethod<::org::w3c::dom::stylesheets::StyleSheet()>("getParentStyleSheet"), //
+		jMethod<::java::lang::String()>("getTitle"), //
+		jMethod<::java::lang::String()>("getType"), //
 		jMethod<::jint(::java::lang::String, ::jint)>("insertRule"), //
+		jMethod<::jvoid(::jboolean)>("setDisabled"), //
 	};
 
 	template<typename R = ::jvoid, typename... Args>
@@ -32,16 +40,64 @@ public:
 		return call<R>("getCssRules", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::jboolean, typename... Args>
+	auto getDisabled(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDisabled")] != -1);
+		return call<R>("getDisabled", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getHref(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHref")] != -1);
+		return call<R>("getHref", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::stylesheets::MediaList, typename... Args>
+	auto getMedia(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMedia")] != -1);
+		return call<R>("getMedia", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Node, typename... Args>
+	auto getOwnerNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOwnerNode")] != -1);
+		return call<R>("getOwnerNode", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::org::w3c::dom::css::CSSRule, typename... Args>
 	auto getOwnerRule(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOwnerRule")] != -1);
 		return call<R>("getOwnerRule", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::org::w3c::dom::stylesheets::StyleSheet, typename... Args>
+	auto getParentStyleSheet(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getParentStyleSheet")] != -1);
+		return call<R>("getParentStyleSheet", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getTitle(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTitle")] != -1);
+		return call<R>("getTitle", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::jint, typename... Args>
 	auto insertRule(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("insertRule")] != -1);
 		return call<R>("insertRule", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDisabled(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setDisabled")] != -1);
+		return call<R>("setDisabled", std::forward<Args>(args)...);
 	}
 
 };

@@ -15,17 +15,32 @@ public:
 
 	constexpr static Enume method_signatures{
 		jMethod<::jchar(::jint)>("charAt"), //
+		jMethod<::java::util::stream::IntStream()>("chars"), //
+		jMethod<::java::util::stream::IntStream()>("codePoints"), //
 		jMethod<::jboolean(::java::lang::CharSequence)>("contentEquals"), //
 		jMethod<::jboolean(::java::lang::Object)>("equals"), //
 		jMethod<::jint()>("hashCode"), //
 		jMethod<::jint()>("length"), //
 		jMethod<::java::lang::CharSequence(::jint, ::jint)>("subSequence"), //
+		jMethod<::java::lang::String()>("toString"), //
 	};
 
 	template<typename R = ::jchar, typename... Args>
 	auto charAt(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("charAt")] != -1);
 		return call<R>("charAt", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::IntStream, typename... Args>
+	auto chars(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("chars")] != -1);
+		return call<R>("chars", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::IntStream, typename... Args>
+	auto codePoints(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("codePoints")] != -1);
+		return call<R>("codePoints", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
@@ -56,6 +71,12 @@ public:
 	auto subSequence(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("subSequence")] != -1);
 		return call<R>("subSequence", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
 	}
 
 };

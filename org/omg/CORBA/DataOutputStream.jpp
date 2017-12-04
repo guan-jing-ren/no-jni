@@ -14,6 +14,7 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String *()>("_truncatable_ids"), //
 		jMethod<::jvoid(::java::lang::Object)>("write_Abstract"), //
 		jMethod<::jvoid(::org::omg::CORBA::Object)>("write_Object"), //
 		jMethod<::jvoid(::org::omg::CORBA::TypeCode)>("write_TypeCode"), //
@@ -47,6 +48,12 @@ public:
 		jMethod<::jvoid(::jchar *, ::jint, ::jint)>("write_wchar_array"), //
 		jMethod<::jvoid(::java::lang::String)>("write_wstring"), //
 	};
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto _truncatable_ids(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("_truncatable_ids")] != -1);
+		return call<R>("_truncatable_ids", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto write_Abstract(Args &&...args) const {

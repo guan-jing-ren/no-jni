@@ -14,15 +14,114 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::awt::event::FocusListener)>("addFocusListener"), //
+		jMethod<::jboolean(::java::awt::Point)>("contains"), //
+		jMethod<::javax::accessibility::Accessible(::java::awt::Point)>("getAccessibleAt"), //
 		jMethod<::javax::accessibility::AccessibleKeyBinding()>("getAccessibleKeyBinding"), //
+		jMethod<::java::awt::Color()>("getBackground"), //
+		jMethod<::java::awt::Rectangle()>("getBounds"), //
+		jMethod<::java::awt::Cursor()>("getCursor"), //
+		jMethod<::java::awt::Font()>("getFont"), //
+		jMethod<::java::awt::FontMetrics(::java::awt::Font)>("getFontMetrics"), //
+		jMethod<::java::awt::Color()>("getForeground"), //
+		jMethod<::java::awt::Point()>("getLocation"), //
+		jMethod<::java::awt::Point()>("getLocationOnScreen"), //
+		jMethod<::java::awt::Dimension()>("getSize"), //
 		jMethod<::java::lang::String()>("getTitledBorderText"), //
 		jMethod<::java::lang::String()>("getToolTipText"), //
+		jMethod<::jboolean()>("isEnabled"), //
+		jMethod<::jboolean()>("isFocusTraversable"), //
+		jMethod<::jboolean()>("isShowing"), //
+		jMethod<::jboolean()>("isVisible"), //
+		jMethod<::jvoid(::java::awt::event::FocusListener)>("removeFocusListener"), //
+		jMethod<::jvoid()>("requestFocus"), //
+		jMethod<::jvoid(::java::awt::Color)>("setBackground"), //
+		jMethod<::jvoid(::java::awt::Rectangle)>("setBounds"), //
+		jMethod<::jvoid(::java::awt::Cursor)>("setCursor"), //
+		jMethod<::jvoid(::jboolean)>("setEnabled"), //
+		jMethod<::jvoid(::java::awt::Font)>("setFont"), //
+		jMethod<::jvoid(::java::awt::Color)>("setForeground"), //
+		jMethod<::jvoid(::java::awt::Point)>("setLocation"), //
+		jMethod<::jvoid(::java::awt::Dimension)>("setSize"), //
+		jMethod<::jvoid(::jboolean)>("setVisible"), //
 	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addFocusListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addFocusListener")] != -1);
+		return call<R>("addFocusListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto contains(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("contains")] != -1);
+		return call<R>("contains", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::accessibility::Accessible, typename... Args>
+	auto getAccessibleAt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAccessibleAt")] != -1);
+		return call<R>("getAccessibleAt", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::javax::accessibility::AccessibleKeyBinding, typename... Args>
 	auto getAccessibleKeyBinding(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAccessibleKeyBinding")] != -1);
 		return call<R>("getAccessibleKeyBinding", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Color, typename... Args>
+	auto getBackground(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBackground")] != -1);
+		return call<R>("getBackground", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Rectangle, typename... Args>
+	auto getBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBounds")] != -1);
+		return call<R>("getBounds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Cursor, typename... Args>
+	auto getCursor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCursor")] != -1);
+		return call<R>("getCursor", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Font, typename... Args>
+	auto getFont(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFont")] != -1);
+		return call<R>("getFont", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::FontMetrics, typename... Args>
+	auto getFontMetrics(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFontMetrics")] != -1);
+		return call<R>("getFontMetrics", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Color, typename... Args>
+	auto getForeground(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getForeground")] != -1);
+		return call<R>("getForeground", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Point, typename... Args>
+	auto getLocation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLocation")] != -1);
+		return call<R>("getLocation", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Point, typename... Args>
+	auto getLocationOnScreen(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLocationOnScreen")] != -1);
+		return call<R>("getLocationOnScreen", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::Dimension, typename... Args>
+	auto getSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSize")] != -1);
+		return call<R>("getSize", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
@@ -35,6 +134,96 @@ public:
 	auto getToolTipText(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getToolTipText")] != -1);
 		return call<R>("getToolTipText", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isEnabled(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isEnabled")] != -1);
+		return call<R>("isEnabled", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isFocusTraversable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isFocusTraversable")] != -1);
+		return call<R>("isFocusTraversable", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isShowing(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isShowing")] != -1);
+		return call<R>("isShowing", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isVisible(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isVisible")] != -1);
+		return call<R>("isVisible", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeFocusListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeFocusListener")] != -1);
+		return call<R>("removeFocusListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto requestFocus(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("requestFocus")] != -1);
+		return call<R>("requestFocus", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setBackground(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setBackground")] != -1);
+		return call<R>("setBackground", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setBounds(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setBounds")] != -1);
+		return call<R>("setBounds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setCursor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setCursor")] != -1);
+		return call<R>("setCursor", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setEnabled(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setEnabled")] != -1);
+		return call<R>("setEnabled", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setFont(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setFont")] != -1);
+		return call<R>("setFont", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setForeground(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setForeground")] != -1);
+		return call<R>("setForeground", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLocation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setLocation")] != -1);
+		return call<R>("setLocation", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setSize")] != -1);
+		return call<R>("setSize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setVisible(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setVisible")] != -1);
+		return call<R>("setVisible", std::forward<Args>(args)...);
 	}
 
 };

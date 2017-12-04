@@ -26,6 +26,9 @@ public:
 		jMethod<::java::lang::String()>("getLibraryDirectory"), //
 		jMethod<::java::util::Set(::java::lang::String)>("getMBeansFromURL"), //
 		jMethod<::java::util::Set(::java::net::URL)>("getMBeansFromURL"), //
+		jMethod<::java::net::URL(::java::lang::String)>("getResource"), //
+		jMethod<::java::io::InputStream(::java::lang::String)>("getResourceAsStream"), //
+		jMethod<::java::util::Enumeration(::java::lang::String)>("getResources"), //
 		jMethod<::java::net::URL *()>("getURLs"), //
 		jMethod<::java::lang::Class(::java::lang::String, ::javax::management::loading::ClassLoaderRepository)>("loadClass"), //
 		jMethod<::jvoid()>("postDeregister"), //
@@ -53,6 +56,24 @@ public:
 	auto getMBeansFromURL(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMBeansFromURL")] != -1);
 		return call<R>("getMBeansFromURL", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::net::URL, typename... Args>
+	auto getResource(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getResource")] != -1);
+		return call<R>("getResource", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::InputStream, typename... Args>
+	auto getResourceAsStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getResourceAsStream")] != -1);
+		return call<R>("getResourceAsStream", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	auto getResources(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getResources")] != -1);
+		return call<R>("getResources", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::net::URL *, typename... Args>

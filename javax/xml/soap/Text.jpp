@@ -14,13 +14,83 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("detachNode"), //
+		jMethod<::javax::xml::soap::SOAPElement()>("getParentElement"), //
+		jMethod<::java::lang::String()>("getValue"), //
+		jMethod<::java::lang::String()>("getWholeText"), //
 		jMethod<::jboolean()>("isComment"), //
+		jMethod<::jboolean()>("isElementContentWhitespace"), //
+		jMethod<::jvoid()>("recycleNode"), //
+		jMethod<::org::w3c::dom::Text(::java::lang::String)>("replaceWholeText"), //
+		jMethod<::jvoid(::javax::xml::soap::SOAPElement)>("setParentElement"), //
+		jMethod<::jvoid(::java::lang::String)>("setValue"), //
+		jMethod<::org::w3c::dom::Text(::jint)>("splitText"), //
 	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto detachNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("detachNode")] != -1);
+		return call<R>("detachNode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::soap::SOAPElement, typename... Args>
+	auto getParentElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getParentElement")] != -1);
+		return call<R>("getParentElement", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getValue")] != -1);
+		return call<R>("getValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getWholeText(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getWholeText")] != -1);
+		return call<R>("getWholeText", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isComment(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isComment")] != -1);
 		return call<R>("isComment", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isElementContentWhitespace(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isElementContentWhitespace")] != -1);
+		return call<R>("isElementContentWhitespace", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto recycleNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("recycleNode")] != -1);
+		return call<R>("recycleNode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Text, typename... Args>
+	auto replaceWholeText(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("replaceWholeText")] != -1);
+		return call<R>("replaceWholeText", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setParentElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setParentElement")] != -1);
+		return call<R>("setParentElement", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setValue")] != -1);
+		return call<R>("setValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Text, typename... Args>
+	auto splitText(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("splitText")] != -1);
+		return call<R>("splitText", std::forward<Args>(args)...);
 	}
 
 };

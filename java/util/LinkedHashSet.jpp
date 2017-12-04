@@ -18,13 +18,112 @@ public:
 		jConstructor<::jvoid(::jint)>(), //
 		jConstructor<::jvoid(::jint, ::jfloat)>(), //
 		jConstructor<::jvoid(::java::util::Collection)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("add"), //
+		jMethod<::jboolean(::java::util::Collection)>("addAll"), //
+		jMethod<::jvoid()>("clear"), //
+		jMethod<::jboolean(::java::lang::Object)>("contains"), //
+		jMethod<::jboolean(::java::util::Collection)>("containsAll"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::jboolean()>("isEmpty"), //
+		jMethod<::java::util::Iterator()>("iterator"), //
+		jMethod<::jboolean(::java::lang::Object)>("remove"), //
+		jMethod<::jboolean(::java::util::Collection)>("removeAll"), //
+		jMethod<::jboolean(::java::util::Collection)>("retainAll"), //
+		jMethod<::jint()>("size"), //
 		jMethod<::java::util::Spliterator()>("spliterator"), //
+		jMethod<::java::lang::Object *()>("toArray"), //
+		jMethod<::java::lang::Object *(::java::lang::Object *)>("toArray"), //
 	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto add(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto addAll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addAll")] != -1);
+		return call<R>("addAll", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto clear(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clear")] != -1);
+		return call<R>("clear", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto contains(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("contains")] != -1);
+		return call<R>("contains", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto containsAll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("containsAll")] != -1);
+		return call<R>("containsAll", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isEmpty(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isEmpty")] != -1);
+		return call<R>("isEmpty", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Iterator, typename... Args>
+	auto iterator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("iterator")] != -1);
+		return call<R>("iterator", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto remove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto removeAll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeAll")] != -1);
+		return call<R>("removeAll", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto retainAll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("retainAll")] != -1);
+		return call<R>("retainAll", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto size(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("size")] != -1);
+		return call<R>("size", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::java::util::Spliterator, typename... Args>
 	auto spliterator(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("spliterator")] != -1);
 		return call<R>("spliterator", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object *, typename... Args>
+	auto toArray(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toArray")] != -1);
+		return call<R>("toArray", std::forward<Args>(args)...);
 	}
 
 };

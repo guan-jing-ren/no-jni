@@ -19,12 +19,15 @@ public:
 		jMethod<::jint()>("getClientX"), //
 		jMethod<::jint()>("getClientY"), //
 		jMethod<::jboolean()>("getCtrlKey"), //
+		jMethod<::jint()>("getDetail"), //
 		jMethod<::jboolean()>("getMetaKey"), //
 		jMethod<::org::w3c::dom::events::EventTarget()>("getRelatedTarget"), //
 		jMethod<::jint()>("getScreenX"), //
 		jMethod<::jint()>("getScreenY"), //
 		jMethod<::jboolean()>("getShiftKey"), //
+		jMethod<::org::w3c::dom::views::AbstractView()>("getView"), //
 		jMethod<::jvoid(::java::lang::String, ::jboolean, ::jboolean, ::org::w3c::dom::views::AbstractView, ::jint, ::jint, ::jint, ::jint, ::jint, ::jboolean, ::jboolean, ::jboolean, ::jboolean, ::jshort, ::org::w3c::dom::events::EventTarget)>("initMouseEvent"), //
+		jMethod<::jvoid(::java::lang::String, ::jboolean, ::jboolean, ::org::w3c::dom::views::AbstractView, ::jint)>("initUIEvent"), //
 	};
 
 	template<typename R = ::jboolean, typename... Args>
@@ -57,6 +60,12 @@ public:
 		return call<R>("getCtrlKey", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::jint, typename... Args>
+	auto getDetail(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDetail")] != -1);
+		return call<R>("getDetail", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::jboolean, typename... Args>
 	auto getMetaKey(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMetaKey")] != -1);
@@ -87,10 +96,22 @@ public:
 		return call<R>("getShiftKey", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::org::w3c::dom::views::AbstractView, typename... Args>
+	auto getView(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getView")] != -1);
+		return call<R>("getView", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::jvoid, typename... Args>
 	auto initMouseEvent(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("initMouseEvent")] != -1);
 		return call<R>("initMouseEvent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto initUIEvent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("initUIEvent")] != -1);
+		return call<R>("initUIEvent", std::forward<Args>(args)...);
 	}
 
 };

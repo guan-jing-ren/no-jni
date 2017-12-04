@@ -14,9 +14,53 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::org::xml::sax::ContentHandler()>("getContentHandler"), //
+		jMethod<::org::xml::sax::DTDHandler()>("getDTDHandler"), //
+		jMethod<::org::xml::sax::EntityResolver()>("getEntityResolver"), //
+		jMethod<::org::xml::sax::ErrorHandler()>("getErrorHandler"), //
+		jMethod<::jboolean(::java::lang::String)>("getFeature"), //
 		jMethod<::org::xml::sax::XMLReader()>("getParent"), //
+		jMethod<::java::lang::Object(::java::lang::String)>("getProperty"), //
+		jMethod<::jvoid(::java::lang::String)>("parse"), //
+		jMethod<::jvoid(::org::xml::sax::InputSource)>("parse"), //
+		jMethod<::jvoid(::org::xml::sax::ContentHandler)>("setContentHandler"), //
+		jMethod<::jvoid(::org::xml::sax::DTDHandler)>("setDTDHandler"), //
+		jMethod<::jvoid(::org::xml::sax::EntityResolver)>("setEntityResolver"), //
+		jMethod<::jvoid(::org::xml::sax::ErrorHandler)>("setErrorHandler"), //
+		jMethod<::jvoid(::java::lang::String, ::jboolean)>("setFeature"), //
 		jMethod<::jvoid(::org::xml::sax::XMLReader)>("setParent"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::Object)>("setProperty"), //
 	};
+
+	template<typename R = ::org::xml::sax::ContentHandler, typename... Args>
+	auto getContentHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getContentHandler")] != -1);
+		return call<R>("getContentHandler", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::xml::sax::DTDHandler, typename... Args>
+	auto getDTDHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDTDHandler")] != -1);
+		return call<R>("getDTDHandler", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::xml::sax::EntityResolver, typename... Args>
+	auto getEntityResolver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEntityResolver")] != -1);
+		return call<R>("getEntityResolver", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::xml::sax::ErrorHandler, typename... Args>
+	auto getErrorHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getErrorHandler")] != -1);
+		return call<R>("getErrorHandler", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getFeature(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFeature")] != -1);
+		return call<R>("getFeature", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::org::xml::sax::XMLReader, typename... Args>
 	auto getParent(Args &&...args) const {
@@ -24,10 +68,58 @@ public:
 		return call<R>("getParent", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getProperty(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getProperty")] != -1);
+		return call<R>("getProperty", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto parse(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("parse")] != -1);
+		return call<R>("parse", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setContentHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setContentHandler")] != -1);
+		return call<R>("setContentHandler", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDTDHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setDTDHandler")] != -1);
+		return call<R>("setDTDHandler", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setEntityResolver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setEntityResolver")] != -1);
+		return call<R>("setEntityResolver", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setErrorHandler(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setErrorHandler")] != -1);
+		return call<R>("setErrorHandler", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setFeature(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setFeature")] != -1);
+		return call<R>("setFeature", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::jvoid, typename... Args>
 	auto setParent(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setParent")] != -1);
 		return call<R>("setParent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setProperty(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setProperty")] != -1);
+		return call<R>("setProperty", std::forward<Args>(args)...);
 	}
 
 };

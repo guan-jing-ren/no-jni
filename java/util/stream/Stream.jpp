@@ -17,6 +17,7 @@ public:
 		jMethod<::jboolean(::java::util::function::Predicate)>("allMatch"), //
 		jMethod<::jboolean(::java::util::function::Predicate)>("anyMatch"), //
 		jMethod<::java::util::stream::Stream$Builder()>("builder"), //
+		jMethod<::jvoid()>("close"), //
 		jMethod<::java::lang::Object(::java::util::function::Supplier, ::java::util::function::BiConsumer, ::java::util::function::BiConsumer)>("collect"), //
 		jMethod<::java::lang::Object(::java::util::stream::Collector)>("collect"), //
 		jMethod<::java::util::stream::Stream(::java::util::stream::Stream, ::java::util::stream::Stream)>("concat"), //
@@ -33,7 +34,9 @@ public:
 		jMethod<::jvoid(::java::util::function::Consumer)>("forEach"), //
 		jMethod<::jvoid(::java::util::function::Consumer)>("forEachOrdered"), //
 		jMethod<::java::util::stream::Stream(::java::util::function::Supplier)>("generate"), //
+		jMethod<::jboolean()>("isParallel"), //
 		jMethod<::java::util::stream::Stream(::java::lang::Object, ::java::util::function::UnaryOperator)>("iterate"), //
+		jMethod<::java::util::Iterator()>("iterator"), //
 		jMethod<::java::util::stream::Stream(::jlong)>("limit"), //
 		jMethod<::java::util::stream::Stream(::java::util::function::Function)>("map"), //
 		jMethod<::java::util::stream::DoubleStream(::java::util::function::ToDoubleFunction)>("mapToDouble"), //
@@ -44,15 +47,20 @@ public:
 		jMethod<::jboolean(::java::util::function::Predicate)>("noneMatch"), //
 		jMethod<::java::util::stream::Stream(::java::lang::Object)>("of"), //
 		jMethod<::java::util::stream::Stream(::java::lang::Object *)>("of"), //
+		jMethod<::java::util::stream::BaseStream(::java::lang::Runnable)>("onClose"), //
+		jMethod<::java::util::stream::BaseStream()>("parallel"), //
 		jMethod<::java::util::stream::Stream(::java::util::function::Consumer)>("peek"), //
 		jMethod<::java::lang::Object(::java::lang::Object, ::java::util::function::BiFunction, ::java::util::function::BinaryOperator)>("reduce"), //
 		jMethod<::java::lang::Object(::java::lang::Object, ::java::util::function::BinaryOperator)>("reduce"), //
 		jMethod<::java::util::Optional(::java::util::function::BinaryOperator)>("reduce"), //
+		jMethod<::java::util::stream::BaseStream()>("sequential"), //
 		jMethod<::java::util::stream::Stream(::jlong)>("skip"), //
 		jMethod<::java::util::stream::Stream()>("sorted"), //
 		jMethod<::java::util::stream::Stream(::java::util::Comparator)>("sorted"), //
+		jMethod<::java::util::Spliterator()>("spliterator"), //
 		jMethod<::java::lang::Object *()>("toArray"), //
 		jMethod<::java::lang::Object *(::java::util::function::IntFunction)>("toArray"), //
+		jMethod<::java::util::stream::BaseStream()>("unordered"), //
 	};
 
 	template<typename R = ::jboolean, typename... Args>
@@ -71,6 +79,12 @@ public:
 	static auto builder(Args &&...args) {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("builder")] != -1);
 		return scall<R>("builder", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
@@ -163,10 +177,22 @@ public:
 		return scall<R>("generate", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::jboolean, typename... Args>
+	auto isParallel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isParallel")] != -1);
+		return call<R>("isParallel", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::java::util::stream::Stream, typename... Args>
 	static auto iterate(Args &&...args) {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("iterate")] != -1);
 		return scall<R>("iterate", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Iterator, typename... Args>
+	auto iterator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("iterator")] != -1);
+		return call<R>("iterator", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::stream::Stream, typename... Args>
@@ -223,6 +249,18 @@ public:
 		return scall<R>("of", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::java::util::stream::BaseStream, typename... Args>
+	auto onClose(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("onClose")] != -1);
+		return call<R>("onClose", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::BaseStream, typename... Args>
+	auto parallel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("parallel")] != -1);
+		return call<R>("parallel", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::java::util::stream::Stream, typename... Args>
 	auto peek(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("peek")] != -1);
@@ -233,6 +271,12 @@ public:
 	auto reduce(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("reduce")] != -1);
 		return call<R>("reduce", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::BaseStream, typename... Args>
+	auto sequential(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("sequential")] != -1);
+		return call<R>("sequential", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::stream::Stream, typename... Args>
@@ -247,10 +291,22 @@ public:
 		return call<R>("sorted", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::java::util::Spliterator, typename... Args>
+	auto spliterator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("spliterator")] != -1);
+		return call<R>("spliterator", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::java::lang::Object *, typename... Args>
 	auto toArray(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toArray")] != -1);
 		return call<R>("toArray", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::BaseStream, typename... Args>
+	auto unordered(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unordered")] != -1);
+		return call<R>("unordered", std::forward<Args>(args)...);
 	}
 
 };

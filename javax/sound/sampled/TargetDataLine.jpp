@@ -14,10 +14,89 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::jint()>("available"), //
+		jMethod<::jvoid()>("drain"), //
+		jMethod<::jvoid()>("flush"), //
+		jMethod<::jint()>("getBufferSize"), //
+		jMethod<::javax::sound::sampled::AudioFormat()>("getFormat"), //
+		jMethod<::jint()>("getFramePosition"), //
+		jMethod<::jfloat()>("getLevel"), //
+		jMethod<::jlong()>("getLongFramePosition"), //
+		jMethod<::jlong()>("getMicrosecondPosition"), //
+		jMethod<::jboolean()>("isActive"), //
+		jMethod<::jboolean()>("isRunning"), //
 		jMethod<::jvoid(::javax::sound::sampled::AudioFormat)>("open"), //
 		jMethod<::jvoid(::javax::sound::sampled::AudioFormat, ::jint)>("open"), //
 		jMethod<::jint(::jbyte *, ::jint, ::jint)>("read"), //
+		jMethod<::jvoid()>("start"), //
+		jMethod<::jvoid()>("stop"), //
 	};
+
+	template<typename R = ::jint, typename... Args>
+	auto available(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("available")] != -1);
+		return call<R>("available", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto drain(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("drain")] != -1);
+		return call<R>("drain", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto flush(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("flush")] != -1);
+		return call<R>("flush", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getBufferSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBufferSize")] != -1);
+		return call<R>("getBufferSize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::sampled::AudioFormat, typename... Args>
+	auto getFormat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFormat")] != -1);
+		return call<R>("getFormat", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getFramePosition(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFramePosition")] != -1);
+		return call<R>("getFramePosition", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jfloat, typename... Args>
+	auto getLevel(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLevel")] != -1);
+		return call<R>("getLevel", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getLongFramePosition(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLongFramePosition")] != -1);
+		return call<R>("getLongFramePosition", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getMicrosecondPosition(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMicrosecondPosition")] != -1);
+		return call<R>("getMicrosecondPosition", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isActive(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isActive")] != -1);
+		return call<R>("isActive", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isRunning(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isRunning")] != -1);
+		return call<R>("isRunning", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto open(Args &&...args) const {
@@ -29,6 +108,18 @@ public:
 	auto read(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read")] != -1);
 		return call<R>("read", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto start(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("start")] != -1);
+		return call<R>("start", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto stop(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("stop")] != -1);
+		return call<R>("stop", std::forward<Args>(args)...);
 	}
 
 };

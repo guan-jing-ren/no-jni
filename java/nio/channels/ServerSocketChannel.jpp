@@ -19,10 +19,12 @@ public:
 		jMethod<::java::nio::channels::ServerSocketChannel(::java::net::SocketAddress)>("bind"), //
 		jMethod<::java::nio::channels::ServerSocketChannel(::java::net::SocketAddress, ::jint)>("bind"), //
 		jMethod<::java::net::SocketAddress()>("getLocalAddress"), //
+		jMethod<::java::lang::Object(::java::net::SocketOption)>("getOption"), //
 		jMethod<::java::nio::channels::ServerSocketChannel()>("open"), //
 		jMethod<::java::nio::channels::NetworkChannel(::java::net::SocketOption, ::java::lang::Object)>("setOption"), //
 		jMethod<::java::nio::channels::ServerSocketChannel(::java::net::SocketOption, ::java::lang::Object)>("setOption"), //
 		jMethod<::java::net::ServerSocket()>("socket"), //
+		jMethod<::java::util::Set()>("supportedOptions"), //
 		jMethod<::jint()>("validOps"), //
 	};
 
@@ -44,6 +46,12 @@ public:
 		return call<R>("getLocalAddress", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getOption(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOption")] != -1);
+		return call<R>("getOption", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::java::nio::channels::ServerSocketChannel, typename... Args>
 	static auto open(Args &&...args) {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("open")] != -1);
@@ -60,6 +68,12 @@ public:
 	auto socket(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("socket")] != -1);
 		return call<R>("socket", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto supportedOptions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("supportedOptions")] != -1);
+		return call<R>("supportedOptions", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>

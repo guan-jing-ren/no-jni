@@ -14,24 +14,49 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::management::ObjectName)>("addObservedObject"), //
+		jMethod<::jboolean(::javax::management::ObjectName)>("containsObservedObject"), //
 		jMethod<::java::lang::Number()>("getDerivedGauge"), //
 		jMethod<::java::lang::Number(::javax::management::ObjectName)>("getDerivedGauge"), //
 		jMethod<::jlong()>("getDerivedGaugeTimeStamp"), //
 		jMethod<::jlong(::javax::management::ObjectName)>("getDerivedGaugeTimeStamp"), //
 		jMethod<::jboolean()>("getDifferenceMode"), //
+		jMethod<::jlong()>("getGranularityPeriod"), //
 		jMethod<::java::lang::Number()>("getInitThreshold"), //
 		jMethod<::java::lang::Number()>("getModulus"), //
 		jMethod<::jboolean()>("getNotify"), //
+		jMethod<::java::lang::String()>("getObservedAttribute"), //
+		jMethod<::javax::management::ObjectName()>("getObservedObject"), //
+		jMethod<::javax::management::ObjectName *()>("getObservedObjects"), //
 		jMethod<::java::lang::Number()>("getOffset"), //
 		jMethod<::java::lang::Number()>("getThreshold"), //
 		jMethod<::java::lang::Number(::javax::management::ObjectName)>("getThreshold"), //
+		jMethod<::jboolean()>("isActive"), //
+		jMethod<::jvoid(::javax::management::ObjectName)>("removeObservedObject"), //
 		jMethod<::jvoid(::jboolean)>("setDifferenceMode"), //
+		jMethod<::jvoid(::jlong)>("setGranularityPeriod"), //
 		jMethod<::jvoid(::java::lang::Number)>("setInitThreshold"), //
 		jMethod<::jvoid(::java::lang::Number)>("setModulus"), //
 		jMethod<::jvoid(::jboolean)>("setNotify"), //
+		jMethod<::jvoid(::java::lang::String)>("setObservedAttribute"), //
+		jMethod<::jvoid(::javax::management::ObjectName)>("setObservedObject"), //
 		jMethod<::jvoid(::java::lang::Number)>("setOffset"), //
 		jMethod<::jvoid(::java::lang::Number)>("setThreshold"), //
+		jMethod<::jvoid()>("start"), //
+		jMethod<::jvoid()>("stop"), //
 	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addObservedObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addObservedObject")] != -1);
+		return call<R>("addObservedObject", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto containsObservedObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("containsObservedObject")] != -1);
+		return call<R>("containsObservedObject", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::java::lang::Number, typename... Args>
 	auto getDerivedGauge(Args &&...args) const {
@@ -49,6 +74,12 @@ public:
 	auto getDifferenceMode(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDifferenceMode")] != -1);
 		return call<R>("getDifferenceMode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getGranularityPeriod(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGranularityPeriod")] != -1);
+		return call<R>("getGranularityPeriod", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Number, typename... Args>
@@ -69,6 +100,24 @@ public:
 		return call<R>("getNotify", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getObservedAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getObservedAttribute")] != -1);
+		return call<R>("getObservedAttribute", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::ObjectName, typename... Args>
+	auto getObservedObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getObservedObject")] != -1);
+		return call<R>("getObservedObject", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::ObjectName *, typename... Args>
+	auto getObservedObjects(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getObservedObjects")] != -1);
+		return call<R>("getObservedObjects", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::java::lang::Number, typename... Args>
 	auto getOffset(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOffset")] != -1);
@@ -81,10 +130,28 @@ public:
 		return call<R>("getThreshold", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::jboolean, typename... Args>
+	auto isActive(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isActive")] != -1);
+		return call<R>("isActive", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeObservedObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeObservedObject")] != -1);
+		return call<R>("removeObservedObject", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::jvoid, typename... Args>
 	auto setDifferenceMode(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setDifferenceMode")] != -1);
 		return call<R>("setDifferenceMode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setGranularityPeriod(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setGranularityPeriod")] != -1);
+		return call<R>("setGranularityPeriod", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
@@ -106,6 +173,18 @@ public:
 	}
 
 	template<typename R = ::jvoid, typename... Args>
+	auto setObservedAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setObservedAttribute")] != -1);
+		return call<R>("setObservedAttribute", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setObservedObject(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setObservedObject")] != -1);
+		return call<R>("setObservedObject", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
 	auto setOffset(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setOffset")] != -1);
 		return call<R>("setOffset", std::forward<Args>(args)...);
@@ -115,6 +194,18 @@ public:
 	auto setThreshold(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setThreshold")] != -1);
 		return call<R>("setThreshold", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto start(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("start")] != -1);
+		return call<R>("start", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto stop(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("stop")] != -1);
+		return call<R>("stop", std::forward<Args>(args)...);
 	}
 
 };

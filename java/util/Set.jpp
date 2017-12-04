@@ -23,11 +23,14 @@ public:
 		jMethod<::jint()>("hashCode"), //
 		jMethod<::jboolean()>("isEmpty"), //
 		jMethod<::java::util::Iterator()>("iterator"), //
+		jMethod<::java::util::stream::Stream()>("parallelStream"), //
 		jMethod<::jboolean(::java::lang::Object)>("remove"), //
 		jMethod<::jboolean(::java::util::Collection)>("removeAll"), //
+		jMethod<::jboolean(::java::util::function::Predicate)>("removeIf"), //
 		jMethod<::jboolean(::java::util::Collection)>("retainAll"), //
 		jMethod<::jint()>("size"), //
 		jMethod<::java::util::Spliterator()>("spliterator"), //
+		jMethod<::java::util::stream::Stream()>("stream"), //
 		jMethod<::java::lang::Object *()>("toArray"), //
 		jMethod<::java::lang::Object *(::java::lang::Object *)>("toArray"), //
 	};
@@ -86,6 +89,12 @@ public:
 		return call<R>("iterator", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::java::util::stream::Stream, typename... Args>
+	auto parallelStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("parallelStream")] != -1);
+		return call<R>("parallelStream", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::jboolean, typename... Args>
 	auto remove(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("remove")] != -1);
@@ -96,6 +105,12 @@ public:
 	auto removeAll(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeAll")] != -1);
 		return call<R>("removeAll", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto removeIf(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeIf")] != -1);
+		return call<R>("removeIf", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
@@ -114,6 +129,12 @@ public:
 	auto spliterator(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("spliterator")] != -1);
 		return call<R>("spliterator", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::Stream, typename... Args>
+	auto stream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("stream")] != -1);
+		return call<R>("stream", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object *, typename... Args>

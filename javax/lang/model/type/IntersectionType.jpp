@@ -14,13 +14,48 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object(::javax::lang::model::type::TypeVisitor, ::java::lang::Object)>("accept"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
 		jMethod<::java::util::List()>("getBounds"), //
+		jMethod<::javax::lang::model::type::TypeKind()>("getKind"), //
+		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::lang::String()>("toString"), //
 	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto accept(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("accept")] != -1);
+		return call<R>("accept", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::java::util::List, typename... Args>
 	auto getBounds(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBounds")] != -1);
 		return call<R>("getBounds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::lang::model::type::TypeKind, typename... Args>
+	auto getKind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getKind")] != -1);
+		return call<R>("getKind", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
 	}
 
 };

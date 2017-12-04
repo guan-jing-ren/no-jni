@@ -20,8 +20,15 @@ public:
 	}
 
 	constexpr static Enume method_signatures{
+		jMethod<::java::security::spec::ECParameterSpec()>("getParams"), //
 		jMethod<::java::security::spec::ECPoint()>("getW"), //
 	};
+
+	template<typename R = ::java::security::spec::ECParameterSpec, typename... Args>
+	auto getParams(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getParams")] != -1);
+		return call<R>("getParams", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::java::security::spec::ECPoint, typename... Args>
 	auto getW(Args &&...args) const {

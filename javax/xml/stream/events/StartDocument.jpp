@@ -14,13 +14,47 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::stream::events::Characters()>("asCharacters"), //
+		jMethod<::javax::xml::stream::events::EndElement()>("asEndElement"), //
+		jMethod<::javax::xml::stream::events::StartElement()>("asStartElement"), //
 		jMethod<::jboolean()>("encodingSet"), //
 		jMethod<::java::lang::String()>("getCharacterEncodingScheme"), //
+		jMethod<::jint()>("getEventType"), //
+		jMethod<::javax::xml::stream::Location()>("getLocation"), //
+		jMethod<::javax::xml::namespace_::QName()>("getSchemaType"), //
 		jMethod<::java::lang::String()>("getSystemId"), //
 		jMethod<::java::lang::String()>("getVersion"), //
+		jMethod<::jboolean()>("isAttribute"), //
+		jMethod<::jboolean()>("isCharacters"), //
+		jMethod<::jboolean()>("isEndDocument"), //
+		jMethod<::jboolean()>("isEndElement"), //
+		jMethod<::jboolean()>("isEntityReference"), //
+		jMethod<::jboolean()>("isNamespace"), //
+		jMethod<::jboolean()>("isProcessingInstruction"), //
 		jMethod<::jboolean()>("isStandalone"), //
+		jMethod<::jboolean()>("isStartDocument"), //
+		jMethod<::jboolean()>("isStartElement"), //
 		jMethod<::jboolean()>("standaloneSet"), //
+		jMethod<::jvoid(::java::io::Writer)>("writeAsEncodedUnicode"), //
 	};
+
+	template<typename R = ::javax::xml::stream::events::Characters, typename... Args>
+	auto asCharacters(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("asCharacters")] != -1);
+		return call<R>("asCharacters", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::stream::events::EndElement, typename... Args>
+	auto asEndElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("asEndElement")] != -1);
+		return call<R>("asEndElement", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::stream::events::StartElement, typename... Args>
+	auto asStartElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("asStartElement")] != -1);
+		return call<R>("asStartElement", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto encodingSet(Args &&...args) const {
@@ -32,6 +66,24 @@ public:
 	auto getCharacterEncodingScheme(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCharacterEncodingScheme")] != -1);
 		return call<R>("getCharacterEncodingScheme", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getEventType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEventType")] != -1);
+		return call<R>("getEventType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::stream::Location, typename... Args>
+	auto getLocation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLocation")] != -1);
+		return call<R>("getLocation", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::namespace_::QName, typename... Args>
+	auto getSchemaType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSchemaType")] != -1);
+		return call<R>("getSchemaType", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
@@ -47,15 +99,75 @@ public:
 	}
 
 	template<typename R = ::jboolean, typename... Args>
+	auto isAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isAttribute")] != -1);
+		return call<R>("isAttribute", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isCharacters(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isCharacters")] != -1);
+		return call<R>("isCharacters", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isEndDocument(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isEndDocument")] != -1);
+		return call<R>("isEndDocument", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isEndElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isEndElement")] != -1);
+		return call<R>("isEndElement", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isEntityReference(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isEntityReference")] != -1);
+		return call<R>("isEntityReference", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isNamespace(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isNamespace")] != -1);
+		return call<R>("isNamespace", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isProcessingInstruction(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isProcessingInstruction")] != -1);
+		return call<R>("isProcessingInstruction", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
 	auto isStandalone(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isStandalone")] != -1);
 		return call<R>("isStandalone", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
+	auto isStartDocument(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isStartDocument")] != -1);
+		return call<R>("isStartDocument", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isStartElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isStartElement")] != -1);
+		return call<R>("isStartElement", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
 	auto standaloneSet(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("standaloneSet")] != -1);
 		return call<R>("standaloneSet", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeAsEncodedUnicode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeAsEncodedUnicode")] != -1);
+		return call<R>("writeAsEncodedUnicode", std::forward<Args>(args)...);
 	}
 
 };

@@ -42,12 +42,20 @@ public:
 
 	constexpr static Enume method_signatures{
 		jMethod<::java::security::spec::AlgorithmParameterSpec()>("getParameterSpec"), //
+		jMethod<::javax::xml::crypto::Data(::javax::xml::crypto::Data, ::javax::xml::crypto::XMLCryptoContext)>("transform"), //
+		jMethod<::javax::xml::crypto::Data(::javax::xml::crypto::Data, ::javax::xml::crypto::XMLCryptoContext, ::java::io::OutputStream)>("transform"), //
 	};
 
 	template<typename R = ::java::security::spec::AlgorithmParameterSpec, typename... Args>
 	auto getParameterSpec(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getParameterSpec")] != -1);
 		return call<R>("getParameterSpec", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::crypto::Data, typename... Args>
+	auto transform(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("transform")] != -1);
+		return call<R>("transform", std::forward<Args>(args)...);
 	}
 
 };

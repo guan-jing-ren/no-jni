@@ -14,8 +14,70 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
-		cexprstr{"\0"}, //
+		jMethod<::org::omg::CORBA::TCKind()>("discriminator_kind"), //
+		jMethod<::org::omg::DynamicAny::DynAny()>("get_discriminator"), //
+		jMethod<::jboolean()>("has_no_active_member"), //
+		jMethod<::org::omg::DynamicAny::DynAny()>("member"), //
+		jMethod<::org::omg::CORBA::TCKind()>("member_kind"), //
+		jMethod<::java::lang::String()>("member_name"), //
+		jMethod<::jvoid(::org::omg::DynamicAny::DynAny)>("set_discriminator"), //
+		jMethod<::jvoid()>("set_to_default_member"), //
+		jMethod<::jvoid()>("set_to_no_active_member"), //
 	};
+
+	template<typename R = ::org::omg::CORBA::TCKind, typename... Args>
+	auto discriminator_kind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("discriminator_kind")] != -1);
+		return call<R>("discriminator_kind", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::DynamicAny::DynAny, typename... Args>
+	auto get_discriminator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get_discriminator")] != -1);
+		return call<R>("get_discriminator", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto has_no_active_member(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("has_no_active_member")] != -1);
+		return call<R>("has_no_active_member", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::DynamicAny::DynAny, typename... Args>
+	auto member(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("member")] != -1);
+		return call<R>("member", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::TCKind, typename... Args>
+	auto member_kind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("member_kind")] != -1);
+		return call<R>("member_kind", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto member_name(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("member_name")] != -1);
+		return call<R>("member_name", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set_discriminator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set_discriminator")] != -1);
+		return call<R>("set_discriminator", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set_to_default_member(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set_to_default_member")] != -1);
+		return call<R>("set_to_default_member", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set_to_no_active_member(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set_to_no_active_member")] != -1);
+		return call<R>("set_to_no_active_member", std::forward<Args>(args)...);
+	}
 
 };
 

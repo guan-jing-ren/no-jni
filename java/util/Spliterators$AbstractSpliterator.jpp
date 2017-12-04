@@ -16,6 +16,10 @@ public:
 	constexpr static Enume method_signatures{
 		jMethod<::jint()>("characteristics"), //
 		jMethod<::jlong()>("estimateSize"), //
+		jMethod<::jvoid(::java::util::function::Consumer)>("forEachRemaining"), //
+		jMethod<::java::util::Comparator()>("getComparator"), //
+		jMethod<::jlong()>("getExactSizeIfKnown"), //
+		jMethod<::jboolean(::jint)>("hasCharacteristics"), //
 		jMethod<::jboolean(::java::util::function::Consumer)>("tryAdvance"), //
 		jMethod<::java::util::Spliterator()>("trySplit"), //
 	};
@@ -30,6 +34,30 @@ public:
 	auto estimateSize(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("estimateSize")] != -1);
 		return call<R>("estimateSize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto forEachRemaining(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("forEachRemaining")] != -1);
+		return call<R>("forEachRemaining", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Comparator, typename... Args>
+	auto getComparator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getComparator")] != -1);
+		return call<R>("getComparator", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getExactSizeIfKnown(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getExactSizeIfKnown")] != -1);
+		return call<R>("getExactSizeIfKnown", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasCharacteristics(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hasCharacteristics")] != -1);
+		return call<R>("hasCharacteristics", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>

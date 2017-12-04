@@ -51,10 +51,14 @@ public:
 		jMethod<::jvoid(::jint, ::jint)>("add"), //
 		jMethod<::jvoid(::java::awt::Point)>("add"), //
 		jMethod<::jvoid(::java::awt::Rectangle)>("add"), //
+		jMethod<::jboolean(::jdouble, ::jdouble)>("contains"), //
+		jMethod<::jboolean(::jdouble, ::jdouble, ::jdouble, ::jdouble)>("contains"), //
 		jMethod<::jboolean(::jint, ::jint)>("contains"), //
 		jMethod<::jboolean(::jint, ::jint, ::jint, ::jint)>("contains"), //
 		jMethod<::jboolean(::java::awt::Point)>("contains"), //
 		jMethod<::jboolean(::java::awt::Rectangle)>("contains"), //
+		jMethod<::jboolean(::java::awt::geom::Point2D)>("contains"), //
+		jMethod<::jboolean(::java::awt::geom::Rectangle2D)>("contains"), //
 		jMethod<::java::awt::geom::Rectangle2D(::java::awt::geom::Rectangle2D)>("createIntersection"), //
 		jMethod<::java::awt::geom::Rectangle2D(::java::awt::geom::Rectangle2D)>("createUnion"), //
 		jMethod<::jboolean(::java::lang::Object)>("equals"), //
@@ -62,6 +66,8 @@ public:
 		jMethod<::java::awt::geom::Rectangle2D()>("getBounds2D"), //
 		jMethod<::jdouble()>("getHeight"), //
 		jMethod<::java::awt::Point()>("getLocation"), //
+		jMethod<::java::awt::geom::PathIterator(::java::awt::geom::AffineTransform)>("getPathIterator"), //
+		jMethod<::java::awt::geom::PathIterator(::java::awt::geom::AffineTransform, ::jdouble)>("getPathIterator"), //
 		jMethod<::java::awt::Dimension()>("getSize"), //
 		jMethod<::jdouble()>("getWidth"), //
 		jMethod<::jdouble()>("getX"), //
@@ -69,7 +75,9 @@ public:
 		jMethod<::jvoid(::jint, ::jint)>("grow"), //
 		jMethod<::jboolean(::jint, ::jint)>("inside"), //
 		jMethod<::java::awt::Rectangle(::java::awt::Rectangle)>("intersection"), //
+		jMethod<::jboolean(::jdouble, ::jdouble, ::jdouble, ::jdouble)>("intersects"), //
 		jMethod<::jboolean(::java::awt::Rectangle)>("intersects"), //
+		jMethod<::jboolean(::java::awt::geom::Rectangle2D)>("intersects"), //
 		jMethod<::jboolean()>("isEmpty"), //
 		jMethod<::jvoid(::jint, ::jint)>("move"), //
 		jMethod<::jint(::jdouble, ::jdouble)>("outcode"), //
@@ -139,6 +147,12 @@ public:
 	auto getLocation(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLocation")] != -1);
 		return call<R>("getLocation", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::PathIterator, typename... Args>
+	auto getPathIterator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPathIterator")] != -1);
+		return call<R>("getPathIterator", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::Dimension, typename... Args>

@@ -14,8 +14,14 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
-		cexprstr{"\0"}, //
+		jMethod<::org::omg::PortableServer::RequestProcessingPolicyValue()>("value"), //
 	};
+
+	template<typename R = ::org::omg::PortableServer::RequestProcessingPolicyValue, typename... Args>
+	auto value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("value")] != -1);
+		return call<R>("value", std::forward<Args>(args)...);
+	}
 
 };
 

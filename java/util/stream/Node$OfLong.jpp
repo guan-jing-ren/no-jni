@@ -14,6 +14,7 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object *(::java::util::function::IntFunction)>("asArray"), //
 		jMethod<::java::lang::Object()>("asPrimitiveArray"), //
 		jMethod<::jvoid(::java::lang::Object, ::jint)>("copyInto"), //
 		jMethod<::jvoid(::java::lang::Long *, ::jint)>("copyInto"), //
@@ -21,14 +22,23 @@ public:
 		jMethod<::jlong()>("count"), //
 		jMethod<::jvoid(::java::lang::Object)>("forEach"), //
 		jMethod<::jvoid(::java::util::function::Consumer)>("forEach"), //
+		jMethod<::java::util::stream::Node$OfPrimitive(::jint)>("getChild"), //
+		jMethod<::java::util::stream::Node(::jint)>("getChild"), //
 		jMethod<::java::util::stream::StreamShape()>("getShape"), //
 		jMethod<::java::lang::Object(::jint)>("newArray"), //
 		jMethod<::jlong *(::jint)>("newArray"), //
 		jMethod<::java::util::Spliterator$OfPrimitive()>("spliterator"), //
+		jMethod<::java::util::Spliterator()>("spliterator"), //
 		jMethod<::java::util::stream::Node$OfLong(::jlong, ::jlong, ::java::util::function::IntFunction)>("truncate"), //
 		jMethod<::java::util::stream::Node$OfPrimitive(::jlong, ::jlong, ::java::util::function::IntFunction)>("truncate"), //
 		jMethod<::java::util::stream::Node(::jlong, ::jlong, ::java::util::function::IntFunction)>("truncate"), //
 	};
+
+	template<typename R = ::java::lang::Object *, typename... Args>
+	auto asArray(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("asArray")] != -1);
+		return call<R>("asArray", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto asPrimitiveArray(Args &&...args) const {
@@ -52,6 +62,12 @@ public:
 	auto forEach(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("forEach")] != -1);
 		return call<R>("forEach", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::Node$OfPrimitive, typename... Args>
+	auto getChild(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getChild")] != -1);
+		return call<R>("getChild", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::stream::StreamShape, typename... Args>

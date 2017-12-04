@@ -14,8 +14,15 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::javax::management::Descriptor()>("getDescriptor"), //
 		jMethod<::jvoid(::javax::management::Descriptor)>("setDescriptor"), //
 	};
+
+	template<typename R = ::javax::management::Descriptor, typename... Args>
+	auto getDescriptor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDescriptor")] != -1);
+		return call<R>("getDescriptor", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setDescriptor(Args &&...args) const {

@@ -30,24 +30,30 @@ public:
 		jMethod<::jboolean(::java::lang::Object)>("contains"), //
 		jMethod<::jboolean(::java::util::Collection)>("containsAll"), //
 		jMethod<::jvoid()>("dontUseGui"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
 		jMethod<::java::beans::beancontext::BeanContext()>("getBeanContext"), //
 		jMethod<::java::net::URL(::java::lang::String, ::java::beans::beancontext::BeanContextChild)>("getResource"), //
 		jMethod<::java::io::InputStream(::java::lang::String, ::java::beans::beancontext::BeanContextChild)>("getResourceAsStream"), //
+		jMethod<::jint()>("hashCode"), //
 		jMethod<::java::lang::Object(::java::lang::String)>("instantiateChild"), //
 		jMethod<::jboolean()>("isDesignTime"), //
 		jMethod<::jboolean()>("isEmpty"), //
 		jMethod<::java::util::Iterator()>("iterator"), //
 		jMethod<::jboolean()>("needsGui"), //
 		jMethod<::jvoid()>("okToUseGui"), //
+		jMethod<::java::util::stream::Stream()>("parallelStream"), //
 		jMethod<::jboolean(::java::lang::Object)>("remove"), //
 		jMethod<::jboolean(::java::util::Collection)>("removeAll"), //
 		jMethod<::jvoid(::java::beans::beancontext::BeanContextMembershipListener)>("removeBeanContextMembershipListener"), //
+		jMethod<::jboolean(::java::util::function::Predicate)>("removeIf"), //
 		jMethod<::jvoid(::java::lang::String, ::java::beans::PropertyChangeListener)>("removePropertyChangeListener"), //
 		jMethod<::jvoid(::java::lang::String, ::java::beans::VetoableChangeListener)>("removeVetoableChangeListener"), //
 		jMethod<::jboolean(::java::util::Collection)>("retainAll"), //
 		jMethod<::jvoid(::java::beans::beancontext::BeanContext)>("setBeanContext"), //
 		jMethod<::jvoid(::jboolean)>("setDesignTime"), //
 		jMethod<::jint()>("size"), //
+		jMethod<::java::util::Spliterator()>("spliterator"), //
+		jMethod<::java::util::stream::Stream()>("stream"), //
 		jMethod<::java::lang::Object *()>("toArray"), //
 		jMethod<::java::lang::Object *(::java::lang::Object *)>("toArray"), //
 	};
@@ -112,6 +118,12 @@ public:
 		return call<R>("dontUseGui", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::java::beans::beancontext::BeanContext, typename... Args>
 	auto getBeanContext(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBeanContext")] != -1);
@@ -128,6 +140,12 @@ public:
 	auto getResourceAsStream(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getResourceAsStream")] != -1);
 		return call<R>("getResourceAsStream", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
@@ -166,6 +184,12 @@ public:
 		return call<R>("okToUseGui", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::java::util::stream::Stream, typename... Args>
+	auto parallelStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("parallelStream")] != -1);
+		return call<R>("parallelStream", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::jboolean, typename... Args>
 	auto remove(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("remove")] != -1);
@@ -182,6 +206,12 @@ public:
 	auto removeBeanContextMembershipListener(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeBeanContextMembershipListener")] != -1);
 		return call<R>("removeBeanContextMembershipListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto removeIf(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeIf")] != -1);
+		return call<R>("removeIf", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
@@ -218,6 +248,18 @@ public:
 	auto size(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("size")] != -1);
 		return call<R>("size", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Spliterator, typename... Args>
+	auto spliterator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("spliterator")] != -1);
+		return call<R>("spliterator", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::Stream, typename... Args>
+	auto stream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("stream")] != -1);
+		return call<R>("stream", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object *, typename... Args>

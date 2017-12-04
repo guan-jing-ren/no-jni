@@ -65,6 +65,11 @@ public:
 		jMethod<::java::lang::Object()>("clone"), //
 		jMethod<::jint(::java::lang::Object, ::java::lang::Object)>("compare"), //
 		jMethod<::jint(::java::lang::String, ::java::lang::String)>("compare"), //
+		jMethod<::java::util::Comparator(::java::util::function::Function)>("comparing"), //
+		jMethod<::java::util::Comparator(::java::util::function::Function, ::java::util::Comparator)>("comparing"), //
+		jMethod<::java::util::Comparator(::java::util::function::ToDoubleFunction)>("comparingDouble"), //
+		jMethod<::java::util::Comparator(::java::util::function::ToIntFunction)>("comparingInt"), //
+		jMethod<::java::util::Comparator(::java::util::function::ToLongFunction)>("comparingLong"), //
 		jMethod<::jboolean(::java::lang::Object)>("equals"), //
 		jMethod<::jboolean(::java::lang::String, ::java::lang::String)>("equals"), //
 		jMethod<::java::util::Locale *()>("getAvailableLocales"), //
@@ -74,8 +79,19 @@ public:
 		jMethod<::java::text::Collator(::java::util::Locale)>("getInstance"), //
 		jMethod<::jint()>("getStrength"), //
 		jMethod<::jint()>("hashCode"), //
+		jMethod<::java::util::Comparator()>("naturalOrder"), //
+		jMethod<::java::util::Comparator(::java::util::Comparator)>("nullsFirst"), //
+		jMethod<::java::util::Comparator(::java::util::Comparator)>("nullsLast"), //
+		jMethod<::java::util::Comparator()>("reverseOrder"), //
+		jMethod<::java::util::Comparator()>("reversed"), //
 		jMethod<::jvoid(::jint)>("setDecomposition"), //
 		jMethod<::jvoid(::jint)>("setStrength"), //
+		jMethod<::java::util::Comparator(::java::util::Comparator)>("thenComparing"), //
+		jMethod<::java::util::Comparator(::java::util::function::Function)>("thenComparing"), //
+		jMethod<::java::util::Comparator(::java::util::function::Function, ::java::util::Comparator)>("thenComparing"), //
+		jMethod<::java::util::Comparator(::java::util::function::ToDoubleFunction)>("thenComparingDouble"), //
+		jMethod<::java::util::Comparator(::java::util::function::ToIntFunction)>("thenComparingInt"), //
+		jMethod<::java::util::Comparator(::java::util::function::ToLongFunction)>("thenComparingLong"), //
 	};
 
 	template<typename R = ::java::lang::Object, typename... Args>
@@ -88,6 +104,30 @@ public:
 	auto compare(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("compare")] != -1);
 		return call<R>("compare", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Comparator, typename... Args>
+	static auto comparing(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("comparing")] != -1);
+		return scall<R>("comparing", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Comparator, typename... Args>
+	static auto comparingDouble(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("comparingDouble")] != -1);
+		return scall<R>("comparingDouble", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Comparator, typename... Args>
+	static auto comparingInt(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("comparingInt")] != -1);
+		return scall<R>("comparingInt", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Comparator, typename... Args>
+	static auto comparingLong(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("comparingLong")] != -1);
+		return scall<R>("comparingLong", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
@@ -132,6 +172,36 @@ public:
 		return call<R>("hashCode", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::java::util::Comparator, typename... Args>
+	static auto naturalOrder(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("naturalOrder")] != -1);
+		return scall<R>("naturalOrder", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Comparator, typename... Args>
+	static auto nullsFirst(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("nullsFirst")] != -1);
+		return scall<R>("nullsFirst", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Comparator, typename... Args>
+	static auto nullsLast(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("nullsLast")] != -1);
+		return scall<R>("nullsLast", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Comparator, typename... Args>
+	static auto reverseOrder(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("reverseOrder")] != -1);
+		return scall<R>("reverseOrder", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Comparator, typename... Args>
+	auto reversed(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("reversed")] != -1);
+		return call<R>("reversed", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::jvoid, typename... Args>
 	auto setDecomposition(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setDecomposition")] != -1);
@@ -142,6 +212,30 @@ public:
 	auto setStrength(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setStrength")] != -1);
 		return call<R>("setStrength", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Comparator, typename... Args>
+	auto thenComparing(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("thenComparing")] != -1);
+		return call<R>("thenComparing", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Comparator, typename... Args>
+	auto thenComparingDouble(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("thenComparingDouble")] != -1);
+		return call<R>("thenComparingDouble", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Comparator, typename... Args>
+	auto thenComparingInt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("thenComparingInt")] != -1);
+		return call<R>("thenComparingInt", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Comparator, typename... Args>
+	auto thenComparingLong(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("thenComparingLong")] != -1);
+		return call<R>("thenComparingLong", std::forward<Args>(args)...);
 	}
 
 };

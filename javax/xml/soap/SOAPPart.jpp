@@ -16,26 +16,135 @@ public:
 	constexpr static Enume method_signatures{
 		jConstructor<::jvoid()>(), //
 		jMethod<::jvoid(::java::lang::String, ::java::lang::String)>("addMimeHeader"), //
+		jMethod<::org::w3c::dom::Node(::org::w3c::dom::Node)>("adoptNode"), //
+		jMethod<::org::w3c::dom::Attr(::java::lang::String)>("createAttribute"), //
+		jMethod<::org::w3c::dom::Attr(::java::lang::String, ::java::lang::String)>("createAttributeNS"), //
+		jMethod<::org::w3c::dom::CDATASection(::java::lang::String)>("createCDATASection"), //
+		jMethod<::org::w3c::dom::Comment(::java::lang::String)>("createComment"), //
+		jMethod<::org::w3c::dom::DocumentFragment()>("createDocumentFragment"), //
+		jMethod<::org::w3c::dom::Element(::java::lang::String)>("createElement"), //
+		jMethod<::org::w3c::dom::Element(::java::lang::String, ::java::lang::String)>("createElementNS"), //
+		jMethod<::org::w3c::dom::EntityReference(::java::lang::String)>("createEntityReference"), //
+		jMethod<::org::w3c::dom::ProcessingInstruction(::java::lang::String, ::java::lang::String)>("createProcessingInstruction"), //
+		jMethod<::org::w3c::dom::Text(::java::lang::String)>("createTextNode"), //
+		jMethod<::jvoid()>("detachNode"), //
 		jMethod<::java::util::Iterator()>("getAllMimeHeaders"), //
 		jMethod<::javax::xml::transform::Source()>("getContent"), //
 		jMethod<::java::lang::String()>("getContentId"), //
 		jMethod<::java::lang::String()>("getContentLocation"), //
+		jMethod<::org::w3c::dom::DocumentType()>("getDoctype"), //
+		jMethod<::org::w3c::dom::Element()>("getDocumentElement"), //
+		jMethod<::java::lang::String()>("getDocumentURI"), //
+		jMethod<::org::w3c::dom::DOMConfiguration()>("getDomConfig"), //
+		jMethod<::org::w3c::dom::Element(::java::lang::String)>("getElementById"), //
+		jMethod<::org::w3c::dom::NodeList(::java::lang::String)>("getElementsByTagName"), //
+		jMethod<::org::w3c::dom::NodeList(::java::lang::String, ::java::lang::String)>("getElementsByTagNameNS"), //
 		jMethod<::javax::xml::soap::SOAPEnvelope()>("getEnvelope"), //
+		jMethod<::org::w3c::dom::DOMImplementation()>("getImplementation"), //
+		jMethod<::java::lang::String()>("getInputEncoding"), //
 		jMethod<::java::util::Iterator(::java::lang::String *)>("getMatchingMimeHeaders"), //
 		jMethod<::java::lang::String *(::java::lang::String)>("getMimeHeader"), //
 		jMethod<::java::util::Iterator(::java::lang::String *)>("getNonMatchingMimeHeaders"), //
+		jMethod<::javax::xml::soap::SOAPElement()>("getParentElement"), //
+		jMethod<::jboolean()>("getStrictErrorChecking"), //
+		jMethod<::java::lang::String()>("getValue"), //
+		jMethod<::java::lang::String()>("getXmlEncoding"), //
+		jMethod<::jboolean()>("getXmlStandalone"), //
+		jMethod<::java::lang::String()>("getXmlVersion"), //
+		jMethod<::org::w3c::dom::Node(::org::w3c::dom::Node, ::jboolean)>("importNode"), //
+		jMethod<::jvoid()>("normalizeDocument"), //
+		jMethod<::jvoid()>("recycleNode"), //
 		jMethod<::jvoid()>("removeAllMimeHeaders"), //
 		jMethod<::jvoid(::java::lang::String)>("removeMimeHeader"), //
+		jMethod<::org::w3c::dom::Node(::org::w3c::dom::Node, ::java::lang::String, ::java::lang::String)>("renameNode"), //
 		jMethod<::jvoid(::javax::xml::transform::Source)>("setContent"), //
 		jMethod<::jvoid(::java::lang::String)>("setContentId"), //
 		jMethod<::jvoid(::java::lang::String)>("setContentLocation"), //
+		jMethod<::jvoid(::java::lang::String)>("setDocumentURI"), //
 		jMethod<::jvoid(::java::lang::String, ::java::lang::String)>("setMimeHeader"), //
+		jMethod<::jvoid(::javax::xml::soap::SOAPElement)>("setParentElement"), //
+		jMethod<::jvoid(::jboolean)>("setStrictErrorChecking"), //
+		jMethod<::jvoid(::java::lang::String)>("setValue"), //
+		jMethod<::jvoid(::jboolean)>("setXmlStandalone"), //
+		jMethod<::jvoid(::java::lang::String)>("setXmlVersion"), //
 	};
 
 	template<typename R = ::jvoid, typename... Args>
 	auto addMimeHeader(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addMimeHeader")] != -1);
 		return call<R>("addMimeHeader", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Node, typename... Args>
+	auto adoptNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("adoptNode")] != -1);
+		return call<R>("adoptNode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Attr, typename... Args>
+	auto createAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createAttribute")] != -1);
+		return call<R>("createAttribute", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Attr, typename... Args>
+	auto createAttributeNS(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createAttributeNS")] != -1);
+		return call<R>("createAttributeNS", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::CDATASection, typename... Args>
+	auto createCDATASection(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createCDATASection")] != -1);
+		return call<R>("createCDATASection", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Comment, typename... Args>
+	auto createComment(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createComment")] != -1);
+		return call<R>("createComment", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::DocumentFragment, typename... Args>
+	auto createDocumentFragment(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createDocumentFragment")] != -1);
+		return call<R>("createDocumentFragment", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Element, typename... Args>
+	auto createElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createElement")] != -1);
+		return call<R>("createElement", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Element, typename... Args>
+	auto createElementNS(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createElementNS")] != -1);
+		return call<R>("createElementNS", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::EntityReference, typename... Args>
+	auto createEntityReference(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createEntityReference")] != -1);
+		return call<R>("createEntityReference", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::ProcessingInstruction, typename... Args>
+	auto createProcessingInstruction(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createProcessingInstruction")] != -1);
+		return call<R>("createProcessingInstruction", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Text, typename... Args>
+	auto createTextNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createTextNode")] != -1);
+		return call<R>("createTextNode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto detachNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("detachNode")] != -1);
+		return call<R>("detachNode", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Iterator, typename... Args>
@@ -62,10 +171,64 @@ public:
 		return call<R>("getContentLocation", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::org::w3c::dom::DocumentType, typename... Args>
+	auto getDoctype(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDoctype")] != -1);
+		return call<R>("getDoctype", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Element, typename... Args>
+	auto getDocumentElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDocumentElement")] != -1);
+		return call<R>("getDocumentElement", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDocumentURI(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDocumentURI")] != -1);
+		return call<R>("getDocumentURI", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::DOMConfiguration, typename... Args>
+	auto getDomConfig(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDomConfig")] != -1);
+		return call<R>("getDomConfig", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Element, typename... Args>
+	auto getElementById(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getElementById")] != -1);
+		return call<R>("getElementById", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::NodeList, typename... Args>
+	auto getElementsByTagName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getElementsByTagName")] != -1);
+		return call<R>("getElementsByTagName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::NodeList, typename... Args>
+	auto getElementsByTagNameNS(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getElementsByTagNameNS")] != -1);
+		return call<R>("getElementsByTagNameNS", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::javax::xml::soap::SOAPEnvelope, typename... Args>
 	auto getEnvelope(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEnvelope")] != -1);
 		return call<R>("getEnvelope", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::DOMImplementation, typename... Args>
+	auto getImplementation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getImplementation")] != -1);
+		return call<R>("getImplementation", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getInputEncoding(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInputEncoding")] != -1);
+		return call<R>("getInputEncoding", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Iterator, typename... Args>
@@ -86,6 +249,60 @@ public:
 		return call<R>("getNonMatchingMimeHeaders", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::javax::xml::soap::SOAPElement, typename... Args>
+	auto getParentElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getParentElement")] != -1);
+		return call<R>("getParentElement", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getStrictErrorChecking(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStrictErrorChecking")] != -1);
+		return call<R>("getStrictErrorChecking", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getValue")] != -1);
+		return call<R>("getValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getXmlEncoding(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getXmlEncoding")] != -1);
+		return call<R>("getXmlEncoding", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getXmlStandalone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getXmlStandalone")] != -1);
+		return call<R>("getXmlStandalone", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getXmlVersion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getXmlVersion")] != -1);
+		return call<R>("getXmlVersion", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Node, typename... Args>
+	auto importNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("importNode")] != -1);
+		return call<R>("importNode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto normalizeDocument(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("normalizeDocument")] != -1);
+		return call<R>("normalizeDocument", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto recycleNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("recycleNode")] != -1);
+		return call<R>("recycleNode", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::jvoid, typename... Args>
 	auto removeAllMimeHeaders(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeAllMimeHeaders")] != -1);
@@ -96,6 +313,12 @@ public:
 	auto removeMimeHeader(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeMimeHeader")] != -1);
 		return call<R>("removeMimeHeader", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Node, typename... Args>
+	auto renameNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("renameNode")] != -1);
+		return call<R>("renameNode", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
@@ -117,9 +340,45 @@ public:
 	}
 
 	template<typename R = ::jvoid, typename... Args>
+	auto setDocumentURI(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setDocumentURI")] != -1);
+		return call<R>("setDocumentURI", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
 	auto setMimeHeader(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setMimeHeader")] != -1);
 		return call<R>("setMimeHeader", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setParentElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setParentElement")] != -1);
+		return call<R>("setParentElement", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setStrictErrorChecking(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setStrictErrorChecking")] != -1);
+		return call<R>("setStrictErrorChecking", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setValue")] != -1);
+		return call<R>("setValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setXmlStandalone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setXmlStandalone")] != -1);
+		return call<R>("setXmlStandalone", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setXmlVersion(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setXmlVersion")] != -1);
+		return call<R>("setXmlVersion", std::forward<Args>(args)...);
 	}
 
 };

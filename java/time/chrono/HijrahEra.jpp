@@ -20,12 +20,42 @@ public:
 	}
 
 	constexpr static Enume method_signatures{
+		jMethod<::java::time::temporal::Temporal(::java::time::temporal::Temporal)>("adjustInto"), //
+		jMethod<::jint(::java::time::temporal::TemporalField)>("get"), //
+		jMethod<::java::lang::String(::java::time::format::TextStyle, ::java::util::Locale)>("getDisplayName"), //
+		jMethod<::jlong(::java::time::temporal::TemporalField)>("getLong"), //
 		jMethod<::jint()>("getValue"), //
+		jMethod<::jboolean(::java::time::temporal::TemporalField)>("isSupported"), //
 		jMethod<::java::time::chrono::HijrahEra(::jint)>("of"), //
+		jMethod<::java::lang::Object(::java::time::temporal::TemporalQuery)>("query"), //
 		jMethod<::java::time::temporal::ValueRange(::java::time::temporal::TemporalField)>("range"), //
 		jMethod<::java::time::chrono::HijrahEra(::java::lang::String)>("valueOf"), //
 		jMethod<::java::time::chrono::HijrahEra *()>("values"), //
 	};
+
+	template<typename R = ::java::time::temporal::Temporal, typename... Args>
+	auto adjustInto(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("adjustInto")] != -1);
+		return call<R>("adjustInto", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto get(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get")] != -1);
+		return call<R>("get", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDisplayName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDisplayName")] != -1);
+		return call<R>("getDisplayName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getLong(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLong")] != -1);
+		return call<R>("getLong", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::jint, typename... Args>
 	auto getValue(Args &&...args) const {
@@ -33,10 +63,22 @@ public:
 		return call<R>("getValue", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::jboolean, typename... Args>
+	auto isSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSupported")] != -1);
+		return call<R>("isSupported", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::java::time::chrono::HijrahEra, typename... Args>
 	static auto of(Args &&...args) {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("of")] != -1);
 		return scall<R>("of", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto query(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("query")] != -1);
+		return call<R>("query", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::time::temporal::ValueRange, typename... Args>

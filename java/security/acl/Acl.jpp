@@ -15,10 +15,13 @@ public:
 
 	constexpr static Enume method_signatures{
 		jMethod<::jboolean(::java::security::Principal, ::java::security::acl::AclEntry)>("addEntry"), //
+		jMethod<::jboolean(::java::security::Principal, ::java::security::Principal)>("addOwner"), //
 		jMethod<::jboolean(::java::security::Principal, ::java::security::acl::Permission)>("checkPermission"), //
+		jMethod<::jboolean(::java::security::Principal, ::java::security::Principal)>("deleteOwner"), //
 		jMethod<::java::util::Enumeration()>("entries"), //
 		jMethod<::java::lang::String()>("getName"), //
 		jMethod<::java::util::Enumeration(::java::security::Principal)>("getPermissions"), //
+		jMethod<::jboolean(::java::security::Principal)>("isOwner"), //
 		jMethod<::jboolean(::java::security::Principal, ::java::security::acl::AclEntry)>("removeEntry"), //
 		jMethod<::jvoid(::java::security::Principal, ::java::lang::String)>("setName"), //
 		jMethod<::java::lang::String()>("toString"), //
@@ -31,9 +34,21 @@ public:
 	}
 
 	template<typename R = ::jboolean, typename... Args>
+	auto addOwner(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addOwner")] != -1);
+		return call<R>("addOwner", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
 	auto checkPermission(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkPermission")] != -1);
 		return call<R>("checkPermission", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto deleteOwner(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("deleteOwner")] != -1);
+		return call<R>("deleteOwner", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Enumeration, typename... Args>
@@ -52,6 +67,12 @@ public:
 	auto getPermissions(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPermissions")] != -1);
 		return call<R>("getPermissions", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isOwner(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isOwner")] != -1);
+		return call<R>("isOwner", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>

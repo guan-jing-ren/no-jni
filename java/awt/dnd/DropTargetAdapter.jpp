@@ -18,6 +18,7 @@ public:
 		jMethod<::jvoid(::java::awt::dnd::DropTargetDragEvent)>("dragEnter"), //
 		jMethod<::jvoid(::java::awt::dnd::DropTargetEvent)>("dragExit"), //
 		jMethod<::jvoid(::java::awt::dnd::DropTargetDragEvent)>("dragOver"), //
+		jMethod<::jvoid(::java::awt::dnd::DropTargetDropEvent)>("drop"), //
 		jMethod<::jvoid(::java::awt::dnd::DropTargetDragEvent)>("dropActionChanged"), //
 	};
 
@@ -37,6 +38,12 @@ public:
 	auto dragOver(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dragOver")] != -1);
 		return call<R>("dragOver", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto drop(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("drop")] != -1);
+		return call<R>("drop", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

@@ -20,6 +20,7 @@ public:
 		jMethod<::jboolean(::java::awt::geom::Point2D)>("contains"), //
 		jMethod<::jboolean(::java::awt::geom::Rectangle2D)>("contains"), //
 		jMethod<::java::awt::Rectangle()>("getBounds"), //
+		jMethod<::java::awt::geom::Rectangle2D()>("getBounds2D"), //
 		jMethod<::java::awt::geom::Point2D()>("getP1"), //
 		jMethod<::java::awt::geom::Point2D()>("getP2"), //
 		jMethod<::java::awt::geom::PathIterator(::java::awt::geom::AffineTransform)>("getPathIterator"), //
@@ -69,6 +70,12 @@ public:
 	auto getBounds(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBounds")] != -1);
 		return call<R>("getBounds", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::awt::geom::Rectangle2D, typename... Args>
+	auto getBounds2D(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBounds2D")] != -1);
+		return call<R>("getBounds2D", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::geom::Point2D, typename... Args>

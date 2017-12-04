@@ -22,12 +22,15 @@ public:
 		jMethod<::jboolean(::java::lang::Object)>("add"), //
 		jMethod<::jboolean(::java::util::Collection)>("addAll"), //
 		jMethod<::jvoid(::java::beans::beancontext::BeanContextMembershipListener)>("addBeanContextMembershipListener"), //
+		jMethod<::jvoid(::java::lang::String, ::java::beans::PropertyChangeListener)>("addPropertyChangeListener"), //
+		jMethod<::jvoid(::java::lang::String, ::java::beans::VetoableChangeListener)>("addVetoableChangeListener"), //
 		jMethod<::jboolean()>("avoidingGui"), //
 		jMethod<::jvoid()>("clear"), //
 		jMethod<::jboolean(::java::lang::Object)>("contains"), //
 		jMethod<::jboolean(::java::util::Collection)>("containsAll"), //
 		jMethod<::jboolean(::java::lang::Object)>("containsKey"), //
 		jMethod<::jvoid()>("dontUseGui"), //
+		jMethod<::java::beans::beancontext::BeanContext()>("getBeanContext"), //
 		jMethod<::java::beans::beancontext::BeanContext()>("getBeanContextPeer"), //
 		jMethod<::java::util::Locale()>("getLocale"), //
 		jMethod<::java::net::URL(::java::lang::String, ::java::beans::beancontext::BeanContextChild)>("getResource"), //
@@ -44,7 +47,10 @@ public:
 		jMethod<::jboolean(::java::lang::Object)>("remove"), //
 		jMethod<::jboolean(::java::util::Collection)>("removeAll"), //
 		jMethod<::jvoid(::java::beans::beancontext::BeanContextMembershipListener)>("removeBeanContextMembershipListener"), //
+		jMethod<::jvoid(::java::lang::String, ::java::beans::PropertyChangeListener)>("removePropertyChangeListener"), //
+		jMethod<::jvoid(::java::lang::String, ::java::beans::VetoableChangeListener)>("removeVetoableChangeListener"), //
 		jMethod<::jboolean(::java::util::Collection)>("retainAll"), //
+		jMethod<::jvoid(::java::beans::beancontext::BeanContext)>("setBeanContext"), //
 		jMethod<::jvoid(::jboolean)>("setDesignTime"), //
 		jMethod<::jvoid(::java::util::Locale)>("setLocale"), //
 		jMethod<::jint()>("size"), //
@@ -70,6 +76,18 @@ public:
 	auto addBeanContextMembershipListener(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addBeanContextMembershipListener")] != -1);
 		return call<R>("addBeanContextMembershipListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addPropertyChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addPropertyChangeListener")] != -1);
+		return call<R>("addPropertyChangeListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addVetoableChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addVetoableChangeListener")] != -1);
+		return call<R>("addVetoableChangeListener", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
@@ -106,6 +124,12 @@ public:
 	auto dontUseGui(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dontUseGui")] != -1);
 		return call<R>("dontUseGui", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::beans::beancontext::BeanContext, typename... Args>
+	auto getBeanContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBeanContext")] != -1);
+		return call<R>("getBeanContext", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::beans::beancontext::BeanContext, typename... Args>
@@ -204,10 +228,28 @@ public:
 		return call<R>("removeBeanContextMembershipListener", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::jvoid, typename... Args>
+	auto removePropertyChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removePropertyChangeListener")] != -1);
+		return call<R>("removePropertyChangeListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeVetoableChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeVetoableChangeListener")] != -1);
+		return call<R>("removeVetoableChangeListener", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::jboolean, typename... Args>
 	auto retainAll(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("retainAll")] != -1);
 		return call<R>("retainAll", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setBeanContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setBeanContext")] != -1);
+		return call<R>("setBeanContext", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

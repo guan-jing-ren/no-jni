@@ -19,7 +19,18 @@ public:
 		jMethod<::jvoid(::jint)>("write"), //
 		jMethod<::jvoid(::jbyte *)>("write"), //
 		jMethod<::jvoid(::jbyte *, ::jint, ::jint)>("write"), //
+		jMethod<::jvoid(::jboolean)>("writeBoolean"), //
+		jMethod<::jvoid(::jint)>("writeByte"), //
+		jMethod<::jvoid(::java::lang::String)>("writeBytes"), //
+		jMethod<::jvoid(::jint)>("writeChar"), //
+		jMethod<::jvoid(::java::lang::String)>("writeChars"), //
+		jMethod<::jvoid(::jdouble)>("writeDouble"), //
+		jMethod<::jvoid(::jfloat)>("writeFloat"), //
+		jMethod<::jvoid(::jint)>("writeInt"), //
+		jMethod<::jvoid(::jlong)>("writeLong"), //
 		jMethod<::jvoid(::java::lang::Object)>("writeObject"), //
+		jMethod<::jvoid(::jint)>("writeShort"), //
+		jMethod<::jvoid(::java::lang::String)>("writeUTF"), //
 	};
 
 	template<typename R = ::jvoid, typename... Args>
@@ -41,9 +52,75 @@ public:
 	}
 
 	template<typename R = ::jvoid, typename... Args>
+	auto writeBoolean(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeBoolean")] != -1);
+		return call<R>("writeBoolean", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeByte(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeByte")] != -1);
+		return call<R>("writeByte", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeBytes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeBytes")] != -1);
+		return call<R>("writeBytes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeChar(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeChar")] != -1);
+		return call<R>("writeChar", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeChars(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeChars")] != -1);
+		return call<R>("writeChars", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeDouble(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeDouble")] != -1);
+		return call<R>("writeDouble", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeFloat(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeFloat")] != -1);
+		return call<R>("writeFloat", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeInt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeInt")] != -1);
+		return call<R>("writeInt", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeLong(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeLong")] != -1);
+		return call<R>("writeLong", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
 	auto writeObject(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeObject")] != -1);
 		return call<R>("writeObject", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeShort(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeShort")] != -1);
+		return call<R>("writeShort", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto writeUTF(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeUTF")] != -1);
+		return call<R>("writeUTF", std::forward<Args>(args)...);
 	}
 
 };

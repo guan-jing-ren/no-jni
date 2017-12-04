@@ -15,12 +15,19 @@ public:
 
 	constexpr static Enume method_signatures{
 		jMethod<::java::lang::reflect::Type()>("getGenericComponentType"), //
+		jMethod<::java::lang::String()>("getTypeName"), //
 	};
 
 	template<typename R = ::java::lang::reflect::Type, typename... Args>
 	auto getGenericComponentType(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getGenericComponentType")] != -1);
 		return call<R>("getGenericComponentType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getTypeName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTypeName")] != -1);
+		return call<R>("getTypeName", std::forward<Args>(args)...);
 	}
 
 };

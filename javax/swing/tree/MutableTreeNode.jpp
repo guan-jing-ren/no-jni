@@ -14,7 +14,14 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::java::util::Enumeration()>("children"), //
+		jMethod<::jboolean()>("getAllowsChildren"), //
+		jMethod<::javax::swing::tree::TreeNode(::jint)>("getChildAt"), //
+		jMethod<::jint()>("getChildCount"), //
+		jMethod<::jint(::javax::swing::tree::TreeNode)>("getIndex"), //
+		jMethod<::javax::swing::tree::TreeNode()>("getParent"), //
 		jMethod<::jvoid(::javax::swing::tree::MutableTreeNode, ::jint)>("insert"), //
+		jMethod<::jboolean()>("isLeaf"), //
 		jMethod<::jvoid(::jint)>("remove"), //
 		jMethod<::jvoid(::javax::swing::tree::MutableTreeNode)>("remove"), //
 		jMethod<::jvoid()>("removeFromParent"), //
@@ -22,10 +29,52 @@ public:
 		jMethod<::jvoid(::java::lang::Object)>("setUserObject"), //
 	};
 
+	template<typename R = ::java::util::Enumeration, typename... Args>
+	auto children(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("children")] != -1);
+		return call<R>("children", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getAllowsChildren(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAllowsChildren")] != -1);
+		return call<R>("getAllowsChildren", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::tree::TreeNode, typename... Args>
+	auto getChildAt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getChildAt")] != -1);
+		return call<R>("getChildAt", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getChildCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getChildCount")] != -1);
+		return call<R>("getChildCount", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIndex")] != -1);
+		return call<R>("getIndex", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::tree::TreeNode, typename... Args>
+	auto getParent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getParent")] != -1);
+		return call<R>("getParent", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::jvoid, typename... Args>
 	auto insert(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("insert")] != -1);
 		return call<R>("insert", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isLeaf(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isLeaf")] != -1);
+		return call<R>("isLeaf", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

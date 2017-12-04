@@ -14,14 +14,42 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::swing::event::ListDataListener)>("addListDataListener"), //
+		jMethod<::java::lang::Object(::jint)>("getElementAt"), //
 		jMethod<::java::lang::Object()>("getSelectedItem"), //
+		jMethod<::jint()>("getSize"), //
+		jMethod<::jvoid(::javax::swing::event::ListDataListener)>("removeListDataListener"), //
 		jMethod<::jvoid(::java::lang::Object)>("setSelectedItem"), //
 	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addListDataListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addListDataListener")] != -1);
+		return call<R>("addListDataListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getElementAt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getElementAt")] != -1);
+		return call<R>("getElementAt", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto getSelectedItem(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSelectedItem")] != -1);
 		return call<R>("getSelectedItem", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getSize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSize")] != -1);
+		return call<R>("getSize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeListDataListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeListDataListener")] != -1);
+		return call<R>("removeListDataListener", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

@@ -14,8 +14,29 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::org::omg::CORBA::Policy()>("copy"), //
+		jMethod<::jvoid()>("destroy"), //
+		jMethod<::jint()>("policy_type"), //
 		jMethod<::org::omg::PortableServer::ImplicitActivationPolicyValue()>("value"), //
 	};
+
+	template<typename R = ::org::omg::CORBA::Policy, typename... Args>
+	auto copy(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("copy")] != -1);
+		return call<R>("copy", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto destroy(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("destroy")] != -1);
+		return call<R>("destroy", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto policy_type(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("policy_type")] != -1);
+		return call<R>("policy_type", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::org::omg::PortableServer::ImplicitActivationPolicyValue, typename... Args>
 	auto value(Args &&...args) const {

@@ -14,8 +14,84 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
-		cexprstr{"\0"}, //
+		jMethod<::jbyte *()>("adapter_id"), //
+		jMethod<::java::lang::String *()>("adapter_name"), //
+		jMethod<::jvoid(::org::omg::IOP::ServiceContext, ::jboolean)>("add_reply_service_context"), //
+		jMethod<::org::omg::CORBA::Policy(::jint)>("get_server_policy"), //
+		jMethod<::jbyte *()>("object_id"), //
+		jMethod<::java::lang::String()>("orb_id"), //
+		jMethod<::org::omg::CORBA::Any()>("sending_exception"), //
+		jMethod<::java::lang::String()>("server_id"), //
+		jMethod<::jvoid(::jint, ::org::omg::CORBA::Any)>("set_slot"), //
+		jMethod<::jboolean(::java::lang::String)>("target_is_a"), //
+		jMethod<::java::lang::String()>("target_most_derived_interface"), //
 	};
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto adapter_id(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("adapter_id")] != -1);
+		return call<R>("adapter_id", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto adapter_name(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("adapter_name")] != -1);
+		return call<R>("adapter_name", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto add_reply_service_context(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("add_reply_service_context")] != -1);
+		return call<R>("add_reply_service_context", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::Policy, typename... Args>
+	auto get_server_policy(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get_server_policy")] != -1);
+		return call<R>("get_server_policy", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto object_id(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("object_id")] != -1);
+		return call<R>("object_id", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto orb_id(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("orb_id")] != -1);
+		return call<R>("orb_id", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::Any, typename... Args>
+	auto sending_exception(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("sending_exception")] != -1);
+		return call<R>("sending_exception", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto server_id(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("server_id")] != -1);
+		return call<R>("server_id", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set_slot(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set_slot")] != -1);
+		return call<R>("set_slot", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto target_is_a(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("target_is_a")] != -1);
+		return call<R>("target_is_a", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto target_most_derived_interface(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("target_most_derived_interface")] != -1);
+		return call<R>("target_most_derived_interface", std::forward<Args>(args)...);
+	}
 
 };
 

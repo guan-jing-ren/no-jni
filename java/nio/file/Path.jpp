@@ -19,6 +19,7 @@ public:
 		jMethod<::jboolean(::java::lang::String)>("endsWith"), //
 		jMethod<::jboolean(::java::nio::file::Path)>("endsWith"), //
 		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jvoid(::java::util::function::Consumer)>("forEach"), //
 		jMethod<::java::nio::file::Path()>("getFileName"), //
 		jMethod<::java::nio::file::FileSystem()>("getFileSystem"), //
 		jMethod<::java::nio::file::Path(::jint)>("getName"), //
@@ -36,6 +37,7 @@ public:
 		jMethod<::java::nio::file::Path(::java::nio::file::Path)>("resolve"), //
 		jMethod<::java::nio::file::Path(::java::lang::String)>("resolveSibling"), //
 		jMethod<::java::nio::file::Path(::java::nio::file::Path)>("resolveSibling"), //
+		jMethod<::java::util::Spliterator()>("spliterator"), //
 		jMethod<::jboolean(::java::lang::String)>("startsWith"), //
 		jMethod<::jboolean(::java::nio::file::Path)>("startsWith"), //
 		jMethod<::java::nio::file::Path(::jint, ::jint)>("subpath"), //
@@ -62,6 +64,12 @@ public:
 	auto equals(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
 		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto forEach(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("forEach")] != -1);
+		return call<R>("forEach", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::nio::file::Path, typename... Args>
@@ -146,6 +154,12 @@ public:
 	auto resolveSibling(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("resolveSibling")] != -1);
 		return call<R>("resolveSibling", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Spliterator, typename... Args>
+	auto spliterator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("spliterator")] != -1);
+		return call<R>("spliterator", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>

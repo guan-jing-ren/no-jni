@@ -22,6 +22,7 @@ public:
 	constexpr static Enume method_signatures{
 		jMethod<::java::lang::String()>("getId"), //
 		jMethod<::java::util::List()>("getReferences"), //
+		jMethod<::jboolean(::java::lang::String)>("isFeatureSupported"), //
 	};
 
 	template<typename R = ::java::lang::String, typename... Args>
@@ -34,6 +35,12 @@ public:
 	auto getReferences(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getReferences")] != -1);
 		return call<R>("getReferences", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isFeatureSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isFeatureSupported")] != -1);
+		return call<R>("isFeatureSupported", std::forward<Args>(args)...);
 	}
 
 };

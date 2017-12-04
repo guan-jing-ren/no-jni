@@ -14,6 +14,7 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::org::omg::CORBA::portable::OutputStream(::java::lang::String, ::org::omg::CORBA::portable::InputStream, ::org::omg::CORBA::portable::ResponseHandler)>("_invoke"), //
 		jMethod<::jvoid()>("deactivate"), //
 		jMethod<::java::rmi::Remote()>("getTarget"), //
 		jMethod<::org::omg::CORBA::ORB()>("orb"), //
@@ -21,6 +22,12 @@ public:
 		jMethod<::jvoid(::java::rmi::Remote)>("setTarget"), //
 		jMethod<::org::omg::CORBA::Object()>("thisObject"), //
 	};
+
+	template<typename R = ::org::omg::CORBA::portable::OutputStream, typename... Args>
+	auto _invoke(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("_invoke")] != -1);
+		return call<R>("_invoke", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto deactivate(Args &&...args) const {

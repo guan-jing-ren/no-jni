@@ -19,6 +19,7 @@ public:
 		jMethod<::java::lang::String()>("getId"), //
 		jMethod<::java::util::List()>("getReferences"), //
 		jMethod<::javax::xml::crypto::dsig::SignatureMethod()>("getSignatureMethod"), //
+		jMethod<::jboolean(::java::lang::String)>("isFeatureSupported"), //
 	};
 
 	template<typename R = ::javax::xml::crypto::dsig::CanonicalizationMethod, typename... Args>
@@ -49,6 +50,12 @@ public:
 	auto getSignatureMethod(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSignatureMethod")] != -1);
 		return call<R>("getSignatureMethod", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isFeatureSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isFeatureSupported")] != -1);
+		return call<R>("isFeatureSupported", std::forward<Args>(args)...);
 	}
 
 };

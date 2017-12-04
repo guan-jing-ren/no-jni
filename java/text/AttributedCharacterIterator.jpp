@@ -14,16 +14,44 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Object()>("clone"), //
+		jMethod<::jchar()>("current"), //
+		jMethod<::jchar()>("first"), //
 		jMethod<::java::util::Set()>("getAllAttributeKeys"), //
 		jMethod<::java::lang::Object(::java::text::AttributedCharacterIterator$Attribute)>("getAttribute"), //
 		jMethod<::java::util::Map()>("getAttributes"), //
+		jMethod<::jint()>("getBeginIndex"), //
+		jMethod<::jint()>("getEndIndex"), //
+		jMethod<::jint()>("getIndex"), //
 		jMethod<::jint()>("getRunLimit"), //
 		jMethod<::jint(::java::text::AttributedCharacterIterator$Attribute)>("getRunLimit"), //
 		jMethod<::jint(::java::util::Set)>("getRunLimit"), //
 		jMethod<::jint()>("getRunStart"), //
 		jMethod<::jint(::java::text::AttributedCharacterIterator$Attribute)>("getRunStart"), //
 		jMethod<::jint(::java::util::Set)>("getRunStart"), //
+		jMethod<::jchar()>("last"), //
+		jMethod<::jchar()>("next"), //
+		jMethod<::jchar()>("previous"), //
+		jMethod<::jchar(::jint)>("setIndex"), //
 	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jchar, typename... Args>
+	auto current(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("current")] != -1);
+		return call<R>("current", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jchar, typename... Args>
+	auto first(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("first")] != -1);
+		return call<R>("first", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::java::util::Set, typename... Args>
 	auto getAllAttributeKeys(Args &&...args) const {
@@ -44,6 +72,24 @@ public:
 	}
 
 	template<typename R = ::jint, typename... Args>
+	auto getBeginIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBeginIndex")] != -1);
+		return call<R>("getBeginIndex", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getEndIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEndIndex")] != -1);
+		return call<R>("getEndIndex", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIndex")] != -1);
+		return call<R>("getIndex", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
 	auto getRunLimit(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRunLimit")] != -1);
 		return call<R>("getRunLimit", std::forward<Args>(args)...);
@@ -53,6 +99,30 @@ public:
 	auto getRunStart(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRunStart")] != -1);
 		return call<R>("getRunStart", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jchar, typename... Args>
+	auto last(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("last")] != -1);
+		return call<R>("last", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jchar, typename... Args>
+	auto next(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("next")] != -1);
+		return call<R>("next", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jchar, typename... Args>
+	auto previous(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("previous")] != -1);
+		return call<R>("previous", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jchar, typename... Args>
+	auto setIndex(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setIndex")] != -1);
+		return call<R>("setIndex", std::forward<Args>(args)...);
 	}
 
 };

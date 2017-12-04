@@ -25,9 +25,12 @@ public:
 		jMethod<::jvoid(::jint, ::jint)>("fireTableRowsUpdated"), //
 		jMethod<::jvoid()>("fireTableStructureChanged"), //
 		jMethod<::java::lang::Class(::jint)>("getColumnClass"), //
+		jMethod<::jint()>("getColumnCount"), //
 		jMethod<::java::lang::String(::jint)>("getColumnName"), //
 		jMethod<::java::util::EventListener *(::java::lang::Class)>("getListeners"), //
+		jMethod<::jint()>("getRowCount"), //
 		jMethod<::javax::swing::event::TableModelListener *()>("getTableModelListeners"), //
+		jMethod<::java::lang::Object(::jint, ::jint)>("getValueAt"), //
 		jMethod<::jboolean(::jint, ::jint)>("isCellEditable"), //
 		jMethod<::jvoid(::javax::swing::event::TableModelListener)>("removeTableModelListener"), //
 		jMethod<::jvoid(::java::lang::Object, ::jint, ::jint)>("setValueAt"), //
@@ -93,6 +96,12 @@ public:
 		return call<R>("getColumnClass", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::jint, typename... Args>
+	auto getColumnCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getColumnCount")] != -1);
+		return call<R>("getColumnCount", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getColumnName(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getColumnName")] != -1);
@@ -105,10 +114,22 @@ public:
 		return call<R>("getListeners", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::jint, typename... Args>
+	auto getRowCount(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRowCount")] != -1);
+		return call<R>("getRowCount", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::javax::swing::event::TableModelListener *, typename... Args>
 	auto getTableModelListeners(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTableModelListeners")] != -1);
 		return call<R>("getTableModelListeners", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getValueAt(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getValueAt")] != -1);
+		return call<R>("getValueAt", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>

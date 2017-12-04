@@ -20,8 +20,28 @@ public:
 	}
 
 	constexpr static Enume method_signatures{
-		cexprstr{"\0"}, //
+		jMethod<::java::lang::String()>("getBindingID"), //
+		jMethod<::java::util::List()>("getHandlerChain"), //
+		jMethod<::jvoid(::java::util::List)>("setHandlerChain"), //
 	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getBindingID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBindingID")] != -1);
+		return call<R>("getBindingID", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getHandlerChain(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHandlerChain")] != -1);
+		return call<R>("getHandlerChain", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setHandlerChain(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setHandlerChain")] != -1);
+		return call<R>("setHandlerChain", std::forward<Args>(args)...);
+	}
 
 };
 

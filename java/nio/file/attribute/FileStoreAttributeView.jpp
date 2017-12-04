@@ -14,8 +14,14 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
-		cexprstr{"\0"}, //
+		jMethod<::java::lang::String()>("name"), //
 	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto name(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("name")] != -1);
+		return call<R>("name", std::forward<Args>(args)...);
+	}
 
 };
 

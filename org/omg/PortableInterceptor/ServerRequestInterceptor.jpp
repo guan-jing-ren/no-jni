@@ -14,8 +14,42 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
-		cexprstr{"\0"}, //
+		jMethod<::jvoid(::org::omg::PortableInterceptor::ServerRequestInfo)>("receive_request"), //
+		jMethod<::jvoid(::org::omg::PortableInterceptor::ServerRequestInfo)>("receive_request_service_contexts"), //
+		jMethod<::jvoid(::org::omg::PortableInterceptor::ServerRequestInfo)>("send_exception"), //
+		jMethod<::jvoid(::org::omg::PortableInterceptor::ServerRequestInfo)>("send_other"), //
+		jMethod<::jvoid(::org::omg::PortableInterceptor::ServerRequestInfo)>("send_reply"), //
 	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto receive_request(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("receive_request")] != -1);
+		return call<R>("receive_request", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto receive_request_service_contexts(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("receive_request_service_contexts")] != -1);
+		return call<R>("receive_request_service_contexts", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto send_exception(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("send_exception")] != -1);
+		return call<R>("send_exception", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto send_other(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("send_other")] != -1);
+		return call<R>("send_other", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto send_reply(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("send_reply")] != -1);
+		return call<R>("send_reply", std::forward<Args>(args)...);
+	}
 
 };
 

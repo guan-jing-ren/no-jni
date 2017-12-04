@@ -17,12 +17,15 @@ public:
 		jMethod<::jvoid()>("checkValidity"), //
 		jMethod<::jvoid(::java::util::Date)>("checkValidity"), //
 		jMethod<::jint()>("getBasicConstraints"), //
+		jMethod<::java::util::Set()>("getCriticalExtensionOIDs"), //
 		jMethod<::java::util::List()>("getExtendedKeyUsage"), //
+		jMethod<::jbyte *(::java::lang::String)>("getExtensionValue"), //
 		jMethod<::java::util::Collection()>("getIssuerAlternativeNames"), //
 		jMethod<::java::security::Principal()>("getIssuerDN"), //
 		jMethod<::jboolean *()>("getIssuerUniqueID"), //
 		jMethod<::javax::security::auth::x500::X500Principal()>("getIssuerX500Principal"), //
 		jMethod<::jboolean *()>("getKeyUsage"), //
+		jMethod<::java::util::Set()>("getNonCriticalExtensionOIDs"), //
 		jMethod<::java::util::Date()>("getNotAfter"), //
 		jMethod<::java::util::Date()>("getNotBefore"), //
 		jMethod<::java::math::BigInteger()>("getSerialNumber"), //
@@ -36,6 +39,7 @@ public:
 		jMethod<::javax::security::auth::x500::X500Principal()>("getSubjectX500Principal"), //
 		jMethod<::jbyte *()>("getTBSCertificate"), //
 		jMethod<::jint()>("getVersion"), //
+		jMethod<::jboolean()>("hasUnsupportedCriticalExtension"), //
 		jMethod<::jvoid(::java::security::PublicKey, ::java::security::Provider)>("verify"), //
 	};
 
@@ -51,10 +55,22 @@ public:
 		return call<R>("getBasicConstraints", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::java::util::Set, typename... Args>
+	auto getCriticalExtensionOIDs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCriticalExtensionOIDs")] != -1);
+		return call<R>("getCriticalExtensionOIDs", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::java::util::List, typename... Args>
 	auto getExtendedKeyUsage(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getExtendedKeyUsage")] != -1);
 		return call<R>("getExtendedKeyUsage", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jbyte *, typename... Args>
+	auto getExtensionValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getExtensionValue")] != -1);
+		return call<R>("getExtensionValue", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Collection, typename... Args>
@@ -85,6 +101,12 @@ public:
 	auto getKeyUsage(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getKeyUsage")] != -1);
 		return call<R>("getKeyUsage", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto getNonCriticalExtensionOIDs(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNonCriticalExtensionOIDs")] != -1);
+		return call<R>("getNonCriticalExtensionOIDs", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Date, typename... Args>
@@ -163,6 +185,12 @@ public:
 	auto getVersion(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getVersion")] != -1);
 		return call<R>("getVersion", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasUnsupportedCriticalExtension(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hasUnsupportedCriticalExtension")] != -1);
+		return call<R>("hasUnsupportedCriticalExtension", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

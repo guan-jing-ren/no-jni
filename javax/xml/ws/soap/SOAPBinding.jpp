@@ -41,13 +41,28 @@ public:
 	}
 
 	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getBindingID"), //
+		jMethod<::java::util::List()>("getHandlerChain"), //
 		jMethod<::javax::xml::soap::MessageFactory()>("getMessageFactory"), //
 		jMethod<::java::util::Set()>("getRoles"), //
 		jMethod<::javax::xml::soap::SOAPFactory()>("getSOAPFactory"), //
 		jMethod<::jboolean()>("isMTOMEnabled"), //
+		jMethod<::jvoid(::java::util::List)>("setHandlerChain"), //
 		jMethod<::jvoid(::jboolean)>("setMTOMEnabled"), //
 		jMethod<::jvoid(::java::util::Set)>("setRoles"), //
 	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getBindingID(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBindingID")] != -1);
+		return call<R>("getBindingID", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getHandlerChain(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getHandlerChain")] != -1);
+		return call<R>("getHandlerChain", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::javax::xml::soap::MessageFactory, typename... Args>
 	auto getMessageFactory(Args &&...args) const {
@@ -71,6 +86,12 @@ public:
 	auto isMTOMEnabled(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isMTOMEnabled")] != -1);
 		return call<R>("isMTOMEnabled", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setHandlerChain(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setHandlerChain")] != -1);
+		return call<R>("setHandlerChain", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

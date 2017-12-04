@@ -54,7 +54,9 @@ public:
 		jMethod<::jboolean(::jint)>("isReadOnly"), //
 		jMethod<::jboolean(::jint)>("isSearchable"), //
 		jMethod<::jboolean(::jint)>("isSigned"), //
+		jMethod<::jboolean(::java::lang::Class)>("isWrapperFor"), //
 		jMethod<::jboolean(::jint)>("isWritable"), //
+		jMethod<::java::lang::Object(::java::lang::Class)>("unwrap"), //
 	};
 
 	template<typename R = ::java::lang::String, typename... Args>
@@ -178,9 +180,21 @@ public:
 	}
 
 	template<typename R = ::jboolean, typename... Args>
+	auto isWrapperFor(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isWrapperFor")] != -1);
+		return call<R>("isWrapperFor", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
 	auto isWritable(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isWritable")] != -1);
 		return call<R>("isWritable", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto unwrap(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unwrap")] != -1);
+		return call<R>("unwrap", std::forward<Args>(args)...);
 	}
 
 };

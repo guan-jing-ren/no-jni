@@ -20,7 +20,9 @@ public:
 		jMethod<::java::util::Comparator()>("comparator"), //
 		jMethod<::jboolean(::java::lang::Object)>("contains"), //
 		jMethod<::jboolean(::java::util::Collection)>("containsAll"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
 		jMethod<::java::lang::Object()>("first"), //
+		jMethod<::jint()>("hashCode"), //
 		jMethod<::java::util::SortedSet(::java::lang::Object)>("headSet"), //
 		jMethod<::jboolean()>("isEmpty"), //
 		jMethod<::java::util::Iterator()>("iterator"), //
@@ -72,10 +74,22 @@ public:
 		return call<R>("containsAll", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto first(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("first")] != -1);
 		return call<R>("first", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::SortedSet, typename... Args>

@@ -22,16 +22,33 @@ public:
 	constexpr static Enume method_signatures{
 		jConstructor<::jvoid()>(), //
 		jConstructor<::jvoid(::javax::management::MBeanServer)>(), //
+		jMethod<::javax::management::remote::JMXServiceURL()>("getAddress"), //
+		jMethod<::java::util::Map()>("getAttributes"), //
 		jMethod<::java::lang::String *()>("getConnectionIds"), //
 		jMethod<::javax::management::MBeanServer()>("getMBeanServer"), //
 		jMethod<::javax::management::MBeanNotificationInfo *()>("getNotificationInfo"), //
+		jMethod<::jboolean()>("isActive"), //
 		jMethod<::jvoid()>("postDeregister"), //
 		jMethod<::jvoid(::java::lang::Boolean)>("postRegister"), //
 		jMethod<::jvoid()>("preDeregister"), //
 		jMethod<::javax::management::ObjectName(::javax::management::MBeanServer, ::javax::management::ObjectName)>("preRegister"), //
 		jMethod<::jvoid(::javax::management::remote::MBeanServerForwarder)>("setMBeanServerForwarder"), //
+		jMethod<::jvoid()>("start"), //
+		jMethod<::jvoid()>("stop"), //
 		jMethod<::javax::management::remote::JMXConnector(::java::util::Map)>("toJMXConnector"), //
 	};
+
+	template<typename R = ::javax::management::remote::JMXServiceURL, typename... Args>
+	auto getAddress(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAddress")] != -1);
+		return call<R>("getAddress", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto getAttributes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAttributes")] != -1);
+		return call<R>("getAttributes", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::java::lang::String *, typename... Args>
 	auto getConnectionIds(Args &&...args) const {
@@ -49,6 +66,12 @@ public:
 	auto getNotificationInfo(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNotificationInfo")] != -1);
 		return call<R>("getNotificationInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isActive(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isActive")] != -1);
+		return call<R>("isActive", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
@@ -79,6 +102,18 @@ public:
 	auto setMBeanServerForwarder(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setMBeanServerForwarder")] != -1);
 		return call<R>("setMBeanServerForwarder", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto start(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("start")] != -1);
+		return call<R>("start", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto stop(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("stop")] != -1);
+		return call<R>("stop", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::management::remote::JMXConnector, typename... Args>

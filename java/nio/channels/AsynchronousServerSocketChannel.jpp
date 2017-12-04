@@ -19,12 +19,15 @@ public:
 		jMethod<::java::nio::channels::AsynchronousServerSocketChannel(::java::net::SocketAddress)>("bind"), //
 		jMethod<::java::nio::channels::NetworkChannel(::java::net::SocketAddress)>("bind"), //
 		jMethod<::java::nio::channels::AsynchronousServerSocketChannel(::java::net::SocketAddress, ::jint)>("bind"), //
+		jMethod<::jvoid()>("close"), //
 		jMethod<::java::net::SocketAddress()>("getLocalAddress"), //
+		jMethod<::java::lang::Object(::java::net::SocketOption)>("getOption"), //
 		jMethod<::java::nio::channels::AsynchronousServerSocketChannel()>("open"), //
 		jMethod<::java::nio::channels::AsynchronousServerSocketChannel(::java::nio::channels::AsynchronousChannelGroup)>("open"), //
 		jMethod<::java::nio::channels::spi::AsynchronousChannelProvider()>("provider"), //
 		jMethod<::java::nio::channels::AsynchronousServerSocketChannel(::java::net::SocketOption, ::java::lang::Object)>("setOption"), //
 		jMethod<::java::nio::channels::NetworkChannel(::java::net::SocketOption, ::java::lang::Object)>("setOption"), //
+		jMethod<::java::util::Set()>("supportedOptions"), //
 	};
 
 	template<typename R = ::java::util::concurrent::Future, typename... Args>
@@ -39,10 +42,22 @@ public:
 		return call<R>("bind", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::java::net::SocketAddress, typename... Args>
 	auto getLocalAddress(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLocalAddress")] != -1);
 		return call<R>("getLocalAddress", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getOption(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOption")] != -1);
+		return call<R>("getOption", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::nio::channels::AsynchronousServerSocketChannel, typename... Args>
@@ -61,6 +76,12 @@ public:
 	auto setOption(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setOption")] != -1);
 		return call<R>("setOption", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto supportedOptions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("supportedOptions")] != -1);
+		return call<R>("supportedOptions", std::forward<Args>(args)...);
 	}
 
 };

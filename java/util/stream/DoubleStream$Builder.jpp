@@ -16,6 +16,7 @@ public:
 	constexpr static Enume method_signatures{
 		jMethod<::jvoid(::jdouble)>("accept"), //
 		jMethod<::java::util::stream::DoubleStream$Builder(::jdouble)>("add"), //
+		jMethod<::java::util::function::DoubleConsumer(::java::util::function::DoubleConsumer)>("andThen"), //
 		jMethod<::java::util::stream::DoubleStream()>("build"), //
 	};
 
@@ -29,6 +30,12 @@ public:
 	auto add(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("add")] != -1);
 		return call<R>("add", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::function::DoubleConsumer, typename... Args>
+	auto andThen(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("andThen")] != -1);
+		return call<R>("andThen", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::stream::DoubleStream, typename... Args>

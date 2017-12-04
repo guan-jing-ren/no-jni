@@ -14,22 +14,39 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("close"), //
 		jMethod<::javax::sound::midi::Instrument *()>("getAvailableInstruments"), //
 		jMethod<::javax::sound::midi::MidiChannel *()>("getChannels"), //
 		jMethod<::javax::sound::midi::Soundbank()>("getDefaultSoundbank"), //
+		jMethod<::javax::sound::midi::MidiDevice$Info()>("getDeviceInfo"), //
 		jMethod<::jlong()>("getLatency"), //
 		jMethod<::javax::sound::midi::Instrument *()>("getLoadedInstruments"), //
 		jMethod<::jint()>("getMaxPolyphony"), //
+		jMethod<::jint()>("getMaxReceivers"), //
+		jMethod<::jint()>("getMaxTransmitters"), //
+		jMethod<::jlong()>("getMicrosecondPosition"), //
+		jMethod<::javax::sound::midi::Receiver()>("getReceiver"), //
+		jMethod<::java::util::List()>("getReceivers"), //
+		jMethod<::javax::sound::midi::Transmitter()>("getTransmitter"), //
+		jMethod<::java::util::List()>("getTransmitters"), //
 		jMethod<::javax::sound::midi::VoiceStatus *()>("getVoiceStatus"), //
+		jMethod<::jboolean()>("isOpen"), //
 		jMethod<::jboolean(::javax::sound::midi::Soundbank)>("isSoundbankSupported"), //
 		jMethod<::jboolean(::javax::sound::midi::Soundbank)>("loadAllInstruments"), //
 		jMethod<::jboolean(::javax::sound::midi::Instrument)>("loadInstrument"), //
 		jMethod<::jboolean(::javax::sound::midi::Soundbank, ::javax::sound::midi::Patch *)>("loadInstruments"), //
+		jMethod<::jvoid()>("open"), //
 		jMethod<::jboolean(::javax::sound::midi::Instrument, ::javax::sound::midi::Instrument)>("remapInstrument"), //
 		jMethod<::jvoid(::javax::sound::midi::Soundbank)>("unloadAllInstruments"), //
 		jMethod<::jvoid(::javax::sound::midi::Instrument)>("unloadInstrument"), //
 		jMethod<::jvoid(::javax::sound::midi::Soundbank, ::javax::sound::midi::Patch *)>("unloadInstruments"), //
 	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::javax::sound::midi::Instrument *, typename... Args>
 	auto getAvailableInstruments(Args &&...args) const {
@@ -47,6 +64,12 @@ public:
 	auto getDefaultSoundbank(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDefaultSoundbank")] != -1);
 		return call<R>("getDefaultSoundbank", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::midi::MidiDevice$Info, typename... Args>
+	auto getDeviceInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDeviceInfo")] != -1);
+		return call<R>("getDeviceInfo", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jlong, typename... Args>
@@ -67,10 +90,58 @@ public:
 		return call<R>("getMaxPolyphony", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::jint, typename... Args>
+	auto getMaxReceivers(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMaxReceivers")] != -1);
+		return call<R>("getMaxReceivers", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getMaxTransmitters(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMaxTransmitters")] != -1);
+		return call<R>("getMaxTransmitters", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getMicrosecondPosition(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMicrosecondPosition")] != -1);
+		return call<R>("getMicrosecondPosition", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::midi::Receiver, typename... Args>
+	auto getReceiver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getReceiver")] != -1);
+		return call<R>("getReceiver", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getReceivers(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getReceivers")] != -1);
+		return call<R>("getReceivers", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::midi::Transmitter, typename... Args>
+	auto getTransmitter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTransmitter")] != -1);
+		return call<R>("getTransmitter", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getTransmitters(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTransmitters")] != -1);
+		return call<R>("getTransmitters", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::javax::sound::midi::VoiceStatus *, typename... Args>
 	auto getVoiceStatus(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getVoiceStatus")] != -1);
 		return call<R>("getVoiceStatus", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isOpen(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isOpen")] != -1);
+		return call<R>("isOpen", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
@@ -95,6 +166,12 @@ public:
 	auto loadInstruments(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("loadInstruments")] != -1);
 		return call<R>("loadInstruments", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto open(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("open")] != -1);
+		return call<R>("open", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>

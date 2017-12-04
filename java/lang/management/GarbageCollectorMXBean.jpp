@@ -16,6 +16,9 @@ public:
 	constexpr static Enume method_signatures{
 		jMethod<::jlong()>("getCollectionCount"), //
 		jMethod<::jlong()>("getCollectionTime"), //
+		jMethod<::java::lang::String *()>("getMemoryPoolNames"), //
+		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::jboolean()>("isValid"), //
 	};
 
 	template<typename R = ::jlong, typename... Args>
@@ -28,6 +31,24 @@ public:
 	auto getCollectionTime(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCollectionTime")] != -1);
 		return call<R>("getCollectionTime", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto getMemoryPoolNames(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMemoryPoolNames")] != -1);
+		return call<R>("getMemoryPoolNames", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isValid(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isValid")] != -1);
+		return call<R>("isValid", std::forward<Args>(args)...);
 	}
 
 };

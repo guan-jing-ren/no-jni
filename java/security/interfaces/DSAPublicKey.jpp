@@ -20,8 +20,15 @@ public:
 	}
 
 	constexpr static Enume method_signatures{
+		jMethod<::java::security::interfaces::DSAParams()>("getParams"), //
 		jMethod<::java::math::BigInteger()>("getY"), //
 	};
+
+	template<typename R = ::java::security::interfaces::DSAParams, typename... Args>
+	auto getParams(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getParams")] != -1);
+		return call<R>("getParams", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::java::math::BigInteger, typename... Args>
 	auto getY(Args &&...args) const {

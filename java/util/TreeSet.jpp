@@ -25,6 +25,7 @@ public:
 		jMethod<::java::lang::Object()>("clone"), //
 		jMethod<::java::util::Comparator()>("comparator"), //
 		jMethod<::jboolean(::java::lang::Object)>("contains"), //
+		jMethod<::jboolean(::java::util::Collection)>("containsAll"), //
 		jMethod<::java::util::Iterator()>("descendingIterator"), //
 		jMethod<::java::util::NavigableSet()>("descendingSet"), //
 		jMethod<::java::lang::Object()>("first"), //
@@ -39,12 +40,16 @@ public:
 		jMethod<::java::lang::Object()>("pollFirst"), //
 		jMethod<::java::lang::Object()>("pollLast"), //
 		jMethod<::jboolean(::java::lang::Object)>("remove"), //
+		jMethod<::jboolean(::java::util::Collection)>("removeAll"), //
+		jMethod<::jboolean(::java::util::Collection)>("retainAll"), //
 		jMethod<::jint()>("size"), //
 		jMethod<::java::util::Spliterator()>("spliterator"), //
 		jMethod<::java::util::SortedSet(::java::lang::Object, ::java::lang::Object)>("subSet"), //
 		jMethod<::java::util::NavigableSet(::java::lang::Object, ::jboolean, ::java::lang::Object, ::jboolean)>("subSet"), //
 		jMethod<::java::util::SortedSet(::java::lang::Object)>("tailSet"), //
 		jMethod<::java::util::NavigableSet(::java::lang::Object, ::jboolean)>("tailSet"), //
+		jMethod<::java::lang::Object *()>("toArray"), //
+		jMethod<::java::lang::Object *(::java::lang::Object *)>("toArray"), //
 	};
 
 	template<typename R = ::jboolean, typename... Args>
@@ -87,6 +92,12 @@ public:
 	auto contains(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("contains")] != -1);
 		return call<R>("contains", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto containsAll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("containsAll")] != -1);
+		return call<R>("containsAll", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Iterator, typename... Args>
@@ -167,6 +178,18 @@ public:
 		return call<R>("remove", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::jboolean, typename... Args>
+	auto removeAll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeAll")] != -1);
+		return call<R>("removeAll", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto retainAll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("retainAll")] != -1);
+		return call<R>("retainAll", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::jint, typename... Args>
 	auto size(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("size")] != -1);
@@ -189,6 +212,12 @@ public:
 	auto tailSet(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("tailSet")] != -1);
 		return call<R>("tailSet", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object *, typename... Args>
+	auto toArray(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toArray")] != -1);
+		return call<R>("toArray", std::forward<Args>(args)...);
 	}
 
 };

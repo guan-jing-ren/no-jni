@@ -16,17 +16,27 @@ public:
 	constexpr static Enume method_signatures{
 		jConstructor<::jvoid()>(), //
 		jConstructor<::jvoid(::javax::script::Bindings)>(), //
+		jMethod<::javax::script::Bindings()>("createBindings"), //
 		jMethod<::java::lang::Object(::java::io::Reader)>("eval"), //
 		jMethod<::java::lang::Object(::java::io::Reader, ::javax::script::Bindings)>("eval"), //
+		jMethod<::java::lang::Object(::java::io::Reader, ::javax::script::ScriptContext)>("eval"), //
 		jMethod<::java::lang::Object(::java::lang::String)>("eval"), //
 		jMethod<::java::lang::Object(::java::lang::String, ::javax::script::Bindings)>("eval"), //
+		jMethod<::java::lang::Object(::java::lang::String, ::javax::script::ScriptContext)>("eval"), //
 		jMethod<::java::lang::Object(::java::lang::String)>("get"), //
 		jMethod<::javax::script::Bindings(::jint)>("getBindings"), //
 		jMethod<::javax::script::ScriptContext()>("getContext"), //
+		jMethod<::javax::script::ScriptEngineFactory()>("getFactory"), //
 		jMethod<::jvoid(::java::lang::String, ::java::lang::Object)>("put"), //
 		jMethod<::jvoid(::javax::script::Bindings, ::jint)>("setBindings"), //
 		jMethod<::jvoid(::javax::script::ScriptContext)>("setContext"), //
 	};
+
+	template<typename R = ::javax::script::Bindings, typename... Args>
+	auto createBindings(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createBindings")] != -1);
+		return call<R>("createBindings", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto eval(Args &&...args) const {
@@ -50,6 +60,12 @@ public:
 	auto getContext(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getContext")] != -1);
 		return call<R>("getContext", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::script::ScriptEngineFactory, typename... Args>
+	auto getFactory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFactory")] != -1);
+		return call<R>("getFactory", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

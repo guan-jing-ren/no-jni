@@ -14,16 +14,43 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::java::nio::file::attribute::FileTime()>("creationTime"), //
+		jMethod<::java::lang::Object()>("fileKey"), //
 		jMethod<::jboolean()>("isArchive"), //
+		jMethod<::jboolean()>("isDirectory"), //
 		jMethod<::jboolean()>("isHidden"), //
+		jMethod<::jboolean()>("isOther"), //
 		jMethod<::jboolean()>("isReadOnly"), //
+		jMethod<::jboolean()>("isRegularFile"), //
+		jMethod<::jboolean()>("isSymbolicLink"), //
 		jMethod<::jboolean()>("isSystem"), //
+		jMethod<::java::nio::file::attribute::FileTime()>("lastAccessTime"), //
+		jMethod<::java::nio::file::attribute::FileTime()>("lastModifiedTime"), //
+		jMethod<::jlong()>("size"), //
 	};
+
+	template<typename R = ::java::nio::file::attribute::FileTime, typename... Args>
+	auto creationTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("creationTime")] != -1);
+		return call<R>("creationTime", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto fileKey(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("fileKey")] != -1);
+		return call<R>("fileKey", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isArchive(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isArchive")] != -1);
 		return call<R>("isArchive", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDirectory(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isDirectory")] != -1);
+		return call<R>("isDirectory", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
@@ -33,15 +60,51 @@ public:
 	}
 
 	template<typename R = ::jboolean, typename... Args>
+	auto isOther(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isOther")] != -1);
+		return call<R>("isOther", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
 	auto isReadOnly(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isReadOnly")] != -1);
 		return call<R>("isReadOnly", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
+	auto isRegularFile(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isRegularFile")] != -1);
+		return call<R>("isRegularFile", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isSymbolicLink(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSymbolicLink")] != -1);
+		return call<R>("isSymbolicLink", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
 	auto isSystem(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSystem")] != -1);
 		return call<R>("isSystem", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::attribute::FileTime, typename... Args>
+	auto lastAccessTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("lastAccessTime")] != -1);
+		return call<R>("lastAccessTime", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::nio::file::attribute::FileTime, typename... Args>
+	auto lastModifiedTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("lastModifiedTime")] != -1);
+		return call<R>("lastModifiedTime", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto size(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("size")] != -1);
+		return call<R>("size", std::forward<Args>(args)...);
 	}
 
 };

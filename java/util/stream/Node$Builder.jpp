@@ -14,8 +14,14 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::jdouble)>("accept"), //
+		jMethod<::jvoid(::jint)>("accept"), //
+		jMethod<::jvoid(::jlong)>("accept"), //
 		jMethod<::jvoid(::java::lang::Object)>("accept"), //
+		jMethod<::jvoid(::jlong)>("begin"), //
 		jMethod<::java::util::stream::Node()>("build"), //
+		jMethod<::jboolean()>("cancellationRequested"), //
+		jMethod<::jvoid()>("end"), //
 	};
 
 	template<typename R = ::jvoid, typename... Args>
@@ -24,10 +30,28 @@ public:
 		return call<R>("accept", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::jvoid, typename... Args>
+	auto begin(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("begin")] != -1);
+		return call<R>("begin", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::java::util::stream::Node, typename... Args>
 	auto build(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("build")] != -1);
 		return call<R>("build", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto cancellationRequested(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("cancellationRequested")] != -1);
+		return call<R>("cancellationRequested", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto end(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("end")] != -1);
+		return call<R>("end", std::forward<Args>(args)...);
 	}
 
 };

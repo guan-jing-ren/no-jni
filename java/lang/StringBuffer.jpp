@@ -51,9 +51,11 @@ public:
 		jMethod<::java::lang::StringBuffer(::jint)>("appendCodePoint"), //
 		jMethod<::jint()>("capacity"), //
 		jMethod<::jchar(::jint)>("charAt"), //
+		jMethod<::java::util::stream::IntStream()>("chars"), //
 		jMethod<::jint(::jint)>("codePointAt"), //
 		jMethod<::jint(::jint)>("codePointBefore"), //
 		jMethod<::jint(::jint, ::jint)>("codePointCount"), //
+		jMethod<::java::util::stream::IntStream()>("codePoints"), //
 		jMethod<::java::lang::AbstractStringBuilder(::jint, ::jint)>("delete"), //
 		jMethod<::java::lang::StringBuffer(::jint, ::jint)>("delete"), //
 		jMethod<::java::lang::AbstractStringBuilder(::jint)>("deleteCharAt"), //
@@ -127,6 +129,12 @@ public:
 		return call<R>("charAt", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::java::util::stream::IntStream, typename... Args>
+	auto chars(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("chars")] != -1);
+		return call<R>("chars", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::jint, typename... Args>
 	auto codePointAt(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("codePointAt")] != -1);
@@ -143,6 +151,12 @@ public:
 	auto codePointCount(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("codePointCount")] != -1);
 		return call<R>("codePointCount", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::stream::IntStream, typename... Args>
+	auto codePoints(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("codePoints")] != -1);
+		return call<R>("codePoints", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::AbstractStringBuilder, typename... Args>

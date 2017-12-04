@@ -14,8 +14,63 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
-		cexprstr{"\0"}, //
+		jMethod<::jvoid(::java::lang::String)>("appendData"), //
+		jMethod<::jvoid(::jint, ::jint)>("deleteData"), //
+		jMethod<::java::lang::String()>("getData"), //
+		jMethod<::jint()>("getLength"), //
+		jMethod<::jvoid(::jint, ::java::lang::String)>("insertData"), //
+		jMethod<::jvoid(::jint, ::jint, ::java::lang::String)>("replaceData"), //
+		jMethod<::jvoid(::java::lang::String)>("setData"), //
+		jMethod<::java::lang::String(::jint, ::jint)>("substringData"), //
 	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto appendData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("appendData")] != -1);
+		return call<R>("appendData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto deleteData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("deleteData")] != -1);
+		return call<R>("deleteData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getData")] != -1);
+		return call<R>("getData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLength")] != -1);
+		return call<R>("getLength", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto insertData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("insertData")] != -1);
+		return call<R>("insertData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto replaceData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("replaceData")] != -1);
+		return call<R>("replaceData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setData")] != -1);
+		return call<R>("setData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto substringData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("substringData")] != -1);
+		return call<R>("substringData", std::forward<Args>(args)...);
+	}
 
 };
 

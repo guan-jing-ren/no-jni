@@ -19,20 +19,68 @@ public:
 		jConstructor<::jvoid(::java::beans::beancontext::BeanContextServices, ::java::util::Locale)>(), //
 		jConstructor<::jvoid(::java::beans::beancontext::BeanContextServices, ::java::util::Locale, ::jboolean)>(), //
 		jConstructor<::jvoid(::java::beans::beancontext::BeanContextServices, ::java::util::Locale, ::jboolean, ::jboolean)>(), //
+		jMethod<::jboolean(::java::lang::Object)>("add"), //
+		jMethod<::jboolean(::java::util::Collection)>("addAll"), //
+		jMethod<::jvoid(::java::beans::beancontext::BeanContextMembershipListener)>("addBeanContextMembershipListener"), //
 		jMethod<::jvoid(::java::beans::beancontext::BeanContextServicesListener)>("addBeanContextServicesListener"), //
+		jMethod<::jvoid(::java::lang::String, ::java::beans::PropertyChangeListener)>("addPropertyChangeListener"), //
 		jMethod<::jboolean(::java::lang::Class, ::java::beans::beancontext::BeanContextServiceProvider)>("addService"), //
+		jMethod<::jvoid(::java::lang::String, ::java::beans::VetoableChangeListener)>("addVetoableChangeListener"), //
+		jMethod<::jboolean()>("avoidingGui"), //
+		jMethod<::jvoid()>("clear"), //
+		jMethod<::jboolean(::java::lang::Object)>("contains"), //
+		jMethod<::jboolean(::java::util::Collection)>("containsAll"), //
+		jMethod<::jvoid()>("dontUseGui"), //
+		jMethod<::java::beans::beancontext::BeanContext()>("getBeanContext"), //
 		jMethod<::java::beans::beancontext::BeanContextServices()>("getBeanContextServicesPeer"), //
 		jMethod<::java::util::Iterator()>("getCurrentServiceClasses"), //
 		jMethod<::java::util::Iterator(::java::lang::Class)>("getCurrentServiceSelectors"), //
+		jMethod<::java::net::URL(::java::lang::String, ::java::beans::beancontext::BeanContextChild)>("getResource"), //
+		jMethod<::java::io::InputStream(::java::lang::String, ::java::beans::beancontext::BeanContextChild)>("getResourceAsStream"), //
 		jMethod<::java::lang::Object(::java::beans::beancontext::BeanContextChild, ::java::lang::Object, ::java::lang::Class, ::java::lang::Object, ::java::beans::beancontext::BeanContextServiceRevokedListener)>("getService"), //
 		jMethod<::jboolean(::java::lang::Class)>("hasService"), //
 		jMethod<::jvoid()>("initialize"), //
+		jMethod<::java::lang::Object(::java::lang::String)>("instantiateChild"), //
+		jMethod<::jboolean()>("isDesignTime"), //
+		jMethod<::jboolean()>("isEmpty"), //
+		jMethod<::java::util::Iterator()>("iterator"), //
+		jMethod<::jboolean()>("needsGui"), //
+		jMethod<::jvoid()>("okToUseGui"), //
 		jMethod<::jvoid(::java::beans::beancontext::BeanContextChild, ::java::lang::Object, ::java::lang::Object)>("releaseService"), //
+		jMethod<::jboolean(::java::lang::Object)>("remove"), //
+		jMethod<::jboolean(::java::util::Collection)>("removeAll"), //
+		jMethod<::jvoid(::java::beans::beancontext::BeanContextMembershipListener)>("removeBeanContextMembershipListener"), //
 		jMethod<::jvoid(::java::beans::beancontext::BeanContextServicesListener)>("removeBeanContextServicesListener"), //
+		jMethod<::jvoid(::java::lang::String, ::java::beans::PropertyChangeListener)>("removePropertyChangeListener"), //
+		jMethod<::jvoid(::java::lang::String, ::java::beans::VetoableChangeListener)>("removeVetoableChangeListener"), //
+		jMethod<::jboolean(::java::util::Collection)>("retainAll"), //
 		jMethod<::jvoid(::java::lang::Class, ::java::beans::beancontext::BeanContextServiceProvider, ::jboolean)>("revokeService"), //
 		jMethod<::jvoid(::java::beans::beancontext::BeanContextServiceAvailableEvent)>("serviceAvailable"), //
 		jMethod<::jvoid(::java::beans::beancontext::BeanContextServiceRevokedEvent)>("serviceRevoked"), //
+		jMethod<::jvoid(::java::beans::beancontext::BeanContext)>("setBeanContext"), //
+		jMethod<::jvoid(::jboolean)>("setDesignTime"), //
+		jMethod<::jint()>("size"), //
+		jMethod<::java::lang::Object *()>("toArray"), //
+		jMethod<::java::lang::Object *(::java::lang::Object *)>("toArray"), //
 	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto add(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("add")] != -1);
+		return call<R>("add", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto addAll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addAll")] != -1);
+		return call<R>("addAll", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addBeanContextMembershipListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addBeanContextMembershipListener")] != -1);
+		return call<R>("addBeanContextMembershipListener", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto addBeanContextServicesListener(Args &&...args) const {
@@ -40,10 +88,58 @@ public:
 		return call<R>("addBeanContextServicesListener", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::jvoid, typename... Args>
+	auto addPropertyChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addPropertyChangeListener")] != -1);
+		return call<R>("addPropertyChangeListener", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::jboolean, typename... Args>
 	auto addService(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addService")] != -1);
 		return call<R>("addService", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addVetoableChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addVetoableChangeListener")] != -1);
+		return call<R>("addVetoableChangeListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto avoidingGui(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("avoidingGui")] != -1);
+		return call<R>("avoidingGui", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto clear(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clear")] != -1);
+		return call<R>("clear", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto contains(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("contains")] != -1);
+		return call<R>("contains", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto containsAll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("containsAll")] != -1);
+		return call<R>("containsAll", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dontUseGui(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dontUseGui")] != -1);
+		return call<R>("dontUseGui", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::beans::beancontext::BeanContext, typename... Args>
+	auto getBeanContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBeanContext")] != -1);
+		return call<R>("getBeanContext", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::beans::beancontext::BeanContextServices, typename... Args>
@@ -64,6 +160,18 @@ public:
 		return call<R>("getCurrentServiceSelectors", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::java::net::URL, typename... Args>
+	auto getResource(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getResource")] != -1);
+		return call<R>("getResource", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::io::InputStream, typename... Args>
+	auto getResourceAsStream(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getResourceAsStream")] != -1);
+		return call<R>("getResourceAsStream", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto getService(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getService")] != -1);
@@ -82,16 +190,88 @@ public:
 		return call<R>("initialize", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto instantiateChild(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("instantiateChild")] != -1);
+		return call<R>("instantiateChild", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDesignTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isDesignTime")] != -1);
+		return call<R>("isDesignTime", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isEmpty(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isEmpty")] != -1);
+		return call<R>("isEmpty", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Iterator, typename... Args>
+	auto iterator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("iterator")] != -1);
+		return call<R>("iterator", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto needsGui(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("needsGui")] != -1);
+		return call<R>("needsGui", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto okToUseGui(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("okToUseGui")] != -1);
+		return call<R>("okToUseGui", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::jvoid, typename... Args>
 	auto releaseService(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("releaseService")] != -1);
 		return call<R>("releaseService", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::jboolean, typename... Args>
+	auto remove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto removeAll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeAll")] != -1);
+		return call<R>("removeAll", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeBeanContextMembershipListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeBeanContextMembershipListener")] != -1);
+		return call<R>("removeBeanContextMembershipListener", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::jvoid, typename... Args>
 	auto removeBeanContextServicesListener(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeBeanContextServicesListener")] != -1);
 		return call<R>("removeBeanContextServicesListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removePropertyChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removePropertyChangeListener")] != -1);
+		return call<R>("removePropertyChangeListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeVetoableChangeListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeVetoableChangeListener")] != -1);
+		return call<R>("removeVetoableChangeListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto retainAll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("retainAll")] != -1);
+		return call<R>("retainAll", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
@@ -110,6 +290,30 @@ public:
 	auto serviceRevoked(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("serviceRevoked")] != -1);
 		return call<R>("serviceRevoked", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setBeanContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setBeanContext")] != -1);
+		return call<R>("setBeanContext", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDesignTime(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setDesignTime")] != -1);
+		return call<R>("setDesignTime", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto size(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("size")] != -1);
+		return call<R>("size", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object *, typename... Args>
+	auto toArray(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toArray")] != -1);
+		return call<R>("toArray", std::forward<Args>(args)...);
 	}
 
 };

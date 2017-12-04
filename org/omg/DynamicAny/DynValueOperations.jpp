@@ -18,8 +18,11 @@ public:
 		jMethod<::java::lang::String()>("current_member_name"), //
 		jMethod<::org::omg::DynamicAny::NameValuePair *()>("get_members"), //
 		jMethod<::org::omg::DynamicAny::NameDynAnyPair *()>("get_members_as_dyn_any"), //
+		jMethod<::jboolean()>("is_null"), //
 		jMethod<::jvoid(::org::omg::DynamicAny::NameValuePair *)>("set_members"), //
 		jMethod<::jvoid(::org::omg::DynamicAny::NameDynAnyPair *)>("set_members_as_dyn_any"), //
+		jMethod<::jvoid()>("set_to_null"), //
+		jMethod<::jvoid()>("set_to_value"), //
 	};
 
 	template<typename R = ::org::omg::CORBA::TCKind, typename... Args>
@@ -46,6 +49,12 @@ public:
 		return call<R>("get_members_as_dyn_any", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::jboolean, typename... Args>
+	auto is_null(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("is_null")] != -1);
+		return call<R>("is_null", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::jvoid, typename... Args>
 	auto set_members(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set_members")] != -1);
@@ -56,6 +65,18 @@ public:
 	auto set_members_as_dyn_any(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set_members_as_dyn_any")] != -1);
 		return call<R>("set_members_as_dyn_any", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set_to_null(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set_to_null")] != -1);
+		return call<R>("set_to_null", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set_to_value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set_to_value")] != -1);
+		return call<R>("set_to_value", std::forward<Args>(args)...);
 	}
 
 };

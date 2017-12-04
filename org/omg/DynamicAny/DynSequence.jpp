@@ -14,8 +14,49 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
-		cexprstr{"\0"}, //
+		jMethod<::org::omg::CORBA::Any *()>("get_elements"), //
+		jMethod<::org::omg::DynamicAny::DynAny *()>("get_elements_as_dyn_any"), //
+		jMethod<::jint()>("get_length"), //
+		jMethod<::jvoid(::org::omg::CORBA::Any *)>("set_elements"), //
+		jMethod<::jvoid(::org::omg::DynamicAny::DynAny *)>("set_elements_as_dyn_any"), //
+		jMethod<::jvoid(::jint)>("set_length"), //
 	};
+
+	template<typename R = ::org::omg::CORBA::Any *, typename... Args>
+	auto get_elements(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get_elements")] != -1);
+		return call<R>("get_elements", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::DynamicAny::DynAny *, typename... Args>
+	auto get_elements_as_dyn_any(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get_elements_as_dyn_any")] != -1);
+		return call<R>("get_elements_as_dyn_any", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto get_length(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get_length")] != -1);
+		return call<R>("get_length", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set_elements(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set_elements")] != -1);
+		return call<R>("set_elements", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set_elements_as_dyn_any(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set_elements_as_dyn_any")] != -1);
+		return call<R>("set_elements_as_dyn_any", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set_length(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set_length")] != -1);
+		return call<R>("set_length", std::forward<Args>(args)...);
+	}
 
 };
 

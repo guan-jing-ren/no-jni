@@ -17,13 +17,23 @@ public:
 		jMethod<::java::lang::String()>("getAlign"), //
 		jMethod<::java::lang::String()>("getCh"), //
 		jMethod<::java::lang::String()>("getChOff"), //
+		jMethod<::java::lang::String()>("getClassName"), //
+		jMethod<::java::lang::String()>("getDir"), //
+		jMethod<::java::lang::String()>("getId"), //
+		jMethod<::java::lang::String()>("getLang"), //
 		jMethod<::jint()>("getSpan"), //
+		jMethod<::java::lang::String()>("getTitle"), //
 		jMethod<::java::lang::String()>("getVAlign"), //
 		jMethod<::java::lang::String()>("getWidth"), //
 		jMethod<::jvoid(::java::lang::String)>("setAlign"), //
 		jMethod<::jvoid(::java::lang::String)>("setCh"), //
 		jMethod<::jvoid(::java::lang::String)>("setChOff"), //
+		jMethod<::jvoid(::java::lang::String)>("setClassName"), //
+		jMethod<::jvoid(::java::lang::String)>("setDir"), //
+		jMethod<::jvoid(::java::lang::String)>("setId"), //
+		jMethod<::jvoid(::java::lang::String)>("setLang"), //
 		jMethod<::jvoid(::jint)>("setSpan"), //
+		jMethod<::jvoid(::java::lang::String)>("setTitle"), //
 		jMethod<::jvoid(::java::lang::String)>("setVAlign"), //
 		jMethod<::jvoid(::java::lang::String)>("setWidth"), //
 	};
@@ -46,10 +56,40 @@ public:
 		return call<R>("getChOff", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getClassName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClassName")] != -1);
+		return call<R>("getClassName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDir(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDir")] != -1);
+		return call<R>("getDir", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getId")] != -1);
+		return call<R>("getId", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getLang(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLang")] != -1);
+		return call<R>("getLang", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::jint, typename... Args>
 	auto getSpan(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSpan")] != -1);
 		return call<R>("getSpan", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getTitle(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTitle")] != -1);
+		return call<R>("getTitle", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
@@ -83,9 +123,39 @@ public:
 	}
 
 	template<typename R = ::jvoid, typename... Args>
+	auto setClassName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setClassName")] != -1);
+		return call<R>("setClassName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDir(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setDir")] != -1);
+		return call<R>("setDir", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setId")] != -1);
+		return call<R>("setId", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setLang(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setLang")] != -1);
+		return call<R>("setLang", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
 	auto setSpan(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setSpan")] != -1);
 		return call<R>("setSpan", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setTitle(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setTitle")] != -1);
+		return call<R>("setTitle", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

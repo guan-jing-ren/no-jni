@@ -36,7 +36,9 @@ public:
 		jMethod<::jboolean(::java::lang::Object)>("equals"), //
 		jMethod<::java::lang::String(::java::time::format::DateTimeFormatter)>("format"), //
 		jMethod<::java::time::LocalDateTime(::java::time::temporal::TemporalAccessor)>("from"), //
+		jMethod<::java::time::chrono::ChronoLocalDateTime(::java::time::temporal::TemporalAccessor)>("from"), //
 		jMethod<::jint(::java::time::temporal::TemporalField)>("get"), //
+		jMethod<::java::time::chrono::Chronology()>("getChronology"), //
 		jMethod<::jint()>("getDayOfMonth"), //
 		jMethod<::java::time::DayOfWeek()>("getDayOfWeek"), //
 		jMethod<::jint()>("getDayOfYear"), //
@@ -98,6 +100,9 @@ public:
 		jMethod<::java::time::LocalDateTime(::jlong)>("plusYears"), //
 		jMethod<::java::lang::Object(::java::time::temporal::TemporalQuery)>("query"), //
 		jMethod<::java::time::temporal::ValueRange(::java::time::temporal::TemporalField)>("range"), //
+		jMethod<::java::util::Comparator()>("timeLineOrder"), //
+		jMethod<::jlong(::java::time::ZoneOffset)>("toEpochSecond"), //
+		jMethod<::java::time::Instant(::java::time::ZoneOffset)>("toInstant"), //
 		jMethod<::java::time::LocalDate()>("toLocalDate"), //
 		jMethod<::java::time::chrono::ChronoLocalDate()>("toLocalDate"), //
 		jMethod<::java::time::LocalTime()>("toLocalTime"), //
@@ -166,6 +171,12 @@ public:
 	auto get(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get")] != -1);
 		return call<R>("get", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::chrono::Chronology, typename... Args>
+	auto getChronology(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getChronology")] != -1);
+		return call<R>("getChronology", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
@@ -412,6 +423,24 @@ public:
 	auto range(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("range")] != -1);
 		return call<R>("range", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Comparator, typename... Args>
+	static auto timeLineOrder(Args &&...args) {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("timeLineOrder")] != -1);
+		return scall<R>("timeLineOrder", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto toEpochSecond(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toEpochSecond")] != -1);
+		return call<R>("toEpochSecond", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::time::Instant, typename... Args>
+	auto toInstant(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toInstant")] != -1);
+		return call<R>("toInstant", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::time::LocalDate, typename... Args>

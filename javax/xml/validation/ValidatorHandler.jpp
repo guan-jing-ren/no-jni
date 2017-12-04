@@ -14,18 +14,53 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::jchar *, ::jint, ::jint)>("characters"), //
+		jMethod<::jvoid()>("endDocument"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::String)>("endElement"), //
+		jMethod<::jvoid(::java::lang::String)>("endPrefixMapping"), //
 		jMethod<::org::xml::sax::ContentHandler()>("getContentHandler"), //
 		jMethod<::org::xml::sax::ErrorHandler()>("getErrorHandler"), //
 		jMethod<::jboolean(::java::lang::String)>("getFeature"), //
 		jMethod<::java::lang::Object(::java::lang::String)>("getProperty"), //
 		jMethod<::org::w3c::dom::ls::LSResourceResolver()>("getResourceResolver"), //
 		jMethod<::javax::xml::validation::TypeInfoProvider()>("getTypeInfoProvider"), //
+		jMethod<::jvoid(::jchar *, ::jint, ::jint)>("ignorableWhitespace"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String)>("processingInstruction"), //
 		jMethod<::jvoid(::org::xml::sax::ContentHandler)>("setContentHandler"), //
+		jMethod<::jvoid(::org::xml::sax::Locator)>("setDocumentLocator"), //
 		jMethod<::jvoid(::org::xml::sax::ErrorHandler)>("setErrorHandler"), //
 		jMethod<::jvoid(::java::lang::String, ::jboolean)>("setFeature"), //
 		jMethod<::jvoid(::java::lang::String, ::java::lang::Object)>("setProperty"), //
 		jMethod<::jvoid(::org::w3c::dom::ls::LSResourceResolver)>("setResourceResolver"), //
+		jMethod<::jvoid(::java::lang::String)>("skippedEntity"), //
+		jMethod<::jvoid()>("startDocument"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::String, ::org::xml::sax::Attributes)>("startElement"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String)>("startPrefixMapping"), //
 	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto characters(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("characters")] != -1);
+		return call<R>("characters", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto endDocument(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("endDocument")] != -1);
+		return call<R>("endDocument", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto endElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("endElement")] != -1);
+		return call<R>("endElement", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto endPrefixMapping(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("endPrefixMapping")] != -1);
+		return call<R>("endPrefixMapping", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::org::xml::sax::ContentHandler, typename... Args>
 	auto getContentHandler(Args &&...args) const {
@@ -64,9 +99,27 @@ public:
 	}
 
 	template<typename R = ::jvoid, typename... Args>
+	auto ignorableWhitespace(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("ignorableWhitespace")] != -1);
+		return call<R>("ignorableWhitespace", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto processingInstruction(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("processingInstruction")] != -1);
+		return call<R>("processingInstruction", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
 	auto setContentHandler(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setContentHandler")] != -1);
 		return call<R>("setContentHandler", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setDocumentLocator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setDocumentLocator")] != -1);
+		return call<R>("setDocumentLocator", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
@@ -91,6 +144,30 @@ public:
 	auto setResourceResolver(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setResourceResolver")] != -1);
 		return call<R>("setResourceResolver", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto skippedEntity(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("skippedEntity")] != -1);
+		return call<R>("skippedEntity", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto startDocument(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("startDocument")] != -1);
+		return call<R>("startDocument", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto startElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("startElement")] != -1);
+		return call<R>("startElement", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto startPrefixMapping(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("startPrefixMapping")] != -1);
+		return call<R>("startPrefixMapping", std::forward<Args>(args)...);
 	}
 
 };

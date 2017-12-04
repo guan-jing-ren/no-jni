@@ -14,25 +14,47 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String()>("getClassName"), //
 		jMethod<::jboolean()>("getDefaultSelected"), //
+		jMethod<::java::lang::String()>("getDir"), //
 		jMethod<::jboolean()>("getDisabled"), //
 		jMethod<::org::w3c::dom::html::HTMLFormElement()>("getForm"), //
+		jMethod<::java::lang::String()>("getId"), //
 		jMethod<::jint()>("getIndex"), //
 		jMethod<::java::lang::String()>("getLabel"), //
+		jMethod<::java::lang::String()>("getLang"), //
 		jMethod<::jboolean()>("getSelected"), //
 		jMethod<::java::lang::String()>("getText"), //
+		jMethod<::java::lang::String()>("getTitle"), //
 		jMethod<::java::lang::String()>("getValue"), //
+		jMethod<::jvoid(::java::lang::String)>("setClassName"), //
 		jMethod<::jvoid(::jboolean)>("setDefaultSelected"), //
+		jMethod<::jvoid(::java::lang::String)>("setDir"), //
 		jMethod<::jvoid(::jboolean)>("setDisabled"), //
+		jMethod<::jvoid(::java::lang::String)>("setId"), //
 		jMethod<::jvoid(::java::lang::String)>("setLabel"), //
+		jMethod<::jvoid(::java::lang::String)>("setLang"), //
 		jMethod<::jvoid(::jboolean)>("setSelected"), //
+		jMethod<::jvoid(::java::lang::String)>("setTitle"), //
 		jMethod<::jvoid(::java::lang::String)>("setValue"), //
 	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getClassName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClassName")] != -1);
+		return call<R>("getClassName", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::jboolean, typename... Args>
 	auto getDefaultSelected(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDefaultSelected")] != -1);
 		return call<R>("getDefaultSelected", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDir(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDir")] != -1);
+		return call<R>("getDir", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
@@ -47,6 +69,12 @@ public:
 		return call<R>("getForm", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getId")] != -1);
+		return call<R>("getId", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::jint, typename... Args>
 	auto getIndex(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getIndex")] != -1);
@@ -57,6 +85,12 @@ public:
 	auto getLabel(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLabel")] != -1);
 		return call<R>("getLabel", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getLang(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLang")] != -1);
+		return call<R>("getLang", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
@@ -72,9 +106,21 @@ public:
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
+	auto getTitle(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTitle")] != -1);
+		return call<R>("getTitle", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
 	auto getValue(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getValue")] != -1);
 		return call<R>("getValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setClassName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setClassName")] != -1);
+		return call<R>("setClassName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
@@ -84,9 +130,21 @@ public:
 	}
 
 	template<typename R = ::jvoid, typename... Args>
+	auto setDir(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setDir")] != -1);
+		return call<R>("setDir", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
 	auto setDisabled(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setDisabled")] != -1);
 		return call<R>("setDisabled", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setId")] != -1);
+		return call<R>("setId", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
@@ -96,9 +154,21 @@ public:
 	}
 
 	template<typename R = ::jvoid, typename... Args>
+	auto setLang(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setLang")] != -1);
+		return call<R>("setLang", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
 	auto setSelected(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setSelected")] != -1);
 		return call<R>("setSelected", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setTitle(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setTitle")] != -1);
+		return call<R>("setTitle", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

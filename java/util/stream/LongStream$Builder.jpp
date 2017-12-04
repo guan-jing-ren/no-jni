@@ -16,6 +16,7 @@ public:
 	constexpr static Enume method_signatures{
 		jMethod<::jvoid(::jlong)>("accept"), //
 		jMethod<::java::util::stream::LongStream$Builder(::jlong)>("add"), //
+		jMethod<::java::util::function::LongConsumer(::java::util::function::LongConsumer)>("andThen"), //
 		jMethod<::java::util::stream::LongStream()>("build"), //
 	};
 
@@ -29,6 +30,12 @@ public:
 	auto add(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("add")] != -1);
 		return call<R>("add", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::function::LongConsumer, typename... Args>
+	auto andThen(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("andThen")] != -1);
+		return call<R>("andThen", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::stream::LongStream, typename... Args>

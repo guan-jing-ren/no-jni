@@ -15,14 +15,25 @@ public:
 
 	constexpr static Enume method_signatures{
 		jConstructor<::jvoid()>(), //
+		jMethod<::jboolean(::jlong, ::java::util::concurrent::TimeUnit)>("awaitTermination"), //
 		jMethod<::java::util::List(::java::util::Collection)>("invokeAll"), //
 		jMethod<::java::util::List(::java::util::Collection, ::jlong, ::java::util::concurrent::TimeUnit)>("invokeAll"), //
 		jMethod<::java::lang::Object(::java::util::Collection)>("invokeAny"), //
 		jMethod<::java::lang::Object(::java::util::Collection, ::jlong, ::java::util::concurrent::TimeUnit)>("invokeAny"), //
+		jMethod<::jboolean()>("isShutdown"), //
+		jMethod<::jboolean()>("isTerminated"), //
+		jMethod<::jvoid()>("shutdown"), //
+		jMethod<::java::util::List()>("shutdownNow"), //
 		jMethod<::java::util::concurrent::Future(::java::lang::Runnable)>("submit"), //
 		jMethod<::java::util::concurrent::Future(::java::lang::Runnable, ::java::lang::Object)>("submit"), //
 		jMethod<::java::util::concurrent::Future(::java::util::concurrent::Callable)>("submit"), //
 	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto awaitTermination(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("awaitTermination")] != -1);
+		return call<R>("awaitTermination", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::java::util::List, typename... Args>
 	auto invokeAll(Args &&...args) const {
@@ -34,6 +45,30 @@ public:
 	auto invokeAny(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("invokeAny")] != -1);
 		return call<R>("invokeAny", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isShutdown(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isShutdown")] != -1);
+		return call<R>("isShutdown", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isTerminated(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isTerminated")] != -1);
+		return call<R>("isTerminated", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto shutdown(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("shutdown")] != -1);
+		return call<R>("shutdown", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto shutdownNow(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("shutdownNow")] != -1);
+		return call<R>("shutdownNow", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::concurrent::Future, typename... Args>

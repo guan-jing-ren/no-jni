@@ -25,6 +25,7 @@ public:
 		jMethod<::jboolean(::javax::tools::JavaFileManager$Location)>("hasLocation"), //
 		jMethod<::java::lang::String(::javax::tools::JavaFileManager$Location, ::javax::tools::JavaFileObject)>("inferBinaryName"), //
 		jMethod<::jboolean(::javax::tools::FileObject, ::javax::tools::FileObject)>("isSameFile"), //
+		jMethod<::jint(::java::lang::String)>("isSupportedOption"), //
 		jMethod<::java::lang::Iterable(::javax::tools::JavaFileManager$Location, ::java::lang::String, ::java::util::Set, ::jboolean)>("list"), //
 	};
 
@@ -92,6 +93,12 @@ public:
 	auto isSameFile(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSameFile")] != -1);
 		return call<R>("isSameFile", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto isSupportedOption(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSupportedOption")] != -1);
+		return call<R>("isSupportedOption", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Iterable, typename... Args>

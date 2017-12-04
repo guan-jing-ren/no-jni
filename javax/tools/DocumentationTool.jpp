@@ -14,9 +14,18 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::java::util::Set()>("getSourceVersions"), //
 		jMethod<::javax::tools::StandardJavaFileManager(::javax::tools::DiagnosticListener, ::java::util::Locale, ::java::nio::charset::Charset)>("getStandardFileManager"), //
 		jMethod<::javax::tools::DocumentationTool$DocumentationTask(::java::io::Writer, ::javax::tools::JavaFileManager, ::javax::tools::DiagnosticListener, ::java::lang::Class, ::java::lang::Iterable, ::java::lang::Iterable)>("getTask"), //
+		jMethod<::jint(::java::lang::String)>("isSupportedOption"), //
+		jMethod<::jint(::java::io::InputStream, ::java::io::OutputStream, ::java::io::OutputStream, ::java::lang::String *)>("run"), //
 	};
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto getSourceVersions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSourceVersions")] != -1);
+		return call<R>("getSourceVersions", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::javax::tools::StandardJavaFileManager, typename... Args>
 	auto getStandardFileManager(Args &&...args) const {
@@ -28,6 +37,18 @@ public:
 	auto getTask(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTask")] != -1);
 		return call<R>("getTask", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto isSupportedOption(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSupportedOption")] != -1);
+		return call<R>("isSupportedOption", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto run(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("run")] != -1);
+		return call<R>("run", std::forward<Args>(args)...);
 	}
 
 };

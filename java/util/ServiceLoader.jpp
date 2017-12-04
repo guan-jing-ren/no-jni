@@ -14,13 +14,21 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::util::function::Consumer)>("forEach"), //
 		jMethod<::java::util::Iterator()>("iterator"), //
 		jMethod<::java::util::ServiceLoader(::java::lang::Class)>("load"), //
 		jMethod<::java::util::ServiceLoader(::java::lang::Class, ::java::lang::ClassLoader)>("load"), //
 		jMethod<::java::util::ServiceLoader(::java::lang::Class)>("loadInstalled"), //
 		jMethod<::jvoid()>("reload"), //
+		jMethod<::java::util::Spliterator()>("spliterator"), //
 		jMethod<::java::lang::String()>("toString"), //
 	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto forEach(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("forEach")] != -1);
+		return call<R>("forEach", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::java::util::Iterator, typename... Args>
 	auto iterator(Args &&...args) const {
@@ -44,6 +52,12 @@ public:
 	auto reload(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("reload")] != -1);
 		return call<R>("reload", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Spliterator, typename... Args>
+	auto spliterator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("spliterator")] != -1);
+		return call<R>("spliterator", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>

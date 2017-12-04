@@ -14,20 +14,75 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::org::w3c::dom::Node(::org::w3c::dom::Node)>("appendChild"), //
 		jMethod<::jvoid(::java::lang::String)>("appendData"), //
+		jMethod<::org::w3c::dom::Node(::jboolean)>("cloneNode"), //
+		jMethod<::jshort(::org::w3c::dom::Node)>("compareDocumentPosition"), //
 		jMethod<::jvoid(::jint, ::jint)>("deleteData"), //
+		jMethod<::org::w3c::dom::NamedNodeMap()>("getAttributes"), //
+		jMethod<::java::lang::String()>("getBaseURI"), //
+		jMethod<::org::w3c::dom::NodeList()>("getChildNodes"), //
 		jMethod<::java::lang::String()>("getData"), //
+		jMethod<::java::lang::Object(::java::lang::String, ::java::lang::String)>("getFeature"), //
+		jMethod<::org::w3c::dom::Node()>("getFirstChild"), //
+		jMethod<::org::w3c::dom::Node()>("getLastChild"), //
 		jMethod<::jint()>("getLength"), //
+		jMethod<::java::lang::String()>("getLocalName"), //
+		jMethod<::java::lang::String()>("getNamespaceURI"), //
+		jMethod<::org::w3c::dom::Node()>("getNextSibling"), //
+		jMethod<::java::lang::String()>("getNodeName"), //
+		jMethod<::jshort()>("getNodeType"), //
+		jMethod<::java::lang::String()>("getNodeValue"), //
+		jMethod<::org::w3c::dom::Document()>("getOwnerDocument"), //
+		jMethod<::org::w3c::dom::Node()>("getParentNode"), //
+		jMethod<::java::lang::String()>("getPrefix"), //
+		jMethod<::org::w3c::dom::Node()>("getPreviousSibling"), //
+		jMethod<::java::lang::String()>("getTextContent"), //
+		jMethod<::java::lang::Object(::java::lang::String)>("getUserData"), //
+		jMethod<::jboolean()>("hasAttributes"), //
+		jMethod<::jboolean()>("hasChildNodes"), //
+		jMethod<::org::w3c::dom::Node(::org::w3c::dom::Node, ::org::w3c::dom::Node)>("insertBefore"), //
 		jMethod<::jvoid(::jint, ::java::lang::String)>("insertData"), //
+		jMethod<::jboolean(::java::lang::String)>("isDefaultNamespace"), //
+		jMethod<::jboolean(::org::w3c::dom::Node)>("isEqualNode"), //
+		jMethod<::jboolean(::org::w3c::dom::Node)>("isSameNode"), //
+		jMethod<::jboolean(::java::lang::String, ::java::lang::String)>("isSupported"), //
+		jMethod<::java::lang::String(::java::lang::String)>("lookupNamespaceURI"), //
+		jMethod<::java::lang::String(::java::lang::String)>("lookupPrefix"), //
+		jMethod<::jvoid()>("normalize"), //
+		jMethod<::org::w3c::dom::Node(::org::w3c::dom::Node)>("removeChild"), //
+		jMethod<::org::w3c::dom::Node(::org::w3c::dom::Node, ::org::w3c::dom::Node)>("replaceChild"), //
 		jMethod<::jvoid(::jint, ::jint, ::java::lang::String)>("replaceData"), //
 		jMethod<::jvoid(::java::lang::String)>("setData"), //
+		jMethod<::jvoid(::java::lang::String)>("setNodeValue"), //
+		jMethod<::jvoid(::java::lang::String)>("setPrefix"), //
+		jMethod<::jvoid(::java::lang::String)>("setTextContent"), //
+		jMethod<::java::lang::Object(::java::lang::String, ::java::lang::Object, ::org::w3c::dom::UserDataHandler)>("setUserData"), //
 		jMethod<::java::lang::String(::jint, ::jint)>("substringData"), //
 	};
+
+	template<typename R = ::org::w3c::dom::Node, typename... Args>
+	auto appendChild(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("appendChild")] != -1);
+		return call<R>("appendChild", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto appendData(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("appendData")] != -1);
 		return call<R>("appendData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Node, typename... Args>
+	auto cloneNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("cloneNode")] != -1);
+		return call<R>("cloneNode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jshort, typename... Args>
+	auto compareDocumentPosition(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("compareDocumentPosition")] != -1);
+		return call<R>("compareDocumentPosition", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
@@ -36,10 +91,46 @@ public:
 		return call<R>("deleteData", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::org::w3c::dom::NamedNodeMap, typename... Args>
+	auto getAttributes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAttributes")] != -1);
+		return call<R>("getAttributes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getBaseURI(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBaseURI")] != -1);
+		return call<R>("getBaseURI", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::NodeList, typename... Args>
+	auto getChildNodes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getChildNodes")] != -1);
+		return call<R>("getChildNodes", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getData(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getData")] != -1);
 		return call<R>("getData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getFeature(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFeature")] != -1);
+		return call<R>("getFeature", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Node, typename... Args>
+	auto getFirstChild(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFirstChild")] != -1);
+		return call<R>("getFirstChild", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Node, typename... Args>
+	auto getLastChild(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLastChild")] != -1);
+		return call<R>("getLastChild", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
@@ -48,10 +139,154 @@ public:
 		return call<R>("getLength", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getLocalName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLocalName")] != -1);
+		return call<R>("getLocalName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getNamespaceURI(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNamespaceURI")] != -1);
+		return call<R>("getNamespaceURI", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Node, typename... Args>
+	auto getNextSibling(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNextSibling")] != -1);
+		return call<R>("getNextSibling", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getNodeName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNodeName")] != -1);
+		return call<R>("getNodeName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jshort, typename... Args>
+	auto getNodeType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNodeType")] != -1);
+		return call<R>("getNodeType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getNodeValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNodeValue")] != -1);
+		return call<R>("getNodeValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Document, typename... Args>
+	auto getOwnerDocument(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOwnerDocument")] != -1);
+		return call<R>("getOwnerDocument", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Node, typename... Args>
+	auto getParentNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getParentNode")] != -1);
+		return call<R>("getParentNode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getPrefix(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPrefix")] != -1);
+		return call<R>("getPrefix", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Node, typename... Args>
+	auto getPreviousSibling(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPreviousSibling")] != -1);
+		return call<R>("getPreviousSibling", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getTextContent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTextContent")] != -1);
+		return call<R>("getTextContent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getUserData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUserData")] != -1);
+		return call<R>("getUserData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasAttributes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hasAttributes")] != -1);
+		return call<R>("hasAttributes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasChildNodes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hasChildNodes")] != -1);
+		return call<R>("hasChildNodes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Node, typename... Args>
+	auto insertBefore(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("insertBefore")] != -1);
+		return call<R>("insertBefore", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::jvoid, typename... Args>
 	auto insertData(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("insertData")] != -1);
 		return call<R>("insertData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isDefaultNamespace(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isDefaultNamespace")] != -1);
+		return call<R>("isDefaultNamespace", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isEqualNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isEqualNode")] != -1);
+		return call<R>("isEqualNode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isSameNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSameNode")] != -1);
+		return call<R>("isSameNode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSupported")] != -1);
+		return call<R>("isSupported", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto lookupNamespaceURI(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("lookupNamespaceURI")] != -1);
+		return call<R>("lookupNamespaceURI", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto lookupPrefix(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("lookupPrefix")] != -1);
+		return call<R>("lookupPrefix", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto normalize(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("normalize")] != -1);
+		return call<R>("normalize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Node, typename... Args>
+	auto removeChild(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeChild")] != -1);
+		return call<R>("removeChild", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Node, typename... Args>
+	auto replaceChild(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("replaceChild")] != -1);
+		return call<R>("replaceChild", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
@@ -64,6 +299,30 @@ public:
 	auto setData(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setData")] != -1);
 		return call<R>("setData", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setNodeValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setNodeValue")] != -1);
+		return call<R>("setNodeValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setPrefix(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setPrefix")] != -1);
+		return call<R>("setPrefix", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setTextContent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setTextContent")] != -1);
+		return call<R>("setTextContent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto setUserData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setUserData")] != -1);
+		return call<R>("setUserData", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>

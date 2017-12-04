@@ -15,12 +15,19 @@ public:
 
 	constexpr static Enume method_signatures{
 		jMethod<::jboolean()>("isPeriodic"), //
+		jMethod<::jvoid()>("run"), //
 	};
 
 	template<typename R = ::jboolean, typename... Args>
 	auto isPeriodic(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isPeriodic")] != -1);
 		return call<R>("isPeriodic", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto run(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("run")] != -1);
+		return call<R>("run", std::forward<Args>(args)...);
 	}
 
 };

@@ -15,6 +15,7 @@ public:
 
 	constexpr static Enume method_signatures{
 		jMethod<::jvoid(::java::lang::Object)>("add"), //
+		jMethod<::jvoid(::java::util::function::Consumer)>("forEachRemaining"), //
 		jMethod<::jboolean()>("hasNext"), //
 		jMethod<::jboolean()>("hasPrevious"), //
 		jMethod<::java::lang::Object()>("next"), //
@@ -29,6 +30,12 @@ public:
 	auto add(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("add")] != -1);
 		return call<R>("add", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto forEachRemaining(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("forEachRemaining")] != -1);
+		return call<R>("forEachRemaining", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>

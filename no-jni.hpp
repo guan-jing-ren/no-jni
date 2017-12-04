@@ -490,7 +490,14 @@ public:
     return f;
   }
   operator F const() { return **this; }
-  F operator*() const { return (env()->*get)(obj, id); }
+  F operator*() const {
+    if constexpr (!std::is_arithmetic<F>::value)
+      return jReference{(env()->*get)(obj, id)};
+    else
+      return (env()->*get)(obj, id);
+  }
+
+  F operator->() const { return **this; };
 };
 
 template <typename E, bool A = std::is_arithmetic<E>::value> class Element {

@@ -16,6 +16,11 @@ public:
 	constexpr static Enume method_signatures{
 		jMethod<::jint()>("characteristics"), //
 		jMethod<::jlong()>("estimateSize"), //
+		jMethod<::jvoid(::java::lang::Object)>("forEachRemaining"), //
+		jMethod<::jvoid(::java::util::function::Consumer)>("forEachRemaining"), //
+		jMethod<::jvoid(::java::util::function::LongConsumer)>("forEachRemaining"), //
+		jMethod<::jboolean(::java::lang::Object)>("tryAdvance"), //
+		jMethod<::jboolean(::java::util::function::Consumer)>("tryAdvance"), //
 		jMethod<::jboolean(::java::util::function::LongConsumer)>("tryAdvance"), //
 		jMethod<::java::util::Spliterator$OfLong()>("trySplit"), //
 		jMethod<::java::util::Spliterator$OfPrimitive()>("trySplit"), //
@@ -32,6 +37,12 @@ public:
 	auto estimateSize(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("estimateSize")] != -1);
 		return call<R>("estimateSize", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto forEachRemaining(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("forEachRemaining")] != -1);
+		return call<R>("forEachRemaining", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>

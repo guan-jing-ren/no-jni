@@ -18,7 +18,11 @@ public:
 		jMethod<::jvoid(::javax::swing::event::ChangeListener)>("addChangeListener"), //
 		jMethod<::javax::swing::event::ChangeListener *()>("getChangeListeners"), //
 		jMethod<::java::util::EventListener *(::java::lang::Class)>("getListeners"), //
+		jMethod<::java::lang::Object()>("getNextValue"), //
+		jMethod<::java::lang::Object()>("getPreviousValue"), //
+		jMethod<::java::lang::Object()>("getValue"), //
 		jMethod<::jvoid(::javax::swing::event::ChangeListener)>("removeChangeListener"), //
+		jMethod<::jvoid(::java::lang::Object)>("setValue"), //
 	};
 
 	template<typename R = ::jvoid, typename... Args>
@@ -39,10 +43,34 @@ public:
 		return call<R>("getListeners", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getNextValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNextValue")] != -1);
+		return call<R>("getNextValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getPreviousValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPreviousValue")] != -1);
+		return call<R>("getPreviousValue", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getValue")] != -1);
+		return call<R>("getValue", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::jvoid, typename... Args>
 	auto removeChangeListener(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeChangeListener")] != -1);
 		return call<R>("removeChangeListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setValue")] != -1);
+		return call<R>("setValue", std::forward<Args>(args)...);
 	}
 
 };

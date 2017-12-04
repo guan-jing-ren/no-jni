@@ -26,9 +26,11 @@ public:
 		jMethod<::jboolean(::java::lang::Object)>("containsKey"), //
 		jMethod<::jboolean(::java::lang::Object)>("containsValue"), //
 		jMethod<::java::util::Set()>("entrySet"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
 		jMethod<::jvoid(::java::util::function::BiConsumer)>("forEach"), //
 		jMethod<::java::lang::Object(::java::lang::Object)>("get"), //
 		jMethod<::java::lang::Object(::java::lang::Object, ::java::lang::Object)>("getOrDefault"), //
+		jMethod<::jint()>("hashCode"), //
 		jMethod<::jboolean()>("isEmpty"), //
 		jMethod<::java::util::Set()>("keySet"), //
 		jMethod<::java::lang::Object(::java::lang::Object, ::java::lang::Object, ::java::util::function::BiFunction)>("merge"), //
@@ -92,6 +94,12 @@ public:
 		return call<R>("entrySet", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::jvoid, typename... Args>
 	auto forEach(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("forEach")] != -1);
@@ -108,6 +116,12 @@ public:
 	auto getOrDefault(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOrDefault")] != -1);
 		return call<R>("getOrDefault", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>

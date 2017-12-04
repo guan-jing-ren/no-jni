@@ -16,8 +16,12 @@ public:
 	constexpr static Enume method_signatures{
 		jMethod<::java::lang::annotation::Annotation(::java::lang::Class)>("getAnnotation"), //
 		jMethod<::java::lang::annotation::Annotation *()>("getAnnotations"), //
+		jMethod<::java::lang::annotation::Annotation *(::java::lang::Class)>("getAnnotationsByType"), //
+		jMethod<::java::lang::annotation::Annotation(::java::lang::Class)>("getDeclaredAnnotation"), //
 		jMethod<::java::lang::annotation::Annotation *()>("getDeclaredAnnotations"), //
+		jMethod<::java::lang::annotation::Annotation *(::java::lang::Class)>("getDeclaredAnnotationsByType"), //
 		jMethod<::java::lang::reflect::TypeVariable *()>("getTypeParameters"), //
+		jMethod<::jboolean(::java::lang::Class)>("isAnnotationPresent"), //
 	};
 
 	template<typename R = ::java::lang::annotation::Annotation, typename... Args>
@@ -33,15 +37,39 @@ public:
 	}
 
 	template<typename R = ::java::lang::annotation::Annotation *, typename... Args>
+	auto getAnnotationsByType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAnnotationsByType")] != -1);
+		return call<R>("getAnnotationsByType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::annotation::Annotation, typename... Args>
+	auto getDeclaredAnnotation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDeclaredAnnotation")] != -1);
+		return call<R>("getDeclaredAnnotation", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::annotation::Annotation *, typename... Args>
 	auto getDeclaredAnnotations(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDeclaredAnnotations")] != -1);
 		return call<R>("getDeclaredAnnotations", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::annotation::Annotation *, typename... Args>
+	auto getDeclaredAnnotationsByType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDeclaredAnnotationsByType")] != -1);
+		return call<R>("getDeclaredAnnotationsByType", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::reflect::TypeVariable *, typename... Args>
 	auto getTypeParameters(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTypeParameters")] != -1);
 		return call<R>("getTypeParameters", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isAnnotationPresent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isAnnotationPresent")] != -1);
+		return call<R>("isAnnotationPresent", std::forward<Args>(args)...);
 	}
 
 };

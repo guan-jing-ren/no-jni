@@ -14,14 +14,42 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::jint()>("getColumnNumber"), //
 		jMethod<::java::lang::String()>("getEncoding"), //
+		jMethod<::jint()>("getLineNumber"), //
+		jMethod<::java::lang::String()>("getPublicId"), //
+		jMethod<::java::lang::String()>("getSystemId"), //
 		jMethod<::java::lang::String()>("getXMLVersion"), //
 	};
+
+	template<typename R = ::jint, typename... Args>
+	auto getColumnNumber(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getColumnNumber")] != -1);
+		return call<R>("getColumnNumber", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getEncoding(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEncoding")] != -1);
 		return call<R>("getEncoding", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getLineNumber(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLineNumber")] != -1);
+		return call<R>("getLineNumber", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getPublicId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPublicId")] != -1);
+		return call<R>("getPublicId", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getSystemId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSystemId")] != -1);
+		return call<R>("getSystemId", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>

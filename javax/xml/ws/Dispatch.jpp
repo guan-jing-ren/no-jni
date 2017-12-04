@@ -14,11 +14,40 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::javax::xml::ws::Binding()>("getBinding"), //
+		jMethod<::javax::xml::ws::EndpointReference()>("getEndpointReference"), //
+		jMethod<::javax::xml::ws::EndpointReference(::java::lang::Class)>("getEndpointReference"), //
+		jMethod<::java::util::Map()>("getRequestContext"), //
+		jMethod<::java::util::Map()>("getResponseContext"), //
 		jMethod<::java::lang::Object(::java::lang::Object)>("invoke"), //
 		jMethod<::javax::xml::ws::Response(::java::lang::Object)>("invokeAsync"), //
 		jMethod<::java::util::concurrent::Future(::java::lang::Object, ::javax::xml::ws::AsyncHandler)>("invokeAsync"), //
 		jMethod<::jvoid(::java::lang::Object)>("invokeOneWay"), //
 	};
+
+	template<typename R = ::javax::xml::ws::Binding, typename... Args>
+	auto getBinding(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBinding")] != -1);
+		return call<R>("getBinding", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::xml::ws::EndpointReference, typename... Args>
+	auto getEndpointReference(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEndpointReference")] != -1);
+		return call<R>("getEndpointReference", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto getRequestContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRequestContext")] != -1);
+		return call<R>("getRequestContext", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto getResponseContext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getResponseContext")] != -1);
+		return call<R>("getResponseContext", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto invoke(Args &&...args) const {

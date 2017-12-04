@@ -49,6 +49,8 @@ public:
 		jMethod<::jboolean()>("isTearOff"), //
 		jMethod<::jboolean()>("isTopLevelMenu"), //
 		jMethod<::jvoid(::jboolean)>("menuSelectionChanged"), //
+		jMethod<::jvoid(::java::awt::event::KeyEvent, ::javax::swing::MenuElement *, ::javax::swing::MenuSelectionManager)>("processKeyEvent"), //
+		jMethod<::jvoid(::java::awt::event::MouseEvent, ::javax::swing::MenuElement *, ::javax::swing::MenuSelectionManager)>("processMouseEvent"), //
 		jMethod<::jvoid(::jint)>("remove"), //
 		jMethod<::jvoid(::java::awt::Component)>("remove"), //
 		jMethod<::jvoid(::javax::swing::JMenuItem)>("remove"), //
@@ -212,6 +214,18 @@ public:
 	auto menuSelectionChanged(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("menuSelectionChanged")] != -1);
 		return call<R>("menuSelectionChanged", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto processKeyEvent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("processKeyEvent")] != -1);
+		return call<R>("processKeyEvent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto processMouseEvent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("processMouseEvent")] != -1);
+		return call<R>("processMouseEvent", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

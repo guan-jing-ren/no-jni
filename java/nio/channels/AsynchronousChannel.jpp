@@ -15,12 +15,19 @@ public:
 
 	constexpr static Enume method_signatures{
 		jMethod<::jvoid()>("close"), //
+		jMethod<::jboolean()>("isOpen"), //
 	};
 
 	template<typename R = ::jvoid, typename... Args>
 	auto close(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
 		return call<R>("close", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isOpen(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isOpen")] != -1);
+		return call<R>("isOpen", std::forward<Args>(args)...);
 	}
 
 };

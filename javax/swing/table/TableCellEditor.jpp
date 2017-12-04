@@ -14,13 +14,62 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::swing::event::CellEditorListener)>("addCellEditorListener"), //
+		jMethod<::jvoid()>("cancelCellEditing"), //
+		jMethod<::java::lang::Object()>("getCellEditorValue"), //
 		jMethod<::java::awt::Component(::javax::swing::JTable, ::java::lang::Object, ::jboolean, ::jint, ::jint)>("getTableCellEditorComponent"), //
+		jMethod<::jboolean(::java::util::EventObject)>("isCellEditable"), //
+		jMethod<::jvoid(::javax::swing::event::CellEditorListener)>("removeCellEditorListener"), //
+		jMethod<::jboolean(::java::util::EventObject)>("shouldSelectCell"), //
+		jMethod<::jboolean()>("stopCellEditing"), //
 	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addCellEditorListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addCellEditorListener")] != -1);
+		return call<R>("addCellEditorListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto cancelCellEditing(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("cancelCellEditing")] != -1);
+		return call<R>("cancelCellEditing", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getCellEditorValue(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCellEditorValue")] != -1);
+		return call<R>("getCellEditorValue", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::java::awt::Component, typename... Args>
 	auto getTableCellEditorComponent(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTableCellEditorComponent")] != -1);
 		return call<R>("getTableCellEditorComponent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isCellEditable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isCellEditable")] != -1);
+		return call<R>("isCellEditable", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeCellEditorListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeCellEditorListener")] != -1);
+		return call<R>("removeCellEditorListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto shouldSelectCell(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("shouldSelectCell")] != -1);
+		return call<R>("shouldSelectCell", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto stopCellEditing(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("stopCellEditing")] != -1);
+		return call<R>("stopCellEditing", std::forward<Args>(args)...);
 	}
 
 };

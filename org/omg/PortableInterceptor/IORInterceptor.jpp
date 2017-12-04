@@ -14,8 +14,14 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
-		cexprstr{"\0"}, //
+		jMethod<::jvoid(::org::omg::PortableInterceptor::IORInfo)>("establish_components"), //
 	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto establish_components(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("establish_components")] != -1);
+		return call<R>("establish_components", std::forward<Args>(args)...);
+	}
 
 };
 

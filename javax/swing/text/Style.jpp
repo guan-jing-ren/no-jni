@@ -14,10 +14,28 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::Object, ::java::lang::Object)>("addAttribute"), //
+		jMethod<::jvoid(::javax::swing::text::AttributeSet)>("addAttributes"), //
 		jMethod<::jvoid(::javax::swing::event::ChangeListener)>("addChangeListener"), //
 		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::jvoid(::java::lang::Object)>("removeAttribute"), //
+		jMethod<::jvoid(::java::util::Enumeration)>("removeAttributes"), //
+		jMethod<::jvoid(::javax::swing::text::AttributeSet)>("removeAttributes"), //
 		jMethod<::jvoid(::javax::swing::event::ChangeListener)>("removeChangeListener"), //
+		jMethod<::jvoid(::javax::swing::text::AttributeSet)>("setResolveParent"), //
 	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addAttribute")] != -1);
+		return call<R>("addAttribute", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addAttributes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addAttributes")] != -1);
+		return call<R>("addAttributes", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto addChangeListener(Args &&...args) const {
@@ -32,9 +50,27 @@ public:
 	}
 
 	template<typename R = ::jvoid, typename... Args>
+	auto removeAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeAttribute")] != -1);
+		return call<R>("removeAttribute", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeAttributes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeAttributes")] != -1);
+		return call<R>("removeAttributes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
 	auto removeChangeListener(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeChangeListener")] != -1);
 		return call<R>("removeChangeListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setResolveParent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setResolveParent")] != -1);
+		return call<R>("setResolveParent", std::forward<Args>(args)...);
 	}
 
 };

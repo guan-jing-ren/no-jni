@@ -14,17 +14,61 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::java::lang::String(::java::lang::String)>("getAttribute"), //
+		jMethod<::java::lang::String(::java::lang::String, ::java::lang::String)>("getAttributeNS"), //
+		jMethod<::org::w3c::dom::Attr(::java::lang::String)>("getAttributeNode"), //
+		jMethod<::org::w3c::dom::Attr(::java::lang::String, ::java::lang::String)>("getAttributeNodeNS"), //
 		jMethod<::java::lang::String()>("getClassName"), //
 		jMethod<::java::lang::String()>("getDir"), //
+		jMethod<::org::w3c::dom::NodeList(::java::lang::String)>("getElementsByTagName"), //
+		jMethod<::org::w3c::dom::NodeList(::java::lang::String, ::java::lang::String)>("getElementsByTagNameNS"), //
 		jMethod<::java::lang::String()>("getId"), //
 		jMethod<::java::lang::String()>("getLang"), //
+		jMethod<::org::w3c::dom::TypeInfo()>("getSchemaTypeInfo"), //
+		jMethod<::java::lang::String()>("getTagName"), //
 		jMethod<::java::lang::String()>("getTitle"), //
+		jMethod<::jboolean(::java::lang::String)>("hasAttribute"), //
+		jMethod<::jboolean(::java::lang::String, ::java::lang::String)>("hasAttributeNS"), //
+		jMethod<::jvoid(::java::lang::String)>("removeAttribute"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String)>("removeAttributeNS"), //
+		jMethod<::org::w3c::dom::Attr(::org::w3c::dom::Attr)>("removeAttributeNode"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String)>("setAttribute"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::String)>("setAttributeNS"), //
+		jMethod<::org::w3c::dom::Attr(::org::w3c::dom::Attr)>("setAttributeNode"), //
+		jMethod<::org::w3c::dom::Attr(::org::w3c::dom::Attr)>("setAttributeNodeNS"), //
 		jMethod<::jvoid(::java::lang::String)>("setClassName"), //
 		jMethod<::jvoid(::java::lang::String)>("setDir"), //
 		jMethod<::jvoid(::java::lang::String)>("setId"), //
+		jMethod<::jvoid(::java::lang::String, ::jboolean)>("setIdAttribute"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::String, ::jboolean)>("setIdAttributeNS"), //
+		jMethod<::jvoid(::org::w3c::dom::Attr, ::jboolean)>("setIdAttributeNode"), //
 		jMethod<::jvoid(::java::lang::String)>("setLang"), //
 		jMethod<::jvoid(::java::lang::String)>("setTitle"), //
 	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAttribute")] != -1);
+		return call<R>("getAttribute", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getAttributeNS(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAttributeNS")] != -1);
+		return call<R>("getAttributeNS", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Attr, typename... Args>
+	auto getAttributeNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAttributeNode")] != -1);
+		return call<R>("getAttributeNode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Attr, typename... Args>
+	auto getAttributeNodeNS(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAttributeNodeNS")] != -1);
+		return call<R>("getAttributeNodeNS", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getClassName(Args &&...args) const {
@@ -36,6 +80,18 @@ public:
 	auto getDir(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDir")] != -1);
 		return call<R>("getDir", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::NodeList, typename... Args>
+	auto getElementsByTagName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getElementsByTagName")] != -1);
+		return call<R>("getElementsByTagName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::NodeList, typename... Args>
+	auto getElementsByTagNameNS(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getElementsByTagNameNS")] != -1);
+		return call<R>("getElementsByTagNameNS", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
@@ -50,10 +106,76 @@ public:
 		return call<R>("getLang", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::org::w3c::dom::TypeInfo, typename... Args>
+	auto getSchemaTypeInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSchemaTypeInfo")] != -1);
+		return call<R>("getSchemaTypeInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getTagName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTagName")] != -1);
+		return call<R>("getTagName", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::java::lang::String, typename... Args>
 	auto getTitle(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTitle")] != -1);
 		return call<R>("getTitle", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hasAttribute")] != -1);
+		return call<R>("hasAttribute", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto hasAttributeNS(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hasAttributeNS")] != -1);
+		return call<R>("hasAttributeNS", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeAttribute")] != -1);
+		return call<R>("removeAttribute", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeAttributeNS(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeAttributeNS")] != -1);
+		return call<R>("removeAttributeNS", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Attr, typename... Args>
+	auto removeAttributeNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeAttributeNode")] != -1);
+		return call<R>("removeAttributeNode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setAttribute")] != -1);
+		return call<R>("setAttribute", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setAttributeNS(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setAttributeNS")] != -1);
+		return call<R>("setAttributeNS", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Attr, typename... Args>
+	auto setAttributeNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setAttributeNode")] != -1);
+		return call<R>("setAttributeNode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::Attr, typename... Args>
+	auto setAttributeNodeNS(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setAttributeNodeNS")] != -1);
+		return call<R>("setAttributeNodeNS", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
@@ -72,6 +194,24 @@ public:
 	auto setId(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setId")] != -1);
 		return call<R>("setId", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setIdAttribute(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setIdAttribute")] != -1);
+		return call<R>("setIdAttribute", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setIdAttributeNS(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setIdAttributeNS")] != -1);
+		return call<R>("setIdAttributeNS", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setIdAttributeNode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setIdAttributeNode")] != -1);
+		return call<R>("setIdAttributeNode", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

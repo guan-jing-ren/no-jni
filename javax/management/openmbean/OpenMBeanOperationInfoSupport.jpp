@@ -17,7 +17,12 @@ public:
 		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::javax::management::openmbean::OpenMBeanParameterInfo *, ::javax::management::openmbean::OpenType, ::jint)>(), //
 		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::javax::management::openmbean::OpenMBeanParameterInfo *, ::javax::management::openmbean::OpenType, ::jint, ::javax::management::Descriptor)>(), //
 		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::java::lang::String()>("getDescription"), //
+		jMethod<::jint()>("getImpact"), //
+		jMethod<::java::lang::String()>("getName"), //
 		jMethod<::javax::management::openmbean::OpenType()>("getReturnOpenType"), //
+		jMethod<::java::lang::String()>("getReturnType"), //
+		jMethod<::javax::management::MBeanParameterInfo *()>("getSignature"), //
 		jMethod<::jint()>("hashCode"), //
 		jMethod<::java::lang::String()>("toString"), //
 	};
@@ -28,10 +33,40 @@ public:
 		return call<R>("equals", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDescription(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDescription")] != -1);
+		return call<R>("getDescription", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getImpact(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getImpact")] != -1);
+		return call<R>("getImpact", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
+		return call<R>("getName", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::javax::management::openmbean::OpenType, typename... Args>
 	auto getReturnOpenType(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getReturnOpenType")] != -1);
 		return call<R>("getReturnOpenType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getReturnType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getReturnType")] != -1);
+		return call<R>("getReturnType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::MBeanParameterInfo *, typename... Args>
+	auto getSignature(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSignature")] != -1);
+		return call<R>("getSignature", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>

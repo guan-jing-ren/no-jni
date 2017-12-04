@@ -19,6 +19,7 @@ public:
 		jMethod<::java::util::concurrent::Future(::java::net::SocketAddress)>("connect"), //
 		jMethod<::jvoid(::java::net::SocketAddress, ::java::lang::Object, ::java::nio::channels::CompletionHandler)>("connect"), //
 		jMethod<::java::net::SocketAddress()>("getLocalAddress"), //
+		jMethod<::java::lang::Object(::java::net::SocketOption)>("getOption"), //
 		jMethod<::java::net::SocketAddress()>("getRemoteAddress"), //
 		jMethod<::java::nio::channels::AsynchronousSocketChannel()>("open"), //
 		jMethod<::java::nio::channels::AsynchronousSocketChannel(::java::nio::channels::AsynchronousChannelGroup)>("open"), //
@@ -31,6 +32,7 @@ public:
 		jMethod<::java::nio::channels::NetworkChannel(::java::net::SocketOption, ::java::lang::Object)>("setOption"), //
 		jMethod<::java::nio::channels::AsynchronousSocketChannel()>("shutdownInput"), //
 		jMethod<::java::nio::channels::AsynchronousSocketChannel()>("shutdownOutput"), //
+		jMethod<::java::util::Set()>("supportedOptions"), //
 		jMethod<::java::util::concurrent::Future(::java::nio::ByteBuffer)>("write"), //
 		jMethod<::jvoid(::java::nio::ByteBuffer, ::jlong, ::java::util::concurrent::TimeUnit, ::java::lang::Object, ::java::nio::channels::CompletionHandler)>("write"), //
 		jMethod<::jvoid(::java::nio::ByteBuffer, ::java::lang::Object, ::java::nio::channels::CompletionHandler)>("write"), //
@@ -53,6 +55,12 @@ public:
 	auto getLocalAddress(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLocalAddress")] != -1);
 		return call<R>("getLocalAddress", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getOption(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOption")] != -1);
+		return call<R>("getOption", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::net::SocketAddress, typename... Args>
@@ -95,6 +103,12 @@ public:
 	auto shutdownOutput(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("shutdownOutput")] != -1);
 		return call<R>("shutdownOutput", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Set, typename... Args>
+	auto supportedOptions(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("supportedOptions")] != -1);
+		return call<R>("supportedOptions", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::concurrent::Future, typename... Args>

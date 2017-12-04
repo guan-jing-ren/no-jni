@@ -28,6 +28,7 @@ public:
 		jMethod<::java::lang::reflect::Type()>("getParameterizedType"), //
 		jMethod<::java::lang::Class()>("getType"), //
 		jMethod<::jint()>("hashCode"), //
+		jMethod<::jboolean(::java::lang::Class)>("isAnnotationPresent"), //
 		jMethod<::jboolean()>("isImplicit"), //
 		jMethod<::jboolean()>("isNamePresent"), //
 		jMethod<::jboolean()>("isSynthetic"), //
@@ -117,6 +118,12 @@ public:
 	auto hashCode(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
 		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isAnnotationPresent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isAnnotationPresent")] != -1);
+		return call<R>("isAnnotationPresent", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>

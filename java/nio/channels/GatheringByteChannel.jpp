@@ -14,11 +14,12 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::jint(::java::nio::ByteBuffer)>("write"), //
 		jMethod<::jlong(::java::nio::ByteBuffer *)>("write"), //
 		jMethod<::jlong(::java::nio::ByteBuffer *, ::jint, ::jint)>("write"), //
 	};
 
-	template<typename R = ::jlong, typename... Args>
+	template<typename R = ::jint, typename... Args>
 	auto write(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("write")] != -1);
 		return call<R>("write", std::forward<Args>(args)...);

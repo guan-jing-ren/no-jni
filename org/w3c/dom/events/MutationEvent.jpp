@@ -36,10 +36,20 @@ public:
 	constexpr static Enume method_signatures{
 		jMethod<::jshort()>("getAttrChange"), //
 		jMethod<::java::lang::String()>("getAttrName"), //
+		jMethod<::jboolean()>("getBubbles"), //
+		jMethod<::jboolean()>("getCancelable"), //
+		jMethod<::org::w3c::dom::events::EventTarget()>("getCurrentTarget"), //
+		jMethod<::jshort()>("getEventPhase"), //
 		jMethod<::java::lang::String()>("getNewValue"), //
 		jMethod<::java::lang::String()>("getPrevValue"), //
 		jMethod<::org::w3c::dom::Node()>("getRelatedNode"), //
+		jMethod<::org::w3c::dom::events::EventTarget()>("getTarget"), //
+		jMethod<::jlong()>("getTimeStamp"), //
+		jMethod<::java::lang::String()>("getType"), //
+		jMethod<::jvoid(::java::lang::String, ::jboolean, ::jboolean)>("initEvent"), //
 		jMethod<::jvoid(::java::lang::String, ::jboolean, ::jboolean, ::org::w3c::dom::Node, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::jshort)>("initMutationEvent"), //
+		jMethod<::jvoid()>("preventDefault"), //
+		jMethod<::jvoid()>("stopPropagation"), //
 	};
 
 	template<typename R = ::jshort, typename... Args>
@@ -52,6 +62,30 @@ public:
 	auto getAttrName(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAttrName")] != -1);
 		return call<R>("getAttrName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getBubbles(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBubbles")] != -1);
+		return call<R>("getBubbles", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto getCancelable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCancelable")] != -1);
+		return call<R>("getCancelable", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::events::EventTarget, typename... Args>
+	auto getCurrentTarget(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCurrentTarget")] != -1);
+		return call<R>("getCurrentTarget", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jshort, typename... Args>
+	auto getEventPhase(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEventPhase")] != -1);
+		return call<R>("getEventPhase", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>
@@ -72,10 +106,46 @@ public:
 		return call<R>("getRelatedNode", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::org::w3c::dom::events::EventTarget, typename... Args>
+	auto getTarget(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTarget")] != -1);
+		return call<R>("getTarget", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jlong, typename... Args>
+	auto getTimeStamp(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTimeStamp")] != -1);
+		return call<R>("getTimeStamp", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getType")] != -1);
+		return call<R>("getType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto initEvent(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("initEvent")] != -1);
+		return call<R>("initEvent", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::jvoid, typename... Args>
 	auto initMutationEvent(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("initMutationEvent")] != -1);
 		return call<R>("initMutationEvent", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto preventDefault(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("preventDefault")] != -1);
+		return call<R>("preventDefault", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto stopPropagation(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("stopPropagation")] != -1);
+		return call<R>("stopPropagation", std::forward<Args>(args)...);
 	}
 
 };

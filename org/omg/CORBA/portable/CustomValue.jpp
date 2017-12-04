@@ -14,8 +14,28 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
-		cexprstr{"\0"}, //
+		jMethod<::java::lang::String *()>("_truncatable_ids"), //
+		jMethod<::jvoid(::org::omg::CORBA::DataOutputStream)>("marshal"), //
+		jMethod<::jvoid(::org::omg::CORBA::DataInputStream)>("unmarshal"), //
 	};
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto _truncatable_ids(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("_truncatable_ids")] != -1);
+		return call<R>("_truncatable_ids", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto marshal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("marshal")] != -1);
+		return call<R>("marshal", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto unmarshal(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("unmarshal")] != -1);
+		return call<R>("unmarshal", std::forward<Args>(args)...);
+	}
 
 };
 

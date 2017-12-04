@@ -15,9 +15,16 @@ public:
 
 	constexpr static Enume method_signatures{
 		jConstructor<::jvoid(::java::security::cert::CertPath, ::java::security::cert::TrustAnchor, ::java::security::cert::PolicyNode, ::java::security::PublicKey)>(), //
+		jMethod<::java::lang::Object()>("clone"), //
 		jMethod<::java::security::cert::CertPath()>("getCertPath"), //
 		jMethod<::java::lang::String()>("toString"), //
 	};
+
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto clone(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clone")] != -1);
+		return call<R>("clone", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::java::security::cert::CertPath, typename... Args>
 	auto getCertPath(Args &&...args) const {

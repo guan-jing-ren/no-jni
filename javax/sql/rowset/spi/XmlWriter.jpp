@@ -14,8 +14,15 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::jboolean(::javax::sql::RowSetInternal)>("writeData"), //
 		jMethod<::jvoid(::javax::sql::rowset::WebRowSet, ::java::io::Writer)>("writeXML"), //
 	};
+
+	template<typename R = ::jboolean, typename... Args>
+	auto writeData(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("writeData")] != -1);
+		return call<R>("writeData", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto writeXML(Args &&...args) const {

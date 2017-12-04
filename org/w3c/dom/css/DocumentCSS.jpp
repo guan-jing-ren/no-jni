@@ -15,12 +15,19 @@ public:
 
 	constexpr static Enume method_signatures{
 		jMethod<::org::w3c::dom::css::CSSStyleDeclaration(::org::w3c::dom::Element, ::java::lang::String)>("getOverrideStyle"), //
+		jMethod<::org::w3c::dom::stylesheets::StyleSheetList()>("getStyleSheets"), //
 	};
 
 	template<typename R = ::org::w3c::dom::css::CSSStyleDeclaration, typename... Args>
 	auto getOverrideStyle(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOverrideStyle")] != -1);
 		return call<R>("getOverrideStyle", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::w3c::dom::stylesheets::StyleSheetList, typename... Args>
+	auto getStyleSheets(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStyleSheets")] != -1);
+		return call<R>("getStyleSheets", std::forward<Args>(args)...);
 	}
 
 };

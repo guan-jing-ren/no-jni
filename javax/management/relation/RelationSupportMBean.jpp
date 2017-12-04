@@ -14,9 +14,75 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::javax::management::relation::RoleResult()>("getAllRoles"), //
+		jMethod<::java::util::Map()>("getReferencedMBeans"), //
+		jMethod<::java::lang::String()>("getRelationId"), //
+		jMethod<::javax::management::ObjectName()>("getRelationServiceName"), //
+		jMethod<::java::lang::String()>("getRelationTypeName"), //
+		jMethod<::java::util::List(::java::lang::String)>("getRole"), //
+		jMethod<::java::lang::Integer(::java::lang::String)>("getRoleCardinality"), //
+		jMethod<::javax::management::relation::RoleResult(::java::lang::String *)>("getRoles"), //
+		jMethod<::jvoid(::javax::management::ObjectName, ::java::lang::String)>("handleMBeanUnregistration"), //
 		jMethod<::java::lang::Boolean()>("isInRelationService"), //
+		jMethod<::javax::management::relation::RoleList()>("retrieveAllRoles"), //
 		jMethod<::jvoid(::java::lang::Boolean)>("setRelationServiceManagementFlag"), //
+		jMethod<::jvoid(::javax::management::relation::Role)>("setRole"), //
+		jMethod<::javax::management::relation::RoleResult(::javax::management::relation::RoleList)>("setRoles"), //
 	};
+
+	template<typename R = ::javax::management::relation::RoleResult, typename... Args>
+	auto getAllRoles(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAllRoles")] != -1);
+		return call<R>("getAllRoles", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Map, typename... Args>
+	auto getReferencedMBeans(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getReferencedMBeans")] != -1);
+		return call<R>("getReferencedMBeans", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getRelationId(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRelationId")] != -1);
+		return call<R>("getRelationId", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::ObjectName, typename... Args>
+	auto getRelationServiceName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRelationServiceName")] != -1);
+		return call<R>("getRelationServiceName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getRelationTypeName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRelationTypeName")] != -1);
+		return call<R>("getRelationTypeName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getRole(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRole")] != -1);
+		return call<R>("getRole", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::Integer, typename... Args>
+	auto getRoleCardinality(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRoleCardinality")] != -1);
+		return call<R>("getRoleCardinality", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::relation::RoleResult, typename... Args>
+	auto getRoles(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRoles")] != -1);
+		return call<R>("getRoles", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto handleMBeanUnregistration(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("handleMBeanUnregistration")] != -1);
+		return call<R>("handleMBeanUnregistration", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::java::lang::Boolean, typename... Args>
 	auto isInRelationService(Args &&...args) const {
@@ -24,10 +90,28 @@ public:
 		return call<R>("isInRelationService", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::javax::management::relation::RoleList, typename... Args>
+	auto retrieveAllRoles(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("retrieveAllRoles")] != -1);
+		return call<R>("retrieveAllRoles", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::jvoid, typename... Args>
 	auto setRelationServiceManagementFlag(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setRelationServiceManagementFlag")] != -1);
 		return call<R>("setRelationServiceManagementFlag", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setRole(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setRole")] != -1);
+		return call<R>("setRole", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::relation::RoleResult, typename... Args>
+	auto setRoles(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setRoles")] != -1);
+		return call<R>("setRoles", std::forward<Args>(args)...);
 	}
 
 };

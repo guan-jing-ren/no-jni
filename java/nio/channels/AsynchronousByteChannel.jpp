@@ -14,11 +14,18 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("close"), //
 		jMethod<::java::util::concurrent::Future(::java::nio::ByteBuffer)>("read"), //
 		jMethod<::jvoid(::java::nio::ByteBuffer, ::java::lang::Object, ::java::nio::channels::CompletionHandler)>("read"), //
 		jMethod<::java::util::concurrent::Future(::java::nio::ByteBuffer)>("write"), //
 		jMethod<::jvoid(::java::nio::ByteBuffer, ::java::lang::Object, ::java::nio::channels::CompletionHandler)>("write"), //
 	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::java::util::concurrent::Future, typename... Args>
 	auto read(Args &&...args) const {

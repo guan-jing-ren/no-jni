@@ -19,6 +19,7 @@ public:
 		jMethod<::jlong()>("getCollectionUsageThresholdCount"), //
 		jMethod<::java::lang::String *()>("getMemoryManagerNames"), //
 		jMethod<::java::lang::String()>("getName"), //
+		jMethod<::javax::management::ObjectName()>("getObjectName"), //
 		jMethod<::java::lang::management::MemoryUsage()>("getPeakUsage"), //
 		jMethod<::java::lang::management::MemoryType()>("getType"), //
 		jMethod<::java::lang::management::MemoryUsage()>("getUsage"), //
@@ -62,6 +63,12 @@ public:
 	auto getName(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getName")] != -1);
 		return call<R>("getName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::ObjectName, typename... Args>
+	auto getObjectName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getObjectName")] != -1);
+		return call<R>("getObjectName", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::management::MemoryUsage, typename... Args>

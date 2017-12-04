@@ -14,8 +14,49 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
-		cexprstr{"\0"}, //
+		jMethod<::org::omg::CORBA::TCKind()>("current_member_kind"), //
+		jMethod<::java::lang::String()>("current_member_name"), //
+		jMethod<::org::omg::DynamicAny::NameValuePair *()>("get_members"), //
+		jMethod<::org::omg::DynamicAny::NameDynAnyPair *()>("get_members_as_dyn_any"), //
+		jMethod<::jvoid(::org::omg::DynamicAny::NameValuePair *)>("set_members"), //
+		jMethod<::jvoid(::org::omg::DynamicAny::NameDynAnyPair *)>("set_members_as_dyn_any"), //
 	};
+
+	template<typename R = ::org::omg::CORBA::TCKind, typename... Args>
+	auto current_member_kind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("current_member_kind")] != -1);
+		return call<R>("current_member_kind", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto current_member_name(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("current_member_name")] != -1);
+		return call<R>("current_member_name", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::DynamicAny::NameValuePair *, typename... Args>
+	auto get_members(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get_members")] != -1);
+		return call<R>("get_members", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::DynamicAny::NameDynAnyPair *, typename... Args>
+	auto get_members_as_dyn_any(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get_members_as_dyn_any")] != -1);
+		return call<R>("get_members_as_dyn_any", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set_members(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set_members")] != -1);
+		return call<R>("set_members", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto set_members_as_dyn_any(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set_members_as_dyn_any")] != -1);
+		return call<R>("set_members_as_dyn_any", std::forward<Args>(args)...);
+	}
 
 };
 

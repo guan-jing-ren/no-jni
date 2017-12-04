@@ -14,24 +14,59 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::javax::swing::event::DocumentListener)>("addDocumentListener"), //
 		jMethod<::javax::swing::text::Style(::java::lang::String, ::javax::swing::text::Style)>("addStyle"), //
+		jMethod<::jvoid(::javax::swing::event::UndoableEditListener)>("addUndoableEditListener"), //
+		jMethod<::javax::swing::text::Position(::jint)>("createPosition"), //
 		jMethod<::java::awt::Color(::javax::swing::text::AttributeSet)>("getBackground"), //
 		jMethod<::javax::swing::text::Element(::jint)>("getCharacterElement"), //
+		jMethod<::javax::swing::text::Element()>("getDefaultRootElement"), //
+		jMethod<::javax::swing::text::Position()>("getEndPosition"), //
 		jMethod<::java::awt::Font(::javax::swing::text::AttributeSet)>("getFont"), //
 		jMethod<::java::awt::Color(::javax::swing::text::AttributeSet)>("getForeground"), //
+		jMethod<::jint()>("getLength"), //
 		jMethod<::javax::swing::text::Style(::jint)>("getLogicalStyle"), //
 		jMethod<::javax::swing::text::Element(::jint)>("getParagraphElement"), //
+		jMethod<::java::lang::Object(::java::lang::Object)>("getProperty"), //
+		jMethod<::javax::swing::text::Element *()>("getRootElements"), //
+		jMethod<::javax::swing::text::Position()>("getStartPosition"), //
 		jMethod<::javax::swing::text::Style(::java::lang::String)>("getStyle"), //
+		jMethod<::java::lang::String(::jint, ::jint)>("getText"), //
+		jMethod<::jvoid(::jint, ::jint, ::javax::swing::text::Segment)>("getText"), //
+		jMethod<::jvoid(::jint, ::java::lang::String, ::javax::swing::text::AttributeSet)>("insertString"), //
+		jMethod<::jvoid(::java::lang::Object, ::java::lang::Object)>("putProperty"), //
+		jMethod<::jvoid(::jint, ::jint)>("remove"), //
+		jMethod<::jvoid(::javax::swing::event::DocumentListener)>("removeDocumentListener"), //
 		jMethod<::jvoid(::java::lang::String)>("removeStyle"), //
+		jMethod<::jvoid(::javax::swing::event::UndoableEditListener)>("removeUndoableEditListener"), //
+		jMethod<::jvoid(::java::lang::Runnable)>("render"), //
 		jMethod<::jvoid(::jint, ::jint, ::javax::swing::text::AttributeSet, ::jboolean)>("setCharacterAttributes"), //
 		jMethod<::jvoid(::jint, ::javax::swing::text::Style)>("setLogicalStyle"), //
 		jMethod<::jvoid(::jint, ::jint, ::javax::swing::text::AttributeSet, ::jboolean)>("setParagraphAttributes"), //
 	};
 
+	template<typename R = ::jvoid, typename... Args>
+	auto addDocumentListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addDocumentListener")] != -1);
+		return call<R>("addDocumentListener", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::javax::swing::text::Style, typename... Args>
 	auto addStyle(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addStyle")] != -1);
 		return call<R>("addStyle", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto addUndoableEditListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addUndoableEditListener")] != -1);
+		return call<R>("addUndoableEditListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::text::Position, typename... Args>
+	auto createPosition(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createPosition")] != -1);
+		return call<R>("createPosition", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::Color, typename... Args>
@@ -46,6 +81,18 @@ public:
 		return call<R>("getCharacterElement", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::javax::swing::text::Element, typename... Args>
+	auto getDefaultRootElement(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDefaultRootElement")] != -1);
+		return call<R>("getDefaultRootElement", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::text::Position, typename... Args>
+	auto getEndPosition(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEndPosition")] != -1);
+		return call<R>("getEndPosition", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::java::awt::Font, typename... Args>
 	auto getFont(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFont")] != -1);
@@ -56,6 +103,12 @@ public:
 	auto getForeground(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getForeground")] != -1);
 		return call<R>("getForeground", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getLength(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLength")] != -1);
+		return call<R>("getLength", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::swing::text::Style, typename... Args>
@@ -70,16 +123,76 @@ public:
 		return call<R>("getParagraphElement", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::java::lang::Object, typename... Args>
+	auto getProperty(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getProperty")] != -1);
+		return call<R>("getProperty", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::text::Element *, typename... Args>
+	auto getRootElements(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRootElements")] != -1);
+		return call<R>("getRootElements", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::swing::text::Position, typename... Args>
+	auto getStartPosition(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStartPosition")] != -1);
+		return call<R>("getStartPosition", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::javax::swing::text::Style, typename... Args>
 	auto getStyle(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getStyle")] != -1);
 		return call<R>("getStyle", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getText(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getText")] != -1);
+		return call<R>("getText", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto insertString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("insertString")] != -1);
+		return call<R>("insertString", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto putProperty(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("putProperty")] != -1);
+		return call<R>("putProperty", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto remove(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("remove")] != -1);
+		return call<R>("remove", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeDocumentListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeDocumentListener")] != -1);
+		return call<R>("removeDocumentListener", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::jvoid, typename... Args>
 	auto removeStyle(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeStyle")] != -1);
 		return call<R>("removeStyle", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto removeUndoableEditListener(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeUndoableEditListener")] != -1);
+		return call<R>("removeUndoableEditListener", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto render(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("render")] != -1);
+		return call<R>("render", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

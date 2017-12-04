@@ -14,14 +14,28 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::jvoid()>("dispose"), //
 		jMethod<::jvoid(::jboolean)>("setEnabled"), //
+		jMethod<::jvoid(::java::awt::Font)>("setFont"), //
 		jMethod<::jvoid(::java::lang::String)>("setLabel"), //
 	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto dispose(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("dispose")] != -1);
+		return call<R>("dispose", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setEnabled(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setEnabled")] != -1);
 		return call<R>("setEnabled", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setFont(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setFont")] != -1);
+		return call<R>("setFont", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

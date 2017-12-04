@@ -38,6 +38,7 @@ public:
 		jMethod<::jboolean(::java::util::Collection)>("removeAll"), //
 		jMethod<::jboolean(::java::util::Collection)>("retainAll"), //
 		jMethod<::jint()>("size"), //
+		jMethod<::java::util::Spliterator()>("spliterator"), //
 		jMethod<::java::util::SortedSet(::java::lang::Object, ::java::lang::Object)>("subSet"), //
 		jMethod<::java::util::NavigableSet(::java::lang::Object, ::jboolean, ::java::lang::Object, ::jboolean)>("subSet"), //
 		jMethod<::java::util::SortedSet(::java::lang::Object)>("tailSet"), //
@@ -182,6 +183,12 @@ public:
 	auto size(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("size")] != -1);
 		return call<R>("size", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::Spliterator, typename... Args>
+	auto spliterator(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("spliterator")] != -1);
+		return call<R>("spliterator", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::SortedSet, typename... Args>

@@ -26,6 +26,7 @@ public:
 		jMethod<::java::util::List()>("getObjects"), //
 		jMethod<::javax::xml::crypto::dsig::XMLSignature$SignatureValue()>("getSignatureValue"), //
 		jMethod<::javax::xml::crypto::dsig::SignedInfo()>("getSignedInfo"), //
+		jMethod<::jboolean(::java::lang::String)>("isFeatureSupported"), //
 		jMethod<::jvoid(::javax::xml::crypto::dsig::XMLSignContext)>("sign"), //
 		jMethod<::jboolean(::javax::xml::crypto::dsig::XMLValidateContext)>("validate"), //
 	};
@@ -64,6 +65,12 @@ public:
 	auto getSignedInfo(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSignedInfo")] != -1);
 		return call<R>("getSignedInfo", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isFeatureSupported(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isFeatureSupported")] != -1);
+		return call<R>("isFeatureSupported", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

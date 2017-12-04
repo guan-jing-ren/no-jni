@@ -15,8 +15,10 @@ public:
 
 	constexpr static Enume method_signatures{
 		jMethod<::java::lang::Object()>("blockingLock"), //
+		jMethod<::jvoid()>("close"), //
 		jMethod<::java::nio::channels::SelectableChannel(::jboolean)>("configureBlocking"), //
 		jMethod<::jboolean()>("isBlocking"), //
+		jMethod<::jboolean()>("isOpen"), //
 		jMethod<::jboolean()>("isRegistered"), //
 		jMethod<::java::nio::channels::SelectionKey(::java::nio::channels::Selector)>("keyFor"), //
 		jMethod<::java::nio::channels::spi::SelectorProvider()>("provider"), //
@@ -31,6 +33,12 @@ public:
 		return call<R>("blockingLock", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::java::nio::channels::SelectableChannel, typename... Args>
 	auto configureBlocking(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("configureBlocking")] != -1);
@@ -41,6 +49,12 @@ public:
 	auto isBlocking(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isBlocking")] != -1);
 		return call<R>("isBlocking", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isOpen(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isOpen")] != -1);
+		return call<R>("isOpen", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>

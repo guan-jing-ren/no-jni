@@ -14,8 +14,35 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
-		cexprstr{"\0"}, //
+		jMethod<::jvoid(::org::omg::CORBA::portable::InputStream)>("_read"), //
+		jMethod<::java::lang::String *()>("_truncatable_ids"), //
+		jMethod<::org::omg::CORBA::TypeCode()>("_type"), //
+		jMethod<::jvoid(::org::omg::CORBA::portable::OutputStream)>("_write"), //
 	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto _read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("_read")] != -1);
+		return call<R>("_read", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String *, typename... Args>
+	auto _truncatable_ids(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("_truncatable_ids")] != -1);
+		return call<R>("_truncatable_ids", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
+	auto _type(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("_type")] != -1);
+		return call<R>("_type", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto _write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("_write")] != -1);
+		return call<R>("_write", std::forward<Args>(args)...);
+	}
 
 };
 

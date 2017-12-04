@@ -14,8 +14,21 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
-		cexprstr{"\0"}, //
+		jMethod<::jint(::java::nio::ByteBuffer)>("read"), //
+		jMethod<::jint(::java::nio::ByteBuffer)>("write"), //
 	};
+
+	template<typename R = ::jint, typename... Args>
+	auto read(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read")] != -1);
+		return call<R>("read", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto write(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("write")] != -1);
+		return call<R>("write", std::forward<Args>(args)...);
+	}
 
 };
 

@@ -14,11 +14,12 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::jint(::java::nio::ByteBuffer)>("read"), //
 		jMethod<::jlong(::java::nio::ByteBuffer *)>("read"), //
 		jMethod<::jlong(::java::nio::ByteBuffer *, ::jint, ::jint)>("read"), //
 	};
 
-	template<typename R = ::jlong, typename... Args>
+	template<typename R = ::jint, typename... Args>
 	auto read(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read")] != -1);
 		return call<R>("read", std::forward<Args>(args)...);

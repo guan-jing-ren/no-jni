@@ -22,13 +22,19 @@ public:
 	constexpr static Enume method_signatures{
 		jMethod<::jint *(::javax::sound::midi::ControllerEventListener, ::jint *)>("addControllerEventListener"), //
 		jMethod<::jboolean(::javax::sound::midi::MetaEventListener)>("addMetaEventListener"), //
+		jMethod<::jvoid()>("close"), //
+		jMethod<::javax::sound::midi::MidiDevice$Info()>("getDeviceInfo"), //
 		jMethod<::jint()>("getLoopCount"), //
 		jMethod<::jlong()>("getLoopEndPoint"), //
 		jMethod<::jlong()>("getLoopStartPoint"), //
 		jMethod<::javax::sound::midi::Sequencer$SyncMode()>("getMasterSyncMode"), //
 		jMethod<::javax::sound::midi::Sequencer$SyncMode *()>("getMasterSyncModes"), //
+		jMethod<::jint()>("getMaxReceivers"), //
+		jMethod<::jint()>("getMaxTransmitters"), //
 		jMethod<::jlong()>("getMicrosecondLength"), //
 		jMethod<::jlong()>("getMicrosecondPosition"), //
+		jMethod<::javax::sound::midi::Receiver()>("getReceiver"), //
+		jMethod<::java::util::List()>("getReceivers"), //
 		jMethod<::javax::sound::midi::Sequence()>("getSequence"), //
 		jMethod<::javax::sound::midi::Sequencer$SyncMode()>("getSlaveSyncMode"), //
 		jMethod<::javax::sound::midi::Sequencer$SyncMode *()>("getSlaveSyncModes"), //
@@ -39,8 +45,12 @@ public:
 		jMethod<::jlong()>("getTickPosition"), //
 		jMethod<::jboolean(::jint)>("getTrackMute"), //
 		jMethod<::jboolean(::jint)>("getTrackSolo"), //
+		jMethod<::javax::sound::midi::Transmitter()>("getTransmitter"), //
+		jMethod<::java::util::List()>("getTransmitters"), //
+		jMethod<::jboolean()>("isOpen"), //
 		jMethod<::jboolean()>("isRecording"), //
 		jMethod<::jboolean()>("isRunning"), //
+		jMethod<::jvoid()>("open"), //
 		jMethod<::jvoid(::javax::sound::midi::Track)>("recordDisable"), //
 		jMethod<::jvoid(::javax::sound::midi::Track, ::jint)>("recordEnable"), //
 		jMethod<::jint *(::javax::sound::midi::ControllerEventListener, ::jint *)>("removeControllerEventListener"), //
@@ -77,6 +87,18 @@ public:
 		return call<R>("addMetaEventListener", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::jvoid, typename... Args>
+	auto close(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("close")] != -1);
+		return call<R>("close", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::midi::MidiDevice$Info, typename... Args>
+	auto getDeviceInfo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDeviceInfo")] != -1);
+		return call<R>("getDeviceInfo", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::jint, typename... Args>
 	auto getLoopCount(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLoopCount")] != -1);
@@ -107,6 +129,18 @@ public:
 		return call<R>("getMasterSyncModes", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::jint, typename... Args>
+	auto getMaxReceivers(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMaxReceivers")] != -1);
+		return call<R>("getMaxReceivers", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto getMaxTransmitters(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMaxTransmitters")] != -1);
+		return call<R>("getMaxTransmitters", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::jlong, typename... Args>
 	auto getMicrosecondLength(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMicrosecondLength")] != -1);
@@ -117,6 +151,18 @@ public:
 	auto getMicrosecondPosition(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMicrosecondPosition")] != -1);
 		return call<R>("getMicrosecondPosition", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::sound::midi::Receiver, typename... Args>
+	auto getReceiver(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getReceiver")] != -1);
+		return call<R>("getReceiver", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getReceivers(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getReceivers")] != -1);
+		return call<R>("getReceivers", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::sound::midi::Sequence, typename... Args>
@@ -179,6 +225,24 @@ public:
 		return call<R>("getTrackSolo", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::javax::sound::midi::Transmitter, typename... Args>
+	auto getTransmitter(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTransmitter")] != -1);
+		return call<R>("getTransmitter", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::List, typename... Args>
+	auto getTransmitters(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTransmitters")] != -1);
+		return call<R>("getTransmitters", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isOpen(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isOpen")] != -1);
+		return call<R>("isOpen", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::jboolean, typename... Args>
 	auto isRecording(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isRecording")] != -1);
@@ -189,6 +253,12 @@ public:
 	auto isRunning(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isRunning")] != -1);
 		return call<R>("isRunning", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto open(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("open")] != -1);
+		return call<R>("open", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

@@ -20,12 +20,22 @@ public:
 	}
 
 	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Class()>("annotationType"), //
 		jMethod<::javax::xml::bind::annotation::XmlNsForm()>("attributeFormDefault"), //
 		jMethod<::javax::xml::bind::annotation::XmlNsForm()>("elementFormDefault"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jint()>("hashCode"), //
 		jMethod<::java::lang::String()>("location"), //
 		jMethod<::java::lang::String()>("namespace"), //
+		jMethod<::java::lang::String()>("toString"), //
 		jMethod<::javax::xml::bind::annotation::XmlNs *()>("xmlns"), //
 	};
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto annotationType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("annotationType")] != -1);
+		return call<R>("annotationType", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::javax::xml::bind::annotation::XmlNsForm, typename... Args>
 	auto attributeFormDefault(Args &&...args) const {
@@ -39,6 +49,18 @@ public:
 		return call<R>("elementFormDefault", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::java::lang::String, typename... Args>
 	auto location(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("location")] != -1);
@@ -49,6 +71,12 @@ public:
 	auto namespace_(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("namespace")] != -1);
 		return call<R>("namespace", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::xml::bind::annotation::XmlNs *, typename... Args>

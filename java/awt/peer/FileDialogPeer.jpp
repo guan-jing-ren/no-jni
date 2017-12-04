@@ -14,10 +14,19 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::util::List)>("blockWindows"), //
 		jMethod<::jvoid(::java::lang::String)>("setDirectory"), //
 		jMethod<::jvoid(::java::lang::String)>("setFile"), //
 		jMethod<::jvoid(::java::io::FilenameFilter)>("setFilenameFilter"), //
+		jMethod<::jvoid(::jboolean)>("setResizable"), //
+		jMethod<::jvoid(::java::lang::String)>("setTitle"), //
 	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto blockWindows(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("blockWindows")] != -1);
+		return call<R>("blockWindows", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto setDirectory(Args &&...args) const {
@@ -35,6 +44,18 @@ public:
 	auto setFilenameFilter(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setFilenameFilter")] != -1);
 		return call<R>("setFilenameFilter", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setResizable(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setResizable")] != -1);
+		return call<R>("setResizable", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto setTitle(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setTitle")] != -1);
+		return call<R>("setTitle", std::forward<Args>(args)...);
 	}
 
 };

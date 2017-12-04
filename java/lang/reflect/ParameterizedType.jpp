@@ -17,6 +17,7 @@ public:
 		jMethod<::java::lang::reflect::Type *()>("getActualTypeArguments"), //
 		jMethod<::java::lang::reflect::Type()>("getOwnerType"), //
 		jMethod<::java::lang::reflect::Type()>("getRawType"), //
+		jMethod<::java::lang::String()>("getTypeName"), //
 	};
 
 	template<typename R = ::java::lang::reflect::Type *, typename... Args>
@@ -35,6 +36,12 @@ public:
 	auto getRawType(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getRawType")] != -1);
 		return call<R>("getRawType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getTypeName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTypeName")] != -1);
+		return call<R>("getTypeName", std::forward<Args>(args)...);
 	}
 
 };

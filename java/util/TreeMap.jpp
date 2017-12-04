@@ -38,6 +38,7 @@ public:
 		jMethod<::java::util::NavigableMap(::java::lang::Object, ::jboolean)>("headMap"), //
 		jMethod<::java::util::Map$Entry(::java::lang::Object)>("higherEntry"), //
 		jMethod<::java::lang::Object(::java::lang::Object)>("higherKey"), //
+		jMethod<::jboolean()>("isEmpty"), //
 		jMethod<::java::util::Set()>("keySet"), //
 		jMethod<::java::util::Map$Entry()>("lastEntry"), //
 		jMethod<::java::lang::Object()>("lastKey"), //
@@ -172,6 +173,12 @@ public:
 	auto higherKey(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("higherKey")] != -1);
 		return call<R>("higherKey", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isEmpty(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isEmpty")] != -1);
+		return call<R>("isEmpty", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Set, typename... Args>

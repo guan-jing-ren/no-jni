@@ -15,6 +15,7 @@ public:
 
 	constexpr static Enume method_signatures{
 		jConstructor<::jvoid()>(), //
+		jMethod<::jvoid(::jlong)>("flushBefore"), //
 		jMethod<::jvoid(::jint)>("write"), //
 		jMethod<::jvoid(::jbyte *)>("write"), //
 		jMethod<::jvoid(::jbyte *, ::jint, ::jint)>("write"), //
@@ -38,6 +39,12 @@ public:
 		jMethod<::jvoid(::jshort *, ::jint, ::jint)>("writeShorts"), //
 		jMethod<::jvoid(::java::lang::String)>("writeUTF"), //
 	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto flushBefore(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("flushBefore")] != -1);
+		return call<R>("flushBefore", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::jvoid, typename... Args>
 	auto write(Args &&...args) const {

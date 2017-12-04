@@ -22,6 +22,7 @@ public:
 		jMethod<::java::awt::event::MouseMotionListener()>("getMouseMotionListener"), //
 		jMethod<::jvoid()>("hide"), //
 		jMethod<::jboolean()>("isFocusTraversable"), //
+		jMethod<::jboolean()>("isVisible"), //
 		jMethod<::jvoid()>("show"), //
 		jMethod<::jvoid()>("uninstallingUI"), //
 	};
@@ -66,6 +67,12 @@ public:
 	auto isFocusTraversable(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isFocusTraversable")] != -1);
 		return call<R>("isFocusTraversable", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto isVisible(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isVisible")] != -1);
+		return call<R>("isVisible", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

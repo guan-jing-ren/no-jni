@@ -18,12 +18,14 @@ public:
 		jConstructor<::jvoid(::jint)>(), //
 		jConstructor<::jvoid(::java::util::Collection)>(), //
 		jMethod<::jboolean(::java::lang::Object)>("add"), //
+		jMethod<::jboolean(::java::util::Collection)>("addAll"), //
 		jMethod<::jvoid(::java::lang::Object)>("addFirst"), //
 		jMethod<::jvoid(::java::lang::Object)>("addLast"), //
 		jMethod<::jvoid()>("clear"), //
 		jMethod<::java::lang::Object()>("clone"), //
 		jMethod<::java::util::ArrayDeque()>("clone"), //
 		jMethod<::jboolean(::java::lang::Object)>("contains"), //
+		jMethod<::jboolean(::java::util::Collection)>("containsAll"), //
 		jMethod<::java::util::Iterator()>("descendingIterator"), //
 		jMethod<::java::lang::Object()>("element"), //
 		jMethod<::java::lang::Object()>("getFirst"), //
@@ -43,10 +45,12 @@ public:
 		jMethod<::jvoid(::java::lang::Object)>("push"), //
 		jMethod<::java::lang::Object()>("remove"), //
 		jMethod<::jboolean(::java::lang::Object)>("remove"), //
+		jMethod<::jboolean(::java::util::Collection)>("removeAll"), //
 		jMethod<::java::lang::Object()>("removeFirst"), //
 		jMethod<::jboolean(::java::lang::Object)>("removeFirstOccurrence"), //
 		jMethod<::java::lang::Object()>("removeLast"), //
 		jMethod<::jboolean(::java::lang::Object)>("removeLastOccurrence"), //
+		jMethod<::jboolean(::java::util::Collection)>("retainAll"), //
 		jMethod<::jint()>("size"), //
 		jMethod<::java::util::Spliterator()>("spliterator"), //
 		jMethod<::java::lang::Object *()>("toArray"), //
@@ -57,6 +61,12 @@ public:
 	auto add(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("add")] != -1);
 		return call<R>("add", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto addAll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addAll")] != -1);
+		return call<R>("addAll", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
@@ -87,6 +97,12 @@ public:
 	auto contains(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("contains")] != -1);
 		return call<R>("contains", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto containsAll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("containsAll")] != -1);
+		return call<R>("containsAll", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::Iterator, typename... Args>
@@ -197,6 +213,12 @@ public:
 		return call<R>("remove", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::jboolean, typename... Args>
+	auto removeAll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeAll")] != -1);
+		return call<R>("removeAll", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto removeFirst(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeFirst")] != -1);
@@ -219,6 +241,12 @@ public:
 	auto removeLastOccurrence(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeLastOccurrence")] != -1);
 		return call<R>("removeLastOccurrence", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto retainAll(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("retainAll")] != -1);
+		return call<R>("retainAll", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>

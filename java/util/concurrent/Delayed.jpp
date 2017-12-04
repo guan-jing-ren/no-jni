@@ -14,8 +14,15 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::jint(::java::lang::Object)>("compareTo"), //
 		jMethod<::jlong(::java::util::concurrent::TimeUnit)>("getDelay"), //
 	};
+
+	template<typename R = ::jint, typename... Args>
+	auto compareTo(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("compareTo")] != -1);
+		return call<R>("compareTo", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::jlong, typename... Args>
 	auto getDelay(Args &&...args) const {

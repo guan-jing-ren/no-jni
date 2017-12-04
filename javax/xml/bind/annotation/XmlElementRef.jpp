@@ -14,11 +14,33 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::java::lang::Class()>("annotationType"), //
+		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::jint()>("hashCode"), //
 		jMethod<::java::lang::String()>("name"), //
 		jMethod<::java::lang::String()>("namespace"), //
 		jMethod<::jboolean()>("required"), //
+		jMethod<::java::lang::String()>("toString"), //
 		jMethod<::java::lang::Class()>("type"), //
 	};
+
+	template<typename R = ::java::lang::Class, typename... Args>
+	auto annotationType(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("annotationType")] != -1);
+		return call<R>("annotationType", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto equals(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
+		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jint, typename... Args>
+	auto hashCode(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
+		return call<R>("hashCode", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::java::lang::String, typename... Args>
 	auto name(Args &&...args) const {
@@ -36,6 +58,12 @@ public:
 	auto required(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("required")] != -1);
 		return call<R>("required", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto toString(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toString")] != -1);
+		return call<R>("toString", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Class, typename... Args>

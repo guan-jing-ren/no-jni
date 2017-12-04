@@ -14,8 +14,21 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
-		cexprstr{"\0"}, //
+		jMethod<::java::lang::String()>("get_value"), //
+		jMethod<::jboolean(::java::lang::String)>("set_value"), //
 	};
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto get_value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get_value")] != -1);
+		return call<R>("get_value", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jboolean, typename... Args>
+	auto set_value(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("set_value")] != -1);
+		return call<R>("set_value", std::forward<Args>(args)...);
+	}
 
 };
 

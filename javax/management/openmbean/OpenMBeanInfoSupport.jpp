@@ -17,6 +17,12 @@ public:
 		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::javax::management::openmbean::OpenMBeanAttributeInfo *, ::javax::management::openmbean::OpenMBeanConstructorInfo *, ::javax::management::openmbean::OpenMBeanOperationInfo *, ::javax::management::MBeanNotificationInfo *)>(), //
 		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::javax::management::openmbean::OpenMBeanAttributeInfo *, ::javax::management::openmbean::OpenMBeanConstructorInfo *, ::javax::management::openmbean::OpenMBeanOperationInfo *, ::javax::management::MBeanNotificationInfo *, ::javax::management::Descriptor)>(), //
 		jMethod<::jboolean(::java::lang::Object)>("equals"), //
+		jMethod<::javax::management::MBeanAttributeInfo *()>("getAttributes"), //
+		jMethod<::java::lang::String()>("getClassName"), //
+		jMethod<::javax::management::MBeanConstructorInfo *()>("getConstructors"), //
+		jMethod<::java::lang::String()>("getDescription"), //
+		jMethod<::javax::management::MBeanNotificationInfo *()>("getNotifications"), //
+		jMethod<::javax::management::MBeanOperationInfo *()>("getOperations"), //
 		jMethod<::jint()>("hashCode"), //
 		jMethod<::java::lang::String()>("toString"), //
 	};
@@ -25,6 +31,42 @@ public:
 	auto equals(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("equals")] != -1);
 		return call<R>("equals", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::MBeanAttributeInfo *, typename... Args>
+	auto getAttributes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAttributes")] != -1);
+		return call<R>("getAttributes", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getClassName(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClassName")] != -1);
+		return call<R>("getClassName", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::MBeanConstructorInfo *, typename... Args>
+	auto getConstructors(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getConstructors")] != -1);
+		return call<R>("getConstructors", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::lang::String, typename... Args>
+	auto getDescription(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDescription")] != -1);
+		return call<R>("getDescription", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::MBeanNotificationInfo *, typename... Args>
+	auto getNotifications(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNotifications")] != -1);
+		return call<R>("getNotifications", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::management::MBeanOperationInfo *, typename... Args>
+	auto getOperations(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getOperations")] != -1);
+		return call<R>("getOperations", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>

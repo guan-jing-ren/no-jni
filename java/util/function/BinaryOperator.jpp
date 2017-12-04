@@ -14,10 +14,17 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
+		jMethod<::java::util::function::BiFunction(::java::util::function::Function)>("andThen"), //
 		jMethod<::java::lang::Object(::java::lang::Object, ::java::lang::Object)>("apply"), //
 		jMethod<::java::util::function::BinaryOperator(::java::util::Comparator)>("maxBy"), //
 		jMethod<::java::util::function::BinaryOperator(::java::util::Comparator)>("minBy"), //
 	};
+
+	template<typename R = ::java::util::function::BiFunction, typename... Args>
+	auto andThen(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("andThen")] != -1);
+		return call<R>("andThen", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::java::lang::Object, typename... Args>
 	auto apply(Args &&...args) const {

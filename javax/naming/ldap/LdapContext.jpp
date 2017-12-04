@@ -20,19 +20,63 @@ public:
 	}
 
 	constexpr static Enume method_signatures{
+		jMethod<::jvoid(::java::lang::String, ::java::lang::Object, ::javax::naming::directory::Attributes)>("bind"), //
+		jMethod<::jvoid(::javax::naming::Name, ::java::lang::Object, ::javax::naming::directory::Attributes)>("bind"), //
+		jMethod<::javax::naming::directory::DirContext(::java::lang::String, ::javax::naming::directory::Attributes)>("createSubcontext"), //
+		jMethod<::javax::naming::directory::DirContext(::javax::naming::Name, ::javax::naming::directory::Attributes)>("createSubcontext"), //
 		jMethod<::javax::naming::ldap::ExtendedResponse(::javax::naming::ldap::ExtendedRequest)>("extendedOperation"), //
+		jMethod<::javax::naming::directory::Attributes(::java::lang::String)>("getAttributes"), //
+		jMethod<::javax::naming::directory::Attributes(::java::lang::String, ::java::lang::String *)>("getAttributes"), //
+		jMethod<::javax::naming::directory::Attributes(::javax::naming::Name)>("getAttributes"), //
+		jMethod<::javax::naming::directory::Attributes(::javax::naming::Name, ::java::lang::String *)>("getAttributes"), //
 		jMethod<::javax::naming::ldap::Control *()>("getConnectControls"), //
 		jMethod<::javax::naming::ldap::Control *()>("getRequestControls"), //
 		jMethod<::javax::naming::ldap::Control *()>("getResponseControls"), //
+		jMethod<::javax::naming::directory::DirContext(::java::lang::String)>("getSchema"), //
+		jMethod<::javax::naming::directory::DirContext(::javax::naming::Name)>("getSchema"), //
+		jMethod<::javax::naming::directory::DirContext(::java::lang::String)>("getSchemaClassDefinition"), //
+		jMethod<::javax::naming::directory::DirContext(::javax::naming::Name)>("getSchemaClassDefinition"), //
+		jMethod<::jvoid(::java::lang::String, ::jint, ::javax::naming::directory::Attributes)>("modifyAttributes"), //
+		jMethod<::jvoid(::java::lang::String, ::javax::naming::directory::ModificationItem *)>("modifyAttributes"), //
+		jMethod<::jvoid(::javax::naming::Name, ::jint, ::javax::naming::directory::Attributes)>("modifyAttributes"), //
+		jMethod<::jvoid(::javax::naming::Name, ::javax::naming::directory::ModificationItem *)>("modifyAttributes"), //
 		jMethod<::javax::naming::ldap::LdapContext(::javax::naming::ldap::Control *)>("newInstance"), //
+		jMethod<::jvoid(::java::lang::String, ::java::lang::Object, ::javax::naming::directory::Attributes)>("rebind"), //
+		jMethod<::jvoid(::javax::naming::Name, ::java::lang::Object, ::javax::naming::directory::Attributes)>("rebind"), //
 		jMethod<::jvoid(::javax::naming::ldap::Control *)>("reconnect"), //
+		jMethod<::javax::naming::NamingEnumeration(::java::lang::String, ::java::lang::String, ::javax::naming::directory::SearchControls)>("search"), //
+		jMethod<::javax::naming::NamingEnumeration(::java::lang::String, ::java::lang::String, ::java::lang::Object *, ::javax::naming::directory::SearchControls)>("search"), //
+		jMethod<::javax::naming::NamingEnumeration(::java::lang::String, ::javax::naming::directory::Attributes)>("search"), //
+		jMethod<::javax::naming::NamingEnumeration(::java::lang::String, ::javax::naming::directory::Attributes, ::java::lang::String *)>("search"), //
+		jMethod<::javax::naming::NamingEnumeration(::javax::naming::Name, ::java::lang::String, ::javax::naming::directory::SearchControls)>("search"), //
+		jMethod<::javax::naming::NamingEnumeration(::javax::naming::Name, ::java::lang::String, ::java::lang::Object *, ::javax::naming::directory::SearchControls)>("search"), //
+		jMethod<::javax::naming::NamingEnumeration(::javax::naming::Name, ::javax::naming::directory::Attributes)>("search"), //
+		jMethod<::javax::naming::NamingEnumeration(::javax::naming::Name, ::javax::naming::directory::Attributes, ::java::lang::String *)>("search"), //
 		jMethod<::jvoid(::javax::naming::ldap::Control *)>("setRequestControls"), //
 	};
+
+	template<typename R = ::jvoid, typename... Args>
+	auto bind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("bind")] != -1);
+		return call<R>("bind", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::naming::directory::DirContext, typename... Args>
+	auto createSubcontext(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createSubcontext")] != -1);
+		return call<R>("createSubcontext", std::forward<Args>(args)...);
+	}
 
 	template<typename R = ::javax::naming::ldap::ExtendedResponse, typename... Args>
 	auto extendedOperation(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("extendedOperation")] != -1);
 		return call<R>("extendedOperation", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::naming::directory::Attributes, typename... Args>
+	auto getAttributes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAttributes")] != -1);
+		return call<R>("getAttributes", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::naming::ldap::Control *, typename... Args>
@@ -53,6 +97,24 @@ public:
 		return call<R>("getResponseControls", std::forward<Args>(args)...);
 	}
 
+	template<typename R = ::javax::naming::directory::DirContext, typename... Args>
+	auto getSchema(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSchema")] != -1);
+		return call<R>("getSchema", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::naming::directory::DirContext, typename... Args>
+	auto getSchemaClassDefinition(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSchemaClassDefinition")] != -1);
+		return call<R>("getSchemaClassDefinition", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
+	auto modifyAttributes(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("modifyAttributes")] != -1);
+		return call<R>("modifyAttributes", std::forward<Args>(args)...);
+	}
+
 	template<typename R = ::javax::naming::ldap::LdapContext, typename... Args>
 	auto newInstance(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newInstance")] != -1);
@@ -60,9 +122,21 @@ public:
 	}
 
 	template<typename R = ::jvoid, typename... Args>
+	auto rebind(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("rebind")] != -1);
+		return call<R>("rebind", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::jvoid, typename... Args>
 	auto reconnect(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("reconnect")] != -1);
 		return call<R>("reconnect", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::javax::naming::NamingEnumeration, typename... Args>
+	auto search(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("search")] != -1);
+		return call<R>("search", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

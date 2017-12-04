@@ -17,6 +17,8 @@ public:
 		jConstructor<::jvoid()>(), //
 		jMethod<::jvoid(::jint)>("accept"), //
 		jMethod<::jvoid(::jlong)>("accept"), //
+		jMethod<::java::util::function::IntConsumer(::java::util::function::IntConsumer)>("andThen"), //
+		jMethod<::java::util::function::LongConsumer(::java::util::function::LongConsumer)>("andThen"), //
 		jMethod<::jvoid(::java::util::LongSummaryStatistics)>("combine"), //
 		jMethod<::jdouble()>("getAverage"), //
 		jMethod<::jlong()>("getCount"), //
@@ -30,6 +32,12 @@ public:
 	auto accept(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("accept")] != -1);
 		return call<R>("accept", std::forward<Args>(args)...);
+	}
+
+	template<typename R = ::java::util::function::IntConsumer, typename... Args>
+	auto andThen(Args &&...args) const {
+		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("andThen")] != -1);
+		return call<R>("andThen", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
