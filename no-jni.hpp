@@ -879,6 +879,25 @@ public:
 
 #include "jfwd_decl.hpp"
 
+#include "java/io/*-jfwd.jpp"
+#include "java/lang/*-jfwd.jpp"
+#include "java/lang/annotation/*-jfwd.jpp"
+#include "java/lang/reflect/*-jfwd.jpp"
+#include "java/math/*-jfwd.jpp"
+#include "java/net/*-jfwd.jpp"
+#include "java/nio/*-jfwd.jpp"
+#include "java/nio/channels/*-jfwd.jpp"
+#include "java/nio/charset/*-jfwd.jpp"
+#include "java/nio/file/*-jfwd.jpp"
+#include "java/nio/file/attribute/*-jfwd.jpp"
+#include "java/security/*-jfwd.jpp"
+#include "java/time/*-jfwd.jpp"
+#include "java/util/*-jfwd.jpp"
+#include "java/util/concurrent/*-jfwd.jpp"
+#include "java/util/function/*-jfwd.jpp"
+#include "java/util/regex/*-jfwd.jpp"
+#include "java/util/stream/*-jfwd.jpp"
+
 class String : public jObject<String> {
   template <typename, typename> friend class jObject;
 

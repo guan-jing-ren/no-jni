@@ -521,6 +521,12 @@ string demangle(string sig) {
                     });
 }
 
+#include "java/util/*-jfwd.jpp"
+#include "java/util/zip/*-jfwd.jpp"
+
+#include "java/util/*"
+#include "java/util/zip/*"
+
 #include "java/lang/Object.jpp"
 #include "java/util/Enumeration.jpp"
 #include "java/util/zip/ZipEntry.jpp"
