@@ -590,8 +590,7 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
 
   ofstream dout{"jfwd_decl.hpp"};
   dout << "#ifndef JFWD_DECL_HPP\n"
-       << "#define JFWD_DECL_HPP\n\n"
-       << "#include \"no-jni.hpp\"\n\n";
+       << "#define JFWD_DECL_HPP\n\n";
 
   unordered_map<string, pair<string, string>> pkg_to_nspace_pkg_var;
 
@@ -607,7 +606,9 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
       equal_range(begin(packages), non_java, string{"java/lang"}, prefixed);
   rotate(++begin(packages), java_lang.first, java_lang.second);
 
-  for (auto &pkg : packages) {
+  for (const auto &pkg : packages) {
+    system(("rm " + pkg + "/*").c_str());
+    system(("rm " + pkg + "/*-jfwd.jpp").c_str());
     auto nspace = regex_replace(pkg, regex{"/"}, "::");
     auto pkg_var = regex_replace(pkg, regex{"/"}, "_");
     pkg_to_nspace_pkg_var[pkg] = {nspace, pkg_var};
@@ -625,7 +626,8 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
                               pkg_child + "\";"));
     dout << "namespace " << nspace << " {}\n" << pkg_sig << "\n";
   }
-  dout << "\n";
+  dout << "\n\n"
+       << "#endif\n";
 
   sort(begin(csignatures), end(csignatures));
   for (auto &csig : csignatures)
@@ -642,9 +644,17 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
       [fund = regex{"java/lang/Class|java/lang/Object|java/lang/String"}](
           const auto &sig) { return regex_match(sig, fund); });
 
+  for (const auto &pkg : packages) {
+    std::ofstream dout{pkg + "/*-jfwd.jpp", std::ofstream::trunc};
+    auto def = std::regex_replace(pkg, std::regex{"/"}, "_");
+    dout << "#ifndef " << def << "_JPP\n";
+    dout << "#define " << def << "_JPP\n\n";
+  }
   for (const auto &sig : csignatures) {
     auto pkg = sig.substr(0, sig.rfind("/"));
     auto cls = sig.substr(pkg.size() + (pkg != sig));
+
+    std::ofstream dout{pkg + "/*-jfwd.jpp", std::ofstream::app};
 
     dout << "namespace " << regex_replace(pkg, regex{"/"}, "::") << " { class "
          << cls << "; }\n";
@@ -652,9 +662,11 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
          << regex_replace(sig, regex{"/"}, "::")
          << "> = ::" << regex_replace(pkg, regex{"/"}, "_") << " / \"" << cls
          << "\";\n";
+  for (const auto &pkg : packages) {
+    std::ofstream dout{pkg + "/*-jfwd.jpp", std::ofstream::app};
+    dout << "\n"
+         << "#endif\n";
   }
-  dout << "\n\n"
-       << "#endif\n";
 
   for (const auto &sig : csignatures) {
     auto pkg = sig.substr(0, sig.rfind("/"));
