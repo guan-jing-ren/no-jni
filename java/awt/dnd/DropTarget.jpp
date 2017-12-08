@@ -20,7 +20,6 @@ public:
 		jConstructor<::jvoid(::java::awt::Component, ::jint, ::java::awt::dnd::DropTargetListener, ::jboolean, ::java::awt::datatransfer::FlavorMap)>(), //
 		jConstructor<::jvoid(::java::awt::Component, ::java::awt::dnd::DropTargetListener)>(), //
 		jMethod<::jvoid(::java::awt::dnd::DropTargetListener)>("addDropTargetListener"), //
-		jMethod<::jvoid(::java::awt::peer::ComponentPeer)>("addNotify"), //
 		jMethod<::jvoid(::java::awt::dnd::DropTargetDragEvent)>("dragEnter"), //
 		jMethod<::jvoid(::java::awt::dnd::DropTargetEvent)>("dragExit"), //
 		jMethod<::jvoid(::java::awt::dnd::DropTargetDragEvent)>("dragOver"), //
@@ -32,7 +31,6 @@ public:
 		jMethod<::java::awt::datatransfer::FlavorMap()>("getFlavorMap"), //
 		jMethod<::jboolean()>("isActive"), //
 		jMethod<::jvoid(::java::awt::dnd::DropTargetListener)>("removeDropTargetListener"), //
-		jMethod<::jvoid(::java::awt::peer::ComponentPeer)>("removeNotify"), //
 		jMethod<::jvoid(::jboolean)>("setActive"), //
 		jMethod<::jvoid(::java::awt::Component)>("setComponent"), //
 		jMethod<::jvoid(::jint)>("setDefaultActions"), //
@@ -43,12 +41,6 @@ public:
 	auto addDropTargetListener(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addDropTargetListener")] != -1);
 		return call<R>("addDropTargetListener", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto addNotify(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addNotify")] != -1);
-		return call<R>("addNotify", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
@@ -115,12 +107,6 @@ public:
 	auto removeDropTargetListener(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeDropTargetListener")] != -1);
 		return call<R>("removeDropTargetListener", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto removeNotify(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeNotify")] != -1);
-		return call<R>("removeNotify", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

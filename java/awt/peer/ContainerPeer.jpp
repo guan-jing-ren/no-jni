@@ -95,7 +95,6 @@ public:
 		jMethod<::jvoid(::java::awt::Graphics)>("paint"), //
 		jMethod<::jboolean(::java::awt::Image, ::jint, ::jint, ::java::awt::image::ImageObserver)>("prepareImage"), //
 		jMethod<::jvoid(::java::awt::Graphics)>("print"), //
-		jMethod<::jvoid(::java::awt::peer::ContainerPeer)>("reparent"), //
 		jMethod<::jboolean(::java::awt::Component, ::jboolean, ::jboolean, ::jlong, ::sun::awt::CausedFocusEvent$Cause)>("requestFocus"), //
 		jMethod<::jvoid(::java::awt::Color)>("setBackground"), //
 		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint, ::jint)>("setBounds"), //
@@ -103,7 +102,6 @@ public:
 		jMethod<::jvoid(::java::awt::Font)>("setFont"), //
 		jMethod<::jvoid(::java::awt::Color)>("setForeground"), //
 		jMethod<::jvoid(::jboolean)>("setVisible"), //
-		jMethod<::jvoid(::java::awt::peer::ComponentPeer)>("setZOrder"), //
 		jMethod<::jvoid()>("updateCursorImmediately"), //
 		jMethod<::jboolean(::java::awt::GraphicsConfiguration)>("updateGraphicsData"), //
 	};
@@ -300,12 +298,6 @@ public:
 		return call<R>("print", std::forward<Args>(args)...);
 	}
 
-	template<typename R = ::jvoid, typename... Args>
-	auto reparent(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("reparent")] != -1);
-		return call<R>("reparent", std::forward<Args>(args)...);
-	}
-
 	template<typename R = ::jboolean, typename... Args>
 	auto requestFocus(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("requestFocus")] != -1);
@@ -346,12 +338,6 @@ public:
 	auto setVisible(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setVisible")] != -1);
 		return call<R>("setVisible", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto setZOrder(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setZOrder")] != -1);
-		return call<R>("setZOrder", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

@@ -747,13 +747,14 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
     process_members(fields, fsignatures, field_from_id);
     for (tClass iface : clazz.implemented_interfaces())
       process_members(iface.get_fields(), fsignatures, field_from_id);
-    fsignatures.erase(remove_if(begin(fsignatures), end(fsignatures),
-                                [](const auto &sig) {
-                                  return !get<3>(sig) ||
-                                         get<1>(sig).find("/internal") !=
-                                             string::npos;
-                                }),
-                      end(fsignatures));
+    fsignatures.erase(
+        remove_if(begin(fsignatures), end(fsignatures),
+                  [](const auto &sig) {
+                    return !get<3>(sig) ||
+                           get<1>(sig).find("/internal") != string::npos ||
+                           get<1>(sig).find("java/awt/peer/") != string::npos;
+                  }),
+        end(fsignatures));
     sort(begin(fsignatures), end(fsignatures));
     fsignatures.erase(unique(begin(fsignatures), end(fsignatures)),
                       end(fsignatures));
@@ -790,13 +791,14 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
     process_members(methods, msignatures, method_from_id);
     for (tClass iface : clazz.implemented_interfaces())
       process_members(iface.get_methods(), msignatures, method_from_id);
-    msignatures.erase(remove_if(begin(msignatures), end(msignatures),
-                                [](const auto &sig) {
-                                  return !get<3>(sig) ||
-                                         get<1>(sig).find("/internal") !=
-                                             string::npos;
-                                }),
-                      end(msignatures));
+    msignatures.erase(
+        remove_if(begin(msignatures), end(msignatures),
+                  [](const auto &sig) {
+                    return !get<3>(sig) ||
+                           get<1>(sig).find("/internal") != string::npos ||
+                           get<1>(sig).find("java/awt/peer/") != string::npos;
+                  }),
+        end(msignatures));
     sort(begin(msignatures), end(msignatures));
     msignatures.erase(unique(begin(msignatures), end(msignatures)),
                       end(msignatures));
