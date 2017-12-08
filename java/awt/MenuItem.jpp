@@ -20,9 +20,6 @@ public:
 		jMethod<::jvoid(::java::awt::event::ActionListener)>("addActionListener"), //
 		jMethod<::jvoid()>("addNotify"), //
 		jMethod<::jvoid()>("deleteShortcut"), //
-		jMethod<::jvoid()>("disable"), //
-		jMethod<::jvoid()>("enable"), //
-		jMethod<::jvoid(::jboolean)>("enable"), //
 		jMethod<::javax::accessibility::AccessibleContext()>("getAccessibleContext"), //
 		jMethod<::java::lang::String()>("getActionCommand"), //
 		jMethod<::java::awt::event::ActionListener *()>("getActionListeners"), //
@@ -54,18 +51,6 @@ public:
 	auto deleteShortcut(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("deleteShortcut")] != -1);
 		return call<R>("deleteShortcut", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto disable(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("disable")] != -1);
-		return call<R>("disable", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto enable(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("enable")] != -1);
-		return call<R>("enable", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::accessibility::AccessibleContext, typename... Args>

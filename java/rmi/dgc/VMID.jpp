@@ -17,7 +17,6 @@ public:
 		jConstructor<::jvoid()>(), //
 		jMethod<::jboolean(::java::lang::Object)>("equals"), //
 		jMethod<::jint()>("hashCode"), //
-		jMethod<::jboolean()>("isUnique"), //
 		jMethod<::java::lang::String()>("toString"), //
 	};
 
@@ -31,12 +30,6 @@ public:
 	auto hashCode(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hashCode")] != -1);
 		return call<R>("hashCode", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jboolean, typename... Args>
-	static auto isUnique(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isUnique")] != -1);
-		return scall<R>("isUnique", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>

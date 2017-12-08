@@ -105,7 +105,6 @@ public:
 		jMethod<::jvoid(::jint)>("setLineWidth"), //
 		jMethod<::jvoid(::jint)>("setTextAntialias"), //
 		jMethod<::jvoid(::org::eclipse::swt::graphics::Transform)>("setTransform"), //
-		jMethod<::jvoid(::jboolean)>("setXORMode"), //
 		jMethod<::org::eclipse::swt::graphics::Point(::java::lang::String)>("stringExtent"), //
 		jMethod<::org::eclipse::swt::graphics::Point(::java::lang::String)>("textExtent"), //
 		jMethod<::org::eclipse::swt::graphics::Point(::java::lang::String, ::jint)>("textExtent"), //
@@ -530,12 +529,6 @@ public:
 	auto setTransform(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setTransform")] != -1);
 		return call<R>("setTransform", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto setXORMode(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setXORMode")] != -1);
-		return call<R>("setXORMode", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::eclipse::swt::graphics::Point, typename... Args>

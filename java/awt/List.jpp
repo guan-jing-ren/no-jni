@@ -20,15 +20,8 @@ public:
 		jMethod<::jvoid(::java::lang::String)>("add"), //
 		jMethod<::jvoid(::java::lang::String, ::jint)>("add"), //
 		jMethod<::jvoid(::java::awt::event::ActionListener)>("addActionListener"), //
-		jMethod<::jvoid(::java::lang::String)>("addItem"), //
-		jMethod<::jvoid(::java::lang::String, ::jint)>("addItem"), //
 		jMethod<::jvoid(::java::awt::event::ItemListener)>("addItemListener"), //
 		jMethod<::jvoid()>("addNotify"), //
-		jMethod<::jboolean()>("allowsMultipleSelections"), //
-		jMethod<::jvoid()>("clear"), //
-		jMethod<::jint()>("countItems"), //
-		jMethod<::jvoid(::jint)>("delItem"), //
-		jMethod<::jvoid(::jint, ::jint)>("delItems"), //
 		jMethod<::jvoid(::jint)>("deselect"), //
 		jMethod<::javax::accessibility::AccessibleContext()>("getAccessibleContext"), //
 		jMethod<::java::awt::event::ActionListener *()>("getActionListeners"), //
@@ -50,12 +43,7 @@ public:
 		jMethod<::jint()>("getVisibleIndex"), //
 		jMethod<::jboolean(::jint)>("isIndexSelected"), //
 		jMethod<::jboolean()>("isMultipleMode"), //
-		jMethod<::jboolean(::jint)>("isSelected"), //
 		jMethod<::jvoid(::jint)>("makeVisible"), //
-		jMethod<::java::awt::Dimension()>("minimumSize"), //
-		jMethod<::java::awt::Dimension(::jint)>("minimumSize"), //
-		jMethod<::java::awt::Dimension()>("preferredSize"), //
-		jMethod<::java::awt::Dimension(::jint)>("preferredSize"), //
 		jMethod<::jvoid(::jint)>("remove"), //
 		jMethod<::jvoid(::java::lang::String)>("remove"), //
 		jMethod<::jvoid(::java::awt::event::ActionListener)>("removeActionListener"), //
@@ -65,7 +53,6 @@ public:
 		jMethod<::jvoid(::java::lang::String, ::jint)>("replaceItem"), //
 		jMethod<::jvoid(::jint)>("select"), //
 		jMethod<::jvoid(::jboolean)>("setMultipleMode"), //
-		jMethod<::jvoid(::jboolean)>("setMultipleSelections"), //
 	};
 
 	template<typename R = ::jvoid, typename... Args>
@@ -81,12 +68,6 @@ public:
 	}
 
 	template<typename R = ::jvoid, typename... Args>
-	auto addItem(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addItem")] != -1);
-		return call<R>("addItem", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
 	auto addItemListener(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addItemListener")] != -1);
 		return call<R>("addItemListener", std::forward<Args>(args)...);
@@ -96,36 +77,6 @@ public:
 	auto addNotify(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addNotify")] != -1);
 		return call<R>("addNotify", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jboolean, typename... Args>
-	auto allowsMultipleSelections(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("allowsMultipleSelections")] != -1);
-		return call<R>("allowsMultipleSelections", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto clear(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("clear")] != -1);
-		return call<R>("clear", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jint, typename... Args>
-	auto countItems(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("countItems")] != -1);
-		return call<R>("countItems", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto delItem(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("delItem")] != -1);
-		return call<R>("delItem", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto delItems(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("delItems")] != -1);
-		return call<R>("delItems", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
@@ -242,28 +193,10 @@ public:
 		return call<R>("isMultipleMode", std::forward<Args>(args)...);
 	}
 
-	template<typename R = ::jboolean, typename... Args>
-	auto isSelected(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSelected")] != -1);
-		return call<R>("isSelected", std::forward<Args>(args)...);
-	}
-
 	template<typename R = ::jvoid, typename... Args>
 	auto makeVisible(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("makeVisible")] != -1);
 		return call<R>("makeVisible", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::java::awt::Dimension, typename... Args>
-	auto minimumSize(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("minimumSize")] != -1);
-		return call<R>("minimumSize", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::java::awt::Dimension, typename... Args>
-	auto preferredSize(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("preferredSize")] != -1);
-		return call<R>("preferredSize", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
@@ -312,12 +245,6 @@ public:
 	auto setMultipleMode(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setMultipleMode")] != -1);
 		return call<R>("setMultipleMode", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto setMultipleSelections(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setMultipleSelections")] != -1);
-		return call<R>("setMultipleSelections", std::forward<Args>(args)...);
 	}
 
 };

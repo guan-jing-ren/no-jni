@@ -27,23 +27,14 @@ public:
 	}
 
 	constexpr static Enume method_signatures{
-		jMethod<::jvoid(::java::rmi::server::RemoteCall)>("done"), //
 		jMethod<::java::rmi::server::RemoteStub(::java::rmi::Remote, ::java::lang::Object)>("exportObject"), //
 		jMethod<::java::lang::String()>("getClientHost"), //
 		jMethod<::java::lang::String(::java::io::ObjectOutput)>("getRefClass"), //
 		jMethod<::java::lang::Object(::java::rmi::Remote, ::java::lang::reflect::Method, ::java::lang::Object *, ::jlong)>("invoke"), //
-		jMethod<::jvoid(::java::rmi::server::RemoteCall)>("invoke"), //
-		jMethod<::java::rmi::server::RemoteCall(::java::rmi::server::RemoteObject, ::java::rmi::server::Operation *, ::jint, ::jlong)>("newCall"), //
 		jMethod<::jboolean(::java::rmi::server::RemoteRef)>("remoteEquals"), //
 		jMethod<::jint()>("remoteHashCode"), //
 		jMethod<::java::lang::String()>("remoteToString"), //
 	};
-
-	template<typename R = ::jvoid, typename... Args>
-	auto done(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("done")] != -1);
-		return call<R>("done", std::forward<Args>(args)...);
-	}
 
 	template<typename R = ::java::rmi::server::RemoteStub, typename... Args>
 	auto exportObject(Args &&...args) const {
@@ -67,12 +58,6 @@ public:
 	auto invoke(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("invoke")] != -1);
 		return call<R>("invoke", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::java::rmi::server::RemoteCall, typename... Args>
-	auto newCall(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("newCall")] != -1);
-		return call<R>("newCall", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>

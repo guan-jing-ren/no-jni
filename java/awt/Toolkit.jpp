@@ -34,8 +34,6 @@ public:
 		jMethod<::java::awt::image::ColorModel()>("getColorModel"), //
 		jMethod<::java::awt::Toolkit()>("getDefaultToolkit"), //
 		jMethod<::java::lang::Object(::java::lang::String)>("getDesktopProperty"), //
-		jMethod<::java::lang::String *()>("getFontList"), //
-		jMethod<::java::awt::FontMetrics(::java::awt::Font)>("getFontMetrics"), //
 		jMethod<::java::awt::Image(::java::lang::String)>("getImage"), //
 		jMethod<::java::awt::Image(::java::net::URL)>("getImage"), //
 		jMethod<::jboolean(::jint)>("getLockingKeyState"), //
@@ -148,18 +146,6 @@ public:
 	auto getDesktopProperty(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDesktopProperty")] != -1);
 		return call<R>("getDesktopProperty", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::java::lang::String *, typename... Args>
-	auto getFontList(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFontList")] != -1);
-		return call<R>("getFontList", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::java::awt::FontMetrics, typename... Args>
-	auto getFontMetrics(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFontMetrics")] != -1);
-		return call<R>("getFontMetrics", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::Image, typename... Args>

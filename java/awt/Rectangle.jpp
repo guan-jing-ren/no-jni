@@ -73,16 +73,12 @@ public:
 		jMethod<::jdouble()>("getX"), //
 		jMethod<::jdouble()>("getY"), //
 		jMethod<::jvoid(::jint, ::jint)>("grow"), //
-		jMethod<::jboolean(::jint, ::jint)>("inside"), //
 		jMethod<::java::awt::Rectangle(::java::awt::Rectangle)>("intersection"), //
 		jMethod<::jboolean(::jdouble, ::jdouble, ::jdouble, ::jdouble)>("intersects"), //
 		jMethod<::jboolean(::java::awt::Rectangle)>("intersects"), //
 		jMethod<::jboolean(::java::awt::geom::Rectangle2D)>("intersects"), //
 		jMethod<::jboolean()>("isEmpty"), //
-		jMethod<::jvoid(::jint, ::jint)>("move"), //
 		jMethod<::jint(::jdouble, ::jdouble)>("outcode"), //
-		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint)>("reshape"), //
-		jMethod<::jvoid(::jint, ::jint)>("resize"), //
 		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint)>("setBounds"), //
 		jMethod<::jvoid(::java::awt::Rectangle)>("setBounds"), //
 		jMethod<::jvoid(::jint, ::jint)>("setLocation"), //
@@ -185,12 +181,6 @@ public:
 		return call<R>("grow", std::forward<Args>(args)...);
 	}
 
-	template<typename R = ::jboolean, typename... Args>
-	auto inside(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("inside")] != -1);
-		return call<R>("inside", std::forward<Args>(args)...);
-	}
-
 	template<typename R = ::java::awt::Rectangle, typename... Args>
 	auto intersection(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("intersection")] != -1);
@@ -209,28 +199,10 @@ public:
 		return call<R>("isEmpty", std::forward<Args>(args)...);
 	}
 
-	template<typename R = ::jvoid, typename... Args>
-	auto move(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("move")] != -1);
-		return call<R>("move", std::forward<Args>(args)...);
-	}
-
 	template<typename R = ::jint, typename... Args>
 	auto outcode(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("outcode")] != -1);
 		return call<R>("outcode", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto reshape(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("reshape")] != -1);
-		return call<R>("reshape", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto resize(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("resize")] != -1);
-		return call<R>("resize", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

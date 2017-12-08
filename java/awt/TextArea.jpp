@@ -48,7 +48,6 @@ public:
 		jConstructor<::jvoid(::java::lang::String, ::jint, ::jint, ::jint)>(), //
 		jMethod<::jvoid()>("addNotify"), //
 		jMethod<::jvoid(::java::lang::String)>("append"), //
-		jMethod<::jvoid(::java::lang::String)>("appendText"), //
 		jMethod<::javax::accessibility::AccessibleContext()>("getAccessibleContext"), //
 		jMethod<::jint()>("getColumns"), //
 		jMethod<::java::awt::Dimension()>("getMinimumSize"), //
@@ -58,13 +57,7 @@ public:
 		jMethod<::jint()>("getRows"), //
 		jMethod<::jint()>("getScrollbarVisibility"), //
 		jMethod<::jvoid(::java::lang::String, ::jint)>("insert"), //
-		jMethod<::jvoid(::java::lang::String, ::jint)>("insertText"), //
-		jMethod<::java::awt::Dimension()>("minimumSize"), //
-		jMethod<::java::awt::Dimension(::jint, ::jint)>("minimumSize"), //
-		jMethod<::java::awt::Dimension()>("preferredSize"), //
-		jMethod<::java::awt::Dimension(::jint, ::jint)>("preferredSize"), //
 		jMethod<::jvoid(::java::lang::String, ::jint, ::jint)>("replaceRange"), //
-		jMethod<::jvoid(::java::lang::String, ::jint, ::jint)>("replaceText"), //
 		jMethod<::jvoid(::jint)>("setColumns"), //
 		jMethod<::jvoid(::jint)>("setRows"), //
 	};
@@ -79,12 +72,6 @@ public:
 	auto append(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("append")] != -1);
 		return call<R>("append", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto appendText(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("appendText")] != -1);
-		return call<R>("appendText", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::accessibility::AccessibleContext, typename... Args>
@@ -130,33 +117,9 @@ public:
 	}
 
 	template<typename R = ::jvoid, typename... Args>
-	auto insertText(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("insertText")] != -1);
-		return call<R>("insertText", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::java::awt::Dimension, typename... Args>
-	auto minimumSize(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("minimumSize")] != -1);
-		return call<R>("minimumSize", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::java::awt::Dimension, typename... Args>
-	auto preferredSize(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("preferredSize")] != -1);
-		return call<R>("preferredSize", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
 	auto replaceRange(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("replaceRange")] != -1);
 		return call<R>("replaceRange", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto replaceText(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("replaceText")] != -1);
-		return call<R>("replaceText", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

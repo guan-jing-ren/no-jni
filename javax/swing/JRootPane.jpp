@@ -84,7 +84,6 @@ public:
 		jMethod<::java::awt::Component()>("getGlassPane"), //
 		jMethod<::javax::swing::JMenuBar()>("getJMenuBar"), //
 		jMethod<::javax::swing::JLayeredPane()>("getLayeredPane"), //
-		jMethod<::javax::swing::JMenuBar()>("getMenuBar"), //
 		jMethod<::javax::swing::plaf::RootPaneUI()>("getUI"), //
 		jMethod<::java::lang::String()>("getUIClassID"), //
 		jMethod<::jint()>("getWindowDecorationStyle"), //
@@ -97,7 +96,6 @@ public:
 		jMethod<::jvoid(::java::awt::Component)>("setGlassPane"), //
 		jMethod<::jvoid(::javax::swing::JMenuBar)>("setJMenuBar"), //
 		jMethod<::jvoid(::javax::swing::JLayeredPane)>("setLayeredPane"), //
-		jMethod<::jvoid(::javax::swing::JMenuBar)>("setMenuBar"), //
 		jMethod<::jvoid(::javax::swing::plaf::RootPaneUI)>("setUI"), //
 		jMethod<::jvoid(::jint)>("setWindowDecorationStyle"), //
 		jMethod<::jvoid()>("updateUI"), //
@@ -143,12 +141,6 @@ public:
 	auto getLayeredPane(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLayeredPane")] != -1);
 		return call<R>("getLayeredPane", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::javax::swing::JMenuBar, typename... Args>
-	auto getMenuBar(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMenuBar")] != -1);
-		return call<R>("getMenuBar", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::swing::plaf::RootPaneUI, typename... Args>
@@ -221,12 +213,6 @@ public:
 	auto setLayeredPane(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setLayeredPane")] != -1);
 		return call<R>("setLayeredPane", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto setMenuBar(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setMenuBar")] != -1);
-		return call<R>("setMenuBar", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

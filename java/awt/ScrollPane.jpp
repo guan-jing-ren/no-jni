@@ -47,7 +47,6 @@ public:
 		jMethod<::jint()>("getVScrollbarWidth"), //
 		jMethod<::java::awt::Dimension()>("getViewportSize"), //
 		jMethod<::jboolean()>("isWheelScrollingEnabled"), //
-		jMethod<::jvoid()>("layout"), //
 		jMethod<::java::lang::String()>("paramString"), //
 		jMethod<::jvoid(::java::awt::Graphics)>("printComponents"), //
 		jMethod<::jvoid(::java::awt::LayoutManager)>("setLayout"), //
@@ -120,12 +119,6 @@ public:
 	auto isWheelScrollingEnabled(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isWheelScrollingEnabled")] != -1);
 		return call<R>("isWheelScrollingEnabled", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto layout(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("layout")] != -1);
-		return call<R>("layout", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>

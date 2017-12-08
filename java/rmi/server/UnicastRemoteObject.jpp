@@ -15,7 +15,6 @@ public:
 
 	constexpr static Enume method_signatures{
 		jMethod<::java::lang::Object()>("clone"), //
-		jMethod<::java::rmi::server::RemoteStub(::java::rmi::Remote)>("exportObject"), //
 		jMethod<::java::rmi::Remote(::java::rmi::Remote, ::jint)>("exportObject"), //
 		jMethod<::java::rmi::Remote(::java::rmi::Remote, ::jint, ::java::rmi::server::RMIClientSocketFactory, ::java::rmi::server::RMIServerSocketFactory)>("exportObject"), //
 		jMethod<::jboolean(::java::rmi::Remote, ::jboolean)>("unexportObject"), //
@@ -27,7 +26,7 @@ public:
 		return call<R>("clone", std::forward<Args>(args)...);
 	}
 
-	template<typename R = ::java::rmi::server::RemoteStub, typename... Args>
+	template<typename R = ::java::rmi::Remote, typename... Args>
 	static auto exportObject(Args &&...args) {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("exportObject")] != -1);
 		return scall<R>("exportObject", std::forward<Args>(args)...);

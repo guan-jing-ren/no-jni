@@ -19,14 +19,12 @@ public:
 		jMethod<::jvoid()>("dispose"), //
 		jMethod<::org::eclipse::swt::graphics::Rectangle()>("getBounds"), //
 		jMethod<::org::eclipse::swt::widgets::Control()>("getControl"), //
-		jMethod<::org::eclipse::swt::graphics::Image()>("getDisabledImage"), //
 		jMethod<::org::eclipse::swt::graphics::Font()>("getFont"), //
 		jMethod<::org::eclipse::swt::custom::CTabFolder()>("getParent"), //
 		jMethod<::jboolean()>("getShowClose"), //
 		jMethod<::java::lang::String()>("getToolTipText"), //
 		jMethod<::jboolean()>("isShowing"), //
 		jMethod<::jvoid(::org::eclipse::swt::widgets::Control)>("setControl"), //
-		jMethod<::jvoid(::org::eclipse::swt::graphics::Image)>("setDisabledImage"), //
 		jMethod<::jvoid(::org::eclipse::swt::graphics::Font)>("setFont"), //
 		jMethod<::jvoid(::org::eclipse::swt::graphics::Image)>("setImage"), //
 		jMethod<::jvoid(::jboolean)>("setShowClose"), //
@@ -50,12 +48,6 @@ public:
 	auto getControl(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getControl")] != -1);
 		return call<R>("getControl", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::org::eclipse::swt::graphics::Image, typename... Args>
-	auto getDisabledImage(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDisabledImage")] != -1);
-		return call<R>("getDisabledImage", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::eclipse::swt::graphics::Font, typename... Args>
@@ -92,12 +84,6 @@ public:
 	auto setControl(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setControl")] != -1);
 		return call<R>("setControl", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto setDisabledImage(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setDisabledImage")] != -1);
-		return call<R>("setDisabledImage", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

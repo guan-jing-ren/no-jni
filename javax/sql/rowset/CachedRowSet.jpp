@@ -10,14 +10,8 @@ public:
 	static constexpr auto signature = ::javax_sql_rowset / "CachedRowSet";
 
 	constexpr static Enume field_signatures{
-		jField<::jboolean>("COMMIT_ON_ACCEPT_CHANGES"), //
+		cexprstr{"\0"}, //
 	};
-
-	template<typename F = ::jboolean>
-	static auto COMMIT_ON_ACCEPT_CHANGES() {
-		static_assert(field_signatures[jField<F>("COMMIT_ON_ACCEPT_CHANGES")] != -1);
-		return sat<F>("COMMIT_ON_ACCEPT_CHANGES");
-	}
 
 	constexpr static Enume method_signatures{
 		jMethod<::jboolean(::jint)>("absolute"), //

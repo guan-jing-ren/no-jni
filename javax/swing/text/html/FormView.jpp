@@ -10,21 +10,8 @@ public:
 	static constexpr auto signature = ::javax_swing_text_html / "FormView";
 
 	constexpr static Enume field_signatures{
-		jField<::java::lang::String>("RESET"), //
-		jField<::java::lang::String>("SUBMIT"), //
+		cexprstr{"\0"}, //
 	};
-
-	template<typename F = ::java::lang::String>
-	static auto RESET() {
-		static_assert(field_signatures[jField<F>("RESET")] != -1);
-		return sat<F>("RESET");
-	}
-
-	template<typename F = ::java::lang::String>
-	static auto SUBMIT() {
-		static_assert(field_signatures[jField<F>("SUBMIT")] != -1);
-		return sat<F>("SUBMIT");
-	}
 
 	constexpr static Enume method_signatures{
 		jConstructor<::jvoid(::javax::swing::text::Element)>(), //

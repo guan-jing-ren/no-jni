@@ -20,17 +20,14 @@ public:
 		jMethod<::java::net::InetAddress()>("getInterface"), //
 		jMethod<::jboolean()>("getLoopbackMode"), //
 		jMethod<::java::net::NetworkInterface()>("getNetworkInterface"), //
-		jMethod<::jbyte()>("getTTL"), //
 		jMethod<::jint()>("getTimeToLive"), //
 		jMethod<::jvoid(::java::net::InetAddress)>("joinGroup"), //
 		jMethod<::jvoid(::java::net::SocketAddress, ::java::net::NetworkInterface)>("joinGroup"), //
 		jMethod<::jvoid(::java::net::InetAddress)>("leaveGroup"), //
 		jMethod<::jvoid(::java::net::SocketAddress, ::java::net::NetworkInterface)>("leaveGroup"), //
-		jMethod<::jvoid(::java::net::DatagramPacket, ::jbyte)>("send"), //
 		jMethod<::jvoid(::java::net::InetAddress)>("setInterface"), //
 		jMethod<::jvoid(::jboolean)>("setLoopbackMode"), //
 		jMethod<::jvoid(::java::net::NetworkInterface)>("setNetworkInterface"), //
-		jMethod<::jvoid(::jbyte)>("setTTL"), //
 		jMethod<::jvoid(::jint)>("setTimeToLive"), //
 	};
 
@@ -52,12 +49,6 @@ public:
 		return call<R>("getNetworkInterface", std::forward<Args>(args)...);
 	}
 
-	template<typename R = ::jbyte, typename... Args>
-	auto getTTL(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTTL")] != -1);
-		return call<R>("getTTL", std::forward<Args>(args)...);
-	}
-
 	template<typename R = ::jint, typename... Args>
 	auto getTimeToLive(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTimeToLive")] != -1);
@@ -77,12 +68,6 @@ public:
 	}
 
 	template<typename R = ::jvoid, typename... Args>
-	auto send(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("send")] != -1);
-		return call<R>("send", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
 	auto setInterface(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setInterface")] != -1);
 		return call<R>("setInterface", std::forward<Args>(args)...);
@@ -98,12 +83,6 @@ public:
 	auto setNetworkInterface(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setNetworkInterface")] != -1);
 		return call<R>("setNetworkInterface", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto setTTL(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setTTL")] != -1);
-		return call<R>("setTTL", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

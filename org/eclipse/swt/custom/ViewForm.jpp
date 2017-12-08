@@ -10,32 +10,11 @@ public:
 	static constexpr auto signature = ::org_eclipse_swt_custom / "ViewForm";
 
 	constexpr static Enume field_signatures{
-		jField<::org::eclipse::swt::graphics::RGB>("borderInsideRGB"), //
-		jField<::org::eclipse::swt::graphics::RGB>("borderMiddleRGB"), //
-		jField<::org::eclipse::swt::graphics::RGB>("borderOutsideRGB"), //
 		jField<::jint>("horizontalSpacing"), //
 		jField<::jint>("marginHeight"), //
 		jField<::jint>("marginWidth"), //
 		jField<::jint>("verticalSpacing"), //
 	};
-
-	template<typename F = ::org::eclipse::swt::graphics::RGB>
-	static auto borderInsideRGB() {
-		static_assert(field_signatures[jField<F>("borderInsideRGB")] != -1);
-		return sat<F>("borderInsideRGB");
-	}
-
-	template<typename F = ::org::eclipse::swt::graphics::RGB>
-	static auto borderMiddleRGB() {
-		static_assert(field_signatures[jField<F>("borderMiddleRGB")] != -1);
-		return sat<F>("borderMiddleRGB");
-	}
-
-	template<typename F = ::org::eclipse::swt::graphics::RGB>
-	static auto borderOutsideRGB() {
-		static_assert(field_signatures[jField<F>("borderOutsideRGB")] != -1);
-		return sat<F>("borderOutsideRGB");
-	}
 
 	template<typename F = ::jint>
 	auto horizontalSpacing() const {

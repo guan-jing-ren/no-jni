@@ -38,7 +38,6 @@ public:
 		jMethod<::javax::accessibility::AccessibleContext()>("getAccessibleContext"), //
 		jMethod<::java::awt::Dialog$ModalityType()>("getModalityType"), //
 		jMethod<::java::lang::String()>("getTitle"), //
-		jMethod<::jvoid()>("hide"), //
 		jMethod<::jboolean()>("isModal"), //
 		jMethod<::jboolean()>("isResizable"), //
 		jMethod<::jboolean()>("isUndecorated"), //
@@ -51,7 +50,6 @@ public:
 		jMethod<::jvoid(::java::lang::String)>("setTitle"), //
 		jMethod<::jvoid(::jboolean)>("setUndecorated"), //
 		jMethod<::jvoid(::jboolean)>("setVisible"), //
-		jMethod<::jvoid()>("show"), //
 		jMethod<::jvoid()>("toBack"), //
 	};
 
@@ -77,12 +75,6 @@ public:
 	auto getTitle(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getTitle")] != -1);
 		return call<R>("getTitle", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto hide(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hide")] != -1);
-		return call<R>("hide", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
@@ -155,12 +147,6 @@ public:
 	auto setVisible(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setVisible")] != -1);
 		return call<R>("setVisible", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto show(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("show")] != -1);
-		return call<R>("show", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

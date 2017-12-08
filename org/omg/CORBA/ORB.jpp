@@ -20,14 +20,7 @@ public:
 		jMethod<::org::omg::CORBA::TypeCode(::java::lang::String, ::java::lang::String, ::org::omg::CORBA::TypeCode)>("create_alias_tc"), //
 		jMethod<::org::omg::CORBA::Any()>("create_any"), //
 		jMethod<::org::omg::CORBA::TypeCode(::jint, ::org::omg::CORBA::TypeCode)>("create_array_tc"), //
-		jMethod<::org::omg::CORBA::DynAny(::org::omg::CORBA::TypeCode)>("create_basic_dyn_any"), //
 		jMethod<::org::omg::CORBA::ContextList()>("create_context_list"), //
-		jMethod<::org::omg::CORBA::DynAny(::org::omg::CORBA::Any)>("create_dyn_any"), //
-		jMethod<::org::omg::CORBA::DynArray(::org::omg::CORBA::TypeCode)>("create_dyn_array"), //
-		jMethod<::org::omg::CORBA::DynEnum(::org::omg::CORBA::TypeCode)>("create_dyn_enum"), //
-		jMethod<::org::omg::CORBA::DynSequence(::org::omg::CORBA::TypeCode)>("create_dyn_sequence"), //
-		jMethod<::org::omg::CORBA::DynStruct(::org::omg::CORBA::TypeCode)>("create_dyn_struct"), //
-		jMethod<::org::omg::CORBA::DynUnion(::org::omg::CORBA::TypeCode)>("create_dyn_union"), //
 		jMethod<::org::omg::CORBA::TypeCode(::java::lang::String, ::java::lang::String, ::java::lang::String *)>("create_enum_tc"), //
 		jMethod<::org::omg::CORBA::Environment()>("create_environment"), //
 		jMethod<::org::omg::CORBA::ExceptionList()>("create_exception_list"), //
@@ -40,7 +33,6 @@ public:
 		jMethod<::org::omg::CORBA::NVList(::org::omg::CORBA::Object)>("create_operation_list"), //
 		jMethod<::org::omg::CORBA::portable::OutputStream()>("create_output_stream"), //
 		jMethod<::org::omg::CORBA::Policy(::jint, ::org::omg::CORBA::Any)>("create_policy"), //
-		jMethod<::org::omg::CORBA::TypeCode(::jint, ::jint)>("create_recursive_sequence_tc"), //
 		jMethod<::org::omg::CORBA::TypeCode(::java::lang::String)>("create_recursive_tc"), //
 		jMethod<::org::omg::CORBA::TypeCode(::jint, ::org::omg::CORBA::TypeCode)>("create_sequence_tc"), //
 		jMethod<::org::omg::CORBA::TypeCode(::jint)>("create_string_tc"), //
@@ -51,7 +43,6 @@ public:
 		jMethod<::org::omg::CORBA::TypeCode(::jint)>("create_wstring_tc"), //
 		jMethod<::jvoid()>("destroy"), //
 		jMethod<::jvoid(::org::omg::CORBA::Object)>("disconnect"), //
-		jMethod<::org::omg::CORBA::Current()>("get_current"), //
 		jMethod<::org::omg::CORBA::Context()>("get_default_context"), //
 		jMethod<::org::omg::CORBA::Request()>("get_next_response"), //
 		jMethod<::org::omg::CORBA::TypeCode(::org::omg::CORBA::TCKind)>("get_primitive_tc"), //
@@ -102,52 +93,10 @@ public:
 		return call<R>("create_array_tc", std::forward<Args>(args)...);
 	}
 
-	template<typename R = ::org::omg::CORBA::DynAny, typename... Args>
-	auto create_basic_dyn_any(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_basic_dyn_any")] != -1);
-		return call<R>("create_basic_dyn_any", std::forward<Args>(args)...);
-	}
-
 	template<typename R = ::org::omg::CORBA::ContextList, typename... Args>
 	auto create_context_list(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_context_list")] != -1);
 		return call<R>("create_context_list", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::org::omg::CORBA::DynAny, typename... Args>
-	auto create_dyn_any(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_dyn_any")] != -1);
-		return call<R>("create_dyn_any", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::org::omg::CORBA::DynArray, typename... Args>
-	auto create_dyn_array(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_dyn_array")] != -1);
-		return call<R>("create_dyn_array", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::org::omg::CORBA::DynEnum, typename... Args>
-	auto create_dyn_enum(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_dyn_enum")] != -1);
-		return call<R>("create_dyn_enum", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::org::omg::CORBA::DynSequence, typename... Args>
-	auto create_dyn_sequence(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_dyn_sequence")] != -1);
-		return call<R>("create_dyn_sequence", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::org::omg::CORBA::DynStruct, typename... Args>
-	auto create_dyn_struct(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_dyn_struct")] != -1);
-		return call<R>("create_dyn_struct", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::org::omg::CORBA::DynUnion, typename... Args>
-	auto create_dyn_union(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_dyn_union")] != -1);
-		return call<R>("create_dyn_union", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
@@ -223,12 +172,6 @@ public:
 	}
 
 	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
-	auto create_recursive_sequence_tc(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_recursive_sequence_tc")] != -1);
-		return call<R>("create_recursive_sequence_tc", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>
 	auto create_recursive_tc(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("create_recursive_tc")] != -1);
 		return call<R>("create_recursive_tc", std::forward<Args>(args)...);
@@ -286,12 +229,6 @@ public:
 	auto disconnect(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("disconnect")] != -1);
 		return call<R>("disconnect", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::org::omg::CORBA::Current, typename... Args>
-	auto get_current(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("get_current")] != -1);
-		return call<R>("get_current", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::omg::CORBA::Context, typename... Args>

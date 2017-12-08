@@ -519,8 +519,6 @@ public:
 		jMethod<::jboolean(::jint)>("isJavaIdentifierPart"), //
 		jMethod<::jboolean(::jchar)>("isJavaIdentifierStart"), //
 		jMethod<::jboolean(::jint)>("isJavaIdentifierStart"), //
-		jMethod<::jboolean(::jchar)>("isJavaLetter"), //
-		jMethod<::jboolean(::jchar)>("isJavaLetterOrDigit"), //
 		jMethod<::jboolean(::jchar)>("isLetter"), //
 		jMethod<::jboolean(::jint)>("isLetter"), //
 		jMethod<::jboolean(::jchar)>("isLetterOrDigit"), //
@@ -530,7 +528,6 @@ public:
 		jMethod<::jboolean(::jint)>("isLowerCase"), //
 		jMethod<::jboolean(::jchar)>("isMirrored"), //
 		jMethod<::jboolean(::jint)>("isMirrored"), //
-		jMethod<::jboolean(::jchar)>("isSpace"), //
 		jMethod<::jboolean(::jchar)>("isSpaceChar"), //
 		jMethod<::jboolean(::jint)>("isSpaceChar"), //
 		jMethod<::jboolean(::jint)>("isSupplementaryCodePoint"), //
@@ -722,18 +719,6 @@ public:
 	}
 
 	template<typename R = ::jboolean, typename... Args>
-	static auto isJavaLetter(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isJavaLetter")] != -1);
-		return scall<R>("isJavaLetter", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jboolean, typename... Args>
-	static auto isJavaLetterOrDigit(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isJavaLetterOrDigit")] != -1);
-		return scall<R>("isJavaLetterOrDigit", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jboolean, typename... Args>
 	static auto isLetter(Args &&...args) {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isLetter")] != -1);
 		return scall<R>("isLetter", std::forward<Args>(args)...);
@@ -761,12 +746,6 @@ public:
 	static auto isMirrored(Args &&...args) {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isMirrored")] != -1);
 		return scall<R>("isMirrored", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jboolean, typename... Args>
-	static auto isSpace(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isSpace")] != -1);
-		return scall<R>("isSpace", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>

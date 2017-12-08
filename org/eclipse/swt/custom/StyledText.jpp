@@ -37,7 +37,6 @@ public:
 		jMethod<::org::eclipse::swt::graphics::Color()>("getBackground"), //
 		jMethod<::jint()>("getBaseline"), //
 		jMethod<::jint(::jint)>("getBaseline"), //
-		jMethod<::jboolean()>("getBidiColoring"), //
 		jMethod<::jboolean()>("getBlockSelection"), //
 		jMethod<::org::eclipse::swt::graphics::Rectangle()>("getBlockSelectionBounds"), //
 		jMethod<::jint()>("getBottomMargin"), //
@@ -130,7 +129,6 @@ public:
 		jMethod<::jvoid(::jint)>("setAlignment"), //
 		jMethod<::jvoid(::jboolean)>("setAlwaysShowScrollBars"), //
 		jMethod<::jvoid(::org::eclipse::swt::graphics::Color)>("setBackground"), //
-		jMethod<::jvoid(::jboolean)>("setBidiColoring"), //
 		jMethod<::jvoid(::jboolean)>("setBlockSelection"), //
 		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint)>("setBlockSelectionBounds"), //
 		jMethod<::jvoid(::org::eclipse::swt::graphics::Rectangle)>("setBlockSelectionBounds"), //
@@ -303,12 +301,6 @@ public:
 	auto getBaseline(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBaseline")] != -1);
 		return call<R>("getBaseline", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jboolean, typename... Args>
-	auto getBidiColoring(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getBidiColoring")] != -1);
-		return call<R>("getBidiColoring", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
@@ -807,12 +799,6 @@ public:
 	auto setBackground(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setBackground")] != -1);
 		return call<R>("setBackground", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto setBidiColoring(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setBidiColoring")] != -1);
-		return call<R>("setBidiColoring", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

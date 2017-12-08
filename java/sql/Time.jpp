@@ -14,16 +14,8 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
-		jConstructor<::jvoid(::jint, ::jint, ::jint)>(), //
 		jConstructor<::jvoid(::jlong)>(), //
-		jMethod<::jint()>("getDate"), //
-		jMethod<::jint()>("getDay"), //
-		jMethod<::jint()>("getMonth"), //
-		jMethod<::jint()>("getYear"), //
-		jMethod<::jvoid(::jint)>("setDate"), //
-		jMethod<::jvoid(::jint)>("setMonth"), //
 		jMethod<::jvoid(::jlong)>("setTime"), //
-		jMethod<::jvoid(::jint)>("setYear"), //
 		jMethod<::java::time::Instant()>("toInstant"), //
 		jMethod<::java::time::LocalTime()>("toLocalTime"), //
 		jMethod<::java::lang::String()>("toString"), //
@@ -31,52 +23,10 @@ public:
 		jMethod<::java::sql::Time(::java::time::LocalTime)>("valueOf"), //
 	};
 
-	template<typename R = ::jint, typename... Args>
-	auto getDate(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDate")] != -1);
-		return call<R>("getDate", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jint, typename... Args>
-	auto getDay(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDay")] != -1);
-		return call<R>("getDay", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jint, typename... Args>
-	auto getMonth(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMonth")] != -1);
-		return call<R>("getMonth", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jint, typename... Args>
-	auto getYear(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getYear")] != -1);
-		return call<R>("getYear", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto setDate(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setDate")] != -1);
-		return call<R>("setDate", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto setMonth(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setMonth")] != -1);
-		return call<R>("setMonth", std::forward<Args>(args)...);
-	}
-
 	template<typename R = ::jvoid, typename... Args>
 	auto setTime(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setTime")] != -1);
 		return call<R>("setTime", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto setYear(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setYear")] != -1);
-		return call<R>("setYear", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::time::Instant, typename... Args>

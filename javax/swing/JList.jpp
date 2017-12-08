@@ -69,7 +69,6 @@ public:
 		jMethod<::jint()>("getSelectedIndex"), //
 		jMethod<::jint *()>("getSelectedIndices"), //
 		jMethod<::java::lang::Object()>("getSelectedValue"), //
-		jMethod<::java::lang::Object *()>("getSelectedValues"), //
 		jMethod<::java::util::List()>("getSelectedValuesList"), //
 		jMethod<::java::awt::Color()>("getSelectionBackground"), //
 		jMethod<::java::awt::Color()>("getSelectionForeground"), //
@@ -294,12 +293,6 @@ public:
 	auto getSelectedValue(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSelectedValue")] != -1);
 		return call<R>("getSelectedValue", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::java::lang::Object *, typename... Args>
-	auto getSelectedValues(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getSelectedValues")] != -1);
-		return call<R>("getSelectedValues", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::util::List, typename... Args>

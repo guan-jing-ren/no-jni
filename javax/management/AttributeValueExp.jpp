@@ -14,11 +14,9 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
-		jConstructor<::jvoid()>(), //
 		jConstructor<::jvoid(::java::lang::String)>(), //
 		jMethod<::javax::management::ValueExp(::javax::management::ObjectName)>("apply"), //
 		jMethod<::java::lang::String()>("getAttributeName"), //
-		jMethod<::jvoid(::javax::management::MBeanServer)>("setMBeanServer"), //
 		jMethod<::java::lang::String()>("toString"), //
 	};
 
@@ -32,12 +30,6 @@ public:
 	auto getAttributeName(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAttributeName")] != -1);
 		return call<R>("getAttributeName", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto setMBeanServer(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setMBeanServer")] != -1);
-		return call<R>("setMBeanServer", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::String, typename... Args>

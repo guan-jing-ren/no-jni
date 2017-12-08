@@ -141,7 +141,6 @@ public:
 		jMethod<::java::awt::Cursor()>("getLastCursor"), //
 		jMethod<::jint()>("getLayer"), //
 		jMethod<::javax::swing::JLayeredPane()>("getLayeredPane"), //
-		jMethod<::javax::swing::JMenuBar()>("getMenuBar"), //
 		jMethod<::java::awt::Component()>("getMostRecentFocusOwner"), //
 		jMethod<::java::awt::Rectangle()>("getNormalBounds"), //
 		jMethod<::javax::swing::JRootPane()>("getRootPane"), //
@@ -184,7 +183,6 @@ public:
 		jMethod<::jvoid(::java::awt::LayoutManager)>("setLayout"), //
 		jMethod<::jvoid(::jboolean)>("setMaximizable"), //
 		jMethod<::jvoid(::jboolean)>("setMaximum"), //
-		jMethod<::jvoid(::javax::swing::JMenuBar)>("setMenuBar"), //
 		jMethod<::jvoid(::java::awt::Rectangle)>("setNormalBounds"), //
 		jMethod<::jvoid(::jboolean)>("setResizable"), //
 		jMethod<::jvoid(::jboolean)>("setSelected"), //
@@ -296,12 +294,6 @@ public:
 	auto getLayeredPane(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLayeredPane")] != -1);
 		return call<R>("getLayeredPane", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::javax::swing::JMenuBar, typename... Args>
-	auto getMenuBar(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getMenuBar")] != -1);
-		return call<R>("getMenuBar", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::Component, typename... Args>
@@ -548,12 +540,6 @@ public:
 	auto setMaximum(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setMaximum")] != -1);
 		return call<R>("setMaximum", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto setMenuBar(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setMenuBar")] != -1);
-		return call<R>("setMenuBar", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

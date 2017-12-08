@@ -48,7 +48,6 @@ public:
 		jMethod<::java::awt::Point()>("getViewPosition"), //
 		jMethod<::java::awt::Rectangle()>("getViewRect"), //
 		jMethod<::java::awt::Dimension()>("getViewSize"), //
-		jMethod<::jboolean()>("isBackingStoreEnabled"), //
 		jMethod<::jboolean()>("isOptimizedDrawingEnabled"), //
 		jMethod<::jvoid(::java::awt::Graphics)>("paint"), //
 		jMethod<::jvoid(::java::awt::Component)>("remove"), //
@@ -56,7 +55,6 @@ public:
 		jMethod<::jvoid(::jlong, ::jint, ::jint, ::jint, ::jint)>("repaint"), //
 		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint)>("reshape"), //
 		jMethod<::jvoid(::java::awt::Rectangle)>("scrollRectToVisible"), //
-		jMethod<::jvoid(::jboolean)>("setBackingStoreEnabled"), //
 		jMethod<::jvoid(::javax::swing::border::Border)>("setBorder"), //
 		jMethod<::jvoid(::java::awt::Dimension)>("setExtentSize"), //
 		jMethod<::jvoid(::jint)>("setScrollMode"), //
@@ -142,12 +140,6 @@ public:
 	}
 
 	template<typename R = ::jboolean, typename... Args>
-	auto isBackingStoreEnabled(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isBackingStoreEnabled")] != -1);
-		return call<R>("isBackingStoreEnabled", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jboolean, typename... Args>
 	auto isOptimizedDrawingEnabled(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isOptimizedDrawingEnabled")] != -1);
 		return call<R>("isOptimizedDrawingEnabled", std::forward<Args>(args)...);
@@ -187,12 +179,6 @@ public:
 	auto scrollRectToVisible(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("scrollRectToVisible")] != -1);
 		return call<R>("scrollRectToVisible", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto setBackingStoreEnabled(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setBackingStoreEnabled")] != -1);
-		return call<R>("setBackingStoreEnabled", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

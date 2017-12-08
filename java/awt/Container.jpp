@@ -26,8 +26,6 @@ public:
 		jMethod<::jvoid(::java::lang::String, ::java::beans::PropertyChangeListener)>("addPropertyChangeListener"), //
 		jMethod<::jvoid(::java::awt::ComponentOrientation)>("applyComponentOrientation"), //
 		jMethod<::jboolean(::jint)>("areFocusTraversalKeysSet"), //
-		jMethod<::jint()>("countComponents"), //
-		jMethod<::jvoid(::java::awt::Event)>("deliverEvent"), //
 		jMethod<::jvoid()>("doLayout"), //
 		jMethod<::java::awt::Component(::jint, ::jint)>("findComponentAt"), //
 		jMethod<::java::awt::Component(::java::awt::Point)>("findComponentAt"), //
@@ -49,7 +47,6 @@ public:
 		jMethod<::java::awt::Dimension()>("getMinimumSize"), //
 		jMethod<::java::awt::Point(::jboolean)>("getMousePosition"), //
 		jMethod<::java::awt::Dimension()>("getPreferredSize"), //
-		jMethod<::java::awt::Insets()>("insets"), //
 		jMethod<::jvoid()>("invalidate"), //
 		jMethod<::jboolean(::java::awt::Component)>("isAncestorOf"), //
 		jMethod<::jboolean()>("isFocusCycleRoot"), //
@@ -57,14 +54,10 @@ public:
 		jMethod<::jboolean()>("isFocusTraversalPolicyProvider"), //
 		jMethod<::jboolean()>("isFocusTraversalPolicySet"), //
 		jMethod<::jboolean()>("isValidateRoot"), //
-		jMethod<::jvoid()>("layout"), //
 		jMethod<::jvoid(::java::io::PrintStream, ::jint)>("list"), //
 		jMethod<::jvoid(::java::io::PrintWriter, ::jint)>("list"), //
-		jMethod<::java::awt::Component(::jint, ::jint)>("locate"), //
-		jMethod<::java::awt::Dimension()>("minimumSize"), //
 		jMethod<::jvoid(::java::awt::Graphics)>("paint"), //
 		jMethod<::jvoid(::java::awt::Graphics)>("paintComponents"), //
-		jMethod<::java::awt::Dimension()>("preferredSize"), //
 		jMethod<::jvoid(::java::awt::Graphics)>("print"), //
 		jMethod<::jvoid(::java::awt::Graphics)>("printComponents"), //
 		jMethod<::jvoid(::jint)>("remove"), //
@@ -118,18 +111,6 @@ public:
 	auto areFocusTraversalKeysSet(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("areFocusTraversalKeysSet")] != -1);
 		return call<R>("areFocusTraversalKeysSet", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jint, typename... Args>
-	auto countComponents(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("countComponents")] != -1);
-		return call<R>("countComponents", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto deliverEvent(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("deliverEvent")] != -1);
-		return call<R>("deliverEvent", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
@@ -246,12 +227,6 @@ public:
 		return call<R>("getPreferredSize", std::forward<Args>(args)...);
 	}
 
-	template<typename R = ::java::awt::Insets, typename... Args>
-	auto insets(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("insets")] != -1);
-		return call<R>("insets", std::forward<Args>(args)...);
-	}
-
 	template<typename R = ::jvoid, typename... Args>
 	auto invalidate(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("invalidate")] != -1);
@@ -289,27 +264,9 @@ public:
 	}
 
 	template<typename R = ::jvoid, typename... Args>
-	auto layout(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("layout")] != -1);
-		return call<R>("layout", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
 	auto list(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("list")] != -1);
 		return call<R>("list", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::java::awt::Component, typename... Args>
-	auto locate(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("locate")] != -1);
-		return call<R>("locate", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::java::awt::Dimension, typename... Args>
-	auto minimumSize(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("minimumSize")] != -1);
-		return call<R>("minimumSize", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
@@ -322,12 +279,6 @@ public:
 	auto paintComponents(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("paintComponents")] != -1);
 		return call<R>("paintComponents", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::java::awt::Dimension, typename... Args>
-	auto preferredSize(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("preferredSize")] != -1);
-		return call<R>("preferredSize", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

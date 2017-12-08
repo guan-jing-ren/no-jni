@@ -40,7 +40,6 @@ public:
 		jField<::jint>("HTTP_REQ_TOO_LONG"), //
 		jField<::jint>("HTTP_RESET"), //
 		jField<::jint>("HTTP_SEE_OTHER"), //
-		jField<::jint>("HTTP_SERVER_ERROR"), //
 		jField<::jint>("HTTP_UNAUTHORIZED"), //
 		jField<::jint>("HTTP_UNAVAILABLE"), //
 		jField<::jint>("HTTP_UNSUPPORTED_TYPE"), //
@@ -226,12 +225,6 @@ public:
 	static auto HTTP_SEE_OTHER() {
 		static_assert(field_signatures[jField<F>("HTTP_SEE_OTHER")] != -1);
 		return sat<F>("HTTP_SEE_OTHER");
-	}
-
-	template<typename F = ::jint>
-	static auto HTTP_SERVER_ERROR() {
-		static_assert(field_signatures[jField<F>("HTTP_SERVER_ERROR")] != -1);
-		return sat<F>("HTTP_SERVER_ERROR");
 	}
 
 	template<typename F = ::jint>

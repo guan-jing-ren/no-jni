@@ -17,7 +17,6 @@ public:
 		jField<::java::lang::String>("javaJVMLocalObjectMimeType"), //
 		jField<::java::lang::String>("javaRemoteObjectMimeType"), //
 		jField<::java::lang::String>("javaSerializedObjectMimeType"), //
-		jField<::java::awt::datatransfer::DataFlavor>("plainTextFlavor"), //
 		jField<::java::awt::datatransfer::DataFlavor>("selectionHtmlFlavor"), //
 		jField<::java::awt::datatransfer::DataFlavor>("stringFlavor"), //
 	};
@@ -65,12 +64,6 @@ public:
 	}
 
 	template<typename F = ::java::awt::datatransfer::DataFlavor>
-	static auto plainTextFlavor() {
-		static_assert(field_signatures[jField<F>("plainTextFlavor")] != -1);
-		return sat<F>("plainTextFlavor");
-	}
-
-	template<typename F = ::java::awt::datatransfer::DataFlavor>
 	static auto selectionHtmlFlavor() {
 		static_assert(field_signatures[jField<F>("selectionHtmlFlavor")] != -1);
 		return sat<F>("selectionHtmlFlavor");
@@ -91,7 +84,6 @@ public:
 		jMethod<::java::lang::Object()>("clone"), //
 		jMethod<::jboolean(::java::awt::datatransfer::DataFlavor)>("equals"), //
 		jMethod<::jboolean(::java::lang::Object)>("equals"), //
-		jMethod<::jboolean(::java::lang::String)>("equals"), //
 		jMethod<::java::lang::Class()>("getDefaultRepresentationClass"), //
 		jMethod<::java::lang::String()>("getDefaultRepresentationClassAsString"), //
 		jMethod<::java::lang::String()>("getHumanPresentableName"), //

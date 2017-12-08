@@ -48,29 +48,15 @@ public:
 	}
 
 	constexpr static Enume method_signatures{
-		jMethod<::jvoid(::java::beans::PropertyChangeListener)>("addPropertyChangeListener"), //
 		jMethod<::java::util::SortedMap()>("properties"), //
-		jMethod<::jvoid(::java::beans::PropertyChangeListener)>("removePropertyChangeListener"), //
 		jMethod<::jvoid(::java::io::File, ::java::util::jar::JarOutputStream)>("unpack"), //
 		jMethod<::jvoid(::java::io::InputStream, ::java::util::jar::JarOutputStream)>("unpack"), //
 	};
-
-	template<typename R = ::jvoid, typename... Args>
-	auto addPropertyChangeListener(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addPropertyChangeListener")] != -1);
-		return call<R>("addPropertyChangeListener", std::forward<Args>(args)...);
-	}
 
 	template<typename R = ::java::util::SortedMap, typename... Args>
 	auto properties(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("properties")] != -1);
 		return call<R>("properties", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto removePropertyChangeListener(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removePropertyChangeListener")] != -1);
-		return call<R>("removePropertyChangeListener", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

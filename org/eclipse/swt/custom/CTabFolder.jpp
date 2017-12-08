@@ -10,37 +10,9 @@ public:
 	static constexpr auto signature = ::org_eclipse_swt_custom / "CTabFolder";
 
 	constexpr static Enume field_signatures{
-		jField<::jint>("MIN_TAB_WIDTH"), //
-		jField<::org::eclipse::swt::graphics::RGB>("borderInsideRGB"), //
-		jField<::org::eclipse::swt::graphics::RGB>("borderMiddleRGB"), //
-		jField<::org::eclipse::swt::graphics::RGB>("borderOutsideRGB"), //
 		jField<::jint>("marginHeight"), //
 		jField<::jint>("marginWidth"), //
 	};
-
-	template<typename F = ::jint>
-	auto MIN_TAB_WIDTH() const {
-		static_assert(field_signatures[jField<F>("MIN_TAB_WIDTH")] != -1);
-		return at<F>("MIN_TAB_WIDTH");
-	}
-
-	template<typename F = ::org::eclipse::swt::graphics::RGB>
-	static auto borderInsideRGB() {
-		static_assert(field_signatures[jField<F>("borderInsideRGB")] != -1);
-		return sat<F>("borderInsideRGB");
-	}
-
-	template<typename F = ::org::eclipse::swt::graphics::RGB>
-	static auto borderMiddleRGB() {
-		static_assert(field_signatures[jField<F>("borderMiddleRGB")] != -1);
-		return sat<F>("borderMiddleRGB");
-	}
-
-	template<typename F = ::org::eclipse::swt::graphics::RGB>
-	static auto borderOutsideRGB() {
-		static_assert(field_signatures[jField<F>("borderOutsideRGB")] != -1);
-		return sat<F>("borderOutsideRGB");
-	}
 
 	template<typename F = ::jint>
 	auto marginHeight() const {
@@ -57,7 +29,6 @@ public:
 	constexpr static Enume method_signatures{
 		jConstructor<::jvoid(::org::eclipse::swt::widgets::Composite, ::jint)>(), //
 		jMethod<::jvoid(::org::eclipse::swt::custom::CTabFolder2Listener)>("addCTabFolder2Listener"), //
-		jMethod<::jvoid(::org::eclipse::swt::custom::CTabFolderListener)>("addCTabFolderListener"), //
 		jMethod<::jvoid(::org::eclipse::swt::events::SelectionListener)>("addSelectionListener"), //
 		jMethod<::org::eclipse::swt::graphics::Rectangle(::jint, ::jint, ::jint, ::jint)>("computeTrim"), //
 		jMethod<::jboolean()>("getBorderVisible"), //
@@ -88,7 +59,6 @@ public:
 		jMethod<::jboolean()>("getUnselectedImageVisible"), //
 		jMethod<::jint(::org::eclipse::swt::custom::CTabItem)>("indexOf"), //
 		jMethod<::jvoid(::org::eclipse::swt::custom::CTabFolder2Listener)>("removeCTabFolder2Listener"), //
-		jMethod<::jvoid(::org::eclipse::swt::custom::CTabFolderListener)>("removeCTabFolderListener"), //
 		jMethod<::jvoid(::org::eclipse::swt::events::SelectionListener)>("removeSelectionListener"), //
 		jMethod<::jvoid(::jint)>("reskin"), //
 		jMethod<::jvoid(::org::eclipse::swt::graphics::Color)>("setBackground"), //
@@ -132,12 +102,6 @@ public:
 	auto addCTabFolder2Listener(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addCTabFolder2Listener")] != -1);
 		return call<R>("addCTabFolder2Listener", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto addCTabFolderListener(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addCTabFolderListener")] != -1);
-		return call<R>("addCTabFolderListener", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
@@ -312,12 +276,6 @@ public:
 	auto removeCTabFolder2Listener(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeCTabFolder2Listener")] != -1);
 		return call<R>("removeCTabFolder2Listener", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto removeCTabFolderListener(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeCTabFolderListener")] != -1);
-		return call<R>("removeCTabFolderListener", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

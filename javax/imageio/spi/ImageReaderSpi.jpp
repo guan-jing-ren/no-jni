@@ -10,14 +10,8 @@ public:
 	static constexpr auto signature = ::javax_imageio_spi / "ImageReaderSpi";
 
 	constexpr static Enume field_signatures{
-		jField<::java::lang::Class *>("STANDARD_INPUT_TYPE"), //
+		cexprstr{"\0"}, //
 	};
-
-	template<typename F = ::java::lang::Class *>
-	static auto STANDARD_INPUT_TYPE() {
-		static_assert(field_signatures[jField<F>("STANDARD_INPUT_TYPE")] != -1);
-		return sat<F>("STANDARD_INPUT_TYPE");
-	}
 
 	constexpr static Enume method_signatures{
 		jConstructor<::jvoid(::java::lang::String, ::java::lang::String, ::java::lang::String *, ::java::lang::String *, ::java::lang::String *, ::java::lang::String, ::java::lang::Class *, ::java::lang::String *, ::jboolean, ::java::lang::String, ::java::lang::String, ::java::lang::String *, ::java::lang::String *, ::jboolean, ::java::lang::String, ::java::lang::String, ::java::lang::String *, ::java::lang::String *)>(), //

@@ -11,19 +11,12 @@ public:
 
 	constexpr static Enume field_signatures{
 		jField<::java::lang::String>("GLOBAL_LOGGER_NAME"), //
-		jField<::java::util::logging::Logger>("global"), //
 	};
 
 	template<typename F = ::java::lang::String>
 	static auto GLOBAL_LOGGER_NAME() {
 		static_assert(field_signatures[jField<F>("GLOBAL_LOGGER_NAME")] != -1);
 		return sat<F>("GLOBAL_LOGGER_NAME");
-	}
-
-	template<typename F = ::java::util::logging::Logger>
-	static auto global() {
-		static_assert(field_signatures[jField<F>("global")] != -1);
-		return sat<F>("global");
 	}
 
 	constexpr static Enume method_signatures{
@@ -70,10 +63,6 @@ public:
 		jMethod<::jvoid(::java::util::logging::Level, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::Object *)>("logp"), //
 		jMethod<::jvoid(::java::util::logging::Level, ::java::lang::String, ::java::lang::String, ::java::lang::Throwable, ::java::util::function::Supplier)>("logp"), //
 		jMethod<::jvoid(::java::util::logging::Level, ::java::lang::String, ::java::lang::String, ::java::util::function::Supplier)>("logp"), //
-		jMethod<::jvoid(::java::util::logging::Level, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::String)>("logrb"), //
-		jMethod<::jvoid(::java::util::logging::Level, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::Object)>("logrb"), //
-		jMethod<::jvoid(::java::util::logging::Level, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::Throwable)>("logrb"), //
-		jMethod<::jvoid(::java::util::logging::Level, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::String, ::java::lang::Object *)>("logrb"), //
 		jMethod<::jvoid(::java::util::logging::Level, ::java::lang::String, ::java::lang::String, ::java::util::ResourceBundle, ::java::lang::String, ::java::lang::Throwable)>("logrb"), //
 		jMethod<::jvoid(::java::util::logging::Level, ::java::lang::String, ::java::lang::String, ::java::util::ResourceBundle, ::java::lang::String, ::java::lang::Object *)>("logrb"), //
 		jMethod<::jvoid(::java::util::logging::Handler)>("removeHandler"), //

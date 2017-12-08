@@ -10,15 +10,8 @@ public:
 	static constexpr auto signature = ::javax_management_openmbean / "OpenType";
 
 	constexpr static Enume field_signatures{
-		jField<::java::lang::String *>("ALLOWED_CLASSNAMES"), //
 		jField<::java::util::List>("ALLOWED_CLASSNAMES_LIST"), //
 	};
-
-	template<typename F = ::java::lang::String *>
-	static auto ALLOWED_CLASSNAMES() {
-		static_assert(field_signatures[jField<F>("ALLOWED_CLASSNAMES")] != -1);
-		return sat<F>("ALLOWED_CLASSNAMES");
-	}
 
 	template<typename F = ::java::util::List>
 	static auto ALLOWED_CLASSNAMES_LIST() {

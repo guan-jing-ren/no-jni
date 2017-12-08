@@ -18,7 +18,6 @@ public:
 		jMethod<::javax::swing::plaf::ComponentUI(::javax::swing::JComponent)>("createUI"), //
 		jMethod<::jvoid(::javax::swing::JScrollPane)>("installListeners"), //
 		jMethod<::jvoid(::javax::swing::JComponent)>("installUI"), //
-		jMethod<::jvoid(::javax::swing::JScrollPane)>("uninstallListeners"), //
 		jMethod<::jvoid(::javax::swing::JComponent)>("uninstallUI"), //
 	};
 
@@ -38,12 +37,6 @@ public:
 	auto installUI(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("installUI")] != -1);
 		return call<R>("installUI", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto uninstallListeners(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("uninstallListeners")] != -1);
-		return call<R>("uninstallListeners", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

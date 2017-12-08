@@ -15,10 +15,8 @@ public:
 
 	constexpr static Enume method_signatures{
 		jConstructor<::jvoid()>(), //
-		jMethod<::java::lang::String()>("getDerivedGauge"), //
 		jMethod<::java::lang::Object(::javax::management::ObjectName)>("getDerivedGauge"), //
 		jMethod<::java::lang::String(::javax::management::ObjectName)>("getDerivedGauge"), //
-		jMethod<::jlong()>("getDerivedGaugeTimeStamp"), //
 		jMethod<::jlong(::javax::management::ObjectName)>("getDerivedGaugeTimeStamp"), //
 		jMethod<::javax::management::MBeanNotificationInfo *()>("getNotificationInfo"), //
 		jMethod<::jboolean()>("getNotifyDiffer"), //
@@ -31,7 +29,7 @@ public:
 		jMethod<::jvoid()>("stop"), //
 	};
 
-	template<typename R = ::java::lang::String, typename... Args>
+	template<typename R = ::java::lang::Object, typename... Args>
 	auto getDerivedGauge(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getDerivedGauge")] != -1);
 		return call<R>("getDerivedGauge", std::forward<Args>(args)...);

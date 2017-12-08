@@ -24,7 +24,6 @@ public:
 		jMethod<::jvoid(::java::io::Reader)>("load"), //
 		jMethod<::jvoid(::java::io::InputStream)>("loadFromXML"), //
 		jMethod<::java::util::Enumeration()>("propertyNames"), //
-		jMethod<::jvoid(::java::io::OutputStream, ::java::lang::String)>("save"), //
 		jMethod<::java::lang::Object(::java::lang::String, ::java::lang::String)>("setProperty"), //
 		jMethod<::jvoid(::java::io::OutputStream, ::java::lang::String)>("store"), //
 		jMethod<::jvoid(::java::io::Writer, ::java::lang::String)>("store"), //
@@ -61,12 +60,6 @@ public:
 	auto propertyNames(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("propertyNames")] != -1);
 		return call<R>("propertyNames", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto save(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("save")] != -1);
-		return call<R>("save", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>

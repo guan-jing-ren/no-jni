@@ -45,7 +45,6 @@ public:
 		jMethod<::jvoid(::jint, ::org::eclipse::swt::graphics::Image)>("setImage"), //
 		jMethod<::jvoid(::org::eclipse::swt::graphics::Image)>("setImage"), //
 		jMethod<::jvoid(::org::eclipse::swt::graphics::Image *)>("setImage"), //
-		jMethod<::jvoid(::jint)>("setImageIndent"), //
 		jMethod<::jvoid(::jint, ::java::lang::String)>("setText"), //
 		jMethod<::jvoid(::java::lang::String)>("setText"), //
 		jMethod<::jvoid(::java::lang::String *)>("setText"), //
@@ -157,12 +156,6 @@ public:
 	auto setImage(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setImage")] != -1);
 		return call<R>("setImage", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto setImageIndent(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setImageIndent")] != -1);
-		return call<R>("setImageIndent", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

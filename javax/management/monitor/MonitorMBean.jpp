@@ -18,13 +18,11 @@ public:
 		jMethod<::jboolean(::javax::management::ObjectName)>("containsObservedObject"), //
 		jMethod<::jlong()>("getGranularityPeriod"), //
 		jMethod<::java::lang::String()>("getObservedAttribute"), //
-		jMethod<::javax::management::ObjectName()>("getObservedObject"), //
 		jMethod<::javax::management::ObjectName *()>("getObservedObjects"), //
 		jMethod<::jboolean()>("isActive"), //
 		jMethod<::jvoid(::javax::management::ObjectName)>("removeObservedObject"), //
 		jMethod<::jvoid(::jlong)>("setGranularityPeriod"), //
 		jMethod<::jvoid(::java::lang::String)>("setObservedAttribute"), //
-		jMethod<::jvoid(::javax::management::ObjectName)>("setObservedObject"), //
 		jMethod<::jvoid()>("start"), //
 		jMethod<::jvoid()>("stop"), //
 	};
@@ -51,12 +49,6 @@ public:
 	auto getObservedAttribute(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getObservedAttribute")] != -1);
 		return call<R>("getObservedAttribute", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::javax::management::ObjectName, typename... Args>
-	auto getObservedObject(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getObservedObject")] != -1);
-		return call<R>("getObservedObject", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::management::ObjectName *, typename... Args>
@@ -87,12 +79,6 @@ public:
 	auto setObservedAttribute(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setObservedAttribute")] != -1);
 		return call<R>("setObservedAttribute", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto setObservedObject(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setObservedObject")] != -1);
-		return call<R>("setObservedObject", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

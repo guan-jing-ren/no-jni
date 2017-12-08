@@ -20,7 +20,6 @@ public:
 		jMethod<::org::omg::CORBA::Context()>("read_Context"), //
 		jMethod<::org::omg::CORBA::Object()>("read_Object"), //
 		jMethod<::org::omg::CORBA::Object(::java::lang::Class)>("read_Object"), //
-		jMethod<::org::omg::CORBA::Principal()>("read_Principal"), //
 		jMethod<::org::omg::CORBA::TypeCode()>("read_TypeCode"), //
 		jMethod<::org::omg::CORBA::Any()>("read_any"), //
 		jMethod<::jboolean()>("read_boolean"), //
@@ -74,12 +73,6 @@ public:
 	auto read_Object(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_Object")] != -1);
 		return call<R>("read_Object", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::org::omg::CORBA::Principal, typename... Args>
-	auto read_Principal(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("read_Principal")] != -1);
-		return call<R>("read_Principal", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::omg::CORBA::TypeCode, typename... Args>

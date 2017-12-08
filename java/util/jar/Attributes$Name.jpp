@@ -12,13 +12,10 @@ public:
 	constexpr static Enume field_signatures{
 		jField<::java::util::jar::Attributes$Name>("CLASS_PATH"), //
 		jField<::java::util::jar::Attributes$Name>("CONTENT_TYPE"), //
-		jField<::java::util::jar::Attributes$Name>("EXTENSION_INSTALLATION"), //
 		jField<::java::util::jar::Attributes$Name>("EXTENSION_LIST"), //
 		jField<::java::util::jar::Attributes$Name>("EXTENSION_NAME"), //
 		jField<::java::util::jar::Attributes$Name>("IMPLEMENTATION_TITLE"), //
-		jField<::java::util::jar::Attributes$Name>("IMPLEMENTATION_URL"), //
 		jField<::java::util::jar::Attributes$Name>("IMPLEMENTATION_VENDOR"), //
-		jField<::java::util::jar::Attributes$Name>("IMPLEMENTATION_VENDOR_ID"), //
 		jField<::java::util::jar::Attributes$Name>("IMPLEMENTATION_VERSION"), //
 		jField<::java::util::jar::Attributes$Name>("MAIN_CLASS"), //
 		jField<::java::util::jar::Attributes$Name>("MANIFEST_VERSION"), //
@@ -42,12 +39,6 @@ public:
 	}
 
 	template<typename F = ::java::util::jar::Attributes$Name>
-	static auto EXTENSION_INSTALLATION() {
-		static_assert(field_signatures[jField<F>("EXTENSION_INSTALLATION")] != -1);
-		return sat<F>("EXTENSION_INSTALLATION");
-	}
-
-	template<typename F = ::java::util::jar::Attributes$Name>
 	static auto EXTENSION_LIST() {
 		static_assert(field_signatures[jField<F>("EXTENSION_LIST")] != -1);
 		return sat<F>("EXTENSION_LIST");
@@ -66,21 +57,9 @@ public:
 	}
 
 	template<typename F = ::java::util::jar::Attributes$Name>
-	static auto IMPLEMENTATION_URL() {
-		static_assert(field_signatures[jField<F>("IMPLEMENTATION_URL")] != -1);
-		return sat<F>("IMPLEMENTATION_URL");
-	}
-
-	template<typename F = ::java::util::jar::Attributes$Name>
 	static auto IMPLEMENTATION_VENDOR() {
 		static_assert(field_signatures[jField<F>("IMPLEMENTATION_VENDOR")] != -1);
 		return sat<F>("IMPLEMENTATION_VENDOR");
-	}
-
-	template<typename F = ::java::util::jar::Attributes$Name>
-	static auto IMPLEMENTATION_VENDOR_ID() {
-		static_assert(field_signatures[jField<F>("IMPLEMENTATION_VENDOR_ID")] != -1);
-		return sat<F>("IMPLEMENTATION_VENDOR_ID");
 	}
 
 	template<typename F = ::java::util::jar::Attributes$Name>

@@ -19,7 +19,6 @@ public:
 		jMethod<::org::omg::CORBA::portable::OutputStream()>("create_output_stream"), //
 		jMethod<::jboolean(::org::omg::CORBA::Any)>("equal"), //
 		jMethod<::org::omg::CORBA::Object()>("extract_Object"), //
-		jMethod<::org::omg::CORBA::Principal()>("extract_Principal"), //
 		jMethod<::org::omg::CORBA::portable::Streamable()>("extract_Streamable"), //
 		jMethod<::org::omg::CORBA::TypeCode()>("extract_TypeCode"), //
 		jMethod<::java::io::Serializable()>("extract_Value"), //
@@ -41,7 +40,6 @@ public:
 		jMethod<::java::lang::String()>("extract_wstring"), //
 		jMethod<::jvoid(::org::omg::CORBA::Object)>("insert_Object"), //
 		jMethod<::jvoid(::org::omg::CORBA::Object, ::org::omg::CORBA::TypeCode)>("insert_Object"), //
-		jMethod<::jvoid(::org::omg::CORBA::Principal)>("insert_Principal"), //
 		jMethod<::jvoid(::org::omg::CORBA::portable::Streamable)>("insert_Streamable"), //
 		jMethod<::jvoid(::org::omg::CORBA::TypeCode)>("insert_TypeCode"), //
 		jMethod<::jvoid(::java::io::Serializable)>("insert_Value"), //
@@ -91,12 +89,6 @@ public:
 	auto extract_Object(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("extract_Object")] != -1);
 		return call<R>("extract_Object", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::org::omg::CORBA::Principal, typename... Args>
-	auto extract_Principal(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("extract_Principal")] != -1);
-		return call<R>("extract_Principal", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::omg::CORBA::portable::Streamable, typename... Args>
@@ -217,12 +209,6 @@ public:
 	auto insert_Object(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("insert_Object")] != -1);
 		return call<R>("insert_Object", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto insert_Principal(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("insert_Principal")] != -1);
-		return call<R>("insert_Principal", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

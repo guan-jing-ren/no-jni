@@ -7,6 +7,12 @@ env LD_LIBRARY_PATH=/usr/lib/jvm/default-java/jre/lib/amd64/server/ ./nojni -Dru
 
 #include "no-jni.hpp"
 
+#include "java/lang/reflect/*-jfwd.jpp"
+#include "java/lang/reflect/*"
+
+#include "java/lang/annotation/Annotation.jpp"
+#include "java/lang/Deprecated.jpp"
+
 #include <jvmti.h>
 
 #include <algorithm>
@@ -368,6 +374,14 @@ public:
               });
     return vars;
   }
+
+  java::lang::reflect::Method reflected() const {
+    jclass declare;
+    env()->GetMethodDeclaringClass(id, &declare);
+    jobject reflect = JavaVirtualMachine::env->ToReflectedMethod(
+        tClass{jReference::steal(declare)}, id, is_static());
+    return jReference::steal(reflect);
+  }
 };
 
 class tField : public tMember<jfieldID> {
@@ -404,6 +418,12 @@ public:
       env()->SetFieldModificationWatch(clazz, *this);
     else
       env()->ClearFieldModificationWatch(clazz, *this);
+  }
+
+  java::lang::reflect::Field reflected() const {
+    jobject reflect =
+        JavaVirtualMachine::env->ToReflectedField(clazz, id, is_static());
+    return jReference::steal(reflect);
   }
 };
 
@@ -674,6 +694,7 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
          << "#endif\n";
   }
 
+  java::lang::Class depr{jReference{java::lang::Deprecated::getClass()}};
   for (const auto &sig : csignatures) {
     auto pkg = sig.substr(0, sig.rfind("/"));
 
@@ -707,13 +728,16 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
          << "\tstatic constexpr auto signature = ::"
          << pkg_to_nspace_pkg_var[pkg].second << " / \"" << cls << "\";\n\n";
 
-    auto process_members = [](const auto &members, auto &signatures,
-                              auto &&factory) {
+    auto process_members = [depr](const auto &members, auto &signatures,
+                                  auto &&factory) {
       transform(begin(members), end(members), back_inserter(signatures),
-                [factory](const auto &m) mutable {
-                  auto members = factory(m);
-                  return make_tuple(members.name(), members.signature(),
-                                    members.is_static(), members.is_public());
+                [factory, depr](const auto &m) mutable {
+                  auto member = factory(m);
+                  auto deprecated = member.reflected().getAnnotation(depr);
+
+                  return tuple{member.name(), member.signature(),
+                               member.is_static(),
+                               member.is_public() && !deprecated};
                 });
     };
 
@@ -762,6 +786,7 @@ void VMInit(jvmtiEnv *jvmti_env, JNIEnv *jni_env, jthread) {
     auto methods = clazz.get_methods();
     vector<tuple<string, string, bool, bool>> msignatures;
     auto method_from_id = [](jmethodID id) { return tMethod{id}; };
+
     process_members(methods, msignatures, method_from_id);
     for (tClass iface : clazz.implemented_interfaces())
       process_members(iface.get_methods(), msignatures, method_from_id);

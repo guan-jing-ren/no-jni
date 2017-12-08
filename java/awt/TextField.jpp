@@ -30,14 +30,9 @@ public:
 		jMethod<::java::awt::Dimension(::jint)>("getMinimumSize"), //
 		jMethod<::java::awt::Dimension()>("getPreferredSize"), //
 		jMethod<::java::awt::Dimension(::jint)>("getPreferredSize"), //
-		jMethod<::java::awt::Dimension()>("minimumSize"), //
-		jMethod<::java::awt::Dimension(::jint)>("minimumSize"), //
-		jMethod<::java::awt::Dimension()>("preferredSize"), //
-		jMethod<::java::awt::Dimension(::jint)>("preferredSize"), //
 		jMethod<::jvoid(::java::awt::event::ActionListener)>("removeActionListener"), //
 		jMethod<::jvoid(::jint)>("setColumns"), //
 		jMethod<::jvoid(::jchar)>("setEchoChar"), //
-		jMethod<::jvoid(::jchar)>("setEchoCharacter"), //
 		jMethod<::jvoid(::java::lang::String)>("setText"), //
 	};
 
@@ -101,18 +96,6 @@ public:
 		return call<R>("getPreferredSize", std::forward<Args>(args)...);
 	}
 
-	template<typename R = ::java::awt::Dimension, typename... Args>
-	auto minimumSize(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("minimumSize")] != -1);
-		return call<R>("minimumSize", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::java::awt::Dimension, typename... Args>
-	auto preferredSize(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("preferredSize")] != -1);
-		return call<R>("preferredSize", std::forward<Args>(args)...);
-	}
-
 	template<typename R = ::jvoid, typename... Args>
 	auto removeActionListener(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removeActionListener")] != -1);
@@ -129,12 +112,6 @@ public:
 	auto setEchoChar(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setEchoChar")] != -1);
 		return call<R>("setEchoChar", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto setEchoCharacter(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setEchoCharacter")] != -1);
-		return call<R>("setEchoCharacter", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

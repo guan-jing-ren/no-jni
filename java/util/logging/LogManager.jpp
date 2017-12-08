@@ -21,7 +21,6 @@ public:
 
 	constexpr static Enume method_signatures{
 		jMethod<::jboolean(::java::util::logging::Logger)>("addLogger"), //
-		jMethod<::jvoid(::java::beans::PropertyChangeListener)>("addPropertyChangeListener"), //
 		jMethod<::jvoid()>("checkAccess"), //
 		jMethod<::java::util::logging::LogManager()>("getLogManager"), //
 		jMethod<::java::util::logging::Logger(::java::lang::String)>("getLogger"), //
@@ -30,7 +29,6 @@ public:
 		jMethod<::java::lang::String(::java::lang::String)>("getProperty"), //
 		jMethod<::jvoid()>("readConfiguration"), //
 		jMethod<::jvoid(::java::io::InputStream)>("readConfiguration"), //
-		jMethod<::jvoid(::java::beans::PropertyChangeListener)>("removePropertyChangeListener"), //
 		jMethod<::jvoid()>("reset"), //
 	};
 
@@ -38,12 +36,6 @@ public:
 	auto addLogger(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addLogger")] != -1);
 		return call<R>("addLogger", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto addPropertyChangeListener(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addPropertyChangeListener")] != -1);
-		return call<R>("addPropertyChangeListener", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
@@ -86,12 +78,6 @@ public:
 	auto readConfiguration(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("readConfiguration")] != -1);
 		return call<R>("readConfiguration", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto removePropertyChangeListener(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("removePropertyChangeListener")] != -1);
-		return call<R>("removePropertyChangeListener", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

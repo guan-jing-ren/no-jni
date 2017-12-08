@@ -18,7 +18,6 @@ public:
 		jMethod<::jvoid(::java::lang::String, ::jint)>("checkAccept"), //
 		jMethod<::jvoid(::java::lang::Thread)>("checkAccess"), //
 		jMethod<::jvoid(::java::lang::ThreadGroup)>("checkAccess"), //
-		jMethod<::jvoid()>("checkAwtEventQueueAccess"), //
 		jMethod<::jvoid(::java::lang::String, ::jint)>("checkConnect"), //
 		jMethod<::jvoid(::java::lang::String, ::jint, ::java::lang::Object)>("checkConnect"), //
 		jMethod<::jvoid()>("checkCreateClassLoader"), //
@@ -27,9 +26,7 @@ public:
 		jMethod<::jvoid(::jint)>("checkExit"), //
 		jMethod<::jvoid(::java::lang::String)>("checkLink"), //
 		jMethod<::jvoid(::jint)>("checkListen"), //
-		jMethod<::jvoid(::java::lang::Class, ::jint)>("checkMemberAccess"), //
 		jMethod<::jvoid(::java::net::InetAddress)>("checkMulticast"), //
-		jMethod<::jvoid(::java::net::InetAddress, ::jbyte)>("checkMulticast"), //
 		jMethod<::jvoid(::java::lang::String)>("checkPackageAccess"), //
 		jMethod<::jvoid(::java::lang::String)>("checkPackageDefinition"), //
 		jMethod<::jvoid(::java::security::Permission)>("checkPermission"), //
@@ -42,11 +39,8 @@ public:
 		jMethod<::jvoid(::java::lang::String, ::java::lang::Object)>("checkRead"), //
 		jMethod<::jvoid(::java::lang::String)>("checkSecurityAccess"), //
 		jMethod<::jvoid()>("checkSetFactory"), //
-		jMethod<::jvoid()>("checkSystemClipboardAccess"), //
-		jMethod<::jboolean(::java::lang::Object)>("checkTopLevelWindow"), //
 		jMethod<::jvoid(::java::io::FileDescriptor)>("checkWrite"), //
 		jMethod<::jvoid(::java::lang::String)>("checkWrite"), //
-		jMethod<::jboolean()>("getInCheck"), //
 		jMethod<::java::lang::Object()>("getSecurityContext"), //
 		jMethod<::java::lang::ThreadGroup()>("getThreadGroup"), //
 	};
@@ -61,12 +55,6 @@ public:
 	auto checkAccess(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkAccess")] != -1);
 		return call<R>("checkAccess", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto checkAwtEventQueueAccess(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkAwtEventQueueAccess")] != -1);
-		return call<R>("checkAwtEventQueueAccess", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
@@ -109,12 +97,6 @@ public:
 	auto checkListen(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkListen")] != -1);
 		return call<R>("checkListen", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto checkMemberAccess(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkMemberAccess")] != -1);
-		return call<R>("checkMemberAccess", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
@@ -178,27 +160,9 @@ public:
 	}
 
 	template<typename R = ::jvoid, typename... Args>
-	auto checkSystemClipboardAccess(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkSystemClipboardAccess")] != -1);
-		return call<R>("checkSystemClipboardAccess", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jboolean, typename... Args>
-	auto checkTopLevelWindow(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkTopLevelWindow")] != -1);
-		return call<R>("checkTopLevelWindow", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
 	auto checkWrite(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("checkWrite")] != -1);
 		return call<R>("checkWrite", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jboolean, typename... Args>
-	auto getInCheck(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInCheck")] != -1);
-		return call<R>("getInCheck", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>

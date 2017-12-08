@@ -19,7 +19,6 @@ public:
 		jMethod<::jvoid()>("addNotify"), //
 		jMethod<::javax::accessibility::AccessibleContext()>("getAccessibleContext"), //
 		jMethod<::java::awt::Component()>("getComponent"), //
-		jMethod<::java::awt::Component(::jint)>("getComponentAtIndex"), //
 		jMethod<::jint(::java::awt::Component)>("getComponentIndex"), //
 		jMethod<::javax::swing::JMenu()>("getHelpMenu"), //
 		jMethod<::java::awt::Insets()>("getMargin"), //
@@ -66,12 +65,6 @@ public:
 	auto getComponent(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getComponent")] != -1);
 		return call<R>("getComponent", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::java::awt::Component, typename... Args>
-	auto getComponentAtIndex(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getComponentAtIndex")] != -1);
-		return call<R>("getComponentAtIndex", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>

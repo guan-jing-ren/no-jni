@@ -10,16 +10,9 @@ public:
 	static constexpr auto signature = ::javax_sql_rowset / "WebRowSet";
 
 	constexpr static Enume field_signatures{
-		jField<::jboolean>("COMMIT_ON_ACCEPT_CHANGES"), //
 		jField<::java::lang::String>("PUBLIC_XML_SCHEMA"), //
 		jField<::java::lang::String>("SCHEMA_SYSTEM_ID"), //
 	};
-
-	template<typename F = ::jboolean>
-	static auto COMMIT_ON_ACCEPT_CHANGES() {
-		static_assert(field_signatures[jField<F>("COMMIT_ON_ACCEPT_CHANGES")] != -1);
-		return sat<F>("COMMIT_ON_ACCEPT_CHANGES");
-	}
 
 	template<typename F = ::java::lang::String>
 	static auto PUBLIC_XML_SCHEMA() {

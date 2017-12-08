@@ -157,7 +157,6 @@ public:
 		jMethod<::jvoid(::java::awt::Point, ::java::awt::Component)>("convertPointFromScreen"), //
 		jMethod<::jvoid(::java::awt::Point, ::java::awt::Component)>("convertPointToScreen"), //
 		jMethod<::java::awt::Rectangle(::java::awt::Component, ::java::awt::Rectangle, ::java::awt::Component)>("convertRectangle"), //
-		jMethod<::java::awt::Component(::java::awt::Component)>("findFocusOwner"), //
 		jMethod<::javax::accessibility::Accessible(::java::awt::Component, ::java::awt::Point)>("getAccessibleAt"), //
 		jMethod<::javax::accessibility::Accessible(::java::awt::Component, ::jint)>("getAccessibleChild"), //
 		jMethod<::jint(::java::awt::Component)>("getAccessibleChildrenCount"), //
@@ -252,12 +251,6 @@ public:
 	static auto convertRectangle(Args &&...args) {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("convertRectangle")] != -1);
 		return scall<R>("convertRectangle", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::java::awt::Component, typename... Args>
-	static auto findFocusOwner(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("findFocusOwner")] != -1);
-		return scall<R>("findFocusOwner", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::accessibility::Accessible, typename... Args>

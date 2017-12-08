@@ -20,13 +20,11 @@ public:
 		jMethod<::java::sql::Connection(::java::lang::String, ::java::util::Properties)>("getConnection"), //
 		jMethod<::java::sql::Driver(::java::lang::String)>("getDriver"), //
 		jMethod<::java::util::Enumeration()>("getDrivers"), //
-		jMethod<::java::io::PrintStream()>("getLogStream"), //
 		jMethod<::java::io::PrintWriter()>("getLogWriter"), //
 		jMethod<::jint()>("getLoginTimeout"), //
 		jMethod<::jvoid(::java::lang::String)>("println"), //
 		jMethod<::jvoid(::java::sql::Driver)>("registerDriver"), //
 		jMethod<::jvoid(::java::sql::Driver, ::java::sql::DriverAction)>("registerDriver"), //
-		jMethod<::jvoid(::java::io::PrintStream)>("setLogStream"), //
 		jMethod<::jvoid(::java::io::PrintWriter)>("setLogWriter"), //
 		jMethod<::jvoid(::jint)>("setLoginTimeout"), //
 	};
@@ -55,12 +53,6 @@ public:
 		return scall<R>("getDrivers", std::forward<Args>(args)...);
 	}
 
-	template<typename R = ::java::io::PrintStream, typename... Args>
-	static auto getLogStream(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLogStream")] != -1);
-		return scall<R>("getLogStream", std::forward<Args>(args)...);
-	}
-
 	template<typename R = ::java::io::PrintWriter, typename... Args>
 	static auto getLogWriter(Args &&...args) {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLogWriter")] != -1);
@@ -83,12 +75,6 @@ public:
 	static auto registerDriver(Args &&...args) {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("registerDriver")] != -1);
 		return scall<R>("registerDriver", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	static auto setLogStream(Args &&...args) {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setLogStream")] != -1);
-		return scall<R>("setLogStream", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

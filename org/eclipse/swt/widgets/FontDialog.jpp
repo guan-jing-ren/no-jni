@@ -17,12 +17,10 @@ public:
 		jConstructor<::jvoid(::org::eclipse::swt::widgets::Shell)>(), //
 		jConstructor<::jvoid(::org::eclipse::swt::widgets::Shell, ::jint)>(), //
 		jMethod<::jboolean()>("getEffectsVisible"), //
-		jMethod<::org::eclipse::swt::graphics::FontData()>("getFontData"), //
 		jMethod<::org::eclipse::swt::graphics::FontData *()>("getFontList"), //
 		jMethod<::org::eclipse::swt::graphics::RGB()>("getRGB"), //
 		jMethod<::org::eclipse::swt::graphics::FontData()>("open"), //
 		jMethod<::jvoid(::jboolean)>("setEffectsVisible"), //
-		jMethod<::jvoid(::org::eclipse::swt::graphics::FontData)>("setFontData"), //
 		jMethod<::jvoid(::org::eclipse::swt::graphics::FontData *)>("setFontList"), //
 		jMethod<::jvoid(::org::eclipse::swt::graphics::RGB)>("setRGB"), //
 	};
@@ -31,12 +29,6 @@ public:
 	auto getEffectsVisible(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getEffectsVisible")] != -1);
 		return call<R>("getEffectsVisible", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::org::eclipse::swt::graphics::FontData, typename... Args>
-	auto getFontData(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getFontData")] != -1);
-		return call<R>("getFontData", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::org::eclipse::swt::graphics::FontData *, typename... Args>
@@ -61,12 +53,6 @@ public:
 	auto setEffectsVisible(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setEffectsVisible")] != -1);
 		return call<R>("setEffectsVisible", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto setFontData(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setFontData")] != -1);
-		return call<R>("setFontData", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

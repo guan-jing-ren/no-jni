@@ -170,7 +170,6 @@ public:
 		jMethod<::jvoid(::jint, ::java::sql::Timestamp)>("setTimestamp"), //
 		jMethod<::jvoid(::jint, ::java::sql::Timestamp, ::java::util::Calendar)>("setTimestamp"), //
 		jMethod<::jvoid(::jint, ::java::net::URL)>("setURL"), //
-		jMethod<::jvoid(::jint, ::java::io::InputStream, ::jint)>("setUnicodeStream"), //
 		jMethod<::java::lang::Object(::java::lang::Class)>("unwrap"), //
 	};
 
@@ -604,12 +603,6 @@ public:
 	auto setURL(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setURL")] != -1);
 		return call<R>("setURL", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto setUnicodeStream(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setUnicodeStream")] != -1);
-		return call<R>("setUnicodeStream", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::lang::Object, typename... Args>

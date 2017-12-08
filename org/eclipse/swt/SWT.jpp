@@ -430,7 +430,6 @@ public:
 		jField<::jint>("Settings"), //
 		jField<::jint>("Show"), //
 		jField<::jint>("Skin"), //
-		jField<::jint>("Sleep"), //
 		jField<::jchar>("TAB"), //
 		jField<::jint>("TIME"), //
 		jField<::jint>("TITLE"), //
@@ -470,7 +469,6 @@ public:
 		jField<::jint>("Verify"), //
 		jField<::jint>("WEBKIT"), //
 		jField<::jint>("WRAP"), //
-		jField<::jint>("Wakeup"), //
 		jField<::jint>("YES"), //
 	};
 
@@ -2994,12 +2992,6 @@ public:
 		return sat<F>("Skin");
 	}
 
-	template<typename F = ::jint>
-	static auto Sleep() {
-		static_assert(field_signatures[jField<F>("Sleep")] != -1);
-		return sat<F>("Sleep");
-	}
-
 	template<typename F = ::jchar>
 	static auto TAB() {
 		static_assert(field_signatures[jField<F>("TAB")] != -1);
@@ -3232,12 +3224,6 @@ public:
 	static auto WRAP() {
 		static_assert(field_signatures[jField<F>("WRAP")] != -1);
 		return sat<F>("WRAP");
-	}
-
-	template<typename F = ::jint>
-	static auto Wakeup() {
-		static_assert(field_signatures[jField<F>("Wakeup")] != -1);
-		return sat<F>("Wakeup");
 	}
 
 	template<typename F = ::jint>

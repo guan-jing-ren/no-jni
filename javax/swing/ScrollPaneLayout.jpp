@@ -170,7 +170,6 @@ public:
 		jMethod<::javax::swing::JScrollBar()>("getVerticalScrollBar"), //
 		jMethod<::jint()>("getVerticalScrollBarPolicy"), //
 		jMethod<::javax::swing::JViewport()>("getViewport"), //
-		jMethod<::java::awt::Rectangle(::javax::swing::JScrollPane)>("getViewportBorderBounds"), //
 		jMethod<::jvoid(::java::awt::Container)>("layoutContainer"), //
 		jMethod<::java::awt::Dimension(::java::awt::Container)>("minimumLayoutSize"), //
 		jMethod<::java::awt::Dimension(::java::awt::Container)>("preferredLayoutSize"), //
@@ -232,12 +231,6 @@ public:
 	auto getViewport(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getViewport")] != -1);
 		return call<R>("getViewport", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::java::awt::Rectangle, typename... Args>
-	auto getViewportBorderBounds(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getViewportBorderBounds")] != -1);
-		return call<R>("getViewportBorderBounds", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

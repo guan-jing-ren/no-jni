@@ -42,24 +42,19 @@ public:
 		jMethod<::javax::accessibility::AccessibleContext()>("getAccessibleContext"), //
 		jMethod<::java::awt::event::AdjustmentListener *()>("getAdjustmentListeners"), //
 		jMethod<::jint()>("getBlockIncrement"), //
-		jMethod<::jint()>("getLineIncrement"), //
 		jMethod<::java::util::EventListener *(::java::lang::Class)>("getListeners"), //
 		jMethod<::jint()>("getMaximum"), //
 		jMethod<::jint()>("getMinimum"), //
 		jMethod<::jint()>("getOrientation"), //
-		jMethod<::jint()>("getPageIncrement"), //
 		jMethod<::jint()>("getUnitIncrement"), //
 		jMethod<::jint()>("getValue"), //
 		jMethod<::jboolean()>("getValueIsAdjusting"), //
-		jMethod<::jint()>("getVisible"), //
 		jMethod<::jint()>("getVisibleAmount"), //
 		jMethod<::jvoid(::java::awt::event::AdjustmentListener)>("removeAdjustmentListener"), //
 		jMethod<::jvoid(::jint)>("setBlockIncrement"), //
-		jMethod<::jvoid(::jint)>("setLineIncrement"), //
 		jMethod<::jvoid(::jint)>("setMaximum"), //
 		jMethod<::jvoid(::jint)>("setMinimum"), //
 		jMethod<::jvoid(::jint)>("setOrientation"), //
-		jMethod<::jvoid(::jint)>("setPageIncrement"), //
 		jMethod<::jvoid(::jint)>("setUnitIncrement"), //
 		jMethod<::jvoid(::jint)>("setValue"), //
 		jMethod<::jvoid(::jboolean)>("setValueIsAdjusting"), //
@@ -97,12 +92,6 @@ public:
 		return call<R>("getBlockIncrement", std::forward<Args>(args)...);
 	}
 
-	template<typename R = ::jint, typename... Args>
-	auto getLineIncrement(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getLineIncrement")] != -1);
-		return call<R>("getLineIncrement", std::forward<Args>(args)...);
-	}
-
 	template<typename R = ::java::util::EventListener *, typename... Args>
 	auto getListeners(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getListeners")] != -1);
@@ -128,12 +117,6 @@ public:
 	}
 
 	template<typename R = ::jint, typename... Args>
-	auto getPageIncrement(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPageIncrement")] != -1);
-		return call<R>("getPageIncrement", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jint, typename... Args>
 	auto getUnitIncrement(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUnitIncrement")] != -1);
 		return call<R>("getUnitIncrement", std::forward<Args>(args)...);
@@ -149,12 +132,6 @@ public:
 	auto getValueIsAdjusting(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getValueIsAdjusting")] != -1);
 		return call<R>("getValueIsAdjusting", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jint, typename... Args>
-	auto getVisible(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getVisible")] != -1);
-		return call<R>("getVisible", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
@@ -176,12 +153,6 @@ public:
 	}
 
 	template<typename R = ::jvoid, typename... Args>
-	auto setLineIncrement(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setLineIncrement")] != -1);
-		return call<R>("setLineIncrement", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
 	auto setMaximum(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setMaximum")] != -1);
 		return call<R>("setMaximum", std::forward<Args>(args)...);
@@ -197,12 +168,6 @@ public:
 	auto setOrientation(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setOrientation")] != -1);
 		return call<R>("setOrientation", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto setPageIncrement(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setPageIncrement")] != -1);
-		return call<R>("setPageIncrement", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

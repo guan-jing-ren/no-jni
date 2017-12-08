@@ -15,15 +15,7 @@ public:
 
 	constexpr static Enume method_signatures{
 		jConstructor<::jvoid()>(), //
-		jMethod<::jbyte *()>("name"), //
-		jMethod<::jvoid(::jbyte *)>("name"), //
 	};
-
-	template<typename R = ::jbyte *, typename... Args>
-	auto name(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("name")] != -1);
-		return call<R>("name", std::forward<Args>(args)...);
-	}
 
 };
 

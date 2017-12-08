@@ -95,7 +95,6 @@ public:
 		jMethod<::java::nio::file::Path()>("toPath"), //
 		jMethod<::java::lang::String()>("toString"), //
 		jMethod<::java::net::URI()>("toURI"), //
-		jMethod<::java::net::URL()>("toURL"), //
 	};
 
 	template<typename R = ::jboolean, typename... Args>
@@ -348,12 +347,6 @@ public:
 	auto toURI(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toURI")] != -1);
 		return call<R>("toURI", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::java::net::URL, typename... Args>
-	auto toURL(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("toURL")] != -1);
-		return call<R>("toURL", std::forward<Args>(args)...);
 	}
 
 };

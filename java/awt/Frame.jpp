@@ -10,50 +10,12 @@ public:
 	static constexpr auto signature = ::java_awt / "Frame";
 
 	constexpr static Enume field_signatures{
-		jField<::jint>("CROSSHAIR_CURSOR"), //
-		jField<::jint>("DEFAULT_CURSOR"), //
-		jField<::jint>("E_RESIZE_CURSOR"), //
-		jField<::jint>("HAND_CURSOR"), //
 		jField<::jint>("ICONIFIED"), //
 		jField<::jint>("MAXIMIZED_BOTH"), //
 		jField<::jint>("MAXIMIZED_HORIZ"), //
 		jField<::jint>("MAXIMIZED_VERT"), //
-		jField<::jint>("MOVE_CURSOR"), //
-		jField<::jint>("NE_RESIZE_CURSOR"), //
 		jField<::jint>("NORMAL"), //
-		jField<::jint>("NW_RESIZE_CURSOR"), //
-		jField<::jint>("N_RESIZE_CURSOR"), //
-		jField<::jint>("SE_RESIZE_CURSOR"), //
-		jField<::jint>("SW_RESIZE_CURSOR"), //
-		jField<::jint>("S_RESIZE_CURSOR"), //
-		jField<::jint>("TEXT_CURSOR"), //
-		jField<::jint>("WAIT_CURSOR"), //
-		jField<::jint>("W_RESIZE_CURSOR"), //
 	};
-
-	template<typename F = ::jint>
-	static auto CROSSHAIR_CURSOR() {
-		static_assert(field_signatures[jField<F>("CROSSHAIR_CURSOR")] != -1);
-		return sat<F>("CROSSHAIR_CURSOR");
-	}
-
-	template<typename F = ::jint>
-	static auto DEFAULT_CURSOR() {
-		static_assert(field_signatures[jField<F>("DEFAULT_CURSOR")] != -1);
-		return sat<F>("DEFAULT_CURSOR");
-	}
-
-	template<typename F = ::jint>
-	static auto E_RESIZE_CURSOR() {
-		static_assert(field_signatures[jField<F>("E_RESIZE_CURSOR")] != -1);
-		return sat<F>("E_RESIZE_CURSOR");
-	}
-
-	template<typename F = ::jint>
-	static auto HAND_CURSOR() {
-		static_assert(field_signatures[jField<F>("HAND_CURSOR")] != -1);
-		return sat<F>("HAND_CURSOR");
-	}
 
 	template<typename F = ::jint>
 	static auto ICONIFIED() {
@@ -80,69 +42,9 @@ public:
 	}
 
 	template<typename F = ::jint>
-	static auto MOVE_CURSOR() {
-		static_assert(field_signatures[jField<F>("MOVE_CURSOR")] != -1);
-		return sat<F>("MOVE_CURSOR");
-	}
-
-	template<typename F = ::jint>
-	static auto NE_RESIZE_CURSOR() {
-		static_assert(field_signatures[jField<F>("NE_RESIZE_CURSOR")] != -1);
-		return sat<F>("NE_RESIZE_CURSOR");
-	}
-
-	template<typename F = ::jint>
 	static auto NORMAL() {
 		static_assert(field_signatures[jField<F>("NORMAL")] != -1);
 		return sat<F>("NORMAL");
-	}
-
-	template<typename F = ::jint>
-	static auto NW_RESIZE_CURSOR() {
-		static_assert(field_signatures[jField<F>("NW_RESIZE_CURSOR")] != -1);
-		return sat<F>("NW_RESIZE_CURSOR");
-	}
-
-	template<typename F = ::jint>
-	static auto N_RESIZE_CURSOR() {
-		static_assert(field_signatures[jField<F>("N_RESIZE_CURSOR")] != -1);
-		return sat<F>("N_RESIZE_CURSOR");
-	}
-
-	template<typename F = ::jint>
-	static auto SE_RESIZE_CURSOR() {
-		static_assert(field_signatures[jField<F>("SE_RESIZE_CURSOR")] != -1);
-		return sat<F>("SE_RESIZE_CURSOR");
-	}
-
-	template<typename F = ::jint>
-	static auto SW_RESIZE_CURSOR() {
-		static_assert(field_signatures[jField<F>("SW_RESIZE_CURSOR")] != -1);
-		return sat<F>("SW_RESIZE_CURSOR");
-	}
-
-	template<typename F = ::jint>
-	static auto S_RESIZE_CURSOR() {
-		static_assert(field_signatures[jField<F>("S_RESIZE_CURSOR")] != -1);
-		return sat<F>("S_RESIZE_CURSOR");
-	}
-
-	template<typename F = ::jint>
-	static auto TEXT_CURSOR() {
-		static_assert(field_signatures[jField<F>("TEXT_CURSOR")] != -1);
-		return sat<F>("TEXT_CURSOR");
-	}
-
-	template<typename F = ::jint>
-	static auto WAIT_CURSOR() {
-		static_assert(field_signatures[jField<F>("WAIT_CURSOR")] != -1);
-		return sat<F>("WAIT_CURSOR");
-	}
-
-	template<typename F = ::jint>
-	static auto W_RESIZE_CURSOR() {
-		static_assert(field_signatures[jField<F>("W_RESIZE_CURSOR")] != -1);
-		return sat<F>("W_RESIZE_CURSOR");
 	}
 
 	constexpr static Enume method_signatures{
@@ -152,7 +54,6 @@ public:
 		jConstructor<::jvoid(::java::lang::String, ::java::awt::GraphicsConfiguration)>(), //
 		jMethod<::jvoid()>("addNotify"), //
 		jMethod<::javax::accessibility::AccessibleContext()>("getAccessibleContext"), //
-		jMethod<::jint()>("getCursorType"), //
 		jMethod<::jint()>("getExtendedState"), //
 		jMethod<::java::awt::Font()>("getFont"), //
 		jMethod<::java::awt::Frame *()>("getFrames"), //
@@ -163,11 +64,9 @@ public:
 		jMethod<::java::lang::String()>("getTitle"), //
 		jMethod<::jboolean()>("isResizable"), //
 		jMethod<::jboolean()>("isUndecorated"), //
-		jMethod<::jboolean(::java::awt::Event)>("postEvent"), //
 		jMethod<::jvoid(::java::awt::MenuComponent)>("remove"), //
 		jMethod<::jvoid()>("removeNotify"), //
 		jMethod<::jvoid(::java::awt::Color)>("setBackground"), //
-		jMethod<::jvoid(::jint)>("setCursor"), //
 		jMethod<::jvoid(::jint)>("setExtendedState"), //
 		jMethod<::jvoid(::java::awt::Image)>("setIconImage"), //
 		jMethod<::jvoid(::java::awt::Rectangle)>("setMaximizedBounds"), //
@@ -190,12 +89,6 @@ public:
 	auto getAccessibleContext(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getAccessibleContext")] != -1);
 		return call<R>("getAccessibleContext", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jint, typename... Args>
-	auto getCursorType(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getCursorType")] != -1);
-		return call<R>("getCursorType", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>
@@ -258,12 +151,6 @@ public:
 		return call<R>("isUndecorated", std::forward<Args>(args)...);
 	}
 
-	template<typename R = ::jboolean, typename... Args>
-	auto postEvent(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("postEvent")] != -1);
-		return call<R>("postEvent", std::forward<Args>(args)...);
-	}
-
 	template<typename R = ::jvoid, typename... Args>
 	auto remove(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("remove")] != -1);
@@ -280,12 +167,6 @@ public:
 	auto setBackground(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setBackground")] != -1);
 		return call<R>("setBackground", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto setCursor(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setCursor")] != -1);
-		return call<R>("setCursor", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

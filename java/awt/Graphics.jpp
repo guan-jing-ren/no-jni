@@ -50,7 +50,6 @@ public:
 		jMethod<::java::awt::Shape()>("getClip"), //
 		jMethod<::java::awt::Rectangle()>("getClipBounds"), //
 		jMethod<::java::awt::Rectangle(::java::awt::Rectangle)>("getClipBounds"), //
-		jMethod<::java::awt::Rectangle()>("getClipRect"), //
 		jMethod<::java::awt::Color()>("getColor"), //
 		jMethod<::java::awt::Font()>("getFont"), //
 		jMethod<::java::awt::FontMetrics()>("getFontMetrics"), //
@@ -220,12 +219,6 @@ public:
 	auto getClipBounds(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClipBounds")] != -1);
 		return call<R>("getClipBounds", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::java::awt::Rectangle, typename... Args>
-	auto getClipRect(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getClipRect")] != -1);
-		return call<R>("getClipRect", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::Color, typename... Args>

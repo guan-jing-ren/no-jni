@@ -232,7 +232,6 @@ public:
 		jMethod<::jvoid(::jbyte *)>("readFully"), //
 		jMethod<::jvoid(::jbyte *, ::jint, ::jint)>("readFully"), //
 		jMethod<::jint()>("readInt"), //
-		jMethod<::java::lang::String()>("readLine"), //
 		jMethod<::jlong()>("readLong"), //
 		jMethod<::java::lang::Object()>("readObject"), //
 		jMethod<::jshort()>("readShort"), //
@@ -315,12 +314,6 @@ public:
 	auto readInt(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("readInt")] != -1);
 		return call<R>("readInt", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::java::lang::String, typename... Args>
-	auto readLine(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("readLine")] != -1);
-		return call<R>("readLine", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jlong, typename... Args>

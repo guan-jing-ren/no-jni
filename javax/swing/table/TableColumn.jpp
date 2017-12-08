@@ -46,8 +46,6 @@ public:
 		jConstructor<::jvoid(::jint, ::jint)>(), //
 		jConstructor<::jvoid(::jint, ::jint, ::javax::swing::table::TableCellRenderer, ::javax::swing::table::TableCellEditor)>(), //
 		jMethod<::jvoid(::java::beans::PropertyChangeListener)>("addPropertyChangeListener"), //
-		jMethod<::jvoid()>("disableResizedPosting"), //
-		jMethod<::jvoid()>("enableResizedPosting"), //
 		jMethod<::javax::swing::table::TableCellEditor()>("getCellEditor"), //
 		jMethod<::javax::swing::table::TableCellRenderer()>("getCellRenderer"), //
 		jMethod<::javax::swing::table::TableCellRenderer()>("getHeaderRenderer"), //
@@ -79,18 +77,6 @@ public:
 	auto addPropertyChangeListener(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addPropertyChangeListener")] != -1);
 		return call<R>("addPropertyChangeListener", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto disableResizedPosting(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("disableResizedPosting")] != -1);
-		return call<R>("disableResizedPosting", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto enableResizedPosting(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("enableResizedPosting")] != -1);
-		return call<R>("enableResizedPosting", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::swing::table::TableCellEditor, typename... Args>

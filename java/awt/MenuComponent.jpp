@@ -20,8 +20,6 @@ public:
 		jMethod<::java::awt::Font()>("getFont"), //
 		jMethod<::java::lang::String()>("getName"), //
 		jMethod<::java::awt::MenuContainer()>("getParent"), //
-		jMethod<::java::awt::peer::MenuComponentPeer()>("getPeer"), //
-		jMethod<::jboolean(::java::awt::Event)>("postEvent"), //
 		jMethod<::jvoid()>("removeNotify"), //
 		jMethod<::jvoid(::java::awt::Font)>("setFont"), //
 		jMethod<::jvoid(::java::lang::String)>("setName"), //
@@ -56,18 +54,6 @@ public:
 	auto getParent(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getParent")] != -1);
 		return call<R>("getParent", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::java::awt::peer::MenuComponentPeer, typename... Args>
-	auto getPeer(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPeer")] != -1);
-		return call<R>("getPeer", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jboolean, typename... Args>
-	auto postEvent(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("postEvent")] != -1);
-		return call<R>("postEvent", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

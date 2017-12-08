@@ -1413,7 +1413,6 @@ public:
 	}
 
 	constexpr static Enume method_signatures{
-		jConstructor<::jvoid(::java::awt::Component, ::jint, ::jlong, ::jint, ::jint)>(), //
 		jConstructor<::jvoid(::java::awt::Component, ::jint, ::jlong, ::jint, ::jint, ::jchar)>(), //
 		jConstructor<::jvoid(::java::awt::Component, ::jint, ::jlong, ::jint, ::jint, ::jchar, ::jint)>(), //
 		jMethod<::jint()>("getExtendedKeyCode"), //
@@ -1427,7 +1426,6 @@ public:
 		jMethod<::java::lang::String()>("paramString"), //
 		jMethod<::jvoid(::jchar)>("setKeyChar"), //
 		jMethod<::jvoid(::jint)>("setKeyCode"), //
-		jMethod<::jvoid(::jint)>("setModifiers"), //
 	};
 
 	template<typename R = ::jint, typename... Args>
@@ -1494,12 +1492,6 @@ public:
 	auto setKeyCode(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setKeyCode")] != -1);
 		return call<R>("setKeyCode", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto setModifiers(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setModifiers")] != -1);
-		return call<R>("setModifiers", std::forward<Args>(args)...);
 	}
 
 };

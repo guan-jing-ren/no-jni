@@ -173,7 +173,6 @@ public:
 		jMethod<::java::lang::String()>("getName"), //
 		jMethod<::jint()>("getNumGlyphs"), //
 		jMethod<::java::lang::String()>("getPSName"), //
-		jMethod<::java::awt::peer::FontPeer()>("getPeer"), //
 		jMethod<::jint()>("getSize"), //
 		jMethod<::jfloat()>("getSize2D"), //
 		jMethod<::java::awt::geom::Rectangle2D(::java::lang::String, ::jint, ::jint, ::java::awt::font::FontRenderContext)>("getStringBounds"), //
@@ -311,12 +310,6 @@ public:
 	auto getPSName(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPSName")] != -1);
 		return call<R>("getPSName", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::java::awt::peer::FontPeer, typename... Args>
-	auto getPeer(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPeer")] != -1);
-		return call<R>("getPeer", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jint, typename... Args>

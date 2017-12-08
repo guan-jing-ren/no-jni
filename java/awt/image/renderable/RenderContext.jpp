@@ -20,12 +20,10 @@ public:
 		jConstructor<::jvoid(::java::awt::geom::AffineTransform, ::java::awt::Shape, ::java::awt::RenderingHints)>(), //
 		jMethod<::java::lang::Object()>("clone"), //
 		jMethod<::jvoid(::java::awt::geom::AffineTransform)>("concatenateTransform"), //
-		jMethod<::jvoid(::java::awt::geom::AffineTransform)>("concetenateTransform"), //
 		jMethod<::java::awt::Shape()>("getAreaOfInterest"), //
 		jMethod<::java::awt::RenderingHints()>("getRenderingHints"), //
 		jMethod<::java::awt::geom::AffineTransform()>("getTransform"), //
 		jMethod<::jvoid(::java::awt::geom::AffineTransform)>("preConcatenateTransform"), //
-		jMethod<::jvoid(::java::awt::geom::AffineTransform)>("preConcetenateTransform"), //
 		jMethod<::jvoid(::java::awt::Shape)>("setAreaOfInterest"), //
 		jMethod<::jvoid(::java::awt::RenderingHints)>("setRenderingHints"), //
 		jMethod<::jvoid(::java::awt::geom::AffineTransform)>("setTransform"), //
@@ -41,12 +39,6 @@ public:
 	auto concatenateTransform(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("concatenateTransform")] != -1);
 		return call<R>("concatenateTransform", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto concetenateTransform(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("concetenateTransform")] != -1);
-		return call<R>("concetenateTransform", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::awt::Shape, typename... Args>
@@ -71,12 +63,6 @@ public:
 	auto preConcatenateTransform(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("preConcatenateTransform")] != -1);
 		return call<R>("preConcatenateTransform", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto preConcetenateTransform(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("preConcetenateTransform")] != -1);
-		return call<R>("preConcetenateTransform", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

@@ -97,9 +97,7 @@ public:
 		jMethod<::java::io::InputStream(::jint)>("getAsciiStream"), //
 		jMethod<::java::io::InputStream(::java::lang::String)>("getAsciiStream"), //
 		jMethod<::java::math::BigDecimal(::jint)>("getBigDecimal"), //
-		jMethod<::java::math::BigDecimal(::jint, ::jint)>("getBigDecimal"), //
 		jMethod<::java::math::BigDecimal(::java::lang::String)>("getBigDecimal"), //
-		jMethod<::java::math::BigDecimal(::java::lang::String, ::jint)>("getBigDecimal"), //
 		jMethod<::java::io::InputStream(::jint)>("getBinaryStream"), //
 		jMethod<::java::io::InputStream(::java::lang::String)>("getBinaryStream"), //
 		jMethod<::java::sql::Blob(::jint)>("getBlob"), //
@@ -167,8 +165,6 @@ public:
 		jMethod<::jint()>("getType"), //
 		jMethod<::java::net::URL(::jint)>("getURL"), //
 		jMethod<::java::net::URL(::java::lang::String)>("getURL"), //
-		jMethod<::java::io::InputStream(::jint)>("getUnicodeStream"), //
-		jMethod<::java::io::InputStream(::java::lang::String)>("getUnicodeStream"), //
 		jMethod<::java::sql::SQLWarning()>("getWarnings"), //
 		jMethod<::jvoid()>("insertRow"), //
 		jMethod<::jboolean()>("isAfterLast"), //
@@ -548,12 +544,6 @@ public:
 	auto getURL(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getURL")] != -1);
 		return call<R>("getURL", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::java::io::InputStream, typename... Args>
-	auto getUnicodeStream(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getUnicodeStream")] != -1);
-		return call<R>("getUnicodeStream", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::sql::SQLWarning, typename... Args>

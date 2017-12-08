@@ -14,21 +14,8 @@ public:
 	};
 
 	constexpr static Enume method_signatures{
-		jMethod<::java::rmi::registry::Registry(::jint)>("registryImpl"), //
-		jMethod<::java::rmi::registry::Registry(::java::lang::String, ::jint)>("registryStub"), //
+		cexprstr{"\0"}, //
 	};
-
-	template<typename R = ::java::rmi::registry::Registry, typename... Args>
-	auto registryImpl(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("registryImpl")] != -1);
-		return call<R>("registryImpl", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::java::rmi::registry::Registry, typename... Args>
-	auto registryStub(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("registryStub")] != -1);
-		return call<R>("registryStub", std::forward<Args>(args)...);
-	}
 
 };
 

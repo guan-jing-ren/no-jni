@@ -55,8 +55,6 @@ public:
 		jMethod<::jvoid(::java::awt::Rectangle)>("computeVisibleRect"), //
 		jMethod<::jboolean(::jint, ::jint)>("contains"), //
 		jMethod<::javax::swing::JToolTip()>("createToolTip"), //
-		jMethod<::jvoid()>("disable"), //
-		jMethod<::jvoid()>("enable"), //
 		jMethod<::jvoid(::java::lang::String, ::jchar, ::jchar)>("firePropertyChange"), //
 		jMethod<::jvoid(::java::lang::String, ::jint, ::jint)>("firePropertyChange"), //
 		jMethod<::jvoid(::java::lang::String, ::jboolean, ::jboolean)>("firePropertyChange"), //
@@ -88,7 +86,6 @@ public:
 		jMethod<::java::awt::Point(::java::awt::Point)>("getLocation"), //
 		jMethod<::java::awt::Dimension()>("getMaximumSize"), //
 		jMethod<::java::awt::Dimension()>("getMinimumSize"), //
-		jMethod<::java::awt::Component()>("getNextFocusableComponent"), //
 		jMethod<::java::awt::Point(::java::awt::event::MouseEvent)>("getPopupLocation"), //
 		jMethod<::java::awt::Dimension()>("getPreferredSize"), //
 		jMethod<::javax::swing::KeyStroke *()>("getRegisteredKeyStrokes"), //
@@ -107,10 +104,8 @@ public:
 		jMethod<::jint()>("getX"), //
 		jMethod<::jint()>("getY"), //
 		jMethod<::jvoid()>("grabFocus"), //
-		jMethod<::jvoid()>("hide"), //
 		jMethod<::jboolean()>("isDoubleBuffered"), //
 		jMethod<::jboolean(::java::awt::Component)>("isLightweightComponent"), //
-		jMethod<::jboolean()>("isManagingFocus"), //
 		jMethod<::jboolean()>("isOpaque"), //
 		jMethod<::jboolean()>("isOptimizedDrawingEnabled"), //
 		jMethod<::jboolean()>("isPaintingForPrint"), //
@@ -130,12 +125,10 @@ public:
 		jMethod<::jvoid(::java::beans::VetoableChangeListener)>("removeVetoableChangeListener"), //
 		jMethod<::jvoid(::jlong, ::jint, ::jint, ::jint, ::jint)>("repaint"), //
 		jMethod<::jvoid(::java::awt::Rectangle)>("repaint"), //
-		jMethod<::jboolean()>("requestDefaultFocus"), //
 		jMethod<::jvoid()>("requestFocus"), //
 		jMethod<::jboolean(::jboolean)>("requestFocus"), //
 		jMethod<::jboolean()>("requestFocusInWindow"), //
 		jMethod<::jvoid()>("resetKeyboardActions"), //
-		jMethod<::jvoid(::jint, ::jint, ::jint, ::jint)>("reshape"), //
 		jMethod<::jvoid()>("revalidate"), //
 		jMethod<::jvoid(::java::awt::Rectangle)>("scrollRectToVisible"), //
 		jMethod<::jvoid(::javax::swing::ActionMap)>("setActionMap"), //
@@ -157,7 +150,6 @@ public:
 		jMethod<::jvoid(::javax::swing::InputVerifier)>("setInputVerifier"), //
 		jMethod<::jvoid(::java::awt::Dimension)>("setMaximumSize"), //
 		jMethod<::jvoid(::java::awt::Dimension)>("setMinimumSize"), //
-		jMethod<::jvoid(::java::awt::Component)>("setNextFocusableComponent"), //
 		jMethod<::jvoid(::jboolean)>("setOpaque"), //
 		jMethod<::jvoid(::java::awt::Dimension)>("setPreferredSize"), //
 		jMethod<::jvoid(::jboolean)>("setRequestFocusEnabled"), //
@@ -204,18 +196,6 @@ public:
 	auto createToolTip(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("createToolTip")] != -1);
 		return call<R>("createToolTip", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto disable(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("disable")] != -1);
-		return call<R>("disable", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto enable(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("enable")] != -1);
-		return call<R>("enable", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
@@ -380,12 +360,6 @@ public:
 		return call<R>("getMinimumSize", std::forward<Args>(args)...);
 	}
 
-	template<typename R = ::java::awt::Component, typename... Args>
-	auto getNextFocusableComponent(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getNextFocusableComponent")] != -1);
-		return call<R>("getNextFocusableComponent", std::forward<Args>(args)...);
-	}
-
 	template<typename R = ::java::awt::Point, typename... Args>
 	auto getPopupLocation(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getPopupLocation")] != -1);
@@ -488,12 +462,6 @@ public:
 		return call<R>("grabFocus", std::forward<Args>(args)...);
 	}
 
-	template<typename R = ::jvoid, typename... Args>
-	auto hide(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("hide")] != -1);
-		return call<R>("hide", std::forward<Args>(args)...);
-	}
-
 	template<typename R = ::jboolean, typename... Args>
 	auto isDoubleBuffered(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isDoubleBuffered")] != -1);
@@ -504,12 +472,6 @@ public:
 	static auto isLightweightComponent(Args &&...args) {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isLightweightComponent")] != -1);
 		return scall<R>("isLightweightComponent", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jboolean, typename... Args>
-	auto isManagingFocus(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("isManagingFocus")] != -1);
-		return call<R>("isManagingFocus", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jboolean, typename... Args>
@@ -608,12 +570,6 @@ public:
 		return call<R>("repaint", std::forward<Args>(args)...);
 	}
 
-	template<typename R = ::jboolean, typename... Args>
-	auto requestDefaultFocus(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("requestDefaultFocus")] != -1);
-		return call<R>("requestDefaultFocus", std::forward<Args>(args)...);
-	}
-
 	template<typename R = ::jvoid, typename... Args>
 	auto requestFocus(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("requestFocus")] != -1);
@@ -630,12 +586,6 @@ public:
 	auto resetKeyboardActions(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("resetKeyboardActions")] != -1);
 		return call<R>("resetKeyboardActions", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto reshape(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("reshape")] != -1);
-		return call<R>("reshape", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
@@ -762,12 +712,6 @@ public:
 	auto setMinimumSize(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setMinimumSize")] != -1);
 		return call<R>("setMinimumSize", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto setNextFocusableComponent(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("setNextFocusableComponent")] != -1);
-		return call<R>("setNextFocusableComponent", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>

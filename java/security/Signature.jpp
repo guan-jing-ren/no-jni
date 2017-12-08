@@ -19,14 +19,12 @@ public:
 		jMethod<::java::security::Signature(::java::lang::String)>("getInstance"), //
 		jMethod<::java::security::Signature(::java::lang::String, ::java::lang::String)>("getInstance"), //
 		jMethod<::java::security::Signature(::java::lang::String, ::java::security::Provider)>("getInstance"), //
-		jMethod<::java::lang::Object(::java::lang::String)>("getParameter"), //
 		jMethod<::java::security::AlgorithmParameters()>("getParameters"), //
 		jMethod<::java::security::Provider()>("getProvider"), //
 		jMethod<::jvoid(::java::security::PrivateKey)>("initSign"), //
 		jMethod<::jvoid(::java::security::PrivateKey, ::java::security::SecureRandom)>("initSign"), //
 		jMethod<::jvoid(::java::security::PublicKey)>("initVerify"), //
 		jMethod<::jvoid(::java::security::cert::Certificate)>("initVerify"), //
-		jMethod<::jvoid(::java::lang::String, ::java::lang::Object)>("setParameter"), //
 		jMethod<::jvoid(::java::security::spec::AlgorithmParameterSpec)>("setParameter"), //
 		jMethod<::jbyte *()>("sign"), //
 		jMethod<::jint(::jbyte *, ::jint, ::jint)>("sign"), //
@@ -55,12 +53,6 @@ public:
 	static auto getInstance(Args &&...args) {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getInstance")] != -1);
 		return scall<R>("getInstance", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::java::lang::Object, typename... Args>
-	auto getParameter(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("getParameter")] != -1);
-		return call<R>("getParameter", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::java::security::AlgorithmParameters, typename... Args>

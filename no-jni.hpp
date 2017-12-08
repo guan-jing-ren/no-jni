@@ -462,9 +462,7 @@ static auto cast(T t) -> std::enable_if_t<std::is_arithmetic<T>::value, T> {
   return t;
 }
 template <typename T, bool A> auto cast(Element<T, A> e) { return cast(*e); }
-template <bool S, typename T> auto cast(const Field<S, T> &f) {
-  return cast(*f);
-}
+template <bool S, typename T> auto cast(Field<S, T> f) { return cast(*f); }
 
 template <bool S, typename F> class Field {
   static JNIEnv *env() { return JavaVirtualMachine::env; }
@@ -628,6 +626,8 @@ class jObject {
   template <typename, typename> friend class jObject;
   template <typename, bool> friend class Element;
   friend class String;
+  friend class class_type;
+  friend class superclass_type;
 
   template <typename G,
             G (JNIEnv ::*getter)(jclass, const char *, const char *), size_t N>
@@ -716,6 +716,18 @@ class jObject {
   }
 
 protected:
+  static jobject cast(void *o) { return static_cast<jobject>(o); }
+  template <typename T>
+  static auto cast(T t) -> std::enable_if_t<std::is_arithmetic<T>::value, T> {
+    return t;
+  }
+  template <typename T, bool A> static auto cast(Element<T, A> e) {
+    return cast(*e);
+  }
+  template <bool S, typename T> static auto cast(const Field<S, T> &f) {
+    return cast(*f);
+  }
+
   static JNIEnv *env() { return JavaVirtualMachine::env; }
   operator void *() const { return ref.obj; }
   jObject(jobject o) : ref(o) {}
@@ -786,6 +798,8 @@ public:
       return call<String>("toString");
     }
   }
+
+  operator bool() const { return ref.obj; }
 
   template <typename F, size_t N> static auto sat(const char (&s)[N]) {
     return at_<true, &JNIEnv::GetStaticFieldID, F>(s, getClass());

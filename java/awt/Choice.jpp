@@ -19,7 +19,6 @@ public:
 		jMethod<::jvoid(::java::lang::String)>("addItem"), //
 		jMethod<::jvoid(::java::awt::event::ItemListener)>("addItemListener"), //
 		jMethod<::jvoid()>("addNotify"), //
-		jMethod<::jint()>("countItems"), //
 		jMethod<::javax::accessibility::AccessibleContext()>("getAccessibleContext"), //
 		jMethod<::java::lang::String(::jint)>("getItem"), //
 		jMethod<::jint()>("getItemCount"), //
@@ -59,12 +58,6 @@ public:
 	auto addNotify(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("addNotify")] != -1);
 		return call<R>("addNotify", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jint, typename... Args>
-	auto countItems(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("countItems")] != -1);
-		return call<R>("countItems", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::javax::accessibility::AccessibleContext, typename... Args>

@@ -20,7 +20,6 @@ public:
 		jMethod<::jvoid(::jint)>("write"), //
 		jMethod<::jvoid(::org::omg::CORBA::Context, ::org::omg::CORBA::ContextList)>("write_Context"), //
 		jMethod<::jvoid(::org::omg::CORBA::Object)>("write_Object"), //
-		jMethod<::jvoid(::org::omg::CORBA::Principal)>("write_Principal"), //
 		jMethod<::jvoid(::org::omg::CORBA::TypeCode)>("write_TypeCode"), //
 		jMethod<::jvoid(::org::omg::CORBA::Any)>("write_any"), //
 		jMethod<::jvoid(::jboolean)>("write_boolean"), //
@@ -80,12 +79,6 @@ public:
 	auto write_Object(Args &&...args) const {
 		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("write_Object")] != -1);
 		return call<R>("write_Object", std::forward<Args>(args)...);
-	}
-
-	template<typename R = ::jvoid, typename... Args>
-	auto write_Principal(Args &&...args) const {
-		static_assert(method_signatures[jMethod<R(std::decay_t<Args>...)>("write_Principal")] != -1);
-		return call<R>("write_Principal", std::forward<Args>(args)...);
 	}
 
 	template<typename R = ::jvoid, typename... Args>
